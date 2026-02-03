@@ -1,0 +1,356 @@
+.section {
+    padding: 100px 0;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero h2 {
+    font-size: 2.75rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.codeDisplay {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.hasCode {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.codeBox {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+}
+
+.codeRow {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.code {
+    font-family: var(--font-sans);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    letter-spacing: 0.1em;
+}
+
+.copyBtn {
+    background: none;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.copyBtn:hover {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+    color: var(--accent-primary);
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 60px;
+}
+
+.accordionContainer {
+    background-color: white;
+    border-radius: 8px;
+    padding: 0 var(--spacing-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.flowCard {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.flowTitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.flowItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.flowItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.flowNumber {
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-light);
+    color: var(--accent-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.flowItem p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.flowLine {
+    width: 2px;
+    height: 30px;
+    background-color: #eee;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: 40px;
+}
+
+.primaryBtn {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.primaryBtn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.secondaryBtn {
+    background-color: white;
+    color: var(--text-primary);
+    border: 1px solid #ddd;
+    padding: 1.2rem 2.5rem;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover:not(:disabled) {
+    border-color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.secondaryBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: var(--spacing-md);
+}
+
+.modal {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.modalTitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.shareGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+    margin-bottom: 30px;
+}
+
+.shareOption {
+    background-color: var(--bg-primary);
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.shareOption:hover {
+    background-color: white;
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.closeBtn {
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+}
+
+.closeBtn:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .mainGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .flowItems {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .flowLine {
+        width: 40px;
+        height: 2px;
+        margin: 0 10px;
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .codeRow {
+        flex-direction: column;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .flowLine {
+        width: 20px;
+    }
+
+    .shareGrid {
+        grid-template-columns: 1fr;
+    }
+}

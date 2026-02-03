@@ -1,0 +1,66 @@
+:root {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+
+  /* Brand Colors - Academic & Medical Trust */
+  --color-red: #d1282f;
+  /* Primary: Medicine/Authority */
+  --color-teal: #0d9488;
+  /* Secondary: Learning/Aqua */
+  --color-gold: #d97706;
+  /* Accent: Rewards/Commissions */
+  --color-warm-gold: #f59e0b;
+  /* Lighter accents */
+  --color-orange: #f97316;
+  /* Secondary accents */
+  --color-soft-blue: #f0f9ff;
+  /* Subtle background */
+  --color-soft-red: #fef2f2;
+  /* Deep trust accent */
+  --color-pink: #db2777;
+  /* Bold Pink for highlights */
+  /* Deep trust accent */
+  --color-indigo: #1e3a8a;
+  /* Deep trust accent */
+
+  --accent-primary: var(--color-red);
+  --accent-secondary: var(--color-teal);
+  --accent-highlight: var(--color-warm-gold);
+  --accent-vibrant: var(--color-orange);
+
+  /* Gradients - Academic Depth */
+  --gradient-hero: linear-gradient(135deg, var(--color-red) 0%, #991b1b 100%);
+  --gradient-cta: linear-gradient(90deg, var(--color-red) 0%, var(--color-warm-gold) 100%);
+  --gradient-teal: linear-gradient(135deg, var(--color-teal) 0%, #0f766e 100%);
+  --gradient-subtle: linear-gradient(180deg, var(--color-soft-blue) 0%, #ffffff 100%);
+  --gradient-warm: linear-gradient(135deg, var(--color-warm-gold) 0%, var(--color-orange) 100%);
+
+  /* Typography */
+  --font-serif: "Lora", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Constraints */
+  --max-width: 1400px;
+  --header-height: 100px;
+  --header-height-shrunk: 80px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #121416;
+    --text-primary: #e1e3e5;
+    --text-secondary: #b0b5bb;
+    --accent-primary: #6eaab0;
+    --accent-secondary: #4d7c81;
+    --accent-light: #1e2a2c;
+  }
+}
