@@ -1,18 +1,24 @@
+"use client";
+
+import { useState, use } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { books } from "@/lib/data";
 import styles from "./BookPage.module.css";
-
 import Accordion from "@/components/Accordion";
 
-export async function generateStaticParams() {
-    return books.map((book) => ({
-        slug: book.slug,
-    }));
-}
+const states = [
+    "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
+    "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo",
+    "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos",
+    "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers",
+    "Sokoto", "Taraba", "Yobe", "Zamfara", "FCT (Abuja)"
+];
 
-export default async function BookPage({ params }: { params: { slug: string } }) {
-    const { slug } = await params;
+export default function BookPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = use(params);
+    const [showDistributors, setShowDistributors] = useState(false);
     const book = books.find((b) => b.slug === slug);
 
     if (!book) {
@@ -45,10 +51,47 @@ export default async function BookPage({ params }: { params: { slug: string } })
 
                         <div className={styles.actions}>
                             {book.status === "Available" ? (
-                                <>
-                                    <button className={styles.primaryBtn}>Buy Edition — $49.99</button>
-                                    <button className={styles.secondaryBtn}>Access Digital</button>
-                                </>
+                                <div className={styles.actionContainer}>
+                                    <div className={styles.btnGroup}>
+                                        <button
+                                            className={styles.primaryBtn}
+                                            onClick={() => setShowDistributors(!showDistributors)}
+                                            aria-expanded={showDistributors}
+                                        >
+                                            Buy Edition — ₦10,000
+                                        </button>
+                                        <button className={styles.secondaryBtn}>Access Digital</button>
+                                    </div>
+
+                                    {showDistributors && (
+                                        <div className={styles.distributorDropdown}>
+                                            <div className={styles.dropdownHeader}>
+                                                <h3>Select Your State (Nigeria)</h3>
+                                            </div>
+                                            <div className={styles.stateList}>
+                                                {states.map((state) => (
+                                                    <div key={state} className={styles.stateItem}>
+                                                        <h4>{state}</h4>
+                                                        <div className={styles.distributorDetails}>
+                                                            <p><span>Distributor:</span> [Coming Soon]</p>
+                                                            <p><span>Location:</span> [TBD]</p>
+                                                            <p><span>Phone:</span> [N/A]</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className={styles.becomeDistributorWrapper}>
+                                                <Link
+                                                    href="/refer#become-referral-partner"
+                                                    className={styles.becomeDistributorBtn}
+                                                    aria-label="Become a Distributor and create referral account"
+                                                >
+                                                    Become a Distributor
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             ) : (
                                 <button className={styles.secondaryBtn} disabled>Coming Soon</button>
                             )}
@@ -71,7 +114,7 @@ export default async function BookPage({ params }: { params: { slug: string } })
                         <Accordion title="Format & Availability">
                             <p>Available in the following formats:</p>
                             <ul>
-                                <li><strong>Print:</strong> Premium editorial binding, acid-free paper ($49.99).</li>
+                                <li><strong>Print:</strong> Premium editorial binding, acid-free paper (₦10,000).</li>
                                 <li><strong>Digital:</strong> Full integration within the Enchiridion mobile app.</li>
                             </ul>
                             <p style={{ marginTop: "1rem" }}>

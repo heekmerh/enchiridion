@@ -77,9 +77,15 @@ export default function Header() {
               </div>
               <div className={styles.megaCol}>
                 <div className={styles.bookGrid}>
-                  <div className={styles.miniBook}>Pediatrics</div>
-                  <div className={styles.miniBook}>Surgery</div>
-                  <div className={styles.miniBook}>Medicine</div>
+                  <Link href="/books/pediatrics" className={styles.miniBook}>
+                    <img src="/ped cover.png" alt="Pediatrics Cover" className={styles.miniBookImg} />
+                  </Link>
+                  <Link href="/books/surgery" className={styles.miniBook}>
+                    <img src="/3.png" alt="Surgery Cover" className={styles.miniBookImg} />
+                  </Link>
+                  <Link href="/books/internal-medicine" className={styles.miniBook}>
+                    <img src="/2.png" alt="Medicine Cover" className={styles.miniBookImg} />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -104,9 +110,18 @@ export default function Header() {
               </div>
               <div className={styles.megaCol}>
                 <div className={styles.bookGrid}>
-                  <div className={styles.miniBook} style={{ background: 'var(--color-red)' }}>Impact</div>
-                  <div className={styles.miniBook} style={{ background: 'var(--color-gold)' }}>Rewards</div>
-                  <div className={styles.miniBook} style={{ background: 'var(--color-teal)' }}>Mission</div>
+                  <Link href="/refer" className={styles.miniBook} style={{ background: 'none' }}>
+                    <img src="/impact-illustration.jpg" alt="Impact" className={styles.miniBookImg} />
+                    <div className={styles.miniBookLabel}>Impact</div>
+                  </Link>
+                  <Link href="/refer" className={styles.miniBook} style={{ background: 'none' }}>
+                    <img src="/rewards-new.png" alt="Rewards" className={styles.miniBookImg} />
+                    <div className={styles.miniBookLabel}>Rewards</div>
+                  </Link>
+                  <Link href="/refer" className={styles.miniBook} style={{ background: 'none' }}>
+                    <img src="/mission-new.png" alt="Mission" className={styles.miniBookImg} />
+                    <div className={styles.miniBookLabel}>Mission</div>
+                  </Link>
                 </div>
               </div>
             </div>

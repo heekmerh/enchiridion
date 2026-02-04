@@ -8,39 +8,45 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <div className={styles.mainWrapper}>
+        <div className={styles.heartBackground}></div>
         {/* SECTION 1 — HERO */}
         <section className={styles.hero}>
+          {/* Dynamic Red Aurora Overlay */}
+          <div className={styles.redAurora}></div>
+
           {/* Atmospheric Glowing Orbs in Hero */}
-          <div className={styles.goldParticle} style={{ top: '15%', left: '10%', animationDelay: '0s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '25%', right: '15%', animationDelay: '-5s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '40%', left: '70%', animationDelay: '-12s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '20%', left: '30%', animationDelay: '-3s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '15%', left: '10%', animationDelay: '0s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '25%', right: '15%', animationDelay: '-5s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '40%', left: '70%', animationDelay: '-12s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '20%', left: '30%', animationDelay: '-3s' }}></div>
 
           <div className={styles.heroContent}>
-            <h1 className="fade-in">
-              Concise Medical <br />
-              <span className={styles.carouselContainer} aria-live="polite" aria-atomic="true">
-                <span className={styles.rotatingText}>
-                  <span>Knowledge.</span>
-                  <span>Pediatrics.</span>
-                  <span>Surgery.</span>
-                  <span>O&G.</span>
-                  <span>Orthopaedics.</span>
-                  <span>Dermatology.</span>
-                  <span>Medicine.</span>
-                  <span>Psychiatry.</span>
-                  <span>Radiology.</span>
-                  <span>Ophthalmology.</span>
+            <div className={styles.heroCircleContainer} aria-label="Main call-to-action area">
+              <h1 className="fade-in">
+                Concise Medical <br />
+                <span className={styles.carouselContainer} aria-live="polite" aria-atomic="true">
+                  <span className={styles.rotatingText}>
+                    <span>Knowledge.</span>
+                    <span>Pediatrics.</span>
+                    <span>Surgery.</span>
+                    <span>O&G.</span>
+                    <span>Orthopaedics.</span>
+                    <span>Dermatology.</span>
+                    <span>Medicine.</span>
+                    <span>Psychiatry.</span>
+                    <span>Radiology.</span>
+                    <span>Ophthalmology.</span>
+                  </span>
                 </span>
-              </span>
-            </h1>
-            <p className={styles.heroDescription}>
-              Enchiridion is a curated collection of practical medical handbooks
-              designed for students, clinicians, and educators. Anywhere. Anytime.
-            </p>
-            <div className={styles.heroActions}>
-              <Link href="#books" className={styles.primaryBtn}>Explore the Books</Link>
-              <Link href="#app" className={styles.secondaryBtn}>Download the App</Link>
+              </h1>
+              <p className={styles.heroDescription}>
+                Enchiridion is a curated collection of practical medical handbooks
+                designed for students, clinicians, and educators. Anywhere. Anytime.
+              </p>
+              <div className={styles.heroActions}>
+                <Link href="#books" className={styles.primaryBtn}>Explore the Books</Link>
+                <Link href="#app" className={styles.secondaryBtn}>Download the App</Link>
+              </div>
             </div>
           </div>
 
@@ -58,30 +64,31 @@ export default function Home() {
 
         {/* SECTION 2 — BOOK CAROUSEL */}
         <section id="books" className={styles.collectionSection}>
-          {/* Prominent Golden Ribbon Flow */}
-          <div className={styles.goldRibbon}></div>
+          {/* Prominent Smoke Ribbon Flow */}
+          <div className={styles.smokeRibbon}></div>
 
-          {/* Ambient Golden Accents */}
-          <div className={styles.goldGlow} style={{ top: '10%', left: '5%', animationDelay: '0s' }}></div>
-          <div className={styles.goldGlow} style={{ top: '60%', right: '5%', animationDelay: '-6s' }}></div>
+          {/* Ambient Blue/Red Accents */}
+          <div className={styles.ambientGlow} style={{ top: '10%', left: '5%', animationDelay: '0s', background: 'radial-gradient(circle, rgba(60, 100, 255, 0.2) 0%, transparent 80%)' }}></div>
+          <div className={styles.ambientGlow} style={{ top: '60%', right: '5%', animationDelay: '-6s', background: 'radial-gradient(circle, rgba(255, 60, 60, 0.2) 0%, transparent 80%)' }}></div>
 
-          {/* Floating Gold Particles (Glowing Orbs) - Increased Density */}
-          <div className={styles.goldParticle} style={{ bottom: '20%', left: '20%', animationDelay: '0s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '40%', right: '25%', animationDelay: '-4s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '10%', left: '50%', animationDelay: '-10s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '70%', right: '15%', animationDelay: '-15s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '15%', left: '80%', animationDelay: '-3s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '30%', left: '10%', animationDelay: '-7s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '50%', right: '40%', animationDelay: '-12s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '5%', right: '5%', animationDelay: '-18s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '40%', left: '45%', animationDelay: '-22s' }}></div>
-          <div className={styles.goldParticle} style={{ top: '65%', right: '60%', animationDelay: '-28s' }}></div>
-          <div className={styles.goldParticle} style={{ bottom: '30%', left: '15%', animationDelay: '-32s' }}></div>
+          {/* Floating Smoke Particles (Glowing Orbs) - Increased Density */}
+          <div className={styles.smokeParticle} style={{ bottom: '20%', left: '20%', animationDelay: '0s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '40%', right: '25%', animationDelay: '-4s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '10%', left: '50%', animationDelay: '-10s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '70%', right: '15%', animationDelay: '-15s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '15%', left: '80%', animationDelay: '-3s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '30%', left: '10%', animationDelay: '-7s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '50%', right: '40%', animationDelay: '-12s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '5%', right: '5%', animationDelay: '-18s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '40%', left: '45%', animationDelay: '-22s' }}></div>
+          <div className={styles.smokeParticle} style={{ top: '65%', right: '60%', animationDelay: '-28s' }}></div>
+          <div className={styles.smokeParticle} style={{ bottom: '30%', left: '15%', animationDelay: '-32s' }}></div>
 
           <div className={styles.collectionHeader}>
             <h2 className="serif">The Collection</h2>
             <p>Treating books like premium editorial products. A curated hospital library at your fingertips.</p>
           </div>
+
           <BookCarousel />
 
           {/* Decorative heart icon from reference */}

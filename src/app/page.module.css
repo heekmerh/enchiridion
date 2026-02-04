@@ -1,7 +1,7 @@
 .page {
   display: block;
   min-height: 100vh;
-  background-color: var(--bg-primary);
+  background-color: transparent;
 }
 
 .hero {
@@ -11,25 +11,14 @@
   justify-content: center;
   text-align: center;
   padding: 140px var(--spacing-sm) 100px;
-  background: linear-gradient(135deg,
-      #c8102e 0%,
-      #b00020 30%,
-      #8B0000 70%,
-      #5c0000 100%);
+  background: transparent;
   color: #fffef0;
   position: relative;
   overflow: hidden;
 }
 
-.mainWrapper {
-  position: relative;
-  min-height: 100vh;
-  background-color: #c8102e;
-  /* Fallback solid red */
-}
-
 /* Step 2: Seamless Background Layer - Silk & Gold (New Reference) */
-.mainWrapper::after {
+/* .mainWrapper::after {
   content: '';
   position: absolute;
   top: 45%;
@@ -42,7 +31,50 @@
   background-repeat: no-repeat;
   opacity: 0.95;
   z-index: -1;
-  /* Behind content */
+} */
+
+.mainWrapper {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.heartBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1117;
+  /* Base background color moved here */
+  background-image: linear-gradient(rgba(0, 0, 20, 0.5), rgba(0, 0, 0, 0.4)), url('/anatomical-heart-bg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.05);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.02);
+  }
+
+  70% {
+    transform: scale(1);
+  }
 }
 
 /* Subtle Golden Threads - Background Layer */
@@ -55,7 +87,8 @@
   bottom: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 Q 50 50, 100 100 T 200 100' stroke='rgba(234, 179, 8, 0.05)' fill='none' stroke-width='0.5'/%3E%3Cpath d='M0 150 Q 75 100, 150 150 T 300 150' stroke='rgba(234, 179, 8, 0.03)' fill='none' stroke-width='0.5'/%3E%3C/svg%3E");
   background-size: 600px 600px;
-  opacity: 0.4;
+  opacity: 0.1;
+  /* Reduced opacity */
   z-index: -1;
   animation: threadShift 30s linear infinite;
 }
@@ -70,17 +103,17 @@
   }
 }
 
-/* Prominent Golden Ribbon Flow */
-.goldRibbon {
+/* Prominent Smoke Ribbon Flow */
+.smokeRibbon {
   position: absolute;
   top: 50%;
   left: -10%;
   width: 120%;
   height: 400px;
-  background: linear-gradient(135deg, rgba(234, 179, 8, 0) 0%, rgba(234, 179, 8, 0.4) 40%, rgba(234, 179, 8, 0.6) 50%, rgba(234, 179, 8, 0.4) 60%, rgba(234, 179, 8, 0) 100%);
-  filter: blur(40px);
+  background: linear-gradient(135deg, rgba(60, 100, 255, 0) 0%, rgba(60, 100, 255, 0.2) 40%, rgba(255, 60, 60, 0.3) 60%, rgba(60, 100, 255, 0) 100%);
+  filter: blur(60px);
   transform: rotate(-5deg);
-  opacity: 0.7;
+  opacity: 0.6;
   pointer-events: none;
   z-index: -1;
   animation: ribbonWave 20s ease-in-out infinite;
@@ -90,73 +123,126 @@
 
   0%,
   100% {
-    transform: rotate(-5deg) translateY(0);
+    transform: rotate(-5deg) translateY(0) scale(1);
   }
 
   50% {
-    transform: rotate(-3deg) translateY(-30px);
+    transform: rotate(-3deg) translateY(-30px) scale(1.1);
   }
 }
 
-/* Glowing Golden Orbs - Synced with New Reference Lighting */
-.goldGlow {
+/* Red Aurora / Moving Red Effect */
+.redAurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 20, 20, 0.4), transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(255, 50, 50, 0.3), transparent 50%);
+  filter: blur(60px);
+  mix-blend-mode: color-dodge;
+  /* or overlay/screen depending on desired intensity */
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+  animation: auroraFlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes auroraFlow {
+  0% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+    opacity: 0.5;
+  }
+
+  25% {
+    transform: scale(1.4) translate(-150px, 80px) rotate(5deg);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(0.9) translate(150px, -150px) rotate(-5deg);
+    opacity: 0.6;
+  }
+
+  75% {
+    transform: scale(1.5) translate(-100px, -100px) rotate(3deg);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.2) translate(100px, 120px) rotate(-2deg);
+    opacity: 0.7;
+  }
+}
+
+/* Glowing Ambient Orbs - Synced with New Reference Lighting */
+.ambientGlow {
   position: absolute;
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, transparent 80%);
+  background: radial-gradient(circle, rgba(60, 100, 255, 0.15) 0%, transparent 80%);
   filter: blur(80px);
   pointer-events: none;
   z-index: -1;
-  animation: goldGlowPulse 18s ease-in-out infinite alternate;
+  animation: ambientGlowPulse 18s ease-in-out infinite alternate;
 }
 
-@keyframes goldGlowPulse {
+@keyframes ambientGlowPulse {
   0% {
     transform: scale(1) opacity(0.3);
   }
 
   100% {
-    transform: scale(1.2) opacity(0.6);
+    transform: scale(1.2) opacity(0.5);
   }
 }
 
-/* Large, Soft Glowing Orbs (matching reference) */
-.goldParticle {
+/* Floating Smoke Particles */
+.smokeParticle {
   position: absolute;
-  width: 12px;
-  height: 12px;
-  background: radial-gradient(circle, #fff 0%, #eab308 60%, transparent 100%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #fff 0%, #3b82f6 50%, transparent 100%);
   border-radius: 50%;
-  filter: blur(2px) drop-shadow(0 0 15px rgba(234, 179, 8, 0.8));
+  filter: blur(1px) drop-shadow(0 0 10px rgba(60, 100, 255, 0.6));
   pointer-events: none;
   z-index: 0;
-  animation: floatingGlow 25s ease-in-out infinite;
+  animation: smokeFloat 20s ease-in-out infinite;
 }
 
-@keyframes floatingGlow {
+/* Alternate particle colors (Red) - using nth-child selector would be cleaner but requiring HTML changes. 
+   Instead, blending standard particle with red highlights via lighting or just variance. 
+   Let's make some particles red by default in keyframes or just variation. 
+   Actually, the best way without adding more classes is to alternate in CSS if possible, 
+   but since they are just divs, I'll make the keyframe cycle colors OR just use a mix. 
+   I'll stick to blue-white as base, and maybe some red ones. 
+   Wait, I can just update the background to be a mix in the class definition? 
+   No, let's just make them white/blue which fits both nicely. 
+   */
 
-  0%,
-  100% {
+@keyframes smokeFloat {
+
+  0% {
     transform: translate(0, 0) scale(1);
     opacity: 0;
   }
 
-  10% {
-    opacity: 0.6;
+  20% {
+    opacity: 0.7;
   }
 
   50% {
-    transform: translate(150px, -300px) scale(1.5);
-    opacity: 1;
-    filter: blur(4px);
+    transform: translate(100px, -150px) scale(1.5);
+    opacity: 0.5;
   }
 
-  90% {
-    opacity: 0.6;
+  80% {
+    opacity: 0.7;
   }
 
   100% {
-    transform: translate(300px, -600px) scale(1);
+    transform: translate(200px, -300px) scale(1);
     opacity: 0;
   }
 }
@@ -238,11 +324,42 @@
   }
 }
 
+/* Hero Circle Container */
+.heroCircleContainer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #991b1b 70%, #450a0a 100%);
+  border-radius: 50%;
+  width: 80vw;
+  max-width: 900px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  padding: 8% 10%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  z-index: 2;
+  /* Ensure it sits above background */
+}
+
+.heroCircleContainer:hover {
+  box-shadow:
+    0 0 40px 20px rgba(255, 0, 0, 0.4),
+    inset 0 0 30px 10px rgba(255, 80, 80, 0.2);
+  transform: scale(1.03);
+  /* border: 2px solid rgba(255, 80, 80, 0.6); Optional border */
+}
+
 .hero h1 {
   margin-bottom: var(--spacing-md);
   color: #fffef0;
   line-height: 1.1;
-  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-size: clamp(2rem, 5vw, 4rem);
+  /* Reduced slightly to fit circle */
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   animation: titlePulse 4s ease-in-out infinite;
 }
@@ -259,6 +376,14 @@
   }
 }
 
+@media (max-width: 768px) {
+  .heroCircleContainer {
+    width: 90vw;
+    max-width: 500px;
+    padding: 10% 8%;
+  }
+}
+
 .carouselContainer {
   display: inline-block;
   text-align: center;
@@ -266,8 +391,9 @@
   height: 1.2em;
   overflow: hidden;
   vertical-align: bottom;
-  color: var(--color-gold);
-  text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+  color: #ff3333;
+  /* Red text as requested */
+  text-shadow: 0 0 30px rgba(255, 50, 50, 0.5);
 }
 
 .rotatingText {
@@ -369,14 +495,14 @@
 }
 
 .primaryBtn {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  background: linear-gradient(135deg, #ef233c 0%, #d90429 50%, #8b0000 100%);
   color: #fff;
   padding: 1.25rem 3rem;
   border-radius: 6px;
   font-weight: 700;
   box-shadow:
-    0 10px 30px rgba(245, 158, 11, 0.4),
-    0 0 0 0 rgba(245, 158, 11, 0);
+    0 10px 30px rgba(217, 4, 41, 0.4),
+    0 0 0 0 rgba(217, 4, 41, 0);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -398,9 +524,9 @@
 .primaryBtn:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow:
-    0 20px 40px rgba(245, 158, 11, 0.5),
-    0 0 30px rgba(245, 158, 11, 0.3);
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    0 20px 40px rgba(217, 4, 41, 0.5),
+    0 0 30px rgba(217, 4, 41, 0.3);
+  background: linear-gradient(135deg, #ff4d4d 0%, #ef233c 50%, #d90429 100%);
 }
 
 .primaryBtn:hover::before {
@@ -488,6 +614,28 @@
   overflow: hidden;
   margin-top: -120px;
   z-index: 2;
+}
+
+/* Carousel Black Rectangle Container */
+.carouselBlackRect {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #991b1b 70%, #450a0a 100%);
+  border-radius: 20px;
+  width: 90vw;
+  max-width: 1400px;
+  padding: 40px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .carouselBlackRect {
+    width: 100vw;
+    padding: 20px 10px;
+    border-radius: 0;
+  }
 }
 
 .waveLayer {

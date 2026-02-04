@@ -136,19 +136,20 @@
 .badge {
     display: inline-block;
     padding: 1.1rem 2.5rem;
-    background: var(--gradient-cta);
+    background: linear-gradient(135deg, #ef233c 0%, #1e3a8a 100%);
     color: white;
     border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2), 0 10px 25px rgba(239, 35, 60, 0.2);
     transition: all 0.3s ease;
 }
 
 .badge:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+    background: linear-gradient(135deg, #ff4d6d 0%, #2563eb 100%);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3), 0 15px 35px rgba(255, 77, 109, 0.3);
 }
 
 @media (max-width: 1200px) {

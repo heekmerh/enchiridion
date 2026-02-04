@@ -1,12 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./ReferralPage.module.css";
 import Accordion from "@/components/Accordion";
 
 export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+    const [showFloatingBtn, setShowFloatingBtn] = useState(false);
+    const staticBtnRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                // If the static button is NOT intersecting (out of view), show the floating button
+                setShowFloatingBtn(!entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
+
+        if (staticBtnRef.current) {
+            observer.observe(staticBtnRef.current);
+        }
+
+        return () => {
+            if (staticBtnRef.current) {
+                observer.unobserve(staticBtnRef.current);
+            }
+        };
+    }, []);
     const [isRegistered, setIsRegistered] = useState(false);
     const [referralCode, setReferralCode] = useState("");
     const [copied, setCopied] = useState(false);
@@ -127,7 +149,13 @@ export default function ReferralPage() {
                     <p className="eyebrow">Enchiridion Referral Program</p>
                     <h1 className="serif">THIS COULD BE YOU</h1>
                     <p className={styles.heroSubtitle}>Share trusted medical knowledge. Earn rewards. Build impact.</p>
-                    <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
+                    <button
+                        ref={staticBtnRef}
+                        className={`${styles.primaryBtn} ${styles.staticReferralCta}`}
+                        onClick={scrollToRegistration}
+                    >
+                        Become a Referral Partner
+                    </button>
                 </div>
                 <div className={styles.heroImage}>
                     <img
@@ -217,18 +245,23 @@ export default function ReferralPage() {
                 <div className={styles.credibilityGrid}>
                     {/* Row 1 */}
                     <div className={styles.imageTile}>
-                        <div className={styles.imagePlaceholder}>
-                            <span>🩺</span>
-                            <p>Doctor with Tablet</p>
-                        </div>
+                        <img
+                            src="/doctor-with-tablet.png"
+                            alt="Doctor using a tablet in a clinical setting"
+                            className={styles.tileImage}
+                        />
                     </div>
                     <div className={`${styles.statTile} ${styles.statBlue}`}>
                         <span className={styles.bigNum}>10,000+</span>
                         <p>Clinical Topics Covered</p>
                     </div>
-                    <div className={`${styles.statTile} ${styles.statTeal}`}>
-                        <span className={styles.bigNum}>50+</span>
-                        <p>Medical Specialties</p>
+                    <div className={styles.imageTile}>
+                        <img
+                            src="/specialties-visual.png"
+                            alt="Visual representation of medical specialties"
+                            className={styles.tileImage}
+                        />
+                        <div className={styles.tileLabel}>50+ Specialties</div>
                     </div>
 
                     {/* Row 2 */}
@@ -237,10 +270,12 @@ export default function ReferralPage() {
                         <p>Healthcare Professionals Reached</p>
                     </div>
                     <div className={styles.imageTile}>
-                        <div className={styles.imagePlaceholder}>
-                            <span>👩‍⚕️</span>
-                            <p>Medical Students</p>
-                        </div>
+                        <img
+                            src="/medical-students-visual.png"
+                            alt="Medical students studying together"
+                            className={styles.tileImage}
+                        />
+                        <div className={styles.tileLabel}>Medical Students</div>
                     </div>
                     <div className={`${styles.statTile} ${styles.statOrange}`}>
                         <span className={styles.bigNum}>24/7</span>
@@ -539,7 +574,7 @@ export default function ReferralPage() {
             </section>
 
             {/* PERSISTENT CTA */}
-            <div className={styles.stickyCta}>
+            <div className={`${styles.floatingReferralCta} ${showFloatingBtn ? styles.visible : styles.hidden}`}>
                 <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
             </div>
         </div>

@@ -1,10 +1,12 @@
 import Link from "next/link";
+import NewsletterSignup from "./NewsletterSignup";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
+                <NewsletterSignup />
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <h3 className={styles.logo}>ENCHIRIDION</h3>

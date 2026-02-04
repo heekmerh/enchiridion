@@ -49,34 +49,42 @@
 
 .navLink {
     font-family: var(--font-sans);
-    font-weight: 700;
+    font-weight: 500;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #000000;
+    color: #666666 !important;
+    /* Force color change */
     text-decoration: none;
     padding: 10px 0;
     transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
 }
 
-.navItem:hover .navLink {
-    color: var(--color-teal);
+.navLink:hover {
+    color: #000000 !important;
+    font-weight: 700;
 }
 
-.navItem::after {
+/* Red glow underline moved to navLink for precision */
+.navLink::after {
     content: "";
     position: absolute;
-    bottom: 25px;
+    bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-teal);
+    background-color: #ff0000;
+    box-shadow: 0 2px 10px 2px rgba(255, 0, 0, 0.4);
     transition: width 0.3s ease;
 }
 
-.navItem:hover::after {
+.navLink:hover::after {
     width: 100%;
 }
+
+/* Removed previous navItem::after */
 
 .logoContainer {
     text-align: center;
@@ -150,7 +158,8 @@
 }
 
 .megaCol p {
-    color: var(--text-secondary);
+    color: #000000;
+    font-weight: 700;
     margin-bottom: 30px;
     max-width: 300px;
 }
@@ -171,7 +180,8 @@
     aspect-ratio: 2/3;
     background: var(--bg-primary);
     border-radius: 4px;
-    padding: 20px;
+    padding: 0;
+    /* Removed padding for image fill */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,6 +190,37 @@
     color: var(--text-secondary);
     border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    overflow: hidden;
+    /* Ensure image conforms to corners */
+}
+
+.miniBookImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.miniBookLabel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    padding: 8px 16px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.miniBook:hover .miniBookLabel {
+    opacity: 1;
+    transform: translate(-50%, -60%);
 }
 
 .miniBook:hover {

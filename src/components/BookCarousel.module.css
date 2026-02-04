@@ -81,23 +81,25 @@
 .card {
     text-decoration: none;
     display: block;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
+    background: #000000;
+    /* Solid black background per request */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px;
     padding: 24px;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-16px) scale(1.02);
-    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.05);
+    background: #000000;
+    /* Keep black on hover */
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow:
-        0 40px 80px rgba(0, 0, 0, 0.4),
-        0 0 40px rgba(200, 16, 46, 0.1);
+        0 0 20px 10px rgba(255, 0, 0, 0.4),
+        inset 0 0 15px 5px rgba(255, 80, 80, 0.2);
+    z-index: 2;
 }
 
 .bookImageWrapper {
