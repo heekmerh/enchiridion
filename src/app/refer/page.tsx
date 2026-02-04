@@ -130,11 +130,11 @@ export default function ReferralPage() {
                     <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
                 </div>
                 <div className={styles.heroImage}>
-                    <div className={styles.visualContent}>
-                        <h3 className="serif">Enchiridion Advocacy</h3>
-                        <p>Turning medical knowledge into shared value</p>
-                        <div style={{ marginTop: '20px', fontSize: '3rem' }}>📚</div>
-                    </div>
+                    <img
+                        src="/Gemini_Generated_Image_5t78u25t78u25t78.png"
+                        alt="Diverse group of healthcare professionals standing together, representing medical advocacy and knowledge sharing"
+                        className={styles.advocacyImage}
+                    />
                 </div>
             </section>
 
@@ -177,7 +177,11 @@ export default function ReferralPage() {
                         <p>With Enchiridion, you don't just refer products — you help improve how medical knowledge is accessed, structured, and applied.</p>
                     </div>
                     <div className={styles.blockImage}>
-                        <div style={{ fontSize: '4rem' }}>📖</div>
+                        <img
+                            src="/Gemini_Generated_Image_mrv5itmrv5itmrv5.png"
+                            alt="Medical knowledge and impact visual"
+                            className={styles.impactImage}
+                        />
                     </div>
                 </div>
                 <div className={styles.block}>
@@ -186,7 +190,11 @@ export default function ReferralPage() {
                         <p>Share books and app access online, at your own pace, with no inventory, logistics, or fixed schedule.</p>
                     </div>
                     <div className={styles.blockImage}>
-                        <div style={{ fontSize: '4rem' }}>📱</div>
+                        <img
+                            src="/image (3).jpg"
+                            alt="Flexible and digital medical learning"
+                            className={styles.digitalImage}
+                        />
                     </div>
                 </div>
                 <div className={styles.block}>
@@ -195,7 +203,11 @@ export default function ReferralPage() {
                         <p>Join students, doctors, educators, and institutions building a shared ecosystem of trusted learning resources.</p>
                     </div>
                     <div className={styles.blockImage}>
-                        <div style={{ fontSize: '4rem' }}>⭐</div>
+                        <img
+                            src="/Gemini_Generated_Image_gf85aagf85aagf85.png"
+                            alt="Growing medical community"
+                            className={styles.communityImage}
+                        />
                     </div>
                 </div>
             </section>

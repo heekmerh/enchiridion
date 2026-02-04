@@ -8,7 +8,7 @@ const menuItems = [
   { label: "Books", href: "#books" },
   { label: "App", href: "#app" },
   { label: "Referral Program", href: "/refer" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Reviews", href: "#user-reviews" },
   { label: "About", href: "/about" },
   { label: "Download", href: "/download" },
 ];
@@ -37,7 +37,7 @@ export default function Header() {
             <div
               key={item.label}
               className={styles.navItem}
-              onMouseEnter={() => setActiveMenu(item.label)}
+              onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
             >
               <Link href={item.href} className={styles.navLink}>{item.label}</Link>
             </div>
@@ -57,7 +57,7 @@ export default function Header() {
             <div
               key={item.label}
               className={styles.navItem}
-              onMouseEnter={() => setActiveMenu(item.label)}
+              onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
             >
               <Link href={item.href} className={styles.navLink}>{item.label}</Link>
             </div>

@@ -66,6 +66,14 @@
     justify-content: center;
 }
 
+.advocacyImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
 .visualContent {
     text-align: center;
     color: white;
@@ -212,6 +220,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+.impactImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.digitalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
 }
 
 /* 4. Credibility Grid - Oriflame Style */
