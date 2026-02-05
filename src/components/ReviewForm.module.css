@@ -142,22 +142,25 @@
 }
 
 .primaryBtn {
-    background: var(--color-blue);
-    color: white;
+    background: #ffffff;
+    color: #4169E1;
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
-    border: none;
+    border: 2px solid #4169E1;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .primaryBtn:hover {
-    background: #1d4ed8;
+    background: #4169E1;
+    color: #ffffff;
 }
 
 .primaryBtn:disabled {
-    background: #93c5fd;
+    background: #f3f4f6;
+    color: #9ca3af;
+    border-color: #d1d5db;
     cursor: not-allowed;
 }
 

@@ -219,7 +219,7 @@ export default function ReferralPage() {
                     </div>
                     <div className={styles.blockImage}>
                         <img
-                            src="/image (3).jpg"
+                            src="/image (3) (1).png"
                             alt="Flexible and digital medical learning"
                             className={styles.digitalImage}
                         />
@@ -323,7 +323,15 @@ export default function ReferralPage() {
             <section className={styles.faqAppSection}>
                 <div className={styles.appBox}>
                     <div>
-                        <div className={styles.appIcon}>E</div>
+                        <div className={styles.appIcon}>
+                            <Image
+                                src="/Gemini_Generated_Image_59zt2r59zt2r59zt (1).png"
+                                alt="Enchiridion App Logo"
+                                width={320}
+                                height={320}
+                                className={styles.appIconImg}
+                            />
+                        </div>
                     </div>
                     <div>
                         <p className="eyebrow" style={{ color: '#000000', fontWeight: 700 }}>The Digital Companion</p>

@@ -72,6 +72,75 @@
     color: var(--text-secondary);
 }
 
+.socialSection {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.socialTitle {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    color: #4b5563;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.socialLink:hover {
+    transform: scale(1.2) translateY(-5px);
+    color: white;
+}
+
+.facebook:hover {
+    background: #1877f2;
+    box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+}
+
+.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    box-shadow: 0 8px 20px rgba(214, 36, 159, 0.4);
+}
+
+.xTwitter:hover {
+    background: #000000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.linkedin:hover {
+    background: #0077b5;
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+}
+
+.whatsapp:hover {
+    background: #25d366;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
 .affiliations {
     max-width: 400px;
     text-align: right;

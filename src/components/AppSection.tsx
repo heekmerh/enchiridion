@@ -28,7 +28,13 @@ export default function AppSection() {
             <div className={styles.appContainer}>
                 <div className={styles.logoCol}>
                     <div className={styles.appIconWrapper}>
-                        <span>E</span>
+                        <Image
+                            src="/Gemini_Generated_Image_59zt2r59zt2r59zt (1).png"
+                            alt="Enchiridion Logo"
+                            width={360}
+                            height={360}
+                            className={styles.appIcon}
+                        />
                     </div>
                 </div>
 

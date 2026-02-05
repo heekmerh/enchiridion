@@ -15,40 +15,89 @@
 }
 
 .logoCol {
-    flex: 0 0 30%;
-    background: var(--gradient-hero);
+    flex: 0 0 45%;
+    background-color: #000000;
+    background-image: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xxl);
     position: relative;
+    overflow: hidden;
+    min-height: 500px;
 }
 
+.logoCol::before,
 .logoCol::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    /* Guaranteed pitch black center using a radial mask */
+    -webkit-mask-image: radial-gradient(circle at center, transparent 35%, black 65%);
+    mask-image: radial-gradient(circle at center, transparent 35%, black 65%);
+}
+
+.logoCol::before {
+    background:
+        radial-gradient(circle at 0% 50%, rgba(0, 102, 204, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 100% 50%, rgba(200, 16, 46, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 15% 15%, rgba(0, 102, 204, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(200, 16, 46, 0.3) 0%, transparent 40%);
+    animation: smokyBreathing 7s ease-in-out infinite;
+    filter: blur(15px);
+}
+
+.logoCol::after {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(100, 0, 200, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(100, 0, 200, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(200, 16, 46, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(0, 102, 204, 0.25) 0%, transparent 40%);
+    animation: smokyBreathing 7s ease-in-out infinite reverse;
+    animation-delay: -3.5s;
+    filter: blur(20px);
+}
+
+@keyframes smokyBreathing {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+        /* Extends the glow inward under the mask */
+    }
 }
 
 .appIconWrapper {
-    width: 140px;
-    height: 140px;
-    background-color: white;
-    border-radius: 32px;
+    width: 360px;
+    height: 360px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-serif);
-    font-size: 5rem;
-    color: var(--color-indigo);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+}
+
+.appIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1.1) contrast(1.05);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.appIcon:hover {
+    filter: brightness(1.2) drop-shadow(0 0 15px rgba(209, 40, 47, 0.6));
+    transform: scale(1.05);
 }
 
 .detailCol {
@@ -150,6 +199,7 @@
     transform: translateY(-3px);
     background: linear-gradient(135deg, #ff4d6d 0%, #2563eb 100%);
     box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3), 0 15px 35px rgba(255, 77, 109, 0.3);
+    color: #000000;
 }
 
 @media (max-width: 1200px) {
@@ -170,7 +220,14 @@
 
     .logoCol {
         flex: 0 0 auto;
-        padding: 60px;
+        padding: 40px var(--spacing-md);
+        min-height: auto;
+    }
+
+    .appIconWrapper {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 20px;
     }
 
     .features {

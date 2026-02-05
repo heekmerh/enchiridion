@@ -238,6 +238,13 @@
     font-weight: 700;
     display: inline-block;
     box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    color: #000000 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
 }
 
 @media (max-width: 1024px) {

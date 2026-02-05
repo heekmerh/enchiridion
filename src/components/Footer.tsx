@@ -16,27 +16,46 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4>Editorial Credits</h4>
                         <ul>
-                            <li>Ed-In-Chief: Dr. Julian Vane</li>
-                            <li>Lead Developer: Enchiridion Systems</li>
-                            <li>Clinical Review: MedBoard Group</li>
+                            <li>Ed-In-Chief: Dr. Hikma Atanda, Dr Ibraheem Olaniyan</li>
+                            <li>Lead Developer: Mr Asor Ahura</li>
                         </ul>
                     </div>
 
                     <div className={styles.section}>
                         <h4>Inquiries</h4>
                         <ul>
-                            <li><Link href="mailto:editorial@enchiridion.med">editorial@enchiridion.med</Link></li>
-                            <li><Link href="/institutional">Institutional Access</Link></li>
+                            <li><Link href="mailto:enchiridion.med@gmail.com">enchiridion.med@gmail.com</Link></li>
+                            <li>IG@enchiridion.md</li>
+                            <li>tiktok@enchiridion.md</li>
                         </ul>
                     </div>
 
                     <div className={styles.section}>
                         <h4>Network</h4>
                         <div className={styles.socials}>
-                            <Link href="#">Journal Archive</Link>
-                            <Link href="#">Clinician Portal</Link>
-                            <Link href="#">LinkedIn Professional</Link>
+                            <Link href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer">LinkedIn Professional</Link>
                         </div>
+                    </div>
+                </div>
+
+                <div className={styles.socialSection}>
+                    <h3 className={styles.socialTitle}>Connect with Us</h3>
+                    <div className={styles.socialIcons}>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={`${styles.socialLink} ${styles.facebook}`}>
+                            <i className="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={`${styles.socialLink} ${styles.instagram}`}>
+                            <i className="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={`${styles.socialLink} ${styles.xTwitter}`}>
+                            <i className="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={`${styles.socialLink} ${styles.linkedin}`}>
+                            <i className="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={`${styles.socialLink} ${styles.whatsapp}`}>
+                            <i className="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
