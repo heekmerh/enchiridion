@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 
 const menuItems = [
@@ -47,7 +48,12 @@ export default function Header() {
         {/* Center Logo */}
         <div className={styles.logoContainer}>
           <Link href="/" className={styles.logo}>
-            ENCHIRIDION
+            <img
+              src="/Gemini.png"
+              alt="Enchiridion Logo"
+              className={styles.logoIcon}
+            />
+            <span>ENCHIRIDION</span>
           </Link>
         </div>
 

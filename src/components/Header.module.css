@@ -98,6 +98,26 @@
     letter-spacing: 0.15em;
     text-decoration: none;
     transition: all 0.5s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Reduced from 15px */
+}
+
+.logoIcon {
+    width: 60px;
+    /* Increased from 44px */
+    height: 60px;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    margin-right: 0;
+    /* Removing margin-right to rely solely on gap */
+}
+
+.scrolled .logoIcon {
+    width: 48px;
+    /* Proportional reduction for scrolled state */
+    height: 48px;
 }
 
 .scrolled .logo {
