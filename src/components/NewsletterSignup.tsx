@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./NewsletterSignup.module.css";
 
 export default function NewsletterSignup() {
@@ -11,6 +11,22 @@ export default function NewsletterSignup() {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+
+    useEffect(() => {
+        const handleOpen = () => {
+            setIsOpen(true);
+            document.getElementById("newsletter-toggle")?.scrollIntoView({ behavior: "smooth" });
+        };
+
+        window.addEventListener("open-newsletter", handleOpen);
+
+        // Also check if hash is #newsletter on mount
+        if (window.location.hash === "#newsletter") {
+            handleOpen();
+        }
+
+        return () => window.removeEventListener("open-newsletter", handleOpen);
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

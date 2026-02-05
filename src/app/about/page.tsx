@@ -199,7 +199,12 @@ export default function AboutPage() {
                     <div className={styles.ctaButtons}>
                         <Link href="/books/pediatrics" className={styles.primaryBtn}>Buy the Book</Link>
                         <button className={styles.secondaryBtn}>Download a Sample Chapter</button>
-                        <button className={styles.secondaryBtn}>Join the Newsletter</button>
+                        <button
+                            className={styles.secondaryBtn}
+                            onClick={() => window.dispatchEvent(new CustomEvent("open-newsletter"))}
+                        >
+                            Join the Newsletter
+                        </button>
                     </div>
                 </div>
             </section>

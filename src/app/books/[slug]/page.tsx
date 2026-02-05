@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { books } from "@/lib/data";
 import styles from "./BookPage.module.css";
 import Accordion from "@/components/Accordion";
+import CheckoutModal from "@/components/CheckoutModal";
 
 const states = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -19,6 +20,7 @@ const states = [
 export default function BookPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);
     const [showDistributors, setShowDistributors] = useState(false);
+    const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
     const book = books.find((b) => b.slug === slug);
 
     if (!book) {
@@ -55,10 +57,16 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                                     <div className={styles.btnGroup}>
                                         <button
                                             className={styles.primaryBtn}
+                                            onClick={() => setIsCheckoutOpen(true)}
+                                        >
+                                            Buy Edition — ₦10,000
+                                        </button>
+                                        <button
+                                            className={styles.secondaryBtn}
                                             onClick={() => setShowDistributors(!showDistributors)}
                                             aria-expanded={showDistributors}
                                         >
-                                            Buy Edition — ₦10,000
+                                            Find a Distributor
                                         </button>
                                         <button className={styles.secondaryBtn}>Access Digital</button>
                                     </div>
@@ -140,6 +148,14 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                     </div>
                 </div>
             </section>
+
+            {book && isCheckoutOpen && (
+                <CheckoutModal
+                    book={book}
+                    isOpen={isCheckoutOpen}
+                    onClose={() => setIsCheckoutOpen(false)}
+                />
+            )}
         </div>
     );
 }
