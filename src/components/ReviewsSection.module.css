@@ -84,11 +84,26 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 60px 20px;
+    }
+
     .header h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .header p {
+        font-size: 1.1rem;
     }
 
     .grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .writeReviewBtn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 }
