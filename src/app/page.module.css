@@ -376,44 +376,58 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    padding: 100px var(--spacing-sm) 60px;
+  }
+
   .heroCircleContainer {
-    width: 92vw;
-    height: 92vw;
-    max-width: 480px;
-    padding: 12% 5%;
+    width: 94vw;
+    height: 94vw;
+    max-width: 420px;
+    padding: 10% 5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
   }
 
   .hero h1 {
-    font-size: clamp(1.4rem, 7vw, 2.1rem);
-    margin-bottom: 0.5rem;
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+    margin-bottom: 0.3rem;
   }
 
   .carouselContainer {
-    text-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+    height: 1.1em;
+    text-shadow: 0 0 10px rgba(255, 50, 50, 0.3);
+  }
+
+  .rotatingText span {
+    height: 1.1em;
+    line-height: 1.1em;
   }
 
   .heroDescription {
-    font-size: 0.9rem;
-    padding: 0 15px;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+    font-size: 0.85rem;
+    padding: 0 20px;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   .heroActions {
     flex-direction: column;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 40px;
     gap: 8px;
   }
 
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
   }
 }
 
