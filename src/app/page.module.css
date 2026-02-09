@@ -7,31 +7,17 @@
 .hero {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 140px var(--spacing-sm) 100px;
+  padding: 120px var(--spacing-sm);
+  /* Symmetric vertical padding */
   background: transparent;
   color: #fffef0;
   position: relative;
   overflow: hidden;
 }
-
-/* Step 2: Seamless Background Layer - Silk & Gold (New Reference) */
-/* .mainWrapper::after {
-  content: '';
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('/images/background-gold-silk.png');
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  opacity: 0.95;
-  z-index: -1;
-} */
 
 .mainWrapper {
   position: relative;
@@ -46,7 +32,6 @@
   width: 100%;
   height: 100%;
   background-color: #0d1117;
-  /* Base background color moved here */
   background-image: linear-gradient(rgba(0, 0, 20, 0.5), rgba(0, 0, 0, 0.4)), url('/anatomical-heart-bg.png');
   background-size: cover;
   background-position: center;
@@ -77,7 +62,6 @@
   }
 }
 
-/* Subtle Golden Threads - Background Layer */
 .mainWrapper::before {
   content: '';
   position: absolute;
@@ -88,7 +72,6 @@
   background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 100 Q 50 50, 100 100 T 200 100' stroke='rgba(234, 179, 8, 0.05)' fill='none' stroke-width='0.5'/%3E%3Cpath d='M0 150 Q 75 100, 150 150 T 300 150' stroke='rgba(234, 179, 8, 0.03)' fill='none' stroke-width='0.5'/%3E%3C/svg%3E");
   background-size: 600px 600px;
   opacity: 0.1;
-  /* Reduced opacity */
   z-index: -1;
   animation: threadShift 30s linear infinite;
 }
@@ -103,7 +86,6 @@
   }
 }
 
-/* Prominent Smoke Ribbon Flow */
 .smokeRibbon {
   position: absolute;
   top: 50%;
@@ -131,7 +113,6 @@
   }
 }
 
-/* Red Aurora / Moving Red Effect */
 .redAurora {
   position: absolute;
   top: 0;
@@ -142,7 +123,6 @@
     radial-gradient(ellipse at 80% 20%, rgba(255, 50, 50, 0.3), transparent 50%);
   filter: blur(60px);
   mix-blend-mode: color-dodge;
-  /* or overlay/screen depending on desired intensity */
   opacity: 0.8;
   z-index: 0;
   pointer-events: none;
@@ -176,7 +156,6 @@
   }
 }
 
-/* Glowing Ambient Orbs - Synced with New Reference Lighting */
 .ambientGlow {
   position: absolute;
   width: 60vw;
@@ -198,7 +177,6 @@
   }
 }
 
-/* Floating Smoke Particles */
 .smokeParticle {
   position: absolute;
   width: 8px;
@@ -211,18 +189,7 @@
   animation: smokeFloat 20s ease-in-out infinite;
 }
 
-/* Alternate particle colors (Red) - using nth-child selector would be cleaner but requiring HTML changes. 
-   Instead, blending standard particle with red highlights via lighting or just variance. 
-   Let's make some particles red by default in keyframes or just variation. 
-   Actually, the best way without adding more classes is to alternate in CSS if possible, 
-   but since they are just divs, I'll make the keyframe cycle colors OR just use a mix. 
-   I'll stick to blue-white as base, and maybe some red ones. 
-   Wait, I can just update the background to be a mix in the class definition? 
-   No, let's just make them white/blue which fits both nicely. 
-   */
-
 @keyframes smokeFloat {
-
   0% {
     transform: translate(0, 0) scale(1);
     opacity: 0;
@@ -247,7 +214,6 @@
   }
 }
 
-/* Animated gradient overlay */
 .hero::before {
   content: "";
   position: absolute;
@@ -262,7 +228,6 @@
   animation: gradientShift 15s ease-in-out infinite;
 }
 
-/* Floating particles effect */
 .hero::after {
   content: "";
   position: absolute;
@@ -306,10 +271,16 @@
 }
 
 .heroContent {
+  width: 100%;
+  /* Prevent horizontal shifts */
   max-width: 900px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  /* Stay above floating icons */
   animation: heroFadeIn 1s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes heroFadeIn {
@@ -324,7 +295,6 @@
   }
 }
 
-/* Hero Circle Container */
 .heroCircleContainer {
   background-color: #000000;
   border-radius: 50%;
@@ -341,17 +311,12 @@
   align-items: center;
   text-align: center;
   transition: all 0.4s ease;
-  box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
   z-index: 2;
-  /* Ensure it sits above background */
 }
 
 .heroCircleContainer:hover {
-  box-shadow:
-    0 0 40px 20px rgba(255, 0, 0, 0.4),
-    inset 0 0 30px 10px rgba(255, 80, 80, 0.2);
+  box-shadow: 0 0 40px 20px rgba(255, 0, 0, 0.4), inset 0 0 30px 10px rgba(255, 80, 80, 0.2);
   transform: scale(1.03);
-  /* border: 2px solid rgba(255, 80, 80, 0.6); Optional border */
 }
 
 .hero h1 {
@@ -382,20 +347,20 @@
   }
 
   .heroCircleContainer {
-    width: 94vw;
-    height: 94vw;
-    max-width: 420px;
-    padding: 10% 5%;
+    width: 90vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    max-width: 600px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 50%;
-    aspect-ratio: 1 / 1;
   }
 
   .hero h1 {
-    font-size: clamp(1.2rem, 6vw, 1.8rem);
-    margin-bottom: 0.3rem;
+    font-size: clamp(1.1rem, 5vw, 2rem);
+    margin-bottom: 0.5rem;
   }
 
   .carouselContainer {
@@ -409,24 +374,31 @@
   }
 
   .heroDescription {
-    font-size: 0.85rem;
-    padding: 0 20px;
+    font-size: clamp(0.75rem, 3vw, 0.95rem);
+    padding: 0 15px;
     margin-bottom: 1rem;
     line-height: 1.4;
+    max-width: 90%;
   }
 
   .heroActions {
-    flex-direction: column;
+    flex-direction: row;
+    /* FORCE ROW */
+    flex-wrap: wrap;
     width: 100%;
-    padding: 0 40px;
+    padding: 0 10px;
     gap: 8px;
+    justify-content: center;
   }
 
   .primaryBtn,
   .secondaryBtn {
-    width: 100%;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 140px;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
     border-radius: 4px;
   }
 }
@@ -439,7 +411,6 @@
   overflow: hidden;
   vertical-align: bottom;
   color: #ff3333;
-  /* Red text as requested */
   text-shadow: 0 0 30px rgba(255, 50, 50, 0.5);
 }
 
@@ -547,43 +518,17 @@
   padding: 1.25rem 3rem;
   border-radius: 6px;
   font-weight: 700;
-  box-shadow:
-    0 10px 30px rgba(217, 4, 41, 0.4),
-    0 0 0 0 rgba(217, 4, 41, 0);
+  box-shadow: 0 10px 30px rgba(217, 4, 41, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-.primaryBtn::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-}
-
 .primaryBtn:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    0 20px 40px rgba(217, 4, 41, 0.5),
-    0 0 30px rgba(217, 4, 41, 0.3);
+  box-shadow: 0 20px 40px rgba(217, 4, 41, 0.5), 0 0 30px rgba(217, 4, 41, 0.3);
   background: linear-gradient(135deg, #ff4d4d 0%, #ef233c 50%, #d90429 100%);
   color: #000000;
-}
-
-.primaryBtn:hover::before {
-  width: 300px;
-  height: 300px;
-}
-
-.primaryBtn:active {
-  transform: translateY(-2px) scale(0.98);
 }
 
 .secondaryBtn {
@@ -599,17 +544,6 @@
   overflow: hidden;
 }
 
-.secondaryBtn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s ease;
-}
-
 .secondaryBtn:hover {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.6);
@@ -617,43 +551,19 @@
   box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
 }
 
-.secondaryBtn:hover::before {
-  left: 100%;
-}
-
-.secondaryBtn:active {
-  transform: translateY(-2px) scale(0.98);
-}
-
-/* Accessibility: Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
 
   .heroContent,
   .heroDescription,
-  .heroActions {
-    animation: none;
-  }
-
+  .heroActions,
   .hero::before,
-  .hero::after {
-    animation: none;
-  }
-
-  .hero h1 {
-    animation: none;
-  }
-
+  .hero::after,
+  .hero h1,
   .rotatingText {
     animation: none;
   }
-
-  .primaryBtn::before,
-  .secondaryBtn::before {
-    display: none;
-  }
 }
 
-/* LAYERED SILK TRANSITION */
 .waveTransitionContainer {
   position: relative;
   width: 100%;
@@ -664,7 +574,6 @@
   z-index: 2;
 }
 
-/* Carousel Black Rectangle Container */
 .carouselBlackRect {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #991b1b 70%, #450a0a 100%);
   border-radius: 20px;
@@ -686,56 +595,18 @@
   }
 }
 
-.waveLayer {
-  position: absolute;
-  bottom: 0;
-  left: -10%;
-  width: 120%;
-  height: 500px;
-  border-radius: 100% 100% 0 0 / 25% 25% 0 0;
-  transform: translateY(10%);
-  filter: blur(8px);
-}
-
-.layer1 {
-  height: 300px;
-  opacity: 0.6;
-  background: linear-gradient(to right, #c8102e, #a00000, #c8102e);
-  z-index: 1;
-}
-
-.layer2 {
-  height: 340px;
-  opacity: 0.5;
-  background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #b0b0b0 100%);
-  transform: translateY(20%) rotate(-2deg);
-  z-index: 2;
-}
-
-.layer3 {
-  height: 380px;
-  opacity: 1;
-  background: linear-gradient(160deg, #f8f8f8 0%, #dcdcdc 40%, #ffffff 70%, #c0c0c0 100%);
-  transform: translateY(40%) rotate(1deg);
-  z-index: 3;
-}
-
-/* SECTION 2 — BOOK CAROUSEL / COLLECTION */
 .collectionSection {
   position: relative;
   z-index: 1;
-  /* Above mainWrapper::after */
   padding: 10vh var(--spacing-sm);
   text-align: center;
   background: none;
-  /* Let mainWrapper handle it */
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 }
 
-/* Step 5: Smooth Transition Overlay */
 .collectionSection::before {
   content: "";
   position: absolute;
@@ -743,7 +614,6 @@
   left: 0;
   right: 0;
   height: 20vh;
-  /* Transition zone */
   background: linear-gradient(to bottom, rgba(200, 16, 46, 0.5), transparent);
   pointer-events: none;
   z-index: 1;
@@ -761,7 +631,6 @@
   font-size: clamp(3rem, 8vw, 4.5rem);
   margin-bottom: 24px;
   color: #ffffff;
-  /* White text as requested */
   font-weight: 800;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
@@ -770,7 +639,6 @@
 .collectionHeader p {
   font-size: 1.5rem;
   color: #ffffff;
-  /* White text as requested */
   font-weight: 500;
   line-height: 1.5;
   max-width: 800px;
@@ -788,7 +656,6 @@
   font-size: 3rem;
   font-weight: 900;
   color: #c8102e;
-  /* Brand Red as requested */
   margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
@@ -797,10 +664,8 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #1f2937;
-  /* Dark gray/black for contrast */
 }
 
-/* Referral Teaser Section */
 .referralSection {
   background-color: white;
   padding: 120px 0;
@@ -812,10 +677,104 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 80px;
-  background: var(--bg-primary);
-  padding: 60px;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(49, 46, 129, 0.05);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.referralContent h2 {
+  color: #000000;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.referralContent p {
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.referralLink {
+  display: inline-block;
+  color: var(--color-red);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.referralLink:hover {
+  transform: translateX(5px);
+  color: #000000;
+}
+
+.referralImage {
+  width: 100%;
+  z-index: 0;
+}
+
+/* Floating Icons Container - Brought forward to z-index 1 */
+.floatingIcons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.icon1,
+.icon2,
+.icon3 {
+  position: absolute;
+  opacity: 0.2;
+  /* Semi-translucent look restored */
+  color: var(--color-red);
+  filter: blur(0.3px);
+  /* Subtle blur for translucency */
+  animation: floatIcon 12s ease-in-out infinite alternate;
+}
+
+.icon1 svg,
+.icon2 svg,
+.icon3 svg {
+  stroke-width: 1px;
+  /* Thinner lines for semi-translucent feel */
+}
+
+.icon1 {
+  top: 20%;
+  left: 10%;
+  transform: rotate(-10deg);
+}
+
+.icon2 {
+  top: 65%;
+  right: 12%;
+  transform: rotate(15deg);
+  animation-duration: 9s;
+  animation-delay: -2s;
+}
+
+.icon3 {
+  top: 40%;
+  left: 8%;
+  transform: rotate(-5deg);
+  animation-duration: 15s;
+  animation-delay: -4s;
+}
+
+@keyframes floatIcon {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-25px) rotate(10deg);
+  }
 }
 
 @media (max-width: 900px) {
@@ -826,148 +785,11 @@
     text-align: center;
   }
 
-  .referralVisual {
-    order: -1;
-  }
-}
-
-.referralContent h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.referralContent p {
-  font-size: 1.15rem;
-  color: var(--text-primary);
-  margin-bottom: 30px;
-  line-height: 1.8;
-  font-weight: 600;
-}
-
-.referralLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-  color: var(--color-indigo);
-  font-size: 1.1rem;
-}
-
-.referralVisual {
-  position: relative;
-  aspect-ratio: 1;
-  background: var(--gradient-subtle);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-teal);
-  overflow: hidden;
-  /* Ensure image respects border radius */
-}
-
-.referralImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-  display: block;
-}
-
-/* Floating Medical Icons Styling */
-.floatingIcons {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.icon1,
-.icon2,
-.icon3,
-.icon4,
-.icon5 {
-  position: absolute;
-  opacity: 0.08;
-  color: #fff;
-  z-index: 0;
-}
-
-.icon1 {
-  top: 40%;
-  left: 10%;
-  transform: rotate(-10deg);
-}
-
-.icon2 {
-  top: 15%;
-  right: 15%;
-  transform: rotate(15deg);
-}
-
-.icon3 {
-  bottom: 10%;
-  right: 5%;
-  transform: rotate(10deg);
-  opacity: 0.05;
-}
-
-.icon4 {
-  top: 30%;
-  right: 10%;
-  transform: rotate(5deg);
-}
-
-.icon5 {
-  display: none;
-}
-
-@keyframes floatRotate {
-
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-
-  33% {
-    transform: translate(15px, -25px) rotate(8deg);
-  }
-
-  66% {
-    transform: translate(-15px, -15px) rotate(-8deg);
-  }
-}
-
-@media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .collectionHeader h2 {
-    font-size: 3rem;
-  }
-
-  .referralTeaser {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .heroActions {
-    flex-direction: column;
-  }
-
-  .floatingIcons {
-    display: none;
-  }
-
-  .referralVisual {
-    display: none;
+  .icon1,
+  .icon2,
+  .icon3 {
+    opacity: 0.1;
+    /* Even lighter on mobile */
+    transform: scale(0.8);
   }
 }

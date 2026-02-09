@@ -28,15 +28,27 @@
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
+    column-gap: var(--spacing-md);
+    /* Consistent gap between logo/nav and within nav */
 }
 
 .navGroup {
     display: flex;
     gap: var(--spacing-md);
+    flex: 1;
+    min-width: 0;
+    /* Prevent overflow breaking the grid */
+    /* Allow groups to grow equally to center the middle column */
 }
 
-.navGroup:last-child {
+.navGroup:first-of-type {
     justify-content: flex-end;
+    /* Pull left nav towards the logo */
+}
+
+.navGroup:nth-of-type(2) {
+    justify-content: flex-start;
+    /* Pull right nav towards the logo */
 }
 
 .navItem {
@@ -244,6 +256,166 @@
     box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
 }
 
+/* Mobile Nav Elements */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-indigo);
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1002;
+    transition: transform 0.3s ease;
+    margin-right: auto;
+    /* Push to the left edge */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 2000;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 80px 40px;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarOpen {
+    left: 0;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.sidebarLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebarItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarLinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.sidebarLink {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.3s ease;
+}
+
+.sidebarLinkOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.chevron {
+    color: #ffffff;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.chevronRotated {
+    transform: rotate(180deg);
+}
+
+.mobileSubMenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+}
+
+.subMenuOpen {
+    max-height: 300px;
+    padding: 10px 0 20px 15px;
+    border-left: 2px solid var(--color-red);
+}
+
+.mobileSubContent {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.mobileSubContent a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    transition: color 0.3s ease;
+}
+
+.mobileSubContent a:hover {
+    color: #ffffff;
+}
+
+.mobileSubContent p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.mobileCta {
+    display: inline-block;
+    color: var(--color-red) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem !important;
+}
+
+.sidebarLink:hover {
+    color: var(--color-red);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1999;
+}
+
+.desktopOnly {
+    display: flex;
+}
+
 @media (max-width: 1024px) {
     .logo {
         font-size: 1.5rem;
@@ -255,23 +427,43 @@
 }
 
 @media (max-width: 768px) {
-    .navGroup {
+    .desktopOnly {
         display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+        margin-right: auto;
+        /* Push towards left */
     }
 
     .container {
         display: flex;
-        justify-content: center;
-        padding: 0 var(--spacing-sm);
+        align-items: center;
+        padding: 0 var(--spacing-md);
+        position: relative;
+    }
+
+    .logoContainer {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        z-index: 5;
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
         gap: 6px;
     }
 
     .logoIcon {
-        width: 32px;
-        height: 32px;
+        width: 38px;
+        height: 38px;
     }
 }
