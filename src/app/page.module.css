@@ -298,11 +298,11 @@
 .heroCircleContainer {
   background-color: #000000;
   border-radius: 50%;
-  width: 80vw;
-  max-width: 900px;
+  width: min(80vw, 700px);
+  /* Refined width */
   aspect-ratio: 1 / 1;
   margin: 0 auto;
-  padding: 8% 10%;
+  padding: 2rem;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -314,16 +314,26 @@
   z-index: 2;
 }
 
+/* Fallback for older browsers */
+@supports not (aspect-ratio: 1 / 1) {
+  .heroCircleContainer {
+    width: min(80vw, 700px);
+    height: 0;
+    padding-bottom: min(80vw, 700px);
+    position: relative;
+  }
+}
+
 .heroCircleContainer:hover {
   box-shadow: 0 0 40px 20px rgba(255, 0, 0, 0.4), inset 0 0 30px 10px rgba(255, 80, 80, 0.2);
   transform: scale(1.03);
 }
 
 .hero h1 {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0.5rem;
   color: #fffef0;
-  line-height: 1.1;
-  font-size: clamp(2rem, 8vw, 4.5rem);
+  line-height: 1.2;
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   animation: titlePulse 4s ease-in-out infinite;
 }
@@ -346,23 +356,6 @@
     padding: 100px var(--spacing-sm) 60px;
   }
 
-  .heroCircleContainer {
-    width: 90vw;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    max-width: 600px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.1rem, 5vw, 2rem);
-    margin-bottom: 0.5rem;
-  }
-
   .carouselContainer {
     height: 1.1em;
     text-shadow: 0 0 10px rgba(255, 50, 50, 0.3);
@@ -372,34 +365,51 @@
     height: 1.1em;
     line-height: 1.1em;
   }
+}
+
+/* Specific Mobile Scaling Breakpoints */
+@media (max-width: 640px) {
+  .heroCircleContainer {
+    width: 90vw;
+    padding: 1.5rem;
+  }
 
   .heroDescription {
-    font-size: clamp(0.75rem, 3vw, 0.95rem);
-    padding: 0 15px;
-    margin-bottom: 1rem;
-    line-height: 1.4;
     max-width: 90%;
+    margin-bottom: 1.5rem;
   }
 
   .heroActions {
-    flex-direction: row;
-    /* FORCE ROW */
-    flex-wrap: wrap;
-    width: 100%;
-    padding: 0 10px;
-    gap: 8px;
-    justify-content: center;
+    gap: 0.75rem;
   }
 
   .primaryBtn,
   .secondaryBtn {
-    flex: 0 1 auto;
-    width: auto;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
     min-width: 140px;
-    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .heroCircleContainer {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.25rem;
+  }
+
+  .heroDescription {
     font-size: 0.8rem;
-    white-space: nowrap;
-    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    min-width: 120px;
   }
 }
 
@@ -483,13 +493,13 @@
 }
 
 .heroDescription {
-  font-size: 1.35rem;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
   color: rgba(255, 255, 255, 0.95);
-  margin-bottom: var(--spacing-lg);
-  max-width: 700px;
+  margin-bottom: 2rem;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7;
+  line-height: 1.6;
   animation: fadeInUp 1s ease-out 0.3s backwards;
 }
 
@@ -507,8 +517,12 @@
 
 .heroActions {
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: row;
+  gap: 1.5rem;
   justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* Enforce side-by-side */
   animation: fadeInUp 1s ease-out 0.6s backwards;
 }
 
