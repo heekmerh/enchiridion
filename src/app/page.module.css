@@ -298,11 +298,12 @@
 .heroCircleContainer {
   background-color: #000000;
   border-radius: 50%;
-  width: min(80vw, 700px);
-  /* Refined width */
+  width: min(90vw, 600px);
+  /* Refined width for balance */
   aspect-ratio: 1 / 1;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
+  /* Better internal breathing room */
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -317,9 +318,9 @@
 /* Fallback for older browsers */
 @supports not (aspect-ratio: 1 / 1) {
   .heroCircleContainer {
-    width: min(80vw, 700px);
+    width: min(90vw, 600px);
     height: 0;
-    padding-bottom: min(80vw, 700px);
+    padding-bottom: min(90vw, 600px);
     position: relative;
   }
 }
@@ -330,10 +331,11 @@
 }
 
 .hero h1 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0px;
   color: #fffef0;
   line-height: 1.2;
-  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  font-size: clamp(1.25rem, 5vw, 2.5rem);
+  /* Refined fluid sizing */
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   animation: titlePulse 4s ease-in-out infinite;
 }
@@ -367,27 +369,54 @@
   }
 }
 
-/* Specific Mobile Scaling Breakpoints */
-@media (max-width: 640px) {
-  .heroCircleContainer {
-    width: 90vw;
-    padding: 1.5rem;
-  }
-
-  .heroDescription {
-    max-width: 90%;
-    margin-bottom: 1.5rem;
-  }
-
+/* Mobile Button Responsive Fix - 600px Breakpoint (Uniform Fix) */
+@media (max-width: 600px) {
   .heroActions {
-    gap: 0.75rem;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+    /* Managed by margin-bottom on child */
+    width: 100% !important;
   }
 
   .primaryBtn,
   .secondaryBtn {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.875rem;
-    min-width: 140px;
+    width: 220px !important;
+    /* Normalized width */
+    min-height: 55px !important;
+    /* Normalized min-height */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0 1rem !important;
+    font-size: 0.9rem !important;
+    /* Identical font-size */
+    margin-left: 0 !important;
+    /* Remove desktop offsets */
+    margin-right: 0 !important;
+    float: none !important;
+    border-radius: 8px !important;
+  }
+
+  .primaryBtn {
+    margin-bottom: 15px !important;
+    /* 15px gap as requested */
+  }
+}
+
+/* Specific Mobile Scaling Breakpoints - STACKED LAYOUT */
+@media (max-width: 640px) {
+  .heroCircleContainer {
+    width: 90vw;
+    padding: 1.25rem;
+  }
+
+  .heroDescription {
+    max-width: 85%;
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
   }
 }
 
@@ -397,19 +426,12 @@
   }
 
   .hero h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .heroDescription {
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .primaryBtn,
-  .secondaryBtn {
-    padding: 0.75rem 1rem;
-    font-size: 0.8rem;
-    min-width: 120px;
+    font-size: 0.75rem;
+    max-width: 90%;
   }
 }
 
@@ -493,13 +515,15 @@
 }
 
 .heroDescription {
-  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  /* Balanced scaling */
   color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 2rem;
-  max-width: 80%;
+  margin: 0 0 1.5rem 0;
+  /* Refined spacing */
+  max-width: 85%;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.5;
   animation: fadeInUp 1s ease-out 0.3s backwards;
 }
 
