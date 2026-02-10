@@ -36,8 +36,8 @@
 }
 
 .heroContent h1 {
-    font-size: 5.5rem;
-    line-height: 1;
+    font-size: clamp(1.85rem, 8vw, 4.5rem);
+    line-height: 1.1;
     color: var(--color-red);
     margin-bottom: 20px;
     letter-spacing: -0.04em;
@@ -45,7 +45,7 @@
 }
 
 .heroSubtitle {
-    font-size: 1.75rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     color: var(--text-primary);
     font-family: var(--font-serif);
     font-style: italic;
@@ -55,8 +55,9 @@
 
 .heroImage {
     position: relative;
-    width: 540px;
-    height: 540px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
     background: var(--gradient-hero);
     border-radius: 50%;
     overflow: hidden;
@@ -132,7 +133,7 @@
 }
 
 .sectionHeader h2 {
-    font-size: 3.5rem;
+    font-size: clamp(1.75rem, 5vw, 3rem);
     color: var(--color-red);
     margin-bottom: 60px;
 }
@@ -339,7 +340,7 @@
 }
 
 .bigNum {
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 8vw, 4rem);
     font-weight: 800;
     line-height: 1;
     margin-bottom: 16px;
@@ -542,42 +543,6 @@
     pointer-events: none;
 }
 
-@media (max-width: 1024px) {
-
-    .hero,
-    .block,
-    .appBox {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px var(--spacing-md);
-    }
-
-    .appIcon {
-        width: 220px;
-        height: 220px;
-        margin: 0 auto 15px;
-    }
-
-    .heroImage {
-        width: 320px;
-        height: 320px;
-        margin: 0 auto;
-    }
-
-    .benefitGrid,
-    .statGrid,
-    .flowContainer {
-        grid-template-columns: 1fr;
-    }
-
-    .registrationSteps {
-        flex-direction: column;
-    }
-
-    .formGrid {
-        grid-template-columns: 1fr;
-    }
-}
 
 /* 9. Registration Section */
 .registrationSection {
@@ -597,7 +562,7 @@
 }
 
 .registrationHeader h1 {
-    font-size: 3.5rem;
+    font-size: clamp(1.75rem, 8vw, 3.5rem);
     color: var(--color-indigo);
     margin-bottom: 16px;
     line-height: 1.1;
@@ -907,13 +872,107 @@
     margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+
+    .hero,
+    .block,
+    .appBox {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px var(--spacing-sm);
+    }
+
+    .appIcon {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto 15px;
+    }
+
+    .heroImage {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .benefitGrid,
+    .statGrid,
+    .flowContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .registrationSteps {
+        flex-direction: column;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .benefitItem {
+        padding: 24px;
+    }
+
+    .registrationForm {
+        padding: 24px;
+    }
+
+    .accordionContainer {
+        padding: 24px;
+    }
+
+    .registrationContainer {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .goalBanner {
+        padding: 20px var(--spacing-sm);
+    }
+
+    .benefitGrid {
+        margin: 40px auto;
+    }
+
+    .howItWorks {
+        padding: 60px 0;
+    }
+}
+
 @media (max-width: 768px) {
     .registrationHeader h1 {
         font-size: 2.5rem;
     }
 
     .registrationForm {
-        padding: 30px;
+        width: 95%;
+        max-width: 500px;
+        margin: 0 auto 60px;
+        padding: 20px;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .floatingReferralCta {
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transform: none;
+    }
+
+    .visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        pointer-events: none;
     }
 
     .successState {
