@@ -1,41 +1,30 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node.js
+frontend/node_modules/
+frontend/.next/
+frontend/out/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Python
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+backend/venv/
+backend/env/
+backend/.pytest_cache/
 
-# testing
-/coverage
+# Environment and Secrets
+.env
+backend/.env
+frontend/.env.local
+*.json
+!package.json
+!tsconfig.json
+!*.example.json
+!backend/requirements.txt
 
-# next.js
-/.next/
-/out/
+# Google Sheets Credentials (specific exclusions for security)
+gen-lang-client-*.json
+client_secret_*.json
 
-# production
-/build
-
-# misc
+# OS files
 .DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+Thumbs.db
