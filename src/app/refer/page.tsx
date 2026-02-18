@@ -29,7 +29,22 @@ export default function ReferralPage() {
             }
         };
     }, []);
+
+    useEffect(() => {
+        const onOpen = () => setIsModalOpen(true);
+        const onClose = () => setIsModalOpen(false);
+
+        window.addEventListener("partner-login-modal-open", onOpen);
+        window.addEventListener("partner-login-modal-close", onClose);
+
+        return () => {
+            window.removeEventListener("partner-login-modal-open", onOpen);
+            window.removeEventListener("partner-login-modal-close", onClose);
+        };
+    }, []);
     const [isRegistered, setIsRegistered] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [referralCode, setReferralCode] = useState("");
     const [copied, setCopied] = useState(false);
     const [formData, setFormData] = useState({
@@ -44,16 +59,16 @@ export default function ReferralPage() {
         institution: ""
     });
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+    const [apiError, setApiError] = useState<string | null>(null);
 
     const toggleAccordion = (index: number) => {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 
     const generateReferralCode = (name: string) => {
-        const prefix = "ENCH";
-        const suffix = Math.random().toString(36).substring(2, 6).toUpperCase();
         const initials = name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) || "RE";
-        return `${prefix}-${initials}-${suffix}`;
+        const randomDigits = Math.floor(1000 + Math.random() * 9000); // 4 random digits
+        return `${initials}${randomDigits}`;
     };
 
     const scrollToRegistration = () => {
@@ -86,12 +101,41 @@ export default function ReferralPage() {
         return Object.keys(errors).length === 0;
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setApiError(null);
+
         if (validateForm()) {
+            setIsLoading(true);
             const code = generateReferralCode(formData.fullName);
-            setReferralCode(code);
-            setIsRegistered(true);
+
+            try {
+                const response = await fetch("/api/auth/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: formData.email,
+                        password: formData.password,
+                        name: formData.fullName,
+                        referral_code: code
+                    })
+                });
+
+                if (response.ok) {
+                    localStorage.setItem("enchiridion_reg_email", formData.email);
+                    setReferralCode(code);
+                    setIsRegistered(true);
+                } else {
+                    const errorData = await response.json();
+                    setApiError(errorData.detail || "Registration failed. Email might already be in use.");
+                }
+            } catch (err) {
+                setApiError("Connection failed. Please check if the backend is running.");
+            } finally {
+                setIsLoading(false);
+            }
         }
     };
 
@@ -149,13 +193,15 @@ export default function ReferralPage() {
                     <p className="eyebrow">Enchiridion Referral Program</p>
                     <h1 className="serif">THIS COULD BE YOU</h1>
                     <p className={styles.heroSubtitle}>Share trusted medical knowledge. Earn rewards. Build impact.</p>
-                    <button
-                        ref={staticBtnRef}
-                        className={`${styles.primaryBtn} ${styles.staticReferralCta}`}
-                        onClick={scrollToRegistration}
-                    >
-                        Become a Referral Partner
-                    </button>
+                    {(!isRegistered && !isModalOpen) && (
+                        <button
+                            ref={staticBtnRef}
+                            className={`${styles.primaryBtn} ${styles.staticReferralCta}`}
+                            onClick={scrollToRegistration}
+                        >
+                            Become a Referral Partner
+                        </button>
+                    )}
                 </div>
                 <div className={styles.heroImage}>
                     <img
@@ -497,13 +543,16 @@ export default function ReferralPage() {
                                     />
                                 </div>
                             </div>
-                            <button type="submit" className={styles.submitBtn}>Create My Referral Account</button>
+                            <button type="submit" className={styles.submitBtn} disabled={isLoading}>
+                                {isLoading ? "Creating Account..." : "Create My Referral Account"}
+                            </button>
+                            {apiError && <p className={styles.error} style={{ textAlign: 'center', marginTop: '15px' }}>{apiError}</p>}
                         </form>
                     ) : (
                         <div className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>
-                            <h3>Welcome to the Enchiridion Partner Network!</h3>
-                            <p>Your referral account has been created successfully.</p>
+                            <h3>Account Created Successfully!</h3>
+                            <p>Welcome to the Enchiridion Partner Network. You can now start sharing your link and earning rewards.</p>
 
                             <div className={styles.codeDisplay}>
                                 <span className={styles.codeLabel}>Your Referral Code</span>
@@ -518,30 +567,41 @@ export default function ReferralPage() {
 
                             <div className={styles.linkDisplay}>
                                 <span className={styles.linkLabel}>Your Shareable Link</span>
-                                <span className={styles.linkValue}>https://enchiridion.app/ref/{referralCode}</span>
+                                <span className={styles.linkValue}>https://enchiridion.ng/?ref={referralCode}</span>
                                 <button
                                     className={styles.copyBtn}
-                                    onClick={() => copyToClipboard(`https://enchiridion.app/ref/${referralCode}`)}
+                                    onClick={() => copyToClipboard(`https://enchiridion.ng/?ref=${referralCode}`)}
                                 >
                                     Copy Link
                                 </button>
                             </div>
 
                             <div className={styles.shareButtons}>
-                                <a
-                                    href={`https://wa.me/?text=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.app%2Fref%2F${referralCode}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={styles.shareBtn}
+                                <button
+                                    className={styles.primaryBtn}
+                                    style={{ width: '100%', marginBottom: '20px' }}
+                                    onClick={() => window.location.hash = "#login"}
                                 >
-                                    Share via WhatsApp
-                                </a>
-                                <a
-                                    href={`mailto:?subject=Join%20Enchiridion&body=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.app%2Fref%2F${referralCode}`}
-                                    className={styles.shareBtn}
-                                >
-                                    Share via Email
-                                </a>
+                                    Login to Partner Dashboard
+                                </button>
+                                <div style={{ display: 'flex', gap: '10px' }}>
+                                    <a
+                                        href={`https://wa.me/?text=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.ng%2F%3Fref%3D${referralCode}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={styles.shareBtn}
+                                        style={{ flex: 1, textAlign: 'center' }}
+                                    >
+                                        WhatsApp
+                                    </a>
+                                    <a
+                                        href={`mailto:?subject=Join%20Enchiridion&body=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.ng%2F%3Fref%3D${referralCode}`}
+                                        className={styles.shareBtn}
+                                        style={{ flex: 1, textAlign: 'center' }}
+                                    >
+                                        Email
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     )}
@@ -582,9 +642,11 @@ export default function ReferralPage() {
             </section>
 
             {/* PERSISTENT CTA */}
-            <div className={`${styles.floatingReferralCta} ${showFloatingBtn ? styles.visible : styles.hidden}`}>
-                <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
-            </div>
+            {(!isRegistered && !isModalOpen) && (
+                <div className={`${styles.floatingReferralCta} ${showFloatingBtn ? styles.visible : styles.hidden}`}>
+                    <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
+                </div>
+            )}
         </div>
     );
 }

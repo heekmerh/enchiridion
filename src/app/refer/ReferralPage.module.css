@@ -977,6 +977,8 @@
 
     .successState {
         padding: 40px 24px;
+        width: 95%;
+        margin: 0 auto 60px;
     }
 
     .codeDisplay,
@@ -986,11 +988,17 @@
     }
 
     .shareButtons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
     }
 
     .shareBtn {
-        width: 100%;
+        flex: 1;
+        min-width: 120px;
         text-align: center;
+        padding: 12px 10px;
+        font-size: 0.85rem;
     }
 }

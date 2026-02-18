@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
+import ReferralTracker from "@/components/ReferralTracker";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Enchiridion — Modern Medical Reference System",
@@ -29,6 +31,9 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
+        <Suspense fallback={null}>
+          <ReferralTracker />
+        </Suspense>
         <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer />
       </body>

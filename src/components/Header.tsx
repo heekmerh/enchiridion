@@ -4,11 +4,14 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
+import PartnerLoginModal from "./PartnerLoginModal";
 
 const menuItems = [
   { label: "Books", href: "#books" },
   { label: "App", href: "#app" },
   { label: "Referral Program", href: "/refer" },
+  { label: "Rewards", href: "/rewards" },
+  { label: "Partner Login", href: "#login", modal: true },
   { label: "Reviews", href: "#user-reviews" },
   { label: "About", href: "/about" },
   { label: "Download", href: "/download" },
@@ -19,13 +22,32 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedSubMenu, setExpandedSubMenu] = useState<string | null>(null);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Temporary state for UI
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    const handleHashChange = () => {
+      if (window.location.hash === "#login") {
+        handleOpenLogin();
+        // Clear hash without triggering scroll
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Check initial hash
+    handleHashChange();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -36,12 +58,26 @@ export default function Header() {
   };
 
   const toggleSubMenu = (label: string) => {
-    if (["Books", "App", "Referral Program"].includes(label)) {
+    if (["Books", "App", "Partnership"].includes(label)) {
       setExpandedSubMenu(expandedSubMenu === label ? null : label);
+    } else if (label === "Partner Login") {
+      setIsLoginModalOpen(true);
+      window.dispatchEvent(new CustomEvent("partner-login-modal-open"));
+      setIsMenuOpen(false);
     } else {
       setIsMenuOpen(false);
       setExpandedSubMenu(null);
     }
+  };
+
+  const handleOpenLogin = () => {
+    setIsLoginModalOpen(true);
+    window.dispatchEvent(new CustomEvent("partner-login-modal-open"));
+  };
+
+  const handleCloseLogin = () => {
+    setIsLoginModalOpen(false);
+    window.dispatchEvent(new CustomEvent("partner-login-modal-close"));
   };
 
   return (
@@ -53,13 +89,19 @@ export default function Header() {
         <div className={styles.container}>
           {/* Desktop Nav - Left */}
           <div className={`${styles.navGroup} ${styles.desktopOnly}`}>
-            {menuItems.slice(0, 3).map((item) => (
+            {menuItems.slice(0, 4).map((item) => (
               <div
                 key={item.label}
                 className={styles.navItem}
                 onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
               >
-                <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+                {item.modal ? (
+                  <button onClick={handleOpenLogin} className={styles.navLinkButton}>
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+                )}
               </div>
             ))}
           </div>
@@ -78,15 +120,26 @@ export default function Header() {
 
           {/* Desktop Nav - Right */}
           <div className={`${styles.navGroup} ${styles.desktopOnly}`}>
-            {menuItems.slice(3).map((item) => (
+            {menuItems.slice(4).map((item) => (
               <div
                 key={item.label}
                 className={styles.navItem}
                 onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
               >
-                <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+                {item.modal ? (
+                  <button onClick={handleOpenLogin} className={styles.navLinkButton}>
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+                )}
               </div>
             ))}
+            {isLoggedIn && (
+              <div className={styles.navItem}>
+                <Link href="/dashboard" className={styles.navLinkDashboard}>Dashboard</Link>
+              </div>
+            )}
           </div>
 
           {/* Hamburger Menu Icon */}
@@ -167,16 +220,22 @@ export default function Header() {
         </button>
         <div className={styles.sidebarLinks}>
           {menuItems.map((item) => {
-            const hasSubMenu = ["Books", "App", "Referral Program"].includes(item.label);
-            const isExpanded = expandedSubMenu === item.label;
+            // Group Partner-related items under "Partnership" in the mobile sidebar
+            const partnerLabels = ["Referral Program", "Rewards", "Partner Login"];
+            if (partnerLabels.includes(item.label) && item.label !== "Referral Program") return null;
+
+            const isPartnershipGroup = item.label === "Referral Program";
+            const displayLabel = isPartnershipGroup ? "Partnership" : item.label;
+            const hasSubMenu = ["Books", "App"].includes(item.label) || isPartnershipGroup;
+            const isExpanded = expandedSubMenu === (isPartnershipGroup ? "Partnership" : item.label);
 
             return (
               <div key={item.label} className={styles.sidebarItem}>
                 <div
                   className={styles.sidebarLinkContainer}
-                  onClick={() => toggleSubMenu(item.label)}
+                  onClick={() => toggleSubMenu(isPartnershipGroup ? "Partnership" : item.label)}
                 >
-                  <span className={styles.sidebarLink}>{item.label}</span>
+                  <span className={styles.sidebarLink}>{displayLabel}</span>
                   {hasSubMenu && (
                     <i className={`fas fa-chevron-down ${styles.chevron} ${isExpanded ? styles.chevronRotated : ""}`}></i>
                   )}
@@ -205,10 +264,19 @@ export default function Header() {
                         <Link href="/download" className={styles.mobileCta} onClick={() => setIsMenuOpen(false)}>Get the App</Link>
                       </div>
                     )}
-                    {item.label === "Referral Program" && (
+                    {isPartnershipGroup && (
                       <div className={styles.mobileSubContent}>
-                        <Link href="/refer" onClick={() => setIsMenuOpen(false)}>Become a Partner</Link>
-                        <Link href="/refer" onClick={() => setIsMenuOpen(false)}>Referral Rewards</Link>
+                        <Link href="/refer" onClick={() => setIsMenuOpen(false)}>Referral Details</Link>
+                        <Link href="/rewards" onClick={() => setIsMenuOpen(false)}>Rewards & Points</Link>
+                        <button
+                          className={styles.mobilePartnerBtn}
+                          onClick={() => {
+                            handleOpenLogin();
+                            setIsMenuOpen(false);
+                          }}
+                        >
+                          Partner Login
+                        </button>
                       </div>
                     )}
                   </div>
@@ -221,6 +289,12 @@ export default function Header() {
 
       {/* Sidebar Overlay */}
       {isMenuOpen && <div className={styles.overlay} onClick={() => setIsMenuOpen(false)} />}
+
+      <PartnerLoginModal
+        isOpen={isLoginModalOpen}
+        onClose={handleCloseLogin}
+        onLoginSuccess={() => setIsLoggedIn(true)}
+      />
     </>
   );
 }
