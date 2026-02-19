@@ -27,7 +27,28 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     const [selectedState, setSelectedState] = useState<StateDelivery | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [showStateDropdown, setShowStateDropdown] = useState(false);
+    const [refCredited, setRefCredited] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
+
+    // Trigger purchase credit when success reached
+    useEffect(() => {
+        if (step === "success" && !refCredited) {
+            const cachedRef = localStorage.getItem("enchiridion_ref");
+            if (cachedRef) {
+                fetch("/api/referral/credit-purchase", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ refCode: cachedRef })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log("Referral purchase credited:", data);
+                        setRefCredited(true);
+                    })
+                    .catch(err => console.error("Error crediting referral purchase:", err));
+            }
+        }
+    }, [step, refCredited]);
 
     // Filter states based on search
     const filteredStates = NIGERIAN_STATES.filter(s =>

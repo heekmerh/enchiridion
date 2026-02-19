@@ -1,22 +1,183 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Rewards.module.css";
+import Link from "next/link";
+import ReferralLeaderboard from "@/components/ReferralLeaderboard";
+import PartnerSuccessGuideModal from "@/components/PartnerSuccessGuideModal";
+
 
 export default function RewardsPage() {
     const [isTermsOpen, setIsTermsOpen] = useState(false);
+    const [isGuideOpen, setIsGuideOpen] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({ months: 0, days: 0 });
+
+
+    useEffect(() => {
+        const calculateTimeLeft = () => {
+            const now = new Date();
+            const target = new Date(now.getFullYear(), 11, 30); // Dec 30th
+
+            // If target has passed this year, set to next year
+            if (now > target) {
+                target.setFullYear(now.getFullYear() + 1);
+            }
+
+            const diff = target.getTime() - now.getTime();
+
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+
+            setTimeLeft({ months, days });
+        };
+
+        calculateTimeLeft();
+        const timer = setInterval(calculateTimeLeft, 1000 * 60 * 60); // Update hourly
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <div className={styles.rewardsPage}>
-            <div className={styles.container}>
-                <div className={styles.hero}>
-                    <h1>Referral Rewards</h1>
-                    <p>
-                        Help clinicians discover the best medical resources and earn
-                        recurring rewards for your impact.
-                    </p>
-                </div>
+            {/* Decorative Background Elements */}
+            <div className={`${styles.blob} ${styles.blob1}`}></div>
+            <div className={`${styles.blob} ${styles.blob2}`}></div>
+            <div className={`${styles.blob} ${styles.blob3}`}></div>
 
+            <div className={styles.container}>
+
+                {/* Leaderboard Podium */}
+                <section className={styles.leaderboardSection}>
+                    <h2>Can You Top the Ranks?</h2>
+                    <div className={styles.podium}>
+                        {/* 2nd Place - SILVER */}
+                        <div className={`${styles.podiumSpot} ${styles.secondSpot}`}>
+                            <div className={styles.spotlight}></div>
+                            <div className={styles.pentagonFrame}>
+                                <div className={styles.pentagonInner}>
+                                    <i className="fas fa-stethoscope"></i>
+                                </div>
+                                <div className={styles.rankBadge}>2</div>
+                            </div>
+                            <div className={styles.rankInfo}>
+                                <span className={styles.rankTitle}>Silver</span>
+                            </div>
+                            <div className={styles.podiumPillar}></div>
+                        </div>
+
+                        {/* 1st Place - GOLD (Front) */}
+                        <div className={`${styles.podiumSpot} ${styles.firstSpot}`}>
+                            <div className={styles.spotlight}></div>
+                            <div className={styles.pentagonFrame}>
+                                <div className={styles.pentagonInner} style={{ color: '#fbbf24' }}>
+                                    <i className="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div className={styles.rankBadge}>1</div>
+                            </div>
+                            <div className={styles.rankInfo}>
+                                <span className={styles.rankTitle}>Gold</span>
+                            </div>
+                            <div className={styles.podiumPillar}></div>
+                        </div>
+
+                        {/* 3rd Place - BRONZE */}
+                        <div className={`${styles.podiumSpot} ${styles.thirdSpot}`}>
+                            <div className={styles.spotlight}></div>
+                            <div className={styles.pentagonFrame}>
+                                <div className={styles.pentagonInner}>
+                                    <i className="fas fa-book-medical"></i>
+                                </div>
+                                <div className={styles.rankBadge}>3</div>
+                            </div>
+                            <div className={styles.rankInfo}>
+                                <span className={styles.rankTitle}>bronze</span>
+                            </div>
+                            <div className={styles.podiumPillar}></div>
+                        </div>
+                    </div>
+                    <p style={{ fontSize: '1.2rem', color: '#64748b', fontWeight: 600 }}>
+                        Current leading users are tracked via the app based on questions answered correctly. Climb the ranks today!
+                    </p>
+                    <div className={styles.podiumIllustration}>
+                        <img src="/images/climb-ranks.png" alt="Climbing the ranks" className={styles.climbImage} />
+                    </div>
+                </section>
+
+                {/* Referral Leaderboard Section */}
+                <ReferralLeaderboard />
+
+                {/* Prize Hero Section */}
+                <header className={styles.prizeHero}>
+                    <h1 className={styles.prizeWelcome}>Download the App, Climb the Ranks, and Win!</h1>
+
+                    <div className={styles.countdownContainer}>
+                        <div className={styles.countdownItem}>
+                            <span className={styles.countNumber}>{timeLeft.months}</span>
+                            <span className={styles.countLabel}>Months</span>
+                        </div>
+                        <div className={styles.countdownItem}>
+                            <span className={styles.countNumber}>{timeLeft.days}</span>
+                            <span className={styles.countLabel}>Days</span>
+                        </div>
+                    </div>
+
+                    <div className={styles.actionRow}>
+                        <div className={styles.downloadIcon}>
+                            <i className="fas fa-rocket"></i>
+                        </div>
+                        <Link href="/download" className={styles.referralBtn}>
+                            <i className="fas fa-cloud-download-alt" style={{ marginRight: '10px' }}></i>
+                            Download App Now
+                        </Link>
+                        <p style={{ opacity: 0.9, fontWeight: 600 }}>
+                            <i className="fas fa-bullhorn" style={{ marginRight: '8px' }}></i>
+                            Winners will be emailed directly when the contest ends.
+                        </p>
+                    </div>
+                </header>
+
+                {/* Educational Info */}
+                <section className={styles.infoSection}>
+                    <div style={{ fontSize: '4rem', marginBottom: '25px', color: '#14b8a6' }}>
+                        <i className="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Prepare for Your Licensing Exams</h3>
+                    <p style={{ fontSize: '1.2rem', color: '#475569', maxWidth: '700px', margin: '0 auto 30px' }}>
+                        Questions are curated from major clinical exams worldwide. Prepare for your licensing exams and primaries while competing for rewards.
+                    </p>
+                    <div className={styles.examTags}>
+                        {['UKMLA', 'MCCQE', 'USMLE', 'NAC', 'AMC', 'NExT', 'PRES', 'MRCP', 'NZREX', 'MDCN'].map(tag => (
+                            <span key={tag} className={styles.examTag}>{tag}</span>
+                        ))}
+                    </div>
+                    <p style={{ color: '#312e81', fontWeight: 800, fontSize: '1.2rem' }}>
+                        <i className="fas fa-heart" style={{ color: '#ef4444', marginRight: '8px' }}></i>
+                        "This is our way of giving back while helping you achieve your dreams."
+                    </p>
+
+                    <div style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' }}>
+                        <Link href="/refer" className={`${styles.referralBtn} ${styles.secondaryBtn}`}>
+                            <i className="fas fa-share-alt" style={{ marginRight: '10px' }}></i>
+                            Tell Friends & Earn Referral Points
+                        </Link>
+
+                        <button
+                            onClick={() => setIsGuideOpen(true)}
+                            className={styles.guideCard}
+                        >
+                            <div className={styles.guideIcon}>
+                                <i className="fas fa-book-reader"></i>
+                            </div>
+                            <div className={styles.guideText}>
+                                <h4>New to the program?</h4>
+                                <p>View the Partner Success Guide & Handbook</p>
+                            </div>
+                            <i className="fas fa-external-link-alt"></i>
+                        </button>
+                    </div>
+
+                </section>
+
+                {/* Legacy Content (Moved Below) */}
                 <section className={styles.section}>
                     <h2>Why Join the Program?</h2>
                     <div className={styles.rulesGrid}>
@@ -68,14 +229,20 @@ export default function RewardsPage() {
                             <div className={styles.termsSection}>
                                 <h3>3. Tracking</h3>
                                 <ul>
-                                    <li>Referral links are cached in the user's browser. Activity is logged immediately upon the user's action.</li>
+                                    <li>Activity is logged immediately upon the user's action.</li>
                                     <li>Self-referrals or fraudulent activity will result in the suspension of the partner account.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <PartnerSuccessGuideModal
+                    isOpen={isGuideOpen}
+                    onClose={() => setIsGuideOpen(false)}
+                />
             </div>
         </div>
+
     );
 }

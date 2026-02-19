@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from .auth import auth_backend, fastapi_users, UserRead, UserCreate
+from .auth import auth_backend, fastapi_users, UserRead, UserCreate, UserUpdate
 from .routers import referral, reviews
 
 import os
@@ -25,15 +25,36 @@ app.include_router(
     tags=["auth"],
 )
 app.include_router(
+    fastapi_users.get_reset_password_router(),
+    prefix="/auth",
+    tags=["auth"],
+)
+app.include_router(
     fastapi_users.get_register_router(UserRead, UserCreate),
     prefix="/auth",
     tags=["auth"],
+)
+app.include_router(
+    fastapi_users.get_users_router(UserRead, UserUpdate),
+    prefix="/users",
+    tags=["users"],
 )
 
 # Business logic routes
 app.include_router(referral.router, prefix="/referral", tags=["referral"])
 app.include_router(reviews.router, prefix="/reviews", tags=["reviews"])
 
+@app.get("/debug-env")
+async def debug_env():
+    from .auth import SECRET
+    return {
+        "secret_length": len(SECRET),
+        "secret_prefix": SECRET[:3] + "...",
+        "env_path_exists": os.path.exists(os.path.join(os.getcwd(), ".env")),
+        "cwd": os.getcwd()
+    }
+
 @app.get("/")
 async def root():
+
     return {"message": "Enchiridion API is running"}

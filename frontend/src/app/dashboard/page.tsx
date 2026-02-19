@@ -6,12 +6,13 @@ import styles from "./Dashboard.module.css";
 export default function PartnerDashboard() {
     const [copied, setCopied] = useState(false);
     const [partnerData, setPartnerData] = useState({
-        username: "Dr. Adebayo",
-        refCode: "ADEBAYO2026",
+        username: "Partner", // Will be updated from localStorage
+        refCode: "",
         stats: {
             friendsReferred: 0,
             pointsEarned: 0,
             accruedRevenue: 0,
+            lifetimeEarnings: 0,
         },
         payout: {
             accountName: "",
@@ -20,6 +21,60 @@ export default function PartnerDashboard() {
             isSaved: false,
         },
     });
+
+    useEffect(() => {
+        // Load name from localStorage
+        const savedName = localStorage.getItem("enchiridion_user_name");
+        if (savedName) {
+            setPartnerData(prev => ({ ...prev, username: savedName }));
+        }
+
+        // Fetch actual stats from backend
+        const fetchStats = async () => {
+            const token = localStorage.getItem("enchiridion_token");
+            if (!token) return;
+
+            try {
+                const response = await fetch("/api/referral/stats", {
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+                if (response.ok) {
+                    const stats = await response.json();
+                    setPartnerData(prev => ({
+                        ...prev,
+                        refCode: stats.referralCode,
+                        stats: {
+                            ...prev.stats,
+                            pointsEarned: stats.points,
+                            accruedRevenue: stats.revenue,
+                            lifetimeEarnings: stats.lifetimeEarnings || 0
+                        },
+                        payout: {
+                            accountName: stats.accountName || "",
+                            accountNumber: stats.accountNumber || "",
+                            bankName: stats.bankName || "",
+                            isSaved: !!(stats.accountName && stats.accountNumber && stats.bankName)
+                        }
+                    }));
+
+                    // Pre-fill payout form if data exists
+                    if (stats.accountName || stats.accountNumber || stats.bankName) {
+                        setPayoutForm({
+                            accountName: stats.accountName || "",
+                            accountNumber: stats.accountNumber || "",
+                            bankName: stats.bankName || "",
+                        });
+                    }
+                }
+            } catch (err) {
+                console.error("Failed to fetch dashboard stats:", err);
+            }
+        };
+
+        fetchStats();
+    }, []);
 
     const [payoutForm, setPayoutForm] = useState({
         accountName: "",
@@ -56,16 +111,41 @@ export default function PartnerDashboard() {
         setTimeout(() => setCopied(false), 2000);
     };
 
-    const handlePayoutSubmit = (e: React.FormEvent) => {
+    const handlePayoutSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // INTEGRATION: Save to Google Sheets
-        setPartnerData({
-            ...partnerData,
-            payout: {
-                ...payoutForm,
-                isSaved: true,
-            },
-        });
+        const token = localStorage.getItem("enchiridion_token");
+        if (!token) return;
+
+        try {
+            const response = await fetch("/api/referral/update-payout", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    refCode: partnerData.refCode,
+                    ...payoutForm
+                })
+            });
+
+            if (response.ok) {
+                setPartnerData({
+                    ...partnerData,
+                    payout: {
+                        ...payoutForm,
+                        isSaved: true,
+                    },
+                });
+                alert("Payout details saved successfully!");
+            } else {
+                const error = await response.json();
+                alert(`Failed to save: ${error.detail || "Unknown error"}`);
+            }
+        } catch (err) {
+            console.error("Failed to save payout:", err);
+            alert("Connection error. Please try again.");
+        }
     };
 
     useEffect(() => {
@@ -132,7 +212,12 @@ export default function PartnerDashboard() {
                     <div className={`${styles.statCard} ${styles.glassCard}`} ref={revenueCardRef}>
                         <div className={styles.statIcon}><i className="fas fa-naira-sign"></i></div>
                         <div className={styles.statValue}>₦{partnerData.stats.accruedRevenue.toLocaleString()}</div>
-                        <div className={styles.statLabel}>Accrued Revenue</div>
+                        <div className={styles.statLabel}>Accrued Balance</div>
+                    </div>
+                    <div className={`${styles.statCard} ${styles.glassCard}`}>
+                        <div className={styles.statIcon}><i className="fas fa-history"></i></div>
+                        <div className={styles.statValue}>₦{(partnerData.stats.lifetimeEarnings || 0).toLocaleString()}</div>
+                        <div className={styles.statLabel}>Lifetime Earnings</div>
                     </div>
                 </div>
 

@@ -1,26 +1,28 @@
+from fastapi_users import schemas
+import uuid
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from datetime import datetime
 
-class UserRead(BaseModel):
-    id: str
-    email: EmailStr
-    is_active: bool = True
-    is_superuser: bool = False
-    is_verified: bool = False
+class User(schemas.BaseUser[uuid.UUID]):
     name: str
     referral_code: str
+    referred_by: Optional[str] = None
+    date_joined: datetime
+    hashed_password: str
+
+class UserRead(schemas.BaseUser[uuid.UUID]):
+    name: str
+    referral_code: str
+    referred_by: Optional[str] = None
     date_joined: datetime
 
-class UserCreate(BaseModel):
-    email: EmailStr
-    password: str
+class UserCreate(schemas.BaseUserCreate):
     name: str
     referral_code: str
+    referred_by: Optional[str] = None
 
-class UserUpdate(BaseModel):
-    password: Optional[str] = None
-    email: Optional[EmailStr] = None
+class UserUpdate(schemas.BaseUserUpdate):
     name: Optional[str] = None
 
 class ActivityLog(BaseModel):
@@ -29,6 +31,11 @@ class ActivityLog(BaseModel):
     points: float
     timestamp: str
     details: dict
+    payoutStatus: str = "PENDING"
+
+class MarkAsPaidRequest(BaseModel):
+    email: str
+    refCode: str
 
 class ReviewBase(BaseModel):
     name: str
@@ -51,3 +58,8 @@ class PayoutSettings(BaseModel):
     accountName: str
     accountNumber: str
     bankName: str
+
+class SessionTrack(BaseModel):
+    refCode: str
+    ip: str
+    userAgent: str

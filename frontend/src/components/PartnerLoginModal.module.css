@@ -180,3 +180,45 @@
         border-radius: 20px;
     }
 }
+
+.forgotLink {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 0;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.forgotLink:hover {
+    text-decoration: underline;
+}
+
+.message {
+    background-color: #f0fdf4;
+    color: #166534;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border: 1px solid #bbf7d0;
+    margin-bottom: 20px;
+}
+
+.backBtn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.backBtn:hover {
+    color: #1e293b;
+}
