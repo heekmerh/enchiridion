@@ -207,6 +207,9 @@
     color: #115e59;
 }
 
+
+/* Loading State */
+
 /* Loading State */
 .loadingContainer {
     padding: 100px;
@@ -261,5 +264,26 @@
     .table th,
     .table td {
         padding: 15px;
+    }
+
+    .podiumContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        min-height: auto;
+        padding-top: 50px;
+    }
+
+    .gold {
+        order: -1;
+    }
+
+    .pedestal,
+    .gold .pedestal {
+        width: 240px;
+    }
+
+    .spotlight {
+        width: 400px;
     }
 }

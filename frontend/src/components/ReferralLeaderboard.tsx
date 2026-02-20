@@ -146,6 +146,7 @@ export default function ReferralLeaderboard() {
                 </table>
             </div>
 
+
             {leaderboard.length === 0 && !isLoading && (
                 <div className={styles.emptyState}>
                     <i className="fas fa-users" style={{ fontSize: '2rem', marginBottom: '10px', opacity: 0.5 }}></i>

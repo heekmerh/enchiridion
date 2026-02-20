@@ -8,6 +8,9 @@
         radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.05) 0px, transparent 50%);
     position: relative;
     overflow-x: hidden;
+    --metal-gold: #FFD700;
+    --metal-silver: #C0C0C0;
+    --metal-bronze: #CD7F32;
 }
 
 /* Decorative Blobs */
@@ -52,7 +55,7 @@
 .prizeHero {
     text-align: center;
     padding: 100px 40px;
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+    background: radial-gradient(ellipse at 50% 10%, #1e1b4b 0%, #0d0b2b 50%, #020617 100%);
     border-radius: 50px;
     color: white;
     margin-bottom: 80px;
@@ -236,248 +239,261 @@
     opacity: 0.8;
 }
 
-/* Leaderboard */
+/* Leaderboard Podium Section */
 .leaderboardSection {
-    margin-bottom: 80px;
+    margin: 80px 0;
     text-align: center;
+    padding: 80px 20px 0;
+    background: radial-gradient(ellipse at 50% 10%, #1e1b4b 0%, #0d0b2b 50%, #020617 100%);
+    border-radius: 48px;
+    position: relative;
+    overflow: hidden;
 }
 
-.leaderboardSection h2 {
-    margin-bottom: 80px;
-    font-size: clamp(2rem, 5vw, 3rem);
-    background: linear-gradient(to right, var(--color-indigo), var(--color-teal));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Tagline above box - red, centered */
+.podiumTitle {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #dc2626;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
 }
 
-.podium {
+/* New Static Image-based Podium */
+.podiumImageContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
-    gap: 40px;
-    height: 600px;
-    margin: 100px 0;
-    perspective: 1200px;
+    align-items: center;
+    /* Enchiridion Blue side-glows to blend edges */
+    box-shadow:
+        -100px 0 150px -80px rgba(30, 58, 138, 0.4),
+        100px 0 150px -80px rgba(30, 58, 138, 0.4);
 }
 
-.podiumSpot {
-    flex: 1;
-    max-width: 240px;
+.podiumImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.1);
+    /* Zoom in to fill background */
+    transform-origin: center top;
+    /* Fade-to-black bottom effect */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Prize Description Section */
+.prizeDescriptionGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prizeGlassCard {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.podiumSpot:hover {
-    transform: translateY(-10px) scale(1.02);
-}
-
-/* Spotlight Effect */
-.spotlight {
-    position: absolute;
-    top: -150px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 500px;
-    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 0;
-    filter: blur(20px);
-    animation: spotlightBreath 4s ease-in-out infinite;
-}
-
-/* 3D Pillar Body (Cylindrical & Metallic) */
-.podiumPillar {
-    width: 100%;
-    position: relative;
-    border-radius: 20px 20px 0 0;
-    box-shadow:
-        inset -15px 0 30px rgba(0, 0, 0, 0.3),
-        inset 15px 0 30px rgba(255, 255, 255, 0.1),
-        0 30px 60px rgba(0, 0, 0, 0.4);
-}
-
-.podiumPillar::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 20%;
-    width: 15%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-    pointer-events: none;
-}
-
-/* Pentagon Frame (Glowing) */
-.pentagonFrame {
-    width: 130px;
-    height: 130px;
-    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-    position: relative;
-    padding: 4px;
-    z-index: 5;
-}
-
-.pentagonInner {
-    width: 100%;
-    height: 100%;
-    background: #0f172a;
-    clip-path: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.8rem;
+    gap: 20px;
     color: white;
 }
 
-/* Rank Badge (Floating Circle) */
-.rankBadge {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.prizeGlassCard h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.prizeIcon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.prizeDesc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Metallic Theme Modifiers */
+.goldTheme {
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.goldTheme h3,
+.goldTheme .prizeIcon {
+    color: var(--metal-gold);
+}
+
+.goldTheme:hover {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
+}
+
+.silverTheme {
+    border-color: rgba(192, 192, 192, 0.2);
+}
+
+.silverTheme h3,
+.silverTheme .prizeIcon {
+    color: var(--metal-silver);
+}
+
+.silverTheme:hover {
+    box-shadow: 0 0 40px rgba(192, 192, 192, 0.15);
+}
+
+.bronzeTheme {
+    border-color: rgba(205, 127, 50, 0.2);
+}
+
+.bronzeTheme h3,
+.bronzeTheme .prizeIcon {
+    color: var(--metal-bronze);
+}
+
+.bronzeTheme:hover {
+    box-shadow: 0 0 40px rgba(205, 127, 50, 0.15);
+}
+
+.prizeGlassCard:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.prizeCTAWrapper {
+    margin: 40px 0 60px;
+    padding-bottom: 80px;
+}
+
+.prizeCTA {
     background: white;
+    color: #020617;
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.prizeCTA:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
+}
+
+/* Anchor Section */
+#referral-link-section {
+    scroll-margin-top: 100px;
+}
+
+.redemptionToggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
-    font-size: 1.3rem;
-    position: absolute;
-    bottom: -15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    border: 4px solid #0f172a;
-}
-
-/* Labels below Badge */
-.rankInfo {
-    margin-top: 25px;
-    margin-bottom: 35px;
-    text-align: center;
-}
-
-.rankTitle {
-    display: block;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
-}
-
-.rankName {
-    display: block;
-    font-weight: 700;
-    color: #475569;
-    font-size: 1rem;
-}
-
-/* Colors for Spots */
-.firstSpot {
-    z-index: 10;
-    transform: scale(1.1);
-}
-
-.firstSpot .podiumPillar {
-    height: 300px;
-    background: linear-gradient(135deg, #7f1d1d 0%, #b91c1c 45%, #7f1d1d 100%);
-}
-
-.firstSpot .podiumTop {
-    background: radial-gradient(circle, #fde047, #fbbf24);
-    box-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
-}
-
-.firstSpot .pentagonFrame {
-    background: #fbbf24;
-    box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
-}
-
-.firstSpot .rankBadge {
-    color: #dc2626;
-    border-color: #fbbf24;
-}
-
-.firstSpot .rankTitle {
-    color: #fbbf24;
-    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
-}
-
-.secondSpot {
-    z-index: 5;
-}
-
-.secondSpot .podiumPillar {
-    height: 220px;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 45%, #1e293b 100%);
-}
-
-.secondSpot .podiumTop {
-    background: radial-gradient(circle, #f1f5f9, #94a3b8);
-}
-
-.secondSpot .pentagonFrame {
-    background: #94a3b8;
-}
-
-.secondSpot .rankBadge {
-    color: #1e3a8a;
-    border-color: #94a3b8;
-}
-
-.secondSpot .rankTitle {
+    gap: 8px;
+    background: none;
+    border: none;
     color: #94a3b8;
+    /* Muted gray */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    margin: 0 auto;
 }
 
-.thirdSpot {
-    z-index: 5;
+.redemptionToggle:hover {
+    color: #3b82f6;
+    /* Enchiridion Blue */
 }
 
-.thirdSpot .podiumPillar {
-    height: 180px;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 45%, #1e293b 100%);
+.redemptionChevron {
+    font-size: 0.8rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.thirdSpot .podiumTop {
-    background: radial-gradient(circle, #fed7aa, #92400e);
+.redemptionChevronOpen {
+    transform: rotate(180deg);
 }
 
-.thirdSpot .pentagonFrame {
-    background: #92400e;
+.redemptionWrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    opacity: 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.thirdSpot .rankBadge {
-    color: #1e3a8a;
-    border-color: #92400e;
+.redemptionWrapperOpen {
+    max-height: 400px;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    padding: 20px 0 40px;
 }
 
-.thirdSpot .rankTitle {
-    color: #92400e;
+.redemptionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.podiumIllustration {
-    margin-top: 80px;
+.redemptionItem {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.climbImage {
-    max-width: 100%;
-    height: auto;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.redemptionItem h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-.climbImage:hover {
-    transform: scale(1.02);
+.redemptionItem p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .redemptionGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Educational Info */
@@ -730,49 +746,24 @@
         gap: 30px;
     }
 
-    .podium {
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-        gap: 100px;
-        margin-top: 100px;
-        perspective: none;
+    .podiumImageContainer {
+        margin-top: 20px;
+        box-shadow: none;
     }
 
-    .podiumSpot {
-        width: 100%;
-        max-width: 250px;
+    .podiumImage {
+        transform: scale(1.25);
+        transform-origin: center top;
     }
 
-    /* Stacking Order for Mobile */
-    .firstSpot {
-        order: 1;
-        transform: scale(1.05) !important;
+    .prizeDescriptionGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 40px 20px;
     }
 
-    .secondSpot {
-        order: 2;
-    }
-
-    .thirdSpot {
-        order: 3;
-    }
-
-    .firstSpot .podiumPillar {
-        height: 180px;
-    }
-
-    .secondSpot .podiumPillar {
-        height: 140px;
-    }
-
-    .thirdSpot .podiumPillar {
-        height: 110px;
-    }
-
-    .spotlight {
-        width: 200px;
-        top: -100px;
+    .prizeGlassCard {
+        padding: 30px 20px;
     }
 
     .countdownContainer {
