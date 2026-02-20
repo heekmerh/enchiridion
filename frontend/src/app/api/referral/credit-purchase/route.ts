@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://127.0.0.1:8002';
 
         const response = await fetch(`${backendUrl}/referral/credit-purchase`, {
             method: 'POST',

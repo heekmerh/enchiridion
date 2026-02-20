@@ -2,13 +2,13 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
     try {
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+        const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8002";
 
 
 
         const authHeader = request.headers.get("Authorization");
 
-        const response = await fetch(`${backendUrl}/referral/audit/verify`, {
+        const response = await fetch(`${BACKEND_URL}/referral/audit/verify`, {
             cache: 'no-store',
             headers: {
                 "Authorization": authHeader || "",

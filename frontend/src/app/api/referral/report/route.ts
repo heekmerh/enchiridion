@@ -1,11 +1,21 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-    const backendUrl = process.env.BACKEND_URL || "http://127.0.0.1:8000";
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8002";
     const authHeader = request.headers.get("Authorization");
 
+    const { searchParams } = new URL(request.url);
+    const month = searchParams.get("month");
+    const year = searchParams.get("year");
+
+    let url = `${backendUrl}/referral/report/monthly/csv`;
+    const params = new URLSearchParams();
+    if (month) params.append("month", month);
+    if (year) params.append("year", year);
+    if (params.toString()) url += `?${params.toString()}`;
+
     try {
-        const response = await fetch(`${backendUrl}/referral/report/monthly/csv`, {
+        const response = await fetch(url, {
             cache: 'no-store',
             headers: {
                 "Authorization": authHeader || "",

@@ -186,6 +186,10 @@ export default function PartnerDashboard() {
         ));
     };
 
+    // Calculate current payout milestone dynamically
+    const payoutMilestone = partnerData.stats.accruedRevenue >= 5000 ? 10000 : 5000;
+    const progressPercent = Math.min((partnerData.stats.accruedRevenue / payoutMilestone) * 100, 100);
+
     return (
         <div className={styles.dashboard}>
             <div className={styles.container}>
@@ -251,17 +255,18 @@ export default function PartnerDashboard() {
 
                     <div className={styles.milestones}>
                         <div className={styles.progressHeader}>
-                            <span className={styles.statLabel}>Next Payout Milestone: ₦5,000</span>
-                            <span className={styles.statLabel}>{Math.round((partnerData.stats.accruedRevenue / 5000) * 100)}%</span>
+                            <span className={styles.statLabel}>Next Payout Milestone: ₦{payoutMilestone.toLocaleString()}</span>
+                            <span className={styles.statLabel}>{Math.round(progressPercent)}%</span>
                         </div>
                         <div className={styles.progressBar}>
                             <div
                                 className={styles.progressFill}
-                                style={{ width: `${Math.min((partnerData.stats.accruedRevenue / 5000) * 100, 100)}%` }}
+                                style={{ width: `${progressPercent}%` }}
                             ></div>
                         </div>
-                        <div className={styles.progressTarget}>Earn ₦{Math.max(5000 - partnerData.stats.accruedRevenue, 0).toLocaleString()} more to reach your next payout!</div>
+                        <div className={styles.progressTarget}>Earn ₦{Math.max(payoutMilestone - partnerData.stats.accruedRevenue, 0).toLocaleString()} more to reach your next payout!</div>
                     </div>
+
                 </div>
 
                 {/* Payout Settings */}
@@ -339,9 +344,10 @@ export default function PartnerDashboard() {
                         </div>
                         <h2>Milestone Reached! 🎉</h2>
                         <p>
-                            Congratulations! You've just earned enough points for a ₦5,000 payout.
+                            Congratulations! You've just earned enough points for a ₦{(Math.floor(partnerData.stats.pointsEarned / 50) * 5000).toLocaleString()} payout.
                             Your hard work is paying off!
                         </p>
+
                         <button className={styles.viewRevenueBtn} onClick={scrollToRevenue}>
                             View My Revenue
                         </button>

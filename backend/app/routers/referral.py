@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from typing import Optional
 from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead
 from ..sheets import sheets_client
 from ..auth import current_active_user, current_active_superuser, UserRead
@@ -431,16 +432,35 @@ async def mark_as_paid(request: MarkAsPaidRequest, user: UserRead = Depends(curr
         # 6. Update Payout Status in ActivityLog for all PENDING entries for this refCode
         # This is optional but keeps logs consistent
         print(f"DEBUG: Updating pending statuses in ActivityLog for {request.refCode}")
-        activity_records = sheets_client.get_all_records("ActivityLog")
+        activity_ws = sheets_client.get_worksheet("ActivityLog")
+        all_activities = activity_ws.get_all_values()
+        
         updated_count = 0
-        for i, log in enumerate(activity_records):
-            if str(log.get("ReferralCode", "")).strip().lower() == request.refCode.strip().lower() and \
-               str(log.get("PayoutStatus", "PENDING")).upper() == "PENDING":
+        if all_activities and len(all_activities) > 1:
+            act_headers = [h.strip().upper() for h in all_activities[0]]
+            def find_idx(targets):
+                for i, h in enumerate(act_headers):
+                    if h in [t.upper() for t in targets]: return i
+                return -1
+            
+            ref_idx = find_idx(["ReferralCode"])
+            stat_idx = find_idx(["PayoutStatus", "Payout status"])
+            
+            for i, row in enumerate(all_activities[1:]):
                 row_idx = i + 2
-                print(f"DEBUG: Updating ActivityLog G{row_idx} to COMPLETED")
-                sheets_client.update_cell("ActivityLog", row_idx, 7, "COMPLETED")
-                updated_count += 1
+                current_ref = row[ref_idx] if ref_idx != -1 and len(row) > ref_idx else ""
+                current_stat = row[stat_idx] if stat_idx != -1 and len(row) > stat_idx else "PENDING"
+                
+                if str(current_ref).strip().lower() == request.refCode.strip().lower() and \
+                   str(current_stat).upper() == "PENDING":
+                    print(f"DEBUG: Updating ActivityLog row {row_idx} to COMPLETED")
+                    # Column I (Payout status) is index 7 in [Timestamp, RefCode, Type, Pts, URL, ReportedStatus, Status]
+                    # Let's find index dynamically or use the fixed 7 since we know it
+                    target_col = stat_idx + 1 if stat_idx != -1 else 7
+                    sheets_client.update_cell("ActivityLog", row_idx, target_col, "COMPLETED")
+                    updated_count += 1
         print(f"DEBUG: Updated {updated_count} rows in ActivityLog")
+
 
         return {"success": True, "new_lifetime": new_lifetime}
         
@@ -451,21 +471,46 @@ async def mark_as_paid(request: MarkAsPaidRequest, user: UserRead = Depends(curr
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/report/monthly/csv")
-async def generate_monthly_csv(user: UserRead = Depends(current_active_user)):
-    """Generates a downloadable CSV report for the current month's performance."""
+async def generate_monthly_csv(
+    month: Optional[int] = None,
+    year: Optional[int] = None,
+    user: UserRead = Depends(current_active_user)
+):
+    """Generates a downloadable CSV report for a given month/year's performance (defaults to current)."""
     if not user.is_superuser:
         raise HTTPException(status_code=403, detail="Admin access required")
         
     try:
         # 1. Setup temporal filters
         now = datetime.now()
-        month_name = now.strftime("%B")
-        year = now.year
+        target_month = month if month is not None else now.month
+        target_year = year if year is not None else now.year
         
-        # 2. Fetch data
-        activity_records = sheets_client.get_all_records("ActivityLog")
+        # Display name for the file
+        month_name = datetime(target_year, target_month, 1).strftime("%B")
+        
+        # 2. Fetch data (Gspread robust way)
+        activity_ws = sheets_client.get_worksheet("ActivityLog")
+        all_activities = activity_ws.get_all_values()
         partner_records = sheets_client.get_all_records("Partners")
         
+        if not all_activities or len(all_activities) < 2:
+            print("DEBUG: ActivityLog is empty or only contains headers")
+            return Response(content="Date,Event Type,Partner Name,Points Awarded,Revenue Equivalent (Naira NGN)\n", media_type="text/csv")
+
+        # Map headers manually for robustness
+        act_headers = [h.strip().upper() for h in all_activities[0]]
+        
+        def find_act_idx(targets: list):
+            for i, h in enumerate(act_headers):
+                if h in [t.upper() for t in targets]: return i
+            return -1
+
+        ts_idx = find_act_idx(["Timestamp"])
+        ref_idx = find_act_idx(["ReferralCode", "RefCode"])
+        type_idx = find_act_idx(["ActivityType", "Type"])
+        pts_idx = find_act_idx(["Points", "Pts"])
+
         # 3. Build Partner Name Map (RefCode -> Name)
         name_map = {}
         for p in partner_records:
@@ -475,27 +520,30 @@ async def generate_monthly_csv(user: UserRead = Depends(current_active_user)):
             
         # 4. Filter and process logs
         report_rows = []
-        for log in activity_records:
-            ts_str = log.get("Timestamp", "")
-            if not ts_str:
-                continue
-                
-            try:
-                # Use date_parser for flexibility (Sheet uses M/D/YYYY H:M:S)
+        for row in all_activities[1:]: # Skip header
+             if ts_idx == -1 or len(row) <= ts_idx: continue
+             
+             ts_str = row[ts_idx]
+             if not ts_str: continue
+             
+             try:
+                # Use date_parser for flexibility
                 ts = date_parser.parse(ts_str)
-                if ts.month == now.month and ts.year == now.year:
-                    ref_code = str(log.get("ReferralCode", "")).strip().lower()
-                    points = float(log.get("Points", 0.0))
+                if ts.month == target_month and ts.year == target_year:
+                    ref_code = str(row[ref_idx]).strip().lower() if ref_idx != -1 and len(row) > ref_idx else ""
+                    type_str = row[type_idx] if type_idx != -1 and len(row) > type_idx else "Unknown"
+                    points_str = row[pts_idx] if pts_idx != -1 and len(row) > pts_idx else "0"
+                    points = float(str(points_str).replace(",", "").strip() or 0)
                     
                     report_rows.append({
                         "Date": ts.strftime("%Y-%m-%d"),
-                        "Event Type": log.get("ActivityType", "Unknown"),
+                        "Event Type": type_str,
                         "Partner Name": name_map.get(ref_code, f"Code: {ref_code}"),
                         "Points Awarded": points,
                         "Revenue Equivalent (Naira NGN)": points * 100
                     })
-            except Exception:
-                # Silent skip for malformed rows
+             except Exception as e:
+                print(f"DEBUG: Skipping row due to parse error: {e}")
                 continue
                 
         # 5. Generate CSV
@@ -504,9 +552,10 @@ async def generate_monthly_csv(user: UserRead = Depends(current_active_user)):
         writer = csv.DictWriter(output, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(report_rows)
+
         
         csv_content = output.getvalue()
-        filename = f"Enchiridion_Report_{month_name}_{year}.csv"
+        filename = f"Enchiridion_Report_{month_name}_{target_year}.csv"
         
         return Response(
             content=csv_content.encode("utf-8"),

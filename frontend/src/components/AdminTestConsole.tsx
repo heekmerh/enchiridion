@@ -269,7 +269,11 @@ export default function AdminTestConsole() {
                                 addLog("Generating CSV report...");
                                 const token = localStorage.getItem("enchiridion_token");
                                 try {
-                                    const res = await fetch("/api/referral/report", {
+                                    const date = new Date();
+                                    const currentMonth = date.getMonth() + 1; // 1-indexed
+                                    const currentYear = date.getFullYear();
+
+                                    const res = await fetch(`/api/referral/report?month=${currentMonth}&year=${currentYear}`, {
                                         headers: { "Authorization": `Bearer ${token}` }
                                     });
                                     if (res.ok) {
@@ -277,9 +281,8 @@ export default function AdminTestConsole() {
                                         const url = window.URL.createObjectURL(blob);
                                         const a = document.createElement('a');
                                         a.href = url;
-                                        const date = new Date();
-                                        const month = date.toLocaleString('default', { month: 'long' });
-                                        a.download = `Enchiridion_Report_${month}_${date.getFullYear()}.csv`;
+                                        const monthName = date.toLocaleString('default', { month: 'long' });
+                                        a.download = `Enchiridion_Report_${monthName}_${currentYear}.csv`;
                                         document.body.appendChild(a);
                                         a.click();
                                         a.remove();

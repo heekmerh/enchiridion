@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8002";
     const authHeader = request.headers.get("Authorization");
 
     try {
