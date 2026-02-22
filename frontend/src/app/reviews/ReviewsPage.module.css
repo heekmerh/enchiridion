@@ -1,0 +1,124 @@
+.main {
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.hero {
+    background: radial-gradient(ellipse at 50% 50%, #1e1b4b 0%, #0d0b2b 100%);
+    padding: 120px 20px 80px;
+    text-align: center;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 24px;
+    font-family: var(--font-serif), serif;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.formSection {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.writeBtn {
+    background: #111827;
+    color: #ffffff;
+    padding: 18px 60px;
+    border-radius: 0;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.writeBtn:hover {
+    background: #4169E1;
+}
+
+.formDropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    margin-top: 0;
+}
+
+.formOpen {
+    max-height: 2000px;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    margin-top: 40px;
+}
+
+.formWrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #f9fafb;
+    border: 3px solid #111827;
+    /* Strict validation border */
+}
+
+.feedSection {
+    padding: 100px 20px;
+    background-color: #f9fafb;
+    border-top: 2px solid #111827;
+}
+
+.sectionTitle {
+    text-align: left;
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 60px;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-left: 8px solid #4169E1;
+    padding-left: 24px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .writeBtn {
+        width: 100%;
+        padding: 15px 30px;
+    }
+
+    .sectionTitle {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .formWrapper {
+        padding: 20px;
+    }
+}

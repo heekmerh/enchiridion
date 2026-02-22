@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './ReviewForm.module.css';
+import { manageReviews } from '@/lib/reviews';
 
 interface ReviewFormProps {
     onReviewSubmitted: () => void;
@@ -44,19 +45,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
         }
 
         try {
-            const response = await fetch('/api/reviews', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || 'Failed to submit review');
-            }
-
+            await manageReviews('SUBMIT', formData);
             setStatus('success');
             // Reset form after a brief delay
             setTimeout(() => {

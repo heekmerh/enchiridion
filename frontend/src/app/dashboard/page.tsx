@@ -13,6 +13,7 @@ export default function PartnerDashboard() {
             pointsEarned: 0,
             accruedRevenue: 0,
             lifetimeEarnings: 0,
+            totalReferrals: 0,
         },
         payout: {
             accountName: "",
@@ -21,6 +22,8 @@ export default function PartnerDashboard() {
             isSaved: false,
         },
     });
+
+    const [milestoneFulfilled, setMilestoneFulfilled] = useState<{ [tier: number]: boolean }>({ 50: false, 100: false });
 
     useEffect(() => {
         // Load name from localStorage
@@ -49,7 +52,8 @@ export default function PartnerDashboard() {
                             ...prev.stats,
                             pointsEarned: stats.points,
                             accruedRevenue: stats.revenue,
-                            lifetimeEarnings: stats.lifetimeEarnings || 0
+                            lifetimeEarnings: stats.lifetimeEarnings || 0,
+                            totalReferrals: stats.totalReferrals || 0,
                         },
                         payout: {
                             accountName: stats.accountName || "",
@@ -76,6 +80,41 @@ export default function PartnerDashboard() {
         fetchStats();
     }, []);
 
+    const applyMilestone = async (tier: number) => {
+        const token = localStorage.getItem("enchiridion_token");
+        if (!token || milestoneFulfilled[tier]) return;
+
+        try {
+            const response = await fetch("/api/referral/apply-milestone", {
+                method: "POST",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    refCode: partnerData.refCode,
+                    tier: tier
+                })
+            });
+            if (response.ok) {
+                setMilestoneFulfilled(prev => ({ ...prev, [tier]: true }));
+                // Update stats locally
+                const result = await response.json();
+                if (result.bonus) {
+                    setPartnerData(prev => ({
+                        ...prev,
+                        stats: {
+                            ...prev.stats,
+                            accruedRevenue: result.new_total
+                        }
+                    }));
+                }
+            }
+        } catch (err) {
+            console.error(`Failed to apply milestone ${tier}:`, err);
+        }
+    };
+
     const [payoutForm, setPayoutForm] = useState({
         accountName: "",
         accountNumber: "",
@@ -83,8 +122,10 @@ export default function PartnerDashboard() {
     });
 
     const [showCelebration, setShowCelebration] = useState(false);
-    const prevPointsRef = useRef(partnerData.stats.pointsEarned);
+    const [celebrationTier, setCelebrationTier] = useState<number | null>(null);
+    const prevReferralsRef = useRef(0);
     const revenueCardRef = useRef<HTMLDivElement>(null);
+    const lifetimeCardRef = useRef<HTMLDivElement>(null);
 
     const referralLink = `https://enchiridion.ng/?ref=${partnerData.refCode}`;
     const whatsappMessage = `Hello! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Users, referral partners and distributors are eligible for incredible rewards and discounts! You can browse the collection or download the app here: ${referralLink}`;
@@ -149,20 +190,24 @@ export default function PartnerDashboard() {
     };
 
     useEffect(() => {
-        const currentPoints = partnerData.stats.pointsEarned;
-        const prevPoints = prevPointsRef.current;
+        const currentRefs = partnerData.stats.totalReferrals;
+        const prevRefs = prevReferralsRef.current;
 
-        // Milestone logic: trigger if we cross a multiple of 50
-        const currentMilestone = Math.floor(currentPoints / 50);
-        const prevMilestone = Math.floor(prevPoints / 50);
-
-        if (currentMilestone > prevMilestone && currentMilestone > 0) {
+        // Multi-tier Milestone logic
+        if (currentRefs >= 100 && prevRefs < 100) {
+            setCelebrationTier(100);
             setShowCelebration(true);
+            applyMilestone(100);
+            setTimeout(() => setShowCelebration(false), 8000);
+        } else if (currentRefs >= 50 && prevRefs < 50) {
+            setCelebrationTier(50);
+            setShowCelebration(true);
+            applyMilestone(50);
             setTimeout(() => setShowCelebration(false), 5000);
         }
 
-        prevPointsRef.current = currentPoints;
-    }, [partnerData.stats.pointsEarned]);
+        prevReferralsRef.current = currentRefs;
+    }, [partnerData.stats.totalReferrals]);
 
     const scrollToRevenue = () => {
         setShowCelebration(false);
@@ -170,9 +215,9 @@ export default function PartnerDashboard() {
     };
 
     // Helper to generate confetti particles
-    const renderConfetti = () => {
-        const colors = ["#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
-        return Array.from({ length: 50 }).map((_, i) => (
+    const renderConfetti = (count = 50) => {
+        const colors = ["#ff0000", "#00ff00", "#0000ff", "#fbbf24", "#4169E1", "#00ffff"];
+        return Array.from({ length: count }).map((_, i) => (
             <div
                 key={i}
                 className={styles.confetti}
@@ -186,9 +231,16 @@ export default function PartnerDashboard() {
         ));
     };
 
-    // Calculate current payout milestone dynamically
-    const payoutMilestone = partnerData.stats.accruedRevenue >= 5000 ? 10000 : 5000;
-    const progressPercent = Math.min((partnerData.stats.accruedRevenue / payoutMilestone) * 100, 100);
+    // Calculate milestone progress
+    const totalRefs = partnerData.stats.totalReferrals;
+    const progressPercent = Math.min((totalRefs / 100) * 100, 100);
+
+    let milestoneStatus = "Next Goal: Power Partner (50)";
+    if (totalRefs >= 100) {
+        milestoneStatus = "Elite Ambassador Status Unlocked! 🏆";
+    } else if (totalRefs >= 50) {
+        milestoneStatus = "Power Partner Achieved! Next Goal: Elite Ambassador (100)";
+    }
 
     return (
         <div className={styles.dashboard}>
@@ -202,10 +254,10 @@ export default function PartnerDashboard() {
                 <div className={styles.statsGrid}>
                     <div className={`${styles.statCard} ${styles.glassCard}`}>
                         <div className={styles.statIcon}><i className="fas fa-users"></i></div>
-                        <div className={styles.statValue}>{partnerData.stats.friendsReferred}</div>
-                        <div className={styles.statLabel}>Friends Referred</div>
-                        {partnerData.stats.friendsReferred === 0 && (
-                            <p className={styles.emptyStateHint}>Start sharing your link to earn your first ₦500!</p>
+                        <div className={styles.statValue}>{partnerData.stats.totalReferrals}</div>
+                        <div className={styles.statLabel}>Total Referrals</div>
+                        {partnerData.stats.totalReferrals === 0 && (
+                            <p className={styles.emptyStateHint}>Start sharing your link to earn your first bonus!</p>
                         )}
                     </div>
                     <div className={`${styles.statCard} ${styles.glassCard}`}>
@@ -218,7 +270,10 @@ export default function PartnerDashboard() {
                         <div className={styles.statValue}>₦{partnerData.stats.accruedRevenue.toLocaleString()}</div>
                         <div className={styles.statLabel}>Accrued Balance</div>
                     </div>
-                    <div className={`${styles.statCard} ${styles.glassCard}`}>
+                    <div
+                        className={`${styles.statCard} ${styles.glassCard} ${totalRefs >= 100 ? styles.elitePulse : ''}`}
+                        ref={lifetimeCardRef}
+                    >
                         <div className={styles.statIcon}><i className="fas fa-history"></i></div>
                         <div className={styles.statValue}>₦{(partnerData.stats.lifetimeEarnings || 0).toLocaleString()}</div>
                         <div className={styles.statLabel}>Lifetime Earnings</div>
@@ -254,17 +309,19 @@ export default function PartnerDashboard() {
                     </div>
 
                     <div className={styles.milestones}>
-                        <div className={styles.progressHeader}>
-                            <span className={styles.statLabel}>Next Payout Milestone: ₦{payoutMilestone.toLocaleString()}</span>
-                            <span className={styles.statLabel}>{Math.round(progressPercent)}%</span>
+                        <div className={styles.milestoneTiers}>
+                            <p className={styles.milestoneStatusLabel}>{milestoneStatus}</p>
+                            <div className={styles.milestoneBarContainer}>
+                                <div className={styles.milestoneProgress} style={{ width: `${progressPercent}%` }}></div>
+                                <div className={`${styles.milestoneMarker} ${totalRefs >= 50 ? styles.reached : ''}`} style={{ left: '50%' }}>
+                                    <div className={styles.markerLabel}>50: ₦2,000</div>
+                                </div>
+                                <div className={`${styles.milestoneMarker} ${totalRefs >= 100 ? styles.reached : ''}`} style={{ left: '100%' }}>
+                                    <div className={styles.markerLabel}>100: ₦5,000</div>
+                                </div>
+                            </div>
+                            <p className={styles.progressDetail}>Road to Power Partner: {totalRefs}/100 Referrals</p>
                         </div>
-                        <div className={styles.progressBar}>
-                            <div
-                                className={styles.progressFill}
-                                style={{ width: `${progressPercent}%` }}
-                            ></div>
-                        </div>
-                        <div className={styles.progressTarget}>Earn ₦{Math.max(payoutMilestone - partnerData.stats.accruedRevenue, 0).toLocaleString()} more to reach your next payout!</div>
                     </div>
 
                 </div>
@@ -336,20 +393,22 @@ export default function PartnerDashboard() {
 
             {/* Celebration Popup */}
             {showCelebration && (
-                <div className={styles.celebrationOverlay}>
-                    {renderConfetti()}
-                    <div className={styles.celebrationCard}>
+                <div className={`${styles.celebrationOverlay} ${celebrationTier === 100 ? styles.eliteOverlay : ''}`}>
+                    {renderConfetti(celebrationTier === 100 ? 150 : 50)}
+                    <div className={`${styles.celebrationCard} ${celebrationTier === 100 ? styles.eliteCard : ''}`}>
                         <div className={styles.trophyIcon}>
-                            <i className="fas fa-trophy"></i>
+                            <i className={`fas ${celebrationTier === 100 ? 'fa-crown' : 'fa-trophy'}`}></i>
                         </div>
-                        <h2>Milestone Reached! 🎉</h2>
+                        <h2>{celebrationTier === 100 ? 'Elite Ambassador Status! 👑' : 'Power Partner Reached! 🎉'}</h2>
                         <p>
-                            Congratulations! You've just earned enough points for a ₦{(Math.floor(partnerData.stats.pointsEarned / 50) * 5000).toLocaleString()} payout.
-                            Your hard work is paying off!
+                            {celebrationTier === 100
+                                ? "Incredible work! You've reached 100 referrals. A ₦5,000 Elite Bonus has been added to your account."
+                                : "Congratulations! You've reached 50 referrals and unlocked the ₦2,000 Power Partner bonus."
+                            }
                         </p>
 
                         <button className={styles.viewRevenueBtn} onClick={scrollToRevenue}>
-                            View My Revenue
+                            {celebrationTier === 100 ? 'Claim My Elite Status' : 'View My Rewards'}
                         </button>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const menuItems = [
   { label: "Referral Program", href: "/refer" },
   { label: "Rewards", href: "/rewards" },
   { label: "Partner Login", href: "#login", modal: true },
-  { label: "Reviews", href: "#user-reviews" },
+  { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
   { label: "Download", href: "/download" },
 ];

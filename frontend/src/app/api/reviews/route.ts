@@ -81,6 +81,7 @@ export async function POST(request: Request) {
 // PUT: moderate a review (Admin only)
 export async function PUT(request: Request) {
     try {
+        const authHeader = request.headers.get('Authorization');
         const body = await request.json();
         const { id, status } = body;
 
@@ -88,13 +89,17 @@ export async function PUT(request: Request) {
             return NextResponse.json({ error: 'Invalid ID or status' }, { status: 400 });
         }
 
+        const headers: Record<string, string> = {
+            'Content-Type': 'application/json',
+        };
+
+        if (authHeader) {
+            headers['Authorization'] = authHeader;
+        }
+
         const response = await fetch(`${BACKEND_URL}/reviews/${id}?status=${status}`, {
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                // Note: In a real app, you'd add the Authorization header here
-                // 'Authorization': `Bearer ${token}`
-            },
+            headers: headers
         });
 
         if (!response.ok) {

@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
-from typing import Optional
+from typing import Optional, List
+from pydantic import BaseModel
 from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead
-from ..sheets import sheets_client
+from ..sheets import sheets_client, safe_float
 from ..auth import current_active_user, current_active_superuser, UserRead
 from datetime import datetime, timedelta
 import csv
@@ -182,6 +183,7 @@ async def verify_integrity(user: UserRead = Depends(current_active_user)):
                     "alignment_ok": status_idx != -1 and lifetime_idx != -1,
                     "payout_status": payout_status,
                     "lifetime_earnings": lifetime_earnings,
+                    "milestone_claimed": row[22] if len(row) > 22 else "NOT_CLAIMED", # Column W
                     "last_payout_amount": safe_float(row[last_payout_idx]) if last_payout_idx != -1 and len(row) > last_payout_idx else 0.0
                 })
 
@@ -346,24 +348,6 @@ def get_case_insensitive(record: dict, *keys: str, default=0.0):
             return normalized_record[norm_key]
     return default
 
-def safe_float(v):
-    """Robust conversion of sheet values (strings/None/numbers) to float."""
-    if v is None:
-        return 0.0
-    if isinstance(v, (int, float)):
-        return float(v)
-    
-    # Clean string: remove currency symbols, commas, and whitespace
-    # Replace longer codes first to avoid partial matches (e.g., NGN before N)
-    clean_v = str(v).replace("NGN", "").replace("\u20a6", "").replace(",", "").replace("$", "").replace("N", "").strip()
-
-
-    if not clean_v:
-        return 0.0
-    try:
-        return float(clean_v)
-    except (ValueError, TypeError):
-        return 0.0
 
 @router.post("/mark-as-paid")
 async def mark_as_paid(request: MarkAsPaidRequest, user: UserRead = Depends(current_active_user)):
@@ -609,9 +593,28 @@ async def revert_payout(request: MarkAsPaidRequest, user=Depends(current_active_
              
         # Calculate restoration
         lifetime = safe_float(user_record.get("LIFETIME EARNINGS", 0.0))
-        new_lifetime = max(0.0, lifetime - revert_amount)
-        restored_revenue = revert_amount
-        restored_points = round(revert_amount / 100.0, 2)
+        
+        # Integrity Check: Milestone protection (Floor logic)
+        # Tier 50 (N2,000) in Column V (Index 21)
+        # Tier 100 (N5,000) in Column W (Index 22)
+        total_bonus_protection = 0.0
+        if len(row_values) > 21 and str(row_values[21]).strip().upper() == "CLAIMED":
+            total_bonus_protection += 2000.0
+        if len(row_values) > 22 and str(row_values[22]).strip().upper() == "CLAIMED":
+            total_bonus_protection += 5000.0
+            
+        # The Lifetime Earnings should never drop below the total bonus protection
+        # We calculate the new lifetime first, ensuring it respects the floor
+        new_lifetime = max(total_bonus_protection, lifetime - revert_amount)
+        
+        # The amount we actually revert back to the partner's balance is the difference
+        actual_revert_amount = lifetime - new_lifetime
+        
+        if total_bonus_protection > 0:
+            print(f"DEBUG: Payout revert for {email}. Protection floor: N{total_bonus_protection}. Original revert request: N{revert_amount}. Actual revert: N{actual_revert_amount}.")
+
+        restored_revenue = actual_revert_amount
+        restored_points = round(actual_revert_amount / 100.0, 2)
         
         # Atomic update (E:I): E=Points, F=Revenue, G=Lifetime(new), H=Referrals(keep), I=Status(PENDING)
         sheets_client.update_range("Partners", f"E{row_idx}:I{row_idx}", 
@@ -627,7 +630,7 @@ async def revert_payout(request: MarkAsPaidRequest, user=Depends(current_active_
             request.refCode,
             "Payout Reverted",
             -restored_points, # Indicated as a negative correction for points logic if needed
-            f"Payout reversed for {email}. Restored \u20a6{lifetime}",
+            f"Payout reversed for {email}. Restored N{lifetime}",
             "", # F: Reported status
             "PENDING" # G: New status
         ]
@@ -655,8 +658,8 @@ async def get_stats(user: UserRead = Depends(current_active_user)):
             # Extract stats using robust safe_float
             points = safe_float(record.get("POINTS", 0.0))
             revenue = safe_float(record.get("REVENUE (\u20a6)", record.get("Revenue", 0.0)))
+            total_referrals = int(safe_float(record.get("TOTAL REFERRALS", 0.0)))
 
-            
             # Ensure they tally based on 1 pt = 100 naira conversion if one is zero
             if points > 0 and revenue == 0:
                 revenue = points * 100
@@ -670,6 +673,7 @@ async def get_stats(user: UserRead = Depends(current_active_user)):
                 "points": points,
                 "revenue": revenue,
                 "lifetimeEarnings": lifetime_earnings,
+                "totalReferrals": total_referrals,
                 "referralCode": record.get("REFERRAL CODE", record.get("ReferralCode", "")),
                 "bankName": record.get("BANK NAME", ""),
                 "accountName": record.get("ACCOUNT NAME", ""),
@@ -801,3 +805,110 @@ async def get_leaderboard():
         })
 
     return final_leaderboard[:50] # Return top 50
+
+class MilestoneRequest(BaseModel):
+    refCode: str
+    tier: int # 50 or 100
+
+@router.post("/apply-milestone")
+async def apply_milestone(request: MilestoneRequest, user: UserRead = Depends(current_active_user)):
+    """Applies high-value tier bonuses (₦2,000 for 50, ₦5,000 for 100)."""
+    try:
+        tier = request.tier
+        if tier not in [50, 100]:
+            raise HTTPException(status_code=400, detail="Invalid milestone tier. Must be 50 or 100.")
+
+        bonus_amount = 2000.0 if tier == 50 else 5000.0
+        bonus_type = "Power Partner Achievement" if tier == 50 else "Elite Ambassador Achievement"
+        
+        # 1. Find user in Partners sheet
+        records = sheets_client.get_all_records("Partners")
+        partner_row_idx = None
+        partner_record = None
+        for i, record in enumerate(records):
+            # Match using case-insensitive email/username
+            record_email = str(record.get("USERNAME", record.get("Email Address", ""))).lower().strip()
+            if record_email == user.email.lower().strip():
+                partner_record = record
+                partner_row_idx = i + 2
+                break
+        
+        if not partner_record:
+            raise HTTPException(status_code=404, detail="Partner not found in records")
+
+        # 2. Check current referrals to verify eligibility
+        # Helper to get case-insensitive total referrals
+        def get_case_insensitive_val(rec, *keys, default=0):
+            for k in keys:
+                if k in rec: return rec[k]
+            return default
+
+        total_refs_val = get_case_insensitive_val(partner_record, "TOTAL REFERRALS", "Total Referrals", "TOTAL_REFERRALS")
+        actual_referrals = int(float(str(total_refs_val or 0)))
+        
+        if actual_referrals < tier:
+            raise HTTPException(status_code=400, detail=f"Ineligible for tier {tier}. Current referrals: {actual_referrals}")
+
+        # 3. Check Audit Logs for Idempotency (Prevent double-crediting)
+        activity_type = "ELITE STATUS UNLOCKED" if tier == 100 else bonus_type
+        try:
+            audit_ws = sheets_client.sheet.worksheet("Admin Audit")
+            # Use get_all_records which handles headers/formatting
+            audit_records = sheets_client.get_all_records("Admin Audit")
+            duplicate = False
+            for audit in audit_records:
+                if str(audit.get("Details", "")).find(f"{user.email}") != -1 and \
+                   (str(audit.get("Activity", "")).find(activity_type) != -1 or 
+                    str(audit.get("Activity", "")).find(bonus_type) != -1):
+                    duplicate = True
+                    break
+            
+            if duplicate:
+                return {"success": True, "message": "Bonus already applied.", "already_applied": True}
+        except Exception as e:
+            print(f"DEBUG: Idempotency check error: {e}")
+            pass
+
+        # 4. Update Balance
+        current_points = safe_float(partner_record.get("POINTS", 0.0))
+        current_revenue = safe_float(get_case_insensitive(partner_record, "REVENUE (₦)", "Revenue", default=0.0))
+        
+        new_points = round(current_points + (bonus_amount / 100.0), 2)
+        new_revenue = round(current_revenue + bonus_amount, 2)
+        
+        # Update sheet (Col E, F) and Status (Col I)
+        sheets_client.update_range("Partners", f"E{partner_row_idx}:F{partner_row_idx}", [[new_points, new_revenue]])
+        
+        # Try to find 'Payout Status' column
+        sheets_client.update_cell("Partners", partner_row_idx, 9, "PENDING") # Column I is usually Status
+
+        if tier == 50:
+            # Update Milestone 1 status logic (Column V / Index 22)
+            sheets_client.update_cell("Partners", partner_row_idx, 22, "CLAIMED")
+        elif tier == 100:
+            # Update Milestone 2 status logic (Column W / Index 23)
+            sheets_client.update_cell("Partners", partner_row_idx, 23, "CLAIMED")
+
+        # 5. Log in Admin Audit
+        from datetime import datetime
+        activity_type = f"ELITE STATUS UNLOCKED" if tier == 100 else bonus_type
+        details = f"User: {user.email}. Bonus: {bonus_amount}"
+        if tier == 100:
+             # Standardized elite log format
+             details = f"ELITE STATUS UNLOCKED: {user.email} reached 100 referrals"
+             
+        log_row = [
+            datetime.now().isoformat(),
+            activity_type,
+            details,
+            "SUCCESS",
+            f"Tier {tier} Milestone fulfilled."
+        ]
+        sheets_client.append_row("Admin Audit", log_row)
+
+        return {"success": True, "bonus": bonus_amount, "new_total": new_revenue}
+
+    except Exception as e:
+        safe_err = str(e).encode('ascii', 'ignore').decode('ascii')
+        print(f"ERROR applying milestone: {safe_err}")
+        raise HTTPException(status_code=500, detail=str(e))

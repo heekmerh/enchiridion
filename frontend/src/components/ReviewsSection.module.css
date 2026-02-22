@@ -1,35 +1,69 @@
 .section {
-    padding: 100px 20px;
-    background-color: #f9fafb;
+    padding: 120px 20px;
+    background-color: #ffffff;
+    border-top: 4px solid #111827;
+    /* Strict validation boundary */
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 60px;
+    text-align: left;
+    margin-bottom: 80px;
+    border-left: 8px solid #4169E1;
+    padding-left: 32px;
 }
 
 .header h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #111827;
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
 .header p {
-    font-size: 1.25rem;
-    color: #6b7280;
+    font-size: 1.4rem;
+    color: #4b5563;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
+.formContainer {
+    background: #f9fafb;
+    padding: 40px;
+    border: 2px solid #111827;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
     gap: 32px;
-    margin-bottom: 60px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0 40px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.cardWrapper {
+    flex: 0 0 calc(33.333% - 22px);
+    scroll-snap-align: center;
+    min-width: 380px;
+    transition: transform 0.3s ease;
 }
 
 .loading,
@@ -64,46 +98,49 @@
 }
 
 .writeReviewBtn {
-    background: #ffffff;
-    color: #4169E1;
-    padding: 14px 40px;
-    border-radius: 50px;
-    font-weight: 700;
+    background: #111827;
+    color: #ffffff;
+    padding: 16px 48px;
+    border: none;
+    font-weight: 800;
     font-size: 1.1rem;
-    border: 2px solid #4169E1;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(65, 105, 225, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: all 0.2s;
 }
 
 .writeReviewBtn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(65, 105, 225, 0.3);
     background: #4169E1;
-    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .cardWrapper {
+        flex: 0 0 calc(50% - 16px);
+        min-width: 340px;
+    }
 }
 
 @media (max-width: 768px) {
     .section {
-        padding: 60px 20px;
+        padding: 80px 20px;
+    }
+
+    .header {
+        padding-left: 20px;
+        margin-bottom: 60px;
     }
 
     .header h2 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
-    .header p {
-        font-size: 1.1rem;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .cardWrapper {
+        flex: 0 0 100%;
+        min-width: unset;
     }
 
     .writeReviewBtn {
         width: 100%;
-        padding: 12px 20px;
-        font-size: 1rem;
     }
 }

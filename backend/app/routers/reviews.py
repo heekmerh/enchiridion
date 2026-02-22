@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from ..models import Review, ReviewCreate
 from ..sheets import sheets_client
-from ..auth import current_active_user, UserRead
+from ..auth import current_active_user, current_active_superuser, UserRead
 from datetime import datetime
 import uuid
 from typing import List
@@ -51,10 +51,11 @@ async def submit_review(review: ReviewCreate):
     return {"message": "Review submitted successfully and is pending approval.", "id": new_id}
 
 @router.put("/{review_id}")
-async def moderate_review(review_id: str, status: str, user: UserRead = Depends(current_active_user)):
-    # In a real app, check if user is admin
-    if status not in ["approved", "rejected"]:
-        raise HTTPException(status_code=400, detail="Invalid status")
+async def moderate_review(
+    review_id: str, 
+    status: str = Query(..., enum=["approved", "rejected"]), 
+    user: UserRead = Depends(current_active_superuser)
+):
     
     # Find review by ID and update status
     # This is a bit complex with gspread without direct row lookup by ID

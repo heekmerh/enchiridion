@@ -53,8 +53,9 @@ class GoogleSheetsClient:
         ws = self.get_worksheet(worksheet_name)
         if ws:
             try:
-                ws.append_row(row)
-                print(f"Successfully appended row to {worksheet_name}")
+                # Force appending starting from column A to prevent accidental shifts
+                ws.append_row(row, table_range="A1")
+                print(f"Successfully appended row to {worksheet_name} starting at Col A")
             except Exception as e:
                 print(f"ERROR: Failed to append row to {worksheet_name}: {e}")
                 raise e # Re-raise to let the caller know it failed
@@ -64,8 +65,35 @@ class GoogleSheetsClient:
         ws = self.get_worksheet(worksheet_name)
         if ws:
             try:
-                records = ws.get_all_records()
-                # print(f"DEBUG: Successfully fetched {len(records)} records from {worksheet_name}")
+                # Use get_all_values and filter headers manually to avoid gspread error with duplicate/empty headers
+                all_values = ws.get_all_values()
+                if not all_values:
+                    return []
+                
+                headers = all_values[0]
+                # Clean headers: handle duplicates and empty strings
+                cleaned_headers = []
+                seen = {}
+                for i, h in enumerate(headers):
+                    h = h.strip()
+                    if not h:
+                        h = f"EMPTY_{i}"
+                    if h in seen:
+                        seen[h] += 1
+                        h = f"{h}_{seen[h]}"
+                    else:
+                        seen[h] = 0
+                    cleaned_headers.append(h)
+                
+                records = []
+                for row in all_values[1:]:
+                    record = {}
+                    for i, header in enumerate(cleaned_headers):
+                        if i < len(row):
+                            record[header] = row[i]
+                        else:
+                            record[header] = ""
+                    records.append(record)
                 return records
             except Exception as e:
                 print(f"ERROR: Failed to get records from {worksheet_name}: {e}")
@@ -104,5 +132,22 @@ class GoogleSheetsClient:
             except Exception as e:
                 print(f"ERROR: Failed to update range {range_name} in {worksheet_name}: {e}")
                 raise e
+
+def safe_float(v):
+    """Robust conversion of sheet values (strings/None/numbers) to float."""
+    if v is None:
+        return 0.0
+    if isinstance(v, (int, float)):
+        return float(v)
+    
+    # Clean string: remove currency symbols, commas, and whitespace
+    clean_v = str(v).replace("NGN", "").replace("\u20a6", "").replace(",", "").replace("$", "").replace("N", "").strip()
+
+    if not clean_v:
+        return 0.0
+    try:
+        return float(clean_v)
+    except (ValueError, TypeError):
+        return 0.0
 
 sheets_client = GoogleSheetsClient()

@@ -33,6 +33,36 @@
     border: 1px solid #bbf7d0;
 }
 
+.adminNav {
+    padding: 24px 60px;
+    background: #ffffff;
+    display: flex;
+    gap: 32px;
+    border-bottom: 4px solid #000000;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s;
+}
+
+.navLink:hover {
+    transform: translateY(-2px);
+    color: #4169E1;
+}
+
+.navIcon {
+    font-size: 1.25rem;
+}
+
 .footer {
     padding: 40px 60px;
     text-align: center;

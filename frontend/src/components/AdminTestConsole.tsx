@@ -263,6 +263,9 @@ export default function AdminTestConsole() {
                     <button onClick={forceSyncAll} className={styles.syncBtn}>
                         Force Sync All Revenue
                     </button>
+                    <a href="/admin/reviews" className={styles.syncBtn} style={{ textDecoration: 'none', background: '#000', color: '#fff' }}>
+                        Moderate Reviews 💬
+                    </a>
                     {isAdmin && (
                         <button
                             onClick={async () => {
@@ -319,7 +322,14 @@ export default function AdminTestConsole() {
                     <div className={styles.log}>
                         <h3 className={styles.logTitle}>Execution Log</h3>
                         <div className={styles.logContent}>
-                            {testLog.map((log, i) => <div key={i} className={styles.logEntry}>{log}</div>)}
+                            {testLog.map((log, i) => {
+                                const isElite = log.includes("ELITE STATUS UNLOCKED");
+                                return (
+                                    <div key={i} className={`${styles.logEntry} ${isElite ? styles.logElite : ""}`}>
+                                        {log}
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </section>
@@ -384,7 +394,12 @@ export default function AdminTestConsole() {
                                         return (
                                             <tr key={i} className={row.math_ok ? styles.rowOk : styles.rowError}>
                                                 <td style={{ color: '#000', fontWeight: 700 }}>{row.row}</td>
-                                                <td style={{ color: '#000', fontWeight: 600 }}>{row.username}</td>
+                                                <td style={{ color: '#000', fontWeight: 600 }}>
+                                                    {row.username}
+                                                    {row.milestone_claimed === 'CLAIMED' && (
+                                                        <span className={styles.trophy} title="Elite Ambassador Achievement Unlocked">🏆</span>
+                                                    )}
+                                                </td>
                                                 <td style={{ color: '#000', fontWeight: 800 }}>{row.points}</td>
                                                 <td style={{ color: '#000', fontWeight: 800 }}>₦{row.revenue?.toLocaleString()}</td>
                                                 <td style={{ color: '#4f46e5', fontWeight: 800 }}>₦{row.lifetime_earnings?.toLocaleString() || 0}</td>

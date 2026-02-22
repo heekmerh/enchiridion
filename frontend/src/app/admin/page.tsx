@@ -12,6 +12,13 @@ export default function AdminPage() {
                 <div className={styles.statusBadge}>System Monitor Active</div>
             </nav>
 
+            <nav className={styles.adminNav}>
+                <Link href="/admin/reviews" className={styles.navLink}>
+                    <span className={styles.navIcon}>💬</span>
+                    Review Moderation
+                </Link>
+            </nav>
+
             <AdminTestConsole />
 
             <footer className={styles.footer}>

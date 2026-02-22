@@ -269,8 +269,89 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
     reset_password_token_secret = SECRET
     verification_token_secret = SECRET
 
+    async def send_partner_welcome_email(self, user: User):
+        """Sends a welcome email to a new partner with their referral link."""
+        referral_link = f"https://enchiridion.ng/?ref={user.referral_code}"
+        
+        html = f"""
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #4169E1; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Enchiridion Partner Network</h1>
+                <p style="color: #64748b; font-size: 14px; margin-top: 5px;">Medical Handbook & Companion</p>
+            </div>
+            
+            <h2 style="color: #0f172a; margin-bottom: 20px;">Welcome, {user.name}!</h2>
+            
+            <p style="color: #334155; line-height: 1.6; font-size: 16px;">
+                We are thrilled to have you join the Enchiridion Partner Network. Your account has been successfully created, and you are now part of an elite community shaping modern medical education.
+            </p>
+            
+            <div style="background-color: #f8fafc; border: 2px solid #111827; padding: 24px; margin: 32px 0; text-align: center;">
+                <p style="color: #64748b; font-size: 14px; text-transform: uppercase; font-weight: 800; margin-bottom: 12px;">Your Unique Referral Link</p>
+                <div style="background: white; border: 1px solid #e2e8f0; padding: 12px; font-family: monospace; font-size: 18px; color: #111827; margin-bottom: 20px;">
+                    {referral_link}
+                </div>
+                <a href="http://localhost:3000/#login" style="background-color: #4169E1; color: white; padding: 14px 28px; border-radius: 0; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #111827;">
+                    Login To Dashboard
+                </a>
+            </div>
+            
+            <p style="color: #334155; line-height: 1.6; font-size: 16px;">
+                Start sharing your link to earn impactful rewards and help medical professionals and students access trusted knowledge.
+            </p>
+            
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;">
+            
+            <div style="text-align: center; color: #94a3b8; font-size: 12px;">
+                <p>© 2026 Enchiridion. All rights reserved.</p>
+                <p>Ensuring medical excellence through tech-forward solutions.</p>
+            </div>
+        </div>
+        """
+
+        message = MessageSchema(
+            subject="Welcome to the Enchiridion Partner Network!",
+            recipients=[user.email],
+            body=html,
+            subtype=MessageType.html
+        )
+
+        fm = FastMail(conf)
+        try:
+            await fm.send_message(message)
+            print(f"DEBUG: Welcome email sent successfully to {user.email}")
+            
+            # Update Admin Audit Execution Log
+            log_row = [
+                datetime.now().isoformat(),
+                "Partner Onboarding",
+                f"New Registration: {user.name} ({user.email})",
+                "SUCCESS",
+                f"Welcome Email sent to {user.email}"
+            ]
+            sheets_client.append_row("Admin Audit", log_row)
+            
+        except Exception as e:
+            print(f"ERROR: Failed to send welcome email or log: {e}")
+            # Try to log failure
+            try:
+                fail_row = [
+                    datetime.now().isoformat(),
+                    "Partner Onboarding",
+                    f"New Registration: {user.name} ({user.email})",
+                    "FAILED",
+                    f"Error: {str(e)}"
+                ]
+                sheets_client.append_row("Admin Audit", fail_row)
+            except:
+                pass
+
     async def on_after_register(self, user: User, request: Optional[Request] = None):
-        print(f"DEBUG: User {user.email} registered. Checking referral...")
+        print(f"DEBUG: User {user.email} registered. Triggering onboarding...")
+        
+        # Trigger Welcome Email and Logging
+        import asyncio
+        asyncio.create_task(self.send_partner_welcome_email(user))
         
         # 1. Check if referred_by exists
         # Note: Depending on how User object is populated, referred_by might be in user_dict

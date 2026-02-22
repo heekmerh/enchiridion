@@ -1,127 +1,140 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from './AdminReviews.module.css';
 import { Review } from '@/app/api/reviews/route';
+import { manageReviews } from '@/lib/reviews';
 
 export default function AdminReviewsPage() {
     const [reviews, setReviews] = useState<Review[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    // Fetch ALL reviews (admin mode)
-    const fetchReviews = async () => {
+    const fetchAllReviewsForAdmin = useCallback(async () => {
+        setIsLoading(true);
         try {
-            const res = await fetch('/api/reviews?admin=true');
-            if (res.ok) {
-                const data = await res.json();
-                setReviews(data);
-            }
+            const data = await manageReviews('FETCH', { admin: true });
+            setReviews(data);
         } catch (error) {
             console.error('Failed to fetch reviews:', error);
         } finally {
             setIsLoading(false);
         }
-    };
-
-    useEffect(() => {
-        fetchReviews();
     }, []);
 
-    const handleModerate = async (id: string, newStatus: 'approved' | 'rejected') => {
+    useEffect(() => {
+        fetchAllReviewsForAdmin();
+    }, [fetchAllReviewsForAdmin]);
+
+    const adminModerateReview = async (id: string, newStatus: 'approved' | 'rejected') => {
+        const token = localStorage.getItem('enchiridion_token');
         try {
             const res = await fetch('/api/reviews', {
                 method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
                 body: JSON.stringify({ id, status: newStatus }),
             });
 
             if (res.ok) {
-                const updatedReview = await res.json();
+                // Update local state for immediate feedback (Live Sync)
                 setReviews((prev) =>
                     prev.map((r) => (r.id === id ? { ...r, status: newStatus } : r))
                 );
             }
         } catch (error) {
-            console.error('Failed to update status:', error);
+            console.error('Failed to moderate review:', error);
         }
     };
 
-    const pendingReviews = reviews.filter((r) => r.status === 'pending');
-    const moderatedReviews = reviews.filter((r) => r.status !== 'pending');
+    const getStatusBadge = (status: string) => {
+        switch (status) {
+            case 'approved': return <span className={styles.badgeApproved}>APPROVED</span>;
+            case 'rejected': return <span className={styles.badgeRejected}>REJECTED</span>;
+            default: return <span className={styles.badgePending}>PENDING</span>;
+        }
+    };
 
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1>Review Moderation Dashboard</h1>
-                <p>Approve or reject user submitted testimonials.</p>
+                <div className={styles.headerTop}>
+                    <h1>Review Moderation Dashboard</h1>
+                    <button onClick={fetchAllReviewsForAdmin} className={styles.refreshBtn} disabled={isLoading}>
+                        {isLoading ? 'Refreshing...' : 'Refresh Reviews'}
+                    </button>
+                </div>
+                <p>Strict Validation Mode: Audit and moderate community testimonials.</p>
             </header>
 
             <section className={styles.section}>
-                <h2>Pending Reviews ({pendingReviews.length})</h2>
-                {isLoading ? (
-                    <p>Loading...</p>
-                ) : pendingReviews.length === 0 ? (
-                    <div className={styles.empty}>No pending reviews. Good job! 🎉</div>
-                ) : (
-                    <div className={styles.list}>
-                        {pendingReviews.map((review) => (
-                            <div key={review.id} className={styles.card}>
-                                <div className={styles.cardHeader}>
-                                    <span className={styles.rating}>★ {review.rating}</span>
-                                    <span className={styles.date}>{new Date(review.createdAt).toLocaleDateString()}</span>
-                                </div>
-                                <div className={styles.author}>
-                                    <strong>{review.name}</strong> • {review.jobTitle}
-                                </div>
-                                <p className={styles.text}>"{review.text}"</p>
-                                <div className={styles.actions}>
-                                    <button onClick={() => handleModerate(review.id, 'rejected')} className={styles.rejectBtn}>
-                                        Reject
-                                    </button>
-                                    <button onClick={() => handleModerate(review.id, 'approved')} className={styles.approveBtn}>
-                                        Approve
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                )}
-            </section>
-
-            <section className={styles.section}>
-                <h2>Moderated History</h2>
                 <div className={styles.tableWrapper}>
                     <table className={styles.table}>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Rating</th>
-                                <th>Status</th>
                                 <th>Date</th>
+                                <th>Reviewer</th>
+                                <th>Rating</th>
+                                <th>Content</th>
+                                <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {moderatedReviews.map((review) => (
-                                <tr key={review.id}>
-                                    <td>{review.name}</td>
-                                    <td>{review.rating} ★</td>
-                                    <td>
-                                        <span className={review.status === 'approved' ? styles.badgeApproved : styles.badgeRejected}>
-                                            {review.status}
-                                        </span>
-                                    </td>
-                                    <td>{new Date(review.createdAt).toLocaleDateString()}</td>
-                                    <td>
-                                        <button
-                                            onClick={() => handleModerate(review.id, review.status === 'approved' ? 'rejected' : 'approved')}
-                                            className={styles.smallBtn}
-                                        >
-                                            {review.status === 'approved' ? 'Reject' : 'Approve'}
-                                        </button>
-                                    </td>
+                            {reviews.length === 0 && !isLoading ? (
+                                <tr>
+                                    <td colSpan={6} className={styles.emptyRow}>No reviews found in the system.</td>
                                 </tr>
-                            ))}
+                            ) : (
+                                reviews.map((review) => (
+                                    <tr key={review.id}>
+                                        <td className={styles.dateCol}>
+                                            {new Date(review.createdAt).toLocaleDateString()}
+                                        </td>
+                                        <td className={styles.authorCol}>
+                                            <strong>{review.name}</strong>
+                                            <div className={styles.jobTitle}>{review.jobTitle}</div>
+                                        </td>
+                                        <td className={styles.ratingCol}>
+                                            {review.rating} ★
+                                        </td>
+                                        <td className={styles.textCol}>
+                                            <div className={styles.reviewSnippet} title={review.text}>
+                                                "{review.text}"
+                                            </div>
+                                        </td>
+                                        <td className={styles.statusCol}>
+                                            {getStatusBadge(review.status)}
+                                        </td>
+                                        <td className={styles.actionsCol}>
+                                            {review.status === 'pending' ? (
+                                                <div className={styles.btnGroup}>
+                                                    <button
+                                                        onClick={() => adminModerateReview(review.id, 'approved')}
+                                                        className={styles.approveBtn}
+                                                    >
+                                                        Approve
+                                                    </button>
+                                                    <button
+                                                        onClick={() => adminModerateReview(review.id, 'rejected')}
+                                                        className={styles.rejectBtn}
+                                                    >
+                                                        Reject
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <button
+                                                    onClick={() => adminModerateReview(review.id, review.status === 'approved' ? 'rejected' : 'approved')}
+                                                    className={styles.undoBtn}
+                                                >
+                                                    {review.status === 'approved' ? 'Reject' : 'Approve'}
+                                                </button>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))
+                            )}
                         </tbody>
                     </table>
                 </div>
