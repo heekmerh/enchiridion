@@ -1,5 +1,6 @@
 import BookCarousel from "@/components/BookCarousel";
 import AppSection from "@/components/AppSection";
+import SampleCTA from "@/components/SampleCTA";
 import ReviewsSection from '@/components/ReviewsSection';
 import Link from "next/link";
 import styles from "./page.module.css";
@@ -102,6 +103,9 @@ export default function Home() {
 
       {/* SECTION 3 — APP SECTION */}
       <AppSection />
+
+      {/* SAMPLE CTA */}
+      <SampleCTA />
 
       {/* SECTION 4 — REVIEWS */}
       <ReviewsSection />

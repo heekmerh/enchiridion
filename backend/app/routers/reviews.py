@@ -10,26 +10,48 @@ router = APIRouter()
 
 @router.get("/", response_model=List[Review])
 async def get_reviews(admin: bool = Query(False)):
-    records = sheets_client.get_all_records("Reviews")
-    reviews = []
-    for record in records:
-        review = Review(
-            id=str(record.get("id", "")),
-            name=record.get("Name", ""),
-            jobTitle=record.get("Job Title", ""),
-            organization=record.get("Organization", ""),
-            rating=int(record.get("Rating", 0)),
-            text=record.get("Text", ""),
-            status=record.get("Status", "pending"),
-            createdAt=record.get("CreatedAt", ""),
-            approvedAt=record.get("ApprovedAt")
-        )
-        if admin or review.status == "approved":
-            reviews.append(review)
-            
-    # Sort by createdAt descending
-    reviews.sort(key=lambda x: x.createdAt, reverse=True)
-    return reviews
+    try:
+        records = sheets_client.get_all_records("Reviews")
+        reviews = []
+        for record in records:
+            try:
+                # Robust Rating conversion
+                raw_rating = record.get("Rating", 0)
+                try:
+                    rating = int(float(raw_rating)) if raw_rating else 0
+                except (ValueError, TypeError):
+                    rating = 0
+
+                review = Review(
+                    id=str(record.get("id", "")),
+                    name=record.get("Name", ""),
+                    jobTitle=record.get("Job Title", ""),
+                    organization=record.get("Organization", ""),
+                    rating=rating,
+                    text=record.get("Text", ""),
+                    status=record.get("Status", "pending"),
+                    createdAt=record.get("CreatedAt", ""),
+                    approvedAt=record.get("ApprovedAt")
+                )
+                if admin or review.status == "approved":
+                    reviews.append(review)
+            except Exception as e:
+                print(f"ERROR: Failed to parse review record: {e}")
+                continue
+                
+        # Sort by createdAt descending, handle potential missing createdAt
+        def get_sort_key(r):
+            if not r.createdAt:
+                return ""
+            return r.createdAt
+
+        reviews.sort(key=get_sort_key, reverse=True)
+        return reviews
+    except Exception as e:
+        print(f"ERROR: Failed to fetch reviews from Sheets: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail="Internal server error while fetching reviews")
 
 @router.post("/", status_code=201)
 async def submit_review(review: ReviewCreate):

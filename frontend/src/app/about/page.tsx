@@ -1,15 +1,26 @@
 "use client";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { books } from "@/lib/data";
 import styles from "./AboutPage.module.css";
+import { logActivity } from "@/lib/tracking";
+import EmailGateModal from "@/components/EmailGateModal";
 
 export default function AboutPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isPreviewLoading, setIsPreviewLoading] = useState(true);
+    const [showGlow, setShowGlow] = useState(false);
+    const [showFloatingButton, setShowFloatingButton] = useState(false);
+    const [showEmailGate, setShowEmailGate] = useState(false);
+    const [isUnlocked, setIsUnlocked] = useState(false);
+    const previewRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        // Initial check for unlock status
+        const unlocked = localStorage.getItem("ench_sample_access_v2") === "true";
+        setIsUnlocked(unlocked);
+
         const interval = setInterval(() => {
             setCurrentImageIndex((prev) => (prev + 1) % books.length);
         }, 4000); // Rotate every 4 seconds
@@ -17,10 +28,70 @@ export default function AboutPage() {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setShowGlow(true);
+                    // Reset glow after animation
+                    setTimeout(() => setShowGlow(false), 2000);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (previewRef.current) {
+            observer.observe(previewRef.current);
+        }
+
+        const buttonObserver = new IntersectionObserver(
+            ([entry]) => {
+                // Show button when we've reached the bottom of the preview or scrolled past it
+                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    setShowFloatingButton(true);
+                } else {
+                    setShowFloatingButton(false);
+                }
+            },
+            { threshold: 0 }
+        );
+
+        if (previewRef.current) {
+            buttonObserver.observe(previewRef.current);
+        }
+
+        return () => {
+            observer.disconnect();
+            buttonObserver.disconnect();
+        };
+    }, []);
+
+    const handleViewSample = () => {
+        if (isUnlocked) {
+            // Scroll directly to preview
+            previewRef.current?.scrollIntoView({ behavior: "smooth" });
+            // Log tracking event
+            const refCode = localStorage.getItem("enchiridion_ref") || "organic";
+            logActivity("Sample View", refCode);
+        } else {
+            // Open the email gate modal
+            setShowEmailGate(true);
+        }
+    };
+
+    const handleGateSuccess = () => {
+        setShowEmailGate(false);
+        setIsUnlocked(true);
+        // Add a slight delay to allow modal to close before scrolling
+        setTimeout(() => {
+            previewRef.current?.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+    };
+
     return (
         <div className={styles.page}>
-            {/* HERO SECTION */}
             <section className={styles.hero}>
+                {/* ... existing hero content ... */}
                 <div className={styles.heroContent}>
                     <p className="eyebrow fade-in">Enchiridion Medical Reference</p>
                     <h1 className="fade-in">About Enchiridion</h1>
@@ -193,21 +264,117 @@ export default function AboutPage() {
             </section>
 
             {/* CALL TO ACTION */}
-            <section className={styles.ctaSection}>
-                <div className={styles.ctaContent}>
-                    <h2 className="serif">Ready to elevate your practice?</h2>
-                    <div className={styles.ctaButtons}>
-                        <Link href="/books/pediatrics" className={styles.primaryBtn}>Buy the Book</Link>
-                        <button className={styles.secondaryBtn}>Download a Sample Chapter</button>
-                        <button
-                            className={styles.secondaryBtn}
-                            onClick={() => window.dispatchEvent(new CustomEvent("open-newsletter"))}
-                        >
-                            Join the Newsletter
-                        </button>
+            <section className={styles.ctaSection} id="sample-viewer">
+                <div className={styles.container}>
+                    <div className={styles.ctaContent}>
+                        <h2 className="serif">Ready to elevate your practice?</h2>
+                        <div className={styles.ctaButtons}>
+                            <Link href="/books/pediatrics" className={styles.primaryBtn}>Buy the Book</Link>
+                            <button className={styles.secondaryBtn} onClick={handleViewSample}>
+                                View a Sample Chapter
+                            </button>
+                            <button
+                                className={styles.secondaryBtn}
+                                onClick={() => window.dispatchEvent(new CustomEvent("open-newsletter"))}
+                            >
+                                Join the Newsletter
+                            </button>
+                        </div>
+
+                        {/* Guided Scroll indicator */}
+                        <div className={styles.scrollIndicator}>
+                            <p>{isUnlocked ? "Read a Preview Below" : "Unlock Preview Below"}</p>
+                            <div className={styles.arrowDown}>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* EMBEDDED PREVIEW */}
+                    <div className={styles.previewSection} ref={previewRef}>
+                        <div className={styles.previewHeader}>
+                            <h3>Sample Chapter Preview</h3>
+                            {isUnlocked && (
+                                <a
+                                    href="https://drive.google.com/file/d/1yOU0ZlIXfYPCfOfZjKaZuIYatm2f60IG/view?usp=sharing"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.fullscreenLink}
+                                >
+                                    <span>View Fullscreen</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                                    </svg>
+                                </a>
+                            )}
+                        </div>
+
+                        {!isUnlocked ? (
+                            <div className={styles.lockedPreview}>
+                                <div className={styles.blurContent}>
+                                    {/* Mock content for blur effect */}
+                                    <div style={{ height: '600px', background: 'white', padding: '40px' }}>
+                                        <div style={{ height: '40px', background: '#eee', width: '60%', marginBottom: '20px' }}></div>
+                                        <div style={{ height: '20px', background: '#f5f5f5', width: '90%', marginBottom: '10px' }}></div>
+                                        <div style={{ height: '20px', background: '#f5f5f5', width: '85%', marginBottom: '10px' }}></div>
+                                        <div style={{ height: '20px', background: '#f5f5f5', width: '95%', marginBottom: '30px' }}></div>
+                                        <div style={{ height: '300px', background: '#fcfcfc', border: '1px solid #eee' }}></div>
+                                    </div>
+                                </div>
+                                <div className={styles.unlockOverlay}>
+                                    <div className={styles.unlockIcon}>
+                                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                        </svg>
+                                    </div>
+                                    <h4>Sample Content Locked</h4>
+                                    <p>Please enter your email to unlock the full sample chapter and start reading today.</p>
+                                    <button className={styles.unlockBtn} onClick={() => setShowEmailGate(true)}>
+                                        Unlock Sample Now
+                                    </button>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className={`${styles.iframeContainer} ${showGlow ? styles.iframeGlow : ""}`}>
+                                {isPreviewLoading && (
+                                    <div className={styles.loadingOverlay}>
+                                        <div className={styles.spinner}></div>
+                                        <p>Loading Preview...</p>
+                                    </div>
+                                )}
+                                <iframe
+                                    src="https://drive.google.com/file/d/1yOU0ZlIXfYPCfOfZjKaZuIYatm2f60IG/preview"
+                                    className={styles.previewIframe}
+                                    allow="autoplay"
+                                    onLoad={() => setIsPreviewLoading(false)}
+                                    title="Enchiridion Sample Chapter Preview"
+                                ></iframe>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
+
+            {/* Floating Conversion Trigger */}
+            <Link
+                href="/books/pediatrics"
+                className={`${styles.floatingBuyButton} ${showFloatingButton ? styles.visible : ""}`}
+            >
+                Buy the Full Book
+            </Link>
+
+
+
+            {/* Email Gate Modal */}
+            {showEmailGate && (
+                <EmailGateModal
+                    onSuccess={handleGateSuccess}
+                    onClose={() => setShowEmailGate(false)}
+                />
+            )}
         </div>
     );
 }

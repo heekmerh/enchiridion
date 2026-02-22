@@ -1,7 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException, Request, Response
+from fastapi import APIRouter, Depends, HTTPException, Request, Response, BackgroundTasks
 from typing import Optional, List
 from pydantic import BaseModel
-from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead
+from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead, LeadCapture
 from ..sheets import sheets_client, safe_float
 from ..auth import current_active_user, current_active_superuser, UserRead
 from datetime import datetime, timedelta
@@ -11,8 +11,16 @@ from dateutil import parser as date_parser
 
 router = APIRouter()
 
+def _log_activity_background(row: list):
+    """Saves activity log in the background."""
+    try:
+        sheets_client.append_row("ActivityLog", row)
+    except Exception as e:
+        print(f"ERROR: Background ActivityLog append failed: {e}")
+
 @router.post("/log-activity")
-async def log_activity(activity: ActivityLog):
+async def log_activity(activity: ActivityLog, background_tasks: BackgroundTasks):
+    """Logs activity in the background."""
     row = [
         activity.timestamp,
         activity.refCode,
@@ -22,74 +30,115 @@ async def log_activity(activity: ActivityLog):
         "", # F: REPORTED Status (For Apps Script)
         activity.payoutStatus # G: Payout Status
     ]
-    sheets_client.append_row("ActivityLog", row)
+    background_tasks.add_task(_log_activity_background, row)
     return {"success": True}
 
-@router.post("/track-visit")
-async def track_visit(track: SessionTrack, request: Request, response: Response):
-    """Tracks a unique visit and credits the referrer with 0.1 points."""
-    # Check for unique session cookie
-    unique_cookie = request.cookies.get("ench_unique_visit")
+def _save_lead_to_sheet(lead_data: list, sheet_name: str):
+    """Internal helper to save lead data in the background (runs in threadpool)."""
+    try:
+        # Check if worksheet needs headers (if empty)
+        ws = sheets_client.get_worksheet(sheet_name)
+        if ws:
+            try:
+                # Optimized check: if row 1 is empty, add headers
+                first_row = ws.row_values(1)
+                if not first_row or not any(cell.strip() for cell in first_row):
+                    headers = ["Timestamp", "Email", "RefCode", "Context"]
+                    print(f"DEBUG: Initializing headers for '{sheet_name}'...")
+                    ws.append_row(headers, table_range="A1")
+            except Exception as header_err:
+                print(f"WARNING: Could not check/init headers for {sheet_name}: {header_err}")
+
+        sheets_client.append_row(sheet_name, lead_data)
+        print(f"DEBUG: Background lead save successful for {lead_data[1]}")
+    except Exception as e:
+        print(f"ERROR: Background lead save failed: {e}")
+
+@router.post("/capture-lead")
+async def capture_lead(lead: LeadCapture, background_tasks: BackgroundTasks):
+    """Captures a lead email before sample preview and logs it to a dedicated sheet in the background."""
+    sheet_name = "sample chapter"
     
+    timestamp = lead.timestamp or datetime.now().isoformat()
+    details = lead.details or {}
+    url = details.get("url", "About Page Gate")
+    
+    # row format: Timestamp, Email, RefCode, Context
+    row = [timestamp, lead.email, lead.refCode, url]
+    
+    # Dispatch to background (FastAPI runs 'def' functions in a threadpool)
+    background_tasks.add_task(_save_lead_to_sheet, row, sheet_name)
+    
+    return {"success": True}
+
+def _credit_visit_background(ref_code: str, ip: str):
+    """Handles the entire visit processing (lookup + credit) in the background."""
+    try:
+        target_code = ref_code.strip().lower()
+        records = sheets_client.get_all_records("Partners")
+        
+        referrer_row_idx = None
+        referrer_record = None
+        for i, record in enumerate(records):
+            if str(record.get("REFERRAL CODE", "")).strip().lower() == target_code:
+                referrer_record = record
+                referrer_row_idx = i + 2 # 1-indexed + header
+                break
+        
+        if not referrer_record:
+            print(f"DEBUG: Referrer code {ref_code} not found. Skipping credit.")
+            return
+
+        # Fraud Prevention: Self-referral check (IP)
+        referrer_ip = referrer_record.get("LAST_IP", "")
+        if referrer_ip == ip:
+            print(f"DEBUG: Self-referral blocked in background for {ref_code} (IP: {ip})")
+            return
+
+        current_points = float(referrer_record.get("POINTS", 0.0))
+        new_points = round(current_points + 0.1, 2)
+        new_revenue = round(new_points * 100, 2)
+        
+        # Atomic update
+        sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
+        sheets_client.update_cell("Partners", referrer_row_idx, 9, "PENDING")
+        
+        # Log Activity
+        activity_row = [
+            datetime.now().isoformat(),
+            ref_code,
+            "Browsing",
+            0.1,
+            f"Referral visit from IP: {ip}",
+            "", # F: REPORTED Status
+            "PENDING" # G: Payout Status
+        ]
+        sheets_client.append_row("ActivityLog", activity_row)
+        print(f"DEBUG: Background full credit successful for {ref_code}")
+    except Exception as e:
+        print(f"ERROR: Background full credit failed for {ref_code}: {e}")
+
+@router.post("/track-visit")
+async def track_visit(track: SessionTrack, request: Request, response: Response, background_tasks: BackgroundTasks):
+    """Tracks a unique visit and offloads ALL sheet processing to the background."""
+    # 1. Quick cookie check
+    unique_cookie = request.cookies.get("ench_unique_visit")
     if unique_cookie:
         return {"status": "already_tracked"}
 
-    # Credit Referrer (0.1 Points)
-    records = sheets_client.get_all_records("Partners")
-    referrer_row_idx = None
-    referrer_record = None
+    # 2. Set 30-day cookie immediately
+    response.set_cookie(
+        key="ench_unique_visit",
+        value="true",
+        max_age=30 * 24 * 60 * 60, # 30 days
+        httponly=True,
+        samesite="lax"
+    )
+
+    # 3. Offload EVERYTHING else to background threadpool
+    background_tasks.add_task(_credit_visit_background, track.refCode, track.ip)
     
-    for i, record in enumerate(records):
-        if str(record.get("REFERRAL CODE", "")).strip().lower() == track.refCode.strip().lower():
-            referrer_record = record
-            referrer_row_idx = i + 2 # 1-indexed + header
-            break
-            
-    if referrer_record:
-        # Fraud Prevention: Self-referral check (IP)
-        # Note: In a real environment, you'd use a more robust IP check
-        referrer_ip = referrer_record.get("LAST_IP", "")
-        if referrer_ip == track.ip:
-            return {"status": "self_referral_blocked"}
-
-        try:
-            current_points = float(referrer_record.get("POINTS", 0.0))
-            new_points = round(current_points + 0.1, 2)
-            new_revenue = round(new_points * 100, 2)
-            
-            # Atomic update of columns E (Points), F (Revenue)
-            # And reset status to PENDING in Column I (9th col)
-            sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
-            sheets_client.update_cell("Partners", referrer_row_idx, 9, "PENDING")
-
-            
-            # Log Activity
-            activity_row = [
-                datetime.now().isoformat(),
-                track.refCode,
-                "Browsing",
-                0.1,
-                f"Referral visit from IP: {track.ip}",
-                "", # F: REPORTED Status
-                "PENDING" # G: Payout Status
-            ]
-            sheets_client.append_row("ActivityLog", activity_row)
-            
-            # Set 30-day cookie
-            response.set_cookie(
-                key="ench_unique_visit",
-                value="true",
-                max_age=30 * 24 * 60 * 60, # 30 days
-                httponly=True,
-                samesite="lax"
-            )
-            
-            return {"status": "success", "points": 0.1}
-        except Exception as e:
-            print(f"ERROR: Failed to credit visit: {e}")
-            raise HTTPException(status_code=500, detail="Failed to credit visit")
-            
-    return {"status": "referrer_not_found"}
+    return {"status": "success", "message": "Visit registered"}
 
 @router.get("/audit/verify")
 async def verify_integrity(user: UserRead = Depends(current_active_user)):

@@ -21,21 +21,36 @@ export async function GET(request: Request) {
     const isAdmin = searchParams.get('admin') === 'true';
 
     try {
+        console.log(`DEBUG: Proxying GET request to ${BACKEND_URL}/reviews/?admin=${isAdmin}`);
         const response = await fetch(`${BACKEND_URL}/reviews/?admin=${isAdmin}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
+            signal: AbortSignal.timeout(10000), // 10 second timeout
         });
 
         if (!response.ok) {
+            const errorMsg = `Backend returned ${response.status}: ${response.statusText}`;
+            console.error(`ERROR: ${errorMsg}`);
             return NextResponse.json({ error: 'Failed to fetch reviews from backend' }, { status: response.status });
         }
 
         const reviews = await response.json();
         return NextResponse.json(reviews);
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error fetching reviews:', error);
+
+        if (error.name === 'AbortError') {
+            return NextResponse.json({ error: 'Backend request timed out' }, { status: 504 });
+        }
+
+        if (error.code === 'ECONNREFUSED' || error.message?.includes('fetch failed')) {
+            return NextResponse.json({
+                error: 'Backend service is currently unavailable. Please ensure the backend is running on port 8002.'
+            }, { status: 503 });
+        }
+
         return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
     }
 }

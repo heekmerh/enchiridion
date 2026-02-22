@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { logActivity } from "@/lib/tracking";
 
 export default function ReferralTracker() {
     const searchParams = useSearchParams();
@@ -31,49 +32,8 @@ export default function ReferralTracker() {
         }
     }, [searchParams]);
 
-    const logActivity = async (type: "browsing" | "registration" | "purchase", refCode: string) => {
-        try {
-            if (type === "browsing") {
-                // Get IP for fraud prevention (simple client-side retrieval)
-                let ip = "unknown";
-                try {
-                    const ipRes = await fetch("https://api.ipify.org?format=json");
-                    const ipData = await ipRes.json();
-                    ip = ipData.ip;
-                } catch (e) { console.error("Could not fetch IP:", e); }
-
-                const response = await fetch("/api/referral/track-visit", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        refCode,
-                        ip,
-                        userAgent: navigator.userAgent
-                    }),
-                });
-
-                const data = await response.json();
-                console.log("Visit tracked:", data);
-                return;
-            }
-
-            // Fallback for other types
-            await fetch("/api/referral/log-activity", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    type,
-                    refCode,
-                    timestamp: new Date().toISOString(),
-                    details: {
-                        url: window.location.href,
-                        userAgent: navigator.userAgent,
-                    },
-                }),
-            });
-        } catch (error) {
-            console.error("Error logging activity:", error);
-        }
+    const logActivityHandler = async (type: "browsing" | "registration" | "purchase", refCode: string) => {
+        await logActivity(type, refCode);
     };
 
     return null; // This component doesn't render anything

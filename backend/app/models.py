@@ -63,3 +63,9 @@ class SessionTrack(BaseModel):
     refCode: str
     ip: str
     userAgent: str
+
+class LeadCapture(BaseModel):
+    email: EmailStr
+    refCode: str
+    timestamp: Optional[str] = None
+    details: Optional[dict] = None
