@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8002";
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
 
 // Interface for Review Data
 export interface Review {
@@ -33,10 +33,25 @@ export async function GET(request: Request) {
         if (!response.ok) {
             const errorMsg = `Backend returned ${response.status}: ${response.statusText}`;
             console.error(`ERROR: ${errorMsg}`);
-            return NextResponse.json({ error: 'Failed to fetch reviews from backend' }, { status: response.status });
+            let detail = 'Failed to fetch reviews from backend';
+            try {
+                const errorData = await response.json();
+                if (errorData.detail) detail = errorData.detail;
+            } catch (e) { }
+            return NextResponse.json({ error: detail }, { status: response.status });
         }
 
-        const reviews = await response.json();
+        let reviews;
+        try {
+            reviews = await response.json();
+        } catch (jsonError: any) {
+            console.error('ERROR: Failed to parse backend JSON response:', jsonError);
+            return NextResponse.json({
+                error: 'Failed to parse data from backend',
+                message: jsonError.message
+            }, { status: 502 }); // Bad Gateway
+        }
+
         return NextResponse.json(reviews);
     } catch (error: any) {
         console.error('Error fetching reviews:', error);
@@ -47,11 +62,16 @@ export async function GET(request: Request) {
 
         if (error.code === 'ECONNREFUSED' || error.message?.includes('fetch failed')) {
             return NextResponse.json({
-                error: 'Backend service is currently unavailable. Please ensure the backend is running on port 8002.'
+                error: 'Backend service is currently unavailable. Please ensure the backend is running on port 8000.'
             }, { status: 503 });
         }
 
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+        return NextResponse.json({
+            error: 'Internal Server Error',
+            message: error.message,
+            code: error.code,
+            name: error.name
+        }, { status: 500 });
     }
 }
 
@@ -87,9 +107,13 @@ export async function POST(request: Request) {
 
         const result = await response.json();
         return NextResponse.json(result, { status: 201 });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error submitting review:', error);
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+        return NextResponse.json({
+            error: 'Internal Server Error',
+            message: error.message,
+            code: error.code
+        }, { status: 500 });
     }
 }
 
@@ -124,8 +148,12 @@ export async function PUT(request: Request) {
 
         const result = await response.json();
         return NextResponse.json(result);
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error updating review:', error);
-        return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+        return NextResponse.json({
+            error: 'Internal Server Error',
+            message: error.message,
+            code: error.code
+        }, { status: 500 });
     }
 }

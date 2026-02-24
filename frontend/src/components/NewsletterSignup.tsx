@@ -34,13 +34,36 @@ export default function NewsletterSignup() {
 
         setStatus("loading");
 
-        // Mocking API call
-        setTimeout(() => {
-            setStatus("success");
-            setEmail("");
-            // Optional: Close after success
-            // setTimeout(() => setIsOpen(false), 3000);
-        }, 1500);
+        try {
+            // Get referral code from localStorage if available
+            const refCode = localStorage.getItem('referralCode') || "";
+
+            const response = await fetch('/api/referral/subscribe-newsletter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: email,
+                    refCode: refCode,
+                    timestamp: new Date().toISOString(),
+                    details: {
+                        url: window.location.href,
+                        source: 'Newsletter Component'
+                    }
+                }),
+            });
+
+            if (response.ok) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error('Newsletter signup error:', error);
+            setStatus("error");
+        }
     };
 
     return (
@@ -72,6 +95,11 @@ export default function NewsletterSignup() {
                             <div className={styles.successMessage}>
                                 <p>✓ Thank you for subscribing! Check your inbox soon.</p>
                                 <button onClick={() => setStatus("idle")} className={styles.resetBtn}>Subscribe another email</button>
+                            </div>
+                        ) : status === "error" ? (
+                            <div className={styles.errorMessage}>
+                                <p>Something went wrong. Please try again later.</p>
+                                <button onClick={() => setStatus("idle")} className={styles.resetBtn}>Retry</button>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className={styles.form}>

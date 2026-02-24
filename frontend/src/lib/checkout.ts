@@ -4,6 +4,39 @@ export interface StateDelivery {
     costLabel: string;
 }
 
+export const HUB_STATES = [
+    "Federal Capital Territory (Abuja)",
+    "Benue",
+    "Kano",
+    "Kaduna",
+    "Lagos",
+    "Ogun",
+    "Rivers"
+];
+
+export const DELIVERY_ZONES = [
+    {
+        id: "central",
+        title: "Central Zone (Abuja/Benue Hub)",
+        states: ["Federal Capital Territory (Abuja)", "Benue", "Nasarawa", "Niger", "Kogi", "Kwara", "Plateau"]
+    },
+    {
+        id: "northwest",
+        title: "North West Zone (Kano/Kaduna Hub)",
+        states: ["Kano", "Kaduna", "Katsina", "Kebbi", "Sokoto", "Zamfara", "Jigawa"]
+    },
+    {
+        id: "southwest",
+        title: "South West Zone (Lagos/Ogun Hub)",
+        states: ["Lagos", "Ogun", "Oyo", "Osun", "Ondo", "Ekiti"]
+    },
+    {
+        id: "southsouth-east",
+        title: "South South / East Zone (Port Harcourt Hub)",
+        states: ["Rivers", "Abia", "Akwa Ibom", "Anambra", "Bayelsa", "Cross River", "Delta", "Ebonyi", "Edo", "Enugu", "Imo", "Gombe", "Taraba", "Adamawa", "Bauchi", "Borno", "Yobe"]
+    }
+];
+
 export const NIGERIAN_STATES: StateDelivery[] = [
     { name: "Abia", cost: 4500, costLabel: "₦4,500" },
     { name: "Adamawa", cost: 5000, costLabel: "₦5,000" },
@@ -94,4 +127,28 @@ export const findClosestDistributor = (userState: string): Distributor => {
 
     // Default to Lagos for South/West/East
     return DISTRIBUTORS[0];
+};
+
+export const fetchShippingRates = async (): Promise<any[]> => {
+    try {
+        const response = await fetch("/api/referral/shipping-rates");
+        if (response.ok) return await response.json();
+    } catch (e) {
+        console.error("Error fetching shipping rates:", e);
+    }
+    return [];
+};
+
+export const getUserStats = async () => {
+    const token = typeof window !== "undefined" ? localStorage.getItem("enchiridion_token") : null;
+    if (!token) return null;
+    try {
+        const response = await fetch("/api/referral/stats", {
+            headers: { "Authorization": `Bearer ${token}` }
+        });
+        if (response.ok) return await response.json();
+    } catch (e) {
+        console.error("Error fetching user stats:", e);
+    }
+    return null;
 };

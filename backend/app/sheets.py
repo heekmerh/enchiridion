@@ -70,8 +70,25 @@ class GoogleSheetsClient:
             return self.sheet.worksheet(name)
         except Exception as e:
             print(f"ERROR: Could not find worksheet '{name}' in sheet {self.spreadsheet_id}: {e}")
-            import traceback
-            traceback.print_exc()
+            return None
+
+    def get_or_create_worksheet(self, name: str, headers: List[str] = None):
+        """Returns existing worksheet or creates a new one with optional headers."""
+        ws = self.get_worksheet(name)
+        if ws:
+            return ws
+        
+        if not self.sheet:
+            return None
+            
+        try:
+            print(f"DEBUG: Creating missing worksheet '{name}'...")
+            ws = self.sheet.add_worksheet(title=name, rows="1000", cols="20")
+            if headers:
+                ws.append_row(headers, table_range="A1")
+            return ws
+        except Exception as e:
+            print(f"ERROR: Failed to create worksheet '{name}': {e}")
             return None
 
 
@@ -153,11 +170,31 @@ class GoogleSheetsClient:
         ws = self.get_worksheet(worksheet_name)
         if ws:
             try:
+                # In gspread 6.x, 'values' is the first positional argument
                 ws.update(values, range_name)
                 print(f"Successfully updated range {range_name} in {worksheet_name}")
             except Exception as e:
                 print(f"ERROR: Failed to update range {range_name} in {worksheet_name}: {e}")
                 raise e
+
+    def log_audit(self, action: str, message: str, status: str = "SUCCESS"):
+        """Logs an action to the 'Admin Audit' sheet."""
+        try:
+            from datetime import datetime
+            row = [datetime.now().isoformat(), action, message, status]
+            self.append_row("Admin Audit", row)
+        except Exception as e:
+            print(f"FAILED TO LOG AUDIT: {e}")
+
+    @staticmethod
+    def get_case_insensitive_val(record: dict, *keys: str, default=None):
+        """Robustly retrieves a value from a gspread record using case-insensitive/variant keys."""
+        normalized_record = {str(k).strip().lower(): v for k, v in record.items()}
+        for key in keys:
+            norm_key = str(key).strip().lower()
+            if norm_key in normalized_record:
+                return normalized_record[norm_key]
+        return default
 
 def safe_float(v):
     """Robust conversion of sheet values (strings/None/numbers) to float."""

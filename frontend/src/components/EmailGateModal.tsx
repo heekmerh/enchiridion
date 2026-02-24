@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import styles from './EmailGateModal.module.css';
-import { captureLeadAndGetSample } from '@/lib/tracking';
+import { captureLeadAndGetSample } from '@/lib/record';
 
 interface EmailGateModalProps {
     onSuccess: () => void;
@@ -29,8 +29,12 @@ export default function EmailGateModal({ onSuccess, onClose }: EmailGateModalPro
             const result = await captureLeadAndGetSample(email, refCode);
 
             if (result.success) {
-                // Store flag to skip modal next time
+                // Store flag to skip modal next time (Hybrid)
                 localStorage.setItem('ench_sample_access_v2', 'true');
+                // Set cookie that expires in 30 days
+                const date = new Date();
+                date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+                document.cookie = `ench_sample_access=true; expires=${date.toUTCString()}; path=/`;
                 onSuccess();
             } else {
                 console.error('EmailGateModal: captureLeadAndGetSample failed:', result.error);

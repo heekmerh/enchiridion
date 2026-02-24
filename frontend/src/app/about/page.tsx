@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { books } from "@/lib/data";
 import styles from "./AboutPage.module.css";
-import { logActivity } from "@/lib/tracking";
+import { logActivity } from "@/lib/record";
 import EmailGateModal from "@/components/EmailGateModal";
 
 export default function AboutPage() {
@@ -15,11 +15,19 @@ export default function AboutPage() {
     const [showEmailGate, setShowEmailGate] = useState(false);
     const [isUnlocked, setIsUnlocked] = useState(false);
     const previewRef = useRef<HTMLDivElement>(null);
-
     useEffect(() => {
-        // Initial check for unlock status
-        const unlocked = localStorage.getItem("ench_sample_access_v2") === "true";
-        setIsUnlocked(unlocked);
+        // Initial check for unlock status (Cookie or LocalStorage)
+        const isCookieUnlocked = typeof document !== 'undefined' && document.cookie.includes("ench_sample_access=true");
+        const isLSUnlocked = typeof localStorage !== 'undefined' && localStorage.getItem("ench_sample_access_v2") === "true";
+
+        // Hybrid logic: If cookie exists, rely on it. 
+        // If user cleared cookies but LS remains, respect the "Reset" and relock everything.
+        if (isLSUnlocked && !isCookieUnlocked) {
+            localStorage.removeItem("ench_sample_access_v2");
+            setIsUnlocked(false);
+        } else {
+            setIsUnlocked(isCookieUnlocked || isLSUnlocked);
+        }
 
         const interval = setInterval(() => {
             setCurrentImageIndex((prev) => (prev + 1) % books.length);

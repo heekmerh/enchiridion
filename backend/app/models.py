@@ -10,20 +10,40 @@ class User(schemas.BaseUser[uuid.UUID]):
     referred_by: Optional[str] = None
     date_joined: datetime
     hashed_password: str
+    state: Optional[str] = None
+    country: Optional[str] = None
+    profession: Optional[str] = None
+    phone: Optional[str] = None
+    institution: Optional[str] = None
 
 class UserRead(schemas.BaseUser[uuid.UUID]):
     name: str
     referral_code: str
     referred_by: Optional[str] = None
     date_joined: datetime
+    state: Optional[str] = None
+    country: Optional[str] = None
+    profession: Optional[str] = None
+    phone: Optional[str] = None
+    institution: Optional[str] = None
 
 class UserCreate(schemas.BaseUserCreate):
     name: str
     referral_code: str
     referred_by: Optional[str] = None
+    state: Optional[str] = None
+    country: Optional[str] = None
+    profession: Optional[str] = None
+    phone: Optional[str] = None
+    institution: Optional[str] = None
 
 class UserUpdate(schemas.BaseUserUpdate):
     name: Optional[str] = None
+    state: Optional[str] = None
+    country: Optional[str] = None
+    profession: Optional[str] = None
+    phone: Optional[str] = None
+    institution: Optional[str] = None
 
 class ActivityLog(BaseModel):
     type: str
@@ -69,3 +89,23 @@ class LeadCapture(BaseModel):
     refCode: str
     timestamp: Optional[str] = None
     details: Optional[dict] = None
+    referred_by: Optional[str] = None # Added for consistency
+
+class DistributorLead(BaseModel):
+    name: str
+    phone: str
+    whatsapp: str
+    location: str
+    timestamp: Optional[str] = None
+    refCode: Optional[str] = None # Capture referrer
+class ShareTrack(BaseModel):
+    refCode: str
+    platform: str
+
+class UserProgress(BaseModel):
+    email: str
+    is_verified: bool = False
+    is_partner: bool = False
+    is_distributor: bool = False
+    has_purchased_book: bool = False
+    last_updated: Optional[str] = None

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
     try {
-        const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8002";
+        const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
 
 
 

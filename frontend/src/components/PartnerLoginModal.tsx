@@ -62,6 +62,9 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
                     if (userProfileResponse.ok) {
                         const userData = await userProfileResponse.json();
                         localStorage.setItem("enchiridion_user_name", userData.name);
+                        if (userData.referral_code) {
+                            localStorage.setItem("enchiridion_user_ref", userData.referral_code);
+                        }
                     }
                 } catch (profileErr) {
                     console.error("Failed to fetch user name:", profileErr);

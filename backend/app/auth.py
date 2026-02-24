@@ -70,14 +70,8 @@ class GoogleSheetsUserDatabase(BaseUserDatabase[User, uuid.UUID]):
         
         target_email = email.lower().strip()
         for record in records:
-            # Try to find a key that looks like "Email Address", "email", or "username"
-            record_email = None
-            for key, value in record.items():
-                if key.lower().replace(" ", "") in ["emailaddress", "email", "username"]:
-                    record_email = str(value).lower().strip()
-                    break
-            
-            if record_email == target_email:
+            record_email = sheets_client.get_case_insensitive_val(record, "USERNAME", "Email", "Email Address", "emailaddress")
+            if str(record_email or "").lower().strip() == target_email:
                 # print(f"DEBUG: Match found for {email} in sheet record.") # Removed to avoid encoding issues
                 try:
                     user_dict = self._to_user_dict(record)
@@ -110,24 +104,34 @@ class GoogleSheetsUserDatabase(BaseUserDatabase[User, uuid.UUID]):
 
         now = datetime.now()
         row = [
-            user_dict["email"],             # A: USERNAME
-            user_dict["hashed_password"],  # B: PASSWORD
-            user_dict.get("name", ""),      # C: FULL NAME
-            user_dict.get("referral_code", ""), # D: REFERRAL CODE
-            0.0,                            # E: POINTS
-            0.0,                            # F: REVENUE (\u20a6)
-            0.0,                            # G: LIFETIME EARNINGS
-            0,                              # H: TOTAL REFERRALS
-            "PENDING",                       # I: PAYOUT STATUS
-            user_dict.get("bank_name", ""), # J: BANK NAME
-            user_dict.get("account_name", ""), # K: ACCOUNT NAME
-            user_dict.get("account_number", ""), # L: ACCOUNT NUMBER
-            user_dict.get("referred_by", ""),# M: REFERRED_BY
-            user_dict.get("ip", ""),         # N: REGISTRATION_IP
-            now.isoformat(),                 # O: DATE_JOINED
-            "FALSE",                         # P: is_superuser
-            "TRUE",                          # Q: is_active
-            "FALSE"                          # R: is_verified
+            user_dict["email"],             # A: USERNAME (0)
+            user_dict["hashed_password"],  # B: PASSWORD (1)
+            user_dict.get("name", ""),      # C: FULL NAME (2)
+            user_dict.get("referral_code", ""), # D: REFERRAL CODE (3)
+            0.0,                            # E: POINTS (4)
+            0.0,                            # F: REVENUE (₦) (5)
+            0.0,                            # G: LIFETIME EARNINGS (6)
+            0,                              # H: TOTAL REFERRALS (7)
+            "PENDING",                       # I: PAYOUT STATUS (8)
+            user_dict.get("bank_name", ""), # J: BANK NAME (9)
+            user_dict.get("account_name", ""), # K: ACCOUNT NAME (10)
+            user_dict.get("account_number", ""), # L: ACCOUNT NUMBER (11)
+            user_dict.get("referred_by", ""),# M: REFERRED_BY (12)
+            user_dict.get("ip", ""),         # N: REGISTRATION_IP (13)
+            now.isoformat(),                 # O: DATE_JOINED (14)
+            "FALSE",                         # P: is_superuser (15)
+            "TRUE",                          # Q: is_active (16)
+            "FALSE",                         # R: is_verified (17)
+            0.0,                             # S: last payout amount (18)
+            "",                              # T: EMPTY (19)
+            "",                              # U: EMPTY (20)
+            "",                              # V: Milestone 1 (21)
+            "",                              # W: Milestone 2 (22)
+            user_dict.get("state", ""),      # X: STATE (23)
+            user_dict.get("country", ""),    # Y: COUNTRY (24)
+            user_dict.get("profession", ""), # Z: PROFESSION (25)
+            user_dict.get("phone", ""),      # AA: PHONE (26)
+            user_dict.get("institution", "") # AB: INSTITUTION (27)
         ]
         
         try:
@@ -189,24 +193,15 @@ class GoogleSheetsUserDatabase(BaseUserDatabase[User, uuid.UUID]):
         pass
 
     def _to_user_dict(self, record):
-        # Helper to find value by case-insensitive key
-        def get_val(r, *keys):
-            for k in keys:
-                # Direct match
-                if k in r: return r[k]
-                # Case-insensitive match
-                for rk in r.keys():
-                    if rk.lower().strip() == k.lower().strip() or rk.lower().replace(" ", "") == k.lower().replace(" ", ""):
-                        return r[rk]
-            return None
+        # Removed local get_val as it is replaced by sheets_client helper
 
         # Determine email first as it's used for fallbacks
-        val = get_val(record, "Email Address", "Email", "USERNAME")
+        val = sheets_client.get_case_insensitive_val(record, "USERNAME", "Email Address", "Email")
         email = str(val if val is not None else "").strip()
 
 
         # Handle DateJoined parsing with fallback
-        date_joined = get_val(record, "DateJoined", "Date Joined", "Timestamp")
+        date_joined = sheets_client.get_case_insensitive_val(record, "DateJoined", "Date Joined", "Timestamp")
         if isinstance(date_joined, str) and date_joined:
             try:
                 date_joined = datetime.fromisoformat(date_joined)
@@ -215,10 +210,10 @@ class GoogleSheetsUserDatabase(BaseUserDatabase[User, uuid.UUID]):
         else:
             date_joined = datetime.now()
 
-        hashed_password = get_val(record, "Password", "hashed_password")
+        hashed_password = sheets_client.get_case_insensitive_val(record, "Password", "hashed_password")
         
         # Handle ID with deterministic fallback if column is missing
-        user_id_str = get_val(record, "id", "UUID")
+        user_id_str = sheets_client.get_case_insensitive_val(record, "id", "UUID")
         if user_id_str:
             try:
                 user_id = uuid.UUID(str(user_id_str))
@@ -234,13 +229,18 @@ class GoogleSheetsUserDatabase(BaseUserDatabase[User, uuid.UUID]):
             "id": user_id,
             "email": email,
             "hashed_password": hashed_password,
-            "is_active": str(get_val(record, "is_active", "active") or "TRUE").upper() == "TRUE",
-            "is_superuser": str(get_val(record, "is_superuser", "superuser") or "FALSE").upper() == "TRUE",
-            "is_verified": str(get_val(record, "is_verified", "verified") or "FALSE").upper() == "TRUE",
-            "name": get_val(record, "Name", "Full Name") or "",
-            "referral_code": get_val(record, "ReferralCode", "Referral Code") or "",
-            "referred_by": get_val(record, "REFERRED_BY", "referred_by") or "",
-            "date_joined": date_joined
+            "is_active": str(sheets_client.get_case_insensitive_val(record, "is_active", "active", default="TRUE")).upper() == "TRUE",
+            "is_superuser": str(sheets_client.get_case_insensitive_val(record, "is_superuser", "superuser", default="FALSE")).upper() == "TRUE",
+            "is_verified": str(sheets_client.get_case_insensitive_val(record, "is_verified", "verified", default="FALSE")).upper() == "TRUE",
+            "name": sheets_client.get_case_insensitive_val(record, "Name", "Full Name") or "",
+            "referral_code": sheets_client.get_case_insensitive_val(record, "ReferralCode", "Referral Code") or "",
+            "referred_by": sheets_client.get_case_insensitive_val(record, "REFERRED_BY", "referred_by") or "",
+            "date_joined": date_joined,
+            "state": sheets_client.get_case_insensitive_val(record, "STATE", "state") or "",
+            "country": sheets_client.get_case_insensitive_val(record, "COUNTRY", "country") or "",
+            "profession": sheets_client.get_case_insensitive_val(record, "PROFESSION", "profession") or "",
+            "phone": sheets_client.get_case_insensitive_val(record, "PHONE", "phone") or "",
+            "institution": sheets_client.get_case_insensitive_val(record, "INSTITUTION", "institution") or ""
         }
 
 
@@ -346,68 +346,351 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
             except:
                 pass
 
+    async def send_friend_joined_email(self, referrer_email: str, friend_name: str):
+        """Notifies a referrer that their friend has successfully joined and they earned points."""
+        html = f"""
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background-color: #ffffff;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #4169E1; font-size: 24px; text-transform: uppercase; letter-spacing: 1px; margin: 0;">Enchiridion Rewards</h1>
+            </div>
+            
+            <h2 style="color: #0f172a; margin-bottom: 20px;">Good News!</h2>
+            
+            <p style="color: #334155; line-height: 1.6; font-size: 16px;">
+                Your friend <strong>{friend_name}</strong> just successfully joined the Enchiridion Partner Network and verified their account!
+            </p>
+            
+            <div style="background-color: #f0fdf4; border: 2px solid #16a34a; padding: 24px; margin: 32px 0; text-align: center;">
+                <p style="color: #16a34a; font-size: 18px; font-weight: 800; margin: 0;">You've earned 0.1 Points (₦10)!</p>
+            </div>
+            
+            <p style="color: #334155; line-height: 1.6; font-size: 16px;">
+                Keep sharing your link to earn more rewards and help spread medical excellence.
+            </p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="http://localhost:3000/#login" style="background-color: #4169E1; color: white; padding: 12px 24px; border-radius: 0; text-decoration: none; font-weight: 800; text-transform: uppercase;">
+                    Check Your Dashboard
+                </a>
+            </div>
+            
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 32px 0;">
+            
+            <div style="text-align: center; color: #94a3b8; font-size: 12px;">
+                <p>© 2026 Enchiridion. All rights reserved.</p>
+            </div>
+        </div>
+        """
+
+        message = MessageSchema(
+            subject="You just earned 10 Naira because your friend joined!",
+            recipients=[referrer_email],
+            body=html,
+            subtype=MessageType.html
+        )
+
+        fm = FastMail(conf)
+        try:
+            await fm.send_message(message)
+            print(f"DEBUG: Referral notification email sent to {referrer_email}")
+        except Exception as e:
+            print(f"ERROR: Failed to send referral notification: {e}")
+
+    async def credit_referrer_conversion(self, referred_by: str, referee_email: str, referee_ip: str):
+        """Credits the referrer when a referee completes verification."""
+        print(f"DEBUG: Attempting to credit {referred_by} for conversion of {referee_email}...")
+        
+        # 1. Find referrer by code
+        records = sheets_client.get_all_records("Partners")
+        referrer_record = None
+        referrer_row_idx = None
+        
+        for i, record in enumerate(records):
+            ref_val = sheets_client.get_case_insensitive_val(record, "REFERRAL CODE", "ReferralCode", "referral_code")
+            if str(ref_val or "").strip().lower() == referred_by.strip().lower():
+                referrer_record = record
+                referrer_row_idx = i + 2 # 1-indexed + header
+                break
+        
+        if not referrer_record:
+            print(f"WARNING: Referrer with code {referred_by} not found during conversion.")
+            return
+
+        referrer_email = str(sheets_client.get_case_insensitive_val(referrer_record, "USERNAME", "Email", "Email Address", default="")).lower().strip()
+        
+        # 2. Fraud Prevention: Self-referral check (Email)
+        if referrer_email == referee_email.lower().strip():
+            print(f"WARNING: Self-referral (email) detected for {referee_email}. Skipping credit.")
+            sheets_client.log_audit("Fraud Check", f"Self-referral blocked: {referee_email}", "BLOCKED")
+            return
+
+        # 3. Fraud Prevention: IP Check
+        # We fetch the referrer's IP from Column N (Index 13)
+        referrer_ip = referrer_record.get("REGISTRATION_IP", "")
+        if not referrer_ip:
+             # Try absolute index check if header mapping failed
+             row_data = sheets_client.get_worksheet("Partners").row_values(referrer_row_idx)
+             if len(row_data) > 13:
+                 referrer_ip = row_data[13]
+
+        if referrer_ip == referee_ip and referee_ip != "unknown" and referee_ip != "":
+            print(f"WARNING: Self-referral (IP: {referee_ip}) detected for {referee_email}. Skipping credit.")
+            sheets_client.log_audit("Fraud Check", f"Self-referral IP block: {referee_email} matches referrer {referrer_email}", "BLOCKED")
+            # return # Optional: some users might share IP in a hospital/school. Maybe just log it?
+            # User requirement says "checks that the Referee is a new user (unique IP/Email) to prevent self-referral fraud"
+            return 
+
+        # 4. Credit Referrer (0.1 Points)
+        try:
+            p_val = sheets_client.get_case_insensitive_val(referrer_record, "POINTS", "points", "Pts")
+            current_points = safe_float(p_val)
+            new_points = round(current_points + 0.1, 2)
+            new_revenue = round(new_points * 100, 2)
+            
+            # Atomic update of columns E (Points) and F (Revenue)
+            sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
+            
+            # 5. Log Activity
+            activity_row = [
+                datetime.now().isoformat(),
+                referred_by,
+                "Referral Conversion",
+                0.1,
+                f"Verified signup: {referee_email}",
+                "", # F: REPORTED Status
+                "PENDING" # G: Payout Status
+            ]
+            sheets_client.append_row("ActivityLog", activity_row)
+            
+            # 6. Notify Referrer
+            import asyncio
+            asyncio.create_task(self.send_friend_joined_email(referrer_email, referee_email.split("@")[0]))
+            
+            sheets_client.log_audit("Referral Credit", f"Credited {referred_by} for verification of {referee_email}")
+            print(f"DEBUG: Successfully credited {referred_by} with 0.1 points for {referee_email}")
+        except Exception as e:
+            print(f"ERROR: Failed to credit referrer during conversion: {e}")
+            sheets_client.log_audit("Referral Credit", f"Failed to credit {referred_by} for {referee_email}: {e}", "FAILED")
+
     async def on_after_register(self, user: User, request: Optional[Request] = None):
         print(f"DEBUG: User {user.email} registered. Triggering onboarding...")
         
         # Trigger Welcome Email and Logging
         import asyncio
         asyncio.create_task(self.send_partner_welcome_email(user))
-        
+
+        # 0. Initialize Onboarding Progress
+        try:
+            onboarding_row = [
+                user.email,
+                "FALSE", # IsVerified (even if registered, verification is a separate event)
+                "FALSE", # IsPartner
+                "FALSE", # IsDistributor
+                "FALSE", # HasPurchasedBook
+                datetime.now().isoformat()
+            ]
+            # Use get_or_create to ensure headers exist
+            sheets_client.get_or_create_worksheet("UserOnboarding", ["Email", "IsVerified", "IsPartner", "IsDistributor", "HasPurchasedBook", "LastUpdated"])
+            sheets_client.append_row("UserOnboarding", onboarding_row)
+        except Exception as e:
+            print(f"ERROR: Failed to initialize onboarding for {user.email}: {e}")
+
         # 1. Check if referred_by exists
-        # Note: Depending on how User object is populated, referred_by might be in user_dict
-        # or we might need to check the raw request data if it's not in the model.
-        # But we added it to UserRead and User object should have it if coming from UserCreate.
         referred_by = getattr(user, "referred_by", None)
         
         if referred_by:
-            print(f"DEBUG: User was referred by {referred_by}. Attempting to credit...")
+            print(f"DEBUG: User was referred by {referred_by}. Logging pending conversion...")
             
-            # 2. Fraud Prevention: Self-referral check (Email)
-            # Find referrer by code
+            # Log Pending Activity
+            activity_row = [
+                datetime.now().isoformat(),
+                referred_by,
+                "Registration",
+                0.0, # 0 points until verified
+                f"New signup (Pending Verification): {user.email}",
+                "", # F: REPORTED Status
+                "PENDING_VERIFICATION" # G: Payout Status / Internal Status
+            ]
+            sheets_client.append_row("ActivityLog", activity_row)
+        else:
+            print("DEBUG: No referral code provided for this registration.")
+
+    async def record_milestone_and_credit(self, referrer_email: str, referee_email: str, milestone_type: str, points: float):
+        """Records a unique milestone and credits the referrer if not already done."""
+        unique_key = f"{referee_email.lower().strip()}_{milestone_type}"
+        print(f"DEBUG: Recording milestone '{milestone_type}' for {referee_email} to credit {referrer_email}")
+
+        # 1. Idempotency Check (Prevent double points)
+        try:
+            ws = sheets_client.get_or_create_worksheet("ReferralMilestones", ["Timestamp", "ReferrerEmail", "RefereeEmail", "MilestoneType", "PointsAwarded", "UniqueKey"])
+            records = sheets_client.get_all_records("ReferralMilestones")
+            for r in records:
+                if str(r.get("UniqueKey", "")).lower().strip() == unique_key.lower().strip():
+                    print(f"DEBUG: Milestone '{unique_key}' already recorded. Skipping.")
+                    return
+        except Exception as e:
+            print(f"DEBUG: Milestone check error: {e}")
+
+        # 2. Find Referrer in Partners Sheet
+        records = sheets_client.get_all_records("Partners")
+        referrer_record = None
+        referrer_row_idx = None
+        for i, r in enumerate(records):
+            if str(r.get("USERNAME", "")).lower().strip() == referrer_email.lower().strip():
+                referrer_record = r
+                referrer_row_idx = i + 2
+                break
+        
+        if not referrer_record:
+            print(f"WARNING: Referrer {referrer_email} not found in Partners sheet.")
+            return
+
+        # 3. Apply Credit
+        try:
+            p_val = sheets_client.get_case_insensitive_val(referrer_record, "POINTS", "points", "Pts")
+            current_points = safe_float(p_val)
+            new_points = round(current_points + points, 2)
+            new_revenue = round(new_points * 100, 2)
+            
+            sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
+            
+            # 4. Record Milestone
+            milestone_row = [
+                datetime.now().isoformat(),
+                referrer_email,
+                referee_email,
+                milestone_type,
+                points,
+                unique_key
+            ]
+            
+            # Ensure worksheet exists
+            sheets_client.get_or_create_worksheet("ReferralMilestones", ["Timestamp", "ReferrerEmail", "RefereeEmail", "MilestoneType", "PointsAwarded", "UniqueKey"])
+            sheets_client.append_row("ReferralMilestones", milestone_row)
+
+            # 5. Log Activity
+            activity_label = {
+                "partner": "Partner Onboarding",
+                "distributor": "Distributor Setup",
+                "network_spread": "Network Growth (Tier 2)",
+                "book_purchase": "Book Purchase"
+            }.get(milestone_type, milestone_type)
+
+            activity_row = [
+                datetime.now().isoformat(),
+                referrer_record.get("REFERRAL CODE", "N/A"),
+                activity_label,
+                points,
+                f"Referee: {referee_email}",
+                "", 
+                "PENDING"
+            ]
+            sheets_client.append_row("ActivityLog", activity_row)
+            
+            # 6. Notify Referrer
+            asyncio.create_task(self.send_milestone_notification(referrer_email, referee_email.split("@")[0], milestone_type, points))
+            
+            print(f"DEBUG: Successfully credited {referrer_email} for milestone {milestone_type}")
+
+        except Exception as e:
+            print(f"ERROR: Failed to credit milestone: {e}")
+
+    async def send_milestone_notification(self, email: str, friend_name: str, m_type: str, points: float):
+        """Sends specific notification for various milestones."""
+        subjects = {
+            "partner": "New Friend Joined!",
+            "distributor": "Distributor Lead Reward!",
+            "network_spread": "Network Growth Reward!",
+            "book_purchase": "Referral Purchase Reward!"
+        }
+        
+        body_texts = {
+            "partner": f"Your friend <strong>{friend_name}</strong> has joined the network!",
+            "distributor": f"Your friend <strong>{friend_name}</strong> just applied to be a Distributor!",
+            "network_spread": f"A friend of <strong>{friend_name}</strong> just joined! Your network is growing.",
+            "book_purchase": f"Your friend <strong>{friend_name}</strong> just purchased a book!"
+        }
+
+        html = f"""
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+            <h2 style="color: #4169E1;">Enchiridion Rewards</h2>
+            <p>{body_texts.get(m_type, "You've earned a reward!")}</p>
+            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0;">
+                <span style="font-size: 24px; font-weight: bold; color: #16a34a;">+ {points} Points (₦{int(points*100)})</span>
+            </div>
+            <p style="color: #64748b; font-size: 14px;">Log in to your dashboard to view your updated balance.</p>
+        </div>
+        """
+
+        message = MessageSchema(
+            subject=subjects.get(m_type, "New Referral Reward!"),
+            recipients=[email],
+            body=html,
+            subtype=MessageType.html
+        )
+        fm = FastMail(conf)
+        try:
+            await fm.send_message(message)
+        except Exception as e:
+            print(f"DEBUG: Milestone email failed: {e}")
+
+    async def on_after_verify(self, user: User, request: Optional[Request] = None):
+        print(f"DEBUG: User {user.email} verified. Processing Milestones...")
+
+        # Update Onboarding Progress Sheet
+        try:
+            records = sheets_client.get_all_records("UserOnboarding")
+            row_idx = None
+            for i, r in enumerate(records):
+                if str(r.get("Email", "")).lower().strip() == user.email.lower().strip():
+                    row_idx = i + 2
+                    break
+            
+            if row_idx:
+                sheets_client.update_cell("UserOnboarding", row_idx, 2, "TRUE")
+                sheets_client.update_cell("UserOnboarding", row_idx, 6, datetime.now().isoformat())
+            else:
+                # If for some reason it's missing, create it
+                onboarding_row = [user.email, "TRUE", "FALSE", "FALSE", "FALSE", datetime.now().isoformat()]
+                sheets_client.append_row("UserOnboarding", onboarding_row)
+        except Exception as e:
+            print(f"ERROR: Failed to update onboarding verification for {user.email}: {e}")
+        
+        referred_by = getattr(user, "referred_by", None)
+        if referred_by:
+            # 1. Credit Referrer (Partner Onboarding)
             records = sheets_client.get_all_records("Partners")
             referrer_record = None
-            referrer_row_idx = None
-            
-            for i, record in enumerate(records):
-                if str(record.get("REFERRAL CODE", "")).strip().lower() == referred_by.strip().lower():
-                    referrer_record = record
-                    referrer_row_idx = i + 2 # 1-indexed + header
+            for r in records:
+                if str(r.get("REFERRAL CODE", "")).strip().lower() == referred_by.strip().lower():
+                    referrer_record = r
                     break
             
             if referrer_record:
                 referrer_email = str(referrer_record.get("USERNAME", "")).lower().strip()
-                if referrer_email == user.email.lower().strip():
-                    print(f"WARNING: Self-referral detected for {user.email}. Skipping credit.")
-                    return
-
-                # 3. Credit Referrer (0.1 Points) using robust safe_float
-                try:
-                    current_points = safe_float(referrer_record.get("POINTS", 0.0))
-                    new_points = round(current_points + 0.1, 2)
-                    new_revenue = round(new_points * 100, 2)
-                    
-                    # Atomic update of columns E (Points) and F (Revenue)
-                    sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
-                    
-                    # 4. Log Activity
-                    activity_row = [
-                        datetime.now().isoformat(),
-                        referred_by,
-                        "Registration",
-                        0.1,
-                        f"New signup: {user.email}",
-                        "", # F: REPORTED Status
-                        "PENDING" # G: Payout Status
-                    ]
-                    sheets_client.append_row("ActivityLog", activity_row)
-                    
-                    print(f"DEBUG: Successfully credited {referred_by} with 0.1 points for {user.email}")
-                except Exception as e:
-                    print(f"ERROR: Failed to credit referrer: {e}")
-            else:
-                print(f"WARNING: Referrer with code {referred_by} not found.")
+                
+                # Fraud Check (IP) - reuse existing logic if possible, or fetch from sheet
+                referee_ip = "unknown" # Could fetch from user record if stored
+                
+                # Use the new milestone helper
+                import asyncio
+                # 0.1 for direct partner onboarding
+                asyncio.create_task(self.record_milestone_and_credit(referrer_email, user.email, "partner", 0.1))
+                
+                # 2. Tier-2 Logic (Network Growth / User A)
+                u_a_code = referrer_record.get("REFERRED_BY", "")
+                if u_a_code:
+                    u_a_record = None
+                    for r in records:
+                        if str(r.get("REFERRAL CODE", "")).strip().lower() == u_a_code.strip().lower():
+                            u_a_record = r
+                            break
+                    if u_a_record:
+                        u_a_email = str(u_a_record.get("USERNAME", "")).lower().strip()
+                        # User A gets +0.1 for User C's verification via User B
+                        asyncio.create_task(self.record_milestone_and_credit(u_a_email, user.email, "network_spread", 0.1))
         else:
-            print("DEBUG: No referral code provided for this registration.")
+            print(f"DEBUG: User {user.email} verified but has no referrer.")
 
     async def on_after_forgot_password(
         self, user: User, token: str, request: Optional[Request] = None

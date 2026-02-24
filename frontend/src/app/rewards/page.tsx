@@ -6,6 +6,8 @@ import Link from "next/link";
 import NextImage from "next/image";
 import ReferralLeaderboard from "@/components/ReferralLeaderboard";
 import PartnerSuccessGuideModal from "@/components/PartnerSuccessGuideModal";
+import GlobalToast from "@/components/GlobalToast";
+import MastersGallery from "@/components/MastersGallery";
 
 
 export default function RewardsPage() {
@@ -134,6 +136,11 @@ export default function RewardsPage() {
 
                 <div id="referral-link-section">
                     <ReferralLeaderboard />
+                </div>
+
+                {/* THE PANTHEON - LEGACY WALL */}
+                <div id="pantheon">
+                    <MastersGallery />
                 </div>
 
                 {/* Prize Hero Section */}
@@ -272,6 +279,9 @@ export default function RewardsPage() {
                     isOpen={isGuideOpen}
                     onClose={() => setIsGuideOpen(false)}
                 />
+
+
+                <GlobalToast />
             </div>
         </div>
 

@@ -28,7 +28,14 @@ export async function manageReviews(action: ReviewAction, data?: any): Promise<a
 
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Failed to fetch reviews');
+            let errorMsg = `Failed to fetch reviews: ${response.status} ${response.statusText}`;
+            try {
+                const errorData = await response.json();
+                if (errorData.error) errorMsg += ` - ${errorData.error}`;
+            } catch (e) {
+                // Ignore parsing errors
+            }
+            throw new Error(errorMsg);
         }
 
         let reviews: Review[] = await response.json();

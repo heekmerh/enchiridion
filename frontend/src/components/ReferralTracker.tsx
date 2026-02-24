@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { logActivity } from "@/lib/tracking";
+import { logActivity } from "@/lib/record";
 
 export default function ReferralTracker() {
     const searchParams = useSearchParams();

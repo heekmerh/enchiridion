@@ -17,7 +17,7 @@ export const logActivity = async (
                 console.error("Could not fetch IP:", e);
             }
 
-            const response = await fetch("/api/referral/track-visit", {
+            const response = await fetch("/api/referral/record-visit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -28,7 +28,7 @@ export const logActivity = async (
             });
 
             const data = await response.json();
-            console.log("Visit tracked:", data);
+            console.log("Visit recorded:", data);
             return;
         }
 
@@ -89,5 +89,40 @@ export const captureLeadAndGetSample = async (email: string, refCode: string): P
         const errorMsg = error?.message || "Internal network error";
         console.error("CRITICAL ERROR capturing lead:", error);
         return { success: false, error: errorMsg };
+    }
+};
+
+/**
+ * Records a social share action to award points.
+ */
+export const recordShare = async (refCode: string, platform: string) => {
+    try {
+        let ip = "unknown";
+        try {
+            const ipRes = await fetch("https://api.ipify.org?format=json");
+            const ipData = await ipRes.json();
+            ip = ipData.ip;
+        } catch (e) { }
+
+        const response = await fetch(`/api/referral/record-share?platform=${platform}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                refCode,
+                ip,
+                userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "unknown"
+            }),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error(`Share recording failed for ${platform}:`, response.status, errorText);
+            return;
+        }
+
+        const data = await response.json();
+        console.log(`Share recorded successfully (${platform}):`, data);
+    } catch (error) {
+        console.error("Critical error in recordShare utility:", error);
     }
 };

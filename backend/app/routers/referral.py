@@ -1,15 +1,29 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Response, BackgroundTasks
 from typing import Optional, List
 from pydantic import BaseModel
-from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead, LeadCapture
+from ..models import ActivityLog, PayoutSettings, SessionTrack, MarkAsPaidRequest, UserRead, LeadCapture, DistributorLead, ShareTrack, UserProgress
 from ..sheets import sheets_client, safe_float
-from ..auth import current_active_user, current_active_superuser, UserRead
+from ..auth import current_active_user, current_active_superuser, UserRead, conf, FastMail, MessageSchema, MessageType
 from datetime import datetime, timedelta
 import csv
 import io
 from dateutil import parser as date_parser
+import hmac
+import hashlib
+import json
+import os
 
 router = APIRouter()
+
+@router.get("/referrer-name")
+async def get_referrer_name(refCode: str):
+    """Returns the name of the referrer for a given code."""
+    records = sheets_client.get_all_records("Partners")
+    target_code = refCode.strip().lower()
+    for record in records:
+        if str(record.get("REFERRAL CODE", "")).strip().lower() == target_code:
+            return {"name": record.get("NAME", record.get("FULL NAME", "a friend"))}
+    raise HTTPException(status_code=404, detail="Referrer not found")
 
 def _log_activity_background(row: list):
     """Saves activity log in the background."""
@@ -17,6 +31,24 @@ def _log_activity_background(row: list):
         sheets_client.append_row("ActivityLog", row)
     except Exception as e:
         print(f"ERROR: Background ActivityLog append failed: {e}")
+
+def _log_global_broadcast(type: str, username: str, city: str = "Nigeria"):
+    """
+    Logs a community-wide broadcast event to the 'GlobalNotifications' sheet.
+    """
+    try:
+        # Format: Timestamp, BroadcastType, Username, City, Text
+        text = ""
+        if type == "sage_rank":
+            text = f"Community Alert: {username} has just achieved the rank of Enchiridion Sage! 🥈"
+        elif type == "master_rank":
+            text = f"A New Master has joined the Pantheon! 🏆 {username} just achieved Enchiridion Mastery."
+        
+        row = [datetime.now().isoformat(), type, username, city, text]
+        sheets_client.append_row("GlobalNotifications", row)
+        print(f"DEBUG: Global broadcast logged: {text}")
+    except Exception as e:
+        print(f"ERROR: Failed to log global broadcast: {e}")
 
 @router.post("/log-activity")
 async def log_activity(activity: ActivityLog, background_tasks: BackgroundTasks):
@@ -71,6 +103,144 @@ async def capture_lead(lead: LeadCapture, background_tasks: BackgroundTasks):
     
     return {"success": True}
 
+@router.post("/subscribe-newsletter")
+async def subscribe_newsletter(lead: LeadCapture, background_tasks: BackgroundTasks):
+    """Captures a newsletter subscription email and logs it to a dedicated sheet."""
+    sheet_name = "Newsletter"
+    
+    timestamp = lead.timestamp or datetime.now().isoformat()
+    details = lead.details or {}
+    url = details.get("url", "Newsletter Popup")
+    
+    # row format: Timestamp, Email, RefCode, Context
+    row = [timestamp, lead.email, lead.refCode or "direct", url]
+    
+    background_tasks.add_task(_save_lead_to_sheet, row, sheet_name)
+    
+    return {"success": True}
+
+
+def _save_distributor_lead_background(row: list):
+    """Saves distributor lead data in the background."""
+    sheet_name = "Distributor Leads"
+    try:
+        ws = sheets_client.get_worksheet(sheet_name)
+        if ws:
+            try:
+                first_row = ws.row_values(1)
+                if not first_row or not any(cell.strip() for cell in first_row):
+                    headers = ["Timestamp", "Name", "Phone", "WhatsApp", "Location"]
+                    ws.append_row(headers, table_range="A1")
+            except Exception as header_err:
+                print(f"WARNING: Could not init headers for {sheet_name}: {header_err}")
+        
+        sheets_client.append_row(sheet_name, row)
+        print(f"DEBUG: Distributor lead save successful for {row[1]}")
+    except Exception as e:
+        print(f"ERROR: Distributor lead save failed: {e}")
+    
+    # 2. Send email notification to Admin
+    try:
+        from ..auth import conf # Re-import safely if needed, though already at top
+        import os
+        admin_email = os.getenv("MAIL_FROM", "enchiridion.med@gmail.com")
+        
+        html = f"""
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
+            <h2 style="color: #ff6b00; margin-bottom: 24px;">New Distributor Interest</h2>
+            <p style="color: #475569; line-height: 1.6;">A new distributor application has been received:</p>
+            <div style="background-color: #f8fafc; padding: 16px; border-radius: 6px; margin: 20px 0;">
+                <p style="margin: 8px 0;"><strong>Name:</strong> {row[1]}</p>
+                <p style="margin: 8px 0;"><strong>Phone:</strong> {row[2]}</p>
+                <p style="margin: 8px 0;"><strong>WhatsApp:</strong> {row[3]}</p>
+                <p style="margin: 8px 0;"><strong>Location:</strong> {row[4]}</p>
+                <p style="margin: 8px 0;"><strong>Timestamp:</strong> {row[0]}</p>
+            </div>
+            <p style="color: #475569; line-height: 1.6; font-size: 14px;">This data has also been saved to the "Distributor Leads" worksheet.</p>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 24px 0;">
+            <p style="color: #94a3b8; font-size: 12px;">Enchiridion Admin System</p>
+        </div>
+        """
+        
+        message = MessageSchema(
+            subject=f"New Distributor Lead: {row[1]}",
+            recipients=[admin_email],
+            body=html,
+            subtype=MessageType.html
+        )
+        
+        # We need to run this async in the background task context
+        # Since _save_distributor_lead_background is NOT async, we need a helper or use asyncio
+        import asyncio
+        fm = FastMail(conf)
+        
+        # Use a new loop or the current one if it exists
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # If we're already in a loop, we can just schedule it
+                asyncio.ensure_future(fm.send_message(message))
+            else:
+                loop.run_until_complete(fm.send_message(message))
+        except Exception as loop_err:
+            # Fallback for thread context
+            asyncio.run(fm.send_message(message))
+            
+        print(f"DEBUG: Distributor email notification sent for {row[1]}")
+    except Exception as email_err:
+        print(f"ERROR: Failed to send distributor notification email: {email_err}")
+
+@router.post("/distributor-lead")
+async def distributor_lead(lead: DistributorLead, background_tasks: BackgroundTasks):
+    """Captures a distributor lead and logs it to Google Sheets in the background."""
+    timestamp = lead.timestamp or datetime.now().isoformat()
+    row = [timestamp, lead.name, lead.phone, lead.whatsapp, lead.location]
+    background_tasks.add_task(_save_distributor_lead_background, row)
+    
+    # NEW: Trigger Milestone Credit for Distributor Lead if referred
+    if lead.refCode:
+        # Use a background task to handle milestone logic (Partner onboarding helper equivalent)
+        # We use a dummy email or phone to identify the referee since they might not have an account yet
+        # But for milestone idempotency, we need a unique ID. Using phone number.
+        referee_id = lead.phone.strip()
+        background_tasks.add_task(_credit_distributor_milestone_background, lead.refCode, lead.name, referee_id)
+        
+    return {"success": True}
+
+def _credit_distributor_milestone_background(ref_code: str, referee_name: str, referee_id: str):
+    """Credits the referrer for a distributor lead milestone."""
+    try:
+        # Re-using the logic from purchase milestone but for 'distributor'
+        target_code = ref_code.strip().lower()
+        records = sheets_client.get_all_records("Partners")
+        referrer_email = None
+        for r in records:
+            if str(r.get("REFERRAL CODE", "")).strip().lower() == target_code:
+                referrer_email = str(r.get("USERNAME", "")).lower().strip()
+                break
+        
+        if referrer_email:
+            unique_key = f"{referee_id}_distributor"
+            # Idempotency
+            m_records = sheets_client.get_all_records("ReferralMilestones")
+            if any(str(r.get("UniqueKey", "")).lower().strip() == unique_key.lower().strip() for r in m_records):
+                return
+            
+            # Find Referrer Indices
+            for i, record in enumerate(records):
+                if str(record.get("USERNAME", "")).lower().strip() == referrer_email:
+                    row_idx = i + 2
+                    pts = safe_float(sheets_client.get_case_insensitive_val(record, "POINTS", "points")) + 0.1
+                    sheets_client.update_range("Partners", f"E{row_idx}:F{row_idx}", [[pts, pts*100]])
+                    # Milestone log
+                    sheets_client.append_row("ReferralMilestones", [datetime.now().isoformat(), referrer_email, referee_id, "distributor", 0.1, unique_key])
+                    # Activity log
+                    sheets_client.append_row("ActivityLog", [datetime.now().isoformat(), ref_code, "Distributor Setup", 0.1, f"Referee: {referee_name}", "", "PENDING"])
+                    break
+    except Exception as e:
+        print(f"ERROR: Distributor milestone failed: {e}")
+
+
 def _credit_visit_background(ref_code: str, ip: str):
     """Handles the entire visit processing (lookup + credit) in the background."""
     try:
@@ -80,23 +250,27 @@ def _credit_visit_background(ref_code: str, ip: str):
         referrer_row_idx = None
         referrer_record = None
         for i, record in enumerate(records):
-            if str(record.get("REFERRAL CODE", "")).strip().lower() == target_code:
+            ref_val = sheets_client.get_case_insensitive_val(record, "REFERRAL CODE", "ReferralCode", "referral_code", "REFERRAL_CODE")
+            if str(ref_val or "").strip().lower() == target_code:
                 referrer_record = record
                 referrer_row_idx = i + 2 # 1-indexed + header
                 break
         
         if not referrer_record:
+            sheets_client.log_audit("Point Credit", f"Referrer code {ref_code} NOT FOUND. Visit credit skipped.", "WARNING")
             print(f"DEBUG: Referrer code {ref_code} not found. Skipping credit.")
             return
 
         # Fraud Prevention: Self-referral check (IP)
         referrer_ip = referrer_record.get("LAST_IP", "")
         if referrer_ip == ip:
+            sheets_client.log_audit("Point Credit", f"Self-referral blocked for {ref_code} (IP: {ip})", "BLOCKED")
             print(f"DEBUG: Self-referral blocked in background for {ref_code} (IP: {ip})")
             return
 
-        current_points = float(referrer_record.get("POINTS", 0.0))
-        new_points = round(current_points + 0.1, 2)
+        p_val = sheets_client.get_case_insensitive_val(referrer_record, "POINTS", "points", "Pts")
+        current_points = safe_float(p_val)
+        new_points = round(current_points + 0.0, 2)
         new_revenue = round(new_points * 100, 2)
         
         # Atomic update
@@ -108,19 +282,72 @@ def _credit_visit_background(ref_code: str, ip: str):
             datetime.now().isoformat(),
             ref_code,
             "Browsing",
-            0.1,
+            0.0,
             f"Referral visit from IP: {ip}",
             "", # F: REPORTED Status
             "PENDING" # G: Payout Status
         ]
         sheets_client.append_row("ActivityLog", activity_row)
-        print(f"DEBUG: Background full credit successful for {ref_code}")
+        sheets_client.log_audit("Visit Record", f"Visit recorded for {ref_code} (IP: {ip}).")
+        print(f"DEBUG: Background visit recording successful for {ref_code}")
     except Exception as e:
+        sheets_client.log_audit("Point Credit", f"Failed visit credit for {ref_code}: {e}", "FAILED")
         print(f"ERROR: Background full credit failed for {ref_code}: {e}")
 
-@router.post("/track-visit")
-async def track_visit(track: SessionTrack, request: Request, response: Response, background_tasks: BackgroundTasks):
-    """Tracks a unique visit and offloads ALL sheet processing to the background."""
+@router.post("/record-share")
+async def record_share(track: SessionTrack, background_tasks: BackgroundTasks, platform: str = "unknown"):
+    """Awards points for a share action."""
+    background_tasks.add_task(_credit_share_background, track.refCode, track.ip, platform)
+    return {"status": "success", "message": "Share recorded"}
+
+def _credit_share_background(ref_code: str, ip: str, platform: str):
+    """Awards points for sharing the referral link."""
+    try:
+        target_code = ref_code.strip().lower()
+        records = sheets_client.get_all_records("Partners")
+        
+        referrer_row_idx = None
+        referrer_record = None
+        for i, record in enumerate(records):
+            ref_val = sheets_client.get_case_insensitive_val(record, "REFERRAL CODE", "ReferralCode", "referral_code")
+            if str(ref_val or "").strip().lower() == target_code:
+                referrer_record = record
+                referrer_row_idx = i + 2
+                break
+        
+        if not referrer_record:
+            sheets_client.log_audit("Share Credit", f"Referrer code '{ref_code}' NOT FOUND. Share reward skipped.", "WARNING")
+            print(f"DEBUG: Referrer code '{ref_code}' NOT FOUND in sheet. Sharing reward skipped.")
+            return
+
+        p_val = sheets_client.get_case_insensitive_val(referrer_record, "POINTS", "points", "Pts")
+        current_points = safe_float(p_val)
+        new_points = round(current_points + 0.0, 2)
+        new_revenue = round(new_points * 100, 2)
+        
+        # Atomic update of Columns E (Points) and F (Revenue)
+        sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
+        
+        # Log Activity
+        activity_row = [
+            datetime.now().isoformat(),
+            ref_code,
+            "Social Share",
+            0.0,
+            f"Shared via {platform} (IP: {ip})",
+            "", 
+            "PENDING"
+        ]
+        sheets_client.append_row("ActivityLog", activity_row)
+        sheets_client.log_audit("Share Record", f"Recorded share for {ref_code} via {platform}")
+        print(f"DEBUG: Share recorded successfully for {ref_code} via {platform}")
+    except Exception as e:
+        sheets_client.log_audit("Share Credit", f"Failed share credit for {ref_code}: {e}", "FAILED")
+        print(f"ERROR: Background share credit failed for {ref_code}: {e}")
+
+@router.post("/record-visit")
+async def record_visit(track: SessionTrack, request: Request, response: Response, background_tasks: BackgroundTasks):
+    """Records a unique visit and offloads ALL sheet processing to the background."""
     # 1. Quick cookie check
     unique_cookie = request.cookies.get("ench_unique_visit")
     if unique_cookie:
@@ -139,6 +366,8 @@ async def track_visit(track: SessionTrack, request: Request, response: Response,
     background_tasks.add_task(_credit_visit_background, track.refCode, track.ip)
     
     return {"status": "success", "message": "Visit registered"}
+
+# Removed duplicate track_share logic
 
 @router.get("/audit/verify")
 async def verify_integrity(user: UserRead = Depends(current_active_user)):
@@ -295,9 +524,9 @@ async def mock_register(email: str, refCode: str, request: Request):
         activity_row = [
             datetime.now().isoformat(),
             refCode,
-            "Registration (Mock)",
+            "Registration (Legacy Mock)",
             0.1,
-            f"Mock signup: {email}",
+            f"Mock signup: {email} (Simulating immediate credit)",
             "", # F: REPORTED Status
             "PENDING" # G: Payout Status
         ]
@@ -342,60 +571,632 @@ from pydantic import BaseModel
 
 class PurchaseCredit(BaseModel):
     refCode: str
+    email: str # Required to identify referee
+
+class PaystackWebhook(BaseModel):
+    event: str
+    data: dict
 
 @router.post("/credit-purchase")
-async def credit_purchase(purchase: PurchaseCredit):
-    """Credits 5.0 points (₦500) to the referring partner."""
-    refCode = purchase.refCode
-    records = sheets_client.get_all_records("Partners")
-    referrer_row_idx = None
-    referrer_record = None
+async def credit_purchase(purchase: PurchaseCredit, background_tasks: BackgroundTasks):
+    """Manual trigger for purchase credit."""
+    background_tasks.add_task(_credit_purchase_background, purchase.refCode, purchase.email)
+    return {"success": True, "message": "Credit processing in background"}
+
+class BuyerEmail(BaseModel):
+    email: str
+
+@router.post("/complete-purchase")
+async def complete_purchase(body: BuyerEmail, background_tasks: BackgroundTasks):
+    """
+    Called by the frontend after a successful Paystack payment.
+    Runs the full buyer-side milestone:
+      1. Sets HasPurchasedBook = TRUE in UserOnboarding
+      2. Awards 1.0 cashback to the buyer
+      3. Credits the referrer 5.0 pts via existing background logic
+    This is the fallback for when the Paystack webhook hasn't been configured yet.
+    """
+    background_tasks.add_task(_handle_payment_milestone, body.email)
+    return {"success": True, "message": "Purchase milestone processing started"}
+
+@router.post("/paystack/webhook")
+async def paystack_webhook(request: Request, background_tasks: BackgroundTasks):
+    """Securely handle Paystack webhooks with HMAC verification."""
+    # 1. Verify Signature
+    paystack_signature = request.headers.get("x-paystack-signature")
+    if not paystack_signature:
+        print("ERROR: Missing x-paystack-signature header")
+        raise HTTPException(status_code=400, detail="Missing signature")
     
-    for i, record in enumerate(records):
-        if str(record.get("REFERRAL CODE", "")).strip().lower() == refCode.strip().lower():
-            referrer_record = record
-            referrer_row_idx = i + 2
-            break
+    secret = os.getenv("PAYSTACK_SECRET_KEY", "")
+    body = await request.body()
+    
+    computed_hmac = hmac.new(
+        secret.encode("utf-8"),
+        body,
+        hashlib.sha512
+    ).hexdigest()
+    
+    if computed_hmac != paystack_signature:
+        print(f"ERROR: Invalid Paystack signature. Computed: {computed_hmac[:10]}... Header: {paystack_signature[:10]}...")
+        raise HTTPException(status_code=400, detail="Invalid signature")
+    
+    # 2. Parse Payload
+    try:
+        payload = json.loads(body)
+    except Exception as e:
+        print(f"ERROR: Failed to parse Paystack webhook body: {e}")
+        raise HTTPException(status_code=400, detail="Invalid JSON")
+        
+    event = payload.get("event")
+    data = payload.get("data", {})
+    
+    if event == "charge.success":
+        status = data.get("status")
+        customer_email = data.get("customer", {}).get("email")
+        metadata = data.get("metadata", {})
+        product = metadata.get("product")
+        
+        if status == "success" and product == "book":
+            print(f"INFO: Verified Paystack purchase for {customer_email}")
+            # Identify the referee and trigger the dual-reward milestone logic
+            background_tasks.add_task(_handle_payment_milestone, customer_email)
+            return {"status": "success", "message": "Signature verified, milestone processing started"}
             
-    if referrer_record:
+    return {"status": "ignored"}
+
+# Deprecated mock webhook (Left for internal transitions if needed, but not protected by HMAC)
+@router.post("/webhook/payment-success")
+async def payment_webhook(payload: PaystackWebhook, background_tasks: BackgroundTasks):
+    """
+    [DEPRECATED] Handle mock/unsecured payment success signals. 
+    New implementation: /api/paystack/webhook (with prefix /referral)
+    """
+    event = payload.event
+    data = payload.data
+    
+    if event == "charge.success":
+        status = data.get("status")
+        customer_email = data.get("customer", {}).get("email")
+        metadata = data.get("metadata", {})
+        product = metadata.get("product")
+        
+        if status == "success" and product == "book":
+            background_tasks.add_task(_handle_payment_milestone, customer_email)
+            return {"status": "success", "message": "Milestone processing started"}
+            
+    return {"status": "ignored"}
+
+async def _handle_payment_milestone(referee_email: str):
+    """Finds the referrer for a referee and credits them, and also credits the buyer (cash-back)."""
+    try:
+        # 1. Update UserOnboarding status
         try:
-            current_points = float(referrer_record.get("POINTS", 0.0))
-            new_points = round(current_points + 5.0, 2)
-            new_revenue = round(new_points * 100, 2)
-            
-            # Atomic update of columns E (Points) and F (Revenue)
-            # And reset status to PENDING in Column I (9th col)
-            sheets_client.update_range("Partners", f"E{referrer_row_idx}:F{referrer_row_idx}", [[new_points, new_revenue]])
-            sheets_client.update_cell("Partners", referrer_row_idx, 9, "PENDING")
-
-            
-            # Log Activity
-            activity_row = [
-                datetime.now().isoformat(),
-                refCode,
-                "Purchase",
-                5.0,
-                "Book Sale Referral",
-                "", # F: REPORTED Status
-                "PENDING" # G: Payout Status
-            ]
-            sheets_client.append_row("ActivityLog", activity_row)
-            
-            return {"success": True, "points_added": 5.0}
+            on_records = sheets_client.get_all_records("UserOnboarding")
+            o_row = None
+            for i, r in enumerate(on_records):
+                if str(r.get("Email", "")).lower().strip() == referee_email.lower().strip():
+                    o_row = i + 2
+                    break
+            if o_row:
+                sheets_client.update_cell("UserOnboarding", o_row, 5, "TRUE")
+                sheets_client.update_cell("UserOnboarding", o_row, 6, datetime.now().isoformat())
         except Exception as e:
-            print(f"ERROR: Failed to credit purchase: {e}")
-            raise HTTPException(status_code=500, detail="Failed to credit purchase")
-            
-    raise HTTPException(status_code=404, detail="Referrer not found")
+            print(f"ERROR: Failed to update onboarding purchase state for {referee_email}: {e}")
 
-def get_case_insensitive(record: dict, *keys: str, default=0.0):
-    """Safely gets a value from a record using a list of potential keys (case-insensitive)."""
-    normalized_record = {str(k).strip().lower(): v for k, v in record.items()}
-    for key in keys:
-        norm_key = str(key).strip().lower()
-        if norm_key in normalized_record:
-            return normalized_record[norm_key]
-    return default
+        # 2. Credit the Buyer (Cash-Back)
+        buyer_name = "Master"
+        try:
+            p_records = sheets_client.get_all_records("Partners")
+            for r in p_records:
+                if str(r.get("USERNAME", "")).lower().strip() == referee_email.lower().strip():
+                    buyer_name = r.get("FULL NAME", r.get("NAME", "Master"))
+                    break
+            
+            await _credit_buyer_cashback(referee_email)
+            await _send_cashback_confirmation_email(referee_email, buyer_name)
+        except Exception as e:
+            print(f"ERROR: Failed buyer cashback for {referee_email}: {e}")
+
+        # 3. Credit the Referrer
+        records = sheets_client.get_all_records("Partners")
+        referred_by = None
+        for r in records:
+            if str(r.get("USERNAME", "")).lower().strip() == referee_email.lower().strip():
+                referred_by = str(r.get("REFERRED_BY", "")).strip()
+                break
+        
+        if referred_by:
+            # Trigger the purchase credit logic (Credits Referrer 5.0)
+            _credit_purchase_background(referred_by, referee_email)
+            
+    except Exception as e:
+        print(f"ERROR: Failed to handle payment milestone for {referee_email}: {e}")
+
+async def _get_legacy_rank_data(email: str):
+    """Calculates Legacy Rank and Souls Guided count based on ReferralMilestones."""
+    try:
+        email = email.lower().strip()
+        milestones = sheets_client.get_all_records("ReferralMilestones")
+        
+        # Filter for book_purchase milestones where this user is the referrer
+        book_refs = [
+            m for m in milestones 
+            if str(m.get("MilestoneType", "")).lower().strip() == "book_purchase" and 
+            str(m.get("ReferrerEmail", "")).lower().strip() == email
+        ]
+        
+        # Sort by timestamp to find attainment dates
+        book_refs.sort(key=lambda x: x.get("Timestamp", ""))
+        
+        count = len(book_refs)
+        rank = "Seeker"
+        mastery_date = None
+        
+        if count >= 16:
+            rank = "Master"
+            # 16th referral date
+            mastery_date = book_refs[15].get("Timestamp")
+        elif count >= 6:
+            rank = "Sage"
+            # 6th referral date
+            mastery_date = book_refs[5].get("Timestamp")
+            
+        return {
+            "rank": rank,
+            "soulsGuided": count,
+            "masteryDate": mastery_date
+        }
+    except Exception as e:
+        print(f"ERROR calculating legacy rank for {email}: {e}")
+        return {"rank": "Seeker", "soulsGuided": 0, "masteryDate": None}
+
+async def _trigger_onboarding_reward(target_email: str, step: str):
+    """Internal helper to find referrer and award points for onboarding steps."""
+    try:
+        # Find the user's referrer code
+        p_records = sheets_client.get_all_records("Partners")
+        referred_by_code = None
+        for p in p_records:
+            if str(p.get("USERNAME", "")).lower().strip() == target_email.lower().strip():
+                referred_by_code = str(p.get("REFERRED_BY", "")).strip()
+                break
+        
+        if referred_by_code:
+            # Find referrer email
+            referrer_email = None
+            for p in p_records:
+                if str(p.get("REFERRAL CODE", "")).lower().strip() == referred_by_code.lower().strip():
+                    referrer_email = str(p.get("USERNAME", "")).lower().strip()
+                    break
+            
+            if referrer_email:
+                from ..auth import GoogleSheetsUserDatabase, UserManager, User
+                import uuid
+                db = GoogleSheetsUserDatabase(User, uuid.UUID)
+                manager = UserManager(db)
+                await manager.record_milestone_and_credit(referrer_email, target_email, step, 0.1)
+                print(f"DEBUG: Auto-rewarded {referrer_email} for {target_email} {step}")
+    except Exception as e:
+        print(f"ERROR triggering auto-reward for {target_email}: {e}")
+
+@router.get("/progress", response_model=UserProgress)
+async def get_user_progress(user: UserRead = Depends(current_active_user)):
+    """Fetches the onboarding progress for the current user and auto-syncs login milestones."""
+    records = sheets_client.get_all_records("UserOnboarding")
+    target = user.email.lower().strip()
+    
+    current_progress = None
+    row_idx = None
+    for i, r in enumerate(records):
+        if str(r.get("Email", "")).lower().strip() == target:
+            row_idx = i + 2
+            current_progress = r
+            break
+    
+    if not current_progress:
+        # Create record if missing (legacy users)
+        onboarding_row = [target, "TRUE" if user.is_verified else "FALSE", "TRUE", "FALSE", "FALSE", datetime.now().isoformat()]
+        sheets_client.get_or_create_worksheet("UserOnboarding", ["Email", "IsVerified", "IsPartner", "IsDistributor", "HasPurchasedBook", "LastUpdated"])
+        sheets_client.append_row("UserOnboarding", onboarding_row)
+        # Award reward for partner status
+        await _trigger_onboarding_reward(target, "partner")
+        return UserProgress(email=target, is_verified=user.is_verified, is_partner=True)
+
+    # Sync state
+    is_verified_sheet = str(current_progress.get("IsVerified", "FALSE")).upper() == "TRUE"
+    is_partner_sheet = str(current_progress.get("IsPartner", "FALSE")).upper() == "TRUE"
+    
+    updates_made = False
+    
+    # 1. Sync Verification
+    if user.is_verified and not is_verified_sheet:
+        sheets_client.update_cell("UserOnboarding", row_idx, 2, "TRUE")
+        is_verified_sheet = True
+        updates_made = True
+        
+    # 2. Sync Partner Status (Accessing dashboard = Partner)
+    if not is_partner_sheet:
+        sheets_client.update_cell("UserOnboarding", row_idx, 3, "TRUE")
+        is_partner_sheet = True
+        updates_made = True
+        # Trigger reward logic
+        await _trigger_onboarding_reward(target, "partner")
+
+    if updates_made:
+        sheets_client.update_cell("UserOnboarding", row_idx, 6, datetime.now().isoformat())
+
+    return UserProgress(
+        email=target,
+        is_verified=is_verified_sheet,
+        is_partner=is_partner_sheet,
+        is_distributor=str(current_progress.get("IsDistributor", "FALSE")).upper() == "TRUE",
+        has_purchased_book=str(current_progress.get("HasPurchasedBook", "FALSE")).upper() == "TRUE",
+        last_updated=datetime.now().isoformat() if updates_made else str(current_progress.get("LastUpdated", ""))
+    )
+
+class ProgressUpdate(BaseModel):
+    email: str
+    step: str # 'partner' or 'distributor'
+
+@router.get("/recent-milestones")
+async def get_recent_milestones():
+    """Fetches the latest 10 milestones and registrations for the live feed."""
+    try:
+        # 1. Fetch latest milestones
+        milestone_records = sheets_client.get_all_records("ReferralMilestones")
+        latest_milestones = sorted(milestone_records, key=lambda x: x.get("Timestamp", ""), reverse=True)[:10]
+        
+        # 2. Fetch latest partners (for "New Partner" notifications)
+        partner_records = sheets_client.get_all_records("Partners")
+        latest_partners = sorted(partner_records, key=lambda x: x.get("DATE_JOINED", ""), reverse=True)[:10]
+
+        # 3. Fetch latest global broadcasts (rank ups)
+        broadcast_records = sheets_client.get_all_records("GlobalNotifications")
+        latest_broadcasts = sorted(broadcast_records, key=lambda x: x.get("Timestamp", ""), reverse=True)[:10]
+
+        all_impacts = []
+        
+        # Process global broadcasts
+        for b in latest_broadcasts:
+            b_type = b.get("BroadcastType", "").lower()
+            name = b.get("Username", "Someone")
+            if b_type == "sage_rank":
+                all_impacts.append({
+                    "type": "sage",
+                    "text": f"{name} just achieved the rank of Sage! 🥈",
+                    "timestamp": b.get("Timestamp")
+                })
+            elif b_type == "master_rank":
+                all_impacts.append({
+                    "type": "master",
+                    "text": f"{name} just reached Enchiridion Mastery! 🏆",
+                    "timestamp": b.get("Timestamp")
+                })
+
+        # Process milestones
+        for m in latest_milestones:
+            m_type = m.get("MilestoneType", "").lower()
+            name = m.get("RefereeEmail", "").split("@")[0]
+            # Try to capitalize first letter
+            name = name.capitalize() if name else "Someone"
+            
+            if m_type == "book_purchase":
+                all_impacts.append({
+                    "type": "purchase",
+                    "text": f"{name} just bought their Enchiridion guide (Book)! 📘",
+                    "timestamp": m.get("Timestamp")
+                })
+            elif m_type == "distributor":
+                all_impacts.append({
+                    "type": "distributor",
+                    "text": f"{name} just promoted to Distributor Status! 🚀",
+                    "timestamp": m.get("Timestamp")
+                })
+            elif m_type == "partner":
+                all_impacts.append({
+                    "type": "partner",
+                    "text": f"{name} just reached Partner Status! 🎉",
+                    "timestamp": m.get("Timestamp")
+                })
+
+        # Process partners
+        for p in latest_partners:
+            name = p.get("FULL NAME", p.get("NAME", "Someone")).split()[0]
+            state = p.get("STATE", "Nigeria")
+            all_impacts.append({
+                "type": "registration",
+                "text": f"{name} from {state} just registered with us! ✨",
+                "timestamp": p.get("DATE_JOINED")
+            })
+
+        # Sort and return top 10
+        all_impacts.sort(key=lambda x: x.get("timestamp", ""), reverse=True)
+        return all_impacts[:10]
+    except Exception as e:
+        print(f"ERROR fetching recent milestones: {e}")
+        return []
+
+@router.get("/global-broadcasts")
+async def get_global_broadcasts():
+    """Fetches the latest global community alerts for real-time toasts."""
+    try:
+        # Fetch last 5 global notifications from the past 10 minutes (to avoid stale toasts)
+        records = sheets_client.get_all_records("GlobalNotifications")
+        if not records:
+            return []
+            
+        now = datetime.now()
+        threshold = now - timedelta(minutes=10)
+        
+        recent = []
+        for r in sorted(records, key=lambda x: x.get("Timestamp", ""), reverse=True):
+            try:
+                ts = date_parser.parse(r.get("Timestamp", ""))
+                if ts >= threshold:
+                    recent.append({
+                        "id": f"{r.get('BroadcastType')}_{r.get('Timestamp')}",
+                        "type": r.get("BroadcastType"),
+                        "username": r.get("Username"),
+                        "text": r.get("Text"),
+                        "timestamp": r.get("Timestamp")
+                    })
+                if len(recent) >= 5:
+                    break
+            except:
+                continue
+        return recent
+    except Exception as e:
+        print(f"ERROR fetching global broadcasts: {e}")
+        return []
+
+@router.post("/update-progress")
+async def update_user_progress(update: ProgressUpdate, user: UserRead = Depends(current_active_superuser)):
+    """
+    Internal/Admin endpoint to move User B along the checklist.
+    Awards rewards to their Referrer (User A).
+    """
+    target_email = update.email.lower().strip()
+    step = update.step.lower().strip()
+    
+    if step not in ["partner", "distributor"]:
+        raise HTTPException(status_code=400, detail="Invalid step. Use 'partner' or 'distributor'.")
+
+    # 1. Find the onboarding row
+    records = sheets_client.get_all_records("UserOnboarding")
+    row_idx = None
+    current_status = None
+    for i, r in enumerate(records):
+        if str(r.get("Email", "")).lower().strip() == target_email:
+            row_idx = i + 2
+            current_status = r
+            break
+    
+    if not row_idx:
+        raise HTTPException(status_code=404, detail="User progress record not found.")
+
+    # 2. Check if already completed
+    col_idx = 3 if step == "partner" else 4
+    col_name = "IsPartner" if step == "partner" else "IsDistributor"
+    
+    if str(current_status.get(col_name, "FALSE")).upper() == "TRUE":
+        return {"success": True, "message": f"Step {step} already completed."}
+
+    # 3. Update the sheet
+    sheets_client.update_cell("UserOnboarding", row_idx, col_idx, "TRUE")
+    sheets_client.update_cell("UserOnboarding", row_idx, 6, datetime.now().isoformat())
+
+    # 4. Award Referrer
+    await _trigger_onboarding_reward(target_email, step)
+
+    return {"success": True, "message": f"Step {step} completed and reward processed."}
+
+def _credit_purchase_background(ref_code: str, referee_email: str):
+    """Internal helper to credit purchase reward using Milestone logic."""
+    try:
+        from ..auth import UserManager
+        # We need a UserManager instance or a static helper. 
+        # Since UserManager handles the sheet logic, let's use a temporary instance or just call its logic.
+        # For simplicity, I'll refactor record_milestone_and_credit to be easily accessible.
+        # But wait, I can just use the existing helper logic here since Sheets are global.
+        
+        # Actually, let's import the record_milestone_and_credit logic carefully.
+        # I'll update referral.py to use the new milestone logic.
+        
+        records = sheets_client.get_all_records("Partners")
+        referrer_email = None
+        for record in records:
+            ref_val = sheets_client.get_case_insensitive_val(record, "REFERRAL CODE", "ReferralCode", "referral_code")
+            if str(ref_val or "").strip().lower() == ref_code.strip().lower():
+                referrer_email = str(record.get("USERNAME", "")).lower().strip()
+                break
+        
+        if referrer_email:
+            # Credit 5.0 for purchase Milestone
+            # We can't easily call UserManager here without an instance, 
+            # so I'll replicate the core logic or call a helper.
+            # I'll create a shared helper if needed, but for now, I'll update it here.
+            
+            # REPLICATING logic for now to avoid circular imports / complex DI
+            unique_key = f"{referee_email.lower().strip()}_book_purchase"
+            
+            # Idempotency
+            milestone_records = sheets_client.get_all_records("ReferralMilestones")
+            for r in milestone_records:
+                if str(r.get("UniqueKey", "")).lower().strip() == unique_key:
+                    return
+
+            # Find row index again for update
+            for i, record in enumerate(records):
+                 if str(record.get("USERNAME", "")).lower().strip() == referrer_email:
+                     row_idx = i + 2
+                     p_val = sheets_client.get_case_insensitive_val(record, "POINTS", "points")
+                     pts = safe_float(p_val) + 5.0
+                     sheets_client.update_range("Partners", f"E{row_idx}:F{row_idx}", [[pts, pts*100]])
+                     
+                     # Log Activity
+                     sheets_client.append_row("ActivityLog", [datetime.now().isoformat(), ref_code, "Book Purchase", 5.0, f"Referee: {referee_email}", "", "PENDING"])
+                     
+                     # Log Milestone
+                     sheets_client.append_row("ReferralMilestones", [datetime.now().isoformat(), referrer_email, referee_email, "book_purchase", 5.0, unique_key])
+
+                     # Rank-Up Detection
+                     # Since we just added a milestone, we need to check if they hit a threshold
+                     # But _get_legacy_rank_data recalculates everything, which is safe.
+                     # However, to know if they *just* ranked up, we'd need to know their count before.
+                     # We can just check if count == 6 or 16 specifically right now.
+                     
+                     import asyncio
+                     # We are in a sync background task, so we need a loop to call async rank helper
+                     try:
+                         loop = asyncio.new_event_loop()
+                         asyncio.set_event_loop(loop)
+                         rank_data = loop.run_until_complete(_get_legacy_rank_data(referrer_email))
+                         loop.close()
+                         
+                         count = rank_data.get("soulsGuided", 0)
+                         username = sheets_client.get_case_insensitive_val(record, "NAME", "FULL NAME", default=referrer_email.split("@")[0])
+                         city = record.get("STATE", record.get("CITY", "Nigeria"))
+                         
+                         if count == 6:
+                             _log_global_broadcast("sage_rank", username, city)
+                         elif count == 16:
+                             _log_global_broadcast("master_rank", username, city)
+                             # Trigger Mastery Email
+                             loop = asyncio.new_event_loop()
+                             asyncio.set_event_loop(loop)
+                             loop.run_until_complete(_send_mastery_email(referrer_email, username))
+                             loop.close()
+                     except Exception as rank_err:
+                         print(f"ERROR in rank-up detection: {rank_err}")
+
+                     break
+    except Exception as e:
+        print(f"ERROR: Failed to credit purchase milestone: {e}")
+
+async def _credit_buyer_cashback(buyer_email: str):
+    """Awards 1.0 point to the buyer as cash-back for purchase."""
+    try:
+        unique_key = f"{buyer_email.lower().strip()}_cashback_purchase"
+        
+        # Idempotency
+        milestone_records = sheets_client.get_all_records("ReferralMilestones")
+        for r in milestone_records:
+            if str(r.get("UniqueKey", "")).lower().strip() == unique_key:
+                print(f"DEBUG: Cashback already awarded to {buyer_email}")
+                return
+
+        records = sheets_client.get_all_records("Partners")
+        for i, record in enumerate(records):
+            if str(record.get("USERNAME", "")).lower().strip() == buyer_email.lower().strip():
+                row_idx = i + 2
+                p_val = sheets_client.get_case_insensitive_val(record, "POINTS", "points")
+                pts = safe_float(p_val) + 1.0
+                sheets_client.update_range("Partners", f"E{row_idx}:F{row_idx}", [[pts, pts*100]])
+                
+                # Log Milestone
+                sheets_client.append_row("ReferralMilestones", [datetime.now().isoformat(), "SYSTEM", buyer_email, "cashback_purchase", 1.0, unique_key])
+                
+                # Log Activity
+                ref_code = record.get("REFERRAL CODE", "N/A")
+                sheets_client.append_row("ActivityLog", [datetime.now().isoformat(), ref_code, "Cash-Back: Enchiridion Book Purchase", 1.0, f"Buyer: {buyer_email}", "", "PENDING"])
+                print(f"DEBUG: Successfully awarded 1.0 cashback to {buyer_email}")
+                break
+    except Exception as e:
+        print(f"ERROR: Failed to credit buyer cashback: {e}")
+
+async def _send_mastery_email(email: str, name: str):
+    """Sends a celebratory email when a user alcanza Enchiridion Mastery."""
+    subject = "UNLOCKED: Enchiridion Mastery Status! 🏆✨"
+    
+    html = f"""
+    <div style="font-family: 'Georgia', serif; max-width: 650px; margin: 0 auto; padding: 40px; border: 15px solid #D4AF37; border-image: linear-gradient(to bottom right, #D4AF37, #FBF2C0, #D4AF37) 1; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;">
+        <div style="margin-bottom: 30px;">
+            <h2 style="color: #1e293b; text-transform: uppercase; letter-spacing: 5px; margin: 0;">Enchiridion Mastery</h2>
+            <div style="width: 100px; height: 2px; background: #D4AF37; margin: 15px auto;"></div>
+            <p style="font-size: 14px; color: #64748b; font-style: italic;">Certificate of Achievement</p>
+        </div>
+        
+        <p style="font-size: 18px; color: #334155;">This is to certify that</p>
+        <h1 style="font-size: 36px; color: #1e293b; margin: 10px 0; border-bottom: 1px solid #e2e8f0; display: inline-block; padding: 0 40px;">{name}</h1>
+        <p style="font-size: 18px; color: #334155; margin-top: 10px;">has successfully guided</p>
+        
+        <div style="background: #1e293b; color: white; display: inline-block; padding: 15px 40px; border-radius: 50px; margin: 20px 0;">
+            <h2 style="color: #D4AF37; margin: 0; font-size: 24px;">16 SOULS GUIDED</h2>
+        </div>
+        
+        <p style="font-size: 18px; color: #334155;">and is hereby recognized as an <strong>Enchiridion Master</strong>.</p>
+        
+        <div style="margin: 40px 0; padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px dashed #cbd5e1;">
+            <p style="font-size: 15px; color: #475569; margin: 0;">
+                <strong>Digital Achievement Card Unlocked:</strong> Your shareable card is now available on your dashboard. 
+                Use it to share your legacy with the world!
+            </p>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="https://enchiridion.ng/dashboard" style="background: #D4AF37; color: #1e293b; padding: 15px 35px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; font-family: sans-serif; text-transform: uppercase; letter-spacing: 1px;">Claim My Rank & Share Card</a>
+        </div>
+
+        <div style="margin-top: 50px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
+            <p style="font-size: 12px; color: #94a3b8; text-transform: uppercase;">The Enchiridion Registry • Verified {datetime.now().year}</p>
+        </div>
+    </div>
+    """
+    
+    message = MessageSchema(
+        subject=subject,
+        recipients=[email],
+        body=html,
+        subtype=MessageType.html
+    )
+    
+    fm = FastMail(conf)
+    try:
+        await fm.send_message(message)
+        print(f"DEBUG: Mastery email sent to {email}")
+    except Exception as e:
+        print(f"ERROR: Failed to send mastery email to {email}: {e}")
+
+async def _send_cashback_confirmation_email(email: str, name: str):
+    """Sends confirmation email with 1.0 point reward notification."""
+    subject = "Your Mastery is Confirmed (Plus a Reward!) 📘✨"
+    
+    html = f"""
+    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+        <h2 style="color: #4169E1;">Welcome to the Inner Circle, {name}</h2>
+        <p>Your purchase of <strong>The Enchiridion</strong> is confirmed, and your journey toward mastery has officially accelerated.</p>
+        
+        <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; text-align: center; margin: 20px 0; border: 1px solid #bbf7d0;">
+            <p style="margin: 0; color: #166534; font-weight: bold;">Bonus Reward Added!</p>
+            <span style="font-size: 28px; font-weight: bold; color: #16a34a;">+ 1.0 Point</span>
+            <p style="margin: 5px 0 0 0; color: #15803d; font-size: 14px;">(subsidized mastery reward)</p>
+        </div>
+
+        <h3 style="color: #1e293b;">What's Next?</h3>
+        <ul style="color: #475569; line-height: 1.6;">
+            <li><strong>Check your Dashboard:</strong> Your "Enchiridion Mastery" milestone is now complete.</li>
+            <li><strong>Start Referring:</strong> Now that you have the blueprint, share your link and earn <b>5.0 points</b> whenever someone you invite buys the book!</li>
+        </ul>
+
+        <p style="color: #64748b; font-size: 14px; margin-top: 30px;">Keep Rising,<br>The Enchiridion Team</p>
+    </div>
+    """
+
+    message = MessageSchema(
+        subject=subject,
+        recipients=[email],
+        body=html,
+        subtype=MessageType.html
+    )
+    fm = FastMail(conf)
+    try:
+        await fm.send_message(message)
+        print(f"DEBUG: Cashback confirmation email sent to {email}")
+    except Exception as e:
+        print(f"DEBUG: Cashback email failed for {email}: {e}")
+
+# Removed local redundant get_case_insensitive helper
 
 
 @router.post("/mark-as-paid")
@@ -419,13 +1220,13 @@ async def mark_as_paid(request: MarkAsPaidRequest, user: UserRead = Depends(curr
         if not partner_record:
             raise HTTPException(status_code=404, detail="Partner not found")
             
-        # 2. Extract current earnings and lifetime earnings using robust safe_float
-        current_points = safe_float(get_case_insensitive(partner_record, "POINTS", "Points", default=0.0))
-        current_revenue = safe_float(get_case_insensitive(partner_record, "REVENUE (\u20a6)", "REVENUE", "Revenue", default=0.0))
+        # 2. Extract current earnings and lifetime earnings using robust sheets_client helper
+        current_points = safe_float(sheets_client.get_case_insensitive_val(partner_record, "POINTS", "points", default=0.0))
+        current_revenue = safe_float(sheets_client.get_case_insensitive_val(partner_record, "REVENUE (\u20a6)", "REVENUE", "Revenue", default=0.0))
 
         
-        # 3. Extract lifetime earnings using robust safe_float
-        lifetime_earnings = safe_float(get_case_insensitive(partner_record, "LIFETIME_EARNINGS", "LIFETIME EARNINGS", "Lifetime Earnings", default=0.0))
+        # 3. Extract lifetime earnings using robust sheets_client helper
+        lifetime_earnings = safe_float(sheets_client.get_case_insensitive_val(partner_record, "LIFETIME_EARNINGS", "LIFETIME EARNINGS", "Lifetime Earnings", default=0.0))
         
         # 4. Calculate new values
         new_lifetime = round(lifetime_earnings + current_revenue, 2)
@@ -693,46 +1494,158 @@ async def revert_payout(request: MarkAsPaidRequest, user=Depends(current_active_
     except Exception as e:
         import traceback
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
+@router.get("/shipping-rates")
+async def get_shipping_rates():
+    """Fetch shipping rates and hub status from the 'Delivery Pricing' sheet."""
+    try:
+        records = sheets_client.get_all_records("Delivery Pricing")
+        # Normalize keys to match what frontend expects
+        normalized = []
+        for r in records:
+            # Expected columns: STATE NAME, COST, HUB STATES
+            state_name = sheets_client.get_case_insensitive_val(r, "STATE NAME", "STATE", "name", default="")
+            cost = safe_float(sheets_client.get_case_insensitive_val(r, "COST", "price", default=0.0))
+            is_hub = str(sheets_client.get_case_insensitive_val(r, "HUB STATES", "HUB", "is_hub", default="FALSE")).upper() == "TRUE"
+            
+            if state_name:
+                normalized.append({
+                    "name": state_name,
+                    "cost": cost,
+                    "isHub": is_hub
+                })
+        return normalized
+    except Exception as e:
+        print(f"ERROR fetching shipping rates: {e}")
+        return []
 
 @router.get("/stats")
 async def get_stats(user: UserRead = Depends(current_active_user)):
-    # Fetch user stats from Partners sheet
+    # 1. Fetch user record from Partners sheet
     records = sheets_client.get_all_records("Partners")
     target_email = user.email.lower().strip()
+    partner_record = None
+    
     for record in records:
-        # Match using case-insensitive email/username
         record_email = str(record.get("USERNAME", record.get("Email Address", ""))).lower().strip()
         if record_email == target_email:
-            # Extract stats using robust safe_float
-            points = safe_float(record.get("POINTS", 0.0))
-            revenue = safe_float(record.get("REVENUE (\u20a6)", record.get("Revenue", 0.0)))
-            total_referrals = int(safe_float(record.get("TOTAL REFERRALS", 0.0)))
+            partner_record = record
+            break
+            
+    if not partner_record:
+        raise HTTPException(status_code=404, detail="Stats not found")
 
-            # Ensure they tally based on 1 pt = 100 naira conversion if one is zero
-            if points > 0 and revenue == 0:
-                revenue = points * 100
-            elif revenue > 0 and points == 0:
-                points = revenue / 100
-                
-            # Extract lifetime earnings using robust safe_float
-            lifetime_earnings = safe_float(get_case_insensitive(record, "LIFETIME EARNINGS", "LIFETIME_EARNINGS", default=0.0))
+    partner_code = sheets_client.get_case_insensitive_val(partner_record, "REFERRAL CODE", "ReferralCode", default="")
+    
+    # 2. Fetch Detailed Activity and Milestones
+    activity_records = sheets_client.get_all_records("ActivityLog")
+    milestone_records = sheets_client.get_all_records("ReferralMilestones")
+    
+    # 3. Calculate Pending Points (Registration but not verified)
+    pending_count = 0
+    for act in activity_records:
+        if str(act.get("REFERRED_BY", "")).lower().strip() == partner_code.lower().strip():
+            status = str(act.get("Payout Status", "")).strip()
+            if status == "PENDING_VERIFICATION":
+                pending_count += 1
+    
+    pending_points = round(pending_count * 0.1, 2)
 
-            return {
-                "points": points,
-                "revenue": revenue,
-                "lifetimeEarnings": lifetime_earnings,
-                "totalReferrals": total_referrals,
-                "referralCode": record.get("REFERRAL CODE", record.get("ReferralCode", "")),
-                "bankName": record.get("BANK NAME", ""),
-                "accountName": record.get("ACCOUNT NAME", ""),
-                "accountNumber": record.get("ACCOUNT NUMBER", "")
-            }
+    # 4. Fetch Milestones for this partner
+    user_milestones = []
+    for m in milestone_records:
+        if str(m.get("ReferrerEmail", "")).lower().strip() == target_email:
+            user_milestones.append({
+                "referee": m.get("RefereeEmail", ""),
+                "type": m.get("MilestoneType", ""),
+                "points": safe_float(m.get("PointsAwarded", 0)),
+                "timestamp": m.get("Timestamp", "")
+            })
 
+    # 5. Calculate Network Spread (Tier-2)
+    network_spread_count = sum(1 for m in user_milestones if m["type"] == "network_spread")
 
+    # 6. Group by Referee for Progress UI
+    referee_map = {}
+    # First, add those who have milestones
+    for m in user_milestones:
+        email = m["referee"]
+        if email not in referee_map:
+            referee_map[email] = {"email": email, "milestones": [], "is_pending": False}
+        referee_map[email]["milestones"].append(m["type"])
 
+    # Second, add those who are pending verification (don't have 'partner' milestone yet)
+    for act in activity_records:
+        if str(act.get("REFERRED_BY", "")).lower().strip() == partner_code.lower().strip():
+            if str(act.get("Payout Status", "")) == "PENDING_VERIFICATION":
+                desc = str(act.get("DESCRIPTION", ""))
+                email = desc.split(": ")[-1].strip() if ": " in desc else None
+                if email and email not in referee_map:
+                    referee_map[email] = {"email": email, "milestones": [], "is_pending": True}
 
-    raise HTTPException(status_code=404, detail="Stats not found")
+    # 7. Aggregate stats
+    points = safe_float(sheets_client.get_case_insensitive_val(partner_record, "POINTS", "points", default=0.0))
+    revenue = safe_float(sheets_client.get_case_insensitive_val(partner_record, "REVENUE (\u20a6)", "REVENUE", default=0.0))
+    total_referrals = int(safe_float(sheets_client.get_case_insensitive_val(partner_record, "TOTAL REFERRALS", default=0.0)))
+    lifetime_earnings = safe_float(sheets_client.get_case_insensitive_val(partner_record, "LIFETIME EARNINGS", default=0.0))
+
+    # 8. Legacy Rank Logic
+    rank_data = await _get_legacy_rank_data(target_email)
+
+    return {
+        "points": points,
+        "revenue": revenue,
+        "pendingPoints": pending_points,
+        "lifetimeEarnings": lifetime_earnings,
+        "totalReferrals": total_referrals,
+        "referralCode": partner_code,
+        "milestones": user_milestones,
+        "networkSpreadCount": network_spread_count,
+        "refereeProgress": list(referee_map.values()),
+        "bankName": partner_record.get("BANK NAME", ""),
+        "accountName": partner_record.get("ACCOUNT NAME", ""),
+        "accountNumber": partner_record.get("ACCOUNT NUMBER", ""),
+        "legacyRank": rank_data["rank"],
+        "soulsGuided": rank_data["soulsGuided"],
+        "masteryDate": rank_data["masteryDate"]
+    }
+
+@router.get("/masters")
+async def get_enchiridion_masters():
+    """Fetches all users with the 'Master' legacy rank for the gallery."""
+    try:
+        milestones = sheets_client.get_all_records("ReferralMilestones")
+        partners = sheets_client.get_all_records("Partners")
+        
+        # Count book referrals per user
+        book_counts = {}
+        attainment_dates = {}
+        for m in milestones:
+            if str(m.get("MilestoneType", "")).lower().strip() == "book_purchase":
+                ref_email = str(m.get("ReferrerEmail", "")).lower().strip()
+                book_counts[ref_email] = book_counts.get(ref_email, 0) + 1
+                if book_counts[ref_email] == 16:
+                    attainment_dates[ref_email] = m.get("Timestamp")
+        
+        master_emails = [email for email, count in book_counts.items() if count >= 16]
+        
+        masters_gallery = []
+        for p in partners:
+            email = str(p.get("USERNAME", "")).lower().strip()
+            if email in master_emails:
+                name = p.get("FULL NAME", p.get("NAME", "Master"))
+                city = p.get("CITY", p.get("LOCATION", "Nigeria"))
+                masters_gallery.append({
+                    "username": name,
+                    "soulsGuided": book_counts[email],
+                    "masteryDate": attainment_dates.get(email),
+                    "city": city,
+                    "avatar": f"https://ui-avatars.com/api/?name={name.replace(' ', '+')}&background=D4AF37&color=fff"
+                })
+        
+        return masters_gallery
+    except Exception as e:
+        print(f"ERROR fetching masters gallery: {e}")
+        return []
 
 @router.post("/update-payout")
 async def update_payout(settings: PayoutSettings, user: UserRead = Depends(current_active_user)):
@@ -789,17 +1702,23 @@ async def get_leaderboard():
             return 0.0
 
     leaderboard_data = []
-    for record in records:
+    for i, record in enumerate(records):
         try:
+            if i == 0:
+                print(f"DEBUG: First record keys: {list(record.keys())}")
+            
             # Flexible matching for common fields
-            name_val = get_case_insensitive(record, "FULL NAME", "Name", "C: FULL NAME")
+            name_val = sheets_client.get_case_insensitive_val(record, "FULL NAME", "Name", "NAME", "C: FULL NAME")
             
             name = str(name_val).strip() if name_val else "Anonymous Partner"
             
-            points = safe_float(get_case_insensitive(record, "POINTS", default=0.0))
-            revenue = safe_float(get_case_insensitive(record, "REVENUE (₦)", "Revenue", default=0.0))
+            points_val = sheets_client.get_case_insensitive_val(record, "POINTS", default=0.0)
+            revenue_val = sheets_client.get_case_insensitive_val(record, "REVENUE (₦)", "REVENUE", default=0.0)
             
-            email = str(get_case_insensitive(record, "USERNAME", "Email", default="")).lower().strip()
+            points = safe_float(points_val)
+            revenue = safe_float(revenue_val)
+            
+            email = str(sheets_client.get_case_insensitive_val(record, "USERNAME", "Email", default="")).lower().strip()
             
             # Ensure they tally based on 1 pt = 100 naira conversion
             if points > 0 and revenue == 0:
@@ -807,7 +1726,7 @@ async def get_leaderboard():
             elif revenue > 0 and points == 0:
                 points = revenue / 100
 
-            lifetime_earnings = safe_float(get_case_insensitive(record, "LIFETIME_EARNINGS", "LIFETIME EARNINGS", "Lifetime Earnings", default=0.0))
+            lifetime_earnings = safe_float(sheets_client.get_case_insensitive_val(record, "LIFETIME_EARNINGS", "LIFETIME EARNINGS", "Lifetime Earnings", default=0.0))
 
             # Privacy Filter: "B. McLoughlin" instead of "Brendan McLoughlin"
             filtered_name = name
@@ -824,7 +1743,9 @@ async def get_leaderboard():
                 "email": email
             })
         except Exception as e:
-            print(f"DEBUG: Error processing record: {e}")
+            print(f"DEBUG: Error processing record {i}: {e}")
+            import traceback
+            traceback.print_exc()
             continue
 
     # Sort by points descending
@@ -961,3 +1882,89 @@ async def apply_milestone(request: MilestoneRequest, user: UserRead = Depends(cu
         safe_err = str(e).encode('ascii', 'ignore').decode('ascii')
         print(f"ERROR applying milestone: {safe_err}")
         raise HTTPException(status_code=500, detail=str(e))
+@router.post("/distributor-lead")
+async def process_distributor_lead(
+    lead: DistributorLead, 
+    background_tasks: BackgroundTasks,
+    user: Optional[UserRead] = Depends(current_active_user)
+):
+    """
+    Captures a distributor lead and saves it to the 'Distributor Leads' sheet.
+    Also updates UserOnboarding progress and triggers referral rewards.
+    """
+    timestamp = lead.timestamp or datetime.now().isoformat()
+    
+    # NEW: Fallback to authenticated user's refCode if missing
+    effective_ref_code = lead.refCode
+    if not effective_ref_code and user:
+        effective_ref_code = user.referral_code
+        print(f"DEBUG: Using authenticated user refCode: {effective_ref_code}")
+
+    # row format: Timestamp, Name, Phone Number, Whatsapp Number, Location, RefCode
+    row = [timestamp, lead.name, lead.phone, lead.whatsapp, lead.location, effective_ref_code or ""]
+    
+    # Ensure worksheet has headers if it's new or misaligned
+    sheets_client.get_or_create_worksheet("Distributor Leads", ["Timestamp", "Name", "Phone Number", "Whatsapp Number", "Location", "RefCode"])
+    
+    background_tasks.add_task(sheets_client.append_row, "Distributor Leads", row)
+    
+    # NEW: Sync status and awards in background
+    if effective_ref_code:
+        background_tasks.add_task(_sync_distributor_status, effective_ref_code, lead.name)
+        
+    return {"success": True}
+
+async def _sync_distributor_status(ref_code: str, name: str):
+    """
+    Finds the user email for a ref code and marks 'IsDistributor' as TRUE.
+    Award rewards to their Referrer.
+    """
+    print(f"DEBUG: Starting distributor status sync for refCode: {ref_code}")
+    try:
+        # 1. Resolve Email from RefCode via Partners sheet
+        records = sheets_client.get_all_records("Partners")
+        target_email = None
+        for r in records:
+            r_code = sheets_client.get_case_insensitive_val(r, "REFERRAL CODE", "ReferralCode", "referral_code")
+            if str(r_code or "").strip().lower() == ref_code.strip().lower():
+                target_email = str(r.get("USERNAME", "")).lower().strip()
+                break
+        
+        if not target_email:
+            print(f"WARNING: Could not resolve email for refCode {ref_code} during distributor sync. Records checked: {len(records)}")
+            return
+
+        print(f"DEBUG: Resolved email {target_email} for refCode {ref_code}. Checking UserOnboarding...")
+
+        # 2. Update UserOnboarding
+        o_records = sheets_client.get_all_records("UserOnboarding")
+        row_idx = None
+        for i, r in enumerate(o_records):
+            if str(r.get("Email", "")).lower().strip() == target_email:
+                row_idx = i + 2
+                current_val = str(r.get("IsDistributor", "FALSE")).upper()
+                print(f"DEBUG: Found onboarding row {row_idx} for {target_email}. Current IsDistributor: {current_val}")
+                if current_val == "TRUE":
+                    print(f"DEBUG: Distributor status already TRUE for {target_email}")
+                    return # Already done
+                break
+        
+        if row_idx:
+            print(f"DEBUG: Updating UserOnboarding row {row_idx} column 4 for {target_email}...")
+            sheets_client.update_cell("UserOnboarding", row_idx, 4, "TRUE")
+            sheets_client.update_cell("UserOnboarding", row_idx, 6, datetime.now().isoformat())
+            
+            # Ensure ReferralMilestones sheet exists
+            sheets_client.get_or_create_worksheet("ReferralMilestones", ["Timestamp", "ReferrerEmail", "RefereeEmail", "MilestoneType", "PointsAwarded", "UniqueKey"])
+            
+            # 3. Award Referrer
+            print(f"DEBUG: Triggering onboarding reward for {target_email} (distributor)...")
+            await _trigger_onboarding_reward(target_email, "distributor")
+            print(f"DEBUG: Sync completed successfully for {target_email}")
+        else:
+            print(f"WARNING: No onboarding row found for {target_email} (Checked {len(o_records)} records)")
+            
+    except Exception as e:
+        print(f"ERROR: Sync distributor status failed for {ref_code}: {e}")
+        import traceback
+        traceback.print_exc()

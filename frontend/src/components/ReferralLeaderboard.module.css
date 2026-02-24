@@ -239,6 +239,32 @@
     color: #64748b;
 }
 
+.errorContainer {
+    padding: 60px;
+    text-align: center;
+    color: #ef4444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.retryBtn {
+    background: var(--color-indigo);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.retryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .leaderboardSection {

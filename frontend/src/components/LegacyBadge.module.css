@@ -1,0 +1,78 @@
+.badgeContainer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.iconWrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.rankLabel {
+    color: #f8fafc;
+    white-space: nowrap;
+}
+
+/* Seeker - Bronze */
+.seeker {
+    color: #cd7f32;
+    background: rgba(205, 127, 50, 0.1);
+    border-color: rgba(205, 127, 50, 0.2);
+}
+
+/* Sage - Silver/Blue */
+.sage {
+    color: #94a3b8;
+    background: rgba(148, 163, 184, 0.1);
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+/* Master - Gold/Glow */
+.master {
+    color: #D4AF37;
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+    animation: goldShimmer 3s infinite;
+}
+
+.master .iconWrapper i {
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+}
+
+.verificationCheck {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    font-size: 0.7rem;
+    color: #D4AF37;
+    background: #0f172a;
+    border-radius: 50%;
+}
+
+@keyframes goldShimmer {
+    0% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    }
+}

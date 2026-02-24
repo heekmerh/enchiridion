@@ -22,15 +22,19 @@ async def get_reviews(admin: bool = Query(False)):
                 except (ValueError, TypeError):
                     rating = 0
 
+                def clean_str(v):
+                    if v is None: return ""
+                    return str(v).encode('utf-8', 'replace').decode('utf-8')
+
                 review = Review(
-                    id=str(record.get("id", "")),
-                    name=record.get("Name", ""),
-                    jobTitle=record.get("Job Title", ""),
-                    organization=record.get("Organization", ""),
+                    id=clean_str(record.get("id", "")),
+                    name=clean_str(record.get("Name", "")),
+                    jobTitle=clean_str(record.get("Job Title", "")),
+                    organization=clean_str(record.get("Organization", "")),
                     rating=rating,
-                    text=record.get("Text", ""),
-                    status=record.get("Status", "pending"),
-                    createdAt=record.get("CreatedAt", ""),
+                    text=clean_str(record.get("Text", "")),
+                    status=clean_str(record.get("Status", "pending")),
+                    createdAt=clean_str(record.get("CreatedAt", "")),
                     approvedAt=record.get("ApprovedAt")
                 )
                 if admin or review.status == "approved":

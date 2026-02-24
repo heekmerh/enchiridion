@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import styles from "./ReferralPage.module.css";
 import Accordion from "@/components/Accordion";
+import DistributorForm from "@/components/DistributorForm";
+import GlobalToast from "@/components/GlobalToast";
 
 export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -60,6 +62,7 @@ export default function ReferralPage() {
     });
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
     const [apiError, setApiError] = useState<string | null>(null);
+    const [referrerName, setReferrerName] = useState<string | null>(null);
 
     const toggleAccordion = (index: number) => {
         setActiveAccordion(activeAccordion === index ? null : index);
@@ -101,6 +104,20 @@ export default function ReferralPage() {
         return Object.keys(errors).length === 0;
     };
 
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get("ref") || localStorage.getItem("enchiridion_ref");
+
+        if (ref) {
+            fetch(`/api/referral/referrer-name?refCode=${ref}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.name) setReferrerName(data.name);
+                })
+                .catch(err => console.error("Failed to fetch referrer name:", err));
+        }
+    }, []);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setApiError(null);
@@ -108,6 +125,9 @@ export default function ReferralPage() {
         if (validateForm()) {
             setIsLoading(true);
             const code = generateReferralCode(formData.fullName);
+
+            // Get referral code from storage if user was referred
+            const referredBy = localStorage.getItem("enchiridion_ref") || "";
 
             try {
                 const response = await fetch("/api/auth/register", {
@@ -119,7 +139,13 @@ export default function ReferralPage() {
                         email: formData.email,
                         password: formData.password,
                         name: formData.fullName,
-                        referral_code: code
+                        referral_code: code,
+                        referred_by: referredBy, // Pass the referrer
+                        country: formData.country,
+                        state: formData.state,
+                        profession: formData.profession,
+                        phone: formData.phone,
+                        institution: formData.institution
                     })
                 });
 
@@ -190,16 +216,24 @@ export default function ReferralPage() {
             {/* 1. HERO SECTION */}
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
-                    <p className="eyebrow">Enchiridion Referral Program</p>
-                    <h1 className="serif">THIS COULD BE YOU</h1>
-                    <p className={styles.heroSubtitle}>Share trusted medical knowledge. Earn rewards. Build impact.</p>
+                    <p className="eyebrow" style={{ color: 'var(--color-orange)', fontWeight: 700 }}>Enchiridion Network</p>
+                    <h1 className="serif" style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '16px' }}>
+                        Your Journey to <br />Impact Starts Here.
+                    </h1>
+                    <p className={styles.heroSubtitle}>
+                        {referrerName ? (
+                            <>You’ve been invited by <strong>{referrerName}</strong> to join the Enchiridion Network.</>
+                        ) : (
+                            "Join the Enchiridion Network of medical professionals and educators."
+                        )}
+                    </p>
                     {(!isRegistered && !isModalOpen) && (
                         <button
                             ref={staticBtnRef}
                             className={`${styles.primaryBtn} ${styles.staticReferralCta}`}
                             onClick={scrollToRegistration}
                         >
-                            Become a Referral Partner
+                            Get Started Now
                         </button>
                     )}
                 </div>
@@ -212,15 +246,23 @@ export default function ReferralPage() {
                 </div>
             </section>
 
-            {/* BENEFIT OVERVIEW */}
+            {/* WHY JOIN US? */}
             <section className={styles.benefitGrid}>
-                {benefits.map((b, i) => (
-                    <div key={i} className={styles.benefitItem}>
-                        <span>0{i + 1}</span>
-                        <h4>{b.title}</h4>
-                        <p>{b.text}</p>
-                    </div>
-                ))}
+                <div className={styles.benefitItem}>
+                    <span>01</span>
+                    <h4>Become a Partner</h4>
+                    <p>Help us scale and earn as you grow. Shared knowledge, shared rewards.</p>
+                </div>
+                <div className={styles.benefitItem}>
+                    <span>02</span>
+                    <h4>Become a Distributor</h4>
+                    <p>Take control of your income and distribution. Higher tiers, higher impact.</p>
+                </div>
+                <div className={styles.benefitItem}>
+                    <span>03</span>
+                    <h4>Get the Book</h4>
+                    <p>Unlock the full Enchiridion blueprint. 50% faster growth for you and your network.</p>
+                </div>
             </section>
 
             {/* 2. HOW IT WORKS */}
@@ -551,28 +593,39 @@ export default function ReferralPage() {
                     ) : (
                         <div className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>
-                            <h3>Account Created Successfully!</h3>
-                            <p>Welcome to the Enchiridion Partner Network. You can now start sharing your link and earning rewards.</p>
+                            <h3>Welcome to the Inner Circle, {formData.fullName.split(' ')[0]}!</h3>
+                            <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
+                                You’re officially in. To get the most out of Enchiridion, complete your profile:
+                            </p>
 
-                            <div className={styles.codeDisplay}>
-                                <span className={styles.codeLabel}>Your Referral Code</span>
-                                <span className={styles.codeValue}>{referralCode}</span>
-                                <button
-                                    className={styles.copyBtn}
-                                    onClick={() => copyToClipboard(referralCode)}
-                                >
-                                    {copied ? "Copied!" : "Copy"}
-                                </button>
+                            <div className={styles.onboardingSteps}>
+                                <div className={styles.onboardingCard}>
+                                    <h4>Register as a Distributor</h4>
+                                    <p>Unlock higher earning tiers and take control of your distribution.</p>
+                                    <span className={styles.badge}>Action Required</span>
+                                </div>
+                                <div className={styles.onboardingCard}>
+                                    <h4>Order the Book</h4>
+                                    <p>Get the physical copy delivered. Physical tools for a digital world.</p>
+                                    <span className={styles.badgeHighlight}>5 Points Value</span>
+                                </div>
                             </div>
 
-                            <div className={styles.linkDisplay}>
-                                <span className={styles.linkLabel}>Your Shareable Link</span>
-                                <span className={styles.linkValue}>https://enchiridion.ng/?ref={referralCode}</span>
-                                <button
-                                    className={styles.copyBtn}
-                                    onClick={() => copyToClipboard(`https://enchiridion.ng/?ref=${referralCode}`)}
-                                >
-                                    Copy Link
+                            <div className={styles.inviteInfo} style={{ background: '#f8fafc', padding: '24px', borderRadius: '12px', margin: '24px 0', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                                <h4 style={{ color: '#1e293b', marginBottom: '12px' }}>Start Building Your Network</h4>
+                                <ul style={{ listStyle: 'none', padding: 0 }}>
+                                    <li style={{ marginBottom: '8px', color: '#000000' }}>• Earn <b>10 Naira</b> for every verified friend who joins.</li>
+                                    <li style={{ marginBottom: '8px', color: '#000000' }}>• Earn <b>500 Naira</b> for every verified book purchase.</li>
+                                    <li style={{ marginBottom: '8px', color: '#000000' }}>• <b>₦2,000 Bonus</b> after 50 confirmed referrals.</li>
+                                    <li style={{ marginBottom: '8px', color: '#000000' }}>• <b>₦5,000 Bonus</b> after 100 confirmed referrals.</li>
+                                </ul>
+                            </div>
+
+                            <div className={styles.codeDisplay}>
+                                <span className={styles.codeLabel}>Your Personal Referral Code</span>
+                                <span className={styles.codeValue}>{referralCode}</span>
+                                <button className={styles.copyBtn} onClick={() => copyToClipboard(referralCode)}>
+                                    {copied ? "Copied!" : "Copy Code"}
                                 </button>
                             </div>
 
@@ -586,20 +639,13 @@ export default function ReferralPage() {
                                 </button>
                                 <div style={{ display: 'flex', gap: '10px' }}>
                                     <a
-                                        href={`https://wa.me/?text=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.ng%2F%3Fref%3D${referralCode}`}
+                                        href={`https://wa.me/?text=${encodeURIComponent(`Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Plus, check out the official Book—it’s a game-changer!\n\nJoin here: https://enchiridion.ng/refer?ref=${referralCode}`)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.shareBtn}
                                         style={{ flex: 1, textAlign: 'center' }}
                                     >
                                         WhatsApp
-                                    </a>
-                                    <a
-                                        href={`mailto:?subject=Join%20Enchiridion&body=Join%20Enchiridion%20using%20my%20referral%20code%3A%20${referralCode}%20%E2%80%94%20https%3A%2F%2Fenchiridion.ng%2F%3Fref%3D${referralCode}`}
-                                        className={styles.shareBtn}
-                                        style={{ flex: 1, textAlign: 'center' }}
-                                    >
-                                        Email
                                     </a>
                                 </div>
                             </div>
@@ -624,7 +670,41 @@ export default function ReferralPage() {
                 </div>
             </section>
 
-            {/* 10. FAQ */}
+            {/* 10. BECOME A DISTRIBUTOR - SECTION */}
+            <section id="become-distributor" className={styles.distributorSection}>
+                <div className={styles.registrationContainer}>
+                    <div className={styles.registrationHeader}>
+                        <h1 className="serif">Become an Enchiridion Distributor</h1>
+                        <h2>Unlock scale. Manage territories. Earn wholesale margins.</h2>
+                        <p>Our Distributor program is for those ready to take leadership in their regions. Distributors manage bulk orders, institutional partnerships, and local supply chains.</p>
+                    </div>
+
+                    <div className={styles.registrationSteps}>
+                        <div className={styles.regStep}>
+                            <div className={styles.regStepIcon}>1</div>
+                            <h4>Apply</h4>
+                            <p>Submit your application with your location and contact details.</p>
+                        </div>
+                        <div className={styles.regStep}>
+                            <div className={styles.regStepIcon}>2</div>
+                            <h4>Consultation</h4>
+                            <p>A Regional Director will contact you to discuss territorial goals.</p>
+                        </div>
+                        <div className={styles.regStep}>
+                            <div className={styles.regStepIcon}>3</div>
+                            <h4>Launch</h4>
+                            <p>Place your first wholesale order and start distributing in your region.</p>
+                        </div>
+                    </div>
+
+                    <div className={styles.distributorFormWrapper}>
+                        <DistributorForm />
+                    </div>
+                </div>
+            </section>
+
+
+            {/* 11. FAQ */}
             <section className={styles.faqAppSection} style={{ paddingTop: 0 }}>
                 <div className={styles.accordionContainer}>
                     <h2 className="serif" style={{ textAlign: 'center', marginBottom: '40px', color: 'var(--color-red)' }}>Frequently Asked Questions</h2>
@@ -647,6 +727,7 @@ export default function ReferralPage() {
                     <button className={styles.primaryBtn} onClick={scrollToRegistration}>Become a Referral Partner</button>
                 </div>
             )}
+            <GlobalToast />
         </div>
     );
 }

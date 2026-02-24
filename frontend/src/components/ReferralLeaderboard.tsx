@@ -18,6 +18,7 @@ export default function ReferralLeaderboard() {
     const [userEmail, setUserEmail] = useState<string | null>(null);
     const [userStats, setUserStats] = useState<{ points: number; revenue: number; lifetimeEarnings: number } | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [fetchError, setFetchError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,10 +31,11 @@ export default function ReferralLeaderboard() {
                 const response = await fetch('/api/referral/leaderboard');
                 if (response.ok) {
                     const data = await response.json();
+                    console.log('DEBUG: Leaderboard data received:', data);
                     setLeaderboard(data);
 
                     // If user is identifies, find their specific stats for the summary
-                    if (email) {
+                    if (email && Array.isArray(data)) {
                         const userEntry = data.find((e: LeaderboardEntry) => e.email.toLowerCase().trim() === email);
                         if (userEntry) {
                             setUserStats({
@@ -43,9 +45,12 @@ export default function ReferralLeaderboard() {
                             });
                         }
                     }
+                } else {
+                    setFetchError('Could not load rankings at this time.');
                 }
             } catch (error) {
                 console.error('Failed to fetch leaderboard:', error);
+                setFetchError('Connection error. Please try again later.');
             } finally {
                 setIsLoading(false);
             }
@@ -59,6 +64,16 @@ export default function ReferralLeaderboard() {
             <div className={styles.loadingContainer}>
                 <div className={styles.spinner}></div>
                 <p>Calculating community impact...</p>
+            </div>
+        );
+    }
+
+    if (fetchError) {
+        return (
+            <div className={styles.errorContainer}>
+                <i className="fas fa-exclamation-circle" style={{ fontSize: '2rem', marginBottom: '10px', color: '#ef4444' }}></i>
+                <p>{fetchError}</p>
+                <button onClick={() => window.location.reload()} className={styles.retryBtn}>Retry</button>
             </div>
         );
     }

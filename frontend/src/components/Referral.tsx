@@ -1,12 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Referral.module.css";
 import Accordion from "./Accordion";
+import { recordShare } from "@/lib/record";
 
 export default function Referral() {
     const [code, setCode] = useState("");
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
+
+    // Initialize from localStorage if available
+    useEffect(() => {
+        const savedRef = localStorage.getItem("enchiridion_user_ref");
+        if (savedRef) {
+            setCode(savedRef);
+        }
+    }, []);
+
     const [isCopied, setIsCopied] = useState(false);
 
     const [showShareModal, setShowShareModal] = useState(false);
@@ -19,22 +29,25 @@ export default function Referral() {
 
     const copyToClipboard = () => {
         if (code) {
-            navigator.clipboard.writeText(code);
+            const shareUrl = `${window.location.origin}?ref=${code}`;
+            navigator.clipboard.writeText(shareUrl);
             setIsCopied(true);
             setTimeout(() => setIsCopied(false), 2000);
         }
     };
 
     const handleShare = async () => {
+        const shareUrl = `${window.location.origin}?ref=${code}`;
         const shareData = {
             title: 'Enchiridion Referral',
             text: `Join the Enchiridion medical community with my referral code: ${code}`,
-            url: window.location.origin
+            url: shareUrl
         };
 
         if (navigator.share && navigator.canShare(shareData)) {
             try {
                 await navigator.share(shareData);
+                recordShare(code, "Native Share");
             } catch (err) {
                 if (err instanceof Error && err.name !== 'AbortError') {
                     setShowShareModal(true);
@@ -46,15 +59,17 @@ export default function Referral() {
     };
 
     const shareVia = (platform: 'twitter' | 'whatsapp' | 'email') => {
+        const shareUrl = `${window.location.origin}?ref=${code}`;
         const text = encodeURIComponent(`Join the Enchiridion medical community with my referral code: ${code}`);
-        const url = encodeURIComponent(window.location.origin);
+        const url = encodeURIComponent(shareUrl);
 
-        let shareUrl = '';
-        if (platform === 'twitter') shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-        if (platform === 'whatsapp') shareUrl = `https://wa.me/?text=${text}%20${url}`;
-        if (platform === 'email') shareUrl = `mailto:?subject=Enchiridion Referral&body=${text}%20${url}`;
+        let finalShareUrl = '';
+        if (platform === 'twitter') finalShareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
+        if (platform === 'whatsapp') finalShareUrl = `https://wa.me/?text=${text}%20${url}`;
+        if (platform === 'email') finalShareUrl = `mailto:?subject=Enchiridion Referral&body=${text}%20${url}`;
 
-        window.open(shareUrl, '_blank');
+        window.open(finalShareUrl, '_blank');
+        recordShare(code, platform);
         setShowShareModal(false);
     };
 

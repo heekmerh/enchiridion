@@ -1,0 +1,107 @@
+.globalToastContainer {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5000;
+    width: auto;
+    max-width: 90%;
+    pointer-events: none;
+}
+
+.toast {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    pointer-events: auto;
+    max-width: 340px;
+}
+
+.masterAlert .toast {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #D4AF37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.masterAlert .toastText {
+    color: #f8fafc;
+}
+
+.toastText {
+    font-size: 0.82rem;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.toastEnter {
+    animation: slideDownFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.toastExit {
+    animation: fadeOutUp 0.5s ease-in forwards;
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutUp {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.toastIcon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.confettiMini {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-image: radial-gradient(#FFD700 2px, transparent 0);
+    background-size: 20px 20px;
+    animation: burst 2s ease-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}

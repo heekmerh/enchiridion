@@ -38,8 +38,18 @@ export default function Header() {
       }
     };
 
+    // Check for existing session
+    const token = localStorage.getItem("enchiridion_token");
+    if (token) setIsLoggedIn(true);
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("hashchange", handleHashChange);
+
+    // Listen for storage changes (to sync across tabs/modals)
+    const handleStorageChange = () => {
+      setIsLoggedIn(!!localStorage.getItem("enchiridion_token"));
+    };
+    window.addEventListener("storage", handleStorageChange);
 
     // Check initial hash
     handleHashChange();
@@ -47,6 +57,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("storage", handleStorageChange);
     };
   }, []);
 
@@ -120,26 +131,31 @@ export default function Header() {
 
           {/* Desktop Nav - Right */}
           <div className={`${styles.navGroup} ${styles.desktopOnly}`}>
-            {menuItems.slice(4).map((item) => (
-              <div
-                key={item.label}
-                className={styles.navItem}
-                onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
-              >
-                {item.modal ? (
-                  <button onClick={handleOpenLogin} className={styles.navLinkButton}>
-                    {item.label}
-                  </button>
-                ) : (
-                  <Link href={item.href} className={styles.navLink}>{item.label}</Link>
-                )}
-              </div>
-            ))}
-            {isLoggedIn && (
-              <div className={styles.navItem}>
-                <Link href="/dashboard" className={styles.navLinkDashboard}>Dashboard</Link>
-              </div>
-            )}
+            {menuItems.slice(4).map((item) => {
+              const isLoginItem = item.label === "Partner Login";
+              if (isLoginItem && isLoggedIn) {
+                return (
+                  <div key="dashboard" className={styles.navItem}>
+                    <Link href="/dashboard" className={styles.navLink}>Dashboard</Link>
+                  </div>
+                );
+              }
+              return (
+                <div
+                  key={item.label}
+                  className={styles.navItem}
+                  onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
+                >
+                  {item.modal ? (
+                    <button onClick={handleOpenLogin} className={styles.navLinkButton}>
+                      {item.label}
+                    </button>
+                  ) : (
+                    <Link href={item.href} className={styles.navLink}>{item.label}</Link>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Hamburger Menu Icon */}
@@ -268,15 +284,21 @@ export default function Header() {
                       <div className={styles.mobileSubContent}>
                         <Link href="/refer" onClick={() => setIsMenuOpen(false)}>Referral Details</Link>
                         <Link href="/rewards" onClick={() => setIsMenuOpen(false)}>Rewards & Points</Link>
-                        <button
-                          className={styles.mobilePartnerBtn}
-                          onClick={() => {
-                            handleOpenLogin();
-                            setIsMenuOpen(false);
-                          }}
-                        >
-                          Partner Login
-                        </button>
+                        {isLoggedIn ? (
+                          <Link href="/dashboard" className={styles.mobilePartnerBtn} style={{ textAlign: 'center' }} onClick={() => setIsMenuOpen(false)}>
+                            Go to Dashboard
+                          </Link>
+                        ) : (
+                          <button
+                            className={styles.mobilePartnerBtn}
+                            onClick={() => {
+                              handleOpenLogin();
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            Partner Login
+                          </button>
+                        )}
                       </div>
                     )}
                   </div>

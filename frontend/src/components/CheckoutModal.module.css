@@ -155,10 +155,45 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 12px;
-    max-height: 300px;
-    overflow-y: auto;
     padding: 4px;
     margin-bottom: 30px;
+}
+
+.zonedWrapper {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 30px;
+}
+
+.zoneHeader {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #4b5563;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+/* Remove border from first header */
+.zoneSection:first-child .zoneHeader {
+    margin-top: 0;
+}
+
+.zoneDivider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 20px 0;
+}
+
+.priceGreen {
+    color: #10b981 !important;
+}
+
+.priceRed {
+    color: #ef4444 !important;
 }
 
 .stateCard {
@@ -305,4 +340,43 @@
     .stateGrid {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+.paymentSummary {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 24px;
+}
+
+.paymentTotal {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.paymentActions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.paymentNotice {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.paymentNotice i {
+    color: #10b981;
 }

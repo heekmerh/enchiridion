@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
     try {
-        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://127.0.0.1:8002';
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://127.0.0.1:8000';
         const response = await fetch(`${backendUrl}/referral/leaderboard`, {
             method: 'GET',
             headers: {

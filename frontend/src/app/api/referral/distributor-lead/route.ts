@@ -1,0 +1,29 @@
+import { NextResponse } from "next/server";
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+
+export async function POST(request: Request) {
+    try {
+        const body = await request.json();
+        const authHeader = request.headers.get("Authorization");
+        const headers: Record<string, string> = { "Content-Type": "application/json" };
+        if (authHeader) headers["Authorization"] = authHeader;
+
+        const response = await fetch(`${BACKEND_URL}/referral/distributor-lead`, {
+            method: "POST",
+            headers,
+            body: JSON.stringify(body),
+        });
+
+        if (!response.ok) {
+            const data = await response.json().catch(() => ({}));
+            return NextResponse.json({ detail: data.detail || response.statusText }, { status: response.status });
+        }
+
+        const data = await response.json();
+        return NextResponse.json(data);
+    } catch (error: any) {
+        console.error("Error in distributor-lead proxy:", error);
+        return NextResponse.json({ detail: error.message || "Internal Server Error" }, { status: 500 });
+    }
+}

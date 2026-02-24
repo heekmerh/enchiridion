@@ -164,6 +164,19 @@
     cursor: pointer;
 }
 
+.errorMessage {
+    color: #cf222e;
+    font-weight: 600;
+    padding: 20px;
+    background-color: #ffebe9;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.errorMessage .resetBtn {
+    color: #cf222e;
+}
+
 @media (max-width: 600px) {
     .inputGroup {
         flex-direction: column;

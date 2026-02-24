@@ -86,7 +86,7 @@ export default function AdminTestConsole() {
         addLog(`Simulating browse for ${referralCode}...`);
         try {
             // Get mock IP
-            const response = await fetch("/api/referral/track-visit", {
+            const response = await fetch("/api/referral/record-visit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

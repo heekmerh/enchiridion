@@ -1,0 +1,332 @@
+.onboardingContainer {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.onboardingCard {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1a202c;
+    margin: 0;
+}
+
+.progressText {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #4a5568;
+    background: #edf2f7;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Progress Bar */
+.titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.rewardBadge {
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid #bbf7d0;
+    white-space: nowrap;
+}
+
+.completedAction {
+    background: #16a34a !important;
+    color: white !important;
+}
+
+.nudgeText {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+    border-left: 3px solid #16a34a;
+    padding-left: 10px;
+}
+
+.progressBarContainer {
+    height: 8px;
+    background: #edf2f7;
+    border-radius: 4px;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.progressBar {
+    height: 100%;
+    background: linear-gradient(90deg, #4169E1, #63b3ed);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Steps Grid */
+.stepsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.stepCard {
+    position: relative;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease;
+    background: #f8fafc;
+}
+
+.stepCard.completed {
+    border-color: #c6f6d5;
+    background: #f0fff4;
+}
+
+.stepCard.completed h4 {
+    color: #2f855a;
+}
+
+.stepCard.active {
+    border-color: #4169E1;
+    background: white;
+    box-shadow: 0 10px 15px -3px rgba(66, 153, 225, 0.1);
+    transform: translateY(-2px);
+}
+
+.stepCard.locked {
+    opacity: 0.6;
+    filter: grayscale(1);
+}
+
+.stepHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stepHeader h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    color: #2d3748;
+}
+
+.statusIcon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.statusIcon.completed {
+    background: #48bb78;
+    color: white;
+}
+
+.statusIcon.active {
+    background: #4169E1;
+    color: white;
+}
+
+.statusIcon.locked {
+    background: #a0aec0;
+    color: white;
+}
+
+.benefitText {
+    font-size: 0.8rem;
+    color: #718096;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.actionBtn {
+    margin-top: auto;
+    background: #4169E1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.actionBtn:hover {
+    background: #3182ce;
+}
+
+/* Confetti copied from Dashboard */
+.confettiContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Community Gravity Widget */
+.communityGravityCard {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.gravityIcon {
+    width: 44px;
+    height: 44px;
+    background: #ebf8ff;
+    color: #4169E1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.gravityContent h4 {
+    margin: 0 0 4px 0;
+    color: #2d3748;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.gravityContent p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+/* Live Feed Toast */
+.liveFeedContainer {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.toast {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    pointer-events: auto;
+    max-width: 340px;
+    animation: slideUpFade 0.5s ease-out forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.toastExit {
+    animation: fadeOut 0.5s ease-in forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.toastIcon {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.toastText {
+    font-size: 0.82rem;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .stepsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .liveFeedContainer {
+        bottom: 80px;
+        right: 16px;
+        left: 16px;
+    }
+
+    .toast {
+        max-width: 100%;
+    }
+}

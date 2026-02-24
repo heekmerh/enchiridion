@@ -1,13 +1,14 @@
 "use client";
 
-import { useState, use } from "react";
+import { useState, use, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import { books } from "@/lib/data";
 import styles from "./BookPage.module.css";
 import Accordion from "@/components/Accordion";
 import CheckoutModal from "@/components/CheckoutModal";
+import DistributorForm from "@/components/DistributorForm";
 
 const states = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -19,8 +20,19 @@ const states = [
 
 export default function BookPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);
+    const searchParams = useSearchParams();
     const [showDistributors, setShowDistributors] = useState(false);
     const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+    const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+
+    useEffect(() => {
+        const tab = searchParams.get("tab");
+        if (tab === "distributor") {
+            setShowDistributors(true);
+            setIsLeadFormOpen(true);
+        }
+    }, [searchParams]);
+
     const book = books.find((b) => b.slug === slug);
 
     if (!book) {
@@ -89,14 +101,21 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                                                 ))}
                                             </div>
                                             <div className={styles.becomeDistributorWrapper}>
-                                                <Link
-                                                    href="/refer#become-referral-partner"
+                                                <button
                                                     className={styles.becomeDistributorBtn}
-                                                    aria-label="Become a Distributor and create referral account"
+                                                    onClick={() => setIsLeadFormOpen(!isLeadFormOpen)}
+                                                    aria-expanded={isLeadFormOpen}
                                                 >
-                                                    Become a Distributor
-                                                </Link>
+                                                    {isLeadFormOpen ? "Close Distributor Application" : "Become a Distributor"}
+                                                </button>
+
+                                                {isLeadFormOpen && (
+                                                    <div className={styles.leadFormWrapper}>
+                                                        <DistributorForm />
+                                                    </div>
+                                                )}
                                             </div>
+
                                         </div>
                                     )}
                                 </div>
@@ -156,6 +175,7 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                     onClose={() => setIsCheckoutOpen(false)}
                 />
             )}
+
         </div>
     );
 }
