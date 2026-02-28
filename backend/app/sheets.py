@@ -1,7 +1,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from google.oauth2 import service_account
 from typing import List, Optional
 import os
+import json
 from dotenv import load_dotenv
 
 # Load .env from the backend directory (parent of this 'app' folder)
@@ -15,41 +17,58 @@ class GoogleSheetsClient:
             "https://www.googleapis.com/auth/spreadsheets",
             "https://www.googleapis.com/auth/drive"
         ]
-        self.creds_file = os.getenv("GOOGLE_SHEETS_CREDS_FILE")
         self.spreadsheet_id = os.getenv("GOOGLE_SHEETS_ID")
         self._client = None
         self._sheet = None
         self._initialized = False
 
+    def _build_credentials(self):
+        """
+        Build Google credentials from environment.
+        Priority:
+          1. GOOGLE_SHEETS_CREDS_JSON  — full JSON string (used on Vercel / any server env)
+          2. GOOGLE_SHEETS_CREDS_FILE  — path to a local JSON file (used in local dev)
+        """
+        creds_json_str = os.getenv("GOOGLE_SHEETS_CREDS_JSON")
+        if creds_json_str:
+            try:
+                creds_info = json.loads(creds_json_str)
+                return Credentials.from_service_account_info(creds_info, scopes=self.scopes)
+            except Exception as e:
+                print(f"CRITICAL ERROR: Could not parse GOOGLE_SHEETS_CREDS_JSON: {e}")
+                return None
+
+        creds_file = os.getenv("GOOGLE_SHEETS_CREDS_FILE")
+        if creds_file and os.path.exists(creds_file):
+            try:
+                return Credentials.from_service_account_file(creds_file, scopes=self.scopes)
+            except Exception as e:
+                print(f"CRITICAL ERROR: Could not load GOOGLE_SHEETS_CREDS_FILE: {e}")
+                return None
+
+        print("WARNING: No Google Sheets credentials found (set GOOGLE_SHEETS_CREDS_JSON or GOOGLE_SHEETS_CREDS_FILE).")
+        return None
+
     def _ensure_initialized(self):
         if self._initialized:
             return
-        
+
         print(f"DEBUG: Initializing Google Sheets Client (Target: {self.spreadsheet_id})...")
-        if self.creds_file and os.path.exists(self.creds_file):
+        creds = self._build_credentials()
+        if creds:
             try:
-                # Use a shorter timeout for the HTTP requests used by gspread
-                self.creds = Credentials.from_service_account_file(self.creds_file, scopes=self.scopes)
-                
-                # We can't easily pass a timeout to authorize(), 
-                # but we can wrap the blocking calls. 
-                # For now, we'll use a try/except pattern with the lazy init 
-                # and add a custom check if it survives.
-                self._client = gspread.authorize(self.creds)
-                
-                # This is a network-bound call that often hangs on this environment
+                self._client = gspread.authorize(creds)
                 print(f"DEBUG: Opening spreadsheet {self.spreadsheet_id}...")
                 self._sheet = self._client.open_by_key(self.spreadsheet_id)
-                
                 self._initialized = True
                 print("DEBUG: Google Sheets Client initialized successfully.")
             except Exception as e:
-                print(f"CRITICAL ERROR: Failed to lazy-load Google Sheets: {e}")
+                print(f"CRITICAL ERROR: Failed to connect to Google Sheets: {e}")
                 self._client = None
                 self._sheet = None
-                self._initialized = True # Mark as "attempted" to prevent boot loops
+                self._initialized = True  # Mark as attempted to prevent boot loops
         else:
-            print("WARNING: Google Sheets credentials not found. Using mock client.")
+            print("WARNING: Google Sheets credentials not available. Using mock client.")
             self._initialized = True
 
     @property

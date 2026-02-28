@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 fastapi-users[jwt]
 gspread
 google-auth
@@ -9,3 +9,5 @@ httpx
 pytest
 python-multipart
 fastapi-mail
+python-dotenv
+email-validator

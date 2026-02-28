@@ -25,6 +25,9 @@ load_dotenv(env_path)
 SECRET = os.getenv("AUTH_SECRET", "SECRET")
 print(f"DEBUG: Auth secret loaded. Length: {len(SECRET)}. Starts with: {SECRET[:4]}...")
 
+# Frontend URL — set to production domain on Vercel
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://enchiridion.ng").rstrip("/")
+
 # Email Configuration
 conf = ConnectionConfig(
     MAIL_USERNAME=os.getenv("MAIL_USERNAME", ""),
@@ -291,7 +294,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
                 <div style="background: white; border: 1px solid #e2e8f0; padding: 12px; font-family: monospace; font-size: 18px; color: #111827; margin-bottom: 20px;">
                     {referral_link}
                 </div>
-                <a href="http://localhost:3000/#login" style="background-color: #4169E1; color: white; padding: 14px 28px; border-radius: 0; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #111827;">
+                <a href="{FRONTEND_URL}/#login" style="background-color: #4169E1; color: white; padding: 14px 28px; border-radius: 0; text-decoration: none; font-weight: 800; display: inline-block; text-transform: uppercase; letter-spacing: 1px; box-shadow: 4px 4px 0px #111827;">
                     Login To Dashboard
                 </a>
             </div>
@@ -369,7 +372,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
             </p>
             
             <div style="text-align: center; margin-top: 30px;">
-                <a href="http://localhost:3000/#login" style="background-color: #4169E1; color: white; padding: 12px 24px; border-radius: 0; text-decoration: none; font-weight: 800; text-transform: uppercase;">
+                <a href="{FRONTEND_URL}/#login" style="background-color: #4169E1; color: white; padding: 12px 24px; border-radius: 0; text-decoration: none; font-weight: 800; text-transform: uppercase;">
                     Check Your Dashboard
                 </a>
             </div>
@@ -700,7 +703,7 @@ class UserManager(UUIDIDMixin, BaseUserManager[User, uuid.UUID]):
         # Determine the reset URL (Production vs Local)
         # In a real app, you'd use the request origin or a config variable
         # For Enchiridion, the frontend is usually on port 3000
-        reset_link = f"http://localhost:3000/reset-password?token={token}"
+        reset_link = f"{FRONTEND_URL}/reset-password?token={token}"
         
         html = f"""
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">

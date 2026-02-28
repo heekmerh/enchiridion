@@ -49,15 +49,6 @@ app.include_router(
 app.include_router(referral.router, prefix="/referral", tags=["referral"])
 app.include_router(reviews.router, prefix="/reviews", tags=["reviews"])
 
-@app.get("/debug-env")
-async def debug_env():
-    from .auth import SECRET
-    return {
-        "secret_length": len(SECRET),
-        "secret_prefix": SECRET[:3] + "...",
-        "env_path_exists": os.path.exists(os.path.join(os.getcwd(), ".env")),
-        "cwd": os.getcwd()
-    }
 
 @app.get("/")
 async def root():
