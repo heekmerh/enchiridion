@@ -502,7 +502,6 @@ class _NotesBottomSheetState extends State<_NotesBottomSheet> {
             ],
           ),
         ),
-      ),
     );
   }
 }
