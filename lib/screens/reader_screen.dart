@@ -47,7 +47,6 @@ class _ReaderShell extends StatefulWidget {
 class _ReaderShellState extends State<_ReaderShell> {
   bool _isMenuOpen = false;
   bool _isSettingsOpen = false;
-  bool _showControls = true;
   bool _hasAccess = false;
   final ScrollController _scrollController = ScrollController();
   int _drawerOpenCount = 0;
@@ -122,7 +121,6 @@ class _ReaderShellState extends State<_ReaderShell> {
       _sectionOffsets = {};       // clear stale offsets from previous chapter
       _currentSectionId = null;   // reset active-section highlight
       _isMenuOpen = false;
-      _showControls = true;
     });
     _scrollController.animateTo(0,
         duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
@@ -131,7 +129,6 @@ class _ReaderShellState extends State<_ReaderShell> {
   void _navigateToSection(String sectionId, String subsectionId) {
     setState(() {
       _isMenuOpen = false;
-      _showControls = true;
     });
     // Try subsection key first, fall back to section key
     final key = _subsectionKeys[subsectionId] ?? _sectionKeys[sectionId];
@@ -206,9 +203,7 @@ class _ReaderShellState extends State<_ReaderShell> {
           builder: (context, settingsProvider, bookmarkProvider, _) {
             return Scaffold(
               body: GestureDetector(
-                onTap: () {
-                  setState(() => _showControls = true);
-                },
+                onTap: () {},
                 child: Stack(
                   children: [
                     CustomScrollView(
@@ -219,7 +214,6 @@ class _ReaderShellState extends State<_ReaderShell> {
                           currentChapterId: chapterId,
                           onSettingsPressed: () => setState(() {
                             _isSettingsOpen = !_isSettingsOpen;
-                            _showControls = true;
                           }),
                           onNotesPressed: () =>
                               _showNotesSheet(chapterId),
@@ -277,7 +271,6 @@ class _ReaderShellState extends State<_ReaderShell> {
                                   tooltip: 'Table of contents',
                                   onPressed: () => setState(() {
                                     _isMenuOpen = !_isMenuOpen;
-                                    _showControls = true;
                                     if (_isMenuOpen) _drawerOpenCount += 1;
                                   }),
                                 ),
@@ -362,18 +355,12 @@ class _ReaderShellState extends State<_ReaderShell> {
                       ),
                     ),
 
-                    if (_showControls)
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: AnimatedOpacity(
-                          duration: const Duration(milliseconds: 300),
-                          opacity: _showControls ? 1.0 : 0.0,
-                          child: ReaderProgressBar(
-                              progress: bookProvider.progress),
-                        ),
-                      ),
+                    Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: ReaderProgressBar(progress: bookProvider.progress),
+                    ),
                   ],
                 ),
               ),
