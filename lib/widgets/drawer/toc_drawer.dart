@@ -257,7 +257,6 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                     section.title,
                     style: const TextStyle(fontSize: 13),
                   ),
-                  onExpansionChanged: (_) {},
                   children: section.subsections.map((sub) {
                     final isActiveSub = sub.id == widget.currentSectionId;
                     return ListTile(
