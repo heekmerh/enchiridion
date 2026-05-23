@@ -21,11 +21,6 @@ class TableBlockWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    final screenWidth = MediaQuery.of(context).size.width;
-    final contentWidth = screenWidth - 48;
-    final colCount = block.columns.isNotEmpty ? block.columns.length : 1;
-    final colWidth = contentWidth / colCount;
-
     final Color headerColor;
     if (headerTintColor != null) {
       headerColor = isDark
@@ -37,60 +32,69 @@ class TableBlockWidget extends StatelessWidget {
           : AppColors.brandPink.withValues(alpha: 0.08);
     }
 
-    return Container(
-      margin: EdgeInsets.only(bottom: fontSize * 1.5),
-      decoration: BoxDecoration(
-        border: Border.all(color: theme.dividerColor),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: Table(
-        columnWidths: {
-          for (int i = 0; i < colCount; i++) i: FixedColumnWidth(colWidth)
-        },
-        border: TableBorder(
-          horizontalInside: BorderSide(color: theme.dividerColor),
-          verticalInside: BorderSide(color: theme.dividerColor),
-        ),
-        children: [
-          if (block.columns.isNotEmpty)
-            TableRow(
-              decoration: BoxDecoration(
-                color: headerColor,
-              ),
-              children: block.columns
-                  .map((col) => Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 14, vertical: 10),
-                        child: Text(
-                          col,
-                          style: TextStyle(
-                            fontSize: fontSize * 0.85,
-                            fontWeight: FontWeight.bold,
-                            color: theme.colorScheme.onSurface,
-                          ),
-                        ),
-                      ))
-                  .toList(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final colCount = block.columns.isNotEmpty ? block.columns.length : 1;
+        // Use actual available width rather than a MediaQuery-based heuristic
+        // so the table adapts correctly regardless of parent padding.
+        final colWidth = constraints.maxWidth / colCount;
+
+        return Container(
+          margin: EdgeInsets.only(bottom: fontSize * 1.5),
+          decoration: BoxDecoration(
+            border: Border.all(color: theme.dividerColor),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Table(
+            columnWidths: {
+              for (int i = 0; i < colCount; i++) i: FixedColumnWidth(colWidth)
+            },
+            border: TableBorder(
+              horizontalInside: BorderSide(color: theme.dividerColor),
+              verticalInside: BorderSide(color: theme.dividerColor),
             ),
-          ...block.rows.map((row) => TableRow(
-                children: row
-                    .map((cell) => Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 14, vertical: 8),
-                          child: Text(
-                            cell,
-                            style: TextStyle(
-                              fontSize: fontSize * 0.9,
-                              height: lineHeight,
-                              color: theme.colorScheme.onSurface,
+            children: [
+              if (block.columns.isNotEmpty)
+                TableRow(
+                  decoration: BoxDecoration(
+                    color: headerColor,
+                  ),
+                  children: block.columns
+                      .map((col) => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 14, vertical: 10),
+                            child: Text(
+                              col,
+                              style: TextStyle(
+                                fontSize: fontSize * 0.85,
+                                fontWeight: FontWeight.bold,
+                                color: theme.colorScheme.onSurface,
+                              ),
                             ),
-                          ),
-                        ))
-                    .toList(),
-              )),
-        ],
-      ),
+                          ))
+                      .toList(),
+                ),
+              ...block.rows.map((row) => TableRow(
+                    children: row
+                        .map((cell) => Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 8),
+                              child: Text(
+                                cell,
+                                style: TextStyle(
+                                  fontSize: fontSize * 0.9,
+                                  height: lineHeight,
+                                  color: theme.colorScheme.onSurface,
+                                ),
+                              ),
+                            ))
+                        .toList(),
+                  )),
+            ],
+          ),
+        );
+      },
     );
   }
 }
