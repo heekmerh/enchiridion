@@ -14,11 +14,81 @@ import 'mnemonic_block.dart';
 import 'red_flags_block.dart';
 import 'table_block.dart';
 
-class BlockRenderer extends StatelessWidget {
+class BlockRenderer extends StatefulWidget {
   final Chapter chapter;
   final String bookId;
+  final void Function(
+    Map<String, GlobalKey> sectionKeys,
+    Map<String, GlobalKey> subsectionKeys,
+  )? onKeysReady;
+  final void Function(Map<String, double> offsets)? onOffsetsReady;
 
-  const BlockRenderer({super.key, required this.chapter, this.bookId = ''});
+  const BlockRenderer({
+    super.key,
+    required this.chapter,
+    this.bookId = '',
+    this.onKeysReady,
+    this.onOffsetsReady,
+  });
+
+  @override
+  State<BlockRenderer> createState() => _BlockRendererState();
+}
+
+class _BlockRendererState extends State<BlockRenderer> {
+  final Map<String, GlobalKey> _sectionKeys = {};
+  final Map<String, GlobalKey> _subsectionKeys = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _buildKeys();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _calculateOffsets());
+  }
+
+  @override
+  void didUpdateWidget(BlockRenderer old) {
+    super.didUpdateWidget(old);
+    if (old.chapter.id != widget.chapter.id) {
+      _buildKeys();
+      WidgetsBinding.instance.addPostFrameCallback((_) => _calculateOffsets());
+    }
+  }
+
+  void _buildKeys() {
+    _sectionKeys.clear();
+    _subsectionKeys.clear();
+    for (final section in widget.chapter.sections) {
+      _sectionKeys[section.id] = GlobalKey();
+      for (final subsection in section.subsections) {
+        _subsectionKeys[subsection.id] = GlobalKey();
+      }
+    }
+    widget.onKeysReady?.call(_sectionKeys, _subsectionKeys);
+  }
+
+  void _calculateOffsets() {
+    final offsets = <String, double>{};
+    for (final entry in _sectionKeys.entries) {
+      final ctx = entry.value.currentContext;
+      if (ctx != null) {
+        final box = ctx.findRenderObject() as RenderBox?;
+        if (box != null && box.hasSize) {
+          offsets[entry.key] = box.localToGlobal(Offset.zero).dy;
+        }
+      }
+    }
+    for (final entry in _subsectionKeys.entries) {
+      final ctx = entry.value.currentContext;
+      if (ctx != null) {
+        final box = ctx.findRenderObject() as RenderBox?;
+        if (box != null && box.hasSize) {
+          offsets[entry.key] = box.localToGlobal(Offset.zero).dy;
+        }
+      }
+    }
+    widget.onOffsetsReady?.call(offsets);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +104,12 @@ class BlockRenderer extends StatelessWidget {
     return DefaultTextStyle.merge(
       style: TextStyle(fontFamily: fontFamily),
       child: _ChapterView(
-        chapter: chapter,
-        bookId: bookId,
+        chapter: widget.chapter,
+        bookId: widget.bookId,
         fontSize: fontSize,
         lineHeight: lineHeight,
+        sectionKeys: _sectionKeys,
+        subsectionKeys: _subsectionKeys,
       ),
     );
   }
@@ -48,12 +120,16 @@ class _ChapterView extends StatelessWidget {
   final String bookId;
   final double fontSize;
   final double lineHeight;
+  final Map<String, GlobalKey> sectionKeys;
+  final Map<String, GlobalKey> subsectionKeys;
 
   const _ChapterView({
     required this.chapter,
     required this.bookId,
     required this.fontSize,
     required this.lineHeight,
+    required this.sectionKeys,
+    required this.subsectionKeys,
   });
 
   @override
@@ -63,6 +139,7 @@ class _ChapterView extends StatelessWidget {
 
     for (final section in chapter.sections) {
       children.add(_SectionHeader(
+        key: sectionKeys[section.id],
         title: section.title,
         fontSize: fontSize,
         bookId: bookId,
@@ -72,6 +149,7 @@ class _ChapterView extends StatelessWidget {
 
       for (final subsection in section.subsections) {
         children.add(_SubsectionHeader(
+          key: subsectionKeys[subsection.id],
           title: subsection.title,
           icon: subsection.icon,
           fontSize: fontSize,
@@ -134,6 +212,7 @@ class _SectionHeader extends StatelessWidget {
   final String sectionId;
 
   const _SectionHeader({
+    super.key,
     required this.title,
     required this.fontSize,
     this.bookId = '',
@@ -278,6 +357,7 @@ class _SubsectionHeader extends StatelessWidget {
   final ThemeData theme;
 
   const _SubsectionHeader({
+    super.key,
     required this.title,
     this.icon,
     required this.fontSize,
