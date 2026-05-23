@@ -6,12 +6,14 @@ class TableBlockWidget extends StatelessWidget {
   final TableBlock block;
   final double fontSize;
   final double lineHeight;
+  final Color? headerTintColor;
 
   const TableBlockWidget({
     super.key,
     required this.block,
     required this.fontSize,
     required this.lineHeight,
+    this.headerTintColor,
   });
 
   @override
