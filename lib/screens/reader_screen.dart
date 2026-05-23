@@ -278,6 +278,8 @@ class _ReaderShellState extends State<_ReaderShell> {
                         visitedChapterIds: bookProvider.visitedChapterIds,
                         onChapterSelected: _navigateToChapter,
                         onSearchResults: (_) {},
+                        currentSectionId: _currentSectionId,
+                        onSectionSelected: (_, __) {},
                       ),
                     ),
 

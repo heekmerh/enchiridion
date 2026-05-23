@@ -14,6 +14,8 @@ class TocDrawerContent extends StatefulWidget {
   final Set<String> visitedChapterIds;
   final Function(String) onChapterSelected;
   final Function(List<SearchResult>) onSearchResults;
+  final String? currentSectionId;
+  final Function(String sectionId, String subsectionId) onSectionSelected;
 
   const TocDrawerContent({
     super.key,
@@ -23,6 +25,8 @@ class TocDrawerContent extends StatefulWidget {
     required this.visitedChapterIds,
     required this.onChapterSelected,
     required this.onSearchResults,
+    this.currentSectionId,
+    required this.onSectionSelected,
   });
 
   @override
