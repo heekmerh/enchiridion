@@ -87,15 +87,13 @@ void main() {
       (WidgetTester tester) async {
     await tester.pumpWidget(buildWidget(headerTintColor: Colors.red));
 
-    // The header TableRow has a BoxDecoration. Find it via DecoratedBox.
-    // TableRow decoration is applied as a DecoratedBox around the row cells.
-    final decoratedBoxes = tester.widgetList<DecoratedBox>(
-        find.descendant(
-            of: find.byType(Table), matching: find.byType(DecoratedBox)));
+    // Find the Table widget and inspect its TableRow decorations directly.
+    // TableRow.decoration is set on the TableRow object, not via a separate widget.
+    final table = tester.widget<Table>(find.byType(Table).first);
 
     bool foundRedTint = false;
-    for (final db in decoratedBoxes) {
-      final decoration = db.decoration;
+    for (final row in table.children) {
+      final decoration = row.decoration;
       if (decoration is BoxDecoration && decoration.color != null) {
         final color = decoration.color!;
         // Colors.red with alpha 0.15 in light mode: red channel dominant, non-zero alpha.
@@ -121,13 +119,12 @@ void main() {
 
     const brandPink = Color(0xFFFF66A3);
 
-    final decoratedBoxes = tester.widgetList<DecoratedBox>(
-        find.descendant(
-            of: find.byType(Table), matching: find.byType(DecoratedBox)));
+    // Inspect TableRow.decoration directly (same pattern as Test 3).
+    final table = tester.widget<Table>(find.byType(Table).first);
 
     bool foundFullBrandPink = false;
-    for (final db in decoratedBoxes) {
-      final decoration = db.decoration;
+    for (final row in table.children) {
+      final decoration = row.decoration;
       if (decoration is BoxDecoration && decoration.color == brandPink) {
         foundFullBrandPink = true;
         break;
