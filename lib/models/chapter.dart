@@ -8,6 +8,7 @@ class Chapter {
   final int order;
   final List<ChapterSection> sections;
   final List<String> tags;
+  final String? chapterColor;
 
   const Chapter({
     required this.id,
@@ -17,6 +18,7 @@ class Chapter {
     required this.order,
     required this.sections,
     this.tags = const [],
+    this.chapterColor,
   });
 
   factory Chapter.fromJson(Map<String, dynamic> json) {
@@ -40,6 +42,7 @@ class Chapter {
               .toList() ??
           [],
       tags: (metadata['tags'] as List<dynamic>?)?.cast<String>() ?? [],
+      chapterColor: metadata['chapter_color'],
     );
   }
 
@@ -50,6 +53,7 @@ class Chapter {
       'chapter_icon': icon,
       'description': description,
       'position_in_book': order,
+      'chapter_color': chapterColor,
       'tags': tags,
     },
     'sections': sections.map((e) => e.toJson()).toList(),
