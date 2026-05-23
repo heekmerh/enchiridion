@@ -68,13 +68,23 @@ class _BlockRendererState extends State<BlockRenderer> {
   }
 
   void _calculateOffsets() {
+    // Use the enclosing Scrollable as the reference frame so that positions are
+    // relative to the scroll viewport origin rather than the screen origin.
+    // This makes stored offsets stable regardless of the current scroll position.
+    final scrollable = Scrollable.maybeOf(context);
+    final scrollRenderObject = scrollable?.context.findRenderObject();
+
     final offsets = <String, double>{};
     for (final entry in _sectionKeys.entries) {
       final ctx = entry.value.currentContext;
       if (ctx != null) {
         final box = ctx.findRenderObject() as RenderBox?;
         if (box != null && box.hasSize) {
-          offsets[entry.key] = box.localToGlobal(Offset.zero).dy;
+          final localPos = box.localToGlobal(
+            Offset.zero,
+            ancestor: scrollRenderObject,
+          );
+          offsets[entry.key] = localPos.dy;
         }
       }
     }
@@ -83,7 +93,11 @@ class _BlockRendererState extends State<BlockRenderer> {
       if (ctx != null) {
         final box = ctx.findRenderObject() as RenderBox?;
         if (box != null && box.hasSize) {
-          offsets[entry.key] = box.localToGlobal(Offset.zero).dy;
+          final localPos = box.localToGlobal(
+            Offset.zero,
+            ancestor: scrollRenderObject,
+          );
+          offsets[entry.key] = localPos.dy;
         }
       }
     }
