@@ -217,8 +217,11 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
               key: ValueKey('toc_${chapter.id}'),
               initiallyExpanded: false,
               onExpansionChanged: (expanded) {
-                // Chapter tap: navigate to chapter AND toggle expansion (D-07)
-                widget.onChapterSelected(chapter.id);
+                // Navigate only when expanding (tap to open), not on collapse.
+                // Collapsing a tile should not trigger chapter navigation (D-07).
+                if (expanded) {
+                  widget.onChapterSelected(chapter.id);
+                }
                 setState(() {
                   if (expanded) {
                     _expandedChapters.add(chapter.id);
