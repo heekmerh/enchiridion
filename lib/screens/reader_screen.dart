@@ -72,6 +72,7 @@ class _ReaderShellState extends State<_ReaderShell> {
 
   @override
   void dispose() {
+    _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     super.dispose();
   }
