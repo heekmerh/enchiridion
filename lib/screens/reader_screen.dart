@@ -539,7 +539,11 @@ class _LockedChapterOverlay extends StatelessWidget {
               BlendMode.srcOver,
             ),
             child: IgnorePointer(
-              child: ReaderContent(chapter: chapter, bookId: bookId),
+              // Use a plain surface-coloured container instead of a full
+              // ReaderContent so that BlockRenderer is never instantiated here.
+              // A second BlockRenderer for the same chapter would register
+              // duplicate GlobalKeys and crash the app at runtime.
+              child: Container(color: theme.colorScheme.surface),
             ),
           ),
         ),
