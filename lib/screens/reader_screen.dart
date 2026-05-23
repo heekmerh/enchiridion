@@ -190,7 +190,14 @@ class _ReaderShellState extends State<_ReaderShell> {
           );
         }
 
-        final chapter = bookProvider.currentChapter!;
+        final chapter = bookProvider.currentChapter;
+        final chapterId = bookProvider.currentChapterId;
+
+        if (chapter == null || chapterId == null) {
+          return const Scaffold(
+            body: Center(child: CircularProgressIndicator()),
+          );
+        }
 
         return Consumer2<SettingsProvider, BookmarkProvider>(
           builder: (context, settingsProvider, bookmarkProvider, _) {
@@ -206,13 +213,13 @@ class _ReaderShellState extends State<_ReaderShell> {
                       slivers: [
                         ReaderAppBar(
                           title: chapter.title,
-                          currentChapterId: bookProvider.currentChapterId!,
+                          currentChapterId: chapterId,
                           onSettingsPressed: () => setState(() {
                             _isSettingsOpen = !_isSettingsOpen;
                             _showControls = true;
                           }),
                           onNotesPressed: () =>
-                              _showNotesSheet(bookProvider.currentChapterId!),
+                              _showNotesSheet(chapterId),
                         ),
                         SliverToBoxAdapter(
                           child: _hasAccess ||
@@ -291,7 +298,7 @@ class _ReaderShellState extends State<_ReaderShell> {
                       child: TocDrawerContent(
                         key: ValueKey(_drawerOpenCount),
                         chapters: bookProvider.chapters,
-                        currentChapterId: bookProvider.currentChapterId!,
+                        currentChapterId: chapterId,
                         bookmarks: bookmarkProvider.bookmarks,
                         visitedChapterIds: bookProvider.visitedChapterIds,
                         onChapterSelected: _navigateToChapter,
