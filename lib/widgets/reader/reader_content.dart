@@ -7,11 +7,18 @@ import '../blocks/block_renderer.dart';
 class ReaderContent extends StatelessWidget {
   final Chapter chapter;
   final String bookId;
+  final void Function(
+    Map<String, GlobalKey> sectionKeys,
+    Map<String, GlobalKey> subsectionKeys,
+  )? onKeysReady;
+  final void Function(Map<String, double> offsets)? onOffsetsReady;
 
   const ReaderContent({
     super.key,
     required this.chapter,
     this.bookId = '',
+    this.onKeysReady,
+    this.onOffsetsReady,
   });
 
   @override
@@ -22,7 +29,12 @@ class ReaderContent extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (chapter.tags.isNotEmpty) _KeywordChips(tags: chapter.tags),
-          BlockRenderer(chapter: chapter, bookId: bookId),
+          BlockRenderer(
+            chapter: chapter,
+            bookId: bookId,
+            onKeysReady: onKeysReady,
+            onOffsetsReady: onOffsetsReady,
+          ),
         ],
       ),
     );
