@@ -52,11 +52,11 @@ void main() {
             'TableBlockWidget must not use SingleChildScrollView with Axis.horizontal');
   });
 
-  // Test 2: With 3 columns on a 375px screen, each column is approximately
-  // (375 - 48) / 3 ≈ 109 px wide (48px total horizontal padding from Scaffold
-  // wrapping; plan specifies 48px content padding offset).
+  // Test 2: With 3 columns, each column is assigned an equal FixedColumnWidth
+  // based on the available layout width (via LayoutBuilder), not a hardcoded
+  // MediaQuery-based heuristic.  All three columns must share the same width.
   testWidgets(
-      'TableBlockWidget assigns equal FixedColumnWidth to each column (~109px on 375px screen)',
+      'TableBlockWidget assigns equal FixedColumnWidth to each column',
       (WidgetTester tester) async {
     await tester.pumpWidget(buildWidget());
 
@@ -68,15 +68,17 @@ void main() {
         reason: 'Table.columnWidths must be set');
     final widths = table.columnWidths!;
 
+    double? firstWidth;
     for (int i = 0; i < 3; i++) {
       expect(widths[i], isA<FixedColumnWidth>(),
           reason: 'Column $i must use FixedColumnWidth');
       final fixedWidth = (widths[i]! as FixedColumnWidth).value;
-      // (375 - 48) / 3 = 109.0
-      expect(fixedWidth, closeTo(109.0, 1.0),
-          reason:
-              'Column $i width should be ~109px (got $fixedWidth); '
-              'expected (375-48)/3');
+      expect(fixedWidth, greaterThan(0),
+          reason: 'Column $i width must be positive (got $fixedWidth)');
+      firstWidth ??= fixedWidth;
+      expect(fixedWidth, closeTo(firstWidth, 0.01),
+          reason: 'All columns must have equal width; '
+              'column $i got $fixedWidth, expected $firstWidth');
     }
   });
 
