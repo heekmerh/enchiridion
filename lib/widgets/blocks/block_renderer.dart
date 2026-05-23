@@ -537,51 +537,61 @@ class _AgeReferenceWidget extends StatelessWidget {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    final screenWidth = MediaQuery.of(context).size.width;
-    final contentWidth = screenWidth - 48;
-    final colCount = block.rows.isNotEmpty
-        ? 1 + block.rows.first.keys.where((k) => k != 'age').length
-        : 1;
-    final colWidth = contentWidth / colCount;
+    // Derive column count from the union of all row keys so that an empty
+    // rows list (colCount would be 1) never mismatches rows that have more
+    // keys, which would cause a Flutter Table assertion error.
+    final allKeys = block.rows.expand((r) => r.keys).toSet();
+    final nonAgeKeys = allKeys.where((k) => k != 'age').toList();
+    // +1 for the 'age' column itself.
+    final colCount = nonAgeKeys.isEmpty ? 1 : 1 + nonAgeKeys.length;
 
-    return Container(
-      margin: EdgeInsets.only(bottom: fontSize * 1.5),
-      decoration: BoxDecoration(
-        border: Border.all(color: theme.dividerColor),
-        borderRadius: const BorderRadius.all(Radius.circular(8)),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: Table(
-        columnWidths: {
-          for (int i = 0; i < colCount; i++) i: FixedColumnWidth(colWidth)
-        },
-        border: TableBorder(
-          horizontalInside: BorderSide(color: theme.dividerColor),
-          verticalInside: BorderSide(color: theme.dividerColor),
-        ),
-        children: [
-          TableRow(
-            decoration: BoxDecoration(
-              color: isDark
-                  ? AppColors.inkCharcoal
-                  : AppColors.brandPink.withValues(alpha: 0.08),
+    // Derive header column labels from first row (or empty if no rows).
+    final headerKeys = block.rows.isNotEmpty
+        ? block.rows.first.keys.where((k) => k != 'age').toList()
+        : <String>[];
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final colWidth = constraints.maxWidth / colCount;
+
+        return Container(
+          margin: EdgeInsets.only(bottom: fontSize * 1.5),
+          decoration: BoxDecoration(
+            border: Border.all(color: theme.dividerColor),
+            borderRadius: const BorderRadius.all(Radius.circular(8)),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Table(
+            columnWidths: {
+              for (int i = 0; i < colCount; i++) i: FixedColumnWidth(colWidth)
+            },
+            border: TableBorder(
+              horizontalInside: BorderSide(color: theme.dividerColor),
+              verticalInside: BorderSide(color: theme.dividerColor),
             ),
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                child: Text(
-                  block.ageUnit,
-                  style: TextStyle(
-                    fontSize: fontSize * 0.85,
-                    fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.onSurface,
-                  ),
+              TableRow(
+                decoration: BoxDecoration(
+                  color: isDark
+                      ? AppColors.inkCharcoal
+                      : AppColors.brandPink.withValues(alpha: 0.08),
                 ),
-              ),
-              ...block.rows.isNotEmpty
-                  ? (block.rows.first.keys.where((k) => k != 'age').map((k) =>
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14, vertical: 10),
+                    child: Text(
+                      block.ageUnit,
+                      style: TextStyle(
+                        fontSize: fontSize * 0.85,
+                        fontWeight: FontWeight.bold,
+                        color: theme.colorScheme.onSurface,
+                      ),
+                    ),
+                  ),
+                  ...headerKeys.map((k) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 14, vertical: 10),
                         child: Text(
                           k,
                           style: TextStyle(
@@ -590,25 +600,29 @@ class _AgeReferenceWidget extends StatelessWidget {
                             color: theme.colorScheme.onSurface,
                           ),
                         ),
-                      )))
-                  : [],
+                      )),
+                ],
+              ),
+              ...block.rows.map((row) => TableRow(
+                    children: row.values
+                        .map((v) => Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 14, vertical: 8),
+                              child: Text(
+                                v.toString(),
+                                style: TextStyle(
+                                  fontSize: fontSize * 0.9,
+                                  height: lineHeight,
+                                  color: theme.colorScheme.onSurface,
+                                ),
+                              ),
+                            ))
+                        .toList(),
+                  )),
             ],
           ),
-          ...block.rows.map((row) => TableRow(
-                children: row.values.map((v) => Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                      child: Text(
-                        v.toString(),
-                        style: TextStyle(
-                          fontSize: fontSize * 0.9,
-                          height: lineHeight,
-                          color: theme.colorScheme.onSurface,
-                        ),
-                      ),
-                    )).toList(),
-              )),
-        ],
-      ),
+        );
+      },
     );
   }
 }
