@@ -119,6 +119,8 @@ class _ReaderShellState extends State<_ReaderShell> {
   void _navigateToChapter(String chapterId) {
     context.read<BookProvider>().navigateToChapter(chapterId);
     setState(() {
+      _sectionOffsets = {};       // clear stale offsets from previous chapter
+      _currentSectionId = null;   // reset active-section highlight
       _isMenuOpen = false;
       _showControls = true;
     });
