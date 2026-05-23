@@ -33,14 +33,14 @@
 
 **Goal:** Fix reader experience — tables, navbar, TOC (tree structure with jump-to navigation)
 
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 
 Plans:
 - [x] 02-01-PLAN.md — App bar fix (floating: false) + chapter_color data pipeline (book.json + Chapter model)
 - [x] 02-02-PLAN.md — Table fix: TableBlockWidget + _AgeReferenceWidget (FixedColumnWidth, no horizontal scroll)
 - [x] 02-03-PLAN.md — BlockRenderer → StatefulWidget + GlobalKey anchor map + ReaderContent callback wiring
 - [x] 02-04-PLAN.md — reader_screen.dart: remove auto-hide timer (D-05) + scroll tracking _currentSectionId (D-11)
-- [ ] 02-05-PLAN.md — TOC tree (ExpansionTile, 3 levels) + _navigateToSection + active-section highlight
+- [x] 02-05-PLAN.md — TOC tree (ExpansionTile, 3 levels) + _navigateToSection + active-section highlight
 
 **Requirements:** REQ-2.1, REQ-2.2, REQ-2.3
 
