@@ -36,6 +36,7 @@ class TocDrawerContent extends StatefulWidget {
 class _TocDrawerContentState extends State<TocDrawerContent> {
   String _searchQuery = '';
   List<SearchResult> _searchResults = [];
+  final Set<String> _expandedChapters = {};
 
   void _handleSearch(String query) {
     setState(() {
@@ -205,16 +206,81 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
           const SizedBox(height: 24),
         ],
 
-        // Chapter List
+        // Chapter List — ExpansionTile tree (D-07, D-08, D-09, D-12)
         if (_searchQuery.isEmpty) ...[
           _buildSectionHeader(AppStrings.protocolsSection, theme),
           const SizedBox(height: 8),
-          ...widget.chapters.map((chapter) => _ChapterItem(
-            chapter: chapter,
-            isActive: chapter.id == widget.currentChapterId,
-            isVisited: widget.visitedChapterIds.contains(chapter.id),
-            onTap: () => widget.onChapterSelected(chapter.id),
-          )),
+          ...widget.chapters.map((chapter) {
+            final isActiveChapter = chapter.id == widget.currentChapterId;
+            final isExpanded = _expandedChapters.contains(chapter.id);
+            return ExpansionTile(
+              key: ValueKey('toc_${chapter.id}'),
+              initiallyExpanded: false,
+              onExpansionChanged: (expanded) {
+                // Chapter tap: navigate to chapter AND toggle expansion (D-07)
+                widget.onChapterSelected(chapter.id);
+                setState(() {
+                  if (expanded) {
+                    _expandedChapters.add(chapter.id);
+                  } else {
+                    _expandedChapters.remove(chapter.id);
+                  }
+                });
+              },
+              leading: isActiveChapter
+                  ? const Icon(Icons.circle, size: 8, color: AppColors.brandPink)
+                  : null,
+              title: Text(
+                chapter.title,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight:
+                      isActiveChapter ? FontWeight.w600 : FontWeight.normal,
+                  color: isActiveChapter
+                      ? AppColors.brandPink
+                      : theme.colorScheme.onSurface,
+                ),
+              ),
+              trailing: Icon(
+                isExpanded ? Icons.expand_less : Icons.expand_more,
+              ),
+              children: chapter.sections.map((section) {
+                return ExpansionTile(
+                  key: ValueKey('toc_${section.id}'),
+                  initiallyExpanded: false,
+                  tilePadding:
+                      const EdgeInsets.only(left: 24, right: 16),
+                  title: Text(
+                    section.title,
+                    style: const TextStyle(fontSize: 13),
+                  ),
+                  onExpansionChanged: (_) {},
+                  children: section.subsections.map((sub) {
+                    final isActiveSub = sub.id == widget.currentSectionId;
+                    return ListTile(
+                      dense: true,
+                      contentPadding:
+                          const EdgeInsets.only(left: 48, right: 16),
+                      title: Text(
+                        sub.title,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: isActiveSub
+                              ? AppColors.neonTeal
+                              : theme.colorScheme.onSurface
+                                  .withValues(alpha: 0.8),
+                          fontWeight:
+                              isActiveSub ? FontWeight.w600 : null,
+                        ),
+                      ),
+                      onTap: () =>
+                          widget.onSectionSelected(section.id, sub.id),
+                    );
+                  }).toList(),
+                );
+              }).toList(),
+            );
+          }),
         ],
       ],
     );
@@ -335,67 +401,3 @@ class _BookmarkItem extends StatelessWidget {
   }
 }
 
-class _ChapterItem extends StatelessWidget {
-  final Chapter chapter;
-  final bool isActive;
-  final bool isVisited;
-  final VoidCallback onTap;
-
-  const _ChapterItem({
-    required this.chapter,
-    required this.isActive,
-    required this.isVisited,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        margin: const EdgeInsets.only(bottom: 4),
-        decoration: BoxDecoration(
-          color: isActive
-              ? AppColors.brandPink.withValues(alpha:0.1)
-              : Colors.transparent,
-          border: isActive
-              ? Border.all(
-                  color: AppColors.brandPink.withValues(alpha:0.2),
-                )
-              : null,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              chapter.title,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: isActive ? FontWeight.w600 : FontWeight.normal,
-                color: isActive
-                    ? AppColors.brandPink
-                    : theme.colorScheme.onSurface,
-              ),
-            ),
-            if (isVisited && !isActive) ...[
-              const SizedBox(height: 4),
-              LinearProgressIndicator(
-                value: 1.0,
-                minHeight: 2,
-                backgroundColor: Colors.transparent,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  AppColors.neonTeal.withValues(alpha: 0.4),
-                ),
-              ),
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}

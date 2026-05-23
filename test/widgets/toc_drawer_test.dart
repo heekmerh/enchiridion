@@ -75,8 +75,12 @@ void main() {
       await tester.tap(find.text('Chapter One'));
       await tester.pumpAndSettle();
 
-      // After tapping, section should appear. Tap section to reveal subsection.
-      await tester.tap(find.text('Section One'));
+      // After expanding, section ExpansionTile should be visible.
+      // Ensure it's scrolled into view then tap it to reveal subsection.
+      final sectionTileFinder = find.text('Section One');
+      await tester.ensureVisible(sectionTileFinder);
+      await tester.pumpAndSettle();
+      await tester.tap(sectionTileFinder);
       await tester.pumpAndSettle();
 
       // Now the subsection title should be visible.
@@ -104,11 +108,18 @@ void main() {
       // Expand chapter then section to reveal subsection.
       await tester.tap(find.text('Chapter One'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Section One'));
+
+      final sectionTileFinder = find.text('Section One');
+      await tester.ensureVisible(sectionTileFinder);
+      await tester.pumpAndSettle();
+      await tester.tap(sectionTileFinder);
       await tester.pumpAndSettle();
 
       // Tap the subsection ListTile.
-      await tester.tap(find.text('Subsection One'));
+      final subTileFinder = find.text('Subsection One');
+      await tester.ensureVisible(subTileFinder);
+      await tester.pumpAndSettle();
+      await tester.tap(subTileFinder);
       await tester.pumpAndSettle();
 
       expect(capturedSectionId, equals('s1'),
@@ -129,12 +140,20 @@ void main() {
       // Expand chapter then section to reveal subsection.
       await tester.tap(find.text('Chapter One'));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Section One'));
+
+      final sectionTileFinder = find.text('Section One');
+      await tester.ensureVisible(sectionTileFinder);
+      await tester.pumpAndSettle();
+      await tester.tap(sectionTileFinder);
       await tester.pumpAndSettle();
 
       // Find the Text widget for the active subsection title.
+      final subTileFinder = find.text('Subsection One');
+      await tester.ensureVisible(subTileFinder);
+      await tester.pumpAndSettle();
+
       final textWidgets = tester.widgetList<Text>(
-        find.text('Subsection One'),
+        subTileFinder,
       ).toList();
 
       expect(textWidgets, isNotEmpty,
