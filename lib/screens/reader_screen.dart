@@ -50,12 +50,11 @@ class _ReaderShellState extends State<_ReaderShell> {
   bool _showControls = true;
   bool _hasAccess = false;
   final ScrollController _scrollController = ScrollController();
+  int _drawerOpenCount = 0;
 
   // D-11: Active-section scroll tracking state
   String? _currentSectionId;
-  // ignore: unused_field — stored for Plan 05 TOC highlighting
   Map<String, GlobalKey> _sectionKeys = {};
-  // ignore: unused_field — stored for Plan 05 TOC highlighting
   Map<String, GlobalKey> _subsectionKeys = {};
   Map<String, double> _sectionOffsets = {};
 
@@ -124,6 +123,23 @@ class _ReaderShellState extends State<_ReaderShell> {
     });
     _scrollController.animateTo(0,
         duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
+  }
+
+  void _navigateToSection(String sectionId, String subsectionId) {
+    setState(() {
+      _isMenuOpen = false;
+      _showControls = true;
+    });
+    // Try subsection key first, fall back to section key
+    final key = _subsectionKeys[subsectionId] ?? _sectionKeys[sectionId];
+    if (key?.currentContext != null) {
+      Scrollable.ensureVisible(
+        key!.currentContext!,
+        duration: const Duration(milliseconds: 400),
+        curve: Curves.easeOut,
+        alignment: 0.0,
+      );
+    }
   }
 
   void _showNotesSheet(String chapterId) {
@@ -252,6 +268,7 @@ class _ReaderShellState extends State<_ReaderShell> {
                                   onPressed: () => setState(() {
                                     _isMenuOpen = !_isMenuOpen;
                                     _showControls = true;
+                                    if (_isMenuOpen) _drawerOpenCount += 1;
                                   }),
                                 ),
                               ],
@@ -272,12 +289,15 @@ class _ReaderShellState extends State<_ReaderShell> {
                         height: 28,
                       ),
                       child: TocDrawerContent(
+                        key: ValueKey(_drawerOpenCount),
                         chapters: bookProvider.chapters,
                         currentChapterId: bookProvider.currentChapterId!,
                         bookmarks: bookmarkProvider.bookmarks,
                         visitedChapterIds: bookProvider.visitedChapterIds,
                         onChapterSelected: _navigateToChapter,
                         onSearchResults: (_) {},
+                        currentSectionId: _currentSectionId,
+                        onSectionSelected: _navigateToSection,
                       ),
                     ),
 

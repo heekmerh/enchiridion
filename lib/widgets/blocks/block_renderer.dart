@@ -180,13 +180,23 @@ class _ChapterView extends StatelessWidget {
     );
   }
 
+  Color? _chapterHeaderTintColor() {
+    final colorStr = chapter.chapterColor;
+    if (colorStr == null || colorStr.isEmpty) return null;
+    try {
+      return Color(int.parse(colorStr.replaceFirst('#', '0xFF')));
+    } catch (_) {
+      return null;
+    }
+  }
+
   Widget _buildBlock(ContentBlock block, double fontSize, double lineHeight) {
     if (block is ParagraphBlock) {
       return _ParagraphWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is MnemonicBlock) {
       return MnemonicBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is TableBlock) {
-      return TableBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return TableBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight, headerTintColor: _chapterHeaderTintColor());
     } else if (block is ChecklistBlock) {
       return ChecklistBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is ClinicalPearlsBlock) {
