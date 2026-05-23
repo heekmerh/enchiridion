@@ -444,37 +444,37 @@ class _NotesBottomSheetState extends State<_NotesBottomSheet> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final viewInsets = MediaQuery.of(context).viewInsets;
 
-    return Padding(
-      padding: EdgeInsets.only(bottom: viewInsets.bottom),
-      child: DraggableScrollableSheet(
-        initialChildSize: 0.55,
-        minChildSize: 0.3,
-        maxChildSize: 0.9,
-        expand: false,
-        builder: (_, __) => Padding(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Center(
-                child: Container(
-                  width: 40,
-                  height: 4,
-                  decoration: BoxDecoration(
-                    color: cs.outline.withValues(alpha: 0.4),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
+    return DraggableScrollableSheet(
+      initialChildSize: 0.55,
+      minChildSize: 0.3,
+      maxChildSize: 0.9,
+      expand: false,
+      builder: (_, __) => Padding(
+        padding: EdgeInsets.fromLTRB(
+          16, 12, 16,
+          16 + MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: cs.outline.withValues(alpha: 0.4),
+                  borderRadius: BorderRadius.circular(2),
                 ),
               ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  const Icon(Icons.edit_note_outlined, size: 20),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Chapter Notes',
+            ),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                const Icon(Icons.edit_note_outlined, size: 20),
+                const SizedBox(width: 8),
+                Text(
+                  'Chapter Notes',
                     style: theme.textTheme.titleSmall
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
