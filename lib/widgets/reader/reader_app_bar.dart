@@ -22,6 +22,7 @@ class ReaderAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       floating: false,
+      pinned: true,
       elevation: 0,
       automaticallyImplyLeading: false,
       // Left padding so content clears the floating back+TOC pill
