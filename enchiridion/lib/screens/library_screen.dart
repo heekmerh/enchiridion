@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/book_catalog.dart';
-import '../models/calculator_definition.dart';
 import '../providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
 import '../services/storage_service.dart';
-import '../services/access_service.dart';
-import '../config/freemium_config.dart';
 import '../screens/reader_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
-import '../screens/calculator_screen.dart';
-import '../screens/unlock_screen.dart';
+import '../screens/calculator_list_screen.dart';
 import '../screens/question_list_screen.dart';
 import '../widgets/drawer/settings_drawer.dart';
+
+// ─── Resource category data model ────────────────────────────────────────────
+
+class _ResourceCategory {
+  final String title;
+  final String assetPath;
+  final void Function(BuildContext) onTap;
+
+  const _ResourceCategory({
+    required this.title,
+    required this.assetPath,
+    required this.onTap,
+  });
+}
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({super.key});
@@ -264,7 +274,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                   controller: _tabController,
                   tabs: const [
                     Tab(icon: Icon(Icons.menu_book_outlined), text: 'Library'),
-                    Tab(icon: Icon(Icons.medical_services_outlined), text: 'Tools'),
+                    Tab(icon: Icon(Icons.medical_services_outlined), text: 'Resources'),
                   ],
                 ),
                 // Tab content
@@ -279,7 +289,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                         onTap: _openBook,
                         onLongPress: _showBookOptions,
                       ),
-                      const _ToolsTab(),
+                      const _ResourcesTab(),
                     ],
                   ),
                 ),
@@ -505,145 +515,172 @@ class _BookPage extends StatelessWidget {
   }
 }
 
-// ─── Tools tab ────────────────────────────────────────────────────────────────
+// ─── Resources tab ───────────────────────────────────────────────────────────
 
-class _ToolsTab extends StatefulWidget {
-  const _ToolsTab();
+class _ResourcesTab extends StatefulWidget {
+  const _ResourcesTab();
 
   @override
-  State<_ToolsTab> createState() => _ToolsTabState();
+  State<_ResourcesTab> createState() => _ResourcesTabState();
 }
 
-class _ToolsTabState extends State<_ToolsTab> {
-  Set<String> _favorites = {};
-  bool _hasAccess = false;
+class _ResourcesTabState extends State<_ResourcesTab> {
+  late final PageController _pageController;
+  int _currentPage = 0;
+
+  late final List<_ResourceCategory> _categories;
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _load());
-  }
-
-  Future<void> _load() async {
-    final access = await AccessService.instance.hasFullAccess();
-    if (!mounted) return;
-    final storage = context.read<StorageService>();
-    setState(() {
-      _favorites = storage.getFavorites();
-      _hasAccess = access;
+    _pageController = PageController();
+    _pageController.addListener(() {
+      final page = _pageController.page?.round() ?? 0;
+      if (page != _currentPage) setState(() => _currentPage = page);
     });
-  }
-
-  bool _isLocked(CalculatorDefinition calc) {
-    if (_hasAccess) return false;
-    final categoryCalcs =
-        kCalculators.where((c) => c.category == calc.category).toList();
-    final index = categoryCalcs.indexWhere((c) => c.id == calc.id);
-    return index >= kFreeCalculatorsPerCategory;
-  }
-
-  void _openCalc(CalculatorDefinition calc) {
-    if (_isLocked(calc)) {
-      Navigator.push(context, MaterialPageRoute(
-        builder: (_) => const UnlockScreen(),
-      ));
-      return;
-    }
-    Navigator.push(context, MaterialPageRoute(
-      builder: (_) => CalculatorScreen(calculatorId: calc.id),
-    ));
-  }
-
-  Widget _sectionHeader(String title) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 20, 0, 8),
-      child: Text(title.toUpperCase(),
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 1.4,
-          color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.5),
+    _categories = [
+      _ResourceCategory(
+        title: 'Calculators',
+        assetPath: 'assets/resources/calculators.jpeg',
+        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => const CalculatorListScreen(),
         )),
-    );
+      ),
+      _ResourceCategory(
+        title: 'Exam Prep',
+        assetPath: 'assets/resources/exam_prep.jpeg',
+        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) =>
+              const QuestionListScreen(bookId: 'paediatrics'), // TODO: multi-book support
+        )),
+      ),
+      _ResourceCategory(
+        title: 'Instrumentation',
+        assetPath: 'assets/resources/instrumentation.jpeg',
+        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Instrumentation — content coming soon'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+      ),
+      _ResourceCategory(
+        title: 'OSCE',
+        assetPath: 'assets/resources/osce.jpeg',
+        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('OSCE — content coming soon'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+      ),
+    ];
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    final favCalcs =
-        kCalculators.where((c) => _favorites.contains(c.id)).toList();
-    final grouped = groupByCategory(kCalculators);
-
-    return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+    return Stack(
       children: [
-        if (favCalcs.isNotEmpty) ...[
-          _sectionHeader('Favorites'),
-          ...favCalcs.map((c) => _CalcTile(
-            calc: c,
-            isFavorite: true,
-            isLocked: _isLocked(c),
-            onTap: () => _openCalc(c),
-          )),
-          const Divider(height: 8),
-        ],
-        ...grouped.entries.expand((entry) => [
-          _sectionHeader(entry.key),
-          ...entry.value.map((c) => _CalcTile(
-            calc: c,
-            isFavorite: _favorites.contains(c.id),
-            isLocked: _isLocked(c),
-            onTap: () => _openCalc(c),
-          )),
-        ]),
+        PageView.builder(
+          controller: _pageController,
+          itemCount: _categories.length,
+          itemBuilder: (_, i) => _ResourceCard(
+            category: _categories[i],
+            onTap: () => _categories[i].onTap(context),
+          ),
+        ),
+        // Page indicator dots — right side, vertical column
+        Positioned(
+          right: 10,
+          top: 0,
+          bottom: 0,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(_categories.length, (i) {
+                final active = i == _currentPage;
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 200),
+                  margin: const EdgeInsets.symmetric(vertical: 3),
+                  width: 6,
+                  height: active ? 18 : 6,
+                  decoration: BoxDecoration(
+                    color: active
+                        ? Colors.white
+                        : Colors.white.withValues(alpha: 0.4),
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                );
+              }),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
 
-class _CalcTile extends StatelessWidget {
-  final CalculatorDefinition calc;
-  final bool isFavorite;
-  final bool isLocked;
+class _ResourceCard extends StatelessWidget {
+  final _ResourceCategory category;
   final VoidCallback onTap;
 
-  const _CalcTile({
-    required this.calc,
-    required this.isFavorite,
-    required this.isLocked,
-    required this.onTap,
-  });
+  const _ResourceCard({required this.category, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-      leading: Container(
-        width: 40, height: 40,
-        decoration: BoxDecoration(
-          color: cs.primaryContainer,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Icon(Icons.calculate_outlined,
-          size: 20, color: cs.onPrimaryContainer),
-      ),
-      title: Text(calc.title,
-        style: theme.textTheme.bodyMedium
-            ?.copyWith(fontWeight: FontWeight.w600)),
-      subtitle: Text(calc.description,
-        style: theme.textTheme.bodySmall?.copyWith(
-            color: cs.onSurface.withValues(alpha: 0.55)),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis),
-      trailing: isLocked
-          ? Icon(Icons.lock_outline, size: 18,
-              color: cs.onSurface.withValues(alpha: 0.4))
-          : isFavorite
-              ? Icon(Icons.favorite, size: 18, color: cs.primary)
-              : null,
+    final cs = Theme.of(context).colorScheme;
+    return GestureDetector(
       onTap: onTap,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Full-screen cover image
+          Image.asset(
+            category.assetPath,
+            fit: BoxFit.cover,
+            errorBuilder: (_, __, ___) => Container(
+              color: cs.primaryContainer,
+              child: Icon(Icons.category_outlined,
+                  size: 80, color: cs.onPrimaryContainer),
+            ),
+          ),
+          // Gradient overlay so text is readable at the bottom
+          DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                stops: const [0.5, 1.0],
+                colors: [
+                  Colors.transparent,
+                  Colors.black.withValues(alpha: 0.75),
+                ],
+              ),
+            ),
+          ),
+          // Bottom label
+          Positioned(
+            left: 20,
+            right: 40,
+            bottom: 28,
+            child: Text(
+              category.title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                height: 1.2,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
