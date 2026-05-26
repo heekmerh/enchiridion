@@ -52,17 +52,15 @@ Plans:
 
 **Goal:** Free users see Chapter 1 only; rename Tools → Resources with carousel
 
-**Tasks:**
-1. [ ] Chapter 1 lock — update ReaderScreen freemium check
-2. [ ] LockedChapterOverlay — show lock icon + unlock button
-3. [ ] Test freemium gating per book
-4. [ ] Rename "Tools" tab to "Resources"
-5. [ ] Create _ResourcesTab with PageView carousel
-6. [ ] Load 4 images from assets/resources/
-7. [ ] Add page indicator dots on right
-8. [ ] Tap category → open section (Calculators → CalculatorScreen, etc.)
-9. [ ] Test carousel scroll + image loading
-10. [ ] Update pubspec.yaml assets section
+**Plans:** 2 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Verify freemium gate + add tests (reader_screen gate already shipped; kFreeChapterCount=1)
+- [ ] 03-02-PLAN.md — Rename Tools→Resources tab + horizontal PageView carousel (4 image cards, right-side dots, card routing) + widget tests
+
+**Note:** Content-lock production code (`_LockedChapterOverlay`, `kFreeChapterCount=1`, gate in reader_screen.dart) is already implemented — Plan 01 is verification/tests only. pubspec already declares `assets/resources/` — no asset registration change needed.
+
+**Requirements:** REQ-3.1, REQ-3.2
 
 **Deliverable:** Resources section redesigned; content lock enforced
 
@@ -224,3 +222,4 @@ Phase 4 (Calculators) — can run parallel with Phases 2–3 after Phase 1
 
 *Roadmap finalized: 2026-05-21*
 *Phase 2 planned: 2026-05-23 — 5 plans, 5 waves*
+*Phase 3 planned: 2026-05-26 — 2 plans, 1 wave*
