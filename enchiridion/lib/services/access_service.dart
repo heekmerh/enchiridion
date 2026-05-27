@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/auth_service.dart';
 
@@ -5,6 +6,11 @@ class AccessService {
   static AccessService? _instance;
   static AccessService get instance => _instance ??= AccessService._();
   AccessService._();
+
+  /// Testing-only override. Set to `true`/`false` in tests to short-circuit
+  /// the Supabase call. Reset to `null` in tearDown to avoid state leakage.
+  @visibleForTesting
+  static bool? testAccessOverride;
 
   // Cache: bookId → has access. '*' = full subscription.
   final Map<String, bool> _cache = {};
@@ -41,6 +47,7 @@ class AccessService {
   }
 
   Future<bool> hasBookAccess(String bookId) async {
+    if (testAccessOverride != null) return testAccessOverride!;
     if (!_loaded) await loadAccess();
     return _cache.containsKey('*') || (_cache[bookId] ?? false);
   }
