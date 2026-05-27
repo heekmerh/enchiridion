@@ -73,20 +73,25 @@ class CustomDrawer extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          children: [
-                            if (headerLeading != null) ...[
-                              headerLeading!,
-                              const SizedBox(width: 10),
-                            ],
-                            Text(
-                              title,
-                              style: theme.textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.w600,
-                                letterSpacing: 0.5,
+                        Expanded(
+                          child: Row(
+                            children: [
+                              if (headerLeading != null) ...[
+                                headerLeading!,
+                                const SizedBox(width: 10),
+                              ],
+                              Flexible(
+                                child: Text(
+                                  title,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: theme.textTheme.titleLarge?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                         IconButton(
                           onPressed: onClose,
