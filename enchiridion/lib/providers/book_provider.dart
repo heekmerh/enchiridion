@@ -50,6 +50,16 @@ class BookProvider with ChangeNotifier {
     _loadBook();
   }
 
+  /// Testing-only constructor. Bypasses rootBundle and initialises the provider
+  /// with [book] already loaded so tests do not need a running platform channel.
+  @visibleForTesting
+  BookProvider.withBook(this._storageService, Book book)
+      : _dataFile = '' {
+    _book = book;
+    _currentChapterId = book.chapters.isNotEmpty ? book.chapters.first.id : null;
+    _status = BookStatus.loaded;
+  }
+
   Future<void> _loadBook() async {
     try {
       final book = await BookService.loadBook(_dataFile);

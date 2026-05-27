@@ -20,14 +20,26 @@ class ReaderScreen extends StatelessWidget {
   final String bookId;
   final String dataFile;
 
+  /// For widget tests only. When non-null, ReaderScreen skips asset loading
+  /// and uses this pre-built provider directly.
+  @visibleForTesting
+  final BookProvider? testBookProvider;
+
   const ReaderScreen({
     super.key,
     this.bookId = 'paediatrics',
     this.dataFile = 'assets/data/book.json',
+    this.testBookProvider,
   });
 
   @override
   Widget build(BuildContext context) {
+    if (testBookProvider != null) {
+      return ChangeNotifierProvider<BookProvider>.value(
+        value: testBookProvider!,
+        child: _ReaderShell(bookId: bookId),
+      );
+    }
     final storageService = context.read<StorageService>();
     return ChangeNotifierProvider<BookProvider>(
       create: (_) => BookProvider(storageService, dataFile),
@@ -518,24 +530,29 @@ class _LockedChapterOverlay extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    final screenHeight = MediaQuery.sizeOf(context).height;
 
-    return Stack(
-      children: [
-        ClipRect(
-          child: ImageFiltered(
-            imageFilter: ColorFilter.mode(
-              cs.surface.withValues(alpha: 0.85),
-              BlendMode.srcOver,
-            ),
-            child: IgnorePointer(
-              // Use a plain surface-coloured container instead of a full
-              // ReaderContent so that BlockRenderer is never instantiated here.
-              // A second BlockRenderer for the same chapter would register
-              // duplicate GlobalKeys and crash the app at runtime.
-              child: Container(color: theme.colorScheme.surface),
+    return SizedBox(
+      height: screenHeight,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: ClipRect(
+              child: ImageFiltered(
+                imageFilter: ColorFilter.mode(
+                  cs.surface.withValues(alpha: 0.85),
+                  BlendMode.srcOver,
+                ),
+                child: IgnorePointer(
+                  // Use a plain surface-coloured container instead of a full
+                  // ReaderContent so that BlockRenderer is never instantiated here.
+                  // A second BlockRenderer for the same chapter would register
+                  // duplicate GlobalKeys and crash the app at runtime.
+                  child: Container(color: theme.colorScheme.surface),
+                ),
+              ),
             ),
           ),
-        ),
         Positioned.fill(
           child: Center(
             child: Padding(
@@ -583,6 +600,7 @@ class _LockedChapterOverlay extends StatelessWidget {
           ),
         ),
       ],
+    ),
     );
   }
 }
