@@ -55,8 +55,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Verify freemium gate + add tests (reader_screen gate already shipped; kFreeChapterCount=1)
-- [ ] 03-02-PLAN.md — Rename Tools→Resources tab + horizontal PageView carousel (4 image cards, right-side dots, card routing) + widget tests
+- [x] 03-01-PLAN.md — Verify freemium gate + add tests (reader_screen gate already shipped; kFreeChapterCount=1)
+- [x] 03-02-PLAN.md — Rename Tools→Resources tab + horizontal PageView carousel (4 image cards, right-side dots, card routing) + widget tests
 
 **Note:** Content-lock production code (`_LockedChapterOverlay`, `kFreeChapterCount=1`, gate in reader_screen.dart) is already implemented — Plan 01 is verification/tests only. pubspec already declares `assets/resources/` — no asset registration change needed.
 
@@ -148,8 +148,8 @@ Phase 4 (Calculators) — can run parallel with Phases 2–3 after Phase 1
 - [ ] Tables render without horizontal scroll (Phase 2)
 - [ ] Top navbar always visible (Phase 2)
 - [ ] TOC tree navigation working (Phase 2)
-- [ ] Free users see Chapter 1 only (Phase 3)
-- [ ] Resources section fully redesigned (Phase 3)
+- [x] Free users see Chapter 1 only (Phase 3)
+- [x] Resources section fully redesigned (Phase 3)
 - [ ] All 25 calculators implemented (Phase 4)
 - [ ] All calculators have explanation + interpretation (Phase 4)
 - [ ] BMI unit conversion working (Phase 4)
@@ -223,3 +223,4 @@ Phase 4 (Calculators) — can run parallel with Phases 2–3 after Phase 1
 *Roadmap finalized: 2026-05-21*
 *Phase 2 planned: 2026-05-23 — 5 plans, 5 waves*
 *Phase 3 planned: 2026-05-26 — 2 plans, 1 wave*
+*Phase 3 executed: 2026-05-27 — 03-01 (freemium gate tests) + 03-02 (Resources carousel) complete; 16/16 tests pass*
