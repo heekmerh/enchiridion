@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
-import 'package:enchiridion/models/calculator_definition.dart';
 import 'package:enchiridion/screens/calculator_screen.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
