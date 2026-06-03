@@ -703,7 +703,17 @@ class _BmiFormState extends State<_BmiForm> {
             items: ['kg', 'lb']
                 .map((u) => DropdownMenuItem(value: u, child: Text(u)))
                 .toList(),
-            onChanged: (v) => setState(() => _weightUnit = v!),
+            onChanged: (v) {
+              if (v == null || v == _weightUnit) return;
+              final current = double.tryParse(_weightCtrl.text);
+              if (current != null && current > 0) {
+                final converted = _weightUnit == 'kg'
+                    ? current * 2.20462   // kg → lb
+                    : current / 2.20462;  // lb → kg
+                _weightCtrl.text = converted.toStringAsFixed(2);
+              }
+              setState(() => _weightUnit = v);
+            },
           ),
         ]),
         Row(children: [
@@ -714,7 +724,28 @@ class _BmiFormState extends State<_BmiForm> {
             items: ['cm', 'm', 'ft']
                 .map((u) => DropdownMenuItem(value: u, child: Text(u)))
                 .toList(),
-            onChanged: (v) => setState(() => _heightUnit = v!),
+            onChanged: (v) {
+              if (v == null || v == _heightUnit) return;
+              final current = double.tryParse(_heightCtrl.text);
+              if (current != null && current > 0) {
+                double meters;
+                switch (_heightUnit) {
+                  case 'cm': meters = current / 100; break;
+                  case 'm':  meters = current; break;
+                  case 'ft': meters = current * 0.3048; break;
+                  default:   meters = current / 100;
+                }
+                double converted;
+                switch (v) {
+                  case 'cm': converted = meters * 100; break;
+                  case 'm':  converted = meters; break;
+                  case 'ft': converted = meters / 0.3048; break;
+                  default:   converted = meters * 100;
+                }
+                _heightCtrl.text = converted.toStringAsFixed(2);
+              }
+              setState(() => _heightUnit = v);
+            },
           ),
         ]),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
