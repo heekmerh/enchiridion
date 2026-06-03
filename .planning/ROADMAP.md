@@ -70,9 +70,21 @@ Plans:
 
 ### Phase 4: Phase 1 Calculators + Enhancements (High Priority)
 
-**Goal:** Add 18 new calculators with explanation, interpretation, safety notes
+**Goal:** 25 total calculators with full enhancements (explanation, clinical interpretation, safety notes, common pitfalls, OSCE tips); BMI unit conversion working
 
-**Tasks:**
+**Plans:** 4 plans
+
+Plans:
+- [ ] 04-01-PLAN.md — Foundation (Wave 1): 5 enhancement fields on CalculatorDefinition + _ClinicalNotesSection widget + BMI auto-conversion + Wave 0 tests + populate 8 existing calculators
+- [ ] 04-02-PLAN.md — Emergency & Critical Care (Wave 2): 7 calculators (qSOFA, NEWS2, Shock Index, Osmolality, Corrected Sodium, A-a Gradient, PaO2/FiO2)
+- [ ] 04-03-PLAN.md — Drug Dosing (Wave 3): 5 calculators (BSA, eGFR CKD-EPI 2021, Gentamicin/Vancomycin, Insulin, Paracetamol)
+- [ ] 04-04-PLAN.md — Paediatrics (Wave 4): 6 calculators (APLS Weight, Broselow, Pediatric BP, Neonatal Bilirubin, APGAR, WHO Growth) + completes 25-total
+
+**Requirements:** REQ-4a, REQ-4b, REQ-4c, REQ-4d, REQ-4e, REQ-4f
+
+**Note on waves:** All four plans modify the same two files (`calculator_definition.dart`, `calculator_screen.dart`). To avoid merge conflicts they run sequentially (waves 1→2→3→4), not in parallel.
+
+**Tasks (reference breakdown):**
 
 **4a. Calculator Definitions (1 day)**
 1. [ ] Add 18 calculator definitions to kCalculators
@@ -224,3 +236,4 @@ Phase 4 (Calculators) — can run parallel with Phases 2–3 after Phase 1
 *Phase 2 planned: 2026-05-23 — 5 plans, 5 waves*
 *Phase 3 planned: 2026-05-26 — 2 plans, 1 wave*
 *Phase 3 executed: 2026-05-27 — 03-01 (freemium gate tests) + 03-02 (Resources carousel) complete; 16/16 tests pass*
+*Phase 4 planned: 2026-06-03 — 4 plans, 4 waves (sequential — shared files)*
