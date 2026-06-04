@@ -213,6 +213,16 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         return _AaGradientForm(onResult: _setResult, onReset: _reset);
       case 'pao2-fio2':
         return _PaO2FiO2Form(onResult: _setResult, onReset: _reset);
+      case 'bsa':
+        return _BsaForm(onResult: _setResult, onReset: _reset);
+      case 'egfr-ckd-epi':
+        return _EgfrCkdEpiForm(onResult: _setResult, onReset: _reset);
+      case 'gentamicin-vancomycin':
+        return _GentamicinVancomycinForm(onResult: _setResult, onReset: _reset);
+      case 'insulin-dose':
+        return _InsulinDoseForm(onResult: _setResult, onReset: _reset);
+      case 'paracetamol-dosing':
+        return _ParacetamolDosingForm(onResult: _setResult, onReset: _reset);
       default:
         return const Text('Unknown calculator');
     }
@@ -1065,6 +1075,7 @@ class _CrClFormState extends State<_CrClForm> {
 
 // ─── Calculator 9: qSOFA Score ───────────────────────────────────────────────
 
+
 class _QsofaForm extends StatefulWidget {
   final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
   final VoidCallback onReset;
@@ -1806,6 +1817,539 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
             onChanged: (v) => setState(() => _weightUnit = v!),
           ),
         ]),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Drug Dosing Calculator D1: BSA (Mosteller) ──────────────────────────────
+
+class _BsaForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _BsaForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_BsaForm> createState() => _BsaFormState();
+}
+
+class _BsaFormState extends State<_BsaForm> {
+  final _weightCtrl = TextEditingController();
+  final _heightCtrl = TextEditingController();
+  String _weightUnit = 'kg';
+  String _heightUnit = 'cm';
+
+  @override
+  void dispose() {
+    _weightCtrl.dispose();
+    _heightCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawWeight = double.tryParse(_weightCtrl.text);
+    final rawHeight = double.tryParse(_heightCtrl.text);
+    if (rawWeight == null || rawWeight <= 0 || rawHeight == null || rawHeight <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid weight and height')));
+      return;
+    }
+    final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight / 2.20462;
+    final heightCm = _heightUnit == 'cm' ? rawHeight : rawHeight * 100.0;
+    // Mosteller: BSA = sqrt(height_cm * weight_kg / 3600)
+    final product = heightCm * weightKg / 3600.0;
+    final bsa = product > 0 ? _sqrtOf(product) : 0.0;
+    widget.onResult(
+      result: 'BSA: ${bsa.toStringAsFixed(2)} m²',
+      interpretation: 'Calculated body surface area (Mosteller): ${bsa.toStringAsFixed(2)} m². '
+          'Used for chemotherapy, cardiac output, and drug dose adjustments.',
+      educationalNote: 'Mosteller formula: BSA = √(height_cm × weight_kg / 3600). '
+          'Typical adult BSA: 1.6–2.0 m². Not validated for extreme weights.',
+    );
+  }
+
+  double _sqrtOf(double x) {
+    double guess = x / 2.0;
+    for (int i = 0; i < 50; i++) {
+      guess = (guess + x / guess) / 2.0;
+    }
+    return guess;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _weightUnit,
+            items: ['kg', 'lb']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _weightUnit = v!),
+          ),
+        ]),
+        Row(children: [
+          Expanded(child: _NumericField(label: 'Height', controller: _heightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _heightUnit,
+            items: ['cm', 'm']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _heightUnit = v!),
+          ),
+        ]),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Drug Dosing Calculator D2: eGFR (CKD-EPI 2021 race-free) ────────────────
+
+class _EgfrCkdEpiForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _EgfrCkdEpiForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_EgfrCkdEpiForm> createState() => _EgfrCkdEpiFormState();
+}
+
+class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
+  final _ageCtrl = TextEditingController();
+  final _scrCtrl = TextEditingController();
+  String _sex = 'male';
+  String _scrUnit = 'mg/dL';
+
+  @override
+  void dispose() {
+    _ageCtrl.dispose();
+    _scrCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final age = double.tryParse(_ageCtrl.text);
+    final rawScr = double.tryParse(_scrCtrl.text);
+    if (age == null || age <= 0 || rawScr == null || rawScr <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid age and serum creatinine')));
+      return;
+    }
+    // Convert µmol/L to mg/dL if needed
+    final scrMgDl = _scrUnit == 'mg/dL' ? rawScr : rawScr / 88.4;
+
+    // 2021 CKD-EPI race-free coefficients (no race variable — Pitfall #6)
+    final bool isFemale = _sex == 'female';
+    final double kappa = isFemale ? 0.7 : 0.9;
+    final double alpha = isFemale ? -0.241 : -0.302;
+    final double sexFactor = isFemale ? 1.012 : 1.0;
+
+    final double ratio = scrMgDl / kappa;
+    final double minPart = ratio < 1.0 ? ratio : 1.0;
+    final double maxPart = ratio > 1.0 ? ratio : 1.0;
+
+    final double egfr = 142 *
+        _powCalc(minPart, alpha) *
+        _powCalc(maxPart, -1.200) *
+        _powCalc(0.9938, age) *
+        sexFactor;
+
+    String band;
+    if (egfr >= 90) {
+      band = 'G1 – Normal or high';
+    } else if (egfr >= 60) {
+      band = 'G2 – Mildly decreased';
+    } else if (egfr >= 45) {
+      band = 'G3a – Mild–moderate decrease';
+    } else if (egfr >= 30) {
+      band = 'G3b – Moderate–severe decrease';
+    } else if (egfr >= 15) {
+      band = 'G4 – Severely decreased';
+    } else {
+      band = 'G5 – Kidney failure';
+    }
+
+    widget.onResult(
+      result: 'eGFR: ${egfr.toStringAsFixed(1)} mL/min/1.73 m² — $band',
+      interpretation: 'Calculated estimate using 2021 CKD-EPI race-free equation: '
+          '${egfr.toStringAsFixed(1)} mL/min/1.73 m² ($band). '
+          'Adjust drug doses for renally cleared medications.',
+      educationalNote: 'Uses the 2021 CKD-EPI race-free equation — no race variable. '
+          'Confirm CKD diagnosis with repeat measurement ≥ 3 months apart before staging.',
+      warning: 'This is a calculated estimate. Verify against clinical context and '
+          'laboratory-reported eGFR before making prescribing decisions.',
+    );
+  }
+
+  // b^e via Taylor series for ln and exp (avoids dart:math import)
+  double _powCalc(double base, double exp) {
+    if (base <= 0) return 0.0;
+    return _expCalc(exp * _lnCalc(base));
+  }
+
+  double _lnCalc(double x) {
+    if (x <= 0) return double.negativeInfinity;
+    double y = (x - 1) / (x + 1);
+    double result = 0.0;
+    double term = y;
+    for (int i = 1; i <= 60; i++) {
+      result += term / (2 * i - 1);
+      term *= y * y;
+    }
+    return 2 * result;
+  }
+
+  double _expCalc(double x) {
+    double result = 1.0;
+    double term = 1.0;
+    for (int i = 1; i <= 60; i++) {
+      term *= x / i;
+      result += term;
+      if (term.abs() < 1e-15) break;
+    }
+    return result;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Age (years)', controller: _ageCtrl),
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: ['male', 'female']
+              .map((s) => DropdownMenuItem(
+                  value: s, child: Text('${s[0].toUpperCase()}${s.substring(1)}')))
+              .toList(),
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        Row(children: [
+          Expanded(
+              child: _NumericField(
+                  label: 'Serum creatinine', controller: _scrCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _scrUnit,
+            items: ['mg/dL', 'µmol/L']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _scrUnit = v!),
+          ),
+        ]),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Drug Dosing Calculator D3: Gentamicin/Vancomycin Dosing ─────────────────
+
+class _GentamicinVancomycinForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _GentamicinVancomycinForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_GentamicinVancomycinForm> createState() =>
+      _GentamicinVancomycinFormState();
+}
+
+class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
+  final _weightCtrl = TextEditingController();
+  String _drug = 'Gentamicin';
+  String _weightUnit = 'kg';
+
+  @override
+  void dispose() {
+    _weightCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawWeight = double.tryParse(_weightCtrl.text);
+    if (rawWeight == null || rawWeight <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid weight')));
+      return;
+    }
+    final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight / 2.20462;
+
+    String result;
+    String interpretation;
+    String educationalNote;
+
+    if (_drug == 'Gentamicin') {
+      final dose = weightKg * 5.0;
+      result = 'Gentamicin: ${dose.toStringAsFixed(1)} mg once daily (suggested)';
+      interpretation = 'Suggested gentamicin dose: ${dose.toStringAsFixed(1)} mg once daily '
+          '(5 mg/kg/day). Adjust based on CrCl and measured trough/peak levels.';
+      educationalNote = 'Once-daily dosing based on actual body weight. '
+          'Use ideal body weight in obese patients (BMI > 30). '
+          'Monitor trough levels (target < 1 mg/L) and check renal function.';
+    } else {
+      final doseMin = weightKg * 15.0;
+      final doseMax = weightKg * 20.0;
+      result = 'Vancomycin: ${doseMin.toStringAsFixed(0)}–${doseMax.toStringAsFixed(0)} mg per dose';
+      interpretation = 'Suggested vancomycin dose range: '
+          '${doseMin.toStringAsFixed(0)}–${doseMax.toStringAsFixed(0)} mg '
+          '(15–20 mg/kg/dose) every 8–12 hours. Adjust interval by CrCl.';
+      educationalNote = 'Vancomycin dosing is highly variable. '
+          'Target AUC/MIC 400–600 mg·h/L (or trough 10–20 mg/L per local guidelines). '
+          'Consider loading dose of 25–30 mg/kg for serious infections.';
+    }
+
+    widget.onResult(
+      result: result,
+      interpretation: interpretation,
+      educationalNote: educationalNote,
+      warning: 'Renally adjust dose by CrCl. Verify trough levels, peak levels, '
+          'and consult current formulary before prescribing. These are suggested '
+          'starting doses only — individualise to patient renal function and response.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DropdownButtonFormField<String>(
+          initialValue: _drug,
+          decoration: const InputDecoration(
+              labelText: 'Drug', border: OutlineInputBorder(), isDense: true),
+          items: ['Gentamicin', 'Vancomycin']
+              .map((d) => DropdownMenuItem(value: d, child: Text(d)))
+              .toList(),
+          onChanged: (v) => setState(() => _drug = v!),
+        ),
+        const SizedBox(height: 12),
+        Row(children: [
+          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _weightUnit,
+            items: ['kg', 'lb']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _weightUnit = v!),
+          ),
+        ]),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Drug Dosing Calculator D4: Insulin Dose (Correction) ────────────────────
+
+class _InsulinDoseForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _InsulinDoseForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_InsulinDoseForm> createState() => _InsulinDoseFormState();
+}
+
+class _InsulinDoseFormState extends State<_InsulinDoseForm> {
+  final _cbgCtrl = TextEditingController();
+  final _targetCtrl = TextEditingController();
+  final _isfCtrl = TextEditingController();
+  String _cbgUnit = 'mmol/L';
+
+  @override
+  void dispose() {
+    _cbgCtrl.dispose();
+    _targetCtrl.dispose();
+    _isfCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawCbg = double.tryParse(_cbgCtrl.text);
+    final rawTarget = double.tryParse(_targetCtrl.text);
+    final rawIsf = double.tryParse(_isfCtrl.text);
+    if (rawCbg == null || rawCbg <= 0 ||
+        rawTarget == null || rawTarget <= 0 ||
+        rawIsf == null || rawIsf <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Enter valid CBG, target glucose, and ISF')));
+      return;
+    }
+    // Convert mmol/L to mg/dL for calculation
+    final cbgMgDl = _cbgUnit == 'mmol/L' ? rawCbg * 18.0182 : rawCbg;
+    final targetMgDl = _cbgUnit == 'mmol/L' ? rawTarget * 18.0182 : rawTarget;
+    // ISF is expected in mg/dL per unit regardless of display unit
+    final raw = (cbgMgDl - targetMgDl) / rawIsf;
+    final correctionDose = raw < 0 ? 0.0 : raw;
+
+    final cbgDisplay = _cbgUnit == 'mmol/L'
+        ? '${rawCbg.toStringAsFixed(1)} mmol/L'
+        : '${rawCbg.toStringAsFixed(0)} mg/dL';
+
+    widget.onResult(
+      result: 'Correction dose: ${correctionDose.toStringAsFixed(1)} units',
+      interpretation: 'Current CBG $cbgDisplay. '
+          'Correction dose: ${correctionDose.toStringAsFixed(1)} units of rapid-acting insulin. '
+          '${correctionDose == 0.0 ? 'CBG is at or below target — no correction needed.' : ''}',
+      educationalNote: 'Correction dose = (CBG − target) ÷ ISF. '
+          'Negative values are clamped to 0. '
+          'ISF (Insulin Sensitivity Factor): the drop in blood glucose per unit of insulin.',
+      warning: 'This is a correction dose estimate only — it is NOT a substitute for your '
+          'prescribed insulin regimen. Always follow your care team\'s instructions. '
+          'Hypoglycaemia risk: do not stack correction doses.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(
+              child: _NumericField(
+                  label: 'Current blood glucose (CBG)', controller: _cbgCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _cbgUnit,
+            items: ['mmol/L', 'mg/dL']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _cbgUnit = v!),
+          ),
+        ]),
+        _NumericField(
+            label: 'Target glucose (same unit as CBG)',
+            controller: _targetCtrl),
+        _NumericField(
+            label: 'ISF (mg/dL drop per unit of insulin)',
+            controller: _isfCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Drug Dosing Calculator D5: Paracetamol (Acetaminophen) Dosing ───────────
+
+class _ParacetamolDosingForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _ParacetamolDosingForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_ParacetamolDosingForm> createState() => _ParacetamolDosingFormState();
+}
+
+class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
+  final _weightCtrl = TextEditingController();
+  String _weightUnit = 'kg';
+  String _ageGroup = 'adult';
+
+  @override
+  void dispose() {
+    _weightCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawWeight = double.tryParse(_weightCtrl.text);
+    if (rawWeight == null || rawWeight <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid weight')));
+      return;
+    }
+    final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight / 2.20462;
+
+    String result;
+    String interpretation;
+    String educationalNote;
+    String? warning;
+
+    if (_ageGroup == 'child') {
+      // Child (<12 y): 15 mg/kg/dose, max 4 doses/24h, max 60 mg/kg/day
+      final perDose = weightKg * 15.0;
+      final dailyByDose = perDose * 4;
+      final maxDailyByKg = weightKg * 60.0;
+      final daily = dailyByDose < maxDailyByKg ? dailyByDose : maxDailyByKg;
+      result = '${perDose.toStringAsFixed(0)} mg/dose | ${daily.toStringAsFixed(0)} mg/day max';
+      interpretation = 'Child dose (15 mg/kg/dose): ${perDose.toStringAsFixed(0)} mg per dose, '
+          'up to 4 doses per 24 hours. Maximum daily dose: ${daily.toStringAsFixed(0)} mg '
+          '(60 mg/kg/day cap).';
+      educationalNote = 'Interval: every 4–6 hours as needed. '
+          'Do not exceed 4 doses in 24 hours. '
+          'Reduce in malnourished children or hepatic impairment.';
+    } else {
+      // Adult: 500–1000 mg q4-6h, max 4 g/day
+      result = '500–1000 mg per dose (q4–6h) | max 4 g/day';
+      interpretation = 'Standard adult dose: 500–1000 mg per dose every 4–6 hours as needed, '
+          'up to 4 doses per 24 hours. Maximum daily dose: 4000 mg (4 g/day).';
+      educationalNote = 'Weight-based dosing (15 mg/kg) may be preferred for lower weight adults '
+          '(< 50 kg). Reduce maximum daily dose in hepatic impairment, chronic alcohol use, '
+          'or malnutrition.';
+      // Warn if weight-based limit is below 4 g adult cap
+      final weightBasedDaily = weightKg * 60.0;
+      if (weightBasedDaily < 4000.0) {
+        warning = 'Patient weight ${weightKg.toStringAsFixed(1)} kg: weight-based limit '
+            '(${weightBasedDaily.toStringAsFixed(0)} mg/day, ${(weightKg * 15).toStringAsFixed(0)} mg/dose × 4) '
+            'is below the standard 4 g/day adult cap. Verify against formulary.';
+      }
+    }
+
+    widget.onResult(
+      result: result,
+      interpretation: interpretation,
+      educationalNote: educationalNote,
+      warning: warning ??
+          'Verify dose against patient weight, hepatic function, and current formulary. '
+          'Paracetamol toxicity risk is higher with fasting, hepatic impairment, '
+          'or concomitant hepatotoxic drugs.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _weightUnit,
+            items: ['kg', 'lb']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _weightUnit = v!),
+          ),
+        ]),
+        const SizedBox(height: 12),
+        DropdownButtonFormField<String>(
+          initialValue: _ageGroup,
+          decoration: const InputDecoration(
+              labelText: 'Age group', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'adult', child: Text('Adult')),
+            DropdownMenuItem(
+                value: 'child', child: Text('Child (< 12 years)')),
+          ],
+          onChanged: (v) => setState(() => _ageGroup = v!),
+        ),
+        const SizedBox(height: 12),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
