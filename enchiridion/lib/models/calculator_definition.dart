@@ -375,6 +375,144 @@ const List<CalculatorDefinition> kCalculators = [
         'Examiners may give a ventilated ICU patient scenario — state the Berlin criteria '
         '(bilateral infiltrates, non-cardiogenic, within 1 week of insult, PEEP ≥ 5).',
   ),
+  // ─── 5 new Drug Dosing calculators (Wave 3 — 04-03) ─────────────────────────
+  CalculatorDefinition(
+    id: 'bsa',
+    title: 'Body Surface Area (BSA)',
+    category: 'Drug Dosing',
+    description: 'Mosteller formula for BSA — used in chemotherapy, burns, and paediatric dosing.',
+    explanation:
+        'BSA (Mosteller) = √(height cm × weight kg / 3600). '
+        'BSA is used to individualise drug doses, particularly in oncology and paediatrics, '
+        'where weight-based dosing alone underestimates dose needs in larger patients.',
+    clinicalInterpretation:
+        'Calculated estimate of body surface area in m². '
+        'Typical adult BSA: 1.7–1.9 m². Use the result to calculate BSA-based drug doses '
+        '(e.g., chemotherapy dose = BSA × dose per m²). Always verify against institutional protocols.',
+    safetyNotes:
+        'BSA-based dosing does not account for organ function — adjust for renal or hepatic '
+        'impairment separately. In extreme obesity, lean body weight or adjusted weight may be '
+        'more appropriate — verify against the drug\'s prescribing information.',
+    commonPitfalls:
+        'Entering height in metres without selecting the m unit option — the Mosteller formula '
+        'requires height in cm. '
+        'Using BSA-calculated dose without checking the protocol\'s dose cap.',
+    osceTips:
+        'State the Mosteller formula clearly: √(Ht_cm × Wt_kg / 3600). '
+        'Mention alternative formulas (DuBois, Haycock) and that Mosteller is preferred '
+        'for simplicity. Note that BSA dosing is standard for cytotoxic chemotherapy.',
+  ),
+  CalculatorDefinition(
+    id: 'egfr-ckd-epi',
+    title: 'eGFR (CKD-EPI 2021)',
+    category: 'Drug Dosing',
+    description: 'Estimated GFR using the 2021 race-free CKD-EPI equation for CKD staging.',
+    explanation:
+        'Uses the 2021 race-free CKD-EPI equation (Inker et al., NEJM 2021), which eliminated '
+        'race as a variable. eGFR = 142 × min(Scr/κ, 1)^α × max(Scr/κ, 1)^−1.200 × 0.9938^age '
+        '× (1.012 if female). Female: κ = 0.7, α = −0.241. Male: κ = 0.9, α = −0.302.',
+    clinicalInterpretation:
+        'CKD stages: G1 ≥ 90, G2 60–89, G3a 45–59, G3b 30–44, G4 15–29, G5 < 15 mL/min/1.73 m². '
+        'Calculated estimate only — interpret with urine albumin-to-creatinine ratio, trend, '
+        'and clinical context. Values below 60 for ≥ 3 months define CKD.',
+    safetyNotes:
+        'This calculator uses the 2021 race-free CKD-EPI equation — no race variable is used. '
+        'eGFR may be inaccurate in pregnancy, acute kidney injury, extremes of muscle mass '
+        '(athletes, amputees, cachexia), or non-steady-state creatinine.',
+    commonPitfalls:
+        'Confusing eGFR (CKD-EPI) with creatinine clearance (Cockcroft-Gault) — they serve '
+        'different purposes: eGFR for CKD staging; CrCl for renal drug dosing. '
+        'Using µmol/L without selecting the correct unit (the formula requires mg/dL; '
+        'this calculator converts automatically).',
+    osceTips:
+        'Know the CKD stages (G1–G5) by eGFR threshold. Mention that the 2021 equation '
+        'removed race as a variable — examiners may ask why (equity in diagnosis). '
+        'Distinguish from Cockcroft-Gault: eGFR for diagnosis; CrCl for drug dosing.',
+  ),
+  CalculatorDefinition(
+    id: 'gentamicin-vancomycin',
+    title: 'Gentamicin/Vancomycin Dosing',
+    category: 'Drug Dosing',
+    description: 'Suggested once-daily gentamicin or weight-based vancomycin initial dose.',
+    explanation:
+        'Gentamicin (aminoglycoside): conventional once-daily dosing of 5 mg/kg/day is a '
+        'commonly used starting point, exploiting concentration-dependent killing. '
+        'Vancomycin (glycopeptide): initial dosing of 15–20 mg/kg/dose, typically q8–12h, '
+        'titrated to trough or AUC targets. Both agents are renally cleared.',
+    clinicalInterpretation:
+        'Suggested initial dose only — not a therapeutic recommendation. '
+        'Therapeutic drug monitoring (TDM) is mandatory for both agents. '
+        'Subsequent doses MUST be adjusted for renal function (CrCl) and monitored levels.',
+    safetyNotes:
+        'Both agents have narrow therapeutic windows. Gentamicin: nephrotoxicity and '
+        'ototoxicity; monitor trough levels and renal function at least every 48–72 h. '
+        'Vancomycin: nephrotoxicity risk increases with troughs > 20 mg/L. '
+        'Always verify initial dose and interval against your institutional formulary '
+        'and adjust for CrCl. Do not use this calculator as the sole basis for prescribing.',
+    commonPitfalls:
+        'Not adjusting the dosing interval for reduced renal function — both drugs accumulate '
+        'rapidly in AKI. Failing to order TDM levels before the next dose.',
+    osceTips:
+        'State that TDM is mandatory for both agents. Know the target trough for vancomycin '
+        '(10–20 mg/L conventional; AUC/MIC 400–600 in contemporary guidelines). '
+        'Mention the renal adjustment principle: extend interval, not dose reduction, for aminoglycosides.',
+  ),
+  CalculatorDefinition(
+    id: 'insulin-dose',
+    title: 'Insulin Dose',
+    category: 'Drug Dosing',
+    description: 'Correction (supplemental) insulin dose from CBG, target glucose, and ISF.',
+    explanation:
+        'Correction dose = (current blood glucose − target glucose) / insulin sensitivity factor (ISF). '
+        'ISF (also called correction factor) is the expected glucose drop per unit of rapid-acting insulin. '
+        'A negative result is clamped to 0 — never administer negative correction doses.',
+    clinicalInterpretation:
+        'Calculated correction dose estimate in units of rapid-acting insulin. '
+        'This is a supplemental correction dose only — it does not account for meal coverage, '
+        'basal insulin, or the patient\'s prescribed sliding scale. '
+        'Always review the full insulin regimen and blood glucose trend before administering.',
+    safetyNotes:
+        'Insulin is a high-risk medication. This calculator provides a correction dose estimate '
+        'only — it is NOT a substitute for the patient\'s prescribed insulin regimen or '
+        'clinical assessment. Hypoglycaemia risk increases with stacking of correction doses. '
+        'Never administer insulin without checking the current blood glucose and prescribed chart.',
+    commonPitfalls:
+        'Stacking correction doses (giving correction before the previous dose has had time to act — '
+        'typically 4 hours for rapid-acting insulin). '
+        'Using an incorrect ISF — ISF varies significantly between patients and conditions.',
+    osceTips:
+        'Know the formula: correction dose = (CBG − target) / ISF. '
+        'Mention the "rule of 1800" (for mg/dL): ISF ≈ 1800 / total daily dose of insulin as an estimate. '
+        'Always emphasise TDM and that the prescribed regimen takes precedence.',
+  ),
+  CalculatorDefinition(
+    id: 'paracetamol-dosing',
+    title: 'Paracetamol Dosing',
+    category: 'Drug Dosing',
+    description: 'Weight-based paracetamol dose for adults and children with 24-hour cap.',
+    explanation:
+        'Child (< 12 years): 15 mg/kg/dose orally, max 4 doses in 24 hours, max 60 mg/kg/day. '
+        'Adult (≥ 12 years): 1000 mg per dose, up to every 4–6 hours, maximum 4 g (4000 mg) per day. '
+        'The 24-hour maximum must not be exceeded regardless of weight.',
+    clinicalInterpretation:
+        'Suggested dose per administration and 24-hour maximum. '
+        'Dose is calculated from weight for children. '
+        'For adults, the standard dose is 1 g regardless of weight for most patients. '
+        'Verify against the patient\'s age, hepatic function, and current medications.',
+    safetyNotes:
+        'Paracetamol toxicity is dose-dependent and can cause fatal hepatic failure. '
+        'The 4 g/day adult maximum must NEVER be exceeded. In hepatic impairment, chronic alcohol '
+        'use, or malnutrition, consider reducing the maximum to 2 g/day. '
+        'Always verify against your institutional formulary and the patient\'s full medication list.',
+    commonPitfalls:
+        'Exceeding the 4 g/day adult maximum — common when paracetamol is prescribed as both a '
+        'regular drug AND as part of a combined analgesic (e.g., co-codamol, co-dydramol). '
+        'Using adult doses in children, or not calculating weight-based dose for lighter children.',
+    osceTips:
+        'State the adult maximum: 1 g per dose, 4 g/day. For children: 15 mg/kg/dose, '
+        'max 60 mg/kg/day or 4 g/day (whichever is lower). '
+        'In OSCEs, always check for concurrent paracetamol-containing products.',
+  ),
 ];
 
 /// Returns calculators grouped by category, with the first per category free.
