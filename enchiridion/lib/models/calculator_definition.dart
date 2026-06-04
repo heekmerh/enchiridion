@@ -198,6 +198,183 @@ const List<CalculatorDefinition> kCalculators = [
         'Recite the 4-2-1 rule clearly and calculate step-by-step for the given weight. '
         'Mention the need to adjust for ongoing losses and clinical status — examiners reward nuanced answers.',
   ),
+  // ─── 7 new Emergency & Critical Care calculators (Wave 2 — 04-02) ───────────
+  CalculatorDefinition(
+    id: 'qsofa',
+    title: 'qSOFA Score',
+    category: 'Emergency & Critical Care',
+    description: 'Quick Sepsis-related Organ Failure Assessment — bedside sepsis screening.',
+    explanation:
+        'qSOFA scores three bedside criteria: altered mental status (GCS < 15), '
+        'respiratory rate ≥ 22 breaths/min, and systolic BP ≤ 100 mmHg. '
+        'A score ≥ 2 suggests high risk of poor outcome in suspected sepsis.',
+    clinicalInterpretation:
+        'Score 0–1: Low risk — reassess regularly. '
+        'Score ≥ 2: High risk of poor sepsis outcome — consider full SOFA assessment, '
+        'blood cultures, IV access, and urgent escalation.',
+    safetyNotes:
+        'qSOFA is a screening tool only — it does not diagnose sepsis. '
+        'A score < 2 does not exclude sepsis; use clinical judgement and full SOFA if sepsis is suspected. '
+        'Not validated for immunocompromised patients or post-surgical ICU settings.',
+    commonPitfalls:
+        'Using qSOFA as a definitive diagnostic tool rather than a screening prompt. '
+        'Ignoring a score of 1 in a patient with a high clinical suspicion of sepsis.',
+    osceTips:
+        'State the three criteria clearly (mentation, RR, SBP). Examiners often ask: '
+        '"What would you do next?" — answer: full SOFA score, blood cultures, IV antibiotics per protocol.',
+  ),
+  CalculatorDefinition(
+    id: 'news2',
+    title: 'NEWS2 Score',
+    category: 'Emergency & Critical Care',
+    description: 'National Early Warning Score 2 — aggregate physiological score for clinical deterioration.',
+    explanation:
+        'NEWS2 aggregates six scored parameters: respiratory rate, SpO2 (scale 1 or scale 2 for '
+        'hypercapnic respiratory failure), supplemental O2, systolic BP, heart rate, '
+        'temperature, and consciousness (ACVPU: Alert = 0, any other = 3). '
+        'Higher totals indicate greater physiological derangement.',
+    clinicalInterpretation:
+        'Score 0: Low — routine monitoring. '
+        '1–4: Low-medium — increase observation frequency. '
+        '5–6: Medium — urgent clinical review. '
+        '≥ 7: High — emergency assessment, consider critical care review.',
+    safetyNotes:
+        'For patients with hypercapnic respiratory failure (e.g., COPD with target SpO2 88–92%), '
+        'use SpO2 scale 2 — otherwise scores will be artificially elevated. '
+        'NEWS2 is designed for adult patients on general wards; not validated for paediatrics, '
+        'pregnancy, or patients with chronic neurological conditions affecting ACVPU.',
+    commonPitfalls:
+        'Using scale 1 SpO2 scoring in COPD patients on target SpO2 88–92% — this inflates the score. '
+        'Scoring ACVPU as 0 (Alert) when a subtle change in mentation has occurred.',
+    osceTips:
+        'Know the clinical response thresholds: 0 = routine, 1–4 = increase frequency, '
+        '5–6 = urgent, ≥ 7 = emergency. Mention the scale 2 pitfall for hypercapnia. '
+        'Examiners may give a COPD patient scenario to test scale selection.',
+  ),
+  CalculatorDefinition(
+    id: 'shock-index',
+    title: 'Shock Index',
+    category: 'Emergency & Critical Care',
+    description: 'Heart rate divided by systolic BP — screens for haemodynamic instability.',
+    explanation:
+        'Shock Index (SI) = HR ÷ SBP. A value ≥ 1.0 suggests the heart rate has met '
+        'or exceeded systolic blood pressure, indicating significant haemodynamic stress.',
+    clinicalInterpretation:
+        'SI < 0.6: Normal. 0.6–0.99: Mildly elevated — monitor closely. '
+        '≥ 1.0: High risk — consider volume resuscitation and urgent assessment.',
+    safetyNotes:
+        'Unreliable in patients on beta-blockers (blunted HR response), severe aortic '
+        'stenosis, or pacemaker-dependent rhythms.',
+    commonPitfalls:
+        'Using resting HR from triage rather than current HR. Interpreting SI in isolation '
+        'without clinical context (pallor, cap refill, mental status).',
+    osceTips:
+        'Examiners may ask: "What does a Shock Index of 1.2 indicate?" — answer: likely '
+        'haemodynamic compromise, initiate resuscitation. Often tested in trauma scenarios.',
+  ),
+  CalculatorDefinition(
+    id: 'osmolality',
+    title: 'Osmolality & Osmolar Gap',
+    category: 'Emergency & Critical Care',
+    description: 'Calculated serum osmolality and osmolar gap to detect unmeasured osmoles.',
+    explanation:
+        'Calculated osmolality = 2 × Na (mEq/L) + glucose (mg/dL) / 18 + BUN (mg/dL) / 2.8. '
+        'Osmolar gap = measured osmolality − calculated osmolality. '
+        'An elevated gap implies the presence of unmeasured osmotically active substances.',
+    clinicalInterpretation:
+        'Normal calculated osmolality: 275–295 mOsm/kg. '
+        'Osmolar gap > 10 mOsm/kg: elevated — consider toxic alcohols (methanol, ethylene glycol, '
+        'isopropanol), mannitol, or severe uraemia. '
+        'A gap ≤ 10 does not reliably exclude toxic alcohol ingestion in early presentations.',
+    safetyNotes:
+        'The osmolar gap calculation requires a measured (laboratory) osmolality for comparison. '
+        'Without a measured value, only the calculated estimate is available. '
+        'Formulae vary slightly between institutions — check local laboratory reference ranges.',
+    commonPitfalls:
+        'Confusing calculated osmolality (this tool) with measured osmolality (the lab result). '
+        'Forgetting that a normal osmolar gap does not exclude toxic alcohol poisoning in early stages.',
+    osceTips:
+        'State the formula clearly: 2×Na + glucose/18 + BUN/2.8. '
+        'Examiners often link osmolar gap to toxic alcohol poisoning — name the MUDPILES overlap '
+        '(methanol, ethylene glycol). Mention that both anion gap and osmolar gap may be elevated.',
+  ),
+  CalculatorDefinition(
+    id: 'corrected-sodium',
+    title: 'Corrected Sodium (Hyperglycemia)',
+    category: 'Emergency & Critical Care',
+    description: 'Adjusts measured sodium for the dilutional effect of hyperglycaemia.',
+    explanation:
+        'In hyperglycaemia, elevated glucose draws water into the extracellular space, '
+        'diluting sodium. Corrected Na = measured Na + 0.016 × (glucose mg/dL − 100). '
+        'This reveals the true sodium once glucose is corrected.',
+    clinicalInterpretation:
+        'A corrected sodium in the normal range (135–145 mEq/L) confirms the hyponatraemia '
+        'is dilutional and will correct with glucose treatment. '
+        'A corrected sodium that is still low or high suggests concurrent sodium pathology.',
+    safetyNotes:
+        'The correction factor (0.016 per mg/dL, or 1.6 per 100 mg/dL) is derived from '
+        'Katz 1973 and widely used; some guidelines use 0.024 (Hillier 1999) for glucose '
+        '> 400 mg/dL. This calculator uses 0.016. '
+        'Formula only applies above 100 mg/dL glucose; below this threshold there is no dilutional effect.',
+    commonPitfalls:
+        'Applying the correction to patients without significant hyperglycaemia (glucose near normal). '
+        'Not re-checking sodium after glucose correction in DKA management.',
+    osceTips:
+        'In DKA/HHS OSCE scenarios: calculate corrected sodium, then interpret fluid management. '
+        'Examiners may ask whether the hyponatraemia is true or dilutional — use this formula to answer.',
+  ),
+  CalculatorDefinition(
+    id: 'aa-gradient',
+    title: 'A-a Gradient',
+    category: 'Emergency & Critical Care',
+    description: 'Alveolar-arterial oxygen gradient to assess the cause of hypoxaemia.',
+    explanation:
+        'A-a gradient = PAO2 − PaO2, where PAO2 = FiO2 × (PB − 47) − PaCO2 / 0.8. '
+        'PB is barometric pressure (default 760 mmHg at sea level). '
+        'A normal gradient indicates a ventilation or low FiO2 cause of hypoxaemia; '
+        'an elevated gradient points to V/Q mismatch, shunt, or diffusion impairment.',
+    clinicalInterpretation:
+        'Expected A-a gradient ≈ age / 4 + 4 mmHg (when age is known). '
+        'Gradient > expected: elevated — consider PE, pulmonary oedema, ARDS, atelectasis, pneumonia. '
+        'Normal gradient with hypoxaemia: consider hypoventilation or low inspired FiO2.',
+    safetyNotes:
+        'Requires arterial blood gas values (PaO2, PaCO2). '
+        'FiO2 must be accurately known — estimated FiO2 from oxygen delivery device introduces error. '
+        'Normal ranges vary with age and altitude; this calculator uses a sea-level default.',
+    commonPitfalls:
+        'Entering FiO2 as a percentage (e.g., 40) instead of a fraction (e.g., 0.40). '
+        'Using a venous PO2 instead of arterial PaO2.',
+    osceTips:
+        'Know the formula by heart and be able to calculate at the bedside. '
+        'Examiners will ask you to interpret: normal gradient = problem above the alveolus; '
+        'elevated gradient = problem at or below the alveolus (V/Q mismatch, shunt, diffusion).',
+  ),
+  CalculatorDefinition(
+    id: 'pao2-fio2',
+    title: 'PaO2/FiO2 Ratio',
+    category: 'Emergency & Critical Care',
+    description: 'P/F ratio to assess oxygenation impairment and ARDS severity.',
+    explanation:
+        'P/F ratio = PaO2 (mmHg) ÷ FiO2 (fraction). '
+        'It normalises arterial oxygen for the fraction of inspired oxygen, giving a '
+        'standardised measure of oxygenation efficiency regardless of supplemental O2.',
+    clinicalInterpretation:
+        '> 400: Normal oxygenation. '
+        '300–400: Mild impairment (Berlin criteria: mild ARDS). '
+        '200–300: Moderate ARDS. '
+        '< 200: Severe ARDS — consider prone positioning and advanced ventilatory support.',
+    safetyNotes:
+        'Berlin criteria for ARDS require PEEP ≥ 5 cmH2O at measurement — P/F alone is not sufficient '
+        'for ARDS diagnosis. Requires arterial blood gas (PaO2), not pulse oximetry.',
+    commonPitfalls:
+        'Entering FiO2 as a percentage (e.g., 60) instead of a fraction (e.g., 0.60) — '
+        'this gives a result 100× too high. '
+        'Using SpO2 from pulse oximetry instead of PaO2 from ABG.',
+    osceTips:
+        'Memorise the ARDS bands: > 400 normal, 300–400 mild, 200–300 moderate, < 200 severe. '
+        'Examiners may give a ventilated ICU patient scenario — state the Berlin criteria '
+        '(bilateral infiltrates, non-cardiogenic, within 1 week of insult, PEEP ≥ 5).',
+  ),
 ];
 
 /// Returns calculators grouped by category, with the first per category free.
