@@ -513,6 +513,180 @@ const List<CalculatorDefinition> kCalculators = [
         'max 60 mg/kg/day or 4 g/day (whichever is lower). '
         'In OSCEs, always check for concurrent paracetamol-containing products.',
   ),
+  // ─── 6 new Paediatrics calculators (Wave 4 — 04-04) ─────────────────────────
+  CalculatorDefinition(
+    id: 'apls-weight',
+    title: 'APLS Weight Estimation',
+    category: 'Paediatrics',
+    description: 'APLS formula for estimated weight in children from age.',
+    explanation:
+        'APLS weight estimation uses age to estimate weight in children: '
+        '< 1 year: weight (kg) = 0.5 × (age in months + 9); '
+        '1–5 years: weight (kg) = 2 × (age + 4); '
+        '6–12 years: weight (kg) = 3 × age + 7. '
+        'These are bedside estimates for resuscitation scenarios.',
+    clinicalInterpretation:
+        'Suggested estimated weight for resuscitation and drug dosing when actual weight is unknown. '
+        'Use alongside clinical judgement — actual weight should be measured whenever possible. '
+        'Over- or under-estimation is clinically significant for weight-based drug doses.',
+    safetyNotes:
+        'APLS weight formulas are estimations only and may be inaccurate in obese, '
+        'underweight, or premature children. For precise dosing (e.g., chemotherapy, insulin), '
+        'always obtain an actual weight. For resuscitation, use in conjunction with a Broselow tape '
+        'or clinical estimation by an experienced clinician.',
+    commonPitfalls:
+        'Using the wrong age range formula — e.g., applying the 1–5y formula to a 7-year-old. '
+        'Entering age in months when the formula expects years (or vice versa) for children ≥ 1 year.',
+    osceTips:
+        'Recite the three formulas for each age band. Examiners expect you to know which band '
+        'applies and to verbalise the calculation step-by-step. '
+        'State clearly: "This is an estimate — actual weight should be used where available."',
+  ),
+  CalculatorDefinition(
+    id: 'broselow',
+    title: 'Broselow Tape Equivalent',
+    category: 'Paediatrics',
+    description: 'Map measured length/height to Broselow colour zone and estimated weight range.',
+    explanation:
+        'The Broselow tape uses measured length (crown-heel) to assign a colour zone and estimate '
+        'weight range. Each colour zone corresponds to a height range and expected weight band '
+        'used for paediatric resuscitation. Drug dose columns are deferred — use the estimated weight '
+        'with the weight-based dosing calculator for specific drug doses.',
+    clinicalInterpretation:
+        'Suggested interpretation: colour zone and weight range estimate from measured length. '
+        'Use the estimated weight range to guide equipment selection (e.g., ET tube size, '
+        'defibrillation energy) and as input for weight-based drug dose calculations. '
+        'Always verify with actual weight when available.',
+    safetyNotes:
+        'This calculator provides zone and weight range only — it does not output individual '
+        'drug doses. Drug dose columns are deferred to a future phase. '
+        'The Broselow system is designed for children up to approximately 36 kg / 146 cm. '
+        'For children above this range, use standard adult or weight-based calculations.',
+    commonPitfalls:
+        'Measuring sitting height instead of crown-heel length — always measure supine. '
+        'Using the Broselow estimate for children over 36 kg or 146 cm where the tape is no longer validated.',
+    osceTips:
+        'In PALS/paediatric resuscitation OSCEs, the Broselow tape is the expected tool for '
+        'weight estimation when scales are unavailable. State the colour zone and use the '
+        'midpoint of the weight range for drug dose calculations.',
+  ),
+  CalculatorDefinition(
+    id: 'pediatric-bp',
+    title: 'Pediatric BP Percentiles',
+    category: 'Paediatrics',
+    description: 'Classify paediatric blood pressure using simplified 2017 AAP thresholds.',
+    explanation:
+        'Blood pressure in children must be interpreted against age- and sex-specific percentiles. '
+        'This calculator uses a simplified lookup of the 95th-percentile SBP by age and sex '
+        'from the 2017 AAP Clinical Practice Guideline. '
+        'Classification: Normal < 90th percentile; Elevated 90th–95th; Stage 1 HTN 95th–99th+5; '
+        'Stage 2 HTN ≥ 99th+5 mmHg.',
+    clinicalInterpretation:
+        'Suggested interpretation of blood pressure category for the entered age and sex. '
+        'Stage 1 hypertension: lifestyle intervention; confirm on 3 separate occasions. '
+        'Stage 2 hypertension: prompt evaluation and treatment. '
+        'Interpret in the context of growth, symptoms, and repeat measurements.',
+    safetyNotes:
+        'This calculator uses simplified threshold values based on the 2017 AAP tables. '
+        'Verify classification against the full 2017 AAP tables (Pediatrics 140(3):e20171904) '
+        'for precise percentile values. Simplified thresholds may not reflect the exact '
+        'height-specific percentile cutoffs in the full guideline.',
+    commonPitfalls:
+        'Applying adult BP thresholds to children — paediatric BP norms differ significantly '
+        'from adult thresholds and vary by age, sex, and height. '
+        'Single measurement classification — BP diagnosis requires at least 3 readings on '
+        'separate occasions.',
+    osceTips:
+        'Know the four BP categories (normal, elevated, Stage 1, Stage 2) and be prepared '
+        'to discuss management for each. Mention that hypertension in children requires '
+        'repeat measurement and investigation for secondary causes (renal, endocrine).',
+  ),
+  CalculatorDefinition(
+    id: 'neonatal-bilirubin',
+    title: 'Neonatal Bilirubin (Phototherapy)',
+    category: 'Paediatrics',
+    description: 'Bhutani-based risk zone and phototherapy guidance for neonatal jaundice.',
+    explanation:
+        'Uses the Bhutani nomogram risk zones to classify neonatal bilirubin level by age in hours '
+        'and risk category. Risk categories: low (no risk factors), medium (mild risk factors), '
+        'high (haemolysis, GGPD, early jaundice). '
+        'Output provides a phototherapy guidance band based on intersecting bilirubin level and age-hours.',
+    clinicalInterpretation:
+        'Suggested interpretation: bilirubin risk zone and guidance band for phototherapy consideration. '
+        'High-risk zone: initiate phototherapy. Intermediate zone: consider repeat bilirubin in 4–8 hours. '
+        'Low-risk zone: routine follow-up. Always confirm the result against your local AAP nomogram '
+        'and institutional thresholds before making clinical decisions.',
+    safetyNotes:
+        'Thresholds are a guide only — confirm against the local AAP phototherapy nomogram. '
+        'The Bhutani nomogram and AAP 2004/2022 guidelines should be consulted for exact treatment '
+        'thresholds, particularly for infants < 35 weeks gestation. '
+        'This tool is not validated for preterm infants (< 35 weeks) — use gestation-specific tables.',
+    commonPitfalls:
+        'Using total serum bilirubin without accounting for risk factors — the same level requires '
+        'different action depending on haemolysis risk. '
+        'Forgetting to convert units: 1 mg/dL = 17.1 µmol/L.',
+    osceTips:
+        'Know that phototherapy thresholds vary by age in hours and risk category. '
+        'In OSCEs: state the level, risk category, age in hours, and recommended action. '
+        'Always mention confirming against local guidelines and the AAP nomogram.',
+  ),
+  CalculatorDefinition(
+    id: 'apgar',
+    title: 'APGAR Score',
+    category: 'Paediatrics',
+    description: 'Neonatal assessment at 1 and 5 minutes — Appearance, Pulse, Grimace, Activity, Respiration.',
+    explanation:
+        'The APGAR score rates five signs: Appearance (colour), Pulse (heart rate), '
+        'Grimace (reflex irritability), Activity (muscle tone), and Respiration. '
+        'Each is scored 0–2. Total ranges from 0 to 10. '
+        'Assessed at 1 minute and 5 minutes after birth; repeated at 10 minutes if ≤ 6.',
+    clinicalInterpretation:
+        'Score 7–10: Reassuring — routine newborn care. '
+        'Score 4–6: Moderately abnormal — supplemental oxygen and stimulation; prepare for resuscitation. '
+        'Score 0–3: Low — immediate resuscitation required; Newborn Life Support protocol.',
+    safetyNotes:
+        'APGAR score is a clinical communication tool, not a predictor of long-term neurological '
+        'outcome. A persistently low APGAR (≤ 5 at 5 minutes) is associated with increased risk '
+        'but is not diagnostic. Resuscitation decisions are based on clinical assessment — '
+        'do not delay resuscitation to complete the APGAR score.',
+    commonPitfalls:
+        'Confusing grimace (reflex irritability — response to suction) with facial expression. '
+        'Scoring central cyanosis (blue trunk) vs acrocyanosis (blue hands/feet only) — '
+        'acrocyanosis alone scores 1 for appearance, not 0.',
+    osceTips:
+        'Use the mnemonic A-P-G-A-R. Examiners expect you to state each component score and the '
+        'corresponding clinical action for the band. '
+        'Know that a score ≤ 6 at 5 minutes mandates reassessment at 10 minutes.',
+  ),
+  CalculatorDefinition(
+    id: 'growth-percentile',
+    title: 'WHO Growth Percentile',
+    category: 'Paediatrics',
+    description: 'WHO simplified z-score bands for weight, height, and head circumference.',
+    explanation:
+        'Uses simplified WHO z-score bands (not full LMS tables) to classify weight, height, '
+        'and head circumference for age and sex. Z-score bands: < −2 SD (below 3rd percentile), '
+        '−2 to +2 SD (normal/3rd–97th percentile range), > +2 SD (above 97th percentile). '
+        'This calculator provides qualitative zone classification — not precise percentile values.',
+    clinicalInterpretation:
+        'Suggested interpretation: qualitative z-score band for each entered measurement. '
+        'Below 3rd percentile: investigate for undernutrition, growth failure, or underlying pathology. '
+        'Above 97th percentile: investigate for overweight/obesity or pathological causes. '
+        'Serial measurements over time are more informative than single-point assessment.',
+    safetyNotes:
+        'This calculator uses simplified z-score bands, not the full WHO LMS (lambda-mu-sigma) '
+        'method. Results are approximate. For clinical growth monitoring, use the full WHO '
+        'growth charts for the child\'s age, sex, and measurement type. '
+        'Classify only within the validated WHO Child Growth Standards age range (0–5 years).',
+    commonPitfalls:
+        'Using a single measurement in isolation rather than tracking growth trajectory over time. '
+        'Applying simplified z-score thresholds without considering gestational age correction '
+        'in preterm infants.',
+    osceTips:
+        'Know the three z-score zones and their clinical significance. '
+        'In paediatric OSCEs, plot growth on a centile chart and describe the trend. '
+        'Mention that the WHO standards are based on healthy breastfed children in optimal conditions.',
+  ),
 ];
 
 /// Returns calculators grouped by category, with the first per category free.
