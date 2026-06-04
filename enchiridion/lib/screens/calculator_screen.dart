@@ -148,6 +148,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             ),
           ],
 
+          _ClinicalNotesSection(def: _def),
+
           const SizedBox(height: 24),
 
           // Disclaimer
@@ -701,7 +703,17 @@ class _BmiFormState extends State<_BmiForm> {
             items: ['kg', 'lb']
                 .map((u) => DropdownMenuItem(value: u, child: Text(u)))
                 .toList(),
-            onChanged: (v) => setState(() => _weightUnit = v!),
+            onChanged: (v) {
+              if (v == null || v == _weightUnit) return;
+              final current = double.tryParse(_weightCtrl.text);
+              if (current != null && current > 0) {
+                final converted = _weightUnit == 'kg'
+                    ? current * 2.20462   // kg → lb
+                    : current / 2.20462;  // lb → kg
+                _weightCtrl.text = converted.toStringAsFixed(2);
+              }
+              setState(() => _weightUnit = v);
+            },
           ),
         ]),
         Row(children: [
@@ -712,7 +724,28 @@ class _BmiFormState extends State<_BmiForm> {
             items: ['cm', 'm', 'ft']
                 .map((u) => DropdownMenuItem(value: u, child: Text(u)))
                 .toList(),
-            onChanged: (v) => setState(() => _heightUnit = v!),
+            onChanged: (v) {
+              if (v == null || v == _heightUnit) return;
+              final current = double.tryParse(_heightCtrl.text);
+              if (current != null && current > 0) {
+                double meters;
+                switch (_heightUnit) {
+                  case 'cm': meters = current / 100; break;
+                  case 'm':  meters = current; break;
+                  case 'ft': meters = current * 0.3048; break;
+                  default:   meters = current / 100;
+                }
+                double converted;
+                switch (v) {
+                  case 'cm': converted = meters * 100; break;
+                  case 'm':  converted = meters; break;
+                  case 'ft': converted = meters / 0.3048; break;
+                  default:   converted = meters * 100;
+                }
+                _heightCtrl.text = converted.toStringAsFixed(2);
+              }
+              setState(() => _heightUnit = v);
+            },
           ),
         ]),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
@@ -1014,6 +1047,82 @@ class _CrClFormState extends State<_CrClForm> {
       ],
     );
   }
+}
+
+// ─── Clinical notes section ──────────────────────────────────────────────────
+
+class _ClinicalNotesSection extends StatefulWidget {
+  final CalculatorDefinition def;
+  const _ClinicalNotesSection({required this.def});
+
+  @override
+  State<_ClinicalNotesSection> createState() => _ClinicalNotesSectionState();
+}
+
+class _ClinicalNotesSectionState extends State<_ClinicalNotesSection> {
+  @override
+  Widget build(BuildContext context) {
+    final def = widget.def;
+    if ([
+      def.explanation,
+      def.clinicalInterpretation,
+      def.safetyNotes,
+      def.commonPitfalls,
+      def.osceTips,
+    ].every((s) => s.isEmpty)) {
+      return const SizedBox.shrink();
+    }
+    return ExpansionTile(
+      title: const Text('Clinical Notes'),
+      initiallyExpanded: false,
+      children: [
+        if (def.explanation.isNotEmpty)
+          _noteRow(context, Icons.info_outline, 'Explanation', def.explanation),
+        if (def.clinicalInterpretation.isNotEmpty)
+          _noteRow(context, Icons.medical_services_outlined,
+              'Clinical Interpretation', def.clinicalInterpretation),
+        if (def.safetyNotes.isNotEmpty)
+          _noteRow(context, Icons.warning_amber_outlined,
+              'Safety Notes', def.safetyNotes),
+        if (def.commonPitfalls.isNotEmpty)
+          _noteRow(context, Icons.error_outline,
+              'Common Pitfalls', def.commonPitfalls),
+        if (def.osceTips.isNotEmpty)
+          _noteRow(context, Icons.school_outlined, 'OSCE Tips', def.osceTips),
+      ],
+    );
+  }
+}
+
+Widget _noteRow(
+    BuildContext context, IconData icon, String label, String body) {
+  final theme = Theme.of(context);
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Icon(icon, size: 18, color: theme.colorScheme.primary),
+        const SizedBox(width: 8),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: theme.colorScheme.primary,
+                ),
+              ),
+              const SizedBox(height: 2),
+              Text(body, style: theme.textTheme.bodySmall),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 // ─── Calculator 8: Holliday-Segar ────────────────────────────────────────────
