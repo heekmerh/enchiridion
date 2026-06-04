@@ -223,6 +223,18 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         return _InsulinDoseForm(onResult: _setResult, onReset: _reset);
       case 'paracetamol-dosing':
         return _ParacetamolDosingForm(onResult: _setResult, onReset: _reset);
+      case 'apls-weight':
+        return _AplsWeightForm(onResult: _setResult, onReset: _reset);
+      case 'broselow':
+        return _BroselowForm(onResult: _setResult, onReset: _reset);
+      case 'pediatric-bp':
+        return _PediatricBpForm(onResult: _setResult, onReset: _reset);
+      case 'neonatal-bilirubin':
+        return _NeonatalBilirubinForm(onResult: _setResult, onReset: _reset);
+      case 'apgar':
+        return _ApgarForm(onResult: _setResult, onReset: _reset);
+      case 'growth-percentile':
+        return _GrowthPercentileForm(onResult: _setResult, onReset: _reset);
       default:
         return const Text('Unknown calculator');
     }
@@ -2351,6 +2363,693 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
         ),
         const SizedBox(height: 12),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P2: APLS Weight Estimation ───────────────────────
+
+class _AplsWeightForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _AplsWeightForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_AplsWeightForm> createState() => _AplsWeightFormState();
+}
+
+class _AplsWeightFormState extends State<_AplsWeightForm> {
+  final _ageCtrl = TextEditingController();
+  String _ageUnit = 'years';
+
+  @override
+  void dispose() {
+    _ageCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawAge = double.tryParse(_ageCtrl.text);
+    if (rawAge == null || rawAge < 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid age')));
+      return;
+    }
+
+    double estimatedKg;
+    String formula;
+
+    if (_ageUnit == 'months') {
+      // < 1 year: weight (kg) = 0.5 × (months + 9)
+      if (rawAge <= 0 || rawAge > 12) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Age in months should be 1–12 for this band')));
+        return;
+      }
+      estimatedKg = 0.5 * (rawAge + 9);
+      formula = '0.5 × (${rawAge.toStringAsFixed(0)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+    } else {
+      // years
+      final ageYears = rawAge;
+      if (ageYears <= 0 || ageYears > 12) {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('APLS formulas apply to children aged 0–12 years')));
+        return;
+      }
+      if (ageYears < 1) {
+        // Treat as < 1 year using age in months
+        final months = ageYears * 12;
+        estimatedKg = 0.5 * (months + 9);
+        formula = '0.5 × (${months.toStringAsFixed(1)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+      } else if (ageYears <= 5) {
+        // 1–5 years: 2 × (age + 4)
+        estimatedKg = 2 * (ageYears + 4);
+        formula = '2 × (${ageYears.toStringAsFixed(0)} + 4) = ${estimatedKg.toStringAsFixed(1)} kg';
+      } else {
+        // 6–12 years: 3 × age + 7
+        estimatedKg = 3 * ageYears + 7;
+        formula = '3 × ${ageYears.toStringAsFixed(0)} + 7 = ${estimatedKg.toStringAsFixed(1)} kg';
+      }
+    }
+
+    widget.onResult(
+      result: '${estimatedKg.toStringAsFixed(1)} kg (estimated)',
+      interpretation: 'Estimated weight: ${estimatedKg.toStringAsFixed(1)} kg\nFormula used: $formula',
+      educationalNote: 'APLS formulas: < 1y: 0.5×(months+9); 1–5y: 2×(age+4); 6–12y: 3×age+7.',
+      warning: 'This is an estimation — use actual weight for precise drug dosing whenever available.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(child: _NumericField(label: 'Age', controller: _ageCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _ageUnit,
+            items: const [
+              DropdownMenuItem(value: 'years', child: Text('years')),
+              DropdownMenuItem(value: 'months', child: Text('months')),
+            ],
+            onChanged: (v) => setState(() => _ageUnit = v!),
+          ),
+        ]),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P3: Broselow Tape Equivalent ─────────────────────
+
+class _BroselowForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _BroselowForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_BroselowForm> createState() => _BroselowFormState();
+}
+
+class _BroselowFormState extends State<_BroselowForm> {
+  final _lengthCtrl = TextEditingController();
+
+  // Broselow zones: (minCm, maxCm, colour, weightRangeKg)
+  static const _zones = [
+    (46.0, 59.0, 'Grey',   '3–5 kg'),
+    (59.0, 70.0, 'Pink',   '6–7 kg'),
+    (70.0, 80.0, 'Red',    '8–9 kg'),
+    (80.0, 90.0, 'Purple', '10–11 kg'),
+    (90.0, 100.0,'Yellow', '12–14 kg'),
+    (100.0, 110.0,'White', '15–18 kg'),
+    (110.0, 120.0,'Blue',  '19–22 kg'),
+    (120.0, 131.0,'Orange','24–29 kg'),
+    (131.0, 146.0,'Green', '30–36 kg'),
+  ];
+
+  @override
+  void dispose() {
+    _lengthCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawLen = double.tryParse(_lengthCtrl.text);
+    if (rawLen == null || rawLen <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid length in cm')));
+      return;
+    }
+
+    if (rawLen < 46) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Broselow tape starts at 46 cm')));
+      return;
+    }
+    if (rawLen > 146) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Broselow tape not validated above 146 cm — use weight-based dosing')));
+      return;
+    }
+
+    String colour = '';
+    String weightRange = '';
+    for (final z in _zones) {
+      if (rawLen >= z.$1 && rawLen < z.$2) {
+        colour = z.$3;
+        weightRange = z.$4;
+        break;
+      }
+    }
+    // Edge case: exactly 146 cm falls in Green zone
+    if (colour.isEmpty) {
+      colour = 'Green';
+      weightRange = '30–36 kg';
+    }
+
+    widget.onResult(
+      result: '$colour zone — $weightRange',
+      interpretation: 'Length ${rawLen.toStringAsFixed(0)} cm falls in the $colour Broselow zone.\n'
+          'Estimated weight range: $weightRange.\n'
+          'Use the midpoint weight with the weight-based dosing calculator for drug dose calculations.',
+      educationalNote: 'Drug dose columns are deferred — use the estimated weight with the weight-dosing calculator.',
+      warning: 'This is an estimate based on length only. Obtain actual weight for precise dosing whenever possible.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Length / Height (cm)', controller: _lengthCtrl),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Find Zone')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P4: Pediatric BP Percentiles ─────────────────────
+
+class _PediatricBpForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _PediatricBpForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_PediatricBpForm> createState() => _PediatricBpFormState();
+}
+
+class _PediatricBpFormState extends State<_PediatricBpForm> {
+  final _ageCtrl = TextEditingController();
+  final _sbpCtrl = TextEditingController();
+  final _dbpCtrl = TextEditingController();
+  String _sex = 'male';
+
+  // Simplified 95th-percentile SBP by age and sex (2017 AAP CPG, Table 3 approximations)
+  // Key: age (years 1–17), value: [male_95th, female_95th]
+  static const Map<int, List<int>> _sbp95th = {
+    1:  [100, 100], 2:  [102, 101], 3:  [104, 103], 4:  [106, 104],
+    5:  [108, 106], 6:  [110, 108], 7:  [111, 110], 8:  [112, 111],
+    9:  [114, 113], 10: [115, 115], 11: [117, 117], 12: [120, 119],
+    13: [122, 121], 14: [125, 122], 15: [128, 123], 16: [130, 124],
+    17: [132, 125],
+  };
+
+  static const Map<int, List<int>> _dbp95th = {
+    1:  [62, 62], 2:  [63, 63], 3:  [65, 65], 4:  [66, 66],
+    5:  [68, 68], 6:  [70, 70], 7:  [71, 71], 8:  [72, 72],
+    9:  [74, 74], 10: [75, 75], 11: [76, 76], 12: [78, 78],
+    13: [79, 79], 14: [80, 79], 15: [81, 80], 16: [82, 80],
+    17: [82, 80],
+  };
+
+  @override
+  void dispose() {
+    _ageCtrl.dispose();
+    _sbpCtrl.dispose();
+    _dbpCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawAge = int.tryParse(_ageCtrl.text);
+    final rawSbp = double.tryParse(_sbpCtrl.text);
+    final rawDbp = double.tryParse(_dbpCtrl.text);
+
+    if (rawAge == null || rawAge < 1 || rawAge > 17) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Age must be 1–17 years for paediatric BP classification')));
+      return;
+    }
+    if (rawSbp == null || rawSbp <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid SBP')));
+      return;
+    }
+    if (rawDbp == null || rawDbp <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid DBP')));
+      return;
+    }
+
+    final sexIdx = _sex == 'male' ? 0 : 1;
+    final sbp95 = _sbp95th[rawAge]![sexIdx];
+    final dbp95 = _dbp95th[rawAge]![sexIdx];
+    final sbp90 = sbp95 - 7;  // approximate 90th from 95th
+    final dbp90 = dbp95 - 5;
+
+    String sbpClass;
+    String dbpClass;
+
+    // SBP classification
+    if (rawSbp < sbp90) {
+      sbpClass = 'Normal';
+    } else if (rawSbp < sbp95) {
+      sbpClass = 'Elevated';
+    } else if (rawSbp < sbp95 + 12) {
+      sbpClass = 'Stage 1 HTN';
+    } else {
+      sbpClass = 'Stage 2 HTN';
+    }
+
+    // DBP classification
+    if (rawDbp < dbp90) {
+      dbpClass = 'Normal';
+    } else if (rawDbp < dbp95) {
+      dbpClass = 'Elevated';
+    } else if (rawDbp < dbp95 + 12) {
+      dbpClass = 'Stage 1 HTN';
+    } else {
+      dbpClass = 'Stage 2 HTN';
+    }
+
+    // Overall: use worst of SBP/DBP
+    const order = ['Normal', 'Elevated', 'Stage 1 HTN', 'Stage 2 HTN'];
+    final overall = order.indexOf(sbpClass) >= order.indexOf(dbpClass) ? sbpClass : dbpClass;
+
+    widget.onResult(
+      result: 'Overall: $overall (SBP: $sbpClass, DBP: $dbpClass)',
+      interpretation: 'Age $rawAge ${_sex == 'male' ? 'M' : 'F'}: '
+          'SBP ${rawSbp.toStringAsFixed(0)} mmHg → $sbpClass (95th ≈ $sbp95 mmHg); '
+          'DBP ${rawDbp.toStringAsFixed(0)} mmHg → $dbpClass (95th ≈ $dbp95 mmHg).\n'
+          'Overall classification: $overall.',
+      educationalNote: 'Simplified thresholds — verify against full 2017 AAP tables (height-specific percentiles).',
+      warning: 'This uses simplified 2017 AAP thresholds. Confirm against full age/sex/height-specific table. '
+          'BP diagnosis requires ≥ 3 measurements on separate occasions.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Age (years, 1–17)', controller: _ageCtrl),
+        const SizedBox(height: 12),
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'male', child: Text('Male')),
+            DropdownMenuItem(value: 'female', child: Text('Female')),
+          ],
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        _NumericField(label: 'SBP (mmHg)', controller: _sbpCtrl),
+        const SizedBox(height: 12),
+        _NumericField(label: 'DBP (mmHg)', controller: _dbpCtrl),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Classify')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P5: Neonatal Bilirubin (Phototherapy) ────────────
+
+class _NeonatalBilirubinForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _NeonatalBilirubinForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_NeonatalBilirubinForm> createState() => _NeonatalBilirubinFormState();
+}
+
+class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
+  final _bilirubinCtrl = TextEditingController();
+  final _ageHoursCtrl  = TextEditingController();
+  String _unit = 'mg/dL';
+  String _risk = 'low';
+
+  @override
+  void dispose() {
+    _bilirubinCtrl.dispose();
+    _ageHoursCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawBili  = double.tryParse(_bilirubinCtrl.text);
+    final rawHours = double.tryParse(_ageHoursCtrl.text);
+
+    if (rawBili == null || rawBili <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid bilirubin level')));
+      return;
+    }
+    if (rawHours == null || rawHours <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid age in hours')));
+      return;
+    }
+    if (rawHours > 168) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Age > 168 hours: use community guidelines for this age range')));
+      return;
+    }
+
+    // Convert umol/L to mg/dL if needed
+    final biliMgdL = _unit == 'µmol/L' ? rawBili / 17.1 : rawBili;
+    final hours = rawHours;
+
+    // Simplified Bhutani-based phototherapy thresholds (mg/dL) by age-hours and risk
+    double lowThreshold;
+    double highThreshold;
+
+    if (hours <= 24) {
+      lowThreshold  = _risk == 'low' ? 12.0 : (_risk == 'medium' ? 10.0 : 8.0);
+      highThreshold = _risk == 'low' ? 15.0 : (_risk == 'medium' ? 13.0 : 11.0);
+    } else if (hours <= 48) {
+      lowThreshold  = _risk == 'low' ? 15.0 : (_risk == 'medium' ? 13.0 : 11.0);
+      highThreshold = _risk == 'low' ? 18.0 : (_risk == 'medium' ? 16.0 : 14.0);
+    } else if (hours <= 72) {
+      lowThreshold  = _risk == 'low' ? 17.0 : (_risk == 'medium' ? 15.0 : 13.0);
+      highThreshold = _risk == 'low' ? 20.0 : (_risk == 'medium' ? 18.0 : 16.0);
+    } else {
+      lowThreshold  = _risk == 'low' ? 18.0 : (_risk == 'medium' ? 16.0 : 14.0);
+      highThreshold = _risk == 'low' ? 21.0 : (_risk == 'medium' ? 19.0 : 17.0);
+    }
+
+    String zone;
+    String guidance;
+
+    if (biliMgdL >= highThreshold) {
+      zone = 'High risk zone';
+      guidance = 'Consider starting phototherapy. Recheck in 4–6 hours.';
+    } else if (biliMgdL >= lowThreshold) {
+      zone = 'Intermediate zone';
+      guidance = 'Borderline — consider phototherapy based on clinical picture. Recheck in 4–8 hours.';
+    } else {
+      zone = 'Low risk zone';
+      guidance = 'Below phototherapy threshold — routine monitoring. Repeat TcB/TSB per clinical protocol.';
+    }
+
+    final umolL = biliMgdL * 17.1;
+    widget.onResult(
+      result: '$zone — ${biliMgdL.toStringAsFixed(1)} mg/dL (${umolL.toStringAsFixed(0)} µmol/L)',
+      interpretation: 'Bilirubin ${biliMgdL.toStringAsFixed(1)} mg/dL at ${hours.toStringAsFixed(0)} hours of age '
+          '($_risk risk).\n'
+          'Zone: $zone. Phototherapy threshold: low ${lowThreshold.toStringAsFixed(0)} mg/dL, '
+          'high ${highThreshold.toStringAsFixed(0)} mg/dL.\n$guidance',
+      educationalNote: 'Thresholds derived from simplified Bhutani nomogram. 1 mg/dL = 17.1 µmol/L.',
+      warning: 'These thresholds are a guide only — confirm against your local AAP phototherapy nomogram '
+          'and institutional guidelines. Not validated for infants < 35 weeks gestation.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(child: _NumericField(label: 'Bilirubin', controller: _bilirubinCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _unit,
+            items: const [
+              DropdownMenuItem(value: 'mg/dL', child: Text('mg/dL')),
+              DropdownMenuItem(value: 'µmol/L', child: Text('µmol/L')),
+            ],
+            onChanged: (v) => setState(() => _unit = v!),
+          ),
+        ]),
+        const SizedBox(height: 12),
+        _NumericField(label: 'Age (hours)', controller: _ageHoursCtrl),
+        const SizedBox(height: 12),
+        DropdownButtonFormField<String>(
+          initialValue: _risk,
+          decoration: const InputDecoration(
+              labelText: 'Risk category', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'low', child: Text('Low (no risk factors)')),
+            DropdownMenuItem(value: 'medium', child: Text('Medium (mild risk factors)')),
+            DropdownMenuItem(value: 'high', child: Text('High (haemolysis / G6PD / early jaundice)')),
+          ],
+          onChanged: (v) => setState(() => _risk = v!),
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P6: APGAR Score ──────────────────────────────────
+
+class _ApgarForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _ApgarForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_ApgarForm> createState() => _ApgarFormState();
+}
+
+class _ApgarFormState extends State<_ApgarForm> {
+  int _appearance  = 2;
+  int _pulse       = 2;
+  int _grimace     = 2;
+  int _activity    = 2;
+  int _respiration = 2;
+
+  void _calculate() {
+    final total = _appearance + _pulse + _grimace + _activity + _respiration;
+    String band;
+    String interp;
+
+    if (total >= 7) {
+      band   = 'Reassuring';
+      interp = 'APGAR $total/10 — Reassuring. Routine newborn care.';
+    } else if (total >= 4) {
+      band   = 'Moderately abnormal';
+      interp = 'APGAR $total/10 — Moderately abnormal. Supplemental oxygen and stimulation; '
+          'prepare for resuscitation if score does not improve at 5 min.';
+    } else {
+      band   = 'Low';
+      interp = 'APGAR $total/10 — Low. Immediate resuscitation required. '
+          'Initiate Newborn Life Support protocol.';
+    }
+
+    widget.onResult(
+      result: '$total/10 — $band',
+      interpretation: '$interp\n'
+          'A: $_appearance  P: $_pulse  G: $_grimace  A: $_activity  R: $_respiration',
+      educationalNote: 'Reassess at 5 min and 10 min if ≤ 6 at 5 min. '
+          'Do not delay resuscitation to complete the APGAR score.',
+      warning: 'APGAR is a communication tool — not a predictor of long-term neurological outcome.',
+    );
+  }
+
+  Widget _apgarRow(String label, int value, void Function(int) onChanged) {
+    return Row(
+      children: [
+        Expanded(child: Text(label)),
+        DropdownButton<int>(
+          value: value,
+          items: const [
+            DropdownMenuItem(value: 0, child: Text('0')),
+            DropdownMenuItem(value: 1, child: Text('1')),
+            DropdownMenuItem(value: 2, child: Text('2')),
+          ],
+          onChanged: (v) => setState(() => onChanged(v!)),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _apgarRow('Appearance (colour)',    _appearance,  (v) => _appearance  = v),
+        _apgarRow('Pulse (heart rate)',      _pulse,       (v) => _pulse       = v),
+        _apgarRow('Grimace (reflex)',         _grimace,     (v) => _grimace     = v),
+        _apgarRow('Activity (muscle tone)',   _activity,    (v) => _activity    = v),
+        _apgarRow('Respiration',              _respiration, (v) => _respiration = v),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Paediatrics Calculator P7: WHO Growth Percentile ────────────────────────
+
+class _GrowthPercentileForm extends StatefulWidget {
+  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final VoidCallback onReset;
+  const _GrowthPercentileForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_GrowthPercentileForm> createState() => _GrowthPercentileFormState();
+}
+
+class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
+  final _weightCtrl    = TextEditingController();
+  final _heightCtrl    = TextEditingController();
+  final _hcCtrl        = TextEditingController();
+  final _ageMonthsCtrl = TextEditingController();
+  String _sex = 'male';
+
+  @override
+  void dispose() {
+    _weightCtrl.dispose();
+    _heightCtrl.dispose();
+    _hcCtrl.dispose();
+    _ageMonthsCtrl.dispose();
+    super.dispose();
+  }
+
+  // Simplified WHO median weight-for-age (kg) and approximate SD by age in months
+  static const Map<int, List<double>> _whoWeightMale = {
+    0:  [3.3, 0.45], 3: [6.0, 0.73], 6: [7.9, 0.87], 9: [9.2, 0.95],
+    12: [10.2, 1.0], 18: [11.5, 1.1], 24: [12.2, 1.2], 36: [14.3, 1.4],
+    48: [16.3, 1.6], 60: [18.3, 1.8],
+  };
+  static const Map<int, List<double>> _whoWeightFemale = {
+    0:  [3.2, 0.44], 3: [5.6, 0.67], 6: [7.3, 0.81], 9: [8.6, 0.89],
+    12: [9.5, 0.93], 18: [10.8, 1.0], 24: [11.5, 1.1], 36: [13.9, 1.3],
+    48: [15.9, 1.5], 60: [18.2, 1.7],
+  };
+
+  String _zoneLabel(double z) {
+    if (z < -2) return 'Below 3rd percentile (< −2 SD)';
+    if (z > 2)  return 'Above 97th percentile (> +2 SD)';
+    return 'Normal range (−2 to +2 SD)';
+  }
+
+  int _nearestAge(int ageMonths) {
+    const ages = [0, 3, 6, 9, 12, 18, 24, 36, 48, 60];
+    int best = ages.first;
+    int bestDiff = (ageMonths - best).abs();
+    for (final a in ages) {
+      final diff = (ageMonths - a).abs();
+      if (diff < bestDiff) {
+        bestDiff = diff;
+        best = a;
+      }
+    }
+    return best;
+  }
+
+  void _calculate() {
+    final rawWeight = double.tryParse(_weightCtrl.text);
+    final rawHeight = double.tryParse(_heightCtrl.text);
+    final rawAge    = int.tryParse(_ageMonthsCtrl.text);
+    final rawHc     = double.tryParse(_hcCtrl.text);
+
+    if (rawWeight == null || rawWeight <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid weight')));
+      return;
+    }
+    if (rawHeight == null || rawHeight <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter a valid height/length')));
+      return;
+    }
+    if (rawAge == null || rawAge < 0 || rawAge > 60) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Age must be 0–60 months for WHO Growth Standards')));
+      return;
+    }
+
+    final nearAge = _nearestAge(rawAge);
+    final ref     = (_sex == 'male' ? _whoWeightMale : _whoWeightFemale)[nearAge]!;
+    final median  = ref[0];
+    final sd      = ref[1];
+
+    final weightZ    = (rawWeight - median) / sd;
+    final weightZone = _zoneLabel(weightZ);
+
+    // Simplified height-for-age approximation
+    final heightMedian = _sex == 'male'
+        ? 45.0 + rawAge * 1.2
+        : 44.0 + rawAge * 1.18;
+    const heightSd = 2.5;
+    final heightZ    = (rawHeight - heightMedian) / heightSd;
+    final heightZone = _zoneLabel(heightZ);
+
+    final buffer = StringBuffer();
+    buffer.writeln('Weight ${rawWeight.toStringAsFixed(1)} kg: $weightZone (z ≈ ${weightZ.toStringAsFixed(1)})');
+    buffer.writeln('Height ${rawHeight.toStringAsFixed(1)} cm: $heightZone (z ≈ ${heightZ.toStringAsFixed(1)})');
+
+    if (rawHc != null && rawHc > 0) {
+      // Simplified head circumference approximation
+      final hcMedian = 34.0 + rawAge * 0.1;
+      const hcSd = 1.5;
+      final hcZ    = (rawHc - hcMedian) / hcSd;
+      final hcZone = _zoneLabel(hcZ);
+      buffer.writeln('HC ${rawHc.toStringAsFixed(1)} cm: $hcZone (z ≈ ${hcZ.toStringAsFixed(1)})');
+    }
+
+    widget.onResult(
+      result: 'Weight: $weightZone',
+      interpretation: buffer.toString().trim(),
+      educationalNote: 'Simplified WHO z-score bands (not full LMS method). '
+          'Results are approximate — use full WHO growth charts for clinical decisions.',
+      warning: 'Simplified z-score band estimates only, not precise percentiles. '
+          'For clinical growth monitoring, plot on the full WHO growth chart for the child\'s age and sex.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Weight (kg)', controller: _weightCtrl),
+        const SizedBox(height: 12),
+        _NumericField(label: 'Height / Length (cm)', controller: _heightCtrl),
+        const SizedBox(height: 12),
+        _NumericField(label: 'Head circumference (cm, optional)', controller: _hcCtrl),
+        const SizedBox(height: 12),
+        _NumericField(label: 'Age (months, 0–60)', controller: _ageMonthsCtrl),
+        const SizedBox(height: 12),
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'male', child: Text('Male')),
+            DropdownMenuItem(value: 'female', child: Text('Female')),
+          ],
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Classify')),
       ],
     );
   }
