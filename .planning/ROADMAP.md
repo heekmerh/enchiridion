@@ -72,12 +72,12 @@ Plans:
 
 **Goal:** 25 total calculators with full enhancements (explanation, clinical interpretation, safety notes, common pitfalls, OSCE tips); BMI unit conversion working
 
-**Plans:** 2/4 plans executed
+**Plans:** 3/4 plans executed
 
 Plans:
 - [x] 04-01-PLAN.md — Foundation (Wave 1): 5 enhancement fields on CalculatorDefinition + _ClinicalNotesSection widget + BMI auto-conversion + Wave 0 tests + populate 8 existing calculators
 - [x] 04-02-PLAN.md — Emergency & Critical Care (Wave 2): 7 calculators (qSOFA, NEWS2, Shock Index, Osmolality, Corrected Sodium, A-a Gradient, PaO2/FiO2)
-- [ ] 04-03-PLAN.md — Drug Dosing (Wave 3): 5 calculators (BSA, eGFR CKD-EPI 2021, Gentamicin/Vancomycin, Insulin, Paracetamol)
+- [x] 04-03-PLAN.md — Drug Dosing (Wave 3): 5 calculators (BSA, eGFR CKD-EPI 2021, Gentamicin/Vancomycin, Insulin, Paracetamol)
 - [ ] 04-04-PLAN.md — Paediatrics (Wave 4): 6 calculators (APLS Weight, Broselow, Pediatric BP, Neonatal Bilirubin, APGAR, WHO Growth) + completes 25-total
 
 **Requirements:** REQ-4a, REQ-4b, REQ-4c, REQ-4d, REQ-4e, REQ-4f
