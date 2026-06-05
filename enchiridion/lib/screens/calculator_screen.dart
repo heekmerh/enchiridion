@@ -2289,15 +2289,19 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
     String? warning;
 
     if (_ageGroup == 'child') {
-      // Child (<12 y): 15 mg/kg/dose, max 4 doses/24h, max 60 mg/kg/day
-      final perDose = weightKg * 15.0;
+      // Child (<12 y): 15 mg/kg/dose, max 4 doses/24h, max 60 mg/kg/day, absolute max 4000 mg/day
+      const maxAbsoluteDaily = 4000.0;
+      const maxAbsolutePerDose = 1000.0;
+      final perDoseRaw = weightKg * 15.0;
+      final perDose = perDoseRaw < maxAbsolutePerDose ? perDoseRaw : maxAbsolutePerDose;
       final dailyByDose = perDose * 4;
       final maxDailyByKg = weightKg * 60.0;
-      final daily = dailyByDose < maxDailyByKg ? dailyByDose : maxDailyByKg;
+      // Cap daily at the lowest of: 4×per-dose, 60 mg/kg/day, and 4000 mg/day absolute maximum
+      final daily = [dailyByDose, maxDailyByKg, maxAbsoluteDaily].reduce((a, b) => a < b ? a : b);
       result = '${perDose.toStringAsFixed(0)} mg/dose | ${daily.toStringAsFixed(0)} mg/day max';
       interpretation = 'Child dose (15 mg/kg/dose): ${perDose.toStringAsFixed(0)} mg per dose, '
           'up to 4 doses per 24 hours. Maximum daily dose: ${daily.toStringAsFixed(0)} mg '
-          '(60 mg/kg/day cap).';
+          '(60 mg/kg/day and 4 g/day absolute cap apply).';
       educationalNote = 'Interval: every 4–6 hours as needed. '
           'Do not exceed 4 doses in 24 hours. '
           'Reduce in malnourished children or hepatic impairment.';
