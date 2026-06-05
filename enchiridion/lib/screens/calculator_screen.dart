@@ -1734,18 +1734,12 @@ class _PaO2FiO2FormState extends State<_PaO2FiO2Form> {
 
 // ─── Clinical notes section ──────────────────────────────────────────────────
 
-class _ClinicalNotesSection extends StatefulWidget {
+class _ClinicalNotesSection extends StatelessWidget {
   final CalculatorDefinition def;
   const _ClinicalNotesSection({required this.def});
 
   @override
-  State<_ClinicalNotesSection> createState() => _ClinicalNotesSectionState();
-}
-
-class _ClinicalNotesSectionState extends State<_ClinicalNotesSection> {
-  @override
   Widget build(BuildContext context) {
-    final def = widget.def;
     if ([
       def.explanation,
       def.clinicalInterpretation,
