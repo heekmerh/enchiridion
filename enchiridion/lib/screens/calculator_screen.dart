@@ -805,6 +805,17 @@ class _BmiFormState extends State<_BmiForm> {
             },
           ),
         ]),
+        if (_heightUnit == 'ft')
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Text(
+              'Enter height as decimal feet (e.g. 5.83 for 5\'10"). '
+              'Do not enter feet and inches separately.',
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+            ),
+          ),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
