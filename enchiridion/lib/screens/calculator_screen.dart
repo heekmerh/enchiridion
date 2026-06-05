@@ -1394,6 +1394,12 @@ class _ShockIndexFormState extends State<_ShockIndexForm> {
           const SnackBar(content: Text('Enter valid HR and SBP')));
       return;
     }
+    if (sbp < 50 || sbp > 300) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('SBP value appears implausible (expected 50–300 mmHg)')));
+      return;
+    }
     final si = hr / sbp;
     String band;
     if (si < 0.6) {
