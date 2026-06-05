@@ -605,7 +605,21 @@ class _GcsFormState extends State<_GcsForm> {
   ];
 
   void _calculate() {
-    final total = _intubated ? _eye + _motor : _eye + _verbal + _motor;
+    if (_intubated) {
+      widget.onResult(
+        result: 'E$_eye V(T) M$_motor = ${_eye + _motor}T',
+        interpretation: 'GCS components: E$_eye V(T) M$_motor. '
+            'Verbal score not assessable (intubated). '
+            'Severity cannot be classified using standard 3–15 thresholds. '
+            'Trend E and M components over time.',
+        educationalNote: 'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
+        warning: 'GCS severity bands (mild/moderate/severe) apply to the full 3–15 scale only. '
+            'Do not apply them to the intubated sub-score. '
+            'GCS alone does not determine airway management — use full clinical assessment.',
+      );
+      return;
+    }
+    final total = _eye + _verbal + _motor;
     String severity;
     if (total >= 13) {
       severity = 'Mild injury';
@@ -615,12 +629,8 @@ class _GcsFormState extends State<_GcsForm> {
       severity = 'Severe injury';
     }
 
-    final display = _intubated
-        ? 'E$_eye V(T) M$_motor = ${_eye + _motor}T'
-        : 'E$_eye V$_verbal M$_motor = $total';
-
     widget.onResult(
-      result: '$display — $severity',
+      result: 'E$_eye V$_verbal M$_motor = $total — $severity',
       interpretation: 'Total GCS $total. $severity.',
       educationalNote: 'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
       warning: 'GCS alone does not determine airway management — use full clinical assessment.',
