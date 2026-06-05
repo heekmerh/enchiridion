@@ -1280,6 +1280,12 @@ class _News2FormState extends State<_News2Form> {
           const SnackBar(content: Text('Enter valid values for all parameters')));
       return;
     }
+    if (tempVal < 25.0 || tempVal > 45.0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Temperature must be in °C (plausible range: 25–45°C)')));
+      return;
+    }
 
     final rrScore = _scoreRR(rrVal.round());
     final spo2Score = _hypercapnic
