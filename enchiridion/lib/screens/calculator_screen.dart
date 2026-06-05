@@ -1537,9 +1537,9 @@ class _CorrectedSodiumFormState extends State<_CorrectedSodiumForm> {
           const SnackBar(content: Text('Enter valid sodium and glucose values')));
       return;
     }
-    if (glucose <= 100) {
+    if (glucose < 100) {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Glucose must be > 100 mg/dL for correction to apply')));
+          const SnackBar(content: Text('Glucose must be ≥ 100 mg/dL for correction to apply')));
       return;
     }
     final corrected = na + 0.016 * (glucose - 100);
