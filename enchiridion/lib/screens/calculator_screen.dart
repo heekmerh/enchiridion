@@ -20,8 +20,18 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   String? _educationalNote;
   String? _warningText;
 
-  CalculatorDefinition get _def =>
-      kCalculators.firstWhere((c) => c.id == widget.calculatorId);
+  CalculatorDefinition get _def {
+    try {
+      return kCalculators.firstWhere((c) => c.id == widget.calculatorId);
+    } catch (_) {
+      return const CalculatorDefinition(
+        id: 'unknown',
+        title: 'Unknown Calculator',
+        category: '',
+        description: 'This calculator could not be found.',
+      );
+    }
+  }
 
   @override
   void initState() {
