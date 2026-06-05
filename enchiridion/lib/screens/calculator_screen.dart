@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -1871,7 +1872,7 @@ class _BsaFormState extends State<_BsaForm> {
     final heightCm = _heightUnit == 'cm' ? rawHeight : rawHeight * 100.0;
     // Mosteller: BSA = sqrt(height_cm * weight_kg / 3600)
     final product = heightCm * weightKg / 3600.0;
-    final bsa = product > 0 ? _sqrtOf(product) : 0.0;
+    final bsa = product > 0 ? math.sqrt(product) : 0.0;
     widget.onResult(
       result: 'BSA: ${bsa.toStringAsFixed(2)} m²',
       interpretation: 'Calculated body surface area (Mosteller): ${bsa.toStringAsFixed(2)} m². '
@@ -1879,14 +1880,6 @@ class _BsaFormState extends State<_BsaForm> {
       educationalNote: 'Mosteller formula: BSA = √(height_cm × weight_kg / 3600). '
           'Typical adult BSA: 1.6–2.0 m². Not validated for extreme weights.',
     );
-  }
-
-  double _sqrtOf(double x) {
-    double guess = x / 2.0;
-    for (int i = 0; i < 50; i++) {
-      guess = (guess + x / guess) / 2.0;
-    }
-    return guess;
   }
 
   @override
@@ -2000,33 +1993,10 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
     );
   }
 
-  // b^e via Taylor series for ln and exp (avoids dart:math import)
+  // Use dart:math for accurate power calculation
   double _powCalc(double base, double exp) {
     if (base <= 0) return 0.0;
-    return _expCalc(exp * _lnCalc(base));
-  }
-
-  double _lnCalc(double x) {
-    if (x <= 0) return double.negativeInfinity;
-    double y = (x - 1) / (x + 1);
-    double result = 0.0;
-    double term = y;
-    for (int i = 1; i <= 60; i++) {
-      result += term / (2 * i - 1);
-      term *= y * y;
-    }
-    return 2 * result;
-  }
-
-  double _expCalc(double x) {
-    double result = 1.0;
-    double term = 1.0;
-    for (int i = 1; i <= 60; i++) {
-      term *= x / i;
-      result += term;
-      if (term.abs() < 1e-15) break;
-    }
-    return result;
+    return math.pow(base, exp).toDouble();
   }
 
   @override
