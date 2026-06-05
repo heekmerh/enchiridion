@@ -2203,8 +2203,9 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
     // Convert mmol/L to mg/dL for calculation
     final cbgMgDl = _cbgUnit == 'mmol/L' ? rawCbg * 18.0182 : rawCbg;
     final targetMgDl = _cbgUnit == 'mmol/L' ? rawTarget * 18.0182 : rawTarget;
-    // ISF is expected in mg/dL per unit regardless of display unit
-    final raw = (cbgMgDl - targetMgDl) / rawIsf;
+    // Convert ISF to mg/dL units when CBG is in mmol/L (user enters ISF in same units as CBG)
+    final isfMgDl = _cbgUnit == 'mmol/L' ? rawIsf * 18.0182 : rawIsf;
+    final raw = (cbgMgDl - targetMgDl) / isfMgDl;
     final correctionDose = raw < 0 ? 0.0 : raw;
 
     final cbgDisplay = _cbgUnit == 'mmol/L'
@@ -2247,7 +2248,7 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
             label: 'Target glucose (same unit as CBG)',
             controller: _targetCtrl),
         _NumericField(
-            label: 'ISF (mg/dL drop per unit of insulin)',
+            label: 'ISF (${_cbgUnit == 'mmol/L' ? 'mmol/L' : 'mg/dL'} drop per unit of insulin)',
             controller: _isfCtrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
