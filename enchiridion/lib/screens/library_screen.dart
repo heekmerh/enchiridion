@@ -589,6 +589,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
       children: [
         PageView.builder(
           controller: _pageController,
+          scrollDirection: Axis.vertical,
           itemCount: _categories.length,
           itemBuilder: (_, i) => _ResourceCard(
             category: _categories[i],
