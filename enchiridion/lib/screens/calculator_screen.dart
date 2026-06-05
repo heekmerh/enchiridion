@@ -832,6 +832,12 @@ class _EddEgaFormState extends State<_EddEgaForm> {
     }
     final edd = _lmp!.add(const Duration(days: 280));
     final diff = _referenceDate.difference(_lmp!).inDays;
+    if (diff < 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+              content: Text('Reference date is before LMP — please check dates')));
+      return;
+    }
     final weeks = diff ~/ 7;
     final days = diff % 7;
 
