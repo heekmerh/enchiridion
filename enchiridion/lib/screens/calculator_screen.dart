@@ -2431,8 +2431,16 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
             const SnackBar(content: Text('Age in months should be 1–12 for this band')));
         return;
       }
-      estimatedKg = 0.5 * (rawAge + 9);
-      formula = '0.5 × (${rawAge.toStringAsFixed(0)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+      // Normalise 12-month-old to the 1–5y formula for consistency:
+      // months formula gives 10.5 kg at 12 months; years formula gives 10 kg at 1 year.
+      // Use the 1–5y formula at exactly 12 months to match the years-unit path.
+      if (rawAge == 12) {
+        estimatedKg = 2 * (1 + 4); // 1–5y formula: 2×(1+4) = 10 kg
+        formula = '2 × (1 + 4) = ${estimatedKg.toStringAsFixed(1)} kg (normalised to 1y formula at 12 months)';
+      } else {
+        estimatedKg = 0.5 * (rawAge + 9);
+        formula = '0.5 × (${rawAge.toStringAsFixed(0)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+      }
     } else {
       // years
       final ageYears = rawAge;
