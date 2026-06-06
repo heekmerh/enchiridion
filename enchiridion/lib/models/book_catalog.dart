@@ -21,7 +21,7 @@ const List<CatalogBook> kBooks = [
     id: 'paediatrics',
     title: 'Paediatrics',
     assetPath: 'assets/books/Paediatrics.png',
-    dataFile: 'assets/data/book.json',
+    dataFile: 'assets/data/paediatrics.json',
     specialty: 'Paediatrics',
   ),
   CatalogBook(
