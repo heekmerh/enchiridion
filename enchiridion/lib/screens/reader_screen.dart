@@ -28,7 +28,7 @@ class ReaderScreen extends StatelessWidget {
   const ReaderScreen({
     super.key,
     this.bookId = 'paediatrics',
-    this.dataFile = 'assets/data/book.json',
+    this.dataFile = 'assets/data/paediatrics.json',
     this.testBookProvider,
   });
 

@@ -46,7 +46,7 @@ class BookProvider with ChangeNotifier {
   final String _dataFile;
 
   BookProvider(this._storageService,
-      [this._dataFile = 'assets/data/book.json']) {
+      [this._dataFile = 'assets/data/paediatrics.json']) {
     _loadBook();
   }
 
