@@ -130,19 +130,21 @@ class _ReaderShellState extends State<_ReaderShell> {
   void _navigateToChapter(String chapterId) {
     context.read<BookProvider>().navigateToChapter(chapterId);
     setState(() {
-      _sectionOffsets = {};       // clear stale offsets from previous chapter
-      _currentSectionId = null;   // reset active-section highlight
-      _isMenuOpen = false;
+      _sectionOffsets = {};
+      _currentSectionId = null;
+      // Drawer stays open — user can pick a section or tap the content to close
     });
     _scrollController.animateTo(0,
         duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
   }
 
   void _navigateToSection(String sectionId, String subsectionId) {
-    setState(() {
-      _isMenuOpen = false;
-    });
-    // Try subsection key first, fall back to section key
+    // Close drawer only when a subsection (leaf) is tapped.
+    // Section-level taps (subsectionId == '') keep the drawer open so the user
+    // can drill down further or tap the content area to dismiss.
+    if (subsectionId.isNotEmpty) {
+      setState(() => _isMenuOpen = false);
+    }
     final key = _subsectionKeys[subsectionId] ?? _sectionKeys[sectionId];
     if (key?.currentContext != null) {
       Scrollable.ensureVisible(
@@ -215,7 +217,9 @@ class _ReaderShellState extends State<_ReaderShell> {
           builder: (context, settingsProvider, bookmarkProvider, _) {
             return Scaffold(
               body: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (_isMenuOpen) setState(() => _isMenuOpen = false);
+                },
                 child: Stack(
                   children: [
                     CustomScrollView(

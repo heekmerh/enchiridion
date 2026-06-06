@@ -257,6 +257,12 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                     section.title,
                     style: const TextStyle(fontSize: 13),
                   ),
+                  onExpansionChanged: (expanded) {
+                    // Navigate to section start when expanding; drawer stays open.
+                    if (expanded) {
+                      widget.onSectionSelected(section.id, '');
+                    }
+                  },
                   children: section.subsections.map((sub) {
                     final isActiveSub = sub.id == widget.currentSectionId;
                     return ListTile(
