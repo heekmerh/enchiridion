@@ -301,15 +301,18 @@ def convert(docx_path: Path, map_path: Path) -> dict:
             })
         cur_sections = []
 
-    def open_chapter(ch: dict):
+    def open_chapter(ch: dict, heading_text: str = ""):
         nonlocal cur_chapter, cur_section_id, cur_section_title, cur_sub_id, cur_sub_title
         nonlocal cur_group_id, cur_group_title
         save_chapter()
         cur_chapter = ch
-        cur_section_id    = ch["chapter_id"] + "_intro"
-        cur_section_title = ch["chapter_title"]
-        cur_sub_id        = cur_section_id + "_overview"
-        cur_sub_title     = "Overview"
+        # The anchor heading becomes the first section; its content is the intro.
+        # Subsection title matches section title so no "Overview" dummy appears.
+        first = heading_text or ch["chapter_title"]
+        cur_section_id    = slug(first)
+        cur_section_title = first
+        cur_sub_id        = cur_section_id + "_intro"
+        cur_sub_title     = first
         cur_group_id      = cur_sub_id + "_main"
         cur_group_title   = ""
 
@@ -325,8 +328,10 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         cur_subsections   = []
         cur_section_id    = slug(title)
         cur_section_title = title
-        cur_sub_id        = cur_section_id + "_overview"
-        cur_sub_title     = "Overview"
+        # First subsection title = section title (no dummy "Overview").
+        # A real H2 will overwrite this when it fires.
+        cur_sub_id        = cur_section_id + "_intro"
+        cur_sub_title     = title
         cur_group_id      = cur_sub_id + "_main"
         cur_group_title   = ""
 
@@ -375,7 +380,7 @@ def convert(docx_path: Path, map_path: Path) -> dict:
 
         # ── chapter boundary (index-based, from pre-scan) ───────────────────
         if i in chapter_boundary_map:
-            open_chapter(chapter_boundary_map[i])
+            open_chapter(chapter_boundary_map[i], text)
             i += 1
             continue
 
