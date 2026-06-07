@@ -239,6 +239,9 @@ def convert(docx_path: Path, map_path: Path) -> dict:
     # ── state ─────────────────────────────────────────────────────────────────
     chapters: list      = []
     cur_chapter: dict | None = None
+    _sec_counter  = [0]   # monotonic counters ensure globally unique IDs
+    _sub_counter  = [0]
+    _grp_counter  = [0]
     cur_sections: list  = []
     cur_section_id      = ""
     cur_section_title   = ""
@@ -316,11 +319,15 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         # The anchor heading becomes the first section; its content is the intro.
         # Subsection title matches section title so no "Overview" dummy appears.
         first = heading_text or ch["chapter_title"]
-        cur_section_id    = slug(first)
+        _sec_counter[0] += 1
+        _sub_counter[0] += 1
+        _grp_counter[0] += 1
+        _sid = f"{ch['chapter_id']}_s{_sec_counter[0]}"
+        cur_section_id    = _sid
         cur_section_title = first
-        cur_sub_id        = cur_section_id + "_intro"
+        cur_sub_id        = f"{_sid}_b{_sub_counter[0]}"
         cur_sub_title     = first
-        cur_group_id      = cur_sub_id + "_main"
+        cur_group_id      = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title   = ""
 
     def open_section(title: str):
@@ -333,13 +340,15 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         cur_groups = []
         flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections)
         cur_subsections   = []
-        cur_section_id    = slug(title)
+        _sec_counter[0] += 1
+        _sub_counter[0] += 1
+        _grp_counter[0] += 1
+        _sid = f"{cur_chapter['chapter_id'] if cur_chapter else 'x'}_s{_sec_counter[0]}"
+        cur_section_id    = _sid
         cur_section_title = title
-        # First subsection title = section title (no dummy "Overview").
-        # A real H2 will overwrite this when it fires.
-        cur_sub_id        = cur_section_id + "_intro"
+        cur_sub_id        = f"{_sid}_b{_sub_counter[0]}"
         cur_sub_title     = title
-        cur_group_id      = cur_sub_id + "_main"
+        cur_group_id      = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title   = ""
 
     def open_subsection(title: str):
@@ -349,9 +358,11 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         cur_blocks   = []
         flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups)
         cur_groups   = []
-        cur_sub_id   = slug(title)
+        _sub_counter[0] += 1
+        _grp_counter[0] += 1
+        cur_sub_id   = f"{cur_section_id}_b{_sub_counter[0]}"
         cur_sub_title = title
-        cur_group_id  = cur_sub_id + "_main"
+        cur_group_id  = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title = ""
 
     def open_group(title: str):
@@ -359,7 +370,8 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         emit_pending()
         flush_group(cur_groups, cur_group_id, cur_group_title, cur_blocks)
         cur_blocks      = []
-        cur_group_id    = slug(title)
+        _grp_counter[0] += 1
+        cur_group_id    = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title = title
 
     # ── walk document ──────────────────────────────────────────────────────────
