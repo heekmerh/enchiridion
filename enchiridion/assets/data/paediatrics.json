@@ -6,7 +6,7 @@
   "chapters": [
     {
       "chapter_metadata": {
-        "chapter_id": "history_taking",
+        "chapter_id": "overview",
         "chapter_title": "Overview",
         "chapter_icon": null,
         "description": null,
@@ -14,12 +14,12 @@
       },
       "sections": [
         {
-          "section_id": "fever",
-          "section_title": "🌡️ FEVER",
+          "section_id": "history_taking_on_common_symptoms",
+          "section_title": "HISTORY TAKING ON COMMON SYMPTOMS",
           "section_order": 1,
           "subsections": [
             {
-              "subsection_id": "fever_intro",
+              "subsection_id": "fever",
               "subsection_title": "🌡️ FEVER",
               "subsection_icon": null,
               "content_groups": [
@@ -103,10 +103,17 @@
                       "text": "Immunosuppression (HIV, cancer)?"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "subsection_id": "history_taking_mnemonic_socrates",
+              "subsection_title": "🔍 HISTORY TAKING MNEMONIC — \"SOCRATES\"",
+              "subsection_icon": null,
+              "content_groups": [
                 {
-                  "group_id": "pain",
-                  "group_title": "⚡ PAIN",
+                  "group_id": "history_taking_mnemonic_socrates_main",
+                  "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -158,21 +165,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "convulsions_seizures",
-          "section_title": "⚡ CONVULSIONS / SEIZURES",
-          "section_order": 2,
-          "subsections": [
+            },
             {
-              "subsection_id": "convulsions_seizures_intro",
-              "subsection_title": "⚡ CONVULSIONS / SEIZURES",
+              "subsection_id": "history_taking_mnemonic_salt_penn",
+              "subsection_title": "🔍 HISTORY TAKING MNEMONIC — \"SALT PENN\"",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "convulsions_seizures_intro_main",
+                  "group_id": "history_taking_mnemonic_salt_penn_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -241,21 +241,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "swelling_mass",
-          "section_title": "🎈 SWELLING / MASS",
-          "section_order": 3,
-          "subsections": [
+            },
             {
-              "subsection_id": "swelling_mass_intro",
-              "subsection_title": "🎈 SWELLING / MASS",
+              "subsection_id": "history_taking_mnemonic_l_scarf_tempo",
+              "subsection_title": "🔍 HISTORY TAKING MNEMONIC — \"L-SCARF TEMPO\"",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "swelling_mass_intro_main",
+                  "group_id": "history_taking_mnemonic_l_scarf_tempo_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -340,16 +333,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "cough",
-          "section_title": "😮‍💨 COUGH",
-          "section_order": 4,
-          "subsections": [
+            },
             {
-              "subsection_id": "cough_intro",
+              "subsection_id": "cough",
               "subsection_title": "😮‍💨 COUGH",
               "subsection_icon": null,
               "content_groups": [
@@ -403,16 +389,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "vomiting",
-          "section_title": "VOMITING",
-          "section_order": 5,
-          "subsections": [
+            },
             {
-              "subsection_id": "vomiting_intro",
+              "subsection_id": "vomiting",
               "subsection_title": "VOMITING",
               "subsection_icon": null,
               "content_groups": [
@@ -458,16 +437,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "difficulty_breathing_dyspnoea",
-          "section_title": "😤 DIFFICULTY BREATHING (DYSPNOEA)",
-          "section_order": 6,
-          "subsections": [
+            },
             {
-              "subsection_id": "difficulty_breathing_dyspnoea_intro",
+              "subsection_id": "difficulty_breathing_dyspnoea",
               "subsection_title": "😤 DIFFICULTY BREATHING (DYSPNOEA)",
               "subsection_icon": null,
               "content_groups": [
@@ -517,16 +489,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "passage_of_frequent_loosewatery_stools_diarrhea",
-          "section_title": "💩 PASSAGE OF FREQUENT LOOSE/WATERY STOOLS (DIARRHEA)",
-          "section_order": 7,
-          "subsections": [
+            },
             {
-              "subsection_id": "passage_of_frequent_loosewatery_stools_diarrhea_intro",
+              "subsection_id": "passage_of_frequent_loosewatery_stools_diarrhea",
               "subsection_title": "💩 PASSAGE OF FREQUENT LOOSE/WATERY STOOLS (DIARRHEA)",
               "subsection_icon": null,
               "content_groups": [
@@ -580,16 +545,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "weight_loss",
-          "section_title": "⚖️ WEIGHT LOSS",
-          "section_order": 8,
-          "subsections": [
+            },
             {
-              "subsection_id": "weight_loss_intro",
+              "subsection_id": "weight_loss",
               "subsection_title": "⚖️ WEIGHT LOSS",
               "subsection_icon": null,
               "content_groups": [
@@ -639,16 +597,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "dark_coloured_urine",
-          "section_title": "🍷 DARK-COLOURED URINE",
-          "section_order": 9,
-          "subsections": [
+            },
             {
-              "subsection_id": "dark_coloured_urine_intro",
+              "subsection_id": "dark_coloured_urine",
               "subsection_title": "🍷 DARK-COLOURED URINE",
               "subsection_icon": null,
               "content_groups": [
@@ -739,16 +690,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "constipation",
-          "section_title": "🚫 CONSTIPATION",
-          "section_order": 10,
-          "subsections": [
+            },
             {
-              "subsection_id": "constipation_intro",
+              "subsection_id": "constipation",
               "subsection_title": "🚫 CONSTIPATION",
               "subsection_icon": null,
               "content_groups": [
@@ -827,16 +771,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "edema",
-          "section_title": "🌊 EDEMA",
-          "section_order": 11,
-          "subsections": [
+            },
             {
-              "subsection_id": "edema_intro",
+              "subsection_id": "edema",
               "subsection_title": "🌊 EDEMA",
               "subsection_icon": null,
               "content_groups": [
@@ -933,10 +870,24 @@
                       ]
                     }
                   ]
-                },
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "section_id": "developmental_milestones",
+          "section_title": "Developmental Milestones",
+          "section_order": 2,
+          "subsections": [
+            {
+              "subsection_id": "developmental_milestones_intro",
+              "subsection_title": "Developmental Milestones",
+              "subsection_icon": null,
+              "content_groups": [
                 {
-                  "group_id": "developmental_milestones",
-                  "group_title": "Developmental Milestones",
+                  "group_id": "developmental_milestones_intro_main",
+                  "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -972,32 +923,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "chapter_metadata": {
-        "chapter_id": "development",
-        "chapter_title": "Growth & Development",
-        "chapter_icon": null,
-        "description": null,
-        "position_in_book": 2
-      },
-      "sections": [
-        {
-          "section_id": "age_wise_developmental_milestones_table",
-          "section_title": "AGE-WISE DEVELOPMENTAL MILESTONES TABLE",
-          "section_order": 1,
-          "subsections": [
+            },
             {
-              "subsection_id": "age_wise_developmental_milestones_table_intro",
+              "subsection_id": "age_wise_developmental_milestones_table",
               "subsection_title": "AGE-WISE DEVELOPMENTAL MILESTONES TABLE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "age_wise_developmental_milestones_table_intro_main",
+                  "group_id": "age_wise_developmental_milestones_table_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1101,16 +1034,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "mnemonics_for_key_ages",
-          "section_title": "🎯 MNEMONICS FOR KEY AGES",
-          "section_order": 2,
-          "subsections": [
+            },
             {
-              "subsection_id": "mnemonics_for_key_ages_intro",
+              "subsection_id": "mnemonics_for_key_ages",
               "subsection_title": "🎯 MNEMONICS FOR KEY AGES",
               "subsection_icon": null,
               "content_groups": [
@@ -1144,22 +1070,6 @@
                           "Sits with support, babbles"
                         ]
                       ]
-                    }
-                  ]
-                },
-                {
-                  "group_id": "9_12_months_pincer_and_peek_a_boo",
-                  "group_title": "‍♂️ 9-12 Months — “Pincer and Peek-a-boo”",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "9 mo: Crawls, pulls to stand, starts pincer grip"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "12 mo: Walks with support, 1–2 words, pincer perfected"
                     }
                   ]
                 },
@@ -1226,21 +1136,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "developmental_milestone_red_flags",
-          "section_title": "📈 DEVELOPMENTAL MILESTONE RED FLAGS",
-          "section_order": 3,
-          "subsections": [
+            },
             {
-              "subsection_id": "developmental_milestone_red_flags_intro",
+              "subsection_id": "developmental_milestone_red_flags",
               "subsection_title": "📈 DEVELOPMENTAL MILESTONE RED FLAGS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "developmental_milestone_red_flags_intro_main",
+                  "group_id": "developmental_milestone_red_flags_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1281,16 +1184,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "comprehensive_milestones_by_domain",
-          "section_title": "COMPREHENSIVE MILESTONES BY DOMAIN",
-          "section_order": 4,
-          "subsections": [
+            },
             {
-              "subsection_id": "comprehensive_milestones_by_domain_intro",
+              "subsection_id": "comprehensive_milestones_by_domain",
               "subsection_title": "COMPREHENSIVE MILESTONES BY DOMAIN",
               "subsection_icon": null,
               "content_groups": [
@@ -1540,17 +1436,17 @@
           ]
         },
         {
-          "section_id": "timeline_of_primary_deciduous_tooth_eruption",
-          "section_title": "📅 TIMELINE OF PRIMARY (DECIDUOUS) TOOTH ERUPTION",
-          "section_order": 5,
+          "section_id": "dental_development",
+          "section_title": "DENTAL DEVELOPMENT",
+          "section_order": 3,
           "subsections": [
             {
-              "subsection_id": "timeline_of_primary_deciduous_tooth_eruption_intro",
+              "subsection_id": "timeline_of_primary_deciduous_tooth_eruption",
               "subsection_title": "📅 TIMELINE OF PRIMARY (DECIDUOUS) TOOTH ERUPTION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "timeline_of_primary_deciduous_tooth_eruption_intro_main",
+                  "group_id": "timeline_of_primary_deciduous_tooth_eruption_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1615,21 +1511,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "primary_tooth_eruption_chart",
-          "section_title": "PRIMARY TOOTH ERUPTION CHART",
-          "section_order": 6,
-          "subsections": [
+            },
             {
-              "subsection_id": "primary_tooth_eruption_chart_intro",
+              "subsection_id": "primary_tooth_eruption_chart",
               "subsection_title": "PRIMARY TOOTH ERUPTION CHART",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "primary_tooth_eruption_chart_intro_main",
+                  "group_id": "primary_tooth_eruption_chart_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1672,29 +1561,18 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "dental_formula",
-          "section_title": "⚕️ DENTAL FORMULA",
-          "section_order": 7,
-          "subsections": [
+            },
             {
-              "subsection_id": "dental_formula_intro",
+              "subsection_id": "dental_formula",
               "subsection_title": "⚕️ DENTAL FORMULA",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "primary_teeth_formula_total_20",
-                  "group_title": "🍼 Primary Teeth Formula (Total 20)",
+                  "group_id": "2_1_2_incisors_canines_molars_per_quadrant",
+                  "group_title": "2-1-2 (Incisors-Canines-Molars) per quadrant",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "2-1-2 (Incisors-Canines-Molars) per quadrant"
-                    },
                     {
                       "type": "paragraph",
                       "text": "Upper jaw (R to L):  I I C M M   = 5 × 2 = 10"
@@ -1706,21 +1584,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "permanent_dentition_timeline",
-          "section_title": "PERMANENT DENTITION TIMELINE",
-          "section_order": 8,
-          "subsections": [
+            },
             {
-              "subsection_id": "permanent_dentition_timeline_intro",
+              "subsection_id": "permanent_dentition_timeline",
               "subsection_title": "PERMANENT DENTITION TIMELINE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "permanent_dentition_timeline_intro_main",
+                  "group_id": "permanent_dentition_timeline_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1776,43 +1647,16 @@
                       ]
                     }
                   ]
-                },
-                {
-                  "group_id": "mnemonic_6_1_2_3_for_molars",
-                  "group_title": "Mnemonic: \"6-1-2-3 for Molars**\"",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "6 yr: 1st molars"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "12 yr: 2nd molars"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "17–21 yr: 3rd molars"
-                    }
-                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "permanent_tooth_eruption_chart",
-          "section_title": "PERMANENT TOOTH ERUPTION CHART",
-          "section_order": 9,
-          "subsections": [
+            },
             {
-              "subsection_id": "permanent_tooth_eruption_chart_intro",
+              "subsection_id": "permanent_tooth_eruption_chart",
               "subsection_title": "PERMANENT TOOTH ERUPTION CHART",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "permanent_tooth_eruption_chart_intro_main",
+                  "group_id": "permanent_tooth_eruption_chart_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -1882,29 +1726,18 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "permanent_dental_formula",
-          "section_title": "📐 PERMANENT DENTAL FORMULA",
-          "section_order": 10,
-          "subsections": [
+            },
             {
-              "subsection_id": "permanent_dental_formula_intro",
+              "subsection_id": "permanent_dental_formula",
               "subsection_title": "📐 PERMANENT DENTAL FORMULA",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "adult_formula_total_32_teeth",
-                  "group_title": "🧑 Adult Formula (Total 32 teeth)",
+                  "group_id": "2_1_2_3_incisors_canines_premolars_molars_per_quadrant",
+                  "group_title": "2-1-2-3 (Incisors-Canines-Premolars-Molars) per quadrant",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "2-1-2-3 (Incisors-Canines-Premolars-Molars) per quadrant"
-                    },
                     {
                       "type": "paragraph",
                       "text": "Upper jaw (R to L):  I I C P P M M M   = 8 × 2 = 16"
@@ -1964,55 +1797,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "memory_hacks_tips",
-          "section_title": "🛠️ MEMORY HACKS & TIPS",
-          "section_order": 11,
-          "subsections": [
+            },
             {
-              "subsection_id": "memory_hacks_tips_intro",
-              "subsection_title": "🛠️ MEMORY HACKS & TIPS",
-              "subsection_icon": null,
-              "content_groups": [
-                {
-                  "group_id": "mnemonic_6_12_6_rule",
-                  "group_title": "Mnemonic: \"6-12-6\" RULE",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "6 months: First baby teeth (central incisors)"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "12 months: ~6–8 teeth present"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "6 years: First permanent molars erupt"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "section_id": "complete_tooth_eruption_summary_table",
-          "section_title": "📊 COMPLETE TOOTH ERUPTION SUMMARY TABLE",
-          "section_order": 12,
-          "subsections": [
-            {
-              "subsection_id": "complete_tooth_eruption_summary_table_intro",
+              "subsection_id": "complete_tooth_eruption_summary_table",
               "subsection_title": "📊 COMPLETE TOOTH ERUPTION SUMMARY TABLE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "complete_tooth_eruption_summary_table_intro_main",
+                  "group_id": "complete_tooth_eruption_summary_table_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2072,30 +1864,19 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "chapter_metadata": {
-        "chapter_id": "anthropometry_immunization",
-        "chapter_title": "Anthropometry & Immunization",
-        "chapter_icon": null,
-        "description": null,
-        "position_in_book": 3
-      },
-      "sections": [
+        },
         {
-          "section_id": "major_anthropometric_measurements",
-          "section_title": "📊 MAJOR ANTHROPOMETRIC MEASUREMENTS",
-          "section_order": 1,
+          "section_id": "anthropometry",
+          "section_title": "📏 ANTHROPOMETRY",
+          "section_order": 4,
           "subsections": [
             {
-              "subsection_id": "major_anthropometric_measurements_intro",
+              "subsection_id": "major_anthropometric_measurements",
               "subsection_title": "📊 MAJOR ANTHROPOMETRIC MEASUREMENTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "major_anthropometric_measurements_intro_main",
+                  "group_id": "major_anthropometric_measurements_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2140,47 +1921,18 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "types_of_anthropometric_measurements",
-          "section_title": "📏 TYPES OF ANTHROPOMETRIC MEASUREMENTS",
-          "section_order": 2,
-          "subsections": [
+            },
             {
-              "subsection_id": "types_of_anthropometric_measurements_intro",
+              "subsection_id": "types_of_anthropometric_measurements",
               "subsection_title": "📏 TYPES OF ANTHROPOMETRIC MEASUREMENTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "types_of_anthropometric_measurements_intro_main",
-                  "group_title": "",
+                  "group_id": "2_weight",
+                  "group_title": "2. Weight",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "algorithm",
-                      "title": "",
-                      "steps": [
-                        "Length vs Height"
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "group_id": "height_measured_standing_2_years",
-                  "group_title": "Height: Measured standing (>2 years)",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "algorithm",
-                      "title": "",
-                      "steps": [
-                        "Weight"
-                      ]
-                    },
                     {
                       "type": "paragraph",
                       "text": "Measured using calibrated infant or adult scales"
@@ -2188,18 +1940,11 @@
                   ]
                 },
                 {
-                  "group_id": "compared_to_weight_for_age_standards",
-                  "group_title": "Compared to weight-for-age standards",
+                  "group_id": "3_head_circumference_ofc",
+                  "group_title": "3. Head Circumference (OFC)",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "algorithm",
-                      "title": "",
-                      "steps": [
-                        "Head Circumference (OFC)"
-                      ]
-                    },
                     {
                       "type": "paragraph",
                       "text": "Measures brain growth (0–3 years)"
@@ -2207,14 +1952,15 @@
                     {
                       "type": "paragraph",
                       "text": "Measured at widest part of forehead and occipital bone"
-                    },
-                    {
-                      "type": "algorithm",
-                      "title": "",
-                      "steps": [
-                        "Mid-Upper Arm Circumference (MUAC)"
-                      ]
-                    },
+                    }
+                  ]
+                },
+                {
+                  "group_id": "4_mid_upper_arm_circumference_muac",
+                  "group_title": "4. Mid-Upper Arm Circumference (MUAC)",
+                  "group_subtitle": null,
+                  "group_icon": null,
+                  "blocks": [
                     {
                       "type": "paragraph",
                       "text": "Indicates acute malnutrition (children 6–59 months)"
@@ -2409,21 +2155,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "growth_monitoring_indices_in_children",
-          "section_title": "📐 GROWTH MONITORING INDICES IN CHILDREN",
-          "section_order": 3,
-          "subsections": [
+            },
             {
-              "subsection_id": "growth_monitoring_indices_in_children_intro",
+              "subsection_id": "growth_monitoring_indices_in_children",
               "subsection_title": "📐 GROWTH MONITORING INDICES IN CHILDREN",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "growth_monitoring_indices_in_children_intro_main",
+                  "group_id": "growth_monitoring_indices_in_children_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2461,21 +2200,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "head_circumference_norms",
-          "section_title": "📏 HEAD CIRCUMFERENCE NORMS",
-          "section_order": 4,
-          "subsections": [
+            },
             {
-              "subsection_id": "head_circumference_norms_intro",
+              "subsection_id": "head_circumference_norms",
               "subsection_title": "📏 HEAD CIRCUMFERENCE NORMS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "head_circumference_norms_intro_main",
+                  "group_id": "head_circumference_norms_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2607,16 +2339,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "mnemonics_for_anthropometry",
-          "section_title": "MNEMONICS FOR ANTHROPOMETRY",
-          "section_order": 5,
-          "subsections": [
+            },
             {
-              "subsection_id": "mnemonics_for_anthropometry_intro",
+              "subsection_id": "mnemonics_for_anthropometry",
               "subsection_title": "MNEMONICS FOR ANTHROPOMETRY",
               "subsection_icon": null,
               "content_groups": [
@@ -2639,21 +2364,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "growth_charts",
-          "section_title": "📈 GROWTH CHARTS",
-          "section_order": 6,
-          "subsections": [
+            },
             {
-              "subsection_id": "growth_charts_intro",
+              "subsection_id": "growth_charts",
               "subsection_title": "📈 GROWTH CHARTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "growth_charts_intro_main",
+                  "group_id": "growth_charts_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2694,21 +2412,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "advanced_measurements",
-          "section_title": "ADVANCED MEASUREMENTS",
-          "section_order": 7,
-          "subsections": [
+            },
             {
-              "subsection_id": "advanced_measurements_intro",
+              "subsection_id": "advanced_measurements",
               "subsection_title": "ADVANCED MEASUREMENTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "advanced_measurements_intro_main",
+                  "group_id": "advanced_measurements_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2741,21 +2452,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "waist_hip_ratio_whr",
-          "section_title": "📐 WAIST-HIP RATIO (WHR)",
-          "section_order": 8,
-          "subsections": [
+            },
             {
-              "subsection_id": "waist_hip_ratio_whr_intro",
+              "subsection_id": "waist_hip_ratio_whr",
               "subsection_title": "📐 WAIST-HIP RATIO (WHR)",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "waist_hip_ratio_whr_intro_main",
+                  "group_id": "waist_hip_ratio_whr_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2812,21 +2516,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "practical_anthropometric_toolkit_clinic_use",
-          "section_title": "📋 PRACTICAL ANTHROPOMETRIC TOOLKIT (CLINIC USE)",
-          "section_order": 9,
-          "subsections": [
+            },
             {
-              "subsection_id": "practical_anthropometric_toolkit_clinic_use_intro",
+              "subsection_id": "practical_anthropometric_toolkit_clinic_use",
               "subsection_title": "📋 PRACTICAL ANTHROPOMETRIC TOOLKIT (CLINIC USE)",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "practical_anthropometric_toolkit_clinic_use_intro_main",
+                  "group_id": "practical_anthropometric_toolkit_clinic_use_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -2863,22 +2560,15 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "clinical_application",
-          "section_title": "CLINICAL APPLICATION",
-          "section_order": 10,
-          "subsections": [
+            },
             {
-              "subsection_id": "anthropometric_monitoring_table",
-              "subsection_title": "ANTHROPOMETRIC MONITORING TABLE",
+              "subsection_id": "clinical_application",
+              "subsection_title": "CLINICAL APPLICATION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "anthropometric_monitoring_table_main",
-                  "group_title": "",
+                  "group_id": "anthropometric_monitoring_table",
+                  "group_title": "ANTHROPOMETRIC MONITORING TABLE",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -2919,12 +2609,12 @@
           ]
         },
         {
-          "section_id": "immunization_schedule_overview_05_years",
-          "section_title": "📋 IMMUNIZATION SCHEDULE OVERVIEW (0–5 YEARS)",
-          "section_order": 11,
+          "section_id": "immunization_schedule",
+          "section_title": "IMMUNIZATION SCHEDULE",
+          "section_order": 5,
           "subsections": [
             {
-              "subsection_id": "immunization_schedule_overview_05_years_intro",
+              "subsection_id": "immunization_schedule_overview_05_years",
               "subsection_title": "📋 IMMUNIZATION SCHEDULE OVERVIEW (0–5 YEARS)",
               "subsection_icon": null,
               "content_groups": [
@@ -3135,63 +2825,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "boh_pop_pop_pop_myp_dmm",
-          "section_title": "🎵 \"BOH-POP POP-POP MYP DMM\"",
-          "section_order": 12,
-          "subsections": [
+            },
             {
-              "subsection_id": "boh_pop_pop_pop_myp_dmm_intro",
-              "subsection_title": "🎵 \"BOH-POP POP-POP MYP DMM\"",
-              "subsection_icon": null,
-              "content_groups": [
-                {
-                  "group_id": "boh_pop_pop_pop_myp_dmm_intro_main",
-                  "group_title": "",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "B: BCG"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "O: OPV"
-                    }
-                  ]
-                },
-                {
-                  "group_id": "d_dpt_booster",
-                  "group_title": "D: DPT booster",
-                  "group_subtitle": null,
-                  "group_icon": null,
-                  "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "M: MMR"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "section_id": "vaccines_and_diseases_covered",
-          "section_title": "VACCINES AND DISEASES COVERED",
-          "section_order": 13,
-          "subsections": [
-            {
-              "subsection_id": "vaccines_and_diseases_covered_intro",
+              "subsection_id": "vaccines_and_diseases_covered",
               "subsection_title": "VACCINES AND DISEASES COVERED",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "vaccines_and_diseases_covered_intro_main",
+                  "group_id": "vaccines_and_diseases_covered_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -3256,21 +2897,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "booster_doses_school_entry_vaccines",
-          "section_title": "📘 BOOSTER DOSES & SCHOOL-ENTRY VACCINES",
-          "section_order": 14,
-          "subsections": [
+            },
             {
-              "subsection_id": "booster_doses_school_entry_vaccines_intro",
+              "subsection_id": "booster_doses_school_entry_vaccines",
               "subsection_title": "📘 BOOSTER DOSES & SCHOOL-ENTRY VACCINES",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "booster_doses_school_entry_vaccines_intro_main",
+                  "group_id": "booster_doses_school_entry_vaccines_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -3327,21 +2961,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "special_cases",
-          "section_title": "SPECIAL CASES",
-          "section_order": 15,
-          "subsections": [
+            },
             {
-              "subsection_id": "special_cases_intro",
+              "subsection_id": "special_cases",
               "subsection_title": "SPECIAL CASES",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "special_cases_intro_main",
+                  "group_id": "special_cases_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -3370,21 +2997,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "vaccine_storage_cold_chain",
-          "section_title": "📊 VACCINE STORAGE: COLD CHAIN",
-          "section_order": 16,
-          "subsections": [
+            },
             {
-              "subsection_id": "vaccine_storage_cold_chain_intro",
+              "subsection_id": "vaccine_storage_cold_chain",
               "subsection_title": "📊 VACCINE STORAGE: COLD CHAIN",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "vaccine_storage_cold_chain_intro_main",
+                  "group_id": "vaccine_storage_cold_chain_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -3418,29 +3038,18 @@
                           "Freezing damages potency"
                         ]
                       ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "📌 KEY REMINDERS"
                     }
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "summary_table_vaccines_timing",
-          "section_title": "SUMMARY TABLE: VACCINES & TIMING",
-          "section_order": 17,
-          "subsections": [
+            },
             {
-              "subsection_id": "summary_table_vaccines_timing_intro",
+              "subsection_id": "summary_table_vaccines_timing",
               "subsection_title": "SUMMARY TABLE: VACCINES & TIMING",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "summary_table_vaccines_timing_intro_main",
+                  "group_id": "summary_table_vaccines_timing_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -3521,22 +3130,11 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "chapter_metadata": {
-        "chapter_id": "electrolytes",
-        "chapter_title": "Electrolyte Disturbances",
-        "chapter_icon": null,
-        "description": null,
-        "position_in_book": 4
-      },
-      "sections": [
+        },
         {
           "section_id": "electrolyte_derangement",
           "section_title": "⚖️ ELECTROLYTE DERANGEMENT",
-          "section_order": 1,
+          "section_order": 6,
           "subsections": [
             {
               "subsection_id": "electrolyte_derangement_intro",
@@ -3582,17 +3180,10 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "1_calcium_disturbances",
-          "section_title": "1.  CALCIUM DISTURBANCES",
-          "section_order": 2,
-          "subsections": [
+            },
             {
-              "subsection_id": "hypocalcaemia_serum_ca2_85_mgdl",
-              "subsection_title": "🔻 Hypocalcaemia (Serum Ca²⁺ < 8.5 mg/dL)",
+              "subsection_id": "1_calcium_disturbances",
+              "subsection_title": "1.  CALCIUM DISTURBANCES",
               "subsection_icon": null,
               "content_groups": [
                 {
@@ -3711,14 +3302,7 @@
                       "text": "Treat underlying cause (e.g., Mg correction)"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "hypercalcaemia_ca2_105_mgdl",
-              "subsection_title": "🔺 Hypercalcaemia (Ca²⁺ > 10.5 mg/dL)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "causes_chimpanzees",
                   "group_title": "📌 Causes – \"CHIMPANZEES\"",
@@ -3853,17 +3437,10 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "2_sodium_disturbances",
-          "section_title": "2. 💧 SODIUM DISTURBANCES",
-          "section_order": 3,
-          "subsections": [
+            },
             {
-              "subsection_id": "hyponatraemia_na_135_meql",
-              "subsection_title": "🔻 Hyponatraemia (Na⁺ < 135 mEq/L)",
+              "subsection_id": "2_sodium_disturbances",
+              "subsection_title": "2. 💧 SODIUM DISTURBANCES",
               "subsection_icon": null,
               "content_groups": [
                 {
@@ -3950,14 +3527,7 @@
                       "text": "Vaptans (vasopressin antagonists)"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "hypernatraemia_na_145_meql",
-              "subsection_title": "🔺 Hypernatraemia (Na⁺ > 145 mEq/L)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "causes",
                   "group_title": "📌 Causes",
@@ -4027,17 +3597,10 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "3_potassium_disturbances",
-          "section_title": "3. ⚡ POTASSIUM DISTURBANCES",
-          "section_order": 4,
-          "subsections": [
+            },
             {
-              "subsection_id": "hypokalaemia_k_35_meql",
-              "subsection_title": "🔻 Hypokalaemia (K⁺ < 3.5 mEq/L)",
+              "subsection_id": "3_potassium_disturbances",
+              "subsection_title": "3. ⚡ POTASSIUM DISTURBANCES",
               "subsection_icon": null,
               "content_groups": [
                 {
@@ -4140,14 +3703,7 @@
                       "text": "Monitor ECG and magnesium"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "hyperkalaemia_k_55_meql",
-              "subsection_title": "🔺 Hyperkalaemia (K⁺ > 5.5 mEq/L)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "causes_machine",
                   "group_title": "📌 Causes – \"MACHINE\"",
@@ -4282,17 +3838,10 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "4_magnesium_disturbances",
-          "section_title": "4. ⚙️ MAGNESIUM DISTURBANCES",
-          "section_order": 5,
-          "subsections": [
+            },
             {
-              "subsection_id": "hypomagnesaemia_mg2_15_mgdl",
-              "subsection_title": "🔻 Hypomagnesaemia (Mg²⁺ < 1.5 mg/dL)",
+              "subsection_id": "4_magnesium_disturbances",
+              "subsection_title": "4. ⚙️ MAGNESIUM DISTURBANCES",
               "subsection_icon": null,
               "content_groups": [
                 {
@@ -4379,14 +3928,7 @@
                       "text": "Correct concurrent hypokalemia and hypocalcemia"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "hypermagnesaemia_mg2_25_mgdl",
-              "subsection_title": "🔺 Hypermagnesaemia (Mg²⁺ > 2.5 mg/dL)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "causes",
                   "group_title": "📌 Causes",
@@ -4479,25 +4021,14 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "chapter_metadata": {
-        "chapter_id": "emergencies",
-        "chapter_title": "Pediatric Emergencies",
-        "chapter_icon": null,
-        "description": null,
-        "position_in_book": 5
-      },
-      "sections": [
+        },
         {
-          "section_id": "pathophysiology",
-          "section_title": "🔬 PATHOPHYSIOLOGY",
-          "section_order": 1,
+          "section_id": "kerosene_poisoning",
+          "section_title": "🛢 KEROSENE POISONING",
+          "section_order": 7,
           "subsections": [
             {
-              "subsection_id": "pathophysiology_intro",
+              "subsection_id": "pathophysiology",
               "subsection_title": "🔬 PATHOPHYSIOLOGY",
               "subsection_icon": null,
               "content_groups": [
@@ -4514,16 +4045,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "clinical_features",
-          "section_title": "⚠️ CLINICAL FEATURES",
-          "section_order": 2,
-          "subsections": [
+            },
             {
-              "subsection_id": "clinical_features_intro",
+              "subsection_id": "clinical_features",
               "subsection_title": "⚠️ CLINICAL FEATURES",
               "subsection_icon": null,
               "content_groups": [
@@ -4556,21 +4080,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "diagnosis",
-          "section_title": "DIAGNOSIS",
-          "section_order": 3,
-          "subsections": [
+            },
             {
-              "subsection_id": "diagnosis_intro",
+              "subsection_id": "diagnosis",
               "subsection_title": "DIAGNOSIS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "diagnosis_intro_main",
+                  "group_id": "diagnosis_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -4636,21 +4153,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "mnemonic_airway",
-          "section_title": "MNEMONIC: “AIRWAY”",
-          "section_order": 4,
-          "subsections": [
+            },
             {
-              "subsection_id": "mnemonic_airway_intro",
+              "subsection_id": "mnemonic_airway",
               "subsection_title": "MNEMONIC: “AIRWAY”",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "mnemonic_airway_intro_main",
+                  "group_id": "mnemonic_airway_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -4732,21 +4242,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "what_not_to_do",
-          "section_title": "⚠️ WHAT NOT TO DO",
-          "section_order": 5,
-          "subsections": [
+            },
             {
-              "subsection_id": "what_not_to_do_intro",
+              "subsection_id": "what_not_to_do",
               "subsection_title": "⚠️ WHAT NOT TO DO",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "what_not_to_do_intro_main",
+                  "group_id": "what_not_to_do_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -4779,21 +4282,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "prognostic_factors",
-          "section_title": "PROGNOSTIC FACTORS",
-          "section_order": 6,
-          "subsections": [
+            },
             {
-              "subsection_id": "prognostic_factors_intro",
+              "subsection_id": "prognostic_factors",
               "subsection_title": "PROGNOSTIC FACTORS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "prognostic_factors_intro_main",
+                  "group_id": "prognostic_factors_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -4830,21 +4326,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "chest_x_ray_findings",
-          "section_title": "CHEST X-RAY FINDINGS",
-          "section_order": 7,
-          "subsections": [
+            },
             {
-              "subsection_id": "chest_x_ray_findings_intro",
+              "subsection_id": "chest_x_ray_findings",
               "subsection_title": "CHEST X-RAY FINDINGS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "chest_x_ray_findings_intro_main",
+                  "group_id": "chest_x_ray_findings_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -4873,16 +4362,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "monitoring_follow_up",
-          "section_title": "MONITORING & FOLLOW-UP",
-          "section_order": 8,
-          "subsections": [
+            },
             {
-              "subsection_id": "monitoring_follow_up_intro",
+              "subsection_id": "monitoring_follow_up",
               "subsection_title": "MONITORING & FOLLOW-UP",
               "subsection_icon": null,
               "content_groups": [
@@ -4897,17 +4379,20 @@
                       "text": "Delayed pneumonitis may develop"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "subsection_id": "prevention",
+              "subsection_title": "📌 PREVENTION",
+              "subsection_icon": null,
+              "content_groups": [
                 {
-                  "group_id": "advise_parents_safe_storage_of_fuels",
-                  "group_title": "Advise parents: safe storage of fuels",
+                  "group_id": "prevention_main",
+                  "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "📌 PREVENTION"
-                    },
                     {
                       "type": "table",
                       "columns": [
@@ -4936,12 +4421,12 @@
           ]
         },
         {
-          "section_id": "types_of_snakes",
-          "section_title": "🐍 TYPES OF SNAKES",
-          "section_order": 9,
+          "section_id": "snake_bite",
+          "section_title": "SNAKE BITE",
+          "section_order": 8,
           "subsections": [
             {
-              "subsection_id": "types_of_snakes_intro",
+              "subsection_id": "types_of_snakes",
               "subsection_title": "🐍 TYPES OF SNAKES",
               "subsection_icon": null,
               "content_groups": [
@@ -4989,21 +4474,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "types_of_venom",
-          "section_title": "💉 TYPES OF VENOM",
-          "section_order": 10,
-          "subsections": [
+            },
             {
-              "subsection_id": "types_of_venom_intro",
+              "subsection_id": "types_of_venom",
               "subsection_title": "💉 TYPES OF VENOM",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "types_of_venom_intro_main",
+                  "group_id": "types_of_venom_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5041,21 +4519,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "mnemonic_bite_reacts",
-          "section_title": "MNEMONIC: “BITE REACTS”",
-          "section_order": 11,
-          "subsections": [
+            },
             {
-              "subsection_id": "mnemonic_bite_reacts_intro",
+              "subsection_id": "mnemonic_bite_reacts",
               "subsection_title": "MNEMONIC: “BITE REACTS”",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "mnemonic_bite_reacts_intro_main",
+                  "group_id": "mnemonic_bite_reacts_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5112,21 +4583,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "investigations",
-          "section_title": "INVESTIGATIONS",
-          "section_order": 12,
-          "subsections": [
+            },
             {
-              "subsection_id": "investigations_intro",
+              "subsection_id": "investigations",
               "subsection_title": "INVESTIGATIONS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "investigations_intro_main",
+                  "group_id": "investigations_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5167,16 +4631,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "antivenom_therapy_asv",
-          "section_title": "💉 ANTIVENOM THERAPY (ASV)",
-          "section_order": 13,
-          "subsections": [
+            },
             {
-              "subsection_id": "antivenom_therapy_asv_intro",
+              "subsection_id": "antivenom_therapy_asv",
               "subsection_title": "💉 ANTIVENOM THERAPY (ASV)",
               "subsection_icon": null,
               "content_groups": [
@@ -5271,21 +4728,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "asv_adverse_effects",
-          "section_title": "⚠️ ASV ADVERSE EFFECTS",
-          "section_order": 14,
-          "subsections": [
+            },
             {
-              "subsection_id": "asv_adverse_effects_intro",
+              "subsection_id": "asv_adverse_effects",
               "subsection_title": "⚠️ ASV ADVERSE EFFECTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "asv_adverse_effects_intro_main",
+                  "group_id": "asv_adverse_effects_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5314,21 +4764,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "supportive_management",
-          "section_title": "🏥 SUPPORTIVE MANAGEMENT",
-          "section_order": 15,
-          "subsections": [
+            },
             {
-              "subsection_id": "supportive_management_intro",
+              "subsection_id": "supportive_management",
               "subsection_title": "🏥 SUPPORTIVE MANAGEMENT",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "supportive_management_intro_main",
+                  "group_id": "supportive_management_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5365,21 +4808,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "observation_timeline",
-          "section_title": "🕒 OBSERVATION TIMELINE",
-          "section_order": 16,
-          "subsections": [
+            },
             {
-              "subsection_id": "observation_timeline_intro",
+              "subsection_id": "observation_timeline",
               "subsection_title": "🕒 OBSERVATION TIMELINE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "observation_timeline_intro_main",
+                  "group_id": "observation_timeline_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5461,21 +4897,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "discharge_prevention_advice",
-          "section_title": "✅ DISCHARGE & PREVENTION ADVICE",
-          "section_order": 17,
-          "subsections": [
+            },
             {
-              "subsection_id": "discharge_prevention_advice_intro",
+              "subsection_id": "discharge_prevention_advice",
               "subsection_title": "✅ DISCHARGE & PREVENTION ADVICE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "discharge_prevention_advice_intro_main",
+                  "group_id": "discharge_prevention_advice_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5507,16 +4936,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "classification",
-          "section_title": "📚 CLASSIFICATION",
-          "section_order": 18,
-          "subsections": [
+            },
             {
-              "subsection_id": "classification_intro",
+              "subsection_id": "classification",
               "subsection_title": "📚 CLASSIFICATION",
               "subsection_icon": null,
               "content_groups": [
@@ -5554,16 +4976,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "red_flags_alarm_symptoms",
-          "section_title": "⚠️ RED FLAGS (\"ALARM SYMPTOMS\")",
-          "section_order": 19,
-          "subsections": [
+            },
             {
-              "subsection_id": "red_flags_alarm_symptoms_intro",
+              "subsection_id": "red_flags_alarm_symptoms",
               "subsection_title": "⚠️ RED FLAGS (\"ALARM SYMPTOMS\")",
               "subsection_icon": null,
               "content_groups": [
@@ -5625,13 +5040,16 @@
                           "Signs of systemic disease (rash, joint pain)"
                         ]
                       ]
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "🔍 COMMON ORGANIC CAUSES"
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "subsection_id": "common_organic_causes",
+              "subsection_title": "🔍 COMMON ORGANIC CAUSES",
+              "subsection_icon": null,
+              "content_groups": [
                 {
                   "group_id": "mnemonic_mug_bits",
                   "group_title": "📍 Mnemonic: \"MUG BITS\"",
@@ -5723,21 +5141,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "investigations_only_if_red_flags_present",
-          "section_title": "INVESTIGATIONS (ONLY IF RED FLAGS PRESENT)",
-          "section_order": 20,
-          "subsections": [
+            },
             {
-              "subsection_id": "investigations_only_if_red_flags_present_intro",
+              "subsection_id": "investigations_only_if_red_flags_present",
               "subsection_title": "INVESTIGATIONS (ONLY IF RED FLAGS PRESENT)",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "investigations_only_if_red_flags_present_intro_main",
+                  "group_id": "investigations_only_if_red_flags_present_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5782,16 +5193,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "management",
-          "section_title": "⚙️ MANAGEMENT",
-          "section_order": 21,
-          "subsections": [
+            },
             {
-              "subsection_id": "management_intro",
+              "subsection_id": "management",
               "subsection_title": "⚙️ MANAGEMENT",
               "subsection_icon": null,
               "content_groups": [
@@ -5924,21 +5328,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "differentiating_functional_vs_organic_pain",
-          "section_title": "🌟 DIFFERENTIATING FUNCTIONAL VS ORGANIC PAIN",
-          "section_order": 22,
-          "subsections": [
+            },
             {
-              "subsection_id": "differentiating_functional_vs_organic_pain_intro",
+              "subsection_id": "differentiating_functional_vs_organic_pain",
               "subsection_title": "🌟 DIFFERENTIATING FUNCTIONAL VS ORGANIC PAIN",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "differentiating_functional_vs_organic_pain_intro_main",
+                  "group_id": "differentiating_functional_vs_organic_pain_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -5990,17 +5387,17 @@
           ]
         },
         {
-          "section_id": "ii_mnemonic_for_primary_assessment_abcde",
-          "section_title": "II. MNEMONIC FOR PRIMARY ASSESSMENT: ABCDE",
-          "section_order": 23,
+          "section_id": "pediatric_resuscitation",
+          "section_title": "PEDIATRIC RESUSCITATION",
+          "section_order": 9,
           "subsections": [
             {
-              "subsection_id": "ii_mnemonic_for_primary_assessment_abcde_intro",
+              "subsection_id": "ii_mnemonic_for_primary_assessment_abcde",
               "subsection_title": "II. MNEMONIC FOR PRIMARY ASSESSMENT: ABCDE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "ii_mnemonic_for_primary_assessment_abcde_intro_main",
+                  "group_id": "ii_mnemonic_for_primary_assessment_abcde_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6043,21 +5440,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "iii_mnemonic_for_secondary_assessment_sample",
-          "section_title": "III. MNEMONIC FOR SECONDARY ASSESSMENT: SAMPLE",
-          "section_order": 24,
-          "subsections": [
+            },
             {
-              "subsection_id": "iii_mnemonic_for_secondary_assessment_sample_intro",
+              "subsection_id": "iii_mnemonic_for_secondary_assessment_sample",
               "subsection_title": "III. MNEMONIC FOR SECONDARY ASSESSMENT: SAMPLE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "iii_mnemonic_for_secondary_assessment_sample_intro_main",
+                  "group_id": "iii_mnemonic_for_secondary_assessment_sample_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6105,21 +5495,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "v_cpr_guidelines_for_children",
-          "section_title": "V. CPR GUIDELINES FOR CHILDREN",
-          "section_order": 25,
-          "subsections": [
+            },
             {
-              "subsection_id": "v_cpr_guidelines_for_children_intro",
+              "subsection_id": "v_cpr_guidelines_for_children",
               "subsection_title": "V. CPR GUIDELINES FOR CHILDREN",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "v_cpr_guidelines_for_children_intro_main",
+                  "group_id": "v_cpr_guidelines_for_children_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6162,16 +5545,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "vi_drugs_in_pediatric_resuscitation",
-          "section_title": "VI. DRUGS IN PEDIATRIC RESUSCITATION",
-          "section_order": 26,
-          "subsections": [
+            },
             {
-              "subsection_id": "vi_drugs_in_pediatric_resuscitation_intro",
+              "subsection_id": "vi_drugs_in_pediatric_resuscitation",
               "subsection_title": "VI. DRUGS IN PEDIATRIC RESUSCITATION",
               "subsection_icon": null,
               "content_groups": [
@@ -6265,16 +5641,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "viii_pals_algorithm_overview",
-          "section_title": "VIII. PALS ALGORITHM OVERVIEW",
-          "section_order": 27,
-          "subsections": [
+            },
             {
-              "subsection_id": "viii_pals_algorithm_overview_intro",
+              "subsection_id": "viii_pals_algorithm_overview",
               "subsection_title": "VIII. PALS ALGORITHM OVERVIEW",
               "subsection_icon": null,
               "content_groups": [
@@ -6311,21 +5680,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "x_quick_reference_table",
-          "section_title": "X. QUICK REFERENCE TABLE",
-          "section_order": 28,
-          "subsections": [
+            },
             {
-              "subsection_id": "x_quick_reference_table_intro",
+              "subsection_id": "x_quick_reference_table",
               "subsection_title": "X. QUICK REFERENCE TABLE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "x_quick_reference_table_intro_main",
+                  "group_id": "x_quick_reference_table_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6380,16 +5742,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "xi_when_to_start_and_stop_cpr",
-          "section_title": "XI. WHEN TO START AND STOP CPR?",
-          "section_order": 29,
-          "subsections": [
+            },
             {
-              "subsection_id": "xi_when_to_start_and_stop_cpr_intro",
+              "subsection_id": "xi_when_to_start_and_stop_cpr",
               "subsection_title": "XI. WHEN TO START AND STOP CPR?",
               "subsection_icon": null,
               "content_groups": [
@@ -6430,21 +5785,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "xii_post_resuscitation_care",
-          "section_title": "✅ XII. POST-RESUSCITATION CARE",
-          "section_order": 30,
-          "subsections": [
+            },
             {
-              "subsection_id": "xii_post_resuscitation_care_intro",
+              "subsection_id": "xii_post_resuscitation_care",
               "subsection_title": "✅ XII. POST-RESUSCITATION CARE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "xii_post_resuscitation_care_intro_main",
+                  "group_id": "xii_post_resuscitation_care_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6478,7 +5826,7 @@
         {
           "section_id": "foreign_body_aspiration_fba",
           "section_title": "FOREIGN BODY ASPIRATION (FBA)",
-          "section_order": 31,
+          "section_order": 10,
           "subsections": [
             {
               "subsection_id": "foreign_body_aspiration_fba_intro",
@@ -6514,21 +5862,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "mnemonic_choke_for_fba_risk_factors",
-          "section_title": "MNEMONIC: “CHOKE” for FBA Risk Factors",
-          "section_order": 32,
-          "subsections": [
+            },
             {
-              "subsection_id": "mnemonic_choke_for_fba_risk_factors_intro",
+              "subsection_id": "mnemonic_choke_for_fba_risk_factors",
               "subsection_title": "MNEMONIC: “CHOKE” for FBA Risk Factors",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "mnemonic_choke_for_fba_risk_factors_intro_main",
+                  "group_id": "mnemonic_choke_for_fba_risk_factors_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6565,21 +5906,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "classification_of_fba",
-          "section_title": "CLASSIFICATION OF FBA",
-          "section_order": 33,
-          "subsections": [
+            },
             {
-              "subsection_id": "classification_of_fba_intro",
+              "subsection_id": "classification_of_fba",
               "subsection_title": "CLASSIFICATION OF FBA",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "classification_of_fba_intro_main",
+                  "group_id": "classification_of_fba_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6617,21 +5951,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "commonly_aspirated_objects_by_age",
-          "section_title": "COMMONLY ASPIRATED OBJECTS BY AGE",
-          "section_order": 34,
-          "subsections": [
+            },
             {
-              "subsection_id": "commonly_aspirated_objects_by_age_intro",
+              "subsection_id": "commonly_aspirated_objects_by_age",
               "subsection_title": "COMMONLY ASPIRATED OBJECTS BY AGE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "commonly_aspirated_objects_by_age_intro_main",
+                  "group_id": "commonly_aspirated_objects_by_age_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6664,21 +5991,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "clinical_presentation",
-          "section_title": "CLINICAL PRESENTATION",
-          "section_order": 35,
-          "subsections": [
+            },
             {
-              "subsection_id": "clinical_presentation_intro",
+              "subsection_id": "clinical_presentation",
               "subsection_title": "CLINICAL PRESENTATION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "clinical_presentation_intro_main",
+                  "group_id": "clinical_presentation_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6717,17 +6037,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "symptoms_by_obstruction_site",
-              "subsection_title": "SYMPTOMS BY OBSTRUCTION SITE",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "symptoms_by_obstruction_site_main",
-                  "group_title": "",
+                  "group_id": "symptoms_by_obstruction_site",
+                  "group_title": "SYMPTOMS BY OBSTRUCTION SITE",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -6755,21 +6068,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "physical_exam_findings",
-          "section_title": "PHYSICAL EXAM FINDINGS",
-          "section_order": 36,
-          "subsections": [
+            },
             {
-              "subsection_id": "physical_exam_findings_intro",
+              "subsection_id": "physical_exam_findings",
               "subsection_title": "PHYSICAL EXAM FINDINGS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "physical_exam_findings_intro_main",
+                  "group_id": "physical_exam_findings_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6806,21 +6112,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "differential_diagnoses",
-          "section_title": "DIFFERENTIAL DIAGNOSES",
-          "section_order": 37,
-          "subsections": [
+            },
             {
-              "subsection_id": "differential_diagnoses_intro",
+              "subsection_id": "differential_diagnoses",
               "subsection_title": "DIFFERENTIAL DIAGNOSES",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "differential_diagnoses_intro_main",
+                  "group_id": "differential_diagnoses_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -6852,22 +6151,15 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "diagnostic_workup",
-          "section_title": "DIAGNOSTIC WORKUP",
-          "section_order": 38,
-          "subsections": [
+            },
             {
-              "subsection_id": "basic_tests",
-              "subsection_title": "BASIC TESTS",
+              "subsection_id": "diagnostic_workup",
+              "subsection_title": "DIAGNOSTIC WORKUP",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "basic_tests_main",
-                  "group_title": "",
+                  "group_id": "basic_tests",
+                  "group_title": "BASIC TESTS",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -6901,17 +6193,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "mnemonic_aim_for_fba_diagnosis",
-              "subsection_title": "MNEMONIC: “AIM” for FBA Diagnosis",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "mnemonic_aim_for_fba_diagnosis_main",
-                  "group_title": "",
+                  "group_id": "mnemonic_aim_for_fba_diagnosis",
+                  "group_title": "MNEMONIC: “AIM” for FBA Diagnosis",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -6922,17 +6207,10 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "management_of_fba",
-          "section_title": "MANAGEMENT OF FBA",
-          "section_order": 39,
-          "subsections": [
+            },
             {
-              "subsection_id": "emergency_management",
-              "subsection_title": "🔹 EMERGENCY MANAGEMENT",
+              "subsection_id": "management_of_fba",
+              "subsection_title": "MANAGEMENT OF FBA",
               "subsection_icon": null,
               "content_groups": [
                 {
@@ -6983,17 +6261,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "definitive_management_rigid_bronchoscopy",
-              "subsection_title": "🔸 DEFINITIVE MANAGEMENT: Rigid Bronchoscopy",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "definitive_management_rigid_bronchoscopy_main",
-                  "group_title": "",
+                  "group_id": "definitive_management_rigid_bronchoscopy",
+                  "group_title": "🔸 DEFINITIVE MANAGEMENT: Rigid Bronchoscopy",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7021,21 +6292,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "complications_of_fba",
-          "section_title": "COMPLICATIONS OF FBA",
-          "section_order": 40,
-          "subsections": [
+            },
             {
-              "subsection_id": "complications_of_fba_intro",
+              "subsection_id": "complications_of_fba",
               "subsection_title": "COMPLICATIONS OF FBA",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "complications_of_fba_intro_main",
+                  "group_id": "complications_of_fba_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7068,16 +6332,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "prevention_strategies",
-          "section_title": "PREVENTION STRATEGIES",
-          "section_order": 41,
-          "subsections": [
+            },
             {
-              "subsection_id": "prevention_strategies_intro",
+              "subsection_id": "prevention_strategies",
               "subsection_title": "PREVENTION STRATEGIES",
               "subsection_icon": null,
               "content_groups": [
@@ -7125,7 +6382,7 @@
         {
           "section_id": "exchange_blood_transfusion",
           "section_title": "EXCHANGE BLOOD TRANSFUSION",
-          "section_order": 42,
+          "section_order": 11,
           "subsections": [
             {
               "subsection_id": "exchange_blood_transfusion_intro",
@@ -7161,21 +6418,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "goals_of_ebt",
-          "section_title": "GOALS OF EBT",
-          "section_order": 43,
-          "subsections": [
+            },
             {
-              "subsection_id": "goals_of_ebt_intro",
+              "subsection_id": "goals_of_ebt",
               "subsection_title": "GOALS OF EBT",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "goals_of_ebt_intro_main",
+                  "group_id": "goals_of_ebt_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7216,22 +6466,15 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "indications_for_exchange_transfusion",
-          "section_title": "INDICATIONS FOR EXCHANGE TRANSFUSION",
-          "section_order": 44,
-          "subsections": [
+            },
             {
-              "subsection_id": "1_neonatal_hyperbilirubinemia",
-              "subsection_title": "1. Neonatal Hyperbilirubinemia",
+              "subsection_id": "indications_for_exchange_transfusion",
+              "subsection_title": "INDICATIONS FOR EXCHANGE TRANSFUSION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "1_neonatal_hyperbilirubinemia_main",
-                  "group_title": "",
+                  "group_id": "1_neonatal_hyperbilirubinemia",
+                  "group_title": "1. Neonatal Hyperbilirubinemia",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7261,17 +6504,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "2_hemolytic_disease_of_the_newborn_hdn",
-              "subsection_title": "2. Hemolytic Disease of the Newborn (HDN)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "2_hemolytic_disease_of_the_newborn_hdn_main",
-                  "group_title": "",
+                  "group_id": "2_hemolytic_disease_of_the_newborn_hdn",
+                  "group_title": "2. Hemolytic Disease of the Newborn (HDN)",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7288,17 +6524,10 @@
                       "text": "G6PD deficiency with severe hemolysis"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "4_toxin_removal_or_severe_anemia_in_special_cases",
-              "subsection_title": "4. Toxin removal or severe anemia (in special cases)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "4_toxin_removal_or_severe_anemia_in_special_cases_main",
-                  "group_title": "",
+                  "group_id": "4_toxin_removal_or_severe_anemia_in_special_cases",
+                  "group_title": "4. Toxin removal or severe anemia (in special cases)",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7313,21 +6542,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "types_of_exchange_transfusion",
-          "section_title": "TYPES OF EXCHANGE TRANSFUSION",
-          "section_order": 45,
-          "subsections": [
+            },
             {
-              "subsection_id": "types_of_exchange_transfusion_intro",
+              "subsection_id": "types_of_exchange_transfusion",
               "subsection_title": "TYPES OF EXCHANGE TRANSFUSION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "types_of_exchange_transfusion_intro_main",
+                  "group_id": "types_of_exchange_transfusion_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7360,21 +6582,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "calculation_of_blood_volume_and_amount_to_exchange",
-          "section_title": "CALCULATION OF BLOOD VOLUME AND AMOUNT TO EXCHANGE",
-          "section_order": 46,
-          "subsections": [
+            },
             {
-              "subsection_id": "calculation_of_blood_volume_and_amount_to_exchange_intro",
+              "subsection_id": "calculation_of_blood_volume_and_amount_to_exchange",
               "subsection_title": "CALCULATION OF BLOOD VOLUME AND AMOUNT TO EXCHANGE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "calculation_of_blood_volume_and_amount_to_exchange_intro_main",
+                  "group_id": "calculation_of_blood_volume_and_amount_to_exchange_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7411,21 +6626,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "donor_blood_requirements",
-          "section_title": "DONOR BLOOD REQUIREMENTS",
-          "section_order": 47,
-          "subsections": [
+            },
             {
-              "subsection_id": "donor_blood_requirements_intro",
+              "subsection_id": "donor_blood_requirements",
               "subsection_title": "DONOR BLOOD REQUIREMENTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "donor_blood_requirements_intro_main",
+                  "group_id": "donor_blood_requirements_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7466,21 +6674,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "ebt_procedure_steps",
-          "section_title": "EBT PROCEDURE STEPS",
-          "section_order": 48,
-          "subsections": [
+            },
             {
-              "subsection_id": "ebt_procedure_steps_intro",
+              "subsection_id": "ebt_procedure_steps",
               "subsection_title": "EBT PROCEDURE STEPS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "ebt_procedure_steps_intro_main",
+                  "group_id": "ebt_procedure_steps_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7523,17 +6724,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "exchange_method",
-              "subsection_title": "🔄 Exchange Method",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "exchange_method_main",
-                  "group_title": "",
+                  "group_id": "exchange_method",
+                  "group_title": "🔄 Exchange Method",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7565,21 +6759,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "monitoring_during_ebt",
-          "section_title": "MONITORING DURING EBT",
-          "section_order": 49,
-          "subsections": [
+            },
             {
-              "subsection_id": "monitoring_during_ebt_intro",
+              "subsection_id": "monitoring_during_ebt",
               "subsection_title": "MONITORING DURING EBT",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "monitoring_during_ebt_intro_main",
+                  "group_id": "monitoring_during_ebt_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7612,21 +6799,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "complications_of_exchange_transfusion",
-          "section_title": "COMPLICATIONS OF EXCHANGE TRANSFUSION",
-          "section_order": 50,
-          "subsections": [
+            },
             {
-              "subsection_id": "complications_of_exchange_transfusion_intro",
+              "subsection_id": "complications_of_exchange_transfusion",
               "subsection_title": "COMPLICATIONS OF EXCHANGE TRANSFUSION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "complications_of_exchange_transfusion_intro_main",
+                  "group_id": "complications_of_exchange_transfusion_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7691,21 +6871,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "post_procedure_care",
-          "section_title": "POST-PROCEDURE CARE",
-          "section_order": 51,
-          "subsections": [
+            },
             {
-              "subsection_id": "post_procedure_care_intro",
+              "subsection_id": "post_procedure_care",
               "subsection_title": "POST-PROCEDURE CARE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "post_procedure_care_intro_main",
+                  "group_id": "post_procedure_care_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7729,21 +6902,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "differences_simple_vs_exchange_transfusion",
-          "section_title": "DIFFERENCES: SIMPLE VS EXCHANGE TRANSFUSION",
-          "section_order": 52,
-          "subsections": [
+            },
             {
-              "subsection_id": "differences_simple_vs_exchange_transfusion_intro",
+              "subsection_id": "differences_simple_vs_exchange_transfusion",
               "subsection_title": "DIFFERENCES: SIMPLE VS EXCHANGE TRANSFUSION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "differences_simple_vs_exchange_transfusion_intro_main",
+                  "group_id": "differences_simple_vs_exchange_transfusion_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7781,21 +6947,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "partial_exchange_blood_transfusion_pebt",
-          "section_title": "🔁 Partial Exchange Blood Transfusion (PEBT)",
-          "section_order": 53,
-          "subsections": [
+            },
             {
-              "subsection_id": "partial_exchange_blood_transfusion_pebt_intro",
+              "subsection_id": "partial_exchange_blood_transfusion_pebt",
               "subsection_title": "🔁 Partial Exchange Blood Transfusion (PEBT)",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "partial_exchange_blood_transfusion_pebt_intro_main",
+                  "group_id": "partial_exchange_blood_transfusion_pebt_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -7805,14 +6964,7 @@
                       "text": "Partial exchange blood transfusion is a procedure in which a calculated volume of the child’s blood is removed and replaced with another fluid (usually normal saline or packed red cells), without changing the total blood volume."
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "main_indications",
-              "subsection_title": "🎯 Main Indications",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "1_severe_anemia_with_cardiac_failure",
                   "group_title": "1️. Severe Anemia with Cardiac Failure",
@@ -7872,17 +7024,10 @@
                       "text": "When full exchange transfusion is not required"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "contraindications",
-              "subsection_title": "🚫 Contraindications",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "contraindications_main",
-                  "group_title": "",
+                  "group_id": "contraindications",
+                  "group_title": "🚫 Contraindications",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7903,17 +7048,10 @@
                       "text": "Unstable patient without resuscitation"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "fluids_used",
-              "subsection_title": "💉 Fluids Used",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "fluids_used_main",
-                  "group_title": "",
+                  "group_id": "fluids_used",
+                  "group_title": "💉 Fluids Used",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -7939,14 +7077,7 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "volume_calculation",
-              "subsection_title": "Volume Calculation",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
                   "group_id": "for_severe_anemia",
                   "group_title": "🔹 For Severe Anemia",
@@ -7978,17 +7109,10 @@
                       "text": "Desired Hct ≈ 55%"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "procedure_step_by_step",
-              "subsection_title": "🛠 Procedure (Step-by-Step)",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "procedure_step_by_step_main",
-                  "group_title": "",
+                  "group_id": "procedure_step_by_step",
+                  "group_title": "🛠 Procedure (Step-by-Step)",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -8033,17 +7157,10 @@
                       "text": "Repeat until calculated volume is exchanged"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "complications",
-              "subsection_title": "⚠️ Complications",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "complications_main",
-                  "group_title": "",
+                  "group_id": "complications",
+                  "group_title": "⚠️ Complications",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -8072,31 +7189,16 @@
                       "text": "Thrombosis"
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "advantages_over_simple_transfusion",
-              "subsection_title": "Advantages Over Simple Transfusion",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "advantages_over_simple_transfusion_main",
-                  "group_title": "",
+                  "group_id": "advantages_over_simple_transfusion",
+                  "group_title": "Advantages Over Simple Transfusion",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
                     {
                       "type": "paragraph",
                       "text": "✔ Prevents fluid overload\n✔ Improves oxygen delivery gradually\n✔ Reduces blood viscosity\n✔ Safer in heart failure"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "SHOCK"
-                    },
-                    {
-                      "type": "paragraph",
-                      "text": "Shock is a life-threatening condition where there is inadequate tissue perfusion and oxygen delivery to meet cellular metabolic demands, leading to cellular hypoxia, metabolic acidosis, and potentially organ failure and death."
                     }
                   ]
                 }
@@ -8105,17 +7207,36 @@
           ]
         },
         {
-          "section_id": "classification_of_shock",
-          "section_title": "CLASSIFICATION OF SHOCK",
-          "section_order": 54,
+          "section_id": "shock",
+          "section_title": "SHOCK",
+          "section_order": 12,
           "subsections": [
             {
-              "subsection_id": "classification_of_shock_intro",
+              "subsection_id": "shock_intro",
+              "subsection_title": "SHOCK",
+              "subsection_icon": null,
+              "content_groups": [
+                {
+                  "group_id": "shock_intro_main",
+                  "group_title": "",
+                  "group_subtitle": null,
+                  "group_icon": null,
+                  "blocks": [
+                    {
+                      "type": "paragraph",
+                      "text": "Shock is a life-threatening condition where there is inadequate tissue perfusion and oxygen delivery to meet cellular metabolic demands, leading to cellular hypoxia, metabolic acidosis, and potentially organ failure and death."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "subsection_id": "classification_of_shock",
               "subsection_title": "CLASSIFICATION OF SHOCK",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "classification_of_shock_intro_main",
+                  "group_id": "classification_of_shock_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8152,21 +7273,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "phases_of_shock",
-          "section_title": "PHASES OF SHOCK",
-          "section_order": 55,
-          "subsections": [
+            },
             {
-              "subsection_id": "phases_of_shock_intro",
+              "subsection_id": "phases_of_shock",
               "subsection_title": "PHASES OF SHOCK",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "phases_of_shock_intro_main",
+                  "group_id": "phases_of_shock_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8207,16 +7321,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "clinical_features_of_shock",
-          "section_title": "CLINICAL FEATURES OF SHOCK",
-          "section_order": 56,
-          "subsections": [
+            },
             {
-              "subsection_id": "clinical_features_of_shock_intro",
+              "subsection_id": "clinical_features_of_shock",
               "subsection_title": "CLINICAL FEATURES OF SHOCK",
               "subsection_icon": null,
               "content_groups": [
@@ -8257,21 +7364,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "diagnostic_mnemonic_for_shock_shocked",
-          "section_title": "DIAGNOSTIC MNEMONIC FOR SHOCK: \"SHOCKED\"",
-          "section_order": 57,
-          "subsections": [
+            },
             {
-              "subsection_id": "diagnostic_mnemonic_for_shock_shocked_intro",
+              "subsection_id": "diagnostic_mnemonic_for_shock_shocked",
               "subsection_title": "DIAGNOSTIC MNEMONIC FOR SHOCK: \"SHOCKED\"",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "diagnostic_mnemonic_for_shock_shocked_intro_main",
+                  "group_id": "diagnostic_mnemonic_for_shock_shocked_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8324,21 +7424,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "types_of_shock_detailed_table",
-          "section_title": "TYPES OF SHOCK – DETAILED TABLE",
-          "section_order": 58,
-          "subsections": [
+            },
             {
-              "subsection_id": "types_of_shock_detailed_table_intro",
+              "subsection_id": "types_of_shock_detailed_table",
               "subsection_title": "TYPES OF SHOCK – DETAILED TABLE",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "types_of_shock_detailed_table_intro_main",
+                  "group_id": "types_of_shock_detailed_table_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8393,21 +7486,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "investigations_in_shock",
-          "section_title": "INVESTIGATIONS IN SHOCK",
-          "section_order": 59,
-          "subsections": [
+            },
             {
-              "subsection_id": "investigations_in_shock_intro",
+              "subsection_id": "investigations_in_shock",
               "subsection_title": "INVESTIGATIONS IN SHOCK",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "investigations_in_shock_intro_main",
+                  "group_id": "investigations_in_shock_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8448,21 +7534,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "management_of_shock",
-          "section_title": "MANAGEMENT OF SHOCK",
-          "section_order": 60,
-          "subsections": [
+            },
             {
-              "subsection_id": "management_of_shock_intro",
+              "subsection_id": "management_of_shock",
               "subsection_title": "MANAGEMENT OF SHOCK",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "management_of_shock_intro_main",
+                  "group_id": "management_of_shock_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8493,17 +7572,10 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "subsection_id": "fluid_resuscitation_table",
-              "subsection_title": "FLUID RESUSCITATION TABLE",
-              "subsection_icon": null,
-              "content_groups": [
+                },
                 {
-                  "group_id": "fluid_resuscitation_table_main",
-                  "group_title": "",
+                  "group_id": "fluid_resuscitation_table",
+                  "group_title": "FLUID RESUSCITATION TABLE",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
@@ -8540,29 +7612,18 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "fluid_resuscitation_in_pediatric_shock",
-          "section_title": "FLUID RESUSCITATION IN PEDIATRIC SHOCK",
-          "section_order": 61,
-          "subsections": [
+            },
             {
-              "subsection_id": "fluid_resuscitation_in_pediatric_shock_intro",
+              "subsection_id": "fluid_resuscitation_in_pediatric_shock",
               "subsection_title": "FLUID RESUSCITATION IN PEDIATRIC SHOCK",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "mnemonic_20_20_20",
-                  "group_title": "🚨 Mnemonic: \"20-20-20\"",
+                  "group_id": "20_mlkg_of_ns_or_rl_bolus",
+                  "group_title": "20 mL/kg of NS or RL bolus",
                   "group_subtitle": null,
                   "group_icon": null,
                   "blocks": [
-                    {
-                      "type": "paragraph",
-                      "text": "20 mL/kg of NS or RL bolus"
-                    },
                     {
                       "type": "paragraph",
                       "text": "Repeat up to 3 times if signs of shock persist"
@@ -8570,16 +7631,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "specific_treatment_based_on_type",
-          "section_title": "SPECIFIC TREATMENT BASED ON TYPE",
-          "section_order": 62,
-          "subsections": [
+            },
             {
-              "subsection_id": "specific_treatment_based_on_type_intro",
+              "subsection_id": "specific_treatment_based_on_type",
               "subsection_title": "SPECIFIC TREATMENT BASED ON TYPE",
               "subsection_icon": null,
               "content_groups": [
@@ -8680,21 +7734,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "shock_in_children_vs_adults",
-          "section_title": "SHOCK IN CHILDREN VS ADULTS",
-          "section_order": 63,
-          "subsections": [
+            },
             {
-              "subsection_id": "shock_in_children_vs_adults_intro",
+              "subsection_id": "shock_in_children_vs_adults",
               "subsection_title": "SHOCK IN CHILDREN VS ADULTS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "shock_in_children_vs_adults_intro_main",
+                  "group_id": "shock_in_children_vs_adults_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8732,21 +7779,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "endpoints_of_resuscitation",
-          "section_title": "ENDPOINTS OF RESUSCITATION",
-          "section_order": 64,
-          "subsections": [
+            },
             {
-              "subsection_id": "endpoints_of_resuscitation_intro",
+              "subsection_id": "endpoints_of_resuscitation",
               "subsection_title": "ENDPOINTS OF RESUSCITATION",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "endpoints_of_resuscitation_intro_main",
+                  "group_id": "endpoints_of_resuscitation_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8778,21 +7818,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "neonatology",
-          "section_title": "NEONATOLOGY",
-          "section_order": 65,
-          "subsections": [
+            },
             {
-              "subsection_id": "neonatology_intro",
+              "subsection_id": "neonatology",
               "subsection_title": "NEONATOLOGY",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "neonatology_intro_main",
+                  "group_id": "neonatology_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8817,21 +7850,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "body_water_distribution_in_newborns",
-          "section_title": "🔹 BODY WATER DISTRIBUTION IN NEWBORNS",
-          "section_order": 66,
-          "subsections": [
+            },
             {
-              "subsection_id": "body_water_distribution_in_newborns_intro",
+              "subsection_id": "body_water_distribution_in_newborns",
               "subsection_title": "🔹 BODY WATER DISTRIBUTION IN NEWBORNS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "body_water_distribution_in_newborns_intro_main",
+                  "group_id": "body_water_distribution_in_newborns_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8874,21 +7900,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "daily_fluid_requirements_water_needs",
-          "section_title": "🔹 DAILY FLUID REQUIREMENTS (WATER NEEDS)",
-          "section_order": 67,
-          "subsections": [
+            },
             {
-              "subsection_id": "daily_fluid_requirements_water_needs_intro",
+              "subsection_id": "daily_fluid_requirements_water_needs",
               "subsection_title": "🔹 DAILY FLUID REQUIREMENTS (WATER NEEDS)",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "daily_fluid_requirements_water_needs_intro_main",
+                  "group_id": "daily_fluid_requirements_water_needs_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8945,21 +7964,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "insensible_water_loss",
-          "section_title": "🔹 INSENSIBLE WATER LOSS",
-          "section_order": 68,
-          "subsections": [
+            },
             {
-              "subsection_id": "insensible_water_loss_intro",
+              "subsection_id": "insensible_water_loss",
               "subsection_title": "🔹 INSENSIBLE WATER LOSS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "insensible_water_loss_intro_main",
+                  "group_id": "insensible_water_loss_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -8992,21 +8004,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "electrolyte_needs_in_newborns",
-          "section_title": "🔹 ELECTROLYTE NEEDS IN NEWBORNS",
-          "section_order": 69,
-          "subsections": [
+            },
             {
-              "subsection_id": "electrolyte_needs_in_newborns_intro",
+              "subsection_id": "electrolyte_needs_in_newborns",
               "subsection_title": "🔹 ELECTROLYTE NEEDS IN NEWBORNS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "electrolyte_needs_in_newborns_intro_main",
+                  "group_id": "electrolyte_needs_in_newborns_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -9039,21 +8044,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "fluid_types_used",
-          "section_title": "🔹 FLUID TYPES USED",
-          "section_order": 70,
-          "subsections": [
+            },
             {
-              "subsection_id": "fluid_types_used_intro",
+              "subsection_id": "fluid_types_used",
               "subsection_title": "🔹 FLUID TYPES USED",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "fluid_types_used_intro_main",
+                  "group_id": "fluid_types_used_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -9091,21 +8089,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "monitoring_parameters",
-          "section_title": "🔹 MONITORING PARAMETERS",
-          "section_order": 71,
-          "subsections": [
+            },
             {
-              "subsection_id": "monitoring_parameters_intro",
+              "subsection_id": "monitoring_parameters",
               "subsection_title": "🔹 MONITORING PARAMETERS",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "monitoring_parameters_intro_main",
+                  "group_id": "monitoring_parameters_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -9142,21 +8133,14 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "common_fluid_electrolyte_disturbances",
-          "section_title": "🔹 COMMON FLUID & ELECTROLYTE DISTURBANCES",
-          "section_order": 72,
-          "subsections": [
+            },
             {
-              "subsection_id": "common_fluid_electrolyte_disturbances_intro",
+              "subsection_id": "common_fluid_electrolyte_disturbances",
               "subsection_title": "🔹 COMMON FLUID & ELECTROLYTE DISTURBANCES",
               "subsection_icon": null,
               "content_groups": [
                 {
-                  "group_id": "common_fluid_electrolyte_disturbances_intro_main",
+                  "group_id": "common_fluid_electrolyte_disturbances_main",
                   "group_title": "",
                   "group_subtitle": null,
                   "group_icon": null,
@@ -9205,16 +8189,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "renal_function_in_neonates",
-          "section_title": "🔹 RENAL FUNCTION IN NEONATES",
-          "section_order": 73,
-          "subsections": [
+            },
             {
-              "subsection_id": "renal_function_in_neonates_intro",
+              "subsection_id": "renal_function_in_neonates",
               "subsection_title": "🔹 RENAL FUNCTION IN NEONATES",
               "subsection_icon": null,
               "content_groups": [
@@ -9279,16 +8256,9 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "section_id": "fluid_therapy_approach",
-          "section_title": "🔹 FLUID THERAPY APPROACH",
-          "section_order": 74,
-          "subsections": [
+            },
             {
-              "subsection_id": "fluid_therapy_approach_intro",
+              "subsection_id": "fluid_therapy_approach",
               "subsection_title": "🔹 FLUID THERAPY APPROACH",
               "subsection_icon": null,
               "content_groups": [
@@ -9352,7 +8322,7 @@
         "chapter_title": "Neonatology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 6
+        "position_in_book": 2
       },
       "sections": [
         {
@@ -15529,7 +14499,7 @@
         "chapter_title": "Genetics & Syndromes",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 7
+        "position_in_book": 3
       },
       "sections": [
         {
@@ -43860,7 +42830,7 @@
         "chapter_title": "Neurology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 8
+        "position_in_book": 4
       },
       "sections": [
         {
@@ -52716,7 +51686,7 @@
         "chapter_title": "Cardiology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 9
+        "position_in_book": 5
       },
       "sections": [
         {
@@ -63959,7 +62929,7 @@
         "chapter_title": "Gastroenterology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 10
+        "position_in_book": 6
       },
       "sections": [
         {
@@ -78159,7 +77129,7 @@
         "chapter_title": "Respiratory",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 11
+        "position_in_book": 7
       },
       "sections": [
         {
@@ -93653,7 +92623,7 @@
         "chapter_title": "Oncology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 12
+        "position_in_book": 8
       },
       "sections": [
         {
@@ -99411,7 +98381,7 @@
         "chapter_title": "Endocrinology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 13
+        "position_in_book": 9
       },
       "sections": [
         {
@@ -107712,7 +106682,7 @@
         "chapter_title": "Nephrology & Urology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 14
+        "position_in_book": 10
       },
       "sections": [
         {
@@ -118380,7 +117350,7 @@
         "chapter_title": "Haematology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 15
+        "position_in_book": 11
       },
       "sections": [
         {
@@ -128444,7 +127414,7 @@
         "chapter_title": "Infectious Diseases & Dermatology",
         "chapter_icon": null,
         "description": null,
-        "position_in_book": 16
+        "position_in_book": 12
       },
       "sections": [
         {

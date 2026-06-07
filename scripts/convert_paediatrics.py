@@ -229,6 +229,13 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         for anchor in ch["anchor_texts"]:
             anchor_to_chapter[norm(anchor)] = ch
 
+    # Pre-build section_anchor sets per chapter (normalised for fast lookup)
+    # Chapters without section_anchors use automatic heading detection.
+    section_anchor_sets: dict[str, set] = {}
+    for ch in chmap:
+        if "section_anchors" in ch:
+            section_anchor_sets[ch["chapter_id"]] = {norm(a) for a in ch["section_anchors"]}
+
     # ── state ─────────────────────────────────────────────────────────────────
     chapters: list      = []
     cur_chapter: dict | None = None
@@ -390,35 +397,84 @@ def convert(docx_path: Path, map_path: Path) -> dict:
             continue
 
         # ── heading detection ───────────────────────────────────────────────
-        if style == "Heading 1":
-            open_section(text)
-            i += 1
-            continue
+        # When the current chapter defines section_anchors, those anchors
+        # control exactly which headings become sections vs subsections.
+        cur_ch_id = cur_chapter["chapter_id"] if cur_chapter else ""
+        sec_anchors = section_anchor_sets.get(cur_ch_id)  # None if not defined
 
-        if style == "Heading 2":
-            open_subsection(text)
-            i += 1
-            continue
+        text_no_emoji = re.sub(r"[^\w\s\-&'\"(),./]", "", text).strip()
+        text_norm_local = norm(text)
 
-        if style in ("Heading 3", "Heading 4"):
-            open_group(text)
-            i += 1
-            continue
-
-        # Bold ALL-CAPS Normal → treat as section if in top-level position
-        if style in ("Normal", "Normal (Web)") and is_bold(para) and is_all_caps_heading(text):
-            # If it looks like a new major topic, open a section
-            if len(text) > 6 and not text.startswith("📌") and not text.startswith("🔍"):
+        if sec_anchors is not None:
+            # ── Chapter with explicit section_anchors (e.g. OVERVIEW) ──────────
+            # Any heading that matches a section_anchor → open_section.
+            # Any other heading-like paragraph → open_subsection or open_group.
+            # Only check on heading-like lines (bold or heading style), not body text.
+            is_heading_para = (
+                style.startswith("Heading")
+                or (style in ("Normal", "Normal (Web)") and is_bold(para))
+            )
+            # Match if exact, or if the text is just the anchor + minor suffix
+            # (e.g. trailing colon/number). Reject full-sentence matches.
+            def _sec_match(t: str, a: str) -> bool:
+                if t == a:
+                    return True
+                if t.startswith(a) and len(t) <= len(a) + 6:
+                    return True  # e.g. "dental development:" or "dental development 1"
+                return False
+            is_section_anchor = is_heading_para and any(
+                _sec_match(text_norm_local, a) for a in sec_anchors
+            )
+            if is_section_anchor and len(text) > 4:
+                open_section(text)
+                i += 1
+                continue
+            # Non-anchor headings: H1/bold-caps → subsection, H3/H4 → group
+            if style == "Heading 1" or (
+                style in ("Normal", "Normal (Web)") and is_bold(para)
+                and is_all_caps_heading(text_no_emoji) and len(text) > 5
+            ):
+                open_subsection(text)
+                i += 1
+                continue
+            if style in ("Heading 2", "Heading 3", "Heading 4"):
+                open_group(text)
+                i += 1
+                continue
+            if style in ("Normal", "Normal (Web)") and is_bold(para) and len(text) > 5:
+                open_group(text)
+                i += 1
+                continue
+        else:
+            # ── Standard automatic detection ────────────────────────────────────
+            if style == "Heading 1":
                 open_section(text)
                 i += 1
                 continue
 
-        # Bold mixed-case Normal → subsection or group
-        if style in ("Normal", "Normal (Web)") and is_bold(para) and not is_all_caps_heading(text):
-            if len(text) > 5 and not re.match(r"^[\d•\-]", text):
+            if style == "Heading 2":
+                open_subsection(text)
+                i += 1
+                continue
+
+            if style in ("Heading 3", "Heading 4"):
                 open_group(text)
                 i += 1
                 continue
+
+            # Bold ALL-CAPS Normal → section
+            if style in ("Normal", "Normal (Web)") and is_bold(para) and is_all_caps_heading(text_no_emoji):
+                if len(text) > 6 and not text.startswith("📌") and not text.startswith("🔍"):
+                    open_section(text)
+                    i += 1
+                    continue
+
+            # Bold mixed-case Normal → group
+            if style in ("Normal", "Normal (Web)") and is_bold(para) and not is_all_caps_heading(text_no_emoji):
+                if len(text) > 5 and not re.match(r"^[\d•\-]", text):
+                    open_group(text)
+                    i += 1
+                    continue
 
         # ── block type detection ─────────────────────────────────────────────
         hint = detect_block_type(text)
