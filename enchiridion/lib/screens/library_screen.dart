@@ -11,6 +11,7 @@ import '../screens/calculator_list_screen.dart';
 import '../screens/exam_prep_home_screen.dart';
 import '../screens/question_list_screen.dart';
 import '../screens/resource_topic_list_screen.dart';
+import '../screens/pinned_notes_screen.dart';
 import '../models/resource_topic.dart';
 import '../widgets/drawer/settings_drawer.dart';
 
@@ -267,6 +268,14 @@ class _LibraryScreenState extends State<LibraryScreen>
                         child: Text('Enchiridion',
                             style: theme.textTheme.titleLarge
                                 ?.copyWith(fontWeight: FontWeight.bold)),
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.push_pin_outlined),
+                        tooltip: 'Pinned Notes',
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const PinnedNotesScreen())),
                       ),
                       IconButton(
                         icon: const Icon(Icons.account_circle_outlined),

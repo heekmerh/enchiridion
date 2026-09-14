@@ -194,6 +194,59 @@ class StorageService {
     await _saveClips(bookId, chapterId, sectionId, clips);
   }
 
+  // ── Pinned Notes (free-standing — not tied to any book/chapter/section,
+  // unlike Clips above; reachable from the Library screen rather than only
+  // from within a reading session) ────────────────────────────────────────
+
+  static const _pinnedNotesKey = 'pinned_notes';
+
+  /// Newest first.
+  List<ClipNote> getPinnedNotes() {
+    try {
+      final raw = _prefs.getString(_pinnedNotesKey);
+      if (raw == null) return [];
+      final jsonList = jsonDecode(raw) as List<dynamic>;
+      return jsonList
+          .map((item) => ClipNote.fromJson(item as Map<String, dynamic>))
+          .toList()
+        ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+    } catch (_) {
+      return [];
+    }
+  }
+
+  Future<void> _savePinnedNotes(List<ClipNote> notes) async {
+    await _prefs.setString(
+      _pinnedNotesKey,
+      jsonEncode(notes.map((n) => n.toJson()).toList()),
+    );
+  }
+
+  Future<ClipNote> addPinnedNote(String text) async {
+    final notes = getPinnedNotes();
+    final note = ClipNote(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      content: text,
+      createdAt: DateTime.now(),
+    );
+    notes.add(note);
+    await _savePinnedNotes(notes);
+    return note;
+  }
+
+  Future<void> updatePinnedNote(String id, String text) async {
+    final notes = getPinnedNotes()
+        .map((n) => n.id == id ? n.copyWith(content: text) : n)
+        .toList();
+    await _savePinnedNotes(notes);
+  }
+
+  Future<void> deletePinnedNote(String id) async {
+    final notes = getPinnedNotes();
+    notes.removeWhere((n) => n.id == id);
+    await _savePinnedNotes(notes);
+  }
+
   // ── Calculator Favourites ────────────────────────────────────────────────────
 
   static const _favoritesKey = 'calc_favorites';
