@@ -23,3 +23,10 @@ __pycache__/
 .venv/
 venv/
 env/
+
+# Intermediate/debug artifacts from the docx extraction pipeline — not
+# source of truth (enchiridion/assets/data/paediatrics.json is).
+scripts/output/book.json
+scripts/output/book_fixed.json
+scripts/output/doc_structure.txt
+scripts/output/semantic_patterns.txt
