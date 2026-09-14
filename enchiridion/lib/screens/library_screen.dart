@@ -11,6 +11,7 @@ import '../screens/calculator_list_screen.dart';
 import '../screens/exam_prep_home_screen.dart';
 import '../screens/question_list_screen.dart';
 import '../screens/resource_topic_list_screen.dart';
+import '../screens/osce_screen.dart';
 import '../screens/pinned_notes_screen.dart';
 import '../models/resource_topic.dart';
 import '../widgets/drawer/settings_drawer.dart';
@@ -603,10 +604,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         title: 'OSCE',
         assetPath: 'assets/resources/osce.jpeg',
         onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => const ResourceTopicListScreen(
-            title: 'OSCE',
-            topics: kOsceTopics,
-          ),
+          builder: (_) => const OsceScreen(),
         )),
       ),
     ];

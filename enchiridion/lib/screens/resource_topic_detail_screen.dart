@@ -30,9 +30,16 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
   }
 
   Future<void> _load() async {
+    final assetPath = widget.topic.dataAssetPath;
+    if (assetPath == null) {
+      setState(() {
+        _error = StateError('${widget.topic.title} has no content yet.');
+        _loading = false;
+      });
+      return;
+    }
     try {
-      final chapter =
-          await ResourceTopicService.loadChapter(widget.topic.dataAssetPath);
+      final chapter = await ResourceTopicService.loadChapter(assetPath);
       if (!mounted) return;
       setState(() {
         _chapter = chapter;
