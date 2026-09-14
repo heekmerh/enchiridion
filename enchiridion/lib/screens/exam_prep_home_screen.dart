@@ -14,6 +14,7 @@ import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
 import 'exam_prep_question_list_screen.dart';
+import 'leaderboard_screen.dart';
 import 'question_screen.dart';
 import 'unlock_screen.dart';
 
@@ -122,7 +123,18 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     final cs = theme.colorScheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Exam Prep')),
+      appBar: AppBar(
+        title: const Text('Exam Prep'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.leaderboard_outlined),
+            tooltip: 'Leaderboard',
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const LeaderboardScreen()),
+            ),
+          ),
+        ],
+      ),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : _error != null
