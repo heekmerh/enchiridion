@@ -10,6 +10,27 @@ class AuthService {
   static Stream<AuthState> get authStateChanges =>
       _client.auth.onAuthStateChange;
 
+  /// Checks display-name availability via the `is_display_name_available`
+  /// RPC (see scripts/sql/002_unique_display_name.sql) — a plain `select`
+  /// against `profiles` can't do this client-side, since its RLS policy only
+  /// lets a user read their own row.
+  ///
+  /// Fails open (returns true) on any error — e.g. the migration hasn't been
+  /// run yet, or the network is down — so a broken check never blocks
+  /// sign-up outright; the DB's unique index is still the real guard against
+  /// a genuine collision, this is just the friendlier up-front UX.
+  static Future<bool> isDisplayNameAvailable(String displayName) async {
+    try {
+      final result = await _client.rpc(
+        'is_display_name_available',
+        params: {'name': displayName},
+      );
+      return result as bool;
+    } catch (_) {
+      return true;
+    }
+  }
+
   static Future<AuthResponse> signUp({
     required String email,
     required String password,

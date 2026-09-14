@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import '../services/auth_service.dart';
 import 'confirm_email_screen.dart';
 import 'login_screen.dart';
 import 'library_screen.dart';
@@ -42,10 +43,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _errorMessage = null;
     });
 
+    final displayName = _nameCtrl.text.trim();
+    final nameAvailable =
+        await AuthService.isDisplayNameAvailable(displayName);
+    if (!nameAvailable) {
+      if (!mounted) return;
+      setState(() {
+        _loading = false;
+        _errorMessage =
+            'That display name is already taken — please choose another.';
+      });
+      return;
+    }
+
+    if (!mounted) return;
     final error = await context.read<AuthProvider>().signUp(
           email: _emailCtrl.text.trim(),
           password: _passwordCtrl.text,
-          displayName: _nameCtrl.text.trim(),
+          displayName: displayName,
           role: _selectedRole,
         );
 

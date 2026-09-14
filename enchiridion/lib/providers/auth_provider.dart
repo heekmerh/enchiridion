@@ -104,6 +104,17 @@ class AuthProvider with ChangeNotifier {
         return 'An account with this email already exists.';
       }
       return e.message;
+    } on PostgrestException catch (e) {
+      notifyListeners();
+      // 23505 = unique_violation. The pre-submit availability check in
+      // RegisterScreen makes this rare — only a genuine race with another
+      // sign-up choosing the identical name in the same instant — but the
+      // unique index (scripts/sql/002_unique_display_name.sql) is the real
+      // guard, so it must still be handled here.
+      if (e.code == '23505') {
+        return 'That display name is already taken — please choose another.';
+      }
+      return 'Something went wrong. Please try again.';
     } catch (e) {
       notifyListeners();
       return 'Something went wrong. Please try again.';
