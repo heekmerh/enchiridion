@@ -11,6 +11,10 @@ import 'question.dart';
 class QuestionReview {
   /// Applied after a wrong answer: bring the question back while the day is
   /// still young, so the correction is re-tested rather than just read once.
+  ///
+  /// TESTING_REPORT.md flagged this against an original 2-4 day resurface
+  /// spec — confirmed as the intended behavior (product decision, not a
+  /// bug), not changed.
   static const Duration relearnInterval = Duration(hours: 3);
 
   /// Applied to a correct-but-guessed answer. A 1-in-5 guess on a five-option
