@@ -1,17 +1,66 @@
 import 'package:flutter/material.dart';
-import '../models/book_catalog.dart';
 
-class UnlockScreen extends StatelessWidget {
+import '../config/pricing_config.dart';
+import '../models/book_catalog.dart';
+import '../services/payment_service.dart';
+
+class UnlockScreen extends StatefulWidget {
   final String? bookId;
 
   const UnlockScreen({super.key, this.bookId});
 
+  @override
+  State<UnlockScreen> createState() => _UnlockScreenState();
+}
+
+class _UnlockScreenState extends State<UnlockScreen> {
+  final _paymentService = PaymentService();
+
+  /// Which plan is currently mid-purchase, or null. Used to disable the
+  /// other buttons and show a spinner on just the one being paid for.
+  PricingPlan? _purchasing;
+
   String _bookTitle() {
-    if (bookId == null) return 'All Access';
+    if (widget.bookId == null) return 'All Access';
     try {
-      return kBooks.firstWhere((b) => b.id == bookId).title;
+      return kBooks.firstWhere((b) => b.id == widget.bookId).title;
     } catch (_) {
       return 'Enchiridion';
+    }
+  }
+
+  Future<void> _purchase(PricingPlan plan) async {
+    if (_purchasing != null) return;
+    setState(() => _purchasing = plan);
+
+    final outcome = await _paymentService.purchase(
+      context: context,
+      plan: plan,
+      bookId: widget.bookId ?? '*',
+    );
+
+    if (!mounted) return;
+    setState(() => _purchasing = null);
+
+    switch (outcome) {
+      case PaymentOutcome.success:
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("You're unlocked! Enjoy.")),
+        );
+        Navigator.of(context).pop(true);
+        return;
+      case PaymentOutcome.cancelled:
+        return;
+      case PaymentOutcome.failed:
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text(
+              "That payment didn't go through. No charge was made — "
+              'please try again.',
+            ),
+          ),
+        );
+        return;
     }
   }
 
@@ -19,7 +68,7 @@ class UnlockScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final isBookSpecific = bookId != null;
+    final isBookSpecific = widget.bookId != null;
     final title =
         isBookSpecific ? 'Unlock ${_bookTitle()}' : 'Unlock All Access';
 
@@ -86,26 +135,38 @@ class UnlockScreen extends StatelessWidget {
 
               // Book-specific unlock CTA
               if (isBookSpecific) ...[
-                FilledButton(
-                  onPressed: () => _showComingSoon(context),
-                  style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16)),
-                  child: Text('Unlock ${_bookTitle()} — price TBD'),
+                _PlanButton(
+                  plan: kBookUnlockPlan,
+                  label: 'Unlock ${_bookTitle()} — ${kBookUnlockPlan.label.split('— ').last}',
+                  tonal: false,
+                  purchasing: _purchasing,
+                  onPressed: () => _purchase(kBookUnlockPlan),
                 ),
                 const SizedBox(height: 12),
               ],
 
-              // Full subscription CTA
-              FilledButton.tonal(
-                onPressed: () => _showComingSoon(context),
-                style: FilledButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 16)),
-                child: const Text('Full Subscription — price TBD'),
+              // Full subscription CTAs
+              _PlanButton(
+                plan: kSubscriptionMonthlyPlan,
+                label: kSubscriptionMonthlyPlan.label,
+                tonal: isBookSpecific,
+                purchasing: _purchasing,
+                onPressed: () => _purchase(kSubscriptionMonthlyPlan),
+              ),
+              const SizedBox(height: 12),
+              _PlanButton(
+                plan: kSubscriptionYearlyPlan,
+                label: kSubscriptionYearlyPlan.label,
+                tonal: true,
+                purchasing: _purchasing,
+                onPressed: () => _purchase(kSubscriptionYearlyPlan),
               ),
               const SizedBox(height: 12),
 
               TextButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: _purchasing != null
+                    ? null
+                    : () => Navigator.pop(context),
                 child: const Text('Maybe later'),
               ),
               const SizedBox(height: 8),
@@ -131,14 +192,42 @@ class UnlockScreen extends StatelessWidget {
       'Notes and annotations',
     ];
   }
+}
 
-  void _showComingSoon(BuildContext context) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Payment coming soon — thank you for your interest!'),
-        behavior: SnackBarBehavior.floating,
-        duration: Duration(seconds: 3),
-      ),
+class _PlanButton extends StatelessWidget {
+  final PricingPlan plan;
+  final String label;
+  final bool tonal;
+  final PricingPlan? purchasing;
+  final VoidCallback onPressed;
+
+  const _PlanButton({
+    required this.plan,
+    required this.label,
+    required this.tonal,
+    required this.purchasing,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final isThisPurchasing = purchasing == plan;
+    final disabled = purchasing != null && !isThisPurchasing;
+    final child = isThisPurchasing
+        ? const SizedBox(
+            height: 20,
+            width: 20,
+            child: CircularProgressIndicator(strokeWidth: 2),
+          )
+        : Text(label);
+
+    final style = FilledButton.styleFrom(
+      padding: const EdgeInsets.symmetric(vertical: 16),
     );
+    final handler = disabled || purchasing != null ? null : onPressed;
+
+    return tonal
+        ? FilledButton.tonal(onPressed: handler, style: style, child: child)
+        : FilledButton(onPressed: handler, style: style, child: child);
   }
 }
