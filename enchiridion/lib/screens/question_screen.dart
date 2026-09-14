@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/question.dart';
 import '../services/notification_service.dart';
+import '../services/question_flag_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
@@ -96,6 +97,33 @@ class _QuestionScreenState extends State<QuestionScreen> {
     }
   }
 
+  Future<void> _flagQuestion() async {
+    final reason = await showDialog<String>(
+      context: context,
+      builder: (context) => _FlagQuestionDialog(),
+    );
+    if (reason == null || !mounted) return;
+
+    try {
+      await QuestionFlagService().submit(
+        scope: widget.bookId,
+        questionId: widget.question.id,
+        reason: reason,
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Thanks — this question has been flagged for review.')),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Couldn't submit the flag — check your connection and try again."),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -108,6 +136,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
         title: Text('Question ${q.questionNumber}'),
         backgroundColor: cs.surface,
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.flag_outlined),
+            tooltip: 'Flag this question',
+            onPressed: _flagQuestion,
+          ),
+        ],
       ),
       body: ListView(
         padding: EdgeInsets.fromLTRB(
@@ -313,6 +348,61 @@ class _OptionTile extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Collects optional details for a question flag. Returns the entered text
+/// (possibly empty) via [Navigator.pop], or null if the user cancelled.
+class _FlagQuestionDialog extends StatefulWidget {
+  @override
+  State<_FlagQuestionDialog> createState() => _FlagQuestionDialogState();
+}
+
+class _FlagQuestionDialogState extends State<_FlagQuestionDialog> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Flag this question'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Let us know what's wrong — a typo, the wrong answer marked "
+            'correct, unclear wording, anything.',
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: _controller,
+            autofocus: true,
+            maxLines: 3,
+            decoration: const InputDecoration(
+              hintText: 'Details (optional)',
+              border: OutlineInputBorder(),
+              isDense: true,
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('Cancel'),
+        ),
+        FilledButton(
+          onPressed: () => Navigator.of(context).pop(_controller.text),
+          child: const Text('Submit'),
+        ),
+      ],
     );
   }
 }
