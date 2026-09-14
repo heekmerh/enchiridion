@@ -2,10 +2,31 @@ import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/auth_service.dart';
 import '../services/access_service.dart';
+import '../services/device_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 
 enum AuthStatus { loading, authenticated, unauthenticated }
+
+/// Where a signed-in user stands on the one-account-per-device gate. See
+/// `.planning/phases/01-email-device-binding/` for the locked design (D-03)
+/// and `AuthGate`, the widget that renders each of these.
+enum DeviceGateStatus {
+  /// Fetching the profile / computing the device fingerprint.
+  checking,
+
+  /// This device is the account's bound device, or a previously authorized
+  /// one — the normal, every-day state.
+  boundToThisDevice,
+
+  /// The account has never bound a device yet (`device_id` is null).
+  needsFirstBind,
+
+  /// This device doesn't match the bound device or any authorized one.
+  /// [AuthProvider.canAuthorizeNewDevice] says whether the 30-day cooldown
+  /// allows adding it right now.
+  needsAuthorization,
+}
 
 class AuthProvider with ChangeNotifier {
   final StorageService _storage;
@@ -14,10 +35,19 @@ class AuthProvider with ChangeNotifier {
   User? _user;
   String? _error;
 
+  DeviceGateStatus _deviceGateStatus = DeviceGateStatus.checking;
+  bool _canAuthorizeNewDevice = true;
+  DateTime? _nextDeviceSwitchDate;
+  String? _deviceFingerprint;
+
   AuthStatus get status => _status;
   User? get user => _user;
   String? get error => _error;
   bool get isAuthenticated => _status == AuthStatus.authenticated;
+
+  DeviceGateStatus get deviceGateStatus => _deviceGateStatus;
+  bool get canAuthorizeNewDevice => _canAuthorizeNewDevice;
+  DateTime? get nextDeviceSwitchDate => _nextDeviceSwitchDate;
 
   AuthProvider(this._storage) {
     _init();
@@ -30,11 +60,12 @@ class AuthProvider with ChangeNotifier {
       _status = AuthStatus.authenticated;
       AccessService.instance.loadAccess();
       QuestionReviewSyncService(_storage).pullAndMergeAll();
+      _checkDeviceGate();
     } else {
       _status = AuthStatus.unauthenticated;
     }
 
-    AuthService.authStateChanges.listen((event) {
+    AuthService.authStateChanges.listen((event) async {
       _user = event.session?.user;
       if (event.session != null) {
         _status = AuthStatus.authenticated;
@@ -44,15 +75,83 @@ class AuthProvider with ChangeNotifier {
         // user starts studying this session.
         QuestionReviewSyncService(_storage).pullAndMergeAll();
         // Create profile from metadata if this is the first sign-in after
-        // email confirmation (profile may not exist yet)
-        AuthService.ensureProfile(event.session!.user);
+        // email confirmation (profile may not exist yet). Awaited — the
+        // device gate check right after needs the row to exist so a
+        // returning user's device_id is actually there to compare against,
+        // not a false "needsFirstBind" from reading an empty profile.
+        await AuthService.ensureProfile(event.session!.user);
+        await _checkDeviceGate();
       } else {
         _status = AuthStatus.unauthenticated;
+        _deviceGateStatus = DeviceGateStatus.checking;
         AccessService.instance.clearCache();
       }
       _error = null;
       notifyListeners();
     });
+  }
+
+  /// Compares this device's fingerprint against the account's bound/
+  /// authorized devices and sets [deviceGateStatus] accordingly.
+  ///
+  /// Fails open (treated as [DeviceGateStatus.boundToThisDevice]) on any
+  /// error — a network blip or an unreachable Supabase project must not
+  /// lock a legitimate user out of a clinical reference app, matching the
+  /// fail-open pattern already used by `StudyStatsService`,
+  /// `QuestionReviewSyncService`, and `NotificationService` elsewhere in
+  /// this app.
+  Future<void> _checkDeviceGate() async {
+    _deviceGateStatus = DeviceGateStatus.checking;
+    notifyListeners();
+    try {
+      final fingerprint = await DeviceService.getDeviceFingerprint();
+      _deviceFingerprint = fingerprint;
+      final profile = await AuthService.getProfile();
+
+      if (profile == null || profile['device_id'] == null) {
+        _deviceGateStatus = DeviceGateStatus.needsFirstBind;
+      } else if (AuthService.matchesAuthorizedDevice(profile, fingerprint)) {
+        _deviceGateStatus = DeviceGateStatus.boundToThisDevice;
+      } else {
+        _canAuthorizeNewDevice = AuthService.canAuthorizeNewDevice(profile);
+        _nextDeviceSwitchDate = AuthService.getNextDeviceSwitchDate(profile);
+        _deviceGateStatus = DeviceGateStatus.needsAuthorization;
+      }
+    } catch (_) {
+      _deviceGateStatus = DeviceGateStatus.boundToThisDevice;
+    }
+    notifyListeners();
+  }
+
+  /// Called by `DeviceAuthDialog` once the user taps "Got it".
+  Future<void> completeDeviceBinding() async {
+    final fingerprint =
+        _deviceFingerprint ?? await DeviceService.getDeviceFingerprint();
+    try {
+      await AuthService.bindDevice(fingerprint);
+    } catch (_) {
+      // Best-effort: if this write fails the user is simply asked to bind
+      // again next launch rather than stranded on the dialog now.
+    }
+    _deviceGateStatus = DeviceGateStatus.boundToThisDevice;
+    notifyListeners();
+  }
+
+  /// Called by `DeviceAuthorizationDialog` once the user taps "Authorize".
+  /// Caller must have already confirmed [canAuthorizeNewDevice].
+  Future<void> authorizeThisDevice() async {
+    final fingerprint =
+        _deviceFingerprint ?? await DeviceService.getDeviceFingerprint();
+    try {
+      final profile = await AuthService.getProfile();
+      if (profile != null) {
+        await AuthService.authorizeNewDevice(profile, fingerprint);
+      }
+    } catch (_) {
+      // Best-effort, same reasoning as completeDeviceBinding.
+    }
+    _deviceGateStatus = DeviceGateStatus.boundToThisDevice;
+    notifyListeners();
   }
 
   Future<String?> signIn(String email, String password) async {

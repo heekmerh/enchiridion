@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import 'auth_gate.dart';
 import 'register_screen.dart';
 import 'password_reset_screen.dart';
-import 'library_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _errorMessage = error);
     } else {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const LibraryScreen()),
+        MaterialPageRoute(builder: (_) => const AuthGate()),
       );
     }
   }

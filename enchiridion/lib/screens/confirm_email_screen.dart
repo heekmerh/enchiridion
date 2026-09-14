@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../config/supabase_config.dart';
 import '../providers/auth_provider.dart';
-import 'library_screen.dart';
+import 'auth_gate.dart';
 import 'login_screen.dart';
 
 /// Collects the numeric code Supabase emails after sign-up.
@@ -93,7 +93,7 @@ class _ConfirmEmailScreenState extends State<ConfirmEmailScreen> {
     // Registration is finished and a session exists. Drop the register and
     // confirm screens so Back cannot return to a half-finished signup.
     Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (_) => const LibraryScreen()),
+      MaterialPageRoute(builder: (_) => const AuthGate()),
       (route) => false,
     );
   }

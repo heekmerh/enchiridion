@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import '../models/user_settings.dart';
 import '../providers/settings_provider.dart';
 import '../providers/auth_provider.dart';
+import 'auth_gate.dart';
 import 'login_screen.dart';
-import 'library_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -65,7 +65,7 @@ class _SplashScreenState extends State<SplashScreen>
       _navigated = true;
 
       final destination = authProvider.isAuthenticated
-          ? const LibraryScreen()
+          ? const AuthGate()
           : const LoginScreen();
 
       Navigator.of(context).pushReplacement(

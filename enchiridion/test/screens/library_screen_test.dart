@@ -62,6 +62,21 @@ class _FakeAuthProvider extends ChangeNotifier implements AuthProvider {
 
   @override
   Future<String?> resendEmailOtp(String email) async => null;
+
+  @override
+  DeviceGateStatus get deviceGateStatus => DeviceGateStatus.boundToThisDevice;
+
+  @override
+  bool get canAuthorizeNewDevice => true;
+
+  @override
+  DateTime? get nextDeviceSwitchDate => null;
+
+  @override
+  Future<void> completeDeviceBinding() async {}
+
+  @override
+  Future<void> authorizeThisDevice() async {}
 }
 
 // ---------------------------------------------------------------------------
