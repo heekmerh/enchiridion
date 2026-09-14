@@ -13,7 +13,8 @@ class CustomIcons {
     return Icon(Icons.settings, size: size, color: color);
   }
 
-  static Widget bookmark({double size = 24, Color? color, bool filled = false}) {
+  static Widget bookmark(
+      {double size = 24, Color? color, bool filled = false}) {
     return Icon(
       filled ? Icons.bookmark : Icons.bookmark_border,
       size: size,

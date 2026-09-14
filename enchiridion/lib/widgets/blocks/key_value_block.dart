@@ -21,8 +21,7 @@ class KeyValueBlockWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: fontSize * 1.5),
       decoration: BoxDecoration(
-        border: Border.all(
-            color: theme.dividerColor.withValues(alpha: 0.6)),
+        border: Border.all(color: theme.dividerColor.withValues(alpha: 0.6)),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
       ),
       child: Column(
@@ -34,8 +33,8 @@ class KeyValueBlockWidget extends StatelessWidget {
           return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 14, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

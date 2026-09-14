@@ -61,7 +61,8 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 420),
-              child: _sent ? _buildSuccessState(theme, cs) : _buildForm(theme, cs),
+              child:
+                  _sent ? _buildSuccessState(theme, cs) : _buildForm(theme, cs),
             ),
           ),
         ),
@@ -78,8 +79,8 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
         Text(
           'Check your email',
           textAlign: TextAlign.center,
-          style:
-              theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+          style: theme.textTheme.headlineSmall
+              ?.copyWith(fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 12),
         Text(
@@ -161,8 +162,8 @@ class _PasswordResetScreenState extends State<PasswordResetScreen> {
                 ? const SizedBox(
                     width: 20,
                     height: 20,
-                    child:
-                        CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                    child: CircularProgressIndicator(
+                        strokeWidth: 2, color: Colors.white),
                   )
                 : const Text('Send reset link'),
           ),

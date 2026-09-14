@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import 'confirm_email_screen.dart';
 import 'login_screen.dart';
 import 'library_screen.dart';
 
@@ -52,8 +53,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
     setState(() => _loading = false);
 
     if (error == 'confirm_email') {
-      setState(() => _errorMessage =
-          'Account created! Check your email and click the confirmation link to log in.');
+      // Sign-up succeeded but there is no session yet. Hand off to the code
+      // entry screen rather than stranding the user on this form.
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => ConfirmEmailScreen(email: _emailCtrl.text.trim()),
+        ),
+      );
     } else if (error != null) {
       setState(() => _errorMessage = error);
     } else {
@@ -177,7 +183,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty) return 'Password is required';
+                        if (v == null || v.isEmpty)
+                          return 'Password is required';
                         if (v.length < 8) {
                           return 'Password must be at least 8 characters';
                         }

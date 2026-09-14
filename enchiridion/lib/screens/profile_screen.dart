@@ -47,7 +47,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
         });
       }
     } catch (e) {
-      if (mounted) setState(() { _error = e.toString(); _loading = false; });
+      if (mounted)
+        setState(() {
+          _error = e.toString();
+          _loading = false;
+        });
     }
   }
 
@@ -64,21 +68,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _saving = false;
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Name updated'), behavior: SnackBarBehavior.floating),
+          const SnackBar(
+              content: Text('Name updated'),
+              behavior: SnackBarBehavior.floating),
         );
       }
     } catch (e) {
       if (mounted) {
         setState(() => _saving = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Failed: $e'), behavior: SnackBarBehavior.floating),
+          SnackBar(
+              content: Text('Failed: $e'), behavior: SnackBarBehavior.floating),
         );
       }
     }
   }
 
-  bool get _isMobile =>
-      !kIsWeb && (Platform.isAndroid || Platform.isIOS);
+  bool get _isMobile => !kIsWeb && (Platform.isAndroid || Platform.isIOS);
 
   Future<void> _pickAndUploadAvatar() async {
     ImageSource? source;
@@ -95,7 +101,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               const SizedBox(height: 8),
               Container(
-                width: 40, height: 4,
+                width: 40,
+                height: 4,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(2),
@@ -142,14 +149,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _saving = false;
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Photo updated'), behavior: SnackBarBehavior.floating),
+          const SnackBar(
+              content: Text('Photo updated'),
+              behavior: SnackBarBehavior.floating),
         );
       }
     } catch (e) {
       if (mounted) {
         setState(() => _saving = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Upload failed: $e'), behavior: SnackBarBehavior.floating),
+          SnackBar(
+              content: Text('Upload failed: $e'),
+              behavior: SnackBarBehavior.floating),
         );
       }
     }
@@ -198,7 +209,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: _loading
             ? const Center(child: CircularProgressIndicator())
             : _error != null
-                ? Center(child: Text(_error!, style: TextStyle(color: cs.error)))
+                ? Center(
+                    child: Text(_error!, style: TextStyle(color: cs.error)))
                 : ListView(
                     padding: const EdgeInsets.all(24),
                     children: [
@@ -258,8 +270,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                         style: theme.textTheme.bodyLarge,
                                         decoration: const InputDecoration(
                                           isDense: true,
-                                          contentPadding: EdgeInsets.symmetric(
-                                              vertical: 8),
+                                          contentPadding:
+                                              EdgeInsets.symmetric(vertical: 8),
                                           border: UnderlineInputBorder(),
                                         ),
                                         onSubmitted: (_) => _saveName(),
@@ -302,8 +314,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                       ListTile(
                         leading: const Icon(Icons.email_outlined),
-                        title: Text('Email',
-                            style: theme.textTheme.labelSmall),
+                        title: Text('Email', style: theme.textTheme.labelSmall),
                         subtitle: Text(user?.email ?? '—',
                             style: theme.textTheme.bodyLarge),
                         contentPadding: EdgeInsets.zero,
@@ -312,11 +323,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                       ListTile(
                         leading: const Icon(Icons.badge_outlined),
-                        title: Text('Role',
-                            style: theme.textTheme.labelSmall),
+                        title: Text('Role', style: theme.textTheme.labelSmall),
                         subtitle: Text(() {
-                          final r =
-                              _profile?['role'] as String? ?? '';
+                          final r = _profile?['role'] as String? ?? '';
                           if (r.isEmpty) return '—';
                           return '${r[0].toUpperCase()}${r.substring(1)}';
                         }(), style: theme.textTheme.bodyLarge),
@@ -331,8 +340,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: OutlinedButton.styleFrom(
                           foregroundColor: cs.error,
                           side: BorderSide(color: cs.error),
-                          padding:
-                              const EdgeInsets.symmetric(vertical: 14),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
                         ),
                       ),
                     ],
@@ -350,10 +358,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return CircleAvatar(
       radius: 52,
       backgroundColor: cs.primaryContainer,
-      backgroundImage:
-          avatarUrl != null && avatarUrl.isNotEmpty
-              ? NetworkImage(avatarUrl)
-              : null,
+      backgroundImage: avatarUrl != null && avatarUrl.isNotEmpty
+          ? NetworkImage(avatarUrl)
+          : null,
       child: avatarUrl == null || avatarUrl.isEmpty
           ? Text(
               initials,

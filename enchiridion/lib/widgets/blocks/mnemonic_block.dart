@@ -46,10 +46,7 @@ class MnemonicBlockWidget extends StatelessWidget {
             ),
           ),
           const Divider(
-              height: 1,
-              color: AppColors.brandPink,
-              indent: 16,
-              endIndent: 16),
+              height: 1, color: AppColors.brandPink, indent: 16, endIndent: 16),
           ...block.items.map((item) => Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 6),

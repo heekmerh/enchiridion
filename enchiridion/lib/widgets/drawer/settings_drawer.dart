@@ -277,9 +277,7 @@ class _FontButton extends StatelessWidget {
               ? AppColors.brandPink.withValues(alpha: 0.1)
               : Colors.transparent,
           border: Border.all(
-            color: isSelected
-                ? AppColors.brandPink
-                : theme.dividerColor,
+            color: isSelected ? AppColors.brandPink : theme.dividerColor,
           ),
           borderRadius: BorderRadius.circular(6),
         ),

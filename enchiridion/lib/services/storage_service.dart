@@ -1,9 +1,13 @@
 import 'dart:convert';
 import 'dart:developer' as developer;
 import 'package:shared_preferences/shared_preferences.dart';
+import '../models/clip_note.dart';
 import '../models/user_settings.dart';
 import '../models/bookmark.dart';
 import '../models/question.dart';
+import '../models/question_review.dart';
+import '../models/serve_log.dart';
+import '../models/study_day_stats.dart';
 
 class StorageService {
   static const _settingsKey = 'enchiridion_settings';
@@ -123,39 +127,71 @@ class StorageService {
   // ── Clips ─────────────────────────────────────────────────────────────────────
 
   static const _clipsPrefix = 'clips_';
+  static const _studyStatsPrefix = 'study_stats_';
 
   String _clipKey(String bookId, String chapterId, String sectionId) =>
       '$_clipsPrefix${bookId}_${chapterId}_$sectionId';
 
-  List<Map<String, dynamic>> getClips(
-      String bookId, String chapterId, String sectionId) {
+  List<ClipNote> getClips(String bookId, String chapterId, String sectionId) {
     try {
       final raw = _prefs.getString(_clipKey(bookId, chapterId, sectionId));
       if (raw == null) return [];
-      return (jsonDecode(raw) as List).cast<Map<String, dynamic>>();
+      final jsonList = jsonDecode(raw) as List<dynamic>;
+      return jsonList
+          .map((item) => ClipNote.fromJson(item as Map<String, dynamic>))
+          .toList();
     } catch (_) {
       return [];
     }
   }
 
-  Future<void> addClip(
-      String bookId, String chapterId, String sectionId, String text) async {
-    final clips = getClips(bookId, chapterId, sectionId);
-    clips.add({
-      'id': DateTime.now().millisecondsSinceEpoch.toString(),
-      'content': text,
-      'createdAt': DateTime.now().toIso8601String(),
-    });
+  Future<void> _saveClips(
+    String bookId,
+    String chapterId,
+    String sectionId,
+    List<ClipNote> clips,
+  ) async {
     await _prefs.setString(
-        _clipKey(bookId, chapterId, sectionId), jsonEncode(clips));
+      _clipKey(bookId, chapterId, sectionId),
+      jsonEncode(clips.map((clip) => clip.toJson()).toList()),
+    );
+  }
+
+  Future<ClipNote> addClip(
+    String bookId,
+    String chapterId,
+    String sectionId,
+    String text,
+  ) async {
+    final clips = getClips(bookId, chapterId, sectionId);
+    final clip = ClipNote(
+      id: DateTime.now().millisecondsSinceEpoch.toString(),
+      content: text,
+      createdAt: DateTime.now(),
+    );
+    clips.add(clip);
+    await _saveClips(bookId, chapterId, sectionId, clips);
+    return clip;
+  }
+
+  Future<void> updateClip(
+    String bookId,
+    String chapterId,
+    String sectionId,
+    String clipId,
+    String text,
+  ) async {
+    final clips = getClips(bookId, chapterId, sectionId)
+        .map((clip) => clip.id == clipId ? clip.copyWith(content: text) : clip)
+        .toList();
+    await _saveClips(bookId, chapterId, sectionId, clips);
   }
 
   Future<void> deleteClip(
       String bookId, String chapterId, String sectionId, String clipId) async {
     final clips = getClips(bookId, chapterId, sectionId);
-    clips.removeWhere((c) => c['id'] == clipId);
-    await _prefs.setString(
-        _clipKey(bookId, chapterId, sectionId), jsonEncode(clips));
+    clips.removeWhere((c) => c.id == clipId);
+    await _saveClips(bookId, chapterId, sectionId, clips);
   }
 
   // ── Calculator Favourites ────────────────────────────────────────────────────
@@ -208,8 +244,8 @@ class StorageService {
       final raw = _prefs.getString('$_answersPrefix$bookId');
       if (raw == null) return {};
       final map = jsonDecode(raw) as Map<String, dynamic>;
-      return map.map(
-          (k, v) => MapEntry(k, UserAnswer.fromJson(v as Map<String, dynamic>)));
+      return map.map((k, v) =>
+          MapEntry(k, UserAnswer.fromJson(v as Map<String, dynamic>)));
     } catch (_) {
       return {};
     }
@@ -222,5 +258,171 @@ class StorageService {
       '$_answersPrefix$bookId',
       jsonEncode(answers.map((k, v) => MapEntry(k, v.toJson()))),
     );
+  }
+
+  /// Records an answered question in both the legacy per-question map (used
+  /// for the tick marks in question lists) and the spaced-repetition ladder.
+  ///
+  /// This must record the review *before* touching the legacy map: on a
+  /// scope's very first answer, [recordQuestionReview] derives its starting
+  /// state from that same legacy map when no review has been written yet
+  /// (see [getQuestionReviews]). Calling [saveAnswer] first would let that
+  /// derivation pick up the answer being recorded right now, then
+  /// [recordQuestionReview] would fold the same answer in a second time —
+  /// silently double-advancing (or double-lapsing) the ladder. Prefer this
+  /// method over calling the two separately.
+  Future<QuestionReview> recordAnswer(
+    String scope,
+    UserAnswer answer, {
+    bool confident = true,
+  }) async {
+    final review =
+        await recordQuestionReview(scope, answer, confident: confident);
+    await saveAnswer(scope, answer);
+    return review;
+  }
+
+  // ── Question Reviews (spaced repetition) ──────────────────────
+
+  static const _reviewsPrefix = 'reviews_';
+  static const _serveLogPrefix = 'serve_log_';
+
+  /// Ladder state for every question the user has touched in [scope].
+  ///
+  /// Falls back to deriving state from the legacy `answers_` map when no
+  /// review record has been written yet, so an existing install keeps its
+  /// history instead of restarting from zero. Call
+  /// [ensureQuestionReviewsMigrated] to make that derivation permanent.
+  Map<String, QuestionReview> getQuestionReviews(String scope) {
+    try {
+      final raw = _prefs.getString('$_reviewsPrefix$scope');
+      if (raw == null) return _reviewsFromLegacyAnswers(scope);
+      final map = jsonDecode(raw) as Map<String, dynamic>;
+      return map.map(
+        (key, value) => MapEntry(
+          key,
+          QuestionReview.fromJson(value as Map<String, dynamic>),
+        ),
+      );
+    } catch (e) {
+      developer.log('Error loading reviews: $e', name: 'StorageService');
+      return {};
+    }
+  }
+
+  Map<String, QuestionReview> _reviewsFromLegacyAnswers(String scope) {
+    return {
+      for (final entry in getAnswers(scope).entries)
+        entry.key: QuestionReview.fromLegacyAnswer(entry.value),
+    };
+  }
+
+  /// One-shot persistence of the legacy-answer derivation. Safe to call on
+  /// every load: it writes only when the review key is genuinely absent.
+  Future<void> ensureQuestionReviewsMigrated(String scope) async {
+    if (_prefs.getString('$_reviewsPrefix$scope') != null) return;
+    await _writeQuestionReviews(scope, _reviewsFromLegacyAnswers(scope));
+  }
+
+  Future<void> _writeQuestionReviews(
+    String scope,
+    Map<String, QuestionReview> reviews,
+  ) async {
+    await _prefs.setString(
+      '$_reviewsPrefix$scope',
+      jsonEncode(reviews.map((key, value) => MapEntry(key, value.toJson()))),
+    );
+  }
+
+  /// Folds one answer into the ladder and persists the result.
+  ///
+  /// [confident] is the user's self-report that they knew the answer rather
+  /// than guessed; a guessed-correct answer does not graduate the question.
+  Future<QuestionReview> recordQuestionReview(
+    String scope,
+    UserAnswer answer, {
+    bool confident = true,
+  }) async {
+    await ensureQuestionReviewsMigrated(scope);
+    final reviews = getQuestionReviews(scope);
+    final current = reviews[answer.questionId] ??
+        QuestionReview.initial(answer.questionId);
+    final updated = current.applyAnswer(
+      isCorrect: answer.isCorrect,
+      selectedOption: answer.selectedOption,
+      confident: confident,
+      at: answer.answeredAt,
+    );
+    reviews[answer.questionId] = updated;
+    await _writeQuestionReviews(scope, reviews);
+    return updated;
+  }
+
+  /// Folds remote review rows into local storage, last-write-wins on
+  /// [QuestionReview.lastSeenAt].
+  ///
+  /// Used by `QuestionReviewSyncService` after sign-in so progress made on
+  /// another device is reflected here. Never favors a remote row over a
+  /// strictly newer local one — this device's own in-flight answers, still
+  /// mid-upload or made offline, must not be clobbered by a stale pull.
+  Future<void> mergeQuestionReviews(
+    String scope,
+    Iterable<QuestionReview> remoteReviews,
+  ) async {
+    await ensureQuestionReviewsMigrated(scope);
+    final local = getQuestionReviews(scope);
+    var changed = false;
+    for (final remote in remoteReviews) {
+      final existing = local[remote.questionId];
+      if (existing == null || remote.lastSeenAt.isAfter(existing.lastSeenAt)) {
+        local[remote.questionId] = remote;
+        changed = true;
+      }
+    }
+    if (changed) await _writeQuestionReviews(scope, local);
+  }
+
+  ServeLog getServeLog(String scope) {
+    try {
+      final raw = _prefs.getString('$_serveLogPrefix$scope');
+      if (raw == null) return ServeLog.empty;
+      return ServeLog.fromJson(jsonDecode(raw) as Map<String, dynamic>);
+    } catch (_) {
+      return ServeLog.empty;
+    }
+  }
+
+  Future<void> saveServeLog(String scope, ServeLog log) async {
+    await _prefs.setString(
+      '$_serveLogPrefix$scope',
+      jsonEncode(log.toJson()),
+    );
+  }
+
+  StudyDayStats getDailyStudyStats(String scope, String dateKey) {
+    try {
+      final raw = _prefs.getString('$_studyStatsPrefix$scope');
+      if (raw == null) {
+        return StudyDayStats.empty(scope: scope, dateKey: dateKey);
+      }
+      final map = jsonDecode(raw) as Map<String, dynamic>;
+      final json = map[dateKey];
+      if (json is Map<String, dynamic>) {
+        return StudyDayStats.fromJson(json);
+      }
+      return StudyDayStats.empty(scope: scope, dateKey: dateKey);
+    } catch (_) {
+      return StudyDayStats.empty(scope: scope, dateKey: dateKey);
+    }
+  }
+
+  Future<void> saveDailyStudyStats(StudyDayStats stats) async {
+    final key = '$_studyStatsPrefix${stats.scope}';
+    final raw = _prefs.getString(key);
+    final map = raw == null
+        ? <String, dynamic>{}
+        : jsonDecode(raw) as Map<String, dynamic>;
+    map[stats.dateKey] = stats.toJson();
+    await _prefs.setString(key, jsonEncode(map));
   }
 }

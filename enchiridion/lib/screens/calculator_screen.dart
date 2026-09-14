@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import '../models/calculator_definition.dart';
 import '../services/storage_service.dart';
+import '../utils/bottom_inset.dart';
 
 class CalculatorScreen extends StatefulWidget {
   final String calculatorId;
@@ -42,7 +43,8 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   void _loadFavorite() {
     if (!mounted) return;
     final storage = context.read<StorageService>();
-    setState(() => _isFavorite = storage.getFavorites().contains(widget.calculatorId));
+    setState(() =>
+        _isFavorite = storage.getFavorites().contains(widget.calculatorId));
   }
 
   Future<void> _toggleFavorite() async {
@@ -112,7 +114,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         ],
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.fromLTRB(16, 16, 16, 16 + bottomViewportInset(context)),
         children: [
           // Description
           Text(
@@ -283,8 +285,8 @@ class _ResultCard extends StatelessWidget {
           ),
           child: Text(
             resultText,
-            style: theme.textTheme.titleMedium
-                ?.copyWith(color: cs.onPrimaryContainer, fontWeight: FontWeight.bold),
+            style: theme.textTheme.titleMedium?.copyWith(
+                color: cs.onPrimaryContainer, fontWeight: FontWeight.bold),
           ),
         ),
         if (interpretation != null) ...[
@@ -330,7 +332,8 @@ class _ResultCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Icon(Icons.lightbulb_outline, size: 18, color: Colors.teal),
+                const Icon(Icons.lightbulb_outline,
+                    size: 18, color: Colors.teal),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(educationalNote!,
@@ -377,7 +380,11 @@ class _NumericField extends StatelessWidget {
 // ─── Calculator 1: Weight-Based Drug Dosing ───────────────────────────────────
 
 class _WeightDosingForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _WeightDosingForm({required this.onResult, required this.onReset});
 
@@ -404,7 +411,10 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
   void _calculate() {
     final rawWeight = double.tryParse(_weightCtrl.text);
     final dosePerKg = double.tryParse(_doseCtrl.text);
-    if (rawWeight == null || rawWeight <= 0 || dosePerKg == null || dosePerKg <= 0) {
+    if (rawWeight == null ||
+        rawWeight <= 0 ||
+        dosePerKg == null ||
+        dosePerKg <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Enter valid weight and dose per kg')));
       return;
@@ -414,15 +424,18 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
     final maxDose = double.tryParse(_maxDoseCtrl.text);
     String? warning;
     if (maxDose != null && maxDose > 0 && total > maxDose) {
-      warning = 'Max dose applied: ${maxDose.toStringAsFixed(1)} mg (calculated: ${total.toStringAsFixed(1)} mg)';
+      warning =
+          'Max dose applied: ${maxDose.toStringAsFixed(1)} mg (calculated: ${total.toStringAsFixed(1)} mg)';
       total = maxDose;
     }
     widget.onResult(
       result: '${total.toStringAsFixed(1)} mg per dose, $_frequency\n'
           'Weight used: ${weightKg.toStringAsFixed(2)} kg × $dosePerKg mg/kg',
-      interpretation: 'Administer ${total.toStringAsFixed(1)} mg per dose, $_frequency.',
+      interpretation:
+          'Administer ${total.toStringAsFixed(1)} mg per dose, $_frequency.',
       educationalNote: null,
-      warning: warning ?? 'Verify dose against current formulary and institutional guidelines.',
+      warning: warning ??
+          'Verify dose against current formulary and institutional guidelines.',
     );
   }
 
@@ -433,7 +446,8 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
       children: [
         Row(
           children: [
-            Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+            Expanded(
+                child: _NumericField(label: 'Weight', controller: _weightCtrl)),
             const SizedBox(width: 8),
             DropdownButton<String>(
               value: _weightUnit,
@@ -448,7 +462,9 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
         DropdownButtonFormField<String>(
           initialValue: _frequency,
           decoration: const InputDecoration(
-              labelText: 'Frequency', border: OutlineInputBorder(), isDense: true),
+              labelText: 'Frequency',
+              border: OutlineInputBorder(),
+              isDense: true),
           items: _freqs
               .map((f) => DropdownMenuItem(value: f, child: Text(f)))
               .toList(),
@@ -466,7 +482,11 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
 // ─── Calculator 2: IV Infusion Rate ──────────────────────────────────────────
 
 class _IvInfusionForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _IvInfusionForm({required this.onResult, required this.onReset});
 
@@ -503,17 +523,20 @@ class _IvInfusionFormState extends State<_IvInfusionForm> {
       result = '${rate.toStringAsFixed(1)} mL/hr';
       widget.onResult(
         result: result,
-        interpretation: 'Set the infusion pump to ${rate.toStringAsFixed(1)} mL/hr.',
+        interpretation:
+            'Set the infusion pump to ${rate.toStringAsFixed(1)} mL/hr.',
         warning: 'Double-check pump settings before starting infusion.',
       );
     } else {
       final timeMin = _timeUnit == 'minutes' ? time : time * 60;
       final rate = (volume * _dropFactor) / timeMin;
-      result = '${rate.toStringAsFixed(1)} drops/min (drop factor: $_dropFactor gtt/mL)';
+      result =
+          '${rate.toStringAsFixed(1)} drops/min (drop factor: $_dropFactor gtt/mL)';
       widget.onResult(
         result: result,
         interpretation: 'Count ${rate.toStringAsFixed(0)} drops per minute.',
-        warning: 'Double-check giving set drop factor before starting infusion.',
+        warning:
+            'Double-check giving set drop factor before starting infusion.',
       );
     }
   }
@@ -526,7 +549,8 @@ class _IvInfusionFormState extends State<_IvInfusionForm> {
         _NumericField(label: 'Total volume (mL)', controller: _volumeCtrl),
         Row(
           children: [
-            Expanded(child: _NumericField(label: 'Time', controller: _timeCtrl)),
+            Expanded(
+                child: _NumericField(label: 'Time', controller: _timeCtrl)),
             const SizedBox(width: 8),
             DropdownButton<String>(
               value: _timeUnit,
@@ -555,7 +579,8 @@ class _IvInfusionFormState extends State<_IvInfusionForm> {
                 border: OutlineInputBorder(),
                 isDense: true),
             items: [10, 15, 20, 60]
-                .map((d) => DropdownMenuItem(value: d, child: Text('$d gtt/mL')))
+                .map(
+                    (d) => DropdownMenuItem(value: d, child: Text('$d gtt/mL')))
                 .toList(),
             onChanged: (v) => setState(() => _dropFactor = v!),
           ),
@@ -570,7 +595,11 @@ class _IvInfusionFormState extends State<_IvInfusionForm> {
 // ─── Calculator 3: Glasgow Coma Scale ────────────────────────────────────────
 
 class _GcsForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _GcsForm({required this.onResult, required this.onReset});
 
@@ -612,8 +641,10 @@ class _GcsFormState extends State<_GcsForm> {
             'Verbal score not assessable (intubated). '
             'Severity cannot be classified using standard 3–15 thresholds. '
             'Trend E and M components over time.',
-        educationalNote: 'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
-        warning: 'GCS severity bands (mild/moderate/severe) apply to the full 3–15 scale only. '
+        educationalNote:
+            'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
+        warning:
+            'GCS severity bands (mild/moderate/severe) apply to the full 3–15 scale only. '
             'Do not apply them to the intubated sub-score. '
             'GCS alone does not determine airway management — use full clinical assessment.',
       );
@@ -632,8 +663,10 @@ class _GcsFormState extends State<_GcsForm> {
     widget.onResult(
       result: 'E$_eye V$_verbal M$_motor = $total — $severity',
       interpretation: 'Total GCS $total. $severity.',
-      educationalNote: 'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
-      warning: 'GCS alone does not determine airway management — use full clinical assessment.',
+      educationalNote:
+          'A GCS ≤ 8 is the conventional threshold for considering airway protection.',
+      warning:
+          'GCS alone does not determine airway management — use full clinical assessment.',
     );
   }
 
@@ -688,7 +721,11 @@ class _GcsFormState extends State<_GcsForm> {
 // ─── Calculator 4: BMI ────────────────────────────────────────────────────────
 
 class _BmiForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _BmiForm({required this.onResult, required this.onReset});
 
@@ -742,8 +779,10 @@ class _BmiFormState extends State<_BmiForm> {
 
     widget.onResult(
       result: 'BMI: ${bmi.toStringAsFixed(1)} — $category',
-      interpretation: 'A BMI of ${bmi.toStringAsFixed(1)} is classified as $category.',
-      educationalNote: 'BMI does not account for muscle mass or fat distribution. Interpret in clinical context.',
+      interpretation:
+          'A BMI of ${bmi.toStringAsFixed(1)} is classified as $category.',
+      educationalNote:
+          'BMI does not account for muscle mass or fat distribution. Interpret in clinical context.',
     );
   }
 
@@ -753,7 +792,8 @@ class _BmiFormState extends State<_BmiForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(children: [
-          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _weightUnit,
@@ -765,8 +805,8 @@ class _BmiFormState extends State<_BmiForm> {
               final current = double.tryParse(_weightCtrl.text);
               if (current != null && current > 0) {
                 final converted = _weightUnit == 'kg'
-                    ? current * 2.20462   // kg → lb
-                    : current / 2.20462;  // lb → kg
+                    ? current * 2.20462 // kg → lb
+                    : current / 2.20462; // lb → kg
                 _weightCtrl.text = converted.toStringAsFixed(2);
               }
               setState(() => _weightUnit = v);
@@ -774,7 +814,8 @@ class _BmiFormState extends State<_BmiForm> {
           ),
         ]),
         Row(children: [
-          Expanded(child: _NumericField(label: 'Height', controller: _heightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Height', controller: _heightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _heightUnit,
@@ -787,17 +828,31 @@ class _BmiFormState extends State<_BmiForm> {
               if (current != null && current > 0) {
                 double meters;
                 switch (_heightUnit) {
-                  case 'cm': meters = current / 100; break;
-                  case 'm':  meters = current; break;
-                  case 'ft': meters = current * 0.3048; break;
-                  default:   meters = current / 100;
+                  case 'cm':
+                    meters = current / 100;
+                    break;
+                  case 'm':
+                    meters = current;
+                    break;
+                  case 'ft':
+                    meters = current * 0.3048;
+                    break;
+                  default:
+                    meters = current / 100;
                 }
                 double converted;
                 switch (v) {
-                  case 'cm': converted = meters * 100; break;
-                  case 'm':  converted = meters; break;
-                  case 'ft': converted = meters / 0.3048; break;
-                  default:   converted = meters * 100;
+                  case 'cm':
+                    converted = meters * 100;
+                    break;
+                  case 'm':
+                    converted = meters;
+                    break;
+                  case 'ft':
+                    converted = meters / 0.3048;
+                    break;
+                  default:
+                    converted = meters * 100;
                 }
                 _heightCtrl.text = converted.toStringAsFixed(2);
               }
@@ -825,7 +880,11 @@ class _BmiFormState extends State<_BmiForm> {
 // ─── Calculator 5: EDD / EGA ──────────────────────────────────────────────────
 
 class _EddEgaForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _EddEgaForm({required this.onResult, required this.onReset});
 
@@ -864,9 +923,8 @@ class _EddEgaFormState extends State<_EddEgaForm> {
     final edd = _lmp!.add(const Duration(days: 280));
     final diff = _referenceDate.difference(_lmp!).inDays;
     if (diff < 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Reference date is before LMP — please check dates')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Reference date is before LMP — please check dates')));
       return;
     }
     final weeks = diff ~/ 7;
@@ -879,19 +937,33 @@ class _EddEgaFormState extends State<_EddEgaForm> {
       warning = 'Past EDD by $overdue days';
     }
 
-    final eddFormatted =
-        '${edd.day} ${_monthName(edd.month)} ${edd.year}';
+    final eddFormatted = '${edd.day} ${_monthName(edd.month)} ${edd.year}';
 
     widget.onResult(
       result: 'EDD: $eddFormatted\nEGA: $egaText',
-      interpretation: 'Estimated delivery date is $eddFormatted. Current gestational age is $egaText.',
-      educationalNote: 'EGA is more accurately determined by first-trimester ultrasound when available.',
+      interpretation:
+          'Estimated delivery date is $eddFormatted. Current gestational age is $egaText.',
+      educationalNote:
+          'EGA is more accurately determined by first-trimester ultrasound when available.',
       warning: warning,
     );
   }
 
   String _monthName(int m) {
-    const names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const names = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ];
     return names[m - 1];
   }
 
@@ -920,7 +992,8 @@ class _EddEgaFormState extends State<_EddEgaForm> {
     );
   }
 
-  Widget _dateTile(ThemeData theme, {required String label, DateTime? date, required VoidCallback onTap}) {
+  Widget _dateTile(ThemeData theme,
+      {required String label, DateTime? date, required VoidCallback onTap}) {
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(8),
@@ -936,8 +1009,8 @@ class _EddEgaFormState extends State<_EddEgaForm> {
               ? '${date.day}/${date.month}/${date.year}'
               : 'Tap to select',
           style: date == null
-              ? theme.textTheme.bodyMedium
-                  ?.copyWith(color: theme.colorScheme.onSurface.withValues(alpha: 0.5))
+              ? theme.textTheme.bodyMedium?.copyWith(
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.5))
               : theme.textTheme.bodyMedium,
         ),
       ),
@@ -948,7 +1021,11 @@ class _EddEgaFormState extends State<_EddEgaForm> {
 // ─── Calculator 6: Anion Gap ──────────────────────────────────────────────────
 
 class _AnionGapForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _AnionGapForm({required this.onResult, required this.onReset});
 
@@ -983,19 +1060,23 @@ class _AnionGapFormState extends State<_AnionGapForm> {
     String interp;
     if (ag < 8) {
       category = 'Low';
-      interp = 'Low anion gap (< 8 mEq/L). Consider hypoalbuminaemia, multiple myeloma, or lithium toxicity.';
+      interp =
+          'Low anion gap (< 8 mEq/L). Consider hypoalbuminaemia, multiple myeloma, or lithium toxicity.';
     } else if (ag <= 12) {
       category = 'Normal';
-      interp = 'Normal anion gap (8–12 mEq/L). Non-anion gap metabolic acidosis if HCO₃ is low.';
+      interp =
+          'Normal anion gap (8–12 mEq/L). Non-anion gap metabolic acidosis if HCO₃ is low.';
     } else {
       category = 'Elevated (HAGMA)';
-      interp = 'Elevated anion gap (> 12 mEq/L). Consider MUDPILES: Methanol, Uraemia, DKA, Propylene glycol/Paracetamol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates.';
+      interp =
+          'Elevated anion gap (> 12 mEq/L). Consider MUDPILES: Methanol, Uraemia, DKA, Propylene glycol/Paracetamol, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates.';
     }
 
     widget.onResult(
       result: 'Anion Gap: ${ag.toStringAsFixed(1)} mEq/L — $category',
       interpretation: interp,
-      educationalNote: 'Consider albumin correction if hypoalbuminaemia is present: Corrected AG = AG + 2.5 × (4 − albumin g/dL).',
+      educationalNote:
+          'Consider albumin correction if hypoalbuminaemia is present: Corrected AG = AG + 2.5 × (4 − albumin g/dL).',
     );
   }
 
@@ -1006,7 +1087,8 @@ class _AnionGapFormState extends State<_AnionGapForm> {
       children: [
         _NumericField(label: 'Sodium Na⁺ (mEq/L)', controller: _naCtrl),
         _NumericField(label: 'Chloride Cl⁻ (mEq/L)', controller: _clCtrl),
-        _NumericField(label: 'Bicarbonate HCO₃⁻ (mEq/L)', controller: _hco3Ctrl),
+        _NumericField(
+            label: 'Bicarbonate HCO₃⁻ (mEq/L)', controller: _hco3Ctrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
@@ -1016,7 +1098,11 @@ class _AnionGapFormState extends State<_AnionGapForm> {
 // ─── Calculator 7: Creatinine Clearance (Cockcroft-Gault) ────────────────────
 
 class _CrClForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _CrClForm({required this.onResult, required this.onReset});
 
@@ -1044,10 +1130,14 @@ class _CrClFormState extends State<_CrClForm> {
     final age = double.tryParse(_ageCtrl.text);
     final rawW = double.tryParse(_weightCtrl.text);
     final rawScr = double.tryParse(_scrCtrl.text);
-    if (age == null || rawW == null || rawScr == null ||
-        age <= 0 || rawW <= 0 || rawScr <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid age, weight, and creatinine')));
+    if (age == null ||
+        rawW == null ||
+        rawScr == null ||
+        age <= 0 ||
+        rawW <= 0 ||
+        rawScr <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid age, weight, and creatinine')));
       return;
     }
     final weightKg = _weightUnit == 'kg' ? rawW : rawW * 0.453592;
@@ -1070,9 +1160,12 @@ class _CrClFormState extends State<_CrClForm> {
 
     widget.onResult(
       result: 'CrCl: ${crcl.toStringAsFixed(1)} mL/min — $band',
-      interpretation: 'Estimated creatinine clearance is ${crcl.toStringAsFixed(1)} mL/min ($band).',
-      educationalNote: 'Cockcroft-Gault uses actual body weight. Consider using IBW in obese patients.',
-      warning: 'Verify drug-specific renal dosing thresholds against current formulary.',
+      interpretation:
+          'Estimated creatinine clearance is ${crcl.toStringAsFixed(1)} mL/min ($band).',
+      educationalNote:
+          'Cockcroft-Gault uses actual body weight. Consider using IBW in obese patients.',
+      warning:
+          'Verify drug-specific renal dosing thresholds against current formulary.',
     );
   }
 
@@ -1088,13 +1181,15 @@ class _CrClFormState extends State<_CrClForm> {
               labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
           items: ['male', 'female']
               .map((s) => DropdownMenuItem(
-                  value: s, child: Text('${s[0].toUpperCase()}${s.substring(1)}')))
+                  value: s,
+                  child: Text('${s[0].toUpperCase()}${s.substring(1)}')))
               .toList(),
           onChanged: (v) => setState(() => _sex = v!),
         ),
         const SizedBox(height: 12),
         Row(children: [
-          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _weightUnit,
@@ -1125,9 +1220,12 @@ class _CrClFormState extends State<_CrClForm> {
 
 // ─── Calculator 9: qSOFA Score ───────────────────────────────────────────────
 
-
 class _QsofaForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _QsofaForm({required this.onResult, required this.onReset});
 
@@ -1141,7 +1239,8 @@ class _QsofaFormState extends State<_QsofaForm> {
   bool _sbpLow = false;
 
   void _calculate() {
-    int score = (_alteredMentation ? 1 : 0) + (_rrHigh ? 1 : 0) + (_sbpLow ? 1 : 0);
+    int score =
+        (_alteredMentation ? 1 : 0) + (_rrHigh ? 1 : 0) + (_sbpLow ? 1 : 0);
     String band;
     String interp;
     if (score >= 2) {
@@ -1156,7 +1255,8 @@ class _QsofaFormState extends State<_QsofaForm> {
     widget.onResult(
       result: '$score/3 — $band',
       interpretation: interp,
-      warning: 'qSOFA is a screening tool only. A score < 2 does not exclude sepsis — use clinical judgement.',
+      warning:
+          'qSOFA is a screening tool only. A score < 2 does not exclude sepsis — use clinical judgement.',
     );
   }
 
@@ -1192,7 +1292,11 @@ class _QsofaFormState extends State<_QsofaForm> {
 // ─── Calculator 10: NEWS2 Score ──────────────────────────────────────────────
 
 class _News2Form extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _News2Form({required this.onResult, required this.onReset});
 
@@ -1284,17 +1388,24 @@ class _News2FormState extends State<_News2Form> {
     final hrVal = double.tryParse(_hrCtrl.text);
     final tempVal = double.tryParse(_tempCtrl.text);
 
-    if (rrVal == null || rrVal <= 0 || spo2Val == null || spo2Val <= 0 ||
-        sbpVal == null || sbpVal <= 0 || hrVal == null || hrVal <= 0 ||
-        tempVal == null || tempVal <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid values for all parameters')));
+    if (rrVal == null ||
+        rrVal <= 0 ||
+        spo2Val == null ||
+        spo2Val <= 0 ||
+        sbpVal == null ||
+        sbpVal <= 0 ||
+        hrVal == null ||
+        hrVal <= 0 ||
+        tempVal == null ||
+        tempVal <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid values for all parameters')));
       return;
     }
     if (tempVal < 25.0 || tempVal > 45.0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Temperature must be in °C (plausible range: 25–45°C)')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text('Temperature must be in °C (plausible range: 25–45°C)')));
       return;
     }
 
@@ -1307,7 +1418,13 @@ class _News2FormState extends State<_News2Form> {
     final hrScore = _scoreHR(hrVal.round());
     final tempScore = _scoreTemp(tempVal);
 
-    final total = rrScore + spo2Score + o2Score + sbpScore + hrScore + tempScore + _consciousnessScore;
+    final total = rrScore +
+        spo2Score +
+        o2Score +
+        sbpScore +
+        hrScore +
+        tempScore +
+        _consciousnessScore;
 
     String band;
     String response;
@@ -1328,8 +1445,10 @@ class _News2FormState extends State<_News2Form> {
     widget.onResult(
       result: '$total — $band',
       interpretation: 'NEWS2 score $total ($band risk). $response',
-      educationalNote: 'Scale 2 SpO2 scoring applies for patients with hypercapnic respiratory failure (COPD target SpO2 88–92%).',
-      warning: 'NEWS2 is for adult general ward use. Not validated in pregnancy or paediatrics.',
+      educationalNote:
+          'Scale 2 SpO2 scoring applies for patients with hypercapnic respiratory failure (COPD target SpO2 88–92%).',
+      warning:
+          'NEWS2 is for adult general ward use. Not validated in pregnancy or paediatrics.',
     );
   }
 
@@ -1338,7 +1457,8 @@ class _News2FormState extends State<_News2Form> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _NumericField(label: 'Respiratory rate (breaths/min)', controller: _rrCtrl),
+        _NumericField(
+            label: 'Respiratory rate (breaths/min)', controller: _rrCtrl),
         SwitchListTile(
           title: const Text('Hypercapnic resp failure (SpO2 target 88–92%)'),
           subtitle: const Text('Uses NEWS2 SpO2 scale 2'),
@@ -1364,7 +1484,8 @@ class _News2FormState extends State<_News2Form> {
               isDense: true),
           items: const [
             DropdownMenuItem(value: 0, child: Text('Alert (0)')),
-            DropdownMenuItem(value: 3, child: Text('Voice/Pain/Unresponsive (3)')),
+            DropdownMenuItem(
+                value: 3, child: Text('Voice/Pain/Unresponsive (3)')),
           ],
           onChanged: (v) => setState(() => _consciousnessScore = v!),
         ),
@@ -1378,7 +1499,11 @@ class _News2FormState extends State<_News2Form> {
 // ─── Calculator 11: Shock Index ──────────────────────────────────────────────
 
 class _ShockIndexForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _ShockIndexForm({required this.onResult, required this.onReset});
 
@@ -1406,9 +1531,9 @@ class _ShockIndexFormState extends State<_ShockIndexForm> {
       return;
     }
     if (sbp < 50 || sbp > 300) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('SBP value appears implausible (expected 50–300 mmHg)')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text('SBP value appears implausible (expected 50–300 mmHg)')));
       return;
     }
     final si = hr / sbp;
@@ -1422,8 +1547,10 @@ class _ShockIndexFormState extends State<_ShockIndexForm> {
     }
     widget.onResult(
       result: '${si.toStringAsFixed(2)} — $band',
-      interpretation: 'Shock Index of ${si.toStringAsFixed(2)} suggests $band haemodynamic status.',
-      warning: 'Shock Index is a screening tool — assess clinical picture in full (pallor, cap refill, mental status).',
+      interpretation:
+          'Shock Index of ${si.toStringAsFixed(2)} suggests $band haemodynamic status.',
+      warning:
+          'Shock Index is a screening tool — assess clinical picture in full (pallor, cap refill, mental status).',
     );
   }
 
@@ -1443,7 +1570,11 @@ class _ShockIndexFormState extends State<_ShockIndexForm> {
 // ─── Calculator 12: Osmolality & Osmolar Gap ─────────────────────────────────
 
 class _OsmolalityForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _OsmolalityForm({required this.onResult, required this.onReset});
 
@@ -1470,9 +1601,14 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
     final na = double.tryParse(_naCtrl.text);
     final glucose = double.tryParse(_glucoseCtrl.text);
     final bun = double.tryParse(_bunCtrl.text);
-    if (na == null || na <= 0 || glucose == null || glucose <= 0 || bun == null || bun <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid Na, glucose, and BUN values')));
+    if (na == null ||
+        na <= 0 ||
+        glucose == null ||
+        glucose <= 0 ||
+        bun == null ||
+        bun <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid Na, glucose, and BUN values')));
       return;
     }
     final calculated = 2 * na + glucose / 18 + bun / 2.8;
@@ -1484,13 +1620,17 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
     if (measured != null && measured > 0) {
       final gap = measured - calculated;
       final gapBand = gap > 10 ? 'Elevated (> 10)' : 'Normal (≤ 10)';
-      resultStr = 'Calc: ${calculated.toStringAsFixed(1)} mOsm/kg | Gap: ${gap.toStringAsFixed(1)} mOsm/kg — $gapBand';
-      interp = 'Calculated osmolality ${calculated.toStringAsFixed(1)} mOsm/kg. '
+      resultStr =
+          'Calc: ${calculated.toStringAsFixed(1)} mOsm/kg | Gap: ${gap.toStringAsFixed(1)} mOsm/kg — $gapBand';
+      interp =
+          'Calculated osmolality ${calculated.toStringAsFixed(1)} mOsm/kg. '
           'Osmolar gap ${gap.toStringAsFixed(1)} mOsm/kg ($gapBand). '
           '${gap > 10 ? 'Elevated gap — consider toxic alcohols (methanol, ethylene glycol, isopropanol), mannitol, or severe uraemia.' : 'Normal osmolar gap.'}';
     } else {
-      resultStr = 'Calculated: ${calculated.toStringAsFixed(1)} mOsm/kg (no measured value entered)';
-      interp = 'Calculated osmolality ${calculated.toStringAsFixed(1)} mOsm/kg. '
+      resultStr =
+          'Calculated: ${calculated.toStringAsFixed(1)} mOsm/kg (no measured value entered)';
+      interp =
+          'Calculated osmolality ${calculated.toStringAsFixed(1)} mOsm/kg. '
           'Normal range: 275–295 mOsm/kg. '
           'Enter measured osmolality to calculate the osmolar gap.';
     }
@@ -1499,7 +1639,8 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
       result: resultStr,
       interpretation: interp,
       educationalNote: 'Formula: 2×Na + glucose(mg/dL)/18 + BUN(mg/dL)/2.8.',
-      warning: 'A normal osmolar gap does not reliably exclude early toxic alcohol ingestion.',
+      warning:
+          'A normal osmolar gap does not reliably exclude early toxic alcohol ingestion.',
     );
   }
 
@@ -1511,7 +1652,9 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
         _NumericField(label: 'Sodium Na⁺ (mEq/L)', controller: _naCtrl),
         _NumericField(label: 'Glucose (mg/dL)', controller: _glucoseCtrl),
         _NumericField(label: 'BUN (mg/dL)', controller: _bunCtrl),
-        _NumericField(label: 'Measured osmolality (mOsm/kg) — optional', controller: _measuredCtrl),
+        _NumericField(
+            label: 'Measured osmolality (mOsm/kg) — optional',
+            controller: _measuredCtrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
@@ -1521,7 +1664,11 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
 // ─── Calculator 13: Corrected Sodium (Hyperglycemia) ─────────────────────────
 
 class _CorrectedSodiumForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _CorrectedSodiumForm({required this.onResult, required this.onReset});
 
@@ -1544,29 +1691,34 @@ class _CorrectedSodiumFormState extends State<_CorrectedSodiumForm> {
     final na = double.tryParse(_naCtrl.text);
     final glucose = double.tryParse(_glucoseCtrl.text);
     if (na == null || na <= 0 || glucose == null || glucose <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid sodium and glucose values')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid sodium and glucose values')));
       return;
     }
     if (glucose < 100) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Glucose must be ≥ 100 mg/dL for correction to apply')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text('Glucose must be ≥ 100 mg/dL for correction to apply')));
       return;
     }
     final corrected = na + 0.016 * (glucose - 100);
     String naInterp;
     if (corrected < 135) {
-      naInterp = 'Corrected Na low — hyponatraemia persists after glucose correction; further evaluation needed.';
+      naInterp =
+          'Corrected Na low — hyponatraemia persists after glucose correction; further evaluation needed.';
     } else if (corrected <= 145) {
-      naInterp = 'Corrected Na normal — hyponatraemia is dilutional and should resolve with glucose treatment.';
+      naInterp =
+          'Corrected Na normal — hyponatraemia is dilutional and should resolve with glucose treatment.';
     } else {
-      naInterp = 'Corrected Na high — hypernatraemia present; review fluid management.';
+      naInterp =
+          'Corrected Na high — hypernatraemia present; review fluid management.';
     }
 
     widget.onResult(
       result: 'Corrected Na: ${corrected.toStringAsFixed(1)} mEq/L',
       interpretation: naInterp,
-      educationalNote: 'Formula: Na + 0.016 × (glucose mg/dL − 100). Applies Katz correction factor.',
+      educationalNote:
+          'Formula: Na + 0.016 × (glucose mg/dL − 100). Applies Katz correction factor.',
       warning: 'This calculator uses the Katz 1973 correction factor (0.016). '
           'Some guidelines use 0.024 for glucose > 400 mg/dL.',
     );
@@ -1588,7 +1740,11 @@ class _CorrectedSodiumFormState extends State<_CorrectedSodiumForm> {
 // ─── Calculator 14: A-a Gradient ─────────────────────────────────────────────
 
 class _AaGradientForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _AaGradientForm({required this.onResult, required this.onReset});
 
@@ -1617,10 +1773,16 @@ class _AaGradientFormState extends State<_AaGradientForm> {
     final pao2 = double.tryParse(_pao2Ctrl.text);
     final paco2 = double.tryParse(_paco2Ctrl.text);
     final fio2 = double.tryParse(_fio2Ctrl.text);
-    if (pao2 == null || pao2 <= 0 || paco2 == null || paco2 <= 0 ||
-        fio2 == null || fio2 <= 0 || fio2 > 1.0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid PaO2, PaCO2, and FiO2 (fraction 0.21–1.0)')));
+    if (pao2 == null ||
+        pao2 <= 0 ||
+        paco2 == null ||
+        paco2 <= 0 ||
+        fio2 == null ||
+        fio2 <= 0 ||
+        fio2 > 1.0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text('Enter valid PaO2, PaCO2, and FiO2 (fraction 0.21–1.0)')));
       return;
     }
     final pbText = _pbCtrl.text.trim();
@@ -1648,8 +1810,10 @@ class _AaGradientFormState extends State<_AaGradientForm> {
     widget.onResult(
       result: '${aaGradient.toStringAsFixed(1)} mmHg',
       interpretation: interp,
-      educationalNote: 'Formula: PAO2 = FiO2 × (PB − 47) − PaCO2 / 0.8; A-a = PAO2 − PaO2.',
-      warning: 'FiO2 must be entered as a fraction (e.g., 0.40 for 40%), not a percentage.',
+      educationalNote:
+          'Formula: PAO2 = FiO2 × (PB − 47) − PaCO2 / 0.8; A-a = PAO2 − PaO2.',
+      warning:
+          'FiO2 must be entered as a fraction (e.g., 0.40 for 40%), not a percentage.',
     );
   }
 
@@ -1660,9 +1824,14 @@ class _AaGradientFormState extends State<_AaGradientForm> {
       children: [
         _NumericField(label: 'PaO2 (mmHg)', controller: _pao2Ctrl),
         _NumericField(label: 'PaCO2 (mmHg)', controller: _paco2Ctrl),
-        _NumericField(label: 'FiO2 (fraction, e.g. 0.21–1.0)', controller: _fio2Ctrl),
-        _NumericField(label: 'Age (years) — optional for expected range', controller: _ageCtrl),
-        _NumericField(label: 'Barometric pressure (mmHg, default 760)', controller: _pbCtrl),
+        _NumericField(
+            label: 'FiO2 (fraction, e.g. 0.21–1.0)', controller: _fio2Ctrl),
+        _NumericField(
+            label: 'Age (years) — optional for expected range',
+            controller: _ageCtrl),
+        _NumericField(
+            label: 'Barometric pressure (mmHg, default 760)',
+            controller: _pbCtrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
@@ -1672,7 +1841,11 @@ class _AaGradientFormState extends State<_AaGradientForm> {
 // ─── Calculator 15: PaO2/FiO2 Ratio ─────────────────────────────────────────
 
 class _PaO2FiO2Form extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _PaO2FiO2Form({required this.onResult, required this.onReset});
 
@@ -1694,9 +1867,13 @@ class _PaO2FiO2FormState extends State<_PaO2FiO2Form> {
   void _calculate() {
     final pao2 = double.tryParse(_pao2Ctrl.text);
     final fio2 = double.tryParse(_fio2Ctrl.text);
-    if (pao2 == null || pao2 <= 0 || fio2 == null || fio2 < 0.21 || fio2 > 1.0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid PaO2 and FiO2 (fraction 0.21–1.0)')));
+    if (pao2 == null ||
+        pao2 <= 0 ||
+        fio2 == null ||
+        fio2 < 0.21 ||
+        fio2 > 1.0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid PaO2 and FiO2 (fraction 0.21–1.0)')));
       return;
     }
     final pf = pao2 / fio2;
@@ -1714,8 +1891,10 @@ class _PaO2FiO2FormState extends State<_PaO2FiO2Form> {
       result: '${pf.toStringAsFixed(0)} mmHg — $band',
       interpretation: 'P/F ratio ${pf.toStringAsFixed(0)} mmHg ($band). '
           '${pf < 300 ? 'Consider mechanical ventilation strategy per ARDS protocol.' : ''}',
-      educationalNote: 'Berlin ARDS criteria require PEEP ≥ 5 cmH2O at measurement. P/F ratio alone does not diagnose ARDS.',
-      warning: 'FiO2 must be entered as a fraction (e.g., 0.60 for 60%), not a percentage.',
+      educationalNote:
+          'Berlin ARDS criteria require PEEP ≥ 5 cmH2O at measurement. P/F ratio alone does not diagnose ARDS.',
+      warning:
+          'FiO2 must be entered as a fraction (e.g., 0.60 for 60%), not a percentage.',
     );
   }
 
@@ -1725,7 +1904,8 @@ class _PaO2FiO2FormState extends State<_PaO2FiO2Form> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         _NumericField(label: 'PaO2 (mmHg)', controller: _pao2Ctrl),
-        _NumericField(label: 'FiO2 (fraction, e.g. 0.21–1.0)', controller: _fio2Ctrl),
+        _NumericField(
+            label: 'FiO2 (fraction, e.g. 0.21–1.0)', controller: _fio2Ctrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
@@ -1759,11 +1939,11 @@ class _ClinicalNotesSection extends StatelessWidget {
           _noteRow(context, Icons.medical_services_outlined,
               'Clinical Interpretation', def.clinicalInterpretation),
         if (def.safetyNotes.isNotEmpty)
-          _noteRow(context, Icons.warning_amber_outlined,
-              'Safety Notes', def.safetyNotes),
+          _noteRow(context, Icons.warning_amber_outlined, 'Safety Notes',
+              def.safetyNotes),
         if (def.commonPitfalls.isNotEmpty)
-          _noteRow(context, Icons.error_outline,
-              'Common Pitfalls', def.commonPitfalls),
+          _noteRow(context, Icons.error_outline, 'Common Pitfalls',
+              def.commonPitfalls),
         if (def.osceTips.isNotEmpty)
           _noteRow(context, Icons.school_outlined, 'OSCE Tips', def.osceTips),
       ],
@@ -1805,7 +1985,11 @@ Widget _noteRow(
 // ─── Calculator 8: Holliday-Segar ────────────────────────────────────────────
 
 class _HollidaySegarForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _HollidaySegarForm({required this.onResult, required this.onReset});
 
@@ -1826,23 +2010,22 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
   void _calculate() {
     final rawW = double.tryParse(_weightCtrl.text);
     if (rawW == null || rawW <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter a valid weight')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid weight')));
       return;
     }
     final w = _weightUnit == 'kg' ? rawW : rawW * 0.453592;
     final first10 = [w, 10.0].reduce((a, b) => a < b ? a : b) * 4;
-    final next10 = [w - 10.0, 10.0, 0.0]
-            .reduce((a, b) => a > b ? a : b)
-            .clamp(0, 10) *
-        2;
+    final next10 =
+        [w - 10.0, 10.0, 0.0].reduce((a, b) => a > b ? a : b).clamp(0, 10) * 2;
     final remaining = (w - 20.0).clamp(0, double.infinity) * 1;
     final rateHr = first10 + next10 + remaining;
     final rateDay = rateHr * 24;
 
     String? warning;
     if (w > 60) {
-      warning = 'Holliday-Segar is validated for paediatric weights. Adult maintenance may differ.';
+      warning =
+          'Holliday-Segar is validated for paediatric weights. Adult maintenance may differ.';
     }
 
     final breakdown = 'First 10 kg: ${first10.toStringAsFixed(1)} mL/hr'
@@ -1850,9 +2033,12 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
         '${w > 20 ? ' | Remaining ${(w - 20).toStringAsFixed(1)} kg: ${remaining.toStringAsFixed(1)} mL/hr' : ''}';
 
     widget.onResult(
-      result: '${rateHr.toStringAsFixed(1)} mL/hr  (${rateDay.toStringAsFixed(0)} mL/day)',
-      interpretation: 'Maintenance fluid rate: ${rateHr.toStringAsFixed(1)} mL/hr.\n$breakdown',
-      educationalNote: 'Adjust for clinical context: fever, ongoing losses, cardiac or renal disease.',
+      result:
+          '${rateHr.toStringAsFixed(1)} mL/hr  (${rateDay.toStringAsFixed(0)} mL/day)',
+      interpretation:
+          'Maintenance fluid rate: ${rateHr.toStringAsFixed(1)} mL/hr.\n$breakdown',
+      educationalNote:
+          'Adjust for clinical context: fever, ongoing losses, cardiac or renal disease.',
       warning: warning,
     );
   }
@@ -1863,7 +2049,8 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(children: [
-          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _weightUnit,
@@ -1882,7 +2069,11 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
 // ─── Drug Dosing Calculator D1: BSA (Mosteller) ──────────────────────────────
 
 class _BsaForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _BsaForm({required this.onResult, required this.onReset});
 
@@ -1906,7 +2097,10 @@ class _BsaFormState extends State<_BsaForm> {
   void _calculate() {
     final rawWeight = double.tryParse(_weightCtrl.text);
     final rawHeight = double.tryParse(_heightCtrl.text);
-    if (rawWeight == null || rawWeight <= 0 || rawHeight == null || rawHeight <= 0) {
+    if (rawWeight == null ||
+        rawWeight <= 0 ||
+        rawHeight == null ||
+        rawHeight <= 0) {
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Enter valid weight and height')));
       return;
@@ -1918,9 +2112,11 @@ class _BsaFormState extends State<_BsaForm> {
     final bsa = product > 0 ? math.sqrt(product) : 0.0;
     widget.onResult(
       result: 'BSA: ${bsa.toStringAsFixed(2)} m²',
-      interpretation: 'Calculated body surface area (Mosteller): ${bsa.toStringAsFixed(2)} m². '
+      interpretation:
+          'Calculated body surface area (Mosteller): ${bsa.toStringAsFixed(2)} m². '
           'Used for chemotherapy, cardiac output, and drug dose adjustments.',
-      educationalNote: 'Mosteller formula: BSA = √(height_cm × weight_kg / 3600). '
+      educationalNote:
+          'Mosteller formula: BSA = √(height_cm × weight_kg / 3600). '
           'Typical adult BSA: 1.6–2.0 m². Not validated for extreme weights.',
     );
   }
@@ -1931,7 +2127,8 @@ class _BsaFormState extends State<_BsaForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(children: [
-          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _weightUnit,
@@ -1942,7 +2139,8 @@ class _BsaFormState extends State<_BsaForm> {
           ),
         ]),
         Row(children: [
-          Expanded(child: _NumericField(label: 'Height', controller: _heightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Height', controller: _heightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _heightUnit,
@@ -1961,7 +2159,11 @@ class _BsaFormState extends State<_BsaForm> {
 // ─── Drug Dosing Calculator D2: eGFR (CKD-EPI 2021 race-free) ────────────────
 
 class _EgfrCkdEpiForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _EgfrCkdEpiForm({required this.onResult, required this.onReset});
 
@@ -1986,8 +2188,8 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
     final age = double.tryParse(_ageCtrl.text);
     final rawScr = double.tryParse(_scrCtrl.text);
     if (age == null || age <= 0 || rawScr == null || rawScr <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid age and serum creatinine')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid age and serum creatinine')));
       return;
     }
     // Convert µmol/L to mg/dL if needed
@@ -2026,12 +2228,15 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
 
     widget.onResult(
       result: 'eGFR: ${egfr.toStringAsFixed(1)} mL/min/1.73 m² — $band',
-      interpretation: 'Calculated estimate using 2021 CKD-EPI race-free equation: '
+      interpretation:
+          'Calculated estimate using 2021 CKD-EPI race-free equation: '
           '${egfr.toStringAsFixed(1)} mL/min/1.73 m² ($band). '
           'Adjust drug doses for renally cleared medications.',
-      educationalNote: 'Uses the 2021 CKD-EPI race-free equation — no race variable. '
+      educationalNote:
+          'Uses the 2021 CKD-EPI race-free equation — no race variable. '
           'Confirm CKD diagnosis with repeat measurement ≥ 3 months apart before staging.',
-      warning: 'This is a calculated estimate. Verify against clinical context and '
+      warning:
+          'This is a calculated estimate. Verify against clinical context and '
           'laboratory-reported eGFR before making prescribing decisions.',
     );
   }
@@ -2054,7 +2259,8 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
               labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
           items: ['male', 'female']
               .map((s) => DropdownMenuItem(
-                  value: s, child: Text('${s[0].toUpperCase()}${s.substring(1)}')))
+                  value: s,
+                  child: Text('${s[0].toUpperCase()}${s.substring(1)}')))
               .toList(),
           onChanged: (v) => setState(() => _sex = v!),
         ),
@@ -2081,9 +2287,14 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
 // ─── Drug Dosing Calculator D3: Gentamicin/Vancomycin Dosing ─────────────────
 
 class _GentamicinVancomycinForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
-  const _GentamicinVancomycinForm({required this.onResult, required this.onReset});
+  const _GentamicinVancomycinForm(
+      {required this.onResult, required this.onReset});
 
   @override
   State<_GentamicinVancomycinForm> createState() =>
@@ -2104,8 +2315,8 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
   void _calculate() {
     final rawWeight = double.tryParse(_weightCtrl.text);
     if (rawWeight == null || rawWeight <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid weight')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter valid weight')));
       return;
     }
     final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight / 2.20462;
@@ -2116,8 +2327,10 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
 
     if (_drug == 'Gentamicin') {
       final dose = weightKg * 5.0;
-      result = 'Gentamicin: ${dose.toStringAsFixed(1)} mg once daily (suggested)';
-      interpretation = 'Suggested gentamicin dose: ${dose.toStringAsFixed(1)} mg once daily '
+      result =
+          'Gentamicin: ${dose.toStringAsFixed(1)} mg once daily (suggested)';
+      interpretation =
+          'Suggested gentamicin dose: ${dose.toStringAsFixed(1)} mg once daily '
           '(5 mg/kg/day). Adjust based on CrCl and measured trough/peak levels.';
       educationalNote = 'Once-daily dosing based on actual body weight. '
           'Use ideal body weight in obese patients (BMI > 30). '
@@ -2125,7 +2338,8 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
     } else {
       final doseMin = weightKg * 15.0;
       final doseMax = weightKg * 20.0;
-      result = 'Vancomycin: ${doseMin.toStringAsFixed(0)}–${doseMax.toStringAsFixed(0)} mg per dose';
+      result =
+          'Vancomycin: ${doseMin.toStringAsFixed(0)}–${doseMax.toStringAsFixed(0)} mg per dose';
       interpretation = 'Suggested vancomycin dose range: '
           '${doseMin.toStringAsFixed(0)}–${doseMax.toStringAsFixed(0)} mg '
           '(15–20 mg/kg/dose) every 8–12 hours. Adjust interval by CrCl.';
@@ -2138,7 +2352,8 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
       result: result,
       interpretation: interpretation,
       educationalNote: educationalNote,
-      warning: 'Renally adjust dose by CrCl. Verify trough levels, peak levels, '
+      warning:
+          'Renally adjust dose by CrCl. Verify trough levels, peak levels, '
           'and consult current formulary before prescribing. These are suggested '
           'starting doses only — individualise to patient renal function and response.',
     );
@@ -2160,7 +2375,8 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
         ),
         const SizedBox(height: 12),
         Row(children: [
-          Expanded(child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _weightUnit,
@@ -2179,7 +2395,11 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
 // ─── Drug Dosing Calculator D4: Insulin Dose (Correction) ────────────────────
 
 class _InsulinDoseForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _InsulinDoseForm({required this.onResult, required this.onReset});
 
@@ -2205,12 +2425,14 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
     final rawCbg = double.tryParse(_cbgCtrl.text);
     final rawTarget = double.tryParse(_targetCtrl.text);
     final rawIsf = double.tryParse(_isfCtrl.text);
-    if (rawCbg == null || rawCbg <= 0 ||
-        rawTarget == null || rawTarget <= 0 ||
-        rawIsf == null || rawIsf <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Enter valid CBG, target glucose, and ISF')));
+    if (rawCbg == null ||
+        rawCbg <= 0 ||
+        rawTarget == null ||
+        rawTarget <= 0 ||
+        rawIsf == null ||
+        rawIsf <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid CBG, target glucose, and ISF')));
       return;
     }
     // Convert mmol/L to mg/dL for calculation
@@ -2233,7 +2455,8 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
       educationalNote: 'Correction dose = (CBG − target) ÷ ISF. '
           'Negative values are clamped to 0. '
           'ISF (Insulin Sensitivity Factor): the drop in blood glucose per unit of insulin.',
-      warning: 'This is a correction dose estimate only — it is NOT a substitute for your '
+      warning:
+          'This is a correction dose estimate only — it is NOT a substitute for your '
           'prescribed insulin regimen. Always follow your care team\'s instructions. '
           'Hypoglycaemia risk: do not stack correction doses.',
     );
@@ -2261,7 +2484,8 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
             label: 'Target glucose (same unit as CBG)',
             controller: _targetCtrl),
         _NumericField(
-            label: 'ISF (${_cbgUnit == 'mmol/L' ? 'mmol/L' : 'mg/dL'} drop per unit of insulin)',
+            label:
+                'ISF (${_cbgUnit == 'mmol/L' ? 'mmol/L' : 'mg/dL'} drop per unit of insulin)',
             controller: _isfCtrl),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
@@ -2272,7 +2496,11 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
 // ─── Drug Dosing Calculator D5: Paracetamol (Acetaminophen) Dosing ───────────
 
 class _ParacetamolDosingForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _ParacetamolDosingForm({required this.onResult, required this.onReset});
 
@@ -2294,8 +2522,8 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
   void _calculate() {
     final rawWeight = double.tryParse(_weightCtrl.text);
     if (rawWeight == null || rawWeight <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter valid weight')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter valid weight')));
       return;
     }
     final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight / 2.20462;
@@ -2310,13 +2538,17 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
       const maxAbsoluteDaily = 4000.0;
       const maxAbsolutePerDose = 1000.0;
       final perDoseRaw = weightKg * 15.0;
-      final perDose = perDoseRaw < maxAbsolutePerDose ? perDoseRaw : maxAbsolutePerDose;
+      final perDose =
+          perDoseRaw < maxAbsolutePerDose ? perDoseRaw : maxAbsolutePerDose;
       final dailyByDose = perDose * 4;
       final maxDailyByKg = weightKg * 60.0;
       // Cap daily at the lowest of: 4×per-dose, 60 mg/kg/day, and 4000 mg/day absolute maximum
-      final daily = [dailyByDose, maxDailyByKg, maxAbsoluteDaily].reduce((a, b) => a < b ? a : b);
-      result = '${perDose.toStringAsFixed(0)} mg/dose | ${daily.toStringAsFixed(0)} mg/day max';
-      interpretation = 'Child dose (15 mg/kg/dose): ${perDose.toStringAsFixed(0)} mg per dose, '
+      final daily = [dailyByDose, maxDailyByKg, maxAbsoluteDaily]
+          .reduce((a, b) => a < b ? a : b);
+      result =
+          '${perDose.toStringAsFixed(0)} mg/dose | ${daily.toStringAsFixed(0)} mg/day max';
+      interpretation =
+          'Child dose (15 mg/kg/dose): ${perDose.toStringAsFixed(0)} mg per dose, '
           'up to 4 doses per 24 hours. Maximum daily dose: ${daily.toStringAsFixed(0)} mg '
           '(60 mg/kg/day and 4 g/day absolute cap apply).';
       educationalNote = 'Interval: every 4–6 hours as needed. '
@@ -2325,15 +2557,18 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
     } else {
       // Adult: 500–1000 mg q4-6h, max 4 g/day
       result = '500–1000 mg per dose (q4–6h) | max 4 g/day';
-      interpretation = 'Standard adult dose: 500–1000 mg per dose every 4–6 hours as needed, '
+      interpretation =
+          'Standard adult dose: 500–1000 mg per dose every 4–6 hours as needed, '
           'up to 4 doses per 24 hours. Maximum daily dose: 4000 mg (4 g/day).';
-      educationalNote = 'Weight-based dosing (15 mg/kg) may be preferred for lower weight adults '
+      educationalNote =
+          'Weight-based dosing (15 mg/kg) may be preferred for lower weight adults '
           '(< 50 kg). Reduce maximum daily dose in hepatic impairment, chronic alcohol use, '
           'or malnutrition.';
       // Warn if weight-based limit is below 4 g adult cap
       final weightBasedDaily = weightKg * 60.0;
       if (weightBasedDaily < 4000.0) {
-        warning = 'Patient weight ${weightKg.toStringAsFixed(1)} kg: weight-based limit '
+        warning =
+            'Patient weight ${weightKg.toStringAsFixed(1)} kg: weight-based limit '
             '(${weightBasedDaily.toStringAsFixed(0)} mg/day, ${(weightKg * 15).toStringAsFixed(0)} mg/dose × 4) '
             'is below the standard 4 g/day adult cap. Verify against formulary.';
       }
@@ -2345,8 +2580,8 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
       educationalNote: educationalNote,
       warning: warning ??
           'Verify dose against patient weight, hepatic function, and current formulary. '
-          'Paracetamol toxicity risk is higher with fasting, hepatic impairment, '
-          'or concomitant hepatotoxic drugs.',
+              'Paracetamol toxicity risk is higher with fasting, hepatic impairment, '
+              'or concomitant hepatotoxic drugs.',
     );
   }
 
@@ -2371,11 +2606,12 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
         DropdownButtonFormField<String>(
           initialValue: _ageGroup,
           decoration: const InputDecoration(
-              labelText: 'Age group', border: OutlineInputBorder(), isDense: true),
+              labelText: 'Age group',
+              border: OutlineInputBorder(),
+              isDense: true),
           items: const [
             DropdownMenuItem(value: 'adult', child: Text('Adult')),
-            DropdownMenuItem(
-                value: 'child', child: Text('Child (< 12 years)')),
+            DropdownMenuItem(value: 'child', child: Text('Child (< 12 years)')),
           ],
           onChanged: (v) => setState(() => _ageGroup = v!),
         ),
@@ -2389,7 +2625,11 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
 // ─── Paediatrics Calculator P2: APLS Weight Estimation ───────────────────────
 
 class _AplsWeightForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _AplsWeightForm({required this.onResult, required this.onReset});
 
@@ -2410,8 +2650,8 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
   void _calculate() {
     final rawAge = double.tryParse(_ageCtrl.text);
     if (rawAge == null || rawAge < 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter a valid age')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid age')));
       return;
     }
 
@@ -2421,8 +2661,8 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
     if (_ageUnit == 'months') {
       // < 1 year: weight (kg) = 0.5 × (months + 9)
       if (rawAge <= 0 || rawAge > 12) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Age in months should be 1–12 for this band')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('Age in months should be 1–12 for this band')));
         return;
       }
       // Normalise 12-month-old to the 1–5y formula for consistency:
@@ -2430,40 +2670,48 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
       // Use the 1–5y formula at exactly 12 months to match the years-unit path.
       if (rawAge == 12) {
         estimatedKg = 2 * (1 + 4); // 1–5y formula: 2×(1+4) = 10 kg
-        formula = '2 × (1 + 4) = ${estimatedKg.toStringAsFixed(1)} kg (normalised to 1y formula at 12 months)';
+        formula =
+            '2 × (1 + 4) = ${estimatedKg.toStringAsFixed(1)} kg (normalised to 1y formula at 12 months)';
       } else {
         estimatedKg = 0.5 * (rawAge + 9);
-        formula = '0.5 × (${rawAge.toStringAsFixed(0)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+        formula =
+            '0.5 × (${rawAge.toStringAsFixed(0)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
       }
     } else {
       // years
       final ageYears = rawAge;
       if (ageYears <= 0 || ageYears > 12) {
-        ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('APLS formulas apply to children aged 0–12 years')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('APLS formulas apply to children aged 0–12 years')));
         return;
       }
       if (ageYears < 1) {
         // Treat as < 1 year using age in months
         final months = ageYears * 12;
         estimatedKg = 0.5 * (months + 9);
-        formula = '0.5 × (${months.toStringAsFixed(1)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
+        formula =
+            '0.5 × (${months.toStringAsFixed(1)} months + 9) = ${estimatedKg.toStringAsFixed(1)} kg';
       } else if (ageYears <= 5) {
         // 1–5 years: 2 × (age + 4)
         estimatedKg = 2 * (ageYears + 4);
-        formula = '2 × (${ageYears.toStringAsFixed(0)} + 4) = ${estimatedKg.toStringAsFixed(1)} kg';
+        formula =
+            '2 × (${ageYears.toStringAsFixed(0)} + 4) = ${estimatedKg.toStringAsFixed(1)} kg';
       } else {
         // 6–12 years: 3 × age + 7
         estimatedKg = 3 * ageYears + 7;
-        formula = '3 × ${ageYears.toStringAsFixed(0)} + 7 = ${estimatedKg.toStringAsFixed(1)} kg';
+        formula =
+            '3 × ${ageYears.toStringAsFixed(0)} + 7 = ${estimatedKg.toStringAsFixed(1)} kg';
       }
     }
 
     widget.onResult(
       result: '${estimatedKg.toStringAsFixed(1)} kg (estimated)',
-      interpretation: 'Estimated weight: ${estimatedKg.toStringAsFixed(1)} kg\nFormula used: $formula',
-      educationalNote: 'APLS formulas: < 1y: 0.5×(months+9); 1–5y: 2×(age+4); 6–12y: 3×age+7.',
-      warning: 'This is an estimation — use actual weight for precise drug dosing whenever available.',
+      interpretation:
+          'Estimated weight: ${estimatedKg.toStringAsFixed(1)} kg\nFormula used: $formula',
+      educationalNote:
+          'APLS formulas: < 1y: 0.5×(months+9); 1–5y: 2×(age+4); 6–12y: 3×age+7.',
+      warning:
+          'This is an estimation — use actual weight for precise drug dosing whenever available.',
     );
   }
 
@@ -2494,7 +2742,11 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
 // ─── Paediatrics Calculator P3: Broselow Tape Equivalent ─────────────────────
 
 class _BroselowForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _BroselowForm({required this.onResult, required this.onReset});
 
@@ -2507,15 +2759,15 @@ class _BroselowFormState extends State<_BroselowForm> {
 
   // Broselow zones: (minCm, maxCm, colour, weightRangeKg)
   static const _zones = [
-    (46.0, 59.0, 'Grey',   '3–5 kg'),
-    (59.0, 70.0, 'Pink',   '6–7 kg'),
-    (70.0, 80.0, 'Red',    '8–9 kg'),
+    (46.0, 59.0, 'Grey', '3–5 kg'),
+    (59.0, 70.0, 'Pink', '6–7 kg'),
+    (70.0, 80.0, 'Red', '8–9 kg'),
     (80.0, 90.0, 'Purple', '10–11 kg'),
-    (90.0, 100.0,'Yellow', '12–14 kg'),
-    (100.0, 110.0,'White', '15–18 kg'),
-    (110.0, 120.0,'Blue',  '19–22 kg'),
-    (120.0, 131.0,'Orange','24–29 kg'),
-    (131.0, 146.0,'Green', '30–36 kg'),
+    (90.0, 100.0, 'Yellow', '12–14 kg'),
+    (100.0, 110.0, 'White', '15–18 kg'),
+    (110.0, 120.0, 'Blue', '19–22 kg'),
+    (120.0, 131.0, 'Orange', '24–29 kg'),
+    (131.0, 146.0, 'Green', '30–36 kg'),
   ];
 
   @override
@@ -2538,8 +2790,9 @@ class _BroselowFormState extends State<_BroselowForm> {
       return;
     }
     if (rawLen > 146) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Broselow tape not validated above 146 cm — use weight-based dosing')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+              'Broselow tape not validated above 146 cm — use weight-based dosing')));
       return;
     }
 
@@ -2560,11 +2813,14 @@ class _BroselowFormState extends State<_BroselowForm> {
 
     widget.onResult(
       result: '$colour zone — $weightRange',
-      interpretation: 'Length ${rawLen.toStringAsFixed(0)} cm falls in the $colour Broselow zone.\n'
+      interpretation:
+          'Length ${rawLen.toStringAsFixed(0)} cm falls in the $colour Broselow zone.\n'
           'Estimated weight range: $weightRange.\n'
           'Use the midpoint weight with the weight-based dosing calculator for drug dose calculations.',
-      educationalNote: 'Drug dose columns are deferred — use the estimated weight with the weight-dosing calculator.',
-      warning: 'This is an estimate based on length only. Obtain actual weight for precise dosing whenever possible.',
+      educationalNote:
+          'Drug dose columns are deferred — use the estimated weight with the weight-dosing calculator.',
+      warning:
+          'This is an estimate based on length only. Obtain actual weight for precise dosing whenever possible.',
     );
   }
 
@@ -2584,7 +2840,11 @@ class _BroselowFormState extends State<_BroselowForm> {
 // ─── Paediatrics Calculator P4: Pediatric BP Percentiles ─────────────────────
 
 class _PediatricBpForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _PediatricBpForm({required this.onResult, required this.onReset});
 
@@ -2601,18 +2861,42 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
   // Simplified 95th-percentile SBP by age and sex (2017 AAP CPG, Table 3 approximations)
   // Key: age (years 1–17), value: [male_95th, female_95th]
   static const Map<int, List<int>> _sbp95th = {
-    1:  [100, 100], 2:  [102, 101], 3:  [104, 103], 4:  [106, 104],
-    5:  [108, 106], 6:  [110, 108], 7:  [111, 110], 8:  [112, 111],
-    9:  [114, 113], 10: [115, 115], 11: [117, 117], 12: [120, 119],
-    13: [122, 121], 14: [125, 122], 15: [128, 123], 16: [130, 124],
+    1: [100, 100],
+    2: [102, 101],
+    3: [104, 103],
+    4: [106, 104],
+    5: [108, 106],
+    6: [110, 108],
+    7: [111, 110],
+    8: [112, 111],
+    9: [114, 113],
+    10: [115, 115],
+    11: [117, 117],
+    12: [120, 119],
+    13: [122, 121],
+    14: [125, 122],
+    15: [128, 123],
+    16: [130, 124],
     17: [132, 125],
   };
 
   static const Map<int, List<int>> _dbp95th = {
-    1:  [62, 62], 2:  [63, 63], 3:  [65, 65], 4:  [66, 66],
-    5:  [68, 68], 6:  [70, 70], 7:  [71, 71], 8:  [72, 72],
-    9:  [74, 74], 10: [75, 75], 11: [76, 76], 12: [78, 78],
-    13: [79, 79], 14: [80, 79], 15: [81, 80], 16: [82, 80],
+    1: [62, 62],
+    2: [63, 63],
+    3: [65, 65],
+    4: [66, 66],
+    5: [68, 68],
+    6: [70, 70],
+    7: [71, 71],
+    8: [72, 72],
+    9: [74, 74],
+    10: [75, 75],
+    11: [76, 76],
+    12: [78, 78],
+    13: [79, 79],
+    14: [80, 79],
+    15: [81, 80],
+    16: [82, 80],
     17: [82, 80],
   };
 
@@ -2630,25 +2914,26 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
     final rawDbp = double.tryParse(_dbpCtrl.text);
 
     if (rawAge == null || rawAge < 1 || rawAge > 17) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Age must be 1–17 years for paediatric BP classification')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content:
+              Text('Age must be 1–17 years for paediatric BP classification')));
       return;
     }
     if (rawSbp == null || rawSbp <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter a valid SBP')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid SBP')));
       return;
     }
     if (rawDbp == null || rawDbp <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter a valid DBP')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid DBP')));
       return;
     }
 
     final sexIdx = _sex == 'male' ? 0 : 1;
     final sbp95 = _sbp95th[rawAge]![sexIdx];
     final dbp95 = _dbp95th[rawAge]![sexIdx];
-    final sbp90 = sbp95 - 7;  // approximate 90th from 95th
+    final sbp90 = sbp95 - 7; // approximate 90th from 95th
     final dbp90 = dbp95 - 5;
 
     String sbpClass;
@@ -2678,7 +2963,9 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
 
     // Overall: use worst of SBP/DBP
     const order = ['Normal', 'Elevated', 'Stage 1 HTN', 'Stage 2 HTN'];
-    final overall = order.indexOf(sbpClass) >= order.indexOf(dbpClass) ? sbpClass : dbpClass;
+    final overall = order.indexOf(sbpClass) >= order.indexOf(dbpClass)
+        ? sbpClass
+        : dbpClass;
 
     widget.onResult(
       result: 'Overall: $overall (SBP: $sbpClass, DBP: $dbpClass)',
@@ -2686,8 +2973,10 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
           'SBP ${rawSbp.toStringAsFixed(0)} mmHg → $sbpClass (95th ≈ $sbp95 mmHg); '
           'DBP ${rawDbp.toStringAsFixed(0)} mmHg → $dbpClass (95th ≈ $dbp95 mmHg).\n'
           'Overall classification: $overall.',
-      educationalNote: 'Simplified thresholds — verify against full 2017 AAP tables (height-specific percentiles).',
-      warning: 'This uses simplified 2017 AAP thresholds. Confirm against full age/sex/height-specific table. '
+      educationalNote:
+          'Simplified thresholds — verify against full 2017 AAP tables (height-specific percentiles).',
+      warning:
+          'This uses simplified 2017 AAP thresholds. Confirm against full age/sex/height-specific table. '
           'BP diagnosis requires ≥ 3 measurements on separate occasions.',
     );
   }
@@ -2723,7 +3012,11 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
 // ─── Paediatrics Calculator P5: Neonatal Bilirubin (Phototherapy) ────────────
 
 class _NeonatalBilirubinForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _NeonatalBilirubinForm({required this.onResult, required this.onReset});
 
@@ -2733,7 +3026,7 @@ class _NeonatalBilirubinForm extends StatefulWidget {
 
 class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
   final _bilirubinCtrl = TextEditingController();
-  final _ageHoursCtrl  = TextEditingController();
+  final _ageHoursCtrl = TextEditingController();
   String _unit = 'mg/dL';
   String _risk = 'low';
 
@@ -2745,7 +3038,7 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
   }
 
   void _calculate() {
-    final rawBili  = double.tryParse(_bilirubinCtrl.text);
+    final rawBili = double.tryParse(_bilirubinCtrl.text);
     final rawHours = double.tryParse(_ageHoursCtrl.text);
 
     if (rawBili == null || rawBili <= 0) {
@@ -2759,8 +3052,9 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
       return;
     }
     if (rawHours > 168) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Age > 168 hours: use community guidelines for this age range')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+              'Age > 168 hours: use community guidelines for this age range')));
       return;
     }
 
@@ -2773,16 +3067,16 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
     double highThreshold;
 
     if (hours <= 24) {
-      lowThreshold  = _risk == 'low' ? 12.0 : (_risk == 'medium' ? 10.0 : 8.0);
+      lowThreshold = _risk == 'low' ? 12.0 : (_risk == 'medium' ? 10.0 : 8.0);
       highThreshold = _risk == 'low' ? 15.0 : (_risk == 'medium' ? 13.0 : 11.0);
     } else if (hours <= 48) {
-      lowThreshold  = _risk == 'low' ? 15.0 : (_risk == 'medium' ? 13.0 : 11.0);
+      lowThreshold = _risk == 'low' ? 15.0 : (_risk == 'medium' ? 13.0 : 11.0);
       highThreshold = _risk == 'low' ? 18.0 : (_risk == 'medium' ? 16.0 : 14.0);
     } else if (hours <= 72) {
-      lowThreshold  = _risk == 'low' ? 17.0 : (_risk == 'medium' ? 15.0 : 13.0);
+      lowThreshold = _risk == 'low' ? 17.0 : (_risk == 'medium' ? 15.0 : 13.0);
       highThreshold = _risk == 'low' ? 20.0 : (_risk == 'medium' ? 18.0 : 16.0);
     } else {
-      lowThreshold  = _risk == 'low' ? 18.0 : (_risk == 'medium' ? 16.0 : 14.0);
+      lowThreshold = _risk == 'low' ? 18.0 : (_risk == 'medium' ? 16.0 : 14.0);
       highThreshold = _risk == 'low' ? 21.0 : (_risk == 'medium' ? 19.0 : 17.0);
     }
 
@@ -2794,21 +3088,27 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
       guidance = 'Consider starting phototherapy. Recheck in 4–6 hours.';
     } else if (biliMgdL >= lowThreshold) {
       zone = 'Intermediate zone';
-      guidance = 'Borderline — consider phototherapy based on clinical picture. Recheck in 4–8 hours.';
+      guidance =
+          'Borderline — consider phototherapy based on clinical picture. Recheck in 4–8 hours.';
     } else {
       zone = 'Low risk zone';
-      guidance = 'Below phototherapy threshold — routine monitoring. Repeat TcB/TSB per clinical protocol.';
+      guidance =
+          'Below phototherapy threshold — routine monitoring. Repeat TcB/TSB per clinical protocol.';
     }
 
     final umolL = biliMgdL * 17.1;
     widget.onResult(
-      result: '$zone — ${biliMgdL.toStringAsFixed(1)} mg/dL (${umolL.toStringAsFixed(0)} µmol/L)',
-      interpretation: 'Bilirubin ${biliMgdL.toStringAsFixed(1)} mg/dL at ${hours.toStringAsFixed(0)} hours of age '
+      result:
+          '$zone — ${biliMgdL.toStringAsFixed(1)} mg/dL (${umolL.toStringAsFixed(0)} µmol/L)',
+      interpretation:
+          'Bilirubin ${biliMgdL.toStringAsFixed(1)} mg/dL at ${hours.toStringAsFixed(0)} hours of age '
           '($_risk risk).\n'
           'Zone: $zone. Phototherapy threshold: low ${lowThreshold.toStringAsFixed(0)} mg/dL, '
           'high ${highThreshold.toStringAsFixed(0)} mg/dL.\n$guidance',
-      educationalNote: 'Thresholds derived from simplified Bhutani nomogram. 1 mg/dL = 17.1 µmol/L.',
-      warning: 'These thresholds are a guide only — confirm against your local AAP phototherapy nomogram '
+      educationalNote:
+          'Thresholds derived from simplified Bhutani nomogram. 1 mg/dL = 17.1 µmol/L.',
+      warning:
+          'These thresholds are a guide only — confirm against your local AAP phototherapy nomogram '
           'and institutional guidelines. Not validated for infants < 35 weeks gestation.',
     );
   }
@@ -2819,7 +3119,9 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(children: [
-          Expanded(child: _NumericField(label: 'Bilirubin', controller: _bilirubinCtrl)),
+          Expanded(
+              child: _NumericField(
+                  label: 'Bilirubin', controller: _bilirubinCtrl)),
           const SizedBox(width: 8),
           DropdownButton<String>(
             value: _unit,
@@ -2836,11 +3138,17 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
         DropdownButtonFormField<String>(
           initialValue: _risk,
           decoration: const InputDecoration(
-              labelText: 'Risk category', border: OutlineInputBorder(), isDense: true),
+              labelText: 'Risk category',
+              border: OutlineInputBorder(),
+              isDense: true),
           items: const [
-            DropdownMenuItem(value: 'low', child: Text('Low (no risk factors)')),
-            DropdownMenuItem(value: 'medium', child: Text('Medium (mild risk factors)')),
-            DropdownMenuItem(value: 'high', child: Text('High (haemolysis / G6PD / early jaundice)')),
+            DropdownMenuItem(
+                value: 'low', child: Text('Low (no risk factors)')),
+            DropdownMenuItem(
+                value: 'medium', child: Text('Medium (mild risk factors)')),
+            DropdownMenuItem(
+                value: 'high',
+                child: Text('High (haemolysis / G6PD / early jaundice)')),
           ],
           onChanged: (v) => setState(() => _risk = v!),
         ),
@@ -2854,7 +3162,11 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
 // ─── Paediatrics Calculator P6: APGAR Score ──────────────────────────────────
 
 class _ApgarForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _ApgarForm({required this.onResult, required this.onReset});
 
@@ -2863,10 +3175,10 @@ class _ApgarForm extends StatefulWidget {
 }
 
 class _ApgarFormState extends State<_ApgarForm> {
-  int _appearance  = 2;
-  int _pulse       = 2;
-  int _grimace     = 2;
-  int _activity    = 2;
+  int _appearance = 2;
+  int _pulse = 2;
+  int _grimace = 2;
+  int _activity = 2;
   int _respiration = 2;
 
   void _calculate() {
@@ -2875,14 +3187,15 @@ class _ApgarFormState extends State<_ApgarForm> {
     String interp;
 
     if (total >= 7) {
-      band   = 'Reassuring';
+      band = 'Reassuring';
       interp = 'APGAR $total/10 — Reassuring. Routine newborn care.';
     } else if (total >= 4) {
-      band   = 'Moderately abnormal';
-      interp = 'APGAR $total/10 — Moderately abnormal. Supplemental oxygen and stimulation; '
+      band = 'Moderately abnormal';
+      interp =
+          'APGAR $total/10 — Moderately abnormal. Supplemental oxygen and stimulation; '
           'prepare for resuscitation if score does not improve at 5 min.';
     } else {
-      band   = 'Low';
+      band = 'Low';
       interp = 'APGAR $total/10 — Low. Immediate resuscitation required. '
           'Initiate Newborn Life Support protocol.';
     }
@@ -2893,7 +3206,8 @@ class _ApgarFormState extends State<_ApgarForm> {
           'A: $_appearance  P: $_pulse  G: $_grimace  A: $_activity  R: $_respiration',
       educationalNote: 'Reassess at 5 min and 10 min if ≤ 6 at 5 min. '
           'Do not delay resuscitation to complete the APGAR score.',
-      warning: 'APGAR is a communication tool — not a predictor of long-term neurological outcome.',
+      warning:
+          'APGAR is a communication tool — not a predictor of long-term neurological outcome.',
     );
   }
 
@@ -2919,11 +3233,11 @@ class _ApgarFormState extends State<_ApgarForm> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        _apgarRow('Appearance (colour)',    _appearance,  (v) => _appearance  = v),
-        _apgarRow('Pulse (heart rate)',      _pulse,       (v) => _pulse       = v),
-        _apgarRow('Grimace (reflex)',         _grimace,     (v) => _grimace     = v),
-        _apgarRow('Activity (muscle tone)',   _activity,    (v) => _activity    = v),
-        _apgarRow('Respiration',              _respiration, (v) => _respiration = v),
+        _apgarRow('Appearance (colour)', _appearance, (v) => _appearance = v),
+        _apgarRow('Pulse (heart rate)', _pulse, (v) => _pulse = v),
+        _apgarRow('Grimace (reflex)', _grimace, (v) => _grimace = v),
+        _apgarRow('Activity (muscle tone)', _activity, (v) => _activity = v),
+        _apgarRow('Respiration', _respiration, (v) => _respiration = v),
         const SizedBox(height: 12),
         FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
@@ -2934,7 +3248,11 @@ class _ApgarFormState extends State<_ApgarForm> {
 // ─── Paediatrics Calculator P7: WHO Growth Percentile ────────────────────────
 
 class _GrowthPercentileForm extends StatefulWidget {
-  final void Function({required String result, required String interpretation, String? educationalNote, String? warning}) onResult;
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
   final VoidCallback onReset;
   const _GrowthPercentileForm({required this.onResult, required this.onReset});
 
@@ -2943,9 +3261,9 @@ class _GrowthPercentileForm extends StatefulWidget {
 }
 
 class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
-  final _weightCtrl    = TextEditingController();
-  final _heightCtrl    = TextEditingController();
-  final _hcCtrl        = TextEditingController();
+  final _weightCtrl = TextEditingController();
+  final _heightCtrl = TextEditingController();
+  final _hcCtrl = TextEditingController();
   final _ageMonthsCtrl = TextEditingController();
   String _sex = 'male';
 
@@ -2960,19 +3278,33 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
 
   // Simplified WHO median weight-for-age (kg) and approximate SD by age in months
   static const Map<int, List<double>> _whoWeightMale = {
-    0:  [3.3, 0.45], 3: [6.0, 0.73], 6: [7.9, 0.87], 9: [9.2, 0.95],
-    12: [10.2, 1.0], 18: [11.5, 1.1], 24: [12.2, 1.2], 36: [14.3, 1.4],
-    48: [16.3, 1.6], 60: [18.3, 1.8],
+    0: [3.3, 0.45],
+    3: [6.0, 0.73],
+    6: [7.9, 0.87],
+    9: [9.2, 0.95],
+    12: [10.2, 1.0],
+    18: [11.5, 1.1],
+    24: [12.2, 1.2],
+    36: [14.3, 1.4],
+    48: [16.3, 1.6],
+    60: [18.3, 1.8],
   };
   static const Map<int, List<double>> _whoWeightFemale = {
-    0:  [3.2, 0.44], 3: [5.6, 0.67], 6: [7.3, 0.81], 9: [8.6, 0.89],
-    12: [9.5, 0.93], 18: [10.8, 1.0], 24: [11.5, 1.1], 36: [13.9, 1.3],
-    48: [15.9, 1.5], 60: [18.2, 1.7],
+    0: [3.2, 0.44],
+    3: [5.6, 0.67],
+    6: [7.3, 0.81],
+    9: [8.6, 0.89],
+    12: [9.5, 0.93],
+    18: [10.8, 1.0],
+    24: [11.5, 1.1],
+    36: [13.9, 1.3],
+    48: [15.9, 1.5],
+    60: [18.2, 1.7],
   };
 
   String _zoneLabel(double z) {
     if (z < -2) return 'Below 3rd percentile (< −2 SD)';
-    if (z > 2)  return 'Above 97th percentile (> +2 SD)';
+    if (z > 2) return 'Above 97th percentile (> +2 SD)';
     return 'Normal range (−2 to +2 SD)';
   }
 
@@ -2993,12 +3325,12 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
   void _calculate() {
     final rawWeight = double.tryParse(_weightCtrl.text);
     final rawHeight = double.tryParse(_heightCtrl.text);
-    final rawAge    = int.tryParse(_ageMonthsCtrl.text);
-    final rawHc     = double.tryParse(_hcCtrl.text);
+    final rawAge = int.tryParse(_ageMonthsCtrl.text);
+    final rawHc = double.tryParse(_hcCtrl.text);
 
     if (rawWeight == null || rawWeight <= 0) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Enter a valid weight')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid weight')));
       return;
     }
     if (rawHeight == null || rawHeight <= 0) {
@@ -3007,38 +3339,40 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
       return;
     }
     if (rawAge == null || rawAge < 0 || rawAge > 60) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Age must be 0–60 months for WHO Growth Standards')));
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Age must be 0–60 months for WHO Growth Standards')));
       return;
     }
 
     final nearAge = _nearestAge(rawAge);
-    final ref     = (_sex == 'male' ? _whoWeightMale : _whoWeightFemale)[nearAge]!;
-    final median  = ref[0];
-    final sd      = ref[1];
+    final ref = (_sex == 'male' ? _whoWeightMale : _whoWeightFemale)[nearAge]!;
+    final median = ref[0];
+    final sd = ref[1];
 
-    final weightZ    = (rawWeight - median) / sd;
+    final weightZ = (rawWeight - median) / sd;
     final weightZone = _zoneLabel(weightZ);
 
     // Simplified height-for-age approximation
-    final heightMedian = _sex == 'male'
-        ? 45.0 + rawAge * 1.2
-        : 44.0 + rawAge * 1.18;
+    final heightMedian =
+        _sex == 'male' ? 45.0 + rawAge * 1.2 : 44.0 + rawAge * 1.18;
     const heightSd = 2.5;
-    final heightZ    = (rawHeight - heightMedian) / heightSd;
+    final heightZ = (rawHeight - heightMedian) / heightSd;
     final heightZone = _zoneLabel(heightZ);
 
     final buffer = StringBuffer();
-    buffer.writeln('Weight ${rawWeight.toStringAsFixed(1)} kg: $weightZone (z ≈ ${weightZ.toStringAsFixed(1)})');
-    buffer.writeln('Height ${rawHeight.toStringAsFixed(1)} cm: $heightZone (z ≈ ${heightZ.toStringAsFixed(1)})');
+    buffer.writeln(
+        'Weight ${rawWeight.toStringAsFixed(1)} kg: $weightZone (z ≈ ${weightZ.toStringAsFixed(1)})');
+    buffer.writeln(
+        'Height ${rawHeight.toStringAsFixed(1)} cm: $heightZone (z ≈ ${heightZ.toStringAsFixed(1)})');
 
     if (rawHc != null && rawHc > 0) {
       // Simplified head circumference approximation
       final hcMedian = 34.0 + rawAge * 0.1;
       const hcSd = 1.5;
-      final hcZ    = (rawHc - hcMedian) / hcSd;
+      final hcZ = (rawHc - hcMedian) / hcSd;
       final hcZone = _zoneLabel(hcZ);
-      buffer.writeln('HC ${rawHc.toStringAsFixed(1)} cm: $hcZone (z ≈ ${hcZ.toStringAsFixed(1)})');
+      buffer.writeln(
+          'HC ${rawHc.toStringAsFixed(1)} cm: $hcZone (z ≈ ${hcZ.toStringAsFixed(1)})');
     }
 
     widget.onResult(
@@ -3046,7 +3380,8 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
       interpretation: buffer.toString().trim(),
       educationalNote: 'Simplified WHO z-score bands (not full LMS method). '
           'Results are approximate — use full WHO growth charts for clinical decisions.',
-      warning: 'Simplified z-score band estimates only, not precise percentiles. '
+      warning:
+          'Simplified z-score band estimates only, not precise percentiles. '
           'For clinical growth monitoring, plot on the full WHO growth chart for the child\'s age and sex.',
     );
   }
@@ -3060,7 +3395,8 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
         const SizedBox(height: 12),
         _NumericField(label: 'Height / Length (cm)', controller: _heightCtrl),
         const SizedBox(height: 12),
-        _NumericField(label: 'Head circumference (cm, optional)', controller: _hcCtrl),
+        _NumericField(
+            label: 'Head circumference (cm, optional)', controller: _hcCtrl),
         const SizedBox(height: 12),
         _NumericField(label: 'Age (months, 0–60)', controller: _ageMonthsCtrl),
         const SizedBox(height: 12),

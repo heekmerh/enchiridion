@@ -119,8 +119,7 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'EDD / Gestational Age',
     category: 'Obs & Gynae',
     description: 'Estimated delivery date and gestational age from LMP.',
-    explanation:
-        'Uses Naegele\'s rule: EDD = LMP + 280 days (40 weeks). '
+    explanation: 'Uses Naegele\'s rule: EDD = LMP + 280 days (40 weeks). '
         'Gestational age (EGA) is calculated as the interval between LMP and the reference date.',
     clinicalInterpretation:
         'EGA guides antenatal care scheduling, screening tests, and management of preterm or post-term labour. '
@@ -191,8 +190,7 @@ const List<CalculatorDefinition> kCalculators = [
     safetyNotes:
         'Holliday-Segar is validated for paediatric patients. In adults the formula overestimates maintenance. '
         'Adjust for dehydration, burns, shock, cardiac disease, and ongoing losses.',
-    commonPitfalls:
-        'Applying adult fluid rates to children. '
+    commonPitfalls: 'Applying adult fluid rates to children. '
         'Not adjusting for clinical conditions that alter fluid requirements (e.g., fever adds ~10% per degree above 37°C).',
     osceTips:
         'Recite the 4-2-1 rule clearly and calculate step-by-step for the given weight. '
@@ -203,13 +201,13 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'qsofa',
     title: 'qSOFA Score',
     category: 'Emergency & Critical Care',
-    description: 'Quick Sepsis-related Organ Failure Assessment — bedside sepsis screening.',
+    description:
+        'Quick Sepsis-related Organ Failure Assessment — bedside sepsis screening.',
     explanation:
         'qSOFA scores three bedside criteria: altered mental status (GCS < 15), '
         'respiratory rate ≥ 22 breaths/min, and systolic BP ≤ 100 mmHg. '
         'A score ≥ 2 suggests high risk of poor outcome in suspected sepsis.',
-    clinicalInterpretation:
-        'Score 0–1: Low risk — reassess regularly. '
+    clinicalInterpretation: 'Score 0–1: Low risk — reassess regularly. '
         'Score ≥ 2: High risk of poor sepsis outcome — consider full SOFA assessment, '
         'blood cultures, IV access, and urgent escalation.',
     safetyNotes:
@@ -227,14 +225,14 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'news2',
     title: 'NEWS2 Score',
     category: 'Emergency & Critical Care',
-    description: 'National Early Warning Score 2 — aggregate physiological score for clinical deterioration.',
+    description:
+        'National Early Warning Score 2 — aggregate physiological score for clinical deterioration.',
     explanation:
         'NEWS2 aggregates six scored parameters: respiratory rate, SpO2 (scale 1 or scale 2 for '
         'hypercapnic respiratory failure), supplemental O2, systolic BP, heart rate, '
         'temperature, and consciousness (ACVPU: Alert = 0, any other = 3). '
         'Higher totals indicate greater physiological derangement.',
-    clinicalInterpretation:
-        'Score 0: Low — routine monitoring. '
+    clinicalInterpretation: 'Score 0: Low — routine monitoring. '
         '1–4: Low-medium — increase observation frequency. '
         '5–6: Medium — urgent clinical review. '
         '≥ 7: High — emergency assessment, consider critical care review.',
@@ -255,7 +253,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'shock-index',
     title: 'Shock Index',
     category: 'Emergency & Critical Care',
-    description: 'Heart rate divided by systolic BP — screens for haemodynamic instability.',
+    description:
+        'Heart rate divided by systolic BP — screens for haemodynamic instability.',
     explanation:
         'Shock Index (SI) = HR ÷ SBP. A value ≥ 1.0 suggests the heart rate has met '
         'or exceeded systolic blood pressure, indicating significant haemodynamic stress.',
@@ -276,13 +275,13 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'osmolality',
     title: 'Osmolality & Osmolar Gap',
     category: 'Emergency & Critical Care',
-    description: 'Calculated serum osmolality and osmolar gap to detect unmeasured osmoles.',
+    description:
+        'Calculated serum osmolality and osmolar gap to detect unmeasured osmoles.',
     explanation:
         'Calculated osmolality = 2 × Na (mEq/L) + glucose (mg/dL) / 18 + BUN (mg/dL) / 2.8. '
         'Osmolar gap = measured osmolality − calculated osmolality. '
         'An elevated gap implies the presence of unmeasured osmotically active substances.',
-    clinicalInterpretation:
-        'Normal calculated osmolality: 275–295 mOsm/kg. '
+    clinicalInterpretation: 'Normal calculated osmolality: 275–295 mOsm/kg. '
         'Osmolar gap > 10 mOsm/kg: elevated — consider toxic alcohols (methanol, ethylene glycol, '
         'isopropanol), mannitol, or severe uraemia. '
         'A gap ≤ 10 does not reliably exclude toxic alcohol ingestion in early presentations.',
@@ -293,8 +292,7 @@ const List<CalculatorDefinition> kCalculators = [
     commonPitfalls:
         'Confusing calculated osmolality (this tool) with measured osmolality (the lab result). '
         'Forgetting that a normal osmolar gap does not exclude toxic alcohol poisoning in early stages.',
-    osceTips:
-        'State the formula clearly: 2×Na + glucose/18 + BUN/2.8. '
+    osceTips: 'State the formula clearly: 2×Na + glucose/18 + BUN/2.8. '
         'Examiners often link osmolar gap to toxic alcohol poisoning — name the MUDPILES overlap '
         '(methanol, ethylene glycol). Mention that both anion gap and osmolar gap may be elevated.',
   ),
@@ -302,7 +300,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'corrected-sodium',
     title: 'Corrected Sodium (Hyperglycemia)',
     category: 'Emergency & Critical Care',
-    description: 'Adjusts measured sodium for the dilutional effect of hyperglycaemia.',
+    description:
+        'Adjusts measured sodium for the dilutional effect of hyperglycaemia.',
     explanation:
         'In hyperglycaemia, elevated glucose draws water into the extracellular space, '
         'diluting sodium. Corrected Na = measured Na + 0.016 × (glucose mg/dL − 100). '
@@ -327,7 +326,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'aa-gradient',
     title: 'A-a Gradient',
     category: 'Emergency & Critical Care',
-    description: 'Alveolar-arterial oxygen gradient to assess the cause of hypoxaemia.',
+    description:
+        'Alveolar-arterial oxygen gradient to assess the cause of hypoxaemia.',
     explanation:
         'A-a gradient = PAO2 − PaO2, where PAO2 = FiO2 × (PB − 47) − PaCO2 / 0.8. '
         'PB is barometric pressure (default 760 mmHg at sea level). '
@@ -337,8 +337,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Expected A-a gradient ≈ age / 4 + 4 mmHg (when age is known). '
         'Gradient > expected: elevated — consider PE, pulmonary oedema, ARDS, atelectasis, pneumonia. '
         'Normal gradient with hypoxaemia: consider hypoventilation or low inspired FiO2.',
-    safetyNotes:
-        'Requires arterial blood gas values (PaO2, PaCO2). '
+    safetyNotes: 'Requires arterial blood gas values (PaO2, PaCO2). '
         'FiO2 must be accurately known — estimated FiO2 from oxygen delivery device introduces error. '
         'Normal ranges vary with age and altitude; this calculator uses a sea-level default.',
     commonPitfalls:
@@ -353,13 +352,12 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'pao2-fio2',
     title: 'PaO2/FiO2 Ratio',
     category: 'Emergency & Critical Care',
-    description: 'P/F ratio to assess oxygenation impairment and ARDS severity.',
-    explanation:
-        'P/F ratio = PaO2 (mmHg) ÷ FiO2 (fraction). '
+    description:
+        'P/F ratio to assess oxygenation impairment and ARDS severity.',
+    explanation: 'P/F ratio = PaO2 (mmHg) ÷ FiO2 (fraction). '
         'It normalises arterial oxygen for the fraction of inspired oxygen, giving a '
         'standardised measure of oxygenation efficiency regardless of supplemental O2.',
-    clinicalInterpretation:
-        '> 400: Normal oxygenation. '
+    clinicalInterpretation: '> 400: Normal oxygenation. '
         '300–400: Mild impairment (Berlin criteria: mild ARDS). '
         '200–300: Moderate ARDS. '
         '< 200: Severe ARDS — consider prone positioning and advanced ventilatory support.',
@@ -380,13 +378,12 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'bsa',
     title: 'Body Surface Area (BSA)',
     category: 'Drug Dosing',
-    description: 'Mosteller formula for BSA — used in chemotherapy, burns, and paediatric dosing.',
-    explanation:
-        'BSA (Mosteller) = √(height cm × weight kg / 3600). '
+    description:
+        'Mosteller formula for BSA — used in chemotherapy, burns, and paediatric dosing.',
+    explanation: 'BSA (Mosteller) = √(height cm × weight kg / 3600). '
         'BSA is used to individualise drug doses, particularly in oncology and paediatrics, '
         'where weight-based dosing alone underestimates dose needs in larger patients.',
-    clinicalInterpretation:
-        'Calculated estimate of body surface area in m². '
+    clinicalInterpretation: 'Calculated estimate of body surface area in m². '
         'Typical adult BSA: 1.7–1.9 m². Use the result to calculate BSA-based drug doses '
         '(e.g., chemotherapy dose = BSA × dose per m²). Always verify against institutional protocols.',
     safetyNotes:
@@ -397,8 +394,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Entering height in metres without selecting the m unit option — the Mosteller formula '
         'requires height in cm. '
         'Using BSA-calculated dose without checking the protocol\'s dose cap.',
-    osceTips:
-        'State the Mosteller formula clearly: √(Ht_cm × Wt_kg / 3600). '
+    osceTips: 'State the Mosteller formula clearly: √(Ht_cm × Wt_kg / 3600). '
         'Mention alternative formulas (DuBois, Haycock) and that Mosteller is preferred '
         'for simplicity. Note that BSA dosing is standard for cytotoxic chemotherapy.',
   ),
@@ -406,7 +402,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'egfr-ckd-epi',
     title: 'eGFR (CKD-EPI 2021)',
     category: 'Drug Dosing',
-    description: 'Estimated GFR using the 2021 race-free CKD-EPI equation for CKD staging.',
+    description:
+        'Estimated GFR using the 2021 race-free CKD-EPI equation for CKD staging.',
     explanation:
         'Uses the 2021 race-free CKD-EPI equation (Inker et al., NEJM 2021), which eliminated '
         'race as a variable. eGFR = 142 × min(Scr/κ, 1)^α × max(Scr/κ, 1)^−1.200 × 0.9938^age '
@@ -433,7 +430,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'gentamicin-vancomycin',
     title: 'Gentamicin/Vancomycin Dosing',
     category: 'Drug Dosing',
-    description: 'Suggested once-daily gentamicin or weight-based vancomycin initial dose.',
+    description:
+        'Suggested once-daily gentamicin or weight-based vancomycin initial dose.',
     explanation:
         'Gentamicin (aminoglycoside): conventional once-daily dosing of 5 mg/kg/day is a '
         'commonly used starting point, exploiting concentration-dependent killing. '
@@ -461,7 +459,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'insulin-dose',
     title: 'Insulin Dose',
     category: 'Drug Dosing',
-    description: 'Correction (supplemental) insulin dose from CBG, target glucose, and ISF.',
+    description:
+        'Correction (supplemental) insulin dose from CBG, target glucose, and ISF.',
     explanation:
         'Correction dose = (current blood glucose − target glucose) / insulin sensitivity factor (ISF). '
         'ISF (also called correction factor) is the expected glucose drop per unit of rapid-acting insulin. '
@@ -480,8 +479,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Stacking correction doses (giving correction before the previous dose has had time to act — '
         'typically 4 hours for rapid-acting insulin). '
         'Using an incorrect ISF — ISF varies significantly between patients and conditions.',
-    osceTips:
-        'Know the formula: correction dose = (CBG − target) / ISF. '
+    osceTips: 'Know the formula: correction dose = (CBG − target) / ISF. '
         'Mention the "rule of 1800" (for mg/dL): ISF ≈ 1800 / total daily dose of insulin as an estimate. '
         'Always emphasise TDM and that the prescribed regimen takes precedence.',
   ),
@@ -489,7 +487,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'paracetamol-dosing',
     title: 'Paracetamol Dosing',
     category: 'Drug Dosing',
-    description: 'Weight-based paracetamol dose for adults and children with 24-hour cap.',
+    description:
+        'Weight-based paracetamol dose for adults and children with 24-hour cap.',
     explanation:
         'Child (< 12 years): 15 mg/kg/dose orally, max 4 doses in 24 hours, max 60 mg/kg/day. '
         'Adult (≥ 12 years): 1000 mg per dose, up to every 4–6 hours, maximum 4 g (4000 mg) per day. '
@@ -546,7 +545,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'broselow',
     title: 'Broselow Tape Equivalent',
     category: 'Paediatrics',
-    description: 'Map measured length/height to Broselow colour zone and estimated weight range.',
+    description:
+        'Map measured length/height to Broselow colour zone and estimated weight range.',
     explanation:
         'The Broselow tape uses measured length (crown-heel) to assign a colour zone and estimate '
         'weight range. Each colour zone corresponds to a height range and expected weight band '
@@ -574,7 +574,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'pediatric-bp',
     title: 'Pediatric BP Percentiles',
     category: 'Paediatrics',
-    description: 'Classify paediatric blood pressure using simplified 2017 AAP thresholds.',
+    description:
+        'Classify paediatric blood pressure using simplified 2017 AAP thresholds.',
     explanation:
         'Blood pressure in children must be interpreted against age- and sex-specific percentiles. '
         'This calculator uses a simplified lookup of the 95th-percentile SBP by age and sex '
@@ -605,7 +606,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'neonatal-bilirubin',
     title: 'Neonatal Bilirubin (Phototherapy)',
     category: 'Paediatrics',
-    description: 'Bhutani-based risk zone and phototherapy guidance for neonatal jaundice.',
+    description:
+        'Bhutani-based risk zone and phototherapy guidance for neonatal jaundice.',
     explanation:
         'Uses the Bhutani nomogram risk zones to classify neonatal bilirubin level by age in hours '
         'and risk category. Risk categories: low (no risk factors), medium (mild risk factors), '
@@ -634,14 +636,14 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'apgar',
     title: 'APGAR Score',
     category: 'Paediatrics',
-    description: 'Neonatal assessment at 1 and 5 minutes — Appearance, Pulse, Grimace, Activity, Respiration.',
+    description:
+        'Neonatal assessment at 1 and 5 minutes — Appearance, Pulse, Grimace, Activity, Respiration.',
     explanation:
         'The APGAR score rates five signs: Appearance (colour), Pulse (heart rate), '
         'Grimace (reflex irritability), Activity (muscle tone), and Respiration. '
         'Each is scored 0–2. Total ranges from 0 to 10. '
         'Assessed at 1 minute and 5 minutes after birth; repeated at 10 minutes if ≤ 6.',
-    clinicalInterpretation:
-        'Score 7–10: Reassuring — routine newborn care. '
+    clinicalInterpretation: 'Score 7–10: Reassuring — routine newborn care. '
         'Score 4–6: Moderately abnormal — supplemental oxygen and stimulation; prepare for resuscitation. '
         'Score 0–3: Low — immediate resuscitation required; Newborn Life Support protocol.',
     safetyNotes:
@@ -662,7 +664,8 @@ const List<CalculatorDefinition> kCalculators = [
     id: 'growth-percentile',
     title: 'WHO Growth Percentile',
     category: 'Paediatrics',
-    description: 'WHO simplified z-score bands for weight, height, and head circumference.',
+    description:
+        'WHO simplified z-score bands for weight, height, and head circumference.',
     explanation:
         'Uses simplified WHO z-score bands (not full LMS tables) to classify weight, height, '
         'and head circumference for age and sex. Z-score bands: < −2 SD (below 3rd percentile), '
@@ -682,8 +685,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Using a single measurement in isolation rather than tracking growth trajectory over time. '
         'Applying simplified z-score thresholds without considering gestational age correction '
         'in preterm infants.',
-    osceTips:
-        'Know the three z-score zones and their clinical significance. '
+    osceTips: 'Know the three z-score zones and their clinical significance. '
         'In paediatric OSCEs, plot growth on a centile chart and describe the trend. '
         'Mention that the WHO standards are based on healthy breastfed children in optimal conditions.',
   ),

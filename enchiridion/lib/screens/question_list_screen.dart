@@ -6,6 +6,7 @@ import '../models/book_catalog.dart';
 import '../services/storage_service.dart';
 import '../services/access_service.dart';
 import '../config/freemium_config.dart';
+import '../utils/bottom_inset.dart';
 import 'question_screen.dart';
 import 'unlock_screen.dart';
 
@@ -25,8 +26,9 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
   bool _hasAccess = false;
   String? _error;
 
-  String get _bookTitle =>
-      kBooks.firstWhere((b) => b.id == widget.bookId, orElse: () => kBooks.first).title;
+  String get _bookTitle => kBooks
+      .firstWhere((b) => b.id == widget.bookId, orElse: () => kBooks.first)
+      .title;
 
   @override
   void initState() {
@@ -44,7 +46,9 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
           .eq('book_id', widget.bookId)
           .order('question_number');
 
-      final questions = (qRows as List).map((r) => Question.fromJson(r as Map<String, dynamic>)).toList();
+      final questions = (qRows as List)
+          .map((r) => Question.fromJson(r as Map<String, dynamic>))
+          .toList();
 
       if (!mounted) return;
       final storage = context.read<StorageService>();
@@ -57,7 +61,11 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
         _loading = false;
       });
     } catch (e) {
-      if (mounted) setState(() { _error = e.toString(); _loading = false; });
+      if (mounted)
+        setState(() {
+          _error = e.toString();
+          _loading = false;
+        });
     }
   }
 
@@ -66,6 +74,12 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
 
   bool _isLocked(Question q) =>
       !_hasAccess && q.questionNumber > kFreeQuestionCount;
+
+  int _optionSeedFor(Question q) {
+    final storage = context.read<StorageService>();
+    final review = storage.getQuestionReviews(widget.bookId)[q.id];
+    return Object.hash(q.id, review?.attempts ?? 0);
+  }
 
   void _openQuestion(Question q) {
     if (_isLocked(q)) {
@@ -84,6 +98,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
           question: q,
           bookId: widget.bookId,
           previousAnswer: _answers[q.id],
+          optionSeed: _optionSeedFor(q),
           onAnswered: (answer) {
             setState(() => _answers[q.id] = answer);
           },
@@ -152,14 +167,15 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
       color: cs.primaryContainer,
       child: Text(
         '$_answeredCount of ${_questions.length} answered — $_correctCount correct',
-        style: theme.textTheme.bodyMedium
-            ?.copyWith(color: cs.onPrimaryContainer, fontWeight: FontWeight.w600),
+        style: theme.textTheme.bodyMedium?.copyWith(
+            color: cs.onPrimaryContainer, fontWeight: FontWeight.w600),
       ),
     );
   }
 
   Widget _buildList(ThemeData theme, ColorScheme cs) {
     return ListView.separated(
+      padding: EdgeInsets.only(bottom: bottomViewportInset(context)),
       itemCount: _questions.length,
       separatorBuilder: (_, __) => const Divider(height: 1),
       itemBuilder: (context, i) {
@@ -170,15 +186,15 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
         return ListTile(
           leading: _statusIcon(answer, locked, cs),
           title: Text(
-            'Q${q.questionNumber}. ${q.questionText.length > 60 ? '${q.questionText.substring(0, 60)}…' : q.questionText}',
+            'Q${q.questionNumber}. ${q.previewText(maxLength: 60)}',
             style: locked
                 ? theme.textTheme.bodyMedium
                     ?.copyWith(color: cs.onSurface.withValues(alpha: 0.4))
                 : theme.textTheme.bodyMedium,
           ),
           trailing: locked
-              ? Icon(Icons.lock_outline, size: 18,
-                  color: cs.onSurface.withValues(alpha: 0.4))
+              ? Icon(Icons.lock_outline,
+                  size: 18, color: cs.onSurface.withValues(alpha: 0.4))
               : const Icon(Icons.chevron_right),
           onTap: () => _openQuestion(q),
         );
@@ -191,8 +207,8 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
       return CircleAvatar(
         radius: 14,
         backgroundColor: cs.surfaceContainerHighest,
-        child: Icon(Icons.lock_outline, size: 14,
-            color: cs.onSurface.withValues(alpha: 0.4)),
+        child: Icon(Icons.lock_outline,
+            size: 14, color: cs.onSurface.withValues(alpha: 0.4)),
       );
     }
     if (answer == null) {

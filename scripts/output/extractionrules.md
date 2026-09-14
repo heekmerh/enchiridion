@@ -1,0 +1,2 @@
+- Images should be extracted and stored with coordinate and content location to be used be the app to render it appropriately for user view
+- Each chapter has its distinct color that needs to be extracted and stored for use in rendering the chapter theme where its section and subsection headers are colored in this color

@@ -1,13 +1,35 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/question.dart';
+import '../services/notification_service.dart';
+import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
+import '../services/study_stats_service.dart';
+import '../utils/bottom_inset.dart';
 
 class QuestionScreen extends StatefulWidget {
   final Question question;
   final String bookId;
   final UserAnswer? previousAnswer;
   final void Function(UserAnswer) onAnswered;
+  final bool trackDailyStudyStats;
+
+  /// Shows [previousAnswer] as already submitted and disables answering.
+  ///
+  /// Used when a caller (e.g. the ambient Quick Check sheet's "Review fully")
+  /// already recorded an answer elsewhere and just wants to show the full
+  /// explanation and OSCE tip. Without this, reopening the screen let the
+  /// user pick again and silently overwrite — including flipping a wrong
+  /// answer to correct and cancelling its spaced-repetition rebound.
+  final bool readOnly;
+
+  /// Seeds the on-screen option order. Two questions with the same seed
+  /// render in the same order; omit it to derive one from the question id.
+  /// Callers vary this with how many times the question has been attempted
+  /// so the correct answer doesn't always land in the same visual slot.
+  final int? optionSeed;
 
   const QuestionScreen({
     super.key,
@@ -15,6 +37,9 @@ class QuestionScreen extends StatefulWidget {
     required this.bookId,
     required this.onAnswered,
     this.previousAnswer,
+    this.trackDailyStudyStats = false,
+    this.readOnly = false,
+    this.optionSeed,
   });
 
   @override
@@ -24,11 +49,18 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   String? _selectedOption;
   bool _submitted = false;
+  late final List<String> _optionOrder;
 
   @override
   void initState() {
     super.initState();
-    // Start fresh even if previously answered (retake support)
+    if (widget.readOnly && widget.previousAnswer != null) {
+      _selectedOption = widget.previousAnswer!.selectedOption;
+      _submitted = true;
+    }
+    // Start fresh otherwise, even if previously answered (retake support).
+    _optionOrder = widget.question.optionKeys
+      ..shuffle(Random(widget.optionSeed ?? widget.question.id.hashCode));
   }
 
   bool get _isCorrect =>
@@ -36,7 +68,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
       widget.question.correctOption.toLowerCase();
 
   Future<void> _submit() async {
-    if (_selectedOption == null) return;
+    if (widget.readOnly || _selectedOption == null) return;
     setState(() => _submitted = true);
 
     final answer = UserAnswer(
@@ -48,7 +80,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
     widget.onAnswered(answer);
 
     final storage = context.read<StorageService>();
-    await storage.saveAnswer(widget.bookId, answer);
+    final review = await storage.recordAnswer(widget.bookId, answer);
+    await NotificationService.instance.scheduleFollowUp(
+      scope: widget.bookId,
+      question: widget.question,
+      review: review,
+    );
+    await QuestionReviewSyncService(storage).push(widget.bookId, review);
+    if (widget.trackDailyStudyStats) {
+      final statsService = StudyStatsService(storage);
+      await statsService.recordAnswer(isCorrect: _isCorrect);
+    }
   }
 
   @override
@@ -56,6 +98,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     final q = widget.question;
+    final options = _optionOrder;
 
     return Scaffold(
       appBar: AppBar(
@@ -64,7 +107,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
         elevation: 0,
       ),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.fromLTRB(
+          16,
+          16,
+          16,
+          32 + bottomViewportInset(context),
+        ),
         children: [
           // Question text
           Container(
@@ -78,13 +126,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
           const SizedBox(height: 20),
 
           // Options
-          ...['a', 'b', 'c', 'd'].map((opt) => _OptionTile(
+          ...options.map((opt) => _OptionTile(
                 option: opt,
                 text: q.optionText(opt),
                 selected: _selectedOption == opt,
                 submitted: _submitted,
                 isCorrect: opt == q.correctOption.toLowerCase(),
-                onTap: _submitted ? null : () => setState(() => _selectedOption = opt),
+                onTap: _submitted
+                    ? null
+                    : () => setState(() => _selectedOption = opt),
               )),
 
           const SizedBox(height: 16),
@@ -118,7 +168,9 @@ class _QuestionScreenState extends State<QuestionScreen> {
                   Text(
                     _isCorrect ? 'Correct!' : 'Incorrect',
                     style: TextStyle(
-                      color: _isCorrect ? Colors.green.shade700 : Colors.red.shade700,
+                      color: _isCorrect
+                          ? Colors.green.shade700
+                          : Colors.red.shade700,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -129,8 +181,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
             // Explanation
             Text('Explanation',
-                style: theme.textTheme.labelSmall?.copyWith(
-                    color: cs.primary, fontWeight: FontWeight.bold)),
+                style: theme.textTheme.labelSmall
+                    ?.copyWith(color: cs.primary, fontWeight: FontWeight.bold)),
             const SizedBox(height: 6),
             Text(q.explanation, style: theme.textTheme.bodyMedium),
 
@@ -142,8 +194,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 decoration: BoxDecoration(
                   color: Colors.teal.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                      color: Colors.teal.withValues(alpha: 0.3)),
+                  border: Border.all(color: Colors.teal.withValues(alpha: 0.3)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,8 +299,8 @@ class _OptionTile extends StatelessWidget {
               ),
               const SizedBox(width: 12),
               Expanded(
-                child: Text(text,
-                    style: Theme.of(context).textTheme.bodyMedium),
+                child:
+                    Text(text, style: Theme.of(context).textTheme.bodyMedium),
               ),
               if (submitted && isCorrect)
                 const Icon(Icons.check_circle, color: Colors.green, size: 20),

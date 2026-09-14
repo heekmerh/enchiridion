@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <!-- Lets the exam-prep spaced-repetition receiver survive a reboot; see
+         ScheduledNotificationBootReceiver below. -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:label="enchiridion"
         android:name="${applicationName}"
@@ -26,11 +30,52 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Hosts the ambient "Quick Check" answer window — see
+             BubblePlugin.kt/BubbleActivity.kt. resizeableActivity +
+             allowEmbedded + documentLaunchMode + <layout> are what let
+             Android host this as an actual expand-in-place bubble rather
+             than a full-screen activity; on devices/settings where Bubbles
+             aren't available it still opens fine as a normal small task. -->
+        <activity
+            android:name=".BubbleActivity"
+            android:exported="false"
+            android:resizeableActivity="true"
+            android:allowEmbedded="true"
+            android:documentLaunchMode="always"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <layout
+                android:defaultWidth="380dp"
+                android:defaultHeight="640dp"
+                android:minWidth="300dp"
+                android:minHeight="480dp"
+                android:gravity="bottom|end"/>
+        </activity>
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- flutter_local_notifications: without this, every scheduled
+             spaced-repetition rebound (see NotificationService) is silently
+             dropped the moment the device reboots — Android's AlarmManager
+             does not persist across a restart on its own. This receiver
+             reads the plugin's own persisted schedule and re-books them. -->
+        <receiver
+            android:exported="false"
+            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

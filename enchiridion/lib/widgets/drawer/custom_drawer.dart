@@ -46,12 +46,8 @@ class CustomDrawer extends StatelessWidget {
           curve: Curves.easeInOut,
           top: 0,
           bottom: 0,
-          left: position == DrawerPosition.left
-              ? (isOpen ? 0 : -320)
-              : null,
-          right: position == DrawerPosition.right
-              ? (isOpen ? 0 : -320)
-              : null,
+          left: position == DrawerPosition.left ? (isOpen ? 0 : -320) : null,
+          right: position == DrawerPosition.right ? (isOpen ? 0 : -320) : null,
           child: Material(
             elevation: 16,
             color: theme.colorScheme.surface,
@@ -96,7 +92,8 @@ class CustomDrawer extends StatelessWidget {
                         IconButton(
                           onPressed: onClose,
                           icon: CustomIcons.close(
-                            color: theme.iconTheme.color?.withValues(alpha: 0.6),
+                            color:
+                                theme.iconTheme.color?.withValues(alpha: 0.6),
                           ),
                         ),
                       ],

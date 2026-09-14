@@ -2,10 +2,14 @@ import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/auth_service.dart';
 import '../services/access_service.dart';
+import '../services/question_review_sync_service.dart';
+import '../services/storage_service.dart';
 
 enum AuthStatus { loading, authenticated, unauthenticated }
 
 class AuthProvider with ChangeNotifier {
+  final StorageService _storage;
+
   AuthStatus _status = AuthStatus.loading;
   User? _user;
   String? _error;
@@ -15,7 +19,7 @@ class AuthProvider with ChangeNotifier {
   String? get error => _error;
   bool get isAuthenticated => _status == AuthStatus.authenticated;
 
-  AuthProvider() {
+  AuthProvider(this._storage) {
     _init();
   }
 
@@ -25,6 +29,7 @@ class AuthProvider with ChangeNotifier {
       _user = session.user;
       _status = AuthStatus.authenticated;
       AccessService.instance.loadAccess();
+      QuestionReviewSyncService(_storage).pullAndMergeAll();
     } else {
       _status = AuthStatus.unauthenticated;
     }
@@ -34,6 +39,10 @@ class AuthProvider with ChangeNotifier {
       if (event.session != null) {
         _status = AuthStatus.authenticated;
         AccessService.instance.loadAccess();
+        // Catches up on progress made on another device — or made on this
+        // one while offline and only now reaching Supabase — before the
+        // user starts studying this session.
+        QuestionReviewSyncService(_storage).pullAndMergeAll();
         // Create profile from metadata if this is the first sign-in after
         // email confirmation (profile may not exist yet)
         AuthService.ensureProfile(event.session!.user);
@@ -75,8 +84,16 @@ class AuthProvider with ChangeNotifier {
         displayName: displayName,
         role: role,
       );
-      // Email confirmation required — session is null until user confirms
-      if (response.session == null && response.user != null) {
+      // No session means the account is not usable yet. That covers both
+      // "confirmation required" and GoTrue's obfuscated reply for an email
+      // that is already registered — which carries neither a session nor a
+      // user, to avoid confirming the address exists.
+      //
+      // Do NOT test `user != null` here: AuthResponse sets user from the
+      // session when the payload has no user id, so the obfuscated reply
+      // leaves both null and would otherwise read as a successful sign-up
+      // and drop the caller into the app with no session.
+      if (response.session == null) {
         return 'confirm_email';
       }
       return null;
@@ -89,6 +106,62 @@ class AuthProvider with ChangeNotifier {
       return e.message;
     } catch (e) {
       notifyListeners();
+      return 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Verifies the 6-digit sign-up code. Returns null on success, or a
+  /// user-facing message. A successful call creates a session, which the
+  /// authStateChanges listener above turns into AuthStatus.authenticated.
+  Future<String?> verifyEmailOtp({
+    required String email,
+    required String token,
+  }) async {
+    _error = null;
+    try {
+      final response =
+          await AuthService.verifyEmailOtp(email: email, token: token);
+      if (response.session == null) {
+        return 'That code could not be verified. Please try again.';
+      }
+      return null;
+    } on AuthException catch (e) {
+      _error = e.message;
+      notifyListeners();
+      // Supabase deliberately returns ONE message for both cases — "Token has
+      // expired or is invalid" — so the two cannot be told apart here. Do not
+      // branch on 'expired' vs 'invalid': the combined string matches
+      // 'expired' first and would report a simply wrong code as expired.
+      //
+      // A code is most often rejected because it is stale, not old: only the
+      // code from the newest email is valid, so any earlier one fails.
+      final message = e.message.toLowerCase();
+      if (message.contains('expired') || message.contains('invalid')) {
+        return 'That code did not work. Codes expire after 1 hour, and only '
+            'the code from the most recent email is valid — check the latest '
+            'email, or tap "Resend code".';
+      }
+      return e.message;
+    } catch (_) {
+      notifyListeners();
+      return 'Something went wrong. Please try again.';
+    }
+  }
+
+  /// Requests a new sign-up code. Returns null on success, or a message.
+  Future<String?> resendEmailOtp(String email) async {
+    try {
+      await AuthService.resendEmailOtp(email);
+      return null;
+    } on AuthException catch (e) {
+      // Supabase rate-limits resends; surface that rather than a generic error
+      // so the user knows to wait instead of retrying immediately.
+      if (e.message.toLowerCase().contains('security purposes') ||
+          e.message.toLowerCase().contains('rate limit')) {
+        return 'Please wait a moment before requesting another code.';
+      }
+      return e.message;
+    } catch (_) {
       return 'Something went wrong. Please try again.';
     }
   }

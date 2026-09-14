@@ -4,6 +4,7 @@ import '../models/calculator_definition.dart';
 import '../services/storage_service.dart';
 import '../services/access_service.dart';
 import '../config/freemium_config.dart';
+import '../utils/bottom_inset.dart';
 import 'calculator_screen.dart';
 import 'unlock_screen.dart';
 
@@ -58,7 +59,7 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
         elevation: 0,
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: EdgeInsets.only(top: 8, bottom: 8 + bottomViewportInset(context)),
         children: [
           if (favCalcs.isNotEmpty) ...[
             _sectionHeader(theme, 'Favorites'),
@@ -98,9 +99,8 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
 
     return ListTile(
       leading: CircleAvatar(
-        backgroundColor: locked
-            ? cs.surfaceContainerHighest
-            : cs.primaryContainer,
+        backgroundColor:
+            locked ? cs.surfaceContainerHighest : cs.primaryContainer,
         child: Icon(
           locked ? Icons.lock_outline : Icons.calculate_outlined,
           color: locked
@@ -124,8 +124,8 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
             : null,
       ),
       trailing: locked
-          ? Icon(Icons.lock_outline, size: 16,
-              color: cs.onSurface.withValues(alpha: 0.4))
+          ? Icon(Icons.lock_outline,
+              size: 16, color: cs.onSurface.withValues(alpha: 0.4))
           : isFavorite
               ? const Icon(Icons.favorite, size: 18, color: Colors.pink)
               : null,

@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import '../models/book.dart';
 
 class BookService {
-  static Future<Book> loadBook([String dataFile = 'assets/data/paediatrics.json']) async {
+  static Future<Book> loadBook(
+      [String dataFile = 'assets/data/paediatrics.json']) async {
     try {
       final String jsonString = await rootBundle.loadString(dataFile);
 

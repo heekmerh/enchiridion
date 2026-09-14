@@ -43,6 +43,28 @@ class AuthService {
     return _client.auth.signInWithPassword(email: email, password: password);
   }
 
+  /// Completes registration with the 6-digit code emailed on sign-up.
+  ///
+  /// Requires the "Confirm signup" email template to render `{{ .Token }}`.
+  /// On success a session is created, so the auth state listener picks it up
+  /// exactly as it would after a normal sign-in.
+  static Future<AuthResponse> verifyEmailOtp({
+    required String email,
+    required String token,
+  }) async {
+    return _client.auth.verifyOTP(
+      type: OtpType.signup,
+      email: email,
+      token: token,
+    );
+  }
+
+  /// Sends a fresh sign-up code. Supabase rate-limits this server-side, so the
+  /// caller should also throttle to avoid burning the quota on double-taps.
+  static Future<void> resendEmailOtp(String email) async {
+    await _client.auth.resend(type: OtpType.signup, email: email);
+  }
+
   static Future<void> signOut() async {
     await _client.auth.signOut();
   }
@@ -73,11 +95,8 @@ class AuthService {
     final user = currentUser;
     if (user == null) return null;
 
-    final response = await _client
-        .from('profiles')
-        .select()
-        .eq('id', user.id)
-        .maybeSingle();
+    final response =
+        await _client.from('profiles').select().eq('id', user.id).maybeSingle();
 
     return response;
   }

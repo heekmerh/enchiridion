@@ -52,6 +52,16 @@ class _FakeAuthProvider extends ChangeNotifier implements AuthProvider {
 
   @override
   Future<String?> resetPassword(String email) async => null;
+
+  @override
+  Future<String?> verifyEmailOtp({
+    required String email,
+    required String token,
+  }) async =>
+      null;
+
+  @override
+  Future<String?> resendEmailOtp(String email) async => null;
 }
 
 // ---------------------------------------------------------------------------
@@ -116,7 +126,8 @@ void main() {
     // (b) Carousel renders: first card title 'Calculators' is visible
     //     after switching to the Resources tab.
     // -------------------------------------------------------------------
-    testWidgets('Resources tab carousel shows first card title', (tester) async {
+    testWidgets('Resources tab carousel shows first card title',
+        (tester) async {
       await tester.pumpWidget(_buildSubject(_makeStorage()));
       await tester.pumpAndSettle();
 
@@ -129,10 +140,10 @@ void main() {
     });
 
     // -------------------------------------------------------------------
-    // (c) Indicator dots present: exactly 4 AnimatedContainers render
+    // (c) Indicator dots present: exactly 5 AnimatedContainers render
     //     after switching to the Resources tab.
     // -------------------------------------------------------------------
-    testWidgets('Resources tab renders exactly 4 indicator dots',
+    testWidgets('Resources tab renders exactly 5 indicator dots',
         (tester) async {
       await tester.pumpWidget(_buildSubject(_makeStorage()));
       await tester.pumpAndSettle();
@@ -148,8 +159,8 @@ void main() {
           tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
       expect(
         animatedContainers.length,
-        equals(4),
-        reason: 'The Resources tab right-side indicator must show 4 dots',
+        equals(5),
+        reason: 'The Resources tab right-side indicator must show 5 dots',
       );
     });
 
@@ -168,12 +179,11 @@ void main() {
       // Initial state: first card 'Calculators' visible.
       expect(find.text('Calculators'), findsOneWidget);
 
-      // Fling left to reveal second page.
-      // Use .last because the Library tab PageView (vertical) is also in the
-      // tree; the Resources tab PageView is the last one rendered.
+      // Fling upward to reveal the second vertical page.
+      // Use .last because the Library tab PageView is also in the tree.
       await tester.fling(
         find.byType(PageView).last,
-        const Offset(-400, 0),
+        const Offset(0, -400),
         800,
       );
       await tester.pumpAndSettle();
@@ -181,10 +191,10 @@ void main() {
       // Second card title 'Exam Prep' should now be visible.
       expect(find.text('Exam Prep'), findsOneWidget);
 
-      // Dot count must remain 4.
+      // Dot count must remain 5.
       final dotsAfterSwipe =
           tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
-      expect(dotsAfterSwipe.length, equals(4));
+      expect(dotsAfterSwipe.length, equals(5));
     });
 
     // -------------------------------------------------------------------

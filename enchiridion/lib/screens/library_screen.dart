@@ -8,7 +8,10 @@ import '../screens/reader_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/calculator_list_screen.dart';
+import '../screens/exam_prep_home_screen.dart';
 import '../screens/question_list_screen.dart';
+import '../screens/resource_topic_list_screen.dart';
+import '../models/resource_topic.dart';
 import '../widgets/drawer/settings_drawer.dart';
 
 // ─── Resource category data model ────────────────────────────────────────────
@@ -127,7 +130,8 @@ class _LibraryScreenState extends State<LibraryScreen>
           children: [
             const SizedBox(height: 8),
             Container(
-              width: 40, height: 4,
+              width: 40,
+              height: 4,
               decoration: BoxDecoration(
                 color: Colors.grey.shade300,
                 borderRadius: BorderRadius.circular(2),
@@ -137,16 +141,21 @@ class _LibraryScreenState extends State<LibraryScreen>
             ListTile(
               leading: const Icon(Icons.menu_book_outlined),
               title: Text('Read ${book.title}'),
-              onTap: () { Navigator.pop(context); _openBook(book); },
+              onTap: () {
+                Navigator.pop(context);
+                _openBook(book);
+              },
             ),
             ListTile(
               leading: const Icon(Icons.quiz_outlined),
               title: Text('${book.title} — Questions'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (_) => QuestionListScreen(bookId: book.id),
-                ));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => QuestionListScreen(bookId: book.id),
+                    ));
               },
             ),
             const SizedBox(height: 8),
@@ -179,7 +188,8 @@ class _LibraryScreenState extends State<LibraryScreen>
               children: [
                 Center(
                   child: Container(
-                    width: 40, height: 4,
+                    width: 40,
+                    height: 4,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(2),
@@ -188,8 +198,10 @@ class _LibraryScreenState extends State<LibraryScreen>
                 ),
                 const SizedBox(height: 16),
                 Text('Settings',
-                  style: Theme.of(context).textTheme.titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold)),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(fontWeight: FontWeight.bold)),
                 const SizedBox(height: 20),
                 SettingsPanel(
                   settings: settingsProvider.settings,
@@ -248,18 +260,21 @@ class _LibraryScreenState extends State<LibraryScreen>
                   padding: const EdgeInsets.fromLTRB(16, 12, 4, 4),
                   child: Row(
                     children: [
-                      Image.asset('assets/icon/logo.png', width: 30, height: 30),
+                      Image.asset('assets/icon/logo.png',
+                          width: 30, height: 30),
                       const SizedBox(width: 10),
                       Expanded(
                         child: Text('Enchiridion',
-                          style: theme.textTheme.titleLarge
-                              ?.copyWith(fontWeight: FontWeight.bold)),
+                            style: theme.textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ),
                       IconButton(
                         icon: const Icon(Icons.account_circle_outlined),
                         tooltip: 'Profile',
-                        onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => const ProfileScreen())),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const ProfileScreen())),
                       ),
                       IconButton(
                         icon: const Icon(Icons.settings_outlined),
@@ -274,7 +289,9 @@ class _LibraryScreenState extends State<LibraryScreen>
                   controller: _tabController,
                   tabs: const [
                     Tab(icon: Icon(Icons.menu_book_outlined), text: 'Library'),
-                    Tab(icon: Icon(Icons.medical_services_outlined), text: 'Resources'),
+                    Tab(
+                        icon: Icon(Icons.medical_services_outlined),
+                        text: 'Resources'),
                   ],
                 ),
                 // Tab content
@@ -428,7 +445,7 @@ class _BookPage extends StatelessWidget {
             errorBuilder: (_, __, ___) => Container(
               color: cs.primaryContainer,
               child: Icon(Icons.menu_book_rounded,
-                size: 80, color: cs.onPrimaryContainer),
+                  size: 80, color: cs.onPrimaryContainer),
             ),
           ),
           // Gradient overlay so text is readable at the bottom
@@ -460,26 +477,26 @@ class _BookPage extends StatelessWidget {
                 if (isRecent)
                   Container(
                     margin: const EdgeInsets.only(bottom: 8),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 3),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
                     decoration: BoxDecoration(
                       color: cs.primary,
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text('Recent',
-                      style: TextStyle(
-                        color: cs.onPrimary,
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold,
-                      )),
+                        style: TextStyle(
+                          color: cs.onPrimary,
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                        )),
                   ),
                 Text(book.title,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                    height: 1.2,
-                  )),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      height: 1.2,
+                    )),
                 const SizedBox(height: 6),
                 Text(
                   book.hasContent ? book.specialty : 'Coming soon',
@@ -506,7 +523,7 @@ class _BookPage extends StatelessWidget {
                       color: Colors.white.withValues(alpha: 0.5), width: 1.5),
                 ),
                 child: const Icon(Icons.menu_book_rounded,
-                  color: Colors.white, size: 22),
+                    color: Colors.white, size: 22),
               ),
             ),
         ],
@@ -550,29 +567,38 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         title: 'Exam Prep',
         assetPath: 'assets/resources/exam_prep.jpeg',
         onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) =>
-              const QuestionListScreen(bookId: 'paediatrics'), // TODO: multi-book support
+          builder: (_) => const ExamPrepHomeScreen(),
         )),
       ),
       _ResourceCategory(
-        title: 'Instrumentation',
-        assetPath: 'assets/resources/instrumentation.jpeg',
-        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Instrumentation — content coming soon'),
-            behavior: SnackBarBehavior.floating,
+        title: 'Surgical Instrumentation',
+        assetPath: 'assets/resources/surgical instrumentation.jpeg',
+        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => const ResourceTopicListScreen(
+            title: 'Surgical Instrumentation',
+            topics: kSurgicalInstrumentationTopics,
           ),
-        ),
+        )),
+      ),
+      _ResourceCategory(
+        title: 'Medical Instrumentation',
+        assetPath: 'assets/resources/clinical instrumentation.jpeg',
+        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => const ResourceTopicListScreen(
+            title: 'Medical Instrumentation',
+            topics: kMedicalInstrumentationTopics,
+          ),
+        )),
       ),
       _ResourceCategory(
         title: 'OSCE',
         assetPath: 'assets/resources/osce.jpeg',
-        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('OSCE — content coming soon'),
-            behavior: SnackBarBehavior.floating,
+        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => const ResourceTopicListScreen(
+            title: 'OSCE',
+            topics: kOsceTopics,
           ),
-        ),
+        )),
       ),
     ];
   }

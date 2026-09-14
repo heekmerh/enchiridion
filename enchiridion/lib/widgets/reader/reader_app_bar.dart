@@ -43,7 +43,8 @@ class ReaderAppBar extends StatelessWidget {
         ),
         Consumer<BookmarkProvider>(
           builder: (context, bookmarkProvider, _) {
-            final isBookmarked = bookmarkProvider.isBookmarked(currentChapterId);
+            final isBookmarked =
+                bookmarkProvider.isBookmarked(currentChapterId);
             return IconButton(
               icon: CustomIcons.bookmark(
                 filled: isBookmarked,

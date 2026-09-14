@@ -14,6 +14,7 @@ import '../widgets/reader/reader_navigation.dart';
 import '../widgets/reader/reader_progress_bar.dart';
 import '../constants/app_strings.dart';
 import '../config/freemium_config.dart';
+import '../utils/bottom_inset.dart';
 import 'unlock_screen.dart';
 
 class ReaderScreen extends StatelessWidget {
@@ -156,8 +157,8 @@ class _ReaderShellState extends State<_ReaderShell> {
     }
   }
 
-  void _showNotesSheet(String chapterId) {
-    showModalBottomSheet(
+  Future<void> _showNotesSheet(String chapterId) async {
+    final saved = await showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
@@ -167,6 +168,14 @@ class _ReaderShellState extends State<_ReaderShell> {
         bookId: widget.bookId,
         chapterId: chapterId,
         storage: context.read<StorageService>(),
+      ),
+    );
+    if (!mounted || saved != true) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Chapter note saved'),
+        behavior: SnackBarBehavior.floating,
+        duration: Duration(seconds: 2),
       ),
     );
   }
@@ -215,6 +224,7 @@ class _ReaderShellState extends State<_ReaderShell> {
 
         return Consumer2<SettingsProvider, BookmarkProvider>(
           builder: (context, settingsProvider, bookmarkProvider, _) {
+            final safeBottomInset = bottomViewportInset(context);
             return Scaffold(
               body: GestureDetector(
                 onTap: () {
@@ -231,8 +241,7 @@ class _ReaderShellState extends State<_ReaderShell> {
                           onSettingsPressed: () => setState(() {
                             _isSettingsOpen = !_isSettingsOpen;
                           }),
-                          onNotesPressed: () =>
-                              _showNotesSheet(chapterId),
+                          onNotesPressed: () => _showNotesSheet(chapterId),
                         ),
                         SliverToBoxAdapter(
                           child: _hasAccess ||
@@ -248,7 +257,9 @@ class _ReaderShellState extends State<_ReaderShell> {
                                   chapter: chapter,
                                 ),
                         ),
-                        const SliverToBoxAdapter(child: SizedBox(height: 80)),
+                        SliverToBoxAdapter(
+                          child: SizedBox(height: 96 + safeBottomInset),
+                        ),
                       ],
                     ),
 
@@ -332,7 +343,7 @@ class _ReaderShellState extends State<_ReaderShell> {
                     ),
 
                     Positioned(
-                      bottom: 4,
+                      bottom: safeBottomInset + 4,
                       left: 0,
                       right: 0,
                       child: Container(
@@ -372,7 +383,7 @@ class _ReaderShellState extends State<_ReaderShell> {
                     ),
 
                     Positioned(
-                      bottom: 0,
+                      bottom: safeBottomInset,
                       left: 0,
                       right: 0,
                       child: ReaderProgressBar(progress: bookProvider.progress),
@@ -408,12 +419,15 @@ class _NotesBottomSheet extends StatefulWidget {
 class _NotesBottomSheetState extends State<_NotesBottomSheet> {
   final _ctrl = TextEditingController();
   bool _saving = false;
+  bool _hasExistingNote = false;
 
   @override
   void initState() {
     super.initState();
-    _ctrl.text =
+    final existingNote =
         widget.storage.getNote(widget.bookId, widget.chapterId) ?? '';
+    _ctrl.text = existingNote;
+    _hasExistingNote = existingNote.trim().isNotEmpty;
   }
 
   @override
@@ -424,100 +438,148 @@ class _NotesBottomSheetState extends State<_NotesBottomSheet> {
 
   Future<void> _save() async {
     setState(() => _saving = true);
-    await widget.storage
-        .saveNote(widget.bookId, widget.chapterId, _ctrl.text.trim());
+    final text = _ctrl.text.trim();
+    await widget.storage.saveNote(widget.bookId, widget.chapterId, text);
     if (mounted) {
-      setState(() => _saving = false);
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Note saved'),
-          behavior: SnackBarBehavior.floating,
-          duration: Duration(seconds: 1),
-        ),
-      );
+      Navigator.of(context).pop(true);
     }
   }
 
-  Future<void> _clear() async {
+  Future<void> _startFresh() async {
+    if (_saving) return;
+    setState(() => _ctrl.clear());
+  }
+
+  Future<void> _clearSavedNote() async {
+    if (_saving) return;
     await widget.storage.deleteNote(widget.bookId, widget.chapterId);
-    if (mounted) setState(() => _ctrl.clear());
+    if (mounted) {
+      setState(() {
+        _ctrl.clear();
+        _hasExistingNote = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Saved chapter note removed'),
+          behavior: SnackBarBehavior.floating,
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
+    final safeBottomInset = bottomViewportInset(context);
 
-    return DraggableScrollableSheet(
-      initialChildSize: 0.55,
-      minChildSize: 0.3,
-      maxChildSize: 0.9,
-      expand: false,
-      builder: (_, __) => Padding(
-        padding: EdgeInsets.fromLTRB(
-          16, 12, 16,
-          16 + MediaQuery.of(context).viewInsets.bottom,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Center(
-              child: Container(
-                width: 40,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: cs.outline.withValues(alpha: 0.4),
-                  borderRadius: BorderRadius.circular(2),
+    return AnimatedPadding(
+      duration: const Duration(milliseconds: 220),
+      curve: Curves.easeOutCubic,
+      padding: EdgeInsets.only(bottom: keyboardInset),
+      child: DraggableScrollableSheet(
+        initialChildSize: 0.65,
+        minChildSize: 0.35,
+        maxChildSize: 0.95,
+        expand: false,
+        builder: (_, __) => Padding(
+          padding: EdgeInsets.fromLTRB(
+            16,
+            12,
+            16,
+            16 + safeBottomInset,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: cs.outline.withValues(alpha: 0.4),
+                    borderRadius: BorderRadius.circular(2),
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                const Icon(Icons.edit_note_outlined, size: 20),
-                const SizedBox(width: 8),
-                Text(
-                  'Chapter Notes',
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  const Icon(Icons.edit_note_outlined, size: 20),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Chapter Notes',
                     style: theme.textTheme.titleSmall
                         ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const Spacer(),
                   TextButton(
-                    onPressed: _clear,
-                    child: const Text('Clear'),
+                    onPressed: _startFresh,
+                    child: const Text('Start Fresh'),
+                  ),
+                  TextButton(
+                    onPressed: _hasExistingNote ? _clearSavedNote : null,
+                    child: const Text('Delete Saved'),
                   ),
                 ],
               ),
               const SizedBox(height: 8),
+              Text(
+                _hasExistingNote
+                    ? 'Your saved chapter note is loaded below. Edit it and save again, or start fresh.'
+                    : 'Write a chapter note and save. The sheet will close once it is stored.',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: cs.onSurface.withValues(alpha: 0.72),
+                ),
+              ),
+              const SizedBox(height: 10),
               Expanded(
                 child: TextField(
-                        controller: _ctrl,
-                        maxLines: null,
-                        expands: true,
-                        textAlignVertical: TextAlignVertical.top,
-                        decoration: InputDecoration(
-                          hintText: 'Write your notes for this chapter…',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          contentPadding: const EdgeInsets.all(12),
-                        ),
-                      ),
+                  controller: _ctrl,
+                  maxLines: null,
+                  expands: true,
+                  textAlignVertical: TextAlignVertical.top,
+                  scrollPadding: const EdgeInsets.only(bottom: 96),
+                  decoration: InputDecoration(
+                    hintText: 'Write your notes for this chapter…',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    contentPadding: const EdgeInsets.all(12),
+                  ),
+                ),
               ),
               const SizedBox(height: 12),
-              FilledButton(
-                onPressed: _saving ? null : _save,
-                child: _saving
-                    ? const SizedBox(
-                        height: 18,
-                        width: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : const Text('Save Note'),
+              Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed:
+                          _saving ? null : () => Navigator.of(context).pop(),
+                      child: const Text('Cancel'),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: FilledButton(
+                      onPressed: _saving ? null : _save,
+                      child: _saving
+                          ? const SizedBox(
+                              height: 18,
+                              width: 18,
+                              child: CircularProgressIndicator(strokeWidth: 2),
+                            )
+                          : const Text('Save Note'),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
+      ),
     );
   }
 }
@@ -557,54 +619,54 @@ class _LockedChapterOverlay extends StatelessWidget {
               ),
             ),
           ),
-        Positioned.fill(
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(32),
-              child: Card(
-                elevation: 6,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.lock_outline, size: 40, color: cs.primary),
-                      const SizedBox(height: 12),
-                      Text(
-                        'Unlock full access to continue reading',
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.titleMedium
-                            ?.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'The free preview covers the first chapter. '
-                        'Unlock this book to read everything.',
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                            color: cs.onSurface.withValues(alpha: 0.6)),
-                      ),
-                      const SizedBox(height: 20),
-                      FilledButton(
-                        onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => UnlockScreen(bookId: bookId),
-                          ),
+          Positioned.fill(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: Card(
+                  elevation: 6,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16)),
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.lock_outline, size: 40, color: cs.primary),
+                        const SizedBox(height: 12),
+                        Text(
+                          'Unlock full access to continue reading',
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.titleMedium
+                              ?.copyWith(fontWeight: FontWeight.bold),
                         ),
-                        child: const Text('Unlock'),
-                      ),
-                    ],
+                        const SizedBox(height: 8),
+                        Text(
+                          'The free preview covers the first chapter. '
+                          'Unlock this book to read everything.',
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.onSurface.withValues(alpha: 0.6)),
+                        ),
+                        const SizedBox(height: 20),
+                        FilledButton(
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => UnlockScreen(bookId: bookId),
+                            ),
+                          ),
+                          child: const Text('Unlock'),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-        ),
-      ],
-    ),
+        ],
+      ),
     );
   }
 }

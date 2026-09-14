@@ -38,7 +38,7 @@ class BookmarkProvider with ChangeNotifier {
       name: chapterTitle,
       scrollProgress: 0.0,
     );
-    
+
     // Optimistic update
     _bookmarks.insert(0, bookmark);
     notifyListeners();

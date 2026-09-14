@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../models/chapter.dart';
+import '../../models/clip_note.dart';
 import '../../models/content_block.dart';
 import '../../models/user_settings.dart';
 import '../../providers/settings_provider.dart';
 import '../../services/storage_service.dart';
 import '../../theme/app_colors.dart';
+import '../../utils/bottom_inset.dart';
 import 'algorithm_block.dart';
 import 'checklist_block.dart';
 import 'clinical_pearls_block.dart';
@@ -111,8 +113,8 @@ class _BlockRendererState extends State<BlockRenderer> {
     final double lineHeight = settings.lineHeight;
     final String fontFamily = switch (settings.fontFamily) {
       FontFamily.serif => 'serif',
-      FontFamily.mono  => 'monospace',
-      FontFamily.sans  => 'sans-serif',
+      FontFamily.mono => 'monospace',
+      FontFamily.sans => 'sans-serif',
     };
 
     return DefaultTextStyle.merge(
@@ -206,23 +208,38 @@ class _ChapterView extends StatelessWidget {
 
   Widget _buildBlock(ContentBlock block, double fontSize, double lineHeight) {
     if (block is ParagraphBlock) {
-      return _ParagraphWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return _ParagraphWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is MnemonicBlock) {
-      return MnemonicBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return MnemonicBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is TableBlock) {
-      return TableBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight, headerTintColor: _chapterHeaderTintColor());
+      return TableBlockWidget(
+          block: block,
+          fontSize: fontSize,
+          lineHeight: lineHeight,
+          headerTintColor: _chapterHeaderTintColor());
     } else if (block is ChecklistBlock) {
-      return ChecklistBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return ChecklistBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is ClinicalPearlsBlock) {
-      return ClinicalPearlsBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return ClinicalPearlsBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is RedFlagsBlock) {
-      return RedFlagsBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return RedFlagsBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is AlgorithmBlock) {
-      return AlgorithmBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return AlgorithmBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is KeyValueBlock) {
-      return KeyValueBlockWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return KeyValueBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
+    } else if (block is ImageBlock) {
+      return _ImageBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is AgeReferenceBlock) {
-      return _AgeReferenceWidget(block: block, fontSize: fontSize, lineHeight: lineHeight);
+      return _AgeReferenceWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     }
     return const SizedBox.shrink();
   }
@@ -243,24 +260,6 @@ class _SectionHeader extends StatelessWidget {
     this.chapterId = '',
     this.sectionId = '',
   });
-
-  void _showClips(BuildContext context) {
-    final storage = context.read<StorageService>();
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder: (_) => _ClipsBottomSheet(
-        bookId: bookId,
-        chapterId: chapterId,
-        sectionId: sectionId,
-        sectionTitle: title,
-        storage: storage,
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -300,7 +299,7 @@ class _SectionHeader extends StatelessWidget {
                   bookId: bookId,
                   chapterId: chapterId,
                   sectionId: sectionId,
-                  onTap: () => _showClips(context),
+                  sectionTitle: title,
                 ),
             ],
           ),
@@ -314,26 +313,79 @@ class _ClipPinButton extends StatelessWidget {
   final String bookId;
   final String chapterId;
   final String sectionId;
-  final VoidCallback onTap;
+  final String sectionTitle;
 
   const _ClipPinButton({
     required this.bookId,
     required this.chapterId,
     required this.sectionId,
-    required this.onTap,
+    required this.sectionTitle,
   });
 
   @override
   Widget build(BuildContext context) {
+    return _ClipPinButtonBody(
+      bookId: bookId,
+      chapterId: chapterId,
+      sectionId: sectionId,
+      sectionTitle: sectionTitle,
+    );
+  }
+}
+
+class _ClipPinButtonBody extends StatefulWidget {
+  final String bookId;
+  final String chapterId;
+  final String sectionId;
+  final String sectionTitle;
+
+  const _ClipPinButtonBody({
+    required this.bookId,
+    required this.chapterId,
+    required this.sectionId,
+    required this.sectionTitle,
+  });
+
+  @override
+  State<_ClipPinButtonBody> createState() => _ClipPinButtonBodyState();
+}
+
+class _ClipPinButtonBodyState extends State<_ClipPinButtonBody> {
+  Future<void> _openSheet() async {
     final storage = context.read<StorageService>();
-    final clips = storage.getClips(bookId, chapterId, sectionId);
+    await showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (_) => _ClipsBottomSheet(
+        bookId: widget.bookId,
+        chapterId: widget.chapterId,
+        sectionId: widget.sectionId,
+        sectionTitle: widget.sectionTitle,
+        storage: storage,
+      ),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final storage = context.read<StorageService>();
+    final clips = storage.getClips(
+      widget.bookId,
+      widget.chapterId,
+      widget.sectionId,
+    );
     final hasClips = clips.isNotEmpty;
-    final color = hasClips
-        ? AppColors.brandPink
-        : Theme.of(context).colorScheme.outline;
+    final color =
+        hasClips ? AppColors.brandPink : Theme.of(context).colorScheme.outline;
 
     return GestureDetector(
-      onTap: onTap,
+      onTap: _openSheet,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
         child: Stack(
@@ -476,8 +528,7 @@ class _GroupHeader extends StatelessWidget {
           ),
           if (subtitle != null && subtitle!.isNotEmpty)
             Padding(
-              padding: EdgeInsets.only(
-                  top: 3, left: fontSize * 0.6 + 2),
+              padding: EdgeInsets.only(top: 3, left: fontSize * 0.6 + 2),
               child: Text(
                 subtitle!,
                 style: TextStyle(
@@ -516,6 +567,115 @@ class _ParagraphWidget extends StatelessWidget {
           height: lineHeight,
           color: theme.colorScheme.onSurface,
         ),
+      ),
+    );
+  }
+}
+
+class _ImageBlockWidget extends StatelessWidget {
+  final ImageBlock block;
+  final double fontSize;
+  final double lineHeight;
+
+  const _ImageBlockWidget({
+    required this.block,
+    required this.fontSize,
+    required this.lineHeight,
+  });
+
+  void _showImageViewer(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      barrierColor: Colors.black.withValues(alpha: 0.92),
+      builder: (_) => Dialog.fullscreen(
+        backgroundColor: Colors.black,
+        child: Stack(
+          children: [
+            Center(
+              child: InteractiveViewer(
+                minScale: 1,
+                maxScale: 5,
+                child: Image.asset(
+                  block.assetPath,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            SafeArea(
+              child: Align(
+                alignment: Alignment.topRight,
+                child: IconButton(
+                  icon: const Icon(Icons.close),
+                  color: Colors.white,
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: EdgeInsets.only(bottom: fontSize * 1.2),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+            onTap: () => _showImageViewer(context),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Container(
+                color: theme.colorScheme.surfaceContainerHigh,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 180),
+                  child: Image.asset(
+                    block.assetPath,
+                    width: double.infinity,
+                    fit: BoxFit.fitWidth,
+                    filterQuality: FilterQuality.high,
+                    errorBuilder: (_, __, ___) => AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.broken_image_outlined,
+                              color: theme.colorScheme.outline,
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Image unavailable',
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: theme.colorScheme.outline,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          if (block.caption != null && block.caption!.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Text(
+                block.caption!,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  height: lineHeight,
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.72),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }
@@ -649,8 +809,10 @@ class _ClipsBottomSheet extends StatefulWidget {
 }
 
 class _ClipsBottomSheetState extends State<_ClipsBottomSheet> {
-  late List<Map<String, dynamic>> _clips;
+  late List<ClipNote> _clips;
   final _addCtrl = TextEditingController();
+  String? _editingClipId;
+  bool _saving = false;
 
   @override
   void initState() {
@@ -665,23 +827,58 @@ class _ClipsBottomSheetState extends State<_ClipsBottomSheet> {
     super.dispose();
   }
 
-  Future<void> _addClip() async {
+  Future<void> _submitClip() async {
     final text = _addCtrl.text.trim();
-    if (text.isEmpty) return;
-    await widget.storage
-        .addClip(widget.bookId, widget.chapterId, widget.sectionId, text);
+    if (text.isEmpty || _saving) return;
+    setState(() => _saving = true);
+    if (_editingClipId == null) {
+      await widget.storage
+          .addClip(widget.bookId, widget.chapterId, widget.sectionId, text);
+    } else {
+      await widget.storage.updateClip(
+        widget.bookId,
+        widget.chapterId,
+        widget.sectionId,
+        _editingClipId!,
+        text,
+      );
+    }
     _addCtrl.clear();
     if (mounted) {
-      setState(() => _clips = widget.storage
-          .getClips(widget.bookId, widget.chapterId, widget.sectionId));
+      setState(() {
+        _saving = false;
+        _editingClipId = null;
+        _clips = widget.storage
+            .getClips(widget.bookId, widget.chapterId, widget.sectionId);
+      });
     }
+  }
+
+  void _startEditing(ClipNote clip) {
+    setState(() {
+      _editingClipId = clip.id;
+      _addCtrl.text = clip.content;
+    });
+  }
+
+  void _cancelEditing() {
+    setState(() {
+      _editingClipId = null;
+      _addCtrl.clear();
+    });
   }
 
   Future<void> _deleteClip(String clipId) async {
     await widget.storage
         .deleteClip(widget.bookId, widget.chapterId, widget.sectionId, clipId);
     if (mounted) {
-      setState(() => _clips.removeWhere((c) => c['id'] == clipId));
+      setState(() {
+        _clips.removeWhere((c) => c.id == clipId);
+        if (_editingClipId == clipId) {
+          _editingClipId = null;
+          _addCtrl.clear();
+        }
+      });
     }
   }
 
@@ -689,10 +886,15 @@ class _ClipsBottomSheetState extends State<_ClipsBottomSheet> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final viewInsets = MediaQuery.of(context).viewInsets;
+    final isEditing = _editingClipId != null;
 
     return Padding(
-      padding: EdgeInsets.only(bottom: viewInsets.bottom),
+      padding: EdgeInsets.only(
+        bottom: bottomViewportInset(
+          context,
+          includeKeyboard: true,
+        ),
+      ),
       child: DraggableScrollableSheet(
         initialChildSize: 0.5,
         minChildSize: 0.3,
@@ -730,23 +932,63 @@ class _ClipsBottomSheetState extends State<_ClipsBottomSheet> {
             const Divider(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Expanded(
-                    child: TextField(
-                      controller: _addCtrl,
-                      decoration: const InputDecoration(
-                        hintText: 'Add a clip note…',
-                        border: OutlineInputBorder(),
-                        isDense: true,
+                  if (isEditing)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.edit_outlined,
+                            size: 16,
+                            color: cs.primary,
+                          ),
+                          const SizedBox(width: 6),
+                          Text(
+                            'Editing clip note',
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.primary,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const Spacer(),
+                          TextButton(
+                            onPressed: _cancelEditing,
+                            child: const Text('Cancel'),
+                          ),
+                        ],
                       ),
-                      maxLines: 2,
                     ),
-                  ),
-                  const SizedBox(width: 8),
-                  FilledButton(
-                    onPressed: _addClip,
-                    child: const Text('Save'),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _addCtrl,
+                          decoration: InputDecoration(
+                            hintText: isEditing
+                                ? 'Update this clip note…'
+                                : 'Add a clip note…',
+                            border: const OutlineInputBorder(),
+                            isDense: true,
+                          ),
+                          minLines: 2,
+                          maxLines: 4,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      FilledButton(
+                        onPressed: _submitClip,
+                        child: Text(
+                          _saving
+                              ? 'Saving…'
+                              : isEditing
+                                  ? 'Update'
+                                  : 'Save',
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -754,36 +996,49 @@ class _ClipsBottomSheetState extends State<_ClipsBottomSheet> {
             const SizedBox(height: 8),
             Expanded(
               child: _clips.isEmpty
-                      ? Center(
-                          child: Text('No clips yet for this section.',
-                              style: theme.textTheme.bodySmall?.copyWith(
-                                  color: cs.onSurface.withValues(alpha: 0.5))),
-                        )
-                      : ListView.separated(
-                          controller: scrollCtrl,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 16, vertical: 4),
-                          itemCount: _clips.length,
-                          separatorBuilder: (_, __) =>
-                              const Divider(height: 1),
-                          itemBuilder: (_, i) {
-                            final clip = _clips[i];
-                            return ListTile(
-                              contentPadding: EdgeInsets.zero,
-                              title: Text(
-                                clip['content'] as String? ?? '',
-                                style: theme.textTheme.bodyMedium,
+                  ? Center(
+                      child: Text('No clips yet for this section.',
+                          style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.onSurface.withValues(alpha: 0.5))),
+                    )
+                  : ListView.separated(
+                      controller: scrollCtrl,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 4),
+                      itemCount: _clips.length,
+                      separatorBuilder: (_, __) => const Divider(height: 1),
+                      itemBuilder: (_, i) {
+                        final clip = _clips[i];
+                        return ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          title: Text(
+                            clip.content,
+                            style: theme.textTheme.bodyMedium,
+                          ),
+                          subtitle: Text(
+                            'Saved ${clip.createdAt.toLocal()}',
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.onSurface.withValues(alpha: 0.55),
+                            ),
+                          ),
+                          trailing: Wrap(
+                            spacing: 4,
+                            children: [
+                              IconButton(
+                                icon: const Icon(Icons.edit_outlined, size: 18),
+                                onPressed: () => _startEditing(clip),
                               ),
-                              trailing: IconButton(
-                                icon: const Icon(Icons.delete_outline,
-                                    size: 18),
+                              IconButton(
+                                icon:
+                                    const Icon(Icons.delete_outline, size: 18),
                                 color: cs.error,
-                                onPressed: () =>
-                                    _deleteClip(clip['id'].toString()),
+                                onPressed: () => _deleteClip(clip.id),
                               ),
-                            );
-                          },
-                        ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
             ),
             const SizedBox(height: 8),
           ],

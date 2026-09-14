@@ -33,19 +33,24 @@ void main() {
   });
 
   group('_ClinicalNotesSection', () {
-    testWidgets('Clinical Notes is present when calculator has enhancement fields (gcs)', (tester) async {
+    testWidgets(
+        'Clinical Notes is present when calculator has enhancement fields (gcs)',
+        (tester) async {
       await _pumpCalculatorScreen(tester, 'gcs');
       expect(find.text('Clinical Notes'), findsOneWidget);
     });
 
-    testWidgets('Clinical Notes is present when calculator has enhancement fields (weight-dosing)', (tester) async {
+    testWidgets(
+        'Clinical Notes is present when calculator has enhancement fields (weight-dosing)',
+        (tester) async {
       await _pumpCalculatorScreen(tester, 'weight-dosing');
       expect(find.text('Clinical Notes'), findsOneWidget);
     });
   });
 
   group('BMI unit auto-conversion', () {
-    testWidgets('weight auto-converts from kg to lb when unit changes', (tester) async {
+    testWidgets('weight auto-converts from kg to lb when unit changes',
+        (tester) async {
       await _pumpCalculatorScreen(tester, 'bmi');
 
       // Enter 70 in the weight field (first numeric field)
@@ -66,7 +71,8 @@ void main() {
       expect(weightField.controller?.text, '154.32');
     });
 
-    testWidgets('height auto-converts from cm to m when unit changes', (tester) async {
+    testWidgets('height auto-converts from cm to m when unit changes',
+        (tester) async {
       await _pumpCalculatorScreen(tester, 'bmi');
 
       // Enter 170 in the height field (second numeric field)

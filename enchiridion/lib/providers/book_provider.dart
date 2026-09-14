@@ -39,7 +39,8 @@ class BookProvider with ChangeNotifier {
   }
 
   bool get hasPrevious => currentIndex > 0;
-  bool get hasNext => _book != null && currentIndex < _book!.chapters.length - 1;
+  bool get hasNext =>
+      _book != null && currentIndex < _book!.chapters.length - 1;
   double get progress =>
       _book == null ? 0.0 : (currentIndex + 1) / _book!.chapters.length;
 
@@ -53,10 +54,10 @@ class BookProvider with ChangeNotifier {
   /// Testing-only constructor. Bypasses rootBundle and initialises the provider
   /// with [book] already loaded so tests do not need a running platform channel.
   @visibleForTesting
-  BookProvider.withBook(this._storageService, Book book)
-      : _dataFile = '' {
+  BookProvider.withBook(this._storageService, Book book) : _dataFile = '' {
     _book = book;
-    _currentChapterId = book.chapters.isNotEmpty ? book.chapters.first.id : null;
+    _currentChapterId =
+        book.chapters.isNotEmpty ? book.chapters.first.id : null;
     _status = BookStatus.loaded;
   }
 

@@ -67,7 +67,7 @@ void main() {
       expect(json['title'], 'Test Book');
       expect(json['chapters'], isA<List>());
       expect((json['chapters'] as List).length, 1);
-      
+
       final chapterJson = (json['chapters'] as List)[0];
       expect(chapterJson['chapter_metadata']['chapter_id'], 'c1');
     });

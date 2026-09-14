@@ -120,7 +120,8 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
     }
     if (block is ClinicalPearlsBlock) return block.items.join(' ');
     if (block is RedFlagsBlock) return block.items.join(' ');
-    if (block is AlgorithmBlock) return '${block.title} ${block.steps.join(' ')}';
+    if (block is AlgorithmBlock)
+      return '${block.title} ${block.steps.join(' ')}';
     if (block is KeyValueBlock) {
       return '${block.title ?? ''} ${block.items.map((i) => '${i.key} ${i.value}').join(' ')}';
     }
@@ -140,11 +141,11 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
           decoration: InputDecoration(
             hintText: AppStrings.queryDatabase,
             hintStyle: TextStyle(
-              color: theme.colorScheme.onSurface.withValues(alpha:0.5),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
               fontSize: 14,
             ),
             prefixIcon: CustomIcons.search(
-              color: theme.colorScheme.onSurface.withValues(alpha:0.4),
+              color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
               size: 20,
             ),
             filled: true,
@@ -183,15 +184,15 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                 style: TextStyle(
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
-                  color: theme.colorScheme.onSurface.withValues(alpha:0.5),
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
                 ),
               ),
             )
           else
             ..._searchResults.map((result) => _SearchResultItem(
-              result: result,
-              onTap: () => widget.onChapterSelected(result.chapterId),
-            )),
+                  result: result,
+                  onTap: () => widget.onChapterSelected(result.chapterId),
+                )),
           const SizedBox(height: 24),
         ],
 
@@ -200,9 +201,9 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
           _buildSectionHeader(AppStrings.savedLocationsSection, theme),
           const SizedBox(height: 8),
           ...widget.bookmarks.map((bookmark) => _BookmarkItem(
-            bookmark: bookmark,
-            onTap: () => widget.onChapterSelected(bookmark.chapterId),
-          )),
+                bookmark: bookmark,
+                onTap: () => widget.onChapterSelected(bookmark.chapterId),
+              )),
           const SizedBox(height: 24),
         ],
 
@@ -231,7 +232,8 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                 });
               },
               leading: isActiveChapter
-                  ? const Icon(Icons.circle, size: 8, color: AppColors.brandPink)
+                  ? const Icon(Icons.circle,
+                      size: 8, color: AppColors.brandPink)
                   : null,
               title: Text(
                 chapter.title,
@@ -251,8 +253,7 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                 return ExpansionTile(
                   key: ValueKey('toc_${section.id}'),
                   initiallyExpanded: false,
-                  tilePadding:
-                      const EdgeInsets.only(left: 24, right: 16),
+                  tilePadding: const EdgeInsets.only(left: 24, right: 16),
                   title: Text(
                     section.title,
                     style: const TextStyle(fontSize: 13),
@@ -277,12 +278,10 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
                               ? AppColors.neonTeal
                               : theme.colorScheme.onSurface
                                   .withValues(alpha: 0.8),
-                          fontWeight:
-                              isActiveSub ? FontWeight.w600 : null,
+                          fontWeight: isActiveSub ? FontWeight.w600 : null,
                         ),
                       ),
-                      onTap: () =>
-                          widget.onSectionSelected(section.id, sub.id),
+                      onTap: () => widget.onSectionSelected(section.id, sub.id),
                     );
                   }).toList(),
                 );
@@ -301,7 +300,7 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
         fontSize: 12,
         fontWeight: FontWeight.bold,
         letterSpacing: 1.5,
-        color: theme.colorScheme.onSurface.withValues(alpha:0.5),
+        color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
       ),
     );
   }
@@ -354,7 +353,7 @@ class _SearchResultItem extends StatelessWidget {
                   fontSize: 12,
                   fontStyle: FontStyle.italic,
                   fontFamily: 'serif',
-                  color: theme.colorScheme.onSurface.withValues(alpha:0.7),
+                  color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

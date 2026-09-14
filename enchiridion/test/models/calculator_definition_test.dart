@@ -3,7 +3,9 @@ import 'package:enchiridion/models/calculator_definition.dart';
 
 void main() {
   group('CalculatorDefinition', () {
-    test('default enhancement fields are empty strings when only required fields provided', () {
+    test(
+        'default enhancement fields are empty strings when only required fields provided',
+        () {
       const def = CalculatorDefinition(
         id: 'test-id',
         title: 'Test Calculator',
@@ -44,12 +46,20 @@ void main() {
       expect(kCalculators.length, 26);
     });
 
-    test('existing calculator entries preserve correct ordering (freemium position-0 free)', () {
-      final drugDosing = kCalculators.where((c) => c.category == 'Drug Dosing').toList();
-      final emergency = kCalculators.where((c) => c.category == 'Emergency & Critical Care').toList();
-      final general = kCalculators.where((c) => c.category == 'General').toList();
-      final obsGynae = kCalculators.where((c) => c.category == 'Obs & Gynae').toList();
-      final paediatrics = kCalculators.where((c) => c.category == 'Paediatrics').toList();
+    test(
+        'existing calculator entries preserve correct ordering (freemium position-0 free)',
+        () {
+      final drugDosing =
+          kCalculators.where((c) => c.category == 'Drug Dosing').toList();
+      final emergency = kCalculators
+          .where((c) => c.category == 'Emergency & Critical Care')
+          .toList();
+      final general =
+          kCalculators.where((c) => c.category == 'General').toList();
+      final obsGynae =
+          kCalculators.where((c) => c.category == 'Obs & Gynae').toList();
+      final paediatrics =
+          kCalculators.where((c) => c.category == 'Paediatrics').toList();
 
       expect(drugDosing.first.id, 'weight-dosing');
       expect(emergency.first.id, 'gcs');
@@ -74,7 +84,9 @@ void main() {
       expect(grouped.keys.length, 5);
     });
 
-    test('groupByCategory final per-category counts (goes GREEN at end of Phase 4)', () {
+    test(
+        'groupByCategory final per-category counts (goes GREEN at end of Phase 4)',
+        () {
       // Goes GREEN at end of Phase 4 (after 04-02/03/04 add 18 new calculators)
       // Final expected: Drug Dosing 8, Emergency & Critical Care 9, General 1, Obs & Gynae 1, Paediatrics 7 = 26
       final grouped = groupByCategory(kCalculators);

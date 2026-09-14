@@ -1,4 +1,3 @@
-
 enum BlockType {
   mnemonic,
   table,
@@ -8,6 +7,7 @@ enum BlockType {
   ageReference,
   algorithm,
   keyValue,
+  image,
   paragraph,
   unknown
 }
@@ -19,7 +19,7 @@ abstract class ContentBlock {
 
   factory ContentBlock.fromJson(Map<String, dynamic> json) {
     final String? typeStr = json['type'];
-    
+
     if (typeStr == null) {
       // Fallback inference if type is missing
       if (json.containsKey('mnemonic')) return MnemonicBlock.fromJson(json);
@@ -31,16 +31,28 @@ abstract class ContentBlock {
     }
 
     switch (typeStr) {
-      case 'mnemonic': return MnemonicBlock.fromJson(json);
-      case 'table': return TableBlock.fromJson(json);
-      case 'checklist': return ChecklistBlock.fromJson(json);
-      case 'clinical_pearls': return ClinicalPearlsBlock.fromJson(json);
-      case 'red_flags': return RedFlagsBlock.fromJson(json);
-      case 'age_reference': return AgeReferenceBlock.fromJson(json);
-      case 'algorithm': return AlgorithmBlock.fromJson(json);
-      case 'key_value': return KeyValueBlock.fromJson(json);
-      case 'paragraph': return ParagraphBlock.fromJson(json);
-      default: return ParagraphBlock.fromJson(json);
+      case 'mnemonic':
+        return MnemonicBlock.fromJson(json);
+      case 'table':
+        return TableBlock.fromJson(json);
+      case 'checklist':
+        return ChecklistBlock.fromJson(json);
+      case 'clinical_pearls':
+        return ClinicalPearlsBlock.fromJson(json);
+      case 'red_flags':
+        return RedFlagsBlock.fromJson(json);
+      case 'age_reference':
+        return AgeReferenceBlock.fromJson(json);
+      case 'algorithm':
+        return AlgorithmBlock.fromJson(json);
+      case 'key_value':
+        return KeyValueBlock.fromJson(json);
+      case 'image':
+        return ImageBlock.fromJson(json);
+      case 'paragraph':
+        return ParagraphBlock.fromJson(json);
+      default:
+        return ParagraphBlock.fromJson(json);
     }
   }
 
@@ -63,63 +75,69 @@ class MnemonicItem {
   }
 
   Map<String, dynamic> toJson() => {
-    'key': key,
-    'label': label,
-    'value': value,
-  };
+        'key': key,
+        'label': label,
+        'value': value,
+      };
 }
 
 class MnemonicBlock extends ContentBlock {
   final String mnemonic;
   final List<MnemonicItem> items;
 
-  MnemonicBlock({required this.mnemonic, required this.items}) 
+  MnemonicBlock({required this.mnemonic, required this.items})
       : super(type: BlockType.mnemonic);
 
   factory MnemonicBlock.fromJson(Map<String, dynamic> json) {
     return MnemonicBlock(
       mnemonic: json['mnemonic'] ?? '',
-      items: (json['items'] as List?)?.map((e) => MnemonicItem.fromJson(e)).toList() ?? [],
+      items: (json['items'] as List?)
+              ?.map((e) => MnemonicItem.fromJson(e))
+              .toList() ??
+          [],
     );
   }
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'mnemonic',
-    'mnemonic': mnemonic,
-    'items': items.map((e) => e.toJson()).toList(),
-  };
+        'type': 'mnemonic',
+        'mnemonic': mnemonic,
+        'items': items.map((e) => e.toJson()).toList(),
+      };
 }
 
 class TableBlock extends ContentBlock {
   final List<String> columns;
   final List<List<String>> rows;
 
-  TableBlock({required this.columns, required this.rows}) 
+  TableBlock({required this.columns, required this.rows})
       : super(type: BlockType.table);
 
   factory TableBlock.fromJson(Map<String, dynamic> json) {
     return TableBlock(
-      columns: (json['columns'] as List?)?.map((e) => e.toString()).toList() ?? [],
-      rows: (json['rows'] as List?)?.map((row) => 
-        (row as List).map((cell) => cell.toString()).toList()
-      ).toList() ?? [],
+      columns:
+          (json['columns'] as List?)?.map((e) => e.toString()).toList() ?? [],
+      rows: (json['rows'] as List?)
+              ?.map((row) =>
+                  (row as List).map((cell) => cell.toString()).toList())
+              .toList() ??
+          [],
     );
   }
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'table',
-    'columns': columns,
-    'rows': rows,
-  };
+        'type': 'table',
+        'columns': columns,
+        'rows': rows,
+      };
 }
 
 class ChecklistBlock extends ContentBlock {
   final String? title;
   final List<String> items;
 
-  ChecklistBlock({this.title, required this.items}) 
+  ChecklistBlock({this.title, required this.items})
       : super(type: BlockType.checklist);
 
   factory ChecklistBlock.fromJson(Map<String, dynamic> json) {
@@ -131,16 +149,16 @@ class ChecklistBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'checklist',
-    'title': title,
-    'items': items,
-  };
+        'type': 'checklist',
+        'title': title,
+        'items': items,
+      };
 }
 
 class ClinicalPearlsBlock extends ContentBlock {
   final List<String> items;
 
-  ClinicalPearlsBlock({required this.items}) 
+  ClinicalPearlsBlock({required this.items})
       : super(type: BlockType.clinicalPearls);
 
   factory ClinicalPearlsBlock.fromJson(Map<String, dynamic> json) {
@@ -151,16 +169,15 @@ class ClinicalPearlsBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'clinical_pearls',
-    'items': items,
-  };
+        'type': 'clinical_pearls',
+        'items': items,
+      };
 }
 
 class RedFlagsBlock extends ContentBlock {
   final List<String> items;
 
-  RedFlagsBlock({required this.items}) 
-      : super(type: BlockType.redFlags);
+  RedFlagsBlock({required this.items}) : super(type: BlockType.redFlags);
 
   factory RedFlagsBlock.fromJson(Map<String, dynamic> json) {
     return RedFlagsBlock(
@@ -170,38 +187,41 @@ class RedFlagsBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'red_flags',
-    'items': items,
-  };
+        'type': 'red_flags',
+        'items': items,
+      };
 }
 
 class AgeReferenceBlock extends ContentBlock {
   final String ageUnit;
   final List<Map<String, dynamic>> rows;
 
-  AgeReferenceBlock({required this.ageUnit, required this.rows}) 
+  AgeReferenceBlock({required this.ageUnit, required this.rows})
       : super(type: BlockType.ageReference);
 
   factory AgeReferenceBlock.fromJson(Map<String, dynamic> json) {
     return AgeReferenceBlock(
       ageUnit: json['age_unit'] ?? '',
-      rows: (json['rows'] as List?)?.map((e) => e as Map<String, dynamic>).toList() ?? [],
+      rows: (json['rows'] as List?)
+              ?.map((e) => e as Map<String, dynamic>)
+              .toList() ??
+          [],
     );
   }
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'age_reference',
-    'age_unit': ageUnit,
-    'rows': rows,
-  };
+        'type': 'age_reference',
+        'age_unit': ageUnit,
+        'rows': rows,
+      };
 }
 
 class AlgorithmBlock extends ContentBlock {
   final String title;
   final List<String> steps;
 
-  AlgorithmBlock({required this.title, required this.steps}) 
+  AlgorithmBlock({required this.title, required this.steps})
       : super(type: BlockType.algorithm);
 
   factory AlgorithmBlock.fromJson(Map<String, dynamic> json) {
@@ -213,10 +233,10 @@ class AlgorithmBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'algorithm',
-    'title': title,
-    'steps': steps,
-  };
+        'type': 'algorithm',
+        'title': title,
+        'steps': steps,
+      };
 }
 
 class KeyValueItem {
@@ -259,8 +279,7 @@ class KeyValueBlock extends ContentBlock {
 class ParagraphBlock extends ContentBlock {
   final String text;
 
-  ParagraphBlock({required this.text}) 
-      : super(type: BlockType.paragraph);
+  ParagraphBlock({required this.text}) : super(type: BlockType.paragraph);
 
   factory ParagraphBlock.fromJson(Map<String, dynamic> json) {
     return ParagraphBlock(
@@ -270,7 +289,39 @@ class ParagraphBlock extends ContentBlock {
 
   @override
   Map<String, dynamic> toJson() => {
-    'type': 'paragraph',
-    'text': text,
-  };
+        'type': 'paragraph',
+        'text': text,
+      };
+}
+
+class ImageBlock extends ContentBlock {
+  final String assetPath;
+  final String? caption;
+  final double? width;
+  final double? height;
+
+  ImageBlock({
+    required this.assetPath,
+    this.caption,
+    this.width,
+    this.height,
+  }) : super(type: BlockType.image);
+
+  factory ImageBlock.fromJson(Map<String, dynamic> json) {
+    return ImageBlock(
+      assetPath: json['assetPath']?.toString() ?? '',
+      caption: json['caption'] as String?,
+      width: (json['width'] as num?)?.toDouble(),
+      height: (json['height'] as num?)?.toDouble(),
+    );
+  }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'type': 'image',
+        'assetPath': assetPath,
+        'caption': caption,
+        'width': width,
+        'height': height,
+      };
 }

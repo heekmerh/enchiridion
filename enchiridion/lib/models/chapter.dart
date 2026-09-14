@@ -47,18 +47,17 @@ class Chapter {
   }
 
   Map<String, dynamic> toJson() => {
-    'chapter_metadata': {
-      'chapter_id': id,
-      'chapter_title': title,
-      'chapter_icon': icon,
-      'description': description,
-      'position_in_book': order,
-      'chapter_color': chapterColor,
-      'tags': tags,
-    },
-    'sections': sections.map((e) => e.toJson()).toList(),
-  };
-
+        'chapter_metadata': {
+          'chapter_id': id,
+          'chapter_title': title,
+          'chapter_icon': icon,
+          'description': description,
+          'position_in_book': order,
+          'chapter_color': chapterColor,
+          'tags': tags,
+        },
+        'sections': sections.map((e) => e.toJson()).toList(),
+      };
 }
 
 class ChapterSection {
@@ -87,11 +86,11 @@ class ChapterSection {
   }
 
   Map<String, dynamic> toJson() => {
-    'section_id': id,
-    'section_title': title,
-    'section_order': order,
-    'subsections': subsections.map((e) => e.toJson()).toList(),
-  };
+        'section_id': id,
+        'section_title': title,
+        'section_order': order,
+        'subsections': subsections.map((e) => e.toJson()).toList(),
+      };
 }
 
 class ChapterSubsection {
@@ -120,11 +119,11 @@ class ChapterSubsection {
   }
 
   Map<String, dynamic> toJson() => {
-    'subsection_id': id,
-    'subsection_title': title,
-    'subsection_icon': icon,
-    'content_groups': contentGroups.map((e) => e.toJson()).toList(),
-  };
+        'subsection_id': id,
+        'subsection_title': title,
+        'subsection_icon': icon,
+        'content_groups': contentGroups.map((e) => e.toJson()).toList(),
+      };
 }
 
 class ContentGroup {
@@ -156,10 +155,10 @@ class ContentGroup {
   }
 
   Map<String, dynamic> toJson() => {
-    'group_id': id,
-    'group_title': title,
-    'group_subtitle': subtitle,
-    'group_icon': icon,
-    'blocks': blocks.map((e) => e.toJson()).toList(),
-  };
+        'group_id': id,
+        'group_title': title,
+        'group_subtitle': subtitle,
+        'group_icon': icon,
+        'blocks': blocks.map((e) => e.toJson()).toList(),
+      };
 }

@@ -20,7 +20,8 @@ class UnlockScreen extends StatelessWidget {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
     final isBookSpecific = bookId != null;
-    final title = isBookSpecific ? 'Unlock ${_bookTitle()}' : 'Unlock All Access';
+    final title =
+        isBookSpecific ? 'Unlock ${_bookTitle()}' : 'Unlock All Access';
 
     return Scaffold(
       appBar: AppBar(
@@ -63,23 +64,20 @@ class UnlockScreen extends StatelessWidget {
                         style: theme.textTheme.labelLarge
                             ?.copyWith(fontWeight: FontWeight.bold)),
                     const SizedBox(height: 10),
-                    ...(_unlockBullets(isBookSpecific))
-                        .map((item) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 3),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Icon(Icons.check_circle_outline,
-                                      size: 18, color: cs.primary),
-                                  const SizedBox(width: 8),
-                                  Expanded(
-                                      child: Text(item,
-                                          style:
-                                              theme.textTheme.bodyMedium)),
-                                ],
-                              ),
-                            )),
+                    ...(_unlockBullets(isBookSpecific)).map((item) => Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 3),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(Icons.check_circle_outline,
+                                  size: 18, color: cs.primary),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                  child: Text(item,
+                                      style: theme.textTheme.bodyMedium)),
+                            ],
+                          ),
+                        )),
                   ],
                 ),
               ),
@@ -137,8 +135,7 @@ class UnlockScreen extends StatelessWidget {
   void _showComingSoon(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text(
-            'Payment coming soon — thank you for your interest!'),
+        content: Text('Payment coming soon — thank you for your interest!'),
         behavior: SnackBarBehavior.floating,
         duration: Duration(seconds: 3),
       ),

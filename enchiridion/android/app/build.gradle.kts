@@ -42,3 +42,12 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    // Backs BubbleAlarmWorker — the headless scheduler behind the ambient
+    // "Quick Check" bubble notifications (see BubbleAlarmWorker.kt).
+    implementation("androidx.work:work-runtime-ktx:2.9.1")
+    // Person/NotificationCompat.BubbleMetadata/ShortcutManagerCompat for
+    // posting the bubble itself (see BubblePlugin.kt).
+    implementation("androidx.core:core-ktx:1.13.1")
+}
