@@ -89,7 +89,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
     await QuestionReviewSyncService(storage).push(widget.bookId, review);
     if (widget.trackDailyStudyStats) {
       final statsService = StudyStatsService(storage);
-      await statsService.recordAnswer(isCorrect: _isCorrect);
+      await statsService.recordAnswer(
+        isCorrect: _isCorrect,
+        isFirstAttempt: review.attempts == 1,
+      );
     }
   }
 

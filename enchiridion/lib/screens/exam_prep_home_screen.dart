@@ -101,6 +101,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
         .push(kStandaloneExamPrepScope, review);
     final stats = await StudyStatsService(storage).recordAnswer(
       isCorrect: answer.isCorrect,
+      isFirstAttempt: review.attempts == 1,
       scope: kStandaloneExamPrepScope,
       answeredAt: answer.answeredAt,
     );

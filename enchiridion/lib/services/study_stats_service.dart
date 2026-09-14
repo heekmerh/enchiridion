@@ -17,14 +17,24 @@ class StudyStatsService {
     return '${local.year}-$month-$day';
   }
 
+  /// Records one answer's contribution to the day's stats.
+  ///
+  /// [isFirstAttempt] must be the caller's `QuestionReview.attempts == 1`
+  /// check (true only the very first time this question is ever answered in
+  /// this scope) — spaced repetition deliberately re-serves the same
+  /// question days or weeks later, and a repeat answer must not inflate
+  /// `questionsAnswered`/`performancePoints` a second time. When false, this
+  /// is a no-op that returns the day's stats unchanged.
   Future<StudyDayStats> recordAnswer({
     String scope = kStandaloneExamPrepScope,
     required bool isCorrect,
+    required bool isFirstAttempt,
     DateTime? answeredAt,
   }) async {
     final timestamp = answeredAt ?? DateTime.now();
     final dateKey = dateKeyFor(timestamp);
     final current = _storage.getDailyStudyStats(scope, dateKey);
+    if (!isFirstAttempt) return current;
     final updated = current.copyWith(
       questionsAnswered: current.questionsAnswered + 1,
       correctAnswers: current.correctAnswers + (isCorrect ? 1 : 0),
