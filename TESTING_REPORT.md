@@ -1,8 +1,14 @@
 # Testing Report
 
-Original issues were logged 2026-06-10 through 2026-08-21 as raw notes/chat messages. This document was reorganized on 2026-09-13 after auditing every item against the current codebase (app root: `enchiridion/enchiridion/`, confirmed via `pubspec.yaml`). Each item below reflects verified code state, not the original assumption — several items reported as broken were already fixed by the time of this audit.
+Original issues were logged 2026-06-10 through 2026-08-21 as raw notes/chat messages. The detailed audit below was written on 2026-09-13. Its PARTIAL and NOT IMPLEMENTED sections are historical snapshots: many items were fixed in commits on 2026-09-14 and should not be picked up again without checking the current code.
 
-Use this document as the source of truth for what's left to do. Each pending item includes exact file:line references and the specific gap, so it can be picked up without re-investigating.
+## Current progress — 2026-09-15
+
+- **Book re-extraction:** implemented in `scripts/convert_paediatrics.py`. The regenerated `assets/data/paediatrics.json` covers all 12 chapters, places 82 body figures inline, uses the direct 24pt-bold heading marker instead of trusting Word's inconsistent style names, and captures source colors per topic. Every generated image path exists. The DOCX package's 86 media entries include four HD Photo fallback files; there are 82 unique body images. A final visual/content spot-check on a device remains useful because the source document itself is inconsistently authored.
+- **Fixed since the audit:** calculator bottom inset, free-tier question text exposure, repeat-answer stat inflation, question flagging, unique display names, one-primary-device binding, cross-user leaderboard, pinned notes, and real Flutterwave checkout. The 3-hour relearn interval was confirmed as intended. OSCE now has station tabs; only Abdomen has full written content.
+- **Still needs work:** source and add full content for the other OSCE and instrumentation topics; define any planned calculators before adding a “Coming soon” list state; build-check Android bubble notifications on a device; and apply the four SQL migrations (`001`–`004`) plus configure/deploy Flutterwave payment verification. `scripts/content/medical_instrumentation.md` is currently empty and cannot supply new topic content.
+
+The original detailed findings and file references remain below for context. Recheck line numbers before using them; the September 14 changes moved code.
 
 ---
 

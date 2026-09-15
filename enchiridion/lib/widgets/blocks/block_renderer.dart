@@ -154,6 +154,10 @@ class _ChapterView extends StatelessWidget {
     final children = <Widget>[];
 
     for (final section in chapter.sections) {
+      final sectionTint = _headingTint(
+        section.sectionColor ?? chapter.chapterColor,
+        theme.brightness,
+      );
       children.add(_SectionHeader(
         key: sectionKeys[section.id],
         title: section.title,
@@ -161,6 +165,7 @@ class _ChapterView extends StatelessWidget {
         bookId: bookId,
         chapterId: chapter.id,
         sectionId: section.id,
+        tintColor: sectionTint,
       ));
 
       for (final subsection in section.subsections) {
@@ -170,6 +175,10 @@ class _ChapterView extends StatelessWidget {
           icon: subsection.icon,
           fontSize: fontSize,
           theme: theme,
+          tintColor: _headingTint(
+            subsection.subsectionColor ?? section.sectionColor ?? chapter.chapterColor,
+            theme.brightness,
+          ),
         ));
 
         for (final group in subsection.contentGroups) {
@@ -184,7 +193,7 @@ class _ChapterView extends StatelessWidget {
           }
 
           for (final block in group.blocks) {
-            children.add(_buildBlock(block, fontSize, lineHeight));
+            children.add(_buildBlock(block, fontSize, lineHeight, theme.brightness));
           }
         }
       }
@@ -196,17 +205,20 @@ class _ChapterView extends StatelessWidget {
     );
   }
 
-  Color? _chapterHeaderTintColor() {
-    final colorStr = chapter.chapterColor;
-    if (colorStr == null || colorStr.isEmpty) return null;
-    try {
-      return Color(int.parse(colorStr.replaceFirst('#', '0xFF')));
-    } catch (_) {
+  Color? _headingTint(String? colorStr, Brightness brightness) {
+    if (colorStr == null || !RegExp(r'^#?[0-9a-fA-F]{6}$').hasMatch(colorStr)) {
       return null;
     }
+    final color = Color(0xFF000000 | int.parse(colorStr.replaceFirst('#', ''), radix: 16));
+    final hsl = HSLColor.fromColor(color);
+    final lightness = brightness == Brightness.dark
+        ? hsl.lightness.clamp(0.65, 0.85)
+        : hsl.lightness.clamp(0.20, 0.42);
+    return hsl.withLightness(lightness.toDouble()).toColor();
   }
 
-  Widget _buildBlock(ContentBlock block, double fontSize, double lineHeight) {
+  Widget _buildBlock(ContentBlock block, double fontSize, double lineHeight,
+      Brightness brightness) {
     if (block is ParagraphBlock) {
       return _ParagraphWidget(
           block: block, fontSize: fontSize, lineHeight: lineHeight);
@@ -218,7 +230,7 @@ class _ChapterView extends StatelessWidget {
           block: block,
           fontSize: fontSize,
           lineHeight: lineHeight,
-          headerTintColor: _chapterHeaderTintColor());
+          headerTintColor: _headingTint(chapter.chapterColor, brightness));
     } else if (block is ChecklistBlock) {
       return ChecklistBlockWidget(
           block: block, fontSize: fontSize, lineHeight: lineHeight);
@@ -251,6 +263,7 @@ class _SectionHeader extends StatelessWidget {
   final String bookId;
   final String chapterId;
   final String sectionId;
+  final Color? tintColor;
 
   const _SectionHeader({
     super.key,
@@ -259,6 +272,7 @@ class _SectionHeader extends StatelessWidget {
     this.bookId = '',
     this.chapterId = '',
     this.sectionId = '',
+    this.tintColor,
   });
 
   @override
@@ -278,7 +292,7 @@ class _SectionHeader extends StatelessWidget {
                 width: 4,
                 height: fontSize * 1.8,
                 decoration: BoxDecoration(
-                  color: AppColors.brandPink,
+                  color: tintColor ?? AppColors.brandPink,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -289,7 +303,7 @@ class _SectionHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: fontSize * 1.6,
                     fontWeight: FontWeight.bold,
-                    color: theme.colorScheme.onSurface,
+                    color: tintColor ?? theme.colorScheme.onSurface,
                     height: 1.2,
                   ),
                 ),
@@ -431,6 +445,7 @@ class _SubsectionHeader extends StatelessWidget {
   final String? icon;
   final double fontSize;
   final ThemeData theme;
+  final Color? tintColor;
 
   const _SubsectionHeader({
     super.key,
@@ -438,6 +453,7 @@ class _SubsectionHeader extends StatelessWidget {
     this.icon,
     required this.fontSize,
     required this.theme,
+    this.tintColor,
   });
 
   @override
@@ -457,7 +473,7 @@ class _SubsectionHeader extends StatelessWidget {
               style: TextStyle(
                 fontSize: fontSize * 1.35,
                 fontWeight: FontWeight.bold,
-                color: AppColors.brandPink,
+                color: tintColor ?? AppColors.brandPink,
                 height: 1.3,
               ),
             ),

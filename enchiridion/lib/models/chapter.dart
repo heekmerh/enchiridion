@@ -64,12 +64,14 @@ class ChapterSection {
   final String id;
   final String title;
   final int order;
+  final String? sectionColor;
   final List<ChapterSubsection> subsections;
 
   const ChapterSection({
     required this.id,
     required this.title,
     required this.order,
+    this.sectionColor,
     required this.subsections,
   });
 
@@ -78,6 +80,7 @@ class ChapterSection {
       id: json['section_id'] ?? '',
       title: json['section_title'] ?? '',
       order: json['section_order'] ?? 0,
+      sectionColor: json['section_color'],
       subsections: (json['subsections'] as List?)
               ?.map((e) => ChapterSubsection.fromJson(e))
               .toList() ??
@@ -89,6 +92,7 @@ class ChapterSection {
         'section_id': id,
         'section_title': title,
         'section_order': order,
+        'section_color': sectionColor,
         'subsections': subsections.map((e) => e.toJson()).toList(),
       };
 }
@@ -97,12 +101,14 @@ class ChapterSubsection {
   final String id;
   final String title;
   final String? icon;
+  final String? subsectionColor;
   final List<ContentGroup> contentGroups;
 
   const ChapterSubsection({
     required this.id,
     required this.title,
     this.icon,
+    this.subsectionColor,
     required this.contentGroups,
   });
 
@@ -111,6 +117,7 @@ class ChapterSubsection {
       id: json['subsection_id'] ?? '',
       title: json['subsection_title'] ?? '',
       icon: json['subsection_icon'],
+      subsectionColor: json['subsection_color'],
       contentGroups: (json['content_groups'] as List?)
               ?.map((e) => ContentGroup.fromJson(e))
               .toList() ??
@@ -122,6 +129,7 @@ class ChapterSubsection {
         'subsection_id': id,
         'subsection_title': title,
         'subsection_icon': icon,
+        'subsection_color': subsectionColor,
         'content_groups': contentGroups.map((e) => e.toJson()).toList(),
       };
 }

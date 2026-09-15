@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: milestone_complete
-last_updated: 2026-08-31T00:00:00.000Z
+last_updated: 2026-09-15T00:00:00.000Z
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 12
   completed_plans: 12
-  percent: 75
-stopped_at: Session resumed 2026-08-31 — milestone v1.0 complete; post-milestone work uncommitted on master
+  percent: 100
+stopped_at: Session resumed 2026-09-15 — milestone v1.0 complete; awaiting next-action choice
 ---
 
 # Milestone State: MVP Polish
@@ -82,17 +82,15 @@ stopped_at: Session resumed 2026-08-31 — milestone v1.0 complete; post-milesto
 
 ## Session Continuity
 
-Last session: 2026-08-31
-Stopped at: Session resumed — status presented, awaiting user routing decision
+Last session: 2026-09-15
+Stopped at: TESTING_REPORT.md issue progression — book re-extraction implemented and verified locally
 Resume file: none (no HANDOFF.json, no .continue-here)
 
 Notes carried forward:
-- Milestone v1.0 (MVP Polish) is complete through Phase 04.
-- 109 uncommitted changes on `master` (last commit cb98739, 2026-06-07) — post-milestone
-  work on exam prep, resource topics, clip notes and study stats done outside the GSD flow.
-- TESTING_REPORT.md (2026-06-10) holds 11 user-reported items; most appear implemented but
-  uncommitted and unverified.
-- 04-HUMAN-UAT.md has 3 pending tests, never run.
+- Milestone v1.0 (MVP Polish) is complete through Phase 04; all 12 plans have SUMMARY files.
+- Human UAT for Phase 04 has 3 pending tests (BMI conversion, calculator clinical notes, and form validation).
+- Book re-extraction changes are in the worktree; `scripts/content/medical_instrumentation.md` remains untracked and empty.
+- `TESTING_REPORT.md` now opens with a 2026-09-15 progress note; the original 2026-09-13 audit is historical.
 
 ---
 

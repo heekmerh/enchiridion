@@ -25,12 +25,15 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 import docx
 from docx.oxml.ns import qn
 from pathlib import Path
+from docx_media import DocxMediaExtractor, A_BLIP, VML_IMAGE
 
 # ── paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR   = Path(__file__).parent
 DOCX_PATH    = SCRIPT_DIR / "final" / "enchiridion pediatrics final app copy.docx"
 MAP_PATH     = SCRIPT_DIR / "chapter_map.json"
 OUT_PATH     = SCRIPT_DIR / "paediatrics.json"
+APP_DATA_PATH = SCRIPT_DIR.parent / "enchiridion" / "assets" / "data" / "paediatrics.json"
+IMAGE_DIR = SCRIPT_DIR.parent / "enchiridion" / "assets" / "images" / "paediatrics"
 
 # ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -42,7 +45,12 @@ def slug(text: str) -> str:
 
 
 def clean(text: str) -> str:
-    return text.strip()
+    text = text.strip()
+    # Preserve the corrected heading already shipped in the previous JSON;
+    # the DOCX source itself accidentally drops its leading D.
+    if text == "IFFERENTIALS OF COMMON SIGNS AND SYMPTOMS":
+        return "DIFFERENTIALS OF COMMON SIGNS AND SYMPTOMS"
+    return text
 
 
 def is_bold(para) -> bool:
@@ -52,6 +60,28 @@ def is_bold(para) -> bool:
 def is_all_caps_heading(text: str) -> bool:
     stripped = re.sub(r"[^\w\s]", "", text).strip()
     return len(stripped) > 4 and stripped == stripped.upper()
+
+
+def heading_format(para) -> tuple[bool, str | None]:
+    """A 24pt bold direct-run override identifies a major topic heading.
+
+    Word paragraph styles are inconsistent in this source: both major topics
+    and their subtopics can be styled Heading 1.
+    """
+    color = None
+    marker = False
+    for run in para.runs:
+        if not run.text.strip():
+            continue
+        if run.bold and run.font.color and run.font.color.rgb:
+            color = color or f"#{run.font.color.rgb}"
+        if run.bold and run.font.size and 23.5 <= run.font.size.pt <= 24.5:
+            marker = True
+    return marker, color
+
+
+def contains_image(para) -> bool:
+    return any(node.tag in (A_BLIP, VML_IMAGE) for node in para._p.iter())
 
 
 def detect_block_type(text: str) -> str:
@@ -127,24 +157,28 @@ def flush_group(groups: list, group_id: str, group_title: str, blocks: list):
     })
 
 
-def flush_subsection(subsections: list, sub_id: str, sub_title: str, groups: list):
+def flush_subsection(subsections: list, sub_id: str, sub_title: str, groups: list,
+                     sub_color: str | None = None):
     if not groups:
         return
     subsections.append({
         "subsection_id":    sub_id,
         "subsection_title": sub_title,
         "subsection_icon":  None,
+        "subsection_color": sub_color,
         "content_groups":   groups,
     })
 
 
-def flush_section(sections: list, sec_id: str, sec_title: str, subsections: list):
-    if not subsections:
+def flush_section(sections: list, sec_id: str, sec_title: str, subsections: list,
+                  sec_color: str | None = None, keep_empty: bool = False):
+    if not subsections and not keep_empty:
         return
     sections.append({
         "section_id":    sec_id,
         "section_title": sec_title,
         "section_order": len(sections) + 1,
+        "section_color": sec_color,
         "subsections":   subsections,
     })
 
@@ -164,7 +198,7 @@ def try_collect_mnemonic(items_ahead: list) -> dict | None:
         if m:
             key, label = m.group(1), m.group(2).strip()
             # Try to split label: value
-            parts = re.split(r"\s*[:–—]\s*", label, 1)
+            parts = re.split(r"\s*[:–—]\s*", label, maxsplit=1)
             parsed.append({"key": key, "label": parts[0], "value": parts[1] if len(parts) > 1 else None})
         elif re.match(r"^[A-Z]\s*$", text.strip()):
             parsed.append({"key": text.strip(), "label": "", "value": None})
@@ -177,9 +211,12 @@ def try_collect_mnemonic(items_ahead: list) -> dict | None:
 
 # ── main conversion ───────────────────────────────────────────────────────────
 
-def convert(docx_path: Path, map_path: Path) -> dict:
+def convert(docx_path: Path, map_path: Path,
+            image_dir: Path = IMAGE_DIR,
+            asset_prefix: str = "assets/images/paediatrics") -> dict:
     doc    = docx.Document(str(docx_path))
     chmap  = json.loads(map_path.read_text(encoding="utf-8"))
+    media  = DocxMediaExtractor(doc, image_dir, asset_prefix)
 
     # Collect all block items in order first
     items = list(iter_block_items(doc))
@@ -195,6 +232,8 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         t = para.text.strip()
         t_no_emoji = re.sub(r"[^\w\s\-&'\"(),./]", "", t).strip()
         return (
+            heading_format(para)[0]
+            or
             style in ("Heading 1", "Heading 2", "Heading 3")
             or (style in ("Normal", "Normal (Web)") and is_bold(para)
                 and is_all_caps_heading(t_no_emoji))
@@ -245,9 +284,14 @@ def convert(docx_path: Path, map_path: Path) -> dict:
     cur_sections: list  = []
     cur_section_id      = ""
     cur_section_title   = ""
+    cur_section_color   = None
+    cur_chapter_color   = None
+    in_formatted_section = False
+    subsection_is_h1 = False
     cur_subsections: list = []
     cur_sub_id          = ""
     cur_sub_title       = ""
+    cur_sub_color       = None
     cur_groups: list    = []
     cur_group_id        = ""
     cur_group_title     = ""
@@ -277,7 +321,7 @@ def convert(docx_path: Path, map_path: Path) -> dict:
                 m = re.match(r"^([A-Z])\s*[.:\-–—]\s*(.+)", raw)
                 if m:
                     key, rest = m.group(1), m.group(2).strip()
-                    parts = re.split(r"\s*[:–—]\s*", rest, 1)
+                    parts = re.split(r"\s*[:–—]\s*", rest, maxsplit=1)
                     parsed.append({"key": key, "label": parts[0], "value": parts[1] if len(parts) > 1 else None})
                 else:
                     parsed.append({"key": "", "label": raw, "value": None})
@@ -289,14 +333,16 @@ def convert(docx_path: Path, map_path: Path) -> dict:
 
     def save_chapter():
         nonlocal cur_chapter, cur_sections, cur_section_id, cur_section_title
+        nonlocal cur_section_color, cur_chapter_color, cur_sub_color
         nonlocal cur_subsections, cur_sub_id, cur_sub_title
         nonlocal cur_groups, cur_group_id, cur_group_title, cur_blocks
         emit_pending()
         flush_group(cur_groups, cur_group_id, cur_group_title, cur_blocks)
         cur_blocks = []
-        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups)
+        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups, cur_sub_color)
         cur_groups = []
-        flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections)
+        flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections,
+                      cur_section_color, keep_empty=in_formatted_section)
         cur_subsections = []
         if cur_chapter and cur_sections:
             chapters.append({
@@ -304,6 +350,7 @@ def convert(docx_path: Path, map_path: Path) -> dict:
                     "chapter_id":       cur_chapter["chapter_id"],
                     "chapter_title":    cur_chapter["chapter_title"],
                     "chapter_icon":     None,
+                    "chapter_color":    cur_chapter_color,
                     "description":      None,
                     "position_in_book": len(chapters) + 1,
                 },
@@ -311,11 +358,19 @@ def convert(docx_path: Path, map_path: Path) -> dict:
             })
         cur_sections = []
 
-    def open_chapter(ch: dict, heading_text: str = ""):
+    def open_chapter(ch: dict, heading_text: str = "", color: str | None = None,
+                     formatted: bool = False):
         nonlocal cur_chapter, cur_section_id, cur_section_title, cur_sub_id, cur_sub_title
         nonlocal cur_group_id, cur_group_title
+        nonlocal cur_chapter_color, cur_section_color, cur_sub_color
+        nonlocal in_formatted_section, subsection_is_h1
         save_chapter()
         cur_chapter = ch
+        cur_chapter_color = color
+        cur_section_color = color
+        cur_sub_color = color
+        in_formatted_section = formatted
+        subsection_is_h1 = False
         # The anchor heading becomes the first section; its content is the intro.
         # Subsection title matches section title so no "Overview" dummy appears.
         first = heading_text or ch["chapter_title"]
@@ -330,15 +385,18 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         cur_group_id      = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title   = ""
 
-    def open_section(title: str):
+    def open_section(title: str, color: str | None = None, formatted: bool = False):
         nonlocal cur_section_id, cur_section_title, cur_sub_id, cur_sub_title
         nonlocal cur_group_id, cur_group_title, cur_groups, cur_subsections, cur_blocks
+        nonlocal cur_section_color, cur_chapter_color, cur_sub_color
+        nonlocal in_formatted_section, subsection_is_h1
         emit_pending()
         flush_group(cur_groups, cur_group_id, cur_group_title, cur_blocks)
         cur_blocks = []
-        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups)
+        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups, cur_sub_color)
         cur_groups = []
-        flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections)
+        flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections,
+                      cur_section_color, keep_empty=in_formatted_section)
         cur_subsections   = []
         _sec_counter[0] += 1
         _sub_counter[0] += 1
@@ -346,22 +404,32 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         _sid = f"{cur_chapter['chapter_id'] if cur_chapter else 'x'}_s{_sec_counter[0]}"
         cur_section_id    = _sid
         cur_section_title = title
+        cur_section_color = color
+        if cur_chapter_color is None and color is not None:
+            cur_chapter_color = color
+        cur_sub_color = color
+        in_formatted_section = formatted
+        subsection_is_h1 = False
         cur_sub_id        = f"{_sid}_b{_sub_counter[0]}"
         cur_sub_title     = title
         cur_group_id      = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title   = ""
 
-    def open_subsection(title: str):
+    def open_subsection(title: str, color: str | None = None,
+                        from_h1: bool = False):
         nonlocal cur_sub_id, cur_sub_title, cur_group_id, cur_group_title, cur_groups, cur_blocks
+        nonlocal cur_sub_color, subsection_is_h1
         emit_pending()
         flush_group(cur_groups, cur_group_id, cur_group_title, cur_blocks)
         cur_blocks   = []
-        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups)
+        flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups, cur_sub_color)
         cur_groups   = []
         _sub_counter[0] += 1
         _grp_counter[0] += 1
         cur_sub_id   = f"{cur_section_id}_b{_sub_counter[0]}"
         cur_sub_title = title
+        cur_sub_color = color or cur_section_color
+        subsection_is_h1 = from_h1
         cur_group_id  = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title = ""
 
@@ -374,6 +442,13 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         cur_group_id    = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title = title
 
+    def emit_heading_media(para):
+        if contains_image(para):
+            cur_blocks.extend(
+                block for block in media.paragraph_blocks(para)
+                if block["type"] == "image"
+            )
+
     # ── walk document ──────────────────────────────────────────────────────────
     i = 0
     while i < len(items):
@@ -383,6 +458,7 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         if kind == "table":
             emit_pending()
             cur_blocks.append(table_to_block(obj))
+            cur_blocks.extend(media.table_image_blocks(obj))
             i += 1
             continue
 
@@ -391,7 +467,7 @@ def convert(docx_path: Path, map_path: Path) -> dict:
         style = para.style.name
         text  = clean(para.text)
 
-        if not text:
+        if not text and not contains_image(para):
             i += 1
             continue
 
@@ -399,12 +475,20 @@ def convert(docx_path: Path, map_path: Path) -> dict:
 
         # ── chapter boundary (index-based, from pre-scan) ───────────────────
         if i in chapter_boundary_map:
-            open_chapter(chapter_boundary_map[i], text)
+            marker, anchor_color = heading_format(para)
+            open_chapter(chapter_boundary_map[i], text, anchor_color, marker)
+            emit_heading_media(para)
             i += 1
             continue
 
         # ── skip if no chapter yet (preamble / TOC noise) ──────────────────
         if cur_chapter is None:
+            i += 1
+            continue
+
+        if not text and contains_image(para):
+            emit_pending()
+            cur_blocks.extend(media.paragraph_blocks(para))
             i += 1
             continue
 
@@ -416,6 +500,23 @@ def convert(docx_path: Path, map_path: Path) -> dict:
 
         text_no_emoji = re.sub(r"[^\w\s\-&'\"(),./]", "", text).strip()
         text_norm_local = norm(text)
+        formatted_heading, heading_color = heading_format(para)
+
+        # The author uses the same Word style for several hierarchy levels.
+        # Direct 24pt bold formatting is the reliable major-topic signal.
+        if formatted_heading:
+            if (text.startswith("(") and in_formatted_section
+                    and not cur_blocks and not cur_groups and not cur_subsections):
+                # The source splits names such as "DOWN SYNDROME" and
+                # "(TRISOMY 21)" across two identically formatted paragraphs.
+                cur_section_title = f"{cur_section_title} {text}"
+                cur_sub_title = cur_section_title
+                i += 1
+                continue
+            open_section(text, heading_color, formatted=True)
+            emit_heading_media(para)
+            i += 1
+            continue
 
         if sec_anchors is not None:
             # ── Chapter with explicit section_anchors (e.g. OVERVIEW) ──────────
@@ -438,7 +539,8 @@ def convert(docx_path: Path, map_path: Path) -> dict:
                 _sec_match(text_norm_local, a) for a in sec_anchors
             )
             if is_section_anchor and len(text) > 4:
-                open_section(text)
+                open_section(text, heading_color)
+                emit_heading_media(para)
                 i += 1
                 continue
             # Non-anchor headings: H1/bold-caps → subsection, H3/H4 → group
@@ -446,38 +548,59 @@ def convert(docx_path: Path, map_path: Path) -> dict:
                 style in ("Normal", "Normal (Web)") and is_bold(para)
                 and is_all_caps_heading(text_no_emoji) and len(text) > 5
             ):
-                open_subsection(text)
+                open_subsection(text, heading_color, from_h1=True)
+                emit_heading_media(para)
+                i += 1
+                continue
+            if style == "Heading 2" and not subsection_is_h1:
+                open_subsection(text, heading_color)
+                emit_heading_media(para)
                 i += 1
                 continue
             if style in ("Heading 2", "Heading 3", "Heading 4"):
                 open_group(text)
+                emit_heading_media(para)
                 i += 1
                 continue
             if style in ("Normal", "Normal (Web)") and is_bold(para) and len(text) > 5:
                 open_group(text)
+                emit_heading_media(para)
                 i += 1
                 continue
         else:
             # ── Standard automatic detection ────────────────────────────────────
             if style == "Heading 1":
-                open_section(text)
+                if in_formatted_section:
+                    open_subsection(text, heading_color, from_h1=True)
+                else:
+                    open_section(text, heading_color)
+                emit_heading_media(para)
                 i += 1
                 continue
 
             if style == "Heading 2":
-                open_subsection(text)
+                if subsection_is_h1:
+                    open_group(text)
+                else:
+                    open_subsection(text, heading_color)
+                emit_heading_media(para)
                 i += 1
                 continue
 
             if style in ("Heading 3", "Heading 4"):
                 open_group(text)
+                emit_heading_media(para)
                 i += 1
                 continue
 
             # Bold ALL-CAPS Normal → section
             if style in ("Normal", "Normal (Web)") and is_bold(para) and is_all_caps_heading(text_no_emoji):
                 if len(text) > 6 and not text.startswith("📌") and not text.startswith("🔍"):
-                    open_section(text)
+                    if in_formatted_section:
+                        open_group(text)
+                    else:
+                        open_section(text, heading_color)
+                    emit_heading_media(para)
                     i += 1
                     continue
 
@@ -485,8 +608,17 @@ def convert(docx_path: Path, map_path: Path) -> dict:
             if style in ("Normal", "Normal (Web)") and is_bold(para) and not is_all_caps_heading(text_no_emoji):
                 if len(text) > 5 and not re.match(r"^[\d•\-]", text):
                     open_group(text)
+                    emit_heading_media(para)
                     i += 1
                     continue
+
+        # Keep each embedded figure between the text runs that surround it.
+        # This also handles image-only paragraphs and floating wp:anchor runs.
+        if contains_image(para):
+            emit_pending()
+            cur_blocks.extend(media.paragraph_blocks(para))
+            i += 1
+            continue
 
         # ── block type detection ─────────────────────────────────────────────
         hint = detect_block_type(text)
@@ -589,6 +721,7 @@ if __name__ == "__main__":
     print("Converting… (this may take 30–60 seconds)")
     book = convert(DOCX_PATH, MAP_PATH)
     OUT_PATH.write_text(json.dumps(book, ensure_ascii=False, indent=2), encoding="utf-8")
+    APP_DATA_PATH.write_text(json.dumps(book, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # Stats
     total_sections    = sum(len(ch["sections"]) for ch in book["chapters"])
