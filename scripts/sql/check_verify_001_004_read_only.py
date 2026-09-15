@@ -54,8 +54,9 @@ def executable_sql(source: str) -> str:
                 state = "single"
                 out.append(" ")
             elif char == '"':
-                state = "double"
-                out.append(" ")
+                # A quoted identifier is executable SQL. Blanking it can hide
+                # a function name from the allowlist, so reject it outright.
+                raise UnsafeSQL("quoted identifiers are prohibited")
             elif char == "-" and nxt == "-":
                 state = "line"
                 out.extend("  ")
@@ -83,18 +84,9 @@ def executable_sql(source: str) -> str:
                 out.append(" ")
             else:
                 out.append("\n" if char == "\n" else " ")
-        else:
-            if char == '"' and nxt == '"':
-                out.extend("  ")
-                i += 1
-            elif char == '"':
-                state = "code"
-                out.append(" ")
-            else:
-                out.append("\n" if char == "\n" else " ")
         i += 1
-    if state in {"single", "double"}:
-        raise UnsafeSQL("unterminated quoted literal or identifier")
+    if state == "single":
+        raise UnsafeSQL("unterminated quoted literal")
     return "".join(out)
 
 
@@ -138,6 +130,8 @@ def self_test() -> None:
         "CREATE TABLE public.t (id integer);",
         "SELECT id INTO public.copy FROM pg_class;",
         "SELECT pg_sleep(1) FROM pg_class;",
+        'SELECT "pg_catalog"."pg_sleep"(1);',
+        'SELECT "count"(*) FROM pg_class;',
         "SELECT id FROM pg_class FOR SHARE;",
         "SELECT 1; DROP TABLE public.t;",
         "SELECT 1 /* hidden */;",
