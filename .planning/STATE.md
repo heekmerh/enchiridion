@@ -35,11 +35,21 @@ Phase 4's [human UAT](phases/04-phase-1-calculators-enhancements-high-priority/0
 
 See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [the TOC audit](../scripts/output/paediatrics_toc_audit.md) for the extraction cross-check. The original detailed audit in TESTING_REPORT.md is historical; use its dated progress note and current code before selecting an issue.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Status | Directory |
+|---|-------------|------|--------|--------|-----------|
+| 260915-r9g | Fix the IV Cannula resource extraction error reported in TESTING_REPORT.md | 2026-09-15 | 8013e70 | passed | .planning/quick/260915-r9g-fix-the-iv-cannula-resource-extraction-error-reported-in-tes |
+| 260915-r9i | Audit Flutterwave payment-verification readiness and write deployment/test checklist | 2026-09-15 | 7a6c539 | passed | .planning/quick/260915-r9i-audit-flutterwave-payment-verification-readiness-from-enchir |
+| 260915-r9k | Update dated testing report with book rerun and attributed migration status | 2026-09-15 | 6f43307 | passed | .planning/quick/260915-r9k-update-the-dated-progress-note-in-testing-report-md-to-recor |
+
+Batch `260915-r9f` remains open: SQL verification item `260915-r9h` failed its safety-gate verification, and OSCE inventory item `260915-r9j` awaits the plan-checker checkpoint decision. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
+
 ## Remaining Validation and External Setup
 
 - Spot-check the regenerated Paediatrics content, headings, colors, tables, and figures in the app; the source DOCX has inconsistent authoring.
 - Complete Phase 4 human UAT and verify Android bubble notifications on a device.
-- Apply the SQL migrations `001_flagged_questions.sql` through `004_payments.sql` and configure/deploy Flutterwave payment verification; these have not been confirmed in the live backend.
+- The user reports applying SQL migrations `001_flagged_questions.sql` through `004_payments.sql`; independently confirm their catalog objects and behavior in the live backend. Fix the SQL verifier safety gate before relying on it, and configure/deploy and test Flutterwave payment verification separately.
 - Source full content for the remaining OSCE and instrumentation topics. `scripts/content/medical_instrumentation.md` is an empty, untracked file and cannot yet supply new topics.
 
 ## Session Continuity
