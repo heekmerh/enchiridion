@@ -20,7 +20,6 @@
 -- This script is idempotent — safe to re-run. It supersedes:
 --   scripts/001_add_device_binding_columns.sql
 --   scripts/quick_migration.sql
---   scripts/sql/create_daily_study_stats.sql
 --
 -- Derived from the app's actual Supabase calls:
 --   profiles           auth_service.dart
