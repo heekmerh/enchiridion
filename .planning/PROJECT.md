@@ -1,7 +1,7 @@
 # Enchiridion — Project Context
 
-**Last Updated:** 2026-05-21  
-**Current Milestone:** MVP Polish
+**Last Updated:** 2026-09-15
+**Current Milestone:** MVP Polish (v1.0 complete; post-milestone testing in progress)
 
 ---
 
@@ -22,6 +22,8 @@ A medical student or junior doctor can open any of the 7 clinical books, test th
 ---
 
 ## Current Status
+
+All four MVP Polish phases and 12 plans are complete. The original requirements and checkboxes below record the planning baseline; [STATE.md](STATE.md) tracks current validation and follow-up work. Phase 4 human UAT remains pending, and live SQL/payment setup has not been confirmed.
 
 ### Active Milestones
 
