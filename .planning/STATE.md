@@ -42,14 +42,15 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 | 260915-r9g | Fix the IV Cannula resource extraction error reported in TESTING_REPORT.md | 2026-09-15 | 8013e70 | passed | .planning/quick/260915-r9g-fix-the-iv-cannula-resource-extraction-error-reported-in-tes |
 | 260915-r9i | Audit Flutterwave payment-verification readiness and write deployment/test checklist | 2026-09-15 | 7a6c539 | passed | .planning/quick/260915-r9i-audit-flutterwave-payment-verification-readiness-from-enchir |
 | 260915-r9k | Update dated testing report with book rerun and attributed migration status | 2026-09-15 | 6f43307 | passed | .planning/quick/260915-r9k-update-the-dated-progress-note-in-testing-report-md-to-recor |
+| 260915-r9j | Inventory OSCE and instrumentation sourcing with manual source-status review | 2026-09-15 | e4c84d4 | passed | .planning/quick/260915-r9j-inventory-the-osce-and-instrumentation-content-gap-using-scr |
 
-Batch `260915-r9f` remains open: SQL verification item `260915-r9h` failed its safety-gate verification, and OSCE inventory item `260915-r9j` awaits the plan-checker checkpoint decision. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
+Batch `260915-r9f` has four verified completions. SQL item `260915-r9h` is code-fixed by `1187b87` and its local gate checks pass, but the live catalog query still needs an operator connection. Its verification report is `human_needed`; the batch manifest keeps it `pending` because GSD's manifest schema does not accept `human_needed` as an item status. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
 
 ## Remaining Validation and External Setup
 
 - Spot-check the regenerated Paediatrics content, headings, colors, tables, and figures in the app; the source DOCX has inconsistent authoring.
 - Complete Phase 4 human UAT and verify Android bubble notifications on a device.
-- The user reports applying SQL migrations `001_flagged_questions.sql` through `004_payments.sql`; independently confirm their catalog objects and behavior in the live backend. Fix the SQL verifier safety gate before relying on it, and configure/deploy and test Flutterwave payment verification separately.
+- The user reports applying SQL migrations `001_flagged_questions.sql` through `004_payments.sql`; run the now locally checked `scripts/sql/verify_001_004.sql` against an existing operator connection and investigate any failed catalog row. Configure/deploy and test Flutterwave payment verification separately.
 - Source full content for the remaining OSCE and instrumentation topics. `scripts/content/medical_instrumentation.md` is an empty, untracked file and cannot yet supply new topics.
 
 ## Session Continuity

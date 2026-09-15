@@ -30,7 +30,7 @@
       "quick_id": "260915-r9h",
       "client_id": null,
       "description": "Add a read-only SQL verification script under `scripts/sql/` for the already-applied `001_flagged_questions.sql` through `004_payments.sql` migrations; check the expected tables, constraints, RLS policies, and `get_leaderboard` RPC using catalog queries, with no schema changes or secrets, so the live database can be checked after deployment.",
-      "status": "failed",
+      "status": "pending",
       "depends_on": [],
       "planned_files": [
         "scripts/sql/verify_001_004.sql",
@@ -42,8 +42,8 @@
       "dispatched_branch": null,
       "dispatched_base": null,
       "wave": 0,
-      "commit": "392a6bb",
-      "failure_reason": "verification reported gaps_found (no automatic gap-fix retry in v1): quoted schema-qualified function identifiers bypass the SQL gate allowlist"
+      "commit": "1187b87",
+      "failure_reason": null
     },
     {
       "quick_id": "260915-r9i",
@@ -67,16 +67,18 @@
       "quick_id": "260915-r9j",
       "client_id": null,
       "description": "Inventory the OSCE and instrumentation content gap using `scripts/content/OSCE.md`, the available source DOCX files, resource JSON, and app topic registrations; write a sourcing checklist under `scripts/output/` that names the missing full-content topics and their existing source status, without inventing clinical instructions or adding placeholder content to the app.",
-      "status": "pending",
+      "status": "complete",
       "depends_on": [],
-      "planned_files": [],
+      "planned_files": [
+        "scripts/output/osce_instrumentation_sourcing_checklist.md"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
       "wave": 0,
-      "commit": null,
+      "commit": "e4c84d4",
       "failure_reason": null
     },
     {
