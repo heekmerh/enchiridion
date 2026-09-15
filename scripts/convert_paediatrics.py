@@ -26,6 +26,10 @@ import docx
 from docx.oxml.ns import qn
 from pathlib import Path
 from docx_media import DocxMediaExtractor, A_BLIP, VML_IMAGE
+from audit_paediatrics_toc import (
+    toc_entries, book_headings, match_in_order, render_report,
+    REPORT as TOC_REPORT,
+)
 
 # ── paths ────────────────────────────────────────────────────────────────────
 SCRIPT_DIR   = Path(__file__).parent
@@ -287,6 +291,7 @@ def convert(docx_path: Path, map_path: Path,
     cur_section_color   = None
     cur_chapter_color   = None
     in_formatted_section = False
+    keep_empty_section = False
     subsection_is_h1 = False
     cur_subsections: list = []
     cur_sub_id          = ""
@@ -342,7 +347,7 @@ def convert(docx_path: Path, map_path: Path,
         flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups, cur_sub_color)
         cur_groups = []
         flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections,
-                      cur_section_color, keep_empty=in_formatted_section)
+                      cur_section_color, keep_empty=keep_empty_section)
         cur_subsections = []
         if cur_chapter and cur_sections:
             chapters.append({
@@ -363,13 +368,14 @@ def convert(docx_path: Path, map_path: Path,
         nonlocal cur_chapter, cur_section_id, cur_section_title, cur_sub_id, cur_sub_title
         nonlocal cur_group_id, cur_group_title
         nonlocal cur_chapter_color, cur_section_color, cur_sub_color
-        nonlocal in_formatted_section, subsection_is_h1
+        nonlocal in_formatted_section, keep_empty_section, subsection_is_h1
         save_chapter()
         cur_chapter = ch
         cur_chapter_color = color
         cur_section_color = color
         cur_sub_color = color
         in_formatted_section = formatted
+        keep_empty_section = formatted
         subsection_is_h1 = False
         # The anchor heading becomes the first section; its content is the intro.
         # Subsection title matches section title so no "Overview" dummy appears.
@@ -385,18 +391,19 @@ def convert(docx_path: Path, map_path: Path,
         cur_group_id      = f"{cur_sub_id}_g{_grp_counter[0]}"
         cur_group_title   = ""
 
-    def open_section(title: str, color: str | None = None, formatted: bool = False):
+    def open_section(title: str, color: str | None = None,
+                     formatted: bool = False, keep_empty: bool = False):
         nonlocal cur_section_id, cur_section_title, cur_sub_id, cur_sub_title
         nonlocal cur_group_id, cur_group_title, cur_groups, cur_subsections, cur_blocks
         nonlocal cur_section_color, cur_chapter_color, cur_sub_color
-        nonlocal in_formatted_section, subsection_is_h1
+        nonlocal in_formatted_section, keep_empty_section, subsection_is_h1
         emit_pending()
         flush_group(cur_groups, cur_group_id, cur_group_title, cur_blocks)
         cur_blocks = []
         flush_subsection(cur_subsections, cur_sub_id, cur_sub_title, cur_groups, cur_sub_color)
         cur_groups = []
         flush_section(cur_sections, cur_section_id, cur_section_title, cur_subsections,
-                      cur_section_color, keep_empty=in_formatted_section)
+                      cur_section_color, keep_empty=keep_empty_section)
         cur_subsections   = []
         _sec_counter[0] += 1
         _sub_counter[0] += 1
@@ -409,6 +416,7 @@ def convert(docx_path: Path, map_path: Path,
             cur_chapter_color = color
         cur_sub_color = color
         in_formatted_section = formatted
+        keep_empty_section = formatted or keep_empty
         subsection_is_h1 = False
         cur_sub_id        = f"{_sid}_b{_sub_counter[0]}"
         cur_sub_title     = title
@@ -448,6 +456,24 @@ def convert(docx_path: Path, map_path: Path,
                 block for block in media.paragraph_blocks(para)
                 if block["type"] == "image"
             )
+
+    def next_heading_is_peer_or_major(index: int) -> bool:
+        """Spot consecutive category labels with no content between them.
+
+        A normal Heading 2 under Heading 1 is a child, but another Heading 1
+        or a direct-formatted major topic is a peer. Keep the empty label as a
+        navigation divider rather than silently dropping it.
+        """
+        for next_index in range(index + 1, len(items)):
+            kind, obj = items[next_index]
+            if kind == "table":
+                return False
+            if contains_image(obj):
+                return False
+            if not clean(obj.text):
+                continue
+            return obj.style.name == "Heading 1" or heading_format(obj)[0]
+        return False
 
     # ── walk document ──────────────────────────────────────────────────────────
     i = 0
@@ -514,6 +540,12 @@ def convert(docx_path: Path, map_path: Path,
                 i += 1
                 continue
             open_section(text, heading_color, formatted=True)
+            emit_heading_media(para)
+            i += 1
+            continue
+
+        if style == "Heading 1" and next_heading_is_peer_or_major(i):
+            open_section(text, heading_color, formatted=True, keep_empty=True)
             emit_heading_media(para)
             i += 1
             continue
@@ -746,3 +778,16 @@ if __name__ == "__main__":
     print(f"  Groups:       {total_groups}")
     print(f"  Blocks:       {total_blocks}")
     print(f"  Block types:  {dict(sorted(block_types.items(), key=lambda x: -x[1]))}")
+
+    # Independent post-extraction coverage check: the flat Word TOC is never
+    # used to create headings, but missing/out-of-order titles fail the run.
+    toc_document = docx.Document(str(DOCX_PATH))
+    entries, blanks, styles = toc_entries(toc_document)
+    matches = match_in_order(entries, book_headings(book))
+    TOC_REPORT.write_text(
+        render_report(entries, blanks, styles, matches), encoding="utf-8")
+    matched = sum(result["match"] is not None for result in matches)
+    print(f"  TOC audit:    {matched}/{len(entries)} headings matched in order")
+    if matched != len(entries):
+        print(f"  Review unmatched entries in {TOC_REPORT}")
+        raise SystemExit(1)

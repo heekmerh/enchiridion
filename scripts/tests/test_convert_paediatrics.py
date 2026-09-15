@@ -31,6 +31,89 @@ def tiny_png() -> bytes:
 
 
 class PaediatricsConversionTest(unittest.TestCase):
+    def test_unmarked_category_contains_peer_topics_and_small_bold_groups(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            document = Document()
+            document.add_paragraph("CHAPTER START", style="Heading 1")
+            major = document.add_paragraph()
+            run = major.add_run("MAJOR TOPIC")
+            run.bold = True
+            run.font.size = Pt(24)
+            document.add_paragraph("Major introduction")
+            document.add_paragraph("OTHER CONDITIONS", style="Heading 1")
+            document.add_paragraph("CYSTIC FIBROSIS", style="Heading 1")
+            document.add_paragraph("Cystic body")
+            document.add_paragraph("DIPHTHERIA", style="Heading 1")
+            document.add_paragraph("Diphtheria body")
+            group = document.add_paragraph("CLASSIFICATION")
+            group.runs[0].bold = True
+            document.add_paragraph("Classification body")
+
+            source = root / "book.docx"
+            chapter_map = root / "chapter_map.json"
+            document.save(source)
+            chapter_map.write_text(json.dumps([{
+                "chapter_id": "sample",
+                "chapter_title": "Sample",
+                "anchor_texts": ["CHAPTER START"],
+            }]))
+            book = convert(source, chapter_map, root / "assets", "assets/test")
+            sections = book["chapters"][0]["sections"]
+            self.assertEqual(
+                [s["section_title"] for s in sections],
+                ["MAJOR TOPIC", "OTHER CONDITIONS"],
+            )
+            topics = sections[1]["subsections"]
+            self.assertEqual(
+                [s["subsection_title"] for s in topics],
+                ["CYSTIC FIBROSIS", "DIPHTHERIA"],
+            )
+            self.assertIn("CLASSIFICATION",
+                          [g["group_title"] for g in topics[1]["content_groups"]])
+
+    def test_consecutive_unmarked_categories_survive_without_promoting_child_h2(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            document = Document()
+            document.add_paragraph("CHAPTER START", style="Heading 1")
+            major = document.add_paragraph(style="Heading 1")
+            run = major.add_run("MAJOR TOPIC")
+            run.bold = True
+            run.font.size = Pt(24)
+            document.add_paragraph("Major introduction")
+            document.add_paragraph("INDICATIONS", style="Heading 1")
+            document.add_paragraph("Detail", style="Heading 2")
+            document.add_paragraph("Detail body")
+            document.add_paragraph("CATEGORY ONE", style="Heading 1")
+            document.add_paragraph("CATEGORY TWO", style="Heading 1")
+            topic = document.add_paragraph(style="Heading 2")
+            run = topic.add_run("NEXT TOPIC")
+            run.bold = True
+            run.font.size = Pt(24)
+            document.add_paragraph("Next topic body")
+
+            source = root / "book.docx"
+            chapter_map = root / "chapter_map.json"
+            document.save(source)
+            chapter_map.write_text(json.dumps([{
+                "chapter_id": "sample",
+                "chapter_title": "Sample",
+                "anchor_texts": ["CHAPTER START"],
+            }]))
+            book = convert(source, chapter_map, root / "assets", "assets/test")
+            sections = book["chapters"][0]["sections"]
+            self.assertEqual(
+                [s["section_title"] for s in sections],
+                ["MAJOR TOPIC", "CATEGORY ONE", "CATEGORY TWO", "NEXT TOPIC"],
+            )
+            self.assertIn(
+                "INDICATIONS",
+                [s["subsection_title"] for s in sections[0]["subsections"]],
+            )
+            self.assertEqual(sections[1]["subsections"], [])
+            self.assertEqual(sections[2]["subsections"], [])
+
     def test_split_topic_name_and_empty_category_heading_are_preserved(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
