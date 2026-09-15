@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -45,7 +46,8 @@ void main() async {
 
   // Ambient "Quick Check" bubble notifications are Android-only (no Bubbles
   // equivalent on iOS yet). Best-effort for the same reason as above.
-  if (Platform.isAndroid && prefs.getBool(_bubbleAlarmArmedKey) != true) {
+  if (!kIsWeb && Platform.isAndroid &&
+      prefs.getBool(_bubbleAlarmArmedKey) != true) {
     try {
       await _bubbleChannel.invokeMethod<void>('armBubbleSchedule');
       await prefs.setBool(_bubbleAlarmArmedKey, true);
