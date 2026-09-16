@@ -71,13 +71,13 @@ WITH objects AS (
     EXISTS (SELECT 1 FROM policies WHERE relname = 'flagged_questions'
             AND polname = 'Users can read their own flags'
             AND polcmd = 'r' AND polpermissive AND polroles = ARRAY[0]::oid[]
-            AND using_expr ~ '^\\(*auth\\.uid\\(\\)=user_id\\)*$'),
+            AND using_expr ~ '^\(*auth\.uid\(\)=user_id\)*$'),
     'permissive PUBLIC SELECT uses only auth.uid()=user_id'
   UNION ALL SELECT '001', 'flagged_questions own-user INSERT',
     EXISTS (SELECT 1 FROM policies WHERE relname = 'flagged_questions'
             AND polname = 'Users can insert their own flags'
             AND polcmd = 'a' AND polpermissive AND polroles = ARRAY[0]::oid[]
-            AND check_expr ~ '^\\(*auth\\.uid\\(\\)=user_id\\)*$'),
+            AND check_expr ~ '^\(*auth\.uid\(\)=user_id\)*$'),
     'permissive PUBLIC INSERT WITH CHECK uses only auth.uid()=user_id'
   UNION ALL SELECT '001', 'flagged_questions no write policies',
     NOT EXISTS (SELECT 1 FROM policies WHERE relname = 'flagged_questions'
@@ -188,7 +188,7 @@ WITH objects AS (
     EXISTS (SELECT 1 FROM policies WHERE relname = 'processed_payments'
             AND polname = 'Users can read their own processed payments'
             AND polcmd = 'r' AND polpermissive AND polroles = ARRAY[0]::oid[]
-            AND using_expr ~ '^\\(*auth\\.uid\\(\\)=user_id\\)*$'),
+            AND using_expr ~ '^\(*auth\.uid\(\)=user_id\)*$'),
     'permissive PUBLIC SELECT uses only auth.uid()=user_id'
   UNION ALL SELECT '004', 'processed_payments no write policies',
     NOT EXISTS (SELECT 1 FROM policies WHERE relname = 'processed_payments'
@@ -205,8 +205,8 @@ WITH objects AS (
     EXISTS (SELECT 1 FROM policies WHERE relname = 'user_book_access'
             AND polname = 'Users can read their granted access'
             AND polcmd = 'r' AND polpermissive AND polroles = ARRAY[0]::oid[]
-            AND using_expr ~ '^\\(*auth\\.uid\\(\\)=user_id\\)*andgrantedand'
-            AND using_expr ~ 'expires_atisnull\\)*or\\(*expires_at>timezone\\(''utc''::text,now\\(\\)\\)\\)*$'),
+            AND using_expr ~ '^\(*auth\.uid\(\)=user_id\)*andgrantedand'
+            AND using_expr ~ 'expires_atisnull\)*or\(*expires_at>timezone\(''utc''::text,now\(\)\)\)*$'),
     'PUBLIC SELECT requires own user, granted, and null-or-future expires_at'
   UNION ALL SELECT '004', 'user_book_access no write policies',
     NOT EXISTS (SELECT 1 FROM policies WHERE relname = 'user_book_access'
