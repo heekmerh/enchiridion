@@ -32,6 +32,7 @@ Phase 4's [human UAT](phases/04-phase-1-calculators-enhancements-high-priority/0
 - `a99b27c` — re-extracted the Paediatrics DOCX using direct 24pt-bold topic markers, preserved source colors, and placed 82 body figures inline. Both generated JSON copies and the bundled figure assets were committed.
 - `5fc1104` — added an independent ordered table-of-contents audit (211/211 non-empty entries matched), preserved adjacent empty headings, and corrected the fever table row from `ARadiation` to `Radiation` by regenerating from the updated DOCX.
 - `f9e4cd1` — guarded the Android-only bubble startup call so Brave/Flutter web does not evaluate `Platform.isAndroid`; `flutter analyze lib/main.dart` passed. Browser runtime after this fix has not yet been reported as verified.
+- 2026-09-16 — spot-checked the regenerated Paediatrics content in a running Flutter-web instance (Brave, via a throwaway `ReaderScreen`-only harness with `AccessService.testAccessOverride` set, deleted afterward — no auth flow was exercised). Confirmed: the `overview` chapter's fever table now reads "Radiation" (not "ARadiation", matching `5fc1104`); all four source heading colors render distinctly (red, black, blue, green) across the `overview` and `genetics_syndromes` chapters; 2- and 3-column tables render cleanly; an inline figure (`assets/images/paediatrics/image4.png`, cleft palate) renders at correct size with its caption; TOC navigation between chapters and subsections works. No console errors or exceptions; only the two expected Flutter-web warnings (viewport meta tag, missing Noto glyphs for emoji). Not covered: the other 10 chapters, and only one of several figures was checked.
 
 See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [the TOC audit](../scripts/output/paediatrics_toc_audit.md) for the extraction cross-check. The original detailed audit in TESTING_REPORT.md is historical; use its dated progress note and current code before selecting an issue.
 
@@ -49,7 +50,6 @@ Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL
 
 ## Remaining Validation and External Setup
 
-- Spot-check the regenerated Paediatrics content, headings, colors, tables, and figures in the app; the source DOCX has inconsistent authoring.
 - Complete Phase 4 human UAT and verify Android bubble notifications on a device.
 - The user reports applying SQL migrations `001_flagged_questions.sql` through `004_payments.sql`, and their SQL Editor result passes the catalog checks. Configure/deploy and test Flutterwave payment verification separately; catalog checks do not exercise a payment grant or replay.
 - Source full content for the remaining OSCE and instrumentation topics. `scripts/content/medical_instrumentation.md` is an empty, untracked file and cannot yet supply new topics.
