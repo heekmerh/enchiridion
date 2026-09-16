@@ -30,7 +30,7 @@
       "quick_id": "260915-r9h",
       "client_id": null,
       "description": "Add a read-only SQL verification script under `scripts/sql/` for the already-applied `001_flagged_questions.sql` through `004_payments.sql` migrations; check the expected tables, constraints, RLS policies, and `get_leaderboard` RPC using catalog queries, with no schema changes or secrets, so the live database can be checked after deployment.",
-      "status": "pending",
+      "status": "complete",
       "depends_on": [],
       "planned_files": [
         "scripts/sql/verify_001_004.sql",
@@ -42,7 +42,7 @@
       "dispatched_branch": null,
       "dispatched_base": null,
       "wave": 0,
-      "commit": "1187b87",
+      "commit": "f8145cd",
       "failure_reason": null
     },
     {

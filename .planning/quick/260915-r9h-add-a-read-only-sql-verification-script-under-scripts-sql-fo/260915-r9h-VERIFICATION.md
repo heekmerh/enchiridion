@@ -1,11 +1,12 @@
 ---
 quick_id: 260915-r9h
-verified: 2026-09-16T14:52:38Z
-status: human_needed
-score: 4/5 must-haves verified
+verified: 2026-09-16T16:00:37Z
+status: passed
+score: 5/5 must-haves verified
 covered_files:
   - .planning/quick/260915-r9h-add-a-read-only-sql-verification-script-under-scripts-sql-fo/260915-r9h-PLAN.md
   - .planning/quick/260915-r9h-add-a-read-only-sql-verification-script-under-scripts-sql-fo/260915-r9h-SUMMARY.md
+  - scripts/output/verify_001_004_live_results.md
   - scripts/sql/000_init_database.sql
   - scripts/sql/001_flagged_questions.sql
   - scripts/sql/002_unique_display_name.sql
@@ -13,33 +14,34 @@ covered_files:
   - scripts/sql/004_payments.sql
   - scripts/sql/check_verify_001_004_read_only.py
   - scripts/sql/verify_001_004.sql
-covered_digest: "v1:sha256:ce259ecba41ac03b086859c90df28d676ace594f93673bd8bd7fc3fb62e0ace9"
+covered_digest: "v1:sha256:a65b35095197f9cb8b198a8fae5eddd5137cb0ee16c09f7ffe0904976cb453ef"
 behavior_unverified: 0
 overrides_applied: 0
 re_verification:
-  previous_status: gaps_found
+  previous_status: human_needed
   previous_score: 4/5
   gaps_closed:
     - Quoted, schema-qualified pg_catalog.pg_sleep bypassed the function allowlist.
+    - User supplied the deployed SQL Editor result after the PostgreSQL regex correction.
   gaps_remaining: []
   regressions: []
 human_verification:
   - test: Run scripts/sql/verify_001_004.sql against deployed Supabase PostgreSQL through an existing operator connection.
     expected: Every named assertion for migrations 001–004 and the OVERALL row returns passed=true on the expected applied schema; drift produces a false row.
-    why_human: No live operator database connection was available, so query execution and deployed catalog values could not be observed.
+    observed: User-provided Supabase SQL Editor output contains 31 named true rows and one true OVERALL row; stored in scripts/output/verify_001_004_live_results.md.
 ---
 
 # Quick 260915-r9h Verification
 
 **Goal:** Provide a read-only catalog verifier for migrations 001–004, with a repeatable SQL safety gate.
-**Status:** human_needed. The original safety gap is closed by commit `1187b87`; the deployed catalog query still requires an operator connection.
+**Status:** passed. The original safety gap is closed by commit `1187b87`, the policy regex correction is in `f8145cd`, and the user supplied a passing Supabase SQL Editor result. The agent did not connect directly to the deployed database.
 **Re-verification:** Yes, after gap closure.
 
 ## Observable truths
 
 | Truth | Status | Codebase evidence |
 | --- | --- | --- |
-| One post-deployment SELECT reports named pass/fail results for 001–004 | ? UNCERTAIN | `verify_001_004.sql:1–4` documents SQL Editor and `psql` execution. Lines 26–221 define 31 named boolean assertions (001: 10, 002: 5, 003: 4, 004: 12) plus OVERALL; the gate accepts one SELECT statement. All rows passed in a temporary PostgreSQL 16 fixture using the actual migrations, but the deployed query was not run. |
+| One post-deployment SELECT reports named pass/fail results for 001–004 | VERIFIED by user-provided output | `verify_001_004.sql:1–4` documents SQL Editor and `psql` execution. The user-provided SQL Editor result in `scripts/output/verify_001_004_live_results.md` contains 31 true named rows (001: 10, 002: 5, 003: 4, 004: 12) and a true OVERALL row. |
 | Missing or changed keys, indexes, policies, and RPC contracts are detected through catalogs without reading application rows | VERIFIED structurally | Assertions read `pg_class`, `pg_constraint`, `pg_index`, `pg_policy`, and `pg_proc`; absent objects make positive `EXISTS` checks false. |
 | Automated gate rejects every write-capable statement and side-effecting function call | VERIFIED | `check_verify_001_004_read_only.py:56–59` rejects double-quoted executable identifiers before token/function scanning. Independent checks reject the original quoted `pg_sleep` bypass, other quoted variants, DML CTEs, SELECT INTO, row locks, DDL, and unapproved calls. |
 | Additional SELECT/ALL policies and substituted RPC bodies fail checks | VERIFIED structurally | Exact policy inventories use `count(*) = 1`; `pg_proc.prosrc` MD5 constants independently match migration 002 (`802aacb921fc4d991a9855564ca633e6`) and 003 (`d1821041253e750bf7bec157fcb5c208`). |
@@ -47,7 +49,7 @@ human_verification:
 
 The two required artifacts exist, are substantive, and are wired through the documented command and the checker's default SQL-file path. Catalog assertions are wired to the expected objects in migrations 001–004. The `user_book_access` expiry assertion inspects `pg_policy.polqual`, matching the policy installed by 004, rather than reading entitlement rows.
 
-**Score:** 4/5 truths verified. The first truth remains uncertain because live PostgreSQL execution has not been observed; all five are structurally present and the query ran successfully against a local fixture. No behavior-dependent state-transition truth is untested.
+**Score:** 5/5 truths verified for the catalog script. The deployed result was supplied by the user rather than observed through an agent connection. Payment transaction behavior and app UAT are outside this item.
 
 ## Artifact, link, and data-flow evidence
 
@@ -69,7 +71,7 @@ No probe is declared for this quick item. The self-test has active fixed asserti
 
 ## Human verification
 
-With an existing deployed database connection, run the SQL file through Supabase SQL Editor or `psql -X -v ON_ERROR_STOP=1 -f scripts/sql/verify_001_004.sql`. Every named row and OVERALL should return `passed=true` on the expected applied schema. No operator connection was available for this verification, so live catalog behavior remains unobserved.
+On 2026-09-16, the user pasted the Supabase SQL Editor result after running the corrected file. The saved output in `scripts/output/verify_001_004_live_results.md` has all 31 named assertions and OVERALL at `passed=true`. This is evidence of the catalog state reported by the user; it does not establish payment grant/replay behavior or prove which Supabase project was selected.
 
 ## 2026-09-16 PostgreSQL regex correction
 
@@ -81,4 +83,4 @@ The corrected script passed the local read-only gate. It ran on a temporary Post
 
 The first verification reproduced `check('SELECT "pg_catalog"."pg_sleep"(1);') == 1`: the lexer had erased double-quoted identifiers, leaving the function call invisible to the allowlist. Commit `1187b87` now raises `UnsafeSQL("quoted identifiers are prohibited")` at the first double quote and adds both the side-effecting quoted call and a harmless quoted `count` call to self-tests. The original blocker is closed. No remaining codebase gap was found.
 
-_Rechecked: 2026-09-16T14:52:38Z. The earlier independent GSD verification remains `human_needed` until the deployed catalog is checked._
+_Rechecked: 2026-09-16T16:00:37Z against the user-provided SQL Editor output. No direct agent connection to the deployed database was made._
