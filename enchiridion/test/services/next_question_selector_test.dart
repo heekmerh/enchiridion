@@ -42,14 +42,14 @@ void main() {
       final bank = List.generate(5, (i) => _question(i + 1));
       final now = DateTime(2026, 1, 1, 12);
 
-      // q1 was answered wrong an hour ago and is already due for relearn.
+      // q1 was answered wrong long enough ago to be due for relearn.
       await storage.recordQuestionReview(
         'exam_prep',
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
           isCorrect: false,
-          answeredAt: now.subtract(const Duration(hours: 4)),
+          answeredAt: now.subtract(const Duration(hours: 28)),
         ),
       );
 
@@ -61,6 +61,39 @@ void main() {
       );
 
       expect(picked?.id, 'q1');
+    });
+
+    test('a stored miss waits a full day then outranks unseen questions',
+        () async {
+      final bank = List.generate(5, (i) => _question(i + 1));
+      final now = DateTime(2026, 1, 1, 12);
+      final review = await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+      expect(review.dueAt.isBefore(now.add(const Duration(days: 1))), isFalse);
+
+      final selector = NextQuestionSelector(storage);
+      final early = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: now.add(const Duration(hours: 23)),
+      );
+      expect(early?.id, isNot('q1'));
+
+      // Forward jitter can put the due time beyond 25 hours. Check the
+      // recorded boundary rather than assuming a fixed post-day offset.
+      final due = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: review.dueAt,
+      );
+      expect(due?.id, 'q1');
     });
 
     test('never re-serves the same question within the cooldown window',
@@ -81,6 +114,84 @@ void main() {
         now: now.add(const Duration(minutes: 5)),
       );
       expect(second?.id, 'q1');
+    });
+
+    test('floor skips a missed question while its lapse window is open',
+        () async {
+      final now = DateTime(2026, 1, 1, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+      final selector = NextQuestionSelector(storage);
+      final bank = [_question(1), _question(2)];
+
+      expect((await selector.next(bank: bank, hasAccess: true, now: now))?.id,
+          'q2');
+      final floorPick = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(floorPick?.id, 'q2');
+    });
+
+    test('returns null if the only question is inside its lapse window',
+        () async {
+      final now = DateTime(2026, 1, 1, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+
+      final picked = await NextQuestionSelector(storage).next(
+        bank: [_question(1)],
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(picked, isNull);
+    });
+
+    test('floor can serve a past miss that was since answered correctly',
+        () async {
+      final now = DateTime(2026, 1, 3, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now.subtract(const Duration(days: 2)),
+        ),
+      );
+      final review = await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'a',
+          isCorrect: true,
+          answeredAt: now,
+        ),
+      );
+      expect(review.lapses, 1);
+      expect(review.lastCorrect, isTrue);
+
+      final picked = await NextQuestionSelector(storage).next(
+        bank: [_question(1)],
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(picked?.id, 'q1');
     });
 
     test('locked questions are excluded for a free-tier user', () async {

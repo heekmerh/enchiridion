@@ -9,18 +9,14 @@ import 'question.dart';
 /// picked last time* and still drives the tick marks in the question lists;
 /// [QuestionReview] records *when the question should come back*.
 class QuestionReview {
-  /// Applied after a wrong answer: bring the question back while the day is
-  /// still young, so the correction is re-tested rather than just read once.
-  ///
-  /// TESTING_REPORT.md flagged this against an original 2-4 day resurface
-  /// spec — confirmed as the intended behavior (product decision, not a
-  /// bug), not changed.
-  static const Duration relearnInterval = Duration(hours: 3);
+  /// Applied after a wrong answer: bring the question back a full day later
+  /// so the correction is re-tested in a fresh session, not the same sitting.
+  /// This is a floor; jitter never brings the scheduled time forward.
+  static const Duration relearnInterval = Duration(days: 1);
 
   /// Applied to a correct-but-guessed answer. A 1-in-5 guess on a five-option
   /// MCQ is not evidence of retention, so it does not graduate the question —
-  /// but it is weaker evidence of failure than a wrong answer, so the interval
-  /// sits above [relearnInterval].
+  /// it remains on a separate same-day review interval.
   static const Duration guessedInterval = Duration(hours: 8);
 
   /// Interval applied on a confident correct answer, indexed by the stage the
@@ -117,7 +113,7 @@ class QuestionReview {
         lastCorrect: false,
         lastOption: selectedOption,
         lastSeenAt: now,
-        dueAt: now.add(_jittered(relearnInterval, rng)),
+        dueAt: now.add(_jitteredForward(relearnInterval, rng)),
         retired: false,
       );
     }
@@ -158,11 +154,18 @@ class QuestionReview {
     );
   }
 
-  /// Spreads scheduled reviews out so that a study session with six misses
-  /// does not queue six prompts for the same minute three hours later.
+  /// Spreads scheduled correct-answer reviews around their base interval.
   static Duration _jittered(Duration base, Random random) {
     final spread = base < const Duration(hours: 12) ? base * 0.25 : base * 0.12;
     final offset = (random.nextDouble() * 2 - 1) * spread.inMilliseconds;
+    return base + Duration(milliseconds: offset.round());
+  }
+
+  /// The lapse interval is a contract floor. Spreading only upward still
+  /// prevents six misses from queueing six prompts for the same minute.
+  static Duration _jitteredForward(Duration base, Random random) {
+    final spread = base < const Duration(hours: 12) ? base * 0.25 : base * 0.12;
+    final offset = random.nextDouble() * spread.inMilliseconds;
     return base + Duration(milliseconds: offset.round());
   }
 
