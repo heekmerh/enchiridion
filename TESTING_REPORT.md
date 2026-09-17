@@ -19,8 +19,8 @@ The original detailed findings and file references remain below for context. Rec
 
 - **Clip notes don't save / should be editable.** Fully implemented. `lib/services/storage_service.dart:135-183` persists `ClipNote` objects to `SharedPreferences`. `lib/widgets/blocks/block_renderer.dart` (`_ClipsBottomSheet`, `_submitClip`/`_startEditing`/`_deleteClip` around lines 792-1000) supports add, edit, and delete end-to-end.
 - **Chapter notes should be editable.** Fully implemented. `lib/services/storage_service.dart:113-124` (`getNote`/`saveNote`/`deleteNote`) + `lib/screens/reader_screen.dart:402-580` (`_NotesBottomSheet`) load existing notes into the field and resave on edit.
-- **Load `scripts/content/question.json` into exam prep.** Done. `scripts/generate_resource_content.py` repairs the malformed source JSON and writes `enchiridion/assets/data/exam_prep_questions.json` (493 valid questions). Loaded via `lib/services/exam_prep_repository.dart` and rendered in `lib/screens/exam_prep_question_list_screen.dart`.
-- **10 questions accessible under freemium.** Done. `lib/config/freemium_config.dart:5` (`kFreeQuestionCount = 10`), enforced in `lib/services/next_question_selector.dart:47-49` and `exam_prep_question_list_screen.dart:69-70`.
+- **Load `scripts/content/question.json` into exam prep.** Done. `scripts/generate_resource_content.py` repairs the malformed source JSON and writes `enchiridion/assets/data/exam_prep_questions.json` (493 valid questions). Loaded via `lib/services/exam_prep_repository.dart`; originally also rendered in the Exam Prep whole-bank list screen, removed under 260917-ndx.
+- **10 questions accessible under freemium.** Done. `lib/config/freemium_config.dart:5` (`kFreeQuestionCount = 10`), enforced in `lib/services/next_question_selector.dart:47-49` (previously also enforced in the Exam Prep whole-bank list screen, removed under 260917-ndx).
 - **Separate Surgical / Medical Instrumentation tiles.** Done. `lib/screens/library_screen.dart:573-592` — two tiles, using `assets/resources/surgical instrumentation.jpeg` and `assets/resources/clinical instrumentation.jpeg` respectively.
 - **Sutures content under Surgical Instrumentation.** Done. `lib/models/resource_topic.dart:21-31` → `assets/data/resources/sutures.json` (36 subsections), wired in `library_screen.dart:576-581`.
 - **IV Cannula content under Medical Instrumentation.** Done. `resource_topic.dart:33-42` → `assets/data/resources/iv_cannula.json` (28 subsections), wired in `library_screen.dart:586-591`.
@@ -45,7 +45,7 @@ Supersedes/expands the earlier "images from the book should display inline" ask 
 
 ### Device navigation bar overlapping bottom content
 Most screens handle it; two do not.
-- A shared helper `bottomViewportInset()` (`lib/utils/bottom_inset.dart:5-13`) is correctly applied in `reader_screen.dart`, `question_list_screen.dart`, `exam_prep_home_screen.dart`, `exam_prep_question_list_screen.dart`, `resource_topic_detail_screen.dart`, `resource_topic_list_screen.dart`, `question_screen.dart`, `library_screen.dart`.
+- A shared helper `bottomViewportInset()` (`lib/utils/bottom_inset.dart:5-13`) is correctly applied in `reader_screen.dart`, `question_list_screen.dart`, `exam_prep_home_screen.dart`, `resource_topic_detail_screen.dart`, `resource_topic_list_screen.dart`, `question_screen.dart`, `library_screen.dart`.
 - **Gap:** `lib/screens/calculator_screen.dart:99-116` and `lib/screens/calculator_list_screen.dart:54-79` use plain `ListView`/fixed `EdgeInsets` with no `SafeArea` or `bottomViewportInset()` call — content in these two screens can sit under the gesture/3-button nav bar.
 - **Action:** add `bottomViewportInset(context)` to the trailing padding in both files, mirroring the pattern already used in `question_list_screen.dart:178`. Consider a shared Scaffold wrapper so this isn't a recurring per-screen omission.
 
@@ -56,9 +56,9 @@ Most screens handle it; two do not.
 - **Action:** add a `SECURITY DEFINER` Postgres function (or equivalent RPC) to safely expose aggregated cross-user rankings, then build a leaderboard screen consuming it.
 
 ### Exam prep should not show the full question bank to free users
-- `lib/screens/exam_prep_question_list_screen.dart:207-236` currently lists all 493 questions to every user, including locked ones — locked rows show a truncated preview of the question text and a lock icon, and are only blocked from answering (tap routes to `UnlockScreen`).
-- **Gap:** free users can browse/search the full bank's question text via `_visibleQuestions` (lines 76-82), even though only the first 10 are answerable.
-- **Action:** decide whether locked rows should hide the question text entirely (e.g. show only "Question #N — 🔒 Locked") or be omitted/collapsed from the list, then update the row-building logic at lines 207-236 accordingly.
+- The Exam Prep whole-bank list screen and its "Browse Full Bank" entry point were removed under batch item 260917-ndx. There is no longer any UI that lists the full question bank or previews locked question text to a free user.
+- **Remaining gap:** `lib/screens/exam_prep_home_screen.dart`'s Access card subtitle still discloses the total question count (e.g. "All N questions are unlocked."), which leaks the bank size even though the browsing UI is gone.
+- **Action:** update or remove the count-disclosing subtitle text. Owned by sibling batch items 260917-ndq and 260917-ndt, not this item.
 
 ### Wrong answers should resurface 2-4 days later
 - Spaced-repetition scheduling exists and is genuinely used: `lib/models/question_review.dart` + `lib/services/next_question_selector.dart:57-88` prioritize due/lapsed questions.
@@ -70,7 +70,7 @@ Most screens handle it; two do not.
 - **Action:** source additional docx content for other instrument types / OSCE stations, run it through `scripts/generate_resource_content.py` (same pipeline used for the three existing topics), and add corresponding `TopicSpec`/`ResourceTopic` entries in `resource_topic.dart`.
 
 ### Unlock button should take user to subscribe for full access
-- Navigation is correctly wired: every "Unlock" CTA (`reader_screen.dart:656-659`, `calculator_list_screen.dart:131-137`, `exam_prep_home_screen.dart:194-199`, `question_list_screen.dart:89`, `exam_prep_question_list_screen.dart:92`) routes to `lib/screens/unlock_screen.dart`.
+- Navigation is correctly wired: every "Unlock" CTA (`reader_screen.dart:656-659`, `calculator_list_screen.dart:131-137`, `exam_prep_home_screen.dart:194-199`, `question_list_screen.dart:89`) routes to `lib/screens/unlock_screen.dart`. (A fifth CTA on the Exam Prep whole-bank list screen was removed along with that screen under 260917-ndx.)
 - **Gap:** on `unlock_screen.dart`, both purchase buttons ("Unlock X — price TBD" and "Full Subscription — price TBD", lines 89-104) call `_showComingSoon()` (lines 135-143), which only shows a SnackBar ("Payment coming soon…"). There is no real checkout/paywall flow or IAP integration behind it. `in_app_purchase` is not even in `pubspec.yaml`.
 - **Action:** build a real pricing/checkout screen (or integrate `in_app_purchase`/a payment provider) and replace `_showComingSoon()` with real purchase navigation. This is the same underlying gap as "Monthly 1000 / Yearly 10,000 pricing" below — solve both together.
 
