@@ -9,6 +9,7 @@ Outputs:
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 from dataclasses import dataclass
@@ -61,7 +62,7 @@ TOPICS = [
 ]
 
 
-def fix_text(value: str) -> str:
+def fix_block_text(value: str) -> str:
     text = value.replace("\xa0", " ").strip()
     if not text:
         return ""
@@ -84,7 +85,14 @@ def fix_text(value: str) -> str:
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
-    return re.sub(r"\s+", " ", text).strip()
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    lines = [re.sub(r"[^\S\n]+", " ", line).strip()
+             for line in text.split("\n")]
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+
+def fix_text(value: str) -> str:
+    return re.sub(r"\s+", " ", fix_block_text(value)).strip()
 
 
 def ensure_dirs() -> None:
@@ -95,9 +103,12 @@ def ensure_dirs() -> None:
 
 def normalize_questions() -> None:
     raw = QUESTION_SOURCE.read_text(encoding="utf-8", errors="replace").strip()
-    payload = [json.loads(repair_json_object_text(obj)) for obj in split_json_objects(raw[1:])]
+    payload = [json.loads(repair_json_object_text(obj)) for obj in split_json_objects(raw)]
     normalized = []
     for index, item in enumerate(payload, start=1):
+        for key in ("question", "options", "answer", "explanation"):
+            if key not in item:
+                raise ValueError(f"Question {index} is missing required key: {key}")
         options = {
             key.lower(): fix_text(str(value))
             for key, value in item["options"].items()
@@ -106,19 +117,19 @@ def normalize_questions() -> None:
         normalized.append(
             {
                 "id": f"exam-{index:04d}",
-                "question_text": fix_text(item["question"]),
+                "question_text": fix_block_text(item["question"]),
                 "options": options,
                 "correct_option": str(item["answer"]).lower(),
-                "explanation": fix_text(item["explanation"]),
-                "osce_tip": fix_text(item.get("osce_tip", "")) or None,
+                "explanation": fix_block_text(item["explanation"]),
+                "osce_tip": fix_block_text(item.get("osce_tip", "")) or None,
                 "question_number": index,
                 "topic": fix_text(item.get("topic", "")) or None,
             }
         )
-    QUESTION_TARGET.write_text(
-        json.dumps(normalized, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    # Keep the bundled asset's existing CRLF line endings. The meaningful
+    # change in this regeneration is the escaped newlines inside explanations.
+    with QUESTION_TARGET.open("w", encoding="utf-8", newline="\r\n") as target:
+        json.dump(normalized, target, ensure_ascii=False, indent=2)
 
 
 def split_json_objects(raw: str) -> list[str]:
@@ -415,11 +426,17 @@ def build_topic_json(spec: TopicSpec) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--questions-only", action="store_true",
+                        help="Regenerate the exam question asset only")
+    args = parser.parse_args()
     ensure_dirs()
     normalize_questions()
-    for spec in TOPICS:
-        build_topic_json(spec)
-    print("Generated exam prep and resource content assets.")
+    if not args.questions_only:
+        for spec in TOPICS:
+            build_topic_json(spec)
+    print("Generated exam prep questions" +
+          ("." if args.questions_only else " and resource content assets."))
 
 
 if __name__ == "__main__":

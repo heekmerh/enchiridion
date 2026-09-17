@@ -1,8 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:enchiridion/services/exam_prep_repository.dart';
 
 void main() {
+  test('bundled explanations retain line breaks when loaded', () {
+    final raw = File('assets/data/exam_prep_questions.json').readAsStringSync();
+    final questions = ExamPrepRepository.parseNormalizedJson(raw);
+
+    expect(questions, isNotEmpty);
+    expect(questions.every((question) => question.explanation.contains('\n')),
+        isTrue);
+  });
+
   test(
       'normalizeLegacySource repairs malformed question source and preserves A-E options',
       () {

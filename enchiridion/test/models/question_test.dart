@@ -13,12 +13,25 @@ Question _question(String text) => Question(
 
 void main() {
   group('Question.previewText', () {
+    test('flattens multiline stems into one line', () {
+      final question =
+          _question('A 5 year old boy.\nWhat is the\n\nnext step?');
+      expect(
+          question.previewText(), 'A 5 year old boy. What is the next step?');
+    });
+
+    test('measures maxLength after flattening', () {
+      final question = _question('Alpha\n\nBeta');
+      expect(question.previewText(maxLength: 10), 'Alpha Beta');
+    });
+
     test('returns the text unchanged when already within maxLength', () {
       final question = _question('Short question?');
       expect(question.previewText(), 'Short question?');
     });
 
-    test('shows the tail — the actual question — not the front of a long '
+    test(
+        'shows the tail — the actual question — not the front of a long '
         'clinical vignette', () {
       const vignette = 'A 32 year old woman presents to the Emergency '
           'Department with a sudden onset of high fever, vomiting, '
