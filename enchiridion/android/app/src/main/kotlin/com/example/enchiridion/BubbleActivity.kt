@@ -18,6 +18,7 @@ import io.flutter.embedding.engine.FlutterEngine
  */
 class BubbleActivity : FlutterActivity() {
     override fun getDartEntrypointFunctionName(): String = "bubbleMain"
+    override fun getDartEntrypointLibraryUri(): String = "package:enchiridion/bubble_main.dart"
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)

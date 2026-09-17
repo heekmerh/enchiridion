@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.Person
@@ -80,11 +81,10 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             return
         }
         when (call.method) {
-            // Called once from lib/main.dart, guarded there by a
-            // SharedPreferences flag so it only ever arms the chain once
-            // per install — BubbleAlarmWorker re-arms itself forever after.
+            // Called on every Android app launch. KEEP preserves a pending
+            // run and starts a new chain if WorkManager has lost the old one.
             "armBubbleSchedule" -> {
-                BubbleAlarmWorker.enqueueNext(context)
+                BubbleAlarmWorker.armOnAppStart(context)
                 result.success(null)
             }
             // Called from the headless engine by bubbleAlarmCallback once it
@@ -196,7 +196,11 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             }
         }
 
-        NotificationManagerCompat.from(context).notify(NOTIFICATION_ID, builder.build())
+        val notificationManager = NotificationManagerCompat.from(context)
+        if (!notificationManager.areNotificationsEnabled()) {
+            Log.w("BubbleAlarm", "outcome=notifications_disabled")
+        }
+        notificationManager.notify(NOTIFICATION_ID, builder.build())
     }
 
     private fun publishShortcut(context: Context, person: Person, icon: IconCompat) {

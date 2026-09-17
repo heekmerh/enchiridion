@@ -1,3 +1,5 @@
+import 'dart:developer' as developer;
+
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,6 +15,20 @@ import 'notification_service.dart';
 import 'storage_service.dart';
 
 const MethodChannel _bubbleChannel = MethodChannel('enchiridion/bubbles');
+const _logName = 'BubbleAlarm';
+
+@visibleForTesting
+Future<bool> probeAccessWithTimeout(
+  Future<bool> Function() probe, {
+  Duration timeout = const Duration(seconds: 10),
+}) async {
+  try {
+    return await Future<bool>.microtask(probe)
+        .timeout(timeout, onTimeout: () => false);
+  } catch (_) {
+    return false;
+  }
+}
 
 /// Headless entrypoint: run by `BubbleAlarmWorker` (native Kotlin, backed by
 /// `WorkManager`) roughly every 18-35 minutes, whether or not the app is
@@ -39,37 +55,50 @@ void bubbleAlarmCallback() {
 
 Future<void> _run() async {
   try {
-    await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
-  } catch (_) {
-    // Already initialized in this isolate — the native side is allowed to
-    // keep a headless engine warm across consecutive runs.
-  }
-
-  try {
-    if (AuthService.currentUser != null) {
-      final prefs = await SharedPreferences.getInstance();
-      final storage = StorageService(prefs);
-      final hasAccess = await AccessService.instance.hasExamPrepAccess();
-      final bank = await ExamPrepRepository().loadQuestions();
-      final question = await NextQuestionSelector(storage).next(
-        bank: bank,
-        hasAccess: hasAccess,
-      );
-
-      if (question != null) {
-        try {
-          await _bubbleChannel.invokeMethod<void>('showBubble', {
-            'scope': kStandaloneExamPrepScope,
-            'questionId': question.id,
-            'title': 'Quick Check',
-            'teaser': notificationTeaser(question.questionText),
-          });
-        } catch (_) {
-          // Best-effort, matching the rest of this app's "local state is
-          // the source of truth, remote delivery is best-effort" pattern.
-        }
-      }
+    var wasInitialized = false;
+    try {
+      wasInitialized = Supabase.instance.isInitialized;
+    } catch (_) {
+      // The getter asserts until Supabase has been initialized in debug mode.
     }
+    await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
+    if (wasInitialized) {
+      developer.log('outcome=supabase_initialization_reused', name: _logName);
+    }
+
+    if (AuthService.currentUser == null) {
+      developer.log('outcome=no_signed_in_user', name: _logName);
+      return;
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+    final storage = StorageService(prefs);
+    final hasAccess = await probeAccessWithTimeout(
+      AccessService.instance.hasExamPrepAccess,
+    );
+    final bank = await ExamPrepRepository().loadQuestions();
+    final question = await NextQuestionSelector(storage).next(
+      bank: bank,
+      hasAccess: hasAccess,
+    );
+
+    if (question == null) {
+      developer.log('outcome=no_servable_question', name: _logName);
+      return;
+    }
+
+    await _bubbleChannel.invokeMethod<void>('showBubble', {
+      'scope': kStandaloneExamPrepScope,
+      'questionId': question.id,
+      'title': 'Quick Check',
+      'teaser': notificationTeaser(question.questionText),
+    });
+    developer.log(
+      'outcome=question_handed_to_notification question_id=${question.id}',
+      name: _logName,
+    );
+  } catch (_) {
+    developer.log('outcome=error', name: _logName);
   } finally {
     try {
       await _bubbleChannel.invokeMethod<void>('workFinished');
