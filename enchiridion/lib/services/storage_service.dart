@@ -20,6 +20,11 @@ class StorageService {
 
   StorageService(this._prefs);
 
+  /// Refreshes values written by the headless bubble worker in
+  /// `bubble_alarm_callback.dart`. It runs in another isolate with its own
+  /// preferences instance, so this instance's cache otherwise misses serves.
+  Future<void> refreshFromDisk() => _prefs.reload();
+
   // Settings
   UserSettings getSettings() {
     try {

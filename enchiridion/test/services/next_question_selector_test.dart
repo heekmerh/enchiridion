@@ -1,7 +1,11 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/models/serve_log.dart';
 import 'package:enchiridion/services/next_question_selector.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
@@ -115,6 +119,53 @@ void main() {
       // With 6 unseen questions and a 12-slot recent-serve log, no id should
       // repeat before the whole bank has been offered once.
       expect(served, hasLength(6));
+    });
+
+    test('rotates through the free-tier bank without repeating a question',
+        () async {
+      final bank = List.generate(10, (i) => _question(i + 1));
+      final selector = NextQuestionSelector(storage);
+      final start = DateTime(2026, 1, 1, 12);
+      final served = <String>[];
+
+      for (var i = 0; i < 25; i++) {
+        final picked = await selector.next(
+          bank: bank,
+          hasAccess: false,
+          now: start.add(Duration(minutes: i)),
+        );
+        expect(picked, isNotNull);
+        served.add(picked!.id);
+      }
+
+      for (var startIndex = 0; startIndex <= served.length - 10; startIndex++) {
+        expect(
+          served.skip(startIndex).take(10).toSet(),
+          hasLength(10),
+          reason: 'Serves $startIndex through ${startIndex + 9} repeated',
+        );
+      }
+    });
+
+    test('sees a serve recorded by another isolate', () async {
+      final bank = List.generate(10, (i) => _question(i + 1));
+      // setMockInitialValues replaces the backing store without updating the
+      // preferences instance held by storage, like a separate isolate's write.
+      SharedPreferences.setMockInitialValues({
+        'serve_log_exam_prep': jsonEncode(ServeLog(
+          recent: List.generate(9, (i) => 'q${i + 1}'),
+          counter: 9,
+        ).toJson()),
+      });
+
+      final picked =
+          await NextQuestionSelector(storage, random: Random(1)).next(
+        bank: bank,
+        hasAccess: false,
+        now: DateTime(2026, 1, 1, 12),
+      );
+
+      expect(picked?.id, 'q10');
     });
   });
 }
