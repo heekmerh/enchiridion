@@ -179,7 +179,8 @@ class NotificationService {
 /// the ambient bubble/notification without going through this plugin.
 String notificationTeaser(String questionText) {
   const maxLength = 160;
-  return questionText.length > maxLength
-      ? '${questionText.substring(0, maxLength)}…'
-      : questionText;
+  final flatText = questionText.replaceAll(RegExp(r'\s+'), ' ').trim();
+  return flatText.length > maxLength
+      ? '${flatText.substring(0, maxLength)}…'
+      : flatText;
 }
