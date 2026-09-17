@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/chapter.dart';
 import 'package:enchiridion/models/content_block.dart';
+import 'package:enchiridion/providers/pinned_notes_provider.dart';
 import 'package:enchiridion/providers/settings_provider.dart';
 import 'package:enchiridion/services/storage_service.dart';
 import 'package:enchiridion/widgets/reader/reader_content.dart';
@@ -43,6 +44,7 @@ Widget _buildSubject(StorageService storage) {
     providers: [
       Provider<StorageService>.value(value: storage),
       ChangeNotifierProvider(create: (_) => SettingsProvider(storage)),
+      ChangeNotifierProvider(create: (_) => PinnedNotesProvider(storage)),
     ],
     child: MaterialApp(
       home: Scaffold(
@@ -110,10 +112,15 @@ void main() {
     await tester.pumpWidget(_buildSubject(storageService));
     await tester.pumpAndSettle();
 
-    final imageGesture = find.ancestor(
-      of: find.byType(Image).first,
-      matching: find.byType(GestureDetector),
-    );
+    // Two ancestor GestureDetectors now wrap the image: the block's own
+    // tap-to-zoom (nearest) and _NotableBlock's long-press-to-pin (outer) —
+    // take the nearest one, which is the tap-to-zoom target.
+    final imageGesture = find
+        .ancestor(
+          of: find.byType(Image).first,
+          matching: find.byType(GestureDetector),
+        )
+        .first;
     await tester.ensureVisible(imageGesture);
     await tester.pumpAndSettle();
     await tester.tap(imageGesture, warnIfMissed: false);

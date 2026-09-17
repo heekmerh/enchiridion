@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer' as developer;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/clip_note.dart';
+import '../models/pinned_note.dart';
 import '../models/user_settings.dart';
 import '../models/bookmark.dart';
 import '../models/question.dart';
@@ -194,20 +195,101 @@ class StorageService {
     await _saveClips(bookId, chapterId, sectionId, clips);
   }
 
-  // ── Pinned Notes (free-standing — not tied to any book/chapter/section,
-  // unlike Clips above; reachable from the Library screen rather than only
-  // from within a reading session) ────────────────────────────────────────
+  // ── Pinned Notes (margin notes anchored to a specific content block,
+  // placed via long-press while reading; reachable for browsing from the
+  // Library screen too) ──────────────────────────────────────────────────
 
   static const _pinnedNotesKey = 'pinned_notes';
+  static const _noteCollectionsKey = 'note_collections';
+
+  List<NoteCollection> getNoteCollections() {
+    try {
+      final raw = _prefs.getString(_noteCollectionsKey);
+      if (raw == null) return [];
+      final items = jsonDecode(raw) as List<dynamic>;
+      return items
+          .map((item) => NoteCollection.fromJson(item as Map<String, dynamic>))
+          .where((collection) => collection.id.isNotEmpty && collection.name.isNotEmpty)
+          .toList()
+        ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
+    } catch (_) {
+      return [];
+    }
+  }
+
+  Future<void> _saveNoteCollections(List<NoteCollection> collections) async {
+    await _prefs.setString(
+      _noteCollectionsKey,
+      jsonEncode(collections.map((collection) => collection.toJson()).toList()),
+    );
+  }
+
+  Future<NoteCollection> createNoteCollection(String name) async {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty) throw ArgumentError.value(name, 'name');
+    final collections = getNoteCollections();
+    for (final existing in collections) {
+      if (existing.name.toLowerCase() == trimmed.toLowerCase()) return existing;
+    }
+    final collection = NoteCollection(
+      id: DateTime.now().microsecondsSinceEpoch.toString(),
+      name: trimmed,
+      createdAt: DateTime.now(),
+    );
+    collections.add(collection);
+    await _saveNoteCollections(collections);
+    return collection;
+  }
+
+  Future<void> renameNoteCollection(String id, String name) async {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty) throw ArgumentError.value(name, 'name');
+    final collections = getNoteCollections();
+    if (collections.any((c) =>
+        c.id != id && c.name.toLowerCase() == trimmed.toLowerCase())) {
+      throw ArgumentError.value(name, 'name', 'Collection already exists');
+    }
+    await _saveNoteCollections(
+      collections.map((c) => c.id == id ? c.copyWith(name: trimmed) : c).toList(),
+    );
+  }
+
+  Future<void> deleteNoteCollection(String id) async {
+    final notes = getPinnedNotes()
+        .map((note) => note.collectionId == id
+            ? note.copyWith(clearCollection: true)
+            : note)
+        .toList();
+    await _savePinnedNotes(notes);
+    await _saveNoteCollections(
+      getNoteCollections().where((collection) => collection.id != id).toList(),
+    );
+  }
+
+  Future<void> assignPinnedNoteToCollection(String noteId, String? collectionId) async {
+    if (collectionId != null &&
+        !getNoteCollections().any((collection) => collection.id == collectionId)) {
+      throw ArgumentError.value(collectionId, 'collectionId');
+    }
+    final notes = getPinnedNotes()
+        .map((note) => note.id == noteId
+            ? note.copyWith(
+                collectionId: collectionId,
+                clearCollection: collectionId == null,
+              )
+            : note)
+        .toList();
+    await _savePinnedNotes(notes);
+  }
 
   /// Newest first.
-  List<ClipNote> getPinnedNotes() {
+  List<PinnedNote> getPinnedNotes() {
     try {
       final raw = _prefs.getString(_pinnedNotesKey);
       if (raw == null) return [];
       final jsonList = jsonDecode(raw) as List<dynamic>;
       return jsonList
-          .map((item) => ClipNote.fromJson(item as Map<String, dynamic>))
+          .map((item) => PinnedNote.fromJson(item as Map<String, dynamic>))
           .toList()
         ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
     } catch (_) {
@@ -215,18 +297,28 @@ class StorageService {
     }
   }
 
-  Future<void> _savePinnedNotes(List<ClipNote> notes) async {
+  Future<void> _savePinnedNotes(List<PinnedNote> notes) async {
     await _prefs.setString(
       _pinnedNotesKey,
       jsonEncode(notes.map((n) => n.toJson()).toList()),
     );
   }
 
-  Future<ClipNote> addPinnedNote(String text) async {
+  Future<PinnedNote> addPinnedNote({
+    required String bookId,
+    required String chapterId,
+    required String anchorId,
+    required NoteSide side,
+    required String content,
+  }) async {
     final notes = getPinnedNotes();
-    final note = ClipNote(
+    final note = PinnedNote(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
-      content: text,
+      bookId: bookId,
+      chapterId: chapterId,
+      anchorId: anchorId,
+      side: side,
+      content: content,
       createdAt: DateTime.now(),
     );
     notes.add(note);
@@ -234,9 +326,9 @@ class StorageService {
     return note;
   }
 
-  Future<void> updatePinnedNote(String id, String text) async {
+  Future<void> updatePinnedNote(String id, String content) async {
     final notes = getPinnedNotes()
-        .map((n) => n.id == id ? n.copyWith(content: text) : n)
+        .map((n) => n.id == id ? n.copyWith(content: content) : n)
         .toList();
     await _savePinnedNotes(notes);
   }

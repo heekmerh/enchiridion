@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import '../../models/chapter.dart';
 import '../../models/clip_note.dart';
 import '../../models/content_block.dart';
+import '../../models/pinned_note.dart';
 import '../../models/user_settings.dart';
+import '../../providers/pinned_notes_provider.dart';
 import '../../providers/settings_provider.dart';
 import '../../services/storage_service.dart';
 import '../../theme/app_colors.dart';
@@ -16,21 +19,41 @@ import 'mnemonic_block.dart';
 import 'red_flags_block.dart';
 import 'table_block.dart';
 
+/// Stable-enough id for a single content block within its chapter, used to
+/// anchor margin notes to it. Positional at the block level (blocks have no
+/// id of their own) but keyed off the surrounding section/subsection/group
+/// ids so it survives unrelated edits elsewhere in the chapter.
+String blockAnchorId(
+  String sectionId,
+  String subsectionId,
+  String groupId,
+  int blockIndex,
+) =>
+    '$sectionId/$subsectionId/$groupId/$blockIndex';
+
 class BlockRenderer extends StatefulWidget {
   final Chapter chapter;
   final String bookId;
+  final bool asSliver;
+  final AutoScrollController? autoScrollController;
+  final void Function(Map<String, int> itemIndexes)? onItemIndexesReady;
   final void Function(
     Map<String, GlobalKey> sectionKeys,
     Map<String, GlobalKey> subsectionKeys,
   )? onKeysReady;
   final void Function(Map<String, double> offsets)? onOffsetsReady;
+  final void Function(Map<String, GlobalKey> anchorKeys)? onAnchorKeysReady;
 
   const BlockRenderer({
     super.key,
     required this.chapter,
     this.bookId = '',
+    this.asSliver = false,
+    this.autoScrollController,
+    this.onItemIndexesReady,
     this.onKeysReady,
     this.onOffsetsReady,
+    this.onAnchorKeysReady,
   });
 
   @override
@@ -40,6 +63,8 @@ class BlockRenderer extends StatefulWidget {
 class _BlockRendererState extends State<BlockRenderer> {
   final Map<String, GlobalKey> _sectionKeys = {};
   final Map<String, GlobalKey> _subsectionKeys = {};
+  final Map<String, GlobalKey> _anchorKeys = {};
+  final Map<String, int> _itemIndexes = {};
 
   @override
   void initState() {
@@ -60,13 +85,29 @@ class _BlockRendererState extends State<BlockRenderer> {
   void _buildKeys() {
     _sectionKeys.clear();
     _subsectionKeys.clear();
+    _anchorKeys.clear();
+    _itemIndexes.clear();
+    var index = 0;
     for (final section in widget.chapter.sections) {
       _sectionKeys[section.id] = GlobalKey();
+      _itemIndexes[section.id] = index++;
       for (final subsection in section.subsections) {
         _subsectionKeys[subsection.id] = GlobalKey();
+        _itemIndexes[subsection.id] = index++;
+        for (final group in subsection.contentGroups) {
+          if (group.title.isNotEmpty) index++;
+          for (var i = 0; i < group.blocks.length; i++) {
+            final anchorId =
+                blockAnchorId(section.id, subsection.id, group.id, i);
+            _anchorKeys[anchorId] = GlobalKey();
+            _itemIndexes[anchorId] = index++;
+          }
+        }
       }
     }
     widget.onKeysReady?.call(_sectionKeys, _subsectionKeys);
+    widget.onAnchorKeysReady?.call(_anchorKeys);
+    widget.onItemIndexesReady?.call(_itemIndexes);
   }
 
   void _calculateOffsets() {
@@ -126,6 +167,9 @@ class _BlockRendererState extends State<BlockRenderer> {
         lineHeight: lineHeight,
         sectionKeys: _sectionKeys,
         subsectionKeys: _subsectionKeys,
+        anchorKeys: _anchorKeys,
+        asSliver: widget.asSliver,
+        autoScrollController: widget.autoScrollController,
       ),
     );
   }
@@ -138,6 +182,9 @@ class _ChapterView extends StatelessWidget {
   final double lineHeight;
   final Map<String, GlobalKey> sectionKeys;
   final Map<String, GlobalKey> subsectionKeys;
+  final Map<String, GlobalKey> anchorKeys;
+  final bool asSliver;
+  final AutoScrollController? autoScrollController;
 
   const _ChapterView({
     required this.chapter,
@@ -146,11 +193,15 @@ class _ChapterView extends StatelessWidget {
     required this.lineHeight,
     required this.sectionKeys,
     required this.subsectionKeys,
+    required this.anchorKeys,
+    required this.asSliver,
+    this.autoScrollController,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final pinnedNotes = context.watch<PinnedNotesProvider>();
     final children = <Widget>[];
 
     for (final section in chapter.sections) {
@@ -192,13 +243,40 @@ class _ChapterView extends StatelessWidget {
             ));
           }
 
-          for (final block in group.blocks) {
-            children.add(_buildBlock(block, fontSize, lineHeight, theme.brightness));
+          for (var i = 0; i < group.blocks.length; i++) {
+            final anchorId =
+                blockAnchorId(section.id, subsection.id, group.id, i);
+            children.add(_NotableBlock(
+              key: anchorKeys[anchorId],
+              bookId: bookId,
+              chapterId: chapter.id,
+              anchorId: anchorId,
+              notes: pinnedNotes.forAnchor(bookId, chapter.id, anchorId),
+              child: _buildBlock(
+                  group.blocks[i], fontSize, lineHeight, theme.brightness),
+            ));
           }
         }
       }
     }
 
+    if (asSliver) {
+      final controller = autoScrollController;
+      return SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => controller == null
+              ? children[index]
+              : AutoScrollTag(
+                  key: ValueKey('${chapter.id}/$index'),
+                  controller: controller,
+                  index: index,
+                  child: children[index],
+                ),
+          childCount: children.length,
+          addAutomaticKeepAlives: false,
+        ),
+      );
+    }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: children,
@@ -554,6 +632,325 @@ class _GroupHeader extends StatelessWidget {
                 ),
               ),
             ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─── Margin notes ───────────────────────────────────────────────────────────
+//
+// Long-press any block to pin a note to it. The marker docks to whichever
+// edge of the screen the press landed in, and stays there — a small flag
+// that a note exists at this exact spot, the way you'd scribble in a
+// margin. Tapping the marker opens a balloon with the note(s) at that spot.
+
+class _NotableBlock extends StatelessWidget {
+  final String bookId;
+  final String chapterId;
+  final String anchorId;
+  final List<PinnedNote> notes;
+  final Widget child;
+
+  const _NotableBlock({
+    super.key,
+    required this.bookId,
+    required this.chapterId,
+    required this.anchorId,
+    required this.notes,
+    required this.child,
+  });
+
+  Future<void> _handleLongPress(
+    BuildContext context,
+    LongPressStartDetails details,
+  ) async {
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final side =
+        details.globalPosition.dx < screenWidth / 2 ? NoteSide.left : NoteSide.right;
+
+    // A single entry today ("Pin note") — more actions (highlight, share…)
+    // can be appended to this list as the app grows.
+    final selected = await showMenu<String>(
+      context: context,
+      position: RelativeRect.fromLTRB(
+        details.globalPosition.dx,
+        details.globalPosition.dy,
+        details.globalPosition.dx,
+        details.globalPosition.dy,
+      ),
+      items: const [
+        PopupMenuItem(value: 'pin', child: Text('Pin note')),
+      ],
+    );
+    if (selected != 'pin' || !context.mounted) return;
+
+    final text = await _promptForNoteText(context);
+    if (text == null || text.trim().isEmpty || !context.mounted) return;
+
+    await context.read<PinnedNotesProvider>().add(
+          bookId: bookId,
+          chapterId: chapterId,
+          anchorId: anchorId,
+          side: side,
+          content: text.trim(),
+        );
+  }
+
+  Future<String?> _promptForNoteText(BuildContext context) {
+    final ctrl = TextEditingController();
+    return showDialog<String>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Pin a note here'),
+        content: TextField(
+          controller: ctrl,
+          autofocus: true,
+          minLines: 2,
+          maxLines: 5,
+          decoration: const InputDecoration(
+            hintText: 'Write your note…',
+            border: OutlineInputBorder(),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(ctrl.text),
+            child: const Text('Pin'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _openBalloon(BuildContext context, Offset anchor) {
+    showDialog<void>(
+      context: context,
+      barrierColor: Colors.transparent,
+      builder: (_) => _NoteBalloon(
+        anchor: anchor,
+        bookId: bookId,
+        chapterId: chapterId,
+        anchorId: anchorId,
+      ),
+    );
+  }
+
+  Widget _marker(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 1),
+      child: GestureDetector(
+        onTapDown: (details) => _openBalloon(context, details.globalPosition),
+        child: const SizedBox(
+          width: 22,
+          height: 22,
+          child: Icon(
+            Icons.chat_bubble,
+            size: 15,
+            color: AppColors.brandPink,
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // A note marker sized via Positioned overflow paints fine but is never
+    // hit-testable outside the Stack's own bounds (a Flutter constraint, not
+    // a layout choice) — so it gets a real Row slot at the block's edge
+    // instead, docked to the side the note was placed on.
+    Widget content = child;
+    if (notes.isNotEmpty) {
+      final marker = _marker(context);
+      content = Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: notes.first.side == NoteSide.left
+            ? [marker, const SizedBox(width: 2), Expanded(child: child)]
+            : [Expanded(child: child), const SizedBox(width: 2), marker],
+      );
+    }
+
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onLongPressStart: (details) => _handleLongPress(context, details),
+      child: content,
+    );
+  }
+}
+
+class _NoteBalloon extends StatefulWidget {
+  final Offset anchor;
+  final String bookId;
+  final String chapterId;
+  final String anchorId;
+
+  const _NoteBalloon({
+    required this.anchor,
+    required this.bookId,
+    required this.chapterId,
+    required this.anchorId,
+  });
+
+  @override
+  State<_NoteBalloon> createState() => _NoteBalloonState();
+}
+
+class _NoteBalloonState extends State<_NoteBalloon> {
+  String? _editingId;
+  final _editCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _editCtrl.dispose();
+    super.dispose();
+  }
+
+  void _startEditing(PinnedNote note) {
+    setState(() {
+      _editingId = note.id;
+      _editCtrl.text = note.content;
+    });
+  }
+
+  Future<void> _saveEdit() async {
+    final id = _editingId;
+    if (id == null) return;
+    final text = _editCtrl.text.trim();
+    if (text.isEmpty) return;
+    await context.read<PinnedNotesProvider>().update(id, text);
+    if (mounted) setState(() => _editingId = null);
+  }
+
+  Future<void> _delete(String id) async {
+    await context.read<PinnedNotesProvider>().delete(id);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final cs = theme.colorScheme;
+    final size = MediaQuery.sizeOf(context);
+    final notes = context
+        .watch<PinnedNotesProvider>()
+        .forAnchor(widget.bookId, widget.chapterId, widget.anchorId);
+
+    if (notes.isEmpty) {
+      // The note this balloon was showing was just deleted — close it.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && Navigator.of(context).canPop()) {
+          Navigator.of(context).pop();
+        }
+      });
+      return const SizedBox.shrink();
+    }
+
+    const balloonWidth = 240.0;
+    // Open toward the centre of the screen, away from the edge the marker
+    // is docked to, so the balloon has room and stays on-screen.
+    final openRight = widget.anchor.dx < size.width / 2;
+    var left = openRight
+        ? widget.anchor.dx + 10
+        : widget.anchor.dx - balloonWidth - 10;
+    left = left.clamp(8.0, size.width - balloonWidth - 8);
+    final top = (widget.anchor.dy - 12).clamp(8.0, size.height - 220);
+
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(),
+      child: Stack(
+        children: [
+          Positioned(
+            left: left,
+            top: top,
+            width: balloonWidth,
+            child: GestureDetector(
+              onTap: () {}, // absorb taps so the balloon itself doesn't close
+              child: Material(
+                elevation: 6,
+                borderRadius: BorderRadius.circular(12),
+                color: cs.surface,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxHeight: 260),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          for (final note in notes) ...[
+                            if (_editingId == note.id)
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  TextField(
+                                    controller: _editCtrl,
+                                    autofocus: true,
+                                    minLines: 2,
+                                    maxLines: 5,
+                                    decoration: const InputDecoration(
+                                      isDense: true,
+                                      border: OutlineInputBorder(),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 6),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            setState(() => _editingId = null),
+                                        child: const Text('Cancel'),
+                                      ),
+                                      FilledButton(
+                                        onPressed: _saveEdit,
+                                        child: const Text('Save'),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              )
+                            else
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Text(
+                                      note.content,
+                                      style: theme.textTheme.bodySmall,
+                                    ),
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(Icons.edit_outlined,
+                                        size: 15),
+                                    padding: EdgeInsets.zero,
+                                    constraints: const BoxConstraints(),
+                                    onPressed: () => _startEditing(note),
+                                  ),
+                                  const SizedBox(width: 4),
+                                  IconButton(
+                                    icon: Icon(Icons.delete_outline,
+                                        size: 15, color: cs.error),
+                                    padding: EdgeInsets.zero,
+                                    constraints: const BoxConstraints(),
+                                    onPressed: () => _delete(note.id),
+                                  ),
+                                ],
+                              ),
+                            if (note != notes.last) const Divider(height: 14),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

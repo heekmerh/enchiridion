@@ -1,218 +1,385 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../models/clip_note.dart';
-import '../services/storage_service.dart';
+import '../models/book_catalog.dart';
+import '../models/pinned_note.dart';
+import '../providers/pinned_notes_provider.dart';
 import '../utils/bottom_inset.dart';
+import 'reader_screen.dart';
 
-/// Free-standing notes, not tied to any book/chapter/section — reachable
-/// from the Library screen rather than only from within a reading session
-/// (see [StorageService.getPinnedNotes] and friends). Mirrors the add/edit/
-/// delete UX already used for per-section clip notes
-/// (`_ClipsBottomSheet` in block_renderer.dart), just as a full screen
-/// instead of a bottom sheet since it isn't anchored to a reading position.
+/// Notes stay linked to their source book while collections can span books.
 class PinnedNotesScreen extends StatefulWidget {
-  const PinnedNotesScreen({super.key});
+  final String bookId;
+  const PinnedNotesScreen({super.key, this.bookId = 'paediatrics'});
 
   @override
   State<PinnedNotesScreen> createState() => _PinnedNotesScreenState();
 }
 
 class _PinnedNotesScreenState extends State<PinnedNotesScreen> {
-  late StorageService _storage;
-  late List<ClipNote> _notes;
-  final _addCtrl = TextEditingController();
-  String? _editingNoteId;
-  bool _saving = false;
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _storage = context.read<StorageService>();
-    _notes = _storage.getPinnedNotes();
-  }
+  static const _unfiled = '__unfiled__';
+  static const _newCollection = '__new_collection__';
+  String? _editingId;
+  final _editCtrl = TextEditingController();
 
   @override
   void dispose() {
-    _addCtrl.dispose();
+    _editCtrl.dispose();
     super.dispose();
   }
 
-  Future<void> _submit() async {
-    final text = _addCtrl.text.trim();
-    if (text.isEmpty || _saving) return;
-    setState(() => _saving = true);
-
-    if (_editingNoteId == null) {
-      await _storage.addPinnedNote(text);
-    } else {
-      await _storage.updatePinnedNote(_editingNoteId!, text);
+  CatalogBook? _book(String id) {
+    for (final book in kBooks) {
+      if (book.id == id) return book;
     }
-
-    _addCtrl.clear();
-    if (mounted) {
-      setState(() {
-        _saving = false;
-        _editingNoteId = null;
-        _notes = _storage.getPinnedNotes();
-      });
-    }
+    return null;
   }
 
-  void _startEditing(ClipNote note) {
+  String _bookTitle(String id) => _book(id)?.title ?? id;
+
+  void _goToNote(PinnedNote note) {
+    final book = _book(note.bookId);
+    if (book == null || !book.hasContent) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content:
+            Text('${_bookTitle(note.bookId)} content is not available yet.'),
+      ));
+      return;
+    }
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (_) => ReaderScreen(
+        bookId: note.bookId,
+        dataFile: book.dataFile,
+        initialChapterId: note.chapterId,
+        initialAnchorId: note.anchorId,
+      ),
+    ));
+  }
+
+  void _startEditing(PinnedNote note) {
     setState(() {
-      _editingNoteId = note.id;
-      _addCtrl.text = note.content;
+      _editingId = note.id;
+      _editCtrl.text = note.content;
     });
   }
 
   void _cancelEditing() {
     setState(() {
-      _editingNoteId = null;
-      _addCtrl.clear();
+      _editingId = null;
+      _editCtrl.clear();
     });
   }
 
-  Future<void> _delete(String id) async {
-    await _storage.deletePinnedNote(id);
-    if (mounted) {
-      setState(() {
-        _notes.removeWhere((n) => n.id == id);
-        if (_editingNoteId == id) {
-          _editingNoteId = null;
-          _addCtrl.clear();
-        }
-      });
+  Future<void> _saveEdit(PinnedNotesProvider notes) async {
+    final id = _editingId;
+    final content = _editCtrl.text.trim();
+    if (id == null || content.isEmpty) return;
+    await notes.update(id, content);
+    if (mounted) _cancelEditing();
+  }
+
+  Future<String?> _askName({String? current}) async {
+    var value = current ?? '';
+    final name = await showDialog<String>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(current == null ? 'New collection' : 'Rename collection'),
+        content: TextFormField(
+          initialValue: current,
+          onChanged: (text) => value = text,
+          autofocus: true,
+          maxLength: 60,
+          textCapitalization: TextCapitalization.words,
+          decoration: const InputDecoration(
+            labelText: 'Collection name',
+            hintText: 'e.g. Paediatrics exam',
+          ),
+          onFieldSubmitted: (text) {
+            if (text.trim().isNotEmpty) {
+              Navigator.pop(dialogContext, text.trim());
+            }
+          },
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: const Text('Cancel'),
+          ),
+          FilledButton(
+            onPressed: () {
+              final trimmed = value.trim();
+              if (trimmed.isNotEmpty) Navigator.pop(dialogContext, trimmed);
+            },
+            child: Text(current == null ? 'Create' : 'Save'),
+          ),
+        ],
+      ),
+    );
+    return name;
+  }
+
+  Future<NoteCollection?> _createCollection(PinnedNotesProvider notes) async {
+    final name = await _askName();
+    if (name == null || !mounted) return null;
+    return notes.createCollection(name);
+  }
+
+  Future<void> _chooseCollection(
+      PinnedNote note, PinnedNotesProvider notes) async {
+    final choice = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      builder: (sheetContext) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          children: [
+            const ListTile(title: Text('Study collection')),
+            ListTile(
+              leading: const Icon(Icons.folder_off_outlined),
+              title: const Text('Unfiled'),
+              trailing:
+                  note.collectionId == null ? const Icon(Icons.check) : null,
+              onTap: () => Navigator.pop(sheetContext, _unfiled),
+            ),
+            for (final collection in notes.collections)
+              ListTile(
+                leading: const Icon(Icons.folder_outlined),
+                title: Text(collection.name),
+                trailing: note.collectionId == collection.id
+                    ? const Icon(Icons.check)
+                    : null,
+                onTap: () => Navigator.pop(sheetContext, collection.id),
+              ),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.create_new_folder_outlined),
+              title: const Text('Create new collection'),
+              onTap: () => Navigator.pop(sheetContext, _newCollection),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (choice == null || !mounted) return;
+    if (choice == _newCollection) {
+      final collection = await _createCollection(notes);
+      if (collection != null) {
+        await notes.assignToCollection(note.id, collection.id);
+      }
+    } else {
+      await notes.assignToCollection(
+          note.id, choice == _unfiled ? null : choice);
     }
+  }
+
+  Future<void> _collectionAction(String action, NoteCollection collection,
+      PinnedNotesProvider notes) async {
+    if (action == 'rename') {
+      final name = await _askName(current: collection.name);
+      if (name == null || !mounted) return;
+      try {
+        await notes.renameCollection(collection.id, name);
+      } on ArgumentError {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('A collection with that name already exists.'),
+          ));
+        }
+      }
+    } else if (action == 'delete') {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: Text('Delete ${collection.name}?'),
+          content: const Text(
+            'The collection will be removed. Its notes will remain under their books.',
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext, false),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext, true),
+              child: const Text('Delete'),
+            ),
+          ],
+        ),
+      );
+      if (confirmed == true) await notes.deleteCollection(collection.id);
+    }
+  }
+
+  Widget _noteTile(PinnedNote note, PinnedNotesProvider notes) {
+    if (_editingId == note.id) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            TextField(
+              controller: _editCtrl,
+              autofocus: true,
+              minLines: 2,
+              maxLines: 5,
+              decoration: const InputDecoration(border: OutlineInputBorder()),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                    onPressed: _cancelEditing, child: const Text('Cancel')),
+                FilledButton(
+                  onPressed: () => _saveEdit(notes),
+                  child: const Text('Save'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    }
+    final collectionName = notes.collections
+        .where((collection) => collection.id == note.collectionId)
+        .map((collection) => collection.name)
+        .firstOrNull;
+    final subtitle = [
+      _bookTitle(note.bookId),
+      note.chapterId.replaceAll('-', ' '),
+      if (collectionName != null) collectionName,
+    ].join(' · ');
+    return ListTile(
+      contentPadding: const EdgeInsets.only(left: 20, right: 8),
+      title: Text(note.content, maxLines: 3, overflow: TextOverflow.ellipsis),
+      subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+      onTap: () => _goToNote(note),
+      trailing: PopupMenuButton<String>(
+        tooltip: 'Note actions',
+        onSelected: (action) {
+          switch (action) {
+            case 'open':
+              _goToNote(note);
+            case 'edit':
+              _startEditing(note);
+            case 'collection':
+              _chooseCollection(note, notes);
+            case 'delete':
+              notes.delete(note.id);
+              if (_editingId == note.id) _cancelEditing();
+          }
+        },
+        itemBuilder: (_) => const [
+          PopupMenuItem(value: 'open', child: Text('Jump to note')),
+          PopupMenuItem(value: 'edit', child: Text('Edit note')),
+          PopupMenuItem(value: 'collection', child: Text('Study collection')),
+          PopupMenuItem(value: 'delete', child: Text('Delete note')),
+        ],
+      ),
+    );
+  }
+
+  Widget _booksView(PinnedNotesProvider notes) {
+    if (notes.all.isEmpty) {
+      return const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Text(
+            'No pinned notes yet. Long-press a passage in a book to pin a note to that spot.',
+            textAlign: TextAlign.center,
+          ),
+        ),
+      );
+    }
+    final byBook = <String, List<PinnedNote>>{};
+    for (final note in notes.all) {
+      byBook.putIfAbsent(note.bookId, () => []).add(note);
+    }
+    final bookIds = byBook.keys.toList()
+      ..sort((a, b) => _bookTitle(a).compareTo(_bookTitle(b)));
+    return ListView(
+      padding: EdgeInsets.only(bottom: bottomViewportInset(context) + 16),
+      children: [
+        for (final id in bookIds)
+          ExpansionTile(
+            key: PageStorageKey('book-$id'),
+            initiallyExpanded: true,
+            leading: const Icon(Icons.menu_book_outlined),
+            title: Text(_bookTitle(id)),
+            subtitle: Text('${byBook[id]!.length} notes'),
+            children: [for (final note in byBook[id]!) _noteTile(note, notes)],
+          ),
+      ],
+    );
+  }
+
+  Widget _collectionsView(PinnedNotesProvider notes) {
+    final unfiled = notes.forCollection(null);
+    return ListView(
+      padding: EdgeInsets.only(bottom: bottomViewportInset(context) + 16),
+      children: [
+        if (notes.collections.isEmpty)
+          const Padding(
+            padding: EdgeInsets.all(24),
+            child: Text(
+              'Create a collection for an exam or study goal, then add notes from any book.',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        if (unfiled.isNotEmpty)
+          ExpansionTile(
+            key: const PageStorageKey('collection-unfiled'),
+            leading: const Icon(Icons.folder_off_outlined),
+            title: const Text('Unfiled'),
+            subtitle: Text('${unfiled.length} notes'),
+            children: [for (final note in unfiled) _noteTile(note, notes)],
+          ),
+        for (final collection in notes.collections)
+          ExpansionTile(
+            key: PageStorageKey('collection-${collection.id}'),
+            leading: const Icon(Icons.folder_outlined),
+            title: Text(collection.name),
+            subtitle:
+                Text('${notes.forCollection(collection.id).length} notes'),
+            trailing: PopupMenuButton<String>(
+              tooltip: 'Collection actions',
+              onSelected: (action) =>
+                  _collectionAction(action, collection, notes),
+              itemBuilder: (_) => const [
+                PopupMenuItem(value: 'rename', child: Text('Rename')),
+                PopupMenuItem(
+                    value: 'delete', child: Text('Delete collection')),
+              ],
+            ),
+            children: [
+              for (final note in notes.forCollection(collection.id))
+                _noteTile(note, notes),
+            ],
+          ),
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-    final isEditing = _editingNoteId != null;
-
-    return Scaffold(
-      appBar: AppBar(title: const Text('Pinned Notes')),
-      body: Padding(
-        padding: EdgeInsets.only(
-          bottom: bottomViewportInset(context, includeKeyboard: true),
-        ),
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  if (isEditing)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: Row(
-                        children: [
-                          Icon(Icons.edit_outlined,
-                              size: 16, color: cs.primary),
-                          const SizedBox(width: 6),
-                          Text(
-                            'Editing note',
-                            style: theme.textTheme.bodySmall?.copyWith(
-                              color: cs.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          const Spacer(),
-                          TextButton(
-                            onPressed: _cancelEditing,
-                            child: const Text('Cancel'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _addCtrl,
-                          decoration: InputDecoration(
-                            hintText: isEditing
-                                ? 'Update this note…'
-                                : 'Pin a quick note…',
-                            border: const OutlineInputBorder(),
-                            isDense: true,
-                          ),
-                          minLines: 2,
-                          maxLines: 4,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      FilledButton(
-                        onPressed: _submit,
-                        child: Text(
-                          _saving
-                              ? 'Saving…'
-                              : isEditing
-                                  ? 'Update'
-                                  : 'Save',
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const Divider(height: 1),
-            Expanded(
-              child: _notes.isEmpty
-                  ? Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(24),
-                        child: Text(
-                          'No pinned notes yet. Anything you pin here stays '
-                          'handy no matter what you\'re reading.',
-                          textAlign: TextAlign.center,
-                          style: theme.textTheme.bodyMedium?.copyWith(
-                            color: cs.onSurface.withValues(alpha: 0.55),
-                          ),
-                        ),
-                      ),
-                    )
-                  : ListView.separated(
-                      padding: const EdgeInsets.symmetric(vertical: 4),
-                      itemCount: _notes.length,
-                      separatorBuilder: (_, __) => const Divider(height: 1),
-                      itemBuilder: (context, index) {
-                        final note = _notes[index];
-                        return ListTile(
-                          title: Text(note.content,
-                              style: theme.textTheme.bodyMedium),
-                          subtitle: Text(
-                            'Pinned ${note.createdAt.toLocal()}',
-                            style: theme.textTheme.bodySmall?.copyWith(
-                              color: cs.onSurface.withValues(alpha: 0.55),
-                            ),
-                          ),
-                          trailing: Wrap(
-                            spacing: 4,
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.edit_outlined,
-                                    size: 18),
-                                onPressed: () => _startEditing(note),
-                              ),
-                              IconButton(
-                                icon: const Icon(Icons.delete_outline,
-                                    size: 18),
-                                color: cs.error,
-                                onPressed: () => _delete(note.id),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    ),
+    final notes = context.watch<PinnedNotesProvider>();
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Pinned Notes'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.create_new_folder_outlined),
+              tooltip: 'New collection',
+              onPressed: () => _createCollection(notes),
             ),
           ],
+          bottom: const TabBar(
+              tabs: [Tab(text: 'Books'), Tab(text: 'Collections')]),
         ),
+        body:
+            TabBarView(children: [_booksView(notes), _collectionsView(notes)]),
       ),
     );
   }

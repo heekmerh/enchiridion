@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:enchiridion/models/question.dart';
 import 'package:enchiridion/models/question_review.dart';
 import 'package:enchiridion/models/study_day_stats.dart';
+import 'package:enchiridion/models/pinned_note.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
 void main() {
@@ -16,6 +17,46 @@ void main() {
   });
 
   group('StorageService', () {
+    test('pinned notes retain book anchors across a cross-book collection',
+        () async {
+      final paediatric = await storageService.addPinnedNote(
+        bookId: 'paediatrics',
+        chapterId: 'overview',
+        anchorId: 'section/subsection/group/1',
+        side: NoteSide.left,
+        content: 'Fever approach',
+      );
+      final surgery = await storageService.addPinnedNote(
+        bookId: 'surgery',
+        chapterId: 'wounds',
+        anchorId: 'wounds/assessment/group/2',
+        side: NoteSide.right,
+        content: 'Wound assessment',
+      );
+      final collection =
+          await storageService.createNoteCollection('Final exam');
+      await storageService.assignPinnedNoteToCollection(
+          paediatric.id, collection.id);
+      await storageService.assignPinnedNoteToCollection(
+          surgery.id, collection.id);
+
+      final notes = storageService.getPinnedNotes();
+      expect(notes.where((note) => note.collectionId == collection.id),
+          hasLength(2));
+      expect(notes.firstWhere((note) => note.id == surgery.id).bookId,
+          'surgery');
+      expect(notes.firstWhere((note) => note.id == paediatric.id).anchorId,
+          'section/subsection/group/1');
+
+      await storageService.renameNoteCollection(collection.id, 'Clinical exam');
+      expect(storageService.getNoteCollections().single.name, 'Clinical exam');
+      await storageService.deleteNoteCollection(collection.id);
+      expect(storageService.getNoteCollections(), isEmpty);
+      expect(storageService.getPinnedNotes(), hasLength(2));
+      expect(storageService.getPinnedNotes().every((n) => n.collectionId == null),
+          isTrue);
+    });
+
     test('chapter notes save, reopen, edit, and clear', () async {
       expect(storageService.getNote('book', 'chapter-1'), isNull);
 

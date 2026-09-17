@@ -22,6 +22,7 @@ import 'package:enchiridion/services/storage_service.dart';
 import 'package:enchiridion/providers/settings_provider.dart';
 import 'package:enchiridion/providers/bookmark_provider.dart';
 import 'package:enchiridion/providers/book_provider.dart';
+import 'package:enchiridion/providers/pinned_notes_provider.dart';
 import 'package:enchiridion/models/book.dart';
 import 'package:enchiridion/models/chapter.dart';
 import 'package:enchiridion/widgets/reader/reader_content.dart';
@@ -49,6 +50,7 @@ Widget _buildTestApp({
       Provider<StorageService>.value(value: storage),
       ChangeNotifierProvider(create: (_) => SettingsProvider(storage)),
       ChangeNotifierProvider(create: (_) => BookmarkProvider(storage)),
+      ChangeNotifierProvider(create: (_) => PinnedNotesProvider(storage)),
     ],
     child: MaterialApp(
       home: ReaderScreen(

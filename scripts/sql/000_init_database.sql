@@ -59,6 +59,12 @@ create table if not exists public.profiles (
   authorized_devices  jsonb       default '[]'::jsonb,
   last_device_switch  timestamptz,
 
+  -- Exempts an account from the one-account-per-device gate entirely (see
+  -- AuthProvider._checkDeviceGate). Not exposed anywhere in the app UI —
+  -- only ever set by hand in SQL, for QA/test accounts that need to sign in
+  -- from many devices/emulators. Defaults false for every real user.
+  device_binding_exempt boolean   default false,
+
   created_at          timestamptz not null default timezone('utc', now())
 );
 
@@ -72,6 +78,7 @@ alter table public.profiles
   add column if not exists bound_at           timestamptz,
   add column if not exists authorized_devices jsonb       default '[]'::jsonb,
   add column if not exists last_device_switch timestamptz,
+  add column if not exists device_binding_exempt boolean  default false,
   add column if not exists created_at         timestamptz not null default timezone('utc', now());
 
 create index if not exists idx_profiles_email_confirmed    on public.profiles(email_confirmed);
@@ -591,12 +598,18 @@ begin
 
   -- The handle_new_user trigger already created the profile; this makes the
   -- seed self-sufficient even if that trigger is ever removed.
-  insert into public.profiles (id, display_name, role, email_confirmed)
-  values (v_user_id, v_name, 'clinician', true)
+  --
+  -- device_binding_exempt = true: this is the shared QA/test account, so it
+  -- is deliberately exempt from the one-account-per-device gate (see the
+  -- column comment above) — otherwise testing on more than one device/
+  -- emulator would trip the 30-day device-switch cooldown.
+  insert into public.profiles (id, display_name, role, email_confirmed, device_binding_exempt)
+  values (v_user_id, v_name, 'clinician', true, true)
   on conflict (id) do update
-    set display_name    = coalesce(nullif(public.profiles.display_name, ''), excluded.display_name),
-        role            = 'clinician',
-        email_confirmed = true;
+    set display_name          = coalesce(nullif(public.profiles.display_name, ''), excluded.display_name),
+        role                  = 'clinician',
+        email_confirmed       = true,
+        device_binding_exempt = true;
 
   -- '*' is the wildcard AccessService checks for a full subscription: it
   -- unlocks all 8 books plus the standalone exam-prep module in one row.

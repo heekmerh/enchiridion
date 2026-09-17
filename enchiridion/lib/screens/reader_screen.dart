@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import '../providers/book_provider.dart';
+import '../models/chapter.dart';
 import '../providers/settings_provider.dart';
 import '../providers/bookmark_provider.dart';
 import '../services/storage_service.dart';
@@ -21,6 +23,14 @@ class ReaderScreen extends StatelessWidget {
   final String bookId;
   final String dataFile;
 
+  /// When set, the reader jumps to this chapter on open instead of the
+  /// last-read one — used when navigating in from a margin note.
+  final String? initialChapterId;
+
+  /// When set (with [initialChapterId]), scrolls to this block once the
+  /// target chapter has laid out — see `PinnedNotesScreen`.
+  final String? initialAnchorId;
+
   /// For widget tests only. When non-null, ReaderScreen skips asset loading
   /// and uses this pre-built provider directly.
   @visibleForTesting
@@ -30,6 +40,8 @@ class ReaderScreen extends StatelessWidget {
     super.key,
     this.bookId = 'paediatrics',
     this.dataFile = 'assets/data/paediatrics.json',
+    this.initialChapterId,
+    this.initialAnchorId,
     this.testBookProvider,
   });
 
@@ -38,20 +50,34 @@ class ReaderScreen extends StatelessWidget {
     if (testBookProvider != null) {
       return ChangeNotifierProvider<BookProvider>.value(
         value: testBookProvider!,
-        child: _ReaderShell(bookId: bookId),
+        child: _ReaderShell(
+          bookId: bookId,
+          initialChapterId: initialChapterId,
+          initialAnchorId: initialAnchorId,
+        ),
       );
     }
     final storageService = context.read<StorageService>();
     return ChangeNotifierProvider<BookProvider>(
       create: (_) => BookProvider(storageService, dataFile),
-      child: _ReaderShell(bookId: bookId),
+      child: _ReaderShell(
+        bookId: bookId,
+        initialChapterId: initialChapterId,
+        initialAnchorId: initialAnchorId,
+      ),
     );
   }
 }
 
 class _ReaderShell extends StatefulWidget {
   final String bookId;
-  const _ReaderShell({required this.bookId});
+  final String? initialChapterId;
+  final String? initialAnchorId;
+  const _ReaderShell({
+    required this.bookId,
+    this.initialChapterId,
+    this.initialAnchorId,
+  });
 
   @override
   State<_ReaderShell> createState() => _ReaderShellState();
@@ -61,18 +87,24 @@ class _ReaderShellState extends State<_ReaderShell> {
   bool _isMenuOpen = false;
   bool _isSettingsOpen = false;
   bool _hasAccess = false;
-  final ScrollController _scrollController = ScrollController();
+  final AutoScrollController _scrollController = AutoScrollController();
   int _drawerOpenCount = 0;
 
   // D-11: Active-section scroll tracking state
   String? _currentSectionId;
   Map<String, GlobalKey> _sectionKeys = {};
   Map<String, GlobalKey> _subsectionKeys = {};
-  Map<String, double> _sectionOffsets = {};
+
+  // Margin-note deep link: jump to a specific chapter/block on open.
+  Map<String, GlobalKey> _anchorKeys = {};
+  Map<String, int> _itemIndexes = {};
+  bool _appliedInitialChapter = false;
+  String? _pendingAnchorId;
 
   @override
   void initState() {
     super.initState();
+    _pendingAnchorId = widget.initialAnchorId;
     _scrollController.addListener(_onScroll);
     _checkAccess();
   }
@@ -94,19 +126,35 @@ class _ReaderShellState extends State<_ReaderShell> {
     _updateActiveSection();
   }
 
-  // D-11: Determine the section currently in view by comparing scroll offset
-  // against known anchor offsets. The section whose offset is closest to but
-  // not past the current scroll position (with a 100 px lookahead) is active.
+  // Lazy children have no stable offsets until built. Use the visible indexed
+  // child instead, then map its index back to the enclosing section.
   void _updateActiveSection() {
-    if (_sectionOffsets.isEmpty) return;
-    final scrollOffset =
-        _scrollController.hasClients ? _scrollController.offset : 0.0;
+    if (!_scrollController.hasClients || _itemIndexes.isEmpty) return;
+    int? visibleIndex;
+    double nearestBelow = double.infinity;
+    for (final entry in _scrollController.tagMap.entries) {
+      final renderObject = entry.value.context.findRenderObject();
+      if (renderObject is! RenderBox || !renderObject.hasSize) continue;
+      final top = renderObject.localToGlobal(Offset.zero).dy;
+      final bottom = top + renderObject.size.height;
+      if (top <= 100 && bottom > 100) {
+        visibleIndex = entry.key;
+        break;
+      }
+      if (top > 100 && top < nearestBelow) {
+        nearestBelow = top;
+        visibleIndex = entry.key;
+      }
+    }
+    if (visibleIndex == null) return;
     String? activeId;
-    double bestOffset = double.negativeInfinity;
-    for (final entry in _sectionOffsets.entries) {
-      if (entry.value <= scrollOffset + 100 && entry.value > bestOffset) {
-        bestOffset = entry.value;
-        activeId = entry.key;
+    var activeIndex = -1;
+    for (final section in context.read<BookProvider>().currentChapter?.sections ??
+        const <ChapterSection>[]) {
+      final index = _itemIndexes[section.id];
+      if (index != null && index <= visibleIndex && index > activeIndex) {
+        activeIndex = index;
+        activeId = section.id;
       }
     }
     if (activeId != _currentSectionId) {
@@ -123,15 +171,40 @@ class _ReaderShellState extends State<_ReaderShell> {
     _subsectionKeys = subsectionKeys;
   }
 
-  // D-11: Receives the offset map after BlockRenderer measures anchor positions.
-  void _onOffsetsReady(Map<String, double> offsets) {
-    setState(() => _sectionOffsets = offsets);
+  void _onItemIndexesReady(Map<String, int> indexes) {
+    _itemIndexes = indexes;
+  }
+
+  // Margin notes: receives per-block keys once BlockRenderer builds them for
+  // the current chapter, and scrolls to a pending target anchor if one is
+  // waiting (set by opening the reader from a note in PinnedNotesScreen).
+  void _onAnchorKeysReady(Map<String, GlobalKey> keys) {
+    _anchorKeys = keys;
+    final target = _pendingAnchorId;
+    if (target == null || !_anchorKeys.containsKey(target)) return;
+    _pendingAnchorId = null;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final ctx = _anchorKeys[target]?.currentContext;
+      if (ctx != null) {
+        Scrollable.ensureVisible(
+          ctx,
+          duration: const Duration(milliseconds: 400),
+          curve: Curves.easeOut,
+          alignment: 0.3,
+        );
+      } else if (mounted && _scrollController.hasClients) {
+        final index = _itemIndexes[target];
+        if (index != null) {
+          _scrollController.scrollToIndex(index,
+              preferPosition: AutoScrollPosition.begin);
+        }
+      }
+    });
   }
 
   void _navigateToChapter(String chapterId) {
     context.read<BookProvider>().navigateToChapter(chapterId);
     setState(() {
-      _sectionOffsets = {};
       _currentSectionId = null;
       // Drawer stays open — user can pick a section or tap the content to close
     });
@@ -154,6 +227,12 @@ class _ReaderShellState extends State<_ReaderShell> {
         curve: Curves.easeOut,
         alignment: 0.0,
       );
+    } else {
+      final index = _itemIndexes[subsectionId] ?? _itemIndexes[sectionId];
+      if (index != null && _scrollController.hasClients) {
+        _scrollController.scrollToIndex(index,
+            preferPosition: AutoScrollPosition.begin);
+      }
     }
   }
 
@@ -213,6 +292,14 @@ class _ReaderShellState extends State<_ReaderShell> {
           );
         }
 
+        if (!_appliedInitialChapter && widget.initialChapterId != null) {
+          _appliedInitialChapter = true;
+          final target = widget.initialChapterId!;
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) bookProvider.navigateToChapter(target);
+          });
+        }
+
         final chapter = bookProvider.currentChapter;
         final chapterId = bookProvider.currentChapterId;
 
@@ -243,20 +330,21 @@ class _ReaderShellState extends State<_ReaderShell> {
                           }),
                           onNotesPressed: () => _showNotesSheet(chapterId),
                         ),
-                        SliverToBoxAdapter(
-                          child: _hasAccess ||
+                        _hasAccess ||
                                   bookProvider.currentIndex < kFreeChapterCount
                               ? ReaderContent(
                                   chapter: chapter,
                                   bookId: widget.bookId,
+                                  asSliver: true,
+                                  autoScrollController: _scrollController,
+                                  onItemIndexesReady: _onItemIndexesReady,
                                   onKeysReady: _onKeysReady,
-                                  onOffsetsReady: _onOffsetsReady,
+                                  onAnchorKeysReady: _onAnchorKeysReady,
                                 )
-                              : _LockedChapterOverlay(
+                              : SliverToBoxAdapter(child: _LockedChapterOverlay(
                                   bookId: widget.bookId,
                                   chapter: chapter,
-                                ),
-                        ),
+                                )),
                         SliverToBoxAdapter(
                           child: SizedBox(height: 96 + safeBottomInset),
                         ),

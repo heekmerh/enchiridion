@@ -108,7 +108,9 @@ class AuthProvider with ChangeNotifier {
       _deviceFingerprint = fingerprint;
       final profile = await AuthService.getProfile();
 
-      if (profile == null || profile['device_id'] == null) {
+      if (profile != null && AuthService.isDeviceBindingExempt(profile)) {
+        _deviceGateStatus = DeviceGateStatus.boundToThisDevice;
+      } else if (profile == null || profile['device_id'] == null) {
         _deviceGateStatus = DeviceGateStatus.needsFirstBind;
       } else if (AuthService.matchesAuthorizedDevice(profile, fingerprint)) {
         _deviceGateStatus = DeviceGateStatus.boundToThisDevice;

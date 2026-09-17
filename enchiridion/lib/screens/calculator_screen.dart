@@ -108,7 +108,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
               _isFavorite ? Icons.favorite : Icons.favorite_border,
               color: _isFavorite ? Colors.pink : null,
             ),
-            tooltip: 'Save to favorites',
+            tooltip: _isFavorite ? 'Remove from favorites' : 'Add to favorites',
             onPressed: _toggleFavorite,
           ),
         ],

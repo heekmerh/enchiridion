@@ -6,19 +6,52 @@ import '../services/resource_topic_service.dart';
 import '../utils/bottom_inset.dart';
 import '../widgets/reader/reader_content.dart';
 
-/// OSCE, as a single screen with one scrollable tab per examination
-/// station (see kOsceTopics, sourced from scripts/content/OSCE.md) rather
-/// than the tap-into-a-list pattern the other resource categories use —
-/// OSCE stations are short enough, and numerous enough, that flicking
-/// between them as tabs fits how someone actually revises for it.
-class OsceScreen extends StatefulWidget {
+/// Browse stations first; tabs appear after opening a station.
+class OsceScreen extends StatelessWidget {
   const OsceScreen({super.key});
 
   @override
-  State<OsceScreen> createState() => _OsceScreenState();
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Scaffold(
+      appBar: AppBar(title: const Text('OSCE')),
+      body: ListView.builder(
+        padding: EdgeInsets.only(top: 8, bottom: 8 + bottomViewportInset(context)),
+        itemCount: kOsceTopics.length,
+        itemBuilder: (context, index) {
+          final topic = kOsceTopics[index];
+          return ListTile(
+            leading: CircleAvatar(
+              backgroundColor: cs.primaryContainer,
+              child: Icon(Icons.medical_services_outlined,
+                  size: 20, color: cs.onPrimaryContainer),
+            ),
+            title: Text(topic.title),
+            subtitle: Text(
+              topic.description ?? (topic.outline?.join(' • ') ?? ''),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
+              builder: (_) => _OsceDetailScreen(initialIndex: index),
+            )),
+          );
+        },
+      ),
+    );
+  }
 }
 
-class _OsceScreenState extends State<OsceScreen>
+class _OsceDetailScreen extends StatefulWidget {
+  final int initialIndex;
+  const _OsceDetailScreen({required this.initialIndex});
+
+  @override
+  State<_OsceDetailScreen> createState() => _OsceDetailScreenState();
+}
+
+class _OsceDetailScreenState extends State<_OsceDetailScreen>
     with SingleTickerProviderStateMixin {
   late final TabController _tabController;
   final Map<String, Chapter> _loadedChapters = {};
@@ -27,8 +60,11 @@ class _OsceScreenState extends State<OsceScreen>
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(length: kOsceTopics.length, vsync: this);
+    _tabController = TabController(
+      length: kOsceTopics.length,
+      initialIndex: widget.initialIndex,
+      vsync: this,
+    );
     for (final topic in kOsceTopics) {
       final path = topic.dataAssetPath;
       if (path == null) continue;

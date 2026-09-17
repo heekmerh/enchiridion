@@ -131,6 +131,14 @@ class AuthService {
   /// calendar month.
   static const Duration deviceSwitchCooldown = Duration(days: 30);
 
+  /// True if this account is exempt from the one-account-per-device gate
+  /// entirely (the `device_binding_exempt` column — set by hand in SQL for
+  /// shared QA/test accounts, never through app UI). Checked before anything
+  /// else in `AuthProvider._checkDeviceGate`.
+  static bool isDeviceBindingExempt(Map<String, dynamic> profile) {
+    return profile['device_binding_exempt'] == true;
+  }
+
   /// True if [fingerprint] is the account's bound device or was previously
   /// authorized as an additional device.
   static bool matchesAuthorizedDevice(

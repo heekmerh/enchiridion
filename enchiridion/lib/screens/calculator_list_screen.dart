@@ -32,7 +32,9 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
     final favIds = storage.getFavorites();
     setState(() {
       _hasAccess = access;
-      _favorites.addAll(favIds);
+      _favorites
+        ..clear()
+        ..addAll(favIds);
     });
   }
 
@@ -129,20 +131,22 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
           : isFavorite
               ? const Icon(Icons.favorite, size: 18, color: Colors.pink)
               : null,
-      onTap: () {
+      onTap: () async {
         if (locked) {
-          Navigator.push(
+          await Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const UnlockScreen()),
           );
+          if (mounted) await _loadData();
           return;
         }
-        Navigator.push(
+        await Navigator.push(
           context,
           MaterialPageRoute(
             builder: (_) => CalculatorScreen(calculatorId: calc.id),
           ),
         );
+        if (mounted) await _loadData();
       },
     );
   }
