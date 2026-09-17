@@ -18,7 +18,13 @@ import 'question_screen.dart';
 import 'unlock_screen.dart';
 
 class ExamPrepHomeScreen extends StatefulWidget {
-  const ExamPrepHomeScreen({super.key});
+  /// For widget tests only. When non-null, `_load` uses this bank instead of
+  /// loading `_repository.loadQuestions()`. Production always passes null so
+  /// the bundled asset is loaded.
+  @visibleForTesting
+  final List<Question>? testQuestions;
+
+  const ExamPrepHomeScreen({super.key, this.testQuestions});
 
   @override
   State<ExamPrepHomeScreen> createState() => _ExamPrepHomeScreenState();
@@ -45,7 +51,8 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   Future<void> _load() async {
     try {
       final storage = context.read<StorageService>();
-      final questions = await _repository.loadQuestions();
+      final questions =
+          widget.testQuestions ?? await _repository.loadQuestions();
       final hasAccess = await AccessService.instance.hasExamPrepAccess();
       final stats = StudyStatsService(storage).getTodayStats();
       final answers = storage.getAnswers(kStandaloneExamPrepScope);
