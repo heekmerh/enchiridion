@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../config/freemium_config.dart';
+import '../models/answered_question_filter.dart';
 import '../models/question.dart';
 import '../models/resource_topic.dart';
 import '../models/study_day_stats.dart';
@@ -13,6 +14,7 @@ import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
+import 'answered_questions_screen.dart';
 import 'exam_prep_question_list_screen.dart';
 import 'leaderboard_screen.dart';
 import 'question_screen.dart';
@@ -78,6 +80,19 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     final review =
         storage.getQuestionReviews(kStandaloneExamPrepScope)[question.id];
     return Object.hash(question.id, review?.attempts ?? 0);
+  }
+
+  Future<void> _openAnsweredQuestions(AnsweredQuestionFilter filter) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => AnsweredQuestionsScreen(
+          questions: _questions,
+          initialFilter: filter,
+        ),
+      ),
+    );
+    if (!mounted) return;
+    _load();
   }
 
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
@@ -170,6 +185,15 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                           _MetricPill(
                             label: 'Correct',
                             value: '${_todayStats?.correctAnswers ?? 0}',
+                          ),
+                          const SizedBox(width: 10),
+                          _MetricPill(
+                            label: 'Wrong',
+                            value:
+                                '${(_todayStats?.questionsAnswered ?? 0) - (_todayStats?.correctAnswers ?? 0)}',
+                            onTap: () => _openAnsweredQuestions(
+                              AnsweredQuestionFilter.wrong,
+                            ),
                           ),
                           const SizedBox(width: 10),
                           _MetricPill(
@@ -298,36 +322,49 @@ class _MetricPill extends StatelessWidget {
   final String label;
   final String value;
 
+  /// When set, the pill is tappable — wrapped so the tap produces a visible
+  /// ripple and exposes a button to the semantics tree.
+  final VoidCallback? onTap;
+
   const _MetricPill({
     required this.label,
     required this.value,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: theme.colorScheme.surface,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: theme.textTheme.labelMedium,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              value,
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+      child: Material(
+        color: theme.colorScheme.surface,
+        borderRadius: BorderRadius.circular(16),
+        child: Semantics(
+          button: onTap != null,
+          label: '$label $value',
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(16),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: theme.textTheme.labelMedium,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    value,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
