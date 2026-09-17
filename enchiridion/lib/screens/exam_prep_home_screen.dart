@@ -16,7 +16,14 @@ import 'question_screen.dart';
 import 'unlock_screen.dart';
 
 class ExamPrepHomeScreen extends StatefulWidget {
-  const ExamPrepHomeScreen({super.key});
+  /// For widget tests only. When non-null, the home screen skips
+  /// `ExamPrepRepository.loadQuestions()` (which hangs in the widget-test
+  /// environment — see `ReaderScreen.testBookProvider` for the same
+  /// constraint on `rootBundle`) and uses this list directly.
+  @visibleForTesting
+  final List<Question>? testQuestions;
+
+  const ExamPrepHomeScreen({super.key, this.testQuestions});
 
   @override
   State<ExamPrepHomeScreen> createState() => _ExamPrepHomeScreenState();
@@ -42,7 +49,8 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   Future<void> _load() async {
     try {
       final storage = context.read<StorageService>();
-      final questions = await _repository.loadQuestions();
+      final questions =
+          widget.testQuestions ?? await _repository.loadQuestions();
       final hasAccess = await AccessService.instance.hasExamPrepAccess();
       final answers = storage.getAnswers(kStandaloneExamPrepScope);
       final nextQuestion = await NextQuestionSelector(storage)
