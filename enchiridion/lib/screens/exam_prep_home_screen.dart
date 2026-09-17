@@ -100,6 +100,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     // it stays mounted beneath a pushed QuestionScreen/QuickCheckCard route.
     final statsProvider = context.watch<StudyStatsProvider>();
     final today = statsProvider.today;
+    final totals = statsProvider.totals;
 
     return Scaffold(
       appBar: AppBar(
@@ -136,24 +137,46 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                   ),
                   children: [
                     _ExamMetricCard(
-                      title: 'Daily Performance',
-                      subtitle:
-                          'Tracked locally and synced to Supabase when available.',
-                      child: Row(
+                      title: 'Performance',
+                      subtitle: 'Tracked on this device — always accurate '
+                          'and up to date, online or offline.',
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _MetricPill(
-                            label: 'Answered',
-                            value: '${today.questionsAnswered}',
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Answered',
+                                value: '${totals.questionsAnswered}',
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Correct',
+                                value: '${totals.correctAnswers}',
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Correct',
-                            value: '${today.correctAnswers}',
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Wrong',
+                                value: '${totals.wrongAnswers}',
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Points',
+                                value: '${totals.performancePoints}',
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Points',
-                            value: '${today.performancePoints}',
+                          const SizedBox(height: 10),
+                          Text(
+                            'Today: ${today.questionsAnswered} answered, '
+                            '${today.performancePoints} points',
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.onSurface.withValues(alpha: 0.64),
+                            ),
                           ),
                         ],
                       ),
