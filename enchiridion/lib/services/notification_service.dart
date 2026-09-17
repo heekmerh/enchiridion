@@ -23,7 +23,7 @@ class NotificationTapPayload {
 
 /// Schedules the background half of spaced repetition.
 ///
-/// A wrong answer's 3-hour rebound (see [QuestionReview.relearnInterval])
+/// A wrong answer's next-day rebound (see [QuestionReview.relearnInterval])
 /// needs to reach the user whether or not the app is open, so every time a
 /// review is updated, [scheduleFollowUp] books (or re-books) exactly one
 /// local notification for that question's new due time. Tapping it is

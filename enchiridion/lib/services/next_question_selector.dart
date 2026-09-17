@@ -20,11 +20,12 @@ import 'storage_service.dart';
 ///   2. **Due reviews and unseen questions, alternating** — so a large review
 ///      backlog cannot starve new material, and vice versa.
 ///   3. Whichever of those buckets is non-empty.
-///   4. Least recently seen — a graceful floor for a bank too small to
-///      satisfy the cooldown (notably the ten free-tier questions).
+///   4. Least recently seen — a floor for a bank too small to satisfy the
+///      cooldown (notably the ten free-tier questions). It may yield nothing
+///      when every candidate is still cooling off after a miss.
 class NextQuestionSelector {
-  /// A question is not re-served within this window regardless of its
-  /// schedule, so a rebound never lands in the same sitting as the miss.
+  /// Short cross-surface spacing for eligible questions. The lapse window,
+  /// rather than this cooldown, keeps a miss out of the same sitting.
   static const Duration cooldown = Duration(minutes: 90);
 
   final StorageService _storage;
@@ -95,7 +96,7 @@ class NextQuestionSelector {
     // Nothing is due and nothing is new, or everything eligible is still in
     // cooldown. Serving the least recently seen question is both a sensible
     // fallback and strictly better than the uniform random this replaced.
-    pick ??= _leastRecentlySeen(unlocked, reviews, log);
+    pick ??= _leastRecentlySeen(unlocked, reviews, log, moment);
     if (pick == null) return null;
 
     await _storage.saveServeLog(scope, log.record(pick.id));
@@ -120,13 +121,13 @@ class NextQuestionSelector {
     return null;
   }
 
-  /// Prefers questions still in rotation; only falls back to retired ones when
-  /// the entire unlocked bank has graduated, so that an explicit "practise one
-  /// now" tap always has something to show.
+  /// Prefers questions still in rotation; falls back to retired ones when
+  /// the unlocked bank has graduated. An open lapse window is never bypassed.
   Question? _leastRecentlySeen(
     List<Question> unlocked,
     Map<String, QuestionReview> reviews,
     ServeLog log,
+    DateTime now,
   ) {
     Question? best;
     Question? retiredBest;
@@ -153,6 +154,11 @@ class NextQuestionSelector {
 
     for (final question in unlocked) {
       final review = reviews[question.id];
+      if (review != null &&
+          review.lastCorrect == false &&
+          review.dueAt.isAfter(now)) {
+        continue;
+      }
       if (review?.retired ?? false) {
         if (retiredBest == null || prefer(question, retiredBest)) {
           retiredBest = question;
