@@ -175,30 +175,49 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                       title: 'Daily Performance',
                       subtitle:
                           'Tracked locally and synced to Supabase when available.',
-                      child: Row(
+                      child: Column(
                         children: [
-                          _MetricPill(
-                            label: 'Answered',
-                            value: '${_todayStats?.questionsAnswered ?? 0}',
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Answered',
+                                value:
+                                    '${_todayStats?.questionsAnswered ?? 0}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.answered,
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Correct',
+                                value: '${_todayStats?.correctAnswers ?? 0}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.correct,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Correct',
-                            value: '${_todayStats?.correctAnswers ?? 0}',
-                          ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Wrong',
-                            value:
-                                '${(_todayStats?.questionsAnswered ?? 0) - (_todayStats?.correctAnswers ?? 0)}',
-                            onTap: () => _openAnsweredQuestions(
-                              AnsweredQuestionFilter.wrong,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Points',
-                            value: '${_todayStats?.performancePoints ?? 0}',
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Wrong',
+                                value:
+                                    '${(_todayStats?.questionsAnswered ?? 0) - (_todayStats?.correctAnswers ?? 0)}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.wrong,
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Points',
+                                value:
+                                    '${_todayStats?.performancePoints ?? 0}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.points,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),

@@ -8,6 +8,15 @@ import '../models/resource_topic.dart';
 import '../services/storage_service.dart';
 import 'question_screen.dart';
 
+/// Points a first correct answer is worth.
+///
+/// Mirrors the value `StudyStatsService.recordAnswer` already applies.
+/// Duplicated here — rather than imported — because constraint 1 of this
+/// plan forbids editing `study_stats_service.dart`, which sibling batch
+/// item 260917-ndu owns; keep the two in sync if that item changes the
+/// award value.
+const int kCorrectAnswerPoints = 10;
+
 /// Browses the questions the user has already answered in Exam Prep,
 /// filtered by [AnsweredQuestionFilter].
 ///
@@ -34,9 +43,22 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
   final Map<String, UserAnswer> _answers = {};
   Map<String, QuestionReview> _reviews = {};
 
+  /// Drives both the segmented control and the row filter. Seeded from
+  /// [AnsweredQuestionsScreen.initialFilter], but the segmented control only
+  /// offers answered/correct/wrong — points and correct describe the same
+  /// set (see [AnsweredQuestionFilter.matches]), so an initial points filter
+  /// starts on the correct segment. The app-bar heading is not driven by
+  /// this field: it stays fixed to the filter the screen was opened with, so
+  /// switching segments doesn't relabel the page out from under the tile the
+  /// user tapped.
+  late AnsweredQuestionFilter _activeFilter;
+
   @override
   void initState() {
     super.initState();
+    _activeFilter = widget.initialFilter == AnsweredQuestionFilter.points
+        ? AnsweredQuestionFilter.correct
+        : widget.initialFilter;
     final storage = context.read<StorageService>();
     _answers.addAll(storage.getAnswers(kStandaloneExamPrepScope));
     _reviews = storage.getQuestionReviews(kStandaloneExamPrepScope);
@@ -61,12 +83,25 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
   List<Question> get _rows {
     final rows = widget.questions.where((question) {
       final answer = _answers[question.id];
-      return answer != null && widget.initialFilter.matches(answer);
+      return answer != null && _activeFilter.matches(answer);
     }).toList()
       ..sort((a, b) =>
           _answers[b.id]!.answeredAt.compareTo(_answers[a.id]!.answeredAt));
     return rows;
   }
+
+  /// All-time counts across every question the user has ever answered in
+  /// this bank — independent of the active segment. These are the user's
+  /// whole answer history, not "today", so they will legitimately disagree
+  /// with the dashboard's daily tiles; the summary line says so explicitly.
+  int get _totalAnsweredCount =>
+      widget.questions.where((q) => _answers.containsKey(q.id)).length;
+
+  int get _totalCorrectCount => widget.questions
+      .where((q) => _answers[q.id]?.isCorrect == true)
+      .length;
+
+  int get _totalWrongCount => _totalAnsweredCount - _totalCorrectCount;
 
   void _openQuestion(Question question) {
     final answer = _answers[question.id]!;
@@ -101,45 +136,98 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(widget.initialFilter.title)),
-      body: rows.isEmpty
-          ? Center(
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Text(
-                  'No questions in this list yet.',
-                  textAlign: TextAlign.center,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: cs.onSurface.withValues(alpha: 0.6),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'All time: $_totalAnsweredCount answered, '
+                  '$_totalCorrectCount correct, $_totalWrongCount wrong',
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: cs.onSurface.withValues(alpha: 0.7),
                   ),
                 ),
-              ),
-            )
-          : ListView.separated(
-              itemCount: rows.length,
-              separatorBuilder: (_, __) => const Divider(height: 1),
-              itemBuilder: (context, index) {
-                final question = rows[index];
-                final answer = _answers[question.id]!;
-                return ListTile(
-                  leading: CircleAvatar(
-                    radius: 14,
-                    backgroundColor: answer.isCorrect
-                        ? Colors.green.withValues(alpha: 0.14)
-                        : Colors.red.withValues(alpha: 0.14),
-                    child: Icon(
-                      answer.isCorrect ? Icons.check : Icons.close,
-                      size: 14,
-                      color: answer.isCorrect ? Colors.green : Colors.red,
+                if (widget.initialFilter == AnsweredQuestionFilter.points) ...[
+                  const SizedBox(height: 4),
+                  Text(
+                    'A first correct answer is worth $kCorrectAnswerPoints '
+                    'points.',
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: cs.onSurface.withValues(alpha: 0.7),
                     ),
                   ),
-                  title: Text(question.previewText()),
-                  trailing: answer.isCorrect
-                      ? const Icon(Icons.chevron_right)
-                      : const Icon(Icons.replay),
-                  onTap: () => _openQuestion(question),
-                );
-              },
+                ],
+                const SizedBox(height: 12),
+                SegmentedButton<AnsweredQuestionFilter>(
+                  segments: const [
+                    ButtonSegment(
+                      value: AnsweredQuestionFilter.answered,
+                      label: Text('Answered'),
+                    ),
+                    ButtonSegment(
+                      value: AnsweredQuestionFilter.correct,
+                      label: Text('Correct'),
+                    ),
+                    ButtonSegment(
+                      value: AnsweredQuestionFilter.wrong,
+                      label: Text('Wrong'),
+                    ),
+                  ],
+                  selected: {_activeFilter},
+                  onSelectionChanged: (selection) {
+                    setState(() => _activeFilter = selection.first);
+                  },
+                ),
+              ],
             ),
+          ),
+          Expanded(
+            child: rows.isEmpty
+                ? Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Text(
+                        'No questions in this list yet.',
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: cs.onSurface.withValues(alpha: 0.6),
+                        ),
+                      ),
+                    ),
+                  )
+                : ListView.separated(
+                    itemCount: rows.length,
+                    separatorBuilder: (_, __) => const Divider(height: 1),
+                    itemBuilder: (context, index) {
+                      final question = rows[index];
+                      final answer = _answers[question.id]!;
+                      return ListTile(
+                        leading: CircleAvatar(
+                          radius: 14,
+                          backgroundColor: answer.isCorrect
+                              ? Colors.green.withValues(alpha: 0.14)
+                              : Colors.red.withValues(alpha: 0.14),
+                          child: Icon(
+                            answer.isCorrect ? Icons.check : Icons.close,
+                            size: 14,
+                            color:
+                                answer.isCorrect ? Colors.green : Colors.red,
+                          ),
+                        ),
+                        title: Text(question.previewText()),
+                        trailing: answer.isCorrect
+                            ? const Icon(Icons.chevron_right)
+                            : const Icon(Icons.replay),
+                        onTap: () => _openQuestion(question),
+                      );
+                    },
+                  ),
+          ),
+        ],
+      ),
     );
   }
 }
