@@ -4,14 +4,11 @@ import 'package:provider/provider.dart';
 import '../config/freemium_config.dart';
 import '../models/question.dart';
 import '../models/resource_topic.dart';
-import '../models/study_day_stats.dart';
+import '../providers/study_stats_provider.dart';
 import '../services/access_service.dart';
 import '../services/exam_prep_repository.dart';
 import '../services/next_question_selector.dart';
-import '../services/notification_service.dart';
-import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
-import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
 import 'exam_prep_question_list_screen.dart';
 import 'leaderboard_screen.dart';
@@ -30,7 +27,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   final Map<String, UserAnswer> _answers = {};
 
   List<Question> _questions = [];
-  StudyDayStats? _todayStats;
   Question? _randomQuestion;
   int _randomQuestionOptionSeed = 0;
   bool _loading = true;
@@ -48,7 +44,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
       final storage = context.read<StorageService>();
       final questions = await _repository.loadQuestions();
       final hasAccess = await AccessService.instance.hasExamPrepAccess();
-      final stats = StudyStatsService(storage).getTodayStats();
       final answers = storage.getAnswers(kStandaloneExamPrepScope);
       final nextQuestion = await NextQuestionSelector(storage)
           .next(bank: questions, hasAccess: hasAccess);
@@ -56,7 +51,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
       setState(() {
         _questions = questions;
         _hasAccess = hasAccess;
-        _todayStats = stats;
         _answers
           ..clear()
           ..addAll(answers);
@@ -80,38 +74,18 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     return Object.hash(question.id, review?.attempts ?? 0);
   }
 
+  /// Called after `QuestionScreen` has already recorded the answer (storage,
+  /// stats, notification scheduling, and the remote push all happen there —
+  /// see its `_submit`). This is genuinely this screen's own job only:
+  /// tracking the answer locally for the "previously answered" state and
+  /// picking the next Quick Check question.
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
     final storage = context.read<StorageService>();
-    final review =
-        await storage.recordAnswer(kStandaloneExamPrepScope, answer);
-    Question? answeredQuestion;
-    for (final question in _questions) {
-      if (question.id == answer.questionId) {
-        answeredQuestion = question;
-        break;
-      }
-    }
-    if (answeredQuestion != null) {
-      await NotificationService.instance.scheduleFollowUp(
-        scope: kStandaloneExamPrepScope,
-        question: answeredQuestion,
-        review: review,
-      );
-    }
-    await QuestionReviewSyncService(storage)
-        .push(kStandaloneExamPrepScope, review);
-    final stats = await StudyStatsService(storage).recordAnswer(
-      isCorrect: answer.isCorrect,
-      isFirstAttempt: review.attempts == 1,
-      scope: kStandaloneExamPrepScope,
-      answeredAt: answer.answeredAt,
-    );
     final nextQuestion = await NextQuestionSelector(storage)
         .next(bank: _questions, hasAccess: _hasAccess);
     if (!mounted) return;
     setState(() {
       _answers[answer.questionId] = answer;
-      _todayStats = stats;
       _randomQuestion = nextQuestion;
       _randomQuestionOptionSeed = _optionSeedFor(storage, nextQuestion);
     });
@@ -121,6 +95,11 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    // `watch` (not `read`): every answer recorded anywhere in the app calls
+    // `notifyListeners()` synchronously, so this screen repaints even though
+    // it stays mounted beneath a pushed QuestionScreen/QuickCheckCard route.
+    final statsProvider = context.watch<StudyStatsProvider>();
+    final today = statsProvider.today;
 
     return Scaffold(
       appBar: AppBar(
@@ -164,17 +143,17 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                         children: [
                           _MetricPill(
                             label: 'Answered',
-                            value: '${_todayStats?.questionsAnswered ?? 0}',
+                            value: '${today.questionsAnswered}',
                           ),
                           const SizedBox(width: 10),
                           _MetricPill(
                             label: 'Correct',
-                            value: '${_todayStats?.correctAnswers ?? 0}',
+                            value: '${today.correctAnswers}',
                           ),
                           const SizedBox(width: 10),
                           _MetricPill(
                             label: 'Points',
-                            value: '${_todayStats?.performancePoints ?? 0}',
+                            value: '${today.performancePoints}',
                           ),
                         ],
                       ),

@@ -1,13 +1,14 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/question.dart';
+import '../providers/study_stats_provider.dart';
 import '../services/notification_service.dart';
 import '../services/question_flag_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
-import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
 
 class QuestionScreen extends StatefulWidget {
@@ -78,23 +79,41 @@ class _QuestionScreenState extends State<QuestionScreen> {
       isCorrect: _isCorrect,
       answeredAt: DateTime.now(),
     );
+
+    // Read providers before the first `await` — reading `context` after an
+    // async gap risks resolving against a widget tree that has since
+    // changed (or disposed) this element.
+    final storage = context.read<StorageService>();
+    final statsProvider =
+        widget.trackDailyStudyStats ? context.read<StudyStatsProvider>() : null;
+
+    // Local write first — it's authoritative and fast. The review must be
+    // recorded before `onAnswered` fires so callers that pick the next
+    // question (e.g. the Exam Prep home screen's Quick Check card) see this
+    // answer already reflected.
+    final review = await storage.recordAnswer(widget.bookId, answer);
+
+    // This is the sole place `StudyDayStats` are recorded for this answer —
+    // callers must not also record through their own `onAnswered` handler.
+    if (statsProvider != null) {
+      await statsProvider.recordAnswer(
+        scope: widget.bookId,
+        isCorrect: _isCorrect,
+        isFirstAttempt: review.attempts == 1,
+        answeredAt: answer.answeredAt,
+      );
+    }
+
     widget.onAnswered(answer);
 
-    final storage = context.read<StorageService>();
-    final review = await storage.recordAnswer(widget.bookId, answer);
-    await NotificationService.instance.scheduleFollowUp(
+    // Notification scheduling and the remote review push are best-effort
+    // background work — never gate the answer flow on the network.
+    unawaited(NotificationService.instance.scheduleFollowUp(
       scope: widget.bookId,
       question: widget.question,
       review: review,
-    );
-    await QuestionReviewSyncService(storage).push(widget.bookId, review);
-    if (widget.trackDailyStudyStats) {
-      final statsService = StudyStatsService(storage);
-      await statsService.recordAnswer(
-        isCorrect: _isCorrect,
-        isFirstAttempt: review.attempts == 1,
-      );
-    }
+    ));
+    unawaited(QuestionReviewSyncService(storage).push(widget.bookId, review));
   }
 
   Future<void> _flagQuestion() async {

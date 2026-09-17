@@ -65,3 +65,52 @@ class StudyDayStats {
     );
   }
 }
+
+/// Lifetime totals folded across every stored [StudyDayStats] day for a
+/// scope — the "accumulated" figures the dashboard's headline metrics show,
+/// unaffected by the local calendar date rolling over.
+class StudyStatsTotals {
+  final int questionsAnswered;
+  final int correctAnswers;
+  final int performancePoints;
+
+  const StudyStatsTotals({
+    required this.questionsAnswered,
+    required this.correctAnswers,
+    required this.performancePoints,
+  });
+
+  const StudyStatsTotals.empty()
+      : questionsAnswered = 0,
+        correctAnswers = 0,
+        performancePoints = 0;
+
+  /// `questionsAnswered - correctAnswers`, floored at zero so an
+  /// inconsistent stored day (e.g. corrupted correctAnswers > questionsAnswered)
+  /// cannot render a negative Wrong count.
+  int get wrongAnswers {
+    final wrong = questionsAnswered - correctAnswers;
+    return wrong < 0 ? 0 : wrong;
+  }
+
+  double get accuracy =>
+      questionsAnswered == 0 ? 0 : correctAnswers / questionsAnswered;
+
+  /// Folds an iterable of stored days into one totals value. An empty
+  /// iterable folds to all-zero rather than throwing.
+  factory StudyStatsTotals.fold(Iterable<StudyDayStats> days) {
+    var answered = 0;
+    var correct = 0;
+    var points = 0;
+    for (final day in days) {
+      answered += day.questionsAnswered;
+      correct += day.correctAnswers;
+      points += day.performancePoints;
+    }
+    return StudyStatsTotals(
+      questionsAnswered: answered,
+      correctAnswers: correct,
+      performancePoints: points,
+    );
+  }
+}

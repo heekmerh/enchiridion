@@ -13,6 +13,7 @@ import 'providers/settings_provider.dart';
 import 'providers/bookmark_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/pinned_notes_provider.dart';
+import 'providers/study_stats_provider.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
 import 'screens/splash_screen.dart';
@@ -77,6 +78,8 @@ class EnchiridionApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => BookmarkProvider(storageService)),
         ChangeNotifierProvider(
             create: (_) => PinnedNotesProvider(storageService)),
+        ChangeNotifierProvider(
+            create: (_) => StudyStatsProvider(storageService)),
       ],
       child: Consumer<SettingsProvider>(
         builder: (context, settingsProvider, _) {
