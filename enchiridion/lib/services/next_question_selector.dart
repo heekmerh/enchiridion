@@ -44,6 +44,11 @@ class NextQuestionSelector {
     DateTime? now,
   }) async {
     final moment = now ?? DateTime.now();
+    try {
+      await _storage.refreshFromDisk();
+    } catch (_) {
+      // A platform read failure must not prevent serving from cached state.
+    }
     final unlocked = bank
         .where((question) =>
             hasAccess || question.questionNumber <= kFreeQuestionCount)
@@ -90,7 +95,7 @@ class NextQuestionSelector {
     // Nothing is due and nothing is new, or everything eligible is still in
     // cooldown. Serving the least recently seen question is both a sensible
     // fallback and strictly better than the uniform random this replaced.
-    pick ??= _leastRecentlySeen(unlocked, reviews);
+    pick ??= _leastRecentlySeen(unlocked, reviews, log);
     if (pick == null) return null;
 
     await _storage.saveServeLog(scope, log.record(pick.id));
@@ -121,24 +126,39 @@ class NextQuestionSelector {
   Question? _leastRecentlySeen(
     List<Question> unlocked,
     Map<String, QuestionReview> reviews,
+    ServeLog log,
   ) {
     Question? best;
-    DateTime? bestSeen;
     Question? retiredBest;
-    DateTime? retiredBestSeen;
+
+    bool prefer(Question candidate, Question current) {
+      final candidateIndex = log.recent.indexOf(candidate.id);
+      final currentIndex = log.recent.indexOf(current.id);
+      // An unserved question wins; otherwise the oldest serve wins.
+      if (candidateIndex != currentIndex) {
+        if (candidateIndex == -1) return true;
+        if (currentIndex == -1) return false;
+        return candidateIndex > currentIndex;
+      }
+
+      final candidateSeen = reviews[candidate.id]?.lastSeenAt ??
+          DateTime.fromMillisecondsSinceEpoch(0);
+      final currentSeen = reviews[current.id]?.lastSeenAt ??
+          DateTime.fromMillisecondsSinceEpoch(0);
+      if (candidateSeen != currentSeen) {
+        return candidateSeen.isBefore(currentSeen);
+      }
+      return _random.nextBool();
+    }
 
     for (final question in unlocked) {
       final review = reviews[question.id];
-      final seen =
-          review?.lastSeenAt ?? DateTime.fromMillisecondsSinceEpoch(0);
       if (review?.retired ?? false) {
-        if (retiredBestSeen == null || seen.isBefore(retiredBestSeen)) {
+        if (retiredBest == null || prefer(question, retiredBest)) {
           retiredBest = question;
-          retiredBestSeen = seen;
         }
-      } else if (bestSeen == null || seen.isBefore(bestSeen)) {
+      } else if (best == null || prefer(question, best)) {
         best = question;
-        bestSeen = seen;
       }
     }
 
