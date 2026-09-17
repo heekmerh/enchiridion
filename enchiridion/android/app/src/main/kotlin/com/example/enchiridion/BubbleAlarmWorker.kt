@@ -18,6 +18,7 @@ import java.util.concurrent.atomic.AtomicReference
 import kotlin.random.Random
 
 private const val UNIQUE_WORK_NAME = "bubble_quick_check"
+private const val FIRST_RUN_DELAY_MINUTES = 3L
 private const val MIN_DELAY_MINUTES = 18L
 private const val JITTER_MINUTES = 18L // delay = MIN_DELAY_MINUTES + random(0..JITTER_MINUTES)
 
@@ -49,6 +50,17 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
         @Volatile
         var pendingLatch: CountDownLatch? = null
 
+        fun armOnAppStart(context: Context) {
+            val request = OneTimeWorkRequestBuilder<BubbleAlarmWorker>()
+                .setInitialDelay(FIRST_RUN_DELAY_MINUTES, TimeUnit.MINUTES)
+                .build()
+            WorkManager.getInstance(context).enqueueUniqueWork(
+                UNIQUE_WORK_NAME,
+                ExistingWorkPolicy.KEEP,
+                request,
+            )
+        }
+
         fun enqueueNext(context: Context) {
             val delayMinutes = MIN_DELAY_MINUTES + Random.nextLong(JITTER_MINUTES + 1)
             val request = OneTimeWorkRequestBuilder<BubbleAlarmWorker>()
@@ -77,7 +89,11 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
                 val appBundlePath =
                     FlutterInjector.instance().flutterLoader().findAppBundlePath()
                 engine.dartExecutor.executeDartEntrypoint(
-                    DartExecutor.DartEntrypoint(appBundlePath, "bubbleAlarmCallback"),
+                    DartExecutor.DartEntrypoint(
+                        appBundlePath,
+                        "package:enchiridion/services/bubble_alarm_callback.dart",
+                        "bubbleAlarmCallback",
+                    ),
                 )
             } catch (_: Exception) {
                 latch.countDown()
