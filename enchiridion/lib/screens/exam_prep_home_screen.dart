@@ -13,7 +13,6 @@ import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
-import 'exam_prep_question_list_screen.dart';
 import 'leaderboard_screen.dart';
 import 'question_screen.dart';
 import 'unlock_screen.dart';
@@ -185,23 +184,9 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                       subtitle: _hasAccess
                           ? 'All ${_questions.length} questions are unlocked.'
                           : 'Questions 1-$kFreeQuestionCount are free. Unlock for the full bank.',
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: FilledButton.icon(
-                              onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) =>
-                                      const ExamPrepQuestionListScreen(),
-                                ),
-                              ),
-                              icon: const Icon(Icons.list_alt_outlined),
-                              label: const Text('Browse Full Bank'),
-                            ),
-                          ),
-                          if (!_hasAccess) ...[
-                            const SizedBox(width: 10),
-                            OutlinedButton(
+                      child: _hasAccess
+                          ? null
+                          : OutlinedButton(
                               onPressed: () => Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (_) => const UnlockScreen(
@@ -211,9 +196,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                               ),
                               child: const Text('Unlock'),
                             ),
-                          ],
-                        ],
-                      ),
                     ),
                     const SizedBox(height: 16),
                     _ExamMetricCard(
@@ -258,12 +240,12 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
 class _ExamMetricCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final Widget child;
+  final Widget? child;
 
   const _ExamMetricCard({
     required this.title,
     required this.subtitle,
-    required this.child,
+    this.child,
   });
 
   @override
@@ -286,8 +268,10 @@ class _ExamMetricCard extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(subtitle),
-          const SizedBox(height: 14),
-          child,
+          if (child != null) ...[
+            const SizedBox(height: 14),
+            child!,
+          ],
         ],
       ),
     );
