@@ -15,6 +15,7 @@ import '../screens/resource_topic_list_screen.dart';
 import '../screens/osce_screen.dart';
 import '../screens/pinned_notes_screen.dart';
 import '../models/resource_topic.dart';
+import '../widgets/common/coming_soon.dart';
 import '../widgets/drawer/settings_drawer.dart';
 
 // ─── Resource category data model ────────────────────────────────────────────
@@ -97,9 +98,9 @@ class _LibraryScreenState extends State<LibraryScreen>
   }
 
   void _openBook(CatalogBook book) {
-    if (!book.hasContent) {
+    if (book.isComingSoon) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('${book.title} — content coming soon'),
+        content: Text('${book.title} — $kComingSoonLabel'),
         behavior: SnackBarBehavior.floating,
       ));
       return;
@@ -443,14 +444,17 @@ class _BookPage extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Full-screen cover image
-          Image.asset(
-            book.assetPath,
-            fit: BoxFit.cover,
-            errorBuilder: (_, __, ___) => Container(
-              color: cs.primaryContainer,
-              child: Icon(Icons.menu_book_rounded,
-                  size: 80, color: cs.onPrimaryContainer),
+          // Full-screen cover image — desaturated when not yet available.
+          ComingSoonDim(
+            dimmed: book.isComingSoon,
+            child: Image.asset(
+              book.assetPath,
+              fit: BoxFit.cover,
+              errorBuilder: (_, __, ___) => Container(
+                color: cs.primaryContainer,
+                child: Icon(Icons.menu_book_rounded,
+                    size: 80, color: cs.onPrimaryContainer),
+              ),
             ),
           ),
           // Gradient overlay so text is readable at the bottom
@@ -467,9 +471,6 @@ class _BookPage extends StatelessWidget {
               ),
             ),
           ),
-          // Coming-soon dim
-          if (!book.hasContent)
-            Container(color: Colors.black.withValues(alpha: 0.35)),
           // Bottom text
           Positioned(
             left: 20,
@@ -503,18 +504,24 @@ class _BookPage extends StatelessWidget {
                       height: 1.2,
                     )),
                 const SizedBox(height: 6),
-                Text(
-                  book.hasContent ? book.specialty : 'Coming soon',
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.75),
-                    fontSize: 14,
+                if (book.isComingSoon)
+                  const Padding(
+                    padding: EdgeInsets.only(top: 2),
+                    child: ComingSoonBadge(),
+                  )
+                else
+                  Text(
+                    book.specialty,
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.75),
+                      fontSize: 14,
+                    ),
                   ),
-                ),
               ],
             ),
           ),
           // Tap-to-read hint icon
-          if (book.hasContent)
+          if (!book.isComingSoon)
             Positioned(
               right: 20,
               bottom: 28,

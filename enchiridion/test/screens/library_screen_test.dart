@@ -12,6 +12,7 @@ import 'package:enchiridion/providers/settings_provider.dart';
 import 'package:enchiridion/screens/library_screen.dart';
 import 'package:enchiridion/screens/calculator_list_screen.dart';
 import 'package:enchiridion/services/storage_service.dart';
+import 'package:enchiridion/widgets/common/coming_soon.dart';
 
 @GenerateNiceMocks([MockSpec<SharedPreferences>()])
 import 'library_screen_test.mocks.dart';
@@ -229,6 +230,30 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(CalculatorListScreen), findsOneWidget);
+    });
+  });
+
+  group('LibraryScreen — Library tab coming-soon treatment', () {
+    // -------------------------------------------------------------------
+    // (g) At least one placeholder book page shows the shared
+    //     ComingSoonBadge, and the AnimatedContainer dot count (case c/d's
+    //     trap) is unaffected by the badge's presence.
+    // -------------------------------------------------------------------
+    testWidgets('a placeholder book page shows a ComingSoonBadge',
+        (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      // Stay on the Library tab (default). Only paediatrics has content;
+      // swipe up to the next book page, which is a placeholder.
+      await tester.fling(
+        find.byType(PageView).first,
+        const Offset(0, -400),
+        800,
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ComingSoonBadge), findsOneWidget);
     });
   });
 
