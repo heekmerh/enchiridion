@@ -108,3 +108,36 @@ Most screens handle it; two do not.
 ### Flag incorrect questions + backend notification
 - No flagging UI or backend hook exists anywhere. (Grep for "flag" only matches an unrelated `RedFlagsBlock` clinical-content widget — not question flagging.) No table/RPC for flags in `scripts/sql/000_init_database.sql`.
 - **Action:** add a "Flag this question" UI affordance on the question screen, a `flagged_questions` table (or similar) in Supabase, and a notification mechanism (e.g. a Supabase Edge Function trigger or admin dashboard query) surfacing new flags to maintainers.
+
+
+## New Testing Report 2026-09-17
+- Also not that across the entire app available content ranks above coming soon.
+- All coming soon topics should be grayed out
+### Exam Prep
+- users should not be able to see the full question bank for now. They should not know how many questions we have in total.
+- The question and answer rendering engine is not making use of the newline feature. it just jumbles everything together into one contiguous text flow.
+- Question stats Dashboard should be clickable: Answered, Correct, Wrong, Points. Such that they can browse the questions they've answered, correct or failed then choose to retry anyone they failed
+- Question numbers should be removed completely from the UI, the user should not have any idea the number questions we have.
+- The question points system is not working correctly. I need to see my correct stats displayed. Accumulated points and question answer stats take some time to update on the dashboard, and I am thinking it should be automatic because it is local first before it pushes scores to supabase when there is connectivity.
+- After I answer a particular question there is no next question feature neither does it automatically serve the next question.
+- How is the randomization of questions being served implemented to ensure repetition doesn't occur.
+- Remove Browse Full Bank, that feature allows users to view the entire bank which we dont want
+- If the user is practicing and they get any question wrong that question should be requeued to be served in 24hrs
+- I have had the app on my device for over 3hours yet no question notification has been served. The user can experience questions in app through the practice now feature which for freemium users allows them 10 questions but while studying questions will be served as notification bubbles.
+- User exam practice experience should be improved. Review it end to end and surface suggestions based on standard practice and innovation.
+
+### Calculators
+- For the calculators all should be part of the list and those not yet implemented should be grayed out with a status of 'Coming Soon'. If their implementation can be found online then implement those and highlight those you cant find.
+
+### Surgical Instrumentation
+- Should be a list starting with 'Sutures' the same way we have a list in OSCE
+- Change the topic name from 'Sutures' to 'Suture Material'
+- It should be such that users can swipe sideways through the tabs of each topic
+
+### Medical Instrumentation
+- The same way calculators are grouped, these should also be grouped.
+- should be a list starting with 'IV Cannula'
+
+### OSCE
+- The topics are implemented nicely but the tab scroll feature is not for the topics, it is for the sub-topics within each topic. You already have access to the sub-topic outline for each topic. For Abdominal which is already implemented you can infer it.
+- Rename Abdominal -> Abdominal Examination

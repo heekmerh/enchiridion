@@ -2,25 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../config/freemium_config.dart';
+import '../models/answered_question_filter.dart';
 import '../models/question.dart';
 import '../models/resource_topic.dart';
-import '../models/study_day_stats.dart';
+import '../providers/study_stats_provider.dart';
 import '../services/access_service.dart';
 import '../services/exam_prep_repository.dart';
 import '../services/next_question_selector.dart';
-import '../services/notification_service.dart';
-import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
-import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/exam_prep/explanation_text.dart';
+import 'answered_questions_screen.dart';
 import 'leaderboard_screen.dart';
 import 'question_screen.dart';
 import 'unlock_screen.dart';
 
 class ExamPrepHomeScreen extends StatefulWidget {
-  /// For widget tests only. When non-null, `_load` uses this bank instead of
-  /// loading `_repository.loadQuestions()`. Production always passes null so
-  /// the bundled asset is loaded.
+  /// For widget tests only. When non-null, the home screen skips
+  /// `ExamPrepRepository.loadQuestions()` (which hangs in the widget-test
+  /// environment — see `ReaderScreen.testBookProvider` for the same
+  /// constraint on `rootBundle`) and uses this list directly.
   @visibleForTesting
   final List<Question>? testQuestions;
 
@@ -35,7 +36,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   final Map<String, UserAnswer> _answers = {};
 
   List<Question> _questions = [];
-  StudyDayStats? _todayStats;
   Question? _randomQuestion;
   int _randomQuestionOptionSeed = 0;
   bool _loading = true;
@@ -54,7 +54,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
       final questions =
           widget.testQuestions ?? await _repository.loadQuestions();
       final hasAccess = await AccessService.instance.hasExamPrepAccess();
-      final stats = StudyStatsService(storage).getTodayStats();
       final answers = storage.getAnswers(kStandaloneExamPrepScope);
       final nextQuestion = await NextQuestionSelector(storage)
           .next(bank: questions, hasAccess: hasAccess);
@@ -62,7 +61,6 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
       setState(() {
         _questions = questions;
         _hasAccess = hasAccess;
-        _todayStats = stats;
         _answers
           ..clear()
           ..addAll(answers);
@@ -86,38 +84,31 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     return Object.hash(question.id, review?.attempts ?? 0);
   }
 
+  Future<void> _openAnsweredQuestions(AnsweredQuestionFilter filter) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => AnsweredQuestionsScreen(
+          questions: _questions,
+          initialFilter: filter,
+        ),
+      ),
+    );
+    if (!mounted) return;
+    _load();
+  }
+
+  /// Called after `QuestionScreen` has already recorded the answer (storage,
+  /// stats, notification scheduling, and the remote push all happen there —
+  /// see its `_submit`). This is genuinely this screen's own job only:
+  /// tracking the answer locally for the "previously answered" state and
+  /// picking the next Quick Check question.
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
     final storage = context.read<StorageService>();
-    final review =
-        await storage.recordAnswer(kStandaloneExamPrepScope, answer);
-    Question? answeredQuestion;
-    for (final question in _questions) {
-      if (question.id == answer.questionId) {
-        answeredQuestion = question;
-        break;
-      }
-    }
-    if (answeredQuestion != null) {
-      await NotificationService.instance.scheduleFollowUp(
-        scope: kStandaloneExamPrepScope,
-        question: answeredQuestion,
-        review: review,
-      );
-    }
-    await QuestionReviewSyncService(storage)
-        .push(kStandaloneExamPrepScope, review);
-    final stats = await StudyStatsService(storage).recordAnswer(
-      isCorrect: answer.isCorrect,
-      isFirstAttempt: review.attempts == 1,
-      scope: kStandaloneExamPrepScope,
-      answeredAt: answer.answeredAt,
-    );
     final nextQuestion = await NextQuestionSelector(storage)
         .next(bank: _questions, hasAccess: _hasAccess);
     if (!mounted) return;
     setState(() {
       _answers[answer.questionId] = answer;
-      _todayStats = stats;
       _randomQuestion = nextQuestion;
       _randomQuestionOptionSeed = _optionSeedFor(storage, nextQuestion);
     });
@@ -127,6 +118,12 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
+    // `watch` (not `read`): every answer recorded anywhere in the app calls
+    // `notifyListeners()` synchronously, so this screen repaints even though
+    // it stays mounted beneath a pushed QuestionScreen/QuickCheckCard route.
+    final statsProvider = context.watch<StudyStatsProvider>();
+    final today = statsProvider.today;
+    final totals = statsProvider.totals;
 
     return Scaffold(
       appBar: AppBar(
@@ -163,24 +160,58 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                   ),
                   children: [
                     _ExamMetricCard(
-                      title: 'Daily Performance',
-                      subtitle:
-                          'Tracked locally and synced to Supabase when available.',
-                      child: Row(
+                      title: 'Performance',
+                      subtitle: 'Tracked on this device — always accurate '
+                          'and up to date, online or offline.',
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          _MetricPill(
-                            label: 'Answered',
-                            value: '${_todayStats?.questionsAnswered ?? 0}',
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Answered',
+                                value: '${totals.questionsAnswered}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.answered,
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Correct',
+                                value: '${totals.correctAnswers}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.correct,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Correct',
-                            value: '${_todayStats?.correctAnswers ?? 0}',
+                          const SizedBox(height: 10),
+                          Row(
+                            children: [
+                              _MetricPill(
+                                label: 'Wrong',
+                                value: '${totals.wrongAnswers}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.wrong,
+                                ),
+                              ),
+                              const SizedBox(width: 10),
+                              _MetricPill(
+                                label: 'Points',
+                                value: '${totals.performancePoints}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.points,
+                                ),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 10),
-                          _MetricPill(
-                            label: 'Points',
-                            value: '${_todayStats?.performancePoints ?? 0}',
+                          const SizedBox(height: 10),
+                          Text(
+                            'Today: ${today.questionsAnswered} answered, '
+                            '${today.performancePoints} points',
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.onSurface.withValues(alpha: 0.64),
+                            ),
                           ),
                         ],
                       ),
@@ -289,36 +320,49 @@ class _MetricPill extends StatelessWidget {
   final String label;
   final String value;
 
+  /// When set, the pill is tappable — wrapped so the tap produces a visible
+  /// ripple and exposes a button to the semantics tree.
+  final VoidCallback? onTap;
+
   const _MetricPill({
     required this.label,
     required this.value,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: theme.colorScheme.surface,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: theme.textTheme.labelMedium,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              value,
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+      child: Material(
+        color: theme.colorScheme.surface,
+        borderRadius: BorderRadius.circular(16),
+        child: Semantics(
+          button: onTap != null,
+          label: '$label $value',
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(16),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: theme.textTheme.labelMedium,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    value,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -472,7 +516,7 @@ class _StudyCardState extends State<_StudyCard> {
               ),
             ),
             const SizedBox(height: 6),
-            Text(widget.question.explanation),
+            ExplanationText(text: widget.question.explanation),
           ],
         ],
       ),

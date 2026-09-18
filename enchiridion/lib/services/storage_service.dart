@@ -20,6 +20,11 @@ class StorageService {
 
   StorageService(this._prefs);
 
+  /// Refreshes values written by the headless bubble worker in
+  /// `bubble_alarm_callback.dart`. It runs in another isolate with its own
+  /// preferences instance, so this instance's cache otherwise misses serves.
+  Future<void> refreshFromDisk() => _prefs.reload();
+
   // Settings
   UserSettings getSettings() {
     try {
@@ -569,5 +574,33 @@ class StorageService {
         : jsonDecode(raw) as Map<String, dynamic>;
     map[stats.dateKey] = stats.toJson();
     await _prefs.setString(key, jsonEncode(map));
+  }
+
+  /// Every stored [StudyDayStats] day for [scope], decoded from the whole
+  /// per-day map at once. Used to fold lifetime totals — unlike
+  /// [getDailyStudyStats], this is not scoped to a single date key.
+  ///
+  /// Tolerates malformed or absent entries the same way [getDailyStudyStats]
+  /// does: an individually unparsable day is skipped rather than aborting
+  /// the whole read, and a missing/corrupt top-level map returns empty
+  /// rather than throwing.
+  List<StudyDayStats> getAllDailyStudyStats(String scope) {
+    try {
+      final raw = _prefs.getString('$_studyStatsPrefix$scope');
+      if (raw == null) return [];
+      final map = jsonDecode(raw) as Map<String, dynamic>;
+      final days = <StudyDayStats>[];
+      for (final value in map.values) {
+        if (value is! Map<String, dynamic>) continue;
+        try {
+          days.add(StudyDayStats.fromJson(value));
+        } catch (_) {
+          // Skip this one malformed day; the rest of the map is still good.
+        }
+      }
+      return days;
+    } catch (_) {
+      return [];
+    }
   }
 }

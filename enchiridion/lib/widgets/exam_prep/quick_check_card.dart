@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -5,10 +6,11 @@ import 'package:provider/provider.dart';
 
 import '../../models/question.dart';
 import '../../models/resource_topic.dart';
+import '../../providers/study_stats_provider.dart';
 import '../../services/notification_service.dart';
 import '../../services/question_review_sync_service.dart';
 import '../../services/storage_service.dart';
-import '../../services/study_stats_service.dart';
+import 'explanation_text.dart';
 
 /// Full-screen "answer one question" card shown inside the Android bubble
 /// window (see `lib/bubble_main.dart`). Picks a random option order seeded by
@@ -63,21 +65,25 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     );
 
     final storage = context.read<StorageService>();
+    final statsProvider = context.read<StudyStatsProvider>();
     final review =
         await storage.recordAnswer(kStandaloneExamPrepScope, answer);
-    await NotificationService.instance.scheduleFollowUp(
+    await statsProvider.recordAnswer(
+      scope: kStandaloneExamPrepScope,
+      isCorrect: _isCorrect,
+      isFirstAttempt: review.attempts == 1,
+      answeredAt: answer.answeredAt,
+    );
+
+    // Best-effort background work — never gate clearing the saving state (or
+    // therefore the dashboard's already-updated numbers) on the network.
+    unawaited(NotificationService.instance.scheduleFollowUp(
       scope: kStandaloneExamPrepScope,
       question: widget.question,
       review: review,
-    );
-    await QuestionReviewSyncService(storage)
-        .push(kStandaloneExamPrepScope, review);
-    await StudyStatsService(storage).recordAnswer(
-      isCorrect: _isCorrect,
-      isFirstAttempt: review.attempts == 1,
-      scope: kStandaloneExamPrepScope,
-      answeredAt: answer.answeredAt,
-    );
+    ));
+    unawaited(QuestionReviewSyncService(storage)
+        .push(kStandaloneExamPrepScope, review));
 
     if (mounted) {
       setState(() => _saving = false);
@@ -189,7 +195,7 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
                   ),
                 ),
                 const SizedBox(height: 6),
-                Text(widget.question.explanation),
+                ExplanationText(text: widget.question.explanation),
               ],
               const SizedBox(height: 16),
               Row(

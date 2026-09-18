@@ -71,8 +71,9 @@ class Question {
   /// ("A 32 year old woman presents to the Emergency Department with a
   /// sudden…") and tells the reader nothing about which question is which.
   String previewText({int maxLength = 90}) {
-    if (questionText.length <= maxLength) return questionText;
-    final tail = questionText.substring(questionText.length - maxLength);
+    final flatText = questionText.replaceAll(RegExp(r'\s+'), ' ').trim();
+    if (flatText.length <= maxLength) return flatText;
+    final tail = flatText.substring(flatText.length - maxLength);
     final firstSpace = tail.indexOf(' ');
     final trimmed = firstSpace == -1 ? tail : tail.substring(firstSpace + 1);
     return '…$trimmed';

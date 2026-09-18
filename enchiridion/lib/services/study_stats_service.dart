@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/resource_topic.dart';
@@ -8,7 +10,15 @@ import 'storage_service.dart';
 class StudyStatsService {
   final StorageService _storage;
 
-  const StudyStatsService(this._storage);
+  /// Test-only seam for substituting the remote push. Defaults to [_sync].
+  /// Tests use this to prove [recordAnswer] returns without waiting on a
+  /// never-completing future, standing in for an offline/hanging Supabase
+  /// client.
+  final Future<void> Function(StudyDayStats stats)? _syncOverride;
+
+  const StudyStatsService(this._storage, {
+    Future<void> Function(StudyDayStats stats)? syncOverride,
+  }) : _syncOverride = syncOverride;
 
   static String dateKeyFor(DateTime dateTime) {
     final local = dateTime.toLocal();
@@ -42,7 +52,10 @@ class StudyStatsService {
       updatedAt: timestamp,
     );
     await _storage.saveDailyStudyStats(updated);
-    await _sync(updated);
+    // The local write above is already durable — do not gate the return (and
+    // therefore the caller's UI update) on a network round-trip. A slow or
+    // hanging Supabase client must never delay the dashboard.
+    unawaited((_syncOverride ?? _sync)(updated));
     return updated;
   }
 
@@ -50,11 +63,26 @@ class StudyStatsService {
     return _storage.getDailyStudyStats(scope, dateKeyFor(DateTime.now()));
   }
 
-  Future<void> _sync(StudyDayStats stats) async {
-    final user = AuthService.currentUser;
-    if (user == null) return;
+  /// Sums every stored day's stats for [scope] into lifetime totals.
+  ///
+  /// Unlike [getTodayStats], this is not scoped to the local calendar date —
+  /// it is the "accumulated" figure the dashboard's headline metrics show,
+  /// unaffected by local midnight.
+  StudyStatsTotals getLifetimeTotals([String scope = kStandaloneExamPrepScope]) {
+    return StudyStatsTotals.fold(_storage.getAllDailyStudyStats(scope));
+  }
 
+  /// The whole body — including the `currentUser` read — is inside the try
+  /// block on purpose, matching `QuestionReviewSyncService.push`:
+  /// `Supabase.instance` asserts (not throws a catchable exception via a
+  /// normal Future) if `Supabase.initialize()` hasn't run yet, which is the
+  /// case in every widget/unit test and briefly during real app cold-start.
+  /// Treating that the same as "offline" is the correct behavior here, not a
+  /// special case to route around.
+  Future<void> _sync(StudyDayStats stats) async {
     try {
+      final user = AuthService.currentUser;
+      if (user == null) return;
       await Supabase.instance.client.from('daily_study_stats').upsert({
         'user_id': user.id,
         'scope': stats.scope,
