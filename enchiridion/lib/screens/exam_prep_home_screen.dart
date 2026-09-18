@@ -442,7 +442,7 @@ class _StudyCardState extends State<_StudyCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Question ${widget.question.questionNumber}',
+            'Quick Check',
             style: theme.textTheme.labelLarge?.copyWith(
               color: cs.primary,
               fontWeight: FontWeight.w700,

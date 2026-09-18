@@ -194,7 +194,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
         return ListTile(
           leading: _statusIcon(answer, locked, cs),
           title: Text(
-            'Q${q.questionNumber}. ${q.previewText(maxLength: 60)}',
+            q.previewText(maxLength: 60),
             style: locked
                 ? theme.textTheme.bodyMedium
                     ?.copyWith(color: cs.onSurface.withValues(alpha: 0.4))
