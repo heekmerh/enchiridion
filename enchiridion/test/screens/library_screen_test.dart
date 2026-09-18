@@ -231,4 +231,24 @@ void main() {
       expect(find.byType(CalculatorListScreen), findsOneWidget);
     });
   });
+
+  group('LibraryScreen — book options sheet', () {
+    // -------------------------------------------------------------------
+    // (f) A user with no recorded answers sees the read entry but no
+    //     question-review entry when long-pressing a book card.
+    // -------------------------------------------------------------------
+    testWidgets(
+        'long-pressing a book with no answers shows read entry and no review entry',
+        (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      // Long-press the first book page on the Library tab.
+      await tester.longPress(find.byType(GestureDetector).first);
+      await tester.pumpAndSettle();
+
+      expect(find.byIcon(Icons.menu_book_outlined), findsWidgets);
+      expect(find.byIcon(Icons.quiz_outlined), findsNothing);
+    });
+  });
 }

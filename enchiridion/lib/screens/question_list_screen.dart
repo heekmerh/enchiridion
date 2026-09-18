@@ -5,6 +5,7 @@ import '../models/question.dart';
 import '../models/book_catalog.dart';
 import '../services/storage_service.dart';
 import '../services/access_service.dart';
+import '../services/question_visibility.dart';
 import '../config/freemium_config.dart';
 import '../utils/bottom_inset.dart';
 import 'question_screen.dart';
@@ -61,16 +62,22 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
         _loading = false;
       });
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         setState(() {
           _error = e.toString();
           _loading = false;
         });
+      }
     }
   }
 
   int get _answeredCount => _answers.length;
   int get _correctCount => _answers.values.where((a) => a.isCorrect).length;
+
+  List<Question> get _reviewable => reviewableQuestions(
+        bank: _questions,
+        answeredIds: _answers.keys.toSet(),
+      );
 
   bool _isLocked(Question q) =>
       !_hasAccess && q.questionNumber > kFreeQuestionCount;
@@ -114,7 +121,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$_bookTitle — Questions'),
+        title: Text('$_bookTitle — Review'),
         backgroundColor: cs.surface,
         elevation: 0,
       ),
@@ -122,7 +129,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
           ? const Center(child: CircularProgressIndicator())
           : _error != null
               ? _buildError(cs)
-              : _questions.isEmpty
+              : _reviewable.isEmpty
                   ? _buildEmpty(theme)
                   : Column(
                       children: [
@@ -153,7 +160,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
         children: [
           const Icon(Icons.quiz_outlined, size: 64, color: Colors.grey),
           const SizedBox(height: 16),
-          Text('No questions yet for this book.',
+          Text('You have not answered anything in this book yet.',
               style: theme.textTheme.bodyLarge),
         ],
       ),
@@ -166,7 +173,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       color: cs.primaryContainer,
       child: Text(
-        '$_answeredCount of ${_questions.length} answered — $_correctCount correct',
+        answeredProgressLabel(answered: _answeredCount, correct: _correctCount),
         style: theme.textTheme.bodyMedium?.copyWith(
             color: cs.onPrimaryContainer, fontWeight: FontWeight.w600),
       ),
@@ -174,12 +181,13 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
   }
 
   Widget _buildList(ThemeData theme, ColorScheme cs) {
+    final reviewable = _reviewable;
     return ListView.separated(
       padding: EdgeInsets.only(bottom: bottomViewportInset(context)),
-      itemCount: _questions.length,
+      itemCount: reviewable.length,
       separatorBuilder: (_, __) => const Divider(height: 1),
       itemBuilder: (context, i) {
-        final q = _questions[i];
+        final q = reviewable[i];
         final answer = _answers[q.id];
         final locked = _isLocked(q);
 

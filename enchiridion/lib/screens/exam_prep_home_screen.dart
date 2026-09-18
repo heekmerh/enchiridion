@@ -238,8 +238,8 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                     _ExamMetricCard(
                       title: 'Access',
                       subtitle: _hasAccess
-                          ? 'All ${_questions.length} questions are unlocked.'
-                          : 'Questions 1-$kFreeQuestionCount are free. Unlock for the full bank.',
+                          ? 'Full access is active.'
+                          : 'You get $kFreeQuestionCount free practice questions. Unlock for unlimited practice.',
                       child: _hasAccess
                           ? null
                           : OutlinedButton(

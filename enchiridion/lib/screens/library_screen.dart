@@ -4,6 +4,7 @@ import '../models/book_catalog.dart';
 import '../providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
 import '../services/storage_service.dart';
+import '../services/question_visibility.dart';
 import '../screens/reader_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
@@ -121,6 +122,10 @@ class _LibraryScreenState extends State<LibraryScreen>
   }
 
   void _showBookOptions(CatalogBook book) {
+    final storage = context.read<StorageService>();
+    final canReview =
+        hasReviewableQuestions(storage.getAnswers(book.id));
+
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -148,18 +153,19 @@ class _LibraryScreenState extends State<LibraryScreen>
                 _openBook(book);
               },
             ),
-            ListTile(
-              leading: const Icon(Icons.quiz_outlined),
-              title: Text('${book.title} — Questions'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => QuestionListScreen(bookId: book.id),
-                    ));
-              },
-            ),
+            if (canReview)
+              ListTile(
+                leading: const Icon(Icons.quiz_outlined),
+                title: Text('${book.title} — Review what you\'ve answered'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => QuestionListScreen(bookId: book.id),
+                      ));
+                },
+              ),
             const SizedBox(height: 8),
           ],
         ),
