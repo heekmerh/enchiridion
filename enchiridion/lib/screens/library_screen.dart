@@ -89,18 +89,7 @@ class _LibraryScreenState extends State<LibraryScreen>
     await storage.recordBookOpen(bookId);
   }
 
-  List<CatalogBook> get _sortedBooks {
-    final sorted = List<CatalogBook>.from(kBooks);
-    sorted.sort((a, b) {
-      final aTime = _history[a.id];
-      final bTime = _history[b.id];
-      if (aTime != null && bTime != null) return bTime.compareTo(aTime);
-      if (aTime != null) return -1;
-      if (bTime != null) return 1;
-      return 0;
-    });
-    return sorted;
-  }
+  List<CatalogBook> get _sortedBooks => booksInDisplayOrder(_history);
 
   bool _isRecent(String bookId) {
     final t = _history[bookId];

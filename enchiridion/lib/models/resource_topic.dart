@@ -1,3 +1,5 @@
+import '../utils/content_availability.dart';
+
 class ResourceTopic {
   final String id;
   final String title;
@@ -23,6 +25,12 @@ class ResourceTopic {
     this.description,
     this.outline,
   });
+
+  /// Whether this topic has real written content available to open, as
+  /// opposed to only an [outline] placeholder. Mirrors
+  /// `CatalogBook.hasContent` so both models answer the same question the
+  /// same way.
+  bool get hasContent => dataAssetPath != null;
 }
 
 const String kStandaloneExamPrepScope = 'exam_prep';
@@ -322,3 +330,10 @@ const List<ResourceTopic> kOsceTopics = [
     ],
   ),
 ];
+
+/// [kOsceTopics] reordered so stations with real content lead stations that
+/// only have an [ResourceTopic.outline] placeholder. `kOsceTopics` itself
+/// stays in its authored order — it remains the authoring source of truth;
+/// this derived list is what UI surfaces render.
+final List<ResourceTopic> kOsceTopicsInDisplayOrder =
+    availableFirst(kOsceTopics, (t) => t.hasContent);

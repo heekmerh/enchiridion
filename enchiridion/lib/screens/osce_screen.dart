@@ -17,9 +17,9 @@ class OsceScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('OSCE')),
       body: ListView.builder(
         padding: EdgeInsets.only(top: 8, bottom: 8 + bottomViewportInset(context)),
-        itemCount: kOsceTopics.length,
+        itemCount: kOsceTopicsInDisplayOrder.length,
         itemBuilder: (context, index) {
-          final topic = kOsceTopics[index];
+          final topic = kOsceTopicsInDisplayOrder[index];
           return ListTile(
             leading: CircleAvatar(
               backgroundColor: cs.primaryContainer,
@@ -61,11 +61,11 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen>
   void initState() {
     super.initState();
     _tabController = TabController(
-      length: kOsceTopics.length,
+      length: kOsceTopicsInDisplayOrder.length,
       initialIndex: widget.initialIndex,
       vsync: this,
     );
-    for (final topic in kOsceTopics) {
+    for (final topic in kOsceTopicsInDisplayOrder) {
       final path = topic.dataAssetPath;
       if (path == null) continue;
       ResourceTopicService.loadChapter(path).then((chapter) {
@@ -92,7 +92,7 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen>
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
-          tabs: kOsceTopics
+          tabs: kOsceTopicsInDisplayOrder
               .map((topic) => Tab(text: topic.title))
               .toList(),
         ),
@@ -100,7 +100,7 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen>
       body: TabBarView(
         controller: _tabController,
         children:
-            kOsceTopics.map((topic) => _OsceTabBody(topic: topic,
+            kOsceTopicsInDisplayOrder.map((topic) => _OsceTabBody(topic: topic,
                 chapter: _loadedChapters[topic.id],
                 error: _loadErrors[topic.id])).toList(),
       ),

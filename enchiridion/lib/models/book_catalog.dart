@@ -1,3 +1,5 @@
+import '../utils/content_availability.dart';
+
 class CatalogBook {
   final String id;
   final String title;
@@ -74,3 +76,25 @@ const List<CatalogBook> kBooks = [
     specialty: 'Dermatology',
   ),
 ];
+
+/// Returns [kBooks] ordered for display: most-recently-opened first among
+/// books that share read [history], then all remaining books in their
+/// authored order — with readable books (see [CatalogBook.hasContent])
+/// always ranked ahead of placeholder books. Availability is the OUTER key;
+/// recency only orders within a group, so a placeholder book can never
+/// outrank a readable one no matter how recently it was "opened".
+///
+/// Pure (no Flutter, no provider) so it can be unit-tested and reused
+/// directly by a guard test.
+List<CatalogBook> booksInDisplayOrder(Map<String, DateTime> history) {
+  final sorted = List<CatalogBook>.from(kBooks);
+  sorted.sort((a, b) {
+    final aTime = history[a.id];
+    final bTime = history[b.id];
+    if (aTime != null && bTime != null) return bTime.compareTo(aTime);
+    if (aTime != null) return -1;
+    if (bTime != null) return 1;
+    return 0;
+  });
+  return availableFirst(sorted, (b) => b.hasContent);
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/resource_topic.dart';
 import '../utils/bottom_inset.dart';
+import '../utils/content_availability.dart';
 import 'resource_topic_detail_screen.dart';
 
 class ResourceTopicListScreen extends StatelessWidget {
@@ -16,6 +17,10 @@ class ResourceTopicListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Ordering happens here, inside the shared list screen, not at each call
+    // site — so any topics list handed to this screen inherits the
+    // available-first rule for free.
+    final orderedTopics = availableFirst(topics, (t) => t.hasContent);
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: ListView.separated(
@@ -25,10 +30,10 @@ class ResourceTopicListScreen extends StatelessWidget {
           16,
           24 + bottomViewportInset(context),
         ),
-        itemCount: topics.length,
+        itemCount: orderedTopics.length,
         separatorBuilder: (_, __) => const SizedBox(height: 14),
         itemBuilder: (context, index) {
-          final topic = topics[index];
+          final topic = orderedTopics[index];
           return InkWell(
             borderRadius: BorderRadius.circular(20),
             onTap: () => Navigator.of(context).push(
