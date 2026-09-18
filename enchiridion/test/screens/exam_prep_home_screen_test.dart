@@ -3,7 +3,7 @@
 // Regression guard for batch item 260917-ndx: the whole-bank list screen
 // (ExamPrepQuestionListScreen) and its "Browse Full Bank" entry point were
 // deleted. These tests prove that removal without a route into the full
-// bank while the rest of the screen — Daily Performance, Access with the
+// bank while the rest of the screen — Performance, Access with the
 // Unlock path, and Quick Check — still renders.
 //
 // Uses ExamPrepHomeScreen.testQuestions to inject a fixed bank so tests
@@ -16,6 +16,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/providers/study_stats_provider.dart';
 import 'package:enchiridion/screens/exam_prep_home_screen.dart';
 import 'package:enchiridion/services/access_service.dart';
 import 'package:enchiridion/services/storage_service.dart';
@@ -37,7 +38,12 @@ List<Question> _makeBank() => List.generate(
 
 Widget _buildSubject(StorageService storage) {
   return MultiProvider(
-    providers: [Provider<StorageService>.value(value: storage)],
+    providers: [
+      Provider<StorageService>.value(value: storage),
+      ChangeNotifierProvider<StudyStatsProvider>(
+        create: (_) => StudyStatsProvider(storage),
+      ),
+    ],
     child: MaterialApp(
       home: ExamPrepHomeScreen(testQuestions: _makeBank()),
     ),
@@ -66,7 +72,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Exam Prep'), findsOneWidget);
-      expect(find.text('Daily Performance'), findsOneWidget);
+      expect(find.text('Performance'), findsOneWidget);
       expect(find.text('Access'), findsOneWidget);
       expect(find.text('Quick Check'), findsOneWidget);
 
@@ -86,7 +92,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Exam Prep'), findsOneWidget);
-      expect(find.text('Daily Performance'), findsOneWidget);
+      expect(find.text('Performance'), findsOneWidget);
       expect(find.text('Access'), findsOneWidget);
       expect(find.text('Quick Check'), findsOneWidget);
 
