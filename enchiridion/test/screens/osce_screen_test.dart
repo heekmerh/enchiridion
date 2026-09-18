@@ -1,5 +1,6 @@
 import 'package:enchiridion/models/resource_topic.dart';
 import 'package:enchiridion/screens/osce_screen.dart';
+import 'package:enchiridion/widgets/common/coming_soon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -41,5 +42,42 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.byType(TabBar), findsNothing);
     expect(find.text('Respiratory System'), findsOneWidget);
+  });
+
+  testWidgets(
+      'coming-soon stations show a badge and available stations do not',
+      (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
+
+    final abdominalTile = tester.widget<ListTile>(
+      find.ancestor(
+        of: find.text('Abdominal Examination'),
+        matching: find.byType(ListTile),
+      ),
+    );
+    final cardiovascularTile = tester.widget<ListTile>(
+      find.ancestor(
+        of: find.text('Cardiovascular System'),
+        matching: find.byType(ListTile),
+      ),
+    );
+
+    expect(abdominalTile.trailing, isNot(isA<ComingSoonBadge>()));
+    expect(cardiovascularTile.trailing, isA<ComingSoonBadge>());
+  });
+
+  testWidgets(
+      'tapping a grayed coming-soon station still opens the tabbed detail view',
+      (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
+
+    await tester.tap(find.text('Cardiovascular System'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(TabBar), findsOneWidget);
+    final tabs = tester.widget<TabBar>(find.byType(TabBar));
+    final expectedIndex = kOsceTopicsInDisplayOrder
+        .indexWhere((t) => t.title == 'Cardiovascular System');
+    expect(tabs.controller!.index, expectedIndex);
   });
 }

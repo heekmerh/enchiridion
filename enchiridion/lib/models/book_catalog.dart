@@ -16,6 +16,10 @@ class CatalogBook {
   });
 
   bool get hasContent => dataFile.isNotEmpty;
+
+  /// Whether this book should render with the shared coming-soon
+  /// treatment — see `ComingSoonStyle` in `widgets/common/coming_soon.dart`.
+  bool get isComingSoon => !hasContent;
 }
 
 const List<CatalogBook> kBooks = [
