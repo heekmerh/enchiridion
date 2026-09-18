@@ -1,7 +1,11 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/models/serve_log.dart';
 import 'package:enchiridion/services/next_question_selector.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
@@ -38,14 +42,14 @@ void main() {
       final bank = List.generate(5, (i) => _question(i + 1));
       final now = DateTime(2026, 1, 1, 12);
 
-      // q1 was answered wrong an hour ago and is already due for relearn.
+      // q1 was answered wrong long enough ago to be due for relearn.
       await storage.recordQuestionReview(
         'exam_prep',
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
           isCorrect: false,
-          answeredAt: now.subtract(const Duration(hours: 4)),
+          answeredAt: now.subtract(const Duration(hours: 28)),
         ),
       );
 
@@ -57,6 +61,39 @@ void main() {
       );
 
       expect(picked?.id, 'q1');
+    });
+
+    test('a stored miss waits a full day then outranks unseen questions',
+        () async {
+      final bank = List.generate(5, (i) => _question(i + 1));
+      final now = DateTime(2026, 1, 1, 12);
+      final review = await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+      expect(review.dueAt.isBefore(now.add(const Duration(days: 1))), isFalse);
+
+      final selector = NextQuestionSelector(storage);
+      final early = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: now.add(const Duration(hours: 23)),
+      );
+      expect(early?.id, isNot('q1'));
+
+      // Forward jitter can put the due time beyond 25 hours. Check the
+      // recorded boundary rather than assuming a fixed post-day offset.
+      final due = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: review.dueAt,
+      );
+      expect(due?.id, 'q1');
     });
 
     test('never re-serves the same question within the cooldown window',
@@ -77,6 +114,84 @@ void main() {
         now: now.add(const Duration(minutes: 5)),
       );
       expect(second?.id, 'q1');
+    });
+
+    test('floor skips a missed question while its lapse window is open',
+        () async {
+      final now = DateTime(2026, 1, 1, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+      final selector = NextQuestionSelector(storage);
+      final bank = [_question(1), _question(2)];
+
+      expect((await selector.next(bank: bank, hasAccess: true, now: now))?.id,
+          'q2');
+      final floorPick = await selector.next(
+        bank: bank,
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(floorPick?.id, 'q2');
+    });
+
+    test('returns null if the only question is inside its lapse window',
+        () async {
+      final now = DateTime(2026, 1, 1, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now,
+        ),
+      );
+
+      final picked = await NextQuestionSelector(storage).next(
+        bank: [_question(1)],
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(picked, isNull);
+    });
+
+    test('floor can serve a past miss that was since answered correctly',
+        () async {
+      final now = DateTime(2026, 1, 3, 12);
+      await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'b',
+          isCorrect: false,
+          answeredAt: now.subtract(const Duration(days: 2)),
+        ),
+      );
+      final review = await storage.recordQuestionReview(
+        'exam_prep',
+        UserAnswer(
+          questionId: 'q1',
+          selectedOption: 'a',
+          isCorrect: true,
+          answeredAt: now,
+        ),
+      );
+      expect(review.lapses, 1);
+      expect(review.lastCorrect, isTrue);
+
+      final picked = await NextQuestionSelector(storage).next(
+        bank: [_question(1)],
+        hasAccess: true,
+        now: now.add(const Duration(minutes: 5)),
+      );
+      expect(picked?.id, 'q1');
     });
 
     test('locked questions are excluded for a free-tier user', () async {
@@ -115,6 +230,53 @@ void main() {
       // With 6 unseen questions and a 12-slot recent-serve log, no id should
       // repeat before the whole bank has been offered once.
       expect(served, hasLength(6));
+    });
+
+    test('rotates through the free-tier bank without repeating a question',
+        () async {
+      final bank = List.generate(10, (i) => _question(i + 1));
+      final selector = NextQuestionSelector(storage);
+      final start = DateTime(2026, 1, 1, 12);
+      final served = <String>[];
+
+      for (var i = 0; i < 25; i++) {
+        final picked = await selector.next(
+          bank: bank,
+          hasAccess: false,
+          now: start.add(Duration(minutes: i)),
+        );
+        expect(picked, isNotNull);
+        served.add(picked!.id);
+      }
+
+      for (var startIndex = 0; startIndex <= served.length - 10; startIndex++) {
+        expect(
+          served.skip(startIndex).take(10).toSet(),
+          hasLength(10),
+          reason: 'Serves $startIndex through ${startIndex + 9} repeated',
+        );
+      }
+    });
+
+    test('sees a serve recorded by another isolate', () async {
+      final bank = List.generate(10, (i) => _question(i + 1));
+      // setMockInitialValues replaces the backing store without updating the
+      // preferences instance held by storage, like a separate isolate's write.
+      SharedPreferences.setMockInitialValues({
+        'serve_log_exam_prep': jsonEncode(ServeLog(
+          recent: List.generate(9, (i) => 'q${i + 1}'),
+          counter: 9,
+        ).toJson()),
+      });
+
+      final picked =
+          await NextQuestionSelector(storage, random: Random(1)).next(
+        bank: bank,
+        hasAccess: false,
+        now: DateTime(2026, 1, 1, 12),
+      );
+
+      expect(picked?.id, 'q10');
     });
   });
 }

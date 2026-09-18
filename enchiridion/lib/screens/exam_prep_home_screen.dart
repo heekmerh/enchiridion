@@ -14,6 +14,7 @@ import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/exam_prep/explanation_text.dart';
 import 'answered_questions_screen.dart';
 import 'exam_prep_question_list_screen.dart';
 import 'leaderboard_screen.dart';
@@ -537,7 +538,7 @@ class _StudyCardState extends State<_StudyCard> {
               ),
             ),
             const SizedBox(height: 6),
-            Text(widget.question.explanation),
+            ExplanationText(text: widget.question.explanation),
           ],
         ],
       ),

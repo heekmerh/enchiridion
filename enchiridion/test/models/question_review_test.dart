@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:enchiridion/models/question.dart';
@@ -5,7 +7,8 @@ import 'package:enchiridion/models/question_review.dart';
 
 void main() {
   group('QuestionReview.applyAnswer', () {
-    test('a wrong answer resets to stage 0 and reschedules ~3 hours out', () {
+    test('a wrong answer resets to stage 0 and requeues no sooner than a day',
+        () {
       final start = DateTime(2026, 1, 1, 12);
       final review = QuestionReview.initial('q1')
           .applyAnswer(
@@ -19,20 +22,23 @@ void main() {
             at: start,
           ); // stage 2, still a lapses == 0
 
-      final lapsed = review.applyAnswer(
-        isCorrect: false,
-        selectedOption: 'b',
-        at: start,
-      );
+      for (var i = 0; i < 50; i++) {
+        final lapsed = review.applyAnswer(
+          isCorrect: false,
+          selectedOption: 'b',
+          at: start,
+          random: Random(i),
+        );
 
-      expect(lapsed.stage, 0);
-      expect(lapsed.lapses, 1);
-      expect(lapsed.retired, isFalse);
-      final delta = lapsed.dueAt.difference(start);
-      // Jittered +/-25% around 3 hours (135..225 min); both ends are
-      // reachable since the random offset is drawn from [-spread, spread).
-      expect(delta.inMinutes, greaterThanOrEqualTo(135));
-      expect(delta.inMinutes, lessThanOrEqualTo(225));
+        expect(lapsed.stage, 0);
+        expect(lapsed.lapses, 1);
+        expect(lapsed.lastCorrect, isFalse);
+        expect(lapsed.retired, isFalse);
+        final delta = lapsed.dueAt.difference(start);
+        expect(delta, greaterThanOrEqualTo(const Duration(days: 1)));
+        expect(
+            delta, lessThanOrEqualTo(const Duration(hours: 24, minutes: 173)));
+      }
     });
 
     test('a confident correct answer climbs the ladder', () {
@@ -105,8 +111,7 @@ void main() {
       expect(review.stage, 0);
       expect(review.lastCorrect, isTrue);
       final delta = review.dueAt.difference(start);
-      // Jittered +/-25% around 8 hours (360..600 min) — see the wrong-answer
-      // test above for why both ends are reachable and must be inclusive.
+      // Symmetric jitter spans +/-25% around 8 hours (360..600 min).
       expect(delta.inMinutes, greaterThanOrEqualTo(360));
       expect(delta.inMinutes, lessThanOrEqualTo(600));
     });
@@ -128,7 +133,7 @@ void main() {
       expect(review.lapses, 1);
       expect(review.attempts, 1);
       // A past miss should already be due by the time "now" is checked.
-      expect(review.isDue(DateTime(2026, 1, 2)), isTrue);
+      expect(review.isDue(DateTime(2026, 1, 3)), isTrue);
     });
   });
 
