@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: MVP Polish
 status: milestone_complete
-last_updated: 2026-09-15T17:51:44Z
+last_updated: 2026-09-17T16:31:55Z
 progress:
   total_phases: 4
   completed_phases: 4
   total_plans: 12
   completed_plans: 12
   percent: 100
-stopped_at: Post-milestone testing-report fixes committed through f9e4cd1; continue validation and remaining issues
+stopped_at: Resumed context; 11 pending question-practice plans in batch 260917-ndp; awaiting next-action selection
 ---
 
 # Milestone State: MVP Polish
@@ -45,6 +45,12 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 | 260915-r9k | Update dated testing report with book rerun and attributed migration status | 2026-09-15 | 6f43307 | passed | .planning/quick/260915-r9k-update-the-dated-progress-note-in-testing-report-md-to-recor |
 | 260915-r9j | Inventory OSCE and instrumentation sourcing with manual source-status review | 2026-09-15 | e4c84d4 | passed | .planning/quick/260915-r9j-inventory-the-osce-and-instrumentation-content-gap-using-scr |
 | 260915-r9h | Verify migrations 001–004 with read-only catalog checks | 2026-09-16 | f8145cd | passed | .planning/quick/260915-r9h-add-a-read-only-sql-verification-script-under-scripts-sql-fo |
+| 260917-ndr | The question and answer rendering engine is not making use of the newline feature. it just jumbles everything together into one contiguous text flow. | 2026-09-17 | ef6d7eae1fec9107204cf4b68b7b9bab5ba9be7d | — | .planning/quick/260917-ndr-the-question-and-answer-rendering-engine-is-not-making-use-o |
+| 260917-ndw | How is the randomization of questions being served implemented to ensure repetition doesn’t occur. | 2026-09-17 | 13e92932c2ee0cf2c2fdf83fd6773be2560590aa | — | .planning/quick/260917-ndw-how-is-the-randomization-of-questions-being-served-implement |
+| 260917-ndy | If the user is practicing and they get any question wrong that question should be requeued to be served in 24hrs | 2026-09-17 | 7e4d5b6a0f65253702e0cb91d8ae19f0e869412b | — | .planning/quick/260917-ndy-if-the-user-is-practicing-and-they-get-any-question-wrong-th |
+| 260917-ndz | I have had the app on my device for over 3hours yet no question notification has been served. The user can experience questions in app through the practice now feature which for freemium users allows them 10 questions but while studying questions will be served as notification bubbles. | 2026-09-17 | 6ab2d0483790c6409655a00f51a68417961d807b | — | .planning/quick/260917-ndz-i-have-had-the-app-on-my-device-for-over-3hours-yet-no-quest |
+| 260917-nds | Question stats Dashboard should be clickable: Answered, Correct, Wrong, Points. Such that they can browse the questions they've answered, correct or failed then choose to retry anyone they failed | 2026-09-18 | f9b8c09697145b6da675ff365846577d31c78713 | — | .planning/quick/260917-nds-question-stats-dashboard-should-be-clickable-answered-correc |
+| 260917-ndu | The question points system is not working correctly. I need to see my correct stats displayed. Accumulated points and question answer stats take some time to update on the dashboard, and I am thinking it should be automatic because it is local first before it pushes scores to supabase when there is connectivity. | 2026-09-18 | 89c67c7a26e742d03ef4fe1429ced6446bd93668 | — | .planning/quick/260917-ndu-the-question-points-system-is-not-working-correctly-i-need-t |
 
 Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL Editor output from 2026-09-16 shows all 31 named migration catalog checks and OVERALL passing; [the saved result](../scripts/output/verify_001_004_live_results.md) records that evidence. The agent did not connect directly to the deployed database. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
 
@@ -56,8 +62,8 @@ Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL
 
 ## Session Continuity
 
-Last session: 2026-09-15
-Stopped at: Testing-report follow-up; three post-milestone fixes committed through `f9e4cd1`. Local `origin/main` tracks `f9e4cd1`.
+Last session: 2026-09-17
+Stopped at: Resumed project context; awaiting selection of the next action. The uncommitted batch `260917-ndp` contains 11 pending question-practice plans, with no execution summaries yet. Preserve the existing uncommitted content and report edits.
 Resume file: none (no HANDOFF.json or .continue-here).
 
 ## Next Step
