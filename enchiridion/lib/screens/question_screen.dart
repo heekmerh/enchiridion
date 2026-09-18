@@ -10,6 +10,7 @@ import '../services/question_flag_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/exam_prep/explanation_text.dart';
 
 class QuestionScreen extends StatefulWidget {
   final Question question;
@@ -241,7 +242,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 style: theme.textTheme.labelSmall
                     ?.copyWith(color: cs.primary, fontWeight: FontWeight.bold)),
             const SizedBox(height: 6),
-            Text(q.explanation, style: theme.textTheme.bodyMedium),
+            ExplanationText(
+                text: q.explanation, style: theme.textTheme.bodyMedium),
 
             // OSCE tip
             if (q.osceTip != null) ...[

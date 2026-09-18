@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../config/freemium_config.dart';
+import '../models/answered_question_filter.dart';
 import '../models/question.dart';
 import '../models/resource_topic.dart';
 import '../providers/study_stats_provider.dart';
@@ -10,6 +11,8 @@ import '../services/exam_prep_repository.dart';
 import '../services/next_question_selector.dart';
 import '../services/storage_service.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/exam_prep/explanation_text.dart';
+import 'answered_questions_screen.dart';
 import 'exam_prep_question_list_screen.dart';
 import 'leaderboard_screen.dart';
 import 'question_screen.dart';
@@ -80,6 +83,19 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     final review =
         storage.getQuestionReviews(kStandaloneExamPrepScope)[question.id];
     return Object.hash(question.id, review?.attempts ?? 0);
+  }
+
+  Future<void> _openAnsweredQuestions(AnsweredQuestionFilter filter) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => AnsweredQuestionsScreen(
+          questions: _questions,
+          initialFilter: filter,
+        ),
+      ),
+    );
+    if (!mounted) return;
+    _load();
   }
 
   /// Called after `QuestionScreen` has already recorded the answer (storage,
@@ -156,11 +172,17 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                               _MetricPill(
                                 label: 'Answered',
                                 value: '${totals.questionsAnswered}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.answered,
+                                ),
                               ),
                               const SizedBox(width: 10),
                               _MetricPill(
                                 label: 'Correct',
                                 value: '${totals.correctAnswers}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.correct,
+                                ),
                               ),
                             ],
                           ),
@@ -170,11 +192,17 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                               _MetricPill(
                                 label: 'Wrong',
                                 value: '${totals.wrongAnswers}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.wrong,
+                                ),
                               ),
                               const SizedBox(width: 10),
                               _MetricPill(
                                 label: 'Points',
                                 value: '${totals.performancePoints}',
+                                onTap: () => _openAnsweredQuestions(
+                                  AnsweredQuestionFilter.points,
+                                ),
                               ),
                             ],
                           ),
@@ -308,36 +336,49 @@ class _MetricPill extends StatelessWidget {
   final String label;
   final String value;
 
+  /// When set, the pill is tappable — wrapped so the tap produces a visible
+  /// ripple and exposes a button to the semantics tree.
+  final VoidCallback? onTap;
+
   const _MetricPill({
     required this.label,
     required this.value,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: theme.colorScheme.surface,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              label,
-              style: theme.textTheme.labelMedium,
-            ),
-            const SizedBox(height: 2),
-            Text(
-              value,
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+      child: Material(
+        color: theme.colorScheme.surface,
+        borderRadius: BorderRadius.circular(16),
+        child: Semantics(
+          button: onTap != null,
+          label: '$label $value',
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: BorderRadius.circular(16),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: theme.textTheme.labelMedium,
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    value,
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -491,7 +532,7 @@ class _StudyCardState extends State<_StudyCard> {
               ),
             ),
             const SizedBox(height: 6),
-            Text(widget.question.explanation),
+            ExplanationText(text: widget.question.explanation),
           ],
         ],
       ),

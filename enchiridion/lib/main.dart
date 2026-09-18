@@ -2,10 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+// Keep native-selected secondary entrypoint libraries in the AOT program.
+// ignore: unused_import
+import 'bubble_main.dart';
+// ignore: unused_import
+import 'services/bubble_alarm_callback.dart';
+
 import 'config/supabase_config.dart';
 import 'navigation/app_navigator.dart';
 import 'providers/book_provider.dart';
@@ -14,18 +20,12 @@ import 'providers/bookmark_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/pinned_notes_provider.dart';
 import 'providers/study_stats_provider.dart';
+import 'services/bubble_scheduler.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
 import 'widgets/exam_prep/in_app_study_prompt_host.dart';
-
-const MethodChannel _bubbleChannel = MethodChannel('enchiridion/bubbles');
-
-/// Guards against re-arming the ambient-prompt work chain on every app
-/// launch — it re-arms itself forever once started (see
-/// `BubbleAlarmWorker.kt`), so this only needs to happen once per install.
-const _bubbleAlarmArmedKey = 'bubble_alarm_armed';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,12 +48,8 @@ void main() async {
 
   // Ambient "Quick Check" bubble notifications are Android-only (no Bubbles
   // equivalent on iOS yet). Best-effort for the same reason as above.
-  if (!kIsWeb && Platform.isAndroid &&
-      prefs.getBool(_bubbleAlarmArmedKey) != true) {
-    try {
-      await _bubbleChannel.invokeMethod<void>('armBubbleSchedule');
-      await prefs.setBool(_bubbleAlarmArmedKey, true);
-    } catch (_) {}
+  if (!kIsWeb && Platform.isAndroid) {
+    await BubbleScheduler().armOnStartup();
   }
 
   runApp(EnchiridionApp(storageService: storageService));

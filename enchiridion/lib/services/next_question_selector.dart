@@ -20,11 +20,12 @@ import 'storage_service.dart';
 ///   2. **Due reviews and unseen questions, alternating** — so a large review
 ///      backlog cannot starve new material, and vice versa.
 ///   3. Whichever of those buckets is non-empty.
-///   4. Least recently seen — a graceful floor for a bank too small to
-///      satisfy the cooldown (notably the ten free-tier questions).
+///   4. Least recently seen — a floor for a bank too small to satisfy the
+///      cooldown (notably the ten free-tier questions). It may yield nothing
+///      when every candidate is still cooling off after a miss.
 class NextQuestionSelector {
-  /// A question is not re-served within this window regardless of its
-  /// schedule, so a rebound never lands in the same sitting as the miss.
+  /// Short cross-surface spacing for eligible questions. The lapse window,
+  /// rather than this cooldown, keeps a miss out of the same sitting.
   static const Duration cooldown = Duration(minutes: 90);
 
   final StorageService _storage;
@@ -44,6 +45,11 @@ class NextQuestionSelector {
     DateTime? now,
   }) async {
     final moment = now ?? DateTime.now();
+    try {
+      await _storage.refreshFromDisk();
+    } catch (_) {
+      // A platform read failure must not prevent serving from cached state.
+    }
     final unlocked = bank
         .where((question) =>
             hasAccess || question.questionNumber <= kFreeQuestionCount)
@@ -90,7 +96,7 @@ class NextQuestionSelector {
     // Nothing is due and nothing is new, or everything eligible is still in
     // cooldown. Serving the least recently seen question is both a sensible
     // fallback and strictly better than the uniform random this replaced.
-    pick ??= _leastRecentlySeen(unlocked, reviews);
+    pick ??= _leastRecentlySeen(unlocked, reviews, log, moment);
     if (pick == null) return null;
 
     await _storage.saveServeLog(scope, log.record(pick.id));
@@ -115,30 +121,50 @@ class NextQuestionSelector {
     return null;
   }
 
-  /// Prefers questions still in rotation; only falls back to retired ones when
-  /// the entire unlocked bank has graduated, so that an explicit "practise one
-  /// now" tap always has something to show.
+  /// Prefers questions still in rotation; falls back to retired ones when
+  /// the unlocked bank has graduated. An open lapse window is never bypassed.
   Question? _leastRecentlySeen(
     List<Question> unlocked,
     Map<String, QuestionReview> reviews,
+    ServeLog log,
+    DateTime now,
   ) {
     Question? best;
-    DateTime? bestSeen;
     Question? retiredBest;
-    DateTime? retiredBestSeen;
+
+    bool prefer(Question candidate, Question current) {
+      final candidateIndex = log.recent.indexOf(candidate.id);
+      final currentIndex = log.recent.indexOf(current.id);
+      // An unserved question wins; otherwise the oldest serve wins.
+      if (candidateIndex != currentIndex) {
+        if (candidateIndex == -1) return true;
+        if (currentIndex == -1) return false;
+        return candidateIndex > currentIndex;
+      }
+
+      final candidateSeen = reviews[candidate.id]?.lastSeenAt ??
+          DateTime.fromMillisecondsSinceEpoch(0);
+      final currentSeen = reviews[current.id]?.lastSeenAt ??
+          DateTime.fromMillisecondsSinceEpoch(0);
+      if (candidateSeen != currentSeen) {
+        return candidateSeen.isBefore(currentSeen);
+      }
+      return _random.nextBool();
+    }
 
     for (final question in unlocked) {
       final review = reviews[question.id];
-      final seen =
-          review?.lastSeenAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+      if (review != null &&
+          review.lastCorrect == false &&
+          review.dueAt.isAfter(now)) {
+        continue;
+      }
       if (review?.retired ?? false) {
-        if (retiredBestSeen == null || seen.isBefore(retiredBestSeen)) {
+        if (retiredBest == null || prefer(question, retiredBest)) {
           retiredBest = question;
-          retiredBestSeen = seen;
         }
-      } else if (bestSeen == null || seen.isBefore(bestSeen)) {
+      } else if (best == null || prefer(question, best)) {
         best = question;
-        bestSeen = seen;
       }
     }
 

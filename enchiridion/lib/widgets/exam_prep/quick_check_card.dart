@@ -10,6 +10,7 @@ import '../../providers/study_stats_provider.dart';
 import '../../services/notification_service.dart';
 import '../../services/question_review_sync_service.dart';
 import '../../services/storage_service.dart';
+import 'explanation_text.dart';
 
 /// Full-screen "answer one question" card shown inside the Android bubble
 /// window (see `lib/bubble_main.dart`). Picks a random option order seeded by
@@ -194,7 +195,7 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
                   ),
                 ),
                 const SizedBox(height: 6),
-                Text(widget.question.explanation),
+                ExplanationText(text: widget.question.explanation),
               ],
               const SizedBox(height: 16),
               Row(
