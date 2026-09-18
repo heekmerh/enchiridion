@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/answered_question_filter.dart';
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/providers/study_stats_provider.dart';
 import 'package:enchiridion/screens/answered_questions_screen.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
@@ -44,7 +45,12 @@ Widget _buildSubject(
   List<Question> questions = _questions,
 }) {
   return MultiProvider(
-    providers: [Provider<StorageService>.value(value: storage)],
+    providers: [
+      Provider<StorageService>.value(value: storage),
+      ChangeNotifierProvider<StudyStatsProvider>(
+        create: (_) => StudyStatsProvider(storage),
+      ),
+    ],
     child: MaterialApp(
       home: AnsweredQuestionsScreen(
         questions: questions,
