@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "batch_id": "260917-ndp",
+  "created_at": "2026-09-17T15:50:02.759Z",
+  "options": {},
+  "base_revision": "5abc039de6901f333b38bbe785b1835743945876",
+  "items": [
+    {
+      "quick_id": "260917-ndq",
+      "client_id": null,
+      "description": "users should not be able to see the full question bank for now. They should not know how many questions we have in total.",
+      "status": "complete",
+      "depends_on": [
+        "260917-ndx"
+      ],
+      "planned_files": [
+        "enchiridion/lib/services/question_visibility.dart",
+        "enchiridion/lib/screens/question_list_screen.dart",
+        "enchiridion/lib/screens/library_screen.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/lib/screens/exam_prep_question_list_screen.dart",
+        "enchiridion/test/services/question_visibility_test.dart",
+        "enchiridion/test/screens/library_screen_test.dart",
+        "enchiridion/test/guards/bank_disclosure_guard_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 4,
+      "commit": "5ecd12aae961fed08244a0fd4d0baeb3ff7cd228",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndr",
+      "client_id": null,
+      "description": "The question and answer rendering engine is not making use of the newline feature. it just jumbles everything together into one contiguous text flow.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/generate_resource_content.py",
+        "scripts/tests/test_generate_questions.py",
+        "enchiridion/assets/data/exam_prep_questions.json",
+        "enchiridion/test/services/exam_prep_repository_test.dart",
+        "enchiridion/lib/widgets/exam_prep/explanation_text.dart",
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/lib/widgets/exam_prep/quick_check_card.dart",
+        "enchiridion/test/widgets/explanation_text_test.dart",
+        "enchiridion/lib/models/question.dart",
+        "enchiridion/lib/services/notification_service.dart",
+        "enchiridion/test/models/question_test.dart",
+        "enchiridion/test/services/notification_service_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "ef6d7eae1fec9107204cf4b68b7b9bab5ba9be7d",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-nds",
+      "client_id": null,
+      "description": "Question stats Dashboard should be clickable: Answered, Correct, Wrong, Points. Such that they can browse the questions they've answered, correct or failed then choose to retry anyone they failed",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/models/answered_question_filter.dart",
+        "enchiridion/lib/screens/answered_questions_screen.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/test/models/answered_question_filter_test.dart",
+        "enchiridion/test/screens/answered_questions_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 1,
+      "commit": "f9b8c09697145b6da675ff365846577d31c78713",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndt",
+      "client_id": null,
+      "description": "Question numbers should be removed completely from the UI, the user should not have any idea the number questions we have.",
+      "status": "complete",
+      "depends_on": [
+        "260917-ndq",
+        "260917-ndx",
+        "260917-nds"
+      ],
+      "planned_files": [
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/lib/screens/question_list_screen.dart",
+        "enchiridion/lib/screens/exam_prep_question_list_screen.dart",
+        "enchiridion/test/screens/question_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 6,
+      "commit": "ee0f1edcc0eb0e63bb2f5ce969430b74bbbc6f81",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndu",
+      "client_id": null,
+      "description": "The question points system is not working correctly. I need to see my correct stats displayed. Accumulated points and question answer stats take some time to update on the dashboard, and I am thinking it should be automatic because it is local first before it pushes scores to supabase when there is connectivity.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/services/study_stats_service.dart",
+        "enchiridion/lib/services/storage_service.dart",
+        "enchiridion/lib/models/study_day_stats.dart",
+        "enchiridion/lib/providers/study_stats_provider.dart",
+        "enchiridion/lib/main.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/screens/exam_prep_question_list_screen.dart",
+        "enchiridion/lib/widgets/exam_prep/quick_check_card.dart",
+        "enchiridion/lib/widgets/exam_prep/in_app_study_prompt_host.dart",
+        "enchiridion/test/services/study_stats_service_test.dart",
+        "enchiridion/test/providers/study_stats_provider_test.dart",
+        "enchiridion/test/screens/exam_prep_home_screen_stats_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 2,
+      "commit": "89c67c7a26e742d03ef4fe1429ced6446bd93668",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndv",
+      "client_id": null,
+      "description": "After I answer a particular question there is no next question feature neither does it automatically serve the next question.",
+      "status": "complete",
+      "depends_on": [
+        "260917-ndr",
+        "260917-ndu"
+      ],
+      "planned_files": [
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/test/screens/question_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 5,
+      "commit": "af7d9aacb86196b2345b3cf7f99be42661e52951",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndw",
+      "client_id": null,
+      "description": "How is the randomization of questions being served implemented to ensure repetition doesn't occur.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        ".planning/quick/260917-ndw-how-is-the-randomization-of-questions-being-served-implement/FINDINGS.md",
+        "enchiridion/test/services/next_question_selector_test.dart",
+        "enchiridion/lib/services/next_question_selector.dart",
+        "enchiridion/lib/services/storage_service.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "13e92932c2ee0cf2c2fdf83fd6773be2560590aa",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndx",
+      "client_id": null,
+      "description": "Remove Browse Full Bank, that feature allows users to view the entire bank which we dont want",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/test/screens/exam_prep_home_screen_test.dart",
+        "TESTING_REPORT.md"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 3,
+      "commit": "0fe180b8f89a8f715be035074ba2f92df31601cd",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndy",
+      "client_id": null,
+      "description": "If the user is practicing and they get any question wrong that question should be requeued to be served in 24hrs",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/models/question_review.dart",
+        "enchiridion/lib/services/next_question_selector.dart",
+        "enchiridion/lib/services/notification_service.dart",
+        "enchiridion/test/models/question_review_test.dart",
+        "enchiridion/test/services/next_question_selector_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 1,
+      "commit": "7e4d5b6a0f65253702e0cb91d8ae19f0e869412b",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ndz",
+      "client_id": null,
+      "description": "I have had the app on my device for over 3hours yet no question notification has been served. The user can experience questions in app through the practice now feature which for freemium users allows them 10 questions but while studying questions will be served as notification bubbles.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/android/app/src/main/kotlin/com/example/enchiridion/BubbleAlarmWorker.kt",
+        "enchiridion/android/app/src/main/kotlin/com/example/enchiridion/BubbleActivity.kt",
+        "enchiridion/android/app/src/main/kotlin/com/example/enchiridion/BubblePlugin.kt",
+        "enchiridion/lib/main.dart",
+        "enchiridion/lib/services/bubble_scheduler.dart",
+        "enchiridion/lib/services/bubble_alarm_callback.dart",
+        "enchiridion/test/android/bubble_entrypoint_wiring_test.dart",
+        "enchiridion/test/services/bubble_scheduler_test.dart",
+        "enchiridion/test/services/bubble_alarm_callback_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "6ab2d0483790c6409655a00f51a68417961d807b",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260917-ne0",
+      "client_id": null,
+      "description": "User exam practice experience should be improved. Review it end to end and surface suggestions based on standard practice and innovation.",
+      "status": "complete",
+      "depends_on": [
+        "260917-ndq",
+        "260917-ndr",
+        "260917-nds",
+        "260917-ndt",
+        "260917-ndu",
+        "260917-ndv",
+        "260917-ndw",
+        "260917-ndx",
+        "260917-ndy",
+        "260917-ndz"
+      ],
+      "planned_files": [
+        ".planning/quick/260917-ne0-user-exam-practice-experience-should-be-improved-review-it-e/EXAM-PRACTICE-UX-REVIEW.md"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 7,
+      "commit": "40f7cf3255ee5ee1f599106980a8be9d1e842941",
+      "failure_reason": null
+    }
+  ]
+}
