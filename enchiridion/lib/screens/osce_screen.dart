@@ -4,6 +4,7 @@ import '../models/chapter.dart';
 import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/common/coming_soon.dart';
 import '../widgets/reader/reader_content.dart';
 
 /// Browse stations first; tabs appear after opening a station.
@@ -20,19 +21,40 @@ class OsceScreen extends StatelessWidget {
         itemCount: kOsceTopicsInDisplayOrder.length,
         itemBuilder: (context, index) {
           final topic = kOsceTopicsInDisplayOrder[index];
+          final comingSoon = topic.isComingSoon;
           return ListTile(
             leading: CircleAvatar(
-              backgroundColor: cs.primaryContainer,
-              child: Icon(Icons.medical_services_outlined,
-                  size: 20, color: cs.onPrimaryContainer),
+              backgroundColor: comingSoon
+                  ? ComingSoonStyle.container(cs)
+                  : cs.primaryContainer,
+              child: Icon(
+                Icons.medical_services_outlined,
+                size: 20,
+                color: comingSoon
+                    ? ComingSoonStyle.icon(cs)
+                    : cs.onPrimaryContainer,
+              ),
             ),
-            title: Text(topic.title),
+            title: Text(
+              topic.title,
+              style: comingSoon
+                  ? TextStyle(color: ComingSoonStyle.title(cs))
+                  : null,
+            ),
             subtitle: Text(
               topic.description ?? (topic.outline?.join(' • ') ?? ''),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
+              style: comingSoon
+                  ? TextStyle(color: ComingSoonStyle.body(cs))
+                  : null,
             ),
-            trailing: const Icon(Icons.chevron_right),
+            // A content-less station still shows a genuinely useful outline
+            // checklist (_OutlinePlaceholder), so the row stays tappable
+            // while grayed — only the trailing affordance changes.
+            trailing: comingSoon
+                ? const ComingSoonBadge(compact: true)
+                : const Icon(Icons.chevron_right),
             onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
               builder: (_) => _OsceDetailScreen(initialIndex: index),
             )),

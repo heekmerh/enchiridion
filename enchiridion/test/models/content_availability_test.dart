@@ -101,6 +101,28 @@ void main() {
     });
   });
 
+  group('isComingSoon', () {
+    test('ResourceTopic.isComingSoon is true for cardiovascular-system and '
+        'false for abdominal-examination', () {
+      final cardiovascular =
+          kOsceTopics.firstWhere((t) => t.id == 'cardiovascular-system');
+      final abdominal =
+          kOsceTopics.firstWhere((t) => t.id == 'abdominal-examination');
+
+      expect(cardiovascular.isComingSoon, isTrue);
+      expect(abdominal.isComingSoon, isFalse);
+    });
+
+    test('CatalogBook.isComingSoon is false for paediatrics and true for '
+        'surgery', () {
+      final paediatrics = kBooks.firstWhere((b) => b.id == 'paediatrics');
+      final surgery = kBooks.firstWhere((b) => b.id == 'surgery');
+
+      expect(paediatrics.isComingSoon, isFalse);
+      expect(surgery.isComingSoon, isTrue);
+    });
+  });
+
   group('ResourceTopicListScreen', () {
     testWidgets(
         'orders its own input so a topic with content renders as the first '

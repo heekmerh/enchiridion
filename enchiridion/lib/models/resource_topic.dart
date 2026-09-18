@@ -31,6 +31,10 @@ class ResourceTopic {
   /// `CatalogBook.hasContent` so both models answer the same question the
   /// same way.
   bool get hasContent => dataAssetPath != null;
+
+  /// Whether this topic should render with the shared coming-soon
+  /// treatment — see `ComingSoonStyle` in `widgets/common/coming_soon.dart`.
+  bool get isComingSoon => !hasContent;
 }
 
 const String kStandaloneExamPrepScope = 'exam_prep';
