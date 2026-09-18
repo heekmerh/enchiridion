@@ -182,6 +182,20 @@ void main() {
     },
   );
 
+  testWidgets(
+    'the app bar and body never render the question ordinal',
+    (tester) async {
+      // The question bank size is commercially sensitive; an ordinal like
+      // "Question 1" or "Q1" leaks how many questions exist relative to it.
+      await tester.pumpWidget(_buildSubject(storageService, readOnly: false));
+      await tester.pumpAndSettle();
+
+      expect(find.textContaining('Question 1'), findsNothing);
+      expect(find.textContaining('Q1'), findsNothing);
+      expect(find.text('Practice Question'), findsOneWidget);
+    },
+  );
+
   group('next-question advance', () {
     testWidgets(
       'without a loader, the post-submit footer is unchanged and shows no next-question control',

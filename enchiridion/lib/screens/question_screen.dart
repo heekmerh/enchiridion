@@ -272,7 +272,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Question ${q.questionNumber}'),
+        title: const Text('Practice Question'),
         backgroundColor: cs.surface,
         elevation: 0,
         actions: [
