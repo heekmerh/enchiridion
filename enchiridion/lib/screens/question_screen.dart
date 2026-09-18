@@ -12,12 +12,29 @@ import '../services/storage_service.dart';
 import '../utils/bottom_inset.dart';
 import '../widgets/exam_prep/explanation_text.dart';
 
+/// The next question to advance to in place, and the seed for its on-screen
+/// option order. Returned by [QuestionScreen.onRequestNext]; null means
+/// nothing is left to serve.
+typedef NextQuestionResult = ({Question question, int optionSeed});
+
+/// Loads the next question to advance to in place, without leaving the
+/// route. Absent (null) on [QuestionScreen] preserves today's behaviour
+/// exactly: no next-question control, no auto-advance.
+typedef NextQuestionLoader = Future<NextQuestionResult?> Function();
+
 class QuestionScreen extends StatefulWidget {
   final Question question;
   final String bookId;
   final UserAnswer? previousAnswer;
   final void Function(UserAnswer) onAnswered;
   final bool trackDailyStudyStats;
+
+  /// When present, the post-submit footer offers an explicit "Next
+  /// question" control (and, layered on top in a later change, an
+  /// unattended auto-advance) that swaps the displayed question in place
+  /// rather than pushing a new route. Absent, the screen behaves exactly as
+  /// it always has — only "Back to question list" is offered.
+  final NextQuestionLoader? onRequestNext;
 
   /// Shows [previousAnswer] as already submitted and disables answering.
   ///
@@ -43,6 +60,7 @@ class QuestionScreen extends StatefulWidget {
     this.trackDailyStudyStats = false,
     this.readOnly = false,
     this.optionSeed,
+    this.onRequestNext,
   });
 
   @override
@@ -52,30 +70,123 @@ class QuestionScreen extends StatefulWidget {
 class _QuestionScreenState extends State<QuestionScreen> {
   String? _selectedOption;
   bool _submitted = false;
-  late final List<String> _optionOrder;
+  List<String> _optionOrder = const [];
+  final ScrollController _scrollController = ScrollController();
+
+  // The question currently on screen and its option seed. Mutable so an
+  // advance can swap them in place instead of pushing a new route; starts as
+  // whatever the caller supplied.
+  late Question _question;
+  int? _optionSeed;
+
+  // True while an advance (manual or, in a later change, automatic) is
+  // awaiting its loader — guards against a second advance firing before the
+  // first resolves.
+  bool _advancing = false;
+
+  // True once the loader has returned null: nothing left to serve.
+  bool _exhausted = false;
+
+  // How long an answered, loader-backed screen waits for an idle user
+  // before advancing on its own — long enough to read a short explanation
+  // and reach the cancel control, short enough that an idle user isn't
+  // stranded. A named constant so it's tunable in one place.
+  static const _feedbackPause = Duration(seconds: 6);
+
+  Timer? _autoAdvanceTimer;
+  int? _secondsRemaining;
 
   @override
   void initState() {
     super.initState();
+    _question = widget.question;
+    _optionSeed = widget.optionSeed;
     if (widget.readOnly && widget.previousAnswer != null) {
       _selectedOption = widget.previousAnswer!.selectedOption;
       _submitted = true;
     }
     // Start fresh otherwise, even if previously answered (retake support).
-    _optionOrder = widget.question.optionKeys
-      ..shuffle(Random(widget.optionSeed ?? widget.question.id.hashCode));
+    _seedOptionOrder();
+  }
+
+  @override
+  void dispose() {
+    _autoAdvanceTimer?.cancel();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  void _startAutoAdvanceCountdown() {
+    _autoAdvanceTimer?.cancel();
+    setState(() => _secondsRemaining = _feedbackPause.inSeconds);
+    _autoAdvanceTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      final remaining = (_secondsRemaining ?? 1) - 1;
+      setState(() => _secondsRemaining = remaining);
+      if (remaining <= 0) {
+        timer.cancel();
+        _autoAdvanceTimer = null;
+        _advance();
+      }
+    });
+  }
+
+  void _cancelAutoAdvance() {
+    _autoAdvanceTimer?.cancel();
+    _autoAdvanceTimer = null;
+    if (_secondsRemaining != null) {
+      setState(() => _secondsRemaining = null);
+    }
+  }
+
+  void _seedOptionOrder() {
+    _optionOrder = _question.optionKeys
+      ..shuffle(Random(_optionSeed ?? _question.id.hashCode));
   }
 
   bool get _isCorrect =>
-      _selectedOption?.toLowerCase() ==
-      widget.question.correctOption.toLowerCase();
+      _selectedOption?.toLowerCase() == _question.correctOption.toLowerCase();
+
+  /// Advances to the next question in place. Guarded against re-entrancy (an
+  /// in-flight advance ignores a second request) and against `mounted ==
+  /// false` after the loader's await.
+  Future<void> _advance() async {
+    if (_advancing) return;
+    final loader = widget.onRequestNext;
+    if (loader == null) return;
+
+    _cancelAutoAdvance();
+    setState(() => _advancing = true);
+    final result = await loader();
+    if (!mounted) return;
+
+    setState(() {
+      _advancing = false;
+      if (result == null) {
+        _exhausted = true;
+        return;
+      }
+      _exhausted = false;
+      _question = result.question;
+      _optionSeed = result.optionSeed;
+      _seedOptionOrder();
+      _selectedOption = null;
+      _submitted = false;
+    });
+    if (result != null && _scrollController.hasClients) {
+      _scrollController.jumpTo(0);
+    }
+  }
 
   Future<void> _submit() async {
     if (widget.readOnly || _selectedOption == null) return;
     setState(() => _submitted = true);
 
     final answer = UserAnswer(
-      questionId: widget.question.id,
+      questionId: _question.id,
       selectedOption: _selectedOption!,
       isCorrect: _isCorrect,
       answeredAt: DateTime.now(),
@@ -111,10 +222,18 @@ class _QuestionScreenState extends State<QuestionScreen> {
     // background work — never gate the answer flow on the network.
     unawaited(NotificationService.instance.scheduleFollowUp(
       scope: widget.bookId,
-      question: widget.question,
+      question: _question,
       review: review,
     ));
     unawaited(QuestionReviewSyncService(storage).push(widget.bookId, review));
+
+    // The countdown starts only now — after the storage write and stats
+    // recording this method awaits have both completed — and only when a
+    // loader is present and the screen isn't readOnly.
+    if (!mounted) return;
+    if (widget.onRequestNext != null && !widget.readOnly) {
+      _startAutoAdvanceCountdown();
+    }
   }
 
   Future<void> _flagQuestion() async {
@@ -127,7 +246,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
     try {
       await QuestionFlagService().submit(
         scope: widget.bookId,
-        questionId: widget.question.id,
+        questionId: _question.id,
         reason: reason,
       );
       if (!mounted) return;
@@ -148,7 +267,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final q = widget.question;
+    final q = _question;
     final options = _optionOrder;
 
     return Scaffold(
@@ -165,6 +284,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
         ],
       ),
       body: ListView(
+        controller: _scrollController,
         padding: EdgeInsets.fromLTRB(
           16,
           16,
@@ -278,6 +398,42 @@ class _QuestionScreenState extends State<QuestionScreen> {
             ],
 
             const SizedBox(height: 24),
+            if (widget.onRequestNext != null && !widget.readOnly) ...[
+              if (_exhausted)
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: cs.surfaceContainerHighest,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Text(
+                    "You're all caught up — nothing more is queued right now.",
+                  ),
+                )
+              else ...[
+                if (_secondsRemaining != null) ...[
+                  Text(
+                    'Next question in ${_secondsRemaining}s',
+                    style: theme.textTheme.bodySmall
+                        ?.copyWith(color: cs.onSurface.withValues(alpha: 0.64)),
+                  ),
+                  const SizedBox(height: 6),
+                ],
+                FilledButton(
+                  onPressed: _advancing ? null : _advance,
+                  style: FilledButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 14)),
+                  child: const Text('Next question'),
+                ),
+                if (_secondsRemaining != null)
+                  TextButton(
+                    onPressed: _cancelAutoAdvance,
+                    child: const Text('Stay on this question'),
+                  ),
+              ],
+              const SizedBox(height: 12),
+            ],
             OutlinedButton(
               onPressed: () => Navigator.pop(context),
               style: OutlinedButton.styleFrom(

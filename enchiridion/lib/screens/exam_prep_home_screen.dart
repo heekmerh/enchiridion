@@ -42,6 +42,13 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   bool _hasAccess = false;
   Object? _error;
 
+  // The in-flight record-and-re-pick work kicked off from the "Practice one
+  // now" QuestionScreen's `onAnswered` callback (which is `void`, so this
+  // future is otherwise unawaited). `_serveNextQuestion` awaits it before
+  // reading the re-picked `_randomQuestion`, so the advance never hands the
+  // user back the question they just answered.
+  Future<void>? _pendingAnswerWrite;
+
   @override
   void initState() {
     super.initState();
@@ -112,6 +119,17 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
       _randomQuestion = nextQuestion;
       _randomQuestionOptionSeed = _optionSeedFor(storage, nextQuestion);
     });
+  }
+
+  /// Supplies `QuestionScreen.onRequestNext` for the "Practice one now"
+  /// entry point: awaits the answer-recording + re-pick already kicked off
+  /// by [_handleStudyCardAnswer], then hands over the question it already
+  /// picked. Deliberately does NOT call `NextQuestionSelector.next()` again
+  /// here — that would burn a second serve-log entry and skip a question.
+  Future<NextQuestionResult?> _serveNextQuestion() async {
+    await _pendingAnswerWrite;
+    if (!mounted || _randomQuestion == null) return null;
+    return (question: _randomQuestion!, optionSeed: _randomQuestionOptionSeed);
   }
 
   @override
@@ -257,8 +275,10 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                                           trackDailyStudyStats: true,
                                           optionSeed: _randomQuestionOptionSeed,
                                           onAnswered: (answer) {
-                                            _handleStudyCardAnswer(answer);
+                                            _pendingAnswerWrite =
+                                                _handleStudyCardAnswer(answer);
                                           },
+                                          onRequestNext: _serveNextQuestion,
                                         ),
                                       ),
                                     ),
