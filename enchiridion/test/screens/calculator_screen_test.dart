@@ -23,6 +23,16 @@ Future<void> _pumpCalculatorScreen(
   await tester.pumpAndSettle();
 }
 
+/// Scrolls [finder] into view before tapping it — several Task 3 forms
+/// (chads-vasc, has-bled, burn-tbsa) have enough switches that the
+/// Calculate button and later switches sit below the test viewport.
+Future<void> _scrollTap(WidgetTester tester, Finder finder) async {
+  await tester.ensureVisible(finder);
+  await tester.pumpAndSettle();
+  await tester.tap(finder);
+  await tester.pumpAndSettle();
+}
+
 void main() {
   setUpAll(() async {
     SharedPreferences.setMockInitialValues({});
@@ -200,6 +210,98 @@ void main() {
       await tester.tap(find.text('Calculate'));
       await tester.pumpAndSettle();
       expect(find.textContaining('20.0 mL/dL'), findsWidgets);
+    });
+  });
+
+  group('Task 3 worked examples', () {
+    testWidgets(
+        'chads-vasc: 76-year-old female with hypertension scores 4/9',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'chads-vasc');
+      final fields = find.byType(TextFormField);
+      await tester.enterText(fields.at(0), '76');
+      await _scrollTap(tester, find.text('Female sex'));
+      await _scrollTap(tester, find.text('Hypertension'));
+      await _scrollTap(tester, find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('4 / 9'), findsWidgets);
+    });
+
+    testWidgets(
+        'has-bled: uncontrolled hypertension + age over 65 + labile INR scores 3, high risk',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'has-bled');
+      await _scrollTap(tester, find.text('Uncontrolled hypertension'));
+      await _scrollTap(tester, find.text('Age over 65'));
+      await _scrollTap(tester, find.text('Labile INR'));
+      await _scrollTap(tester, find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('3 / 9'), findsWidgets);
+      expect(find.textContaining('High bleeding risk'), findsWidgets);
+    });
+
+    testWidgets(
+        'burn-tbsa: adult head + one arm renders 18%; paediatric head + one leg renders 32%',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'burn-tbsa');
+      await _scrollTap(tester, find.text('Head & neck'));
+      await _scrollTap(tester, find.text('Left arm'));
+      await _scrollTap(tester, find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('18%'), findsWidgets);
+
+      // Switch to paediatric preset, swap the arm selection for a leg.
+      await _scrollTap(tester, find.text('Adult'));
+      await tester.tap(find.text('Paediatric').last);
+      await tester.pumpAndSettle();
+      await _scrollTap(tester, find.text('Left arm'));
+      await _scrollTap(tester, find.text('Left leg'));
+      await _scrollTap(tester, find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('32%'), findsWidgets);
+    });
+
+    testWidgets(
+        'parkland: 70 kg with 20% TBSA renders 5600 mL total, 2800 mL in the first 8 hours',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'parkland');
+      final fields = find.byType(TextFormField);
+      await tester.enterText(fields.at(0), '70');
+      await tester.enterText(fields.at(1), '20');
+      await tester.tap(find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('5600 mL'), findsWidgets);
+      expect(find.textContaining('2800 mL'), findsWidgets);
+    });
+
+    testWidgets(
+        'gtpal: gravida 3, term 1, preterm 1, abortions 1, living 2 renders G3 T1 P1 A1 L2',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'gtpal');
+      final fields = find.byType(TextFormField);
+      await tester.enterText(fields.at(0), '3');
+      await tester.enterText(fields.at(1), '1');
+      await tester.enterText(fields.at(2), '1');
+      await tester.enterText(fields.at(3), '1');
+      await tester.enterText(fields.at(4), '2');
+      await tester.tap(find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('G3 T1 P1 A1 L2'), findsWidgets);
+    });
+
+    testWidgets(
+        'gtpal: term + preterm + abortions exceeding gravida renders a consistency warning',
+        (tester) async {
+      await _pumpCalculatorScreen(tester, 'gtpal');
+      final fields = find.byType(TextFormField);
+      await tester.enterText(fields.at(0), '1');
+      await tester.enterText(fields.at(1), '1');
+      await tester.enterText(fields.at(2), '1');
+      await tester.enterText(fields.at(3), '1');
+      await tester.enterText(fields.at(4), '1');
+      await tester.tap(find.text('Calculate'));
+      await tester.pumpAndSettle();
+      expect(find.textContaining('exceeds gravida'), findsWidgets);
     });
   });
 }

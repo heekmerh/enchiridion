@@ -68,18 +68,19 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      // The first Cardiology entry ("Mean Arterial Pressure (MAP)") is
-      // coming-soon at this point (Task 1) — flipped to implemented later.
-      expect(find.text('Mean Arterial Pressure (MAP)'), findsOneWidget);
+      // "TIMI Risk Score" is a Cardiology entry that remains coming-soon
+      // through the whole plan (see CALCULATOR-SOURCING.md — blocked on a
+      // source decision).
+      expect(find.text('TIMI Risk Score'), findsOneWidget);
       final tile = find.ancestor(
-        of: find.text('Mean Arterial Pressure (MAP)'),
+        of: find.text('TIMI Risk Score'),
         matching: find.byType(ListTile),
       );
       expect(
         find.descendant(of: tile, matching: find.byType(ComingSoonBadge)),
         findsOneWidget,
       );
-      // No lock icon anywhere in a fully-unlocked, all-coming-soon category.
+      // A coming-soon row never renders a lock icon, regardless of access.
       expect(
         find.descendant(of: tile, matching: find.byIcon(Icons.lock_outline)),
         findsNothing,
@@ -97,11 +98,10 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Mean Arterial Pressure (MAP)'));
+      await tester.tap(find.text('TIMI Risk Score'));
       await tester.pump();
 
-      expect(find.text('Mean Arterial Pressure (MAP) — $kComingSoonLabel'),
-          findsOneWidget);
+      expect(find.text('TIMI Risk Score — $kComingSoonLabel'), findsOneWidget);
       // Still on the list screen — no CalculatorScreen pushed.
       expect(find.byType(CalculatorListScreen), findsOneWidget);
     });
@@ -134,13 +134,13 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      final cardiologyIds = kCalculators
-          .where((c) => c.category == 'Cardiology')
+      final comingSoonCardiologyTitles = kCalculators
+          .where((c) => c.category == 'Cardiology' && c.isComingSoon)
           .map((c) => c.title)
           .toList();
-      // Every Cardiology entry is coming-soon at this point — zero locked
-      // rows should render for the whole category.
-      for (final title in cardiologyIds) {
+      // Every coming-soon Cardiology entry must never render a lock icon,
+      // even with access denied — coming-soon wins over the freemium gate.
+      for (final title in comingSoonCardiologyTitles) {
         final tile = find.ancestor(
           of: find.text(title),
           matching: find.byType(ListTile),

@@ -710,7 +710,24 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Fluid Resuscitation (Parkland)',
     category: 'Emergency & Critical Care',
     description: 'Burn fluid resuscitation volume for the first 24 hours.',
-    implemented: false,
+    explanation:
+        'Parkland formula: total 24-hour crystalloid volume = 4 mL × weight (kg) × %TBSA burned. '
+        'Half is given over the first 8 hours from the time of injury, and the remaining half '
+        'over the next 16 hours.',
+    clinicalInterpretation:
+        'Use the total, first-8-hour rate, and next-16-hour rate as a starting point for '
+        'resuscitation. Titrate the actual infusion rate to urine output (typically 0.5 mL/kg/hr '
+        'in adults) and other perfusion markers, not to the formula alone.',
+    safetyNotes:
+        'The clock starts at the time of injury, not at presentation — hours already elapsed '
+        'before arrival must be subtracted from the first 8-hour window. This is a resuscitation '
+        'starting point only and must be titrated to the individual patient\'s response.',
+    commonPitfalls:
+        'Starting the 8-hour clock at presentation instead of at the time of burn. '
+        'Not adjusting the running rate once urine output and vital signs are available.',
+    osceTips:
+        'State the formula, the 8-hour/16-hour split, and that timing starts at injury. '
+        'Examiners expect you to mention urine output as the titration target.',
   ),
   CalculatorDefinition(
     id: 'sofa',
@@ -821,7 +838,23 @@ const List<CalculatorDefinition> kCalculators = [
     category: 'Obs & Gynae',
     description:
         'Obstetric history as Gravida, Term, Preterm, Abortions, Living.',
-    implemented: false,
+    explanation:
+        'GTPAL summarises obstetric history: Gravida (total pregnancies, including the current '
+        'one), Term births (37 weeks or later), Preterm births (20–36 completed weeks), '
+        'Abortions (losses before 20 weeks, spontaneous or induced), and Living children.',
+    clinicalInterpretation:
+        'Rendered as a five-figure string (e.g. G3 T1 P1 A1 L2) for quick obstetric history '
+        'documentation and handover. A current pregnancy counts toward gravida but not toward '
+        'the para components until it delivers.',
+    safetyNotes:
+        'GTPAL is a documentation summary, not a risk score — it does not itself predict '
+        'obstetric risk. Verify the counts directly with the patient rather than inferring them.',
+    commonPitfalls:
+        'Counting the current pregnancy toward term/preterm/abortions before it has concluded. '
+        'Confusing multiple gestations (e.g. twins) as multiple pregnancies rather than one.',
+    osceTips:
+        'State each letter and its definition in order. Examiners often test whether term + '
+        'preterm + abortions is internally consistent with gravida.',
   ),
   CalculatorDefinition(
     id: 'bishop-score',
@@ -899,14 +932,54 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'CHA₂DS₂-VASc Score',
     category: 'Cardiology',
     description: 'Stroke risk in non-valvular atrial fibrillation.',
-    implemented: false,
+    explanation:
+        'CHA₂DS₂-VASc scores stroke risk factors in non-valvular atrial fibrillation: '
+        'congestive heart failure (1), hypertension (1), age ≥ 75 (2), diabetes (1), prior '
+        'stroke/TIA/thromboembolism (2), vascular disease (1), age 65–74 (1), and female sex '
+        '(1) — maximum 9. The two age bands are mutually exclusive by construction from a '
+        'single age input.',
+    clinicalInterpretation:
+        'Higher scores indicate greater annual stroke risk and support the discussion of '
+        'anticoagulation. Applies to non-valvular atrial fibrillation only — do not use for '
+        'valvular AF or other arrhythmias.',
+    safetyNotes:
+        'This score applies to non-valvular atrial fibrillation only. It informs, but does not '
+        'replace, an individualised anticoagulation discussion that also weighs bleeding risk '
+        '(e.g. HAS-BLED) and patient preference.',
+    commonPitfalls:
+        'Double-counting both age bands instead of using the higher applicable one. '
+        'Applying the score to valvular atrial fibrillation, where it was not derived.',
+    osceTips:
+        'Recite each criterion and its point value. Examiners expect you to state that the score '
+        'applies to non-valvular AF and that anticoagulation is a shared decision weighing '
+        'bleeding risk.',
   ),
   CalculatorDefinition(
     id: 'has-bled',
     title: 'HAS-BLED Score',
     category: 'Cardiology',
     description: 'Major bleeding risk on anticoagulation.',
-    implemented: false,
+    explanation:
+        'HAS-BLED scores bleeding risk factors on anticoagulation: uncontrolled hypertension '
+        '(1), abnormal renal function (1), abnormal liver function (1), prior stroke (1), '
+        'bleeding history or predisposition (1), labile INR (1), age over 65 (1), drugs '
+        'predisposing to bleeding (1), and alcohol excess (1) — maximum 9.',
+    clinicalInterpretation:
+        'A score of 3 or more indicates high bleeding risk. This should prompt addressing '
+        'modifiable bleeding risk factors (blood pressure control, concurrent antiplatelets, '
+        'alcohol use) rather than withholding anticoagulation outright when it is otherwise '
+        'indicated.',
+    safetyNotes:
+        'A high HAS-BLED score is not, by itself, a reason to withhold anticoagulation when '
+        'stroke risk is high — it identifies modifiable risks to address alongside the '
+        'anticoagulation decision.',
+    commonPitfalls:
+        'Using a high HAS-BLED score in isolation to deny anticoagulation without weighing '
+        'stroke risk (e.g. CHA₂DS₂-VASc). '
+        'Failing to act on the modifiable risk factors the score identifies.',
+    osceTips:
+        'Recite each criterion. Examiners often test whether you know a high score should '
+        'prompt risk modification, not automatic discontinuation of anticoagulation.',
   ),
   CalculatorDefinition(
     id: 'timi',
@@ -989,7 +1062,26 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Burn % (Rule of 9s)',
     category: 'Surgery & Trauma',
     description: 'Total body surface area burned, adult and paediatric.',
-    implemented: false,
+    explanation:
+        'The rule of 9s estimates total body surface area (TBSA) burned by assigning each body '
+        'region a multiple of 9%. Adult: head and neck 9%, each arm 9%, each leg 18%, anterior '
+        'trunk 18%, posterior trunk 18%, perineum 1%. Paediatric preset: head and neck 18%, each '
+        'leg 14%, with the remaining regions unchanged from the adult values.',
+    clinicalInterpretation:
+        'The summed percentage of selected regions drives fluid resuscitation calculations '
+        '(e.g. Parkland formula) and burn severity triage. Only partial- and full-thickness burns '
+        'count toward the total.',
+    safetyNotes:
+        'The rule of 9s is a field estimate. Lund–Browder charts are the reference method in '
+        'children because body proportions change with age more than the rule of 9s accounts '
+        'for.',
+    commonPitfalls:
+        'Including superficial (erythema-only, first-degree) burns in the total — only partial- '
+        'and full-thickness burns count. '
+        'Using the adult preset for a child, whose head and legs occupy different proportions.',
+    osceTips:
+        'State the adult and paediatric region percentages and when to switch presets. Mention '
+        'Lund–Browder as the more accurate paediatric reference method.',
   ),
   CalculatorDefinition(
     id: 'alvarado',

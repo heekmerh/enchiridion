@@ -79,12 +79,12 @@ void main() {
       expect(ids.toSet().length, ids.length);
     });
 
-    test('implemented count is 33 and coming-soon count is 25', () {
-      // Went 26/32 (Task 1) -> 33/25 (Task 2, this test) -> 38/20 (Task 3).
+    test('implemented count is 38 and coming-soon count is 20', () {
+      // Went 26/32 (Task 1) -> 33/25 (Task 2) -> 38/20 (Task 3, this test).
       final implemented = kCalculators.where((c) => c.implemented).length;
       final comingSoon = kCalculators.where((c) => c.isComingSoon).length;
-      expect(implemented, 33);
-      expect(comingSoon, 25);
+      expect(implemented, 38);
+      expect(comingSoon, 20);
       expect(implemented + comingSoon, kCalculators.length);
     });
 
@@ -152,27 +152,38 @@ void main() {
 
   group('groupedCalculatorsInDisplayOrder', () {
     test(
-        'categories with at least one implemented calculator precede categories with none',
+        'every category holds at least one implemented calculator, so no category is demoted',
+        () {
+      // End-state after Task 3: all nine categories hold at least one
+      // implemented calculator, so groupedCalculatorsInDisplayOrder returns
+      // all nine in authored order with none demoted to the trailing bucket.
+      final grouped = groupedCalculatorsInDisplayOrder();
+      for (final entry in grouped.entries) {
+        expect(entry.value.any((c) => c.implemented), isTrue,
+            reason: '${entry.key} has no implemented calculator');
+      }
+      expect(grouped.keys.toList(), [
+        'Drug Dosing',
+        'Emergency & Critical Care',
+        'General',
+        'Obs & Gynae',
+        'Paediatrics',
+        'Cardiology',
+        'Respiratory',
+        'Surgery & Trauma',
+        'Utility',
+      ]);
+    });
+
+    test('every category key maps to a list whose first entry is implemented',
         () {
       final grouped = groupedCalculatorsInDisplayOrder();
-      final keys = grouped.keys.toList();
-      final categoryHasImplemented = <String, bool>{
-        for (final entry in grouped.entries)
-          entry.key: entry.value.any((c) => c.implemented),
-      };
-      final firstUnimplementedIndex =
-          keys.indexWhere((k) => categoryHasImplemented[k] == false);
-      final lastImplementedIndex =
-          keys.lastIndexWhere((k) => categoryHasImplemented[k] == true);
-      // At this point (Task 2), only Surgery & Trauma has no implemented
-      // calculators yet (Task 3 adds burn-tbsa and parkland) and must be
-      // the trailing category.
-      expect(firstUnimplementedIndex, isNot(-1));
-      expect(lastImplementedIndex, lessThan(firstUnimplementedIndex));
-      expect(
-        keys.sublist(firstUnimplementedIndex),
-        containsAll(['Surgery & Trauma']),
-      );
+      for (final entry in grouped.entries) {
+        expect(entry.value.first.implemented, isTrue,
+            reason:
+                '${entry.key} category\'s first entry should be implemented '
+                '(the free slot must always be a working calculator)');
+      }
     });
 
     test(
