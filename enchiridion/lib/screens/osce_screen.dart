@@ -5,9 +5,11 @@ import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
 import '../utils/bottom_inset.dart';
 import '../widgets/common/coming_soon.dart';
-import '../widgets/reader/reader_content.dart';
+import '../widgets/common/subtopic_tabs.dart';
 
-/// Browse stations first; tabs appear after opening a station.
+/// Browse stations first; opening a station shows tabs for that station's
+/// own sub-topics (see `subtopic_tabs.dart`) — never a strip of other
+/// stations.
 class OsceScreen extends StatelessWidget {
   const OsceScreen({super.key});
 
@@ -50,13 +52,13 @@ class OsceScreen extends StatelessWidget {
                   : null,
             ),
             // A content-less station still shows a genuinely useful outline
-            // checklist (_OutlinePlaceholder), so the row stays tappable
-            // while grayed — only the trailing affordance changes.
+            // as its sub-topic tabs (SubtopicTabsView), so the row stays
+            // tappable while grayed — only the trailing affordance changes.
             trailing: comingSoon
                 ? const ComingSoonBadge(compact: true)
                 : const Icon(Icons.chevron_right),
             onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
-              builder: (_) => _OsceDetailScreen(initialIndex: index),
+              builder: (_) => _OsceDetailScreen(topic: topic),
             )),
           );
         },
@@ -66,171 +68,55 @@ class OsceScreen extends StatelessWidget {
 }
 
 class _OsceDetailScreen extends StatefulWidget {
-  final int initialIndex;
-  const _OsceDetailScreen({required this.initialIndex});
+  final ResourceTopic topic;
+  const _OsceDetailScreen({required this.topic});
 
   @override
   State<_OsceDetailScreen> createState() => _OsceDetailScreenState();
 }
 
-class _OsceDetailScreenState extends State<_OsceDetailScreen>
-    with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
-  final Map<String, Chapter> _loadedChapters = {};
-  final Map<String, Object> _loadErrors = {};
+class _OsceDetailScreenState extends State<_OsceDetailScreen> {
+  Chapter? _chapter;
+  Object? _error;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(
-      length: kOsceTopicsInDisplayOrder.length,
-      initialIndex: widget.initialIndex,
-      vsync: this,
-    );
-    for (final topic in kOsceTopicsInDisplayOrder) {
-      final path = topic.dataAssetPath;
-      if (path == null) continue;
-      ResourceTopicService.loadChapter(path).then((chapter) {
-        if (!mounted) return;
-        setState(() => _loadedChapters[topic.id] = chapter);
-      }).catchError((Object error) {
-        if (!mounted) return;
-        setState(() => _loadErrors[topic.id] = error);
-      });
-    }
-  }
-
-  @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
+    final path = widget.topic.dataAssetPath;
+    // Stations with no content JSON simply never resolve `_chapter`; their
+    // outline is real structure and `SubtopicTabsView` turns it into one
+    // tab per outline entry with the shared coming-soon placeholder.
+    if (path == null) return;
+    ResourceTopicService.loadChapter(path).then((chapter) {
+      if (!mounted) return;
+      setState(() => _chapter = chapter);
+    }).catchError((Object error) {
+      if (!mounted) return;
+      setState(() => _error = error);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final isLoading = widget.topic.dataAssetPath != null &&
+        _error == null &&
+        _chapter == null;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('OSCE'),
-        bottom: TabBar(
-          controller: _tabController,
-          isScrollable: true,
-          tabs: kOsceTopicsInDisplayOrder
-              .map((topic) => Tab(text: topic.title))
-              .toList(),
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children:
-            kOsceTopicsInDisplayOrder.map((topic) => _OsceTabBody(topic: topic,
-                chapter: _loadedChapters[topic.id],
-                error: _loadErrors[topic.id])).toList(),
-      ),
-    );
-  }
-}
-
-class _OsceTabBody extends StatelessWidget {
-  final ResourceTopic topic;
-  final Chapter? chapter;
-  final Object? error;
-
-  const _OsceTabBody({required this.topic, this.chapter, this.error});
-
-  @override
-  Widget build(BuildContext context) {
-    if (topic.dataAssetPath == null) {
-      return _OutlinePlaceholder(topic: topic);
-    }
-    if (error != null) {
-      return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Text(
-            'Could not load this section.\n\n$error',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      );
-    }
-    if (chapter == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-    return ListView(
-      padding: EdgeInsets.only(bottom: 24 + bottomViewportInset(context)),
-      children: [
-        if (topic.description != null)
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
-            child: Text(
-              topic.description!,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ),
-        ReaderContent(chapter: chapter!, bookId: ''),
-      ],
-    );
-  }
-}
-
-/// Shown for a station whose full content hasn't been written yet — the
-/// checklist from OSCE.md stands in for it, so the structure is already
-/// useful even before the prose lands.
-class _OutlinePlaceholder extends StatelessWidget {
-  final ResourceTopic topic;
-
-  const _OutlinePlaceholder({required this.topic});
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-    final outline = topic.outline ?? const [];
-
-    return ListView(
-      padding: EdgeInsets.fromLTRB(
-        20,
-        20,
-        20,
-        24 + bottomViewportInset(context),
-      ),
-      children: [
-        Container(
-          padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            color: cs.secondaryContainer.withValues(alpha: 0.5),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(Icons.construction_outlined, size: 18, color: cs.secondary),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  'Full content for ${topic.title} is coming soon. Here\'s '
-                  'what this station covers in the meantime.',
-                  style: theme.textTheme.bodySmall,
-                ),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 16),
-        ...outline.map((item) => Padding(
-              padding: const EdgeInsets.symmetric(vertical: 6),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.circle, size: 6, color: cs.onSurface.withValues(alpha: 0.5)),
-                  const SizedBox(width: 10),
-                  Expanded(
-                    child: Text(item, style: theme.textTheme.bodyMedium),
+      appBar: AppBar(title: Text(widget.topic.title)),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : _error != null
+              ? Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Text(
+                      'Could not load this section.\n\n$_error',
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ],
-              ),
-            )),
-      ],
+                )
+              : SubtopicTabsView(topic: widget.topic, chapter: _chapter),
     );
   }
 }
