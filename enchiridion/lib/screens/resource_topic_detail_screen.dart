@@ -74,32 +74,35 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
                     ),
                   ),
                 )
-              : Column(
-                  children: [
-                    AspectRatio(
-                      aspectRatio: 16 / 9,
-                      child: Image.asset(
-                        widget.topic.heroAssetPath,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          widget.topic.categoryTitle,
-                          style: theme.textTheme.labelLarge?.copyWith(
-                            color: theme.colorScheme.primary,
-                            fontWeight: FontWeight.w700,
-                          ),
+              : SubtopicTabsView(
+                  topic: widget.topic,
+                  chapter: _chapter,
+                  // The hero banner and category label scroll away with the
+                  // content; the tab strip stays pinned above the scroll
+                  // view so sub-topic navigation never leaves the screen.
+                  headerSlivers: [
+                    SliverToBoxAdapter(
+                      child: AspectRatio(
+                        aspectRatio: 16 / 9,
+                        child: Image.asset(
+                          widget.topic.heroAssetPath,
+                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: SubtopicTabsView(
-                        topic: widget.topic,
-                        chapter: _chapter,
+                    SliverToBoxAdapter(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            widget.topic.categoryTitle,
+                            style: theme.textTheme.labelLarge?.copyWith(
+                              color: theme.colorScheme.primary,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ],

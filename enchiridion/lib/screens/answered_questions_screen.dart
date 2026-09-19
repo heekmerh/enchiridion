@@ -120,6 +120,7 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
           trackDailyStudyStats: true,
           readOnly: answer.isCorrect,
           optionSeed: _optionSeedFor(question),
+          backLabel: 'Back to answers',
           onAnswered: (_) {},
         ),
       ),

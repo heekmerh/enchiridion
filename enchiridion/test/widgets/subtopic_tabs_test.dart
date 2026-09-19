@@ -531,4 +531,55 @@ void main() {
       expect(_inContent(find.text('One')), findsNothing);
     });
   });
+
+  group('SubtopicTabsView headerSlivers', () {
+    late StorageService storage;
+
+    setUp(() async {
+      SharedPreferences.setMockInitialValues({});
+      storage = StorageService(await SharedPreferences.getInstance());
+    });
+
+    Widget wrap(Widget child) => MaterialApp(
+          home: Scaffold(
+            body: MultiProvider(
+              providers: [
+                Provider<StorageService>.value(value: storage),
+                ChangeNotifierProvider(create: (_) => SettingsProvider(storage)),
+                ChangeNotifierProvider(
+                    create: (_) => PinnedNotesProvider(storage)),
+              ],
+              child: child,
+            ),
+          ),
+        );
+
+    testWidgets(
+        'a header sliver scrolls out of sight while the tab strip stays pinned',
+        (tester) async {
+      final chapter = _tallContentChapter();
+      await tester.pumpWidget(wrap(SubtopicTabsView(
+        topic: _topic,
+        chapter: chapter,
+        headerSlivers: const [
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 400,
+              child: Text('HEADER MARKER'),
+            ),
+          ),
+        ],
+      )));
+      await tester.pump();
+
+      expect(find.text('HEADER MARKER'), findsOneWidget);
+      expect(find.byType(TabBar), findsOneWidget);
+
+      await tester.drag(_contentScrollable(), const Offset(0, -500));
+      await tester.pumpAndSettle();
+
+      expect(find.text('HEADER MARKER'), findsNothing);
+      expect(find.byType(TabBar), findsOneWidget);
+    });
+  });
 }

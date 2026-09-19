@@ -105,6 +105,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
           question: q,
           bookId: widget.bookId,
           previousAnswer: _answers[q.id],
+          trackDailyStudyStats: true,
           optionSeed: _optionSeedFor(q),
           onAnswered: (answer) {
             setState(() => _answers[q.id] = answer);

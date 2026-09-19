@@ -152,7 +152,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Correct!'), findsOneWidget);
 
-      await tester.tap(find.text('Back to question list'));
+      await tester.tap(find.text('Back to answers'));
       await tester.pumpAndSettle();
 
       // The retried question left the Wrong filter; the untouched one is

@@ -273,6 +273,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                                               _answers[_randomQuestion!.id],
                                           trackDailyStudyStats: true,
                                           optionSeed: _randomQuestionOptionSeed,
+                                          backLabel: 'Back to Exam Prep',
                                           onAnswered: (answer) {
                                             _pendingAnswerWrite =
                                                 _handleStudyCardAnswer(answer);

@@ -52,6 +52,8 @@ Widget _buildSubject(
   StudyStatsProvider? statsProvider,
   Key? screenKey,
   int? optionSeed,
+  String bookId = 'exam_prep',
+  String? backLabel,
 }) {
   return MultiProvider(
     providers: [
@@ -68,13 +70,14 @@ Widget _buildSubject(
       home: QuestionScreen(
         key: screenKey,
         question: question ?? _question,
-        bookId: 'exam_prep',
+        bookId: bookId,
         readOnly: readOnly,
         previousAnswer: previousAnswer,
         onAnswered: onAnswered ?? (_) {},
         onRequestNext: onRequestNext,
         trackDailyStudyStats: trackDailyStudyStats,
         optionSeed: optionSeed,
+        backLabel: backLabel ?? 'Back to question list',
       ),
     ),
   );
@@ -505,7 +508,74 @@ void main() {
     );
   });
 
+  group('back control label', () {
+    testWidgets(
+      'defaults to the question-list wording',
+      (tester) async {
+        await tester.pumpWidget(_buildSubject(storageService, readOnly: false));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('Back to question list'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'a caller-supplied label is rendered instead',
+      (tester) async {
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          backLabel: 'Back to Exam Prep',
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('Back to Exam Prep'), findsOneWidget);
+        expect(find.text('Back to question list'), findsNothing);
+      },
+    );
+  });
+
   group('daily stats tracking', () {
+    testWidgets(
+      'an answer served from a book review list still counts toward the '
+      'exam-prep dashboard totals',
+      (tester) async {
+        // Regression: QuestionScreen used to record stats under its own
+        // bookId scope, and the book review list did not opt into tracking
+        // at all — so answers given there never reached the dashboard.
+        final statsProvider = StudyStatsProvider(storageService);
+
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          bookId: 'paediatrics',
+          trackDailyStudyStats: true,
+          statsProvider: statsProvider,
+          screenKey: const ValueKey('book-scope-attempt'),
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(statsProvider.totals.questionsAnswered, 1);
+        expect(statsProvider.totals.correctAnswers, 1);
+        expect(statsProvider.totals.performancePoints, 10);
+      },
+    );
+
     testWidgets(
       'a repeat answer to the same question counts as a second answer, not '
       'a no-op — reproduces the reported "answered 4, counted 2" bug',

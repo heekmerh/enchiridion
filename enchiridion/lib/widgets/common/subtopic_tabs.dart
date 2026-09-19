@@ -238,12 +238,21 @@ class SubtopicTabsView extends StatefulWidget {
   /// subsection behaviour.
   final bool Function(String title)? isSectionHeading;
 
+  /// Slivers rendered at the top of the one content scroll view, above the
+  /// topic body — e.g. a hero banner a detail screen wants to scroll away
+  /// as the user reads, while the tab strip (outside the scroll view)
+  /// stays pinned. Empty by default; the scrollspy anchors below are
+  /// unaffected since they resolve against the content items, not position
+  /// zero.
+  final List<Widget> headerSlivers;
+
   const SubtopicTabsView({
     super.key,
     required this.topic,
     this.chapter,
     this.initialIndex = 0,
     this.isSectionHeading,
+    this.headerSlivers = const [],
   });
 
   @override
@@ -256,10 +265,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   /// scrollspy activation line. Derived from the scroll view's own
   /// [RenderBox] rather than a fixed screen-relative offset (compare
   /// `reader_screen.dart`'s `_updateActiveSection`, which hard-codes a
-  /// screen-relative `dy` of 100): `ResourceTopicDetailScreen` stacks a
-  /// 16:9 hero image, a category label and this tab strip above the scroll
-  /// view, so a fixed screen-relative number would sit above the viewport
-  /// and always resolve to the wrong sub-topic.
+  /// screen-relative `dy` of 100): callers may stack a tab strip above the
+  /// scroll view, so a fixed screen-relative number would sit above the
+  /// viewport and always resolve to the wrong sub-topic. Caller-supplied
+  /// [headerSlivers] live inside the scroll view itself, so they need no
+  /// compensation here.
   static const double _activationLineInset = 16;
 
   late List<SubtopicTab> _tabs;
@@ -471,6 +481,7 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     final chapter = widget.chapter;
     if (chapter != null) {
       return [
+        ...widget.headerSlivers,
         if (widget.topic.description != null)
           SliverToBoxAdapter(
             child: Padding(
@@ -496,6 +507,7 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     }
 
     return [
+      ...widget.headerSlivers,
       SliverList(
         delegate: SliverChildBuilderDelegate(
           (context, index) => AutoScrollTag(

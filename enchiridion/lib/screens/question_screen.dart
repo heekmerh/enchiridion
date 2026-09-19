@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/question.dart';
+import '../models/resource_topic.dart';
 import '../providers/study_stats_provider.dart';
 import '../services/notification_service.dart';
 import '../services/question_flag_service.dart';
@@ -33,8 +34,8 @@ class QuestionScreen extends StatefulWidget {
   /// question" control that swaps the displayed question in place rather
   /// than pushing a new route. The screen never advances by itself, so the
   /// user keeps the explanation on screen as long as they want. Absent, the
-  /// screen behaves exactly as it always has — only "Back to question list"
-  /// is offered.
+  /// screen behaves exactly as it always has — only the back control
+  /// ([backLabel]) is offered.
   final NextQuestionLoader? onRequestNext;
 
   /// Shows [previousAnswer] as already submitted and disables answering.
@@ -52,6 +53,13 @@ class QuestionScreen extends StatefulWidget {
   /// so the correct answer doesn't always land in the same visual slot.
   final int? optionSeed;
 
+  /// Label of the post-submit control that pops this screen. The screen is
+  /// pushed from several places (the Exam Prep home card, a book's review
+  /// list, the answered-questions drill-down, a tapped notification), so a
+  /// single hard-coded label names the wrong destination for most of them —
+  /// each caller names where its own push came from.
+  final String backLabel;
+
   const QuestionScreen({
     super.key,
     required this.question,
@@ -62,6 +70,7 @@ class QuestionScreen extends StatefulWidget {
     this.readOnly = false,
     this.optionSeed,
     this.onRequestNext,
+    this.backLabel = 'Back to question list',
   });
 
   @override
@@ -170,9 +179,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
     // This is the sole place `StudyDayStats` are recorded for this answer —
     // callers must not also record through their own `onAnswered` handler.
+    // Always recorded under the standalone exam-prep scope, never under
+    // `bookId`: the dashboard is one exam-prep-wide figure and the user did
+    // the work whichever list served the question (mock exam, book review,
+    // drill-down retry, tapped notification). Recording under a per-book
+    // scope instead silently dropped book-review answers from the dashboard
+    // while the drill-down screens kept counting them.
     if (statsProvider != null) {
       await statsProvider.recordAnswer(
-        scope: widget.bookId,
+        scope: kStandaloneExamPrepScope,
         isCorrect: _isCorrect,
         answeredAt: answer.answeredAt,
       );
@@ -382,7 +397,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               onPressed: () => Navigator.pop(context),
               style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 14)),
-              child: const Text('Back to question list'),
+              child: Text(widget.backLabel),
             ),
           ],
           const SizedBox(height: 32),
