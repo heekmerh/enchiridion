@@ -241,12 +241,9 @@ void main() {
     testWidgets(
         'IV Cannula renders strictly above every other Medical '
         'Instrumentation topic tile in the first viewport', (tester) async {
-      // The default 800x600 test surface only fits one hero-image card
-      // (Medical Instrumentation renders in card mode, not dense), so
-      // nothing else would be built to compare against. Enlarge the
-      // viewport so the first several cards lay out without scrolling —
-      // this changes only how much of the list is built, not the order
-      // under test.
+      // Enlarge the viewport so enough dense rows lay out without scrolling
+      // for the position comparison below to be meaningful — this changes
+      // only how much of the list is built, not the order under test.
       tester.view.physicalSize = const Size(800, 3000);
       tester.view.devicePixelRatio = 1.0;
       addTearDown(tester.view.resetPhysicalSize);
@@ -256,6 +253,7 @@ void main() {
         home: ResourceTopicListScreen(
           title: 'Medical Instrumentation',
           topics: kMedicalInstrumentationTopicsInDisplayOrder,
+          dense: true,
         ),
       ));
       await tester.pump();
