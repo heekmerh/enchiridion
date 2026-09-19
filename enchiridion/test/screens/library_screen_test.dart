@@ -11,6 +11,7 @@ import 'package:enchiridion/providers/auth_provider.dart';
 import 'package:enchiridion/providers/settings_provider.dart';
 import 'package:enchiridion/screens/library_screen.dart';
 import 'package:enchiridion/screens/calculator_list_screen.dart';
+import 'package:enchiridion/screens/resource_topic_list_screen.dart';
 import 'package:enchiridion/services/storage_service.dart';
 import 'package:enchiridion/widgets/common/coming_soon.dart';
 
@@ -230,6 +231,74 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(CalculatorListScreen), findsOneWidget);
+    });
+
+    // -------------------------------------------------------------------
+    // (f) Medical Instrumentation routing: tap card → ResourceTopicListScreen
+    //     renders the dense (ListTile) presentation, not the hero-image card
+    //     presentation, with IV Cannula still leading.
+    // -------------------------------------------------------------------
+    testWidgets(
+        'tapping Medical Instrumentation card navigates to a dense ResourceTopicListScreen',
+        (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      // Switch to Resources tab.
+      await tester.tap(find.text('Resources'));
+      await tester.pumpAndSettle();
+
+      // Advance the vertical carousel to the Medical Instrumentation card.
+      // Bounded loop: fail with a clear reason if the card never appears,
+      // rather than a confusing tap-on-nothing error further down.
+      var attempts = 0;
+      while (find.text('Medical Instrumentation').evaluate().isEmpty) {
+        attempts++;
+        if (attempts > 6) {
+          fail(
+            'Medical Instrumentation card did not appear in the Resources '
+            'carousel after 6 swipes — carousel order may have changed.',
+          );
+        }
+        await tester.fling(
+          find.byType(PageView).last,
+          const Offset(0, -400),
+          800,
+        );
+        await tester.pumpAndSettle();
+      }
+
+      // Tap the card.
+      await tester.tap(find.text('Medical Instrumentation'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ResourceTopicListScreen), findsOneWidget);
+
+      final resourceTopicListScreenFinder =
+          find.byType(ResourceTopicListScreen);
+
+      // Presentation assertion 1: dense rows (ListTile) are present.
+      expect(
+        find.descendant(
+          of: resourceTopicListScreenFinder,
+          matching: find.byType(ListTile),
+        ),
+        findsWidgets,
+      );
+
+      // Presentation assertion 2: the card presentation (hero Image) is
+      // gone. Scoped to the pushed screen's subtree so the Library tab's
+      // own book-cover images underneath cannot satisfy this.
+      expect(
+        find.descendant(
+          of: resourceTopicListScreenFinder,
+          matching: find.byType(Image),
+        ),
+        findsNothing,
+      );
+
+      // Preserved-behavior assertion: IV Cannula still leads the list.
+      expect(find.text('IV Cannula'), findsWidgets);
     });
   });
 
