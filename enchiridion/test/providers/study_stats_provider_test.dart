@@ -35,10 +35,7 @@ void main() {
         var notifyCount = 0;
         provider.addListener(() => notifyCount++);
 
-        final updated = provider.recordAnswer(
-          isCorrect: true,
-          isFirstAttempt: true,
-        );
+        final updated = provider.recordAnswer(isCorrect: true);
 
         // If the push were awaited internally, this would hang forever and
         // the test framework would time out.
@@ -53,10 +50,7 @@ void main() {
     test('a correct answer raises points by exactly 10 and answered by 1',
         () async {
       final provider = buildProvider();
-      final result = await provider.recordAnswer(
-        isCorrect: true,
-        isFirstAttempt: true,
-      );
+      final result = await provider.recordAnswer(isCorrect: true);
 
       expect(result.questionsAnswered, 1);
       expect(result.performancePoints, 10);
@@ -66,27 +60,22 @@ void main() {
 
     test('a wrong answer raises answered by 1 and points by 0', () async {
       final provider = buildProvider();
-      final result = await provider.recordAnswer(
-        isCorrect: false,
-        isFirstAttempt: true,
-      );
+      final result = await provider.recordAnswer(isCorrect: false);
 
       expect(result.questionsAnswered, 1);
       expect(result.correctAnswers, 0);
       expect(result.performancePoints, 0);
     });
 
-    test('recording the same question a second time (not first attempt) '
-        'changes nothing', () async {
+    test('recording the same question a second time counts as a second '
+        'answer — spaced repetition re-serves are real work, not a no-op',
+        () async {
       final provider = buildProvider();
-      await provider.recordAnswer(isCorrect: true, isFirstAttempt: true);
-      final second = await provider.recordAnswer(
-        isCorrect: true,
-        isFirstAttempt: false,
-      );
+      await provider.recordAnswer(isCorrect: true);
+      final second = await provider.recordAnswer(isCorrect: true);
 
-      expect(second.questionsAnswered, 1);
-      expect(second.performancePoints, 10);
+      expect(second.questionsAnswered, 2);
+      expect(second.performancePoints, 20);
     });
 
     test('listeners are notified exactly once per recorded answer',
@@ -95,10 +84,10 @@ void main() {
       var notifyCount = 0;
       provider.addListener(() => notifyCount++);
 
-      await provider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await provider.recordAnswer(isCorrect: true);
       expect(notifyCount, 1);
 
-      await provider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await provider.recordAnswer(isCorrect: true);
       expect(notifyCount, 2);
     });
 
@@ -119,10 +108,7 @@ void main() {
       var notified = false;
       provider.addListener(() => notified = true);
 
-      final future = provider.recordAnswer(
-        isCorrect: true,
-        isFirstAttempt: true,
-      );
+      final future = provider.recordAnswer(isCorrect: true);
 
       // The push has started but is deliberately held open — proving
       // recordAnswer's notifyListeners already ran without waiting for the
@@ -147,7 +133,7 @@ void main() {
       expect(provider.totals.questionsAnswered, 3);
       expect(provider.totals.performancePoints, 20);
 
-      await provider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await provider.recordAnswer(isCorrect: true);
 
       expect(provider.totals.questionsAnswered, 4);
       expect(provider.totals.performancePoints, 30);

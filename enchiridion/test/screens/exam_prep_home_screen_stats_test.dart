@@ -85,7 +85,7 @@ void main() {
       // Baseline: nothing recorded yet.
       expect(find.text('0'), findsWidgets);
 
-      await statsProvider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await statsProvider.recordAnswer(isCorrect: true);
       // A single frame — NOT pumpAndSettle, which would mask a pending
       // network wait by draining timers/microtasks until everything (fake)
       // settles. A single `pump` proves the repaint happened synchronously
@@ -109,7 +109,7 @@ void main() {
       await tester.pumpWidget(_buildSubject(storageService, statsProvider));
       await tester.pumpAndSettle();
 
-      await statsProvider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await statsProvider.recordAnswer(isCorrect: true);
       await tester.pumpAndSettle();
 
       // Read the rendered text, not internal counters: if the wiring
@@ -137,7 +137,7 @@ void main() {
       );
 
       final statsProvider = StudyStatsProvider(storageService);
-      await statsProvider.recordAnswer(isCorrect: true, isFirstAttempt: true);
+      await statsProvider.recordAnswer(isCorrect: true);
 
       await tester.pumpWidget(_buildSubject(storageService, statsProvider));
       await tester.pumpAndSettle();
