@@ -63,9 +63,16 @@ List<_Catalog> _catalogs() {
       availableFirst(kSurgicalInstrumentationTopics, (t) => t.hasContent),
       (e) => (e as ResourceTopic).hasContent,
     ),
+    // Registers the real shipped list — the one the Library call site
+    // actually reads — not an ad-hoc recomputation. This catalog is
+    // group-ordered (see 260918-dr4): if a second category ever gains
+    // written content, the correct response is to move this entry to the
+    // group-aware assertions in
+    // test/models/medical_instrumentation_display_order_test.dart, not to
+    // weaken this guard's flat-list invariant for everyone else.
     _Catalog(
-      'availableFirst(kMedicalInstrumentationTopics)',
-      availableFirst(kMedicalInstrumentationTopics, (t) => t.hasContent),
+      'kMedicalInstrumentationTopicsInDisplayOrder',
+      kMedicalInstrumentationTopicsInDisplayOrder,
       (e) => (e as ResourceTopic).hasContent,
     ),
     _Catalog(
