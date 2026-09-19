@@ -18,8 +18,8 @@ import '../widgets/exam_prep/explanation_text.dart';
 typedef NextQuestionResult = ({Question question, int optionSeed});
 
 /// Loads the next question to advance to in place, without leaving the
-/// route. Absent (null) on [QuestionScreen] preserves today's behaviour
-/// exactly: no next-question control, no auto-advance.
+/// route. Absent (null) on [QuestionScreen] means no next-question control
+/// is shown at all — advancing is always user-initiated.
 typedef NextQuestionLoader = Future<NextQuestionResult?> Function();
 
 class QuestionScreen extends StatefulWidget {
@@ -30,10 +30,11 @@ class QuestionScreen extends StatefulWidget {
   final bool trackDailyStudyStats;
 
   /// When present, the post-submit footer offers an explicit "Next
-  /// question" control (and, layered on top in a later change, an
-  /// unattended auto-advance) that swaps the displayed question in place
-  /// rather than pushing a new route. Absent, the screen behaves exactly as
-  /// it always has — only "Back to question list" is offered.
+  /// question" control that swaps the displayed question in place rather
+  /// than pushing a new route. The screen never advances by itself, so the
+  /// user keeps the explanation on screen as long as they want. Absent, the
+  /// screen behaves exactly as it always has — only "Back to question list"
+  /// is offered.
   final NextQuestionLoader? onRequestNext;
 
   /// Shows [previousAnswer] as already submitted and disables answering.
@@ -79,9 +80,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
   late Question _question;
   int? _optionSeed;
 
-  // True while an advance (manual or, in a later change, automatic) is
-  // awaiting its loader — guards against a second advance firing before the
-  // first resolves.
+  // True while an advance is awaiting its loader — guards against a second
+  // advance firing before the first resolves.
   bool _advancing = false;
 
   // True once the loader has returned null: nothing left to serve.
