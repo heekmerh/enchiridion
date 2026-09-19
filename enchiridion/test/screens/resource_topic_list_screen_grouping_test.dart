@@ -170,4 +170,52 @@ void main() {
     expect(find.byType(SnackBar), findsOneWidget);
     expect(find.textContaining('Coming Soon'), findsWidgets);
   });
+
+  testWidgets(
+      'the real kMedicalInstrumentationTopics catalog opens on the '
+      'Diagnostic and Monitoring Equipment header with IV Cannula first',
+      (tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: ResourceTopicListScreen(
+        title: 'Medical Instrumentation',
+        topics: kMedicalInstrumentationTopics,
+      ),
+    ));
+
+    expect(
+      find.text('DIAGNOSTIC AND MONITORING EQUIPMENT'),
+      findsOneWidget,
+    );
+
+    final firstHeaderFinder = find.byType(SectionHeader).first;
+    final firstTopicRowFinder = find.ancestor(
+      of: find.text('IV Cannula'),
+      matching: find.byType(Ink),
+    );
+
+    // The header precedes the first topic row in paint order, so the
+    // header's top offset must be smaller than the topic row's.
+    final headerTop = tester.getTopLeft(firstHeaderFinder).dy;
+    final topicTop = tester.getTopLeft(firstTopicRowFinder).dy;
+    expect(headerTop, lessThan(topicTop));
+  });
+
+  testWidgets(
+      'the real kSurgicalInstrumentationTopics catalog renders no '
+      'SectionHeader at all', (tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: ResourceTopicListScreen(
+        title: 'Surgical Instrumentation',
+        topics: kSurgicalInstrumentationTopics,
+        dense: true,
+      ),
+    ));
+
+    expect(find.byType(SectionHeader), findsNothing);
+
+    await tester.scrollUntilVisible(find.text('Wound dressing set'), 300);
+    await tester.pumpAndSettle();
+
+    expect(find.byType(SectionHeader), findsNothing);
+  });
 }
