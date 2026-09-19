@@ -58,6 +58,8 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 | 260917-ne0 | User exam practice experience should be improved. Review it end to end and surface suggestions based on standard practice and innovation. | 2026-09-18 | 40f7cf3255ee5ee1f599106980a8be9d1e842941 | — | .planning/quick/260917-ne0-user-exam-practice-experience-should-be-improved-review-it-e |
 | 260918-dqx | Also note that across the entire app available content ranks above coming soon. | 2026-09-18 | 0b99c306862465f7def495afc6ec4d19e63eeb15 | — | .planning/quick/260918-dqx-also-note-that-across-the-entire-app-available-content-ranks |
 | 260918-dqy | All coming soon topics should be grayed out | 2026-09-18 | d549813a0725b1a84e0abb7837ed7c04aeb9d124 | — | .planning/quick/260918-dqy-all-coming-soon-topics-should-be-grayed-out |
+| 260918-dr0 | Should be a list starting with 'Sutures' the same way we have a list in OSCE | 2026-09-19 | 536d52c | — | .planning/quick/260918-dr0-should-be-a-list-starting-with-sutures-the-same-way-we-have |
+| 260918-dr2 | It should be such that users can swipe sideways through the tabs of each topic | 2026-09-19 | d5a6a0b | — | .planning/quick/260918-dr2-it-should-be-such-that-users-can-swipe-sideways-through-the |
 
 Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL Editor output from 2026-09-16 shows all 31 named migration catalog checks and OVERALL passing; [the saved result](../scripts/output/verify_001_004_live_results.md) records that evidence. The agent did not connect directly to the deployed database. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
 
