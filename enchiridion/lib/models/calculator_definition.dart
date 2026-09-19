@@ -1,3 +1,5 @@
+import '../utils/content_availability.dart';
+
 class CalculatorDefinition {
   final String id;
   final String title;
@@ -11,6 +13,10 @@ class CalculatorDefinition {
   final String commonPitfalls;
   final String osceTips;
 
+  /// Whether this calculator has a working form wired into `CalculatorScreen`.
+  /// Defaults to true so all pre-existing const entries compile unchanged.
+  final bool implemented;
+
   const CalculatorDefinition({
     required this.id,
     required this.title,
@@ -22,7 +28,16 @@ class CalculatorDefinition {
     this.safetyNotes = '',
     this.commonPitfalls = '',
     this.osceTips = '',
+    this.implemented = true,
   });
+
+  /// Mirrors the same getter pair on `ResourceTopic`/`CatalogBook`: a
+  /// calculator "has content" when its form is actually implemented.
+  bool get hasContent => implemented;
+
+  /// A calculator with no working form is "coming soon" — the inverse of
+  /// [hasContent].
+  bool get isComingSoon => !hasContent;
 }
 
 const String _kDefaultDisclaimer =
@@ -689,6 +704,241 @@ const List<CalculatorDefinition> kCalculators = [
         'In paediatric OSCEs, plot growth on a centile chart and describe the trend. '
         'Mention that the WHO standards are based on healthy breastfed children in optimal conditions.',
   ),
+  // ─── Coming-soon: Emergency & Critical Care (Ideas/ideas.md §1) ─────────────
+  CalculatorDefinition(
+    id: 'parkland',
+    title: 'Fluid Resuscitation (Parkland)',
+    category: 'Emergency & Critical Care',
+    description: 'Burn fluid resuscitation volume for the first 24 hours.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'sofa',
+    title: 'SOFA Score',
+    category: 'Emergency & Critical Care',
+    description: 'Six-organ sequential organ failure assessment score.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Drug Dosing (Ideas/ideas.md §2) ───────────────────────────
+  CalculatorDefinition(
+    id: 'adrenaline-dose',
+    title: 'Adrenaline Dose (Resuscitation)',
+    category: 'Drug Dosing',
+    description: 'Weight-based adrenaline dose for arrest and anaphylaxis.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: General (Ideas/ideas.md §6) ───────────────────────────────
+  CalculatorDefinition(
+    id: 'corrected-calcium',
+    title: 'Corrected Calcium',
+    category: 'General',
+    description: 'Albumin-corrected serum calcium.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'ldl-friedewald',
+    title: 'LDL (Friedewald)',
+    category: 'General',
+    description: 'Calculated LDL cholesterol from a lipid panel.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'waist-hip-ratio',
+    title: 'Waist-to-Hip Ratio',
+    category: 'General',
+    description: 'Central adiposity risk from waist and hip circumference.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'meld',
+    title: 'MELD Score',
+    category: 'General',
+    description: 'End-stage liver disease severity score.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'child-pugh',
+    title: 'Child-Pugh Score',
+    category: 'General',
+    description: 'Chronic liver disease severity class A–C.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Obs & Gynae (Ideas/ideas.md §7) ───────────────────────────
+  CalculatorDefinition(
+    id: 'gtpal',
+    title: 'GTPAL',
+    category: 'Obs & Gynae',
+    description:
+        'Obstetric history as Gravida, Term, Preterm, Abortions, Living.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'bishop-score',
+    title: 'Bishop Score',
+    category: 'Obs & Gynae',
+    description: 'Cervical favourability for induction of labour.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'partograph',
+    title: 'Partograph Plotting',
+    category: 'Obs & Gynae',
+    description: 'Plot labour progress against alert and action lines.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'preeclampsia-risk',
+    title: 'Preeclampsia Risk',
+    category: 'Obs & Gynae',
+    description: 'Risk stratification for pre-eclampsia.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Cardiology (new category — Ideas/ideas.md §4) ────────────
+  CalculatorDefinition(
+    id: 'map',
+    title: 'Mean Arterial Pressure (MAP)',
+    category: 'Cardiology',
+    description: 'Mean arterial pressure from systolic and diastolic BP.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'qtc',
+    title: 'QTc (Corrected QT)',
+    category: 'Cardiology',
+    description: 'Heart-rate-corrected QT interval.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'chads-vasc',
+    title: 'CHA₂DS₂-VASc Score',
+    category: 'Cardiology',
+    description: 'Stroke risk in non-valvular atrial fibrillation.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'has-bled',
+    title: 'HAS-BLED Score',
+    category: 'Cardiology',
+    description: 'Major bleeding risk on anticoagulation.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'timi',
+    title: 'TIMI Risk Score',
+    category: 'Cardiology',
+    description: 'Risk stratification in acute coronary syndrome.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'framingham',
+    title: 'Framingham Risk Score',
+    category: 'Cardiology',
+    description: 'Ten-year cardiovascular risk estimate.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'cardiac-output',
+    title: 'Cardiac Output',
+    category: 'Cardiology',
+    description: 'Cardiac output and cardiac index estimate.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Respiratory (new category — Ideas/ideas.md §5) ───────────
+  CalculatorDefinition(
+    id: 'cao2',
+    title: 'Oxygen Content (CaO₂)',
+    category: 'Respiratory',
+    description: 'Arterial oxygen content from haemoglobin, SaO₂, and PaO₂.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'alveolar-gas',
+    title: 'Alveolar Gas Equation',
+    category: 'Respiratory',
+    description: 'Alveolar oxygen tension from FiO₂ and PaCO₂.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'pefr-predicted',
+    title: 'PEFR Predicted',
+    category: 'Respiratory',
+    description: 'Predicted peak expiratory flow from age, sex, and height.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'fev1-predicted',
+    title: 'FEV1 Predicted',
+    category: 'Respiratory',
+    description:
+        'Predicted FEV1 from age, sex, height, and ethnicity.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'abg-interpretation',
+    title: 'ABG Interpretation Assistant',
+    category: 'Respiratory',
+    description: 'Step-through acid–base interpretation of a blood gas.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Surgery & Trauma (new category — Ideas/ideas.md §8) ──────
+  CalculatorDefinition(
+    id: 'burn-tbsa',
+    title: 'Burn % (Rule of 9s)',
+    category: 'Surgery & Trauma',
+    description: 'Total body surface area burned, adult and paediatric.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'alvarado',
+    title: 'Alvarado Score',
+    category: 'Surgery & Trauma',
+    description: 'Likelihood of acute appendicitis.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'wells-score',
+    title: 'Wells Score (DVT / PE)',
+    category: 'Surgery & Trauma',
+    description: 'Pre-test probability for DVT and pulmonary embolism.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'revised-trauma-score',
+    title: 'Revised Trauma Score',
+    category: 'Surgery & Trauma',
+    description: 'Physiological trauma severity from GCS, SBP, and RR.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'iss',
+    title: 'Injury Severity Score (ISS)',
+    category: 'Surgery & Trauma',
+    description: 'Anatomical trauma severity from AIS region scores.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Utility (new category — Ideas/ideas.md §9) ───────────────
+  CalculatorDefinition(
+    id: 'ibw',
+    title: 'Ideal Body Weight (IBW)',
+    category: 'Utility',
+    description: 'Ideal and adjusted body weight from height and sex.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'unit-conversions',
+    title: 'Unit Conversions',
+    category: 'Utility',
+    description: 'Convert between clinical units (mg ↔ mmol, lb ↔ kg).',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'calorie-requirements',
+    title: 'Calorie Requirements',
+    category: 'Utility',
+    description:
+        'Daily energy requirement from weight, height, age, activity.',
+    implemented: false,
+  ),
 ];
 
 /// Returns calculators grouped by category, with the first per category free.
@@ -699,4 +949,25 @@ Map<String, List<CalculatorDefinition>> groupByCategory(
     map.putIfAbsent(c.category, () => []).add(c);
   }
   return map;
+}
+
+/// Returns calculators grouped by category in the app's display order:
+/// categories holding at least one implemented calculator precede categories
+/// that hold none, and within each category implemented calculators precede
+/// coming-soon ones. Both partitions are done with [availableFirst], which
+/// is stable, so the authored relative order is preserved inside each
+/// bucket. Built on top of [groupByCategory], which stays the authored-order
+/// primitive this helper composes over.
+Map<String, List<CalculatorDefinition>> groupedCalculatorsInDisplayOrder(
+    [List<CalculatorDefinition> calculators = kCalculators]) {
+  final byCategory = groupByCategory(calculators);
+  final orderedCategoryEntries = availableFirst<MapEntry<String, List<CalculatorDefinition>>>(
+    byCategory.entries,
+    (entry) => entry.value.any((c) => c.hasContent),
+  );
+  final result = <String, List<CalculatorDefinition>>{};
+  for (final entry in orderedCategoryEntries) {
+    result[entry.key] = availableFirst(entry.value, (c) => c.hasContent);
+  }
+  return result;
 }

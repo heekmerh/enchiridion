@@ -13,6 +13,7 @@
 // one-line addition; there is nothing else to wire up.
 
 import 'package:enchiridion/models/book_catalog.dart';
+import 'package:enchiridion/models/calculator_definition.dart';
 import 'package:enchiridion/models/resource_topic.dart';
 import 'package:enchiridion/utils/content_availability.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -37,6 +38,17 @@ class _Violation {
   String toString() =>
       '$catalogName: entry without content at index $firstWithoutContentIndex '
       'appears before entry with content at index $lastWithContentIndex';
+}
+
+List<_Catalog> _calculatorCategoryCatalogs() {
+  return groupedCalculatorsInDisplayOrder()
+      .entries
+      .map((entry) => _Catalog(
+            'groupedCalculatorsInDisplayOrder()["${entry.key}"]',
+            entry.value,
+            (e) => (e as CalculatorDefinition).hasContent,
+          ))
+      .toList();
 }
 
 List<_Catalog> _catalogs() {
@@ -68,6 +80,10 @@ List<_Catalog> _catalogs() {
       ),
       (e) => (e as CatalogBook).hasContent,
     ),
+    // Registered per-category, not as a flattened calculator list —
+    // flattening would interleave categories and violate this guard's
+    // flat-list invariant by design.
+    ..._calculatorCategoryCatalogs(),
   ];
 }
 
