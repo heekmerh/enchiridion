@@ -4,44 +4,60 @@ import 'package:enchiridion/widgets/common/coming_soon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+// Look up expected stations/labels by id and outline rather than hardcoding
+// title literals, so siblings 260918-dr1/260918-dr6 (which rename topic
+// titles) cannot break these tests.
+ResourceTopic _topic(String id) => kOsceTopics.firstWhere((t) => t.id == id);
+
 void main() {
-  testWidgets('OSCE opens as a list, then shows tabs at the selected station',
+  testWidgets(
+      'OSCE list has no TabBar; opening a content-less station shows its own outline as tabs',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
 
     expect(find.byType(TabBar), findsNothing);
 
-    // Available-first ordering: the only station with real content leads
-    // the list.
-    final firstTileFinder = find.byType(ListTile).first;
-    final firstTile = tester.widget<ListTile>(firstTileFinder);
-    final firstTitle = (firstTile.title! as Text).data;
-    expect(firstTitle, 'Abdominal Examination');
+    final cardiovascular = _topic('cardiovascular-system');
+    final respiratory = _topic('respiratory-system');
 
-    expect(find.text('Cardiovascular System'), findsOneWidget);
-    expect(find.text('Respiratory System'), findsOneWidget);
-
-    await tester.tap(find.text('Respiratory System'));
+    await tester.tap(find.text(cardiovascular.title));
     await tester.pumpAndSettle();
 
     expect(find.byType(TabBar), findsOneWidget);
-    final tabs = tester.widget<TabBar>(find.byType(TabBar));
+    final tabBar = tester.widget<TabBar>(find.byType(TabBar));
+    final labels = tabBar.tabs.map((t) => (t as Tab).text).toList();
 
-    // Resolve the expected tab index from the same ordered list the screen
-    // reads, rather than a hardcoded literal, so a later content addition
-    // does not break this test.
-    final expectedIndex = kOsceTopicsInDisplayOrder
-        .indexWhere((t) => t.title == 'Respiratory System');
-    expect(tabs.controller!.index, expectedIndex);
-    expect(find.textContaining('Respiratory rate'), findsWidgets);
+    expect(labels, cardiovascular.outline);
+    expect(tabBar.controller!.index, 0);
+    expect(labels, isNot(contains(respiratory.title)));
 
-    // The first tab in the detail TabBar is Abdominal Examination.
-    expect((tabs.tabs.first as Tab).text, 'Abdominal Examination');
+    // The opened station's own title is the AppBar title, not a tab label.
+    expect(find.widgetWithText(AppBar, cardiovascular.title), findsOneWidget);
 
     await tester.pageBack();
     await tester.pumpAndSettle();
     expect(find.byType(TabBar), findsNothing);
-    expect(find.text('Respiratory System'), findsOneWidget);
+    expect(find.text(cardiovascular.title), findsOneWidget);
+  });
+
+  testWidgets(
+      'dragging the content area sideways advances the tab controller by one, and dragging back returns it',
+      (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
+
+    final cardiovascular = _topic('cardiovascular-system');
+    await tester.tap(find.text(cardiovascular.title));
+    await tester.pumpAndSettle();
+
+    final tabBarView = find.byType(TabBarView);
+
+    await tester.drag(tabBarView, const Offset(-500, 0));
+    await tester.pumpAndSettle();
+    expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
+
+    await tester.drag(tabBarView, const Offset(500, 0));
+    await tester.pumpAndSettle();
+    expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 0);
   });
 
   testWidgets(
@@ -49,15 +65,18 @@ void main() {
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
 
+    final abdominal = _topic('abdominal-examination');
+    final cardiovascular = _topic('cardiovascular-system');
+
     final abdominalTile = tester.widget<ListTile>(
       find.ancestor(
-        of: find.text('Abdominal Examination'),
+        of: find.text(abdominal.title),
         matching: find.byType(ListTile),
       ),
     );
     final cardiovascularTile = tester.widget<ListTile>(
       find.ancestor(
-        of: find.text('Cardiovascular System'),
+        of: find.text(cardiovascular.title),
         matching: find.byType(ListTile),
       ),
     );
@@ -71,13 +90,12 @@ void main() {
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
 
-    await tester.tap(find.text('Cardiovascular System'));
+    final cardiovascular = _topic('cardiovascular-system');
+    await tester.tap(find.text(cardiovascular.title));
     await tester.pumpAndSettle();
 
     expect(find.byType(TabBar), findsOneWidget);
-    final tabs = tester.widget<TabBar>(find.byType(TabBar));
-    final expectedIndex = kOsceTopicsInDisplayOrder
-        .indexWhere((t) => t.title == 'Cardiovascular System');
-    expect(tabs.controller!.index, expectedIndex);
+    final tabBar = tester.widget<TabBar>(find.byType(TabBar));
+    expect(tabBar.controller!.index, 0);
   });
 }
