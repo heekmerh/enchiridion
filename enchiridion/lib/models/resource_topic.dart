@@ -978,6 +978,21 @@ const List<ResourceTopic> kMedicalInstrumentationTopics = [
   ),
 ];
 
+/// [kMedicalInstrumentationTopics] reordered so the group holding real
+/// content — Diagnostic and Monitoring Equipment, via `iv-cannula` — leads
+/// the section, with every other group following in its authored
+/// first-appearance order. Group membership stays contiguous; nothing is
+/// interleaved. `kMedicalInstrumentationTopics` itself stays in its authored
+/// order — it remains the authoring source of truth; this derived list is
+/// what UI surfaces render. A future topic gaining a `dataAssetPath` will
+/// promote its own group automatically, with no edit needed here.
+final List<ResourceTopic> kMedicalInstrumentationTopicsInDisplayOrder =
+    availableFirstByGroup(
+  kMedicalInstrumentationTopics,
+  groupOf: (t) => t.group,
+  isAvailable: (t) => t.hasContent,
+);
+
 // Sourced from scripts/content/OSCE.md, which the author put together as
 // the OSCE section's structure — one tab per numbered section there. Only
 // "Abdominal Examination" has full written content today
