@@ -98,7 +98,7 @@ void main() {
     expect(find.byType(ResourceTopicDetailScreen), findsOneWidget);
   });
 
-  Widget _denseSubject() => const MaterialApp(
+  Widget denseSubject() => const MaterialApp(
         home: ResourceTopicListScreen(
           title: 'Test List',
           topics: [_available, _pending],
@@ -109,7 +109,7 @@ void main() {
   testWidgets(
       'dense available row renders a chevron and no ComingSoonBadge',
       (tester) async {
-    await tester.pumpWidget(_denseSubject());
+    await tester.pumpWidget(denseSubject());
 
     final availableTileFinder = find.ancestor(
       of: find.text('Available Topic'),
@@ -130,7 +130,7 @@ void main() {
   testWidgets(
       'dense coming-soon row renders a ComingSoonBadge, taps show a SnackBar and push nothing',
       (tester) async {
-    await tester.pumpWidget(_denseSubject());
+    await tester.pumpWidget(denseSubject());
 
     final pendingTileFinder = find.ancestor(
       of: find.text('Pending Topic'),
@@ -180,7 +180,7 @@ void main() {
     final suture =
         kSurgicalInstrumentationTopics.firstWhere((t) => t.id == 'sutures');
 
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: ResourceTopicListScreen(
         title: 'Surgical Instrumentation',
         topics: kSurgicalInstrumentationTopics,
