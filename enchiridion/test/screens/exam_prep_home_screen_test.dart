@@ -4,7 +4,7 @@
 // (ExamPrepQuestionListScreen) and its "Browse Full Bank" entry point were
 // deleted. These tests prove that removal without a route into the full
 // bank while the rest of the screen — Performance, Access with the
-// Unlock path, and Quick Check — still renders.
+// Unlock path, and Mock Exam — still renders.
 //
 // Uses ExamPrepHomeScreen.testQuestions to inject a fixed bank so tests
 // never touch rootBundle / platform channels, and
@@ -74,7 +74,7 @@ void main() {
       expect(find.text('Exam Prep'), findsOneWidget);
       expect(find.text('Performance'), findsOneWidget);
       expect(find.text('Access'), findsOneWidget);
-      expect(find.text('Quick Check'), findsOneWidget);
+      expect(find.text('Mock Exam'), findsOneWidget);
 
       expect(find.text('Unlock'), findsOneWidget);
 
@@ -94,7 +94,7 @@ void main() {
       expect(find.text('Exam Prep'), findsOneWidget);
       expect(find.text('Performance'), findsOneWidget);
       expect(find.text('Access'), findsOneWidget);
-      expect(find.text('Quick Check'), findsOneWidget);
+      expect(find.text('Mock Exam'), findsOneWidget);
 
       expect(find.text('Unlock'), findsNothing);
 

@@ -90,7 +90,7 @@ Future<void> _run() async {
     await _bubbleChannel.invokeMethod<void>('showBubble', {
       'scope': kStandaloneExamPrepScope,
       'questionId': question.id,
-      'title': 'Quick Check',
+      'title': 'Practice Question',
       'teaser': notificationTeaser(question.questionText),
     });
     developer.log(

@@ -102,7 +102,7 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Quick Check',
+                'Practice Question',
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),

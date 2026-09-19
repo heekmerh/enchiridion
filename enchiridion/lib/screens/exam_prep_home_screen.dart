@@ -11,7 +11,6 @@ import '../services/exam_prep_repository.dart';
 import '../services/next_question_selector.dart';
 import '../services/storage_service.dart';
 import '../utils/bottom_inset.dart';
-import '../widgets/exam_prep/explanation_text.dart';
 import 'answered_questions_screen.dart';
 import 'leaderboard_screen.dart';
 import 'question_screen.dart';
@@ -42,8 +41,8 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   bool _hasAccess = false;
   Object? _error;
 
-  // The in-flight record-and-re-pick work kicked off from the "Practice one
-  // now" QuestionScreen's `onAnswered` callback (which is `void`, so this
+  // The in-flight record-and-re-pick work kicked off from the "Start Mock
+  // Exam" QuestionScreen's `onAnswered` callback (which is `void`, so this
   // future is otherwise unawaited). `_serveNextQuestion` awaits it before
   // reading the re-picked `_randomQuestion`, so the advance never hands the
   // user back the question they just answered.
@@ -108,7 +107,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   /// stats, notification scheduling, and the remote push all happen there —
   /// see its `_submit`). This is genuinely this screen's own job only:
   /// tracking the answer locally for the "previously answered" state and
-  /// picking the next Quick Check question.
+  /// picking the next mock exam question.
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
     final storage = context.read<StorageService>();
     final nextQuestion = await NextQuestionSelector(storage)
@@ -121,7 +120,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
     });
   }
 
-  /// Supplies `QuestionScreen.onRequestNext` for the "Practice one now"
+  /// Supplies `QuestionScreen.onRequestNext` for the "Start Mock Exam"
   /// entry point: awaits the answer-recording + re-pick already kicked off
   /// by [_handleStudyCardAnswer], then hands over the question it already
   /// picked. Deliberately does NOT call `NextQuestionSelector.next()` again
@@ -255,12 +254,12 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                     ),
                     const SizedBox(height: 16),
                     _ExamMetricCard(
-                      title: 'Quick Check',
+                      title: 'Mock Exam',
                       subtitle:
-                          'Short question prompts now appear at random study intervals while you use the app.',
+                          'Take a mock exam drawn from your unlocked questions. Your answers feed the performance stats above.',
                       child: _randomQuestion == null
                           ? const Text(
-                              'No unlocked quick-check question is available yet.')
+                              'No unlocked questions are available yet.')
                           : Row(
                               children: [
                                 Expanded(
@@ -282,8 +281,8 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
                                         ),
                                       ),
                                     ),
-                                    icon: const Icon(Icons.bolt_outlined),
-                                    label: const Text('Practice one now'),
+                                    icon: const Icon(Icons.quiz_outlined),
+                                    label: const Text('Start Mock Exam'),
                                   ),
                                 ),
                               ],
@@ -384,161 +383,6 @@ class _MetricPill extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _StudyCard extends StatefulWidget {
-  final Question question;
-  final Future<void> Function(UserAnswer answer) onAnswered;
-
-  const _StudyCard({
-    super.key,
-    required this.question,
-    required this.onAnswered,
-  });
-
-  @override
-  State<_StudyCard> createState() => _StudyCardState();
-}
-
-class _StudyCardState extends State<_StudyCard> {
-  String? _selectedOption;
-  bool _submitted = false;
-  bool _saving = false;
-
-  Future<void> _submit() async {
-    if (_selectedOption == null || _saving) return;
-    setState(() {
-      _saving = true;
-      _submitted = true;
-    });
-    final answer = UserAnswer(
-      questionId: widget.question.id,
-      selectedOption: _selectedOption!,
-      isCorrect:
-          _selectedOption!.toLowerCase() == widget.question.correctOption,
-      answeredAt: DateTime.now(),
-    );
-    await widget.onAnswered(answer);
-    if (mounted) {
-      setState(() => _saving = false);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-        color: cs.surfaceContainerHigh,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Quick Check',
-            style: theme.textTheme.labelLarge?.copyWith(
-              color: cs.primary,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            widget.question.questionText,
-            style: theme.textTheme.titleMedium?.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 16),
-          ...widget.question.optionKeys.map((option) {
-            final selected = _selectedOption == option;
-            final isCorrect = option == widget.question.correctOption;
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: InkWell(
-                borderRadius: BorderRadius.circular(16),
-                onTap: _submitted
-                    ? null
-                    : () => setState(() => _selectedOption = option),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 14,
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    border: Border.all(
-                      color: _submitted
-                          ? isCorrect
-                              ? Colors.green
-                              : selected
-                                  ? Colors.red
-                                  : cs.outline.withValues(alpha: 0.35)
-                          : selected
-                              ? cs.primary
-                              : cs.outline.withValues(alpha: 0.35),
-                    ),
-                    color: _submitted
-                        ? isCorrect
-                            ? Colors.green.withValues(alpha: 0.12)
-                            : selected
-                                ? Colors.red.withValues(alpha: 0.12)
-                                : cs.surface
-                        : selected
-                            ? cs.primaryContainer
-                            : cs.surface,
-                  ),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 14,
-                        backgroundColor: cs.surfaceContainerHighest,
-                        child: Text(
-                          option.toUpperCase(),
-                          style: theme.textTheme.labelMedium?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Text(widget.question.optionText(option)),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          }),
-          const SizedBox(height: 6),
-          FilledButton(
-            onPressed: _selectedOption == null ? null : _submit,
-            child: Text(_saving ? 'Saving…' : 'Submit Answer'),
-          ),
-          if (_submitted) ...[
-            const SizedBox(height: 14),
-            Text(
-              _selectedOption?.toLowerCase() == widget.question.correctOption
-                  ? 'Correct'
-                  : 'Review',
-              style: theme.textTheme.titleSmall?.copyWith(
-                color: _selectedOption?.toLowerCase() ==
-                        widget.question.correctOption
-                    ? Colors.green.shade700
-                    : Colors.red.shade700,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 6),
-            ExplanationText(text: widget.question.explanation),
-          ],
-        ],
       ),
     );
   }

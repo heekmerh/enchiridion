@@ -140,7 +140,7 @@ class NotificationService {
       await _plugin.zonedSchedule(
         id: id,
         scheduledDate: due,
-        title: 'Quick Check',
+        title: 'Practice Question',
         body: teaser,
         payload: jsonEncode({'scope': scope, 'question_id': question.id}),
         notificationDetails: NotificationDetails(
