@@ -4,6 +4,7 @@ import '../models/chapter.dart';
 import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
 import '../utils/bottom_inset.dart';
+import '../utils/osce_subtopics.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/common/subtopic_tabs.dart';
 
@@ -11,7 +12,14 @@ import '../widgets/common/subtopic_tabs.dart';
 /// own sub-topics (see `subtopic_tabs.dart`) — never a strip of other
 /// stations.
 class OsceScreen extends StatelessWidget {
-  const OsceScreen({super.key});
+  /// Test-only chapter loader override, forwarded to [_OsceDetailScreen].
+  /// Defaults to [ResourceTopicService.loadChapter] (real `rootBundle`
+  /// asset loading) when omitted. Real asset loading hangs indefinitely in
+  /// this project's widget-test environment — mirrors
+  /// `ExamPrepHomeScreen.testQuestions` / `ReaderScreen.testBookProvider`.
+  final Future<Chapter> Function(String assetPath)? testChapterLoader;
+
+  const OsceScreen({super.key, this.testChapterLoader});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +66,10 @@ class OsceScreen extends StatelessWidget {
                 ? const ComingSoonBadge(compact: true)
                 : const Icon(Icons.chevron_right),
             onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
-              builder: (_) => _OsceDetailScreen(topic: topic),
+              builder: (_) => _OsceDetailScreen(
+                topic: topic,
+                chapterLoader: testChapterLoader ?? ResourceTopicService.loadChapter,
+              ),
             )),
           );
         },
@@ -69,7 +80,8 @@ class OsceScreen extends StatelessWidget {
 
 class _OsceDetailScreen extends StatefulWidget {
   final ResourceTopic topic;
-  const _OsceDetailScreen({required this.topic});
+  final Future<Chapter> Function(String assetPath) chapterLoader;
+  const _OsceDetailScreen({required this.topic, required this.chapterLoader});
 
   @override
   State<_OsceDetailScreen> createState() => _OsceDetailScreenState();
@@ -87,7 +99,7 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen> {
     // outline is real structure and `SubtopicTabsView` turns it into one
     // tab per outline entry with the shared coming-soon placeholder.
     if (path == null) return;
-    ResourceTopicService.loadChapter(path).then((chapter) {
+    widget.chapterLoader(path).then((chapter) {
       if (!mounted) return;
       setState(() => _chapter = chapter);
     }).catchError((Object error) {
@@ -116,7 +128,16 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen> {
                     ),
                   ),
                 )
-              : SubtopicTabsView(topic: widget.topic, chapter: _chapter),
+              : SubtopicTabsView(
+                  topic: widget.topic,
+                  chapter: _chapter,
+                  // Abdominal Examination's 69 subsections alternate
+                  // between ALL-CAPS headings and sentence-case
+                  // continuations; group by that signal instead of
+                  // surfacing one tab per raw subsection. See
+                  // `lib/utils/osce_subtopics.dart`.
+                  isSectionHeading: isOsceSubtopicHeading,
+                ),
     );
   }
 }

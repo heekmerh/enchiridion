@@ -50,12 +50,12 @@ String _guardLabel(String? raw, String fallback) {
 ///   (id/title/icon/description/order/tags/chapterColor unchanged) but
 ///   carrying only that one, unmodified [ChapterSection].
 /// - [chapter] non-null with exactly 1 section holding 2+ subsections: one
-///   tab per subsection, labelled with the subsection title. Each slice is
-///   the original [Chapter] copied, carrying one [ChapterSection] that
-///   reuses the original section's id/title/order/color and holds only that
-///   single, unmodified [ChapterSubsection]. This is the branch
-///   `abdominal_examination.json` (69 subsections), `sutures.json` (36) and
-///   `iv_cannula.json` (28) take.
+///   tab per subsection, labelled with the subsection title, UNLESS
+///   [isSectionHeading] is supplied — see below. Each slice is the original
+///   [Chapter] copied, carrying one [ChapterSection] that reuses the
+///   original section's id/title/order/color and holds only that single,
+///   unmodified [ChapterSubsection]. This is the branch `sutures.json` (36
+///   subsections) and `iv_cannula.json` (28) take.
 /// - [chapter] non-null otherwise (no sections, or one section with 0 or 1
 ///   subsections): exactly one tab carrying the chapter unchanged, labelled
 ///   with the chapter title when non-blank, the topic title otherwise.
@@ -68,9 +68,26 @@ String _guardLabel(String? raw, String fallback) {
 /// `blockAnchorId` (`lib/widgets/blocks/block_renderer.dart`) keys
 /// pinned/margin notes off those ids, so inventing new ones on split would
 /// orphan existing note anchors.
+///
+/// [isSectionHeading] is an optional, additive override for the "1 section,
+/// 2+ subsections" branch only. When supplied, that branch walks the
+/// section's subsections in authored order and opens a new group whenever
+/// [isSectionHeading] returns true for a subsection's title (and for the
+/// very first subsection regardless), appending to the currently open group
+/// otherwise; it then emits one tab per group, titled by the group's
+/// opening subsection, with a slice carrying every subsection in that
+/// group (each original [ChapterSubsection] reused verbatim, so anchors
+/// stay stable — see above). When omitted (every caller except the OSCE
+/// detail screen), this branch's original one-tab-per-subsection behaviour
+/// is unchanged. This exists because a single-section chapter whose
+/// subsections alternate between ALL-CAPS headings and sentence-case
+/// continuations (`abdominal_examination.json`'s 69 subsections) should
+/// surface sub-topics inferred from that structure, not one tab per raw
+/// subsection; see `lib/utils/osce_subtopics.dart`.
 List<SubtopicTab> subtopicTabsFor({
   required ResourceTopic topic,
   Chapter? chapter,
+  bool Function(String title)? isSectionHeading,
 }) {
   if (chapter != null) {
     final sections = chapter.sections;
@@ -97,6 +114,42 @@ List<SubtopicTab> subtopicTabsFor({
     if (sections.length == 1 && sections.first.subsections.length >= 2) {
       final section = sections.first;
       final subsections = section.subsections;
+
+      if (isSectionHeading != null) {
+        final groups = <List<ChapterSubsection>>[];
+        for (final subsection in subsections) {
+          if (groups.isEmpty || isSectionHeading(subsection.title)) {
+            groups.add([subsection]);
+          } else {
+            groups.last.add(subsection);
+          }
+        }
+        return [
+          for (var i = 0; i < groups.length; i++)
+            SubtopicTab(
+              title: _guardLabel(groups[i].first.title, 'Part ${i + 1}'),
+              content: Chapter(
+                id: chapter.id,
+                title: chapter.title,
+                icon: chapter.icon,
+                description: chapter.description,
+                order: chapter.order,
+                tags: chapter.tags,
+                chapterColor: chapter.chapterColor,
+                sections: [
+                  ChapterSection(
+                    id: section.id,
+                    title: section.title,
+                    order: section.order,
+                    sectionColor: section.sectionColor,
+                    subsections: groups[i],
+                  ),
+                ],
+              ),
+            ),
+        ];
+      }
+
       return [
         for (var i = 0; i < subsections.length; i++)
           SubtopicTab(
@@ -156,11 +209,18 @@ class SubtopicTabsView extends StatefulWidget {
   final Chapter? chapter;
   final int initialIndex;
 
+  /// Forwarded verbatim to [subtopicTabsFor]'s `isSectionHeading` — see that
+  /// parameter's dartdoc. Only the OSCE detail screen supplies this today;
+  /// every other caller omits it and keeps the default one-tab-per-raw-
+  /// subsection behaviour.
+  final bool Function(String title)? isSectionHeading;
+
   const SubtopicTabsView({
     super.key,
     required this.topic,
     this.chapter,
     this.initialIndex = 0,
+    this.isSectionHeading,
   });
 
   @override
@@ -175,7 +235,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   @override
   void initState() {
     super.initState();
-    _tabs = subtopicTabsFor(topic: widget.topic, chapter: widget.chapter);
+    _tabs = subtopicTabsFor(
+      topic: widget.topic,
+      chapter: widget.chapter,
+      isSectionHeading: widget.isSectionHeading,
+    );
     _controller = TabController(
       length: _tabs.length,
       initialIndex: widget.initialIndex.clamp(0, _tabs.length - 1),
@@ -190,7 +254,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
         identical(oldWidget.chapter, widget.chapter)) {
       return;
     }
-    final newTabs = subtopicTabsFor(topic: widget.topic, chapter: widget.chapter);
+    final newTabs = subtopicTabsFor(
+      topic: widget.topic,
+      chapter: widget.chapter,
+      isSectionHeading: widget.isSectionHeading,
+    );
     if (newTabs.length != _tabs.length) {
       final retainedIndex = _controller.index.clamp(0, newTabs.length - 1);
       _controller.dispose();
