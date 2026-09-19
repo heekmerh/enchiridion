@@ -609,7 +609,171 @@ const List<ResourceTopic> kSurgicalInstrumentationTopics = [
   ),
 ];
 
+// Sourced from `scripts/content/medical_instrumentation.md` — 9 authored
+// headings, 48 bullets total. Group order below follows first appearance
+// here, which matches the source file's heading order; display order is
+// decided by `groupTopicsForDisplay`, not by this list's literal order.
+// The "IV cannulation" bullet (Diagnostic and Monitoring Equipment) maps to
+// the pre-existing `iv-cannula` entry rather than a second row — it is this
+// catalog's only entry with real written content, which is why
+// `groupTopicsForDisplay` opens on that group with IV Cannula leading it.
+// The ENT "Laryngoscope" bullet is prefixed `medical-` to disambiguate its
+// id from the Surgical Instrumentation catalog's own `laryngoscope` entry.
 const List<ResourceTopic> kMedicalInstrumentationTopics = [
+  // -- Cardiovascular Instrumentation
+  ResourceTopic(
+    id: 'electrocardiograph-ecg-machine',
+    title: 'Electrocardiograph (ECG) machine',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'holter-monitor',
+    title: 'Holter monitor',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'cardiac-monitor',
+    title: 'Cardiac monitor',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'defibrillator',
+    title: 'Defibrillator',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'automated-external-defibrillator-aed',
+    title: 'Automated External Defibrillator (AED)',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'pacemaker',
+    title: 'Pacemaker',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'sphygmomanometer',
+    title: 'Sphygmomanometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'stethoscope',
+    title: 'Stethoscope',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Cardiovascular Instrumentation',
+  ),
+
+  // -- Respiratory Instrumentation
+  ResourceTopic(
+    id: 'pulse-oximeter',
+    title: 'Pulse oximeter',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'spirometer',
+    title: 'Spirometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'peak-flow-meter',
+    title: 'Peak flow meter',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'nebulizer',
+    title: 'Nebulizer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'oxygen-cylinder',
+    title: 'Oxygen cylinder',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'oxygen-concentrator',
+    title: 'Oxygen concentrator',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'ventilator',
+    title: 'Ventilator',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'capnograph',
+    title: 'Capnograph',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Respiratory Instrumentation',
+  ),
+
+  // -- Neurological Instrumentation
+  ResourceTopic(
+    id: 'electroencephalograph-eeg',
+    title: 'Electroencephalograph (EEG)',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Neurological Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'electromyograph-emg',
+    title: 'Electromyograph (EMG)',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Neurological Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'reflex-hammer',
+    title: 'Reflex hammer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Neurological Instrumentation',
+  ),
+  ResourceTopic(
+    id: 'tuning-fork',
+    title: 'Tuning fork',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Neurological Instrumentation',
+  ),
+
+  // -- Diagnostic and Monitoring Equipment
+  ResourceTopic(
+    id: 'thermometer',
+    title: 'Thermometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
   ResourceTopic(
     id: 'iv-cannula',
     title: 'IV Cannula',
@@ -618,6 +782,199 @@ const List<ResourceTopic> kMedicalInstrumentationTopics = [
     dataAssetPath: 'assets/data/resources/iv_cannula.json',
     description:
         'Peripheral venous cannula parts, insertion, uses, and precautions.',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'glucometer',
+    title: 'Glucometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'patient-monitor',
+    title: 'Patient monitor',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'infusion-pump',
+    title: 'Infusion pump',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'syringe-pump',
+    title: 'Syringe pump',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'doppler-ultrasound-device',
+    title: 'Doppler ultrasound device',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+  ResourceTopic(
+    id: 'fetal-monitor-ctg',
+    title: 'Fetal monitor (CTG)',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Diagnostic and Monitoring Equipment',
+  ),
+
+  // -- Imaging Equipment
+  ResourceTopic(
+    id: 'x-ray-machine',
+    title: 'X-ray machine',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Imaging Equipment',
+  ),
+  ResourceTopic(
+    id: 'ultrasound-machine',
+    title: 'Ultrasound machine',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Imaging Equipment',
+  ),
+  ResourceTopic(
+    id: 'ct-scanner',
+    title: 'CT scanner',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Imaging Equipment',
+  ),
+  ResourceTopic(
+    id: 'mri-scanner',
+    title: 'MRI scanner',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Imaging Equipment',
+  ),
+  ResourceTopic(
+    id: 'mammography-unit',
+    title: 'Mammography unit',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Imaging Equipment',
+  ),
+
+  // -- Ophthalmic Instruments
+  ResourceTopic(
+    id: 'ophthalmoscope',
+    title: 'Ophthalmoscope',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Ophthalmic Instruments',
+  ),
+  ResourceTopic(
+    id: 'retinoscope',
+    title: 'Retinoscope',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Ophthalmic Instruments',
+  ),
+  ResourceTopic(
+    id: 'snellen-chart',
+    title: 'Snellen chart',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Ophthalmic Instruments',
+  ),
+  ResourceTopic(
+    id: 'tonometer',
+    title: 'Tonometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Ophthalmic Instruments',
+  ),
+
+  // -- ENT Instruments
+  ResourceTopic(
+    id: 'otoscope',
+    title: 'Otoscope',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'ENT Instruments',
+  ),
+  ResourceTopic(
+    id: 'medical-laryngoscope',
+    title: 'Laryngoscope',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'ENT Instruments',
+  ),
+  ResourceTopic(
+    id: 'nasal-speculum',
+    title: 'Nasal speculum',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'ENT Instruments',
+  ),
+  ResourceTopic(
+    id: 'audiometer',
+    title: 'Audiometer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'ENT Instruments',
+  ),
+
+  // -- Biomedical Sensors and Transducers
+  ResourceTopic(
+    id: 'temperature-transducer',
+    title: 'Temperature transducer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Biomedical Sensors and Transducers',
+  ),
+  ResourceTopic(
+    id: 'pressure-transducer',
+    title: 'Pressure transducer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Biomedical Sensors and Transducers',
+  ),
+  ResourceTopic(
+    id: 'flow-transducer',
+    title: 'Flow transducer',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Biomedical Sensors and Transducers',
+  ),
+  ResourceTopic(
+    id: 'biosensors',
+    title: 'Biosensors',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Biomedical Sensors and Transducers',
+  ),
+  ResourceTopic(
+    id: 'ecg-electrodes',
+    title: 'ECG electrodes',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Biomedical Sensors and Transducers',
+  ),
+
+  // -- Therapeutic Equipment
+  ResourceTopic(
+    id: 'dialysis-machine',
+    title: 'Dialysis machine',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Therapeutic Equipment',
+  ),
+  ResourceTopic(
+    id: 'laser-therapy-devices',
+    title: 'Laser therapy devices',
+    categoryTitle: 'Medical Instrumentation',
+    heroAssetPath: 'assets/resources/clinical instrumentation.jpeg',
+    group: 'Therapeutic Equipment',
   ),
 ];
 
