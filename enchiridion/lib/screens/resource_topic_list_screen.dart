@@ -2,9 +2,27 @@ import 'package:flutter/material.dart';
 
 import '../models/resource_topic.dart';
 import '../utils/bottom_inset.dart';
-import '../utils/content_availability.dart';
 import '../widgets/common/coming_soon.dart';
+import '../widgets/common/section_header.dart';
 import 'resource_topic_detail_screen.dart';
+
+/// A single row in the flattened, renderable list: either a section header
+/// or a topic. Flattening headers and topics into one list lets both
+/// presentations (card and dense) drive a single `ListView.builder` so a
+/// large, grouped catalog builds its rows — and hero images — lazily.
+sealed class _ListEntry {
+  const _ListEntry();
+}
+
+class _HeaderEntry extends _ListEntry {
+  final String title;
+  const _HeaderEntry(this.title);
+}
+
+class _TopicEntry extends _ListEntry {
+  final ResourceTopic topic;
+  const _TopicEntry(this.topic);
+}
 
 class ResourceTopicListScreen extends StatelessWidget {
   final String title;
@@ -44,21 +62,30 @@ class ResourceTopicListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ordering happens here, inside the shared list screen, not at each call
-    // site — so any topics list handed to this screen inherits the
-    // available-first rule for free.
-    final orderedTopics = availableFirst(topics, (t) => t.hasContent);
+    // Grouping (and, inside it, the available-first ordering rule) happens
+    // here, inside the shared list screen, not at each call site — so any
+    // topics list handed to this screen inherits both for free. A
+    // group-less list (every `ResourceTopic.group` null) collapses to one
+    // bucket keyed null, which flattens below with zero header rows —
+    // exactly today's rendering for Surgical Instrumentation and OSCE.
+    final grouped = groupTopicsForDisplay(topics);
+    final items = <_ListEntry>[
+      for (final entry in grouped.entries) ...[
+        if (entry.key != null) _HeaderEntry(entry.key!),
+        for (final topic in entry.value) _TopicEntry(topic),
+      ],
+    ];
     return Scaffold(
       appBar: AppBar(title: Text(title)),
       body: dense
-          ? _buildDenseList(context, orderedTopics)
-          : _buildCardList(context, orderedTopics),
+          ? _buildDenseList(context, items)
+          : _buildCardList(context, items),
     );
   }
 
   Widget _buildDenseList(
     BuildContext context,
-    List<ResourceTopic> orderedTopics,
+    List<_ListEntry> items,
   ) {
     final cs = Theme.of(context).colorScheme;
     return ListView.builder(
@@ -66,9 +93,13 @@ class ResourceTopicListScreen extends StatelessWidget {
         top: 8,
         bottom: 8 + bottomViewportInset(context),
       ),
-      itemCount: orderedTopics.length,
+      itemCount: items.length,
       itemBuilder: (context, index) {
-        final topic = orderedTopics[index];
+        final item = items[index];
+        if (item is _HeaderEntry) {
+          return SectionHeader(title: item.title);
+        }
+        final topic = (item as _TopicEntry).topic;
         final comingSoon = topic.isComingSoon;
         return ListTile(
           leading: CircleAvatar(
@@ -108,82 +139,99 @@ class ResourceTopicListScreen extends StatelessWidget {
 
   Widget _buildCardList(
     BuildContext context,
-    List<ResourceTopic> orderedTopics,
+    List<_ListEntry> items,
   ) {
-    return ListView.separated(
-      padding: EdgeInsets.fromLTRB(
-        16,
-        16,
-        16,
-        24 + bottomViewportInset(context),
+    return ListView.builder(
+      padding: EdgeInsets.only(
+        top: 16,
+        bottom: 24 + bottomViewportInset(context),
       ),
-      itemCount: orderedTopics.length,
-      separatorBuilder: (_, __) => const SizedBox(height: 14),
+      itemCount: items.length,
       itemBuilder: (context, index) {
-        final topic = orderedTopics[index];
-        final comingSoon = topic.isComingSoon;
-        final cs = Theme.of(context).colorScheme;
-        return InkWell(
-          borderRadius: BorderRadius.circular(20),
-          onTap: () => _handleTap(context, topic, comingSoon),
-          child: Ink(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              color: cs.surfaceContainerHigh,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius:
-                      const BorderRadius.vertical(top: Radius.circular(20)),
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: ComingSoonDim(
-                      dimmed: comingSoon,
-                      child: Image.asset(
-                        topic.heroAssetPath,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        topic.title,
-                        style:
-                            Theme.of(context).textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: comingSoon
-                                      ? ComingSoonStyle.title(cs)
-                                      : null,
-                                ),
-                      ),
-                      if (topic.description != null) ...[
-                        const SizedBox(height: 6),
-                        Text(
-                          topic.description!,
-                          style: comingSoon
-                              ? TextStyle(color: ComingSoonStyle.body(cs))
-                              : null,
-                        ),
-                      ],
-                      if (comingSoon) ...[
-                        const SizedBox(height: 8),
-                        const ComingSoonBadge(),
-                      ],
-                    ],
-                  ),
-                ),
-              ],
-            ),
+        final item = items[index];
+        if (item is _HeaderEntry) {
+          return SectionHeader(title: item.title);
+        }
+        final topic = (item as _TopicEntry).topic;
+        // Headers carry their own vertical padding, so a topic row only
+        // needs the shared 14px gap before the *next* topic row — never
+        // before a header (the header's own top padding is that gap) and
+        // never after the last row (the outer ListView's bottom padding
+        // already provides scroll clearance).
+        final isLast = index == items.length - 1;
+        final nextIsHeader = !isLast && items[index + 1] is _HeaderEntry;
+        return Padding(
+          padding: EdgeInsets.fromLTRB(
+            16,
+            0,
+            16,
+            isLast || nextIsHeader ? 0 : 14,
           ),
+          child: _cardTile(context, topic),
         );
       },
+    );
+  }
+
+  Widget _cardTile(BuildContext context, ResourceTopic topic) {
+    final comingSoon = topic.isComingSoon;
+    final cs = Theme.of(context).colorScheme;
+    return InkWell(
+      borderRadius: BorderRadius.circular(20),
+      onTap: () => _handleTap(context, topic, comingSoon),
+      child: Ink(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: cs.surfaceContainerHigh,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ClipRRect(
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(20)),
+              child: AspectRatio(
+                aspectRatio: 16 / 9,
+                child: ComingSoonDim(
+                  dimmed: comingSoon,
+                  child: Image.asset(
+                    topic.heroAssetPath,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    topic.title,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: comingSoon ? ComingSoonStyle.title(cs) : null,
+                        ),
+                  ),
+                  if (topic.description != null) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      topic.description!,
+                      style: comingSoon
+                          ? TextStyle(color: ComingSoonStyle.body(cs))
+                          : null,
+                    ),
+                  ],
+                  if (comingSoon) ...[
+                    const SizedBox(height: 8),
+                    const ComingSoonBadge(),
+                  ],
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
