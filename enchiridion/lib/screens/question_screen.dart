@@ -174,7 +174,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
       await statsProvider.recordAnswer(
         scope: widget.bookId,
         isCorrect: _isCorrect,
-        isFirstAttempt: review.attempts == 1,
         answeredAt: answer.answeredAt,
       );
     }

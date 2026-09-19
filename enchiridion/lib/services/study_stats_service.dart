@@ -29,22 +29,24 @@ class StudyStatsService {
 
   /// Records one answer's contribution to the day's stats.
   ///
-  /// [isFirstAttempt] must be the caller's `QuestionReview.attempts == 1`
-  /// check (true only the very first time this question is ever answered in
-  /// this scope) — spaced repetition deliberately re-serves the same
-  /// question days or weeks later, and a repeat answer must not inflate
-  /// `questionsAnswered`/`performancePoints` a second time. When false, this
-  /// is a no-op that returns the day's stats unchanged.
+  /// Every submitted answer counts once, including a re-served question
+  /// answered again — spaced repetition exists specifically to bring a
+  /// question back, and the user genuinely did the work again each time.
+  /// Review state (`QuestionReview.attempts`) is deliberately not consulted
+  /// here: a review merged from another device, or one derived from a
+  /// pre-spaced-repetition answer, already carries a non-zero attempt count
+  /// that has nothing to do with whether this answer is new to this method.
+  /// The protection against double-counting is structural, not a check on
+  /// review state — exactly one surface (`QuestionScreen._submit` or
+  /// `QuickCheckCard._submit`) calls this per submission.
   Future<StudyDayStats> recordAnswer({
     String scope = kStandaloneExamPrepScope,
     required bool isCorrect,
-    required bool isFirstAttempt,
     DateTime? answeredAt,
   }) async {
     final timestamp = answeredAt ?? DateTime.now();
     final dateKey = dateKeyFor(timestamp);
     final current = _storage.getDailyStudyStats(scope, dateKey);
-    if (!isFirstAttempt) return current;
     final updated = current.copyWith(
       questionsAnswered: current.questionsAnswered + 1,
       correctAnswers: current.correctAnswers + (isCorrect ? 1 : 0),

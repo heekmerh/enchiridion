@@ -47,17 +47,23 @@ Widget _buildSubject(
   bool trackDailyStudyStats = false,
   Question? question,
   List<NavigatorObserver> navigatorObservers = const [],
+  StudyStatsProvider? statsProvider,
+  Key? screenKey,
 }) {
   return MultiProvider(
     providers: [
       Provider<StorageService>.value(value: storage),
-      ChangeNotifierProvider<StudyStatsProvider>(
-        create: (_) => StudyStatsProvider(storage),
-      ),
+      if (statsProvider != null)
+        ChangeNotifierProvider<StudyStatsProvider>.value(value: statsProvider)
+      else
+        ChangeNotifierProvider<StudyStatsProvider>(
+          create: (_) => StudyStatsProvider(storage),
+        ),
     ],
     child: MaterialApp(
       navigatorObservers: navigatorObservers,
       home: QuestionScreen(
+        key: screenKey,
         question: question ?? _question,
         bookId: 'exam_prep',
         readOnly: readOnly,
@@ -423,6 +429,103 @@ void main() {
         await tester.pump(const Duration(seconds: 30));
 
         expect(tester.takeException(), isNull);
+      },
+    );
+  });
+
+  group('daily stats tracking', () {
+    testWidgets(
+      'a repeat answer to the same question counts as a second answer, not '
+      'a no-op — reproduces the reported "answered 4, counted 2" bug',
+      (tester) async {
+        // Regression for commit d0a90f6: `StudyStatsService.recordAnswer`
+        // used to skip the update whenever `QuestionReview.attempts != 1`,
+        // silently dropping every spaced-repetition re-serve. The provider
+        // instance is held across two fresh `QuestionScreen` pumps — the way
+        // a real user reaches a repeat is by being re-served the question in
+        // a later session, not by forcing `attempts` back to 1.
+        final statsProvider = StudyStatsProvider(storageService);
+
+        // Distinct keys force Flutter to mount a brand-new `QuestionScreen`
+        // State per pump instead of reusing the first pump's (already
+        // submitted) State — the way a real re-serve arrives as a new screen
+        // instance, not a rebuild of the same one.
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          trackDailyStudyStats: true,
+          statsProvider: statsProvider,
+          screenKey: const ValueKey('attempt-1'),
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(statsProvider.totals.questionsAnswered, 1);
+        expect(statsProvider.totals.correctAnswers, 1);
+        expect(statsProvider.totals.performancePoints, 10);
+
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          trackDailyStudyStats: true,
+          statsProvider: statsProvider,
+          screenKey: const ValueKey('attempt-2'),
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(statsProvider.totals.questionsAnswered, 2);
+        expect(statsProvider.totals.correctAnswers, 2);
+        expect(statsProvider.totals.performancePoints, 20);
+      },
+    );
+
+    testWidgets(
+      'a wrong second submission after a correct first leaves answered 2, '
+      'correct 1, wrong 1',
+      (tester) async {
+        final statsProvider = StudyStatsProvider(storageService);
+
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          trackDailyStudyStats: true,
+          statsProvider: statsProvider,
+          screenKey: const ValueKey('attempt-1'),
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          trackDailyStudyStats: true,
+          statsProvider: statsProvider,
+          screenKey: const ValueKey('attempt-2'),
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('3'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(statsProvider.totals.questionsAnswered, 2);
+        expect(statsProvider.totals.correctAnswers, 1);
+        expect(statsProvider.totals.performancePoints, 10);
+        expect(statsProvider.totals.wrongAnswers, 1);
       },
     );
   });
