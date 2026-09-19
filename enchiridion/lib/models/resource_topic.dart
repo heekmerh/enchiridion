@@ -51,7 +51,7 @@ const String kStandaloneExamPrepScope = 'exam_prep';
 const List<ResourceTopic> kSurgicalInstrumentationTopics = [
   ResourceTopic(
     id: 'sutures',
-    title: 'Sutures',
+    title: 'Suture Material',
     categoryTitle: 'Surgical Instrumentation',
     heroAssetPath: 'assets/resources/surgical instrumentation.jpeg',
     dataAssetPath: 'assets/data/resources/sutures.json',
