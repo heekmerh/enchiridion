@@ -141,3 +141,18 @@ Most screens handle it; two do not.
 ### OSCE
 - The topics are implemented nicely but the tab scroll feature is not for the topics, it is for the sub-topics within each topic. You already have access to the sub-topic outline for each topic. For Abdominal which is already implemented you can infer it.
 - Rename Abdominal -> Abdominal Examination
+
+## New Testing Report 2026-09-19
+### Exam Prep
+- When the user answer a question the time lapse before the next question is displayed is not a enough to read the explanation therefore next question should only be triggered by the user and not automatic
+- There is no concept for 'Quick Check' anymore. The user simply engages a mock exam so change the messaging or text there to reflect this fact
+- I answered 4 questions but the dashboard shows I answered 2
+- When scrambling the answer options, moving them with their option label (A,B,C,D) defeats the purpose of the shuffle
+
+### Surgical & Medical Instrumentation
+- The content scroll is not supposed to be sectionalized, it is supposed to be continuous through all sections changing tabs as each sections is arrived upon. Being abrubptly halted while scrolling then having to go change tabs just to continue is very poor user experience. This also affects OSCE
+- Subtopics are being treated as items in the IV Cannula module content. We need to re-extract "scripts/content/IV_Cannula_instrumentation.docx". These are subtopics not items: "Advantages", "Disadvantages", "Precautions", "Complications"
+- Medical intrumentation modules are not displayed as a list like surgical instrumentation. It is supposed to be a list similar to Surgical instrumentation.
+
+### Library
+- The books are colourful and beautiful, these are images so dont gray them out, the previous implementation dim out those tiles and we need that continued in this case.
