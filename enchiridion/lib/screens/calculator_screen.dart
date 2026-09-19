@@ -248,6 +248,30 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         return _ApgarForm(onResult: _setResult, onReset: _reset);
       case 'growth-percentile':
         return _GrowthPercentileForm(onResult: _setResult, onReset: _reset);
+      case 'map':
+        return _MapForm(onResult: _setResult, onReset: _reset);
+      case 'qtc':
+        return _QtcForm(onResult: _setResult, onReset: _reset);
+      case 'corrected-calcium':
+        return _CorrectedCalciumForm(onResult: _setResult, onReset: _reset);
+      case 'ldl-friedewald':
+        return _LdlFriedewaldForm(onResult: _setResult, onReset: _reset);
+      case 'waist-hip-ratio':
+        return _WaistHipRatioForm(onResult: _setResult, onReset: _reset);
+      case 'ibw':
+        return _IbwForm(onResult: _setResult, onReset: _reset);
+      case 'cao2':
+        return _Cao2Form(onResult: _setResult, onReset: _reset);
+      case 'chads-vasc':
+        return _ChadsVascForm(onResult: _setResult, onReset: _reset);
+      case 'has-bled':
+        return _HasBledForm(onResult: _setResult, onReset: _reset);
+      case 'burn-tbsa':
+        return _BurnTbsaForm(onResult: _setResult, onReset: _reset);
+      case 'parkland':
+        return _ParklandForm(onResult: _setResult, onReset: _reset);
+      case 'gtpal':
+        return _GtpalForm(onResult: _setResult, onReset: _reset);
       default:
         return const Text('Unknown calculator');
     }
@@ -3412,6 +3436,1059 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
         ),
         const SizedBox(height: 12),
         FilledButton(onPressed: _calculate, child: const Text('Classify')),
+      ],
+    );
+  }
+}
+
+// ─── Cardiology Calculator C1: Mean Arterial Pressure (MAP) ──────────────────
+
+class _MapForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _MapForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_MapForm> createState() => _MapFormState();
+}
+
+class _MapFormState extends State<_MapForm> {
+  final _sbpCtrl = TextEditingController();
+  final _dbpCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _sbpCtrl.dispose();
+    _dbpCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final sbp = double.tryParse(_sbpCtrl.text);
+    final dbp = double.tryParse(_dbpCtrl.text);
+    if (sbp == null || sbp <= 0 || dbp == null || dbp <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid systolic and diastolic BP')));
+      return;
+    }
+    if (dbp >= sbp) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Diastolic BP must be lower than systolic BP')));
+      return;
+    }
+    final map = dbp + (sbp - dbp) / 3;
+    final adequate = map >= 65;
+    widget.onResult(
+      result: '${map.toStringAsFixed(0)} mmHg',
+      interpretation: 'MAP ${map.toStringAsFixed(0)} mmHg. '
+          '${adequate ? 'At or above the conventional 65 mmHg organ-perfusion threshold.' : 'Below the conventional 65 mmHg organ-perfusion threshold — consider escalation.'}',
+      educationalNote: 'Formula: MAP = diastolic + ⅓ × (systolic − diastolic).',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Systolic BP (mmHg)', controller: _sbpCtrl),
+        _NumericField(label: 'Diastolic BP (mmHg)', controller: _dbpCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Cardiology Calculator C2: QTc (Corrected QT) ────────────────────────────
+
+class _QtcForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _QtcForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_QtcForm> createState() => _QtcFormState();
+}
+
+class _QtcFormState extends State<_QtcForm> {
+  final _qtCtrl = TextEditingController();
+  final _hrCtrl = TextEditingController();
+  String _sex = 'male';
+
+  @override
+  void dispose() {
+    _qtCtrl.dispose();
+    _hrCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final qt = double.tryParse(_qtCtrl.text);
+    final hr = double.tryParse(_hrCtrl.text);
+    if (qt == null || qt <= 0 || hr == null || hr <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid QT and heart rate')));
+      return;
+    }
+    final rrSeconds = 60 / hr;
+    final bazett = qt / math.sqrt(rrSeconds);
+    final fridericia = qt / math.pow(rrSeconds, 1 / 3);
+
+    final prolongedThreshold = _sex == 'male' ? 450 : 470;
+    final prolonged = bazett > prolongedThreshold;
+    final highRisk = bazett > 500;
+
+    String band;
+    if (highRisk) {
+      band = 'markedly prolonged — highest torsades de pointes risk';
+    } else if (prolonged) {
+      band = 'prolonged';
+    } else {
+      band = 'within normal range';
+    }
+
+    widget.onResult(
+      result: 'QTc (Bazett): ${bazett.toStringAsFixed(0)} ms | '
+          'QTc (Fridericia): ${fridericia.toStringAsFixed(0)} ms',
+      interpretation:
+          'Bazett QTc ${bazett.toStringAsFixed(0)} ms — $band '
+          '(threshold: > $prolongedThreshold ms for ${_sex == 'male' ? 'men' : 'women'}, '
+          '> 500 ms highest risk).',
+      warning:
+          'Bazett over-corrects at fast heart rates and under-corrects at slow heart rates — '
+          'Fridericia is more reliable outside the normal heart rate range.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'QT interval (ms)', controller: _qtCtrl),
+        _NumericField(label: 'Heart rate (bpm)', controller: _hrCtrl),
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'male', child: Text('Male')),
+            DropdownMenuItem(value: 'female', child: Text('Female')),
+          ],
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── General Calculator G1: Corrected Calcium ────────────────────────────────
+
+class _CorrectedCalciumForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _CorrectedCalciumForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_CorrectedCalciumForm> createState() => _CorrectedCalciumFormState();
+}
+
+class _CorrectedCalciumFormState extends State<_CorrectedCalciumForm> {
+  final _calciumCtrl = TextEditingController();
+  final _albuminCtrl = TextEditingController();
+  String _unit = 'mmol/L (SI)';
+
+  @override
+  void dispose() {
+    _calciumCtrl.dispose();
+    _albuminCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final calcium = double.tryParse(_calciumCtrl.text);
+    final albumin = double.tryParse(_albuminCtrl.text);
+    if (calcium == null || calcium <= 0 || albumin == null || albumin <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid calcium and albumin values')));
+      return;
+    }
+    final isSi = _unit == 'mmol/L (SI)';
+    final corrected =
+        isSi ? calcium + 0.02 * (40 - albumin) : calcium + 0.8 * (4 - albumin);
+    final units = isSi ? 'mmol/L' : 'mg/dL';
+
+    widget.onResult(
+      result: '${corrected.toStringAsFixed(2)} $units',
+      interpretation:
+          'Corrected calcium ${corrected.toStringAsFixed(2)} $units, adjusted for an albumin '
+          'of ${albumin.toStringAsFixed(1)} ${isSi ? 'g/L' : 'g/dL'}. '
+          'Interpret against the local normal range for total calcium.',
+      educationalNote: isSi
+          ? 'Formula: measured Ca + 0.02 mmol/L per 1 g/L albumin below 40 g/L.'
+          : 'Formula: measured Ca + 0.8 mg/dL per 1 g/dL albumin below 4 g/dL.',
+      warning:
+          'An estimate only — measure ionised calcium directly when precision is required '
+          '(e.g. critical illness, acid-base disturbance, paraproteinaemia).',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DropdownButtonFormField<String>(
+          initialValue: _unit,
+          decoration: const InputDecoration(
+              labelText: 'Unit system',
+              border: OutlineInputBorder(),
+              isDense: true),
+          items: ['mmol/L (SI)', 'mg/dL (conventional)']
+              .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+              .toList(),
+          onChanged: (v) => setState(() => _unit = v!),
+        ),
+        const SizedBox(height: 12),
+        _NumericField(
+            label: 'Measured calcium (${_unit == 'mmol/L (SI)' ? 'mmol/L' : 'mg/dL'})',
+            controller: _calciumCtrl),
+        _NumericField(
+            label: 'Albumin (${_unit == 'mmol/L (SI)' ? 'g/L' : 'g/dL'})',
+            controller: _albuminCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── General Calculator G2: LDL (Friedewald) ─────────────────────────────────
+
+class _LdlFriedewaldForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _LdlFriedewaldForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_LdlFriedewaldForm> createState() => _LdlFriedewaldFormState();
+}
+
+class _LdlFriedewaldFormState extends State<_LdlFriedewaldForm> {
+  final _tcCtrl = TextEditingController();
+  final _hdlCtrl = TextEditingController();
+  final _tgCtrl = TextEditingController();
+  String _unit = 'mg/dL';
+
+  @override
+  void dispose() {
+    _tcCtrl.dispose();
+    _hdlCtrl.dispose();
+    _tgCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final tc = double.tryParse(_tcCtrl.text);
+    final hdl = double.tryParse(_hdlCtrl.text);
+    final tg = double.tryParse(_tgCtrl.text);
+    if (tc == null || tc <= 0 || hdl == null || hdl <= 0 || tg == null || tg <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid total cholesterol, HDL, and triglycerides')));
+      return;
+    }
+    final isMgDl = _unit == 'mg/dL';
+    final ceiling = isMgDl ? 400.0 : 4.5;
+    if (tg > ceiling) {
+      widget.onResult(
+        result: 'Not valid — triglycerides exceed $ceiling $_unit',
+        interpretation:
+            'The Friedewald estimate is invalid above $ceiling $_unit triglycerides. '
+            'Request a direct LDL measurement instead of relying on this calculated value.',
+        warning:
+            'Triglycerides of ${tg.toStringAsFixed(0)} $_unit exceed the Friedewald validity '
+            'ceiling — no LDL value is reported to avoid a misleading number.',
+      );
+      return;
+    }
+    final ldl = isMgDl ? tc - hdl - tg / 5 : tc - hdl - tg / 2.2;
+
+    widget.onResult(
+      result: '${ldl.toStringAsFixed(0)} $_unit',
+      interpretation: 'Calculated LDL ${ldl.toStringAsFixed(0)} $_unit (Friedewald). '
+          'Use alongside total cholesterol and HDL for cardiovascular risk assessment.',
+      educationalNote: isMgDl
+          ? 'Formula: LDL = Total cholesterol − HDL − Triglycerides / 5 (mg/dL).'
+          : 'Formula: LDL = Total cholesterol − HDL − Triglycerides / 2.2 (mmol/L).',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DropdownButtonFormField<String>(
+          initialValue: _unit,
+          decoration: const InputDecoration(
+              labelText: 'Unit', border: OutlineInputBorder(), isDense: true),
+          items: ['mg/dL', 'mmol/L']
+              .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+              .toList(),
+          onChanged: (v) => setState(() => _unit = v!),
+        ),
+        const SizedBox(height: 12),
+        _NumericField(label: 'Total cholesterol ($_unit)', controller: _tcCtrl),
+        _NumericField(label: 'HDL ($_unit)', controller: _hdlCtrl),
+        _NumericField(label: 'Triglycerides ($_unit)', controller: _tgCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── General Calculator G3: Waist-to-Hip Ratio ───────────────────────────────
+
+class _WaistHipRatioForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _WaistHipRatioForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_WaistHipRatioForm> createState() => _WaistHipRatioFormState();
+}
+
+class _WaistHipRatioFormState extends State<_WaistHipRatioForm> {
+  final _waistCtrl = TextEditingController();
+  final _hipCtrl = TextEditingController();
+  String _sex = 'male';
+
+  @override
+  void dispose() {
+    _waistCtrl.dispose();
+    _hipCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final waist = double.tryParse(_waistCtrl.text);
+    final hip = double.tryParse(_hipCtrl.text);
+    if (waist == null || waist <= 0 || hip == null || hip <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid waist and hip measurements')));
+      return;
+    }
+    final ratio = waist / hip;
+    final threshold = _sex == 'male' ? 0.90 : 0.85;
+    final elevated = ratio > threshold;
+
+    widget.onResult(
+      result: ratio.toStringAsFixed(2),
+      interpretation: 'Waist-to-hip ratio ${ratio.toStringAsFixed(2)}. '
+          '${elevated ? 'Above the WHO threshold ($threshold for ${_sex == 'male' ? 'men' : 'women'}) — increased cardiometabolic risk from central adiposity.' : 'Within the WHO threshold ($threshold for ${_sex == 'male' ? 'men' : 'women'}).'}',
+      educationalNote: 'Measure waist at the midpoint between the lowest rib and iliac crest, '
+          'and hip at the widest point, standing and relaxed.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Waist circumference (cm)', controller: _waistCtrl),
+        _NumericField(label: 'Hip circumference (cm)', controller: _hipCtrl),
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'male', child: Text('Male')),
+            DropdownMenuItem(value: 'female', child: Text('Female')),
+          ],
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Utility Calculator U1: Ideal Body Weight (IBW, Devine) ──────────────────
+
+class _IbwForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _IbwForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_IbwForm> createState() => _IbwFormState();
+}
+
+class _IbwFormState extends State<_IbwForm> {
+  final _heightCtrl = TextEditingController();
+  final _actualWeightCtrl = TextEditingController();
+  String _sex = 'male';
+  String _heightUnit = 'cm';
+  String _weightUnit = 'kg';
+
+  @override
+  void dispose() {
+    _heightCtrl.dispose();
+    _actualWeightCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawHeight = double.tryParse(_heightCtrl.text);
+    if (rawHeight == null || rawHeight <= 0) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid height')));
+      return;
+    }
+    final heightInches =
+        _heightUnit == 'cm' ? rawHeight / 2.54 : rawHeight;
+    if (heightInches < 60) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text(
+              'IBW (Devine) is not valid below 60 inches (152 cm) — use a different method')));
+      return;
+    }
+    final base = _sex == 'male' ? 50.0 : 45.5;
+    final ibw = base + 2.3 * (heightInches - 60);
+
+    final rawActual = double.tryParse(_actualWeightCtrl.text);
+    String? abwLine;
+    if (rawActual != null && rawActual > 0) {
+      final actualKg = _weightUnit == 'kg' ? rawActual : rawActual * 0.453592;
+      final abw = ibw + 0.4 * (actualKg - ibw);
+      abwLine = '\nAdjusted body weight (ABW): ${abw.toStringAsFixed(1)} kg';
+    }
+
+    widget.onResult(
+      result: '${ibw.toStringAsFixed(1)} kg${abwLine ?? ''}',
+      interpretation: 'Ideal body weight (Devine): ${ibw.toStringAsFixed(1)} kg.'
+          '${abwLine ?? ''}',
+      educationalNote:
+          'Devine formula: ${_sex == 'male' ? '50' : '45.5'} kg + 2.3 kg per inch of height '
+          'above 60 inches.',
+      warning: 'Not valid below 60 inches without a different method.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DropdownButtonFormField<String>(
+          initialValue: _sex,
+          decoration: const InputDecoration(
+              labelText: 'Sex', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'male', child: Text('Male')),
+            DropdownMenuItem(value: 'female', child: Text('Female')),
+          ],
+          onChanged: (v) => setState(() => _sex = v!),
+        ),
+        const SizedBox(height: 12),
+        Row(children: [
+          Expanded(
+              child: _NumericField(label: 'Height', controller: _heightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _heightUnit,
+            items: ['cm', 'in']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _heightUnit = v!),
+          ),
+        ]),
+        Row(children: [
+          Expanded(
+              child: _NumericField(
+                  label: 'Actual weight — optional',
+                  controller: _actualWeightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _weightUnit,
+            items: ['kg', 'lb']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _weightUnit = v!),
+          ),
+        ]),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Respiratory Calculator R1: Oxygen Content (CaO₂) ────────────────────────
+
+class _Cao2Form extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _Cao2Form({required this.onResult, required this.onReset});
+
+  @override
+  State<_Cao2Form> createState() => _Cao2FormState();
+}
+
+class _Cao2FormState extends State<_Cao2Form> {
+  final _hbCtrl = TextEditingController();
+  final _sao2Ctrl = TextEditingController();
+  final _pao2Ctrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _hbCtrl.dispose();
+    _sao2Ctrl.dispose();
+    _pao2Ctrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final hb = double.tryParse(_hbCtrl.text);
+    final sao2 = double.tryParse(_sao2Ctrl.text);
+    final pao2 = double.tryParse(_pao2Ctrl.text);
+    if (hb == null || hb <= 0 || sao2 == null || sao2 <= 0 || pao2 == null || pao2 <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          content: Text('Enter valid haemoglobin, SaO₂, and PaO₂ values')));
+      return;
+    }
+    final cao2 = 1.34 * hb * (sao2 / 100) + 0.003 * pao2;
+
+    widget.onResult(
+      result: '${cao2.toStringAsFixed(1)} mL/dL',
+      interpretation:
+          'Arterial oxygen content ${cao2.toStringAsFixed(1)} mL/dL. '
+          'Content describes how much oxygen the blood carries — delivery to tissues '
+          'additionally requires cardiac output (DO₂ = CaO₂ × cardiac output).',
+      educationalNote:
+          'Formula: CaO₂ = 1.34 × Hb (g/dL) × SaO₂ (fraction) + 0.003 × PaO₂ (mmHg). '
+          'The dissolved-oxygen term is small at room air.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Haemoglobin (g/dL)', controller: _hbCtrl),
+        _NumericField(label: 'SaO₂ (%)', controller: _sao2Ctrl),
+        _NumericField(label: 'PaO₂ (mmHg)', controller: _pao2Ctrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Cardiology Calculator C3: CHA₂DS₂-VASc Score ────────────────────────────
+
+class _ChadsVascForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _ChadsVascForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_ChadsVascForm> createState() => _ChadsVascFormState();
+}
+
+class _ChadsVascFormState extends State<_ChadsVascForm> {
+  final _ageCtrl = TextEditingController();
+  bool _female = false;
+  bool _chf = false;
+  bool _hypertension = false;
+  bool _diabetes = false;
+  bool _strokeHistory = false;
+  bool _vascularDisease = false;
+
+  @override
+  void dispose() {
+    _ageCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final age = double.tryParse(_ageCtrl.text);
+    if (age == null || age <= 0) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Enter a valid age')));
+      return;
+    }
+    // Age bands are mutually exclusive by construction from one age input.
+    final agePoints = age >= 75 ? 2 : (age >= 65 ? 1 : 0);
+    final score = (_chf ? 1 : 0) +
+        (_hypertension ? 1 : 0) +
+        agePoints +
+        (_diabetes ? 1 : 0) +
+        (_strokeHistory ? 2 : 0) +
+        (_vascularDisease ? 1 : 0) +
+        (_female ? 1 : 0);
+
+    widget.onResult(
+      result: '$score / 9',
+      interpretation: 'CHA₂DS₂-VASc score $score/9. '
+          '${score == 0 ? 'Low stroke risk.' : score == 1 ? 'Low-to-moderate stroke risk — consider anticoagulation.' : 'Anticoagulation is generally recommended, subject to bleeding-risk assessment.'}',
+      warning:
+          'Applies to non-valvular atrial fibrillation only. Anticoagulation is a shared '
+          'decision that also weighs bleeding risk (e.g. HAS-BLED) and patient preference.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Age (years)', controller: _ageCtrl),
+        SwitchListTile(
+          title: const Text('Female sex'),
+          value: _female,
+          onChanged: (v) => setState(() => _female = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Congestive heart failure'),
+          value: _chf,
+          onChanged: (v) => setState(() => _chf = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Hypertension'),
+          value: _hypertension,
+          onChanged: (v) => setState(() => _hypertension = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Diabetes'),
+          value: _diabetes,
+          onChanged: (v) => setState(() => _diabetes = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Prior stroke, TIA, or thromboembolism'),
+          value: _strokeHistory,
+          onChanged: (v) => setState(() => _strokeHistory = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Vascular disease'),
+          value: _vascularDisease,
+          onChanged: (v) => setState(() => _vascularDisease = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Cardiology Calculator C4: HAS-BLED Score ────────────────────────────────
+
+class _HasBledForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _HasBledForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_HasBledForm> createState() => _HasBledFormState();
+}
+
+class _HasBledFormState extends State<_HasBledForm> {
+  bool _uncontrolledHypertension = false;
+  bool _abnormalRenal = false;
+  bool _abnormalLiver = false;
+  bool _priorStroke = false;
+  bool _bleedingHistory = false;
+  bool _labileInr = false;
+  bool _ageOver65 = false;
+  bool _predisposingDrugs = false;
+  bool _alcoholExcess = false;
+
+  void _calculate() {
+    final score = (_uncontrolledHypertension ? 1 : 0) +
+        (_abnormalRenal ? 1 : 0) +
+        (_abnormalLiver ? 1 : 0) +
+        (_priorStroke ? 1 : 0) +
+        (_bleedingHistory ? 1 : 0) +
+        (_labileInr ? 1 : 0) +
+        (_ageOver65 ? 1 : 0) +
+        (_predisposingDrugs ? 1 : 0) +
+        (_alcoholExcess ? 1 : 0);
+    final highRisk = score >= 3;
+
+    widget.onResult(
+      result: '$score / 9 — ${highRisk ? 'High bleeding risk' : 'Lower bleeding risk'}',
+      interpretation: 'HAS-BLED score $score/9. '
+          '${highRisk ? 'High bleeding risk — address modifiable risk factors rather than withholding anticoagulation outright.' : 'Lower bleeding risk on current criteria.'}',
+      warning:
+          'A high score should prompt addressing modifiable bleeding risks (blood pressure, '
+          'concurrent antiplatelets, alcohol use), not automatic discontinuation of indicated '
+          'anticoagulation.',
+    );
+  }
+
+  Widget _switch(String label, bool value, void Function(bool) onChanged) {
+    return SwitchListTile(
+      title: Text(label),
+      value: value,
+      onChanged: (v) => setState(() => onChanged(v)),
+      contentPadding: EdgeInsets.zero,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _switch('Uncontrolled hypertension', _uncontrolledHypertension,
+            (v) => _uncontrolledHypertension = v),
+        _switch('Abnormal renal function', _abnormalRenal,
+            (v) => _abnormalRenal = v),
+        _switch('Abnormal liver function', _abnormalLiver,
+            (v) => _abnormalLiver = v),
+        _switch('Prior stroke', _priorStroke, (v) => _priorStroke = v),
+        _switch('Bleeding history or predisposition', _bleedingHistory,
+            (v) => _bleedingHistory = v),
+        _switch('Labile INR', _labileInr, (v) => _labileInr = v),
+        _switch('Age over 65', _ageOver65, (v) => _ageOver65 = v),
+        _switch('Drugs predisposing to bleeding', _predisposingDrugs,
+            (v) => _predisposingDrugs = v),
+        _switch('Alcohol excess', _alcoholExcess, (v) => _alcoholExcess = v),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Surgery & Trauma Calculator S1: Burn % (Rule of 9s) ─────────────────────
+
+class _BurnTbsaForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _BurnTbsaForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_BurnTbsaForm> createState() => _BurnTbsaFormState();
+}
+
+class _BurnTbsaFormState extends State<_BurnTbsaForm> {
+  String _preset = 'adult';
+  bool _headNeck = false;
+  bool _leftArm = false;
+  bool _rightArm = false;
+  bool _leftLeg = false;
+  bool _rightLeg = false;
+  bool _anteriorTrunk = false;
+  bool _posteriorTrunk = false;
+  bool _perineum = false;
+
+  void _calculate() {
+    final isAdult = _preset == 'adult';
+    final headNeckPct = isAdult ? 9.0 : 18.0;
+    const armPct = 9.0;
+    final legPct = isAdult ? 18.0 : 14.0;
+    const trunkPct = 18.0;
+    const perineumPct = 1.0;
+
+    double total = 0;
+    if (_headNeck) total += headNeckPct;
+    if (_leftArm) total += armPct;
+    if (_rightArm) total += armPct;
+    if (_leftLeg) total += legPct;
+    if (_rightLeg) total += legPct;
+    if (_anteriorTrunk) total += trunkPct;
+    if (_posteriorTrunk) total += trunkPct;
+    if (_perineum) total += perineumPct;
+    total = total.clamp(0, 100);
+
+    widget.onResult(
+      result: '${total.toStringAsFixed(0)}% TBSA',
+      interpretation:
+          '${total.toStringAsFixed(0)}% total body surface area burned (${isAdult ? 'adult' : 'paediatric'} preset). '
+          'Only partial- and full-thickness burns should be included.',
+      warning:
+          'The rule of 9s is a field estimate — Lund–Browder is the reference method in '
+          'children. Superficial (erythema-only) burns are excluded from the total.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        DropdownButtonFormField<String>(
+          initialValue: _preset,
+          decoration: const InputDecoration(
+              labelText: 'Preset', border: OutlineInputBorder(), isDense: true),
+          items: const [
+            DropdownMenuItem(value: 'adult', child: Text('Adult')),
+            DropdownMenuItem(value: 'paediatric', child: Text('Paediatric')),
+          ],
+          onChanged: (v) => setState(() => _preset = v!),
+        ),
+        const SizedBox(height: 12),
+        SwitchListTile(
+          title: const Text('Head & neck'),
+          value: _headNeck,
+          onChanged: (v) => setState(() => _headNeck = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Left arm'),
+          value: _leftArm,
+          onChanged: (v) => setState(() => _leftArm = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Right arm'),
+          value: _rightArm,
+          onChanged: (v) => setState(() => _rightArm = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Left leg'),
+          value: _leftLeg,
+          onChanged: (v) => setState(() => _leftLeg = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Right leg'),
+          value: _rightLeg,
+          onChanged: (v) => setState(() => _rightLeg = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Anterior trunk'),
+          value: _anteriorTrunk,
+          onChanged: (v) => setState(() => _anteriorTrunk = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Posterior trunk'),
+          value: _posteriorTrunk,
+          onChanged: (v) => setState(() => _posteriorTrunk = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        SwitchListTile(
+          title: const Text('Perineum'),
+          value: _perineum,
+          onChanged: (v) => setState(() => _perineum = v),
+          contentPadding: EdgeInsets.zero,
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Emergency & Critical Care Calculator E10: Fluid Resuscitation (Parkland) ─
+
+class _ParklandForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _ParklandForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_ParklandForm> createState() => _ParklandFormState();
+}
+
+class _ParklandFormState extends State<_ParklandForm> {
+  final _weightCtrl = TextEditingController();
+  final _tbsaCtrl = TextEditingController();
+  String _weightUnit = 'kg';
+
+  @override
+  void dispose() {
+    _weightCtrl.dispose();
+    _tbsaCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final rawWeight = double.tryParse(_weightCtrl.text);
+    final tbsa = double.tryParse(_tbsaCtrl.text);
+    if (rawWeight == null || rawWeight <= 0 || tbsa == null || tbsa <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid weight and %TBSA')));
+      return;
+    }
+    final weightKg = _weightUnit == 'kg' ? rawWeight : rawWeight * 0.453592;
+    final total = 4 * weightKg * tbsa;
+    final first8Volume = total / 2;
+    final next16Volume = total / 2;
+    final first8Rate = first8Volume / 8;
+    final next16Rate = next16Volume / 16;
+
+    widget.onResult(
+      result: '${total.toStringAsFixed(0)} mL over 24 hours',
+      interpretation:
+          'Total ${total.toStringAsFixed(0)} mL over 24 hours from the time of injury: '
+          'first 8 hours ${first8Volume.toStringAsFixed(0)} mL (${first8Rate.toStringAsFixed(0)} mL/hr), '
+          'next 16 hours ${next16Volume.toStringAsFixed(0)} mL (${next16Rate.toStringAsFixed(0)} mL/hr).',
+      educationalNote: 'Formula: 4 mL × weight (kg) × %TBSA, half over the first 8 hours '
+          'and half over the following 16 hours.',
+      warning:
+          'The clock starts at the time of injury, not at presentation. This is a starting '
+          'point — titrate the running rate to urine output.',
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(children: [
+          Expanded(
+              child: _NumericField(label: 'Weight', controller: _weightCtrl)),
+          const SizedBox(width: 8),
+          DropdownButton<String>(
+            value: _weightUnit,
+            items: ['kg', 'lb']
+                .map((u) => DropdownMenuItem(value: u, child: Text(u)))
+                .toList(),
+            onChanged: (v) => setState(() => _weightUnit = v!),
+          ),
+        ]),
+        _NumericField(label: '%TBSA burned', controller: _tbsaCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
+      ],
+    );
+  }
+}
+
+// ─── Obs & Gynae Calculator O2: GTPAL ─────────────────────────────────────────
+
+class _GtpalForm extends StatefulWidget {
+  final void Function(
+      {required String result,
+      required String interpretation,
+      String? educationalNote,
+      String? warning}) onResult;
+  final VoidCallback onReset;
+  const _GtpalForm({required this.onResult, required this.onReset});
+
+  @override
+  State<_GtpalForm> createState() => _GtpalFormState();
+}
+
+class _GtpalFormState extends State<_GtpalForm> {
+  final _gravidaCtrl = TextEditingController();
+  final _termCtrl = TextEditingController();
+  final _pretermCtrl = TextEditingController();
+  final _abortionsCtrl = TextEditingController();
+  final _livingCtrl = TextEditingController();
+
+  @override
+  void dispose() {
+    _gravidaCtrl.dispose();
+    _termCtrl.dispose();
+    _pretermCtrl.dispose();
+    _abortionsCtrl.dispose();
+    _livingCtrl.dispose();
+    super.dispose();
+  }
+
+  void _calculate() {
+    final g = int.tryParse(_gravidaCtrl.text);
+    final t = int.tryParse(_termCtrl.text);
+    final p = int.tryParse(_pretermCtrl.text);
+    final a = int.tryParse(_abortionsCtrl.text);
+    final l = int.tryParse(_livingCtrl.text);
+    if (g == null || g < 0 || t == null || t < 0 || p == null || p < 0 ||
+        a == null || a < 0 || l == null || l < 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Enter valid non-negative whole numbers')));
+      return;
+    }
+
+    final resultString = 'G$g T$t P$p A$a L$l';
+    String? warning;
+    if (t + p + a > g) {
+      warning =
+          'Term + preterm + abortions ($t + $p + $a = ${t + p + a}) exceeds gravida ($g) — check the entered history for consistency.';
+    }
+
+    widget.onResult(
+      result: resultString,
+      interpretation:
+          '$resultString — Gravida $g, Term $t, Preterm $p, Abortions $a, Living $l.',
+      educationalNote:
+          'A current pregnancy counts toward gravida but not toward the para components '
+          'until it delivers.',
+      warning: warning,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        _NumericField(label: 'Gravida (total pregnancies)', controller: _gravidaCtrl),
+        _NumericField(
+            label: 'Term births (≥ 37 weeks)', controller: _termCtrl),
+        _NumericField(
+            label: 'Preterm births (20–36 weeks)', controller: _pretermCtrl),
+        _NumericField(
+            label: 'Abortions (losses < 20 weeks)', controller: _abortionsCtrl),
+        _NumericField(label: 'Living children', controller: _livingCtrl),
+        FilledButton(onPressed: _calculate, child: const Text('Calculate')),
       ],
     );
   }

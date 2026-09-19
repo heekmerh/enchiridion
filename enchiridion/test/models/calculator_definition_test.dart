@@ -37,13 +37,55 @@ void main() {
       expect(def.commonPitfalls, 'Forgetting to convert units.');
       expect(def.osceTips, 'In OSCEs, state the normal range.');
     });
+
+    test('implemented defaults to true for a definition constructed without it',
+        () {
+      const def = CalculatorDefinition(
+        id: 'test-id',
+        title: 'Test Calculator',
+        category: 'General',
+        description: 'A test calculator.',
+      );
+      expect(def.implemented, isTrue);
+      expect(def.hasContent, isTrue);
+      expect(def.isComingSoon, isFalse);
+    });
+
+    test('implemented: false flips hasContent/isComingSoon', () {
+      const def = CalculatorDefinition(
+        id: 'test-id',
+        title: 'Test Calculator',
+        category: 'General',
+        description: 'A test calculator.',
+        implemented: false,
+      );
+      expect(def.implemented, isFalse);
+      expect(def.hasContent, isFalse);
+      expect(def.isComingSoon, isTrue);
+    });
   });
 
   group('kCalculators', () {
-    test('kCalculators has exactly 26 entries', () {
-      // Goes GREEN at end of Phase 4 (after 04-02/03/04 add 18 new calculators)
-      // Currently 8 existing calculators; will be 8 + 18 = 26 after Wave 2-4.
-      expect(kCalculators.length, 26);
+    // 58 entries total: the app's authored calculator catalog from
+    // Ideas/ideas.md (nine-category calculator spec PROJECT.md points at),
+    // minus three deliberate duplicates of shipped calculators (see
+    // CALCULATOR-SOURCING.md).
+    test('kCalculators has exactly 58 entries', () {
+      expect(kCalculators.length, 58);
+    });
+
+    test('all calculator ids are unique', () {
+      final ids = kCalculators.map((c) => c.id).toList();
+      expect(ids.toSet().length, ids.length);
+    });
+
+    test('implemented count is 38 and coming-soon count is 20', () {
+      // Went 26/32 (Task 1) -> 33/25 (Task 2) -> 38/20 (Task 3, this test).
+      final implemented = kCalculators.where((c) => c.implemented).length;
+      final comingSoon = kCalculators.where((c) => c.isComingSoon).length;
+      expect(implemented, 38);
+      expect(comingSoon, 20);
+      expect(implemented + comingSoon, kCalculators.length);
     });
 
     test(
@@ -70,9 +112,7 @@ void main() {
   });
 
   group('groupByCategory', () {
-    test('groupByCategory returns exactly 5 keys for kCalculators', () {
-      // Goes GREEN at end of Phase 4 (after 04-02/03/04 add 18 new calculators)
-      // Currently 8 calculators in 5 categories; after all plans: 26 in same 5 categories.
+    test('groupByCategory returns exactly 9 keys for kCalculators', () {
       final grouped = groupByCategory(kCalculators);
       expect(grouped.keys.toSet(), {
         'Drug Dosing',
@@ -80,21 +120,92 @@ void main() {
         'General',
         'Obs & Gynae',
         'Paediatrics',
+        'Cardiology',
+        'Respiratory',
+        'Surgery & Trauma',
+        'Utility',
       });
-      expect(grouped.keys.length, 5);
+      expect(grouped.keys.length, 9);
+    });
+
+    test('groupByCategory final per-category counts', () {
+      final grouped = groupByCategory(kCalculators);
+      expect(grouped['Drug Dosing']?.length, 9);
+      expect(grouped['Emergency & Critical Care']?.length, 11);
+      expect(grouped['General']?.length, 6);
+      expect(grouped['Obs & Gynae']?.length, 5);
+      expect(grouped['Paediatrics']?.length, 7);
+      expect(grouped['Cardiology']?.length, 7);
+      expect(grouped['Respiratory']?.length, 5);
+      expect(grouped['Surgery & Trauma']?.length, 5);
+      expect(grouped['Utility']?.length, 3);
+
+      // Grouped lengths sum to kCalculators.length, and no group is empty.
+      final total =
+          grouped.values.fold<int>(0, (sum, list) => sum + list.length);
+      expect(total, kCalculators.length);
+      for (final list in grouped.values) {
+        expect(list, isNotEmpty);
+      }
+    });
+  });
+
+  group('groupedCalculatorsInDisplayOrder', () {
+    test(
+        'every category holds at least one implemented calculator, so no category is demoted',
+        () {
+      // End-state after Task 3: all nine categories hold at least one
+      // implemented calculator, so groupedCalculatorsInDisplayOrder returns
+      // all nine in authored order with none demoted to the trailing bucket.
+      final grouped = groupedCalculatorsInDisplayOrder();
+      for (final entry in grouped.entries) {
+        expect(entry.value.any((c) => c.implemented), isTrue,
+            reason: '${entry.key} has no implemented calculator');
+      }
+      expect(grouped.keys.toList(), [
+        'Drug Dosing',
+        'Emergency & Critical Care',
+        'General',
+        'Obs & Gynae',
+        'Paediatrics',
+        'Cardiology',
+        'Respiratory',
+        'Surgery & Trauma',
+        'Utility',
+      ]);
+    });
+
+    test('every category key maps to a list whose first entry is implemented',
+        () {
+      final grouped = groupedCalculatorsInDisplayOrder();
+      for (final entry in grouped.entries) {
+        expect(entry.value.first.implemented, isTrue,
+            reason:
+                '${entry.key} category\'s first entry should be implemented '
+                '(the free slot must always be a working calculator)');
+      }
     });
 
     test(
-        'groupByCategory final per-category counts (goes GREEN at end of Phase 4)',
+        'within each category, implemented calculators precede coming-soon ones in authored order',
         () {
-      // Goes GREEN at end of Phase 4 (after 04-02/03/04 add 18 new calculators)
-      // Final expected: Drug Dosing 8, Emergency & Critical Care 9, General 1, Obs & Gynae 1, Paediatrics 7 = 26
-      final grouped = groupByCategory(kCalculators);
-      expect(grouped['Drug Dosing']?.length, 8);
-      expect(grouped['Emergency & Critical Care']?.length, 9);
-      expect(grouped['General']?.length, 1);
-      expect(grouped['Obs & Gynae']?.length, 1);
-      expect(grouped['Paediatrics']?.length, 7);
+      final grouped = groupedCalculatorsInDisplayOrder();
+      for (final entry in grouped.entries) {
+        final implementedFlags = entry.value.map((c) => c.implemented).toList();
+        final firstComingSoon = implementedFlags.indexOf(false);
+        final lastImplemented = implementedFlags.lastIndexOf(true);
+        if (firstComingSoon == -1 || lastImplemented == -1) continue;
+        expect(lastImplemented, lessThan(firstComingSoon),
+            reason:
+                '${entry.key}: a coming-soon entry ranks before an implemented one');
+      }
+
+      // Sanity: authored relative order among implemented ones is unchanged.
+      expect(grouped['Drug Dosing']?.first.id, 'weight-dosing');
+      expect(grouped['Emergency & Critical Care']?.first.id, 'gcs');
+      expect(grouped['General']?.first.id, 'bmi');
+      expect(grouped['Obs & Gynae']?.first.id, 'edd-ega');
+      expect(grouped['Paediatrics']?.first.id, 'holliday-segar');
     });
   });
 }

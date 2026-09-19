@@ -5,6 +5,7 @@ import '../services/storage_service.dart';
 import '../services/access_service.dart';
 import '../config/freemium_config.dart';
 import '../utils/bottom_inset.dart';
+import '../widgets/common/coming_soon.dart';
 import 'calculator_screen.dart';
 import 'unlock_screen.dart';
 
@@ -39,9 +40,17 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
   }
 
   bool _isLocked(CalculatorDefinition calc) {
+    // An unbuilt calculator is not paywalled content and must never show a
+    // lock — coming-soon wins over the freemium gate.
+    if (calc.isComingSoon) return false;
     if (_hasAccess) return false;
-    final categoryCalcs =
-        kCalculators.where((c) => c.category == calc.category).toList();
+    // Compute the free-slot index over that category's implemented entries
+    // only, so a coming-soon entry can never consume the free slot. Because
+    // `availableFirst` (used by `groupedCalculatorsInDisplayOrder`) is
+    // stable, this filtered order matches exactly what the user sees.
+    final categoryCalcs = kCalculators
+        .where((c) => c.category == calc.category && c.hasContent)
+        .toList();
     final index = categoryCalcs.indexWhere((c) => c.id == calc.id);
     return index >= kFreeCalculatorsPerCategory;
   }
@@ -50,9 +59,12 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    final grouped = groupByCategory(kCalculators);
-    final favCalcs =
-        kCalculators.where((c) => _favorites.contains(c.id)).toList();
+    final grouped = groupedCalculatorsInDisplayOrder();
+    // Filter stale favourites for now-unbuilt ids so a coming-soon entry
+    // can never surface in the Favorites section.
+    final favCalcs = kCalculators
+        .where((c) => _favorites.contains(c.id) && c.hasContent)
+        .toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -96,8 +108,32 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
     CalculatorDefinition calc, {
     bool isFavorite = false,
   }) {
+    final comingSoon = calc.isComingSoon;
     final locked = _isLocked(calc);
     final cs = Theme.of(context).colorScheme;
+
+    if (comingSoon) {
+      return ListTile(
+        leading: CircleAvatar(
+          backgroundColor: ComingSoonStyle.container(cs),
+          child: Icon(Icons.schedule, color: ComingSoonStyle.icon(cs), size: 20),
+        ),
+        title: Text(calc.title, style: TextStyle(color: ComingSoonStyle.title(cs))),
+        subtitle: Text(
+          calc.description,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(color: ComingSoonStyle.body(cs)),
+        ),
+        trailing: const ComingSoonBadge(compact: true),
+        onTap: () {
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text('${calc.title} — $kComingSoonLabel'),
+            behavior: SnackBarBehavior.floating,
+          ));
+        },
+      );
+    }
 
     return ListTile(
       leading: CircleAvatar(
@@ -106,28 +142,23 @@ class _CalculatorListScreenState extends State<CalculatorListScreen> {
         child: Icon(
           locked ? Icons.lock_outline : Icons.calculate_outlined,
           color: locked
-              ? cs.onSurface.withValues(alpha: 0.4)
+              ? ComingSoonStyle.icon(cs)
               : cs.onPrimaryContainer,
           size: 20,
         ),
       ),
       title: Text(
         calc.title,
-        style: locked
-            ? TextStyle(color: cs.onSurface.withValues(alpha: 0.5))
-            : null,
+        style: locked ? TextStyle(color: ComingSoonStyle.title(cs)) : null,
       ),
       subtitle: Text(
         calc.description,
         maxLines: 1,
         overflow: TextOverflow.ellipsis,
-        style: locked
-            ? TextStyle(color: cs.onSurface.withValues(alpha: 0.35))
-            : null,
+        style: locked ? TextStyle(color: ComingSoonStyle.body(cs)) : null,
       ),
       trailing: locked
-          ? Icon(Icons.lock_outline,
-              size: 16, color: cs.onSurface.withValues(alpha: 0.4))
+          ? Icon(Icons.lock_outline, size: 16, color: ComingSoonStyle.icon(cs))
           : isFavorite
               ? const Icon(Icons.favorite, size: 18, color: Colors.pink)
               : null,

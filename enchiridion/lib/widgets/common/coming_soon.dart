@@ -3,14 +3,16 @@
 /// topic, book, or resource row in the app renders through.
 ///
 /// Consumers wired to this module: `osce_screen.dart` (station list),
-/// `resource_topic_list_screen.dart` (topic cards), and `library_screen.dart`
-/// (book shelf pages). Any new topic or resource list should route through
-/// this module rather than restyling locally.
+/// `resource_topic_list_screen.dart` (topic cards), `library_screen.dart`
+/// (book shelf pages), and `calculator_list_screen.dart` (calculator list).
+/// Any new topic or resource list should route through this module rather
+/// than restyling locally.
 ///
-/// `calculator_list_screen.dart` intentionally does NOT consume this module:
-/// its muted rows represent a freemium paywall lock (content exists but is
-/// gated behind payment), not unavailable content that has not been written
-/// yet. Those are different states with different affordances.
+/// `calculator_list_screen.dart` consumes this module for genuinely unbuilt
+/// calculators (no working form exists yet), while keeping the freemium
+/// paywall lock as a separate state that takes lower precedence — an
+/// unbuilt calculator is never shown as locked/purchasable, since a
+/// coming-soon row wins whenever both states could apply.
 library;
 
 import 'package:flutter/material.dart';

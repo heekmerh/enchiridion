@@ -1,3 +1,5 @@
+import '../utils/content_availability.dart';
+
 class CalculatorDefinition {
   final String id;
   final String title;
@@ -11,6 +13,10 @@ class CalculatorDefinition {
   final String commonPitfalls;
   final String osceTips;
 
+  /// Whether this calculator has a working form wired into `CalculatorScreen`.
+  /// Defaults to true so all pre-existing const entries compile unchanged.
+  final bool implemented;
+
   const CalculatorDefinition({
     required this.id,
     required this.title,
@@ -22,7 +28,16 @@ class CalculatorDefinition {
     this.safetyNotes = '',
     this.commonPitfalls = '',
     this.osceTips = '',
+    this.implemented = true,
   });
+
+  /// Mirrors the same getter pair on `ResourceTopic`/`CatalogBook`: a
+  /// calculator "has content" when its form is actually implemented.
+  bool get hasContent => implemented;
+
+  /// A calculator with no working form is "coming soon" — the inverse of
+  /// [hasContent].
+  bool get isComingSoon => !hasContent;
 }
 
 const String _kDefaultDisclaimer =
@@ -689,6 +704,453 @@ const List<CalculatorDefinition> kCalculators = [
         'In paediatric OSCEs, plot growth on a centile chart and describe the trend. '
         'Mention that the WHO standards are based on healthy breastfed children in optimal conditions.',
   ),
+  // ─── Coming-soon: Emergency & Critical Care (Ideas/ideas.md §1) ─────────────
+  CalculatorDefinition(
+    id: 'parkland',
+    title: 'Fluid Resuscitation (Parkland)',
+    category: 'Emergency & Critical Care',
+    description: 'Burn fluid resuscitation volume for the first 24 hours.',
+    explanation:
+        'Parkland formula: total 24-hour crystalloid volume = 4 mL × weight (kg) × %TBSA burned. '
+        'Half is given over the first 8 hours from the time of injury, and the remaining half '
+        'over the next 16 hours.',
+    clinicalInterpretation:
+        'Use the total, first-8-hour rate, and next-16-hour rate as a starting point for '
+        'resuscitation. Titrate the actual infusion rate to urine output (typically 0.5 mL/kg/hr '
+        'in adults) and other perfusion markers, not to the formula alone.',
+    safetyNotes:
+        'The clock starts at the time of injury, not at presentation — hours already elapsed '
+        'before arrival must be subtracted from the first 8-hour window. This is a resuscitation '
+        'starting point only and must be titrated to the individual patient\'s response.',
+    commonPitfalls:
+        'Starting the 8-hour clock at presentation instead of at the time of burn. '
+        'Not adjusting the running rate once urine output and vital signs are available.',
+    osceTips:
+        'State the formula, the 8-hour/16-hour split, and that timing starts at injury. '
+        'Examiners expect you to mention urine output as the titration target.',
+  ),
+  CalculatorDefinition(
+    id: 'sofa',
+    title: 'SOFA Score',
+    category: 'Emergency & Critical Care',
+    description: 'Six-organ sequential organ failure assessment score.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Drug Dosing (Ideas/ideas.md §2) ───────────────────────────
+  CalculatorDefinition(
+    id: 'adrenaline-dose',
+    title: 'Adrenaline Dose (Resuscitation)',
+    category: 'Drug Dosing',
+    description: 'Weight-based adrenaline dose for arrest and anaphylaxis.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: General (Ideas/ideas.md §6) ───────────────────────────────
+  CalculatorDefinition(
+    id: 'corrected-calcium',
+    title: 'Corrected Calcium',
+    category: 'General',
+    description: 'Albumin-corrected serum calcium.',
+    explanation:
+        'Total serum calcium is partly bound to albumin, so hypoalbuminaemia lowers the '
+        'measured total calcium without changing the physiologically active ionised fraction. '
+        'Corrected Ca = measured Ca + 0.02 mmol/L (SI) or 0.8 mg/dL (conventional) for every unit '
+        'albumin falls below 40 g/L (SI) or 4 g/dL (conventional).',
+    clinicalInterpretation:
+        'Interpret the corrected value against the local normal range for total calcium — the '
+        'correction estimates what total calcium would be if albumin were normal. '
+        'It does not replace an ionised calcium measurement when precision is needed.',
+    safetyNotes:
+        'The correction is an estimate and is unreliable in critical illness, acid-base '
+        'disturbance, or paraproteinaemia. Measure ionised calcium directly when a precise '
+        'value is required for clinical decisions.',
+    commonPitfalls:
+        'Mixing SI and conventional unit correction factors. '
+        'Applying the correction when albumin is already normal or high — the formula only '
+        'adjusts for low albumin.',
+    osceTips:
+        'State the formula for the unit system given and explain why hypoalbuminaemia lowers '
+        'total (but not ionised) calcium. Mention ionised calcium as the gold standard when asked.',
+  ),
+  CalculatorDefinition(
+    id: 'ldl-friedewald',
+    title: 'LDL (Friedewald)',
+    category: 'General',
+    description: 'Calculated LDL cholesterol from a lipid panel.',
+    explanation:
+        'The Friedewald equation estimates LDL cholesterol from a standard lipid panel: '
+        'LDL = Total cholesterol − HDL − Triglycerides/5 (mg/dL) or Triglycerides/2.2 (mmol/L). '
+        'It assumes a fixed ratio of triglycerides to VLDL cholesterol that breaks down at high '
+        'triglyceride levels.',
+    clinicalInterpretation:
+        'Use the calculated LDL alongside total cholesterol and HDL to guide cardiovascular risk '
+        'assessment and lipid-lowering therapy decisions per local guidelines.',
+    safetyNotes:
+        'Invalid above 400 mg/dL (4.5 mmol/L) triglycerides — the assumed VLDL ratio breaks down '
+        'and the formula silently underestimates LDL. Request a direct LDL measurement instead.',
+    commonPitfalls:
+        'Reporting a Friedewald LDL when triglycerides exceed the validity ceiling. '
+        'Mixing mg/dL and mmol/L conversion factors between the numerator and triglyceride term.',
+    osceTips:
+        'Recite the formula and state its triglyceride ceiling. Examiners often test whether '
+        'you know to request a direct LDL when triglycerides are markedly elevated.',
+  ),
+  CalculatorDefinition(
+    id: 'waist-hip-ratio',
+    title: 'Waist-to-Hip Ratio',
+    category: 'General',
+    description: 'Central adiposity risk from waist and hip circumference.',
+    explanation:
+        'Waist-to-hip ratio = waist circumference ÷ hip circumference, measured in the same '
+        'units. It reflects central (visceral) fat distribution, an independent cardiometabolic '
+        'risk factor beyond BMI alone.',
+    clinicalInterpretation:
+        'WHO thresholds: above 0.90 in men and above 0.85 in women indicate increased '
+        'cardiometabolic risk from central adiposity, regardless of overall BMI.',
+    safetyNotes:
+        'Measurement technique affects reliability — measure waist at the midpoint between the '
+        'lowest rib and iliac crest, and hip at the widest point, with the patient standing and '
+        'relaxed. Not validated in pregnancy.',
+    commonPitfalls:
+        'Measuring waist over clothing or at the umbilicus rather than the anatomical midpoint. '
+        'Comparing measurements taken with inconsistent technique between visits.',
+    osceTips:
+        'State the measurement landmarks precisely and the sex-specific thresholds. Mention that '
+        'waist-to-hip ratio adds information beyond BMI for cardiometabolic risk.',
+  ),
+  CalculatorDefinition(
+    id: 'meld',
+    title: 'MELD Score',
+    category: 'General',
+    description: 'End-stage liver disease severity score.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'child-pugh',
+    title: 'Child-Pugh Score',
+    category: 'General',
+    description: 'Chronic liver disease severity class A–C.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Obs & Gynae (Ideas/ideas.md §7) ───────────────────────────
+  CalculatorDefinition(
+    id: 'gtpal',
+    title: 'GTPAL',
+    category: 'Obs & Gynae',
+    description:
+        'Obstetric history as Gravida, Term, Preterm, Abortions, Living.',
+    explanation:
+        'GTPAL summarises obstetric history: Gravida (total pregnancies, including the current '
+        'one), Term births (37 weeks or later), Preterm births (20–36 completed weeks), '
+        'Abortions (losses before 20 weeks, spontaneous or induced), and Living children.',
+    clinicalInterpretation:
+        'Rendered as a five-figure string (e.g. G3 T1 P1 A1 L2) for quick obstetric history '
+        'documentation and handover. A current pregnancy counts toward gravida but not toward '
+        'the para components until it delivers.',
+    safetyNotes:
+        'GTPAL is a documentation summary, not a risk score — it does not itself predict '
+        'obstetric risk. Verify the counts directly with the patient rather than inferring them.',
+    commonPitfalls:
+        'Counting the current pregnancy toward term/preterm/abortions before it has concluded. '
+        'Confusing multiple gestations (e.g. twins) as multiple pregnancies rather than one.',
+    osceTips:
+        'State each letter and its definition in order. Examiners often test whether term + '
+        'preterm + abortions is internally consistent with gravida.',
+  ),
+  CalculatorDefinition(
+    id: 'bishop-score',
+    title: 'Bishop Score',
+    category: 'Obs & Gynae',
+    description: 'Cervical favourability for induction of labour.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'partograph',
+    title: 'Partograph Plotting',
+    category: 'Obs & Gynae',
+    description: 'Plot labour progress against alert and action lines.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'preeclampsia-risk',
+    title: 'Preeclampsia Risk',
+    category: 'Obs & Gynae',
+    description: 'Risk stratification for pre-eclampsia.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Cardiology (new category — Ideas/ideas.md §4) ────────────
+  CalculatorDefinition(
+    id: 'map',
+    title: 'Mean Arterial Pressure (MAP)',
+    category: 'Cardiology',
+    description: 'Mean arterial pressure from systolic and diastolic BP.',
+    explanation:
+        'MAP = diastolic BP + ⅓ × pulse pressure, where pulse pressure = systolic − diastolic. '
+        'It approximates the average arterial pressure driving organ perfusion across the '
+        'cardiac cycle (diastole occupies about two-thirds of the cycle at normal heart rates).',
+    clinicalInterpretation:
+        'A MAP of at least 65 mmHg is the conventional threshold widely used to support organ '
+        'perfusion, particularly in sepsis and shock resuscitation targets. Interpret alongside '
+        'the clinical picture, not in isolation.',
+    safetyNotes:
+        'The ⅓/⅔ diastole-to-systole assumption is derived at normal heart rates; MAP estimated '
+        'this way is less accurate at extremes of heart rate. Direct arterial line measurement is '
+        'more accurate when available.',
+    commonPitfalls:
+        'Entering diastolic BP greater than or equal to systolic BP. '
+        'Using MAP alone to judge perfusion without considering heart rate, urine output, and '
+        'lactate.',
+    osceTips:
+        'State the formula and the 65 mmHg perfusion threshold. Examiners often use MAP targets '
+        'in sepsis/shock scenarios — know it is a resuscitation target, not a diagnosis.',
+  ),
+  CalculatorDefinition(
+    id: 'qtc',
+    title: 'QTc (Corrected QT)',
+    category: 'Cardiology',
+    description: 'Heart-rate-corrected QT interval.',
+    explanation:
+        'QT interval varies with heart rate, so it must be corrected to compare across rates. '
+        'RR (seconds) = 60 ÷ heart rate. Bazett: QTc = QT ÷ √RR. Fridericia: QTc = QT ÷ ∛RR. '
+        'Both are reported in the same units as the entered QT (ms).',
+    clinicalInterpretation:
+        'Conventional thresholds: QTc above 450 ms in men or above 470 ms in women is prolonged; '
+        'above 500 ms carries the highest torsades de pointes risk and warrants urgent review of '
+        'QT-prolonging drugs and electrolytes.',
+    safetyNotes:
+        'Bazett over-corrects at fast heart rates and under-corrects at slow heart rates — '
+        'Fridericia is more accurate outside the normal heart rate range. Always check '
+        'potassium, magnesium, and calcium, and review the drug chart for QT-prolonging agents.',
+    commonPitfalls:
+        'Using Bazett at tachycardia or bradycardia without cross-checking Fridericia. '
+        'Measuring QT from a lead with a poorly defined T-wave end.',
+    osceTips:
+        'State both formulas and their rate-dependent bias. Examiners expect you to name the '
+        'torsades risk threshold and the electrolyte/drug review that follows a prolonged QTc.',
+  ),
+  CalculatorDefinition(
+    id: 'chads-vasc',
+    title: 'CHA₂DS₂-VASc Score',
+    category: 'Cardiology',
+    description: 'Stroke risk in non-valvular atrial fibrillation.',
+    explanation:
+        'CHA₂DS₂-VASc scores stroke risk factors in non-valvular atrial fibrillation: '
+        'congestive heart failure (1), hypertension (1), age ≥ 75 (2), diabetes (1), prior '
+        'stroke/TIA/thromboembolism (2), vascular disease (1), age 65–74 (1), and female sex '
+        '(1) — maximum 9. The two age bands are mutually exclusive by construction from a '
+        'single age input.',
+    clinicalInterpretation:
+        'Higher scores indicate greater annual stroke risk and support the discussion of '
+        'anticoagulation. Applies to non-valvular atrial fibrillation only — do not use for '
+        'valvular AF or other arrhythmias.',
+    safetyNotes:
+        'This score applies to non-valvular atrial fibrillation only. It informs, but does not '
+        'replace, an individualised anticoagulation discussion that also weighs bleeding risk '
+        '(e.g. HAS-BLED) and patient preference.',
+    commonPitfalls:
+        'Double-counting both age bands instead of using the higher applicable one. '
+        'Applying the score to valvular atrial fibrillation, where it was not derived.',
+    osceTips:
+        'Recite each criterion and its point value. Examiners expect you to state that the score '
+        'applies to non-valvular AF and that anticoagulation is a shared decision weighing '
+        'bleeding risk.',
+  ),
+  CalculatorDefinition(
+    id: 'has-bled',
+    title: 'HAS-BLED Score',
+    category: 'Cardiology',
+    description: 'Major bleeding risk on anticoagulation.',
+    explanation:
+        'HAS-BLED scores bleeding risk factors on anticoagulation: uncontrolled hypertension '
+        '(1), abnormal renal function (1), abnormal liver function (1), prior stroke (1), '
+        'bleeding history or predisposition (1), labile INR (1), age over 65 (1), drugs '
+        'predisposing to bleeding (1), and alcohol excess (1) — maximum 9.',
+    clinicalInterpretation:
+        'A score of 3 or more indicates high bleeding risk. This should prompt addressing '
+        'modifiable bleeding risk factors (blood pressure control, concurrent antiplatelets, '
+        'alcohol use) rather than withholding anticoagulation outright when it is otherwise '
+        'indicated.',
+    safetyNotes:
+        'A high HAS-BLED score is not, by itself, a reason to withhold anticoagulation when '
+        'stroke risk is high — it identifies modifiable risks to address alongside the '
+        'anticoagulation decision.',
+    commonPitfalls:
+        'Using a high HAS-BLED score in isolation to deny anticoagulation without weighing '
+        'stroke risk (e.g. CHA₂DS₂-VASc). '
+        'Failing to act on the modifiable risk factors the score identifies.',
+    osceTips:
+        'Recite each criterion. Examiners often test whether you know a high score should '
+        'prompt risk modification, not automatic discontinuation of anticoagulation.',
+  ),
+  CalculatorDefinition(
+    id: 'timi',
+    title: 'TIMI Risk Score',
+    category: 'Cardiology',
+    description: 'Risk stratification in acute coronary syndrome.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'framingham',
+    title: 'Framingham Risk Score',
+    category: 'Cardiology',
+    description: 'Ten-year cardiovascular risk estimate.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'cardiac-output',
+    title: 'Cardiac Output',
+    category: 'Cardiology',
+    description: 'Cardiac output and cardiac index estimate.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Respiratory (new category — Ideas/ideas.md §5) ───────────
+  CalculatorDefinition(
+    id: 'cao2',
+    title: 'Oxygen Content (CaO₂)',
+    category: 'Respiratory',
+    description: 'Arterial oxygen content from haemoglobin, SaO₂, and PaO₂.',
+    explanation:
+        'CaO₂ = (1.34 × Hb g/dL × SaO₂ fraction) + (0.003 × PaO₂ mmHg). '
+        'The first term is oxygen bound to haemoglobin; the second is oxygen dissolved in '
+        'plasma, which is small at room air but becomes more significant at high PaO₂.',
+    clinicalInterpretation:
+        'Oxygen content describes how much oxygen the blood carries, not how much reaches the '
+        'tissues — delivery (DO₂) additionally requires cardiac output (DO₂ = CaO₂ × cardiac '
+        'output). Low CaO₂ with normal cardiac output can still mean adequate delivery.',
+    safetyNotes:
+        'The dissolved-oxygen term (0.003 × PaO₂) is small under room-air conditions and matters '
+        'mainly with supplemental oxygen or hyperbaric therapy. This calculator reports content, '
+        'not delivery — do not conflate the two.',
+    commonPitfalls:
+        'Entering SaO₂ as a fraction instead of a percentage, or vice versa. '
+        'Treating CaO₂ as a delivery measure without factoring in cardiac output.',
+    osceTips:
+        'State the formula and both terms. Examiners often probe the distinction between oxygen '
+        'content and oxygen delivery — know that delivery needs cardiac output as well.',
+  ),
+  CalculatorDefinition(
+    id: 'alveolar-gas',
+    title: 'Alveolar Gas Equation',
+    category: 'Respiratory',
+    description: 'Alveolar oxygen tension from FiO₂ and PaCO₂.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'pefr-predicted',
+    title: 'PEFR Predicted',
+    category: 'Respiratory',
+    description: 'Predicted peak expiratory flow from age, sex, and height.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'fev1-predicted',
+    title: 'FEV1 Predicted',
+    category: 'Respiratory',
+    description:
+        'Predicted FEV1 from age, sex, height, and ethnicity.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'abg-interpretation',
+    title: 'ABG Interpretation Assistant',
+    category: 'Respiratory',
+    description: 'Step-through acid–base interpretation of a blood gas.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Surgery & Trauma (new category — Ideas/ideas.md §8) ──────
+  CalculatorDefinition(
+    id: 'burn-tbsa',
+    title: 'Burn % (Rule of 9s)',
+    category: 'Surgery & Trauma',
+    description: 'Total body surface area burned, adult and paediatric.',
+    explanation:
+        'The rule of 9s estimates total body surface area (TBSA) burned by assigning each body '
+        'region a multiple of 9%. Adult: head and neck 9%, each arm 9%, each leg 18%, anterior '
+        'trunk 18%, posterior trunk 18%, perineum 1%. Paediatric preset: head and neck 18%, each '
+        'leg 14%, with the remaining regions unchanged from the adult values.',
+    clinicalInterpretation:
+        'The summed percentage of selected regions drives fluid resuscitation calculations '
+        '(e.g. Parkland formula) and burn severity triage. Only partial- and full-thickness burns '
+        'count toward the total.',
+    safetyNotes:
+        'The rule of 9s is a field estimate. Lund–Browder charts are the reference method in '
+        'children because body proportions change with age more than the rule of 9s accounts '
+        'for.',
+    commonPitfalls:
+        'Including superficial (erythema-only, first-degree) burns in the total — only partial- '
+        'and full-thickness burns count. '
+        'Using the adult preset for a child, whose head and legs occupy different proportions.',
+    osceTips:
+        'State the adult and paediatric region percentages and when to switch presets. Mention '
+        'Lund–Browder as the more accurate paediatric reference method.',
+  ),
+  CalculatorDefinition(
+    id: 'alvarado',
+    title: 'Alvarado Score',
+    category: 'Surgery & Trauma',
+    description: 'Likelihood of acute appendicitis.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'wells-score',
+    title: 'Wells Score (DVT / PE)',
+    category: 'Surgery & Trauma',
+    description: 'Pre-test probability for DVT and pulmonary embolism.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'revised-trauma-score',
+    title: 'Revised Trauma Score',
+    category: 'Surgery & Trauma',
+    description: 'Physiological trauma severity from GCS, SBP, and RR.',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'iss',
+    title: 'Injury Severity Score (ISS)',
+    category: 'Surgery & Trauma',
+    description: 'Anatomical trauma severity from AIS region scores.',
+    implemented: false,
+  ),
+  // ─── Coming-soon: Utility (new category — Ideas/ideas.md §9) ───────────────
+  CalculatorDefinition(
+    id: 'ibw',
+    title: 'Ideal Body Weight (IBW)',
+    category: 'Utility',
+    description: 'Ideal and adjusted body weight from height and sex.',
+    explanation:
+        'Devine formula: IBW = 50 kg (men) or 45.5 kg (women), plus 2.3 kg for every inch of '
+        'height above 60 inches (5 feet). When an actual weight is supplied, adjusted body '
+        'weight (ABW) = IBW + 0.4 × (actual weight − IBW), used for dosing in obesity.',
+    clinicalInterpretation:
+        'IBW and ABW are used to individualise dosing for weight-based drugs, particularly in '
+        'obese patients where actual body weight overestimates the dose some agents need.',
+    safetyNotes:
+        'The Devine formula is not valid below 60 inches (152 cm) — it can produce negative or '
+        'unreliable values. Use a different method (e.g., paediatric or alternative adult '
+        'formulas) below this height.',
+    commonPitfalls:
+        'Applying the formula below 60 inches without a fallback method. '
+        'Using actual body weight instead of adjusted body weight for drugs that require it in '
+        'obesity.',
+    osceTips:
+        'State the Devine formula and its 60-inch validity floor. Know when to use IBW versus '
+        'adjusted body weight versus actual body weight for a given drug class.',
+  ),
+  CalculatorDefinition(
+    id: 'unit-conversions',
+    title: 'Unit Conversions',
+    category: 'Utility',
+    description: 'Convert between clinical units (mg ↔ mmol, lb ↔ kg).',
+    implemented: false,
+  ),
+  CalculatorDefinition(
+    id: 'calorie-requirements',
+    title: 'Calorie Requirements',
+    category: 'Utility',
+    description:
+        'Daily energy requirement from weight, height, age, activity.',
+    implemented: false,
+  ),
 ];
 
 /// Returns calculators grouped by category, with the first per category free.
@@ -699,4 +1161,25 @@ Map<String, List<CalculatorDefinition>> groupByCategory(
     map.putIfAbsent(c.category, () => []).add(c);
   }
   return map;
+}
+
+/// Returns calculators grouped by category in the app's display order:
+/// categories holding at least one implemented calculator precede categories
+/// that hold none, and within each category implemented calculators precede
+/// coming-soon ones. Both partitions are done with [availableFirst], which
+/// is stable, so the authored relative order is preserved inside each
+/// bucket. Built on top of [groupByCategory], which stays the authored-order
+/// primitive this helper composes over.
+Map<String, List<CalculatorDefinition>> groupedCalculatorsInDisplayOrder(
+    [List<CalculatorDefinition> calculators = kCalculators]) {
+  final byCategory = groupByCategory(calculators);
+  final orderedCategoryEntries = availableFirst<MapEntry<String, List<CalculatorDefinition>>>(
+    byCategory.entries,
+    (entry) => entry.value.any((c) => c.hasContent),
+  );
+  final result = <String, List<CalculatorDefinition>>{};
+  for (final entry in orderedCategoryEntries) {
+    result[entry.key] = availableFirst(entry.value, (c) => c.hasContent);
+  }
+  return result;
 }
