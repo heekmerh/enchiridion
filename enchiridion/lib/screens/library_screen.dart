@@ -597,9 +597,9 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         title: 'Medical Instrumentation',
         assetPath: 'assets/resources/clinical instrumentation.jpeg',
         onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => const ResourceTopicListScreen(
+          builder: (_) => ResourceTopicListScreen(
             title: 'Medical Instrumentation',
-            topics: kMedicalInstrumentationTopics,
+            topics: kMedicalInstrumentationTopicsInDisplayOrder,
           ),
         )),
       ),
