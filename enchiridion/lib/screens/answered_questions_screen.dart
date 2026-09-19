@@ -8,13 +8,12 @@ import '../models/resource_topic.dart';
 import '../services/storage_service.dart';
 import 'question_screen.dart';
 
-/// Points a first correct answer is worth.
+/// Points a correct answer is worth.
 ///
 /// Mirrors the value `StudyStatsService.recordAnswer` already applies.
-/// Duplicated here — rather than imported — because constraint 1 of this
-/// plan forbids editing `study_stats_service.dart`, which sibling batch
-/// item 260917-ndu owns; keep the two in sync if that item changes the
-/// award value.
+/// Duplicated here — rather than imported — so this screen doesn't need to
+/// construct a `StudyStatsService` just to read a constant; keep the two in
+/// sync if that value ever changes.
 const int kCorrectAnswerPoints = 10;
 
 /// Browses the questions the user has already answered in Exam Prep,
@@ -91,9 +90,12 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
   }
 
   /// All-time counts across every question the user has ever answered in
-  /// this bank — independent of the active segment. These are the user's
-  /// whole answer history, not "today", so they will legitimately disagree
-  /// with the dashboard's daily tiles; the summary line says so explicitly.
+  /// this bank — independent of the active segment. This screen counts
+  /// distinct questions (one row per question, however many times it was
+  /// answered), while the dashboard tiles count answers given (a re-served
+  /// question counts again each time). The two figures are expected to
+  /// disagree once any question has been re-answered; the summary line
+  /// says so explicitly.
   int get _totalAnsweredCount =>
       widget.questions.where((q) => _answers.containsKey(q.id)).length;
 
@@ -144,8 +146,10 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'All time: $_totalAnsweredCount answered, '
-                  '$_totalCorrectCount correct, $_totalWrongCount wrong',
+                  'All time: $_totalAnsweredCount questions answered, '
+                  '$_totalCorrectCount correct, $_totalWrongCount wrong '
+                  '(distinct questions — the dashboard counts every answer '
+                  'given, so re-answered questions make that total higher).',
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: cs.onSurface.withValues(alpha: 0.7),
                   ),
@@ -153,7 +157,7 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
                 if (widget.initialFilter == AnsweredQuestionFilter.points) ...[
                   const SizedBox(height: 4),
                   Text(
-                    'A first correct answer is worth $kCorrectAnswerPoints '
+                    'Every correct answer is worth $kCorrectAnswerPoints '
                     'points.',
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: cs.onSurface.withValues(alpha: 0.7),

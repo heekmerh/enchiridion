@@ -108,7 +108,6 @@ void main() {
         final today = await statsService.recordAnswer(
           scope: _scope,
           isCorrect: true,
-          isFirstAttempt: true,
         );
 
         final totals = statsService.getLifetimeTotals(_scope);
@@ -127,5 +126,39 @@ void main() {
       expect(totals.performancePoints, 0);
       expect(totals.wrongAnswers, 0);
     });
+
+    test(
+      'four recorded answers, two of them repeats of already-answered '
+      'questions, fold to four answered — reproduces the reported '
+      '"answered 4, counted 2" bug at the service level',
+      () async {
+        // Two distinct questions, each answered twice in the same run. The
+        // service takes no question identity at all — it is the caller
+        // (QuestionScreen._submit) that is the single point of truth for
+        // "this is a new submission" — so two answers to the same question
+        // are indistinguishable from two answers to different questions
+        // here, exactly as intended: attempts/review state plays no part.
+        // syncOverride keeps this test off the network regardless.
+        final noNetworkStatsService = StudyStatsService(
+          storageService,
+          syncOverride: (_) async {},
+        );
+        await noNetworkStatsService.recordAnswer(
+            scope: _scope, isCorrect: true);
+        await noNetworkStatsService.recordAnswer(
+            scope: _scope, isCorrect: true);
+        await noNetworkStatsService.recordAnswer(
+            scope: _scope, isCorrect: true);
+        await noNetworkStatsService.recordAnswer(
+            scope: _scope, isCorrect: false);
+
+        final totals = noNetworkStatsService.getLifetimeTotals(_scope);
+
+        expect(totals.questionsAnswered, 4);
+        expect(totals.correctAnswers, 3);
+        expect(totals.wrongAnswers, 1);
+        expect(totals.performancePoints, 30);
+      },
+    );
   });
 }

@@ -71,7 +71,6 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     await statsProvider.recordAnswer(
       scope: kStandaloneExamPrepScope,
       isCorrect: _isCorrect,
-      isFirstAttempt: review.attempts == 1,
       answeredAt: answer.answeredAt,
     );
 

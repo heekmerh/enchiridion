@@ -44,13 +44,11 @@ class StudyStatsProvider with ChangeNotifier {
   Future<StudyDayStats> recordAnswer({
     String scope = kStandaloneExamPrepScope,
     required bool isCorrect,
-    required bool isFirstAttempt,
     DateTime? answeredAt,
   }) async {
     final updated = await _statsService.recordAnswer(
       scope: scope,
       isCorrect: isCorrect,
-      isFirstAttempt: isFirstAttempt,
       answeredAt: answeredAt,
     );
     _today = updated;
