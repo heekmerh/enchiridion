@@ -146,4 +146,33 @@ void main() {
       expect(find.text('4'), findsOneWidget); // 3 (prior day) + 1 (today)
     },
   );
+
+  testWidgets(
+    'an answer recorded out-of-band (e.g. the bubble overlay engine) '
+    'appears on the dashboard when the app resumes',
+    (tester) async {
+      final statsProvider = StudyStatsProvider(storageService);
+
+      await tester.pumpWidget(_buildSubject(storageService, statsProvider));
+      await tester.pumpAndSettle();
+
+      expect(find.text('0'), findsWidgets);
+
+      // A separate writer holding its own service instance — the way the
+      // bubble overlay engine writes to the same SharedPreferences without
+      // touching this screen's provider.
+      await StudyStatsService(storageService)
+          .recordAnswer(isCorrect: false);
+      await tester.pump();
+      expect(find.text('0'), findsWidgets);
+
+      tester.binding
+          .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await tester.pumpAndSettle();
+
+      // Answered and Wrong both read 1; Correct and Points stay zero.
+      expect(find.text('1'), findsNWidgets(2));
+      expect(find.text('0'), findsWidgets);
+    },
+  );
 }

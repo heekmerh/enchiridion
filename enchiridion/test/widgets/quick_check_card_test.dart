@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:enchiridion/models/question.dart';
 import 'package:enchiridion/providers/study_stats_provider.dart';
 import 'package:enchiridion/services/storage_service.dart';
+import 'package:enchiridion/services/study_stats_service.dart';
 import 'package:enchiridion/widgets/exam_prep/quick_check_card.dart';
 
 const _question = Question(
@@ -25,6 +26,17 @@ Widget _buildSubject(StorageService storage) {
         create: (_) => StudyStatsProvider(storage),
       ),
     ],
+    child: MaterialApp(
+      home: QuickCheckCard(question: _question, onDismiss: () {}),
+    ),
+  );
+}
+
+/// Mirrors the bubble overlay engine (bubble_main.dart before the provider
+/// was added there): only StorageService, no StudyStatsProvider.
+Widget _buildProviderlessSubject(StorageService storage) {
+  return Provider<StorageService>.value(
+    value: storage,
     child: MaterialApp(
       home: QuickCheckCard(question: _question, onDismiss: () {}),
     ),
@@ -84,5 +96,29 @@ void main() {
       findsOneWidget,
       reason: 'the verdict follows the option key, never the letter the shuffle handed the row',
     );
+  });
+
+  testWidgets(
+      'without a StudyStatsProvider in the tree (bubble overlay) the answer '
+      'still submits and still counts toward stats', (tester) async {
+    // Regression: the bubble engine provided only StorageService, so the
+    // provider read threw after the answer was stored — stats, the rebound
+    // notification and the remote push never ran. A silently half-recorded
+    // answer, invisible to the dashboard.
+    await tester.pumpWidget(_buildProviderlessSubject(storage));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('2'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Submit'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Correct'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+
+    final totals =
+        StudyStatsService(storage).getLifetimeTotals();
+    expect(totals.questionsAnswered, 1);
+    expect(totals.correctAnswers, 1);
   });
 }

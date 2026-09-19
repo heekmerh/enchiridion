@@ -6,6 +6,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'config/supabase_config.dart';
 import 'models/question.dart';
+import 'providers/study_stats_provider.dart';
 import 'services/exam_prep_repository.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
@@ -78,12 +79,19 @@ class _BubbleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provider<StorageService>.value(
       value: storageService,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.getTheme(storageService.getSettings().theme),
-        home: question == null
-            ? _BubbleUnavailableScreen(onClose: _dismiss)
-            : QuickCheckCard(question: question!, onDismiss: _dismiss),
+      child: ChangeNotifierProvider(
+        // The card prefers the provider when present (it notifies
+        // listeners as well as persisting); it falls back to recording
+        // through StudyStatsService directly when it is absent, so an
+        // answer here can never again be half-recorded.
+        create: (_) => StudyStatsProvider(storageService),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.getTheme(storageService.getSettings().theme),
+          home: question == null
+              ? _BubbleUnavailableScreen(onClose: _dismiss)
+              : QuickCheckCard(question: question!, onDismiss: _dismiss),
+        ),
       ),
     );
   }

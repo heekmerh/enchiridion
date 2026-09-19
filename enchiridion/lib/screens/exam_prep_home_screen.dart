@@ -30,7 +30,8 @@ class ExamPrepHomeScreen extends StatefulWidget {
   State<ExamPrepHomeScreen> createState() => _ExamPrepHomeScreenState();
 }
 
-class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
+class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
+    with WidgetsBindingObserver {
   final ExamPrepRepository _repository = ExamPrepRepository();
   final Map<String, UserAnswer> _answers = {};
 
@@ -51,7 +52,26 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _load();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Answers can be recorded while this screen is covered — notably by the
+    // bubble overlay, which runs in a separate engine with its own provider
+    // instance writing to the same SharedPreferences. The provider cached
+    // at construction would otherwise keep showing stale totals until the
+    // next cold start.
+    if (state == AppLifecycleState.resumed && mounted) {
+      context.read<StudyStatsProvider>().refresh();
+    }
   }
 
   Future<void> _load() async {

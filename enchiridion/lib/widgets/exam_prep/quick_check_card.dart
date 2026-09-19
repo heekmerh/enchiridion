@@ -10,6 +10,7 @@ import '../../providers/study_stats_provider.dart';
 import '../../services/notification_service.dart';
 import '../../services/question_review_sync_service.dart';
 import '../../services/storage_service.dart';
+import '../../services/study_stats_service.dart';
 import 'explanation_text.dart';
 
 /// Full-screen "answer one question" card shown inside the Android bubble
@@ -65,14 +66,33 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     );
 
     final storage = context.read<StorageService>();
-    final statsProvider = context.read<StudyStatsProvider>();
+    StudyStatsProvider? statsProvider;
+    try {
+      // The bubble overlay engine (bubble_main.dart) historically provided
+      // only StorageService, so this read threw there: the answer was
+      // already stored above, but stats, the rebound notification and the
+      // remote push below never ran — a silently half-recorded answer.
+      // Prefer the provider when present (it also notifies dashboard
+      // listeners); otherwise record stats directly through the service.
+      statsProvider = context.read<StudyStatsProvider>();
+    } catch (_) {
+      statsProvider = null;
+    }
     final review =
         await storage.recordAnswer(kStandaloneExamPrepScope, answer);
-    await statsProvider.recordAnswer(
-      scope: kStandaloneExamPrepScope,
-      isCorrect: _isCorrect,
-      answeredAt: answer.answeredAt,
-    );
+    if (statsProvider != null) {
+      await statsProvider.recordAnswer(
+        scope: kStandaloneExamPrepScope,
+        isCorrect: _isCorrect,
+        answeredAt: answer.answeredAt,
+      );
+    } else {
+      await StudyStatsService(storage).recordAnswer(
+        scope: kStandaloneExamPrepScope,
+        isCorrect: _isCorrect,
+        answeredAt: answer.answeredAt,
+      );
+    }
 
     // Best-effort background work — never gate clearing the saving state (or
     // therefore the dashboard's already-updated numbers) on the network.
