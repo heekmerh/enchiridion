@@ -38,6 +38,14 @@ class TopicSpec:
     title: str
     source_path: Path
     description: str
+    # Opts this topic into detecting headings by Word run formatting (bold +
+    # an explicit run size at or above this many points) in addition to the
+    # three style/text-shape rules in is_heading(). Left at the default
+    # (None, i.e. opted out) for sutures and abdominal_examination: the same
+    # bold-and-large-run pattern matches ordinary content lines in those two
+    # sources (see the counts in 260919-kix's plan research findings), so
+    # enabling it there would restructure already-shipped topics.
+    bold_heading_min_pt: float | None = None
 
 
 TOPICS = [
@@ -52,6 +60,7 @@ TOPICS = [
         title="IV Cannula",
         source_path=CONTENT_DIR / "IV_Cannula_instrumentation.docx",
         description="Peripheral venous cannula anatomy, uses, precautions, and insertion flow.",
+        bold_heading_min_pt=13.5,
     ),
     TopicSpec(
         slug="abdominal_examination",
@@ -215,15 +224,35 @@ def extract_images(document: Document, paragraph: Paragraph, output_dir: Path) -
     return rel_paths
 
 
-def is_heading(text: str, style_name: str) -> bool:
+def styled_heading_paragraph(paragraph: Paragraph | None, min_pt: float | None) -> bool:
+    if min_pt is None or paragraph is None:
+        return False
+    runs = [run for run in paragraph.runs if run.text.strip()]
+    if not runs:
+        return False
+    if not all(run.bold for run in runs):
+        return False
+    sizes = [run.font.size.pt for run in runs if run.font.size is not None]
+    if not sizes:
+        return False
+    return max(sizes) >= min_pt
+
+
+def is_heading(
+    text: str,
+    style_name: str,
+    paragraph: Paragraph | None = None,
+    bold_heading_min_pt: float | None = None,
+) -> bool:
     if style_name.startswith("Heading"):
         return True
-    if len(text) > 110:
-        return False
-    if re.match(r"^\d+(\.\d+)*[\.)]?\s+[A-Za-z]", text):
-        return True
-    letters_only = re.sub(r"[^A-Za-z ]", "", text).strip()
-    return bool(letters_only) and letters_only == letters_only.upper()
+    if len(text) <= 110:
+        if re.match(r"^\d+(\.\d+)*[\.)]?\s+[A-Za-z]", text):
+            return True
+        letters_only = re.sub(r"[^A-Za-z ]", "", text).strip()
+        if bool(letters_only) and letters_only == letters_only.upper():
+            return True
+    return styled_heading_paragraph(paragraph, bold_heading_min_pt)
 
 
 def clean_heading(text: str) -> str:
@@ -360,7 +389,7 @@ def build_topic_json(spec: TopicSpec) -> None:
             continue
         if text == spec.title or text.upper() == spec.title.upper():
             continue
-        if is_heading(text, style_name):
+        if is_heading(text, style_name, paragraph, spec.bold_heading_min_pt):
             cleaned = clean_heading(text)
             if not cleaned:
                 continue
@@ -429,8 +458,26 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--questions-only", action="store_true",
                         help="Regenerate the exam question asset only")
+    parser.add_argument("--topic", action="append", dest="topics", metavar="SLUG",
+                        help="Regenerate only this topic's JSON (repeatable). "
+                             "Skips normalize_questions() entirely so a single-"
+                             "topic run cannot rewrite the exam question asset.")
     args = parser.parse_args()
     ensure_dirs()
+
+    if args.topics:
+        known = {spec.slug: spec for spec in TOPICS}
+        unknown = [slug for slug in args.topics if slug not in known]
+        if unknown:
+            valid = ", ".join(sorted(known))
+            raise SystemExit(
+                f"Unknown topic slug(s): {', '.join(unknown)}. Valid slugs: {valid}"
+            )
+        for slug in args.topics:
+            build_topic_json(known[slug])
+        print(f"Generated resource content asset(s) for: {', '.join(args.topics)}.")
+        return
+
     normalize_questions()
     if not args.questions_only:
         for spec in TOPICS:
