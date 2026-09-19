@@ -589,6 +589,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
           builder: (_) => const ResourceTopicListScreen(
             title: 'Surgical Instrumentation',
             topics: kSurgicalInstrumentationTopics,
+            dense: true,
           ),
         )),
       ),

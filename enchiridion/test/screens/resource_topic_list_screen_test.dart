@@ -97,4 +97,55 @@ void main() {
 
     expect(find.byType(ResourceTopicDetailScreen), findsOneWidget);
   });
+
+  Widget _denseSubject() => const MaterialApp(
+        home: ResourceTopicListScreen(
+          title: 'Test List',
+          topics: [_available, _pending],
+          dense: true,
+        ),
+      );
+
+  testWidgets(
+      'dense available row renders a chevron and no ComingSoonBadge',
+      (tester) async {
+    await tester.pumpWidget(_denseSubject());
+
+    final availableTileFinder = find.ancestor(
+      of: find.text('Available Topic'),
+      matching: find.byType(ListTile),
+    );
+    expect(
+      find.descendant(
+          of: availableTileFinder, matching: find.byIcon(Icons.chevron_right)),
+      findsOneWidget,
+    );
+    expect(
+      find.descendant(
+          of: availableTileFinder, matching: find.byType(ComingSoonBadge)),
+      findsNothing,
+    );
+  });
+
+  testWidgets(
+      'dense coming-soon row renders a ComingSoonBadge, taps show a SnackBar and push nothing',
+      (tester) async {
+    await tester.pumpWidget(_denseSubject());
+
+    final pendingTileFinder = find.ancestor(
+      of: find.text('Pending Topic'),
+      matching: find.byType(ListTile),
+    );
+    expect(
+      find.descendant(
+          of: pendingTileFinder, matching: find.byType(ComingSoonBadge)),
+      findsOneWidget,
+    );
+
+    await tester.tap(find.text('Pending Topic'));
+    await tester.pump();
+
+    expect(find.byType(ResourceTopicDetailScreen), findsNothing);
+    expect(find.byType(SnackBar), findsOneWidget);
+  });
 }
