@@ -733,21 +733,72 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Corrected Calcium',
     category: 'General',
     description: 'Albumin-corrected serum calcium.',
-    implemented: false,
+    explanation:
+        'Total serum calcium is partly bound to albumin, so hypoalbuminaemia lowers the '
+        'measured total calcium without changing the physiologically active ionised fraction. '
+        'Corrected Ca = measured Ca + 0.02 mmol/L (SI) or 0.8 mg/dL (conventional) for every unit '
+        'albumin falls below 40 g/L (SI) or 4 g/dL (conventional).',
+    clinicalInterpretation:
+        'Interpret the corrected value against the local normal range for total calcium — the '
+        'correction estimates what total calcium would be if albumin were normal. '
+        'It does not replace an ionised calcium measurement when precision is needed.',
+    safetyNotes:
+        'The correction is an estimate and is unreliable in critical illness, acid-base '
+        'disturbance, or paraproteinaemia. Measure ionised calcium directly when a precise '
+        'value is required for clinical decisions.',
+    commonPitfalls:
+        'Mixing SI and conventional unit correction factors. '
+        'Applying the correction when albumin is already normal or high — the formula only '
+        'adjusts for low albumin.',
+    osceTips:
+        'State the formula for the unit system given and explain why hypoalbuminaemia lowers '
+        'total (but not ionised) calcium. Mention ionised calcium as the gold standard when asked.',
   ),
   CalculatorDefinition(
     id: 'ldl-friedewald',
     title: 'LDL (Friedewald)',
     category: 'General',
     description: 'Calculated LDL cholesterol from a lipid panel.',
-    implemented: false,
+    explanation:
+        'The Friedewald equation estimates LDL cholesterol from a standard lipid panel: '
+        'LDL = Total cholesterol − HDL − Triglycerides/5 (mg/dL) or Triglycerides/2.2 (mmol/L). '
+        'It assumes a fixed ratio of triglycerides to VLDL cholesterol that breaks down at high '
+        'triglyceride levels.',
+    clinicalInterpretation:
+        'Use the calculated LDL alongside total cholesterol and HDL to guide cardiovascular risk '
+        'assessment and lipid-lowering therapy decisions per local guidelines.',
+    safetyNotes:
+        'Invalid above 400 mg/dL (4.5 mmol/L) triglycerides — the assumed VLDL ratio breaks down '
+        'and the formula silently underestimates LDL. Request a direct LDL measurement instead.',
+    commonPitfalls:
+        'Reporting a Friedewald LDL when triglycerides exceed the validity ceiling. '
+        'Mixing mg/dL and mmol/L conversion factors between the numerator and triglyceride term.',
+    osceTips:
+        'Recite the formula and state its triglyceride ceiling. Examiners often test whether '
+        'you know to request a direct LDL when triglycerides are markedly elevated.',
   ),
   CalculatorDefinition(
     id: 'waist-hip-ratio',
     title: 'Waist-to-Hip Ratio',
     category: 'General',
     description: 'Central adiposity risk from waist and hip circumference.',
-    implemented: false,
+    explanation:
+        'Waist-to-hip ratio = waist circumference ÷ hip circumference, measured in the same '
+        'units. It reflects central (visceral) fat distribution, an independent cardiometabolic '
+        'risk factor beyond BMI alone.',
+    clinicalInterpretation:
+        'WHO thresholds: above 0.90 in men and above 0.85 in women indicate increased '
+        'cardiometabolic risk from central adiposity, regardless of overall BMI.',
+    safetyNotes:
+        'Measurement technique affects reliability — measure waist at the midpoint between the '
+        'lowest rib and iliac crest, and hip at the widest point, with the patient standing and '
+        'relaxed. Not validated in pregnancy.',
+    commonPitfalls:
+        'Measuring waist over clothing or at the umbilicus rather than the anatomical midpoint. '
+        'Comparing measurements taken with inconsistent technique between visits.',
+    osceTips:
+        'State the measurement landmarks precisely and the sex-specific thresholds. Mention that '
+        'waist-to-hip ratio adds information beyond BMI for cardiometabolic risk.',
   ),
   CalculatorDefinition(
     id: 'meld',
@@ -799,14 +850,49 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Mean Arterial Pressure (MAP)',
     category: 'Cardiology',
     description: 'Mean arterial pressure from systolic and diastolic BP.',
-    implemented: false,
+    explanation:
+        'MAP = diastolic BP + ⅓ × pulse pressure, where pulse pressure = systolic − diastolic. '
+        'It approximates the average arterial pressure driving organ perfusion across the '
+        'cardiac cycle (diastole occupies about two-thirds of the cycle at normal heart rates).',
+    clinicalInterpretation:
+        'A MAP of at least 65 mmHg is the conventional threshold widely used to support organ '
+        'perfusion, particularly in sepsis and shock resuscitation targets. Interpret alongside '
+        'the clinical picture, not in isolation.',
+    safetyNotes:
+        'The ⅓/⅔ diastole-to-systole assumption is derived at normal heart rates; MAP estimated '
+        'this way is less accurate at extremes of heart rate. Direct arterial line measurement is '
+        'more accurate when available.',
+    commonPitfalls:
+        'Entering diastolic BP greater than or equal to systolic BP. '
+        'Using MAP alone to judge perfusion without considering heart rate, urine output, and '
+        'lactate.',
+    osceTips:
+        'State the formula and the 65 mmHg perfusion threshold. Examiners often use MAP targets '
+        'in sepsis/shock scenarios — know it is a resuscitation target, not a diagnosis.',
   ),
   CalculatorDefinition(
     id: 'qtc',
     title: 'QTc (Corrected QT)',
     category: 'Cardiology',
     description: 'Heart-rate-corrected QT interval.',
-    implemented: false,
+    explanation:
+        'QT interval varies with heart rate, so it must be corrected to compare across rates. '
+        'RR (seconds) = 60 ÷ heart rate. Bazett: QTc = QT ÷ √RR. Fridericia: QTc = QT ÷ ∛RR. '
+        'Both are reported in the same units as the entered QT (ms).',
+    clinicalInterpretation:
+        'Conventional thresholds: QTc above 450 ms in men or above 470 ms in women is prolonged; '
+        'above 500 ms carries the highest torsades de pointes risk and warrants urgent review of '
+        'QT-prolonging drugs and electrolytes.',
+    safetyNotes:
+        'Bazett over-corrects at fast heart rates and under-corrects at slow heart rates — '
+        'Fridericia is more accurate outside the normal heart rate range. Always check '
+        'potassium, magnesium, and calcium, and review the drug chart for QT-prolonging agents.',
+    commonPitfalls:
+        'Using Bazett at tachycardia or bradycardia without cross-checking Fridericia. '
+        'Measuring QT from a lead with a poorly defined T-wave end.',
+    osceTips:
+        'State both formulas and their rate-dependent bias. Examiners expect you to name the '
+        'torsades risk threshold and the electrolyte/drug review that follows a prolonged QTc.',
   ),
   CalculatorDefinition(
     id: 'chads-vasc',
@@ -849,7 +935,24 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Oxygen Content (CaO₂)',
     category: 'Respiratory',
     description: 'Arterial oxygen content from haemoglobin, SaO₂, and PaO₂.',
-    implemented: false,
+    explanation:
+        'CaO₂ = (1.34 × Hb g/dL × SaO₂ fraction) + (0.003 × PaO₂ mmHg). '
+        'The first term is oxygen bound to haemoglobin; the second is oxygen dissolved in '
+        'plasma, which is small at room air but becomes more significant at high PaO₂.',
+    clinicalInterpretation:
+        'Oxygen content describes how much oxygen the blood carries, not how much reaches the '
+        'tissues — delivery (DO₂) additionally requires cardiac output (DO₂ = CaO₂ × cardiac '
+        'output). Low CaO₂ with normal cardiac output can still mean adequate delivery.',
+    safetyNotes:
+        'The dissolved-oxygen term (0.003 × PaO₂) is small under room-air conditions and matters '
+        'mainly with supplemental oxygen or hyperbaric therapy. This calculator reports content, '
+        'not delivery — do not conflate the two.',
+    commonPitfalls:
+        'Entering SaO₂ as a fraction instead of a percentage, or vice versa. '
+        'Treating CaO₂ as a delivery measure without factoring in cardiac output.',
+    osceTips:
+        'State the formula and both terms. Examiners often probe the distinction between oxygen '
+        'content and oxygen delivery — know that delivery needs cardiac output as well.',
   ),
   CalculatorDefinition(
     id: 'alveolar-gas',
@@ -922,7 +1025,24 @@ const List<CalculatorDefinition> kCalculators = [
     title: 'Ideal Body Weight (IBW)',
     category: 'Utility',
     description: 'Ideal and adjusted body weight from height and sex.',
-    implemented: false,
+    explanation:
+        'Devine formula: IBW = 50 kg (men) or 45.5 kg (women), plus 2.3 kg for every inch of '
+        'height above 60 inches (5 feet). When an actual weight is supplied, adjusted body '
+        'weight (ABW) = IBW + 0.4 × (actual weight − IBW), used for dosing in obesity.',
+    clinicalInterpretation:
+        'IBW and ABW are used to individualise dosing for weight-based drugs, particularly in '
+        'obese patients where actual body weight overestimates the dose some agents need.',
+    safetyNotes:
+        'The Devine formula is not valid below 60 inches (152 cm) — it can produce negative or '
+        'unreliable values. Use a different method (e.g., paediatric or alternative adult '
+        'formulas) below this height.',
+    commonPitfalls:
+        'Applying the formula below 60 inches without a fallback method. '
+        'Using actual body weight instead of adjusted body weight for drugs that require it in '
+        'obesity.',
+    osceTips:
+        'State the Devine formula and its 60-inch validity floor. Know when to use IBW versus '
+        'adjusted body weight versus actual body weight for a given drug class.',
   ),
   CalculatorDefinition(
     id: 'unit-conversions',

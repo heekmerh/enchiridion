@@ -79,13 +79,12 @@ void main() {
       expect(ids.toSet().length, ids.length);
     });
 
-    test('implemented count is 26 and coming-soon count is 32', () {
-      // Goes 26/32 -> 33/25 (Task 2) -> 38/20 (Task 3) as this plan's
-      // remaining tasks flip flags on the twelve verified formulas.
+    test('implemented count is 33 and coming-soon count is 25', () {
+      // Went 26/32 (Task 1) -> 33/25 (Task 2, this test) -> 38/20 (Task 3).
       final implemented = kCalculators.where((c) => c.implemented).length;
       final comingSoon = kCalculators.where((c) => c.isComingSoon).length;
-      expect(implemented, 26);
-      expect(comingSoon, 32);
+      expect(implemented, 33);
+      expect(comingSoon, 25);
       expect(implemented + comingSoon, kCalculators.length);
     });
 
@@ -165,15 +164,14 @@ void main() {
           keys.indexWhere((k) => categoryHasImplemented[k] == false);
       final lastImplementedIndex =
           keys.lastIndexWhere((k) => categoryHasImplemented[k] == true);
-      // At this point (Task 1), Cardiology, Respiratory, Surgery & Trauma,
-      // and Utility have no implemented calculators and must be the
-      // trailing four.
+      // At this point (Task 2), only Surgery & Trauma has no implemented
+      // calculators yet (Task 3 adds burn-tbsa and parkland) and must be
+      // the trailing category.
       expect(firstUnimplementedIndex, isNot(-1));
       expect(lastImplementedIndex, lessThan(firstUnimplementedIndex));
       expect(
         keys.sublist(firstUnimplementedIndex),
-        containsAll(
-            ['Cardiology', 'Respiratory', 'Surgery & Trauma', 'Utility']),
+        containsAll(['Surgery & Trauma']),
       );
     });
 
