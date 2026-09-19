@@ -18,8 +18,8 @@ import '../widgets/exam_prep/explanation_text.dart';
 typedef NextQuestionResult = ({Question question, int optionSeed});
 
 /// Loads the next question to advance to in place, without leaving the
-/// route. Absent (null) on [QuestionScreen] preserves today's behaviour
-/// exactly: no next-question control, no auto-advance.
+/// route. Absent (null) on [QuestionScreen] means no next-question control
+/// is shown at all — advancing is always user-initiated.
 typedef NextQuestionLoader = Future<NextQuestionResult?> Function();
 
 class QuestionScreen extends StatefulWidget {
@@ -30,10 +30,11 @@ class QuestionScreen extends StatefulWidget {
   final bool trackDailyStudyStats;
 
   /// When present, the post-submit footer offers an explicit "Next
-  /// question" control (and, layered on top in a later change, an
-  /// unattended auto-advance) that swaps the displayed question in place
-  /// rather than pushing a new route. Absent, the screen behaves exactly as
-  /// it always has — only "Back to question list" is offered.
+  /// question" control that swaps the displayed question in place rather
+  /// than pushing a new route. The screen never advances by itself, so the
+  /// user keeps the explanation on screen as long as they want. Absent, the
+  /// screen behaves exactly as it always has — only "Back to question list"
+  /// is offered.
   final NextQuestionLoader? onRequestNext;
 
   /// Shows [previousAnswer] as already submitted and disables answering.
@@ -79,22 +80,12 @@ class _QuestionScreenState extends State<QuestionScreen> {
   late Question _question;
   int? _optionSeed;
 
-  // True while an advance (manual or, in a later change, automatic) is
-  // awaiting its loader — guards against a second advance firing before the
-  // first resolves.
+  // True while an advance is awaiting its loader — guards against a second
+  // advance firing before the first resolves.
   bool _advancing = false;
 
   // True once the loader has returned null: nothing left to serve.
   bool _exhausted = false;
-
-  // How long an answered, loader-backed screen waits for an idle user
-  // before advancing on its own — long enough to read a short explanation
-  // and reach the cancel control, short enough that an idle user isn't
-  // stranded. A named constant so it's tunable in one place.
-  static const _feedbackPause = Duration(seconds: 6);
-
-  Timer? _autoAdvanceTimer;
-  int? _secondsRemaining;
 
   @override
   void initState() {
@@ -111,35 +102,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   @override
   void dispose() {
-    _autoAdvanceTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
-  }
-
-  void _startAutoAdvanceCountdown() {
-    _autoAdvanceTimer?.cancel();
-    setState(() => _secondsRemaining = _feedbackPause.inSeconds);
-    _autoAdvanceTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (!mounted) {
-        timer.cancel();
-        return;
-      }
-      final remaining = (_secondsRemaining ?? 1) - 1;
-      setState(() => _secondsRemaining = remaining);
-      if (remaining <= 0) {
-        timer.cancel();
-        _autoAdvanceTimer = null;
-        _advance();
-      }
-    });
-  }
-
-  void _cancelAutoAdvance() {
-    _autoAdvanceTimer?.cancel();
-    _autoAdvanceTimer = null;
-    if (_secondsRemaining != null) {
-      setState(() => _secondsRemaining = null);
-    }
   }
 
   void _seedOptionOrder() {
@@ -158,7 +122,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
     final loader = widget.onRequestNext;
     if (loader == null) return;
 
-    _cancelAutoAdvance();
     setState(() => _advancing = true);
     final result = await loader();
     if (!mounted) return;
@@ -226,14 +189,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
       review: review,
     ));
     unawaited(QuestionReviewSyncService(storage).push(widget.bookId, review));
-
-    // The countdown starts only now — after the storage write and stats
-    // recording this method awaits have both completed — and only when a
-    // loader is present and the screen isn't readOnly.
-    if (!mounted) return;
-    if (widget.onRequestNext != null && !widget.readOnly) {
-      _startAutoAdvanceCountdown();
-    }
   }
 
   Future<void> _flagQuestion() async {
@@ -411,27 +366,13 @@ class _QuestionScreenState extends State<QuestionScreen> {
                     "You're all caught up — nothing more is queued right now.",
                   ),
                 )
-              else ...[
-                if (_secondsRemaining != null) ...[
-                  Text(
-                    'Next question in ${_secondsRemaining}s',
-                    style: theme.textTheme.bodySmall
-                        ?.copyWith(color: cs.onSurface.withValues(alpha: 0.64)),
-                  ),
-                  const SizedBox(height: 6),
-                ],
+              else
                 FilledButton(
                   onPressed: _advancing ? null : _advance,
                   style: FilledButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 14)),
                   child: const Text('Next question'),
                 ),
-                if (_secondsRemaining != null)
-                  TextButton(
-                    onPressed: _cancelAutoAdvance,
-                    child: const Text('Stay on this question'),
-                  ),
-              ],
               const SizedBox(height: 12),
             ],
             OutlinedButton(

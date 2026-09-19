@@ -296,9 +296,37 @@ void main() {
     );
   });
 
-  group('auto-advance', () {
+  group('no timed advance', () {
     testWidgets(
-      'an idle user is carried to the next question after the feedback pause',
+      'an idle user is never carried forward',
+      (tester) async {
+        var loaderCalls = 0;
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          onRequestNext: () async {
+            loaderCalls++;
+            return (question: _question2, optionSeed: 7);
+          },
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        await tester.pump(const Duration(seconds: 30));
+
+        expect(loaderCalls, 0);
+        expect(find.text('What is 2 + 2?'), findsOneWidget);
+        expect(find.text('Explanation'), findsOneWidget);
+        expect(find.text('Next question'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'no countdown affordances are rendered after submit',
       (tester) async {
         await tester.pumpWidget(_buildSubject(
           storageService,
@@ -312,58 +340,13 @@ void main() {
         await tester.tap(find.text('Submit'));
         await tester.pumpAndSettle();
 
-        expect(find.textContaining('Next question in'), findsOneWidget);
-
-        // Drive the periodic timer with `pump`, never `pumpAndSettle` — a
-        // periodic timer never settles.
-        await tester.pump(const Duration(seconds: 6));
-        // Flush the loader's Future and the resulting rebuild.
-        await tester.pump();
-        await tester.pump();
-
-        expect(find.text('What is 3 + 3?'), findsOneWidget);
+        expect(find.textContaining('Next question in'), findsNothing);
+        expect(find.text('Stay on this question'), findsNothing);
       },
     );
 
     testWidgets(
-      'Stay on this question cancels the pending advance',
-      (tester) async {
-        await tester.pumpWidget(_buildSubject(
-          storageService,
-          readOnly: false,
-          onRequestNext: () async => (question: _question2, optionSeed: 7),
-        ));
-        await tester.pumpAndSettle();
-
-        await tester.tap(find.text('4'));
-        await tester.pumpAndSettle();
-        await tester.tap(find.text('Submit'));
-        await tester.pumpAndSettle();
-
-        // Scroll the body into view without `pumpAndSettle` — a periodic
-        // timer is already running and would never let it settle.
-        await tester.drag(find.byType(ListView), const Offset(0, -300));
-        await tester.pump();
-        await tester.tap(find.text('Stay on this question'));
-        await tester.pump();
-
-        // Pump well past the pause: the same question stays on screen.
-        await tester.pump(const Duration(seconds: 10));
-
-        // The body is scrolled from the drag above, so the question stem is
-        // geometrically offstage (outside the viewport) even though it's
-        // still mounted — `skipOffstage: false` looks at the whole tree
-        // rather than only what's currently painted.
-        expect(find.text('What is 2 + 2?', skipOffstage: false), findsOneWidget);
-        expect(find.text('Next question', skipOffstage: false), findsOneWidget);
-        expect(find.textContaining('Next question in', skipOffstage: false),
-            findsNothing);
-      },
-    );
-
-    testWidgets(
-      'tapping Next question manually cancels the pending timer so the '
-      'advance happens exactly once',
+      'tapping Next question advances exactly once and stays advanced',
       (tester) async {
         var loaderCalls = 0;
         await tester.pumpWidget(_buildSubject(
@@ -384,16 +367,15 @@ void main() {
         await tester.tap(find.text('Next question'));
         await tester.pumpAndSettle();
 
-        // Well past the original pause: if the timer weren't cancelled by
-        // the manual tap, this would fire a second advance.
-        await tester.pump(const Duration(seconds: 10));
+        await tester.pump(const Duration(seconds: 30));
 
         expect(loaderCalls, 1);
+        expect(find.text('What is 3 + 3?'), findsOneWidget);
       },
     );
 
     testWidgets(
-      'an exhausted queue shows a caught-up message instead of advancing',
+      'an exhausted queue is only discovered on an explicit tap',
       (tester) async {
         await tester.pumpWidget(_buildSubject(
           storageService,
@@ -407,20 +389,19 @@ void main() {
         await tester.tap(find.text('Submit'));
         await tester.pumpAndSettle();
 
-        await tester.pump(const Duration(seconds: 6));
-        await tester.pump();
-        await tester.pump();
+        expect(find.textContaining('caught up'), findsNothing);
 
-        expect(find.text('Next question'), findsNothing);
+        await tester.tap(find.text('Next question'));
+        await tester.pumpAndSettle();
+
         expect(find.textContaining('caught up'), findsOneWidget);
-        expect(find.text('Back to question list'), findsOneWidget);
+        expect(find.text('Next question'), findsNothing);
         expect(find.text('Explanation'), findsOneWidget);
       },
     );
 
     testWidgets(
-      'popping the screen while a countdown is pending produces no '
-      'setState-after-dispose error',
+      'leaving an answered screen raises no exception',
       (tester) async {
         await tester.pumpWidget(_buildPushableSubject(
           storageService,
@@ -436,11 +417,10 @@ void main() {
         await tester.tap(find.text('Submit'));
         await tester.pumpAndSettle();
 
-        // Countdown pending; pop before it elapses.
         Navigator.of(tester.element(find.byType(QuestionScreen))).pop();
         await tester.pumpAndSettle();
 
-        await tester.pump(const Duration(seconds: 10));
+        await tester.pump(const Duration(seconds: 30));
 
         expect(tester.takeException(), isNull);
       },
