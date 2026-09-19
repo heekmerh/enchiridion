@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:enchiridion/models/resource_topic.dart';
+import 'package:enchiridion/screens/resource_topic_list_screen.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -65,6 +67,22 @@ void main() {
         final occurrences =
             RegExp('Sutures').allMatches(raw).length;
         expect(occurrences, 7);
+      },
+    );
+
+    testWidgets(
+      'real Surgical Instrumentation catalog card list renders Suture '
+      'Material, never the bare old name Sutures',
+      (tester) async {
+        await tester.pumpWidget(const MaterialApp(
+          home: ResourceTopicListScreen(
+            title: 'Surgical Instrumentation',
+            topics: kSurgicalInstrumentationTopics,
+          ),
+        ));
+
+        expect(find.text('Suture Material'), findsOneWidget);
+        expect(find.text('Sutures'), findsNothing);
       },
     );
   });
