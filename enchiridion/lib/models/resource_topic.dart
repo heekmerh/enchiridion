@@ -980,9 +980,9 @@ const List<ResourceTopic> kMedicalInstrumentationTopics = [
 
 // Sourced from scripts/content/OSCE.md, which the author put together as
 // the OSCE section's structure — one tab per numbered section there. Only
-// "Abdomen" has full written content today (abdominal_examination.json);
-// every other tab shows its [ResourceTopic.outline] as a checklist until
-// its own content JSON exists.
+// "Abdominal Examination" has full written content today
+// (abdominal_examination.json); every other tab shows its
+// [ResourceTopic.outline] as a checklist until its own content JSON exists.
 const List<ResourceTopic> kOsceTopics = [
   ResourceTopic(
     id: 'cardiovascular-system',
