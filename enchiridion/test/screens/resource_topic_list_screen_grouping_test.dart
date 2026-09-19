@@ -179,6 +179,7 @@ void main() {
       home: ResourceTopicListScreen(
         title: 'Medical Instrumentation',
         topics: kMedicalInstrumentationTopics,
+        dense: true,
       ),
     ));
 
@@ -190,7 +191,7 @@ void main() {
     final firstHeaderFinder = find.byType(SectionHeader).first;
     final firstTopicRowFinder = find.ancestor(
       of: find.text('IV Cannula'),
-      matching: find.byType(Ink),
+      matching: find.byType(ListTile),
     );
 
     // The header precedes the first topic row in paint order, so the
