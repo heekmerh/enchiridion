@@ -30,8 +30,8 @@ class ResourceTopicListScreen extends StatelessWidget {
 
   /// When true, renders each topic as a single-line `ListTile` (the
   /// OSCE-style dense presentation) instead of the default hero-image card.
-  /// Defaults to false so existing call sites (Medical Instrumentation, and
-  /// any future caller that doesn't opt in) are unaffected.
+  /// Defaults to false: callers that don't opt in keep the hero-card
+  /// presentation.
   final bool dense;
 
   const ResourceTopicListScreen({
