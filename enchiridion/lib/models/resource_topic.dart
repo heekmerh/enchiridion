@@ -16,6 +16,13 @@ class ResourceTopic {
   /// [dataAssetPath] is null — the structure exists before the prose does.
   final List<String>? outline;
 
+  /// The category heading this topic sits under in its authoring source —
+  /// e.g. "Cardiovascular Instrumentation" for a Medical Instrumentation
+  /// topic sourced from `scripts/content/medical_instrumentation.md`. Null
+  /// means this topic renders in a flat, header-less list (the case for
+  /// every Surgical Instrumentation and OSCE topic today).
+  final String? group;
+
   const ResourceTopic({
     required this.id,
     required this.title,
@@ -24,6 +31,7 @@ class ResourceTopic {
     this.dataAssetPath,
     this.description,
     this.outline,
+    this.group,
   });
 
   /// Whether this topic has real written content available to open, as
@@ -35,6 +43,43 @@ class ResourceTopic {
   /// Whether this topic should render with the shared coming-soon
   /// treatment — see `ComingSoonStyle` in `widgets/common/coming_soon.dart`.
   bool get isComingSoon => !hasContent;
+}
+
+/// Groups [topics] by [ResourceTopic.group] for display, mirroring
+/// `groupedCalculatorsInDisplayOrder` in `calculator_definition.dart` so the
+/// two screens order their sections the same way.
+///
+/// Buckets are built with `putIfAbsent`, so group order starts as
+/// first-appearance order in [topics] — the same primitive
+/// `groupByCategory` uses for calculators. [availableFirst] (from
+/// `utils/content_availability.dart`, landed by sibling 260918-dqx) is then
+/// applied at both levels: a group holding at least one topic with content
+/// outranks a group holding none, and within each group, topics with
+/// content lead topics that don't. This is why the Medical Instrumentation
+/// screen opens on the group holding its one written topic rather than on
+/// whichever heading was authored first — the rule comes from availability,
+/// not from this list's literal order.
+///
+/// A topic list where every topic has a null [ResourceTopic.group] collapses
+/// to a single bucket keyed `null`, whose flattened order is identical to
+/// `availableFirst(topics, (t) => t.hasContent)` — the flat, header-less
+/// rendering is the degenerate case of this same rule.
+Map<String?, List<ResourceTopic>> groupTopicsForDisplay(
+    List<ResourceTopic> topics) {
+  final byGroup = <String?, List<ResourceTopic>>{};
+  for (final topic in topics) {
+    byGroup.putIfAbsent(topic.group, () => []).add(topic);
+  }
+  final orderedEntries =
+      availableFirst<MapEntry<String?, List<ResourceTopic>>>(
+    byGroup.entries,
+    (entry) => entry.value.any((t) => t.hasContent),
+  );
+  final result = <String?, List<ResourceTopic>>{};
+  for (final entry in orderedEntries) {
+    result[entry.key] = availableFirst(entry.value, (t) => t.hasContent);
+  }
+  return result;
 }
 
 const String kStandaloneExamPrepScope = 'exam_prep';
