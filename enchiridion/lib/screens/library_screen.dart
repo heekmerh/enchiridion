@@ -600,6 +600,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
           builder: (_) => ResourceTopicListScreen(
             title: 'Medical Instrumentation',
             topics: kMedicalInstrumentationTopicsInDisplayOrder,
+            dense: true,
           ),
         )),
       ),
