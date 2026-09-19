@@ -9,6 +9,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 
 import '../../models/chapter.dart';
 import '../../models/resource_topic.dart';
@@ -29,6 +30,28 @@ class SubtopicTab {
   final Chapter? content;
 
   const SubtopicTab({required this.title, this.content});
+
+  /// The id this tab scrolls to in the one shared content scroll view — a
+  /// key into `BlockRenderer`'s `onItemIndexesReady` map (see
+  /// `block_renderer.dart`'s `_buildKeys`), which indexes every section and
+  /// subsection id of the ORIGINAL, unsliced chapter that the content-backed
+  /// path renders.
+  ///
+  /// Resolved as the first subsection id of this tab's slice's single
+  /// section, falling back to that section's id when the section has no
+  /// subsections, and null when this tab has no content at all. Covers all
+  /// three content branches of [subtopicTabsFor] (multi-section,
+  /// one-section-many-subsections, whole-chapter) with no new fields and no
+  /// change to that derivation.
+  String? get anchorId {
+    final sections = content?.sections;
+    if (sections == null || sections.isEmpty) return null;
+    final section = sections.single;
+    if (section.subsections.isNotEmpty) {
+      return section.subsections.first.id;
+    }
+    return section.id;
+  }
 }
 
 String _guardLabel(String? raw, String fallback) {
@@ -228,9 +251,35 @@ class SubtopicTabsView extends StatefulWidget {
 }
 
 class _SubtopicTabsViewState extends State<SubtopicTabsView>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
+  /// Distance below the content scroll view's own top edge used as the
+  /// scrollspy activation line. Derived from the scroll view's own
+  /// [RenderBox] rather than a fixed screen-relative offset (compare
+  /// `reader_screen.dart`'s `_updateActiveSection`, which hard-codes a
+  /// screen-relative `dy` of 100): `ResourceTopicDetailScreen` stacks a
+  /// 16:9 hero image, a category label and this tab strip above the scroll
+  /// view, so a fixed screen-relative number would sit above the viewport
+  /// and always resolve to the wrong sub-topic.
+  static const double _activationLineInset = 16;
+
   late List<SubtopicTab> _tabs;
   late TabController _controller;
+  late AutoScrollController _autoScrollController;
+  final GlobalKey _scrollViewKey = GlobalKey();
+
+  // Populated by BlockRenderer's onItemIndexesReady/onKeysReady callbacks,
+  // which fire during a descendant's initState/didUpdateWidget — assigned
+  // directly with no setState (mirrors reader_screen.dart:174-176; calling
+  // setState from those callbacks throws). Anchors are resolved lazily, at
+  // tap or scroll time, by looking the tab's anchor id up in these maps.
+  Map<String, int> _itemIndexes = {};
+  Map<String, GlobalKey> _sectionKeys = {};
+  Map<String, GlobalKey> _subsectionKeys = {};
+
+  // Guards the scrollspy listener against fighting a tap-initiated scroll:
+  // held for the duration of that scroll's future plus one post-frame
+  // settle, during which the listener returns early.
+  bool _suppressScrollSpy = false;
 
   @override
   void initState() {
@@ -245,6 +294,8 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
       initialIndex: widget.initialIndex.clamp(0, _tabs.length - 1),
       vsync: this,
     );
+    _autoScrollController = AutoScrollController();
+    _autoScrollController.addListener(_onScroll);
   }
 
   @override
@@ -254,6 +305,12 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
         identical(oldWidget.chapter, widget.chapter)) {
       return;
     }
+    // A stale index/key from the previous chapter must never be used as a
+    // scroll anchor for the new one — BlockRenderer calls
+    // onItemIndexesReady/onKeysReady again once the new chapter lays out.
+    _itemIndexes = {};
+    _sectionKeys = {};
+    _subsectionKeys = {};
     final newTabs = subtopicTabsFor(
       topic: widget.topic,
       chapter: widget.chapter,
@@ -274,14 +331,224 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   @override
   void dispose() {
     _controller.dispose();
+    _autoScrollController.removeListener(_onScroll);
+    _autoScrollController.dispose();
     super.dispose();
+  }
+
+  void _onItemIndexesReady(Map<String, int> indexes) {
+    _itemIndexes = indexes;
+  }
+
+  void _onKeysReady(
+    Map<String, GlobalKey> sectionKeys,
+    Map<String, GlobalKey> subsectionKeys,
+  ) {
+    _sectionKeys = sectionKeys;
+    _subsectionKeys = subsectionKeys;
+  }
+
+  double? _viewportTop() {
+    final renderObject = _scrollViewKey.currentContext?.findRenderObject();
+    if (renderObject is! RenderBox || !renderObject.hasSize) return null;
+    return renderObject.localToGlobal(Offset.zero).dy;
+  }
+
+  /// The scroll index tab [tabIndex] scrolls to. For the outline-only path
+  /// (no content JSON yet), each tab IS its own `AutoScrollTag` with index
+  /// equal to the tab's own position — see the no-content branch of
+  /// [_buildContentSlivers]. For the content-backed path, the index comes
+  /// from `BlockRenderer`'s `onItemIndexesReady` map, keyed by the tab's
+  /// [SubtopicTab.anchorId].
+  int? _anchorIndexFor(int tabIndex) {
+    final tab = _tabs[tabIndex];
+    if (tab.content == null) return tabIndex;
+    final anchorId = tab.anchorId;
+    if (anchorId == null) return null;
+    return _itemIndexes[anchorId];
+  }
+
+  // Scrollspy: mirrors reader_screen.dart's `_updateActiveSection` — lazy
+  // children have no stable offsets until built, so this walks the visible
+  // AutoScrollTag nearest the activation line, then maps that tag index
+  // back to the tab whose anchor is at or before it.
+  void _onScroll() {
+    if (_suppressScrollSpy || _tabs.length <= 1) return;
+    if (!_autoScrollController.hasClients ||
+        _autoScrollController.tagMap.isEmpty) {
+      return;
+    }
+    final viewportTop = _viewportTop();
+    if (viewportTop == null) return;
+    final activationLine = viewportTop + _activationLineInset;
+
+    int? activeTagIndex;
+    var nearestBelowTop = double.infinity;
+    for (final entry in _autoScrollController.tagMap.entries) {
+      final renderObject = entry.value.context.findRenderObject();
+      if (renderObject is! RenderBox || !renderObject.hasSize) continue;
+      final top = renderObject.localToGlobal(Offset.zero).dy;
+      final bottom = top + renderObject.size.height;
+      if (top <= activationLine && bottom > activationLine) {
+        activeTagIndex = entry.key;
+        break;
+      }
+      if (top > activationLine && top < nearestBelowTop) {
+        nearestBelowTop = top;
+        activeTagIndex = entry.key;
+      }
+    }
+    if (activeTagIndex == null) return;
+
+    var bestTab = 0;
+    var bestAnchor = -1;
+    for (var i = 0; i < _tabs.length; i++) {
+      final anchorIndex = _anchorIndexFor(i);
+      if (anchorIndex != null &&
+          anchorIndex <= activeTagIndex &&
+          anchorIndex > bestAnchor) {
+        bestAnchor = anchorIndex;
+        bestTab = i;
+      }
+    }
+    if (bestTab != _controller.index) {
+      _controller.animateTo(bestTab);
+    }
+  }
+
+  // Scrolls the one content view to tab [tabIndex]'s anchor — preferring
+  // `Scrollable.ensureVisible` on the subsection/section GlobalKey when
+  // already built, falling back to `scrollToIndex` when it is not. Mirrors
+  // the two-step `_navigateToSection` in reader_screen.dart.
+  Future<void> _scrollToTab(int tabIndex) async {
+    _suppressScrollSpy = true;
+    try {
+      final tab = _tabs[tabIndex];
+      final anchorId = tab.anchorId;
+      final key = anchorId == null
+          ? null
+          : (_subsectionKeys[anchorId] ?? _sectionKeys[anchorId]);
+      final ctx = key?.currentContext;
+      if (ctx != null) {
+        await Scrollable.ensureVisible(
+          ctx,
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeOut,
+          alignment: 0.0,
+        );
+      } else {
+        final anchorIndex = _anchorIndexFor(tabIndex);
+        if (anchorIndex != null && _autoScrollController.hasClients) {
+          await _autoScrollController.scrollToIndex(
+            anchorIndex,
+            preferPosition: AutoScrollPosition.begin,
+          );
+        }
+      }
+    } finally {
+      if (mounted) {
+        await WidgetsBinding.instance.endOfFrame;
+      }
+      if (mounted) {
+        _suppressScrollSpy = false;
+      }
+    }
+  }
+
+  /// The one content scroll view's slivers.
+  ///
+  /// Content-backed: the topic blurb once (it used to be pinned to the
+  /// first tab), then the ORIGINAL, unsliced chapter exactly once — NEVER
+  /// one slice per tab, which would repeat the source section header once
+  /// per sub-topic (`BlockRenderer` emits a section header for every
+  /// section of whatever chapter it is given). The slices `subtopicTabsFor`
+  /// builds are used only to derive tab labels and scroll anchors.
+  ///
+  /// No content JSON at all: one coming-soon body per tab, each its own
+  /// `AutoScrollTag` on this same controller with index equal to the tab's
+  /// own position — see [_anchorIndexFor].
+  List<Widget> _buildContentSlivers(BuildContext context) {
+    final chapter = widget.chapter;
+    if (chapter != null) {
+      return [
+        if (widget.topic.description != null)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
+              child: Text(
+                widget.topic.description!,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+          ),
+        ReaderContent(
+          chapter: chapter,
+          bookId: '',
+          asSliver: true,
+          autoScrollController: _autoScrollController,
+          onItemIndexesReady: _onItemIndexesReady,
+          onKeysReady: _onKeysReady,
+        ),
+        SliverPadding(
+          padding: EdgeInsets.only(bottom: 24 + bottomViewportInset(context)),
+        ),
+      ];
+    }
+
+    return [
+      SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) => AutoScrollTag(
+            key: ValueKey('subtopic-outline-$index'),
+            controller: _autoScrollController,
+            index: index,
+            child: _ComingSoonSubtopicBody(
+              topic: widget.topic,
+              label: _tabs[index].title,
+            ),
+          ),
+          childCount: _tabs.length,
+        ),
+      ),
+      SliverPadding(
+        padding: EdgeInsets.only(bottom: 24 + bottomViewportInset(context)),
+      ),
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     if (_tabs.length <= 1) {
-      return _SubtopicBody(topic: widget.topic, tab: _tabs.first, isFirst: true);
+      return CustomScrollView(
+        key: _scrollViewKey,
+        controller: _autoScrollController,
+        slivers: _buildContentSlivers(context),
+      );
     }
+
+    if (widget.chapter != null) {
+      return Column(
+        children: [
+          TabBar(
+            controller: _controller,
+            isScrollable: true,
+            onTap: _scrollToTab,
+            tabs: [for (final tab in _tabs) Tab(text: tab.title)],
+          ),
+          Expanded(
+            child: CustomScrollView(
+              key: _scrollViewKey,
+              controller: _autoScrollController,
+              slivers: _buildContentSlivers(context),
+            ),
+          ),
+        ],
+      );
+    }
+
+    // TODO(260919-kiw Task 2): the outline-only (no content JSON yet) path
+    // still pages through the former per-tab pager here; the next task in
+    // this plan unifies it onto the one-scroll-view design above.
     return Column(
       children: [
         TabBar(
@@ -290,15 +557,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
           tabs: [for (final tab in _tabs) Tab(text: tab.title)],
         ),
         Expanded(
-          // Physics intentionally left unset: the default drag behaviour is
-          // the sideways swipe between sub-topics this widget exists to
-          // provide. Do not wrap this in a gesture detector that would win
-          // the horizontal drag arena instead.
           child: TabBarView(
             controller: _controller,
             children: [
-              for (var i = 0; i < _tabs.length; i++)
-                _SubtopicBody(topic: widget.topic, tab: _tabs[i], isFirst: i == 0),
+              for (final tab in _tabs)
+                _ComingSoonSubtopicBody(topic: widget.topic, label: tab.title),
             ],
           ),
         ),
@@ -307,46 +570,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   }
 }
 
-class _SubtopicBody extends StatelessWidget {
-  final ResourceTopic topic;
-  final SubtopicTab tab;
-  final bool isFirst;
-
-  const _SubtopicBody({
-    required this.topic,
-    required this.tab,
-    required this.isFirst,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final content = tab.content;
-    if (content == null) {
-      return _ComingSoonSubtopicBody(topic: topic, label: tab.title);
-    }
-    return ListView(
-      key: PageStorageKey<String>(tab.title),
-      padding: EdgeInsets.only(bottom: 24 + bottomViewportInset(context)),
-      children: [
-        // The topic blurb is preserved exactly once — on the first tab
-        // only — rather than repeated on every sub-topic.
-        if (isFirst && topic.description != null)
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
-            child: Text(
-              topic.description!,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ),
-        ReaderContent(chapter: content, bookId: ''),
-      ],
-    );
-  }
-}
-
 /// Placeholder body for a sub-topic that has no written content yet. Renders
 /// through the shared coming-soon treatment (`coming_soon.dart`) rather than
-/// restyling locally.
+/// restyling locally. A plain (non-scrolling) column — it is placed as an
+/// item inside the shared outer scroll view, so a nested scrollable here
+/// would reintroduce the very boundary this widget exists to remove.
 class _ComingSoonSubtopicBody extends StatelessWidget {
   final ResourceTopic topic;
   final String label;
@@ -357,32 +585,30 @@ class _ComingSoonSubtopicBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final cs = theme.colorScheme;
-    return ListView(
-      key: PageStorageKey<String>(label),
-      padding: EdgeInsets.fromLTRB(
-        20,
-        24,
-        20,
-        24 + bottomViewportInset(context),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 24, 20, 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ComingSoonBadge(),
+          const SizedBox(height: 12),
+          Text(
+            label,
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            '$kComingSoonLabel — this part of ${topic.title} has not been '
+            'written yet. The rest of this topic is still browsable.',
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: ComingSoonStyle.body(cs),
+            ),
+          ),
+        ],
       ),
-      children: [
-        const ComingSoonBadge(),
-        const SizedBox(height: 12),
-        Text(
-          label,
-          style: theme.textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          '$kComingSoonLabel — this part of ${topic.title} has not been '
-          'written yet. The rest of this topic is still browsable.',
-          style: theme.textTheme.bodyMedium?.copyWith(
-            color: ComingSoonStyle.body(cs),
-          ),
-        ),
-      ],
     );
   }
 }
