@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../models/chapter.dart';
 import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
-import '../utils/bottom_inset.dart';
-import '../widgets/reader/reader_content.dart';
+import '../widgets/common/subtopic_tabs.dart';
 
 class ResourceTopicDetailScreen extends StatefulWidget {
   final ResourceTopic topic;
@@ -21,7 +21,7 @@ class ResourceTopicDetailScreen extends StatefulWidget {
 class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
   bool _loading = true;
   Object? _error;
-  dynamic _chapter;
+  Chapter? _chapter;
 
   @override
   void initState() {
@@ -74,10 +74,7 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
                     ),
                   ),
                 )
-              : ListView(
-                  padding: EdgeInsets.only(
-                    bottom: 24 + bottomViewportInset(context),
-                  ),
+              : Column(
                   children: [
                     AspectRatio(
                       aspectRatio: 16 / 9,
@@ -88,36 +85,22 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20, 18, 20, 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.topic.categoryTitle,
-                            style: theme.textTheme.labelLarge?.copyWith(
-                              color: theme.colorScheme.primary,
-                              fontWeight: FontWeight.w700,
-                            ),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          widget.topic.categoryTitle,
+                          style: theme.textTheme.labelLarge?.copyWith(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.w700,
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            widget.topic.title,
-                            style: theme.textTheme.headlineSmall?.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          if (widget.topic.description != null) ...[
-                            const SizedBox(height: 10),
-                            Text(
-                              widget.topic.description!,
-                              style: theme.textTheme.bodyMedium,
-                            ),
-                          ],
-                        ],
+                        ),
                       ),
                     ),
-                    ReaderContent(
-                      chapter: _chapter,
-                      bookId: '',
+                    Expanded(
+                      child: SubtopicTabsView(
+                        topic: widget.topic,
+                        chapter: _chapter,
+                      ),
                     ),
                   ],
                 ),
