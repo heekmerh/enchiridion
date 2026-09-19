@@ -51,7 +51,11 @@ class TopicSpec:
 TOPICS = [
     TopicSpec(
         slug="sutures",
-        title="Sutures",
+        # Matches the app-facing name from quick task 260918-dr1, which
+        # renamed the shipped topic by editing sutures.json directly rather
+        # than regenerating. Keeping this in sync means `--topic sutures`
+        # reproduces the committed asset byte for byte.
+        title="Suture Material",
         source_path=CONTENT_DIR / "SUTURES_instrumentation.docx",
         description="Core suture concepts, classification, and technique illustrations.",
     ),
@@ -448,9 +452,13 @@ def build_topic_json(spec: TopicSpec) -> None:
     }
 
     target = RESOURCE_DATA_DIR / f"{spec.slug}.json"
+    # Match the bundled assets' existing CRLF line endings (same rationale as
+    # normalize_questions() above): regenerating a single topic should only
+    # change its content, not flip every line's ending and blow up the diff.
     target.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
+        newline="\r\n",
     )
 
 
