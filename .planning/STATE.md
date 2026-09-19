@@ -65,6 +65,7 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 | 260918-dr5 | The topics are implemented nicely but the tab scroll feature is not for the topics, it is for the sub-topics within each topic. You already have access to the sub-topic outline for each topic. For Abdominal which is already implemented you can infer it. | 2026-09-19 | 3353b98 | — | .planning/quick/260918-dr5-the-topics-are-implemented-nicely-but-the-tab-scroll-feature |
 | 260918-dr3 | The same way calculators are grouped, these should also be grouped. | 2026-09-19 | 799e640 | — | .planning/quick/260918-dr3-the-same-way-calculators-are-grouped-these-should-also-be-gr |
 | 260918-dr6 | Rename Abdominal -> Abdominal Examination | 2026-09-19 | 205e394 | — | .planning/quick/260918-dr6-rename-abdominal-abdominal-examination |
+| 260918-dr4 | should be a list starting with 'IV Cannula' | 2026-09-19 | b379387 | — | .planning/quick/260918-dr4-should-be-a-list-starting-with-iv-cannula |
 
 Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL Editor output from 2026-09-16 shows all 31 named migration catalog checks and OVERALL passing; [the saved result](../scripts/output/verify_001_004_live_results.md) records that evidence. The agent did not connect directly to the deployed database. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
 
