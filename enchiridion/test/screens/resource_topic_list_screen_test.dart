@@ -195,4 +195,18 @@ void main() {
     );
     expect(find.byType(ComingSoonBadge), findsWidgets);
   });
+
+  testWidgets(
+      'real Surgical Instrumentation catalog card list renders Suture '
+      'Material, never the bare old name Sutures', (tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: ResourceTopicListScreen(
+        title: 'Surgical Instrumentation',
+        topics: kSurgicalInstrumentationTopics,
+      ),
+    ));
+
+    expect(find.text('Suture Material'), findsOneWidget);
+    expect(find.text('Sutures'), findsNothing);
+  });
 }
