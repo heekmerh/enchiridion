@@ -42,14 +42,27 @@
       "client_id": null,
       "description": "For the calculators all should be part of the list and those not yet implemented should be grayed out with a status of 'Coming Soon'. If their implementation can be found online then implement those and highlight those you cant find.",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dqx",
+        "260918-dqy"
+      ],
+      "planned_files": [
+        "enchiridion/lib/models/calculator_definition.dart",
+        "enchiridion/lib/screens/calculator_list_screen.dart",
+        "enchiridion/lib/screens/calculator_screen.dart",
+        "enchiridion/test/models/calculator_definition_test.dart",
+        "enchiridion/test/screens/calculator_list_screen_test.dart",
+        "enchiridion/test/screens/calculator_screen_test.dart",
+        "enchiridion/test/guards/available_before_coming_soon_guard_test.dart",
+        "enchiridion/test/guards/calculator_form_coverage_guard_test.dart",
+        ".planning/quick/260918-dqz-for-the-calculators-all-should-be-part-of-the-list-and-those/CALCULATOR-SOURCING.md"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 1,
       "commit": null,
       "failure_reason": null
     },
@@ -59,7 +72,13 @@
       "description": "Should be a list starting with 'Sutures' the same way we have a list in OSCE",
       "status": "pending",
       "depends_on": [],
-      "planned_files": [],
+      "planned_files": [
+        "enchiridion/lib/models/resource_topic.dart",
+        "enchiridion/lib/screens/resource_topic_list_screen.dart",
+        "enchiridion/lib/screens/library_screen.dart",
+        "enchiridion/test/screens/resource_topic_list_screen_test.dart",
+        "enchiridion/test/guards/surgical_instrumentation_source_fidelity_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
@@ -74,14 +93,20 @@
       "client_id": null,
       "description": "Change the topic name from 'Sutures' to 'Suture Material'",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dr0"
+      ],
+      "planned_files": [
+        "enchiridion/lib/models/resource_topic.dart",
+        "enchiridion/assets/data/resources/sutures.json",
+        "enchiridion/test/models/resource_topic_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 1,
       "commit": null,
       "failure_reason": null
     },
@@ -91,7 +116,13 @@
       "description": "It should be such that users can swipe sideways through the tabs of each topic",
       "status": "pending",
       "depends_on": [],
-      "planned_files": [],
+      "planned_files": [
+        "enchiridion/lib/widgets/common/subtopic_tabs.dart",
+        "enchiridion/lib/screens/osce_screen.dart",
+        "enchiridion/lib/screens/resource_topic_detail_screen.dart",
+        "enchiridion/test/widgets/subtopic_tabs_test.dart",
+        "enchiridion/test/screens/osce_screen_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
@@ -106,14 +137,23 @@
       "client_id": null,
       "description": "The same way calculators are grouped, these should also be grouped.",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dr0",
+        "260918-dr1"
+      ],
+      "planned_files": [
+        "enchiridion/lib/models/resource_topic.dart",
+        "enchiridion/lib/widgets/common/section_header.dart",
+        "enchiridion/lib/screens/resource_topic_list_screen.dart",
+        "enchiridion/test/screens/resource_topic_list_screen_grouping_test.dart",
+        "enchiridion/test/models/resource_topic_group_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 2,
       "commit": null,
       "failure_reason": null
     },
@@ -122,14 +162,23 @@
       "client_id": null,
       "description": "should be a list starting with 'IV Cannula'",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dr3",
+        "260918-dr0"
+      ],
+      "planned_files": [
+        "enchiridion/lib/utils/content_availability.dart",
+        "enchiridion/lib/models/resource_topic.dart",
+        "enchiridion/lib/screens/library_screen.dart",
+        "enchiridion/test/models/medical_instrumentation_display_order_test.dart",
+        "enchiridion/test/guards/available_before_coming_soon_guard_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 4,
       "commit": null,
       "failure_reason": null
     },
@@ -138,14 +187,21 @@
       "client_id": null,
       "description": "The topics are implemented nicely but the tab scroll feature is not for the topics, it is for the sub-topics within each topic. You already have access to the sub-topic outline for each topic. For Abdominal which is already implemented you can infer it.",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dr2"
+      ],
+      "planned_files": [
+        "enchiridion/lib/utils/osce_subtopics.dart",
+        "enchiridion/lib/screens/osce_screen.dart",
+        "enchiridion/test/utils/osce_subtopics_test.dart",
+        "enchiridion/test/screens/osce_screen_test.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 1,
       "commit": null,
       "failure_reason": null
     },
@@ -154,14 +210,19 @@
       "client_id": null,
       "description": "Rename Abdominal -> Abdominal Examination",
       "status": "pending",
-      "depends_on": [],
-      "planned_files": [],
+      "depends_on": [
+        "260918-dr5"
+      ],
+      "planned_files": [
+        "enchiridion/test/guards/osce_station_titles_guard_test.dart",
+        "enchiridion/lib/models/resource_topic.dart"
+      ],
       "directory": null,
       "worktree": null,
       "dispatched_worktree": null,
       "dispatched_branch": null,
       "dispatched_base": null,
-      "wave": 0,
+      "wave": 3,
       "commit": null,
       "failure_reason": null
     }
