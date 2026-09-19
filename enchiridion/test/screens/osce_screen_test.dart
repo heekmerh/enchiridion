@@ -114,7 +114,7 @@ void main() {
   });
 
   testWidgets(
-      'dragging the content area sideways advances the tab controller by one, and dragging back returns it',
+      'flinging the content area sideways advances the tab controller by one, and flinging back returns it',
       (tester) async {
     await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
 
@@ -122,15 +122,49 @@ void main() {
     await tester.tap(find.text(cardiovascular.title));
     await tester.pumpAndSettle();
 
-    final tabBarView = find.byType(TabBarView);
+    final content = find.byType(CustomScrollView);
 
-    await tester.drag(tabBarView, const Offset(-500, 0));
+    await tester.fling(content, const Offset(-500, 0), 1000);
     await tester.pumpAndSettle();
     expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
 
-    await tester.drag(tabBarView, const Offset(500, 0));
+    await tester.fling(content, const Offset(500, 0), 1000);
     await tester.pumpAndSettle();
     expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 0);
+  });
+
+  testWidgets(
+      'opening a content-less station (Cardiovascular System) scrolls continuously through its outline with no tab tap',
+      (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: OsceScreen()));
+
+    final cardiovascular = _topic('cardiovascular-system');
+    await tester.tap(find.text(cardiovascular.title));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(TabBar), findsOneWidget);
+    final lastEntry = cardiovascular.outline!.last;
+
+    await tester.scrollUntilVisible(
+      find.descendant(
+        of: find.byType(CustomScrollView),
+        matching: find.text(lastEntry),
+      ),
+      300,
+      scrollable: find.descendant(
+        of: find.byType(CustomScrollView),
+        matching: find.byType(Scrollable),
+      ),
+      maxScrolls: 200,
+    );
+
+    expect(
+      find.descendant(
+        of: find.byType(CustomScrollView),
+        matching: find.text(lastEntry),
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets(

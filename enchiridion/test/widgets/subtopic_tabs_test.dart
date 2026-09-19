@@ -97,33 +97,27 @@ Finder _contentScrollable() => find.descendant(
       matching: find.byType(Scrollable),
     );
 
-/// Scrolls [scrollable] until [heading] is visible, then aligns it to the
-/// top of the viewport (`Scrollable.ensureVisible`'s default alignment),
-/// so a scrollspy assertion can rely on the heading having actually crossed
-/// the activation line near the viewport's top edge.
-Future<void> _scrollHeadingToTop(
+/// Drags [scrollable] downward in small, real-drag-sized steps — each
+/// naturally frame-synced, unlike `scrollUntilVisible`'s internal
+/// zero-duration `Scrollable.ensureVisible` jump, whose scroll-position
+/// notification fires before the resulting layout is built and so leaves
+/// the scrollspy reading stale render box positions — until the `TabBar`
+/// controller reaches [targetIndex].
+Future<void> _dragUntilTabIndex(
   WidgetTester tester,
   Finder scrollable,
-  Finder heading,
-) async {
-  await tester.scrollUntilVisible(
-    heading,
-    300,
-    scrollable: scrollable,
-    maxScrolls: 200,
-  );
-  await tester.pump();
-  // `scrollUntilVisible`'s final internal `Scrollable.ensureVisible` jumps
-  // (zero-duration) rather than animates, so its scroll-position listener
-  // notification fires synchronously — before the resulting layout has been
-  // computed — leaving the scrollspy reading one-frame-stale render box
-  // positions. A small following drag (past touch slop, then reversed to
-  // net back to the same position) forces a fresh scroll notification once
-  // the jumped-to layout has actually been built.
-  await tester.drag(scrollable, const Offset(0, -40));
-  await tester.pump();
-  await tester.drag(scrollable, const Offset(0, 40));
-  await tester.pump();
+  int targetIndex, {
+  int maxDrags = 100,
+}) async {
+  int currentIndex() =>
+      tester.widget<TabBar>(find.byType(TabBar)).controller!.index;
+  for (var i = 0; i < maxDrags; i++) {
+    if (currentIndex() == targetIndex) return;
+    await tester.drag(scrollable, const Offset(0, -150));
+    await tester.pump();
+  }
+  fail('Tab controller never reached index $targetIndex (stuck at '
+      '${currentIndex()})');
 }
 
 void main() {
@@ -247,7 +241,7 @@ void main() {
 
   group('SubtopicTabsView', () {
     testWidgets(
-        'a topic with no content and a 4-entry outline shows a TabBar with 4 labels, swipeable by drag',
+        'a topic with no content and a 4-entry outline shows a TabBar with 4 labels; a leftward fling advances the tab',
         (tester) async {
       const topic = ResourceTopic(
         id: 'topic-id',
@@ -260,6 +254,7 @@ void main() {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(body: SubtopicTabsView(topic: topic)),
       ));
+      await tester.pump();
 
       expect(find.byType(TabBar), findsOneWidget);
       final tabBar = tester.widget<TabBar>(find.byType(TabBar));
@@ -269,7 +264,11 @@ void main() {
       );
       expect(tabBar.controller!.index, 0);
 
-      await tester.drag(find.byType(TabBarView), const Offset(-500, 0));
+      await tester.fling(
+        find.byType(CustomScrollView),
+        const Offset(-500, 0),
+        1000,
+      );
       await tester.pumpAndSettle();
       expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
     });
@@ -361,11 +360,7 @@ void main() {
           .pumpWidget(wrap(SubtopicTabsView(topic: _topic, chapter: chapter)));
       await tester.pump();
 
-      await _scrollHeadingToTop(
-        tester,
-        _contentScrollable(),
-        _inContent(find.text('Sub Three')),
-      );
+      await _dragUntilTabIndex(tester, _contentScrollable(), 2);
 
       expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 2);
     });
@@ -419,6 +414,121 @@ void main() {
       );
 
       expect(_inContent(find.text('Sub Four')), findsOneWidget);
+    });
+  });
+
+  group('SubtopicTabsView outline-only continuous scroll and fling', () {
+    const outlineTopic = ResourceTopic(
+      id: 'outline-topic-id',
+      title: 'Outline Topic',
+      categoryTitle: 'Test',
+      heroAssetPath: 'assets/resources/osce.jpeg',
+      outline: ['One', 'Two', 'Three', 'Four'],
+    );
+
+    testWidgets(
+        'scrolling down without tapping a tab reaches the fourth outline entry',
+        (tester) async {
+      await tester.pumpWidget(const MaterialApp(
+        home: Scaffold(
+          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+        ),
+      ));
+      await tester.pump();
+
+      await tester.scrollUntilVisible(
+        _inContent(find.text('Four')),
+        300,
+        scrollable: _contentScrollable(),
+        maxScrolls: 200,
+      );
+
+      expect(_inContent(find.text('Four')), findsOneWidget);
+    });
+
+    testWidgets(
+        'scrolling the third outline entry to the top moves the tab controller to index 2 with no tap',
+        (tester) async {
+      await tester.pumpWidget(const MaterialApp(
+        home: Scaffold(
+          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+        ),
+      ));
+      await tester.pump();
+
+      await _dragUntilTabIndex(tester, _contentScrollable(), 2, maxDrags: 20);
+
+      expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 2);
+      expect(_inContent(find.text('Three')), findsOneWidget);
+    });
+
+    testWidgets(
+        'a leftward fling advances the controller index by one and settles with the next entry in view',
+        (tester) async {
+      await tester.pumpWidget(const MaterialApp(
+        home: Scaffold(
+          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+        ),
+      ));
+      await tester.pump();
+
+      await tester.fling(
+        find.byType(CustomScrollView),
+        const Offset(-500, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+
+      expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
+      expect(_inContent(find.text('Two')), findsOneWidget);
+    });
+
+    testWidgets(
+        'a rightward fling returns to the previous entry, index and content together',
+        (tester) async {
+      await tester.pumpWidget(const MaterialApp(
+        home: Scaffold(
+          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+        ),
+      ));
+      await tester.pump();
+
+      await tester.fling(
+        find.byType(CustomScrollView),
+        const Offset(-500, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+      expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
+
+      await tester.fling(
+        find.byType(CustomScrollView),
+        const Offset(500, 0),
+        1000,
+      );
+      await tester.pumpAndSettle();
+
+      expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 0);
+      expect(_inContent(find.text('One')), findsOneWidget);
+    });
+
+    testWidgets(
+        'a vertical drag still scrolls the content and leaves the fling handler inert',
+        (tester) async {
+      await tester.pumpWidget(const MaterialApp(
+        home: Scaffold(
+          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+        ),
+      ));
+      await tester.pump();
+
+      // The drag is purely vertical, so it should move the content
+      // (scrollspy advances past the first entry) rather than being
+      // swallowed by the horizontal fling recognizer sitting alongside it.
+      await _dragUntilTabIndex(tester, find.byType(CustomScrollView), 1);
+
+      expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
+      expect(_inContent(find.text('One')), findsNothing);
     });
   });
 }

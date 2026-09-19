@@ -516,6 +516,29 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     ];
   }
 
+  // Restores sibling 260918-dr2's sideways swipe on top of the one scroll
+  // view: a fling past this velocity threshold moves one sub-topic forward
+  // or back through the exact same scroll path a tab tap uses (clamped at
+  // both ends), rather than paging a separate widget. A horizontal
+  // GestureDetector recognizer does not contend with the vertical
+  // scrollable's own drag arena, so ordinary vertical reading is
+  // unaffected — the old warning against wrapping this content in a
+  // gesture detector was about the former per-tab pager, whose own
+  // recognizer was horizontal; that hazard left with it.
+  static const double _flingVelocityThreshold = 300;
+
+  void _handleHorizontalDragEnd(DragEndDetails details) {
+    final velocity = details.primaryVelocity ?? 0;
+    if (velocity.abs() < _flingVelocityThreshold) return;
+    // A leftward fling (negative velocity) reveals sub-topics further
+    // along, i.e. moves forward; a rightward fling moves back.
+    final direction = velocity < 0 ? 1 : -1;
+    final target = (_controller.index + direction).clamp(0, _tabs.length - 1);
+    if (target == _controller.index) return;
+    _controller.animateTo(target);
+    _scrollToTab(target);
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_tabs.length <= 1) {
@@ -526,43 +549,22 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
       );
     }
 
-    if (widget.chapter != null) {
-      return Column(
-        children: [
-          TabBar(
-            controller: _controller,
-            isScrollable: true,
-            onTap: _scrollToTab,
-            tabs: [for (final tab in _tabs) Tab(text: tab.title)],
-          ),
-          Expanded(
-            child: CustomScrollView(
-              key: _scrollViewKey,
-              controller: _autoScrollController,
-              slivers: _buildContentSlivers(context),
-            ),
-          ),
-        ],
-      );
-    }
-
-    // TODO(260919-kiw Task 2): the outline-only (no content JSON yet) path
-    // still pages through the former per-tab pager here; the next task in
-    // this plan unifies it onto the one-scroll-view design above.
     return Column(
       children: [
         TabBar(
           controller: _controller,
           isScrollable: true,
+          onTap: _scrollToTab,
           tabs: [for (final tab in _tabs) Tab(text: tab.title)],
         ),
         Expanded(
-          child: TabBarView(
-            controller: _controller,
-            children: [
-              for (final tab in _tabs)
-                _ComingSoonSubtopicBody(topic: widget.topic, label: tab.title),
-            ],
+          child: GestureDetector(
+            onHorizontalDragEnd: _handleHorizontalDragEnd,
+            child: CustomScrollView(
+              key: _scrollViewKey,
+              controller: _autoScrollController,
+              slivers: _buildContentSlivers(context),
+            ),
           ),
         ),
       ],
