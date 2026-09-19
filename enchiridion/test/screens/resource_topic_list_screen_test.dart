@@ -148,4 +148,51 @@ void main() {
     expect(find.byType(ResourceTopicDetailScreen), findsNothing);
     expect(find.byType(SnackBar), findsOneWidget);
   });
+
+  test(
+      'kSurgicalInstrumentationTopics has 85 unique entries with exactly one hasContent',
+      () {
+    expect(kSurgicalInstrumentationTopics.length, 85);
+    expect(
+      kSurgicalInstrumentationTopics.first.id,
+      'sutures',
+    );
+    expect(
+      kSurgicalInstrumentationTopics.first.dataAssetPath,
+      'assets/data/resources/sutures.json',
+    );
+
+    final ids = kSurgicalInstrumentationTopics.map((t) => t.id).toList();
+    expect(ids.toSet().length, ids.length, reason: 'ids must be unique');
+
+    final withContent =
+        kSurgicalInstrumentationTopics.where((t) => t.hasContent).toList();
+    expect(withContent, hasLength(1));
+    expect(
+      kSurgicalInstrumentationTopics.where((t) => t.isComingSoon).length,
+      84,
+    );
+  });
+
+  testWidgets(
+      'real Surgical Instrumentation catalog in dense mode puts sutures first with a badge present',
+      (tester) async {
+    final suture =
+        kSurgicalInstrumentationTopics.firstWhere((t) => t.id == 'sutures');
+
+    await tester.pumpWidget(MaterialApp(
+      home: ResourceTopicListScreen(
+        title: 'Surgical Instrumentation',
+        topics: kSurgicalInstrumentationTopics,
+        dense: true,
+      ),
+    ));
+
+    final firstTileFinder = find.byType(ListTile).first;
+    expect(
+      find.descendant(of: firstTileFinder, matching: find.text(suture.title)),
+      findsOneWidget,
+    );
+    expect(find.byType(ComingSoonBadge), findsWidgets);
+  });
 }
