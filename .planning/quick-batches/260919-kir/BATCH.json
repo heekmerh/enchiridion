@@ -1,0 +1,194 @@
+{
+  "schema_version": 1,
+  "batch_id": "260919-kir",
+  "created_at": "2026-09-19T13:46:30.896Z",
+  "options": {},
+  "base_revision": "7662dc01adfba2888d81a523430da220f1262f8e",
+  "items": [
+    {
+      "quick_id": "260919-kis",
+      "client_id": null,
+      "description": "Exam Prep: after a user answers a question, remove the automatic timed advance to the next question; require an explicit user action (e.g. tapping Next) to advance, so there is time to read the explanation.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/test/screens/question_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "9ac673f",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kit",
+      "client_id": null,
+      "description": "Exam Prep: there is no \"Quick Check\" concept anymore, users simply take a mock exam; find and update any remaining \"Quick Check\" messaging/copy in the exam prep flow to reflect that it is a mock exam.",
+      "status": "complete",
+      "depends_on": [
+        "260919-kiu",
+        "260919-kiv"
+      ],
+      "planned_files": [
+        "enchiridion/lib/screens/exam_prep_home_screen.dart",
+        "enchiridion/lib/widgets/exam_prep/quick_check_card.dart",
+        "enchiridion/lib/services/notification_service.dart",
+        "enchiridion/lib/services/bubble_alarm_callback.dart",
+        "enchiridion/test/screens/exam_prep_home_screen_test.dart",
+        "enchiridion/test/guards/retired_quick_check_copy_guard_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 3,
+      "commit": "92c9de1",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kiu",
+      "client_id": null,
+      "description": "Exam Prep: fix the answered-questions counter bug where a user who answered 4 questions sees the dashboard report only 2 answered; find and correct the underlying tracking/counting logic.",
+      "status": "complete",
+      "depends_on": [
+        "260919-kis"
+      ],
+      "planned_files": [
+        "enchiridion/lib/services/study_stats_service.dart",
+        "enchiridion/lib/providers/study_stats_provider.dart",
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/widgets/exam_prep/quick_check_card.dart",
+        "enchiridion/lib/screens/answered_questions_screen.dart",
+        "enchiridion/test/screens/question_screen_test.dart",
+        "enchiridion/test/providers/study_stats_provider_test.dart",
+        "enchiridion/test/services/study_stats_service_test.dart",
+        "enchiridion/test/screens/exam_prep_home_screen_stats_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 1,
+      "commit": "d6c4e08",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kiv",
+      "client_id": null,
+      "description": "Exam Prep: fix answer-option shuffling so that when options are scrambled the A/B/C/D labels are reassigned to the new shuffled positions rather than moving along with their original option text, which currently defeats the purpose of the shuffle.",
+      "status": "complete",
+      "depends_on": [
+        "260919-kis",
+        "260919-kiu"
+      ],
+      "planned_files": [
+        "enchiridion/lib/models/question.dart",
+        "enchiridion/lib/screens/question_screen.dart",
+        "enchiridion/lib/widgets/exam_prep/quick_check_card.dart",
+        "enchiridion/test/models/question_test.dart",
+        "enchiridion/test/screens/question_screen_test.dart",
+        "enchiridion/test/widgets/quick_check_card_test.dart",
+        "enchiridion/test/guards/option_label_position_guard_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 2,
+      "commit": "ce1da1f",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kiw",
+      "client_id": null,
+      "description": "Surgical and Medical Instrumentation and OSCE: make module content scrolling continuous across all sections/subtopics instead of halting at tab boundaries, auto-advancing the active tab/section indicator as the user scrolls through (scrollspy behavior), removing the abrupt halt that requires manually switching tabs to keep reading.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/widgets/common/subtopic_tabs.dart",
+        "enchiridion/test/widgets/subtopic_tabs_test.dart",
+        "enchiridion/test/screens/osce_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "5b2c572",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kix",
+      "client_id": null,
+      "description": "Content extraction: re-extract scripts/content/IV_Cannula_instrumentation.docx so that \"Advantages\", \"Disadvantages\", \"Precautions\", \"Complications\" are treated as subtopic headers rather than as individual content items in the IV Cannula module.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/generate_resource_content.py",
+        "scripts/tests/test_generate_resource_content.py",
+        "enchiridion/assets/data/resources/iv_cannula.json"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "8a584b2",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kiy",
+      "client_id": null,
+      "description": "Medical Instrumentation: display Medical Instrumentation modules as a list, matching the existing Surgical Instrumentation list UI/pattern.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "enchiridion/lib/screens/library_screen.dart",
+        "enchiridion/lib/screens/resource_topic_list_screen.dart",
+        "enchiridion/test/screens/library_screen_test.dart",
+        "enchiridion/test/screens/resource_topic_list_screen_grouping_test.dart",
+        "enchiridion/test/models/medical_instrumentation_display_order_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "ba95178",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260919-kiz",
+      "client_id": null,
+      "description": "Library: stop dimming/graying out library book cover tiles since they are colourful cover images; restore the prior behavior where book cover tiles are shown at full color while other tile types may still dim as before.",
+      "status": "complete",
+      "depends_on": [
+        "260919-kiy"
+      ],
+      "planned_files": [
+        "enchiridion/lib/widgets/common/coming_soon.dart",
+        "enchiridion/lib/screens/library_screen.dart",
+        "enchiridion/test/widgets/coming_soon_test.dart",
+        "enchiridion/test/screens/library_screen_test.dart"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 1,
+      "commit": "23e45fc",
+      "failure_reason": null
+    }
+  ]
+}
