@@ -444,17 +444,14 @@ class _BookPage extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          // Full-screen cover image — desaturated when not yet available.
-          ComingSoonDim(
-            dimmed: book.isComingSoon,
-            child: Image.asset(
-              book.assetPath,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => Container(
-                color: cs.primaryContainer,
-                child: Icon(Icons.menu_book_rounded,
-                    size: 80, color: cs.onPrimaryContainer),
-              ),
+          // Full-colour full-bleed cover art.
+          Image.asset(
+            book.assetPath,
+            fit: BoxFit.cover,
+            errorBuilder: (_, __, ___) => Container(
+              color: cs.primaryContainer,
+              child: Icon(Icons.menu_book_rounded,
+                  size: 80, color: cs.onPrimaryContainer),
             ),
           ),
           // Gradient overlay so text is readable at the bottom
@@ -471,6 +468,7 @@ class _BookPage extends StatelessWidget {
               ),
             ),
           ),
+          if (book.isComingSoon) const ComingSoonScrim(),
           // Bottom text
           Positioned(
             left: 20,

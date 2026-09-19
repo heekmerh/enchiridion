@@ -324,6 +324,50 @@ void main() {
 
       expect(find.byType(ComingSoonBadge), findsOneWidget);
     });
+
+    testWidgets('readable book cover renders with no scrim', (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      // Page 0 is paediatrics, the only readable book.
+      expect(find.byType(ComingSoonScrim), findsNothing);
+    });
+
+    testWidgets('placeholder cover stays full colour under a scrim',
+        (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      await tester.fling(
+        find.byType(PageView).first,
+        const Offset(0, -400),
+        800,
+      );
+      await tester.pumpAndSettle();
+
+      final coverFinder = find.byWidgetPredicate(
+        (w) =>
+            w is Image &&
+            w.image is AssetImage &&
+            (w.image as AssetImage).assetName ==
+                'assets/books/Internal Medicine.jpeg',
+      );
+      expect(coverFinder, findsOneWidget);
+      expect(
+        find.ancestor(
+            of: coverFinder, matching: find.byType(ColorFiltered)),
+        findsNothing,
+        reason: 'Library covers must not desaturate',
+      );
+      expect(
+        find.ancestor(
+            of: coverFinder, matching: find.byType(ComingSoonDim)),
+        findsNothing,
+        reason: 'Library covers must not use the desaturating wrapper',
+      );
+      expect(find.byType(ComingSoonScrim), findsOneWidget);
+      expect(find.byType(ComingSoonBadge), findsOneWidget);
+    });
   });
 
   group('LibraryScreen — book options sheet', () {

@@ -1,12 +1,19 @@
 /// App-wide "not yet available" presentation rule: the shared label, muted
-/// text/icon alphas, badge, and desaturation wrapper every not-yet-available
-/// topic, book, or resource row in the app renders through.
+/// text/icon alphas, badge, and the two dimming treatments (desaturating
+/// wrapper for small thumbnails, dark scrim for full-bleed artwork) every
+/// not-yet-available topic, book, or resource row in the app renders through.
 ///
 /// Consumers wired to this module: `osce_screen.dart` (station list),
-/// `resource_topic_list_screen.dart` (topic cards), `library_screen.dart`
-/// (book shelf pages), and `calculator_list_screen.dart` (calculator list).
+/// `resource_topic_list_screen.dart` (topic cards, desaturating wrapper),
+/// `library_screen.dart` (book shelf pages, dark scrim), and
+/// `calculator_list_screen.dart` (calculator list).
 /// Any new topic or resource list should route through this module rather
 /// than restyling locally.
+///
+/// Choosing rule: artwork-forward tiles whose image IS the content
+/// (full-bleed book covers) darken under [ComingSoonScrim] and keep their
+/// colour; icon/text rows and small thumbnails inside text cards keep using
+/// the desaturating [ComingSoonDim] wrapper.
 ///
 /// `calculator_list_screen.dart` consumes this module for genuinely unbuilt
 /// calculators (no working form exists yet), while keeping the freemium
@@ -36,6 +43,10 @@ abstract final class ComingSoonStyle {
   static const double bodyAlpha = 0.35;
   static const double iconAlpha = 0.4;
   static const double imageOpacity = 0.45;
+
+  /// Translucent black veil for full-bleed colourful artwork (Library book
+  /// covers). Matches the shelf's pre-regression scrim.
+  static const double scrimAlpha = 0.35;
 
   static Color title(ColorScheme cs) =>
       cs.onSurface.withValues(alpha: titleAlpha);
@@ -93,8 +104,10 @@ class ComingSoonBadge extends StatelessWidget {
 
 /// Desaturates [child] when [dimmed] is true; a no-op otherwise.
 ///
-/// Used to gray out hero images and cover art so an unavailable card reads
-/// as gray even though its artwork is colorful.
+/// Used to gray out small hero thumbnails inside text cards so an
+/// unavailable card reads as gray even though its artwork is colorful.
+/// For full-bleed colourful artwork whose image IS the content (Library
+/// book covers), use [ComingSoonScrim] instead so the art keeps its colour.
 class ComingSoonDim extends StatelessWidget {
   final Widget child;
   final bool dimmed;
@@ -121,6 +134,23 @@ class ComingSoonDim extends StatelessWidget {
         ]),
         child: child,
       ),
+    );
+  }
+}
+
+/// Darkens full-bleed colourful artwork without desaturating it.
+///
+/// The treatment for artwork-forward tiles whose image IS the content
+/// (Library book covers): darkens under a translucent black veil and keeps
+/// full colour. Icon/text rows and small thumbnails inside text cards keep
+/// using the desaturating [ComingSoonDim] wrapper instead.
+class ComingSoonScrim extends StatelessWidget {
+  const ComingSoonScrim({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ColoredBox(
+      color: Colors.black.withValues(alpha: ComingSoonStyle.scrimAlpha),
     );
   }
 }

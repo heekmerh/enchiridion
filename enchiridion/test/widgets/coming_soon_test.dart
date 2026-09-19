@@ -78,4 +78,26 @@ void main() {
       expect(ComingSoonStyle.bodyAlpha < ComingSoonStyle.titleAlpha, isTrue);
     });
   });
+
+  group('ComingSoonScrim', () {
+    test('scrimAlpha restores the pre-regression 0.35 veil', () {
+      expect(ComingSoonStyle.scrimAlpha, 0.35);
+    });
+
+    testWidgets('renders the 0.35 black veil', (tester) async {
+      await tester.pumpWidget(wrap(const ComingSoonScrim()));
+      final box = tester.widget<ColoredBox>(find.descendant(
+        of: find.byType(ComingSoonScrim),
+        matching: find.byType(ColoredBox),
+      ));
+      expect(box.color, Colors.black.withValues(alpha: 0.35));
+    });
+
+    testWidgets('darkens without desaturating', (tester) async {
+      await tester.pumpWidget(wrap(const ComingSoonScrim()));
+      expect(find.byType(ColorFiltered), findsNothing);
+      expect(find.byType(Opacity), findsNothing);
+      expect(find.byType(AnimatedContainer), findsNothing);
+    });
+  });
 }
