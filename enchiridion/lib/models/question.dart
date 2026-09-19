@@ -62,6 +62,16 @@ class Question {
     return keys;
   }
 
+  /// Display letter for a rendered option slot.
+  ///
+  /// The letter belongs to the rendered slot, not to the option — a
+  /// shuffled repeat must reassign A/B/C by position so the letter cannot
+  /// be memorized alongside the option text.
+  static String displayLabel(int position) {
+    assert(position >= 0 && position < 26);
+    return String.fromCharCode(0x41 + position);
+  }
+
   /// A list-row preview of [questionText], up to [maxLength] characters.
   ///
   /// Takes the *end* of the stem rather than the start: these are clinical

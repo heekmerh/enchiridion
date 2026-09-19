@@ -122,7 +122,8 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
                 ),
               ),
               const SizedBox(height: 14),
-              ..._optionOrder.map((option) {
+              ..._optionOrder.asMap().entries.map((entry) {
+                final option = entry.value;
                 final selected = _selectedOption == option;
                 final isCorrect = option == widget.question.correctOption;
                 return Padding(
@@ -166,7 +167,7 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
                             radius: 14,
                             backgroundColor: cs.surfaceContainerHighest,
                             child: Text(
-                              option.toUpperCase(),
+                              Question.displayLabel(entry.key),
                               style: theme.textTheme.labelMedium?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),

@@ -12,6 +12,20 @@ Question _question(String text) => Question(
     );
 
 void main() {
+  group('Question.displayLabel', () {
+    test('maps positions to capital letters', () {
+      expect(Question.displayLabel(0), 'A');
+      expect(Question.displayLabel(1), 'B');
+      expect(Question.displayLabel(2), 'C');
+      expect(Question.displayLabel(3), 'D');
+    });
+
+    test('rejects out-of-range positions', () {
+      expect(() => Question.displayLabel(-1), throwsA(isA<AssertionError>()));
+      expect(() => Question.displayLabel(26), throwsA(isA<AssertionError>()));
+    });
+  });
+
   group('Question.previewText', () {
     test('flattens multiline stems into one line', () {
       final question =

@@ -258,16 +258,20 @@ class _QuestionScreenState extends State<QuestionScreen> {
           const SizedBox(height: 20),
 
           // Options
-          ...options.map((opt) => _OptionTile(
-                option: opt,
-                text: q.optionText(opt),
-                selected: _selectedOption == opt,
-                submitted: _submitted,
-                isCorrect: opt == q.correctOption.toLowerCase(),
-                onTap: _submitted
-                    ? null
-                    : () => setState(() => _selectedOption = opt),
-              )),
+          ...options.asMap().entries.map((entry) {
+            final option = entry.value;
+            return _OptionTile(
+              label: Question.displayLabel(entry.key),
+              option: option,
+              text: q.optionText(option),
+              selected: _selectedOption == option,
+              submitted: _submitted,
+              isCorrect: option == q.correctOption.toLowerCase(),
+              onTap: _submitted
+                  ? null
+                  : () => setState(() => _selectedOption = option),
+            );
+          }),
 
           const SizedBox(height: 16),
 
@@ -389,6 +393,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 }
 
 class _OptionTile extends StatelessWidget {
+  final String label;
   final String option;
   final String text;
   final bool selected;
@@ -397,6 +402,7 @@ class _OptionTile extends StatelessWidget {
   final VoidCallback? onTap;
 
   const _OptionTile({
+    required this.label,
     required this.option,
     required this.text,
     required this.selected,
@@ -444,7 +450,7 @@ class _OptionTile extends StatelessWidget {
                 radius: 14,
                 backgroundColor: borderColor.withValues(alpha: 0.2),
                 child: Text(
-                  option.toUpperCase(),
+                  label,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 13,

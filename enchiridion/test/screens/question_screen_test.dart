@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
@@ -49,6 +51,7 @@ Widget _buildSubject(
   List<NavigatorObserver> navigatorObservers = const [],
   StudyStatsProvider? statsProvider,
   Key? screenKey,
+  int? optionSeed,
 }) {
   return MultiProvider(
     providers: [
@@ -71,6 +74,7 @@ Widget _buildSubject(
         onAnswered: onAnswered ?? (_) {},
         onRequestNext: onRequestNext,
         trackDailyStudyStats: trackDailyStudyStats,
+        optionSeed: optionSeed,
       ),
     ),
   );
@@ -429,6 +433,74 @@ void main() {
         await tester.pump(const Duration(seconds: 30));
 
         expect(tester.takeException(), isNull);
+      },
+    );
+  });
+
+  group('shuffled option labels', () {
+    testWidgets(
+      'a permuted option order still renders letters A, B, C top to bottom',
+      (tester) async {
+        const seed = 0;
+        final expectedKeys = ['a', 'b', 'c']..shuffle(Random(seed));
+        expect(
+          expectedKeys,
+          isNot(orderedEquals(['a', 'b', 'c'])),
+          reason: 'a seed that leaves the order untouched makes the test vacuous',
+        );
+
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          optionSeed: seed,
+        ));
+        await tester.pumpAndSettle();
+
+        const texts = {'a': '3', 'b': '4', 'c': '5'};
+        final expectedTexts =
+            expectedKeys.map((k) => texts[k]!).toList();
+
+        final optionTexts = tester
+            .widgetList<Text>(find.byWidgetPredicate(
+              (w) =>
+                  w is Text &&
+                  w.data != null &&
+                  texts.values.contains(w.data),
+            ))
+            .map((w) => w.data!)
+            .toList();
+        expect(optionTexts, orderedEquals(expectedTexts));
+
+        final letters = tester
+            .widgetList<Text>(find.descendant(
+              of: find.byType(CircleAvatar),
+              matching: find.byType(Text),
+            ))
+            .map((w) => w.data!)
+            .toList();
+        expect(letters, orderedEquals(['A', 'B', 'C']));
+      },
+    );
+
+    testWidgets(
+      'the row carrying the correct text still scores correct after a permutation',
+      (tester) async {
+        UserAnswer? reported;
+        await tester.pumpWidget(_buildSubject(
+          storageService,
+          readOnly: false,
+          optionSeed: 0,
+          onAnswered: (answer) => reported = answer,
+        ));
+        await tester.pumpAndSettle();
+
+        await tester.tap(find.text('4'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Submit'));
+        await tester.pumpAndSettle();
+
+        expect(reported?.isCorrect, isTrue);
+        expect(find.text('Correct!'), findsOneWidget);
       },
     );
   });
