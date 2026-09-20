@@ -1,3 +1,5 @@
+import 'exam_module.dart';
+
 class Question {
   final String id;
   final String? bookId;
@@ -10,6 +12,10 @@ class Question {
   final int questionNumber;
   final String? topic;
 
+  /// Exam module this question belongs to (`plab`, `usmle`, …). Banks
+  /// authored before modules existed carry no value and default to PLAB.
+  final String module;
+
   const Question({
     required this.id,
     this.bookId,
@@ -21,6 +27,7 @@ class Question {
     this.osceTip,
     required this.questionNumber,
     this.topic,
+    this.module = kPlabModuleId,
   });
 
   factory Question.fromJson(Map<String, dynamic> json) {
@@ -50,6 +57,7 @@ class Question {
       osceTip: json['osce_tip'] as String?,
       questionNumber: json['question_number'] as int,
       topic: json['topic'] as String?,
+      module: json['module'] as String? ?? kPlabModuleId,
     );
   }
 
@@ -100,6 +108,7 @@ class Question {
         'osce_tip': osceTip,
         'question_number': questionNumber,
         'topic': topic,
+        'module': module,
       };
 }
 

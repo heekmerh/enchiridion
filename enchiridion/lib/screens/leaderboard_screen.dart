@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../models/exam_module.dart';
 import '../models/leaderboard_entry.dart';
 import '../services/leaderboard_service.dart';
 import '../utils/bottom_inset.dart';
 
+/// Leaderboard with an aggregated cross-module board plus one tab per
+/// available exam module (PLAB today). Coming-soon modules have no data and
+/// get no tab.
 class LeaderboardScreen extends StatefulWidget {
-  const LeaderboardScreen({super.key});
+  /// Module tab to open on. Null (or an unavailable module) opens Overall.
+  final String? initialModule;
+
+  const LeaderboardScreen({super.key, this.initialModule});
 
   @override
   State<LeaderboardScreen> createState() => _LeaderboardScreenState();
@@ -14,18 +21,46 @@ class LeaderboardScreen extends StatefulWidget {
 class _LeaderboardScreenState extends State<LeaderboardScreen> {
   static const _limit = 20;
 
+  /// Tabs: Overall first, then one per available module.
+  late final List<_BoardTab> _tabs;
+  late int _tabIndex;
   late Future<List<LeaderboardEntry>> _future;
 
   @override
   void initState() {
     super.initState();
-    _future = LeaderboardService().fetch(limit: _limit);
+    _tabs = [
+      const _BoardTab(label: 'Overall', moduleId: null),
+      for (final module in kExamModules)
+        if (module.isAvailable)
+          _BoardTab(label: module.label, moduleId: module.id),
+    ];
+    final initial = widget.initialModule;
+    _tabIndex = _tabs.indexWhere((tab) => tab.moduleId == initial);
+    if (_tabIndex < 0) _tabIndex = 0;
+    _future = _load(_tabs[_tabIndex]);
+  }
+
+  Future<List<LeaderboardEntry>> _load(_BoardTab tab) {
+    final moduleId = tab.moduleId;
+    if (moduleId == null) {
+      return LeaderboardService().fetch(limit: _limit);
+    }
+    return LeaderboardService().fetchForModule(moduleId, limit: _limit);
   }
 
   Future<void> _refresh() async {
-    final next = LeaderboardService().fetch(limit: _limit);
+    final next = _load(_tabs[_tabIndex]);
     setState(() => _future = next);
     await next;
+  }
+
+  void _selectTab(int index) {
+    if (index == _tabIndex) return;
+    setState(() {
+      _tabIndex = index;
+      _future = _load(_tabs[index]);
+    });
   }
 
   @override
@@ -35,10 +70,26 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Leaderboard')),
-      body: RefreshIndicator(
-        onRefresh: _refresh,
-        child: FutureBuilder<List<LeaderboardEntry>>(
-          future: _future,
+      body: Column(
+        children: [
+          if (_tabs.length > 1)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+              child: SegmentedButton<int>(
+                segments: [
+                  for (var i = 0; i < _tabs.length; i++)
+                    ButtonSegment(value: i, label: Text(_tabs[i].label)),
+                ],
+                selected: {_tabIndex},
+                onSelectionChanged: (selection) =>
+                    _selectTab(selection.first),
+              ),
+            ),
+          Expanded(
+            child: RefreshIndicator(
+              onRefresh: _refresh,
+              child: FutureBuilder<List<LeaderboardEntry>>(
+                future: _future,
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
               return const Center(child: CircularProgressIndicator());
@@ -84,8 +135,18 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
           },
         ),
       ),
+            ),
+          ],
+      ),
     );
   }
+}
+
+class _BoardTab {
+  final String label;
+  final String? moduleId;
+
+  const _BoardTab({required this.label, this.moduleId});
 }
 
 class _LeaderboardRow extends StatelessWidget {

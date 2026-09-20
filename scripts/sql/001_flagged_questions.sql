@@ -3,7 +3,7 @@
 -- =============================================================================
 -- Written by lib/services/question_flag_service.dart when a user taps
 -- "Flag this question" on QuestionScreen. `scope` matches daily_study_stats
--- and question_reviews: 'exam_prep' (kStandaloneExamPrepScope) or a book id.
+-- and question_reviews: 'exam_prep_plab' (kStandaloneExamPrepScope) or a book id.
 --
 -- There is no in-app admin surface (and no outbound email/Slack integration
 -- configured anywhere in this project) to notify maintainers automatically —
@@ -17,7 +17,7 @@
 create table if not exists public.flagged_questions (
   id          uuid primary key default gen_random_uuid(),
   user_id     uuid not null references auth.users(id) on delete cascade,
-  scope       text not null default 'exam_prep',
+  scope       text not null default 'exam_prep_plab',
   question_id text not null,
   reason      text not null,
   status      text not null default 'open' check (status in ('open', 'reviewed', 'dismissed')),

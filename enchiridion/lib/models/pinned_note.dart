@@ -18,6 +18,10 @@ class PinnedNote {
   final String? collectionId;
   final DateTime createdAt;
 
+  /// Last content/collection edit. Defaults to [createdAt] for notes written
+  /// before this field existed; drives last-write-wins cross-device sync.
+  final DateTime updatedAt;
+
   const PinnedNote({
     required this.id,
     required this.bookId,
@@ -27,9 +31,13 @@ class PinnedNote {
     required this.content,
     this.collectionId,
     required this.createdAt,
-  });
+    DateTime? updatedAt,
+  }) : updatedAt = updatedAt ?? createdAt;
 
   factory PinnedNote.fromJson(Map<String, dynamic> json) {
+    final createdAt =
+        DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
+            DateTime.fromMillisecondsSinceEpoch(0);
     return PinnedNote(
       id: json['id']?.toString() ?? '',
       bookId: json['bookId']?.toString() ?? '',
@@ -38,8 +46,9 @@ class PinnedNote {
       side: json['side'] == 'right' ? NoteSide.right : NoteSide.left,
       content: json['content']?.toString() ?? '',
       collectionId: json['collectionId']?.toString(),
-      createdAt: DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
-          DateTime.fromMillisecondsSinceEpoch(0),
+      createdAt: createdAt,
+      updatedAt:
+          DateTime.tryParse(json['updatedAt']?.toString() ?? '') ?? createdAt,
     );
   }
 
@@ -52,12 +61,14 @@ class PinnedNote {
         'content': content,
         'collectionId': collectionId,
         'createdAt': createdAt.toIso8601String(),
+        'updatedAt': updatedAt.toIso8601String(),
       };
 
   PinnedNote copyWith({
     String? content,
     String? collectionId,
     bool clearCollection = false,
+    DateTime? updatedAt,
   }) {
     return PinnedNote(
       id: id,
@@ -68,6 +79,7 @@ class PinnedNote {
       content: content ?? this.content,
       collectionId: clearCollection ? null : collectionId ?? this.collectionId,
       createdAt: createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
 }
@@ -77,28 +89,41 @@ class NoteCollection {
   final String name;
   final DateTime createdAt;
 
+  /// Last rename. Defaults to [createdAt]; drives last-write-wins sync.
+  final DateTime updatedAt;
+
   const NoteCollection({
     required this.id,
     required this.name,
     required this.createdAt,
-  });
+    DateTime? updatedAt,
+  }) : updatedAt = updatedAt ?? createdAt;
 
-  factory NoteCollection.fromJson(Map<String, dynamic> json) => NoteCollection(
-        id: json['id']?.toString() ?? '',
-        name: json['name']?.toString() ?? '',
-        createdAt: DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
-            DateTime.fromMillisecondsSinceEpoch(0),
-      );
+  factory NoteCollection.fromJson(Map<String, dynamic> json) {
+    final createdAt =
+        DateTime.tryParse(json['createdAt']?.toString() ?? '') ??
+            DateTime.fromMillisecondsSinceEpoch(0);
+    return NoteCollection(
+      id: json['id']?.toString() ?? '',
+      name: json['name']?.toString() ?? '',
+      createdAt: createdAt,
+      updatedAt:
+          DateTime.tryParse(json['updatedAt']?.toString() ?? '') ?? createdAt,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         'id': id,
         'name': name,
         'createdAt': createdAt.toIso8601String(),
+        'updatedAt': updatedAt.toIso8601String(),
       };
 
-  NoteCollection copyWith({String? name}) => NoteCollection(
+  NoteCollection copyWith({String? name, DateTime? updatedAt}) =>
+      NoteCollection(
         id: id,
         name: name ?? this.name,
         createdAt: createdAt,
+        updatedAt: updatedAt ?? this.updatedAt,
       );
 }

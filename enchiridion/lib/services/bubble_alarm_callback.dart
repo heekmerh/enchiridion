@@ -73,6 +73,7 @@ Future<void> _run() async {
 
     final prefs = await SharedPreferences.getInstance();
     final storage = StorageService(prefs);
+    AccessService.instance.bindStorage(storage);
     final hasAccess = await probeAccessWithTimeout(
       AccessService.instance.hasExamPrepAccess,
     );
@@ -92,6 +93,9 @@ Future<void> _run() async {
       'questionId': question.id,
       'title': 'Practice Question',
       'teaser': notificationTeaser(question.questionText),
+      // Collapsed row shows the teaser; the expanded notification shows
+      // the full question (see BubblePlugin.showBubble).
+      'fullText': notificationFullText(question.questionText),
     });
     developer.log(
       'outcome=question_handed_to_notification question_id=${question.id}',

@@ -74,6 +74,17 @@ class StudyStatsService {
     return StudyStatsTotals.fold(_storage.getAllDailyStudyStats(scope));
   }
 
+  /// Folds lifetime totals across several scopes — the aggregated,
+  /// cross-module figure the exam-modules screen shows. Scopes with no stored
+  /// days contribute nothing, so coming-soon modules never skew the total.
+  StudyStatsTotals getLifetimeTotalsForScopes(Iterable<String> scopes) {
+    final days = <StudyDayStats>[];
+    for (final scope in scopes) {
+      days.addAll(_storage.getAllDailyStudyStats(scope));
+    }
+    return StudyStatsTotals.fold(days);
+  }
+
   /// The whole body — including the `currentUser` read — is inside the try
   /// block on purpose, matching `QuestionReviewSyncService.push`:
   /// `Supabase.instance` asserts (not throws a catchable exception via a

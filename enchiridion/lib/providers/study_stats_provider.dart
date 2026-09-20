@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../models/exam_module.dart';
 import '../models/resource_topic.dart';
 import '../models/study_day_stats.dart';
 import '../services/storage_service.dart';
@@ -55,6 +56,17 @@ class StudyStatsProvider with ChangeNotifier {
     _totals = _statsService.getLifetimeTotals(scope);
     notifyListeners();
     return updated;
+  }
+
+  /// Lifetime totals for one exam module's scope.
+  StudyStatsTotals totalsForModule(String moduleId) {
+    return _statsService.getLifetimeTotals(examScopeForModule(moduleId));
+  }
+
+  /// Lifetime totals aggregated across every exam module — the cross-module
+  /// figure the modules screen shows alongside each module's own stats.
+  StudyStatsTotals get overallExamTotals {
+    return _statsService.getLifetimeTotalsForScopes(allExamScopes);
   }
 
   /// Re-reads from storage and notifies — for callers that recorded an

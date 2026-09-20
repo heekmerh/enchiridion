@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/answered_question_filter.dart';
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/models/resource_topic.dart';
 import 'package:enchiridion/providers/study_stats_provider.dart';
 import 'package:enchiridion/screens/answered_questions_screen.dart';
 import 'package:enchiridion/services/storage_service.dart';
@@ -73,7 +74,7 @@ void main() {
     'Wrong filter lists only the missed questions, identified by preview text',
     (tester) async {
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionOne.id,
           selectedOption: 'a', // wrong — correct is 'b'
@@ -82,7 +83,7 @@ void main() {
         ),
       );
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionTwo.id,
           selectedOption: 'b', // wrong — correct is 'a'
@@ -91,7 +92,7 @@ void main() {
         ),
       );
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionThree.id,
           selectedOption: 'a', // correct
@@ -116,7 +117,7 @@ void main() {
     'answering it correctly then popping moves it out of the Wrong filter',
     (tester) async {
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionOne.id,
           selectedOption: 'a', // wrong — correct is 'b'
@@ -125,7 +126,7 @@ void main() {
         ),
       );
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionTwo.id,
           selectedOption: 'b', // wrong — correct is 'a'
@@ -161,7 +162,7 @@ void main() {
       expect(find.text(_questionTwo.previewText()), findsOneWidget);
 
       expect(
-        storageService.getAnswers('exam_prep')[_questionOne.id]?.isCorrect,
+        storageService.getAnswers(kStandaloneExamPrepScope)[_questionOne.id]?.isCorrect,
         isTrue,
       );
     },
@@ -171,7 +172,7 @@ void main() {
     'A filter with no matching answers renders an empty-state message',
     (tester) async {
       await storageService.recordAnswer(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: _questionOne.id,
           selectedOption: 'a', // wrong

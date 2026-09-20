@@ -7,6 +7,7 @@ import '../utils/bottom_inset.dart';
 import '../utils/osce_subtopics.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/common/subtopic_tabs.dart';
+import 'pinned_notes_screen.dart';
 
 /// Browse stations first; opening a station shows tabs for that station's
 /// own sub-topics (see `subtopic_tabs.dart`) — never a strip of other
@@ -115,9 +116,20 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen> {
         _chapter == null;
 
     return Scaffold(
-      appBar: AppBar(title: Text(widget.topic.title)),
-      body: isLoading
-          ? const Center(child: CircularProgressIndicator())
+      appBar: AppBar(
+        title: Text(widget.topic.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.push_pin_outlined),
+            tooltip: 'Notes for ${widget.topic.title}',
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => const PinnedNotesScreen()),
+            ),
+          ),
+        ],
+      ),
+      body: isLoading          ? const Center(child: CircularProgressIndicator())
           : _error != null
               ? Center(
                   child: Padding(

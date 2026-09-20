@@ -5,7 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'config/supabase_config.dart';
+import 'models/exam_module.dart';
 import 'models/question.dart';
+import 'models/resource_topic.dart';
 import 'providers/study_stats_provider.dart';
 import 'services/exam_prep_repository.dart';
 import 'services/notification_service.dart';
@@ -34,13 +36,9 @@ void bubbleMain() {
 
 Future<void> _run() async {
   final routeName = WidgetsBinding.instance.platformDispatcher.defaultRouteName;
-  final questionId = Uri.parse(routeName).queryParameters['question'];
-
-  try {
-    await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
-  } catch (_) {
-    // Already initialized in this isolate/engine.
-  }
+  final route = Uri.parse(routeName);
+  final questionId = route.queryParameters['question'];
+  final scope = route.queryParameters['scope'];
 
   final prefs = await SharedPreferences.getInstance();
   final storageService = StorageService(prefs);
@@ -51,25 +49,103 @@ Future<void> _run() async {
     await NotificationService.instance.initialize();
   } catch (_) {}
 
-  Question? question;
-  if (questionId != null) {
-    final bank = await ExamPrepRepository().loadQuestions();
-    for (final candidate in bank) {
-      if (candidate.id == questionId) {
-        question = candidate;
-        break;
-      }
-    }
+  // Show a loading window immediately and resolve the question off the
+  // critical path: previously the whole question bank was loaded before the
+  // first frame, leaving a blank screen long enough for Android to report
+  // "Enchiridion isn't responding" on slow devices.
+  runApp(_BubbleLoader(
+    storageService: storageService,
+    questionId: questionId,
+    scope: scope != null && isExamPrepScope(scope) ? scope : null,
+  ));
+}
+
+/// Resolves the tapped bubble's question asynchronously behind a loading
+/// screen, then hands off to [_BubbleApp] once it is ready.
+class _BubbleLoader extends StatefulWidget {
+  final StorageService storageService;
+  final String? questionId;
+
+  /// Exam scope the question belongs to. Defaults to PLAB's scope for older
+  /// notifications posted without one.
+  final String? scope;
+
+  const _BubbleLoader(
+      {required this.storageService, this.questionId, this.scope});
+
+  @override
+  State<_BubbleLoader> createState() => _BubbleLoaderState();
+}
+
+class _BubbleLoaderState extends State<_BubbleLoader> {
+  Question? _question;
+  bool _ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _resolve();
   }
 
-  runApp(_BubbleApp(storageService: storageService, question: question));
+  Future<void> _resolve() async {
+    Question? question;
+    final questionId = widget.questionId;
+    if (questionId != null) {
+      try {
+        await Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey);
+      } catch (_) {
+        // Already initialized in this isolate/engine, or unreachable —
+        // the question bank itself is a local asset and doesn't need it.
+      }
+      try {
+        final bank = await ExamPrepRepository().loadQuestions();
+        for (final candidate in bank) {
+          if (candidate.id == questionId) {
+            question = candidate;
+            break;
+          }
+        }
+      } catch (_) {
+        // Falls through to the unavailable screen below.
+      }
+    }
+    if (!mounted) return;
+    setState(() {
+      _question = question;
+      _ready = true;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_ready) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.getTheme(widget.storageService.getSettings().theme),
+        home: const Scaffold(
+          body: SafeArea(
+            child: Center(child: CircularProgressIndicator()),
+          ),
+        ),
+      );
+    }
+    return _BubbleApp(
+      storageService: widget.storageService,
+      question: _question,
+      scope: widget.scope ?? kStandaloneExamPrepScope,
+    );
+  }
 }
 
 class _BubbleApp extends StatelessWidget {
   final StorageService storageService;
   final Question? question;
+  final String scope;
 
-  const _BubbleApp({required this.storageService, required this.question});
+  const _BubbleApp(
+      {required this.storageService,
+      required this.question,
+      this.scope = kStandaloneExamPrepScope});
 
   void _dismiss() {
     _bubbleChannel.invokeMethod<void>('dismissBubble');
@@ -90,7 +166,11 @@ class _BubbleApp extends StatelessWidget {
           theme: AppTheme.getTheme(storageService.getSettings().theme),
           home: question == null
               ? _BubbleUnavailableScreen(onClose: _dismiss)
-              : QuickCheckCard(question: question!, onDismiss: _dismiss),
+              : QuickCheckCard(
+                  question: question!,
+                  scope: scope,
+                  onDismiss: _dismiss,
+                ),
         ),
       ),
     );

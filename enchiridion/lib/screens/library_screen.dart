@@ -3,14 +3,15 @@ import 'package:provider/provider.dart';
 import '../models/book_catalog.dart';
 import '../providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
+import '../services/auth_service.dart';
 import '../services/storage_service.dart';
 import '../services/question_visibility.dart';
 import '../screens/reader_screen.dart';
+import '../screens/about_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/calculator_list_screen.dart';
-import '../screens/exam_prep_home_screen.dart';
-import '../screens/question_list_screen.dart';
+import '../screens/exam_modules_screen.dart';import '../screens/question_list_screen.dart';
 import '../screens/resource_topic_list_screen.dart';
 import '../screens/osce_screen.dart';
 import '../screens/pinned_notes_screen.dart';
@@ -217,6 +218,22 @@ class _LibraryScreenState extends State<LibraryScreen>
                     );
                   },
                 ),
+                const SizedBox(height: 8),
+                const Divider(),
+                ListTile(
+                  leading: const Icon(Icons.info_outlined),
+                  title: const Text('About Enchiridion'),
+                  subtitle: const Text(
+                      'Author, developer, website, and data protection'),
+                  contentPadding: EdgeInsets.zero,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (_) => const AboutScreen()),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -274,14 +291,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                             MaterialPageRoute(
                                 builder: (_) => const PinnedNotesScreen())),
                       ),
-                      IconButton(
-                        icon: const Icon(Icons.account_circle_outlined),
-                        tooltip: 'Profile',
-                        onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const ProfileScreen())),
-                      ),
+                      const _ProfileAvatarButton(),
                       IconButton(
                         icon: const Icon(Icons.settings_outlined),
                         tooltip: 'Settings',
@@ -577,7 +587,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         title: 'Exam Prep',
         assetPath: 'assets/resources/exam_prep.jpeg',
         onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => const ExamPrepHomeScreen(),
+          builder: (_) => const ExamModulesScreen(),
         )),
       ),
       _ResourceCategory(
@@ -662,8 +672,69 @@ class _ResourcesTabState extends State<_ResourcesTab> {
   }
 }
 
-class _ResourceCard extends StatelessWidget {
-  final _ResourceCategory category;
+// ─── Profile avatar button ────────────────────────────────────────────────────
+
+/// Homepage profile control: shows the user's uploaded avatar photo when one
+/// exists, falling back to the generic profile icon when they have not
+/// uploaded any image yet (or are signed out).
+class _ProfileAvatarButton extends StatefulWidget {
+  const _ProfileAvatarButton();
+
+  @override
+  State<_ProfileAvatarButton> createState() => _ProfileAvatarButtonState();
+}
+
+class _ProfileAvatarButtonState extends State<_ProfileAvatarButton> {
+  String? _userId;
+  Future<Map<String, dynamic>?>? _profileFuture;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final userId = context.watch<AuthProvider>().user?.id;
+    if (userId != _userId) {
+      _userId = userId;
+      _profileFuture =
+          userId == null ? Future.value(null) : AuthService.getProfile();
+    }
+  }
+
+  Future<void> _openProfile() async {
+    await Navigator.push(context,
+        MaterialPageRoute(builder: (_) => const ProfileScreen()));
+    if (!mounted) return;
+    final userId = context.read<AuthProvider>().user?.id;
+    setState(() {
+      _userId = userId;
+      _profileFuture =
+          userId == null ? Future.value(null) : AuthService.getProfile();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<Map<String, dynamic>?>(
+      future: _profileFuture,
+      builder: (context, snapshot) {
+        final avatarUrl = snapshot.data?['avatar_url'] as String?;
+        final hasAvatar = avatarUrl != null && avatarUrl.isNotEmpty;
+        return IconButton(
+          tooltip: 'Profile',
+          onPressed: _openProfile,
+          icon: hasAvatar
+              ? CircleAvatar(
+                  radius: 13,
+                  backgroundImage: NetworkImage(avatarUrl),
+                  onBackgroundImageError: (_, __) {},
+                )
+              : const Icon(Icons.account_circle_outlined),
+        );
+      },
+    );
+  }
+}
+
+class _ResourceCard extends StatelessWidget {  final _ResourceCategory category;
   final VoidCallback onTap;
 
   const _ResourceCard({required this.category, required this.onTap});

@@ -6,6 +6,7 @@ import 'device_auth_dialog.dart';
 import 'device_authorization_dialog.dart';
 import 'library_screen.dart';
 import 'login_screen.dart';
+import 'sync_splash_screen.dart';
 
 /// The one place every sign-in/sign-up path (`SplashScreen`, `LoginScreen`,
 /// `ConfirmEmailScreen`, `RegisterScreen`) navigates to instead of
@@ -30,14 +31,29 @@ class _AuthGateState extends State<AuthGate> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<AuthProvider>();
+    final auth = context.watch<AuthProvider>();
+    // First sync on a new device runs visibly: show the recovery splash
+    // instead of the gate spinner until it finishes or is skipped. The
+    // device-gate flow below resumes afterwards.
+    if (auth.initialSyncRunning) {
+      return SyncSplashScreen(
+        completedStages:
+            (auth.syncProgress * AuthProvider.syncTotalStages).round(),
+        totalStages: AuthProvider.syncTotalStages,
+        stageLabel: auth.syncStageLabel,
+        onSkip: () => context.read<AuthProvider>().skipInitialSync(),
+      );
+    }
     WidgetsBinding.instance.addPostFrameCallback((_) => _handle());
     return const Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 
   Future<void> _handle() async {
     if (_navigated || _dialogShowing || !mounted) return;
-    final status = context.read<AuthProvider>().deviceGateStatus;
+    final provider = context.read<AuthProvider>();
+    // Sync splash owns the screen while the initial sync runs.
+    if (provider.initialSyncRunning) return;
+    final status = provider.deviceGateStatus;
 
     switch (status) {
       case DeviceGateStatus.checking:

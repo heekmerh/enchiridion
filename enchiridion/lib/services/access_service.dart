@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../models/resource_topic.dart';
+import '../models/exam_module.dart';
 import '../services/auth_service.dart';
+import 'storage_service.dart';
 
 class AccessService {
   static AccessService? _instance;
@@ -13,6 +14,23 @@ class AccessService {
   /// the Supabase call. Reset to `null` in tearDown to avoid state leakage.
   @visibleForTesting
   static bool? testAccessOverride;
+
+  /// Maximum age of a successful online validation before access must be
+  /// revalidated. Past this point without a successful check (e.g. the
+  /// device has been offline), cached grants are discarded and the user
+  /// reverts to freemium — so a one-month subscription cannot be kept alive
+  /// indefinitely by cutting the app off from the internet.
+  static const maxValidationAge = Duration(days: 7);
+
+  StorageService? _storage;
+
+  /// Wires the persistent validation-timestamp store. Called once at startup
+  /// (see `main()`); without it the in-memory cache still works, but the
+  /// 7-day offline revert cannot tell how stale a cached grant is across
+  /// restarts.
+  void bindStorage(StorageService storage) {
+    _storage = storage;
+  }
 
   // Cache: bookId -> has access. '*' = full subscription.
   final Map<String, bool> _cache = {};
@@ -48,6 +66,14 @@ class AccessService {
       for (final row in rows as List) {
         _cache[row['book_id'] as String] = true;
       }
+
+      // Successful online validation — record it so the 7-day offline
+      // revert (see `_enforceValidationFreshness`) can tell how fresh this
+      // cache is. Only for the user the rows were fetched for.
+      if (AuthService.currentUser?.id == userId) {
+        await _storage?.setLastAccessValidation(
+            userId, DateTime.now().toUtc());
+      }
     } catch (_) {
       // Supabase not configured or offline: default to the free tier. The
       // cache was already cleared, so old entitlements cannot leak through.
@@ -66,7 +92,11 @@ class AccessService {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) await loadAccess();
+    if (!_loaded || _loadedForUserId != user.id) {
+      await loadAccess();
+    } else {
+      await _enforceValidationFreshness(user.id);
+    }
     return _cache.containsKey('*') || (_cache[bookId] ?? false);
   }
 
@@ -74,17 +104,66 @@ class AccessService {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) await loadAccess();
+    if (!_loaded || _loadedForUserId != user.id) {
+      await loadAccess();
+    } else {
+      await _enforceValidationFreshness(user.id);
+    }
     return _cache.containsKey('*');
   }
 
   Future<bool> hasExamPrepAccess() async {
+    return hasModuleAccess(kPlabModuleId);
+  }
+
+  /// Whether the user can access [moduleId]'s exam prep. PLAB resolves to
+  /// the legacy `exam_prep` scope; future modules resolve to their own
+  /// `exam_prep_<id>` scope. A full (`*`) subscription unlocks every module.
+  Future<bool> hasModuleAccess(String moduleId) async {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) await loadAccess();
+    if (!_loaded || _loadedForUserId != user.id) {
+      await loadAccess();
+    } else {
+      await _enforceValidationFreshness(user.id);
+    }
     return _cache.containsKey('*') ||
-        (_cache[kStandaloneExamPrepScope] ?? false);
+        (_cache[examScopeForModule(moduleId)] ?? false);
+  }
+
+  /// Scope-based access check for paywall callers that only hold a scope
+  /// string (book id, exam module scope, or `*` for full access).
+  Future<bool> hasScopeAccess(String scope) async {
+    if (scope == '*') return hasFullAccess();
+    for (final module in kExamModules) {
+      if (examScopeForModule(module.id) == scope) {
+        return hasModuleAccess(module.id);
+      }
+    }
+    return hasBookAccess(scope);
+  }
+
+  /// Discards cached grants that have not been successfully revalidated
+  /// within [maxValidationAge].
+  ///
+  /// Called on every access check that would otherwise trust a warm cache,
+  /// so a device kept offline past the grace window reverts to freemium even
+  /// if the process (and its in-memory cache) never restarted. When still
+  /// online, `loadAccess` simply refreshes the cache and the timestamp, and
+  /// access continues uninterrupted. When offline, `loadAccess` clears the
+  /// cache itself — the revert.
+  Future<void> _enforceValidationFreshness(String userId) async {
+    final storage = _storage;
+    if (storage == null) return;
+    final last = storage.getLastAccessValidation(userId);
+    if (last != null &&
+        DateTime.now().toUtc().difference(last) <= maxValidationAge) {
+      return;
+    }
+    // Never validated, or validated too long ago (including pre-upgrade
+    // installs with a warm cache but no timestamp): revalidate now.
+    await loadAccess();
   }
 
   /// Grant access manually (for testing / admin use).

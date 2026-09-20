@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../config/pricing_config.dart';
 import '../models/book_catalog.dart';
-import '../services/payment_service.dart';
+import '../models/exam_module.dart';
+import '../services/access_service.dart';
+import '../services/auth_service.dart';
 
+/// Paywall. Subscriptions are sold on the website, not in-app: each plan
+/// button opens the subscribe page in the device browser with the account
+/// and intended plan attached, and this screen re-checks access when the
+/// user returns (or when they tap "I've paid").
 class UnlockScreen extends StatefulWidget {
   final String? bookId;
 
@@ -13,15 +21,55 @@ class UnlockScreen extends StatefulWidget {
   State<UnlockScreen> createState() => _UnlockScreenState();
 }
 
-class _UnlockScreenState extends State<UnlockScreen> {
-  final _paymentService = PaymentService();
+/// Website checkout. Query parameters let the site tie the payment to this
+/// account and pre-select the plan/scope; the site grants access through
+/// the verify-flutterwave-payment Edge Function afterwards.
+const String kSubscribeUrl = 'https://enchiridion.site/app/subscribe';
 
-  /// Which plan is currently mid-purchase, or null. Used to disable the
-  /// other buttons and show a spinner on just the one being paid for.
-  PricingPlan? _purchasing;
+Uri subscribeUri({
+  required String userId,
+  required String email,
+  required String planId,
+  required String scope,
+}) {
+  return Uri.parse(kSubscribeUrl).replace(queryParameters: {
+    'user_id': userId,
+    'email': email,
+    'plan': planId,
+    'scope': scope,
+  });
+}
+
+class _UnlockScreenState extends State<UnlockScreen>
+    with WidgetsBindingObserver {
+  bool _checking = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // The user paid on the website and came back — re-check silently and
+    // close the paywall if access is now granted.
+    if (state == AppLifecycleState.resumed && mounted) {
+      _checkAccess(silent: true);
+    }
+  }
 
   String _bookTitle() {
     if (widget.bookId == null) return 'All Access';
+    final moduleLabel =
+        examModuleLabelForScope(widget.bookId ?? kPlabModuleId);
+    if (moduleLabel != null) return moduleLabel;
     try {
       return kBooks.firstWhere((b) => b.id == widget.bookId).title;
     } catch (_) {
@@ -29,38 +77,73 @@ class _UnlockScreenState extends State<UnlockScreen> {
     }
   }
 
-  Future<void> _purchase(PricingPlan plan) async {
-    if (_purchasing != null) return;
-    setState(() => _purchasing = plan);
+  /// Scope the website should grant: the specific book/module, or `*` for
+  /// full access.
+  String get _scope => widget.bookId ?? '*';
 
-    final outcome = await _paymentService.purchase(
-      context: context,
-      plan: plan,
-      bookId: widget.bookId ?? '*',
+  Future<void> _subscribe(PricingPlan plan) async {
+    final user = AuthService.currentUser;
+    if (user == null || !mounted) return;
+    final uri = subscribeUri(
+      userId: user.id,
+      email: user.email ?? '',
+      planId: plan.id,
+      scope: _scope,
     );
-
-    if (!mounted) return;
-    setState(() => _purchasing = null);
-
-    switch (outcome) {
-      case PaymentOutcome.success:
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("You're unlocked! Enjoy.")),
-        );
-        Navigator.of(context).pop(true);
-        return;
-      case PaymentOutcome.cancelled:
-        return;
-      case PaymentOutcome.failed:
+    try {
+      final opened =
+          await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!opened && mounted) {
+        await Clipboard.setData(ClipboardData(text: uri.toString()));
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text(
-              "That payment didn't go through. No charge was made — "
-              'please try again.',
-            ),
+                'Could not open the browser — the link was copied instead.'),
+            behavior: SnackBarBehavior.floating,
           ),
         );
-        return;
+      }
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Could not open the browser. Please try again.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
+
+  /// Re-reads entitlements from Supabase. Pops with success when access is
+  /// granted; otherwise (manual tap only) explains nothing changed yet.
+  Future<void> _checkAccess({bool silent = false}) async {
+    if (_checking || !mounted) return;
+    setState(() => _checking = true);
+    try {
+      await AccessService.instance.loadAccess();
+    } catch (_) {}
+    if (!mounted) return;
+    setState(() => _checking = false);
+    final granted = widget.bookId == null
+        ? await AccessService.instance.hasFullAccess()
+        : await AccessService.instance.hasScopeAccess(_scope);
+    if (!mounted) return;
+    if (granted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("You're unlocked! Enjoy.")),
+      );
+      Navigator.of(context).pop(true);
+    } else if (!silent) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'No new access found yet — if you just paid, give it a moment '
+            'and try again.',
+          ),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
     }
   }
 
@@ -133,40 +216,58 @@ class _UnlockScreenState extends State<UnlockScreen> {
 
               const Spacer(),
 
+              Text(
+                'Payment is completed securely on our website — '
+                'tap a plan to continue there.',
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: cs.onSurface.withValues(alpha: 0.64),
+                ),
+              ),
+              const SizedBox(height: 12),
+
               // Book-specific unlock CTA
               if (isBookSpecific) ...[
                 _PlanButton(
-                  plan: kBookUnlockPlan,
-                  label: 'Unlock ${_bookTitle()} — ${kBookUnlockPlan.label.split('— ').last}',
+                  label:
+                      'Unlock ${_bookTitle()} — ${kBookUnlockPlan.label.split('— ').last}',
                   tonal: false,
-                  purchasing: _purchasing,
-                  onPressed: () => _purchase(kBookUnlockPlan),
+                  onPressed: () => _subscribe(kBookUnlockPlan),
                 ),
                 const SizedBox(height: 12),
               ],
 
               // Full subscription CTAs
               _PlanButton(
-                plan: kSubscriptionMonthlyPlan,
                 label: kSubscriptionMonthlyPlan.label,
                 tonal: isBookSpecific,
-                purchasing: _purchasing,
-                onPressed: () => _purchase(kSubscriptionMonthlyPlan),
+                onPressed: () => _subscribe(kSubscriptionMonthlyPlan),
               ),
               const SizedBox(height: 12),
               _PlanButton(
-                plan: kSubscriptionYearlyPlan,
                 label: kSubscriptionYearlyPlan.label,
                 tonal: true,
-                purchasing: _purchasing,
-                onPressed: () => _purchase(kSubscriptionYearlyPlan),
+                onPressed: () => _subscribe(kSubscriptionYearlyPlan),
               ),
               const SizedBox(height: 12),
 
+              // Returns from the website checkout go through here too (see
+              // didChangeAppLifecycleState), but a manual check covers the
+              // case where the grant lands while this screen is open.
+              OutlinedButton.icon(
+                onPressed: _checking ? null : () => _checkAccess(),
+                icon: _checking
+                    ? const SizedBox(
+                        height: 18,
+                        width: 18,
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      )
+                    : const Icon(Icons.refresh_outlined, size: 18),
+                label: Text(
+                    _checking ? 'Checking…' : "I've paid — check access"),
+              ),
               TextButton(
-                onPressed: _purchasing != null
-                    ? null
-                    : () => Navigator.pop(context),
+                onPressed: () => Navigator.pop(context),
                 child: const Text('Maybe later'),
               ),
               const SizedBox(height: 8),
@@ -195,39 +296,26 @@ class _UnlockScreenState extends State<UnlockScreen> {
 }
 
 class _PlanButton extends StatelessWidget {
-  final PricingPlan plan;
   final String label;
   final bool tonal;
-  final PricingPlan? purchasing;
   final VoidCallback onPressed;
 
   const _PlanButton({
-    required this.plan,
     required this.label,
     required this.tonal,
-    required this.purchasing,
     required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isThisPurchasing = purchasing == plan;
-    final disabled = purchasing != null && !isThisPurchasing;
-    final child = isThisPurchasing
-        ? const SizedBox(
-            height: 20,
-            width: 20,
-            child: CircularProgressIndicator(strokeWidth: 2),
-          )
-        : Text(label);
-
     final style = FilledButton.styleFrom(
       padding: const EdgeInsets.symmetric(vertical: 16),
     );
-    final handler = disabled || purchasing != null ? null : onPressed;
 
     return tonal
-        ? FilledButton.tonal(onPressed: handler, style: style, child: child)
-        : FilledButton(onPressed: handler, style: style, child: child);
+        ? FilledButton.tonal(
+            onPressed: onPressed, style: style, child: Text(label))
+        : FilledButton(
+            onPressed: onPressed, style: style, child: Text(label));
   }
 }

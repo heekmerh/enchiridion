@@ -494,7 +494,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
           ),
         ReaderContent(
           chapter: chapter,
-          bookId: '',
+          // Topic notes anchor under the topic's own scope (see
+          // `ResourceTopic.notesScope`) so the pin controls render — the
+          // previous empty `bookId` disabled them via BlockRenderer's
+          // `bookId.isNotEmpty` gate.
+          bookId: widget.topic.notesScope,
           asSliver: true,
           autoScrollController: _autoScrollController,
           onItemIndexesReady: _onItemIndexesReady,

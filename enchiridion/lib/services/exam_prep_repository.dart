@@ -2,20 +2,28 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import '../models/exam_module.dart';
 import '../models/question.dart';
 
 class ExamPrepRepository {
   static const String assetPath = 'assets/data/exam_prep_questions.json';
 
-  Future<List<Question>> loadQuestions() async {
+  /// Loads the question bank, filtered to [module]. The bundled bank predates
+  /// modules so every question defaults to PLAB; filtering keeps each
+  /// module's serve log, reviews, and stats cleanly separated once more
+  /// banks ship.
+  Future<List<Question>> loadQuestions(
+      {String module = kPlabModuleId}) async {
     final raw = await rootBundle.loadString(assetPath);
-    return parseNormalizedJson(raw);
+    return parseNormalizedJson(raw, module: module);
   }
 
-  static List<Question> parseNormalizedJson(String raw) {
+  static List<Question> parseNormalizedJson(String raw,
+      {String module = kPlabModuleId}) {
     final list = jsonDecode(raw) as List<dynamic>;
     return list
         .map((item) => Question.fromJson(item as Map<String, dynamic>))
+        .where((question) => question.module == module)
         .toList();
   }
 
@@ -42,6 +50,7 @@ class ExamPrepRepository {
           osceTip: normalizedList[i]['osce_tip'] as String?,
           questionNumber: i + 1,
           topic: normalizedList[i]['topic'] as String?,
+          module: normalizedList[i]['module'] as String? ?? kPlabModuleId,
         ),
     ];
   }

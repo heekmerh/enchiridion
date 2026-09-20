@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../models/book_catalog.dart';
 import '../models/pinned_note.dart';
+import '../models/resource_topic.dart';
 import '../providers/pinned_notes_provider.dart';
 import '../utils/bottom_inset.dart';
 import 'reader_screen.dart';
@@ -35,11 +36,22 @@ class _PinnedNotesScreenState extends State<PinnedNotesScreen> {
     return null;
   }
 
-  String _bookTitle(String id) => _book(id)?.title ?? id;
+  String _bookTitle(String id) {
+    final book = _book(id);
+    if (book != null) return book.title;
+    return topicTitleForNotesScope(id);
+  }
 
   void _goToNote(PinnedNote note) {
     final book = _book(note.bookId);
     if (book == null || !book.hasContent) {
+      if (note.bookId.startsWith('topic_')) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+              'Open ${topicTitleForNotesScope(note.bookId)} to see this note in context.'),
+        ));
+        return;
+      }
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content:
             Text('${_bookTitle(note.bookId)} content is not available yet.'),
@@ -285,7 +297,7 @@ class _PinnedNotesScreenState extends State<PinnedNotesScreen> {
         child: Padding(
           padding: EdgeInsets.all(24),
           child: Text(
-            'No pinned notes yet. Long-press a passage in a book to pin a note to that spot.',
+            'No pinned notes yet. Long-press a passage in a book or topic to pin a note to that spot.',
             textAlign: TextAlign.center,
           ),
         ),

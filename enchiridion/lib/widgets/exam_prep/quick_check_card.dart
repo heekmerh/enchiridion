@@ -22,10 +22,15 @@ class QuickCheckCard extends StatefulWidget {
   final Question question;
   final VoidCallback onDismiss;
 
+  /// Exam module scope the answer is recorded under. Defaults to PLAB's
+  /// scope; the bubble host forwards the scope from the launch route.
+  final String scope;
+
   const QuickCheckCard({
     super.key,
     required this.question,
     required this.onDismiss,
+    this.scope = kStandaloneExamPrepScope,
   });
 
   @override
@@ -42,8 +47,8 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
   void initState() {
     super.initState();
     final storage = context.read<StorageService>();
-    final review = storage
-        .getQuestionReviews(kStandaloneExamPrepScope)[widget.question.id];
+    final review =
+        storage.getQuestionReviews(widget.scope)[widget.question.id];
     final seed = Object.hash(widget.question.id, review?.attempts ?? 0);
     _optionOrder = widget.question.optionKeys..shuffle(Random(seed));
   }
@@ -79,16 +84,16 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
       statsProvider = null;
     }
     final review =
-        await storage.recordAnswer(kStandaloneExamPrepScope, answer);
+        await storage.recordAnswer(widget.scope, answer);
     if (statsProvider != null) {
       await statsProvider.recordAnswer(
-        scope: kStandaloneExamPrepScope,
+        scope: widget.scope,
         isCorrect: _isCorrect,
         answeredAt: answer.answeredAt,
       );
     } else {
       await StudyStatsService(storage).recordAnswer(
-        scope: kStandaloneExamPrepScope,
+        scope: widget.scope,
         isCorrect: _isCorrect,
         answeredAt: answer.answeredAt,
       );
@@ -97,12 +102,12 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     // Best-effort background work — never gate clearing the saving state (or
     // therefore the dashboard's already-updated numbers) on the network.
     unawaited(NotificationService.instance.scheduleFollowUp(
-      scope: kStandaloneExamPrepScope,
+      scope: widget.scope,
       question: widget.question,
       review: review,
     ));
     unawaited(QuestionReviewSyncService(storage)
-        .push(kStandaloneExamPrepScope, review));
+        .push(widget.scope, review));
 
     if (mounted) {
       setState(() => _saving = false);

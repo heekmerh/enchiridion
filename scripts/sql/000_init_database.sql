@@ -181,7 +181,7 @@ create trigger on_auth_user_created
 -- =============================================================================
 -- book_id is a catalog id ('paediatrics', 'internal-medicine', 'surgery',
 -- 'obs-gynae', 'psychiatry', 'radiology', 'orthopedics', 'dermatology'),
--- or 'exam_prep' for the standalone exam-prep module,
+-- or 'exam_prep_plab' for the PLAB exam-prep module,
 -- or '*' for a full subscription (AccessService treats '*' as access to all).
 --
 -- The UNIQUE (user_id, book_id) constraint is REQUIRED: AccessService
@@ -305,7 +305,7 @@ create policy "Signed-in users can read questions"
 -- 4. daily_study_stats — study tracking + leaderboard
 -- =============================================================================
 -- Written by StudyStatsService._sync() via upsert on (user_id, scope, study_date).
--- `scope` is 'exam_prep' (kStandaloneExamPrepScope) or a book id.
+-- `scope` is 'exam_prep_plab' (kStandaloneExamPrepScope) or a book id.
 
 create table if not exists public.daily_study_stats (
   id                 uuid primary key default gen_random_uuid(),
@@ -364,14 +364,14 @@ group by user_id;
 -- pattern above: the SharedPreferences copy on-device is authoritative, this
 -- table exists so a second device can catch up, not as the source of truth.
 --
--- `scope` matches daily_study_stats.scope: 'exam_prep' (kStandaloneExamPrepScope)
+-- `scope` matches daily_study_stats.scope: 'exam_prep_plab' (kStandaloneExamPrepScope)
 -- or a book id. Column names match QuestionReview.toJson()/fromJson() exactly
 -- so a fetched row can be deserialized directly without remapping keys.
 
 create table if not exists public.question_reviews (
   user_id      uuid not null references auth.users(id) on delete cascade,
   question_id  text not null,
-  scope        text not null default 'exam_prep',
+  scope        text not null default 'exam_prep_plab',
   stage        smallint not null default 0 check (stage >= 0),
   attempts     integer not null default 0 check (attempts >= 0),
   lapses       integer not null default 0 check (lapses >= 0),

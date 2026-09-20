@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/exam_module.dart';
 import '../../models/question.dart';
-import '../../models/resource_topic.dart';
 import '../../navigation/app_navigator.dart';
 import '../../services/exam_prep_repository.dart';
 import '../../services/notification_service.dart';
@@ -73,9 +73,36 @@ class _InAppStudyPromptHostState extends State<InAppStudyPromptHost> {
   /// providers is unaffected by that — [MultiProvider] is still an ancestor
   /// either way — so `context.read` below is fine.
   Future<void> _openTappedQuestion(NotificationTapPayload payload) async {
-    if (payload.scope != kStandaloneExamPrepScope) return;
-    await _ensureBankLoaded();
-    if (!mounted) return;
+    if (!isExamPrepScope(payload.scope)) return;
+    final navigator = rootNavigatorKey.currentState;
+    if (navigator == null) return;
+    // Captured before any await: `navigator.context` must not be reached
+    // across the bank load below.
+    final messenger = ScaffoldMessenger.of(navigator.context);
+
+    // Push a loading screen synchronously so the tap gives instant feedback.
+    // Previously the question bank loaded first with nothing on screen,
+    // which read as a hung app when the load was slow.
+    navigator.push(
+      MaterialPageRoute(builder: (_) => const _QuestionLoadingScreen()),
+    );
+
+    try {
+      await _ensureBankLoaded();
+    } catch (error) {
+      navigator.pop();
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text('Could not open the question.\n\n$error'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+    if (!mounted) {
+      navigator.pop();
+      return;
+    }
 
     Question? question;
     for (final candidate in _questions) {
@@ -84,13 +111,23 @@ class _InAppStudyPromptHostState extends State<InAppStudyPromptHost> {
         break;
       }
     }
-    if (question == null) return;
+    if (question == null) {
+      navigator.pop();
+      messenger.showSnackBar(
+        const SnackBar(
+          content: Text('This question is no longer available.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
 
-    final storage = context.read<StorageService>();
+    final storage = navigator.context.read<StorageService>();
     final review = storage.getQuestionReviews(payload.scope)[question.id];
     final optionSeed = Object.hash(question.id, review?.attempts ?? 0);
 
-    rootNavigatorKey.currentState?.push(
+    navigator.pop();
+    navigator.push(
       MaterialPageRoute(
         builder: (_) => QuestionScreen(
           question: question!,
@@ -106,5 +143,20 @@ class _InAppStudyPromptHostState extends State<InAppStudyPromptHost> {
   @override
   Widget build(BuildContext context) {
     return widget.child;
+  }
+}
+
+/// Instant placeholder pushed the moment a notification is tapped, while the
+/// question bank loads off the critical path.
+class _QuestionLoadingScreen extends StatelessWidget {
+  const _QuestionLoadingScreen();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: SafeArea(
+        child: Center(child: CircularProgressIndicator()),
+      ),
+    );
   }
 }

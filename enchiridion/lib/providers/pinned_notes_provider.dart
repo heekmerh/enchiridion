@@ -85,4 +85,10 @@ class PinnedNotesProvider with ChangeNotifier {
     _collections = _storageService.getNoteCollections();
     notifyListeners();
   }
+
+  /// Re-reads from storage and notifies — called after cross-device sync
+  /// pulls remote notes into storage.
+  void refresh() {
+    _reload();
+  }
 }

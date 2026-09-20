@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/auth_service.dart';
@@ -5,6 +7,7 @@ import '../services/access_service.dart';
 import '../services/device_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
+import '../services/user_data_sync_service.dart';
 
 enum AuthStatus { loading, authenticated, unauthenticated }
 
@@ -49,6 +52,32 @@ class AuthProvider with ChangeNotifier {
   bool get canAuthorizeNewDevice => _canAuthorizeNewDevice;
   DateTime? get nextDeviceSwitchDate => _nextDeviceSwitchDate;
 
+  /// True while the first cross-device sync is running with visible
+  /// progress (new device that never synced). `AuthGate` shows the sync
+  /// splash instead of the library until this clears.
+  bool get initialSyncRunning => _initialSyncRunning;
+  bool _initialSyncRunning = false;
+
+  /// Human-readable stage of the running initial sync (`SyncSplashScreen`).
+  String get syncStageLabel => _syncStageLabel;
+  String _syncStageLabel = '';
+
+  /// 0..1 progress across push (8 stages) + pull (9 stages) = 17 ticks.
+  double get syncProgress => _syncProgress;
+  double _syncProgress = 0;
+  static const int syncTotalStages = 17;
+
+  bool _skipSyncRequested = false;
+
+  /// Lets the user proceed offline without waiting for the initial sync.
+  /// The sync futures keep running detached; their results still merge when
+  /// they land, and the splash returns next launch until one completes.
+  void skipInitialSync() {
+    _skipSyncRequested = true;
+    _initialSyncRunning = false;
+    notifyListeners();
+  }
+
   AuthProvider(this._storage) {
     _init();
   }
@@ -60,6 +89,7 @@ class AuthProvider with ChangeNotifier {
       _status = AuthStatus.authenticated;
       AccessService.instance.loadAccess();
       QuestionReviewSyncService(_storage).pullAndMergeAll();
+      unawaited(_runUserDataSync());
       _checkDeviceGate();
     } else {
       _status = AuthStatus.unauthenticated;
@@ -74,6 +104,7 @@ class AuthProvider with ChangeNotifier {
         // one while offline and only now reaching Supabase — before the
         // user starts studying this session.
         QuestionReviewSyncService(_storage).pullAndMergeAll();
+        unawaited(_runUserDataSync());
         // Create profile from metadata if this is the first sign-in after
         // email confirmation (profile may not exist yet). Awaited — the
         // device gate check right after needs the row to exist so a
@@ -89,6 +120,47 @@ class AuthProvider with ChangeNotifier {
       _error = null;
       notifyListeners();
     });
+  }
+
+  /// Pushes this device's offline user-data changes, then pulls everything
+  /// (notes, bookmarks, answers, settings, …).
+  ///
+  /// First sync on a device runs visibly: [initialSyncRunning] stays true
+  /// with per-stage progress until it finishes or the user skips, so
+  /// `AuthGate` can show the sync splash. Later syncs refresh silently in
+  /// the background.
+  Future<void> _runUserDataSync() async {
+    final sync = UserDataSyncService(_storage);
+    if (await _storage.hasCompletedInitialSync()) {
+      unawaited(sync.pushAll());
+      unawaited(sync.pullAndMergeAll());
+      return;
+    }
+    _skipSyncRequested = false;
+    _initialSyncRunning = true;
+    _syncStageLabel = 'Preparing…';
+    _syncProgress = 0;
+    notifyListeners();
+    try {
+      await sync.pushAll(onProgress: (label, done, total) {
+        if (_skipSyncRequested) return;
+        _syncStageLabel = 'Backing up $label…';
+        _syncProgress = done / syncTotalStages;
+        notifyListeners();
+      });
+      if (_skipSyncRequested || AuthService.currentUser == null) return;
+      await sync.pullAndMergeAll(onProgress: (label, done, total) {
+        if (_skipSyncRequested) return;
+        _syncStageLabel = 'Restoring $label…';
+        _syncProgress = (8 + done) / syncTotalStages;
+        notifyListeners();
+      });
+      if (_skipSyncRequested) return;
+      await _storage.setInitialSyncComplete();
+    } finally {
+      _initialSyncRunning = false;
+      notifyListeners();
+    }
   }
 
   /// Compares this device's fingerprint against the account's bound/

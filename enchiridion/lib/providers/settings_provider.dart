@@ -17,6 +17,12 @@ class SettingsProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  /// Re-reads from storage and notifies — called after cross-device sync
+  /// pulls remote settings into storage.
+  void refresh() {
+    _loadSettings();
+  }
+
   Future<void> updateSettings(UserSettings newSettings) async {
     _settings = newSettings;
     await _storageService.saveSettings(newSettings);

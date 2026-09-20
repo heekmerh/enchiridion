@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../config/freemium_config.dart';
 import '../models/answered_question_filter.dart';
+import '../models/exam_module.dart';
 import '../models/question.dart';
-import '../models/resource_topic.dart';
 import '../providers/study_stats_provider.dart';
 import '../services/access_service.dart';
 import '../services/exam_prep_repository.dart';
@@ -17,6 +17,11 @@ import 'question_screen.dart';
 import 'unlock_screen.dart';
 
 class ExamPrepHomeScreen extends StatefulWidget {
+  /// Which exam module this dashboard shows. Defaults to PLAB — the only
+  /// module with a question bank today. Reached from [ExamModulesScreen],
+  /// which only opens this screen for available modules.
+  final String moduleId;
+
   /// For widget tests only. When non-null, the home screen skips
   /// `ExamPrepRepository.loadQuestions()` (which hangs in the widget-test
   /// environment — see `ReaderScreen.testBookProvider` for the same
@@ -24,7 +29,8 @@ class ExamPrepHomeScreen extends StatefulWidget {
   @visibleForTesting
   final List<Question>? testQuestions;
 
-  const ExamPrepHomeScreen({super.key, this.testQuestions});
+  const ExamPrepHomeScreen(
+      {super.key, this.moduleId = kPlabModuleId, this.testQuestions});
 
   @override
   State<ExamPrepHomeScreen> createState() => _ExamPrepHomeScreenState();
@@ -49,6 +55,12 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
   // user back the question they just answered.
   Future<void>? _pendingAnswerWrite;
 
+  /// Storage scope for this module's answers, reviews, serve log, and stats.
+  String get _scope => examScopeForModule(widget.moduleId);
+
+  /// Display label for this module (`PLAB`, …).
+  String get _moduleLabel => examModuleForId(widget.moduleId).label;
+
   @override
   void initState() {
     super.initState();
@@ -70,19 +82,20 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
     // at construction would otherwise keep showing stale totals until the
     // next cold start.
     if (state == AppLifecycleState.resumed && mounted) {
-      context.read<StudyStatsProvider>().refresh();
+      context.read<StudyStatsProvider>().refresh(_scope);
     }
   }
 
   Future<void> _load() async {
     try {
       final storage = context.read<StorageService>();
-      final questions =
-          widget.testQuestions ?? await _repository.loadQuestions();
-      final hasAccess = await AccessService.instance.hasExamPrepAccess();
-      final answers = storage.getAnswers(kStandaloneExamPrepScope);
+      final questions = widget.testQuestions ??
+          await _repository.loadQuestions(module: widget.moduleId);
+      final hasAccess =
+          await AccessService.instance.hasModuleAccess(widget.moduleId);
+      final answers = storage.getAnswers(_scope);
       final nextQuestion = await NextQuestionSelector(storage)
-          .next(bank: questions, hasAccess: hasAccess);
+          .next(bank: questions, hasAccess: hasAccess, scope: _scope);
       if (!mounted) return;
       setState(() {
         _questions = questions;
@@ -105,8 +118,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
 
   int _optionSeedFor(StorageService storage, Question? question) {
     if (question == null) return 0;
-    final review =
-        storage.getQuestionReviews(kStandaloneExamPrepScope)[question.id];
+    final review = storage.getQuestionReviews(_scope)[question.id];
     return Object.hash(question.id, review?.attempts ?? 0);
   }
 
@@ -131,7 +143,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
     final storage = context.read<StorageService>();
     final nextQuestion = await NextQuestionSelector(storage)
-        .next(bank: _questions, hasAccess: _hasAccess);
+        .next(bank: _questions, hasAccess: _hasAccess, scope: _scope);
     if (!mounted) return;
     setState(() {
       _answers[answer.questionId] = answer;
@@ -164,13 +176,15 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exam Prep'),
+        title: Text(_moduleLabel),
         actions: [
           IconButton(
             icon: const Icon(Icons.leaderboard_outlined),
             tooltip: 'Leaderboard',
             onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => const LeaderboardScreen()),
+              MaterialPageRoute(
+                  builder: (_) =>
+                      LeaderboardScreen(initialModule: widget.moduleId)),
             ),
           ),
         ],
@@ -182,7 +196,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: Text(
-                      'Could not load exam prep.\n\n$_error',
+                      'Could not load $_moduleLabel.\n\n$_error',
                       textAlign: TextAlign.center,
                       style: TextStyle(color: cs.error),
                     ),
@@ -197,9 +211,9 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                   ),
                   children: [
                     _ExamMetricCard(
-                      title: 'Performance',
-                      subtitle: 'Tracked on this device — always accurate '
-                          'and up to date, online or offline.',
+                      title: '$_moduleLabel Performance',
+                      subtitle: '$_moduleLabel results tracked on this device — '
+                          'always accurate and up to date, online or offline.',
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -255,17 +269,17 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                     ),
                     const SizedBox(height: 16),
                     _ExamMetricCard(
-                      title: 'Access',
+                      title: '$_moduleLabel Access',
                       subtitle: _hasAccess
-                          ? 'Full access is active.'
-                          : 'You get $kFreeQuestionCount free practice questions. Unlock for unlimited practice.',
+                          ? 'Full $_moduleLabel access is active.'
+                          : 'You get $kFreeQuestionCount free $_moduleLabel practice questions. Unlock for unlimited practice.',
                       child: _hasAccess
                           ? null
                           : OutlinedButton(
                               onPressed: () => Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) => const UnlockScreen(
-                                    bookId: kStandaloneExamPrepScope,
+                                  builder: (_) => UnlockScreen(
+                                    bookId: _scope,
                                   ),
                                 ),
                               ),
@@ -274,9 +288,9 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                     ),
                     const SizedBox(height: 16),
                     _ExamMetricCard(
-                      title: 'Mock Exam',
+                      title: '$_moduleLabel Mock Exam',
                       subtitle:
-                          'Take a mock exam drawn from your unlocked questions. Your answers feed the performance stats above.',
+                          'Take a $_moduleLabel mock exam drawn from your unlocked questions. Your answers feed the performance stats above.',
                       child: _randomQuestion == null
                           ? const Text(
                               'No unlocked questions are available yet.')
@@ -288,12 +302,12 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                                       MaterialPageRoute(
                                         builder: (_) => QuestionScreen(
                                           question: _randomQuestion!,
-                                          bookId: kStandaloneExamPrepScope,
+                                          bookId: _scope,
                                           previousAnswer:
                                               _answers[_randomQuestion!.id],
                                           trackDailyStudyStats: true,
                                           optionSeed: _randomQuestionOptionSeed,
-                                          backLabel: 'Back to Exam Prep',
+                                          backLabel: 'Back to $_moduleLabel',
                                           onAnswered: (answer) {
                                             _pendingAnswerWrite =
                                                 _handleStudyCardAnswer(answer);

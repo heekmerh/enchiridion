@@ -136,6 +136,7 @@ class NotificationService {
     if (!due.isAfter(tz.TZDateTime.now(tz.local))) return;
 
     final teaser = notificationTeaser(question.questionText);
+    final fullText = notificationFullText(question.questionText);
     try {
       await _plugin.zonedSchedule(
         id: id,
@@ -148,9 +149,11 @@ class NotificationService {
             _channelId,
             _channelName,
             channelDescription: _channelDescription,
-            // Without this, Android's collapsed view truncates a full
-            // clinical vignette after a few words with no way to expand it.
-            styleInformation: BigTextStyleInformation(teaser),
+            // Collapsed view shows the short [teaser]; expanding the
+            // notification reveals the full question text. Previously both
+            // showed the truncated teaser, so the full question was never
+            // visible in the shade.
+            styleInformation: BigTextStyleInformation(fullText),
           ),
         ),
         // Avoids requiring the separate SCHEDULE_EXACT_ALARM permission —
@@ -183,4 +186,13 @@ String notificationTeaser(String questionText) {
   return flatText.length > maxLength
       ? '${flatText.substring(0, maxLength)}…'
       : flatText;
+}
+
+/// The full, untruncated question text flattened for notification display.
+///
+/// Used as the *expanded* content (big text / message style) so expanding a
+/// notification in the shade reveals the whole question, while the collapsed
+/// row keeps showing the short [notificationTeaser].
+String notificationFullText(String questionText) {
+  return questionText.replaceAll(RegExp(r'\s+'), ' ').trim();
 }

@@ -79,6 +79,18 @@ class _FakeAuthProvider extends ChangeNotifier implements AuthProvider {
 
   @override
   Future<void> authorizeThisDevice() async {}
+
+  @override
+  bool get initialSyncRunning => false;
+
+  @override
+  String get syncStageLabel => '';
+
+  @override
+  double get syncProgress => 0;
+
+  @override
+  void skipInitialSync() {}
 }
 
 // ---------------------------------------------------------------------------

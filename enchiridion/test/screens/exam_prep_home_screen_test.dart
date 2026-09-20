@@ -71,10 +71,10 @@ void main() {
       await tester.pumpWidget(_buildSubject(storageService));
       await tester.pumpAndSettle();
 
-      expect(find.text('Exam Prep'), findsOneWidget);
-      expect(find.text('Performance'), findsOneWidget);
-      expect(find.text('Access'), findsOneWidget);
-      expect(find.text('Mock Exam'), findsOneWidget);
+      expect(find.text('PLAB'), findsOneWidget);
+      expect(find.text('PLAB Performance'), findsOneWidget);
+      expect(find.text('PLAB Access'), findsOneWidget);
+      expect(find.text('PLAB Mock Exam'), findsOneWidget);
 
       expect(find.text('Unlock'), findsOneWidget);
 
@@ -91,10 +91,10 @@ void main() {
       await tester.pumpWidget(_buildSubject(storageService));
       await tester.pumpAndSettle();
 
-      expect(find.text('Exam Prep'), findsOneWidget);
-      expect(find.text('Performance'), findsOneWidget);
-      expect(find.text('Access'), findsOneWidget);
-      expect(find.text('Mock Exam'), findsOneWidget);
+      expect(find.text('PLAB'), findsOneWidget);
+      expect(find.text('PLAB Performance'), findsOneWidget);
+      expect(find.text('PLAB Access'), findsOneWidget);
+      expect(find.text('PLAB Mock Exam'), findsOneWidget);
 
       expect(find.text('Unlock'), findsNothing);
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/chapter.dart';
 import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
+import 'pinned_notes_screen.dart';
 import '../widgets/common/subtopic_tabs.dart';
 
 class ResourceTopicDetailScreen extends StatefulWidget {
@@ -61,6 +62,16 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.topic.title),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.push_pin_outlined),
+            tooltip: 'Notes for ${widget.topic.title}',
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                  builder: (_) => const PinnedNotesScreen()),
+            ),
+          ),
+        ],
       ),
       body: _loading
           ? const Center(child: CircularProgressIndicator())

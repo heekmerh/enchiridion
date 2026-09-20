@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +22,9 @@ import 'providers/bookmark_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/pinned_notes_provider.dart';
 import 'providers/study_stats_provider.dart';
+import 'services/access_service.dart';
 import 'services/bubble_scheduler.dart';
+import 'services/user_data_sync_service.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
 import 'screens/splash_screen.dart';
@@ -37,6 +41,21 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final storageService = StorageService(prefs);
+  // Lets AccessService timestamp successful validations so cached grants
+  // expire back to freemium after 7 days without a successful check.
+  AccessService.instance.bindStorage(storageService);
+  // Pre-launch rename: carry dev-device PLAB data from `exam_prep` to
+  // `exam_prep_plab`. No-op on fresh installs.
+  await storageService.migrateLegacyExamPrepScope();
+
+  // Cross-device continuity: every local user-data mutation uploads in the
+  // background from here on. The first sync after sign-in runs with visible
+  // progress from AuthProvider (new-device splash); providers refresh via
+  // onUserDataMerged when remote state lands.
+  final userDataSync = UserDataSyncService(storageService);
+  storageService.onUserDataChanged = (entity) {
+    unawaited(userDataSync.pushEntity(entity));
+  };
 
   // Best-effort: a platform channel failure here (e.g. running on a bare
   // Windows/web target with no notification support) should not block app
@@ -55,7 +74,7 @@ void main() async {
   runApp(EnchiridionApp(storageService: storageService));
 }
 
-class EnchiridionApp extends StatelessWidget {
+class EnchiridionApp extends StatefulWidget {
   final StorageService storageService;
 
   const EnchiridionApp({
@@ -64,18 +83,45 @@ class EnchiridionApp extends StatelessWidget {
   });
 
   @override
+  State<EnchiridionApp> createState() => _EnchiridionAppState();
+}
+
+class _EnchiridionAppState extends State<EnchiridionApp> {
+  late final SettingsProvider _settingsProvider;
+  late final BookmarkProvider _bookmarkProvider;
+  late final PinnedNotesProvider _pinnedNotesProvider;
+  late final StudyStatsProvider _studyStatsProvider;
+
+  @override
+  void initState() {
+    super.initState();
+    // Created once here — not per-build and not lazily — so the sync hooks
+    // can refresh cached provider state after a cross-device pull merges
+    // remote data.
+    _settingsProvider = SettingsProvider(widget.storageService);
+    _bookmarkProvider = BookmarkProvider(widget.storageService);
+    _pinnedNotesProvider = PinnedNotesProvider(widget.storageService);
+    _studyStatsProvider = StudyStatsProvider(widget.storageService);
+    widget.storageService.onUserDataMerged = () {
+      _settingsProvider.refresh();
+      _bookmarkProvider.refresh();
+      _pinnedNotesProvider.refresh();
+      _studyStatsProvider.refresh();
+    };
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final storageService = widget.storageService;
     return MultiProvider(
       providers: [
         Provider<StorageService>.value(value: storageService),
         ChangeNotifierProvider(create: (_) => AuthProvider(storageService)),
         ChangeNotifierProvider(create: (_) => BookProvider(storageService)),
-        ChangeNotifierProvider(create: (_) => SettingsProvider(storageService)),
-        ChangeNotifierProvider(create: (_) => BookmarkProvider(storageService)),
-        ChangeNotifierProvider(
-            create: (_) => PinnedNotesProvider(storageService)),
-        ChangeNotifierProvider(
-            create: (_) => StudyStatsProvider(storageService)),
+        ChangeNotifierProvider.value(value: _settingsProvider),
+        ChangeNotifierProvider.value(value: _bookmarkProvider),
+        ChangeNotifierProvider.value(value: _pinnedNotesProvider),
+        ChangeNotifierProvider.value(value: _studyStatsProvider),
       ],
       child: Consumer<SettingsProvider>(
         builder: (context, settingsProvider, _) {

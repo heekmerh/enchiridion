@@ -94,7 +94,10 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 val questionId = call.argument<String>("questionId") ?: ""
                 val title = call.argument<String>("title") ?: "Quick Check"
                 val teaser = call.argument<String>("teaser") ?: ""
-                showBubble(context, scope, questionId, title, teaser)
+                // Full question text for the expanded view; falls back to
+                // the teaser on older posts that didn't send it.
+                val fullText = call.argument<String>("fullText") ?: teaser
+                showBubble(context, scope, questionId, title, teaser, fullText)
                 result.success(null)
             }
             // Called from BubbleActivity's engine (bubble_main.dart) once
@@ -147,6 +150,7 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         questionId: String,
         title: String,
         teaser: String,
+        fullText: String,
     ) {
         ensureNotificationChannel(context)
 
@@ -166,10 +170,14 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         val builder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(title)
+            // Collapsed row shows the short teaser.
             .setContentText(teaser)
             .setStyle(
+                // Expanded view shows the full question text, not the
+                // truncated teaser — previously both showed the teaser, so
+                // expanding the notification never revealed the rest.
                 NotificationCompat.MessagingStyle(person)
-                    .addMessage(teaser, System.currentTimeMillis(), person),
+                    .addMessage(fullText, System.currentTimeMillis(), person),
             )
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setContentIntent(pendingIntent)

@@ -43,6 +43,34 @@ class ResourceTopic {
   /// Whether this topic should render with the shared coming-soon
   /// treatment — see `ComingSoonStyle` in `widgets/common/coming_soon.dart`.
   bool get isComingSoon => !hasContent;
+
+  /// Stable storage scope used to anchor pinned notes to this topic.
+  ///
+  /// Topic content renders through the same `BlockRenderer` as books, whose
+  /// pin/clip controls key off a non-empty `bookId`. Scoping topic notes as
+  /// `topic_<id>` keeps them separate from book notes while reusing the same
+  /// storage and listing machinery.
+  String get notesScope => 'topic_$id';
+}
+
+/// Resolves a pinned-note storage scope back to a display title: real book
+/// ids resolve via the caller, `topic_<id>` scopes resolve against the
+/// resource catalogs, and anything else falls back to the raw scope.
+String topicTitleForNotesScope(String scope) {
+  const prefix = 'topic_';
+  if (!scope.startsWith(prefix)) return scope;
+  final id = scope.substring(prefix.length);
+  const catalogs = [
+    kSurgicalInstrumentationTopics,
+    kMedicalInstrumentationTopics,
+    kOsceTopics,
+  ];
+  for (final catalog in catalogs) {
+    for (final topic in catalog) {
+      if (topic.id == id) return topic.title;
+    }
+  }
+  return scope;
 }
 
 /// Groups [topics] by [ResourceTopic.group] for display, mirroring
@@ -82,7 +110,9 @@ Map<String?, List<ResourceTopic>> groupTopicsForDisplay(
   return result;
 }
 
-const String kStandaloneExamPrepScope = 'exam_prep';
+/// Storage scope for PLAB exam prep — the uniform `exam_prep_<module>`
+/// scheme (`exam_prep_plab`, `exam_prep_usmle`, …; see `exam_module.dart`).
+const String kStandaloneExamPrepScope = 'exam_prep_plab';
 
 // Sourced from `scripts/content/surgical instrumentation.md` — 86 authored
 // bullet lines, 85 unique (`Foley catheter` is listed twice; deduped to its

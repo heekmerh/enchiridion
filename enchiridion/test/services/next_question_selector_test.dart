@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:enchiridion/models/question.dart';
+import 'package:enchiridion/models/resource_topic.dart';
 import 'package:enchiridion/models/serve_log.dart';
 import 'package:enchiridion/services/next_question_selector.dart';
 import 'package:enchiridion/services/storage_service.dart';
@@ -44,7 +45,7 @@ void main() {
 
       // q1 was answered wrong long enough ago to be due for relearn.
       await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
@@ -68,7 +69,7 @@ void main() {
       final bank = List.generate(5, (i) => _question(i + 1));
       final now = DateTime(2026, 1, 1, 12);
       final review = await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
@@ -120,7 +121,7 @@ void main() {
         () async {
       final now = DateTime(2026, 1, 1, 12);
       await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
@@ -145,7 +146,7 @@ void main() {
         () async {
       final now = DateTime(2026, 1, 1, 12);
       await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
@@ -166,7 +167,7 @@ void main() {
         () async {
       final now = DateTime(2026, 1, 3, 12);
       await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'b',
@@ -175,7 +176,7 @@ void main() {
         ),
       );
       final review = await storage.recordQuestionReview(
-        'exam_prep',
+        kStandaloneExamPrepScope,
         UserAnswer(
           questionId: 'q1',
           selectedOption: 'a',
@@ -263,7 +264,7 @@ void main() {
       // setMockInitialValues replaces the backing store without updating the
       // preferences instance held by storage, like a separate isolate's write.
       SharedPreferences.setMockInitialValues({
-        'serve_log_exam_prep': jsonEncode(ServeLog(
+        'serve_log_$kStandaloneExamPrepScope': jsonEncode(ServeLog(
           recent: List.generate(9, (i) => 'q${i + 1}'),
           counter: 9,
         ).toJson()),

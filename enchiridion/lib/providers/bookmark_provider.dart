@@ -17,6 +17,12 @@ class BookmarkProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  /// Re-reads from storage and notifies — called after cross-device sync
+  /// pulls remote bookmarks into storage.
+  void refresh() {
+    _loadBookmarks();
+  }
+
   bool isBookmarked(String chapterId) {
     return _bookmarks.any((b) => b.chapterId == chapterId);
   }
