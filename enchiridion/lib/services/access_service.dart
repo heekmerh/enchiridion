@@ -69,10 +69,13 @@ class AccessService {
 
       // Successful online validation — record it so the 7-day offline
       // revert (see `_enforceValidationFreshness`) can tell how fresh this
-      // cache is. Only for the user the rows were fetched for.
+      // cache is. The granted scopes are persisted alongside it so a cold
+      // isolate can reuse them instead of repeating this round trip (see
+      // `_hydrateFromStorage`). Only for the user the rows were fetched for.
       if (AuthService.currentUser?.id == userId) {
         await _storage?.setLastAccessValidation(
             userId, DateTime.now().toUtc());
+        await _storage?.setCachedAccessScopes(userId, _cache.keys.toList());
       }
     } catch (_) {
       // Supabase not configured or offline: default to the free tier. The
@@ -92,11 +95,7 @@ class AccessService {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) {
-      await loadAccess();
-    } else {
-      await _enforceValidationFreshness(user.id);
-    }
+    await _ensureAccessLoaded(user.id);
     return _cache.containsKey('*') || (_cache[bookId] ?? false);
   }
 
@@ -104,11 +103,7 @@ class AccessService {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) {
-      await loadAccess();
-    } else {
-      await _enforceValidationFreshness(user.id);
-    }
+    await _ensureAccessLoaded(user.id);
     return _cache.containsKey('*');
   }
 
@@ -123,11 +118,7 @@ class AccessService {
     if (testAccessOverride != null) return testAccessOverride!;
     final user = AuthService.currentUser;
     if (user == null) return false;
-    if (!_loaded || _loadedForUserId != user.id) {
-      await loadAccess();
-    } else {
-      await _enforceValidationFreshness(user.id);
-    }
+    await _ensureAccessLoaded(user.id);
     return _cache.containsKey('*') ||
         (_cache[examScopeForModule(moduleId)] ?? false);
   }
@@ -142,6 +133,52 @@ class AccessService {
       }
     }
     return hasBookAccess(scope);
+  }
+
+  /// Makes [_cache] usable for [userId], preferring the cheapest source that
+  /// is still within [maxValidationAge]: the warm in-memory cache, then the
+  /// grants persisted by the last successful validation, and only then a
+  /// Supabase round trip.
+  Future<void> _ensureAccessLoaded(String userId) async {
+    if (_loaded && _loadedForUserId == userId) {
+      await _enforceValidationFreshness(userId);
+      return;
+    }
+    if (_hydrateFromStorage(userId)) return;
+    await loadAccess();
+  }
+
+  /// Rebuilds [_cache] from the last successful validation's persisted scopes,
+  /// if that validation is still fresh. Returns whether the cache is now
+  /// usable.
+  ///
+  /// This is what keeps the headless Study Buddy alarm off the network: it
+  /// runs in a brand-new isolate every time, so the in-memory cache is always
+  /// cold and every ambient prompt was paying a 1-3s Supabase round trip
+  /// before posting. The 7-day revert is unaffected — a stale (or missing)
+  /// validation timestamp still falls through to [loadAccess]. Consequently a
+  /// grant revoked server-side is honoured here on the same terms as a warm
+  /// cache in the running app: at the next revalidation, not instantly.
+  bool _hydrateFromStorage(String userId) {
+    final storage = _storage;
+    if (storage == null) return false;
+    final last = storage.getLastAccessValidation(userId);
+    if (last == null ||
+        DateTime.now().toUtc().difference(last) > maxValidationAge) {
+      return false;
+    }
+    // null, not empty: an empty list is a validated free-tier user (hydrate,
+    // stay offline), while null means this install has never recorded scopes
+    // and must revalidate — otherwise an upgrade would silently strip a paid
+    // user's access until their timestamp aged out.
+    final scopes = storage.getCachedAccessScopes(userId);
+    if (scopes == null) return false;
+    _cache
+      ..clear()
+      ..addEntries(scopes.map((scope) => MapEntry(scope, true)));
+    _loaded = true;
+    _loadedForUserId = userId;
+    return true;
   }
 
   /// Discards cached grants that have not been successfully revalidated

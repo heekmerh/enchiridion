@@ -1152,6 +1152,33 @@ class StorageService {
         '$_accessValidationPrefix$userId', when.toIso8601String());
   }
 
+  static const _accessScopesPrefix = 'access_scopes_';
+
+  /// The scopes ([`*`] for a full subscription, otherwise book ids / exam
+  /// module scopes) granted at the last successful validation for [userId].
+  ///
+  /// Persisted alongside [getLastAccessValidation] so a cold isolate — the
+  /// headless Study Buddy alarm creates a fresh one on every run — can trust
+  /// a recent validation instead of paying a Supabase round trip each time.
+  /// Keyed by user id, so one account's grants can never be read for another.
+  ///
+  /// Returns null when no validation has ever been recorded on this install,
+  /// which is distinct from an empty list: a validated free-tier user legibly
+  /// holds no scopes, whereas null means "nothing known, ask the server". An
+  /// install that predates this key has a timestamp but no scopes, and must
+  /// revalidate rather than be treated as holding nothing.
+  List<String>? getCachedAccessScopes(String userId) {
+    try {
+      return _prefs.getStringList('$_accessScopesPrefix$userId');
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<void> setCachedAccessScopes(String userId, List<String> scopes) async {
+    await _prefs.setStringList('$_accessScopesPrefix$userId', scopes);
+  }
+
   static const _initialSyncKey = 'initial_sync_complete';
 
   /// Whether this device has ever completed a full cross-device sync.

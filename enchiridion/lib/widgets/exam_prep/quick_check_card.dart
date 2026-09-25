@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../models/question.dart';
 import '../../models/resource_topic.dart';
 import '../../providers/study_stats_provider.dart';
+import '../../services/diagnostics_log.dart';
 import '../../services/notification_service.dart';
 import '../../services/question_review_sync_service.dart';
 import '../../services/storage_service.dart';
@@ -26,11 +27,18 @@ class QuickCheckCard extends StatefulWidget {
   /// scope; the bubble host forwards the scope from the launch route.
   final String scope;
 
+  /// Called once the answer is durably recorded, whether or not the user then
+  /// closes this card. The bubble host uses it to clear the prompt from the
+  /// notification shade, so backing out afterwards cannot leave a prompt for
+  /// an already-answered question.
+  final VoidCallback? onAnswerRecorded;
+
   const QuickCheckCard({
     super.key,
     required this.question,
     required this.onDismiss,
     this.scope = kStandaloneExamPrepScope,
+    this.onAnswerRecorded,
   });
 
   @override
@@ -58,6 +66,8 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
 
   Future<void> _submit() async {
     if (_selectedOption == null || _saving) return;
+    DiagnosticsLog.event(
+        'answer_card_submit_start', {'question_id': widget.question.id});
     setState(() {
       _saving = true;
       _submitted = true;
@@ -83,34 +93,65 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     } catch (_) {
       statsProvider = null;
     }
-    final review =
-        await storage.recordAnswer(widget.scope, answer);
-    if (statsProvider != null) {
-      await statsProvider.recordAnswer(
-        scope: widget.scope,
-        isCorrect: _isCorrect,
-        answeredAt: answer.answeredAt,
-      );
-    } else {
-      await StudyStatsService(storage).recordAnswer(
-        scope: widget.scope,
-        isCorrect: _isCorrect,
-        answeredAt: answer.answeredAt,
-      );
-    }
 
-    // Best-effort background work — never gate clearing the saving state (or
-    // therefore the dashboard's already-updated numbers) on the network.
-    unawaited(NotificationService.instance.scheduleFollowUp(
-      scope: widget.scope,
-      question: widget.question,
-      review: review,
-    ));
-    unawaited(QuestionReviewSyncService(storage)
-        .push(widget.scope, review));
+    // These are local disk writes (SharedPreferences), but under two-engine
+    // contention (this bubble window plus the main app both alive) the prefs
+    // platform channel can stall. Bounded so a stuck write can never leave
+    // the user stuck on "Saving…" forever — cleared in `finally` regardless
+    // of outcome, since the on-screen answer feedback is already correct
+    // either way.
+    try {
+      final review = await DiagnosticsLog.track(
+        'answer_card_record_answer',
+        () => storage
+            .recordAnswer(widget.scope, answer)
+            .timeout(const Duration(seconds: 5)),
+      );
+      if (statsProvider != null) {
+        await DiagnosticsLog.track(
+          'answer_card_record_stats',
+          () => statsProvider!
+              .recordAnswer(
+                scope: widget.scope,
+                isCorrect: _isCorrect,
+                answeredAt: answer.answeredAt,
+              )
+              .timeout(const Duration(seconds: 5)),
+        );
+      } else {
+        await DiagnosticsLog.track(
+          'answer_card_record_stats',
+          () => StudyStatsService(storage)
+              .recordAnswer(
+                scope: widget.scope,
+                isCorrect: _isCorrect,
+                answeredAt: answer.answeredAt,
+              )
+              .timeout(const Duration(seconds: 5)),
+        );
+      }
 
-    if (mounted) {
-      setState(() => _saving = false);
+      // Best-effort background work — never gate clearing the saving state
+      // (or therefore the dashboard's already-updated numbers) on the
+      // network.
+      unawaited(NotificationService.instance.scheduleFollowUp(
+        scope: widget.scope,
+        question: widget.question,
+        review: review,
+      ));
+      unawaited(QuestionReviewSyncService(storage)
+          .push(widget.scope, review));
+      widget.onAnswerRecorded?.call();
+      DiagnosticsLog.event('answer_card_submit_end', {'ok': true});
+    } catch (e) {
+      // Swallow: the answer/correctness feedback is already on screen from
+      // the setState above, so a stalled or failed local write shouldn't
+      // block the user from closing the card.
+      DiagnosticsLog.error('answer_card_submit', e);
+    } finally {
+      if (mounted) {
+        setState(() => _saving = false);
+      }
     }
   }
 

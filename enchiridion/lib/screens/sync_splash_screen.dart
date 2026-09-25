@@ -66,26 +66,33 @@ class _SyncSplashScreenState extends State<SyncSplashScreen>
               const SizedBox(height: 28),
               AnimatedBuilder(
                 animation: _orbit,
-                builder: (context, _) => CustomPaint(
-                  size: const Size(220, 220),
-                  painter: _RecoveryRingPainter(
-                    completedStages: widget.completedStages,
-                    totalStages: widget.totalStages,
-                    orbitTurns: _orbit.value,
-                    primary: cs.primary,
-                    track: cs.outline.withValues(alpha: 0.25),
-                  ),
-                  child: Center(
-                    child: Text(
-                      '${(fraction * 100).round()}%',
-                      style: theme.textTheme.headlineMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: cs.primary,
-                        fontFeatures: const [
-                          FontFeature.tabularFigures()
-                        ],
+                builder: (context, _) => SizedBox(
+                  width: 220,
+                  height: 220,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      CustomPaint(
+                        size: const Size(220, 220),
+                        painter: _RecoveryRingPainter(
+                          completedStages: widget.completedStages,
+                          totalStages: widget.totalStages,
+                          orbitTurns: _orbit.value,
+                          primary: cs.primary,
+                          track: cs.outline.withValues(alpha: 0.25),
+                        ),
                       ),
-                    ),
+                      Text(
+                        '${(fraction * 100).round()}%',
+                        style: theme.textTheme.headlineMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: cs.primary,
+                          fontFeatures: const [
+                            FontFeature.tabularFigures()
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),

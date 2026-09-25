@@ -9,6 +9,7 @@ import 'package:timezone/timezone.dart' as tz;
 
 import '../models/question.dart';
 import '../models/question_review.dart';
+import 'diagnostics_log.dart';
 
 /// Which question a tapped notification wants opened.
 class NotificationTapPayload {
@@ -57,6 +58,7 @@ class NotificationService {
 
   Future<void> initialize() async {
     if (_initialized) return;
+    DiagnosticsLog.start('notification_plugin_init');
 
     tz_data.initializeTimeZones();
     try {
@@ -89,6 +91,7 @@ class NotificationService {
         ?.requestNotificationsPermission();
 
     _initialized = true;
+    DiagnosticsLog.end('notification_plugin_init');
   }
 
   void _handleResponse(NotificationResponse response) {
@@ -96,6 +99,8 @@ class NotificationService {
     if (raw == null) return;
     try {
       final data = jsonDecode(raw) as Map<String, dynamic>;
+      DiagnosticsLog.event(
+          'notification_tapped', {'question_id': data['question_id']});
       _tapped.add(NotificationTapPayload(
         scope: data['scope'] as String,
         questionId: data['question_id'] as String,
@@ -103,6 +108,7 @@ class NotificationService {
     } catch (e) {
       developer.log('Malformed notification payload: $e',
           name: 'NotificationService');
+      DiagnosticsLog.error('notification_tapped_payload', e);
     }
   }
 
@@ -137,6 +143,7 @@ class NotificationService {
 
     final teaser = notificationTeaser(question.questionText);
     final fullText = notificationFullText(question.questionText);
+    DiagnosticsLog.start('schedule_follow_up', {'question_id': question.id});
     try {
       await _plugin.zonedSchedule(
         id: id,
@@ -163,9 +170,11 @@ class NotificationService {
         // much slack.
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       );
+      DiagnosticsLog.end('schedule_follow_up');
     } catch (e) {
       developer.log('Could not schedule follow-up: $e',
           name: 'NotificationService');
+      DiagnosticsLog.error('schedule_follow_up', e);
     }
   }
 

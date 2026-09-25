@@ -15,19 +15,22 @@ import io.flutter.plugins.GeneratedPluginRegistrant
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicReference
-import kotlin.random.Random
 
 private const val UNIQUE_WORK_NAME = "bubble_quick_check"
 private const val FIRST_RUN_DELAY_MINUTES = 3L
-private const val MIN_DELAY_MINUTES = 18L
-private const val JITTER_MINUTES = 18L // delay = MIN_DELAY_MINUTES + random(0..JITTER_MINUTES)
+private const val PREFS_NAME = "study_buddy_prefs"
+private const val PREF_INTERVAL_MINUTES = "interval_minutes"
+private const val PREF_ENABLED = "enabled"
+const val DEFAULT_INTERVAL_MINUTES = 45L
+private const val MIN_INTERVAL_MINUTES = 15L
+private const val MAX_INTERVAL_MINUTES = 180L
 
 /**
  * Runs `bubbleAlarmCallback` (lib/services/bubble_alarm_callback.dart) in a
  * fresh, fully plugin-registered headless Flutter engine, then always
- * re-enqueues itself for another run 18-35 minutes later — this is what
- * keeps ambient "Quick Check" prompts flowing whether or not the app is
- * open.
+ * re-enqueues itself for another run after the user-configured Study Buddy
+ * interval (default 45 minutes) — this is what keeps ambient "Quick Check"
+ * prompts flowing whether or not the app is open.
  *
  * Deliberately not built on the `android_alarm_manager_plus` pub package:
  * that plugin's headless engine (`FlutterBackgroundExecutor.
@@ -50,7 +53,11 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
         @Volatile
         var pendingLatch: CountDownLatch? = null
 
-        fun armOnAppStart(context: Context) {
+        fun armOnAppStart(context: Context, intervalMinutes: Long? = null) {
+            if (intervalMinutes != null) {
+                saveInterval(context, intervalMinutes)
+            }
+            setEnabled(context, true)
             val request = OneTimeWorkRequestBuilder<BubbleAlarmWorker>()
                 .setInitialDelay(FIRST_RUN_DELAY_MINUTES, TimeUnit.MINUTES)
                 .build()
@@ -61,8 +68,21 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
             )
         }
 
+        /**
+         * Applies a user-initiated Study Buddy settings change: unlike
+         * [armOnAppStart] (which deliberately uses KEEP so a normal app
+         * launch never resets an already-ticking countdown), a change made
+         * in Settings must take effect immediately — REPLACE cancels the
+         * pending run at its old delay and re-enqueues at the new interval.
+         */
+        fun rearmForSettingsChange(context: Context, intervalMinutes: Long) {
+            saveInterval(context, intervalMinutes)
+            setEnabled(context, true)
+            enqueueNext(context)
+        }
+
         fun enqueueNext(context: Context) {
-            val delayMinutes = MIN_DELAY_MINUTES + Random.nextLong(JITTER_MINUTES + 1)
+            val delayMinutes = getInterval(context)
             val request = OneTimeWorkRequestBuilder<BubbleAlarmWorker>()
                 .setInitialDelay(delayMinutes, TimeUnit.MINUTES)
                 .build()
@@ -72,9 +92,57 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
                 request,
             )
         }
+
+        fun cancelSchedule(context: Context) {
+            setEnabled(context, false)
+            WorkManager.getInstance(context).cancelUniqueWork(UNIQUE_WORK_NAME)
+        }
+
+        fun getInterval(context: Context): Long {
+            return try {
+                val prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                prefs.getLong(PREF_INTERVAL_MINUTES, DEFAULT_INTERVAL_MINUTES)
+                    .coerceIn(MIN_INTERVAL_MINUTES, MAX_INTERVAL_MINUTES)
+            } catch (_: Exception) {
+                DEFAULT_INTERVAL_MINUTES
+            }
+        }
+
+        private fun saveInterval(context: Context, intervalMinutes: Long) {
+            try {
+                context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                    .edit()
+                    .putLong(
+                        PREF_INTERVAL_MINUTES,
+                        intervalMinutes.coerceIn(
+                            MIN_INTERVAL_MINUTES, MAX_INTERVAL_MINUTES))
+                    .apply()
+            } catch (_: Exception) {
+            }
+        }
+
+        private fun setEnabled(context: Context, enabled: Boolean) {
+            try {
+                context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                    .edit()
+                    .putBoolean(PREF_ENABLED, enabled)
+                    .apply()
+            } catch (_: Exception) {
+            }
+        }
+
+        private fun isEnabled(context: Context): Boolean {
+            return try {
+                context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+                    .getBoolean(PREF_ENABLED, true)
+            } catch (_: Exception) {
+                true
+            }
+        }
     }
 
     override fun doWork(): Result {
+        DiagLog.event(applicationContext, "START", "alarm_worker_dowork")
         val latch = CountDownLatch(1)
         pendingLatch = latch
         val engineRef = AtomicReference<FlutterEngine?>()
@@ -95,7 +163,8 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
                         "bubbleAlarmCallback",
                     ),
                 )
-            } catch (_: Exception) {
+            } catch (e: Exception) {
+                DiagLog.event(applicationContext, "ERROR", "alarm_worker_engine_create", "error=$e")
                 latch.countDown()
             }
         }
@@ -104,14 +173,23 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
         // when its work (picking a question, posting the bubble) is done.
         // If that signal never arrives — a crash, a hung network call — this
         // falls through, and the alarm chain still self-heals below.
-        latch.await(60, TimeUnit.SECONDS)
+        val signaled = latch.await(60, TimeUnit.SECONDS)
         pendingLatch = null
+        DiagLog.event(
+            applicationContext,
+            "END",
+            "alarm_worker_dowork",
+            "signaled=$signaled",
+        )
 
         Handler(Looper.getMainLooper()).post { engineRef.get()?.destroy() }
 
         // Always re-arm, regardless of what happened above — this is the
         // entire mechanism that keeps ambient prompts alive; see class doc.
-        enqueueNext(applicationContext)
+        // Skipped only when the user has switched Study Buddy off.
+        if (isEnabled(applicationContext)) {
+            enqueueNext(applicationContext)
+        }
 
         return Result.success()
     }

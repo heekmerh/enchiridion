@@ -8,9 +8,8 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-// Keep native-selected secondary entrypoint libraries in the AOT program.
-// ignore: unused_import
 import 'bubble_main.dart';
+// Keeps the native-selected headless entrypoint library in the AOT program.
 // ignore: unused_import
 import 'services/bubble_alarm_callback.dart';
 
@@ -24,6 +23,7 @@ import 'providers/pinned_notes_provider.dart';
 import 'providers/study_stats_provider.dart';
 import 'services/access_service.dart';
 import 'services/bubble_scheduler.dart';
+import 'services/diagnostics_log.dart';
 import 'services/user_data_sync_service.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
@@ -34,12 +34,38 @@ import 'widgets/exam_prep/in_app_study_prompt_host.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Supabase.initialize(
-    url: supabaseUrl,
-    anonKey: supabaseAnonKey,
+  // BubbleActivity launches this same entrypoint (see BubbleActivity.kt): its
+  // former secondary entrypoint never started in release AOT builds, leaving
+  // the tapped-notification window blank forever. Branch before any of the
+  // full-shell setup below — Supabase, sync, the alarm chain — none of which
+  // the one-question window needs.
+  if (isBubbleRoute(PlatformDispatcher.instance.defaultRouteName)) {
+    runBubbleWindow();
+    return;
+  }
+
+  FlutterError.onError = (details) {
+    DiagnosticsLog.error(
+        'main_flutter_error', details.exceptionAsString(), details.stack);
+    FlutterError.presentError(details);
+  };
+  PlatformDispatcher.instance.onError = (error, stack) {
+    DiagnosticsLog.error('main_uncaught_error', error, stack);
+    return false;
+  };
+  // Not awaited: the channel lookup now retries, and on a platform without
+  // BubblePlugin (desktop/web) that would otherwise add a second to startup.
+  // Lines logged before it lands are buffered, not lost.
+  unawaited(DiagnosticsLog.init('main'));
+  DiagnosticsLog.event('main_start');
+
+  await DiagnosticsLog.track(
+    'main_supabase_init',
+    () => Supabase.initialize(url: supabaseUrl, anonKey: supabaseAnonKey),
   );
 
-  final prefs = await SharedPreferences.getInstance();
+  final prefs = await DiagnosticsLog.track(
+      'main_storage_load', SharedPreferences.getInstance);
   final storageService = StorageService(prefs);
   // Lets AccessService timestamp successful validations so cached grants
   // expire back to freemium after 7 days without a successful check.
@@ -62,15 +88,28 @@ void main() async {
   // startup — reviews still work locally, they just won't rebound in the
   // background.
   try {
-    await NotificationService.instance.initialize();
+    await DiagnosticsLog.track(
+        'main_notification_service_init', NotificationService.instance.initialize);
   } catch (_) {}
 
   // Ambient "Quick Check" bubble notifications are Android-only (no Bubbles
   // equivalent on iOS yet). Best-effort for the same reason as above.
   if (!kIsWeb && Platform.isAndroid) {
-    await BubbleScheduler().armOnStartup();
+    final studyBuddy = storageService.getSettings();
+    if (studyBuddy.studyBuddyEnabled) {
+      await DiagnosticsLog.track(
+        'main_bubble_arm_on_startup',
+        () => BubbleScheduler().armOnStartup(
+          intervalMinutes: studyBuddy.studyBuddyIntervalMinutes,
+        ),
+      );
+    } else {
+      await DiagnosticsLog.track(
+          'main_bubble_cancel_schedule', BubbleScheduler().cancelSchedule);
+    }
   }
 
+  DiagnosticsLog.event('main_run_app');
   runApp(EnchiridionApp(storageService: storageService));
 }
 

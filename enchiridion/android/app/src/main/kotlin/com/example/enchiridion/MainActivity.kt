@@ -11,5 +11,6 @@ class MainActivity : FlutterActivity() {
         // engine that needs it — this one (the visible app), BubbleActivity's
         // engine, and the headless engine BubbleAlarmWorker creates.
         flutterEngine.plugins.add(BubblePlugin())
+        DiagLog.event(this, "EVENT", "main_activity_engine_configured")
     }
 }

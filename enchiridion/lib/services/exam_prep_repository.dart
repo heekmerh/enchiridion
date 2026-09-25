@@ -4,9 +4,17 @@ import 'package:flutter/services.dart';
 
 import '../models/exam_module.dart';
 import '../models/question.dart';
+import 'diagnostics_log.dart';
 
 class ExamPrepRepository {
   static const String assetPath = 'assets/data/exam_prep_questions.json';
+
+  // The bundled bank is ~1.1MB / 493 questions: loading + jsonDecode-ing it
+  // was previously repeated on every call (every bubble tap, every home
+  // screen open), which read as a UI freeze while the spinner couldn't even
+  // animate. Parsed once per process and reused — safe because the asset is
+  // immutable for the lifetime of the app.
+  static Future<List<Question>>? _cachedBank;
 
   /// Loads the question bank, filtered to [module]. The bundled bank predates
   /// modules so every question defaults to PLAB; filtering keeps each
@@ -14,8 +22,35 @@ class ExamPrepRepository {
   /// banks ship.
   Future<List<Question>> loadQuestions(
       {String module = kPlabModuleId}) async {
-    final raw = await rootBundle.loadString(assetPath);
-    return parseNormalizedJson(raw, module: module);
+    final cacheHit = _cachedBank != null;
+    final bank = await (_cachedBank ??= _loadBank());
+    if (cacheHit) {
+      DiagnosticsLog.event('bank_cache_hit', {'module': module});
+    }
+    return bank.where((question) => question.module == module).toList();
+  }
+
+  Future<List<Question>> _loadBank() async {
+    final stopwatch = Stopwatch()..start();
+    DiagnosticsLog.start('bank_parse');
+    try {
+      final raw = await rootBundle.loadString(assetPath);
+      final list = jsonDecode(raw) as List<dynamic>;
+      final parsed = list
+          .map((item) => Question.fromJson(item as Map<String, dynamic>))
+          .toList();
+      DiagnosticsLog.end('bank_parse', {
+        'ms': stopwatch.elapsedMilliseconds,
+        'count': parsed.length,
+      });
+      return parsed;
+    } catch (e) {
+      DiagnosticsLog.error('bank_parse', e);
+      // Don't cache a failed load — a transient asset-bundle hiccup
+      // shouldn't permanently break every future call in this process.
+      _cachedBank = null;
+      rethrow;
+    }
   }
 
   static List<Question> parseNormalizedJson(String raw,

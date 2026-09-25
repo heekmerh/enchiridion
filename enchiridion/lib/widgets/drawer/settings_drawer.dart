@@ -1,5 +1,8 @@
+import 'package:flutter/foundation.dart'
+    show defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/material.dart';
 import '../../models/user_settings.dart' as models;
+import '../../screens/diagnostics_log_screen.dart';
 import '../../theme/app_colors.dart';
 import '../../constants/app_strings.dart';
 
@@ -20,12 +23,16 @@ class SettingsPanel extends StatelessWidget {
     int? fontSize,
     double? lineHeight,
     models.FontFamily? fontFamily,
+    bool? studyBuddyEnabled,
+    int? studyBuddyIntervalMinutes,
   }) {
     onUpdate(settings.copyWith(
       theme: theme,
       fontSize: fontSize,
       lineHeight: lineHeight,
       fontFamily: fontFamily,
+      studyBuddyEnabled: studyBuddyEnabled,
+      studyBuddyIntervalMinutes: studyBuddyIntervalMinutes,
     ));
   }
 
@@ -133,6 +140,40 @@ class SettingsPanel extends StatelessWidget {
           onChanged: (value) => _update(lineHeight: value),
         ),
 
+        // Android-only: ambient prompts are armed through a WorkManager chain
+        // with no iOS/desktop equivalent (arming is Platform.isAndroid-gated in
+        // SettingsProvider), so rendering these controls anywhere else offers a
+        // switch that silently does nothing.
+        if (defaultTargetPlatform == TargetPlatform.android) ...[
+          const SizedBox(height: 32),
+          _buildSectionTitle(AppStrings.studyBuddySection, theme),
+          const SizedBox(height: 12),
+          SwitchListTile(
+            value: settings.studyBuddyEnabled,
+            onChanged: (value) => _update(studyBuddyEnabled: value),
+            title: const Text('Study Buddy prompts'),
+            subtitle: const Text(
+                'A practice question every so often, even when the app is closed.'),
+            contentPadding: EdgeInsets.zero,
+          ),
+          _StudyBuddyIntervalSlider(
+            intervalMinutes: settings.studyBuddyIntervalMinutes,
+            enabled: settings.studyBuddyEnabled,
+            onChangedEnd: (minutes) =>
+                _update(studyBuddyIntervalMinutes: minutes),
+          ),
+          ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(Icons.bug_report_outlined),
+            title: const Text('Diagnostics log'),
+            subtitle: const Text(
+                'Timeline of app and Study Buddy activity, for troubleshooting.'),
+            onTap: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const DiagnosticsLogScreen()),
+            ),
+          ),
+        ],
+
         if (onLogout != null) ...[
           const SizedBox(height: 40),
           const Divider(),
@@ -162,6 +203,76 @@ class SettingsPanel extends StatelessWidget {
         letterSpacing: 1.5,
         color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
       ),
+    );
+  }
+}
+
+/// Interval slider for Study Buddy's ambient prompt spacing.
+///
+/// Tracks the dragged value locally and only reports it back to the parent
+/// (which persists to prefs and re-arms the native WorkManager chain — a
+/// real cancel-and-reschedule since the interval-change fix uses REPLACE)
+/// on release. Reporting on every drag tick would spam that native call for
+/// every one of the slider's 21 divisions crossed while dragging.
+class _StudyBuddyIntervalSlider extends StatefulWidget {
+  final int intervalMinutes;
+  final bool enabled;
+  final ValueChanged<int> onChangedEnd;
+
+  const _StudyBuddyIntervalSlider({
+    required this.intervalMinutes,
+    required this.enabled,
+    required this.onChangedEnd,
+  });
+
+  @override
+  State<_StudyBuddyIntervalSlider> createState() =>
+      _StudyBuddyIntervalSliderState();
+}
+
+class _StudyBuddyIntervalSliderState extends State<_StudyBuddyIntervalSlider> {
+  late double _value = widget.intervalMinutes.toDouble().clamp(15, 120);
+
+  @override
+  void didUpdateWidget(covariant _StudyBuddyIntervalSlider oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.intervalMinutes != widget.intervalMinutes) {
+      _value = widget.intervalMinutes.toDouble().clamp(15, 120);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Every'),
+            Text(
+              '${_value.round()} min',
+              style: const TextStyle(
+                fontSize: 12,
+                fontFamily: 'monospace',
+                color: AppColors.neonTeal,
+              ),
+            ),
+          ],
+        ),
+        Slider(
+          value: _value,
+          min: 15,
+          max: 120,
+          divisions: 21,
+          onChanged: widget.enabled
+              ? (value) => setState(() => _value = value)
+              : null,
+          onChangeEnd: widget.enabled
+              ? (value) => widget.onChangedEnd(value.round())
+              : null,
+        ),
+      ],
     );
   }
 }

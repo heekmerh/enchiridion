@@ -1,5 +1,9 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import '../models/user_settings.dart';
+import '../services/bubble_scheduler.dart';
 import '../services/storage_service.dart';
 
 class SettingsProvider with ChangeNotifier {
@@ -24,9 +28,23 @@ class SettingsProvider with ChangeNotifier {
   }
 
   Future<void> updateSettings(UserSettings newSettings) async {
+    final studyBuddyChanged =
+        newSettings.studyBuddyEnabled != _settings.studyBuddyEnabled ||
+            newSettings.studyBuddyIntervalMinutes !=
+                _settings.studyBuddyIntervalMinutes;
     _settings = newSettings;
     await _storageService.saveSettings(newSettings);
     notifyListeners();
+    if (studyBuddyChanged && !kIsWeb) {
+      try {
+        if (Platform.isAndroid) {
+          unawaited(BubbleScheduler().applySettings(
+            enabled: newSettings.studyBuddyEnabled,
+            intervalMinutes: newSettings.studyBuddyIntervalMinutes,
+          ));
+        }
+      } catch (_) {}
+    }
   }
 
   Future<void> updateTheme(ThemeMode theme) async {
@@ -43,5 +61,13 @@ class SettingsProvider with ChangeNotifier {
 
   Future<void> updateFontFamily(FontFamily fontFamily) async {
     await updateSettings(_settings.copyWith(fontFamily: fontFamily));
+  }
+
+  Future<void> updateStudyBuddyEnabled(bool enabled) async {
+    await updateSettings(_settings.copyWith(studyBuddyEnabled: enabled));
+  }
+
+  Future<void> updateStudyBuddyInterval(int minutes) async {
+    await updateSettings(_settings.copyWith(studyBuddyIntervalMinutes: minutes));
   }
 }

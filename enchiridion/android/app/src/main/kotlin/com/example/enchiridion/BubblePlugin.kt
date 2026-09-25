@@ -26,8 +26,29 @@ import io.flutter.plugin.common.MethodChannel.Result
 
 private const val CHANNEL_NAME = "enchiridion/bubbles"
 private const val NOTIFICATION_CHANNEL_ID = "quick_check"
-private const val NOTIFICATION_ID = 4271
 private const val SHORTCUT_ID = "study_buddy"
+
+/**
+ * Stable per-question id used for both the notification and its
+ * PendingIntent request code.
+ *
+ * Previously every prompt shared one constant notification id, so a new
+ * prompt silently replaced the one the user was still answering. The request
+ * code was `questionId.hashCode()`, whose 32-bit Java string hash can collide
+ * across question ids — and with FLAG_UPDATE_CURRENT a collision delivers the
+ * wrong question's extras. Question ids are `exam-NNNN`, so deriving from the
+ * trailing digits is both collision-free across the bank and stable between
+ * posting a notification and cancelling it.
+ */
+internal fun quickCheckNotificationId(questionId: String): Int {
+    val digits = questionId.takeLastWhile { it.isDigit() }
+    val parsed = digits.toIntOrNull()
+    // Offset keeps these clear of unrelated notification ids in this app.
+    if (parsed != null) return 40000 + parsed
+    // Non-conforming id (never in the bundled bank): fall back to a positive
+    // hash. Collisions are possible but confined to this case.
+    return 40000 + (questionId.hashCode() and 0xffff)
+}
 
 /**
  * Bridges `lib/services/bubble_alarm_callback.dart`, `lib/bubble_main.dart`,
@@ -81,10 +102,33 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             return
         }
         when (call.method) {
+            // Tells the Dart-side DiagnosticsLog exactly where DiagLog is
+            // writing, so both land in the one file/timeline.
+            "diagLogDir" -> {
+                result.success(DiagLog.directory(context))
+            }
             // Called on every Android app launch. KEEP preserves a pending
             // run and starts a new chain if WorkManager has lost the old one.
             "armBubbleSchedule" -> {
-                BubbleAlarmWorker.armOnAppStart(context)
+                val intervalArg = (call.argument<Number>("intervalMinutes"))?.toLong()
+                DiagLog.event(context, "EVENT", "arm_on_app_start", "interval=$intervalArg")
+                BubbleAlarmWorker.armOnAppStart(context, intervalArg)
+                result.success(null)
+            }
+            // Called when the user changes the Study Buddy toggle/interval in
+            // Settings. Unlike armBubbleSchedule (KEEP, for app-startup arm),
+            // this uses REPLACE so a shortened/lengthened interval takes
+            // effect immediately instead of waiting out the old schedule.
+            "rearmBubbleSchedule" -> {
+                val intervalArg = (call.argument<Number>("intervalMinutes"))?.toLong()
+                    ?: DEFAULT_INTERVAL_MINUTES
+                DiagLog.event(context, "EVENT", "rearm_for_settings_change", "interval=$intervalArg")
+                BubbleAlarmWorker.rearmForSettingsChange(context, intervalArg)
+                result.success(null)
+            }
+            "cancelBubbleSchedule" -> {
+                DiagLog.event(context, "EVENT", "cancel_schedule")
+                BubbleAlarmWorker.cancelSchedule(context)
                 result.success(null)
             }
             // Called from the headless engine by bubbleAlarmCallback once it
@@ -97,13 +141,35 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 // Full question text for the expanded view; falls back to
                 // the teaser on older posts that didn't send it.
                 val fullText = call.argument<String>("fullText") ?: teaser
+                DiagLog.event(context, "EVENT", "show_bubble", "question_id=$questionId")
                 showBubble(context, scope, questionId, title, teaser, fullText)
                 result.success(null)
             }
             // Called from BubbleActivity's engine (bubble_main.dart) once
             // the user has closed the answer card.
+            // Clears a prompt without closing the window, called once its
+            // answer is recorded. Backing out of the window afterwards then
+            // cannot leave a prompt in the shade pointing at a question the
+            // user has already answered.
+            "cancelBubbleNotification" -> {
+                val questionId = call.argument<String>("questionId")
+                if (questionId != null && questionId.isNotEmpty()) {
+                    NotificationManagerCompat.from(context)
+                        .cancel(quickCheckNotificationId(questionId))
+                }
+                result.success(null)
+            }
+            // Cancels only this window's own prompt: prompts are posted under
+            // per-question ids now, so closing one must not clear another
+            // that is still waiting in the shade. A missing questionId (a
+            // window that never resolved one) closes without cancelling.
             "dismissBubble" -> {
-                NotificationManagerCompat.from(context).cancel(NOTIFICATION_ID)
+                val questionId = call.argument<String>("questionId")
+                DiagLog.event(context, "EVENT", "dismiss_bubble", "question_id=$questionId")
+                if (questionId != null && questionId.isNotEmpty()) {
+                    NotificationManagerCompat.from(context)
+                        .cancel(quickCheckNotificationId(questionId))
+                }
                 activity?.finish()
                 result.success(null)
             }
@@ -112,6 +178,7 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             // BubbleAlarmWorker.doWork()'s wait so it can tear the engine
             // down and re-arm the next run.
             "workFinished" -> {
+                DiagLog.event(context, "EVENT", "work_finished_signal")
                 BubbleAlarmWorker.pendingLatch?.countDown()
                 result.success(null)
             }
@@ -137,7 +204,11 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     }
 
     private fun bubbleActivityIntent(context: Context, scope: String, questionId: String): Intent {
-        val route = "/bubble?scope=${Uri.encode(scope)}&question=${Uri.encode(questionId)}"
+        // logdir lets bubble_main.dart start its log with no platform-channel
+        // round trip, so that window can still be diagnosed when channels in
+        // its engine are the thing that isn't responding.
+        val route = "/bubble?scope=${Uri.encode(scope)}&question=${Uri.encode(questionId)}" +
+            "&logdir=${Uri.encode(DiagLog.directory(context))}"
         return FlutterActivity.NewEngineIntentBuilder(BubbleActivity::class.java)
             .initialRoute(route)
             .build(context)
@@ -154,12 +225,13 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     ) {
         ensureNotificationChannel(context)
 
+        val notificationId = quickCheckNotificationId(questionId)
         val contentIntent = bubbleActivityIntent(context, scope, questionId)
         // Bubble intents specifically must be mutable — Android rejects an
         // immutable PendingIntent in BubbleMetadata.
         val pendingIntent = PendingIntent.getActivity(
             context,
-            questionId.hashCode(),
+            notificationId,
             contentIntent,
             PendingIntent.FLAG_MUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
@@ -208,7 +280,7 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
         if (!notificationManager.areNotificationsEnabled()) {
             Log.w("BubbleAlarm", "outcome=notifications_disabled")
         }
-        notificationManager.notify(NOTIFICATION_ID, builder.build())
+        notificationManager.notify(notificationId, builder.build())
     }
 
     private fun publishShortcut(context: Context, person: Person, icon: IconCompat) {

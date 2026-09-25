@@ -31,4 +31,5 @@ class AppStrings {
   static const typefaceSection = 'TYPEFACE';
   static const sizeSection = 'SIZE';
   static const spacingSection = 'SPACING';
+  static const studyBuddySection = 'STUDY BUDDY';
 }
