@@ -54,6 +54,7 @@ union all select 'daily_study_stats', count(*) from public.daily_study_stats
 union all select 'question_reviews', count(*) from public.question_reviews
 union all select 'flagged_questions', count(*) from public.flagged_questions
 union all select 'processed_payments', count(*) from public.processed_payments
+union all select 'user_subscriptions', count(*) from public.user_subscriptions
 union all select 'pinned_notes', count(*) from public.pinned_notes
 union all select 'note_collections', count(*) from public.note_collections
 union all select 'bookmarks', count(*) from public.bookmarks

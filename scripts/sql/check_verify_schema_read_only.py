@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail closed on write-capable SQL before an operator runs verify_001_004.sql."""
+"""Fail closed on write-capable SQL before an operator runs verify_schema.sql."""
 
 from __future__ import annotations
 
@@ -151,7 +151,7 @@ def self_test() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--self-test", action="store_true")
-    parser.add_argument("sql_file", nargs="?", default=str(Path(__file__).with_name("verify_001_004.sql")))
+    parser.add_argument("sql_file", nargs="?", default=str(Path(__file__).with_name("verify_schema.sql")))
     args = parser.parse_args()
     try:
         if args.self_test:

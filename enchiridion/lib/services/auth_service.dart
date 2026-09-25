@@ -11,7 +11,7 @@ class AuthService {
       _client.auth.onAuthStateChange;
 
   /// Checks display-name availability via the `is_display_name_available`
-  /// RPC (see scripts/sql/002_unique_display_name.sql) — a plain `select`
+  /// RPC (see scripts/sql/999_MASTER_init.sql) — a plain `select`
   /// against `profiles` can't do this client-side, since its RLS policy only
   /// lets a user read their own row.
   ///
@@ -36,11 +36,18 @@ class AuthService {
     required String password,
     required String displayName,
     required String role,
+    required String termsVersion,
   }) async {
+    final acceptedAt = DateTime.now().toUtc().toIso8601String();
     final response = await _client.auth.signUp(
       email: email,
       password: password,
-      data: {'display_name': displayName, 'role': role},
+      data: {
+        'display_name': displayName,
+        'role': role,
+        'terms_version': termsVersion,
+        'terms_accepted_at': acceptedAt,
+      },
     );
 
     // Only insert profile if we have a live session (email confirmation off).
@@ -51,6 +58,8 @@ class AuthService {
         'id': response.user!.id,
         'display_name': displayName,
         'role': role,
+        'terms_version': termsVersion,
+        'terms_accepted_at': acceptedAt,
       });
     }
 
@@ -107,6 +116,8 @@ class AuthService {
           'id': user.id,
           'display_name': meta['display_name'] as String? ?? '',
           'role': meta['role'] as String? ?? 'student',
+          'terms_version': meta['terms_version'] as String?,
+          'terms_accepted_at': meta['terms_accepted_at'] as String?,
         });
       }
     } catch (_) {}

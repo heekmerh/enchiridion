@@ -5,12 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../constants/about_config.dart';
 import '../utils/bottom_inset.dart';
 
-/// About section: the author, the app developer, links to a physical copy
-/// and the website, plus the copyright and data-protection (NDPA) notice.
-///
-/// Content lives in [AboutConfig] — this screen only renders it. Links open
-/// in the device browser; if launching fails, the URL is copied to the
-/// clipboard instead so the user is never stuck.
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
@@ -72,8 +66,6 @@ class AboutScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 6),
-                const Text(AboutConfig.authorBio),
                 const SizedBox(height: 10),
                 _EmailRow(
                   email: AboutConfig.authorEmail,
@@ -93,8 +85,6 @@ class AboutScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 6),
-                const Text(AboutConfig.coAuthorBio),
               ],
             ),
           ),
@@ -109,8 +99,6 @@ class AboutScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 6),
-                const Text(AboutConfig.appDeveloperBlurb),
                 const SizedBox(height: 10),
                 _EmailRow(
                   email: AboutConfig.developerEmail,
@@ -135,6 +123,27 @@ class AboutScreen extends StatelessWidget {
               label: 'Visit the website',
               icon: Icons.language_outlined,
               onOpen: () => _openLink(context, AboutConfig.websiteUrl),
+            ),
+          ),
+          _Section(
+            title: 'Legal',
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _LinkRow(
+                  url: AboutConfig.termsUrl,
+                  label: 'Terms and Conditions',
+                  icon: Icons.gavel_outlined,
+                  onOpen: () => _openLink(context, AboutConfig.termsUrl),
+                ),
+                const SizedBox(height: 16),
+                _LinkRow(
+                  url: AboutConfig.privacyPolicyUrl,
+                  label: 'Privacy Policy',
+                  icon: Icons.privacy_tip_outlined,
+                  onOpen: () => _openLink(context, AboutConfig.privacyPolicyUrl),
+                ),
+              ],
             ),
           ),
           _Section(

@@ -3,8 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../constants/about_config.dart';
 import '../providers/auth_provider.dart';
 import '../services/auth_service.dart';
+import '../services/subscription_service.dart';
 import 'login_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -16,6 +19,7 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   Map<String, dynamic>? _profile;
+  SubscriptionStatus? _subscription;
   bool _loading = true;
   bool _saving = false;
   String? _error;
@@ -28,6 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     super.initState();
     _nameCtrl = TextEditingController();
     _loadProfile();
+    _loadSubscription();
   }
 
   @override
@@ -53,6 +58,59 @@ class _ProfileScreenState extends State<ProfileScreen> {
           _loading = false;
         });
     }
+  }
+
+  Future<void> _loadSubscription() async {
+    final subscription = await SubscriptionService.instance.current();
+    if (mounted) setState(() => _subscription = subscription);
+  }
+
+  Future<void> _openManageSubscription() async {
+    final messenger = ScaffoldMessenger.of(context);
+    bool opened = false;
+    try {
+      opened = await launchUrl(
+        Uri.parse(AboutConfig.manageSubscriptionUrl),
+        mode: LaunchMode.externalApplication,
+      );
+    } catch (_) {
+      opened = false;
+    }
+    if (!opened) {
+      messenger.showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Could not open the browser. Manage your subscription at '
+            '${AboutConfig.manageSubscriptionUrl}',
+          ),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
+
+  Widget _subscriptionSubtitle(ThemeData theme) {
+    final subscription = _subscription;
+    if (subscription == null) {
+      return Text('Free tier — no active subscription',
+          style: theme.textTheme.bodyLarge);
+    }
+    final endsOn = subscription.endsOn;
+    final when = endsOn == null ? null : formatRenewalDate(endsOn);
+    if (subscription.renewsAutomatically) {
+      return Text(
+        when == null
+            ? 'Renews automatically until you cancel'
+            : 'Renews automatically on $when',
+        style: theme.textTheme.bodyLarge,
+      );
+    }
+    return Text(
+      when == null
+          ? 'Cancelled — will not renew'
+          : 'Cancelled — access until $when',
+      style: theme.textTheme.bodyLarge,
+    );
   }
 
   Future<void> _saveName() async {
@@ -330,6 +388,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           return '${r[0].toUpperCase()}${r.substring(1)}';
                         }(), style: theme.textTheme.bodyLarge),
                         contentPadding: EdgeInsets.zero,
+                      ),
+                      const Divider(),
+
+                      ListTile(
+                        leading: const Icon(Icons.card_membership_outlined),
+                        title: Text('Subscription',
+                            style: theme.textTheme.labelSmall),
+                        subtitle: _subscriptionSubtitle(theme),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextButton.icon(
+                          onPressed: _openManageSubscription,
+                          icon: const Icon(Icons.open_in_new, size: 18),
+                          label: Text(_subscription == null
+                              ? 'See plans'
+                              : 'Manage or cancel subscription'),
+                        ),
                       ),
                       const SizedBox(height: 40),
 

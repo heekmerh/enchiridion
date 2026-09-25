@@ -248,6 +248,7 @@ class AuthProvider with ChangeNotifier {
     required String password,
     required String displayName,
     required String role,
+    required String termsVersion,
   }) async {
     _error = null;
     try {
@@ -256,6 +257,7 @@ class AuthProvider with ChangeNotifier {
         password: password,
         displayName: displayName,
         role: role,
+        termsVersion: termsVersion,
       );
       // No session means the account is not usable yet. That covers both
       // "confirmation required" and GoTrue's obfuscated reply for an email
@@ -282,7 +284,7 @@ class AuthProvider with ChangeNotifier {
       // 23505 = unique_violation. The pre-submit availability check in
       // RegisterScreen makes this rare — only a genuine race with another
       // sign-up choosing the identical name in the same instant — but the
-      // unique index (scripts/sql/002_unique_display_name.sql) is the real
+      // unique index (scripts/sql/999_MASTER_init.sql) is the real
       // guard, so it must still be handled here.
       if (e.code == '23505') {
         return 'That display name is already taken — please choose another.';

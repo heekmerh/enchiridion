@@ -14,7 +14,7 @@ enum PaymentOutcome { success, cancelled, failed }
 ///
 /// This client never grants access itself — `user_book_access` has no
 /// client-writable INSERT/UPDATE policy on purpose (see the note in
-/// scripts/sql/000_init_database.sql), because a client that could grant
+/// scripts/sql/999_MASTER_init.sql), because a client that could grant
 /// its own access wouldn't need to pay at all. [purchase] only launches the
 /// checkout, then hands the resulting transaction id to the
 /// verify-flutterwave-payment Edge Function, which is the only thing that

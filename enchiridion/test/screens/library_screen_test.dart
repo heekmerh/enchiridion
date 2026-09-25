@@ -46,6 +46,7 @@ class _FakeAuthProvider extends ChangeNotifier implements AuthProvider {
     required String password,
     required String displayName,
     required String role,
+    required String termsVersion,
   }) async =>
       null;
 

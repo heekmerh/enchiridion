@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../config/pricing_config.dart';
+import '../constants/about_config.dart';
 import '../models/book_catalog.dart';
 import '../models/exam_module.dart';
 import '../services/access_service.dart';
@@ -115,6 +116,29 @@ class _UnlockScreenState extends State<UnlockScreen>
     }
   }
 
+  Future<void> _openTerms() async {
+    final messenger = ScaffoldMessenger.of(context);
+    bool opened = false;
+    try {
+      opened = await launchUrl(
+        Uri.parse(AboutConfig.termsUrl),
+        mode: LaunchMode.externalApplication,
+      );
+    } catch (_) {
+      opened = false;
+    }
+    if (!opened) {
+      await Clipboard.setData(
+          const ClipboardData(text: AboutConfig.termsUrl));
+      messenger.showSnackBar(
+        const SnackBar(
+          content: Text('Link copied to clipboard.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
+
   /// Re-reads entitlements from Supabase. Pops with success when access is
   /// granted; otherwise (manual tap only) explains nothing changed yet.
   Future<void> _checkAccess({bool silent = false}) async {
@@ -218,7 +242,8 @@ class _UnlockScreenState extends State<UnlockScreen>
 
               Text(
                 'Payment is completed securely on our website — '
-                'tap a plan to continue there.',
+                'tap a plan to continue there. Prices are in naira and '
+                'include tax.',
                 textAlign: TextAlign.center,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: cs.onSurface.withValues(alpha: 0.64),
@@ -231,6 +256,7 @@ class _UnlockScreenState extends State<UnlockScreen>
                 _PlanButton(
                   label:
                       'Unlock ${_bookTitle()} — ${kBookUnlockPlan.label.split('— ').last}',
+                  note: kBookUnlockPlan.renewalNotice,
                   tonal: false,
                   onPressed: () => _subscribe(kBookUnlockPlan),
                 ),
@@ -240,12 +266,14 @@ class _UnlockScreenState extends State<UnlockScreen>
               // Full subscription CTAs
               _PlanButton(
                 label: kSubscriptionMonthlyPlan.label,
+                note: kSubscriptionMonthlyPlan.renewalNotice,
                 tonal: isBookSpecific,
                 onPressed: () => _subscribe(kSubscriptionMonthlyPlan),
               ),
               const SizedBox(height: 12),
               _PlanButton(
                 label: kSubscriptionYearlyPlan.label,
+                note: kSubscriptionYearlyPlan.renewalNotice,
                 tonal: true,
                 onPressed: () => _subscribe(kSubscriptionYearlyPlan),
               ),
@@ -265,6 +293,10 @@ class _UnlockScreenState extends State<UnlockScreen>
                     : const Icon(Icons.refresh_outlined, size: 18),
                 label: Text(
                     _checking ? 'Checking…' : "I've paid — check access"),
+              ),
+              TextButton(
+                onPressed: _openTerms,
+                child: const Text('Terms, renewal and cancellation'),
               ),
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -297,25 +329,41 @@ class _UnlockScreenState extends State<UnlockScreen>
 
 class _PlanButton extends StatelessWidget {
   final String label;
+  final String note;
   final bool tonal;
   final VoidCallback onPressed;
 
   const _PlanButton({
     required this.label,
+    required this.note,
     required this.tonal,
     required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final style = FilledButton.styleFrom(
       padding: const EdgeInsets.symmetric(vertical: 16),
     );
 
-    return tonal
-        ? FilledButton.tonal(
-            onPressed: onPressed, style: style, child: Text(label))
-        : FilledButton(
-            onPressed: onPressed, style: style, child: Text(label));
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        tonal
+            ? FilledButton.tonal(
+                onPressed: onPressed, style: style, child: Text(label))
+            : FilledButton(
+                onPressed: onPressed, style: style, child: Text(label)),
+        const SizedBox(height: 4),
+        Text(
+          note,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
+          ),
+        ),
+      ],
+    );
   }
 }

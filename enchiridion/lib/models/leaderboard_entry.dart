@@ -1,5 +1,5 @@
 /// One row from the `get_leaderboard` RPC (see
-/// scripts/sql/003_leaderboard.sql). `rank` is the row's true position even
+/// scripts/sql/999_MASTER_init.sql). `rank` is the row's true position even
 /// when the row was only included because [isYou] — a row past the
 /// requested limit is still a real rank, not a placeholder.
 class LeaderboardEntry {

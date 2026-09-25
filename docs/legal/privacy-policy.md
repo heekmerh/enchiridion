@@ -2,7 +2,10 @@
 
 > Draft populated from the app's actual implementation (Flutter client,
 > Supabase backend, Flutterwave payments). Review with counsel before
-> publishing. Last updated: September 2026.
+> publishing. Last updated: 25 September 2026.
+>
+> Publish at https://www.enchiridion.site/privacy — the sign-up screen, the
+> About screen, and the Play listing all link to that URL.
 
 Enchiridion ("we", "us") provides an offline-first clinical companion app
 with textbooks, calculators, instrumentation guides, OSCE stations, and
@@ -35,6 +38,15 @@ unlocked, grant dates, and expiry dates. Payments are processed by
 **Flutterwave**; we never see or store your card number, bank details, or
 USSD PIN. We keep only the payment reference (transaction ID), plan, amount,
 and currency so we can verify purchases and prevent double-charging.
+
+**Subscription records.** If you take an auto-renewing plan, we also store
+the plan you chose, its status, whether it is set to renew, your renewal
+date, and the subscription identifier Flutterwave issues, so the app can
+show you when you will next be billed and where to cancel. The billing
+schedule itself is run by Flutterwave against the email on your account.
+
+**Terms acceptance.** The version of the Terms and Conditions you accepted
+at sign-up, and when — kept as our record that you agreed to them.
 
 **Support and content reports.** Anything you send to support@enchiridion.site,
 and any question you flag in-app (question ID and reason).

@@ -4,7 +4,7 @@
 //   supabase secrets set FLUTTERWAVE_SECRET_KEY=<your Flutterwave secret key>
 //
 // This is the ONLY place allowed to write public.user_book_access — see
-// that table's own RLS note in scripts/sql/000_init_database.sql. The
+// that table's own RLS note in scripts/sql/999_MASTER_init.sql. The
 // client (lib/services/payment_service.dart) only ever launches a
 // Flutterwave checkout and hands this function the resulting
 // transaction_id; every fact this function acts on (whether the payment

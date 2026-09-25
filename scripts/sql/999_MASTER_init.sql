@@ -1,61 +1,52 @@
 -- ===============================================================================
 -- Enchiridion — MASTER database initialization (single file)
 -- ===============================================================================
--- Run this ONCE against a brand-new Supabase project (Dashboard → SQL Editor
--- → New query → paste → Run). It is the concatenation, in dependency order, of:
---   000_init_database.sql  (profiles, device binding, user_book_access,
---                             questions, daily_study_stats, question_reviews,
---                             avatars bucket, seed clinician account)
---   001_flagged_questions.sql
---   002_unique_display_name.sql
---   003_leaderboard.sql
---   004_payments.sql (processed_payments + expiry enforcement)
---   005_leaderboard_modules.sql
---   006_user_data_sync.sql (cross-device user data)
---
--- Every section is idempotent — safe to re-run top to bottom. If a statement
--- fails, fix the cause and re-run the whole file.
---
--- >>> BEFORE GOING LIVE: edit the seed password in the 000 section (search
---     for EDIT ME), then run wipe_database.sql first on a used project so no
---     development rows survive.
--- ===============================================================================
-
-
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 000_init_database.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
-
--- =============================================================================
--- Enchiridion — Full Database Initialization
--- =============================================================================
--- Run this ONCE against a brand-new Supabase project to create every table,
--- index, RLS policy and storage bucket the Flutter app expects.
+-- THE schema. There are no numbered migration files: while the app is in
+-- development, every schema change is folded into this file, in dependency
+-- order, so one paste provisions a project completely.
 --
 -- HOW TO RUN
---   1. Create a new project at https://supabase.com/dashboard
+--   1. Create a project at https://supabase.com/dashboard
 --   2. Open the project → SQL Editor → New query
 --   3. Paste this entire file, THEN EDIT THE PASSWORD in section 6 → Run
---   4. Copy the new Project URL + anon key into
+--   4. Copy the Project URL + anon key into
 --      enchiridion/lib/config/supabase_config.dart
 --   5. Auth → Providers → Email: turn "Confirm email" ON (the app's signup
 --      flow assumes confirmation is required).
 --
--- Section 6 seeds a pre-confirmed clinician account with a full subscription.
--- Its password is a placeholder in plain text in this file — change it before
--- running, and do not commit a real password here.
+-- CONTENTS
+--   1.  profiles (incl. device binding and terms acceptance)
+--   1b. handle_new_user — profile + inert entitlement row on signup
+--   2.  user_book_access — paid entitlements, expiry enforced in RLS
+--   3.  questions
+--   4.  daily_study_stats
+--   5.  question_reviews (spaced repetition)
+--   6.  avatars bucket + seed clinician account
+--   7.  flagged_questions
+--   8.  unique display names
+--   9.  leaderboard (global and per-module)
+--   10. payments — processed_payments anti-replay ledger
+--   11. cross-device user data sync
+--   12. user_subscriptions — auto-renewal mirror the app polls
 --
--- This script is idempotent — safe to re-run. It supersedes:
---   scripts/001_add_device_binding_columns.sql
---   scripts/quick_migration.sql
+-- Every section is idempotent — safe to re-run top to bottom. Adding a column
+-- to an existing table needs BOTH the column in its create table and a
+-- matching `alter table ... add column if not exists`, or a project that was
+-- provisioned earlier never receives it.
 --
 -- Derived from the app's actual Supabase calls:
---   profiles           auth_service.dart
---   user_book_access   access_service.dart
---   questions          question_list_screen.dart
---   daily_study_stats  study_stats_service.dart
---   avatars (bucket)   auth_service.dart :: uploadAvatar
--- =============================================================================
+--   profiles            auth_service.dart
+--   user_book_access    access_service.dart
+--   user_subscriptions  subscription_service.dart
+--   questions           question_list_screen.dart
+--   daily_study_stats   study_stats_service.dart
+--   avatars (bucket)    auth_service.dart :: uploadAvatar
+--
+-- >>> BEFORE GOING LIVE: edit the seed password in section 6 (search for
+--     EDIT ME), then run 998_wipe_database.sql first on a used project so no
+--     development rows survive.
+-- ===============================================================================
+
 
 begin;
 
@@ -93,6 +84,12 @@ create table if not exists public.profiles (
   -- from many devices/emulators. Defaults false for every real user.
   device_binding_exempt boolean   default false,
 
+  -- Which version of docs/legal/terms-and-conditions.md the user accepted at
+  -- sign-up, and when. Stamped by handle_new_user from server time, not from
+  -- the device clock, so the record stands as evidence of acceptance.
+  terms_version       text,
+  terms_accepted_at   timestamptz,
+
   created_at          timestamptz not null default timezone('utc', now())
 );
 
@@ -107,6 +104,8 @@ alter table public.profiles
   add column if not exists authorized_devices jsonb       default '[]'::jsonb,
   add column if not exists last_device_switch timestamptz,
   add column if not exists device_binding_exempt boolean  default false,
+  add column if not exists terms_version      text,
+  add column if not exists terms_accepted_at  timestamptz,
   add column if not exists created_at         timestamptz not null default timezone('utc', now());
 
 create index if not exists idx_profiles_email_confirmed    on public.profiles(email_confirmed);
@@ -162,6 +161,7 @@ set search_path = public
 as $$
 declare
   v_role text;
+  v_terms_version text;
 begin
   -- raw_user_meta_data is client-supplied (AuthService.signUp passes it
   -- straight through), so `role` cannot be trusted. Anything outside the three
@@ -176,11 +176,18 @@ begin
     v_role := 'student';
   end if;
 
-  insert into public.profiles (id, display_name, role)
+  v_terms_version :=
+    nullif(left(coalesce(new.raw_user_meta_data->>'terms_version', ''), 32), '');
+
+  insert into public.profiles (
+    id, display_name, role, terms_version, terms_accepted_at
+  )
   values (
     new.id,
     coalesce(new.raw_user_meta_data->>'display_name', ''),
-    v_role
+    v_role,
+    v_terms_version,
+    case when v_terms_version is null then null else timezone('utc', now()) end
   )
   on conflict (id) do nothing;
 
@@ -252,9 +259,17 @@ drop policy if exists "Users can read their granted access" on public.user_book_
 -- AccessService loads an empty entitlement set and falls back to the free
 -- tier. Tick `granted` and the same row becomes visible, book_id '*' lands in
 -- the cache, and the account has full access on its next sign-in.
+--
+-- The expires_at clause is what makes a purchased window actually end: the
+-- row disappears from the client the moment it passes. Evaluated live on
+-- every read, so no scheduled job is needed.
 create policy "Users can read their granted access"
   on public.user_book_access for select
-  using (auth.uid() = user_id and granted);
+  using (
+    auth.uid() = user_id
+    and granted
+    and (expires_at is null or expires_at > timezone('utc', now()))
+  );
 
 -- No INSERT or UPDATE policy is defined on purpose. Rows are created by the
 -- handle_new_user trigger (SECURITY DEFINER, so it bypasses RLS) and only ever
@@ -691,9 +706,9 @@ commit;
 --   where u.email = 'clinician@enchiridion.app';
 -- =============================================================================
 
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 001_flagged_questions.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Flagged questions
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- flagged_questions — user-reported issues with exam-prep / book questions
@@ -765,16 +780,16 @@ create policy "Users can insert their own flags"
 --   update public.flagged_questions set status = 'reviewed' where id = '<id>';
 -- =============================================================================
 
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 002_unique_display_name.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Unique display names
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- Unique, case-insensitive display names
 -- =============================================================================
 -- profiles.display_name had no uniqueness constraint at all — two users could
 -- register with the identical name. The default '' (see profiles.display_name
--- in 000_init_database.sql) is deliberately excluded from the constraint so a
+-- in section 1) is deliberately excluded from the constraint so a
 -- profile that hasn't set a name yet never collides with another blank one.
 --
 -- Run this BEFORE deploying the client changes that call
@@ -792,7 +807,7 @@ create unique index if not exists idx_profiles_display_name_unique
 
 -- Lets the sign-up form check availability before creating the account,
 -- without widening the profiles SELECT policy (which deliberately only lets
--- a user read their own row — see the NOTE in 000_init_database.sql). This
+-- a user read their own row — see the NOTE in section 1). This
 -- function only ever returns a boolean, never row data, so it's safe to
 -- expose to anon (a user checking a name has no session yet) and
 -- authenticated alike.
@@ -811,14 +826,14 @@ $$;
 
 grant execute on function public.is_display_name_available(text) to anon, authenticated;
 
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 003_leaderboard.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Leaderboard
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- Real cross-user leaderboard
 -- =============================================================================
--- 000_init_database.sql's leaderboard_points_totals view is `security_invoker`,
+-- The leaderboard_points_totals view in section 4 is `security_invoker`,
 -- so it respects the caller's daily_study_stats RLS policy (own rows only) —
 -- as its own comment there says, that means every user currently sees only
 -- their own totals through it, not a real leaderboard. This is the
@@ -868,32 +883,25 @@ $$;
 
 grant execute on function public.get_leaderboard(integer) to authenticated;
 
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 004_payments.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Payments
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- Real payments (Flutterwave) — anti-replay ledger + expiry enforcement
 -- =============================================================================
--- Backs supabase/functions/verify-flutterwave-payment, the only thing
--- allowed to write user_book_access (see that table's own note in
--- 000_init_database.sql — no client-side INSERT/UPDATE policy exists there
--- on purpose). This migration adds:
+-- Backs supabase/functions/verify-flutterwave-payment and
+-- supabase/functions/flutterwave-webhook, the only things allowed to write
+-- user_book_access (see section 2 — no client-side INSERT/UPDATE policy
+-- exists there on purpose).
 --
---   1. processed_payments — an anti-replay ledger. Each Flutterwave
---      transaction_id may only ever grant access once; the Edge Function
---      inserts here (transaction_id is the primary key) before granting,
---      so replaying the same transaction_id back to the function a second
---      time cannot extend access further.
---
---   2. An RLS fix on user_book_access: the existing policy only checked
---      `granted`, never `expires_at`, so a row stayed visible (and access
---      stayed active) forever once granted — expiry was tracked but never
---      actually enforced. The Edge Function sets a real expires_at on every
---      purchase; this makes the client-visible row disappear once it
---      passes, which is what actually makes a purchased access window
---      time-limited. No scheduled job needed — this is evaluated live on
---      every read, the same way `granted` already was.
+-- processed_payments is an anti-replay ledger. Each Flutterwave
+-- transaction_id may only ever grant access once; the Edge Functions insert
+-- here (transaction_id is the primary key) before granting, so replaying
+-- the same transaction_id a second time cannot extend access further. It is
+-- shared by both functions, which is also what stops the first charge of a
+-- subscription being granted twice when the webhook and the app's own
+-- verify call both arrive.
 
 create table if not exists public.processed_payments (
   transaction_id text primary key,
@@ -918,24 +926,14 @@ create policy "Users can read their own processed payments"
 -- No insert/update/delete policy: only the Edge Function (service_role)
 -- writes here, exactly like user_book_access.
 
-drop policy if exists "Users can read their granted access" on public.user_book_access;
-
-create policy "Users can read their granted access"
-  on public.user_book_access for select
-  using (
-    auth.uid() = user_id
-    and granted
-    and (expires_at is null or expires_at > timezone('utc', now()))
-  );
-
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 005_leaderboard_modules.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Per-module leaderboards
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- Module-scoped leaderboard
 -- =============================================================================
--- Companion to 003_leaderboard.sql's `get_leaderboard`: the same
+-- Companion to `get_leaderboard` above: the same
 -- cross-user aggregation filtered to one exam module's storage scope
 -- (`exam_prep_plab`, `exam_prep_usmle`, … — see
 -- `lib/models/exam_module.dart`). Powers the per-module tabs in
@@ -990,9 +988,9 @@ $$;
 
 grant execute on function public.get_leaderboard_for_scope(integer, text) to authenticated;
 
--- ───────────────────────────────────────────────────────────────────────────────
--- Bundled from: 006_user_data_sync.sql (do not edit here — edit the source file and re-bundle)
--- ───────────────────────────────────────────────────────────────────────────────
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Cross-device user data sync
+-- ──────────────────────────────────────────────────────────────────────────────
 
 -- =============================================================================
 -- Cross-device user data sync (notes, bookmarks, answers, settings, …)
@@ -1013,7 +1011,7 @@ grant execute on function public.get_leaderboard_for_scope(integer, text) to aut
 
 begin;
 
--- ── Pinned margin notes ──────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Pinned margin notes ──────────────────────────────────────────────────────
 
 create table if not exists public.pinned_notes (
   user_id       uuid not null references auth.users(id) on delete cascade,
@@ -1032,7 +1030,7 @@ create table if not exists public.pinned_notes (
 create index if not exists idx_pinned_notes_user_updated
   on public.pinned_notes(user_id, updated_at desc);
 
--- ── Note collections ─────────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Note collections ─────────────────────────────────────────────────────────
 
 create table if not exists public.note_collections (
   user_id    uuid not null references auth.users(id) on delete cascade,
@@ -1043,7 +1041,7 @@ create table if not exists public.note_collections (
   primary key (user_id, id)
 );
 
--- ── Bookmarks ────────────────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Bookmarks ────────────────────────────────────────────────────────────────
 
 create table if not exists public.bookmarks (
   user_id         uuid not null references auth.users(id) on delete cascade,
@@ -1055,7 +1053,7 @@ create table if not exists public.bookmarks (
   primary key (user_id, id)
 );
 
--- ── Free-text reading notes (one per book+chapter) ───────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Free-text reading notes (one per book+chapter) ───────────────────────────
 
 create table if not exists public.reading_notes (
   user_id    uuid not null references auth.users(id) on delete cascade,
@@ -1066,7 +1064,7 @@ create table if not exists public.reading_notes (
   primary key (user_id, book_id, chapter_id)
 );
 
--- ── Text clips ───────────────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Text clips ───────────────────────────────────────────────────────────────
 
 create table if not exists public.clips (
   user_id    uuid not null references auth.users(id) on delete cascade,
@@ -1083,7 +1081,7 @@ create table if not exists public.clips (
 create index if not exists idx_clips_user_updated
   on public.clips(user_id, updated_at desc);
 
--- ── Per-question answers (powers "review what you've answered" lists) ───────
+-- ────────────────────────────────────────────────────────────────────────────── Per-question answers (powers "review what you've answered" lists) ───────
 
 create table if not exists public.user_answers (
   user_id         uuid not null references auth.users(id) on delete cascade,
@@ -1098,7 +1096,7 @@ create table if not exists public.user_answers (
 create index if not exists idx_user_answers_user_scope
   on public.user_answers(user_id, scope);
 
--- ── Reading settings (single row per user) ───────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Reading settings (single row per user) ───────────────────────────────────
 
 create table if not exists public.user_settings (
   user_id    uuid primary key references auth.users(id) on delete cascade,
@@ -1106,7 +1104,7 @@ create table if not exists public.user_settings (
   updated_at timestamptz not null default timezone('utc', now())
 );
 
--- ── Recently opened books ────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Recently opened books ────────────────────────────────────────────────────
 
 create table if not exists public.user_book_history (
   user_id   uuid not null references auth.users(id) on delete cascade,
@@ -1115,7 +1113,7 @@ create table if not exists public.user_book_history (
   primary key (user_id, book_id)
 );
 
--- ── Deletion tombstones ──────────────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── Deletion tombstones ──────────────────────────────────────────────────────
 
 create table if not exists public.synced_deletions (
   user_id    uuid not null references auth.users(id) on delete cascade,
@@ -1125,7 +1123,7 @@ create table if not exists public.synced_deletions (
   primary key (user_id, entity, entity_id)
 );
 
--- ── RLS: owner-only everything ───────────────────────────────────────────────
+-- ────────────────────────────────────────────────────────────────────────────── RLS: owner-only everything ───────────────────────────────────────────────
 
 alter table public.pinned_notes     enable row level security;
 alter table public.note_collections enable row level security;
@@ -1196,3 +1194,77 @@ create policy "Users manage own deletions"
   with check (auth.uid() = user_id);
 
 commit;
+
+
+-- ──────────────────────────────────────────────────────────────────────────────
+-- Auto-renewing subscriptions
+-- ──────────────────────────────────────────────────────────────────────────────
+
+-- =============================================================================
+-- Auto-renewing subscriptions (Flutterwave payment plans)
+-- =============================================================================
+-- Checkout and renewal both happen on the website; Flutterwave bills the
+-- card on its own schedule and tells us by webhook. This table is the
+-- mirror of that state the app can actually read: the app never talks to
+-- Flutterwave, it polls here (lib/services/subscription_service.dart) to
+-- show the renewal date and the cancel entry point, exactly as it polls
+-- user_book_access for the entitlement itself.
+--
+-- Entitlement still lives in user_book_access — this table only explains
+-- *why* it is there and *when* it next extends. Keeping them separate means
+-- a subscription that stops renewing simply stops extending expires_at, and
+-- the existing expiry enforcement in section 2's RLS does the rest with no
+-- scheduled job.
+--
+-- Written only by the flutterwave-webhook Edge Function (service_role); no
+-- client INSERT/UPDATE policy exists on purpose, same as user_book_access.
+
+create table if not exists public.user_subscriptions (
+  user_id              uuid        not null references auth.users(id) on delete cascade,
+  scope                text        not null default '*',
+  plan_id              text        not null,
+  flw_plan_id          text,
+  flw_subscription_id  text,
+  customer_email       text,
+  status               text        not null default 'active',
+  auto_renew           boolean     not null default true,
+  amount               numeric,
+  currency             text        not null default 'NGN',
+  current_period_end   timestamptz,
+  next_billing_at      timestamptz,
+  last_payment_at      timestamptz,
+  cancelled_at         timestamptz,
+  created_at           timestamptz not null default timezone('utc', now()),
+  updated_at           timestamptz not null default timezone('utc', now()),
+  primary key (user_id, scope)
+);
+
+create index if not exists idx_user_subscriptions_flw_sub
+  on public.user_subscriptions(flw_subscription_id);
+
+create index if not exists idx_user_subscriptions_email
+  on public.user_subscriptions(customer_email);
+
+alter table public.user_subscriptions enable row level security;
+
+drop policy if exists "Users can read their own subscription" on public.user_subscriptions;
+
+create policy "Users can read their own subscription"
+  on public.user_subscriptions for select
+  using (auth.uid() = user_id);
+
+-- Recurring charges arrive as webhooks, not as a call from the signed-in
+-- client, so the grant path cannot authenticate the user the way
+-- verify-flutterwave-payment does. The webhook resolves the payer by the
+-- email Flutterwave billed; this lets it do that without exposing auth.users
+-- to anyone else (SECURITY DEFINER, service_role only via the revoke below).
+create or replace function public.user_id_for_email(p_email text)
+returns uuid
+language sql
+security definer
+set search_path = public
+as $$
+  select id from auth.users where lower(email) = lower(p_email) limit 1;
+$$;
+
+revoke all on function public.user_id_for_email(text) from public, anon, authenticated;

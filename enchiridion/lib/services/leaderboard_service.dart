@@ -4,12 +4,12 @@ import '../models/exam_module.dart';
 import '../models/leaderboard_entry.dart';
 
 /// Fetches the cross-user leaderboard via the `get_leaderboard` RPC (see
-/// scripts/sql/003_leaderboard.sql) — a SECURITY DEFINER function, since
+/// the leaderboard section of scripts/sql/999_MASTER_init.sql) — a SECURITY DEFINER function, since
 /// daily_study_stats' RLS policy otherwise only lets a user read their own
 /// rows and a plain client-side select can't aggregate across everyone.
 ///
 /// Module leaderboards go through `get_leaderboard_for_scope` (see
-/// scripts/sql/005_leaderboard_modules.sql), which filters the same
+/// the same file), which filters the same
 /// aggregation to one module's storage scope. When that function is missing
 /// (migration not run yet) or the device is offline, the call falls back to
 /// the aggregated board rather than failing.

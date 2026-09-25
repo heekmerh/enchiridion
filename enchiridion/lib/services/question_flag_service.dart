@@ -6,7 +6,7 @@ import 'auth_service.dart';
 /// the wrong option marked correct, unclear wording, ...) to Supabase for a
 /// maintainer to review later.
 ///
-/// See `scripts/sql/001_flagged_questions.sql` for the table this writes to
+/// See `scripts/sql/999_MASTER_init.sql` for the table this writes to
 /// and the query a maintainer runs from the Supabase SQL editor to see
 /// what's been flagged — there is no in-app admin surface or outbound
 /// notification yet.

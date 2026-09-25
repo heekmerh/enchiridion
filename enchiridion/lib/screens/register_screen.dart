@@ -1,5 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../constants/about_config.dart';
 import '../providers/auth_provider.dart';
 import '../services/auth_service.dart';
 import 'auth_gate.dart';
@@ -23,12 +27,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _obscurePassword = true;
   bool _obscureConfirm = true;
   bool _loading = false;
+  bool _termsAccepted = false;
   String? _errorMessage;
+  final List<TapGestureRecognizer> _legalLinkRecognizers = [];
 
   static const _roles = ['student', 'clinician', 'other'];
 
   @override
   void dispose() {
+    for (final recognizer in _legalLinkRecognizers) {
+      recognizer.dispose();
+    }
     _nameCtrl.dispose();
     _emailCtrl.dispose();
     _passwordCtrl.dispose();
@@ -36,8 +45,51 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+  Future<void> _openLegalLink(String url) async {
+    final messenger = ScaffoldMessenger.of(context);
+    bool opened = false;
+    try {
+      opened = await launchUrl(
+        Uri.parse(url),
+        mode: LaunchMode.externalApplication,
+      );
+    } catch (_) {
+      opened = false;
+    }
+    if (!opened) {
+      await Clipboard.setData(ClipboardData(text: url));
+      messenger.showSnackBar(
+        const SnackBar(
+          content: Text('Link copied to clipboard.'),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+    }
+  }
+
+  TextSpan _legalLink(String label, String url) {
+    final recognizer = TapGestureRecognizer()
+      ..onTap = () => _openLegalLink(url);
+    _legalLinkRecognizers.add(recognizer);
+    return TextSpan(
+      text: label,
+      style: TextStyle(
+        color: Theme.of(context).colorScheme.primary,
+        fontWeight: FontWeight.w600,
+        decoration: TextDecoration.underline,
+      ),
+      recognizer: recognizer,
+    );
+  }
+
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
+    if (!_termsAccepted) {
+      setState(() => _errorMessage =
+          'Please accept the Terms and Conditions and Privacy Policy to '
+          'continue.');
+      return;
+    }
     setState(() {
       _loading = true;
       _errorMessage = null;
@@ -62,6 +114,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           password: _passwordCtrl.text,
           displayName: displayName,
           role: _selectedRole,
+          termsVersion: AboutConfig.termsVersion,
         );
 
     if (!mounted) return;
@@ -236,6 +289,48 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       },
                     ),
 
+                    const SizedBox(height: 20),
+
+                    // Play policy: the auto-renewal and legal terms must be
+                    // accepted explicitly, and the acceptance is recorded
+                    // against the account (profiles.terms_version).
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Checkbox(
+                          value: _termsAccepted,
+                          onChanged: (v) => setState(() {
+                            _termsAccepted = v ?? false;
+                            if (_termsAccepted) _errorMessage = null;
+                          }),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: RichText(
+                              text: TextSpan(
+                                style: theme.textTheme.bodySmall,
+                                children: [
+                                  const TextSpan(
+                                      text: 'I am 18 or older and I agree to '
+                                          'the '),
+                                  _legalLink('Terms and Conditions',
+                                      AboutConfig.termsUrl),
+                                  const TextSpan(text: ' and the '),
+                                  _legalLink('Privacy Policy',
+                                      AboutConfig.privacyPolicyUrl),
+                                  const TextSpan(
+                                      text: '. Enchiridion is a study aid, '
+                                          'not a substitute for clinical '
+                                          'judgement.'),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+
                     // Error
                     if (_errorMessage != null) ...[
                       const SizedBox(height: 16),
@@ -255,7 +350,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     const SizedBox(height: 24),
 
                     FilledButton(
-                      onPressed: _loading ? null : _submit,
+                      onPressed: (_loading || !_termsAccepted) ? null : _submit,
                       style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                       ),
@@ -275,9 +370,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'Already have an account? ',
-                          style: theme.textTheme.bodyMedium,
+                        Flexible(
+                          child: Text(
+                            'Already have an account? ',
+                            style: theme.textTheme.bodyMedium,
+                          ),
                         ),
                         TextButton(
                           onPressed: () => Navigator.pushReplacement(
