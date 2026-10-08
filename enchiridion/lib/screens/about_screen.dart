@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/common/brand_division.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -51,6 +52,8 @@ class AboutScreen extends StatelessWidget {
           24 + bottomViewportInset(context),
         ),
         children: [
+          const BrandDivision(),
+          const SizedBox(height: 16),
           const _Section(
             title: 'About the App',
             child: Text(AboutConfig.aboutAppBlurb),

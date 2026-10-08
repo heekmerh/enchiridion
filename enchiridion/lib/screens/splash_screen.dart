@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide ThemeMode;
 import 'package:provider/provider.dart';
+import '../widgets/common/brand_division.dart';
 import '../models/user_settings.dart';
 import '../providers/settings_provider.dart';
 import '../providers/auth_provider.dart';
@@ -130,6 +131,11 @@ class _SplashScreenState extends State<SplashScreen>
                         letterSpacing: 1.2,
                         fontWeight: FontWeight.w300,
                       ),
+                    ),
+                    const SizedBox(height: 6),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      child: BrandDivision(textAlign: TextAlign.center),
                     ),
                   ],
                 ),
