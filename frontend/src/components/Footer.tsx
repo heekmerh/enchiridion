@@ -10,6 +10,7 @@ export default function Footer() {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <h3 className={styles.logo}>ENCHIRIDION</h3>
+                        <p className={styles.division}>A division of ultramedikx nigeria limited</p>
                         <p className={styles.tagline}>Definitive clinical references for the modern healthcare professional.</p>
                     </div>
 

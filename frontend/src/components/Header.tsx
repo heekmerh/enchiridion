@@ -125,7 +125,10 @@ export default function Header() {
                 alt="Enchiridion Logo"
                 className={styles.logoIcon}
               />
-              <span>ENCHIRIDION</span>
+              <span className={styles.brandText}>
+                <span>ENCHIRIDION</span>
+                <small className={styles.division}>A division of ultramedikx nigeria limited</small>
+              </span>
             </Link>
           </div>
 
