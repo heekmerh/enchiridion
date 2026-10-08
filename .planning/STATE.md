@@ -40,6 +40,7 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 
 | # | Description | Date | Commit | Status | Directory |
 |---|-------------|------|--------|--------|-----------|
+| 261008-ckm | Add Ultramedikx division attribution to app and website branding | 2026-10-08 | d96f394 / 36dcece / 2c284c9 | complete | [261008-ckm-ultramedikx-division-branding](./quick/261008-ckm-ultramedikx-division-branding/) |
 | 260915-r9g | Fix the IV Cannula resource extraction error reported in TESTING_REPORT.md | 2026-09-15 | 8013e70 | passed | .planning/quick/260915-r9g-fix-the-iv-cannula-resource-extraction-error-reported-in-tes |
 | 260915-r9i | Audit Flutterwave payment-verification readiness and write deployment/test checklist | 2026-09-15 | 7a6c539 | passed | .planning/quick/260915-r9i-audit-flutterwave-payment-verification-readiness-from-enchir |
 | 260915-r9k | Update dated testing report with book rerun and attributed migration status | 2026-09-15 | 6f43307 | passed | .planning/quick/260915-r9k-update-the-dated-progress-note-in-testing-report-md-to-recor |
@@ -89,3 +90,5 @@ Resume file: none (no HANDOFF.json or .continue-here).
 ## Next Step
 
 Continue the remaining TESTING_REPORT.md validation and fixes with the user, then decide whether to open a v1.1 milestone. Keep the completed v1.0 roadmap and phase artifacts as historical records.
+
+Last activity: 2026-10-08 - Completed quick task 261008-ckm: Add Ultramedikx division attribution to app and website branding
