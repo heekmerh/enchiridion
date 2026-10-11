@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import PartnerLoginModal from "./PartnerLoginModal";
+import { currentSession, onSessionChange } from "@/lib/supabase";
 
 const menuItems = [
   { label: "Books", href: "#books" },
   { label: "App", href: "#app" },
   { label: "Referral Program", href: "/refer" },
   { label: "Rewards", href: "/rewards" },
+  { label: "Premium", href: "/premium" },
   { label: "Partner Login", href: "#login", modal: true },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
@@ -38,18 +40,11 @@ export default function Header() {
       }
     };
 
-    // Check for existing session
-    const token = localStorage.getItem("enchiridion_token");
-    if (token) setIsLoggedIn(true);
+    currentSession().then(session => setIsLoggedIn(!!session));
+    const stopListening = onSessionChange(session => setIsLoggedIn(!!session));
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("hashchange", handleHashChange);
-
-    // Listen for storage changes (to sync across tabs/modals)
-    const handleStorageChange = () => {
-      setIsLoggedIn(!!localStorage.getItem("enchiridion_token"));
-    };
-    window.addEventListener("storage", handleStorageChange);
 
     // Check initial hash
     handleHashChange();
@@ -57,7 +52,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("hashchange", handleHashChange);
-      window.removeEventListener("storage", handleStorageChange);
+      stopListening();
     };
   }, []);
 

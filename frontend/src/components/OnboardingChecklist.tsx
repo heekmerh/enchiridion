@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./OnboardingChecklist.module.css";
 import CommunityGravity from "./CommunityGravity";
+import { getAccessToken } from "@/lib/supabase";
 
 interface UserProgress {
     email: string;
@@ -21,7 +22,7 @@ export default function OnboardingChecklist() {
 
     useEffect(() => {
         const fetchProgress = async () => {
-            const token = localStorage.getItem("enchiridion_token");
+            const token = await getAccessToken();
             if (!token) return;
 
             try {
@@ -69,12 +70,12 @@ export default function OnboardingChecklist() {
         {
             id: 'verify',
             title: 'Account Verified',
-            completed: progress.is_verified || progress.is_partner,
-            active: !progress.is_verified && !progress.is_partner,
+            completed: progress.is_verified,
+            active: !progress.is_verified,
             locked: false,
             benefit: 'Step 1: Verify your email to unlock dashboard tracking & rewards.',
             actionLabel: 'Verify Email',
-            actionUrl: '#verify-info'
+            actionUrl: '/verify-email'
         },
         {
             id: 'partner',

@@ -3,14 +3,17 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./PartnerLoginModal.module.css";
+import GoogleButton from "@/components/GoogleButton";
+import { authErrorMessage, authorizedFetch, signInWithGoogle, supabase } from "@/lib/supabase";
 
 interface PartnerLoginModalProps {
     isOpen: boolean;
     onClose: () => void;
     onLoginSuccess: () => void;
+    redirectTo?: string;
 }
 
-export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: PartnerLoginModalProps) {
+export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, redirectTo }: PartnerLoginModalProps) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [view, setView] = useState<"login" | "forgot">("login");
@@ -25,8 +28,6 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
             const savedEmail = localStorage.getItem("enchiridion_reg_email");
             if (savedEmail) {
                 setUsername(savedEmail);
-                // Optional: clear it so it doesn't pre-fill forever
-                // localStorage.removeItem("enchiridion_reg_email");
             }
         }
     }, [isOpen]);
@@ -39,48 +40,41 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
         setError(null);
 
         try {
-            const formData = new FormData();
-            formData.append("username", username);
-            formData.append("password", password);
-
-            const response = await fetch("/api/auth/login", {
-                method: "POST",
-                body: formData,
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                localStorage.setItem("enchiridion_token", data.access_token);
-
-                // Fetch user profile to get the dynamic name
-                try {
-                    const userProfileResponse = await fetch("/api/users/me", {
-                        headers: {
-                            "Authorization": `Bearer ${data.access_token}`
-                        }
-                    });
-                    if (userProfileResponse.ok) {
-                        const userData = await userProfileResponse.json();
-                        localStorage.setItem("enchiridion_user_name", userData.name);
-                        if (userData.referral_code) {
-                            localStorage.setItem("enchiridion_user_ref", userData.referral_code);
-                        }
-                    }
-                } catch (profileErr) {
-                    console.error("Failed to fetch user name:", profileErr);
-                }
-
-                onLoginSuccess();
-                onClose();
-                router.push("/dashboard");
-            } else {
-                const errorData = await response.json();
-                setError(errorData.detail || "Invalid username or password. Please try again.");
+            const { error: signInError } = await supabase().auth.signInWithPassword({ email: username.trim(), password });
+            if (signInError) {
+                setError(signInError.message === "Email not confirmed"
+                    ? "Please verify your email address first. Check your inbox for the verification email."
+                    : "Invalid email or password. Please try again.");
+                return;
             }
+            try {
+                const userProfileResponse = await authorizedFetch("/api/users/me");
+                if (userProfileResponse.ok) {
+                    const userData = await userProfileResponse.json();
+                    localStorage.setItem("enchiridion_user_name", userData.name);
+                    if (userData.referral_code) {
+                        localStorage.setItem("enchiridion_user_ref", userData.referral_code);
+                    }
+                }
+            } catch (profileErr) {
+                console.error("Failed to fetch user name:", profileErr);
+            }
+            onLoginSuccess();
+            onClose();
+            router.push(redirectTo || "/dashboard");
         } catch (err) {
-            setError("An unexpected error occurred. Please try again later.");
+            setError(authErrorMessage(err, "An unexpected error occurred. Please try again later."));
         } finally {
             setIsLoading(false);
+        }
+    };
+
+    const handleGoogle = async () => {
+        setError(null);
+        try {
+            await signInWithGoogle(redirectTo || "/dashboard");
+        } catch (err) {
+            setError(authErrorMessage(err, "Google sign-in could not be started."));
         }
     };
 
@@ -91,21 +85,13 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
         setMessage(null);
 
         try {
-            const response = await fetch("/api/forgot-password", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email: username }),
+            const { error: resetError } = await supabase().auth.resetPasswordForEmail(username.trim(), {
+                redirectTo: `${window.location.origin}/reset-password`,
             });
-
-            // FastAPI-Users returns 202 for forgot password
-            if (response.ok || response.status === 202) {
-                setMessage("If an account exists for this email, a reset link has been sent.");
-            } else {
-                const data = await response.json();
-                setError(data.detail || "Failed to send reset link.");
-            }
+            if (resetError) throw resetError;
+            setMessage("If an account exists for this email, a reset link has been sent.");
         } catch (err) {
-            setError("Something went wrong. Please try again.");
+            setError(authErrorMessage(err, "Something went wrong. Please try again."));
         } finally {
             setIsLoading(false);
         }
@@ -120,10 +106,10 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
                 </button>
 
                 <div className={styles.header}>
-                    <h2>{view === "login" ? "Partner Login" : "Reset Password"}</h2>
+                    <h2>{view === "login" ? "Sign In" : "Reset Password"}</h2>
                     <p>
                         {view === "login"
-                            ? "Access your referral dashboard and rewards."
+                            ? "One Enchiridion account for the website, the app and Premium."
                             : "Enter your registered email to receive a reset link."}
                     </p>
                 </div>
@@ -134,17 +120,17 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
                         {error && <div className={styles.error}>{error}</div>}
 
                         <div className={styles.field}>
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Email</label>
                             <div className={styles.inputGroup}>
                                 <i className="fas fa-user"></i>
                                 <input
                                     id="username"
-                                    type="text"
+                                    type="email"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
-                                    placeholder="Enter your username"
+                                    placeholder="Enter your email"
                                     required
-                                    autoComplete="username"
+                                    autoComplete="email"
                                 />
                             </div>
                         </div>
@@ -179,9 +165,11 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess }: P
                                     Logging in...
                                 </>
                             ) : (
-                                "Login to Dashboard"
+                                "Sign In"
                             )}
                         </button>
+                        <GoogleButton onClick={handleGoogle} disabled={isLoading}
+                            note="By continuing with Google you agree to the Terms and Conditions and Privacy Policy." />
                     </form>
                 ) : (
                     <form className={styles.form} onSubmit={handleForgotSubmit}>

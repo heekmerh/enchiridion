@@ -1,4 +1,5 @@
 import { Review } from '@/app/api/reviews/route';
+import { getAccessToken } from "@/lib/supabase";
 
 export type ReviewAction = 'SUBMIT' | 'FETCH';
 
@@ -26,7 +27,10 @@ export async function manageReviews(action: ReviewAction, data?: any): Promise<a
         const { limit, admin = false } = data || {};
         const url = `/api/reviews?admin=${admin}`;
 
-        const response = await fetch(url);
+        const token = admin ? await getAccessToken() : null;
+        const response = await fetch(url, {
+            headers: token ? { Authorization: `Bearer ${token}` } : {},
+        });
         if (!response.ok) {
             let errorMsg = `Failed to fetch reviews: ${response.status} ${response.statusText}`;
             try {

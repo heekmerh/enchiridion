@@ -1,8 +1,5 @@
-import { NextResponse } from 'next/server';
+import { proxyBackend } from "@/lib/backend";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
-
-// Interface for Review Data
 export interface Review {
     id: string;
     name: string;
@@ -10,150 +7,27 @@ export interface Review {
     organization?: string;
     rating: number;
     text: string;
-    status: 'pending' | 'approved' | 'rejected';
+    status: "pending" | "approved" | "rejected";
     createdAt: string;
     approvedAt?: string;
 }
 
-// GET: Fetch reviews
 export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const isAdmin = searchParams.get('admin') === 'true';
-
-    try {
-        console.log(`DEBUG: Proxying GET request to ${BACKEND_URL}/reviews/?admin=${isAdmin}`);
-        const response = await fetch(`${BACKEND_URL}/reviews/?admin=${isAdmin}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            signal: AbortSignal.timeout(10000), // 10 second timeout
-        });
-
-        if (!response.ok) {
-            const errorMsg = `Backend returned ${response.status}: ${response.statusText}`;
-            console.error(`ERROR: ${errorMsg}`);
-            let detail = 'Failed to fetch reviews from backend';
-            try {
-                const errorData = await response.json();
-                if (errorData.detail) detail = errorData.detail;
-            } catch (e) { }
-            return NextResponse.json({ error: detail }, { status: response.status });
-        }
-
-        let reviews;
-        try {
-            reviews = await response.json();
-        } catch (jsonError: any) {
-            console.error('ERROR: Failed to parse backend JSON response:', jsonError);
-            return NextResponse.json({
-                error: 'Failed to parse data from backend',
-                message: jsonError.message
-            }, { status: 502 }); // Bad Gateway
-        }
-
-        return NextResponse.json(reviews);
-    } catch (error: any) {
-        console.error('Error fetching reviews:', error);
-
-        if (error.name === 'AbortError') {
-            return NextResponse.json({ error: 'Backend request timed out' }, { status: 504 });
-        }
-
-        if (error.code === 'ECONNREFUSED' || error.message?.includes('fetch failed')) {
-            return NextResponse.json({
-                error: 'Backend service is currently unavailable. Please ensure the backend is running on port 8000.'
-            }, { status: 503 });
-        }
-
-        return NextResponse.json({
-            error: 'Internal Server Error',
-            message: error.message,
-            code: error.code,
-            name: error.name
-        }, { status: 500 });
-    }
+    return proxyBackend(request, "/reviews/" + new URL(request.url).search);
 }
 
-// POST: Submit a new review
 export async function POST(request: Request) {
-    try {
-        const body = await request.json();
-        const { name, jobTitle, organization, rating, text } = body;
-
-        // Validation
-        if (!name || !jobTitle || !rating || !text) {
-            return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
-        }
-
-        const response = await fetch(`${BACKEND_URL}/reviews/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name,
-                jobTitle,
-                organization,
-                rating,
-                text
-            }),
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            return NextResponse.json({ error: errorData.detail || 'Failed to submit review' }, { status: response.status });
-        }
-
-        const result = await response.json();
-        return NextResponse.json(result, { status: 201 });
-    } catch (error: any) {
-        console.error('Error submitting review:', error);
-        return NextResponse.json({
-            error: 'Internal Server Error',
-            message: error.message,
-            code: error.code
-        }, { status: 500 });
-    }
+    return proxyBackend(request, "/reviews/");
 }
 
-// PUT: moderate a review (Admin only)
 export async function PUT(request: Request) {
     try {
-        const authHeader = request.headers.get('Authorization');
-        const body = await request.json();
-        const { id, status } = body;
-
-        if (!id || !['approved', 'rejected'].includes(status)) {
-            return NextResponse.json({ error: 'Invalid ID or status' }, { status: 400 });
+        const body = await request.clone().json();
+        if (typeof body.id !== "string" || !["approved", "rejected"].includes(body.status)) {
+            return Response.json({ detail: "Invalid review or status" }, { status: 400 });
         }
-
-        const headers: Record<string, string> = {
-            'Content-Type': 'application/json',
-        };
-
-        if (authHeader) {
-            headers['Authorization'] = authHeader;
-        }
-
-        const response = await fetch(`${BACKEND_URL}/reviews/${id}?status=${status}`, {
-            method: 'PUT',
-            headers: headers
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            return NextResponse.json({ error: errorData.detail || 'Failed to moderate review' }, { status: response.status });
-        }
-
-        const result = await response.json();
-        return NextResponse.json(result);
-    } catch (error: any) {
-        console.error('Error updating review:', error);
-        return NextResponse.json({
-            error: 'Internal Server Error',
-            message: error.message,
-            code: error.code
-        }, { status: 500 });
+        return proxyBackend(request, `/reviews/${encodeURIComponent(body.id)}?status=${body.status}`);
+    } catch {
+        return Response.json({ detail: "Invalid request" }, { status: 400 });
     }
 }

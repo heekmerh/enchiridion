@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import styles from './AdminReviews.module.css';
 import { Review } from '@/app/api/reviews/route';
 import { manageReviews } from '@/lib/reviews';
+import { getAccessToken } from "@/lib/supabase";
 
 export default function AdminReviewsPage() {
     const [reviews, setReviews] = useState<Review[]>([]);
@@ -26,7 +27,7 @@ export default function AdminReviewsPage() {
     }, [fetchAllReviewsForAdmin]);
 
     const adminModerateReview = async (id: string, newStatus: 'approved' | 'rejected') => {
-        const token = localStorage.getItem('enchiridion_token');
+        const token = await getAccessToken();
         try {
             const res = await fetch('/api/reviews', {
                 method: 'PUT',

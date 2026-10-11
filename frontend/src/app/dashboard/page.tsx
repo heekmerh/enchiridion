@@ -9,6 +9,7 @@ import LegacyBadge from "@/components/LegacyBadge";
 import Link from "next/link";
 import GlobalToast from "@/components/GlobalToast";
 import SocialShareCard from "@/components/SocialShareCard";
+import { getAccessToken, signOut } from "@/lib/supabase";
 
 export default function PartnerDashboard() {
     const [copied, setCopied] = useState(false);
@@ -62,7 +63,7 @@ export default function PartnerDashboard() {
 
         // Fetch actual stats from backend
         const fetchStats = async () => {
-            const token = localStorage.getItem("enchiridion_token");
+            const token = await getAccessToken();
             if (!token) return;
 
             try {
@@ -175,7 +176,7 @@ export default function PartnerDashboard() {
     }, [partnerData.legacy.rank]);
 
     const applyMilestone = async (tier: number) => {
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
         if (!token || milestoneFulfilled[tier]) return;
 
         try {
@@ -222,7 +223,7 @@ export default function PartnerDashboard() {
     const revenueCardRef = useRef<HTMLDivElement>(null);
     const lifetimeCardRef = useRef<HTMLDivElement>(null);
 
-    const referralLink = mounted ? `${window.location.origin}/refer?ref=${partnerData.refCode}` : `https://enchiridion.ng/refer?ref=${partnerData.refCode}`;
+    const referralLink = mounted ? `${window.location.origin}/refer?ref=${partnerData.refCode}` : `https://enchiridion.site/refer?ref=${partnerData.refCode}`;
     const whatsappMessage = `Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Users, referral partners and distributors are eligible for incredible rewards and discounts! Plus, check out the official Book—it’s a game-changer for anyone in the medical space!\n\nJoin here: ${referralLink}`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -267,8 +268,8 @@ export default function PartnerDashboard() {
         window.open(url, '_blank');
     };
 
-    const handleLogout = () => {
-        localStorage.removeItem("enchiridion_token");
+    const handleLogout = async () => {
+        await signOut();
         localStorage.removeItem("enchiridion_user_name");
         localStorage.removeItem("enchiridion_user_ref");
         localStorage.removeItem("enchiridion_ref");
@@ -281,7 +282,7 @@ export default function PartnerDashboard() {
 
     const handlePayoutSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
         if (!token) return;
 
         try {

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./DistributorForm.module.css";
+import { getAccessToken } from "@/lib/supabase";
 
 const states = [
     "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -35,7 +36,7 @@ export default function DistributorForm() {
             return;
         }
 
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
         const refCode = localStorage.getItem("enchiridion_user_ref") || localStorage.getItem("enchiridion_ref");
 
         console.log("DEBUG: Submitting distributor lead. RefCode:", refCode, "Token present:", !!token);

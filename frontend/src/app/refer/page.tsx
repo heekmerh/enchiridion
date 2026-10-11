@@ -6,6 +6,8 @@ import styles from "./ReferralPage.module.css";
 import Accordion from "@/components/Accordion";
 import DistributorForm from "@/components/DistributorForm";
 import GlobalToast from "@/components/GlobalToast";
+import GoogleButton from "@/components/GoogleButton";
+import { authErrorMessage, PENDING_MARKETING_KEY, signInWithGoogle, supabase, TERMS_VERSION } from "@/lib/supabase";
 
 export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -58,7 +60,9 @@ export default function ReferralPage() {
         password: "",
         confirmPassword: "",
         phone: "",
-        institution: ""
+        institution: "",
+        acceptTerms: false,
+        marketingOptIn: false
     });
     const [formErrors, setFormErrors] = useState<Record<string, string>>({});
     const [apiError, setApiError] = useState<string | null>(null);
@@ -83,7 +87,8 @@ export default function ReferralPage() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        const isCheckbox = e.target instanceof HTMLInputElement && e.target.type === "checkbox";
+        setFormData(prev => ({ ...prev, [name]: isCheckbox ? (e.target as HTMLInputElement).checked : value }));
         if (formErrors[name]) {
             setFormErrors(prev => ({ ...prev, [name]: "" }));
         }
@@ -100,6 +105,7 @@ export default function ReferralPage() {
         if (!formData.password) errors.password = "Password is required";
         else if (formData.password.length < 6) errors.password = "Password must be at least 6 characters";
         if (formData.password !== formData.confirmPassword) errors.confirmPassword = "Passwords do not match";
+        if (!formData.acceptTerms) errors.acceptTerms = "Please accept the Terms and Privacy Policy";
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
@@ -130,38 +136,50 @@ export default function ReferralPage() {
             const referredBy = localStorage.getItem("enchiridion_ref") || "";
 
             try {
-                const response = await fetch("/api/auth/register", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
+                const { error } = await supabase().auth.signUp({
+                    email: formData.email.trim(),
+                    password: formData.password,
+                    options: {
+                        emailRedirectTo: `${window.location.origin}/verify-email`,
+                        data: {
+                            name: formData.fullName.trim(),
+                            display_name: formData.fullName.trim().split(" ")[0],
+                            referral_code: code,
+                            referred_by: referredBy,
+                            country: formData.country,
+                            state: formData.state,
+                            profession: formData.profession,
+                            phone: formData.phone,
+                            institution: formData.institution,
+                            signup_source: "web",
+                            terms_version: TERMS_VERSION,
+                            marketing_opt_in: formData.marketingOptIn ? "true" : "false",
+                        },
                     },
-                    body: JSON.stringify({
-                        email: formData.email,
-                        password: formData.password,
-                        name: formData.fullName,
-                        referral_code: code,
-                        referred_by: referredBy, // Pass the referrer
-                        country: formData.country,
-                        state: formData.state,
-                        profession: formData.profession,
-                        phone: formData.phone,
-                        institution: formData.institution
-                    })
                 });
-
-                if (response.ok) {
-                    localStorage.setItem("enchiridion_reg_email", formData.email);
-                    setReferralCode(code);
-                    setIsRegistered(true);
-                } else {
-                    const errorData = await response.json();
-                    setApiError(errorData.detail || "Registration failed. Email might already be in use.");
-                }
+                if (error) throw error;
+                localStorage.setItem("enchiridion_reg_email", formData.email);
+                setReferralCode(code);
+                setIsRegistered(true);
             } catch (err) {
-                setApiError("Connection failed. Please check if the backend is running.");
+                setApiError(authErrorMessage(err, "Registration failed. Email might already be in use."));
             } finally {
                 setIsLoading(false);
             }
+        }
+    };
+
+    const handleGoogleSignup = async () => {
+        setApiError(null);
+        if (!formData.acceptTerms) {
+            setFormErrors(prev => ({ ...prev, acceptTerms: "Please accept the Terms and Privacy Policy" }));
+            return;
+        }
+        localStorage.setItem(PENDING_MARKETING_KEY, formData.marketingOptIn ? "true" : "false");
+        try {
+            await signInWithGoogle("/dashboard");
+        } catch (err) {
+            setApiError(authErrorMessage(err, "Google sign-up could not be started."));
         }
     };
 
@@ -584,18 +602,33 @@ export default function ReferralPage() {
                                         placeholder="University or Hospital Name"
                                     />
                                 </div>
+                                <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
+                                    <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
+                                        <input type="checkbox" name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
+                                        <span>I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a>. *</span>
+                                    </label>
+                                    {formErrors.acceptTerms && <span className={styles.error}>{formErrors.acceptTerms}</span>}
+                                </div>
+                                <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
+                                    <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
+                                        <input type="checkbox" name="marketingOptIn" checked={formData.marketingOptIn} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
+                                        <span>Email me Enchiridion offers, including Premium plans. Optional; unsubscribe any time. Account and security emails are sent regardless.</span>
+                                    </label>
+                                </div>
                             </div>
                             <button type="submit" className={styles.submitBtn} disabled={isLoading}>
                                 {isLoading ? "Creating Account..." : "Create My Referral Account"}
                             </button>
                             {apiError && <p className={styles.error} style={{ textAlign: 'center', marginTop: '15px' }}>{apiError}</p>}
+                            <GoogleButton onClick={handleGoogleSignup} disabled={isLoading}
+                                note="Tick the Terms box above first. Your Google name and email are used for your account." />
                         </form>
                     ) : (
                         <div className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>
                             <h3>Welcome to the Inner Circle, {formData.fullName.split(' ')[0]}!</h3>
                             <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
-                                You’re officially in. To get the most out of Enchiridion, complete your profile:
+                                We&apos;ve sent a verification email to <b>{formData.email}</b>. Verify your address, then sign in to use the same account on the website and in the Enchiridion app.
                             </p>
 
                             <div className={styles.onboardingSteps}>
@@ -639,7 +672,7 @@ export default function ReferralPage() {
                                 </button>
                                 <div style={{ display: 'flex', gap: '10px' }}>
                                     <a
-                                        href={`https://wa.me/?text=${encodeURIComponent(`Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Plus, check out the official Book—it’s a game-changer!\n\nJoin here: https://enchiridion.ng/refer?ref=${referralCode}`)}`}
+                                        href={`https://wa.me/?text=${encodeURIComponent(`Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Plus, check out the official Book—it’s a game-changer!\n\nJoin here: https://enchiridion.site/refer?ref=${referralCode}`)}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.shareBtn}

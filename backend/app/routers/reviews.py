@@ -1,97 +1,52 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
-from ..models import Review, ReviewCreate
-from ..sheets import sheets_client
-from ..auth import current_active_user, current_active_superuser, UserRead
-from datetime import datetime
-import uuid
-from typing import List
+from typing import Literal
+from uuid import UUID
+
+from fastapi import APIRouter, Depends, HTTPException
+
+from ..auth import current_active_superuser, optional_user
+from ..database import get_db
+from ..models import ReviewCreate
 
 router = APIRouter()
 
-@router.get("/", response_model=List[Review])
-async def get_reviews(admin: bool = Query(False)):
-    try:
-        records = sheets_client.get_all_records("Reviews")
-        reviews = []
-        for record in records:
-            try:
-                # Robust Rating conversion
-                raw_rating = record.get("Rating", 0)
-                try:
-                    rating = int(float(raw_rating)) if raw_rating else 0
-                except (ValueError, TypeError):
-                    rating = 0
 
-                def clean_str(v):
-                    if v is None: return ""
-                    return str(v).encode('utf-8', 'replace').decode('utf-8')
+def serialize(row):
+    return {
+        "id": str(row["id"]), "name": row["name"], "jobTitle": row["job_title"],
+        "organization": row["organization"], "rating": row["rating"], "text": row["text"],
+        "status": row["status"], "createdAt": row["created_at"].isoformat(),
+        "approvedAt": row["approved_at"].isoformat() if row["approved_at"] else None,
+    }
 
-                review = Review(
-                    id=clean_str(record.get("id", "")),
-                    name=clean_str(record.get("Name", "")),
-                    jobTitle=clean_str(record.get("Job Title", "")),
-                    organization=clean_str(record.get("Organization", "")),
-                    rating=rating,
-                    text=clean_str(record.get("Text", "")),
-                    status=clean_str(record.get("Status", "pending")),
-                    createdAt=clean_str(record.get("CreatedAt", "")),
-                    approvedAt=record.get("ApprovedAt")
-                )
-                if admin or review.status == "approved":
-                    reviews.append(review)
-            except Exception as e:
-                print(f"ERROR: Failed to parse review record: {e}")
-                continue
-                
-        # Sort by createdAt descending, handle potential missing createdAt
-        def get_sort_key(r):
-            if not r.createdAt:
-                return ""
-            return r.createdAt
 
-        reviews.sort(key=get_sort_key, reverse=True)
-        return reviews
-    except Exception as e:
-        print(f"ERROR: Failed to fetch reviews from Sheets: {e}")
-        import traceback
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail="Internal server error while fetching reviews")
+@router.get("/")
+async def get_reviews(admin: bool = False, user=Depends(optional_user), db=Depends(get_db, scope="function")):
+    if admin and (not user or not user.is_superuser):
+        raise HTTPException(403, "Admin access required")
+    rows = await (await db.execute(
+        "SELECT * FROM reviews WHERE (%s OR status = 'approved') ORDER BY created_at DESC", (admin,),
+    )).fetchall()
+    return [serialize(row) for row in rows]
+
 
 @router.post("/", status_code=201)
-async def submit_review(review: ReviewCreate):
-    new_id = str(uuid.uuid4())
-    created_at = datetime.now().isoformat()
-    # Sheet columns: id, Name, Job Title, Organization, Rating, Text, Status, CreatedAt, ApprovedAt
-    row = [
-        new_id,
-        review.name,
-        review.jobTitle,
-        review.organization or "",
-        review.rating,
-        review.text,
-        "pending",
-        created_at,
-        ""
-    ]
-    sheets_client.append_row("Reviews", row)
-    return {"message": "Review submitted successfully and is pending approval.", "id": new_id}
+async def submit_review(review: ReviewCreate, db=Depends(get_db, scope="function")):
+    row = await (await db.execute(
+        """INSERT INTO reviews(name, job_title, organization, rating, text)
+           VALUES (%s, %s, %s, %s, %s) RETURNING id""",
+        (review.name, review.jobTitle, review.organization or "", review.rating, review.text),
+    )).fetchone()
+    return {"message": "Review submitted successfully and is pending approval.", "id": str(row["id"])}
+
 
 @router.put("/{review_id}")
-async def moderate_review(
-    review_id: str, 
-    status: str = Query(..., enum=["approved", "rejected"]), 
-    user: UserRead = Depends(current_active_superuser)
-):
-    
-    # Find review by ID and update status
-    # This is a bit complex with gspread without direct row lookup by ID
-    # For MVP, we'll use find_cell
-    cell = sheets_client.find_cell("Reviews", review_id, 1) # Column 1 is id
-    if not cell:
-        raise HTTPException(status_code=404, detail="Review not found")
-    
-    sheets_client.update_cell("Reviews", cell.row, 7, status) # Column 7 is Status
-    if status == "approved":
-        sheets_client.update_cell("Reviews", cell.row, 9, datetime.now().isoformat()) # Column 9 is ApprovedAt
-        
+async def moderate_review(review_id: UUID, status: Literal["approved", "rejected"],
+                          user=Depends(current_active_superuser), db=Depends(get_db, scope="function")):
+    row = await (await db.execute(
+        """UPDATE reviews SET status = %s,
+           approved_at = CASE WHEN %s = 'approved' THEN now() ELSE NULL END
+           WHERE id = %s RETURNING id""", (status, status, review_id),
+    )).fetchone()
+    if not row:
+        raise HTTPException(404, "Review not found")
     return {"message": f"Review {status} successfully"}

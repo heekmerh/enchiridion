@@ -6,6 +6,7 @@ import ReferralTracker from "@/components/ReferralTracker";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enchiridion.site"),
   title: "Enchiridion — Modern Medical Reference System",
   description: "Digital companion and curated specialty-based medical books for clinicians and students.",
 };

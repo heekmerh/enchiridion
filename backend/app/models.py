@@ -1,49 +1,15 @@
-from fastapi_users import schemas
-import uuid
-from pydantic import BaseModel, EmailStr
-from typing import Optional, List
-from datetime import datetime
+from pydantic import BaseModel, EmailStr, Field
+from typing import Optional
 
-class User(schemas.BaseUser[uuid.UUID]):
-    name: str
-    referral_code: str
-    referred_by: Optional[str] = None
-    date_joined: datetime
-    hashed_password: str
-    state: Optional[str] = None
-    country: Optional[str] = None
-    profession: Optional[str] = None
-    phone: Optional[str] = None
-    institution: Optional[str] = None
 
-class UserRead(schemas.BaseUser[uuid.UUID]):
-    name: str
-    referral_code: str
-    referred_by: Optional[str] = None
-    date_joined: datetime
-    state: Optional[str] = None
-    country: Optional[str] = None
-    profession: Optional[str] = None
-    phone: Optional[str] = None
-    institution: Optional[str] = None
+class UserUpdate(BaseModel):
+    name: Optional[str] = Field(default=None, min_length=1, max_length=200)
+    state: Optional[str] = Field(default=None, max_length=100)
+    country: Optional[str] = Field(default=None, max_length=100)
+    profession: Optional[str] = Field(default=None, max_length=100)
+    phone: Optional[str] = Field(default=None, max_length=40)
+    institution: Optional[str] = Field(default=None, max_length=200)
 
-class UserCreate(schemas.BaseUserCreate):
-    name: str
-    referral_code: str
-    referred_by: Optional[str] = None
-    state: Optional[str] = None
-    country: Optional[str] = None
-    profession: Optional[str] = None
-    phone: Optional[str] = None
-    institution: Optional[str] = None
-
-class UserUpdate(schemas.BaseUserUpdate):
-    name: Optional[str] = None
-    state: Optional[str] = None
-    country: Optional[str] = None
-    profession: Optional[str] = None
-    phone: Optional[str] = None
-    institution: Optional[str] = None
 
 class ActivityLog(BaseModel):
     type: str
@@ -61,8 +27,8 @@ class ReviewBase(BaseModel):
     name: str
     jobTitle: str
     organization: Optional[str] = None
-    rating: int
-    text: str
+    rating: int = Field(ge=1, le=5)
+    text: str = Field(min_length=1, max_length=10000)
 
 class ReviewCreate(ReviewBase):
     pass

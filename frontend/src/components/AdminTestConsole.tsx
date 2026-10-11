@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from "react";
 import styles from "./AdminTestConsole.module.css";
+import { getAccessToken } from "@/lib/supabase";
 
 export default function AdminTestConsole() {
     const [auditData, setAuditData] = useState<any>(null);
     const [loading, setLoading] = useState(false);
     const [testLog, setTestLog] = useState<string[]>([]);
-    const [referralCode, setReferralCode] = useState("TEST001");
-    const [testEmail, setTestEmail] = useState("test@example.com");
     const [isAdmin, setIsAdmin] = useState(false);
     const [payoutFilter, setPayoutFilter] = useState("ALL");
     const [actionLoading, setActionLoading] = useState<string | null>(null);
@@ -25,7 +24,7 @@ export default function AdminTestConsole() {
         setActionLoading(email);
         addLog(`Reverting payout of ₦${amount} for ${email}...`);
 
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
 
         try {
             const res = await fetch("/api/referral/audit-revert", {
@@ -52,7 +51,7 @@ export default function AdminTestConsole() {
 
     const runAudit = async () => {
         setLoading(true);
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
         try {
             const res = await fetch("/api/referral/audit-verify", {
                 headers: { "Authorization": `Bearer ${token}` }
@@ -67,7 +66,7 @@ export default function AdminTestConsole() {
                 setAuditData(data);
             } else {
                 setAuditData(data);
-                addLog("Audit complete. Data integrity verified.");
+                addLog("Audit complete. Balances loaded.");
             }
         } catch (err) {
             const errMsg = String(err);
@@ -82,68 +81,9 @@ export default function AdminTestConsole() {
     };
 
 
-    const simulateBrowse = async () => {
-        addLog(`Simulating browse for ${referralCode}...`);
-        try {
-            // Get mock IP
-            const response = await fetch("/api/referral/record-visit", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    refCode: referralCode,
-                    ip: "127.0.0.1",
-                    userAgent: navigator.userAgent
-                }),
-            });
-            const data = await response.json();
-            addLog(`Response: ${JSON.stringify(data)}`);
-            if (data.status === "success") addLog("SUCCESS: 0.1 Pts added.");
-            await runAudit();
-        } catch (err) {
-            addLog(`Error: ${err}`);
-        }
-    };
-
-    const simulateRegistration = async () => {
-        addLog(`Simulating mock registration for ${testEmail} via ${referralCode}...`);
-        try {
-            const response = await fetch(`/api/referral/mock-register?email=${testEmail}&refCode=${referralCode}`, {
-                method: "POST"
-            });
-            const data = await response.json();
-            addLog(`Response: ${JSON.stringify(data)}`);
-            if (data.success) addLog("SUCCESS: 0.1 Pts credited to referrer.");
-            await runAudit();
-        } catch (err) {
-            addLog(`Error: ${err}`);
-        }
-    };
-
-    const simulateSale = async () => {
-        addLog(`Simulating mock sale for ${referralCode}...`);
-        try {
-            const response = await fetch("/api/referral/credit-purchase", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ refCode: referralCode })
-            });
-            const data = await response.json();
-            addLog(`Response: ${JSON.stringify(data)}`);
-            if (data.success) addLog("SUCCESS: 5.0 Pts (₦500) added.");
-            await runAudit();
-        } catch (err) {
-            addLog(`Error: ${err}`);
-        }
-    };
-
-    const checkPersistence = () => {
-        const code = localStorage.getItem("enchiridion_ref");
-        addLog(`LocalStorage persistence check: ${code ? `FOUND (${code})` : "NOT FOUND"}`);
-    };
-
     useEffect(() => {
         const checkAdmin = async () => {
-            const token = localStorage.getItem("enchiridion_token");
+            const token = await getAccessToken();
             addLog(`Auth check: Token found=${!!token}`);
             if (!token) {
                 addLog("Auth check: No token found. Please login as Admin.");
@@ -174,31 +114,12 @@ export default function AdminTestConsole() {
         runAudit();
     }, []);
 
-    const forceSyncAll = async () => {
-        addLog("Starting full revenue/points sync...");
-        const token = localStorage.getItem("enchiridion_token");
-        try {
-            const res = await fetch("/api/referral/sync-all", {
-                headers: { "Authorization": `Bearer ${token}` }
-            });
-            const data = await res.json();
-            if (data.status === "success") {
-                addLog(`Sync complete! Updated ${data.updated_rows} rows.`);
-            } else {
-                addLog(`Sync error: ${data.error}`);
-            }
-            await runAudit();
-        } catch (err) {
-            addLog(`Sync request failed: ${err}`);
-        }
-    };
-
     const markAsPaid = async (email: string, refCode: string) => {
         if (!confirm(`Mark ${email} as PAID? This will reset their current points/revenue and update Lifetime Earnings.`)) return;
 
         setActionLoading(email);
         addLog(`Marking ${email} as paid...`);
-        const token = localStorage.getItem("enchiridion_token");
+        const token = await getAccessToken();
         try {
             const res = await fetch("/api/referral/mark-as-paid", {
                 method: "POST",
@@ -242,27 +163,10 @@ export default function AdminTestConsole() {
         <div className={styles.console}>
             <header className={styles.header}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-                    <h1 className={styles.headerTitle}>Referral Audit & Test Console</h1>
-                    <span style={{ fontSize: '10px', color: '#666', opacity: 0.7 }}>v1.2.0-Debug</span>
+                    <h1 className={styles.headerTitle}>Referral Administration</h1>
+
                 </div>
                 <div className={styles.config}>
-                    <input
-                        type="text"
-                        placeholder="Referral Code"
-                        value={referralCode}
-                        onChange={(e) => setReferralCode(e.target.value)}
-                        className={styles.configInput}
-                    />
-                    <input
-                        type="email"
-                        placeholder="Test Email"
-                        value={testEmail}
-                        onChange={(e) => setTestEmail(e.target.value)}
-                        className={styles.configInput}
-                    />
-                    <button onClick={forceSyncAll} className={styles.syncBtn}>
-                        Force Sync All Revenue
-                    </button>
                     <a href="/admin/reviews" className={styles.syncBtn} style={{ textDecoration: 'none', background: '#000', color: '#fff' }}>
                         Moderate Reviews 💬
                     </a>
@@ -270,7 +174,7 @@ export default function AdminTestConsole() {
                         <button
                             onClick={async () => {
                                 addLog("Generating CSV report...");
-                                const token = localStorage.getItem("enchiridion_token");
+                                const token = await getAccessToken();
                                 try {
                                     const date = new Date();
                                     const currentMonth = date.getMonth() + 1; // 1-indexed
@@ -307,18 +211,6 @@ export default function AdminTestConsole() {
 
             <div className={styles.grid}>
                 <section className={styles.simulation}>
-                    <h2 className={styles.sectionTitle}>Simulate Triggers</h2>
-                    <div className={styles.btnGroup}>
-                        <button onClick={simulateBrowse} className={styles.btn}>Simulate Browse (+0.1)</button>
-                        <button onClick={simulateRegistration} className={styles.btn}>Simulate Registration (+0.1)</button>
-                        <button onClick={simulateSale} className={styles.btn}>Simulate Sale (+5.0)</button>
-                        <button onClick={checkPersistence} className={styles.secondaryBtn}>Persistence Check</button>
-                        <button onClick={() => {
-                            localStorage.removeItem("enchiridion_ref");
-                            addLog("LocalStorage cleared.");
-                        }} className={styles.dangerBtn}>Clear LocalStorage</button>
-                    </div>
-
                     <div className={styles.log}>
                         <h3 className={styles.logTitle}>Execution Log</h3>
                         <div className={styles.logContent}>

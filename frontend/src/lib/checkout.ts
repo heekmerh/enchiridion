@@ -1,3 +1,4 @@
+import { getAccessToken } from "@/lib/supabase";
 export interface StateDelivery {
     name: string;
     cost: number;
@@ -140,7 +141,7 @@ export const fetchShippingRates = async (): Promise<any[]> => {
 };
 
 export const getUserStats = async () => {
-    const token = typeof window !== "undefined" ? localStorage.getItem("enchiridion_token") : null;
+    const token = await getAccessToken();
     if (!token) return null;
     try {
         const response = await fetch("/api/referral/stats", {

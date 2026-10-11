@@ -53,7 +53,7 @@ export const logActivity = async (
 };
 
 /**
- * Captures a lead email and persists it to Google Sheets.
+ * Captures a lead email and persists it through the backend.
  */
 export const captureLeadAndGetSample = async (email: string, refCode: string): Promise<{ success: boolean; error?: string }> => {
     try {

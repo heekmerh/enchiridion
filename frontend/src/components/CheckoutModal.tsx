@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import styles from "./CheckoutModal.module.css";
-import { NIGERIAN_STATES, StateDelivery, findClosestDistributor, DELIVERY_ZONES, HUB_STATES, fetchShippingRates, getUserStats } from "@/lib/checkout";
+import { NIGERIAN_STATES, StateDelivery, DELIVERY_ZONES, HUB_STATES, fetchShippingRates, getUserStats } from "@/lib/checkout";
 import { Book } from "@/lib/data";
 
 interface CheckoutModalProps {
@@ -27,8 +27,11 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     const [selectedState, setSelectedState] = useState<StateDelivery | null>(null);
     const [searchTerm, setSearchTerm] = useState("");
     const [showStateDropdown, setShowStateDropdown] = useState(false);
-    const [refCredited, setRefCredited] = useState(false);
-    const [dynamicRates, setDynamicRates] = useState<any[]>([]);
+    const [paymentBusy, setPaymentBusy] = useState(false);
+    const [paymentError, setPaymentError] = useState("");
+    const [bookPrice, setBookPrice] = useState<number | null>(null);
+    const [pendingPayment, setPendingPayment] = useState<{ transaction_id: number; tx_ref: string; email: string } | null>(null);
+    const [dynamicRates, setDynamicRates] = useState<(StateDelivery & { isHub: boolean })[]>([]);
     const [userRegisteredState, setUserRegisteredState] = useState<string | null>(null);
     const dropdownRef = useRef<HTMLDivElement>(null);
     const zoneRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -37,8 +40,10 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     useEffect(() => {
         if (isOpen) {
             fetchShippingRates().then(rates => {
-                if (rates && rates.length > 0) setDynamicRates(rates);
+                setDynamicRates(rates);
+                if (!rates.length) setPaymentError("Delivery rates are currently unavailable.");
             });
+            if (step === "success") setStep("shipping");
             getUserStats().then(stats => {
                 if (stats?.state) {
                     setUserRegisteredState(stats.state);
@@ -47,76 +52,83 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                 }
             });
 
-            // Load Paystack script
-            const script = document.createElement("script");
-            script.src = "https://js.paystack.co/v1/inline.js";
-            script.async = true;
-            document.body.appendChild(script);
-            return () => {
-                document.body.removeChild(script);
-            };
+            fetch("/api/referral/checkout-config").then(async response => {
+                if (!response.ok) throw new Error("Checkout is unavailable");
+                const config = await response.json();
+                setBookPrice(config.bookPrice);
+            }).catch(() => setPaymentError("Checkout is temporarily unavailable."));
+            if (!document.getElementById("flutterwave-checkout")) {
+                const script = document.createElement("script");
+                script.id = "flutterwave-checkout";
+                script.src = "https://checkout.flutterwave.com/v3.js";
+                script.async = true;
+                script.onerror = () => setPaymentError("Unable to load Flutterwave. Please refresh and retry.");
+                document.body.appendChild(script);
+            }
         }
     }, [isOpen]);
 
-    const payWithPaystack = () => {
-        const buyerEmail = formData.email || "customer@example.com";
-        const handler = (window as any).PaystackPop.setup({
-            key: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
-            email: buyerEmail,
-            amount: total * 100, // Kobo
-            currency: "NGN",
-            ref: `ENCH-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-            metadata: {
-                product: "book",
-                refCode: localStorage.getItem("enchiridion_ref") || "direct",
-                custom_fields: [
-                    {
-                        display_name: "Customer Name",
-                        variable_name: "customer_name",
-                        value: formData.fullName
-                    }
-                ]
-            },
-            callback: (response: any) => {
-                console.log("Paystack Payment Success:", response);
-                // Immediately update HasPurchasedBook and award 1.0 cashback to buyer
-                fetch("/api/referral/complete-purchase", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: buyerEmail })
-                })
-                    .then(res => res.json())
-                    .then(data => console.log("Purchase milestone triggered:", data))
-                    .catch(err => console.error("Error triggering purchase milestone:", err));
-
-                setStep("success");
-            },
-            onClose: () => {
-                alert("Transaction was not completed.");
-            }
-        });
-        handler.openIframe();
+    const confirmPayment = async (payment: { transaction_id: number; tx_ref: string; email: string }) => {
+        setPendingPayment(payment);
+        setPaymentBusy(true);
+        try {
+            const response = await fetch("/api/referral/complete-purchase", {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payment),
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) throw new Error(result.detail || "Payment confirmation is pending. Retry confirmation.");
+            setPendingPayment(null);
+            setStep("success");
+        } catch (error) {
+            setPaymentError(error instanceof Error ? error.message : "Payment confirmation is pending.");
+        } finally {
+            setPaymentBusy(false);
+        }
     };
 
-    // Trigger referrer credit when success reached (rewards the referrer 5.0 pts)
-    useEffect(() => {
-        if (step === "success" && !refCredited) {
-            const cachedRef = localStorage.getItem("enchiridion_ref");
-            if (cachedRef) {
-                fetch("/api/referral/credit-purchase", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ refCode: cachedRef, email: formData.email || "" })
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log("Referral purchase credited:", data);
-                        setRefCredited(true);
-                    })
-                    .catch(err => console.error("Error crediting referral purchase:", err));
-            }
+    const payWithFlutterwave = async () => {
+        setPaymentError("");
+        if (pendingPayment) return confirmPayment(pendingPayment);
+        const publicKey = process.env.NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY;
+        if (!window.FlutterwaveCheckout || !publicKey) {
+            setPaymentError("Flutterwave checkout is not available yet.");
+            return;
         }
-    }, [step, refCredited]);
+        if (!selectedState || !formData.email || bookPrice === null) {
+            setPaymentError("Complete your email and delivery details first.");
+            return;
+        }
+        setPaymentBusy(true);
+        try {
+            const response = await fetch("/api/referral/initialize-purchase", {
+                method: "POST", headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...formData, state: selectedState.name, quantity: 1,
+                    book: book.title, refCode: localStorage.getItem("enchiridion_ref") || "" }),
+            });
+            const order = await response.json();
+            if (!response.ok) throw new Error(typeof order.detail === "string" ? order.detail : "Unable to create order.");
+            const expectedTotal = bookPrice + selectedState.cost;
+            if (order.amount !== expectedTotal) {
+                throw new Error("The price has changed. Reopen checkout to review the updated total.");
+            }
+            const modal = window.FlutterwaveCheckout({
+                public_key: publicKey, tx_ref: order.tx_ref, amount: order.amount, currency: order.currency,
+                customer: { email: formData.email, name: formData.fullName, phone_number: formData.phone },
+                customizations: { title: "Enchiridion", description: book.title },
+                meta: { product: "book" },
+                callback: (payment) => {
+                    modal.close();
+                    void confirmPayment({ transaction_id: payment.transaction_id || payment.id,
+                        tx_ref: order.tx_ref, email: formData.email });
+                },
+                onclose: () => setPaymentBusy(false),
+            });
+        } catch (error) {
+            setPaymentError(error instanceof Error ? error.message : "Unable to start checkout.");
+            setPaymentBusy(false);
+        }
+    };
 
     // Filter states based on search
     const filteredStates = NIGERIAN_STATES.filter(s =>
@@ -175,8 +187,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
     if (!isOpen) return null;
 
-    const bookPrice = 10000;
-    const total = bookPrice + (selectedState?.cost || 0);
+    const total = (bookPrice ?? 0) + (selectedState?.cost || 0);
 
     const handleShippingSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -185,18 +196,16 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
     const handleDeliverySelect = (state: StateDelivery) => {
         setSelectedState(state);
+        setFormData(previous => ({ ...previous, state: state.name }));
     };
 
-    const handlePaymentSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setStep("success");
-    };
 
     return (
         <div className={styles.overlay}>
             <div className={styles.modal}>
-                <button className={styles.closeBtn} onClick={onClose}>&times;</button>
+                <button className={styles.closeBtn} disabled={paymentBusy} onClick={onClose}>&times;</button>
 
+                {paymentError && <p role="alert">{paymentError}</p>}
                 {step === "shipping" && (
                     <div className={styles.stepContainer}>
                         <h2>Enter Your Shipping Details</h2>
@@ -290,9 +299,10 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                     />
                                 </div>
                                 <div className={styles.field}>
-                                    <label>Email (Optional)</label>
+                                    <label>Email</label>
                                     <input
                                         type="email"
+                                        required
                                         value={formData.email}
                                         onChange={e => setFormData({ ...formData, email: e.target.value })}
                                     />
@@ -322,15 +332,14 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                         {zone.states.map((stateName: string) => {
                                             const normName = normalizeStateName(stateName);
                                             const dynamicData = dynamicRates.find(r => normalizeStateName(r.name) === normName);
-                                            const localData = NIGERIAN_STATES.find(s => normalizeStateName(s.name) === normName);
 
-                                            if (!dynamicData && !localData) return null;
+                                            if (!dynamicData) return null;
 
-                                            const stateData = dynamicData ? {
+                                            const stateData = {
                                                 name: stateName,
                                                 cost: dynamicData.cost,
                                                 costLabel: `₦${dynamicData.cost.toLocaleString()}`
-                                            } : localData!;
+                                            };
 
                                             const isHub = dynamicData ? dynamicData.isHub : HUB_STATES.some(s => normalizeStateName(s) === normName);
                                             const priceClass = isHub ? styles.priceGreen : styles.priceRed;
@@ -357,7 +366,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                             <div className={styles.summary}>
                                 <div className={styles.summaryRow}>
                                     <span>Book Price:</span>
-                                    <span>₦10,000</span>
+                                    <span>₦{bookPrice?.toLocaleString() ?? "--"}</span>
                                 </div>
                                 <div className={styles.summaryRow}>
                                     <span>Delivery to {selectedState.name}:</span>
@@ -367,7 +376,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                     <span>Total:</span>
                                     <span>₦{total.toLocaleString()}</span>
                                 </div>
-                                <button className={styles.primaryBtn} onClick={() => setStep("payment")}>Continue to Pay</button>
+                                <button className={styles.primaryBtn} disabled={bookPrice === null} onClick={() => setStep("payment")}>Continue to Pay</button>
                             </div>
                         )}
                         <button className={styles.backBtn} onClick={() => setStep("shipping")}>Back</button>
@@ -397,16 +406,17 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                         <div className={styles.paymentActions}>
                             <button
                                 className={styles.payBtn}
-                                onClick={payWithPaystack}
+                                onClick={payWithFlutterwave}
+                                disabled={paymentBusy || bookPrice === null}
                             >
                                 <i className="fas fa-lock" style={{ marginRight: '10px' }}></i>
-                                Pay Securely with Paystack
+                                {paymentBusy ? "Confirming payment..." : pendingPayment ? "Retry Confirmation" : "Pay Securely with Flutterwave"}
                             </button>
                             <p className={styles.paymentNotice}>
-                                <i className="fas fa-shield-alt"></i> Payments are processed securely via Paystack.
+                                <i className="fas fa-shield-alt"></i> Payments are processed securely via Flutterwave.
                             </p>
                         </div>
-                        <button className={styles.backBtn} onClick={() => setStep("delivery")}>Back</button>
+                        <button className={styles.backBtn} disabled={paymentBusy || pendingPayment !== null} onClick={() => setStep("delivery")}>Back</button>
                     </div>
                 )}
 
@@ -417,9 +427,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                         <p>Your order for <strong>{book.title}</strong> has been processed.</p>
 
                         <div className={styles.distributorMatch}>
-                            <p>Assigned Distributor:</p>
-                            <h3>{findClosestDistributor(formData.state).name}</h3>
-                            <p>They will contact you soon for delivery to {formData.city}, {formData.state}.</p>
+                            <p>Your delivery details have been received.</p>
+                            <p>We will contact you about delivery to {formData.city}, {selectedState?.name}.</p>
                         </div>
 
                         <button className={styles.primaryBtn} onClick={onClose}>Finish</button>
