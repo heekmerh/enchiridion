@@ -21,6 +21,27 @@ export default function BookCarousel() {
         }
     };
 
+    const revealClippedCard = (card: HTMLDivElement) => {
+        const carousel = scrollRef.current;
+        if (!carousel) return;
+        const viewport = carousel.getBoundingClientRect();
+        const bounds = card.getBoundingClientRect();
+        const offset = bounds.left < viewport.left
+            ? bounds.left - viewport.left
+            : bounds.right > viewport.right ? bounds.right - viewport.right : 0;
+        if (Math.abs(offset) < 1) return;
+        carousel.scrollBy({
+            left: offset,
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+        });
+    };
+
+    useEffect(() => {
+        checkScroll();
+        window.addEventListener("resize", checkScroll);
+        return () => window.removeEventListener("resize", checkScroll);
+    }, []);
+
     useEffect(() => {
         if (!isPaused) {
             const interval = setInterval(() => {
@@ -37,7 +58,7 @@ export default function BookCarousel() {
         }
     }, [isPaused]);
 
-    const scroll = (direction: "left" | "right") => {
+    function scroll(direction: "left" | "right") {
         if (scrollRef.current) {
             const scrollAmount = 400;
             scrollRef.current.scrollBy({
@@ -45,7 +66,7 @@ export default function BookCarousel() {
                 behavior: "smooth",
             });
         }
-    };
+    }
 
     return (
         <section
@@ -83,7 +104,12 @@ export default function BookCarousel() {
                     onScroll={checkScroll}
                 >
                     {books.map((book) => (
-                        <div key={book.id} className={styles.cardWrapper}>
+                        <div key={book.id} className={styles.cardWrapper}
+                            onPointerEnter={event => {
+                                if (event.pointerType === "mouse") revealClippedCard(event.currentTarget);
+                            }}
+                            onFocus={event => revealClippedCard(event.currentTarget)}
+                        >
                             <Link
                                 href={`/books/${book.slug}`}
                                 className={styles.card}

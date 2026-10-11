@@ -76,10 +76,10 @@ export default function Header() {
     }
   };
 
-  const handleOpenLogin = () => {
+  function handleOpenLogin() {
     setIsLoginModalOpen(true);
     window.dispatchEvent(new CustomEvent("partner-login-modal-open"));
-  };
+  }
 
   const handleCloseLogin = () => {
     setIsLoginModalOpen(false);
@@ -91,6 +91,13 @@ export default function Header() {
       <header
         className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${activeMenu ? styles.menuOpen : ""}`}
         onMouseLeave={() => setActiveMenu(null)}
+        onClickCapture={event => {
+          if (event.target instanceof Element && event.target.closest("a")) {
+            setActiveMenu(null);
+            setIsMenuOpen(false);
+            setExpandedSubMenu(null);
+          }
+        }}
       >
         <div className={styles.container}>
           {/* Desktop Nav - Left */}

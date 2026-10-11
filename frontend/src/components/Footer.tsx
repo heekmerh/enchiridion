@@ -25,7 +25,7 @@ export default function Footer() {
                     <div className={styles.section}>
                         <h4>Inquiries</h4>
                         <ul>
-                            <li><Link href="mailto:enchiridion.med@gmail.com">enchiridion.med@gmail.com</Link></li>
+                            <li><Link href="mailto:support@enchiridion.site">support@enchiridion.site</Link></li>
                             <li>IG@enchiridion.md</li>
                             <li>tiktok@enchiridion.md</li>
                         </ul>

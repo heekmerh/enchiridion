@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./ReferralPage.module.css";
 import Accordion from "@/components/Accordion";
 import DistributorForm from "@/components/DistributorForm";
@@ -13,6 +14,7 @@ export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
     const [showFloatingBtn, setShowFloatingBtn] = useState(false);
     const staticBtnRef = useRef<HTMLButtonElement>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -48,7 +50,6 @@ export default function ReferralPage() {
     }, []);
     const [isRegistered, setIsRegistered] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
     const [referralCode, setReferralCode] = useState("");
     const [copied, setCopied] = useState(false);
     const [formData, setFormData] = useState({
@@ -308,7 +309,7 @@ export default function ReferralPage() {
                 <div className={styles.block}>
                     <div className={styles.blockContent}>
                         <h3 className="serif">KNOWLEDGE & IMPACT</h3>
-                        <p>With Enchiridion, you don't just refer products — you help improve how medical knowledge is accessed, structured, and applied.</p>
+                        <p>With Enchiridion, you don&apos;t just refer products — you help improve how medical knowledge is accessed, structured, and applied.</p>
                     </div>
                     <div className={styles.blockImage}>
                         <img
@@ -396,11 +397,11 @@ export default function ReferralPage() {
                 <p>Why they share Enchiridion</p>
                 <div className={styles.testimonialGrid}>
                     <div className={styles.testimonialCard}>
-                        <blockquote>"Enchiridion made it easier to revise and explain concepts to juniors. Sharing it felt natural — the referral rewards were a bonus."</blockquote>
+                        <blockquote>&quot;Enchiridion made it easier to revise and explain concepts to juniors. Sharing it felt natural — the referral rewards were a bonus.&quot;</blockquote>
                         <p>— A., Medical Officer</p>
                     </div>
                     <div className={styles.testimonialCard}>
-                        <blockquote>"The ability to refer my study group and earn credits for my next specialty book has been a game changer for my clinical years."</blockquote>
+                        <blockquote>&quot;The ability to refer my study group and earn credits for my next specialty book has been a game changer for my clinical years.&quot;</blockquote>
                         <p>— S., Medical Student</p>
                     </div>
                 </div>
@@ -628,8 +629,12 @@ export default function ReferralPage() {
                             <div className={styles.successIcon}>✓</div>
                             <h3>Welcome to the Inner Circle, {formData.fullName.split(' ')[0]}!</h3>
                             <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
-                                We&apos;ve sent a verification email to <b>{formData.email}</b>. Verify your address, then sign in to use the same account on the website and in the Enchiridion app.
+                                We&apos;ve sent an eight-digit verification code to <b>{formData.email}</b>. Select Verify My Email below and enter that code to activate your account. The same account works on the website and in the Enchiridion app.
                             </p>
+
+                            <Link href="/verify-email" className={styles.primaryBtn}>
+                                Verify My Email
+                            </Link>
 
                             <div className={styles.onboardingSteps}>
                                 <div className={styles.onboardingCard}>
