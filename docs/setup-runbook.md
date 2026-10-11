@@ -97,60 +97,34 @@ Google sign-in comes later, in phase 6.
 
 ---
 
-## Phase 2 — Backend on Vercel
+## Phase 2 — Combined website and backend on Vercel
 
-### 2.1 Create the project
+Follow [vercel-services.md](vercel-services.md) for the current one-project deployment.
 
-[README → Vercel Deployment](../README.md#vercel-deployment)
+- [ ] Import `heekmerh/enchiridion` with repository root `./` and application preset **Services**.
+- [ ] Use the checked-in root `vercel.json`; the service roots are `frontend` and `backend`.
+- [ ] Add the backend and frontend environment variables from the combined guide to this project.
+- [ ] Do not manually set `BACKEND_URL`; the service binding injects it at runtime.
+- [ ] Deploy and record the combined URL as `<BACKEND>` for the provider setup steps below.
+- [ ] Ensure production Deployment Protection allows public API and webhook requests.
 
-- [ ] New Vercel project from this repository, **root directory `backend`**.
-- [ ] Set these variables now (payment variables come in phases 5 and 7):
+**Check:** `<BACKEND>/` serves the website and `<BACKEND>/health/ready` returns `ready`.
 
-| Variable | Value |
-| --- | --- |
-| `SUPABASE_DB_URL` | pooler URI from 1.1 |
-| `SUPABASE_URL` | `https://lvyoqnmqdquadkfixduq.supabase.co` |
-| `FRONTEND_URL` | `https://enchiridion.site` |
-| `CORS_ORIGINS` | `https://enchiridion.site,https://www.enchiridion.site` |
-| `BOOK_PRICE_NGN` | `10000` (or the real book price) |
-| `CRON_SECRET` | second secret from 0.3 |
-| `MAIL_USERNAME`, `MAIL_PASSWORD`, `MAIL_FROM`, `MAIL_SERVER`, `MAIL_PORT`, `MAIL_FROM_NAME` | your SMTP mailbox |
+## Phase 3 — Domain and administrator account
 
-- [ ] Deploy. Write down the URL; this is `<BACKEND>`.
-- [ ] **Settings → Deployment Protection:** off for production, so Flutterwave, Google and the website can reach it.
-
-**Check:** `curl <BACKEND>/health/ready` returns OK. If not, `SUPABASE_DB_URL` is wrong (usually the port or an un-encoded password).
-
----
-
-## Phase 3 — Website on Vercel
-
-### 3.1 Create the project
-
-- [ ] Second Vercel project from this repository, **root directory `frontend`**.
-- [ ] Variables:
-
-| Variable | Value |
-| --- | --- |
-| `BACKEND_URL` | `<BACKEND>` (no trailing path) |
-| `NEXT_PUBLIC_SUPABASE_URL` | `https://lvyoqnmqdquadkfixduq.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | anon key from 1.1 |
-| `NEXT_PUBLIC_FLUTTERWAVE_PUBLIC_KEY` | leave empty until 5.1 |
-| `NEXT_PUBLIC_PLAY_STORE_URL` | placeholder until 6.3 |
-
-- [ ] Deploy.
+The frontend and backend share the combined project. Add the domain to that project.
 
 ### 3.2 Domain
 
 [README → Hostinger Domain](../README.md#hostinger-domain)
 
-- [ ] Add `enchiridion.site` and `www.enchiridion.site` to the **frontend** project.
+- [ ] Add `enchiridion.site` and `www.enchiridion.site` to the **combined Services** project.
 - [ ] In Hostinger DNS, set the A and CNAME records Vercel shows. Keep the MX, SPF and DKIM records.
 - [ ] Wait for HTTPS to be issued.
 
 ### 3.3 Make yourself admin
 
-- [ ] Sign up on `https://enchiridion.site/refer` and click the link in the verification email.
+- [ ] Sign up on `https://enchiridion.site/refer` and enter the emailed verification code on `/verify-email`.
 - [ ] In Supabase:
 
   ```sql
@@ -179,7 +153,7 @@ This confirms the code before you spend time in provider consoles.
 - [ ] **A2:** Business Preferences → you pay the fees, not the customer.
 - [ ] **A3:** webhook `<BACKEND>/api/v1/payments/flutterwave/webhook`, secret hash = first secret from 0.3, which also goes into backend `FLUTTERWAVE_WEBHOOK_SECRET`. Retries on.
 - [ ] **A4:** decide about the cancel link in Flutterwave's reminder emails.
-- [ ] Redeploy **both** Vercel projects.
+- [ ] Redeploy the combined Vercel project.
 - [ ] **A6:** subscribe monthly on `/premium` with a test card.
 
 **Check:** the A6 SQL shows `ACTIVE` / `verified` / `processed`; the webhook log in Flutterwave shows 200; cancelling on `/account/subscription` keeps Premium until the period end.
@@ -297,7 +271,7 @@ B5
   ```
 
   It should return a JSON summary, not 401.
-- [ ] In the backend project, open **Settings → Cron Jobs** and confirm the daily job is listed.
+- [ ] In the combined project, open **Settings → Cron Jobs** and confirm the daily job is listed.
 - [ ] Work through all 11 rows of [subscriptions.md → 7. Sandbox test plan](subscriptions.md#7-sandbox-test-plan). Rows 1–6 are the website and rows 7–11 are Android.
 - [ ] Confirm the billing emails (activated, cancelled) arrive from your SMTP address.
 
@@ -326,10 +300,10 @@ Do these in order, in one sitting.
 [A7](payment-provider-setup.md#a7-go-live)
 
 - [ ] Switch the dashboard to Live mode.
-- [ ] Enter the live keys in both Vercel projects.
+- [ ] Enter the live keys in the combined Vercel project.
 - [ ] Set up the live webhook with the same URL and secret.
 - [ ] Re-check the fee setting.
-- [ ] Redeploy both projects.
+- [ ] Redeploy the combined Vercel project.
 
 ### 9.4 Play production
 

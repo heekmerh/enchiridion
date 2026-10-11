@@ -73,7 +73,7 @@ export default function VerifyEmail() {
                     <form className={styles.form} onSubmit={verifyCode}>
                         <div className={styles.header}>
                             <h2>Verify Your Email</h2>
-                            <p>Open the link in your verification email, or enter the code it contains.</p>
+                            <p>Enter the verification code from your email to confirm your account.</p>
                         </div>
                         {error && <div className={styles.error}>{error}</div>}
                         {message && <div className={styles.message}>{message}</div>}

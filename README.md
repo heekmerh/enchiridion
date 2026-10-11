@@ -69,7 +69,12 @@ WHERE email = 'your-registered-email@example.com';
 
 ## Vercel Deployment
 
-Create **two Vercel projects from this repository**:
+The default deployment is **one Vercel Services project**, configured by the root
+[`vercel.json`](vercel.json). Follow [the combined deployment guide](docs/vercel-services.md).
+Use repository root `./` and application preset **Services**; do not manually set
+`BACKEND_URL`, which is injected by the frontend service binding.
+
+The instructions below are the alternative **two-project deployment**:
 
 | Project | Root directory | Framework |
 | --- | --- | --- |

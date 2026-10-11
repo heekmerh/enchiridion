@@ -19,7 +19,10 @@ Android app ──► Google Play Billing ──► POST /api/v1/payments/google
 Click-by-click provider setup: [payment-provider-setup.md](payment-provider-setup.md).
 
 Every call from the app and the website goes through `https://enchiridion.site/api/v1/...`
-(the Next.js proxy). Point provider webhooks straight at the backend URL.
+(routed directly to FastAPI by Vercel Services). Provider webhooks use the same
+combined domain. Follow [vercel-services.md](vercel-services.md) for the default
+one-project deployment; the separate backend/frontend project instructions below
+are an alternative.
 
 ## 1. Supabase
 
@@ -30,7 +33,7 @@ Every call from the app and the website goes through `https://enchiridion.site/a
 4. **Authentication → Emails → Templates:** paste
    [`confirm-signup.html`](../supabase/email-templates/confirm-signup.html) into *Confirm signup* (subject: `Verify your Enchiridion account`) and
    [`reset-password.html`](../supabase/email-templates/reset-password.html) into *Reset password*.
-   Both contain the link (website) and the `{{ .Token }}` code (app).
+   Confirm signup uses the `{{ .Token }}` verification code on both the website and the app. Reset password uses the existing `{{ .ConfirmationURL }}` link flow. Keep the working Supabase templates if they already match these flows.
 5. **Authentication → Emails → SMTP:** configure custom SMTP so verification mail is not rate-limited.
 
 ## 2. Backend (Vercel project rooted at `backend/`)
