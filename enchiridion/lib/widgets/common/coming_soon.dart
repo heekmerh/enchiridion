@@ -1,25 +1,11 @@
-/// App-wide "not yet available" presentation rule: the shared label, muted
-/// text/icon alphas, badge, and the two dimming treatments (desaturating
-/// wrapper for small thumbnails, dark scrim for full-bleed artwork) every
-/// not-yet-available topic, book, or resource row in the app renders through.
-///
-/// Consumers wired to this module: `osce_screen.dart` (station list),
-/// `resource_topic_list_screen.dart` (topic cards, desaturating wrapper),
-/// `library_screen.dart` (book shelf pages, dark scrim), and
-/// `calculator_list_screen.dart` (calculator list).
-/// Any new topic or resource list should route through this module rather
-/// than restyling locally.
-///
-/// Choosing rule: artwork-forward tiles whose image IS the content
-/// (full-bleed book covers) darken under [ComingSoonScrim] and keep their
-/// colour; icon/text rows and small thumbnails inside text cards keep using
-/// the desaturating [ComingSoonDim] wrapper.
-///
-/// `calculator_list_screen.dart` consumes this module for genuinely unbuilt
-/// calculators (no working form exists yet), while keeping the freemium
-/// paywall lock as a separate state that takes lower precedence — an
-/// unbuilt calculator is never shown as locked/purchasable, since a
-/// coming-soon row wins whenever both states could apply.
+/// App-wide "not yet available" presentation: shared label, muted alphas,
+/// badge, and two dimming treatments — [ComingSoonScrim] darkens full-bleed
+/// artwork whose image IS the content (Library covers) keeping its colour,
+/// [ComingSoonDim] desaturates small thumbnails/icon rows instead. New topic
+/// or resource lists should route through this module rather than restyling
+/// locally. In `calculator_list_screen.dart`, a coming-soon row always wins
+/// over the freemium paywall lock for the same tile, since an unbuilt
+/// calculator is never shown as locked/purchasable.
 library;
 
 import 'package:flutter/material.dart';
@@ -32,12 +18,10 @@ import '../../utils/content_availability.dart';
 // also import `content_availability.dart` directly for ordering.
 export '../../utils/content_availability.dart' show kComingSoonLabel;
 
-/// Shared muted styling for content that has not been written yet.
-///
-/// The alphas below are lifted verbatim from the freemium-locked branch of
-/// `calculator_list_screen.dart._calcTile`, so a locked row and an
-/// unavailable row read as one visual family even though they represent
-/// different states.
+/// Shared muted styling for content that has not been written yet. Alphas
+/// are lifted verbatim from the freemium-locked branch of
+/// `calculator_list_screen.dart._calcTile` so a locked row and an
+/// unavailable row read as one visual family.
 abstract final class ComingSoonStyle {
   static const double titleAlpha = 0.5;
   static const double bodyAlpha = 0.35;
@@ -61,7 +45,6 @@ abstract final class ComingSoonStyle {
 }
 
 /// A small pill badge stating that content is not yet available.
-///
 /// Every screen renders this widget rather than writing the phrase inline,
 /// so the wording and styling stay identical everywhere.
 class ComingSoonBadge extends StatelessWidget {
@@ -102,12 +85,9 @@ class ComingSoonBadge extends StatelessWidget {
   }
 }
 
-/// Desaturates [child] when [dimmed] is true; a no-op otherwise.
-///
-/// Used to gray out small hero thumbnails inside text cards so an
-/// unavailable card reads as gray even though its artwork is colorful.
-/// For full-bleed colourful artwork whose image IS the content (Library
-/// book covers), use [ComingSoonScrim] instead so the art keeps its colour.
+/// Desaturates [child] when [dimmed] is true, a no-op otherwise. For
+/// full-bleed artwork whose image IS the content, use [ComingSoonScrim]
+/// instead so the art keeps its colour.
 class ComingSoonDim extends StatelessWidget {
   final Widget child;
   final bool dimmed;
@@ -138,12 +118,8 @@ class ComingSoonDim extends StatelessWidget {
   }
 }
 
-/// Darkens full-bleed colourful artwork without desaturating it.
-///
-/// The treatment for artwork-forward tiles whose image IS the content
-/// (Library book covers): darkens under a translucent black veil and keeps
-/// full colour. Icon/text rows and small thumbnails inside text cards keep
-/// using the desaturating [ComingSoonDim] wrapper instead.
+/// Darkens full-bleed artwork under a translucent black veil without
+/// desaturating it; use [ComingSoonDim] for icon/text rows instead.
 class ComingSoonScrim extends StatelessWidget {
   const ComingSoonScrim({super.key});
 

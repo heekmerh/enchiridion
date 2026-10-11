@@ -25,12 +25,12 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
-# ── Paths ──────────────────────────────────────────────────────────────────────
+# Paths
 
 DOCX_PATH = Path(__file__).parent / "final" / "final.docx"
 OUTPUT_PATH = Path(__file__).parent / "output" / "book.json"
 
-# ── Book-level metadata (edit here if needed) ──────────────────────────────────
+# Book-level metadata (edit here if needed)
 
 BOOK_META = {
     "id": "medical-codex-001",
@@ -39,7 +39,7 @@ BOOK_META = {
     "coverUrl": "assets/icon/logo.png",
 }
 
-# ── Heading style → hierarchy level mapping ────────────────────────────────────
+# Heading style → hierarchy level mapping
 # Run --discover to see what styles your docx actually uses, then adjust here.
 
 HEADING_MAP: dict[str, int] = {
@@ -54,7 +54,7 @@ HEADING_MAP: dict[str, int] = {
 # Styles that are always plain content (never heading-detected)
 CONTENT_STYLES = {"Normal (Web)", "List Paragraph", "HTML Preformatted"}
 
-# ── Regexes ────────────────────────────────────────────────────────────────────
+# Regexes
 
 CLINICAL_PEARLS_RE = re.compile(r'clinical\s*pearl', re.IGNORECASE)
 RED_FLAGS_RE = re.compile(r'red\s*flag', re.IGNORECASE)
@@ -63,7 +63,7 @@ QUOTED_WORD_RE = re.compile(r'[\u201c\u201d\u2018\u2019"\']([\w\-]+)[\u201c\u201
 EMOJI_RE = re.compile(r'^([\U0001F000-\U0001FFFF\u2600-\u27BF\u00A9\u00AE]+)\s*')
 
 
-# ── Helpers ────────────────────────────────────────────────────────────────────
+# Helpers
 
 def to_id(text: str) -> str:
     """Slugify text to snake_case for use as an ID."""
@@ -119,7 +119,7 @@ def detect_normal_level(text: str) -> int | None:
     return None
 
 
-# ── Block classification ───────────────────────────────────────────────────────
+# Block classification
 
 def classify_blocks(group_title: str, raw: list[dict]) -> list[dict]:
     """
@@ -181,7 +181,7 @@ def classify_blocks(group_title: str, raw: list[dict]) -> list[dict]:
     return result
 
 
-# ── Converter class ────────────────────────────────────────────────────────────
+# Converter class
 
 class DocxConverter:
     """State machine that walks document body elements and builds the JSON tree."""
@@ -203,7 +203,7 @@ class DocxConverter:
         self._subsection_n = 0
         self._group_n = 0
 
-    # ── Flush helpers ──────────────────────────────────────────────────────────
+    # Flush helpers
 
     def _flush_group(self):
         if self._group is None:
@@ -237,7 +237,7 @@ class DocxConverter:
         self.chapters.append(self._chapter)
         self._chapter = None
 
-    # ── Ensure helpers (create containers lazily when content arrives early) ───
+    # Ensure helpers (create containers lazily when content arrives early)
 
     def _ensure_group(self) -> bool:
         """Guarantee chapter/section/subsection/group all exist. Returns False
@@ -271,7 +271,7 @@ class DocxConverter:
             }
         return True
 
-    # ── Heading handlers ───────────────────────────────────────────────────────
+    # Heading handlers
 
     def _on_h1(self, text: str):
         self._flush_chapter()
@@ -336,7 +336,7 @@ class DocxConverter:
             "blocks": [],
         }
 
-    # ── Main entry point ───────────────────────────────────────────────────────
+    # Main entry point
 
     def convert(self) -> dict:
         for elem in self.doc.element.body:
@@ -396,7 +396,7 @@ class DocxConverter:
         return {**BOOK_META, "chapters": self.chapters}
 
 
-# ── Discovery mode ─────────────────────────────────────────────────────────────
+# Discovery mode
 
 def safe_print(text: str):
     """Print with emoji replaced by ? on terminals that can't handle them."""
@@ -427,7 +427,7 @@ def discover_styles(docx_path: Path):
     safe_print("\nUpdate HEADING_MAP in docx_processor.py if your styles differ from 'Heading 1/2/3/4'.")
 
 
-# ── Entry point ────────────────────────────────────────────────────────────────
+# Entry point
 
 def main():
     if '--discover' in sys.argv:

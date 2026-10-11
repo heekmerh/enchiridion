@@ -3,33 +3,16 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
-/// Append-only diagnostic log covering the Study Buddy path: app and window
-/// startup, ambient prompt scheduling, question loading, and answer
-/// submission.
-///
-/// Records operation *boundaries* rather than chatter — each meaningful step
-/// gets a START/END pair with a duration, or a single EVENT, or an ERROR. Read
-/// it by looking for a START with no matching END: that operation is where
-/// things stopped. A user can retrieve it without a dev machine via Settings →
-/// Diagnostics log (`DiagnosticsLogScreen`).
-///
-/// Ordinary logging (`dart:developer`'s `log`) is invisible in release builds
-/// and lives only in memory — useless once the problem it was meant to explain
-/// has already happened, especially if the process gets killed for ANR before
-/// anyone can inspect it. Every call here instead does a synchronous,
-/// immediately-flushed file append: the "started X" line lands on disk
-/// *before* X runs, so even if X never returns, the log still shows exactly
-/// where things stopped — not merely what happened beforehand.
-///
-/// Shared with the native side (`DiagLog.kt`) via one file: both write to
-/// `<filesDir>/study_buddy_diagnostics.log`, so a single timeline covers
-/// native `FlutterEngine` construction/teardown as well as everything that
-/// happens once Dart is running, across all three engines this app creates
-/// (the main app, the bubble window, and the headless alarm worker).
-///
-/// Best-effort throughout: a failing log write must never itself cause (or
-/// contribute to) the freeze/crash it exists to explain, and on platforms
-/// without `BubblePlugin` (iOS, desktop, web) this becomes a silent no-op.
+/// Append-only diagnostic log covering the Study Buddy path. Records
+/// operation *boundaries*: a START/END pair with duration, an EVENT, or an
+/// ERROR; a START with no matching END marks where things stopped. Unlike
+/// `dart:developer`'s `log` (memory-only, invisible in release builds), each
+/// call is a synchronous, immediately-flushed file append. Shared with the
+/// native side (`DiagLog.kt`) via one file so a single timeline covers
+/// native `FlutterEngine` construction/teardown as well as
+/// Dart, across all three engines this app creates. Best-effort throughout:
+/// a failing log write must never itself cause the freeze/crash it exists
+/// to explain, and on platforms without `BubblePlugin` this is a no-op.
 class DiagnosticsLog {
   DiagnosticsLog._();
 
@@ -48,11 +31,9 @@ class DiagnosticsLog {
   static const _maxBufferedLines = 200;
 
   /// Bootstraps the log with no platform channel and no `await`, using a
-  /// directory the native side already handed us.
-  ///
-  /// This is the path the bubble window uses: [initFromRoute] pulls the
-  /// directory out of the launch route, so that engine can record its very
-  /// first instruction even if platform channels in it never respond.
+  /// directory the native side already handed us. The path the bubble
+  /// window uses: [initFromRoute] pulls it from the launch route, so that
+  /// engine can log its first instruction even if channels never respond.
   static void initWithDirectory(String directory, String engineTag) {
     _engineTag = engineTag;
     if (_path != null) return;
@@ -74,23 +55,16 @@ class DiagnosticsLog {
     } catch (_) {}
   }
 
-  /// Resolves the log directory over the platform channel. Used by the
-  /// engines that have no launch route to carry it (the main app and the
-  /// headless alarm callback).
-  ///
-  /// Must never be awaited on a critical path: a stalled channel would then
-  /// gate the very work being instrumented. Anything logged while this is
-  /// in flight is buffered and flushed when it lands.
+  /// Resolves the log directory over the platform channel, for engines with
+  /// no launch route to carry it. Must never be awaited on a critical path —
+  /// a stalled channel would gate the work being instrumented — so anything
+  /// logged while this is in flight is buffered and flushed when it lands.
   static Future<void> init(String engineTag) async {
     if (_path != null || _unavailable) return;
     _engineTag = engineTag;
-    // Retried rather than latched on the first failure: `FlutterActivity`
-    // builds its engine with `FlutterEngineGroup.createAndRunEngine`, which
-    // starts executing Dart *before* `configureFlutterEngine` registers any
-    // plugin — measured at ~45ms on this device. A MissingPluginException in
-    // that window is a timing artifact, not a verdict, and an earlier version
-    // treated it as permanent *and* discarded the buffer, destroying exactly
-    // the evidence this log exists to capture.
+    // Retried rather than latched on first failure: Dart starts running
+    // before `configureFlutterEngine` registers plugins (~45ms), so an
+    // early MissingPluginException is a timing artifact, not a verdict.
     for (var attempt = 0; attempt < 5; attempt++) {
       try {
         final dir = await _channel.invokeMethod<String>('diagLogDir');

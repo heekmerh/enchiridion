@@ -8,21 +8,16 @@ import '../models/resource_topic.dart';
 import '../services/storage_service.dart';
 import 'question_screen.dart';
 
-/// Points a correct answer is worth.
-///
-/// Mirrors the value `StudyStatsService.recordAnswer` already applies.
-/// Duplicated here — rather than imported — so this screen doesn't need to
-/// construct a `StudyStatsService` just to read a constant; keep the two in
-/// sync if that value ever changes.
+/// Points a correct answer is worth. Duplicates `StudyStatsService
+/// .recordAnswer`'s value rather than importing it, so this screen doesn't
+/// need a `StudyStatsService` instance just to read a constant — keep both
+/// in sync if it ever changes.
 const int kCorrectAnswerPoints = 10;
 
 /// Browses the questions the user has already answered in Exam Prep,
-/// filtered by [AnsweredQuestionFilter].
-///
-/// Rows are built strictly from the intersection of [questions] and the
-/// stored answers for [kStandaloneExamPrepScope] — a question with no
-/// recorded answer can never become a row, so this screen can never leak
-/// unanswered (and therefore possibly locked) bank content.
+/// filtered by [AnsweredQuestionFilter]. Rows are built strictly from the
+/// intersection of [questions] and stored answers, so this screen can never
+/// leak unanswered (and therefore possibly locked) bank content.
 class AnsweredQuestionsScreen extends StatefulWidget {
   final List<Question> questions;
   final AnsweredQuestionFilter initialFilter;
@@ -43,13 +38,11 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
   Map<String, QuestionReview> _reviews = {};
 
   /// Drives both the segmented control and the row filter. Seeded from
-  /// [AnsweredQuestionsScreen.initialFilter], but the segmented control only
-  /// offers answered/correct/wrong — points and correct describe the same
-  /// set (see [AnsweredQuestionFilter.matches]), so an initial points filter
-  /// starts on the correct segment. The app-bar heading is not driven by
-  /// this field: it stays fixed to the filter the screen was opened with, so
-  /// switching segments doesn't relabel the page out from under the tile the
-  /// user tapped.
+  /// [AnsweredQuestionsScreen.initialFilter]; since the segmented control
+  /// only offers answered/correct/wrong and points/correct describe the same
+  /// set, an initial points filter starts on the correct segment. The
+  /// app-bar heading stays fixed to the opening filter regardless, so
+  /// switching segments doesn't relabel the page.
   late AnsweredQuestionFilter _activeFilter;
 
   @override
@@ -89,13 +82,11 @@ class _AnsweredQuestionsScreenState extends State<AnsweredQuestionsScreen> {
     return rows;
   }
 
-  /// All-time counts across every question the user has ever answered in
-  /// this bank — independent of the active segment. This screen counts
-  /// distinct questions (one row per question, however many times it was
-  /// answered), while the dashboard tiles count answers given (a re-served
-  /// question counts again each time). The two figures are expected to
-  /// disagree once any question has been re-answered; the summary line
-  /// says so explicitly.
+  /// All-time count across every question ever answered in this bank,
+  /// independent of the active segment. Counts distinct questions, unlike
+  /// the dashboard tiles which count answers given (a re-served question
+  /// counts again) — the two are expected to disagree once anything has
+  /// been re-answered; the summary line says so explicitly.
   int get _totalAnsweredCount =>
       widget.questions.where((q) => _answers.containsKey(q.id)).length;
 

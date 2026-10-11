@@ -5,7 +5,6 @@ import '../providers/auth_provider.dart';
 
 /// Shown when this device doesn't match the account's bound device or any
 /// previously authorized one (`DeviceGateStatus.needsAuthorization`).
-///
 /// Dismissible — unlike [DeviceAuthDialog] — since declining just means
 /// staying signed out on this device, not losing access to the account.
 /// Pops `true` if the device was authorized, `false`/`null` otherwise; the

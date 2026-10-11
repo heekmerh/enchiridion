@@ -3,7 +3,6 @@ import 'dart:math';
 import 'question.dart';
 
 /// Spaced-repetition state for one question within one scope.
-///
 /// This — not the [UserAnswer] map in `StorageService` — is the source of
 /// truth for what may be served next. [UserAnswer] records *what the user
 /// picked last time* and still drives the tick marks in the question lists;
@@ -91,7 +90,6 @@ class QuestionReview {
   bool isDue(DateTime now) => !retired && !dueAt.isAfter(now);
 
   /// Folds one answer into the ladder and returns the next state.
-  ///
   /// [confident] is the user's own signal that they knew the answer rather
   /// than guessed it; see [guessedInterval].
   QuestionReview applyAnswer({

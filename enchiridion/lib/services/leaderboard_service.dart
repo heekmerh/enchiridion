@@ -3,16 +3,11 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/exam_module.dart';
 import '../models/leaderboard_entry.dart';
 
-/// Fetches the cross-user leaderboard via the `get_leaderboard` RPC (see
-/// the leaderboard section of scripts/sql/999_MASTER_init.sql) — a SECURITY DEFINER function, since
-/// daily_study_stats' RLS policy otherwise only lets a user read their own
-/// rows and a plain client-side select can't aggregate across everyone.
-///
-/// Module leaderboards go through `get_leaderboard_for_scope` (see
-/// the same file), which filters the same
-/// aggregation to one module's storage scope. When that function is missing
-/// (migration not run yet) or the device is offline, the call falls back to
-/// the aggregated board rather than failing.
+/// Fetches the cross-user leaderboard via the `get_leaderboard` RPC, a
+/// SECURITY DEFINER function since daily_study_stats' RLS only lets a user
+/// read their own rows. Module leaderboards use `get_leaderboard_for_scope`
+/// instead, filtering the same aggregation to one module. Falls back to the
+/// aggregated board if that function is missing or the device is offline.
 class LeaderboardService {
   Future<List<LeaderboardEntry>> fetch({int limit = 20}) async {
     final rows = await Supabase.instance.client.rpc(

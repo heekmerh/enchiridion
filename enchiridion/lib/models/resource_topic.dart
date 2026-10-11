@@ -16,11 +16,9 @@ class ResourceTopic {
   /// [dataAssetPath] is null — the structure exists before the prose does.
   final List<String>? outline;
 
-  /// The category heading this topic sits under in its authoring source —
-  /// e.g. "Cardiovascular Instrumentation" for a Medical Instrumentation
-  /// topic sourced from `scripts/content/medical_instrumentation.md`. Null
-  /// means this topic renders in a flat, header-less list (the case for
-  /// every Surgical Instrumentation and OSCE topic today).
+  /// The category heading this topic sits under in its authoring source
+  /// (e.g. "Cardiovascular Instrumentation"). Null renders in a flat,
+  /// header-less list (every Surgical Instrumentation and OSCE topic today).
   final String? group;
 
   const ResourceTopic({
@@ -44,12 +42,9 @@ class ResourceTopic {
   /// treatment — see `ComingSoonStyle` in `widgets/common/coming_soon.dart`.
   bool get isComingSoon => !hasContent;
 
-  /// Stable storage scope used to anchor pinned notes to this topic.
-  ///
-  /// Topic content renders through the same `BlockRenderer` as books, whose
-  /// pin/clip controls key off a non-empty `bookId`. Scoping topic notes as
-  /// `topic_<id>` keeps them separate from book notes while reusing the same
-  /// storage and listing machinery.
+  /// Stable storage scope anchoring pinned notes to this topic. `topic_<id>`
+  /// keeps them separate from book notes while reusing the same
+  /// `BlockRenderer` pin/clip machinery (keyed on a non-empty `bookId`).
   String get notesScope => 'topic_$id';
 }
 
@@ -73,25 +68,11 @@ String topicTitleForNotesScope(String scope) {
   return scope;
 }
 
-/// Groups [topics] by [ResourceTopic.group] for display, mirroring
-/// `groupedCalculatorsInDisplayOrder` in `calculator_definition.dart` so the
-/// two screens order their sections the same way.
-///
-/// Buckets are built with `putIfAbsent`, so group order starts as
-/// first-appearance order in [topics] — the same primitive
-/// `groupByCategory` uses for calculators. [availableFirst] (from
-/// `utils/content_availability.dart`, landed by sibling 260918-dqx) is then
-/// applied at both levels: a group holding at least one topic with content
-/// outranks a group holding none, and within each group, topics with
-/// content lead topics that don't. This is why the Medical Instrumentation
-/// screen opens on the group holding its one written topic rather than on
-/// whichever heading was authored first — the rule comes from availability,
-/// not from this list's literal order.
-///
-/// A topic list where every topic has a null [ResourceTopic.group] collapses
-/// to a single bucket keyed `null`, whose flattened order is identical to
-/// `availableFirst(topics, (t) => t.hasContent)` — the flat, header-less
-/// rendering is the degenerate case of this same rule.
+/// Groups [topics] by [ResourceTopic.group], applying [availableFirst] at
+/// both the group and topic level so a group with any content outranks one
+/// without (why Medical Instrumentation opens on its one written topic's
+/// group, not authored order). An all-null-group list degenerates to
+/// `availableFirst(topics, (t) => t.hasContent)`.
 Map<String?, List<ResourceTopic>> groupTopicsForDisplay(
     List<ResourceTopic> topics) {
   final byGroup = <String?, List<ResourceTopic>>{};
@@ -114,15 +95,10 @@ Map<String?, List<ResourceTopic>> groupTopicsForDisplay(
 /// scheme (`exam_prep_plab`, `exam_prep_usmle`, …; see `exam_module.dart`).
 const String kStandaloneExamPrepScope = 'exam_prep_plab';
 
-// Sourced from `scripts/content/surgical instrumentation.md` — 86 authored
-// bullet lines, 85 unique (`Foley catheter` is listed twice; deduped to its
-// first occurrence). The list below preserves that source order except the
-// suture entry, which is hoisted to position one because it is the only
-// entry with real written content (availableFirst would also put it there,
-// but hoisting it here keeps authored order and display order visibly the
-// same). The `Suture material` bullet maps to this pre-existing entry rather
-// than getting a second row — see `sims-speculum` for the other apostrophe
-// normalization in this list.
+// Sourced from `scripts/content/surgical instrumentation.md` (86 bullets,
+// 85 unique — `Foley catheter` is deduped). Preserves that source order
+// except sutures, hoisted to position one as the only entry with real
+// content; its `Suture material` bullet maps here rather than a second row.
 const List<ResourceTopic> kSurgicalInstrumentationTopics = [
   ResourceTopic(
     id: 'sutures',
@@ -639,16 +615,12 @@ const List<ResourceTopic> kSurgicalInstrumentationTopics = [
   ),
 ];
 
-// Sourced from `scripts/content/medical_instrumentation.md` — 9 authored
-// headings, 48 bullets total. Group order below follows first appearance
-// here, which matches the source file's heading order; display order is
-// decided by `groupTopicsForDisplay`, not by this list's literal order.
-// The "IV cannulation" bullet (Diagnostic and Monitoring Equipment) maps to
-// the pre-existing `iv-cannula` entry rather than a second row — it is this
-// catalog's only entry with real written content, which is why
-// `groupTopicsForDisplay` opens on that group with IV Cannula leading it.
-// The ENT "Laryngoscope" bullet is prefixed `medical-` to disambiguate its
-// id from the Surgical Instrumentation catalog's own `laryngoscope` entry.
+// Sourced from `scripts/content/medical_instrumentation.md` (9 headings, 48
+// bullets); group order follows the source's heading order, display order
+// comes from `groupTopicsForDisplay`. The "IV cannulation" bullet maps to
+// the pre-existing `iv-cannula` entry (this catalog's only real content,
+// hence its group leading). "Laryngoscope" is prefixed `medical-` to
+// disambiguate from the Surgical Instrumentation catalog's own entry.
 const List<ResourceTopic> kMedicalInstrumentationTopics = [
   // -- Cardiovascular Instrumentation
   ResourceTopic(
@@ -1009,13 +981,10 @@ const List<ResourceTopic> kMedicalInstrumentationTopics = [
 ];
 
 /// [kMedicalInstrumentationTopics] reordered so the group holding real
-/// content — Diagnostic and Monitoring Equipment, via `iv-cannula` — leads
-/// the section, with every other group following in its authored
-/// first-appearance order. Group membership stays contiguous; nothing is
-/// interleaved. `kMedicalInstrumentationTopics` itself stays in its authored
-/// order — it remains the authoring source of truth; this derived list is
-/// what UI surfaces render. A future topic gaining a `dataAssetPath` will
-/// promote its own group automatically, with no edit needed here.
+/// content leads (contiguously, nothing interleaved), other groups following
+/// authored order. The source list stays in authored order as the source of
+/// truth; a future topic gaining a `dataAssetPath` promotes its group
+/// automatically, with no edit needed here.
 final List<ResourceTopic> kMedicalInstrumentationTopicsInDisplayOrder =
     availableFirstByGroup(
   kMedicalInstrumentationTopics,
@@ -1023,11 +992,9 @@ final List<ResourceTopic> kMedicalInstrumentationTopicsInDisplayOrder =
   isAvailable: (t) => t.hasContent,
 );
 
-// Sourced from scripts/content/OSCE.md, which the author put together as
-// the OSCE section's structure — one tab per numbered section there. Only
-// "Abdominal Examination" has full written content today
-// (abdominal_examination.json); every other tab shows its
-// [ResourceTopic.outline] as a checklist until its own content JSON exists.
+// Sourced from scripts/content/OSCE.md, one tab per numbered section. Only
+// "Abdominal Examination" has full content today; every other tab shows its
+// [ResourceTopic.outline] as a checklist until its own JSON exists.
 const List<ResourceTopic> kOsceTopics = [
   ResourceTopic(
     id: 'cardiovascular-system',

@@ -101,12 +101,10 @@ class StorageService {
 
   StorageService(this._prefs);
 
-  /// Fired at the end of every user-data mutation (notes, clips, bookmarks,
-  /// answers, settings, history) so cross-device sync can push the change.
-  /// Wired once in `main()`; null in tests and unwired contexts, where
-  /// mutations stay local-only. Callers never await it. Merge methods below
-  /// run quietly (see [runQuietly]) so applying remote state never
-  /// re-triggers a push.
+  /// Fired at the end of every user-data mutation so cross-device sync can
+  /// push the change. Wired once in `main()`; null in tests, where mutations
+  /// stay local-only. Merge methods below run quietly (see [runQuietly]) so
+  /// applying remote state never re-triggers a push.
   void Function(UserDataEntity)? onUserDataChanged;
 
   /// Fired after a pull merges remote state into storage, so providers with
@@ -137,8 +135,7 @@ class StorageService {
     }
   }
 
-  // ── Sync indexes & deletion tombstones ─────────────────────────────────────
-  //
+  // Sync indexes & deletion tombstones
   // Reading notes and clips live under composite keys that cannot be
   // enumerated unambiguously, so each maintains a `|`-joined location index.
   // Deletions are recorded as tombstones (entity + id + time) so they
@@ -435,8 +432,7 @@ class StorageService {
     }
   }
 
-  // ── Reading notes ────────────────────────────────────────────────────────────
-  //
+  // Reading notes
   // Free-text notes keyed by book+chapter. An index + per-note updated-at
   // metadata power enumeration and last-write-wins sync; the content keys
   // themselves are unchanged.
@@ -525,7 +521,7 @@ class StorageService {
     return changed;
   }
 
-  // ── Clips ─────────────────────────────────────────────────────────────────────
+  // Clips
 
   static const _clipsPrefix = 'clips_';
   static const _clipsIndexKey = 'clips_index';
@@ -670,9 +666,8 @@ class StorageService {
     return changed;
   }
 
-  // ── Pinned Notes (margin notes anchored to a specific content block,
-  // placed via long-press while reading; reachable for browsing from the
-  // Library screen too) ──────────────────────────────────────────────────
+  // Pinned Notes: margin notes anchored to a specific content block, placed
+  // via long-press while reading; also reachable for browsing from Library.
 
   static const _pinnedNotesKey = 'pinned_notes';
   static const _noteCollectionsKey = 'note_collections';
@@ -873,7 +868,7 @@ class StorageService {
     return true;
   }
 
-  // ── Calculator Favourites ────────────────────────────────────────────────────
+  // Calculator Favourites
 
   static const _favoritesKey = 'calc_favorites';
 
@@ -890,7 +885,7 @@ class StorageService {
     await _prefs.setStringList(_favoritesKey, favs.toList());
   }
 
-  // ── Book History ─────────────────────────────────────────────────────────────
+  // Book History
 
   static const _bookHistoryKey = 'book_history';
 
@@ -935,7 +930,7 @@ class StorageService {
     return true;
   }
 
-  // ── Question Answers ─────────────────────────────────────────────────────────
+  // Question Answers
 
   static const _answersPrefix = 'answers_';
 
@@ -994,17 +989,12 @@ class StorageService {
     return true;
   }
 
-  /// Records an answered question in both the legacy per-question map (used
-  /// for the tick marks in question lists) and the spaced-repetition ladder.
-  ///
-  /// This must record the review *before* touching the legacy map: on a
-  /// scope's very first answer, [recordQuestionReview] derives its starting
-  /// state from that same legacy map when no review has been written yet
-  /// (see [getQuestionReviews]). Calling [saveAnswer] first would let that
-  /// derivation pick up the answer being recorded right now, then
-  /// [recordQuestionReview] would fold the same answer in a second time —
-  /// silently double-advancing (or double-lapsing) the ladder. Prefer this
-  /// method over calling the two separately.
+  /// Records an answered question in both the legacy per-question map and
+  /// the spaced-repetition ladder. Must record the review *before* touching
+  /// the legacy map, since [recordQuestionReview] derives its starting state
+  /// from that map on a scope's first answer — reversing the order would
+  /// fold the same answer into the ladder twice. Prefer this over calling
+  /// the two separately.
   Future<QuestionReview> recordAnswer(
     String scope,
     UserAnswer answer, {
@@ -1016,17 +1006,16 @@ class StorageService {
     return review;
   }
 
-  // ── Question Reviews (spaced repetition) ──────────────────────
+  // Question Reviews (spaced repetition)
 
   static const _reviewsPrefix = 'reviews_';
   static const _serveLogPrefix = 'serve_log_';
 
-  /// Ladder state for every question the user has touched in [scope].
-  ///
-  /// Falls back to deriving state from the legacy `answers_` map when no
-  /// review record has been written yet, so an existing install keeps its
-  /// history instead of restarting from zero. Call
-  /// [ensureQuestionReviewsMigrated] to make that derivation permanent.
+  /// Ladder state for every question touched in [scope]. Falls back to
+  /// deriving state from the legacy `answers_` map when no review record
+  /// exists yet, so an existing install keeps its history instead of
+  /// restarting from zero; call [ensureQuestionReviewsMigrated] to persist
+  /// that derivation.
   Map<String, QuestionReview> getQuestionReviews(String scope) {
     try {
       final raw = _prefs.getString('$_reviewsPrefix$scope');
@@ -1069,7 +1058,6 @@ class StorageService {
   }
 
   /// Folds one answer into the ladder and persists the result.
-  ///
   /// [confident] is the user's self-report that they knew the answer rather
   /// than guessed; a guessed-correct answer does not graduate the question.
   Future<QuestionReview> recordQuestionReview(
@@ -1093,12 +1081,9 @@ class StorageService {
   }
 
   /// Folds remote review rows into local storage, last-write-wins on
-  /// [QuestionReview.lastSeenAt].
-  ///
-  /// Used by `QuestionReviewSyncService` after sign-in so progress made on
-  /// another device is reflected here. Never favors a remote row over a
-  /// strictly newer local one — this device's own in-flight answers, still
-  /// mid-upload or made offline, must not be clobbered by a stale pull.
+  /// [QuestionReview.lastSeenAt] — never favoring a remote row over a
+  /// strictly newer local one, so a stale pull can't clobber this device's
+  /// own in-flight or offline answers.
   Future<void> mergeQuestionReviews(
     String scope,
     Iterable<QuestionReview> remoteReviews,
@@ -1133,12 +1118,9 @@ class StorageService {
     );
   }
 
-  // ── Subscription validation ──────────────────────────────────────────────────  //
-  // Timestamp of the last time the subscription cache was successfully
-  // revalidated against Supabase (see `AccessService`). If the device goes
-  // longer than `AccessService.maxValidationAge` without a successful
-  // validation (e.g. the user cuts internet to keep access indefinitely),
-  // access automatically reverts to freemium until the next successful check.
+  // Subscription validation: last time the cache was revalidated against
+  // Supabase. Past `AccessService.maxValidationAge` without a successful
+  // check, access reverts to freemium.
 
   static const _accessValidationPrefix = 'access_validated_at_';
   DateTime? getLastAccessValidation(String userId) {
@@ -1154,19 +1136,11 @@ class StorageService {
 
   static const _accessScopesPrefix = 'access_scopes_';
 
-  /// The scopes ([`*`] for a full subscription, otherwise book ids / exam
-  /// module scopes) granted at the last successful validation for [userId].
-  ///
-  /// Persisted alongside [getLastAccessValidation] so a cold isolate — the
-  /// headless Study Buddy alarm creates a fresh one on every run — can trust
-  /// a recent validation instead of paying a Supabase round trip each time.
-  /// Keyed by user id, so one account's grants can never be read for another.
-  ///
-  /// Returns null when no validation has ever been recorded on this install,
-  /// which is distinct from an empty list: a validated free-tier user legibly
-  /// holds no scopes, whereas null means "nothing known, ask the server". An
-  /// install that predates this key has a timestamp but no scopes, and must
-  /// revalidate rather than be treated as holding nothing.
+  /// Scopes granted at the last successful validation for [userId], keyed
+  /// per user so a cold isolate (e.g. the headless Study Buddy alarm) can
+  /// trust a recent validation instead of a fresh Supabase round trip. Null
+  /// means "never validated, ask the server" — distinct from an empty list,
+  /// which means a validated free-tier user genuinely holds no scopes.
   List<String>? getCachedAccessScopes(String userId) {
     try {
       return _prefs.getStringList('$_accessScopesPrefix$userId');
@@ -1191,14 +1165,9 @@ class StorageService {
     await _prefs.setBool(_initialSyncKey, true);
   }
 
-  // ── Pre-launch scope migration ─────────────────────────────────────────────
-  //
-  // PLAB's storage scope was renamed from the bare `exam_prep` to
-  // `exam_prep_plab` before launch (uniform `exam_prep_<module>` scheme).
-  // This one-time copy carries any answers, reviews, serve log, and study
-  // stats recorded under the old scope on a development device over to the
-  // new one. It only copies when the destination is absent, never overwrites,
-  // and is a no-op for fresh installs.
+  // Pre-launch scope migration: PLAB's storage scope was renamed from
+  // `exam_prep` to `exam_prep_plab`. One-time copy of a dev device's old-scope
+  // data to the new scope; never overwrites, no-op for fresh installs.
 
   static const _legacyExamPrepScope = 'exam_prep';
   static const _currentExamPrepScope = 'exam_prep_plab';
@@ -1220,7 +1189,7 @@ class StorageService {
     }
   }
 
-  // ── Daily study stats ──────────────────────────────────────────────────────
+  // Daily study stats
 
   StudyDayStats getDailyStudyStats(String scope, String dateKey) {    try {
       final raw = _prefs.getString('$_studyStatsPrefix$scope');
@@ -1248,14 +1217,10 @@ class StorageService {
     await _prefs.setString(key, jsonEncode(map));
   }
 
-  /// Every stored [StudyDayStats] day for [scope], decoded from the whole
-  /// per-day map at once. Used to fold lifetime totals — unlike
-  /// [getDailyStudyStats], this is not scoped to a single date key.
-  ///
-  /// Tolerates malformed or absent entries the same way [getDailyStudyStats]
-  /// does: an individually unparsable day is skipped rather than aborting
-  /// the whole read, and a missing/corrupt top-level map returns empty
-  /// rather than throwing.
+  /// Every stored [StudyDayStats] day for [scope] (unlike
+  /// [getDailyStudyStats], not scoped to one date key), used to fold lifetime
+  /// totals. An unparsable day is skipped rather than aborting the read; a
+  /// missing/corrupt map returns empty rather than throwing.
   List<StudyDayStats> getAllDailyStudyStats(String scope) {
     try {
       final raw = _prefs.getString('$_studyStatsPrefix$scope');

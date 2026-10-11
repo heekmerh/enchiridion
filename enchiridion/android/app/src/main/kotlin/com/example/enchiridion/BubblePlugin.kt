@@ -28,18 +28,10 @@ private const val CHANNEL_NAME = "enchiridion/bubbles"
 private const val NOTIFICATION_CHANNEL_ID = "quick_check"
 private const val SHORTCUT_ID = "study_buddy"
 
-/**
- * Stable per-question id used for both the notification and its
- * PendingIntent request code.
- *
- * Previously every prompt shared one constant notification id, so a new
- * prompt silently replaced the one the user was still answering. The request
- * code was `questionId.hashCode()`, whose 32-bit Java string hash can collide
- * across question ids — and with FLAG_UPDATE_CURRENT a collision delivers the
- * wrong question's extras. Question ids are `exam-NNNN`, so deriving from the
- * trailing digits is both collision-free across the bank and stable between
- * posting a notification and cancelling it.
- */
+// Stable per-question id for both the notification and its PendingIntent
+// request code. A raw `questionId.hashCode()` could collide across question
+// ids, which with FLAG_UPDATE_CURRENT delivers the wrong question's extras;
+// deriving from the `exam-NNNN` trailing digits is collision-free instead.
 internal fun quickCheckNotificationId(questionId: String): Int {
     val digits = questionId.takeLastWhile { it.isDigit() }
     val parsed = digits.toIntOrNull()
@@ -50,18 +42,11 @@ internal fun quickCheckNotificationId(questionId: String): Int {
     return 40000 + (questionId.hashCode() and 0xffff)
 }
 
-/**
- * Bridges `lib/services/bubble_alarm_callback.dart`, `lib/bubble_main.dart`,
- * and `lib/main.dart` to the native pieces of the ambient "Quick Check"
- * bubble-notification feature: scheduling (via [BubbleAlarmWorker]) and
- * posting an Android Bubble (falling back to a plain notification where
- * Bubbles aren't supported/allowed — both land on [BubbleActivity]).
- *
- * Registered on three different engines (see each call site's comment):
- * the visible app's engine, [BubbleActivity]'s engine, and the headless
- * engine [BubbleAlarmWorker] creates — each only ever calls the subset of
- * methods relevant to it.
- */
+// Bridges the Dart bubble-notification code to the native "Quick Check"
+// feature: scheduling (via BubbleAlarmWorker) and posting an Android Bubble
+// (or plain notification fallback), both landing on BubbleActivity.
+// Registered on three engines — the visible app, BubbleActivity, and the
+// headless alarm worker — each calling only the methods relevant to it.
 class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private var channel: MethodChannel? = null
     private var appContext: Context? = null
@@ -145,12 +130,9 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
                 showBubble(context, scope, questionId, title, teaser, fullText)
                 result.success(null)
             }
-            // Called from BubbleActivity's engine (bubble_main.dart) once
-            // the user has closed the answer card.
-            // Clears a prompt without closing the window, called once its
-            // answer is recorded. Backing out of the window afterwards then
-            // cannot leave a prompt in the shade pointing at a question the
-            // user has already answered.
+            // Clears a prompt once its answer is recorded, without closing
+            // the window, so backing out afterwards can't leave a prompt in
+            // the shade for an already-answered question.
             "cancelBubbleNotification" -> {
                 val questionId = call.argument<String>("questionId")
                 if (questionId != null && questionId.isNotEmpty()) {
@@ -255,11 +237,9 @@ class BubblePlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 
-        // Bubbles are API 30+. Wrapped defensively: if anything about this
-        // device/build's Bubbles surface behaves unexpectedly, falling back
-        // to the plain notification built above (still fully functional —
-        // it opens the same BubbleActivity, just not as an actual bubble)
-        // is strictly better than crashing the worker.
+        // Bubbles are API 30+; wrapped defensively so an unexpected Bubbles
+        // failure falls back to the plain notification above instead of
+        // crashing the worker.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             try {
                 publishShortcut(context, person, icon)

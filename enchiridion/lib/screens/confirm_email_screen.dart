@@ -9,11 +9,9 @@ import 'auth_gate.dart';
 import 'login_screen.dart';
 
 /// Collects the numeric code Supabase emails after sign-up.
-///
 /// Reached from RegisterScreen when signUp returns without a session. The code
 /// only exists if the "Confirm signup" email template renders `{{ .Token }}` —
 /// with the stock link-only template the email arrives with nothing to type.
-///
 /// Its length is [kEmailOtpLength], which must track the dashboard's "Email
 /// OTP length" setting.
 class ConfirmEmailScreen extends StatefulWidget {

@@ -7,7 +7,6 @@ import '../services/storage_service.dart';
 import '../services/study_stats_service.dart';
 
 /// Owns the exam-prep points/stats state for the whole app.
-///
 /// Writes locally through [StudyStatsService] (which itself never awaits the
 /// Supabase push) and calls [notifyListeners] synchronously on the same
 /// turn, so every screen watching this provider repaints the instant an

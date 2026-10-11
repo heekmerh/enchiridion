@@ -33,17 +33,23 @@ performance points), and module/exam-prep progress. This is stored on your
 device first and synced to your account when you are signed in, so it
 follows you across devices.
 
-**Entitlements and payments.** Which books or subscriptions you have
-unlocked, grant dates, and expiry dates. Payments are processed by
-**Flutterwave**; we never see or store your card number, bank details, or
-USSD PIN. We keep only the payment reference (transaction ID), plan, amount,
-and currency so we can verify purchases and prevent double-charging.
+**Entitlements and payments.** Which Premium access you hold, its start and
+expiry dates, and how it was granted. Website payments are processed by
+**Flutterwave** and in-app payments by **Google Play**; we never see or store
+your card number, bank details, or USSD PIN. We keep the payment reference
+(Flutterwave transaction ID or Google Play order ID and purchase token),
+plan, amount, currency, and verification result so we can verify purchases,
+prevent one purchase being used by two accounts, and avoid double charges.
 
-**Subscription records.** If you take an auto-renewing plan, we also store
-the plan you chose, its status, whether it is set to renew, your renewal
-date, and the subscription identifier Flutterwave issues, so the app can
-show you when you will next be billed and where to cancel. The billing
-schedule itself is run by Flutterwave against the email on your account.
+**Subscription records.** For a subscription we store the plan, provider,
+status, whether it renews, the current paid period, cancellation and refund
+dates, and an audit history of those changes, so the app and website can
+show when you will next be billed and how to cancel. Renewals are run by the
+provider you bought through.
+
+**Email preferences.** Whether you asked to receive Enchiridion offers, when
+and where you gave or withdrew that consent, and your region if you told us.
+Account, security and billing emails are sent regardless of that choice.
 
 **Terms acceptance.** The version of the Terms and Conditions you accepted
 at sign-up, and when — kept as our record that you agreed to them.
@@ -86,8 +92,10 @@ are scheduled and delivered entirely on your device.
 - **Service providers (sub-processors).**
   - *Supabase* — hosting, authentication (including sign-up codes and
     password-reset emails), database, and file storage.
-  - *Flutterwave* — payment processing (card/bank/USSD), in Nigerian naira
-    (₦). Their own privacy terms apply to payment details.
+  - *Flutterwave* — website payment processing (card/bank/USSD), in Nigerian
+    naira (₦). Their own privacy terms apply to payment details.
+  - *Google Play* — in-app subscription billing. Google's own privacy terms
+    apply to payment details.
 - **Authorities** — only where required by Nigerian law.
 
 We do not sell personal data and we do not share it for marketing.

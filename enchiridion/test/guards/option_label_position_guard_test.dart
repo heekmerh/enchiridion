@@ -1,14 +1,10 @@
-// Repo-wide guard: in a surface that shuffles option order, the displayed
-// letter is a function of the rendered position and of nothing else.
-//
-// This gate checks exactly the two surfaces that shuffle option order:
-// lib/screens/question_screen.dart and lib/widgets/exam_prep/quick_check_card.dart.
-// lib/screens/exam_prep_home_screen.dart is deliberately absent — it renders
-// sorted keys and never shuffles.
-//
-// Scans `lib/` only — never `test/` — because the detection literal lives
-// in this very file, and scanning `test/` would make the gate fail for the
-// wrong reason.
+// Guard: in a surface that shuffles option order, the displayed letter must
+// be a function of rendered position only. Checks exactly the two surfaces
+// that shuffle (question_screen.dart, quick_check_card.dart) —
+// exam_prep_home_screen.dart is deliberately absent, it renders sorted keys
+// and never shuffles. Scans `lib/` only, never `test/`, since the detection
+// literal lives in this file and scanning `test/` would fail for the wrong
+// reason.
 
 import 'dart:io';
 

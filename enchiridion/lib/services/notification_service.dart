@@ -22,18 +22,12 @@ class NotificationTapPayload {
   });
 }
 
-/// Schedules the background half of spaced repetition.
-///
-/// A wrong answer's next-day rebound (see [QuestionReview.relearnInterval])
-/// needs to reach the user whether or not the app is open, so every time a
-/// review is updated, [scheduleFollowUp] books (or re-books) exactly one
-/// local notification for that question's new due time. Tapping it is
-/// handled by whoever calls [initialize] and listens on [onQuestionTapped].
-///
-/// The separate ambient "ask something every 18-35 minutes" prompt is not
-/// scheduled here — see `lib/services/bubble_alarm_callback.dart`, which
-/// posts those directly as Android bubbles/notifications from a headless
-/// alarm rather than through this plugin.
+/// Schedules the background half of spaced repetition: every time a review
+/// is updated, [scheduleFollowUp] books (or re-books) exactly one local
+/// notification for that question's new due time, so a wrong answer's
+/// next-day rebound reaches the user whether or not the app is open. The
+/// separate ambient "ask something every 18-35 minutes" prompt is scheduled
+/// by `bubble_alarm_callback.dart` instead, not through this plugin.
 class NotificationService {
   static NotificationService? _instance;
   static NotificationService get instance =>
@@ -119,12 +113,10 @@ class NotificationService {
       Object.hash(scope, questionId) & 0x7fffffff;
 
   /// Books the next background rebound for [question], or clears it once the
-  /// question has graduated off the ladder.
-  ///
-  /// Safe to call after every answer regardless of whether notifications are
-  /// available: silently no-ops if [initialize] hasn't succeeded, matching
-  /// the rest of this app's "local state is the source of truth, remote
-  /// delivery is best-effort" pattern (see `StudyStatsService._sync`).
+  /// question has graduated off the ladder. Safe to call after every answer
+  /// regardless of notification availability: silently no-ops if
+  /// [initialize] hasn't succeeded (best-effort delivery, like
+  /// `StudyStatsService._sync`).
   Future<void> scheduleFollowUp({
     required String scope,
     required Question question,
@@ -163,11 +155,9 @@ class NotificationService {
             styleInformation: BigTextStyleInformation(fullText),
           ),
         ),
-        // Avoids requiring the separate SCHEDULE_EXACT_ALARM permission —
-        // a study reminder landing a few minutes off schedule is an
-        // acceptable trade against a permission prompt most users would
-        // decline anyway. The relearn/interval jitter already assumes this
-        // much slack.
+        // Avoids the separate SCHEDULE_EXACT_ALARM permission; landing a few
+        // minutes off schedule is an acceptable trade the interval jitter
+        // already assumes.
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       );
       DiagnosticsLog.end('schedule_follow_up');
@@ -185,7 +175,6 @@ class NotificationService {
 }
 
 /// Truncates a question's text to a length suitable for a notification body.
-///
 /// Shared by [NotificationService.scheduleFollowUp] and
 /// `bubbleAlarmCallback`, which builds the same style of teaser natively for
 /// the ambient bubble/notification without going through this plugin.
@@ -198,7 +187,6 @@ String notificationTeaser(String questionText) {
 }
 
 /// The full, untruncated question text flattened for notification display.
-///
 /// Used as the *expanded* content (big text / message style) so expanding a
 /// notification in the shade reveals the whole question, while the collapsed
 /// row keeps showing the short [notificationTeaser].

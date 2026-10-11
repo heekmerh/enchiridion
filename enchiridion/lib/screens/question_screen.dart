@@ -30,21 +30,17 @@ class QuestionScreen extends StatefulWidget {
   final void Function(UserAnswer) onAnswered;
   final bool trackDailyStudyStats;
 
-  /// When present, the post-submit footer offers an explicit "Next
-  /// question" control that swaps the displayed question in place rather
-  /// than pushing a new route. The screen never advances by itself, so the
-  /// user keeps the explanation on screen as long as they want. Absent, the
-  /// screen behaves exactly as it always has — only the back control
-  /// ([backLabel]) is offered.
+  /// When present, the post-submit footer offers a "Next question" control
+  /// that swaps the displayed question in place rather than pushing a new
+  /// route; the screen never advances by itself. Absent, only the back
+  /// control ([backLabel]) is offered.
   final NextQuestionLoader? onRequestNext;
 
   /// Shows [previousAnswer] as already submitted and disables answering.
-  ///
-  /// Used when a caller (e.g. the ambient Quick Check sheet's "Review fully")
-  /// already recorded an answer elsewhere and just wants to show the full
-  /// explanation and OSCE tip. Without this, reopening the screen let the
-  /// user pick again and silently overwrite — including flipping a wrong
-  /// answer to correct and cancelling its spaced-repetition rebound.
+  /// Used when a caller already recorded an answer elsewhere and just wants
+  /// to show the explanation. Without this, reopening let the user pick
+  /// again and silently overwrite — including cancelling a wrong answer's
+  /// spaced-repetition rebound.
   final bool readOnly;
 
   /// Seeds the on-screen option order. Two questions with the same seed
@@ -53,11 +49,9 @@ class QuestionScreen extends StatefulWidget {
   /// so the correct answer doesn't always land in the same visual slot.
   final int? optionSeed;
 
-  /// Label of the post-submit control that pops this screen. The screen is
-  /// pushed from several places (the Exam Prep home card, a book's review
-  /// list, the answered-questions drill-down, a tapped notification), so a
-  /// single hard-coded label names the wrong destination for most of them —
-  /// each caller names where its own push came from.
+  /// Label of the post-submit control that pops this screen. Pushed from
+  /// several places, so each caller names where its own push came from
+  /// rather than sharing one hard-coded label.
   final String backLabel;
 
   const QuestionScreen({
@@ -171,20 +165,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
     final statsProvider =
         widget.trackDailyStudyStats ? context.read<StudyStatsProvider>() : null;
 
-    // Local write first — it's authoritative and fast. The review must be
-    // recorded before `onAnswered` fires so callers that pick the next
-    // question (e.g. the Exam Prep home screen's Quick Check card) see this
-    // answer already reflected.
+    // Recorded before `onAnswered` fires so callers that pick the next
+    // question see this answer already reflected.
     final review = await storage.recordAnswer(widget.bookId, answer);
 
-    // This is the sole place `StudyDayStats` are recorded for this answer —
-    // callers must not also record through their own `onAnswered` handler.
-    // Always recorded under the standalone exam-prep scope, never under
-    // `bookId`: the dashboard is one exam-prep-wide figure and the user did
-    // the work whichever list served the question (mock exam, book review,
-    // drill-down retry, tapped notification). Recording under a per-book
-    // scope instead silently dropped book-review answers from the dashboard
-    // while the drill-down screens kept counting them.
+    // Sole place `StudyDayStats` are recorded for this answer — callers must
+    // not also record via `onAnswered`. Always under the standalone
+    // exam-prep scope, never `bookId`: recording per-book previously dropped
+    // book-review answers from the dashboard while drill-down still counted
+    // them.
     if (statsProvider != null) {
       await statsProvider.recordAnswer(
         scope: kStandaloneExamPrepScope,

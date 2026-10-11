@@ -62,12 +62,10 @@ class ResourceTopicListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Grouping (and, inside it, the available-first ordering rule) happens
-    // here, inside the shared list screen, not at each call site — so any
-    // topics list handed to this screen inherits both for free. A
-    // group-less list (every `ResourceTopic.group` null) collapses to one
-    // bucket keyed null, which flattens below with zero header rows —
-    // exactly today's rendering for Surgical Instrumentation and OSCE.
+    // Grouping and available-first ordering happen here so any topics list
+    // handed to this screen inherits both for free; a group-less list
+    // collapses to one bucket with zero header rows (Surgical
+    // Instrumentation, OSCE).
     final grouped = groupTopicsForDisplay(topics);
     final items = <_ListEntry>[
       for (final entry in grouped.entries) ...[
@@ -153,11 +151,9 @@ class ResourceTopicListScreen extends StatelessWidget {
           return SectionHeader(title: item.title);
         }
         final topic = (item as _TopicEntry).topic;
-        // Headers carry their own vertical padding, so a topic row only
-        // needs the shared 14px gap before the *next* topic row — never
-        // before a header (the header's own top padding is that gap) and
-        // never after the last row (the outer ListView's bottom padding
-        // already provides scroll clearance).
+        // A topic row only needs the shared 14px gap before the next topic
+        // row, never before a header (its own padding covers that) or after
+        // the last row (the ListView's bottom padding covers that).
         final isLast = index == items.length - 1;
         final nextIsHeader = !isLast && items[index + 1] is _HeaderEntry;
         return Padding(

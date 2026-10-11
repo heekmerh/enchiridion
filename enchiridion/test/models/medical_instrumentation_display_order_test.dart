@@ -3,7 +3,6 @@
 // `kMedicalInstrumentationTopicsInDisplayOrder` list it produces, ensuring
 // the Medical Instrumentation section opens with IV Cannula — its only
 // entry with real written content — leading the screen.
-//
 // Local `ResourceTopic` fixtures back the helper-level assertions so they
 // stay valid independent of catalog churn; only the two assertions that name
 // the real catalog reach into `kMedicalInstrumentationTopics` /

@@ -10,7 +10,6 @@ Enchiridion is a futuristic, offline-first reader application.
 ## Getting Started
 ### Create APK
 - flutter build apk --release --split-per-abi
-adb shell getprop ro.product.cpu.abi
 To run the Flutter application:
 
 1. Navigate to the project directory:

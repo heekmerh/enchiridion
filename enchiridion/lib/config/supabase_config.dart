@@ -1,9 +1,7 @@
-/// Digits in the sign-up confirmation code.
-///
-/// MUST match Supabase → Authentication → Sign In / Providers → Email →
-/// "Email OTP length". Supabase allows 6–10 and defaults to 6; this project
-/// is set to 8. If the two disagree the confirm screen rejects every valid
-/// code, because it validates the length before sending it to be verified.
+/// Digits in the sign-up confirmation code. Must match Supabase →
+/// Authentication → Providers → Email → "Email OTP length" (set to 8 here,
+/// default 6) — a mismatch rejects every valid code before it's even sent
+/// for verification.
 const int kEmailOtpLength = 8;
 
 const String supabaseUrl = 'https://lvyoqnmqdquadkfixduq.supabase.co';

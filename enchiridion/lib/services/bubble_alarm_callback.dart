@@ -31,21 +31,13 @@ Future<bool> probeAccessWithTimeout(
   }
 }
 
-/// Headless entrypoint: run by `BubbleAlarmWorker` (native Kotlin, backed by
-/// `WorkManager`) roughly every 18-35 minutes, whether or not the app is
-/// running, to post the next ambient "Quick Check" question as an Android
-/// bubble/notification (falling back to a plain notification on the native
-/// side when Bubbles aren't available).
-///
-/// Runs in its own Flutter engine and isolate — no [BuildContext], no widget
-/// tree, no access to anything the main app engine set up in memory.
-/// Everything it needs ([Supabase], [SharedPreferences]) is re-initialized
-/// fresh here, the same way `main()` does for the foreground engine.
-///
-/// Scheduling itself (when this next runs) is entirely the native side's
-/// responsibility — this function only needs to signal "done" via
-/// `workFinished` when it's finished, not compute or pass along a delay; see
-/// `BubbleAlarmWorker.kt`.
+/// Headless entrypoint run by `BubbleAlarmWorker` (native Kotlin/WorkManager)
+/// roughly every 18-35 minutes to post the next ambient "Quick Check"
+/// question as a bubble/notification. Runs in its own Flutter engine and
+/// isolate — no [BuildContext], nothing from the main engine — so
+/// [Supabase]/[SharedPreferences] are re-initialized fresh here. Scheduling
+/// the next run is the native side's job; this only signals "done" via
+/// `workFinished` (see `BubbleAlarmWorker.kt`).
 @pragma('vm:entry-point')
 void bubbleAlarmCallback() {
   WidgetsFlutterBinding.ensureInitialized();

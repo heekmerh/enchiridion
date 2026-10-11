@@ -27,18 +27,13 @@ class StudyStatsService {
     return '${local.year}-$month-$day';
   }
 
-  /// Records one answer's contribution to the day's stats.
-  ///
-  /// Every submitted answer counts once, including a re-served question
-  /// answered again — spaced repetition exists specifically to bring a
-  /// question back, and the user genuinely did the work again each time.
-  /// Review state (`QuestionReview.attempts`) is deliberately not consulted
-  /// here: a review merged from another device, or one derived from a
-  /// pre-spaced-repetition answer, already carries a non-zero attempt count
-  /// that has nothing to do with whether this answer is new to this method.
-  /// The protection against double-counting is structural, not a check on
-  /// review state — exactly one surface (`QuestionScreen._submit` or
-  /// `QuickCheckCard._submit`) calls this per submission.
+  /// Records one answer's contribution to the day's stats. Every submitted
+  /// answer counts once, including a re-served question — the user genuinely
+  /// did the work again. `QuestionReview.attempts` is deliberately not
+  /// consulted (it can carry a non-zero count unrelated to this call);
+  /// double-counting protection is structural instead — exactly one surface
+  /// (`QuestionScreen._submit` or `QuickCheckCard._submit`) calls this per
+  /// submission.
   Future<StudyDayStats> recordAnswer({
     String scope = kStandaloneExamPrepScope,
     required bool isCorrect,
@@ -66,7 +61,6 @@ class StudyStatsService {
   }
 
   /// Sums every stored day's stats for [scope] into lifetime totals.
-  ///
   /// Unlike [getTodayStats], this is not scoped to the local calendar date —
   /// it is the "accumulated" figure the dashboard's headline metrics show,
   /// unaffected by local midnight.
@@ -85,13 +79,12 @@ class StudyStatsService {
     return StudyStatsTotals.fold(days);
   }
 
-  /// The whole body — including the `currentUser` read — is inside the try
-  /// block on purpose, matching `QuestionReviewSyncService.push`:
-  /// `Supabase.instance` asserts (not throws a catchable exception via a
-  /// normal Future) if `Supabase.initialize()` hasn't run yet, which is the
-  /// case in every widget/unit test and briefly during real app cold-start.
-  /// Treating that the same as "offline" is the correct behavior here, not a
-  /// special case to route around.
+  /// The whole body, including the `currentUser` read, is inside the try
+  /// block on purpose (matching `QuestionReviewSyncService.push`):
+  /// `Supabase.instance` asserts rather than throwing a catchable exception
+  /// if `Supabase.initialize()` hasn't run yet (every widget/unit test, and
+  /// briefly at real app cold-start), and treating that the same as
+  /// "offline" is correct here, not a special case to route around.
   Future<void> _sync(StudyDayStats stats) async {
     try {
       final user = AuthService.currentUser;

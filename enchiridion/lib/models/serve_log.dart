@@ -1,5 +1,4 @@
 /// Cross-surface record of which questions were served most recently.
-///
 /// Before this existed, the exam-prep home card, the ambient Quick Check
 /// prompt and the question list each rolled their own `Random`, so two
 /// surfaces could serve the same question minutes apart. `NextQuestionSelector`

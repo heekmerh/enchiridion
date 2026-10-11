@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 /// New-device sync splash: makes the first cross-device recovery obvious
 /// instead of silent.
-///
 /// The centerpiece is the "recovery ring": one tick per sync stage (8
 /// backup + 9 restore stages) that lights up as each domain lands, orbited
 /// by two counter-rotating dashed arcs. Progress is driven by

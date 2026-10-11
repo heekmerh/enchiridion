@@ -17,10 +17,11 @@ import '../screens/resource_topic_list_screen.dart';
 import '../screens/osce_screen.dart';
 import '../screens/pinned_notes_screen.dart';
 import '../models/resource_topic.dart';
+import '../widgets/common/announcement_banner.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/drawer/settings_drawer.dart';
 
-// ─── Resource category data model ────────────────────────────────────────────
+// Resource category data model
 
 class _ResourceCategory {
   final String title;
@@ -307,7 +308,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                     ],
                   ),
                 ),
-                // Tab bar
+                const AnnouncementBanner(),
                 TabBar(
                   controller: _tabController,
                   tabs: const [
@@ -342,7 +343,7 @@ class _LibraryScreenState extends State<LibraryScreen>
   }
 }
 
-// ─── Library tab ──────────────────────────────────────────────────────────────
+// Library tab
 
 class _LibraryTab extends StatefulWidget {
   final List<CatalogBook> books;
@@ -559,7 +560,7 @@ class _BookPage extends StatelessWidget {
   }
 }
 
-// ─── Resources tab ───────────────────────────────────────────────────────────
+// Resources tab
 
 class _ResourcesTab extends StatefulWidget {
   const _ResourcesTab();
@@ -679,7 +680,7 @@ class _ResourcesTabState extends State<_ResourcesTab> {
   }
 }
 
-// ─── Profile avatar button ────────────────────────────────────────────────────
+// Profile avatar button
 
 /// Homepage profile control: shows the user's uploaded avatar photo when one
 /// exists, falling back to the generic profile icon when they have not

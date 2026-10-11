@@ -7,14 +7,10 @@ import '../models/serve_log.dart';
 import '../models/resource_topic.dart';
 import 'storage_service.dart';
 
-/// The single place that decides which question a user sees next.
-///
-/// Every ambient surface — the exam-prep home card, the Quick Check prompt,
-/// and (later) a scheduled notification — must go through here. Each of those
-/// used to roll its own `Random` over the whole unlocked bank, which meant
-/// two surfaces could serve the same question minutes apart and, once the
-/// bank was exhausted, that repeats became arbitrary.
-///
+/// The single place that decides which question a user sees next. Every
+/// ambient surface (exam-prep home card, Quick Check prompt, scheduled
+/// notifications) must go through here — each used to roll its own
+/// `Random`, so two surfaces could serve the same question minutes apart.
 /// Priority order:
 ///   1. **Lapsed and due** — questions the user has actually got wrong.
 ///   2. **Due reviews and unseen questions, alternating** — so a large review
@@ -35,7 +31,6 @@ class NextQuestionSelector {
       : _random = random ?? Random();
 
   /// Returns the question to serve, or null when nothing is unlocked.
-  ///
   /// Records the choice in the shared serve log, so callers should invoke this
   /// only when they are about to show the question.
   Future<Question?> next({

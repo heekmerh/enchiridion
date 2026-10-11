@@ -2,7 +2,6 @@
 // in isolation, then proves the end-to-end effect it has once wired into
 // `subtopicTabsFor`'s `isSectionHeading` parameter (`osce_screen.dart`'s
 // actual call path) against the real, shipped Abdominal Examination JSON.
-//
 // The JSON is read with a plain `dart:io` `File`, not `rootBundle` — real
 // asset loading hangs indefinitely in this project's widget-test
 // environment (see `subtopic_tabs_test.dart` and

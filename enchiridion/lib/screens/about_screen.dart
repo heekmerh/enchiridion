@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/about_config.dart';
 import '../utils/bottom_inset.dart';
+import 'legal_document_screen.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -134,17 +135,19 @@ class AboutScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _LinkRow(
-                  url: AboutConfig.termsUrl,
+                  url: 'Read on this device',
                   label: 'Terms and Conditions',
                   icon: Icons.gavel_outlined,
-                  onOpen: () => _openLink(context, AboutConfig.termsUrl),
+                  onOpen: () =>
+                      LegalDocumentScreen.open(context, LegalDocument.terms),
                 ),
                 const SizedBox(height: 16),
                 _LinkRow(
-                  url: AboutConfig.privacyPolicyUrl,
+                  url: 'Read on this device',
                   label: 'Privacy Policy',
                   icon: Icons.privacy_tip_outlined,
-                  onOpen: () => _openLink(context, AboutConfig.privacyPolicyUrl),
+                  onOpen: () =>
+                      LegalDocumentScreen.open(context, LegalDocument.privacy),
                 ),
               ],
             ),
@@ -155,6 +158,8 @@ class AboutScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(AboutConfig.copyrightNotice),
+                const SizedBox(height: 8),
+                const Text(AboutConfig.thirdPartyMaterialNotice),
                 const SizedBox(height: 8),
                 const Text(
                   'Your account holds your email address, display name, role, '

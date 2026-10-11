@@ -487,7 +487,7 @@ class _ReaderShellState extends State<_ReaderShell> {
   }
 }
 
-// ─── Notes bottom sheet (US-006) ─────────────────────────────────────────────
+// Notes bottom sheet (US-006)
 
 class _NotesBottomSheet extends StatefulWidget {
   final String bookId;
@@ -672,7 +672,7 @@ class _NotesBottomSheetState extends State<_NotesBottomSheet> {
   }
 }
 
-// ─── Freemium gate overlay ────────────────────────────────────────────────────
+// Freemium gate overlay
 
 class _LockedChapterOverlay extends StatelessWidget {
   final String bookId;
@@ -741,7 +741,7 @@ class _LockedChapterOverlay extends StatelessWidget {
                           onPressed: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => UnlockScreen(bookId: bookId),
+                              builder: (_) => const UnlockScreen(),
                             ),
                           ),
                           child: const Text('Unlock'),

@@ -15,25 +15,14 @@ import 'storage_service.dart';
 typedef SyncProgressCallback = void Function(
     String stageLabel, int completed, int total);
 
-/// Best-effort cross-device sync for user-authored data: pinned notes,
-/// collections, bookmarks, reading notes, clips, answers, settings, and book
-/// history.
-///
-/// Local `SharedPreferences` state (via [StorageService]) is authoritative —
-/// these tables exist so a new device picks up everything, not as a source
-/// of truth the app depends on. Every method swallows network/Supabase
-/// failures: offline or unconfigured, the app keeps working locally.
-///
-/// Conflict rule is last-write-wins per row (each row carries an updated-at
-/// timestamp). Deletions propagate as tombstones (`synced_deletions`):
-/// deleting locally records one, pushing it removes the remote row, and
-/// pulling applies remote tombstones to local storage. Tombstones older
-/// than 90 days are purged.
-///
-/// Wiring: `main()` binds [StorageService.onUserDataChanged] to [pushEntity]
-/// so every local mutation uploads; [AuthProvider] calls [pullAndMergeAll]
-/// after sign-in so a new device catches up. At the end of a pull,
-/// [StorageService.onUserDataMerged] refreshes cached providers.
+/// Best-effort cross-device sync for user-authored data (notes, bookmarks,
+/// clips, answers, settings, book history). Local `SharedPreferences` (via
+/// [StorageService]) stays authoritative; every method swallows
+/// network/Supabase failures so the app keeps working offline. Conflicts
+/// resolve last-write-wins per row; deletions propagate as tombstones
+/// (`synced_deletions`, purged after 90 days). `main()` binds
+/// [StorageService.onUserDataChanged] to [pushEntity]; [AuthProvider] calls
+/// [pullAndMergeAll] after sign-in.
 class UserDataSyncService {
   static const _logName = 'UserDataSyncService';
 
@@ -77,7 +66,7 @@ class UserDataSyncService {
       'settings',
       'reading history',
     ];
-    final entities = UserDataEntity.values;
+    const entities = UserDataEntity.values;
     for (var i = 0; i < entities.length; i++) {
       await pushEntity(entities[i]);
       onProgress?.call(labels[i], i + 1, entities.length);

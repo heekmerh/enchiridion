@@ -30,7 +30,6 @@ const _testQuestions = [
 /// answer could be recorded twice on the Quick Check path. Both regressions
 /// would show up here as either a stale/zero metric after a single frame,
 /// or a doubled Points/Answered value.
-///
 /// Uses `ExamPrepHomeScreen.testQuestions` to skip
 /// `ExamPrepRepository.loadQuestions()` — like `ReaderScreen.testBookProvider`,
 /// real asset loading via `rootBundle` hangs indefinitely in this project's

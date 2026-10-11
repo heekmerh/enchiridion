@@ -1,13 +1,9 @@
 /// Shared category section-header style for grouped topic/calculator lists.
-///
-/// The padding, uppercasing, and text style below are lifted verbatim from
+/// Padding, uppercasing, and text style are lifted verbatim from
 /// `calculator_list_screen.dart`'s private `_sectionHeader` helper, so any
-/// screen that renders this widget reads as the same visual system the
-/// Calculators screen already established. Pointing the Calculators screen
-/// itself at this widget (instead of its own private helper) is a
-/// deliberate follow-up left for later — sibling 260918-dqz is editing that
-/// file in this same batch, and duplicating the style here avoids a merge
-/// collision on that file now.
+/// screen using this widget matches that visual system. TODO: point the
+/// Calculators screen itself at this widget instead of its own private
+/// helper.
 library;
 
 import 'package:flutter/material.dart';

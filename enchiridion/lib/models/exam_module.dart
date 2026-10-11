@@ -43,7 +43,6 @@ const String kExamPrepScopePrefix = 'exam_prep';
 /// stats. Uniform scheme: `exam_prep_<id>` for every module, PLAB included
 /// (it kept the legacy bare `exam_prep` scope only until the pre-launch
 /// reset — see `StorageService.migrateLegacyExamPrepScope`).
-///
 /// Invariant: `examScopeForModule(kPlabModuleId)` must equal
 /// [kStandaloneExamPrepScope] (`exam_prep_plab`) — both derive from
 /// [kExamPrepScopePrefix] plus the module id, so they agree by construction.

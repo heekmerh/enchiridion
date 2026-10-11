@@ -1,16 +1,9 @@
-// Repo-wide guard: fails the suite if any display-order catalog regresses
-// to interleaved order — i.e. a placeholder entry (no real content) ranks
-// ahead of an entry with real content.
-//
-// This gate asserts one invariant only: within an ordered catalog, the last
-// entry that HAS content must sit at or before the first entry that does
-// NOT have content. A catalog that is entirely available or entirely
-// placeholder passes trivially (there is no "first entry without content"
-// or no "last entry with content" to compare against).
-//
-// The guard checks RUNTIME order — the actual `List` each catalog produces
-// today — not source text. Add a future catalog to `_catalogs` below as a
-// one-line addition; there is nothing else to wire up.
+// Repo-wide guard: fails if any display-order catalog regresses to
+// interleaved order — a placeholder entry ranking ahead of one with real
+// content. Asserts the last entry that has content sits at or before the
+// first that doesn't (trivially true for an all-available or all-placeholder
+// catalog). Checks the actual runtime `List`, not source text. Add a future
+// catalog to `_catalogs` below as a one-line addition.
 
 import 'package:enchiridion/models/book_catalog.dart';
 import 'package:enchiridion/models/calculator_definition.dart';

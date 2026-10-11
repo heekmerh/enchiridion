@@ -1,13 +1,10 @@
 // Widget tests for the freemium gate in ReaderScreen.
-//
 // Uses ReaderScreen.testBookProvider to inject a pre-built BookProvider so
 // tests never touch rootBundle / platform channels. This avoids the
 // ui.ImmutableBuffer.fromAsset path that bypasses binary-messenger mocks in
 // Flutter 3.19+.
-//
 // Free vs paid access is driven via AccessService.testAccessOverride so that
 // no Supabase connection is required.
-//
 // _LockedChapterOverlay is private; its presence is detected by its exclusive
 // public markers: Icon(Icons.lock_outline) + Text('Unlock').
 
@@ -29,14 +26,14 @@ import 'package:enchiridion/widgets/reader/reader_content.dart';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-Book _makeFakeBook() => Book(
+Book _makeFakeBook() => const Book(
       id: 'test-book',
       title: 'Test Book',
       author: 'Test',
       coverUrl: '',
       chapters: [
-        const Chapter(id: 'ch1', title: 'Chapter One', order: 1, sections: []),
-        const Chapter(id: 'ch2', title: 'Chapter Two', order: 2, sections: []),
+        Chapter(id: 'ch1', title: 'Chapter One', order: 1, sections: []),
+        Chapter(id: 'ch2', title: 'Chapter Two', order: 2, sections: []),
       ],
     );
 

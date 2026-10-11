@@ -71,7 +71,6 @@ class Question {
   }
 
   /// Display letter for a rendered option slot.
-  ///
   /// The letter belongs to the rendered slot, not to the option — a
   /// shuffled repeat must reassign A/B/C by position so the letter cannot
   /// be memorized alongside the option text.
@@ -81,7 +80,6 @@ class Question {
   }
 
   /// A list-row preview of [questionText], up to [maxLength] characters.
-  ///
   /// Takes the *end* of the stem rather than the start: these are clinical
   /// vignettes — several sentences of scene-setting followed by the actual
   /// question ("...What is the most likely diagnosis?") — so truncating from

@@ -25,31 +25,17 @@ const val DEFAULT_INTERVAL_MINUTES = 45L
 private const val MIN_INTERVAL_MINUTES = 15L
 private const val MAX_INTERVAL_MINUTES = 180L
 
-/**
- * Runs `bubbleAlarmCallback` (lib/services/bubble_alarm_callback.dart) in a
- * fresh, fully plugin-registered headless Flutter engine, then always
- * re-enqueues itself for another run after the user-configured Study Buddy
- * interval (default 45 minutes) — this is what keeps ambient "Quick Check"
- * prompts flowing whether or not the app is open.
- *
- * Deliberately not built on the `android_alarm_manager_plus` pub package:
- * that plugin's headless engine (`FlutterBackgroundExecutor.
- * startBackgroundIsolate`, in its own Android source) never calls
- * `GeneratedPluginRegistrant.registerWith(...)` — its own README even flags
- * this as an unresolved "may be necessary" gap under "Using other plugins in
- * alarm callbacks" — so `shared_preferences`/`supabase_flutter` calls inside
- * a callback scheduled through it would throw `MissingPluginException`.
- * `WorkManager` gives the same "run Dart in the background, app open or
- * not" capability while leaving engine creation to us, so plugins can be
- * registered correctly.
- */
+// Runs `bubbleAlarmCallback` in a fresh, plugin-registered headless Flutter
+// engine, then re-enqueues itself after the Study Buddy interval (default 45
+// min) — keeping ambient "Quick Check" prompts flowing app-open or not. Not
+// built on android_alarm_manager_plus: its headless engine never calls
+// GeneratedPluginRegistrant.registerWith(...), so shared_preferences/
+// supabase_flutter calls would throw MissingPluginException there.
 class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
 
     companion object {
-        /**
-         * Set for the duration of a headless Dart entrypoint run; counted
-         * down by [BubblePlugin] when Dart calls "workFinished".
-         */
+        // Set for the duration of a headless Dart entrypoint run; counted
+        // down by BubblePlugin when Dart calls "workFinished".
         @Volatile
         var pendingLatch: CountDownLatch? = null
 
@@ -68,13 +54,9 @@ class BubbleAlarmWorker(context: Context, params: WorkerParameters) : Worker(con
             )
         }
 
-        /**
-         * Applies a user-initiated Study Buddy settings change: unlike
-         * [armOnAppStart] (which deliberately uses KEEP so a normal app
-         * launch never resets an already-ticking countdown), a change made
-         * in Settings must take effect immediately — REPLACE cancels the
-         * pending run at its old delay and re-enqueues at the new interval.
-         */
+        // Unlike armOnAppStart's KEEP (never resets an already-ticking
+        // countdown), a Settings change must take effect immediately:
+        // REPLACE cancels the pending run and re-enqueues at the new interval.
         fun rearmForSettingsChange(context: Context, intervalMinutes: Long) {
             saveInterval(context, intervalMinutes)
             setEnabled(context, true)

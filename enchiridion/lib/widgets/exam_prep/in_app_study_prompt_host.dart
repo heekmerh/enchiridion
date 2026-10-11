@@ -13,18 +13,11 @@ import '../../services/storage_service.dart';
 import '../../screens/question_screen.dart';
 
 /// Listens for taps on background "Quick Check" notifications and opens the
-/// tapped question.
-///
-/// Ambient prompting itself (picking a question and surfacing it on the
-/// user-configured interval, default 45 minutes) now happens entirely
-/// outside the running Flutter
-/// app, via a periodic Android alarm that posts a bubble/notification
-/// directly (see `lib/services/bubble_alarm_callback.dart`) — nothing here
-/// runs a timer or shows anything unprompted while the app is open. This
-/// widget only exists to catch the case where Bubbles aren't
-/// available/allowed on a device and `BubbleNotifier.showBubble` falls back
-/// to a plain notification instead: tapping that still needs somewhere to
-/// land.
+/// tapped question. Ambient prompting itself runs entirely outside the app
+/// via a periodic Android alarm (see `bubble_alarm_callback.dart`); this
+/// widget only catches the fallback case where Bubbles aren't
+/// available/allowed and a plain notification was posted instead, which
+/// still needs somewhere to land on tap.
 class InAppStudyPromptHost extends StatefulWidget {
   final Widget child;
 
@@ -102,14 +95,11 @@ class _InAppStudyPromptHostState extends State<InAppStudyPromptHost> {
     _loadedBank = true;
   }
 
-  /// Opens the question a background notification was tapped for.
-  ///
-  /// Pushed on [rootNavigatorKey] rather than this widget's own context:
-  /// this State sits in [MaterialApp.builder], a position *above* the
-  /// Navigator that `builder` constructs (its `child` parameter), so
-  /// `Navigator.of(context)` from here throws "no Navigator found". Reading
-  /// providers is unaffected by that — [MultiProvider] is still an ancestor
-  /// either way — so `context.read` below is fine.
+  /// Opens the question a background notification was tapped for. Pushed on
+  /// [rootNavigatorKey] rather than this widget's own context, which sits
+  /// above the Navigator in [MaterialApp.builder] and would throw "no
+  /// Navigator found"; `context.read` below is unaffected since
+  /// [MultiProvider] is still an ancestor either way.
   Future<void> _openTappedQuestion(NotificationTapPayload payload) async {
     if (!isExamPrepScope(payload.scope)) return;
     if (_isOpeningQuestion) {

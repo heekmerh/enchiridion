@@ -1,7 +1,6 @@
 import 'question.dart';
 
 /// The status a question row can be browsed by on [AnsweredQuestionsScreen].
-///
 /// Kept free of Flutter widget imports so it stays unit-testable in
 /// isolation from the widget tree — it depends only on [Question] /
 /// [UserAnswer].
@@ -40,7 +39,6 @@ enum AnsweredQuestionFilter {
   }
 
   /// Whether [answer] belongs in this filter's browse list.
-  ///
   /// [points] deliberately shares the [correct] predicate: points are only
   /// ever awarded for a correct answer, so the set of point-earning
   /// questions is exactly the set of correctly-answered ones.

@@ -638,8 +638,7 @@ class _GroupHeader extends StatelessWidget {
   }
 }
 
-// ─── Margin notes ───────────────────────────────────────────────────────────
-//
+// Margin notes
 // Long-press any block to pin a note to it. The marker docks to whichever
 // edge of the screen the press landed in, and stays there — a small flag
 // that a note exists at this exact spot, the way you'd scribble in a
@@ -1200,7 +1199,7 @@ class _AgeReferenceWidget extends StatelessWidget {
   }
 }
 
-// ─── Clips bottom sheet ───────────────────────────────────────────────────────
+// Clips bottom sheet
 
 class _ClipsBottomSheet extends StatefulWidget {
   final String bookId;

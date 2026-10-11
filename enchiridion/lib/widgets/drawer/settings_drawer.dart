@@ -208,7 +208,6 @@ class SettingsPanel extends StatelessWidget {
 }
 
 /// Interval slider for Study Buddy's ambient prompt spacing.
-///
 /// Tracks the dragged value locally and only reports it back to the parent
 /// (which persists to prefs and re-arms the native WorkManager chain — a
 /// real cancel-and-reschedule since the interval-change fix uses REPLACE)

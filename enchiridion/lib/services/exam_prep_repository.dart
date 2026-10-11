@@ -20,8 +20,7 @@ class ExamPrepRepository {
   /// modules so every question defaults to PLAB; filtering keeps each
   /// module's serve log, reviews, and stats cleanly separated once more
   /// banks ship.
-  Future<List<Question>> loadQuestions(
-      {String module = kPlabModuleId}) async {
+  Future<List<Question>> loadQuestions({String module = kPlabModuleId}) async {
     final cacheHit = _cachedBank != null;
     final bank = await (_cachedBank ??= _loadBank());
     if (cacheHit) {
@@ -72,12 +71,11 @@ class ExamPrepRepository {
       for (int i = 0; i < normalizedList.length; i++)
         Question(
           id: 'exam-${(i + 1).toString().padLeft(4, '0')}',
-          questionText: (normalizedList[i] as Map<String, dynamic>)['question']
-              .toString(),
+          questionText: normalizedList[i]['question'].toString(),
           options: {
-            for (final entry in ((normalizedList[i]
-                    as Map<String, dynamic>)['options'] as Map<String, dynamic>)
-                .entries)
+            for (final entry
+                in (normalizedList[i]['options'] as Map<String, dynamic>)
+                    .entries)
               entry.key.toLowerCase(): entry.value.toString(),
           },
           correctOption: (normalizedList[i]['answer'] as String).toLowerCase(),

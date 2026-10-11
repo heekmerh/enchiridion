@@ -1,20 +1,10 @@
-// Repo-wide guard: fails the suite by name if the Surgical Instrumentation
-// catalog ever silently drops an instrument that the source markdown lists,
-// or carries an id the source markdown does not.
-//
-// This gate reads `../scripts/content/surgical instrumentation.md` relative
-// to the Flutter package root (the working directory `flutter test` runs
-// with), parses every `* ` bullet, dedupes case-insensitively preserving
-// first-seen order, and slugifies each bullet with the exact rule
-// `kSurgicalInstrumentationTopics` was authored with. It then asserts set
-// equality — in both directions — against the catalog's ids, applying one
-// documented alias: the `Suture material` bullet maps to the pre-existing
-// id `sutures` (that entry predates the catalog expansion and its title is
-// owned by sibling 260918-dr1).
-//
-// If the source file is absent from the checkout, the test skips with a
-// clear reason instead of failing, so the suite stays green in a sparse
-// worktree.
+// Repo-wide guard: fails if the Surgical Instrumentation catalog ever
+// silently drops an instrument the source markdown lists, or carries an id
+// it doesn't. Reads `../scripts/content/surgical instrumentation.md`,
+// parses/dedupes/slugifies its bullets the same way the catalog was
+// authored, then asserts set equality both ways (with one alias: `Suture
+// material` maps to the pre-existing `sutures` id). Skips with a clear
+// reason, rather than failing, if the source file is absent.
 
 import 'dart:io';
 

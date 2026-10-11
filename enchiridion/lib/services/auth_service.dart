@@ -1,5 +1,13 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:math';
+
+import 'package:crypto/crypto.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../config/backend_config.dart';
+import '../config/google_sign_in_config.dart';
 
 class AuthService {
   static SupabaseClient get _client => Supabase.instance.client;
@@ -11,14 +19,10 @@ class AuthService {
       _client.auth.onAuthStateChange;
 
   /// Checks display-name availability via the `is_display_name_available`
-  /// RPC (see scripts/sql/999_MASTER_init.sql) — a plain `select`
-  /// against `profiles` can't do this client-side, since its RLS policy only
-  /// lets a user read their own row.
-  ///
-  /// Fails open (returns true) on any error — e.g. the migration hasn't been
-  /// run yet, or the network is down — so a broken check never blocks
-  /// sign-up outright; the DB's unique index is still the real guard against
-  /// a genuine collision, this is just the friendlier up-front UX.
+  /// RPC, since a plain `select` against `profiles` can't do this
+  /// client-side (its RLS policy only lets a user read their own row). Fails
+  /// open (returns true) on any error, so a broken check never blocks
+  /// sign-up — the DB's unique index is still the real guard.
   static Future<bool> isDisplayNameAvailable(String displayName) async {
     try {
       final result = await _client.rpc(
@@ -42,11 +46,13 @@ class AuthService {
     final response = await _client.auth.signUp(
       email: email,
       password: password,
+      emailRedirectTo: '$kBackendBaseUrl/verify-email',
       data: {
         'display_name': displayName,
         'role': role,
         'terms_version': termsVersion,
         'terms_accepted_at': acceptedAt,
+        'signup_source': 'android_app',
       },
     );
 
@@ -74,7 +80,6 @@ class AuthService {
   }
 
   /// Completes registration with the 6-digit code emailed on sign-up.
-  ///
   /// Requires the "Confirm signup" email template to render `{{ .Token }}`.
   /// On success a session is created, so the auth state listener picks it up
   /// exactly as it would after a normal sign-in.
@@ -97,10 +102,51 @@ class AuthService {
 
   static Future<void> signOut() async {
     await _client.auth.signOut();
+    try {
+      await GoogleSignIn.instance.signOut();
+    } catch (_) {}
+  }
+
+  static String _randomNonce() {
+    final random = Random.secure();
+    return base64Url.encode(List<int>.generate(32, (_) => random.nextInt(256)));
+  }
+
+  static Future<AuthResponse?> signInWithGoogle() async {
+    final rawNonce = _randomNonce();
+    final google = GoogleSignIn.instance;
+    // Google signs the hashed nonce into the ID token and Supabase checks it against the raw one, so a captured token cannot be replayed.
+    await google.initialize(
+      serverClientId: kGoogleWebClientId,
+      nonce: sha256.convert(utf8.encode(rawNonce)).toString(),
+    );
+    final GoogleSignInAccount account;
+    try {
+      account = await google.authenticate();
+    } on GoogleSignInException catch (error) {
+      if (error.code == GoogleSignInExceptionCode.canceled) return null;
+      rethrow;
+    }
+    final idToken = account.authentication.idToken;
+    if (idToken == null) {
+      throw const AuthException('Google did not return an identity token.');
+    }
+    return _client.auth.signInWithIdToken(
+      provider: OAuthProvider.google,
+      idToken: idToken,
+      nonce: rawNonce,
+    );
+  }
+
+  static Future<void> recordTermsAcceptance(String termsVersion) async {
+    await _client.rpc('accept_terms', params: {'p_version': termsVersion});
   }
 
   static Future<void> resetPassword(String email) async {
-    await _client.auth.resetPasswordForEmail(email);
+    await _client.auth.resetPasswordForEmail(
+      email,
+      redirectTo: '$kBackendBaseUrl/reset-password',
+    );
   }
 
   static Future<void> ensureProfile(User user) async {
@@ -206,9 +252,9 @@ class AuthService {
     final user = currentUser;
     if (user == null) throw StateError('Not authenticated');
     final now = DateTime.now().toUtc().toIso8601String();
-    final authorized =
-        List<dynamic>.from(profile['authorized_devices'] as List<dynamic>? ?? [])
-          ..add({'device_id': fingerprint, 'authorized_at': now});
+    final authorized = List<dynamic>.from(
+        profile['authorized_devices'] as List<dynamic>? ?? [])
+      ..add({'device_id': fingerprint, 'authorized_at': now});
     await _client.from('profiles').upsert({
       'id': user.id,
       'authorized_devices': authorized,

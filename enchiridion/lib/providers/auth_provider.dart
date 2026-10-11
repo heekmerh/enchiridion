@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../services/auth_service.dart';
 import '../services/access_service.dart';
 import '../services/device_service.dart';
+import '../services/play_billing_service.dart';
 import '../services/question_review_sync_service.dart';
 import '../services/storage_service.dart';
 import '../services/user_data_sync_service.dart';
@@ -78,8 +79,22 @@ class AuthProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  AppLifecycleListener? _lifecycle;
+
   AuthProvider(this._storage) {
     _init();
+    _lifecycle = AppLifecycleListener(onResume: _refreshEntitlements);
+  }
+
+  void _refreshEntitlements() {
+    if (_status != AuthStatus.authenticated) return;
+    unawaited(AccessService.instance.loadAccess());
+  }
+
+  @override
+  void dispose() {
+    _lifecycle?.dispose();
+    super.dispose();
   }
 
   void _init() {
@@ -100,16 +115,16 @@ class AuthProvider with ChangeNotifier {
       if (event.session != null) {
         _status = AuthStatus.authenticated;
         AccessService.instance.loadAccess();
+        if (event.event == AuthChangeEvent.signedIn) {
+          unawaited(PlayBillingService.instance.restore(reportOutcome: false));
+        }
         // Catches up on progress made on another device — or made on this
         // one while offline and only now reaching Supabase — before the
         // user starts studying this session.
         QuestionReviewSyncService(_storage).pullAndMergeAll();
         unawaited(_runUserDataSync());
-        // Create profile from metadata if this is the first sign-in after
-        // email confirmation (profile may not exist yet). Awaited — the
-        // device gate check right after needs the row to exist so a
-        // returning user's device_id is actually there to compare against,
-        // not a false "needsFirstBind" from reading an empty profile.
+        // Awaited: the device gate check right after needs the profile row
+        // to exist, or it reads a false "needsFirstBind" from an empty one.
         await AuthService.ensureProfile(event.session!.user);
         await _checkDeviceGate();
       } else {
@@ -122,16 +137,13 @@ class AuthProvider with ChangeNotifier {
     });
   }
 
-  /// Pushes this device's offline user-data changes, then pulls everything
-  /// (notes, bookmarks, answers, settings, …).
-  ///
-  /// First sync on a device runs visibly: [initialSyncRunning] stays true
-  /// with per-stage progress until it finishes or the user skips, so
-  /// `AuthGate` can show the sync splash. Later syncs refresh silently in
-  /// the background.
+  /// Pushes this device's offline user-data changes, then pulls everything.
+  /// First sync runs visibly: [initialSyncRunning] stays true with per-stage
+  /// progress so `AuthGate` can show the sync splash; later syncs refresh
+  /// silently.
   Future<void> _runUserDataSync() async {
     final sync = UserDataSyncService(_storage);
-    if (await _storage.hasCompletedInitialSync()) {
+    if (_storage.hasCompletedInitialSync()) {
       unawaited(sync.pushAll());
       unawaited(sync.pullAndMergeAll());
       return;
@@ -164,14 +176,10 @@ class AuthProvider with ChangeNotifier {
   }
 
   /// Compares this device's fingerprint against the account's bound/
-  /// authorized devices and sets [deviceGateStatus] accordingly.
-  ///
-  /// Fails open (treated as [DeviceGateStatus.boundToThisDevice]) on any
-  /// error — a network blip or an unreachable Supabase project must not
-  /// lock a legitimate user out of a clinical reference app, matching the
-  /// fail-open pattern already used by `StudyStatsService`,
-  /// `QuestionReviewSyncService`, and `NotificationService` elsewhere in
-  /// this app.
+  /// authorized devices and sets [deviceGateStatus] accordingly. Fails open
+  /// on any error, matching this app's fail-open pattern elsewhere — a
+  /// network blip must not lock a legitimate user out of a clinical
+  /// reference app.
   Future<void> _checkDeviceGate() async {
     _deviceGateStatus = DeviceGateStatus.checking;
     notifyListeners();
@@ -259,15 +267,11 @@ class AuthProvider with ChangeNotifier {
         role: role,
         termsVersion: termsVersion,
       );
-      // No session means the account is not usable yet. That covers both
-      // "confirmation required" and GoTrue's obfuscated reply for an email
-      // that is already registered — which carries neither a session nor a
-      // user, to avoid confirming the address exists.
-      //
-      // Do NOT test `user != null` here: AuthResponse sets user from the
-      // session when the payload has no user id, so the obfuscated reply
-      // leaves both null and would otherwise read as a successful sign-up
-      // and drop the caller into the app with no session.
+      // No session covers both "confirmation required" and GoTrue's
+      // obfuscated already-registered reply (neither session nor user, to
+      // avoid confirming the address exists). Do NOT test `user != null`
+      // instead — AuthResponse derives it from the session, so the
+      // obfuscated reply would misread as a successful sign-up.
       if (response.session == null) {
         return 'confirm_email';
       }
@@ -281,11 +285,8 @@ class AuthProvider with ChangeNotifier {
       return e.message;
     } on PostgrestException catch (e) {
       notifyListeners();
-      // 23505 = unique_violation. The pre-submit availability check in
-      // RegisterScreen makes this rare — only a genuine race with another
-      // sign-up choosing the identical name in the same instant — but the
-      // unique index (scripts/sql/999_MASTER_init.sql) is the real
-      // guard, so it must still be handled here.
+      // 23505 = unique_violation: rare given RegisterScreen's pre-submit
+      // check, but the DB's unique index is the real guard against a race.
       if (e.code == '23505') {
         return 'That display name is already taken — please choose another.';
       }
@@ -314,13 +315,9 @@ class AuthProvider with ChangeNotifier {
     } on AuthException catch (e) {
       _error = e.message;
       notifyListeners();
-      // Supabase deliberately returns ONE message for both cases — "Token has
-      // expired or is invalid" — so the two cannot be told apart here. Do not
-      // branch on 'expired' vs 'invalid': the combined string matches
-      // 'expired' first and would report a simply wrong code as expired.
-      //
-      // A code is most often rejected because it is stale, not old: only the
-      // code from the newest email is valid, so any earlier one fails.
+      // Supabase returns one combined "Token has expired or is invalid" for
+      // both cases — do not branch on 'expired' vs 'invalid', it would
+      // misreport a simply wrong code as expired.
       final message = e.message.toLowerCase();
       if (message.contains('expired') || message.contains('invalid')) {
         return 'That code did not work. Codes expire after 1 hour, and only '
@@ -349,6 +346,28 @@ class AuthProvider with ChangeNotifier {
       return e.message;
     } catch (_) {
       return 'Something went wrong. Please try again.';
+    }
+  }
+
+  Future<({bool signedIn, String? error})> signInWithGoogle({
+    required String termsVersion,
+  }) async {
+    _error = null;
+    try {
+      final response = await AuthService.signInWithGoogle();
+      if (response?.session == null) return (signedIn: false, error: null);
+      await AuthService.recordTermsAcceptance(termsVersion);
+      return (signedIn: true, error: null);
+    } on AuthException catch (e) {
+      _error = e.message;
+      notifyListeners();
+      return (signedIn: false, error: 'Google sign-in failed: ${e.message}');
+    } catch (_) {
+      notifyListeners();
+      return (
+        signedIn: false,
+        error: 'Google sign-in failed. Please try again.',
+      );
     }
   }
 

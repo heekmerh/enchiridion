@@ -16,6 +16,7 @@ import 'services/exam_prep_repository.dart';
 import 'services/notification_service.dart';
 import 'services/storage_service.dart';
 import 'theme/app_theme.dart';
+import 'widgets/common/system_navigation_inset.dart';
 import 'widgets/exam_prep/quick_check_card.dart';
 
 const MethodChannel _bubbleChannel = MethodChannel('enchiridion/bubbles');
@@ -30,7 +31,6 @@ const String kBubbleRoutePrefix = '/bubble';
 bool isBubbleRoute(String route) => route.startsWith(kBubbleRoutePrefix);
 
 /// Closes this bubble window and clears its own notification.
-///
 /// [questionId] identifies which prompt to clear: prompts are posted under
 /// per-question notification ids, so closing one window must not sweep away a
 /// different prompt still waiting in the shade.
@@ -41,7 +41,6 @@ void dismissBubbleWindow(String? questionId) {
 }
 
 /// Clears this window's prompt from the shade without closing the window.
-///
 /// Called once the answer is recorded, so backing out with the system back
 /// button (which never reaches [dismissBubbleWindow]) cannot leave a prompt
 /// behind for a question that has already been answered.
@@ -53,30 +52,17 @@ void clearBubbleNotification(String? questionId) {
 }
 
 /// Boots the small "answer one question" window hosted inside
-/// `BubbleActivity` (native Kotlin) — what opens when a user taps a "Quick
-/// Check" bubble notification.
-///
-/// Reached from `main()`, not from a Dart entrypoint of its own. It used to be
-/// a secondary entrypoint (`bubbleMain`, selected natively via
-/// `FlutterActivity.getDartEntrypointFunctionName()`), but in release AOT
-/// builds that entrypoint never actually started: the engine reported
-/// `isExecutingDart=true` while not one statement of Dart ever ran, leaving
-/// the window blank forever. `main` is the one entrypoint proven to run in
-/// every build, so `BubbleActivity` now launches it and `main()` branches here
-/// on [isBubbleRoute]. (The headless alarm callback keeps its own entrypoint —
-/// it is invoked through a direct `DartExecutor` call, which does work.)
-///
-/// Deliberately does not boot the full `EnchiridionApp` shell — no splash
-/// screen, no auth gate, no book/bookmark providers. This window only ever
-/// needs to show one question and record one answer, so it wires up just
-/// enough (`StorageService`, notification rebound scheduling) to do that.
+/// `BubbleActivity` — what opens when a user taps a "Quick Check" bubble
+/// notification. Reached from `main()`, not a Dart entrypoint of its own: a
+/// prior secondary entrypoint never actually ran in release AOT builds, so
+/// `BubbleActivity` launches `main` and branches here on [isBubbleRoute]
+/// instead. Deliberately does not boot the full `EnchiridionApp` shell —
+/// this window only ever needs to show one question and record one answer.
 void runBubbleWindow() {
-  // Bootstrap the log before anything else, with no platform channel and no
-  // await: the native side puts its log directory in the launch route, so
-  // this window records its first instruction even if channels in this
-  // engine never answer. Wrapped because nothing here may throw — an
-  // exception before runApp would leave the window blank with no error
-  // handler installed yet, which is indistinguishable from the bug above.
+  // Bootstrapped first, with no platform channel and no await, from the log
+  // directory the native side put in the launch route. Wrapped because an
+  // exception here (before runApp) would leave the window blank with no
+  // error handler installed yet.
   try {
     DiagnosticsLog.initFromRoute(
         PlatformDispatcher.instance.defaultRouteName, 'bubble');
@@ -133,11 +119,9 @@ class _BubbleLoaderState extends State<_BubbleLoader> {
   }
 
   Future<void> _boot() async {
-    // Fallback only, for a launch whose route carried no log directory.
-    // Deliberately never awaited: an earlier version awaited this here, which
-    // put a platform-channel round trip in front of the question — the exact
-    // kind of gate the rest of this method goes out of its way to avoid.
-    // Anything logged before it lands is buffered, not lost.
+    // Fallback for a launch whose route carried no log directory. Never
+    // awaited — that would put a platform-channel round trip in front of the
+    // question — and anything logged before it lands is buffered, not lost.
     unawaited(DiagnosticsLog.init('bubble'));
 
     String? questionId;
@@ -352,6 +336,9 @@ class _BubbleApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.getTheme(storageService.getSettings().theme),
+          builder: (context, child) => SystemNavigationInset(
+            child: child ?? const SizedBox.shrink(),
+          ),
           home: question == null
               ? _BubbleUnavailableScreen(onClose: _dismiss)
               : QuickCheckCard(

@@ -1,11 +1,9 @@
 // Widget tests for the Exam Prep home screen's Access card.
-//
 // Regression guard for batch item 260917-ndx: the whole-bank list screen
 // (ExamPrepQuestionListScreen) and its "Browse Full Bank" entry point were
 // deleted. These tests prove that removal without a route into the full
 // bank while the rest of the screen — Performance, Access with the
 // Unlock path, and Mock Exam — still renders.
-//
 // Uses ExamPrepHomeScreen.testQuestions to inject a fixed bank so tests
 // never touch rootBundle / platform channels, and
 // AccessService.testAccessOverride to avoid a Supabase connection.

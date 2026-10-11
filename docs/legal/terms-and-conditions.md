@@ -1,10 +1,10 @@
 # Enchiridion — Terms and Conditions
 
-**Version 1.0 · Effective 25 September 2026**
+**Version 1.2 · Effective 27 September 2026**
 
 > Draft for review. Populated from the app's actual implementation. Have
 > counsel review before publishing. This version is the one users accept at
-> sign-up: the app records the version string `1.0` against the account, so
+> sign-up: the app records the version string `1.2` against the account, so
 > any change to these terms must ship as a new version number (see §18).
 >
 > Publish at https://www.enchiridion.site/terms — the app, the Google Play
@@ -74,69 +74,82 @@ offline. We may change what the free tier includes.
 Paid access unlocks the content described on the purchase page at the time
 you buy. Two shapes of purchase exist:
 
-**(a) One-off access window.** A single payment unlocks a defined scope for
-a defined period (for example, a single book or exam module for 30 days).
-It does not renew. When the window ends, that scope reverts to the free
-tier until you buy again.
+**(a) One-time Premium period.** On our website you can pay once for a
+single monthly or yearly Premium period. It does not renew; when the period
+ends, your account reverts to the free tier until you buy again.
 
 **(b) Auto-renewing subscription.** See §6.
 
-All prices are shown in Nigerian naira (₦) inclusive of any applicable tax,
-on the purchase page, before you pay. Prices may change; a change never
-applies to a period you have already paid for, and for subscriptions we
-will notify you as set out in §6.5.
+All prices are shown in Nigerian naira (₦) inclusive of any applicable tax
+and of Enchiridion's own payment-processing charges, before you pay. Prices
+may change; a change never applies to a period you have already paid for,
+and for subscriptions we will notify you as set out in §6.5. Charges your
+own bank or card issuer levies independently are outside our control.
 
-**Purchases are made on our website, not inside the app.** Tapping a plan in
-the app opens https://www.enchiridion.site/app/subscribe in your browser.
-Payments there are processed by **Flutterwave**, our payment processor.
-Enchiridion never receives or stores your card or bank details. Your use of
-Flutterwave's checkout is also subject to Flutterwave's own terms.
+**Where you can buy Premium.** Premium is one subscription with the same
+benefits wherever you buy it, and it follows your Enchiridion account:
 
-Access is granted only after our server independently verifies the payment
-with Flutterwave. Altered, replayed, or unverifiable payment references
-grant nothing.
+- **In the Android app**, purchases are made through **Google Play Billing**.
+  Google Play shows the price in your local currency, takes the payment, and
+  its own terms apply to that payment.
+- **On our website** (https://www.enchiridion.site/premium), payments are
+  processed by **Flutterwave**. Your use of Flutterwave's checkout is also
+  subject to Flutterwave's own terms.
+
+Enchiridion never receives or stores your card or bank details. Access is
+granted only after our server independently verifies the payment with Google
+Play or Flutterwave. Altered, replayed, pending, or unverifiable payments grant
+nothing, and one purchase can be linked to only one Enchiridion account.
 
 ## 6. Auto-renewing subscriptions
 
 Read this section carefully — it describes a recurring charge.
 
 **6.1 What you are agreeing to.** When you choose an auto-renewing plan, you
-authorise us, through Flutterwave, to charge your payment method the plan
-price automatically at the start of each billing period, **until you
-cancel**. The plan name, price, and billing interval (for example ₦1,000
-monthly, or ₦10,000 yearly) are shown on the purchase page and confirmed in
-your purchase email.
+authorise the provider you bought through (Google Play or, on our website,
+Flutterwave) to charge the plan price automatically at the start of each
+billing period, **until you cancel**. On the website the plans are ₦1,500
+monthly or ₦15,000 yearly; in the app, the price Google Play displays at
+checkout applies. The plan, price, and billing interval are shown before you
+pay and confirmed afterwards. A website purchase can instead be made as a
+one-time payment for a single period that does not renew.
 
 **6.2 Renewal.** Your subscription renews automatically at the end of each
 billing period for another period of the same length, at the then-current
-price, unless you cancel before the renewal date. Your current renewal date
-is shown in the app and in your account page on the website.
+price, unless you cancel before the renewal date. Your renewal date is shown
+in the app under **Profile → Subscription** and on the website under your
+account.
 
-**6.3 How to cancel.** You can cancel at any time, with no cancellation fee,
-in any of these ways:
+**6.3 How to cancel.** You can cancel at any time, with no cancellation fee:
 
-- in the app: **Profile → Subscription → Manage subscription**, which opens
-  your account page on the website;
-- on the website: https://www.enchiridion.site/app/subscription;
-- by emailing support@enchiridion.site from your registered address.
+- **bought in the app:** in your Google Play account (Play Store → Payments
+  and subscriptions → Subscriptions). **Profile → Subscription → Manage in
+  Google Play** opens it for you;
+- **bought on the website:** from your account page at
+  https://www.enchiridion.site/account/subscription;
+- in either case, by emailing support@enchiridion.site from your registered
+  address.
 
 Cancellation stops future charges. It takes effect at the end of the period
-you have already paid for: you keep paid access until that date, then revert
-to the free tier. Cancelling does not delete your account or your study
-data.
+you have already paid for: you keep Premium until that date, then revert to
+the free tier. Cancelling does not delete your account or your study data.
 
-**6.4 Failed payments.** If a renewal charge fails, our payment processor
-retries it a small number of times over a short window. If it still fails,
-the subscription is cancelled and your access reverts to the free tier at
-the end of the paid period. You can resubscribe at any time.
+**6.4 Failed payments.** If a renewal charge fails, the provider retries it
+for a period set by that provider (Google Play may keep Premium available
+during a short grace period). If it still fails, the subscription lapses and
+your access reverts to the free tier. You can resubscribe at any time.
 
 **6.5 Price changes.** If we change the price of your subscription, we will
 tell you by email at least **30 days** before the change takes effect,
-together with the date it applies and how to cancel. If you do not cancel
-before that date, the new price applies from your next renewal.
+together with the date it applies and how to cancel. For Google Play
+subscriptions, Google Play will also notify you and, where its rules require,
+ask for your consent. If you do not cancel before that date, the new price
+applies from your next renewal.
 
-**6.6 Changing plans.** Switching plans takes effect from your next renewal
-date unless the purchase page says otherwise.
+**6.6 One subscription at a time.** Premium is the same whichever way you buy
+it, so we block starting a second recurring subscription while one is
+active on your account. Switching plans takes effect from your next renewal
+date unless the purchase screen says otherwise.
 
 ## 7. Refunds
 
@@ -152,11 +165,10 @@ access has been granted, except:
 
 To request a refund, email support@enchiridion.site with your registered
 email address and the payment reference within 30 days of the charge. We aim
-to respond within 5 business days. Refunds are made to the original payment
-method.
-
-Because purchases are made on our website and not through Google Play,
-Google Play's refund process does not apply to them.
+to respond within 5 business days. Refunds for website purchases are made to the original payment method.
+Purchases made through Google Play are also covered by Google Play's refund
+policies; you can request a refund from Google Play directly, and a refunded
+Google Play purchase ends the Premium access it paid for.
 
 ## 8. Your content and conduct
 
@@ -193,17 +205,26 @@ are visible to other signed-in users on the leaderboard. Choose a display
 name you are comfortable showing publicly. You can change your display name
 in your profile.
 
-## 10. Intellectual property
+## 10. Intellectual property and third-party material
 
-All content and software in the Service — text, images, questions,
-calculators, and the app itself — are © 2026 Hikma Akinfunmilola Atanda and
-are protected by copyright and other laws. Paying grants you a **personal,
-non-exclusive, non-transferable, revocable licence to access and use the
-content for your own study** for as long as your access lasts. It does not
-transfer ownership and does not permit reproduction, redistribution, public
-display, teaching from the material commercially, or use to train machine
-learning models. To request permission or report infringement, email
-support@enchiridion.site.
+The app's software, calculators, original text, and layout are © 2026 Hikma
+Akinfunmilola Atanda and are protected by copyright and other laws. Paying
+grants you a **personal, non-exclusive, non-transferable, revocable licence
+to access and use that material for your own study** for as long as your
+access lasts. It does not transfer ownership and does not permit
+reproduction, redistribution, public display, teaching from the material
+commercially, or use to train machine learning models.
+
+**Third-party material.** Some images and practice questions in the Service
+were gathered from third-party sources and are not owned by us. They remain
+the property of their respective owners, are included for educational
+purposes, and are not covered by the licence above. We claim no ownership of
+them, and you must not reproduce or redistribute them.
+
+If you own material that appears in the Service and want it credited or
+removed, email support@enchiridion.site with a description of the material
+and where it appears. We will review the request promptly and remove the
+material where the claim is valid.
 
 ## 11. Third-party services
 

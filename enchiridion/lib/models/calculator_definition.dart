@@ -211,7 +211,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Recite the 4-2-1 rule clearly and calculate step-by-step for the given weight. '
         'Mention the need to adjust for ongoing losses and clinical status — examiners reward nuanced answers.',
   ),
-  // ─── 7 new Emergency & Critical Care calculators (Wave 2 — 04-02) ───────────
+  // 7 new Emergency & Critical Care calculators (Wave 2 — 04-02)
   CalculatorDefinition(
     id: 'qsofa',
     title: 'qSOFA Score',
@@ -388,7 +388,7 @@ const List<CalculatorDefinition> kCalculators = [
         'Examiners may give a ventilated ICU patient scenario — state the Berlin criteria '
         '(bilateral infiltrates, non-cardiogenic, within 1 week of insult, PEEP ≥ 5).',
   ),
-  // ─── 5 new Drug Dosing calculators (Wave 3 — 04-03) ─────────────────────────
+  // 5 new Drug Dosing calculators (Wave 3 — 04-03)
   CalculatorDefinition(
     id: 'bsa',
     title: 'Body Surface Area (BSA)',
@@ -527,7 +527,7 @@ const List<CalculatorDefinition> kCalculators = [
         'max 60 mg/kg/day or 4 g/day (whichever is lower). '
         'In OSCEs, always check for concurrent paracetamol-containing products.',
   ),
-  // ─── 6 new Paediatrics calculators (Wave 4 — 04-04) ─────────────────────────
+  // 6 new Paediatrics calculators (Wave 4 — 04-04)
   CalculatorDefinition(
     id: 'apls-weight',
     title: 'APLS Weight Estimation',
@@ -704,7 +704,7 @@ const List<CalculatorDefinition> kCalculators = [
         'In paediatric OSCEs, plot growth on a centile chart and describe the trend. '
         'Mention that the WHO standards are based on healthy breastfed children in optimal conditions.',
   ),
-  // ─── Coming-soon: Emergency & Critical Care (Ideas/ideas.md §1) ─────────────
+  // Coming-soon: Emergency & Critical Care (Ideas/ideas.md §1)
   CalculatorDefinition(
     id: 'parkland',
     title: 'Fluid Resuscitation (Parkland)',
@@ -736,7 +736,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Six-organ sequential organ failure assessment score.',
     implemented: false,
   ),
-  // ─── Coming-soon: Drug Dosing (Ideas/ideas.md §2) ───────────────────────────
+  // Coming-soon: Drug Dosing (Ideas/ideas.md §2)
   CalculatorDefinition(
     id: 'adrenaline-dose',
     title: 'Adrenaline Dose (Resuscitation)',
@@ -744,7 +744,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Weight-based adrenaline dose for arrest and anaphylaxis.',
     implemented: false,
   ),
-  // ─── Coming-soon: General (Ideas/ideas.md §6) ───────────────────────────────
+  // Coming-soon: General (Ideas/ideas.md §6)
   CalculatorDefinition(
     id: 'corrected-calcium',
     title: 'Corrected Calcium',
@@ -831,7 +831,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Chronic liver disease severity class A–C.',
     implemented: false,
   ),
-  // ─── Coming-soon: Obs & Gynae (Ideas/ideas.md §7) ───────────────────────────
+  // Coming-soon: Obs & Gynae (Ideas/ideas.md §7)
   CalculatorDefinition(
     id: 'gtpal',
     title: 'GTPAL',
@@ -877,7 +877,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Risk stratification for pre-eclampsia.',
     implemented: false,
   ),
-  // ─── Coming-soon: Cardiology (new category — Ideas/ideas.md §4) ────────────
+  // Coming-soon: Cardiology (new category — Ideas/ideas.md §4)
   CalculatorDefinition(
     id: 'map',
     title: 'Mean Arterial Pressure (MAP)',
@@ -1002,7 +1002,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Cardiac output and cardiac index estimate.',
     implemented: false,
   ),
-  // ─── Coming-soon: Respiratory (new category — Ideas/ideas.md §5) ───────────
+  // Coming-soon: Respiratory (new category — Ideas/ideas.md §5)
   CalculatorDefinition(
     id: 'cao2',
     title: 'Oxygen Content (CaO₂)',
@@ -1056,7 +1056,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Step-through acid–base interpretation of a blood gas.',
     implemented: false,
   ),
-  // ─── Coming-soon: Surgery & Trauma (new category — Ideas/ideas.md §8) ──────
+  // Coming-soon: Surgery & Trauma (new category — Ideas/ideas.md §8)
   CalculatorDefinition(
     id: 'burn-tbsa',
     title: 'Burn % (Rule of 9s)',
@@ -1111,7 +1111,7 @@ const List<CalculatorDefinition> kCalculators = [
     description: 'Anatomical trauma severity from AIS region scores.',
     implemented: false,
   ),
-  // ─── Coming-soon: Utility (new category — Ideas/ideas.md §9) ───────────────
+  // Coming-soon: Utility (new category — Ideas/ideas.md §9)
   CalculatorDefinition(
     id: 'ibw',
     title: 'Ideal Body Weight (IBW)',

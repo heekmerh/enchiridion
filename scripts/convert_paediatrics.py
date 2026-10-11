@@ -31,7 +31,7 @@ from audit_paediatrics_toc import (
     REPORT as TOC_REPORT,
 )
 
-# ── paths ────────────────────────────────────────────────────────────────────
+# paths
 SCRIPT_DIR   = Path(__file__).parent
 DOCX_PATH    = SCRIPT_DIR / "final" / "enchiridion pediatrics final app copy.docx"
 MAP_PATH     = SCRIPT_DIR / "chapter_map.json"
@@ -39,7 +39,7 @@ OUT_PATH     = SCRIPT_DIR / "paediatrics.json"
 APP_DATA_PATH = SCRIPT_DIR.parent / "enchiridion" / "assets" / "data" / "paediatrics.json"
 IMAGE_DIR = SCRIPT_DIR.parent / "enchiridion" / "assets" / "images" / "paediatrics"
 
-# ── helpers ──────────────────────────────────────────────────────────────────
+# helpers
 
 def slug(text: str) -> str:
     """Lowercase, strip emoji/punctuation, replace spaces with underscores."""
@@ -129,7 +129,7 @@ def table_to_block(table) -> dict:
     return {"type": "table", "columns": deduped_cols, "rows": deduped_rows}
 
 
-# ── document element iterator ────────────────────────────────────────────────
+# document element iterator
 
 def iter_block_items(doc):
     """
@@ -145,7 +145,7 @@ def iter_block_items(doc):
             yield ("table", docx.table.Table(child, doc))
 
 
-# ── content group builder ────────────────────────────────────────────────────
+# content group builder
 
 def flush_group(groups: list, group_id: str, group_title: str, blocks: list):
     """Append a completed content_group if it has any blocks."""
@@ -187,7 +187,7 @@ def flush_section(sections: list, sec_id: str, sec_title: str, subsections: list
     })
 
 
-# ── mnemonic / list collector ─────────────────────────────────────────────────
+# mnemonic / list collector
 
 def try_collect_mnemonic(items_ahead: list) -> dict | None:
     """
@@ -213,7 +213,7 @@ def try_collect_mnemonic(items_ahead: list) -> dict | None:
     return None, 0
 
 
-# ── main conversion ───────────────────────────────────────────────────────────
+# main conversion
 
 def convert(docx_path: Path, map_path: Path,
             image_dir: Path = IMAGE_DIR,
@@ -225,7 +225,7 @@ def convert(docx_path: Path, map_path: Path,
     # Collect all block items in order first
     items = list(iter_block_items(doc))
 
-    # ── PRE-SCAN: find the first heading occurrence of each chapter ────────────
+    # PRE-SCAN: find the first heading occurrence of each chapter
     # This determines document-order chapter boundaries rather than relying on
     # chapter_map order, which prevents wrong-chapter captures.
     def norm(t: str) -> str:
@@ -279,7 +279,7 @@ def convert(docx_path: Path, map_path: Path,
         if "section_anchors" in ch:
             section_anchor_sets[ch["chapter_id"]] = {norm(a) for a in ch["section_anchors"]}
 
-    # ── state ─────────────────────────────────────────────────────────────────
+    # state
     chapters: list      = []
     cur_chapter: dict | None = None
     _sec_counter  = [0]   # monotonic counters ensure globally unique IDs
@@ -475,12 +475,12 @@ def convert(docx_path: Path, map_path: Path,
             return obj.style.name == "Heading 1" or heading_format(obj)[0]
         return False
 
-    # ── walk document ──────────────────────────────────────────────────────────
+    # walk document
     i = 0
     while i < len(items):
         kind, obj = items[i]
 
-        # ── TABLE ──────────────────────────────────────────────────────────────
+        # TABLE
         if kind == "table":
             emit_pending()
             cur_blocks.append(table_to_block(obj))
@@ -488,7 +488,7 @@ def convert(docx_path: Path, map_path: Path,
             i += 1
             continue
 
-        # ── PARAGRAPH ──────────────────────────────────────────────────────────
+        # PARAGRAPH
         para  = obj
         style = para.style.name
         text  = clean(para.text)
@@ -499,7 +499,7 @@ def convert(docx_path: Path, map_path: Path,
 
         text_lower = text.lower()
 
-        # ── chapter boundary (index-based, from pre-scan) ───────────────────
+        # chapter boundary (index-based, from pre-scan)
         if i in chapter_boundary_map:
             marker, anchor_color = heading_format(para)
             open_chapter(chapter_boundary_map[i], text, anchor_color, marker)
@@ -507,7 +507,7 @@ def convert(docx_path: Path, map_path: Path,
             i += 1
             continue
 
-        # ── skip if no chapter yet (preamble / TOC noise) ──────────────────
+        # skip if no chapter yet (preamble / TOC noise)
         if cur_chapter is None:
             i += 1
             continue
@@ -518,7 +518,7 @@ def convert(docx_path: Path, map_path: Path,
             i += 1
             continue
 
-        # ── heading detection ───────────────────────────────────────────────
+        # heading detection
         # When the current chapter defines section_anchors, those anchors
         # control exactly which headings become sections vs subsections.
         cur_ch_id = cur_chapter["chapter_id"] if cur_chapter else ""
@@ -551,7 +551,7 @@ def convert(docx_path: Path, map_path: Path,
             continue
 
         if sec_anchors is not None:
-            # ── Chapter with explicit section_anchors (e.g. OVERVIEW) ──────────
+            # Chapter with explicit section_anchors (e.g. OVERVIEW)
             # Any heading that matches a section_anchor → open_section.
             # Any other heading-like paragraph → open_subsection or open_group.
             # Only check on heading-like lines (bold or heading style), not body text.
@@ -600,7 +600,7 @@ def convert(docx_path: Path, map_path: Path,
                 i += 1
                 continue
         else:
-            # ── Standard automatic detection ────────────────────────────────────
+            # Standard automatic detection
             if style == "Heading 1":
                 if in_formatted_section:
                     open_subsection(text, heading_color, from_h1=True)
@@ -652,7 +652,7 @@ def convert(docx_path: Path, map_path: Path,
             i += 1
             continue
 
-        # ── block type detection ─────────────────────────────────────────────
+        # block type detection
         hint = detect_block_type(text)
 
         if hint == "red_flags_header":
@@ -747,7 +747,7 @@ def convert(docx_path: Path, map_path: Path,
     }
 
 
-# ── run ───────────────────────────────────────────────────────────────────────
+# run
 
 if __name__ == "__main__":
     print("Converting… (this may take 30–60 seconds)")

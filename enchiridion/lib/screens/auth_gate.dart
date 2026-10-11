@@ -8,16 +8,12 @@ import 'library_screen.dart';
 import 'login_screen.dart';
 import 'sync_splash_screen.dart';
 
-/// The one place every sign-in/sign-up path (`SplashScreen`, `LoginScreen`,
-/// `ConfirmEmailScreen`, `RegisterScreen`) navigates to instead of
+/// The one place every sign-in/sign-up path navigates to instead of
 /// `LibraryScreen` directly, so the one-account-per-device gate
-/// (`AuthProvider.deviceGateStatus`) is enforced exactly once, in exactly
-/// one place, regardless of how the user got here.
-///
-/// Renders nothing but a spinner itself — on every rebuild it reacts to the
-/// current [DeviceGateStatus] by either proceeding straight to
-/// [LibraryScreen] (the normal, every-day case) or showing the relevant
-/// blocking dialog first.
+/// (`AuthProvider.deviceGateStatus`) is enforced exactly once regardless of
+/// how the user got here. Renders nothing but a spinner, reacting to the
+/// current [DeviceGateStatus] by proceeding to [LibraryScreen] or showing
+/// the relevant blocking dialog.
 class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
 

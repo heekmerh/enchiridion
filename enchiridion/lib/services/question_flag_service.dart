@@ -2,19 +2,12 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'auth_service.dart';
 
-/// Submits a user's report that a question's content looks wrong (a typo,
-/// the wrong option marked correct, unclear wording, ...) to Supabase for a
-/// maintainer to review later.
-///
-/// See `scripts/sql/999_MASTER_init.sql` for the table this writes to
-/// and the query a maintainer runs from the Supabase SQL editor to see
-/// what's been flagged — there is no in-app admin surface or outbound
-/// notification yet.
-///
-/// Unlike `QuestionReviewSyncService`/`StudyStatsService`, there is no local
-/// fallback state here — a flag either reaches the backend or it doesn't —
-/// so failures are rethrown rather than swallowed. The caller is expected to
-/// tell the user their report didn't go through.
+/// Submits a user's report that a question's content looks wrong. See
+/// `enchiridion-web/docs/database.md` for the table and the maintainer query
+/// — there is no in-app admin surface yet. Unlike
+/// `QuestionReviewSyncService`/`StudyStatsService`, there is no local
+/// fallback: failures are rethrown so the caller can tell the user the
+/// report didn't go through.
 class QuestionFlagService {
   static const _table = 'flagged_questions';
 

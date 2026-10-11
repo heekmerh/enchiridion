@@ -18,6 +18,7 @@ import 'navigation/app_navigator.dart';
 import 'providers/book_provider.dart';
 import 'providers/settings_provider.dart';
 import 'providers/bookmark_provider.dart';
+import 'providers/announcement_provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/pinned_notes_provider.dart';
 import 'providers/study_stats_provider.dart';
@@ -26,9 +27,11 @@ import 'services/bubble_scheduler.dart';
 import 'services/diagnostics_log.dart';
 import 'services/user_data_sync_service.dart';
 import 'services/notification_service.dart';
+import 'services/play_billing_service.dart';
 import 'services/storage_service.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
+import 'widgets/common/system_navigation_inset.dart';
 import 'widgets/exam_prep/in_app_study_prompt_host.dart';
 
 void main() async {
@@ -75,9 +78,11 @@ void main() async {
   await storageService.migrateLegacyExamPrepScope();
 
   // Cross-device continuity: every local user-data mutation uploads in the
-  // background from here on. The first sync after sign-in runs with visible
-  // progress from AuthProvider (new-device splash); providers refresh via
-  // onUserDataMerged when remote state lands.
+  // background from here on; providers refresh via onUserDataMerged when
+  // remote state lands.
+  // Listening before the first frame lets Play redeliver purchases that finished while the app was closed.
+  PlayBillingService.instance.start();
+
   final userDataSync = UserDataSyncService(storageService);
   storageService.onUserDataChanged = (entity) {
     unawaited(userDataSync.pushEntity(entity));
@@ -88,8 +93,8 @@ void main() async {
   // startup — reviews still work locally, they just won't rebound in the
   // background.
   try {
-    await DiagnosticsLog.track(
-        'main_notification_service_init', NotificationService.instance.initialize);
+    await DiagnosticsLog.track('main_notification_service_init',
+        NotificationService.instance.initialize);
   } catch (_) {}
 
   // Ambient "Quick Check" bubble notifications are Android-only (no Bubbles
@@ -157,6 +162,7 @@ class _EnchiridionAppState extends State<EnchiridionApp> {
         Provider<StorageService>.value(value: storageService),
         ChangeNotifierProvider(create: (_) => AuthProvider(storageService)),
         ChangeNotifierProvider(create: (_) => BookProvider(storageService)),
+        ChangeNotifierProvider(create: (_) => AnnouncementProvider()),
         ChangeNotifierProvider.value(value: _settingsProvider),
         ChangeNotifierProvider.value(value: _bookmarkProvider),
         ChangeNotifierProvider.value(value: _pinnedNotesProvider),
@@ -169,8 +175,10 @@ class _EnchiridionAppState extends State<EnchiridionApp> {
             debugShowCheckedModeBanner: false,
             navigatorKey: rootNavigatorKey,
             theme: AppTheme.getTheme(settingsProvider.settings.theme),
-            builder: (context, child) => InAppStudyPromptHost(
-              child: child ?? const SizedBox.shrink(),
+            builder: (context, child) => SystemNavigationInset(
+              child: InAppStudyPromptHost(
+                child: child ?? const SizedBox.shrink(),
+              ),
             ),
             home: const SplashScreen(),
           );

@@ -12,12 +12,10 @@ class AboutConfig {
 
   static const String termsUrl = 'https://www.enchiridion.site/terms';
 
-  static const String termsVersion = '1.0';
+  static const String termsVersion = '1.2';
 
   static const String privacyPolicyUrl = 'https://www.enchiridion.site/privacy';
 
-  static const String manageSubscriptionUrl =
-      'https://www.enchiridion.site/app/subscription';
 
   static const String aboutAppBlurb =
       'Enchiridion is an offline-first clinical companion: textbooks, '
@@ -25,8 +23,14 @@ class AboutConfig {
       'with spaced repetition — on your device, online or offline.';
 
   static const String copyrightNotice =
-      '© 2026 Hikma Akinfunmilola Atanda. All rights reserved. '
-      'Enchiridion content and software may not be reproduced without permission.';
+      '© 2026 Hikma Akinfunmilola Atanda. Enchiridion software, calculators '
+      'and original text may not be reproduced without permission.';
+
+  static const String thirdPartyMaterialNotice =
+      'Some images and practice questions were gathered from third-party '
+      'sources and are not owned by Enchiridion. They remain the property of '
+      'their owners and are included for educational purposes. To request '
+      'credit or removal, email $contactEmail.';
 
   static const String contactEmail = 'support@enchiridion.site';
 

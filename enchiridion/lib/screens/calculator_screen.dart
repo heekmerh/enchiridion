@@ -278,7 +278,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 }
 
-// ─── Shared result card ───────────────────────────────────────────────────────
+// Shared result card
 
 class _ResultCard extends StatelessWidget {
   final String resultText;
@@ -373,7 +373,7 @@ class _ResultCard extends StatelessWidget {
   }
 }
 
-// ─── Shared input widget ──────────────────────────────────────────────────────
+// Shared input widget
 
 class _NumericField extends StatelessWidget {
   final String label;
@@ -401,7 +401,7 @@ class _NumericField extends StatelessWidget {
   }
 }
 
-// ─── Calculator 1: Weight-Based Drug Dosing ───────────────────────────────────
+// Calculator 1: Weight-Based Drug Dosing
 
 class _WeightDosingForm extends StatefulWidget {
   final void Function(
@@ -503,7 +503,7 @@ class _WeightDosingFormState extends State<_WeightDosingForm> {
   }
 }
 
-// ─── Calculator 2: IV Infusion Rate ──────────────────────────────────────────
+// Calculator 2: IV Infusion Rate
 
 class _IvInfusionForm extends StatefulWidget {
   final void Function(
@@ -616,7 +616,7 @@ class _IvInfusionFormState extends State<_IvInfusionForm> {
   }
 }
 
-// ─── Calculator 3: Glasgow Coma Scale ────────────────────────────────────────
+// Calculator 3: Glasgow Coma Scale
 
 class _GcsForm extends StatefulWidget {
   final void Function(
@@ -742,7 +742,7 @@ class _GcsFormState extends State<_GcsForm> {
   }
 }
 
-// ─── Calculator 4: BMI ────────────────────────────────────────────────────────
+// Calculator 4: BMI
 
 class _BmiForm extends StatefulWidget {
   final void Function(
@@ -901,7 +901,7 @@ class _BmiFormState extends State<_BmiForm> {
   }
 }
 
-// ─── Calculator 5: EDD / EGA ──────────────────────────────────────────────────
+// Calculator 5: EDD / EGA
 
 class _EddEgaForm extends StatefulWidget {
   final void Function(
@@ -1042,7 +1042,7 @@ class _EddEgaFormState extends State<_EddEgaForm> {
   }
 }
 
-// ─── Calculator 6: Anion Gap ──────────────────────────────────────────────────
+// Calculator 6: Anion Gap
 
 class _AnionGapForm extends StatefulWidget {
   final void Function(
@@ -1119,7 +1119,7 @@ class _AnionGapFormState extends State<_AnionGapForm> {
   }
 }
 
-// ─── Calculator 7: Creatinine Clearance (Cockcroft-Gault) ────────────────────
+// Calculator 7: Creatinine Clearance (Cockcroft-Gault)
 
 class _CrClForm extends StatefulWidget {
   final void Function(
@@ -1242,7 +1242,7 @@ class _CrClFormState extends State<_CrClForm> {
   }
 }
 
-// ─── Calculator 9: qSOFA Score ───────────────────────────────────────────────
+// Calculator 9: qSOFA Score
 
 class _QsofaForm extends StatefulWidget {
   final void Function(
@@ -1313,7 +1313,7 @@ class _QsofaFormState extends State<_QsofaForm> {
   }
 }
 
-// ─── Calculator 10: NEWS2 Score ──────────────────────────────────────────────
+// Calculator 10: NEWS2 Score
 
 class _News2Form extends StatefulWidget {
   final void Function(
@@ -1520,7 +1520,7 @@ class _News2FormState extends State<_News2Form> {
   }
 }
 
-// ─── Calculator 11: Shock Index ──────────────────────────────────────────────
+// Calculator 11: Shock Index
 
 class _ShockIndexForm extends StatefulWidget {
   final void Function(
@@ -1591,7 +1591,7 @@ class _ShockIndexFormState extends State<_ShockIndexForm> {
   }
 }
 
-// ─── Calculator 12: Osmolality & Osmolar Gap ─────────────────────────────────
+// Calculator 12: Osmolality & Osmolar Gap
 
 class _OsmolalityForm extends StatefulWidget {
   final void Function(
@@ -1685,7 +1685,7 @@ class _OsmolalityFormState extends State<_OsmolalityForm> {
   }
 }
 
-// ─── Calculator 13: Corrected Sodium (Hyperglycemia) ─────────────────────────
+// Calculator 13: Corrected Sodium (Hyperglycemia)
 
 class _CorrectedSodiumForm extends StatefulWidget {
   final void Function(
@@ -1761,7 +1761,7 @@ class _CorrectedSodiumFormState extends State<_CorrectedSodiumForm> {
   }
 }
 
-// ─── Calculator 14: A-a Gradient ─────────────────────────────────────────────
+// Calculator 14: A-a Gradient
 
 class _AaGradientForm extends StatefulWidget {
   final void Function(
@@ -1862,7 +1862,7 @@ class _AaGradientFormState extends State<_AaGradientForm> {
   }
 }
 
-// ─── Calculator 15: PaO2/FiO2 Ratio ─────────────────────────────────────────
+// Calculator 15: PaO2/FiO2 Ratio
 
 class _PaO2FiO2Form extends StatefulWidget {
   final void Function(
@@ -1936,7 +1936,7 @@ class _PaO2FiO2FormState extends State<_PaO2FiO2Form> {
   }
 }
 
-// ─── Clinical notes section ──────────────────────────────────────────────────
+// Clinical notes section
 
 class _ClinicalNotesSection extends StatelessWidget {
   final CalculatorDefinition def;
@@ -2006,7 +2006,7 @@ Widget _noteRow(
   );
 }
 
-// ─── Calculator 8: Holliday-Segar ────────────────────────────────────────────
+// Calculator 8: Holliday-Segar
 
 class _HollidaySegarForm extends StatefulWidget {
   final void Function(
@@ -2090,7 +2090,7 @@ class _HollidaySegarFormState extends State<_HollidaySegarForm> {
   }
 }
 
-// ─── Drug Dosing Calculator D1: BSA (Mosteller) ──────────────────────────────
+// Drug Dosing Calculator D1: BSA (Mosteller)
 
 class _BsaForm extends StatefulWidget {
   final void Function(
@@ -2180,7 +2180,7 @@ class _BsaFormState extends State<_BsaForm> {
   }
 }
 
-// ─── Drug Dosing Calculator D2: eGFR (CKD-EPI 2021 race-free) ────────────────
+// Drug Dosing Calculator D2: eGFR (CKD-EPI 2021 race-free)
 
 class _EgfrCkdEpiForm extends StatefulWidget {
   final void Function(
@@ -2308,7 +2308,7 @@ class _EgfrCkdEpiFormState extends State<_EgfrCkdEpiForm> {
   }
 }
 
-// ─── Drug Dosing Calculator D3: Gentamicin/Vancomycin Dosing ─────────────────
+// Drug Dosing Calculator D3: Gentamicin/Vancomycin Dosing
 
 class _GentamicinVancomycinForm extends StatefulWidget {
   final void Function(
@@ -2416,7 +2416,7 @@ class _GentamicinVancomycinFormState extends State<_GentamicinVancomycinForm> {
   }
 }
 
-// ─── Drug Dosing Calculator D4: Insulin Dose (Correction) ────────────────────
+// Drug Dosing Calculator D4: Insulin Dose (Correction)
 
 class _InsulinDoseForm extends StatefulWidget {
   final void Function(
@@ -2517,7 +2517,7 @@ class _InsulinDoseFormState extends State<_InsulinDoseForm> {
   }
 }
 
-// ─── Drug Dosing Calculator D5: Paracetamol (Acetaminophen) Dosing ───────────
+// Drug Dosing Calculator D5: Paracetamol (Acetaminophen) Dosing
 
 class _ParacetamolDosingForm extends StatefulWidget {
   final void Function(
@@ -2646,7 +2646,7 @@ class _ParacetamolDosingFormState extends State<_ParacetamolDosingForm> {
   }
 }
 
-// ─── Paediatrics Calculator P2: APLS Weight Estimation ───────────────────────
+// Paediatrics Calculator P2: APLS Weight Estimation
 
 class _AplsWeightForm extends StatefulWidget {
   final void Function(
@@ -2763,7 +2763,7 @@ class _AplsWeightFormState extends State<_AplsWeightForm> {
   }
 }
 
-// ─── Paediatrics Calculator P3: Broselow Tape Equivalent ─────────────────────
+// Paediatrics Calculator P3: Broselow Tape Equivalent
 
 class _BroselowForm extends StatefulWidget {
   final void Function(
@@ -2861,7 +2861,7 @@ class _BroselowFormState extends State<_BroselowForm> {
   }
 }
 
-// ─── Paediatrics Calculator P4: Pediatric BP Percentiles ─────────────────────
+// Paediatrics Calculator P4: Pediatric BP Percentiles
 
 class _PediatricBpForm extends StatefulWidget {
   final void Function(
@@ -3033,7 +3033,7 @@ class _PediatricBpFormState extends State<_PediatricBpForm> {
   }
 }
 
-// ─── Paediatrics Calculator P5: Neonatal Bilirubin (Phototherapy) ────────────
+// Paediatrics Calculator P5: Neonatal Bilirubin (Phototherapy)
 
 class _NeonatalBilirubinForm extends StatefulWidget {
   final void Function(
@@ -3183,7 +3183,7 @@ class _NeonatalBilirubinFormState extends State<_NeonatalBilirubinForm> {
   }
 }
 
-// ─── Paediatrics Calculator P6: APGAR Score ──────────────────────────────────
+// Paediatrics Calculator P6: APGAR Score
 
 class _ApgarForm extends StatefulWidget {
   final void Function(
@@ -3269,7 +3269,7 @@ class _ApgarFormState extends State<_ApgarForm> {
   }
 }
 
-// ─── Paediatrics Calculator P7: WHO Growth Percentile ────────────────────────
+// Paediatrics Calculator P7: WHO Growth Percentile
 
 class _GrowthPercentileForm extends StatefulWidget {
   final void Function(
@@ -3441,7 +3441,7 @@ class _GrowthPercentileFormState extends State<_GrowthPercentileForm> {
   }
 }
 
-// ─── Cardiology Calculator C1: Mean Arterial Pressure (MAP) ──────────────────
+// Cardiology Calculator C1: Mean Arterial Pressure (MAP)
 
 class _MapForm extends StatefulWidget {
   final void Function(
@@ -3503,7 +3503,7 @@ class _MapFormState extends State<_MapForm> {
   }
 }
 
-// ─── Cardiology Calculator C2: QTc (Corrected QT) ────────────────────────────
+// Cardiology Calculator C2: QTc (Corrected QT)
 
 class _QtcForm extends StatefulWidget {
   final void Function(
@@ -3592,7 +3592,7 @@ class _QtcFormState extends State<_QtcForm> {
   }
 }
 
-// ─── General Calculator G1: Corrected Calcium ────────────────────────────────
+// General Calculator G1: Corrected Calcium
 
 class _CorrectedCalciumForm extends StatefulWidget {
   final void Function(
@@ -3676,7 +3676,7 @@ class _CorrectedCalciumFormState extends State<_CorrectedCalciumForm> {
   }
 }
 
-// ─── General Calculator G2: LDL (Friedewald) ─────────────────────────────────
+// General Calculator G2: LDL (Friedewald)
 
 class _LdlFriedewaldForm extends StatefulWidget {
   final void Function(
@@ -3764,7 +3764,7 @@ class _LdlFriedewaldFormState extends State<_LdlFriedewaldForm> {
   }
 }
 
-// ─── General Calculator G3: Waist-to-Hip Ratio ───────────────────────────────
+// General Calculator G3: Waist-to-Hip Ratio
 
 class _WaistHipRatioForm extends StatefulWidget {
   final void Function(
@@ -3836,7 +3836,7 @@ class _WaistHipRatioFormState extends State<_WaistHipRatioForm> {
   }
 }
 
-// ─── Utility Calculator U1: Ideal Body Weight (IBW, Devine) ──────────────────
+// Utility Calculator U1: Ideal Body Weight (IBW, Devine)
 
 class _IbwForm extends StatefulWidget {
   final void Function(
@@ -3950,7 +3950,7 @@ class _IbwFormState extends State<_IbwForm> {
   }
 }
 
-// ─── Respiratory Calculator R1: Oxygen Content (CaO₂) ────────────────────────
+// Respiratory Calculator R1: Oxygen Content (CaO₂)
 
 class _Cao2Form extends StatefulWidget {
   final void Function(
@@ -4015,7 +4015,7 @@ class _Cao2FormState extends State<_Cao2Form> {
   }
 }
 
-// ─── Cardiology Calculator C3: CHA₂DS₂-VASc Score ────────────────────────────
+// Cardiology Calculator C3: CHA₂DS₂-VASc Score
 
 class _ChadsVascForm extends StatefulWidget {
   final void Function(
@@ -4121,7 +4121,7 @@ class _ChadsVascFormState extends State<_ChadsVascForm> {
   }
 }
 
-// ─── Cardiology Calculator C4: HAS-BLED Score ────────────────────────────────
+// Cardiology Calculator C4: HAS-BLED Score
 
 class _HasBledForm extends StatefulWidget {
   final void Function(
@@ -4205,7 +4205,7 @@ class _HasBledFormState extends State<_HasBledForm> {
   }
 }
 
-// ─── Surgery & Trauma Calculator S1: Burn % (Rule of 9s) ─────────────────────
+// Surgery & Trauma Calculator S1: Burn % (Rule of 9s)
 
 class _BurnTbsaForm extends StatefulWidget {
   final void Function(
@@ -4412,7 +4412,7 @@ class _ParklandFormState extends State<_ParklandForm> {
   }
 }
 
-// ─── Obs & Gynae Calculator O2: GTPAL ─────────────────────────────────────────
+// Obs & Gynae Calculator O2: GTPAL
 
 class _GtpalForm extends StatefulWidget {
   final void Function(

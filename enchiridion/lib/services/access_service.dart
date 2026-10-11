@@ -1,9 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../config/pricing_config.dart';
 import '../models/exam_module.dart';
 import '../services/auth_service.dart';
 import 'storage_service.dart';
+
+String scopeForFeature(String feature) =>
+    feature == kPremiumFeature ? kFullAccessScope : feature;
+
+const String kFullAccessScope = '*';
 
 class AccessService {
   static AccessService? _instance;
@@ -15,11 +21,9 @@ class AccessService {
   @visibleForTesting
   static bool? testAccessOverride;
 
-  /// Maximum age of a successful online validation before access must be
-  /// revalidated. Past this point without a successful check (e.g. the
-  /// device has been offline), cached grants are discarded and the user
-  /// reverts to freemium — so a one-month subscription cannot be kept alive
-  /// indefinitely by cutting the app off from the internet.
+  /// Past this age without a successful revalidation, cached grants are
+  /// discarded and the user reverts to freemium — so access can't be kept
+  /// alive indefinitely by cutting the app off from the internet.
   static const maxValidationAge = Duration(days: 7);
 
   StorageService? _storage;
@@ -51,10 +55,7 @@ class AccessService {
     _loadedForUserId = userId;
 
     try {
-      final rows = await Supabase.instance.client
-          .from('user_book_access')
-          .select('book_id')
-          .eq('user_id', userId);
+      final rows = await Supabase.instance.client.rpc('get_my_entitlements');
 
       // Auth can change while the request is in flight. Discard stale rows
       // rather than granting one user's entitlements to another user.
@@ -64,17 +65,14 @@ class AccessService {
       }
 
       for (final row in rows as List) {
-        _cache[row['book_id'] as String] = true;
+        _cache[scopeForFeature(row['feature'] as String)] = true;
       }
 
-      // Successful online validation — record it so the 7-day offline
-      // revert (see `_enforceValidationFreshness`) can tell how fresh this
-      // cache is. The granted scopes are persisted alongside it so a cold
-      // isolate can reuse them instead of repeating this round trip (see
-      // `_hydrateFromStorage`). Only for the user the rows were fetched for.
+      // Records this successful validation for `_enforceValidationFreshness`,
+      // and persists the granted scopes so `_hydrateFromStorage` lets a cold
+      // isolate reuse them instead of repeating this round trip.
       if (AuthService.currentUser?.id == userId) {
-        await _storage?.setLastAccessValidation(
-            userId, DateTime.now().toUtc());
+        await _storage?.setLastAccessValidation(userId, DateTime.now().toUtc());
         await _storage?.setCachedAccessScopes(userId, _cache.keys.toList());
       }
     } catch (_) {
@@ -148,17 +146,12 @@ class AccessService {
     await loadAccess();
   }
 
-  /// Rebuilds [_cache] from the last successful validation's persisted scopes,
-  /// if that validation is still fresh. Returns whether the cache is now
-  /// usable.
-  ///
-  /// This is what keeps the headless Study Buddy alarm off the network: it
-  /// runs in a brand-new isolate every time, so the in-memory cache is always
-  /// cold and every ambient prompt was paying a 1-3s Supabase round trip
-  /// before posting. The 7-day revert is unaffected — a stale (or missing)
-  /// validation timestamp still falls through to [loadAccess]. Consequently a
-  /// grant revoked server-side is honoured here on the same terms as a warm
-  /// cache in the running app: at the next revalidation, not instantly.
+  /// Rebuilds [_cache] from the last successful validation's persisted
+  /// scopes, if still fresh, returning whether the cache is now usable. Keeps
+  /// the headless Study Buddy alarm — a brand-new, always-cold isolate — off
+  /// the network for every ambient prompt. A stale/missing timestamp still
+  /// falls through to [loadAccess], so a server-revoked grant is honoured at
+  /// the next revalidation, same as a warm in-app cache.
   bool _hydrateFromStorage(String userId) {
     final storage = _storage;
     if (storage == null) return false;
@@ -181,15 +174,11 @@ class AccessService {
     return true;
   }
 
-  /// Discards cached grants that have not been successfully revalidated
-  /// within [maxValidationAge].
-  ///
+  /// Discards cached grants not revalidated within [maxValidationAge].
   /// Called on every access check that would otherwise trust a warm cache,
   /// so a device kept offline past the grace window reverts to freemium even
-  /// if the process (and its in-memory cache) never restarted. When still
-  /// online, `loadAccess` simply refreshes the cache and the timestamp, and
-  /// access continues uninterrupted. When offline, `loadAccess` clears the
-  /// cache itself — the revert.
+  /// without a process restart; `loadAccess` does the actual reverting when
+  /// offline, or just refreshes the cache when still online.
   Future<void> _enforceValidationFreshness(String userId) async {
     final storage = _storage;
     if (storage == null) return;
@@ -201,19 +190,5 @@ class AccessService {
     // Never validated, or validated too long ago (including pre-upgrade
     // installs with a warm cache but no timestamp): revalidate now.
     await loadAccess();
-  }
-
-  /// Grant access manually (for testing / admin use).
-  Future<void> grantBookAccess(String bookId) async {
-    final user = AuthService.currentUser;
-    if (user == null) return;
-    await Supabase.instance.client.from('user_book_access').upsert({
-      'user_id': user.id,
-      'book_id': bookId,
-      'access_type': bookId == '*' ? 'subscription' : 'book',
-    });
-    _loadedForUserId = user.id;
-    _loaded = true;
-    _cache[bookId] = true;
   }
 }

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../config/google_sign_in_config.dart';
+import '../constants/about_config.dart';
 import '../providers/auth_provider.dart';
 import '../services/biometric_sign_in_service.dart';
+import '../widgets/auth/google_sign_in_button.dart';
+import 'legal_document_screen.dart';
 import 'auth_gate.dart';
 import 'register_screen.dart';
 import 'password_reset_screen.dart';
@@ -19,10 +23,11 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordCtrl = TextEditingController();
   bool _obscurePassword = true;
   bool _loading = false;
+  bool _googleLoading = false;
   bool _biometricAvailable = false;
   bool _biometricEnabled = false;
   bool _saveBiometric = false;
-  bool get _busy => _loading;
+  bool get _busy => _loading || _googleLoading;
 
   @override
   void initState() {
@@ -97,6 +102,33 @@ class _LoginScreenState extends State<LoginScreen> {
     _emailCtrl.dispose();
     _passwordCtrl.dispose();
     super.dispose();
+  }
+
+  Future<void> _continueWithGoogle() async {
+    if (_busy) return;
+    setState(() {
+      _googleLoading = true;
+      _errorMessage = null;
+    });
+    final result = await context
+        .read<AuthProvider>()
+        .signInWithGoogle(termsVersion: AboutConfig.termsVersion);
+    if (!mounted) return;
+    setState(() {
+      _googleLoading = false;
+      _errorMessage = result.error;
+    });
+    if (result.signedIn) {
+      try {
+        if (await BiometricSignInService.instance.isEnabled()) {
+          await BiometricSignInService.instance.disable();
+        }
+      } catch (_) {}
+      if (!mounted) return;
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const AuthGate()),
+      );
+    }
   }
 
   Future<void> _submit() async {
@@ -318,6 +350,25 @@ class _LoginScreenState extends State<LoginScreen> {
                             )
                           : const Text('Sign In'),
                     ),
+                    if (isGoogleSignInConfigured) ...[
+                      const SizedBox(height: 20),
+                      const AuthDivider(),
+                      const SizedBox(height: 20),
+                      GoogleSignInButton(
+                        busy: _googleLoading,
+                        onPressed: _busy ? null : _continueWithGoogle,
+                      ),
+                      TextButton(
+                        onPressed: () => LegalDocumentScreen.open(
+                            context, LegalDocument.terms),
+                        child: Text(
+                          'By continuing with Google you agree to the Terms '
+                          'and Conditions and Privacy Policy.',
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodySmall,
+                        ),
+                      ),
+                    ],
                     const SizedBox(height: 24),
 
                     // Register link

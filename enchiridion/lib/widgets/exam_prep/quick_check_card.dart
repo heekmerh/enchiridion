@@ -15,10 +15,9 @@ import '../../services/study_stats_service.dart';
 import 'explanation_text.dart';
 
 /// Full-screen "answer one question" card shown inside the Android bubble
-/// window (see `lib/bubble_main.dart`). Picks a random option order seeded by
-/// the question's review attempt count (so repeats aren't memorized by
-/// position), submits the answer through the same services the rest of the
-/// app uses, then lets the caller decide what "done" means via [onDismiss].
+/// window. Option order is seeded by the review attempt count so repeats
+/// aren't memorized by position; submits through the same services the rest
+/// of the app uses, then lets the caller decide "done" via [onDismiss].
 class QuickCheckCard extends StatefulWidget {
   final Question question;
   final VoidCallback onDismiss;
@@ -83,23 +82,16 @@ class _QuickCheckCardState extends State<QuickCheckCard> {
     final storage = context.read<StorageService>();
     StudyStatsProvider? statsProvider;
     try {
-      // The bubble overlay engine (bubble_main.dart) historically provided
-      // only StorageService, so this read threw there: the answer was
-      // already stored above, but stats, the rebound notification and the
-      // remote push below never ran — a silently half-recorded answer.
-      // Prefer the provider when present (it also notifies dashboard
-      // listeners); otherwise record stats directly through the service.
+      // The bubble overlay engine historically provided only StorageService,
+      // so this threw there, silently skipping stats/notification/remote
+      // push after the answer was already stored above.
       statsProvider = context.read<StudyStatsProvider>();
     } catch (_) {
       statsProvider = null;
     }
 
-    // These are local disk writes (SharedPreferences), but under two-engine
-    // contention (this bubble window plus the main app both alive) the prefs
-    // platform channel can stall. Bounded so a stuck write can never leave
-    // the user stuck on "Saving…" forever — cleared in `finally` regardless
-    // of outcome, since the on-screen answer feedback is already correct
-    // either way.
+    // Local SharedPreferences writes, but two-engine contention can stall the
+    // prefs channel; bounded so the user is never stuck on "Saving…".
     try {
       final review = await DiagnosticsLog.track(
         'answer_card_record_answer',

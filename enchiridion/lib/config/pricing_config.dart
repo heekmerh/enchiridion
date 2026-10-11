@@ -1,51 +1,55 @@
-class PricingPlan {
+enum PremiumInterval { monthly, annual }
+
+class PremiumPlan {
   final String id;
-  final String label;
-  final int amount;
-  final int accessDays;
-  final bool autoRenewing;
-  final String billingPeriodLabel;
+  final String basePlanId;
+  final PremiumInterval interval;
+  final String title;
+  final String subscribeLabel;
+  final String summary;
 
-  const PricingPlan({
+  const PremiumPlan({
     required this.id,
-    required this.label,
-    required this.amount,
-    required this.accessDays,
-    required this.autoRenewing,
-    required this.billingPeriodLabel,
+    required this.basePlanId,
+    required this.interval,
+    required this.title,
+    required this.subscribeLabel,
+    required this.summary,
   });
-
-  // Google Play requires the renewal terms to be visible at the point of
-  // purchase, not only in the Terms and Conditions.
-  String get renewalNotice => autoRenewing
-      ? 'Renews automatically every $billingPeriodLabel until you cancel. '
-          'Cancel any time in Profile → Subscription.'
-      : 'One-time payment for $accessDays days. Does not renew.';
 }
 
-const kBookUnlockPlan = PricingPlan(
-  id: 'book_monthly',
-  label: 'Unlock — ₦1,000 for 30 days',
-  amount: 1000,
-  accessDays: 30,
-  autoRenewing: false,
-  billingPeriodLabel: 'month',
+// Must match the subscription and base plans in Play Console and billing.provider_plan_mappings on the server.
+const String kPlayPremiumProductId = 'enchiridion_premium';
+
+const kPremiumMonthlyPlan = PremiumPlan(
+  id: 'premium_monthly',
+  basePlanId: 'premium-monthly',
+  interval: PremiumInterval.monthly,
+  title: 'Monthly',
+  subscribeLabel: 'Subscribe Monthly',
+  summary: 'Flexible monthly billing.',
 );
 
-const kSubscriptionMonthlyPlan = PricingPlan(
-  id: 'sub_monthly',
-  label: 'Monthly — ₦1,000/month',
-  amount: 1000,
-  accessDays: 30,
-  autoRenewing: true,
-  billingPeriodLabel: 'month',
+const kPremiumAnnualPlan = PremiumPlan(
+  id: 'premium_annual',
+  basePlanId: 'premium-annual',
+  interval: PremiumInterval.annual,
+  title: 'Annual',
+  subscribeLabel: 'Subscribe Annually',
+  summary: 'Billed once a year.',
 );
 
-const kSubscriptionYearlyPlan = PricingPlan(
-  id: 'sub_yearly',
-  label: 'Yearly — ₦10,000/year',
-  amount: 10000,
-  accessDays: 365,
-  autoRenewing: true,
-  billingPeriodLabel: 'year',
-);
+const List<PremiumPlan> kPremiumPlans = [
+  kPremiumMonthlyPlan,
+  kPremiumAnnualPlan
+];
+
+const String kPremiumFeature = 'premium';
+
+const List<String> kFullAccessBenefits = [
+  'Every chapter of all 8 specialty books',
+  'Complete question banks and PLAB exam prep with spaced repetition',
+  'All clinical calculators',
+  'OSCE stations and instrumentation guides',
+  'Notes, bookmarks and clips synced across your devices',
+];

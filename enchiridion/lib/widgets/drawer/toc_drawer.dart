@@ -120,8 +120,9 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
     }
     if (block is ClinicalPearlsBlock) return block.items.join(' ');
     if (block is RedFlagsBlock) return block.items.join(' ');
-    if (block is AlgorithmBlock)
+    if (block is AlgorithmBlock) {
       return '${block.title} ${block.steps.join(' ')}';
+    }
     if (block is KeyValueBlock) {
       return '${block.title ?? ''} ${block.items.map((i) => '${i.key} ${i.value}').join(' ')}';
     }

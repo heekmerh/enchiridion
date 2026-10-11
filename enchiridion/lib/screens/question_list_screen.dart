@@ -93,7 +93,7 @@ class _QuestionListScreenState extends State<QuestionListScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => UnlockScreen(bookId: widget.bookId),
+          builder: (_) => const UnlockScreen(),
         ),
       );
       return;

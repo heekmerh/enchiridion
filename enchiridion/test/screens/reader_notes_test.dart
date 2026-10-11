@@ -13,12 +13,12 @@ import 'package:enchiridion/screens/reader_screen.dart';
 import 'package:enchiridion/services/access_service.dart';
 import 'package:enchiridion/services/storage_service.dart';
 
-Book _makeBook() => Book(
+Book _makeBook() => const Book(
       id: 'book-1',
       title: 'Test Book',
       author: 'Tester',
       coverUrl: '',
-      chapters: const [
+      chapters: [
         Chapter(
           id: 'chapter-1',
           title: 'Editable Chapter',

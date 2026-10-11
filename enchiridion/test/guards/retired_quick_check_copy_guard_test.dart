@@ -1,14 +1,7 @@
-// Repo-wide guard: fails the suite if the retired exam-prep label
-// reappears in a non-comment `lib/` Dart line.
-//
-// This gate asserts one invariant only: user-visible copy no longer names
-// the retired concept. The `QuickCheckCard` class identifier and the
-// `quick_check_card` filename fragment are retained internal identifiers
-// and are exempt.
-//
-// Scans `lib/` only — never `test/` — because the detection literal lives
-// in this very file, and scanning `test/` would make the gate fail for the
-// wrong reason.
+// Guard: fails if the retired exam-prep label reappears in a non-comment
+// `lib/` line. The `QuickCheckCard` class/file identifiers are retained
+// internal names and are exempt. Scans `lib/` only, never `test/`, since the
+// detection literal lives in this file.
 
 import 'dart:io';
 

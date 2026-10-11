@@ -1,16 +1,9 @@
-// Guard: pins the display name of the OSCE station backed by
-// `assets/data/resources/abdominal_examination.json` to "Abdominal
-// Examination" on every user-visible surface — the station list tile and
-// the detail route — and asserts no station in `kOsceTopics` ever regresses
-// to the bare single-word organ short form the station used to be
-// (mis)labelled with in source comments.
-//
-// Deliberately decoupled from tab layout: this suite selects the station by
-// `id`, never by list position or tab index, and on the detail route it
-// asserts on rendered text rather than on `TabBar`/`Tab` structure. That
-// keeps it green across OSCE detail-route restructures (e.g. sibling
-// 260918-dr5's per-station-tabs -> per-sub-topic-tabs rewrite) instead of
-// pinning a layout shape that is expected to change.
+// Guard: pins the OSCE station backed by `abdominal_examination.json` to
+// "Abdominal Examination" everywhere user-visible, and asserts no
+// `kOsceTopics` station ever regresses to its old bare organ short form.
+// Selects the station by `id` and asserts on rendered text, never on list
+// position or `TabBar`/`Tab` structure, so it stays green across detail-route
+// layout restructures.
 
 import 'package:enchiridion/models/chapter.dart';
 import 'package:enchiridion/models/resource_topic.dart';

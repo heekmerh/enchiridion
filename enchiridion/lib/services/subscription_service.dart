@@ -22,78 +22,72 @@ String formatRenewalDate(DateTime date) {
   return '${local.day} ${_monthNames[local.month - 1]} ${local.year}';
 }
 
+enum SubscriptionProvider { googlePlay, website }
+
+const Set<String> _renewingStates = {'ACTIVE', 'GRACE_PERIOD'};
+const Set<String> _paymentProblemStates = {'PAYMENT_FAILED', 'PAUSED'};
+
 class SubscriptionStatus {
-  final String scope;
   final String planId;
-  final String status;
-  final bool autoRenew;
+  final SubscriptionProvider provider;
+  final String state;
+  final bool autoRenewing;
   final DateTime? currentPeriodEnd;
-  final DateTime? nextBillingAt;
+  final DateTime? accessExpiresAt;
+  final String? productId;
 
   const SubscriptionStatus({
-    required this.scope,
     required this.planId,
-    required this.status,
-    required this.autoRenew,
+    required this.provider,
+    required this.state,
+    required this.autoRenewing,
     this.currentPeriodEnd,
-    this.nextBillingAt,
+    this.accessExpiresAt,
+    this.productId,
   });
 
   factory SubscriptionStatus.fromRow(Map<String, dynamic> row) {
     DateTime? parse(Object? value) =>
         value is String ? DateTime.tryParse(value) : null;
     return SubscriptionStatus(
-      scope: row['scope'] as String? ?? '*',
       planId: row['plan_id'] as String? ?? '',
-      status: row['status'] as String? ?? 'active',
-      autoRenew: row['auto_renew'] as bool? ?? false,
+      provider: row['provider'] == 'google_play'
+          ? SubscriptionProvider.googlePlay
+          : SubscriptionProvider.website,
+      state: row['internal_state'] as String? ?? 'EXPIRED',
+      autoRenewing: row['auto_renewing'] as bool? ?? false,
       currentPeriodEnd: parse(row['current_period_end']),
-      nextBillingAt: parse(row['next_billing_at']),
+      accessExpiresAt: parse(row['access_expires_at']),
+      productId: row['product_id'] as String?,
     );
   }
 
-  bool get renewsAutomatically => status == 'active' && autoRenew;
+  bool get renewsAutomatically =>
+      autoRenewing && _renewingStates.contains(state);
 
-  DateTime? get endsOn => currentPeriodEnd;
+  bool get hasPaymentProblem => _paymentProblemStates.contains(state);
+
+  bool get hasEnded => state == 'EXPIRED' || state == 'REFUNDED';
+
+  bool get isGooglePlay => provider == SubscriptionProvider.googlePlay;
+
+  DateTime? get endsOn => accessExpiresAt ?? currentPeriodEnd;
 }
 
-/// Read-only view of `user_subscriptions`, which only the
-/// flutterwave-webhook Edge Function ever writes. Billing itself happens on
-/// the website, so the app's whole role is to poll this and tell the user
-/// when their subscription renews and where to cancel it.
 class SubscriptionService {
   static final SubscriptionService instance = SubscriptionService._();
   SubscriptionService._();
 
   Future<SubscriptionStatus?> current() async {
-    final user = AuthService.currentUser;
-    if (user == null) return null;
+    if (AuthService.currentUser == null) return null;
     try {
-      final rows = await Supabase.instance.client
-          .from('user_subscriptions')
-          .select()
-          .eq('user_id', user.id);
-      final statuses = (rows as List)
-          .map((row) =>
-              SubscriptionStatus.fromRow(Map<String, dynamic>.from(row as Map)))
-          .toList();
-      if (statuses.isEmpty) return null;
-      statuses.sort(_mostRelevantFirst);
-      return statuses.first;
+      final rows =
+          await Supabase.instance.client.rpc('get_my_subscription') as List;
+      if (rows.isEmpty) return null;
+      return SubscriptionStatus.fromRow(
+          Map<String, dynamic>.from(rows.first as Map));
     } catch (_) {
       return null;
     }
-  }
-
-  int _mostRelevantFirst(SubscriptionStatus a, SubscriptionStatus b) {
-    if (a.renewsAutomatically != b.renewsAutomatically) {
-      return a.renewsAutomatically ? -1 : 1;
-    }
-    final aEnd = a.endsOn;
-    final bEnd = b.endsOn;
-    if (aEnd == null && bEnd == null) return 0;
-    if (aEnd == null) return 1;
-    if (bEnd == null) return -1;
-    return bEnd.compareTo(aEnd);
   }
 }

@@ -1,11 +1,6 @@
-/// The single place the app decides what a topic's SUB-TOPICS are.
-///
-/// Opening a topic (an OSCE station, a Surgical/Medical Instrumentation
-/// entry, or any future topic-shaped screen) should show tabs for that
-/// topic's own sub-topics — never a tab strip of unrelated sibling topics —
-/// and the content area should swipe sideways between them. New topic
-/// surfaces should consume [SubtopicTabsView] / [subtopicTabsFor] rather
-/// than inventing their own tab strip.
+/// The single place the app decides what a topic's sub-topics are. New
+/// topic-shaped screens should consume [SubtopicTabsView] / [subtopicTabsFor]
+/// rather than inventing their own tab strip.
 library;
 
 import 'package:flutter/material.dart';
@@ -20,29 +15,18 @@ import 'coming_soon.dart';
 /// One tab in a [SubtopicTabsView]: a label and the content slice it
 /// renders.
 class SubtopicTab {
-  /// The tab label. Already guarded against being blank — see
-  /// [subtopicTabsFor].
+  /// Already guarded against being blank — see [subtopicTabsFor].
   final String title;
 
-  /// The content slice this tab renders, or null when this sub-topic has
-  /// no written content yet (the tab then renders the shared coming-soon
-  /// placeholder instead).
+  /// Null when this sub-topic has no written content yet (the tab then
+  /// renders the shared coming-soon placeholder instead).
   final Chapter? content;
 
   const SubtopicTab({required this.title, this.content});
 
-  /// The id this tab scrolls to in the one shared content scroll view — a
-  /// key into `BlockRenderer`'s `onItemIndexesReady` map (see
-  /// `block_renderer.dart`'s `_buildKeys`), which indexes every section and
-  /// subsection id of the ORIGINAL, unsliced chapter that the content-backed
-  /// path renders.
-  ///
-  /// Resolved as the first subsection id of this tab's slice's single
-  /// section, falling back to that section's id when the section has no
-  /// subsections, and null when this tab has no content at all. Covers all
-  /// three content branches of [subtopicTabsFor] (multi-section,
-  /// one-section-many-subsections, whole-chapter) with no new fields and no
-  /// change to that derivation.
+  /// Key into `BlockRenderer`'s `onItemIndexesReady` map: the first
+  /// subsection id of this tab's slice, falling back to the section id, or
+  /// null when this tab has no content at all.
   String? get anchorId {
     final sections = content?.sections;
     if (sections == null || sections.isEmpty) return null;
@@ -59,54 +43,14 @@ String _guardLabel(String? raw, String fallback) {
   return trimmed.isEmpty ? fallback : trimmed;
 }
 
-/// Derives the sub-topic tabs for [topic], given its loaded [chapter] (null
-/// while content hasn't loaded yet, or when the topic has no content JSON
-/// at all).
-///
-/// Precedence, most-structured content first. The measured shapes below are
-/// from the three bundled topic JSONs (see PLAN context): a chapter with one
-/// section holding many subsections is the common case today, but nothing
-/// enforces that shape, so a multi-section chapter is handled too.
-///
-/// - [chapter] non-null with 2+ sections: one tab per section, labelled with
-///   the section title. Each slice is the original [Chapter] copied
-///   (id/title/icon/description/order/tags/chapterColor unchanged) but
-///   carrying only that one, unmodified [ChapterSection].
-/// - [chapter] non-null with exactly 1 section holding 2+ subsections: one
-///   tab per subsection, labelled with the subsection title, UNLESS
-///   [isSectionHeading] is supplied — see below. Each slice is the original
-///   [Chapter] copied, carrying one [ChapterSection] that reuses the
-///   original section's id/title/order/color and holds only that single,
-///   unmodified [ChapterSubsection]. This is the branch `sutures.json` (36
-///   subsections) and `iv_cannula.json` (28) take.
-/// - [chapter] non-null otherwise (no sections, or one section with 0 or 1
-///   subsections): exactly one tab carrying the chapter unchanged, labelled
-///   with the chapter title when non-blank, the topic title otherwise.
-/// - [chapter] null with a non-empty `topic.outline`: one tab per outline
-///   entry, labelled with the entry text, with no content slice.
-/// - [chapter] null with no usable outline: exactly one tab labelled with
-///   the topic title, with no content slice.
-///
-/// Every slice preserves the original section/subsection ids verbatim.
+/// Derives the sub-topic tabs for [topic] given its loaded [chapter] (null
+/// before content loads, or when there is no content JSON). Every slice
+/// preserves the original section/subsection ids verbatim, since
 /// `blockAnchorId` (`lib/widgets/blocks/block_renderer.dart`) keys
-/// pinned/margin notes off those ids, so inventing new ones on split would
-/// orphan existing note anchors.
-///
-/// [isSectionHeading] is an optional, additive override for the "1 section,
-/// 2+ subsections" branch only. When supplied, that branch walks the
-/// section's subsections in authored order and opens a new group whenever
-/// [isSectionHeading] returns true for a subsection's title (and for the
-/// very first subsection regardless), appending to the currently open group
-/// otherwise; it then emits one tab per group, titled by the group's
-/// opening subsection, with a slice carrying every subsection in that
-/// group (each original [ChapterSubsection] reused verbatim, so anchors
-/// stay stable — see above). When omitted (every caller except the OSCE
-/// detail screen), this branch's original one-tab-per-subsection behaviour
-/// is unchanged. This exists because a single-section chapter whose
-/// subsections alternate between ALL-CAPS headings and sentence-case
-/// continuations (`abdominal_examination.json`'s 69 subsections) should
-/// surface sub-topics inferred from that structure, not one tab per raw
-/// subsection; see `lib/utils/osce_subtopics.dart`.
+/// pinned/margin notes off those ids and inventing new ones would orphan
+/// existing anchors. [isSectionHeading] (OSCE detail screen only) overrides
+/// the "1 section, 2+ subsections" case to group consecutive subsections by
+/// predicate instead of one tab per subsection; see `osce_subtopics.dart`.
 List<SubtopicTab> subtopicTabsFor({
   required ResourceTopic topic,
   Chapter? chapter,
@@ -220,30 +164,22 @@ List<SubtopicTab> subtopicTabsFor({
 
 /// Renders [topic]'s sub-topics (per [subtopicTabsFor]) as a swipeable,
 /// scrollable tab strip above the matching content — or, when there is only
-/// one sub-topic, that single body alone with no tab strip.
-///
-/// [chapter] arrives asynchronously in every caller today (it is loaded from
-/// an asset), so the tab count can change from 1 to N mid-life; this widget
-/// recomputes its tabs and rebuilds its [TabController] whenever that
-/// happens, always keeping the controller's length in sync with the tab
-/// count.
+/// one sub-topic, that single body alone with no tab strip. [chapter]
+/// arrives asynchronously (loaded from an asset), so the tab count can
+/// change from 1 to N mid-life; this widget recomputes its tabs and rebuilds
+/// its [TabController] whenever that happens.
 class SubtopicTabsView extends StatefulWidget {
   final ResourceTopic topic;
   final Chapter? chapter;
   final int initialIndex;
 
-  /// Forwarded verbatim to [subtopicTabsFor]'s `isSectionHeading` — see that
-  /// parameter's dartdoc. Only the OSCE detail screen supplies this today;
-  /// every other caller omits it and keeps the default one-tab-per-raw-
-  /// subsection behaviour.
+  /// Forwarded verbatim to [subtopicTabsFor]'s `isSectionHeading`. Only the
+  /// OSCE detail screen supplies this today.
   final bool Function(String title)? isSectionHeading;
 
   /// Slivers rendered at the top of the one content scroll view, above the
   /// topic body — e.g. a hero banner a detail screen wants to scroll away
-  /// as the user reads, while the tab strip (outside the scroll view)
-  /// stays pinned. Empty by default; the scrollspy anchors below are
-  /// unaffected since they resolve against the content items, not position
-  /// zero.
+  /// while the tab strip (outside the scroll view) stays pinned.
   final List<Widget> headerSlivers;
 
   const SubtopicTabsView({
@@ -261,15 +197,9 @@ class SubtopicTabsView extends StatefulWidget {
 
 class _SubtopicTabsViewState extends State<SubtopicTabsView>
     with TickerProviderStateMixin {
-  /// Distance below the content scroll view's own top edge used as the
-  /// scrollspy activation line. Derived from the scroll view's own
-  /// [RenderBox] rather than a fixed screen-relative offset (compare
-  /// `reader_screen.dart`'s `_updateActiveSection`, which hard-codes a
-  /// screen-relative `dy` of 100): callers may stack a tab strip above the
-  /// scroll view, so a fixed screen-relative number would sit above the
-  /// viewport and always resolve to the wrong sub-topic. Caller-supplied
-  /// [headerSlivers] live inside the scroll view itself, so they need no
-  /// compensation here.
+  /// Scrollspy activation line, relative to the scroll view's own
+  /// [RenderBox] rather than the screen — a caller-stacked tab strip would
+  /// throw off a screen-relative number.
   static const double _activationLineInset = 16;
 
   late List<SubtopicTab> _tabs;
@@ -277,11 +207,8 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   late AutoScrollController _autoScrollController;
   final GlobalKey _scrollViewKey = GlobalKey();
 
-  // Populated by BlockRenderer's onItemIndexesReady/onKeysReady callbacks,
-  // which fire during a descendant's initState/didUpdateWidget — assigned
-  // directly with no setState (mirrors reader_screen.dart:174-176; calling
-  // setState from those callbacks throws). Anchors are resolved lazily, at
-  // tap or scroll time, by looking the tab's anchor id up in these maps.
+  // Assigned directly with no setState: these fire during a descendant's
+  // initState/didUpdateWidget, and calling setState there throws.
   Map<String, int> _itemIndexes = {};
   Map<String, GlobalKey> _sectionKeys = {};
   Map<String, GlobalKey> _subsectionKeys = {};
@@ -315,9 +242,8 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
         identical(oldWidget.chapter, widget.chapter)) {
       return;
     }
-    // A stale index/key from the previous chapter must never be used as a
-    // scroll anchor for the new one — BlockRenderer calls
-    // onItemIndexesReady/onKeysReady again once the new chapter lays out.
+    // A stale index/key from the previous chapter must never be reused as a
+    // scroll anchor for the new one.
     _itemIndexes = {};
     _sectionKeys = {};
     _subsectionKeys = {};
@@ -364,12 +290,10 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     return renderObject.localToGlobal(Offset.zero).dy;
   }
 
-  /// The scroll index tab [tabIndex] scrolls to. For the outline-only path
-  /// (no content JSON yet), each tab IS its own `AutoScrollTag` with index
-  /// equal to the tab's own position — see the no-content branch of
-  /// [_buildContentSlivers]. For the content-backed path, the index comes
-  /// from `BlockRenderer`'s `onItemIndexesReady` map, keyed by the tab's
-  /// [SubtopicTab.anchorId].
+  /// The scroll index tab [tabIndex] scrolls to: the tab's own position for
+  /// the outline-only path (see the no-content branch of
+  /// [_buildContentSlivers]), or `BlockRenderer`'s `onItemIndexesReady` map
+  /// keyed by [SubtopicTab.anchorId] for the content-backed path.
   int? _anchorIndexFor(int tabIndex) {
     final tab = _tabs[tabIndex];
     if (tab.content == null) return tabIndex;
@@ -378,10 +302,9 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     return _itemIndexes[anchorId];
   }
 
-  // Scrollspy: mirrors reader_screen.dart's `_updateActiveSection` — lazy
-  // children have no stable offsets until built, so this walks the visible
-  // AutoScrollTag nearest the activation line, then maps that tag index
-  // back to the tab whose anchor is at or before it.
+  // Lazy children have no stable offsets until built, so this walks the
+  // visible AutoScrollTag nearest the activation line, then maps that tag
+  // index back to the tab whose anchor is at or before it.
   void _onScroll() {
     if (_suppressScrollSpy || _tabs.length <= 1) return;
     if (!_autoScrollController.hasClients ||
@@ -426,10 +349,8 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     }
   }
 
-  // Scrolls the one content view to tab [tabIndex]'s anchor — preferring
-  // `Scrollable.ensureVisible` on the subsection/section GlobalKey when
-  // already built, falling back to `scrollToIndex` when it is not. Mirrors
-  // the two-step `_navigateToSection` in reader_screen.dart.
+  // Prefers `Scrollable.ensureVisible` on the subsection/section GlobalKey
+  // when already built, falling back to `scrollToIndex` when it is not.
   Future<void> _scrollToTab(int tabIndex) async {
     _suppressScrollSpy = true;
     try {
@@ -465,18 +386,11 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     }
   }
 
-  /// The one content scroll view's slivers.
-  ///
-  /// Content-backed: the topic blurb once (it used to be pinned to the
-  /// first tab), then the ORIGINAL, unsliced chapter exactly once — NEVER
-  /// one slice per tab, which would repeat the source section header once
-  /// per sub-topic (`BlockRenderer` emits a section header for every
-  /// section of whatever chapter it is given). The slices `subtopicTabsFor`
-  /// builds are used only to derive tab labels and scroll anchors.
-  ///
-  /// No content JSON at all: one coming-soon body per tab, each its own
-  /// `AutoScrollTag` on this same controller with index equal to the tab's
-  /// own position — see [_anchorIndexFor].
+  /// The one content scroll view's slivers. Renders the original, unsliced
+  /// chapter exactly once — never one slice per tab, which would repeat the
+  /// source section header per sub-topic — using `subtopicTabsFor`'s slices
+  /// only to derive tab labels and scroll anchors. With no content JSON,
+  /// renders one coming-soon body per tab instead; see [_anchorIndexFor].
   List<Widget> _buildContentSlivers(BuildContext context) {
     final chapter = widget.chapter;
     if (chapter != null) {
@@ -494,10 +408,8 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
           ),
         ReaderContent(
           chapter: chapter,
-          // Topic notes anchor under the topic's own scope (see
-          // `ResourceTopic.notesScope`) so the pin controls render — the
-          // previous empty `bookId` disabled them via BlockRenderer's
-          // `bookId.isNotEmpty` gate.
+          // Anchors notes under the topic's own scope so the pin controls
+          // render (BlockRenderer gates them on `bookId.isNotEmpty`).
           bookId: widget.topic.notesScope,
           asSliver: true,
           autoScrollController: _autoScrollController,
@@ -532,22 +444,15 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     ];
   }
 
-  // Restores sibling 260918-dr2's sideways swipe on top of the one scroll
-  // view: a fling past this velocity threshold moves one sub-topic forward
-  // or back through the exact same scroll path a tab tap uses (clamped at
-  // both ends), rather than paging a separate widget. A horizontal
-  // GestureDetector recognizer does not contend with the vertical
-  // scrollable's own drag arena, so ordinary vertical reading is
-  // unaffected — the old warning against wrapping this content in a
-  // gesture detector was about the former per-tab pager, whose own
-  // recognizer was horizontal; that hazard left with it.
+  // A fling past this velocity moves one sub-topic via the same scroll path
+  // a tab tap uses; the horizontal recognizer doesn't contend with vertical
+  // scrolling's own drag arena.
   static const double _flingVelocityThreshold = 300;
 
   void _handleHorizontalDragEnd(DragEndDetails details) {
     final velocity = details.primaryVelocity ?? 0;
     if (velocity.abs() < _flingVelocityThreshold) return;
-    // A leftward fling (negative velocity) reveals sub-topics further
-    // along, i.e. moves forward; a rightward fling moves back.
+    // A leftward (negative) fling moves forward; a rightward fling moves back.
     final direction = velocity < 0 ? 1 : -1;
     final target = (_controller.index + direction).clamp(0, _tabs.length - 1);
     if (target == _controller.index) return;
@@ -588,11 +493,10 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
   }
 }
 
-/// Placeholder body for a sub-topic that has no written content yet. Renders
-/// through the shared coming-soon treatment (`coming_soon.dart`) rather than
-/// restyling locally. A plain (non-scrolling) column — it is placed as an
-/// item inside the shared outer scroll view, so a nested scrollable here
-/// would reintroduce the very boundary this widget exists to remove.
+/// Placeholder body for a sub-topic with no written content yet, via the
+/// shared coming-soon treatment. Non-scrolling: it sits inside the shared
+/// outer scroll view, so nesting a scrollable here would reintroduce the
+/// boundary this widget exists to remove.
 class _ComingSoonSubtopicBody extends StatelessWidget {
   final ResourceTopic topic;
   final String label;

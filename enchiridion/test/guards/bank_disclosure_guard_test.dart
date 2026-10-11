@@ -1,13 +1,6 @@
-// Repo-wide guard: fails the suite if any `lib/` source line discloses a
-// question-bank total or an ordinal question range to the user.
-//
-// This gate asserts one invariant only: no inventory figure reaches the
-// user. It does not widen to sibling-owned phrasing (browse-feature
-// wording, question-number labels).
-//
-// Scans `lib/` only — never `test/` — because the pattern literals used to
-// detect a violation live in this very file, and scanning `test/` would
-// make the gate permanently fail for the wrong reason.
+// Guard: fails if any `lib/` line discloses a question-bank total or ordinal
+// question range to the user — no inventory figure should reach them. Scans
+// `lib/` only, never `test/`, since the detection patterns live in this file.
 
 import 'dart:io';
 

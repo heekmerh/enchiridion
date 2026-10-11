@@ -48,11 +48,9 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
   bool _hasAccess = false;
   Object? _error;
 
-  // The in-flight record-and-re-pick work kicked off from the "Start Mock
-  // Exam" QuestionScreen's `onAnswered` callback (which is `void`, so this
-  // future is otherwise unawaited). `_serveNextQuestion` awaits it before
-  // reading the re-picked `_randomQuestion`, so the advance never hands the
-  // user back the question they just answered.
+  // In-flight record-and-re-pick work from the `void onAnswered` callback;
+  // `_serveNextQuestion` awaits it so the advance never hands back the
+  // question just answered.
   Future<void>? _pendingAnswerWrite;
 
   /// Storage scope for this module's answers, reviews, serve log, and stats.
@@ -76,11 +74,9 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    // Answers can be recorded while this screen is covered — notably by the
-    // bubble overlay, which runs in a separate engine with its own provider
-    // instance writing to the same SharedPreferences. The provider cached
-    // at construction would otherwise keep showing stale totals until the
-    // next cold start.
+    // Answers can be recorded while covered — notably by the bubble overlay,
+    // a separate engine writing to the same SharedPreferences — which would
+    // otherwise leave stale totals until the next cold start.
     if (state == AppLifecycleState.resumed && mounted) {
       context.read<StudyStatsProvider>().refresh(_scope);
     }
@@ -135,11 +131,10 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
     _load();
   }
 
-  /// Called after `QuestionScreen` has already recorded the answer (storage,
-  /// stats, notification scheduling, and the remote push all happen there —
-  /// see its `_submit`). This is genuinely this screen's own job only:
-  /// tracking the answer locally for the "previously answered" state and
-  /// picking the next mock exam question.
+  /// Called after `QuestionScreen` has already recorded the answer
+  /// (storage/stats/notifications/remote push all happen there). This
+  /// screen's own job only: track the answer locally for "previously
+  /// answered" state and pick the next mock exam question.
   Future<void> _handleStudyCardAnswer(UserAnswer answer) async {
     final storage = context.read<StorageService>();
     final nextQuestion = await NextQuestionSelector(storage)
@@ -152,11 +147,10 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
     });
   }
 
-  /// Supplies `QuestionScreen.onRequestNext` for the "Start Mock Exam"
-  /// entry point: awaits the answer-recording + re-pick already kicked off
-  /// by [_handleStudyCardAnswer], then hands over the question it already
-  /// picked. Deliberately does NOT call `NextQuestionSelector.next()` again
-  /// here — that would burn a second serve-log entry and skip a question.
+  /// Supplies `QuestionScreen.onRequestNext`: awaits the record+re-pick
+  /// already kicked off by [_handleStudyCardAnswer] and hands over that
+  /// question. Does NOT call `NextQuestionSelector.next()` again — that
+  /// would burn a second serve-log entry and skip a question.
   Future<NextQuestionResult?> _serveNextQuestion() async {
     await _pendingAnswerWrite;
     if (!mounted || _randomQuestion == null) return null;
@@ -278,9 +272,7 @@ class _ExamPrepHomeScreenState extends State<ExamPrepHomeScreen>
                           : OutlinedButton(
                               onPressed: () => Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) => UnlockScreen(
-                                    bookId: _scope,
-                                  ),
+                                  builder: (_) => const UnlockScreen(),
                                 ),
                               ),
                               child: const Text('Unlock'),

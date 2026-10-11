@@ -1,13 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../config/google_sign_in_config.dart';
 import '../constants/about_config.dart';
 import '../providers/auth_provider.dart';
 import '../services/auth_service.dart';
+import '../widgets/auth/google_sign_in_button.dart';
 import 'auth_gate.dart';
 import 'confirm_email_screen.dart';
+import 'legal_document_screen.dart';
 import 'login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -27,6 +28,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _obscurePassword = true;
   bool _obscureConfirm = true;
   bool _loading = false;
+  bool _googleLoading = false;
   bool _termsAccepted = false;
   String? _errorMessage;
   final List<TapGestureRecognizer> _legalLinkRecognizers = [];
@@ -45,31 +47,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
-  Future<void> _openLegalLink(String url) async {
-    final messenger = ScaffoldMessenger.of(context);
-    bool opened = false;
-    try {
-      opened = await launchUrl(
-        Uri.parse(url),
-        mode: LaunchMode.externalApplication,
-      );
-    } catch (_) {
-      opened = false;
-    }
-    if (!opened) {
-      await Clipboard.setData(ClipboardData(text: url));
-      messenger.showSnackBar(
-        const SnackBar(
-          content: Text('Link copied to clipboard.'),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-    }
-  }
-
-  TextSpan _legalLink(String label, String url) {
+  TextSpan _legalLink(String label, LegalDocument document) {
     final recognizer = TapGestureRecognizer()
-      ..onTap = () => _openLegalLink(url);
+      ..onTap = () => LegalDocumentScreen.open(context, document);
     _legalLinkRecognizers.add(recognizer);
     return TextSpan(
       text: label,
@@ -82,12 +62,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
+  Future<void> _continueWithGoogle() async {
+    if (!_termsAccepted) {
+      setState(() => _errorMessage =
+          'Please accept the Terms and Conditions to create an account.');
+      return;
+    }
+    setState(() {
+      _googleLoading = true;
+      _errorMessage = null;
+    });
+    final result = await context
+        .read<AuthProvider>()
+        .signInWithGoogle(termsVersion: AboutConfig.termsVersion);
+    if (!mounted) return;
+    setState(() {
+      _googleLoading = false;
+      _errorMessage = result.error;
+    });
+    if (result.signedIn) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const AuthGate()),
+      );
+    }
+  }
+
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     if (!_termsAccepted) {
       setState(() => _errorMessage =
           'Please accept the Terms and Conditions and Privacy Policy to '
-          'continue.');
+              'continue.');
       return;
     }
     setState(() {
@@ -96,8 +101,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
 
     final displayName = _nameCtrl.text.trim();
-    final nameAvailable =
-        await AuthService.isDisplayNameAvailable(displayName);
+    final nameAvailable = await AuthService.isDisplayNameAvailable(displayName);
     if (!nameAvailable) {
       if (!mounted) return;
       setState(() {
@@ -251,8 +255,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty)
+                        if (v == null || v.isEmpty) {
                           return 'Password is required';
+                        }
                         if (v.length < 8) {
                           return 'Password must be at least 8 characters';
                         }
@@ -315,10 +320,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       text: 'I am 18 or older and I agree to '
                                           'the '),
                                   _legalLink('Terms and Conditions',
-                                      AboutConfig.termsUrl),
+                                      LegalDocument.terms),
                                   const TextSpan(text: ' and the '),
-                                  _legalLink('Privacy Policy',
-                                      AboutConfig.privacyPolicyUrl),
+                                  _legalLink(
+                                      'Privacy Policy', LegalDocument.privacy),
                                   const TextSpan(
                                       text: '. Enchiridion is a study aid, '
                                           'not a substitute for clinical '
@@ -365,6 +370,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             )
                           : const Text('Create Account'),
                     ),
+                    if (isGoogleSignInConfigured) ...[
+                      const SizedBox(height: 20),
+                      const AuthDivider(),
+                      const SizedBox(height: 20),
+                      GoogleSignInButton(
+                        busy: _googleLoading,
+                        onPressed: (_loading || !_termsAccepted)
+                            ? null
+                            : _continueWithGoogle,
+                      ),
+                    ],
                     const SizedBox(height: 24),
 
                     Row(

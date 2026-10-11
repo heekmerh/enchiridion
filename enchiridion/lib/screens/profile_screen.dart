@@ -5,11 +5,13 @@ import '../widgets/auth/biometric_sign_in_setting.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../constants/about_config.dart';
+import '../config/backend_config.dart';
+import '../constants/billing_copy.dart';
 import '../providers/auth_provider.dart';
 import '../services/auth_service.dart';
 import '../services/subscription_service.dart';
 import 'login_screen.dart';
+import 'unlock_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -53,11 +55,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         });
       }
     } catch (e) {
-      if (mounted)
+      if (mounted) {
         setState(() {
           _error = e.toString();
           _loading = false;
         });
+      }
     }
   }
 
@@ -66,12 +69,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (mounted) setState(() => _subscription = subscription);
   }
 
-  Future<void> _openManageSubscription() async {
+  Future<void> _openGooglePlaySubscriptions() async {
     final messenger = ScaffoldMessenger.of(context);
-    bool opened = false;
+    var opened = false;
     try {
       opened = await launchUrl(
-        Uri.parse(AboutConfig.manageSubscriptionUrl),
+        Uri.parse(kGooglePlaySubscriptionsUrl),
         mode: LaunchMode.externalApplication,
       );
     } catch (_) {
@@ -80,38 +83,69 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (!opened) {
       messenger.showSnackBar(
         const SnackBar(
-          content: Text(
-            'Could not open the browser. Manage your subscription at '
-            '${AboutConfig.manageSubscriptionUrl}',
-          ),
+          content: Text(BillingCopy.googlePlayManagement),
           behavior: SnackBarBehavior.floating,
         ),
       );
     }
   }
 
+  Future<void> _openPlans() async {
+    await Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => const UnlockScreen()));
+    await _loadSubscription();
+  }
+
   Widget _subscriptionSubtitle(ThemeData theme) {
     final subscription = _subscription;
-    if (subscription == null) {
-      return Text('Free tier — no active subscription',
+    if (subscription == null || subscription.hasEnded) {
+      return Text('Free account — no active subscription',
           style: theme.textTheme.bodyLarge);
     }
     final endsOn = subscription.endsOn;
     final when = endsOn == null ? null : formatRenewalDate(endsOn);
-    if (subscription.renewsAutomatically) {
-      return Text(
-        when == null
-            ? 'Renews automatically until you cancel'
-            : 'Renews automatically on $when',
-        style: theme.textTheme.bodyLarge,
+    final String status;
+    if (subscription.hasPaymentProblem) {
+      status = BillingCopy.paymentFailed;
+    } else if (subscription.renewsAutomatically) {
+      status = when == null
+          ? 'Renews automatically until you cancel'
+          : 'Renews automatically on $when';
+    } else {
+      status = when == null
+          ? 'Will not renew'
+          : 'Will not renew — access until $when';
+    }
+    final management = subscription.isGooglePlay
+        ? BillingCopy.googlePlayManagement
+        : BillingCopy.websiteManagement;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(status, style: theme.textTheme.bodyLarge),
+        const SizedBox(height: 4),
+        Text(management, style: theme.textTheme.bodySmall),
+      ],
+    );
+  }
+
+  Widget? _subscriptionAction() {
+    final subscription = _subscription;
+    if (subscription == null || subscription.hasEnded) {
+      return TextButton.icon(
+        onPressed: _openPlans,
+        icon: const Icon(Icons.workspace_premium_outlined, size: 18),
+        label: const Text('See Premium plans'),
       );
     }
-    return Text(
-      when == null
-          ? 'Cancelled — will not renew'
-          : 'Cancelled — access until $when',
-      style: theme.textTheme.bodyLarge,
-    );
+    if (subscription.isGooglePlay) {
+      return TextButton.icon(
+        onPressed: _openGooglePlaySubscriptions,
+        icon: const Icon(Icons.open_in_new, size: 18),
+        label: const Text('Manage in Google Play'),
+      );
+    }
+    return null;
   }
 
   Future<void> _saveName() async {
@@ -399,16 +433,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         subtitle: _subscriptionSubtitle(theme),
                         contentPadding: EdgeInsets.zero,
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: TextButton.icon(
-                          onPressed: _openManageSubscription,
-                          icon: const Icon(Icons.open_in_new, size: 18),
-                          label: Text(_subscription == null
-                              ? 'See plans'
-                              : 'Manage or cancel subscription'),
-                        ),
-                      ),
+                      if (_subscriptionAction() case final action?)
+                        Align(alignment: Alignment.centerLeft, child: action),
                       const BiometricSignInSetting(),
                       const SizedBox(height: 40),
 

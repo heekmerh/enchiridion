@@ -81,15 +81,10 @@ const List<CatalogBook> kBooks = [
   ),
 ];
 
-/// Returns [kBooks] ordered for display: most-recently-opened first among
-/// books that share read [history], then all remaining books in their
-/// authored order — with readable books (see [CatalogBook.hasContent])
-/// always ranked ahead of placeholder books. Availability is the OUTER key;
-/// recency only orders within a group, so a placeholder book can never
-/// outrank a readable one no matter how recently it was "opened".
-///
-/// Pure (no Flutter, no provider) so it can be unit-tested and reused
-/// directly by a guard test.
+/// Returns [kBooks] most-recently-opened first among books sharing [history],
+/// then the rest in authored order, with readable books (see
+/// [CatalogBook.hasContent]) always ranked ahead of placeholders regardless
+/// of recency. Pure (no Flutter, no provider) so it is unit-testable.
 List<CatalogBook> booksInDisplayOrder(Map<String, DateTime> history) {
   final sorted = List<CatalogBook>.from(kBooks);
   sorted.sort((a, b) {
