@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
+import '../services/biometric_sign_in_service.dart';
 import 'auth_gate.dart';
 import 'register_screen.dart';
 import 'password_reset_screen.dart';
@@ -18,6 +19,77 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordCtrl = TextEditingController();
   bool _obscurePassword = true;
   bool _loading = false;
+  bool _biometricAvailable = false;
+  bool _biometricEnabled = false;
+  bool _saveBiometric = false;
+  bool get _busy => _loading;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadBiometrics();
+  }
+
+  Future<void> _loadBiometrics() async {
+    try {
+      final service = BiometricSignInService.instance;
+      final available = await service.isAvailable();
+      final enabled = await service.isEnabled();
+      if (!mounted) return;
+      setState(() {
+        _biometricAvailable = available;
+        _biometricEnabled = enabled;
+      });
+    } catch (_) {}
+  }
+
+  Future<void> _forgetBiometrics() async {
+    if (_busy) return;
+    setState(() => _loading = true);
+    try {
+      await BiometricSignInService.instance.disable();
+      if (!mounted) return;
+      setState(() {
+        _biometricEnabled = false;
+        _saveBiometric = false;
+      });
+    } catch (_) {
+      if (mounted) {
+        setState(() => _errorMessage =
+            'Could not remove fingerprint sign-in. Please try again.');
+      }
+    } finally {
+      if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  Future<void> _signInWithBiometrics() async {
+    if (_busy) return;
+    setState(() {
+      _loading = true;
+      _errorMessage = null;
+    });
+    final result = await BiometricSignInService.instance.signIn();
+    if (!mounted) return;
+    setState(() => _loading = false);
+    if (result == BiometricSignInResult.signedIn) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const AuthGate()),
+      );
+      return;
+    }
+    setState(() => _errorMessage = switch (result) {
+          BiometricSignInResult.expired =>
+            'Please sign in with your password and enable fingerprint sign-in again.',
+          BiometricSignInResult.unavailable =>
+            'Fingerprint sign-in is unavailable. Use your password.',
+          BiometricSignInResult.canceled => null,
+          _ =>
+            'Fingerprint sign-in did not complete. Try again or use your password. An internet connection is required.',
+        });
+    await _loadBiometrics();
+  }
+
   String? _errorMessage;
 
   @override
@@ -28,6 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _submit() async {
+    if (_busy) return;
     if (!_formKey.currentState!.validate()) return;
     setState(() {
       _loading = true;
@@ -40,11 +113,32 @@ class _LoginScreenState extends State<LoginScreen> {
         );
 
     if (!mounted) return;
-    setState(() => _loading = false);
-
     if (error != null) {
-      setState(() => _errorMessage = error);
+      setState(() {
+        _loading = false;
+        _errorMessage = error;
+      });
     } else {
+      try {
+        if (_saveBiometric) {
+          await BiometricSignInService.instance.enable(
+            _emailCtrl.text.trim(),
+            _passwordCtrl.text,
+          );
+        } else if (await BiometricSignInService.instance.isEnabled()) {
+          await BiometricSignInService.instance.disable();
+        }
+      } catch (_) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text(
+                'Signed in. Fingerprint setup did not complete; you can try again on your next password login.'),
+          ));
+        }
+      }
+      _passwordCtrl.clear();
+      if (!mounted) return;
+      setState(() => _loading = false);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => const AuthGate()),
       );
@@ -94,9 +188,30 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 32),
 
+                    if (_biometricEnabled) ...[
+                      OutlinedButton.icon(
+                        onPressed: _busy || !_biometricAvailable
+                            ? null
+                            : _signInWithBiometrics,
+                        icon: const Icon(Icons.fingerprint),
+                        label: const Text('Sign in with fingerprint'),
+                        style: OutlinedButton.styleFrom(
+                          minimumSize: const Size.fromHeight(48),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: _busy ? null : _forgetBiometrics,
+                        child: const Text(
+                            'Forget fingerprint sign-in on this device'),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
+
                     // Email
                     TextFormField(
                       controller: _emailCtrl,
+                      enabled: !_busy,
+                      autofillHints: const [AutofillHints.username],
                       keyboardType: TextInputType.emailAddress,
                       textInputAction: TextInputAction.next,
                       decoration: const InputDecoration(
@@ -116,6 +231,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Password
                     TextFormField(
                       controller: _passwordCtrl,
+                      enabled: !_busy,
+                      autofillHints: const [AutofillHints.password],
                       obscureText: _obscurePassword,
                       textInputAction: TextInputAction.done,
                       onFieldSubmitted: (_) => _submit(),
@@ -131,12 +248,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty)
+                        if (v == null || v.isEmpty) {
                           return 'Password is required';
+                        }
                         return null;
                       },
                     ),
                     const SizedBox(height: 8),
+
+                    if (_biometricAvailable)
+                      CheckboxListTile(
+                        value: _saveBiometric,
+                        onChanged: _busy
+                            ? null
+                            : (value) =>
+                                setState(() => _saveBiometric = value ?? false),
+                        title: const Text('Use fingerprint next time'),
+                        subtitle: const Text(
+                            'Save this login securely on this device. Anyone with an enrolled fingerprint can use it.'),
+                        contentPadding: EdgeInsets.zero,
+                        controlAffinity: ListTileControlAffinity.leading,
+                      ),
 
                     // Forgot password
                     Align(
@@ -171,7 +303,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     // Sign in button
                     FilledButton(
-                      onPressed: _loading ? null : _submit,
+                      onPressed: _busy ? null : _submit,
                       style: FilledButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                       ),

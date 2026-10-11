@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import '../widgets/auth/biometric_sign_in_setting.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -408,6 +409,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               : 'Manage or cancel subscription'),
                         ),
                       ),
+                      const BiometricSignInSetting(),
                       const SizedBox(height: 40),
 
                       OutlinedButton.icon(
