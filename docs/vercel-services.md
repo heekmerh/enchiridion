@@ -63,6 +63,14 @@ Binding URLs are generated at runtime for the same deployment, including preview
 Local development can still run Next.js and Uvicorn separately with the frontend
 `.env.local` setting `BACKEND_URL=http://127.0.0.1:8000`.
 
+## Image optimization
+
+The root `images` configuration enables Vercel's native `/_vercel/image` endpoint.
+Next.js uses this endpoint on Vercel and its default `/_next/image` endpoint locally.
+Keep its allowed widths and qualities aligned with the Next.js image configuration.
+Confirm optimized cover requests return an image after every deployment; a successful
+request to the original PNG does not verify the optimization endpoint.
+
 ## Deployment checks
 
 1. Confirm the build lists both services and the home page loads.
