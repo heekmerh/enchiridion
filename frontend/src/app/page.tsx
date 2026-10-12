@@ -41,10 +41,10 @@ export default function Home() {
           {/* Floating Medical Icons */}
           <div className={styles.floatingIcons}>
             <div className={styles.icon1}>
-              <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+              <svg aria-hidden="true" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
             </div>
             <div className={styles.icon2}>
-              <svg width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" strokeOpacity="0.8" strokeWidth="0.5"><circle cx="50" cy="50" r="30" /><circle cx="50" cy="50" r="15" /><path d="M50 10 L50 90 M10 50 L90 50" /></g></svg>
+              <svg aria-hidden="true" width="120" height="120" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" strokeOpacity="0.8" strokeWidth="0.5"><circle cx="50" cy="50" r="30" /><circle cx="50" cy="50" r="15" /><path d="M50 10 L50 90 M10 50 L90 50" /></g></svg>
             </div>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function Home() {
           {/* Decorative heart icon from reference */}
           <div className={styles.floatingIcons}>
             <div className={styles.icon3}>
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+              <svg aria-hidden="true" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
             </div>
           </div>
         </section>

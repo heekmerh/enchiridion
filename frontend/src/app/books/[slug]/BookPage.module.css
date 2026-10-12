@@ -386,7 +386,7 @@
     content: "✓";
     position: absolute;
     color: white;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     left: 50%;
     top: 50%;
@@ -594,3 +594,4 @@
         flex-direction: column;
     }
 }
+.heroInfo { min-width: 0; max-width: 100%; }

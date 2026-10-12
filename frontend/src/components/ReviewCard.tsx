@@ -14,15 +14,15 @@ export default function ReviewCard({ review }: ReviewCardProps) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.rating}>
+            <div className={styles.rating} role="img" aria-label={`${rating} out of 5 stars`}>
                 {Array.from({ length: 5 }).map((_, i) => (
-                    <span key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
+                    <span aria-hidden="true" key={i} className={i < rating ? styles.starFilled : styles.starEmpty}>
                         ★
                     </span>
                 ))}
             </div>
             <p className={styles.text}>"{displayText}"</p>
-            <Link href="/reviews" className={styles.readMore}>Read More</Link>
+            <Link href="/reviews" className={styles.readMore} aria-label={`Read more of ${name}’s review`}>Read More</Link>
 
             <div className={styles.author}>
                 <div className={styles.avatarPlaceholder}>{name.charAt(0)}</div>

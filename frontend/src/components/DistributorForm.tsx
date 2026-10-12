@@ -15,6 +15,7 @@ const states = [
 
 export default function DistributorForm() {
     const [isLoading, setIsLoading] = useState(false);
+    const [submitError, setSubmitError] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [formShake, setFormShake] = useState(false);
     const [showErrorHint, setShowErrorHint] = useState(false);
@@ -38,6 +39,7 @@ export default function DistributorForm() {
             return;
         }
 
+        setSubmitError("");
         const token = await getAccessToken();
         const refCode = localStorage.getItem("enchiridion_user_ref") || localStorage.getItem("enchiridion_ref");
 
@@ -71,7 +73,7 @@ export default function DistributorForm() {
 
     if (isSubmitted) {
         return (
-            <div className={styles.successState}>
+            <div role="status" className={styles.successState}>
                 <div className={styles.successIcon}>✓</div>
                 <h3>Application Received</h3>
                 <p>One of our Regional Directors will contact you via WhatsApp/Phone shortly.</p>
@@ -85,9 +87,10 @@ export default function DistributorForm() {
                 className={`${styles.leadForm} ${formShake ? styles.shake : ""}`}
                 onSubmit={handleSubmit}
             >
+                {submitError && <p role="alert" className="error-summary">{submitError}</p>}
                 <div className={styles.formField}>
                     <label htmlFor="distributorform-field-1">Full Name</label>
-                    <input id="distributorform-field-1"
+                    <input id="distributorform-field-1" autoComplete="name"
                         type="text"
                         required
                         value={formData.name}
@@ -97,7 +100,7 @@ export default function DistributorForm() {
                 </div>
                 <div className={styles.formField}>
                     <label htmlFor="distributorform-field-2">Phone Number</label>
-                    <input id="distributorform-field-2"
+                    <input id="distributorform-field-2" autoComplete="tel"
                         type="tel"
                         required
                         value={formData.phone}
@@ -131,7 +134,7 @@ export default function DistributorForm() {
                 {!formData.sameAsPhone && (
                     <div className={styles.formField}>
                         <label htmlFor="distributorform-field-3">WhatsApp Number</label>
-                        <input id="distributorform-field-3"
+                        <input id="distributorform-field-3" autoComplete="tel"
                             type="tel"
                             required
                             value={formData.whatsapp}
@@ -142,7 +145,7 @@ export default function DistributorForm() {
                 )}
                 <div className={styles.formField}>
                     <label htmlFor="distributorform-field-4">Location (State)</label>
-                    <select id="distributorform-field-4"
+                    <select id="distributorform-field-4" autoComplete="address-level1"
                         required
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
@@ -156,6 +159,8 @@ export default function DistributorForm() {
                         <input
                             type="checkbox"
                             id="acceptedTerms"
+                            aria-invalid={showErrorHint}
+                            aria-describedby={showErrorHint ? "distributor-terms-error" : undefined}
                             checked={acceptedTerms}
                             onChange={(e) => {
                                 setAcceptedTerms(e.target.checked);
@@ -166,7 +171,7 @@ export default function DistributorForm() {
                             I agree to the Enchiridion Distributor <button type="button" className={styles.termsLink} onClick={() => setShowTermsModal(true)}>Terms & Conditions</button>.
                         </label>
                     </div>
-                    {showErrorHint && <span className={styles.errorHint}>Please accept the terms to proceed.</span>}
+                    {showErrorHint && <span id="distributor-terms-error" role="alert" className={styles.errorHint}>Please accept the terms to proceed.</span>}
                 </div>
                 <button
                     type="submit"
@@ -184,7 +189,7 @@ export default function DistributorForm() {
                             <h2>Distributor Terms & Conditions</h2>
                             <button className={styles.closeModal} aria-label="Close terms" onClick={() => setShowTermsModal(false)}>&times;</button>
                         </div>
-                        <div className={styles.modalBody}>
+                        <div className={styles.modalBody} tabIndex={0} role="region" aria-label="Distributor terms">
                             <div className={styles.termsContent}>
                                 <h3>1. Minimum Order Quantity (MOQ)</h3>
                                 <p>Distributors must maintain a minimum opening order of 10 copies of the Enchiridion to qualify for wholesale pricing.</p>

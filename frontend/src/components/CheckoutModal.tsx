@@ -27,7 +27,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     });
     const [selectedState, setSelectedState] = useState<StateDelivery | null>(null);
     const [paymentBusy, setPaymentBusy] = useState(false);
-    const dialogRef = useDialog(isOpen, onClose, !paymentBusy);
+    const dialogRef = useDialog(isOpen && !paymentBusy, onClose);
     const [paymentError, setPaymentError] = useState("");
     const [bookPrice, setBookPrice] = useState<number | null>(null);
     const [pendingPayment, setPendingPayment] = useState<{ transaction_id: number; tx_ref: string; email: string } | null>(null);
@@ -189,7 +189,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
     return (
         <div className={styles.overlay}>
-            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Book checkout" tabIndex={-1} className={styles.modal}>
+            <div ref={dialogRef} role="dialog" aria-modal={!paymentBusy} aria-label="Book checkout" tabIndex={-1} className={styles.modal}>
                 <button className={styles.closeBtn} disabled={paymentBusy} onClick={onClose} aria-label="Close checkout">&times;</button>
 
                 {paymentError && <p role="alert">{paymentError}</p>}
@@ -201,7 +201,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                         <form onSubmit={handleShippingSubmit} className={styles.form}>
                             <div className={styles.field}>
                                 <label htmlFor="checkoutmodal-field-1">Full Name</label>
-                                <input id="checkoutmodal-field-1"
+                                <input id="checkoutmodal-field-1" autoComplete="name"
                                     type="text"
                                     required
                                     minLength={3}
@@ -214,12 +214,12 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                             <div className={styles.field}>
                                 <label htmlFor="checkoutmodal-field-2">Country</label>
-                                <input id="checkoutmodal-field-2" type="text" value="Nigeria" readOnly className={styles.readOnly} />
+                                <input id="checkoutmodal-field-2" autoComplete="country-name" type="text" value="Nigeria" readOnly className={styles.readOnly} />
                             </div>
 
                             <div className={styles.field}>
                                 <label htmlFor="checkout-state">State</label>
-                                <select id="checkout-state" required value={formData.state}
+                                <select id="checkout-state" autoComplete="address-level1" required value={formData.state}
                                     onChange={event => setFormData({ ...formData, state: event.target.value })}>
                                     <option value="">Select your state</option>
                                     {NIGERIAN_STATES.map(state => <option key={state.name} value={state.name}>{state.name}</option>)}
@@ -228,7 +228,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                             <div className={styles.field}>
                                 <label htmlFor="checkoutmodal-field-3">City</label>
-                                <input id="checkoutmodal-field-3"
+                                <input id="checkoutmodal-field-3" autoComplete="address-level2"
                                     type="text"
                                     required
                                     minLength={2}
@@ -239,7 +239,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                             <div className={styles.field}>
                                 <label htmlFor="checkoutmodal-field-4">Apartment Number / Detailed Address</label>
-                                <input id="checkoutmodal-field-4"
+                                <input id="checkoutmodal-field-4" autoComplete="street-address"
                                     type="text"
                                     required
                                     placeholder="Flat 5, Block A, etc."
@@ -251,7 +251,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                             <div className={styles.row}>
                                 <div className={styles.field}>
                                     <label htmlFor="checkoutmodal-field-5">Phone Number</label>
-                                    <input id="checkoutmodal-field-5"
+                                    <input id="checkoutmodal-field-5" autoComplete="tel" aria-describedby="shipping-phone-hint"
                                         type="tel"
                                         required
                                         pattern="^\+234\d{10}$"
@@ -259,10 +259,11 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                         value={formData.phone}
                                         onChange={e => setFormData({ ...formData, phone: e.target.value })}
                                     />
+                                    <p id="shipping-phone-hint">Use +234 followed by 10 digits, for example +2348000000000.</p>
                                 </div>
                                 <div className={styles.field}>
                                     <label htmlFor="checkoutmodal-field-6">Email</label>
-                                    <input id="checkoutmodal-field-6"
+                                    <input id="checkoutmodal-field-6" autoComplete="email"
                                         type="email"
                                         required
                                         value={formData.email}
@@ -372,11 +373,11 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                 onClick={payWithFlutterwave}
                                 disabled={paymentBusy || bookPrice === null}
                             >
-                                <i className="fas fa-lock" style={{ marginRight: '10px' }}></i>
+                                <i aria-hidden="true" className="fas fa-lock" style={{ marginRight: '10px' }}></i>
                                 {paymentBusy ? "Confirming payment..." : pendingPayment ? "Retry Confirmation" : "Pay Securely with Flutterwave"}
                             </button>
                             <p className={styles.paymentNotice}>
-                                <i className="fas fa-shield-alt"></i> Payments are processed securely via Flutterwave.
+                                <i aria-hidden="true" className="fas fa-shield-alt"></i> Payments are processed securely via Flutterwave.
                             </p>
                         </div>
                         <button className={styles.backBtn} disabled={paymentBusy || pendingPayment !== null} onClick={() => setStep("delivery")}>Back</button>

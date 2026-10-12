@@ -79,7 +79,8 @@ export default function AboutPage() {
     const handleViewSample = () => {
         if (isUnlocked) {
             // Scroll directly to preview
-            previewRef.current?.scrollIntoView({ behavior: "smooth" });
+            previewRef.current?.focus({ preventScroll: true });
+            previewRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
             // Log tracking event
             const refCode = localStorage.getItem("enchiridion_ref") || "organic";
             logActivity("Sample View", refCode);
@@ -94,7 +95,8 @@ export default function AboutPage() {
         setIsUnlocked(true);
         // Add a slight delay to allow modal to close before scrolling
         setTimeout(() => {
-            previewRef.current?.scrollIntoView({ behavior: "smooth" });
+            previewRef.current?.focus({ preventScroll: true });
+            previewRef.current?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
         }, 300);
     };
 
@@ -258,19 +260,19 @@ export default function AboutPage() {
                     <h2 className="serif">What You Gain</h2>
                     <div className={styles.grid}>
                         <div className={styles.valueCard}>
-                            <h4>Confidence</h4>
+                            <h3>Confidence</h3>
                             <p>Approach patients more systematically and confidently.</p>
                         </div>
                         <div className={styles.valueCard}>
-                            <h4>Decision Making</h4>
+                            <h3>Decision Making</h3>
                             <p>Improve clinical reasoning and decision-making.</p>
                         </div>
                         <div className={styles.valueCard}>
-                            <h4>Efficiency</h4>
+                            <h3>Efficiency</h3>
                             <p>Save time during busy clinical duties.</p>
                         </div>
                         <div className={styles.valueCard}>
-                            <h4>Success</h4>
+                            <h3>Success</h3>
                             <p>Strengthen understanding for exams and assessments.</p>
                         </div>
                     </div>
@@ -299,7 +301,7 @@ export default function AboutPage() {
                         <div className={styles.scrollIndicator}>
                             <p>{isUnlocked ? "Read a Preview Below" : "Unlock Preview Below"}</p>
                             <div className={styles.arrowDown}>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
                                 </svg>
                             </div>
@@ -307,7 +309,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* EMBEDDED PREVIEW */}
-                    <div className={styles.previewSection} ref={previewRef}>
+                    <div className={styles.previewSection} ref={previewRef} tabIndex={-1} role="region" aria-label="Sample chapter preview">
                         <div className={styles.previewHeader}>
                             <h3>Sample Chapter Preview</h3>
                             {isUnlocked && (
@@ -318,7 +320,7 @@ export default function AboutPage() {
                                     className={styles.fullscreenLink}
                                 >
                                     <span>View Fullscreen</span>
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
                                     </svg>
                                 </a>
@@ -339,12 +341,12 @@ export default function AboutPage() {
                                 </div>
                                 <div className={styles.unlockOverlay}>
                                     <div className={styles.unlockIcon}>
-                                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <svg aria-hidden="true" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                                             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                                         </svg>
                                     </div>
-                                    <h4>Sample Content Locked</h4>
+                                    <h3>Sample Content Locked</h3>
                                     <p>Please enter your email to unlock the full sample chapter and start reading today.</p>
                                     <button className={styles.unlockBtn} onClick={() => setShowEmailGate(true)}>
                                         Unlock Sample Now

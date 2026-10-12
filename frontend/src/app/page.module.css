@@ -36,7 +36,7 @@
   background-size: cover;
   background-position: center;
   z-index: -1;
-  animation: heartBeat 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: heartBeat 1.2s 1 cubic-bezier(0.215, 0.61, 0.355, 1);
   will-change: transform;
 }
 
@@ -73,7 +73,7 @@
   background-size: 600px 600px;
   opacity: 0.1;
   z-index: -1;
-  animation: threadShift 30s linear infinite;
+  animation: threadShift 4s linear 1;
 }
 
 @keyframes threadShift {
@@ -98,7 +98,7 @@
   opacity: 0.6;
   pointer-events: none;
   z-index: -1;
-  animation: ribbonWave 20s ease-in-out infinite;
+  animation: ribbonWave 4s ease-in-out 1;
 }
 
 @keyframes ribbonWave {
@@ -126,7 +126,7 @@
   opacity: 0.8;
   z-index: 0;
   pointer-events: none;
-  animation: auroraFlow 8s ease-in-out infinite alternate;
+  animation: auroraFlow 4s ease-in-out 1 alternate;
 }
 
 @keyframes auroraFlow {
@@ -164,7 +164,7 @@
   filter: blur(80px);
   pointer-events: none;
   z-index: -1;
-  animation: ambientGlowPulse 18s ease-in-out infinite alternate;
+  animation: ambientGlowPulse 4s ease-in-out 1 alternate;
 }
 
 @keyframes ambientGlowPulse {
@@ -186,7 +186,7 @@
   filter: blur(1px) drop-shadow(0 0 10px rgba(60, 100, 255, 0.6));
   pointer-events: none;
   z-index: 0;
-  animation: smokeFloat 20s ease-in-out infinite;
+  animation: smokeFloat 4s ease-in-out 1;
 }
 
 @keyframes smokeFloat {
@@ -225,7 +225,7 @@
     radial-gradient(ellipse at 20% 80%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 20%, rgba(13, 148, 136, 0.1) 0%, transparent 50%),
     url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='1'%3E%3Cpath d='M50 10 L50 90 M10 50 L90 50 M25 25 L75 75 M75 25 L25 75'/%3E%3Ccircle cx='50' cy='50' r='30'/%3E%3Ccircle cx='50' cy='50' r='15'/%3E%3C/g%3E%3C/svg%3E");
-  animation: gradientShift 15s ease-in-out infinite;
+  animation: gradientShift 4s ease-in-out 1;
 }
 
 .hero::after {
@@ -240,7 +240,7 @@
     radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 2%),
     radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.06) 0%, transparent 1.5%),
     radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 1%);
-  animation: floatParticles 20s linear infinite;
+  animation: floatParticles 4s linear 1;
   pointer-events: none;
 }
 
@@ -337,7 +337,7 @@
   font-size: clamp(1.25rem, 5vw, 2.5rem);
   /* Refined fluid sizing */
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-  animation: titlePulse 4s ease-in-out infinite;
+  animation: titlePulse 4s ease-in-out 1;
 }
 
 @keyframes titlePulse {
@@ -450,7 +450,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: carouselScroll 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: carouselScroll 4s cubic-bezier(0.4, 0, 0.2, 1) 1;
 }
 
 .rotatingText span {
@@ -773,7 +773,7 @@
   color: var(--color-red);
   filter: blur(0.3px);
   /* Subtle blur for translucency */
-  animation: floatIcon 12s ease-in-out infinite alternate;
+  animation: floatIcon 4s ease-in-out 1 alternate;
 }
 
 .icon1 svg,
@@ -793,7 +793,7 @@
   top: 65%;
   right: 12%;
   transform: rotate(15deg);
-  animation-duration: 9s;
+  animation-duration: 4s;
   animation-delay: -2s;
 }
 
@@ -801,7 +801,7 @@
   top: 40%;
   left: 8%;
   transform: rotate(-5deg);
-  animation-duration: 15s;
+  animation-duration: 4s;
   animation-delay: -4s;
 }
 
@@ -831,15 +831,15 @@
     transform: scale(0.8);
   }
 }
-/* Let the hero grow with text zoom instead of compressing it into a circle. */
-.heroCircleContainer { aspect-ratio: auto; min-height: 520px; border-radius: 32px; padding: 40px 32px; }
+/* Preserve the oval silhouette while allowing the panel to grow with text zoom. */
+.heroCircleContainer { aspect-ratio: auto; min-height: 520px; border-radius: 50%; padding: 64px 48px; }
 .hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; animation: none; }
 .heroDescription { font-size: 1rem; max-width: 100%; }
 .heroActions { flex-wrap: wrap; }
 .primaryBtn, .primaryBtn:hover { background: #bd1230; color: white; }
 @media (max-width: 640px) {
  .hero { min-height: auto; padding: 64px 16px; }
- .heroCircleContainer { width: 100%; min-height: 0; padding: 32px 24px; border-radius: 24px; }
+ .heroCircleContainer { width: 100%; min-height: 0; padding: 64px 32px; border-radius: 50%; }
  .hero h1 { font-size: 2rem; }
  .heroDescription { font-size: 1rem; max-width: 100%; }
  .heroActions a { width: 100% !important; font-size: 1rem !important; }

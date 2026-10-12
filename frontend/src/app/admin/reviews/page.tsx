@@ -8,15 +8,19 @@ import { getAccessToken } from "@/lib/supabase";
 
 export default function AdminReviewsPage() {
     const [reviews, setReviews] = useState<Review[]>([]);
+    const [error, setError] = useState<string | null>(null);
+    const [message, setMessage] = useState("");
+    const [moderating, setModerating] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchAllReviewsForAdmin = useCallback(async () => {
         setIsLoading(true);
+        setError(null);
         try {
             const data = await manageReviews('FETCH', { admin: true });
             setReviews(data);
         } catch (error) {
-            console.error('Failed to fetch reviews:', error);
+            setError("Reviews could not be loaded. Use Refresh Reviews to try again.");
         } finally {
             setIsLoading(false);
         }
@@ -27,8 +31,11 @@ export default function AdminReviewsPage() {
     }, [fetchAllReviewsForAdmin]);
 
     const adminModerateReview = async (id: string, newStatus: 'approved' | 'rejected') => {
-        const token = await getAccessToken();
+        setError(null);
+        setMessage("");
+        setModerating(id);
         try {
+            const token = await getAccessToken();
             const res = await fetch('/api/reviews', {
                 method: 'PUT',
                 headers: {
@@ -38,14 +45,19 @@ export default function AdminReviewsPage() {
                 body: JSON.stringify({ id, status: newStatus }),
             });
 
+            if (!res.ok) throw new Error("Moderation failed");
             if (res.ok) {
+                setMessage(`Review by ${reviews.find(review => review.id === id)?.name ?? "reviewer"} ${newStatus}.`);
+                requestAnimationFrame(() => document.getElementById(`moderation-${id}`)?.focus());
                 // Update local state for immediate feedback (Live Sync)
                 setReviews((prev) =>
                     prev.map((r) => (r.id === id ? { ...r, status: newStatus } : r))
                 );
             }
         } catch (error) {
-            console.error('Failed to moderate review:', error);
+            setError("The review could not be updated. Please try again.");
+        } finally {
+            setModerating(null);
         }
     };
 
@@ -69,17 +81,20 @@ export default function AdminReviewsPage() {
                 <p>Strict Validation Mode: Audit and moderate community testimonials.</p>
             </header>
 
+            {error && <p role="alert">{error}</p>}
+            <p role="status">{isLoading ? "Loading reviews…" : message}</p>
             <section className={styles.section}>
-                <div className={styles.tableWrapper}>
+                <div role="region" aria-label="Review moderation table" tabIndex={0} className={styles.tableWrapper}>
                     <table className={styles.table}>
+                        <caption className="sr-only">Community reviews and moderation actions</caption>
                         <thead>
                             <tr>
-                                <th>Date</th>
-                                <th>Reviewer</th>
-                                <th>Rating</th>
-                                <th>Content</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Reviewer</th>
+                                <th scope="col">Rating</th>
+                                <th scope="col">Content</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -89,7 +104,7 @@ export default function AdminReviewsPage() {
                                 </tr>
                             ) : (
                                 reviews.map((review) => (
-                                    <tr key={review.id}>
+                                    <tr key={review.id} id={`moderation-${review.id}`} tabIndex={-1}>
                                         <td className={styles.dateCol}>
                                             {new Date(review.createdAt).toLocaleDateString()}
                                         </td>
@@ -112,12 +127,16 @@ export default function AdminReviewsPage() {
                                             {review.status === 'pending' ? (
                                                 <div className={styles.btnGroup}>
                                                     <button
+                                                        disabled={moderating !== null}
+                                                        aria-label={`Approve review by ${review.name}`}
                                                         onClick={() => adminModerateReview(review.id, 'approved')}
                                                         className={styles.approveBtn}
                                                     >
                                                         Approve
                                                     </button>
                                                     <button
+                                                        disabled={moderating !== null}
+                                                        aria-label={`Reject review by ${review.name}`}
                                                         onClick={() => adminModerateReview(review.id, 'rejected')}
                                                         className={styles.rejectBtn}
                                                     >
@@ -126,7 +145,9 @@ export default function AdminReviewsPage() {
                                                 </div>
                                             ) : (
                                                 <button
-                                                    onClick={() => adminModerateReview(review.id, review.status === 'approved' ? 'rejected' : 'approved')}
+                                                    disabled={moderating !== null}
+                                                        aria-label={`${review.status === "approved" ? "Reject" : "Approve"} review by ${review.name}`}
+                                                        onClick={() => adminModerateReview(review.id, review.status === 'approved' ? 'rejected' : 'approved')}
                                                     className={styles.undoBtn}
                                                 >
                                                     {review.status === 'approved' ? 'Reject' : 'Approve'}

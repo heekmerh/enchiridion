@@ -61,7 +61,7 @@
     opacity: 0.7;
     z-index: 0;
     pointer-events: none;
-    animation: neonPulse 8s infinite alternate ease-in-out;
+    animation: neonPulse 4s 1 alternate ease-in-out;
 }
 
 .heroImage::before {
@@ -235,7 +235,7 @@
 
 /* VISION BOX */
 .visionBox {
-    background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%);
     padding: 40px;
     border-radius: 12px;
     color: white;
@@ -244,6 +244,7 @@
 }
 
 .visionBox h3 {
+    color: #ffffff;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
@@ -275,7 +276,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.valueCard h4 {
+.valueCard h3 {
     color: var(--accent-primary);
     font-size: 1.2rem;
     margin-bottom: 1rem;
@@ -458,7 +459,7 @@
 }
 
 .arrowDown {
-    animation: bounce 2s infinite;
+    animation: bounce 2s 1;
 }
 
 @keyframes bounce {
@@ -540,7 +541,7 @@
 .unlockIcon {
     margin-bottom: 1.5rem;
     color: var(--accent-primary);
-    animation: pulse 2s infinite;
+    animation: pulse 2s 1;
 }
 
 @keyframes pulse {
@@ -560,7 +561,7 @@
     }
 }
 
-.unlockOverlay h4 {
+.unlockOverlay h3 {
     color: white;
     font-size: 1.5rem;
     margin-bottom: 1rem;

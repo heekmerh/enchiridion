@@ -221,7 +221,8 @@ export default function PartnerDashboard() {
     const [celebrationTier, setCelebrationTier] = useState<number | null>(null);
     const [showRules, setShowRules] = useState(false);
     const rulesRef = useDialog(showRules, () => setShowRules(false));
-    const rankRef = useDialog(!!showRankUp, () => setShowRankUp(null));
+    const rankRef = useDialog(!!showRankUp && !showCelebration, () => setShowRankUp(null));
+    const celebrationRef = useDialog(showCelebration, () => setShowCelebration(false));
     const prevReferralsRef = useRef(0);
     const revenueCardRef = useRef<HTMLDivElement>(null);
     const lifetimeCardRef = useRef<HTMLDivElement>(null);
@@ -328,12 +329,12 @@ export default function PartnerDashboard() {
             setCelebrationTier(100);
             setShowCelebration(true);
             applyMilestone(100);
-            setTimeout(() => setShowCelebration(false), 8000);
+
         } else if (currentRefs >= 50 && prevRefs < 50) {
             setCelebrationTier(50);
             setShowCelebration(true);
             applyMilestone(50);
-            setTimeout(() => setShowCelebration(false), 5000);
+
         }
 
         prevReferralsRef.current = currentRefs;
@@ -378,13 +379,13 @@ export default function PartnerDashboard() {
                         <h1>Welcome, {partnerData.username}</h1>
                         <LegacyBadge rank={partnerData.legacy.rank} />
                         <button className={styles.logoutBtn} onClick={handleLogout} title="Log out">
-                            <i className="fas fa-sign-out-alt"></i> Logout
+                            <i aria-hidden="true" className="fas fa-sign-out-alt"></i> Logout
                         </button>
                     </div>
                     <p>
                         Track your impact and manage your rewards.
                         <Link href="/rewards#pantheon" className={styles.legacyWallLink}>
-                            View the Legacy Wall <i className="fas fa-external-link-alt"></i>
+                            View the Legacy Wall <i aria-hidden="true" className="fas fa-external-link-alt"></i>
                         </Link>
                     </p>
                 </div>
@@ -407,7 +408,7 @@ export default function PartnerDashboard() {
                             </div>
                             <div className={styles.masteryCTA}>
                                 <button className={styles.referralBtn} onClick={handleCopy}>
-                                    {copied ? "Link Copied!" : "Copy My Referral Link"} <i className="fas fa-copy"></i>
+                                    {copied ? "Link Copied!" : "Copy My Referral Link"} <i aria-hidden="true" className="fas fa-copy"></i>
                                 </button>
                                 <p style={{ margin: 0, color: '#94a3b8', fontSize: '0.9rem' }}>
                                     <b>Next Goal:</b> Refer your first friend to earn <b>5.0 Points</b>
@@ -422,7 +423,7 @@ export default function PartnerDashboard() {
                 {/* Stats Grid */}
                 <div className={styles.statsGrid}>
                     <div className={`${styles.statCard} ${styles.glassCard}`}>
-                        <div className={styles.statIcon}><i className="fas fa-users"></i></div>
+                        <div className={styles.statIcon}><i aria-hidden="true" className="fas fa-users"></i></div>
                         <div className={styles.statValue}>{partnerData.stats.totalReferrals}</div>
                         <div className={styles.statLabel}>Total Referrals</div>
                         {partnerData.stats.totalReferrals === 0 && (
@@ -430,25 +431,24 @@ export default function PartnerDashboard() {
                         )}
                     </div>
                     <div className={`${styles.statCard} ${styles.glassCard}`}>
-                        <div className={styles.statIcon}><i className="fas fa-star"></i></div>
+                        <div className={styles.statIcon}><i aria-hidden="true" className="fas fa-star"></i></div>
                         <div className={styles.statValue}>
                             {partnerData.stats.pointsEarned.toFixed(1)}
-                            <i
-                                className={`fas fa-info-circle ${styles.infoIcon}`}
-                                onClick={() => setShowRules(true)}
-                                title="How points work"
-                            ></i>
+                            <button type="button" className={styles.infoIcon} aria-label="How points work"
+                                aria-expanded={showRules} aria-controls="referral-rules" onClick={() => setShowRules(true)}>
+                                <i aria-hidden="true" className="fas fa-info-circle" />
+                            </button>
                         </div>
                         <div className={styles.statLabel}>Points Earned</div>
                     </div>
                     <div className={`${styles.statCard} ${styles.glassCard}`}>
-                        <div className={styles.statIcon}><i className="fas fa-hourglass-half"></i></div>
+                        <div className={styles.statIcon}><i aria-hidden="true" className="fas fa-hourglass-half"></i></div>
                         <div className={styles.statValue}>{partnerData.stats.pendingPoints.toFixed(1)}</div>
                         <div className={styles.statLabel}>Pending Points</div>
                     </div>
                     <div className={`${styles.statCard} ${styles.glassCard} ${showCashbackPulse ? styles.walletPulse : ""}`} ref={revenueCardRef}>
                         {showCashbackPulse && <div className={styles.cashbackChip}>+1.0 Cash-back Awarded</div>}
-                        <div className={styles.statIcon}><i className="fas fa-naira-sign"></i></div>
+                        <div className={styles.statIcon}><i aria-hidden="true" className="fas fa-naira-sign"></i></div>
                         <div className={styles.statValue}>₦{partnerData.stats.accruedRevenue.toLocaleString()}</div>
                         <div className={styles.statLabel}>Accrued Balance</div>
                     </div>
@@ -456,7 +456,7 @@ export default function PartnerDashboard() {
                         className={`${styles.statCard} ${styles.glassCard} ${totalRefs >= 100 ? styles.elitePulse : ''}`}
                         ref={lifetimeCardRef}
                     >
-                        <div className={styles.statIcon}><i className="fas fa-history"></i></div>
+                        <div className={styles.statIcon}><i aria-hidden="true" className="fas fa-history"></i></div>
                         <div className={styles.statValue}>₦{(partnerData.stats.lifetimeEarnings || 0).toLocaleString()}</div>
                         <div className={styles.statLabel}>Lifetime Earnings</div>
                     </div>
@@ -464,13 +464,13 @@ export default function PartnerDashboard() {
 
                 {/* Share Section */}
                 <div className={styles.card}>
-                    <h3>Share Your Link</h3>
+                    <h2>Share Your Link</h2>
                     <div className={styles.shareBox}>
                         <p className={styles.shareLabel}>Copy & Paste or Click & Share</p>
                         <div className={styles.linkGroup}>
                             <div className={styles.linkInput}>{referralLink}</div>
                             <button className={styles.copyBtn} onClick={handleCopy}>
-                                {copied ? "Copied!" : "Copy"} <i className="fas fa-copy"></i>
+                                {copied ? "Copied!" : "Copy"} <i aria-hidden="true" className="fas fa-copy"></i>
                             </button>
                         </div>
 
@@ -479,21 +479,21 @@ export default function PartnerDashboard() {
                             <div className={styles.socialIcons}>
                                 <button
                                     onClick={() => handleSocialShare('whatsapp', whatsappUrl)}
-                                    className={`${styles.socialBtn} ${styles.whatsapp}`}
+                                    aria-label="Share referral link on WhatsApp" className={`${styles.socialBtn} ${styles.whatsapp}`}
                                 >
-                                    <i className="fab fa-whatsapp"></i>
+                                    <i aria-hidden="true" className="fab fa-whatsapp"></i>
                                 </button>
                                 <button
                                     onClick={() => handleSocialShare('twitter', `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out Enchiridion! " + referralLink)}`)}
-                                    className={`${styles.socialBtn} ${styles.twitter}`}
+                                    aria-label="Share referral link on X" className={`${styles.socialBtn} ${styles.twitter}`}
                                 >
-                                    <i className="fab fa-x-twitter"></i>
+                                    <i aria-hidden="true" className="fab fa-x-twitter"></i>
                                 </button>
                                 <button
                                     onClick={() => handleSocialShare('facebook', `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralLink)}`)}
-                                    className={`${styles.socialBtn} ${styles.facebook}`}
+                                    aria-label="Share referral link on Facebook" className={`${styles.socialBtn} ${styles.facebook}`}
                                 >
-                                    <i className="fab fa-facebook-f"></i>
+                                    <i aria-hidden="true" className="fab fa-facebook-f"></i>
                                 </button>
                             </div>
                         </div>
@@ -517,7 +517,7 @@ export default function PartnerDashboard() {
 
                     <div className={styles.milestoneSections}>
                         <div className={styles.milestoneTableCard}>
-                            <h3>Milestone Tracker</h3>
+                            <h2>Milestone Tracker</h2>
                             <div className={styles.refereeList}>
                                 {partnerData.refereeProgress.map((ref: any) => (
                                     <div key={ref.email} className={styles.refereeRow}>
@@ -527,7 +527,7 @@ export default function PartnerDashboard() {
                                                 className={styles.nudgeBtn}
                                                 onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(`Hey! I saw you joined Enchiridion! If you grab the book, we both get closer to our goals! ${referralLink}`)}`, '_blank')}
                                             >
-                                                <i className="fab fa-whatsapp"></i> Nudge
+                                                <i aria-hidden="true" className="fab fa-whatsapp"></i> Nudge
                                             </button>
                                         </div>
                                         <div className={styles.miniMilestones}>
@@ -544,13 +544,13 @@ export default function PartnerDashboard() {
                                     </div>
                                 ))}
                                 {partnerData.refereeProgress.length === 0 && (
-                                    <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>No active milestones yet. Share your link to start tracking!</p>
+                                    <p style={{ color: '#64748b', fontSize: '0.9rem' }}>No active milestones yet. Share your link to start tracking!</p>
                                 )}
                             </div>
                         </div>
 
                         <div className={styles.milestoneTableCard}>
-                            <h3>Network Tree (Tier-2)</h3>
+                            <h2>Network Tree (Tier-2)</h2>
                             <div className={styles.networkTree}>
                                 <div className={styles.treeItem}>
                                     Network Spread: <b>{partnerData.stats.networkSpreadCount}</b> rewards earned.
@@ -563,7 +563,7 @@ export default function PartnerDashboard() {
                     </div>
 
                     <div className={styles.card}>
-                        <h3>Recent Activity</h3>
+                        <h2>Recent Activity</h2>
                         <div className={styles.activityFeed}>
                             {partnerData.recentActivity.length > 0 ? (
                                 partnerData.recentActivity.slice().reverse().map((act: any, idx: number) => (
@@ -589,7 +589,7 @@ export default function PartnerDashboard() {
 
                 {/* Payout Settings */}
                 <div className={styles.card}>
-                    <h3>Payout Settings</h3>
+                    <h2>Payout Settings</h2>
                     {partnerData.payout.isSaved ? (
                         <div className={styles.savedInfo}>
                             <div className={styles.infoDetails}>
@@ -656,9 +656,9 @@ export default function PartnerDashboard() {
             {showCelebration && (
                 <div className={`${styles.celebrationOverlay} ${celebrationTier === 100 ? styles.eliteOverlay : ''}`}>
                     {renderConfetti(celebrationTier === 100 ? 150 : 50)}
-                    <div className={`${styles.celebrationCard} ${celebrationTier === 100 ? styles.eliteCard : ''}`}>
+                    <div ref={celebrationRef} role="dialog" aria-modal="true" aria-label="Referral milestone reached" tabIndex={-1} className={`${styles.celebrationCard} ${celebrationTier === 100 ? styles.eliteCard : ''}`}>
                         <div className={styles.trophyIcon}>
-                            <i className={`fas ${celebrationTier === 100 ? 'fa-crown' : 'fa-trophy'}`}></i>
+                            <i aria-hidden="true" className={`fas ${celebrationTier === 100 ? 'fa-crown' : 'fa-trophy'}`}></i>
                         </div>
                         <h2>{celebrationTier === 100 ? 'Elite Ambassador Status! 👑' : 'Power Partner Reached! 🎉'}</h2>
                         <p>
@@ -678,19 +678,19 @@ export default function PartnerDashboard() {
             {/* Referral Rules Modal */}
             {showRules && (
                 <div className={styles.rulesOverlay} onClick={() => setShowRules(false)}>
-                    <div ref={rulesRef} role="dialog" aria-modal="true" aria-label="Referral rules" tabIndex={-1} className={styles.rulesCard} onClick={(e) => e.stopPropagation()}>
+                    <div id="referral-rules" ref={rulesRef} role="dialog" aria-modal="true" aria-label="Referral rules" tabIndex={-1} className={styles.rulesCard} onClick={(e) => e.stopPropagation()}>
                         <h2>
                             Referral Rules & Milestones
                             <button className={styles.closeButton} aria-label="Close rules" onClick={() => setShowRules(false)}>&times;</button>
                         </h2>
 
                         <div className={styles.ruleSection}>
-                            <h3>How it Works</h3>
+                            <h2>How it Works</h2>
                             <p>Points are earned for <b>Verified Actions</b> taken by your friends, not just for sharing links. 1 Point = ₦100.</p>
                         </div>
 
                         <div className={styles.ruleSection}>
-                            <h3>Earning Milestones</h3>
+                            <h2>Earning Milestones</h2>
                             <ul>
                                 <li><b>Partner Registration (+0.1 Pts):</b> Awarded when your friend joins and verifies their account.</li>
                                 <li><b>Distributor Registration (+0.1 Pts):</b> Awarded when your friend registers as a Distributor.</li>
@@ -700,7 +700,7 @@ export default function PartnerDashboard() {
                         </div>
 
                         <div className={styles.ruleSection}>
-                            <h3>Guidelines</h3>
+                            <h2>Guidelines</h2>
                             <ul>
                                 <li>Minimum withdrawal threshold: ₦500.</li>
                                 <li>Self-referrals are prohibited and will result in point reversal.</li>
@@ -717,11 +717,11 @@ export default function PartnerDashboard() {
             <GlobalToast />
 
             {/* Rank Up Celebration Popup */}
-            {showRankUp && (
+            {showRankUp && !showCelebration && (
                 <div className={styles.celebrationOverlay} onClick={handleCloseRankUp}>
                     <div ref={rankRef} role="dialog" aria-modal="true" aria-label="Rank achievement" tabIndex={-1} className={styles.celebrationCard} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.trophyIcon}>
-                            <i className={`fas ${showRankUp.icon}`}></i>
+                            <i aria-hidden="true" className={`fas ${showRankUp.icon}`}></i>
                         </div>
                         <h2>{showRankUp.title}</h2>
 
@@ -757,7 +757,7 @@ export default function PartnerDashboard() {
                         </button>
 
                         <button className={styles.closeCelebrationBtn} aria-label="Close achievement" onClick={handleCloseRankUp}>
-                            <i className="fas fa-times"></i>
+                            <i aria-hidden="true" className="fas fa-times"></i>
                         </button>
                     </div>
                 </div>

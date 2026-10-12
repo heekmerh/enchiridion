@@ -31,8 +31,8 @@ function Unsubscribe() {
     if (!token) {
         return (
             <div className={styles.errorCard} role="status">
-                <i className="fas fa-exclamation-triangle"></i>
-                <h2>Something went wrong</h2>
+                <i aria-hidden="true" className="fas fa-exclamation-triangle"></i>
+                <h1>Something went wrong</h1>
                 <p>This unsubscribe link is incomplete.</p>
                 <Link href="/" className={styles.backHome}>Back to Enchiridion</Link>
             </div>
@@ -41,8 +41,8 @@ function Unsubscribe() {
 
     return (
         <div className={state === "failed" ? styles.errorCard : styles.successCard} role="status">
-            <i className={`fas ${state === "failed" ? "fa-exclamation-triangle" : state === "done" ? "fa-check-circle" : "fa-spinner"}`}></i>
-            <h2>{state === "done" ? "You're unsubscribed" : state === "failed" ? "Something went wrong" : "Updating your preferences"}</h2>
+            <i aria-hidden="true" className={`fas ${state === "failed" ? "fa-exclamation-triangle" : state === "done" ? "fa-check-circle" : "fa-spinner"}`}></i>
+            <h1>{state === "done" ? "You're unsubscribed" : state === "failed" ? "Something went wrong" : "Updating your preferences"}</h1>
             <p>{message}</p>
             <Link href="/" className={styles.backHome}>Back to Enchiridion</Link>
         </div>

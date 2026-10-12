@@ -67,7 +67,7 @@ export default function EmailGateModal({ onSuccess, onClose }: EmailGateModalPro
                         <label htmlFor="gate-email">Professional or Student Email</label>
                         <input
                             type="email"
-                            id="gate-email"
+                            id="gate-email" autoComplete="email"
                             placeholder="doc@example.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}

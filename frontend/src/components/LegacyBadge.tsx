@@ -38,13 +38,14 @@ const LegacyBadge: React.FC<LegacyBadgeProps> = ({ rank, showLabel = true }) => 
     return (
         <div className={`${styles.badgeContainer} ${details.className}`} title={details.label}>
             <div className={styles.iconWrapper}>
-                <i className={`fas ${details.icon}`}></i>
+                <i aria-hidden="true" className={`fas ${details.icon}`}></i>
                 {rank === 'Master' && (
                     <div className={styles.verificationCheck}>
-                        <i className="fas fa-check-circle"></i>
+                        <i aria-hidden="true" className="fas fa-check-circle"></i>
                     </div>
                 )}
             </div>
+            {!showLabel && <span className="sr-only">{details.label}</span>}
             {showLabel && <span className={styles.rankLabel}>{details.label}</span>}
         </div>
     );

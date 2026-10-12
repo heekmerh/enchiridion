@@ -212,8 +212,8 @@ export default function AdminTestConsole() {
             <div className={styles.grid}>
                 <section className={styles.simulation}>
                     <div className={styles.log}>
-                        <h3 className={styles.logTitle}>Execution Log</h3>
-                        <div className={styles.logContent}>
+                        <h2 className={styles.logTitle}>Execution Log</h2>
+                        <div role="log" tabIndex={0} aria-label="Administration activity" className={styles.logContent}>
                             {testLog.map((log, i) => {
                                 const isElite = log.includes("ELITE STATUS UNLOCKED");
                                 return (
@@ -230,7 +230,8 @@ export default function AdminTestConsole() {
                     <div className={styles.auditHeader}>
                         <h2 className={styles.sectionTitle}>Real-Time Sheet Audit</h2>
                         <div className={styles.filterGroup}>
-                            <select
+                            <label htmlFor="payout-filter" className="sr-only">Filter payouts</label>
+                            <select id="payout-filter"
                                 value={payoutFilter}
                                 onChange={(e) => setPayoutFilter(e.target.value)}
                                 className={styles.filterSelect}
@@ -246,23 +247,24 @@ export default function AdminTestConsole() {
                     </div>
 
                     {auditData?.error && (
-                        <div className={styles.errorBanner}>
+                        <div role="alert" className={styles.errorBanner}>
                             <strong>Audit Failed:</strong> {auditData.error}
                         </div>
                     )}
 
                     {auditData?.results && (
-                        <div className={styles.auditTableWrapper}>
+                        <div role="region" aria-label="Referral payout audit" tabIndex={0} className={styles.auditTableWrapper}>
                             <table className={styles.auditTable}>
+                                <caption className="sr-only">Referral balances, calculation checks, and payout actions</caption>
                                 <thead>
                                     <tr>
-                                        <th>Row</th>
-                                        <th>Username</th>
-                                        <th>Points</th>
-                                        <th>Revenue</th>
-                                        <th>Lifetime</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th scope="col">Row</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Points</th>
+                                        <th scope="col">Revenue</th>
+                                        <th scope="col">Lifetime</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -285,7 +287,7 @@ export default function AdminTestConsole() {
 
                                         return (
                                             <tr key={i} className={row.math_ok ? styles.rowOk : styles.rowError}>
-                                                <td style={{ color: '#000', fontWeight: 700 }}>{row.row}</td>
+                                                <td style={{ color: '#000', fontWeight: 700 }}>{row.row}<span className="sr-only">{row.math_ok ? " — calculation verified" : " — calculation mismatch"}</span></td>
                                                 <td style={{ color: '#000', fontWeight: 600 }}>
                                                     {row.username}
                                                     {row.milestone_claimed === 'CLAIMED' && (
@@ -304,8 +306,9 @@ export default function AdminTestConsole() {
                                                                 onClick={() => revertPayout(row.username, row.refCode || "TEST001", row.last_payout_amount)}
                                                                 className={styles.revertBtn}
                                                                 title="Revert Payout"
+                                                                aria-label={`Revert payout for ${row.username}`}
                                                             >
-                                                                <i className="fas fa-rotate-left"></i>
+                                                                <i aria-hidden="true" className="fas fa-rotate-left"></i>
                                                             </button>
                                                         )}
                                                     </div>
@@ -321,7 +324,7 @@ export default function AdminTestConsole() {
                                                         </button>
                                                     ) : (
                                                         <span style={{
-                                                            color: sheetStatus === "COMPLETED" ? "#16a34a" : "#9ca3af",
+                                                            color: sheetStatus === "COMPLETED" ? "#15803d" : "#64748b",
                                                             fontWeight: 600,
                                                             fontSize: '0.875rem',
                                                             display: 'flex',

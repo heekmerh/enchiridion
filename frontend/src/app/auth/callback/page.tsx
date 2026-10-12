@@ -61,8 +61,8 @@ function Callback() {
     if (error) {
         return (
             <div className={styles.errorCard} role="alert">
-                <i className="fas fa-exclamation-triangle"></i>
-                <h2>Sign-in failed</h2>
+                <i aria-hidden="true" className="fas fa-exclamation-triangle"></i>
+                <h1>Sign-in failed</h1>
                 <p>{error}</p>
                 <Link href="/#login" className={styles.backHome}>Try again</Link>
             </div>
@@ -70,8 +70,8 @@ function Callback() {
     }
     return (
         <div className={styles.successCard} role="status">
-            <i className="fas fa-spinner"></i>
-            <h2>Signing you in…</h2>
+            <i aria-hidden="true" className="fas fa-spinner"></i>
+            <h1>Signing you in…</h1>
         </div>
     );
 }

@@ -7,7 +7,7 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://enchiridion.site"),
-  title: "Enchiridion — Modern Medical Reference System",
+  title: { default: "Enchiridion — Modern Medical Reference System", template: "%s | Enchiridion" },
   description: "Digital companion and curated specialty-based medical books for clinicians and students.",
 };
 

@@ -51,15 +51,15 @@ export default function ReviewsFeed() {
                                 <span className={styles.reviewerName}>{review.name}</span>
                                 <span className={styles.jobTitle}> • {review.jobTitle}</span>
                             </div>
-                            <div className={styles.rating}>
+                            <div className={styles.rating} role="img" aria-label={`${review.rating} out of 5 stars`}>
                                 {Array.from({ length: 5 }).map((_, i) => (
-                                    <span key={i} className={i < review.rating ? styles.starFilled : styles.starEmpty}>
+                                    <span aria-hidden="true" key={i} className={i < review.rating ? styles.starFilled : styles.starEmpty}>
                                         ★
                                     </span>
                                 ))}
                             </div>
                         </div>
-                        <i className={`fas fa-chevron-down ${styles.chevron} ${openId === review.id ? styles.chevronOpen : ""}`}></i>
+                        <i aria-hidden="true" className={`fas fa-chevron-down ${styles.chevron} ${openId === review.id ? styles.chevronOpen : ""}`}></i>
                     </button>
 
                     <div id={`review-${review.id}`} hidden={openId !== review.id} className={`${styles.contentWrapper} ${openId === review.id ? styles.contentOpen : ""}`}>

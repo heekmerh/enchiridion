@@ -141,7 +141,7 @@
     margin-bottom: 32px;
 }
 
-.card h3 {
+.card h2 {
     margin-bottom: 24px;
     font-size: 1.25rem;
     color: var(--color-indigo);
@@ -320,7 +320,7 @@
 
 /* Elite Pulse Animation */
 .elitePulse {
-    animation: goldPulse 2s infinite;
+    animation: goldPulse 2s 1;
     border: 2px solid #fbbf24 !important;
 }
 
@@ -386,7 +386,7 @@
 }
 
 .saveBtn {
-    background: #10b981;
+    background: #047857;
     color: white;
     border: none;
     padding: 14px;
@@ -489,7 +489,7 @@
 }
 
 .celebrationCard {
-    background: rgba(255, 255, 255, 0.1);
+    background: #0f172a;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 32px;
@@ -508,7 +508,7 @@
     color: #ffd700;
     margin-bottom: 24px;
     filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
-    animation: float 2s ease-in-out infinite;
+    animation: float 2s ease-in-out 1;
 }
 
 .celebrationCard h2 {
@@ -525,7 +525,7 @@
 }
 
 .viewRevenueBtn {
-    background: #10b981;
+    background: #047857;
     color: white;
     padding: 16px 32px;
     border-radius: 14px;
@@ -667,7 +667,7 @@
 }
 
 .miniBadge.active {
-    background: #10b981;
+    background: #047857;
     color: white;
 }
 
@@ -722,7 +722,7 @@
     background: rgba(251, 191, 36, 0.1) !important;
     color: #fbbf24 !important;
     border: 1px solid rgba(251, 191, 36, 0.3);
-    animation: simplePulse 2s infinite;
+    animation: simplePulse 2s 1;
 }
 
 @keyframes simplePulse {
@@ -806,7 +806,7 @@
     margin-bottom: 24px;
 }
 
-.ruleSection h3 {
+.ruleSection h2 {
     font-size: 1.1rem;
     color: #fbbf24;
     margin-bottom: 12px;
@@ -882,7 +882,7 @@
 
 .activityPoints {
     font-weight: 700;
-    color: #10b981;
+    color: #047857;
     font-size: 0.9rem;
 }
 
@@ -1097,3 +1097,9 @@
     color: white;
 }
 .rulesCard, .celebrationCard { max-width: calc(100vw - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; }
+
+.emptyStateHint { color: #fda4af; }
+.emptyActivity { color: #64748b; }
+.treeItem { color: #1e293b; }
+.refereeHeader { flex-wrap: wrap; gap: 12px; overflow-wrap: anywhere; }
+.miniMilestones { flex-wrap: wrap; }

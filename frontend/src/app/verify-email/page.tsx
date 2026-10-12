@@ -63,24 +63,24 @@ export default function VerifyEmail() {
         <div className={styles.page}>
             <div className={styles.container}>
                 {verified ? (
-                    <div className={styles.successCard}>
-                        <i className="fas fa-check-circle"></i>
-                        <h2>Your email is verified</h2>
+                    <div className={styles.successCard} role="status">
+                        <i aria-hidden="true" className="fas fa-check-circle"></i>
+                        <h1>Your email is verified</h1>
                         <p>Your Enchiridion account is ready. Sign in with the same email and password on the website or in the app.</p>
                         <Link href="/dashboard" className={styles.backHome}>Continue to your account</Link>
                     </div>
                 ) : (
                     <form className={styles.form} onSubmit={verifyCode}>
                         <div className={styles.header}>
-                            <h2>Verify Your Email</h2>
+                            <h1>Verify Your Email</h1>
                             <p>Enter the email address you registered with and the eight-digit code from your verification email.</p>
                         </div>
-                        {error && <div className={styles.error}>{error}</div>}
-                        {message && <div className={styles.message}>{message}</div>}
+                        {error && <div className={styles.error} role="alert">{error}</div>}
+                        {message && <div className={styles.message} role="status">{message}</div>}
                         <div className={styles.field}>
                             <label htmlFor="verification-email">Email</label>
                             <div className={styles.inputGroup}>
-                                <i className="fas fa-envelope"></i>
+                                <i aria-hidden="true" className="fas fa-envelope"></i>
                                 <input id="verification-email" type="email" required value={email}
                                     onChange={event => setEmail(event.target.value)} autoComplete="email" />
                             </div>
@@ -88,7 +88,7 @@ export default function VerifyEmail() {
                         <div className={styles.field}>
                             <label htmlFor="verification-code">Verification code</label>
                             <div className={styles.inputGroup}>
-                                <i className="fas fa-key"></i>
+                                <i aria-hidden="true" className="fas fa-key"></i>
                                 <input id="verification-code" inputMode="numeric" required value={code}
                                     onChange={event => setCode(event.target.value)} autoComplete="one-time-code" />
                             </div>

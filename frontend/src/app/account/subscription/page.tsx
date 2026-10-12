@@ -18,18 +18,30 @@ export default function SubscriptionAccountPage() {
     const { ready, signedIn } = useSession();
     const [current, setCurrent] = useState<CurrentSubscription | null>(null);
     const [marketingOptIn, setMarketingOptIn] = useState<boolean | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [savingPreference, setSavingPreference] = useState(false);
     const [busy, setBusy] = useState(false);
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [loginOpen, setLoginOpen] = useState(false);
 
-    const load = useCallback(() => Promise.all([
-        authorizedFetch("/api/v1/subscription/current").then(response => response.ok ? response.json() : null),
-        authorizedFetch("/api/v1/communications/preferences").then(response => response.ok ? response.json() : null),
-    ]).then(([subscription, preferences]) => {
-        if (subscription) setCurrent(subscription);
-        if (preferences) setMarketingOptIn(preferences.marketing_opt_in);
-    }).catch(() => setError("Your subscription could not be loaded.")), []);
+    const load = useCallback(async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const [subscription, preferences] = await Promise.all([
+                authorizedFetch("/api/v1/subscription/current"),
+                authorizedFetch("/api/v1/communications/preferences"),
+            ]);
+            if (!subscription.ok || !preferences.ok) throw new Error("Load failed");
+            setCurrent(await subscription.json());
+            setMarketingOptIn((await preferences.json()).marketing_opt_in);
+        } catch {
+            setError("Your subscription could not be loaded. Please try again.");
+        } finally {
+            setLoading(false);
+        }
+    }, []);
 
     useEffect(() => {
         if (signedIn) load();
@@ -47,20 +59,34 @@ export default function SubscriptionAccountPage() {
             }
             setMessage((await response.json()).message);
             await load();
+        } catch {
+            setError("The subscription could not be cancelled. Please try again.");
         } finally {
             setBusy(false);
         }
     }
 
     async function updateMarketing(optIn: boolean) {
+        const previous = marketingOptIn;
         setMarketingOptIn(optIn);
-        const response = await authorizedFetch("/api/v1/communications/preferences", {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ marketing_opt_in: optIn }),
-        });
-        if (response.ok) setMarketingOptIn((await response.json()).marketing_opt_in);
-        else setError("Your email preference could not be saved.");
+        setSavingPreference(true);
+        setError(null);
+        setMessage(null);
+        try {
+            const response = await authorizedFetch("/api/v1/communications/preferences", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ marketing_opt_in: optIn }),
+            });
+            if (!response.ok) throw new Error("Save failed");
+            setMarketingOptIn((await response.json()).marketing_opt_in);
+            setMessage("Your email preference has been saved.");
+        } catch {
+            setMarketingOptIn(previous);
+            setError("Your email preference could not be saved. Please try again.");
+        } finally {
+            setSavingPreference(false);
+        }
     }
 
     if (ready && !signedIn) {
@@ -87,7 +113,8 @@ export default function SubscriptionAccountPage() {
                 <h1>Your subscription</h1>
                 {message && <div className={styles.success} role="status">{message}</div>}
                 {error && <div className={styles.alert} role="alert">{error}</div>}
-                {!current && <div className={styles.spinner} aria-hidden="true"></div>}
+                {(!ready || loading) && <p role="status">Loading your subscription…</p>}
+                {error && !current && !loading && <button className={styles.secondaryBtn} onClick={load}>Try again</button>}
                 {current && !subscription && !manualAccess && (
                     <>
                         <p>You are using the Free account.</p>
@@ -122,7 +149,7 @@ export default function SubscriptionAccountPage() {
                 )}
                 {marketingOptIn !== null && (
                     <label className={styles.toggle}>
-                        <input type="checkbox" checked={marketingOptIn} onChange={event => updateMarketing(event.target.checked)} />
+                        <input type="checkbox" disabled={savingPreference} checked={marketingOptIn} onChange={event => updateMarketing(event.target.checked)} />
                         <span>Email me Enchiridion offers. Account, security and billing emails are always sent.</span>
                     </label>
                 )}

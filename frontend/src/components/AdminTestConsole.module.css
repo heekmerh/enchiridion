@@ -199,7 +199,7 @@
     color: #fbbf24;
     font-size: 1.1rem;
     filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6));
-    animation: bounce 2s infinite;
+    animation: bounce 2s 1;
     display: inline-block;
 }
 
@@ -255,7 +255,7 @@
 
 .markPaidBtn {
     padding: 6px 12px;
-    background: #16a34a;
+    background: #15803d;
     color: white;
     border-radius: 8px;
     font-weight: 600;
@@ -277,7 +277,7 @@
 }
 
 .statusCompleted {
-    color: #16a34a;
+    color: #15803d;
     font-weight: 800;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -334,7 +334,7 @@
 }
 
 .ok {
-    color: #16a34a;
+    color: #15803d;
     font-weight: 700;
 }
 
@@ -396,3 +396,11 @@
     transform: scale(1.1);
     opacity: 1;
 }
+.header, .auditHeader, .config, .filterGroup { flex-wrap: wrap; gap: 16px; }
+.grid > *, .audit, .simulation { min-width: 0; }
+.auditTableWrapper { max-width: 100%; overflow-x: auto; }
+@media (max-width: 640px) { .console { padding: 24px 16px; } .headerTitle { font-size: 2rem; } .grid { grid-template-columns: 1fr; } .filterGroup { width: 100%; } .logContent { overflow-wrap: anywhere; } }
+.grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+@media (max-width: 640px) { .grid { grid-template-columns: minmax(0, 1fr); } .simulation, .audit { padding: 20px 16px; } .filterSelect { width: 100%; min-width: 0; } }
+
+.simulation, .audit { width: 100%; max-width: 100%; }

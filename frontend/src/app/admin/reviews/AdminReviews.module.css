@@ -107,7 +107,7 @@
 
 .ratingCol {
     font-weight: 900;
-    color: #fbbf24;
+    color: #92400e;
 }
 
 .textCol {
@@ -157,7 +157,7 @@
 }
 
 .approveBtn {
-    background: #10b981;
+    background: #047857;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -172,7 +172,7 @@
 }
 
 .rejectBtn {
-    background: #ef4444;
+    background: #b91c1c;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -207,3 +207,9 @@
     color: #6b7280;
     font-style: italic;
 }
+.tableWrapper { max-width: 100%; overflow-x: auto; }
+.headerTop { flex-wrap: wrap; gap: 16px; }
+.reviewSnippet { white-space: normal; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .container { padding: 24px 16px; } .section { min-width: 0; } }
+
+.headerTop > * { min-width: 0; max-width: 100%; }

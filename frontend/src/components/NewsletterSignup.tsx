@@ -109,7 +109,7 @@ export default function NewsletterSignup() {
                                     <label htmlFor="newsletter-email">Email address</label>
                                     <input
                                         type="email"
-                                        id="newsletter-email"
+                                        id="newsletter-email" autoComplete="email"
                                         placeholder="Email*"
                                         required
                                         value={email}

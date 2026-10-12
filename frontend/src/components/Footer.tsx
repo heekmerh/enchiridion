@@ -6,53 +6,42 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <NewsletterSignup />
                 <div className={styles.grid}>
                     <div className={styles.brand}>
-                        <h3 className={styles.logo}>ENCHIRIDION</h3>
+                        <Link href="/" className={styles.brandLink}><h2 className={styles.logo}>ENCHIRIDION</h2></Link>
                         <p className={styles.division}>A division of ultramedikx nigeria limited</p>
                         <p className={styles.tagline}>Definitive clinical references for the modern healthcare professional.</p>
+                        <NewsletterSignup />
                     </div>
 
                     <div className={styles.section}>
-                        <h4>Editorial Credits</h4>
-                        <ul>
-                            <li>Ed-In-Chief: Dr. Hikma Atanda, Dr Ibraheem Olaniyan</li>
-                            <li>Lead Developer: Mr Asor Ahura</li>
-                        </ul>
+                        <h3>Contact & community</h3>
+                        <a className={styles.email} href="mailto:support@enchiridion.site">support@enchiridion.site</a>
+                        <nav aria-label="Enchiridion social profiles" className={styles.socials}>
+                            <a href="https://www.instagram.com/enchiridion.md/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a href="https://www.tiktok.com/@enchiridion.md" target="_blank" rel="noopener noreferrer">TikTok</a>
+                            <a href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </nav>
+                        <p className={styles.handle}>@enchiridion.md</p>
                     </div>
 
                     <div className={styles.section}>
-                        <h4>Inquiries</h4>
-                        <ul>
-                            <li><Link href="mailto:support@enchiridion.site">support@enchiridion.site</Link></li>
-                            <li>IG@enchiridion.md</li>
-                            <li>tiktok@enchiridion.md</li>
-                        </ul>
-                    </div>
-
-                    <div className={styles.section}>
-                        <h4>Network</h4>
-                        <div className={styles.socials}>
-                            <Link href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer">LinkedIn Professional</Link>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.socialSection}>
-                    <h3 className={styles.socialTitle}>Connect with Us</h3>
-                    <div className={styles.socialIcons}>
-                        <a href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={`${styles.socialLink} ${styles.linkedin}`}>
-                            <i className="fab fa-linkedin-in"></i>
-                        </a>
+                        <h3>Editorial credits</h3>
+                        <dl className={styles.credits}>
+                            <dt>Editors-in-chief</dt>
+                            <dd>Dr. Hikma Atanda<br />Dr. Ibraheem Olaniyan</dd>
+                            <dt>Lead developer</dt>
+                            <dd>Mr. Asor Ahura</dd>
+                        </dl>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
                     <div className={styles.legal}>
-                        <Link href="/privacy">Privacy Policy</Link>
-                        {" · "}
-                        <Link href="/terms">Terms and Conditions</Link>
+                        <nav aria-label="Legal information" className={styles.legalLinks}>
+                            <Link href="/privacy">Privacy Policy</Link>
+                            <Link href="/terms">Terms and Conditions</Link>
+                        </nav>
                         <p>&copy; {new Date().getFullYear()} Enchiridion. All rights reserved.</p>
                     </div>
                     <p className={styles.affiliations}>

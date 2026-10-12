@@ -567,3 +567,8 @@
   .division { max-width: 210px; }
   .sidebar { width: min(320px, 90vw); padding: 80px 24px 24px; }
 }
+
+.navDisclosure { background: none; border: none; color: #334155; min-width: 24px; margin-left: 4px; }
+.navGroup { gap: clamp(12px, 1.5vw, 24px); }
+.navLink, .navLinkButton { letter-spacing: 0.08em; }
+.megaDropdown { max-height: calc(100dvh - var(--header-height)); overflow-y: auto; overscroll-behavior: contain; }

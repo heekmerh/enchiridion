@@ -108,8 +108,7 @@ export default function ReferralPage() {
         if (formData.password !== formData.confirmPassword) errors.confirmPassword = "Passwords do not match";
         if (!formData.acceptTerms) errors.acceptTerms = "Please accept the Terms and Privacy Policy";
         setFormErrors(errors);
-        const firstInvalid = Object.keys(errors)[0];
-        if (firstInvalid) document.getElementById(firstInvalid)?.focus();
+        if (Object.keys(errors).length) requestAnimationFrame(() => document.getElementById("registration-errors")?.focus());
         return Object.keys(errors).length === 0;
     };
 
@@ -268,20 +267,20 @@ export default function ReferralPage() {
             </section>
 
             {/* WHY JOIN US? */}
-            <section className={styles.benefitGrid}>
+            <section aria-label="Partner benefits" className={styles.benefitGrid}>
                 <div className={styles.benefitItem}>
                     <span>01</span>
-                    <h4>Become a Partner</h4>
+                    <h2>Become a Partner</h2>
                     <p>Help us scale and earn as you grow. Shared knowledge, shared rewards.</p>
                 </div>
                 <div className={styles.benefitItem}>
                     <span>02</span>
-                    <h4>Become a Distributor</h4>
+                    <h2>Become a Distributor</h2>
                     <p>Take control of your income and distribution. Higher tiers, higher impact.</p>
                 </div>
                 <div className={styles.benefitItem}>
                     <span>03</span>
-                    <h4>Get the Book</h4>
+                    <h2>Get the Book</h2>
                     <p>Unlock the full Enchiridion blueprint. 50% faster growth for you and your network.</p>
                 </div>
             </section>
@@ -299,7 +298,7 @@ export default function ReferralPage() {
                     ].map((step, i) => (
                         <div key={i} className={styles.flowItem}>
                             <div className={styles.flowNum}>{i + 1}</div>
-                            <h4>{step.title}</h4>
+                            <h3>{step.title}</h3>
                             <p>{step.text}</p>
                         </div>
                     ))}
@@ -468,17 +467,17 @@ export default function ReferralPage() {
                     <div className={styles.registrationSteps}>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>1</div>
-                            <h4>Register</h4>
+                            <h3>Register</h3>
                             <p>Sign up as an Enchiridion Referral Partner in less than 2 minutes.</p>
                         </div>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>2</div>
-                            <h4>Get Your Referral Code</h4>
+                            <h3>Get Your Referral Code</h3>
                             <p>Instantly receive a unique referral code and shareable link.</p>
                         </div>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>3</div>
-                            <h4>Earn & Track</h4>
+                            <h3>Earn & Track</h3>
                             <p>Earn rewards, discounts, and early access when people join through you.</p>
                         </div>
                     </div>
@@ -486,12 +485,20 @@ export default function ReferralPage() {
                     {/* Registration Form OR Success State */}
                     {!isRegistered ? (
                         <form className={styles.registrationForm} onSubmit={handleSubmit}>
+                            {Object.keys(formErrors).length > 0 && (
+                                <div id="registration-errors" tabIndex={-1} role="alert" className="error-summary">
+                                    <h3>Check your account details</h3>
+                                    <ul>{Object.entries(formErrors).map(([field, message]) => (
+                                        <li key={field}><a href={`#${field}`} onClick={event => { event.preventDefault(); document.getElementById(field)?.focus(); }}>{message}</a></li>
+                                    ))}</ul>
+                                </div>
+                            )}
                             <div className={styles.formGrid}>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="fullName">Full Name *</label>
                                     <input
                                         type="text"
-                                        id="fullName"
+                                        id="fullName" autoComplete="name"
                                         aria-invalid={!!formErrors.fullName}
                                         aria-describedby={formErrors.fullName ? "registration-fullName-error" : undefined}
                                         name="fullName"
@@ -506,7 +513,7 @@ export default function ReferralPage() {
                                     <label htmlFor="email">Email Address *</label>
                                     <input
                                         type="email"
-                                        id="email"
+                                        id="email" autoComplete="email"
                                         aria-invalid={!!formErrors.email}
                                         aria-describedby={formErrors.email ? "registration-email-error" : undefined}
                                         name="email"
@@ -521,7 +528,7 @@ export default function ReferralPage() {
                                     <label htmlFor="country">Country *</label>
                                     <input
                                         type="text"
-                                        id="country"
+                                        id="country" autoComplete="country-name"
                                         aria-invalid={!!formErrors.country}
                                         aria-describedby={formErrors.country ? "registration-country-error" : undefined}
                                         name="country"
@@ -536,7 +543,7 @@ export default function ReferralPage() {
                                     <label htmlFor="state">State</label>
                                     <input
                                         type="text"
-                                        id="state"
+                                        id="state" autoComplete="address-level1"
                                         name="state"
                                         value={formData.state}
                                         onChange={handleInputChange}
@@ -567,7 +574,7 @@ export default function ReferralPage() {
                                     <label htmlFor="phone">Phone Number *</label>
                                     <input
                                         type="tel"
-                                        id="phone"
+                                        id="phone" autoComplete="tel"
                                         aria-invalid={!!formErrors.phone}
                                         aria-describedby={formErrors.phone ? "registration-phone-error" : undefined}
                                         name="phone"
@@ -582,7 +589,7 @@ export default function ReferralPage() {
                                     <label htmlFor="password">Password *</label>
                                     <input
                                         type="password"
-                                        id="password"
+                                        id="password" autoComplete="new-password"
                                         aria-invalid={!!formErrors.password}
                                         aria-describedby={formErrors.password ? "registration-password-error" : undefined}
                                         name="password"
@@ -597,7 +604,7 @@ export default function ReferralPage() {
                                     <label htmlFor="confirmPassword">Confirm Password *</label>
                                     <input
                                         type="password"
-                                        id="confirmPassword"
+                                        id="confirmPassword" autoComplete="new-password"
                                         aria-invalid={!!formErrors.confirmPassword}
                                         aria-describedby={formErrors.confirmPassword ? "registration-confirmPassword-error" : undefined}
                                         name="confirmPassword"
@@ -612,7 +619,7 @@ export default function ReferralPage() {
                                     <label htmlFor="institution">Institution (Optional)</label>
                                     <input
                                         type="text"
-                                        id="institution"
+                                        id="institution" autoComplete="organization"
                                         name="institution"
                                         value={formData.institution}
                                         onChange={handleInputChange}
@@ -621,10 +628,10 @@ export default function ReferralPage() {
                                 </div>
                                 <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
                                     <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
-                                        <input type="checkbox" name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
+                                        <input type="checkbox" id="acceptTerms" aria-invalid={!!formErrors.acceptTerms} aria-describedby={formErrors.acceptTerms ? "registration-terms-error" : undefined} name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
                                         <span>I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a>. *</span>
                                     </label>
-                                    {formErrors.acceptTerms && <span className={styles.error}>{formErrors.acceptTerms}</span>}
+                                    {formErrors.acceptTerms && <span id="registration-terms-error" className={styles.error}>{formErrors.acceptTerms}</span>}
                                 </div>
                                 <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
                                     <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
@@ -641,7 +648,7 @@ export default function ReferralPage() {
                                 note="Tick the Terms box above first. Your Google name and email are used for your account." />
                         </form>
                     ) : (
-                        <div className={styles.successState}>
+                        <div role="status" className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>
                             <h3>Welcome to the Inner Circle, {formData.fullName.split(' ')[0]}!</h3>
                             <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
@@ -654,19 +661,19 @@ export default function ReferralPage() {
 
                             <div className={styles.onboardingSteps}>
                                 <div className={styles.onboardingCard}>
-                                    <h4>Register as a Distributor</h4>
+                                    <h3>Register as a Distributor</h3>
                                     <p>Unlock higher earning tiers and take control of your distribution.</p>
                                     <span className={styles.badge}>Action Required</span>
                                 </div>
                                 <div className={styles.onboardingCard}>
-                                    <h4>Order the Book</h4>
+                                    <h3>Order the Book</h3>
                                     <p>Get the physical copy delivered. Physical tools for a digital world.</p>
                                     <span className={styles.badgeHighlight}>5 Points Value</span>
                                 </div>
                             </div>
 
                             <div className={styles.inviteInfo} style={{ background: '#f8fafc', padding: '24px', borderRadius: '12px', margin: '24px 0', textAlign: 'left', border: '1px solid #e2e8f0' }}>
-                                <h4 style={{ color: '#1e293b', marginBottom: '12px' }}>Start Building Your Network</h4>
+                                <h3 style={{ color: '#1e293b', marginBottom: '12px' }}>Start Building Your Network</h3>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
                                     <li style={{ marginBottom: '8px', color: '#000000' }}>• Earn <b>10 Naira</b> for every verified friend who joins.</li>
                                     <li style={{ marginBottom: '8px', color: '#000000' }}>• Earn <b>500 Naira</b> for every verified book purchase.</li>
@@ -736,17 +743,17 @@ export default function ReferralPage() {
                     <div className={styles.registrationSteps}>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>1</div>
-                            <h4>Apply</h4>
+                            <h3>Apply</h3>
                             <p>Submit your application with your location and contact details.</p>
                         </div>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>2</div>
-                            <h4>Consultation</h4>
+                            <h3>Consultation</h3>
                             <p>A Regional Director will contact you to discuss territorial goals.</p>
                         </div>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>3</div>
-                            <h4>Launch</h4>
+                            <h3>Launch</h3>
                             <p>Place your first wholesale order and start distributing in your region.</p>
                         </div>
                     </div>

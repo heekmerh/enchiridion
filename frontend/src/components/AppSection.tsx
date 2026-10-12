@@ -39,10 +39,10 @@ export default function AppSection() {
                         {features.map((f, i) => (
                             <div key={i} className={styles.feature}>
                                 <div className={styles.featureIcon}>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6 9 17l-5-5" /></svg>
+                                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6 9 17l-5-5" /></svg>
                                 </div>
                                 <div>
-                                    <h4>{f.title}</h4>
+                                    <h3>{f.title}</h3>
                                     <p>{f.description}</p>
                                 </div>
                             </div>

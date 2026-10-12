@@ -45,7 +45,7 @@
         radial-gradient(circle at 100% 50%, rgba(200, 16, 46, 0.45) 0%, transparent 40%),
         radial-gradient(circle at 15% 15%, rgba(0, 102, 204, 0.3) 0%, transparent 40%),
         radial-gradient(circle at 85% 15%, rgba(200, 16, 46, 0.25) 0%, transparent 40%);
-    animation: smokyBreathing 7s ease-in-out infinite;
+    animation: smokyBreathing 4s ease-in-out 1;
     filter: blur(15px);
 }
 
@@ -55,7 +55,7 @@
         radial-gradient(circle at 50% 100%, rgba(100, 0, 200, 0.2) 0%, transparent 40%),
         radial-gradient(circle at 85% 15%, rgba(200, 16, 46, 0.25) 0%, transparent 40%),
         radial-gradient(circle at 15% 85%, rgba(0, 102, 204, 0.25) 0%, transparent 40%);
-    animation: smokyBreathing 7s ease-in-out infinite reverse;
+    animation: smokyBreathing 4s ease-in-out 1 reverse;
     animation-delay: -3.5s;
     filter: blur(20px);
 }
@@ -146,7 +146,7 @@
     margin-top: 4px;
 }
 
-.feature h4 {
+.feature h3 {
     font-family: var(--font-sans);
     font-size: 1.1rem;
     font-weight: 800;

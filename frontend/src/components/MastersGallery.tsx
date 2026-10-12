@@ -19,7 +19,7 @@ const MasterCard: React.FC<{ master: Master }> = ({ master }) => {
     return (
         <div className={styles.masterCard}>
             <div className={styles.waxSeal}>
-                <i className="fas fa-certificate"></i>
+                <i aria-hidden="true" className="fas fa-certificate"></i>
             </div>
 
             <div className={styles.avatarWrapper}>
@@ -30,7 +30,7 @@ const MasterCard: React.FC<{ master: Master }> = ({ master }) => {
             <div className={styles.cardContent}>
                 <h3 className={styles.username}>{master.username}</h3>
                 <div className={styles.masterBadge}>
-                    <i className="fas fa-crown"></i> ENCHIRIDION MASTER
+                    <i aria-hidden="true" className="fas fa-crown"></i> ENCHIRIDION MASTER
                 </div>
 
                 <div className={styles.statsRow}>
@@ -108,14 +108,14 @@ const MastersGallery: React.FC = () => {
                 <div className={styles.filterBar}>
                     <button
                         className={`${styles.filterBtn} ${filter === 'all' ? styles.active : ''}`}
-                        onClick={() => setFilter('all')}
+                        aria-pressed={filter === "all"} onClick={() => setFilter('all')}
                     >
                         All Masters
                     </button>
                     {userCity && (
                         <button
                             className={`${styles.filterBtn} ${filter === 'local' ? styles.active : ''}`}
-                            onClick={() => setFilter('local')}
+                            aria-pressed={filter === "local"} onClick={() => setFilter('local')}
                         >
                             Masters from {userCity}
                         </button>
@@ -131,7 +131,7 @@ const MastersGallery: React.FC = () => {
                 </div>
             ) : (
                 <div className={styles.emptyPantheon}>
-                    <i className="fas fa-hourglass-start"></i>
+                    <i aria-hidden="true" className="fas fa-hourglass-start"></i>
                     <p>The wall is waiting for the next legend from {userCity}.</p>
                 </div>
             )}

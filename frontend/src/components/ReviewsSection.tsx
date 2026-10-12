@@ -14,6 +14,12 @@ export default function ReviewsSection() {
     const [showForm, setShowForm] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
 
+    const triggerRef = useRef<HTMLButtonElement>(null);
+    const closeForm = () => {
+        setShowForm(false);
+        requestAnimationFrame(() => triggerRef.current?.focus());
+    };
+
     const fetchReviews = async () => {
         try {
             const data = await manageReviews('FETCH', { limit: 5 });
@@ -31,7 +37,7 @@ export default function ReviewsSection() {
     }, []);
 
     const handleReviewSubmitted = () => {
-        setShowForm(false);
+        closeForm();
         fetchReviews();
     };
 
@@ -45,7 +51,7 @@ export default function ReviewsSection() {
 
                 {showForm ? (
                     <div className={styles.formContainer}>
-                        <ReviewForm onReviewSubmitted={handleReviewSubmitted} onCancel={() => setShowForm(false)} />
+                        <ReviewForm onReviewSubmitted={handleReviewSubmitted} onCancel={closeForm} />
                     </div>
                 ) : (
                     <>
@@ -70,7 +76,7 @@ export default function ReviewsSection() {
                         </div>
 
                         <div className={styles.footerActions}>
-                            <button onClick={() => setShowForm(true)} className={styles.writeReviewBtn}>
+                            <button ref={triggerRef} onClick={() => setShowForm(true)} className={styles.writeReviewBtn}>
                                 Write a Review
                             </button>
                         </div>

@@ -16,7 +16,7 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
         <div className={styles.overlay} onClick={onClose}>
             <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Partner success guide" tabIndex={-1} className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
-                    <i className="fas fa-times"></i>
+                    <i aria-hidden="true" className="fas fa-times"></i>
                 </button>
 
                 <div className={styles.header}>
@@ -24,7 +24,7 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
                     <p>Turn Your Medical Network into Rewards!</p>
                 </div>
 
-                <div className={styles.content}>
+                <div className={styles.content} role="region" aria-label="Partner handbook" tabIndex={0}>
                     <div className={styles.section}>
                         <h3>1. Getting Started</h3>
                         <p><b>Your Unique Link:</b> Access your dashboard to find your custom referral link. This link is your 'digital ID'—whenever someone clicks it, our system tracks them for 30 days.</p>

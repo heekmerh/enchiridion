@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import styles from "./OnboardingChecklist.module.css";
 import CommunityGravity from "./CommunityGravity";
 import { getAccessToken } from "@/lib/supabase";
@@ -20,51 +20,19 @@ export default function OnboardingChecklist() {
     const [showConfetti, setShowConfetti] = useState(false);
     const prevMasteryRef = useRef(false);
 
-    useEffect(() => {
-        const fetchProgress = async () => {
+    const fetchProgress = useCallback(async () => {
+        setLoading(true);
+        try {
             const token = await getAccessToken();
             if (!token) return;
+            const response = await fetch("/api/referral/progress", { headers: { Authorization: `Bearer ${token}` } });
+            if (response.ok) setProgress(await response.json());
+        } catch (error) { console.error("Failed to fetch onboarding progress:", error); }
+        finally { setLoading(false); }
+    }, []);
+    useEffect(() => { fetchProgress(); }, [fetchProgress]);
 
-            try {
-                const response = await fetch("/api/referral/progress", {
-                    headers: {
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-                if (response.ok) {
-                    const data: UserProgress = await response.json();
-                    setProgress(data);
-
-                    // Celebate mastery if it just happened
-                    if (data.has_purchased_book && !prevMasteryRef.current) {
-                        // Only celebrate if it was previously false in the *same* session state transition
-                        // Or if we haven't seen it true yet.
-                        // For the very first load, we check against a persistent "celebrated" flag?
-                        // Let's just celebrate if it is true and we haven't loaded yet.
-                        if (loading) {
-                            // First load - maybe don't celebrate if it was already true for a long time?
-                            // User says "confetti effect when Step 4 is completed"
-                            // We'll show it if it's the first time the UI sees it as true.
-                            setShowConfetti(true);
-                            setTimeout(() => setShowConfetti(false), 5000);
-                        }
-                    }
-                    prevMasteryRef.current = data.has_purchased_book;
-                }
-            } catch (err) {
-                console.error("Failed to fetch onboarding progress:", err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchProgress();
-        // Polling for updates every 30 seconds if not all complete
-        const interval = setInterval(fetchProgress, 30000);
-        return () => clearInterval(interval);
-    }, [loading]);
-
-    if (loading || !progress) return null;
+    if (!progress) return null;
 
     const steps = [
         {
@@ -135,11 +103,12 @@ export default function OnboardingChecklist() {
 
             <div className={styles.onboardingCard}>
                 <div className={styles.header}>
-                    <h3>Enchiridion Onboarding</h3>
+                    <h2>Enchiridion Onboarding</h2>
+                    <button type="button" disabled={loading} onClick={fetchProgress}>Refresh progress</button>
                     <div className={styles.progressText}>{Math.round(progressPercent)}% Complete</div>
                 </div>
 
-                <div className={styles.progressBarContainer}>
+                <div role="progressbar" aria-label="Onboarding completion" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progressPercent)} className={styles.progressBarContainer}>
                     <div className={styles.progressBar} style={{ width: `${progressPercent}%` }}></div>
                 </div>
 
@@ -151,13 +120,14 @@ export default function OnboardingChecklist() {
                         >
                             <div className={styles.stepHeader}>
                                 <div className={styles.titleGroup}>
-                                    <h4>{step.title}</h4>
+                                    <h3>{step.title}</h3>
                                     {step.completed && (step as any).reward && (
                                         <span className={styles.rewardBadge}>{(step as any).reward}</span>
                                     )}
                                 </div>
                                 <div className={`${styles.statusIcon} ${step.completed ? styles.completed : step.active ? styles.active : styles.locked ? styles.locked : ""}`}>
-                                    {step.completed ? <i className="fas fa-check"></i> : step.locked ? <i className="fas fa-lock"></i> : <i className="fas fa-arrow-right"></i>}
+                                    <span className="sr-only">{step.completed ? "Completed" : step.locked ? "Locked" : "Next step"}</span>
+                                    {step.completed ? <i aria-hidden="true" className="fas fa-check"></i> : step.locked ? <i aria-hidden="true" className="fas fa-lock"></i> : <i aria-hidden="true" className="fas fa-arrow-right"></i>}
                                 </div>
                             </div>
 

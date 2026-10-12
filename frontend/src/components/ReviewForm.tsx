@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './ReviewForm.module.css';
 import { manageReviews } from '@/lib/reviews';
 
@@ -19,6 +19,8 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
     });
 
     const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+    const successRef = useRef<HTMLDivElement>(null);
+    useEffect(() => { if (status === "success") successRef.current?.focus(); }, [status]);
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -47,10 +49,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
         try {
             await manageReviews('SUBMIT', formData);
             setStatus('success');
-            // Reset form after a brief delay
-            setTimeout(() => {
-                onReviewSubmitted();
-            }, 2000);
+
         } catch (error) {
             console.error('Submission error:', error);
             setErrorMessage(error instanceof Error ? error.message : 'An error occurred. Please try again.');
@@ -60,9 +59,9 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
 
     if (status === 'success') {
         return (
-            <div className={styles.successMessage}>
+            <div ref={successRef} tabIndex={-1} role="status" className={styles.successMessage}>
                 <div className={styles.successIcon}>✓</div>
-                <h3>Review Submitted!</h3>
+                <h2>Review Submitted!</h2>
                 <p>Thank you for your feedback. Your review is pending moderation and will appear shortly once approved.</p>
                 <button onClick={onReviewSubmitted} className={styles.secondaryBtn}>
                     Close
@@ -74,7 +73,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
     return (
         <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.formHeader}>
-                <h3>Write a Review</h3>
+                <h2>Write a Review</h2>
                 <p>Share your experience with Enchiridion to help the community.</p>
             </div>
 
@@ -84,7 +83,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
                 <label htmlFor="name">Full Name <span className={styles.required}>*</span></label>
                 <input
                     type="text"
-                    id="name"
+                    id="name" autoComplete="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
@@ -98,7 +97,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
                     <label htmlFor="jobTitle">Job Title / Profession <span className={styles.required}>*</span></label>
                     <input
                         type="text"
-                        id="jobTitle"
+                        id="jobTitle" autoComplete="organization-title"
                         name="jobTitle"
                         value={formData.jobTitle}
                         onChange={handleChange}
@@ -111,7 +110,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
                     <label htmlFor="organization">Organization <span className={styles.optional}>(Optional)</span></label>
                     <input
                         type="text"
-                        id="organization"
+                        id="organization" autoComplete="organization"
                         name="organization"
                         value={formData.organization}
                         onChange={handleChange}

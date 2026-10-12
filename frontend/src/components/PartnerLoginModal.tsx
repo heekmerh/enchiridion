@@ -102,9 +102,9 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
 
     return (
         <div className={styles.overlay} onClick={onClose}>
-            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Sign in to Enchiridion" tabIndex={-1} className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={view === "login" ? "Sign in to Enchiridion" : "Reset password"} tabIndex={-1} className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
-                    <i className="fas fa-times"></i>
+                    <i aria-hidden="true" className="fas fa-times"></i>
                 </button>
 
                 <div className={styles.header}>
@@ -124,7 +124,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
                         <div className={styles.field}>
                             <label htmlFor="username">Email</label>
                             <div className={styles.inputGroup}>
-                                <i className="fas fa-user"></i>
+                                <i aria-hidden="true" className="fas fa-user"></i>
                                 <input
                                     id="username"
                                     type="email"
@@ -140,7 +140,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
                         <div className={styles.field}>
                             <label htmlFor="password">Password</label>
                             <div className={styles.inputGroup}>
-                                <i className="fas fa-lock"></i>
+                                <i aria-hidden="true" className="fas fa-lock"></i>
                                 <input
                                     id="password"
                                     type="password"
@@ -163,7 +163,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
                         <button type="submit" className={styles.loginBtn} disabled={isLoading}>
                             {isLoading ? (
                                 <>
-                                    <i className={`fas fa-spinner ${styles.spinner}`}></i>
+                                    <i aria-hidden="true" className={`fas fa-spinner ${styles.spinner}`}></i>
                                     Logging in...
                                 </>
                             ) : (
@@ -182,7 +182,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
                             <div className={styles.field}>
                                 <label htmlFor="reset-email">Registered Email</label>
                                 <div className={styles.inputGroup}>
-                                    <i className="fas fa-envelope"></i>
+                                    <i aria-hidden="true" className="fas fa-envelope"></i>
                                     <input
                                         id="reset-email"
                                         type="email"

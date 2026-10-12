@@ -65,7 +65,7 @@ export default function RewardsPage() {
                         {/* 1st Place - Gold */}
                         <div className={`${styles.prizeGlassCard} ${styles.goldTheme}`}>
                             <div className={styles.prizeIcon}>
-                                <i className="fas fa-coins"></i>
+                                <i aria-hidden="true" className="fas fa-coins"></i>
                             </div>
                             <h3 className="serif">The Grand Master</h3>
                             <p className={styles.prizeDesc}>
@@ -76,7 +76,7 @@ export default function RewardsPage() {
                         {/* 2nd Place - Silver */}
                         <div className={`${styles.prizeGlassCard} ${styles.silverTheme}`}>
                             <div className={styles.prizeIcon}>
-                                <i className="fas fa-stethoscope"></i>
+                                <i aria-hidden="true" className="fas fa-stethoscope"></i>
                             </div>
                             <h3 className="serif">The Elite Champ</h3>
                             <p className={styles.prizeDesc}>
@@ -87,7 +87,7 @@ export default function RewardsPage() {
                         {/* 3rd Place - Bronze */}
                         <div className={`${styles.prizeGlassCard} ${styles.bronzeTheme}`}>
                             <div className={styles.prizeIcon}>
-                                <i className="fas fa-book-open"></i>
+                                <i aria-hidden="true" className="fas fa-book-open"></i>
                             </div>
                             <h3 className="serif">The Rising Star</h3>
                             <p className={styles.prizeDesc}>
@@ -99,35 +99,35 @@ export default function RewardsPage() {
                     <div className={styles.prizeCTAWrapper}>
                         <Link href="#referral-link-section" className={styles.prizeCTA}>
                             Download the App & Win
-                            <i className="fas fa-arrow-right"></i>
+                            <i aria-hidden="true" className="fas fa-arrow-right"></i>
                         </Link>
                     </div>
 
                     {/* Prize Redemption Rules Accordion */}
                     <button
-                        className={styles.redemptionToggle}
+                        aria-expanded={isRedemptionOpen} aria-controls="prize-redemption-rules" className={styles.redemptionToggle}
                         onClick={() => setIsRedemptionOpen(!isRedemptionOpen)}
                     >
                         View Prize Redemption Rules
-                        <i className={`fas fa-chevron-down ${styles.redemptionChevron} ${isRedemptionOpen ? styles.redemptionChevronOpen : ""}`}></i>
+                        <i aria-hidden="true" className={`fas fa-chevron-down ${styles.redemptionChevron} ${isRedemptionOpen ? styles.redemptionChevronOpen : ""}`}></i>
                     </button>
 
-                    <div className={`${styles.redemptionWrapper} ${isRedemptionOpen ? styles.redemptionWrapperOpen : ""}`}>
+                    <div id="prize-redemption-rules" hidden={!isRedemptionOpen} className={`${styles.redemptionWrapper} ${isRedemptionOpen ? styles.redemptionWrapperOpen : ""}`}>
                         <div className={styles.redemptionGrid}>
                             <div className={styles.redemptionItem}>
-                                <h4>Eligibility</h4>
+                                <h3>Eligibility</h3>
                                 <p>Prizes are awarded to the top 3 ranked winners at the end of the competition period. Fraudulent activity will result in immediate disqualification.</p>
                             </div>
                             <div className={styles.redemptionItem}>
-                                <h4>Cash Payouts</h4>
+                                <h3>Cash Payouts</h3>
                                 <p>The $100 Gold Prize will be converted to ₦ at the prevailing market rate and sent to the bank details provided by the winner.</p>
                             </div>
                             <div className={styles.redemptionItem}>
-                                <h4>Physical Prizes</h4>
+                                <h3>Physical Prizes</h3>
                                 <p>Silver and Bronze physical prizes (Medical Equipment/Books) will be shipped within 14 business days of verification. Shipping is restricted to Nigeria.</p>
                             </div>
                             <div className={styles.redemptionItem}>
-                                <h4>Sub-Verification</h4>
+                                <h3>Sub-Verification</h3>
                                 <p>App subscriptions for the Silver prize will be activated via the winner's registered email address.</p>
                             </div>
                         </div>
@@ -160,14 +160,14 @@ export default function RewardsPage() {
 
                     <div className={styles.actionRow}>
                         <div className={styles.downloadIcon}>
-                            <i className="fas fa-rocket"></i>
+                            <i aria-hidden="true" className="fas fa-rocket"></i>
                         </div>
                         <Link href="/#app" className={styles.referralBtn}>
-                            <i className="fas fa-cloud-download-alt" style={{ marginRight: '10px' }}></i>
+                            <i aria-hidden="true" className="fas fa-cloud-download-alt" style={{ marginRight: '10px' }}></i>
                             Download App Now
                         </Link>
                         <p style={{ opacity: 0.9, fontWeight: 600 }}>
-                            <i className="fas fa-bullhorn" style={{ marginRight: '8px' }}></i>
+                            <i aria-hidden="true" className="fas fa-bullhorn" style={{ marginRight: '8px' }}></i>
                             Winners will be emailed directly when the contest ends.
                         </p>
                     </div>
@@ -176,9 +176,9 @@ export default function RewardsPage() {
                 {/* Educational Info */}
                 <section className={styles.infoSection}>
                     <div style={{ fontSize: '4rem', marginBottom: '25px', color: '#14b8a6' }}>
-                        <i className="fas fa-user-graduate"></i>
+                        <i aria-hidden="true" className="fas fa-user-graduate"></i>
                     </div>
-                    <h3>Prepare for Your Licensing Exams</h3>
+                    <h2>Prepare for Your Licensing Exams</h2>
                     <p style={{ fontSize: '1.2rem', color: '#475569', maxWidth: '700px', margin: '0 auto 30px' }}>
                         Questions are curated from major clinical exams worldwide. Prepare for your licensing exams and primaries while competing for rewards.
                     </p>
@@ -188,13 +188,13 @@ export default function RewardsPage() {
                         ))}
                     </div>
                     <p style={{ color: '#312e81', fontWeight: 800, fontSize: '1.2rem' }}>
-                        <i className="fas fa-heart" style={{ color: '#ef4444', marginRight: '8px' }}></i>
+                        <i aria-hidden="true" className="fas fa-heart" style={{ color: '#ef4444', marginRight: '8px' }}></i>
                         "This is our way of giving back while helping you achieve your dreams."
                     </p>
 
                     <div style={{ marginTop: '50px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' }}>
                         <Link href="/refer" className={`${styles.referralBtn} ${styles.secondaryBtn}`}>
-                            <i className="fas fa-share-alt" style={{ marginRight: '10px' }}></i>
+                            <i aria-hidden="true" className="fas fa-share-alt" style={{ marginRight: '10px' }}></i>
                             Tell Friends & Earn Referral Points
                         </Link>
 
@@ -203,13 +203,13 @@ export default function RewardsPage() {
                             className={styles.guideCard}
                         >
                             <div className={styles.guideIcon}>
-                                <i className="fas fa-book-reader"></i>
+                                <i aria-hidden="true" className="fas fa-book-reader"></i>
                             </div>
                             <div className={styles.guideText}>
-                                <h4>New to the program?</h4>
+                                <h3>New to the program?</h3>
                                 <p>View the Partner Success Guide & Handbook</p>
                             </div>
-                            <i className="fas fa-external-link-alt"></i>
+                            <i aria-hidden="true" className="fas fa-external-link-alt"></i>
                         </button>
                     </div>
 
@@ -237,14 +237,14 @@ export default function RewardsPage() {
                 {/* Collapsible Terms Section */}
                 <div className={styles.accordion}>
                     <button
-                        className={styles.accordionHeader}
+                        aria-expanded={isTermsOpen} aria-controls="account-payout-rules" className={styles.accordionHeader}
                         onClick={() => setIsTermsOpen(!isTermsOpen)}
                     >
                         <h2>Account & Payout Rules</h2>
-                        <i className={`fas fa-chevron-down ${styles.chevron} ${isTermsOpen ? styles.chevronOpen : ""}`}></i>
+                        <i aria-hidden="true" className={`fas fa-chevron-down ${styles.chevron} ${isTermsOpen ? styles.chevronOpen : ""}`}></i>
                     </button>
 
-                    <div className={`${styles.accordionContent} ${isTermsOpen ? styles.contentOpen : ""}`}>
+                    <div id="account-payout-rules" hidden={!isTermsOpen} className={`${styles.accordionContent} ${isTermsOpen ? styles.contentOpen : ""}`}>
                         <div className={styles.termsList}>
                             <div className={styles.termsSection}>
                                 <h3>1. Earning Points</h3>

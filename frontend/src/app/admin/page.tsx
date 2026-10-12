@@ -6,13 +6,13 @@ import Link from "next/link";
 
 export default function AdminPage() {
     return (
-        <main className={styles.container}>
-            <nav className={styles.nav}>
+        <div className={styles.container}>
+            <nav aria-label="Administration breadcrumb" className={styles.nav}>
                 <Link href="/" className={styles.backLink}>← Back to Site</Link>
                 <div className={styles.statusBadge}>System Monitor Active</div>
             </nav>
 
-            <nav className={styles.adminNav}>
+            <nav aria-label="Administration sections" className={styles.adminNav}>
                 <Link href="/admin/reviews" className={styles.navLink}>
                     <span className={styles.navIcon}>💬</span>
                     Review Moderation
@@ -24,6 +24,6 @@ export default function AdminPage() {
             <footer className={styles.footer}>
                 <p>Enchiridion Administrative Protocol &copy; 2026. Data verified against Partners Database.</p>
             </footer>
-        </main>
+        </div>
     );
 }

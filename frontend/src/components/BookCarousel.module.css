@@ -2,23 +2,24 @@
     padding: 0;
     background-color: transparent;
     width: 100%;
+    max-width: 1128px;
 }
 
 .carouselHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
-    padding: 0 var(--spacing-md);
+    margin-bottom: 24px;
+    padding: 0;
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
 }
 
-.carouselHeader h2 {
-    display: none;
-    /* Already handled by page header */
-}
+.carouselHeader { flex-wrap: wrap; gap: 16px; }
+.browseHint { color: #ffffff; text-align: left; }
+.browseHint p { margin: 0; }
+.bookCount { font-weight: 700; font-size: 1.125rem; }
 
 .controls {
     display: flex;
@@ -26,17 +27,17 @@
 }
 
 .navBtn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 64px;
-    height: 64px;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    color: white;
+    color: #0f172a;
     font-size: 1.5rem;
     backdrop-filter: blur(10px);
 }
@@ -50,7 +51,7 @@
 }
 
 .navBtn:disabled {
-    opacity: 0.1;
+    opacity: 0.55;
     cursor: not-allowed;
 }
 
@@ -61,11 +62,12 @@
 
 .carousel {
     display: flex;
-    gap: 40px;
+    gap: 16px;
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    padding: 20px calc((100vw - var(--max-width)) / 2 + var(--spacing-md));
+    padding: 20px 56px;
+    scroll-padding-inline: 56px;
     scrollbar-width: none;
 }
 
@@ -74,8 +76,9 @@
 }
 
 .cardWrapper {
-    flex: 0 0 320px;
-    scroll-snap-align: center;
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    scroll-snap-align: start;
 }
 
 .card {
@@ -194,14 +197,16 @@
 }
 
 @media (max-width: 1024px) {
-    .carousel {
-        padding: var(--spacing-md);
-    }
-
-    .cardWrapper {
-        flex: 0 0 280px;
-    }
+    .cardWrapper { flex-basis: calc((100% - 32px) / 2); }
 }
+@media (max-width: 640px) {
+    .carousel { padding: 20px 40px; scroll-padding-inline: 40px; }
+    .cardWrapper { flex-basis: 100%; }
+    .card { padding: 16px; }
+    .browseHint { width: 100%; }
+    .controls { margin-left: auto; }
+}
+
 .category, .learnMore { color: #5eead4; }
 .card:focus-visible .hoverOverlay { opacity: 1; }
 .card:focus-visible .hoverOverlay p { transform: translateY(0); }

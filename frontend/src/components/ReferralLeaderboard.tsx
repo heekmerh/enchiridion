@@ -70,8 +70,8 @@ export default function ReferralLeaderboard() {
 
     if (fetchError) {
         return (
-            <div className={styles.errorContainer}>
-                <i className="fas fa-exclamation-circle" style={{ fontSize: '2rem', marginBottom: '10px', color: '#ef4444' }}></i>
+            <div role="alert" className={styles.errorContainer}>
+                <i aria-hidden="true" className="fas fa-exclamation-circle" style={{ fontSize: '2rem', marginBottom: '10px', color: '#ef4444' }}></i>
                 <p>{fetchError}</p>
                 <button onClick={() => window.location.reload()} className={styles.retryBtn}>Retry</button>
             </div>
@@ -102,16 +102,17 @@ export default function ReferralLeaderboard() {
                 </div>
             )}
 
-            <div className={styles.tableWrapper}>
+            <div role="region" aria-label="Referral partner rankings" tabIndex={0} className={styles.tableWrapper}>
                 <table className={styles.table}>
+                    <caption className="sr-only">Partner rank, points, current balance, lifetime earnings, and impact</caption>
                     <thead>
                         <tr>
-                            <th className={styles.rankCol}>Rank</th>
-                            <th className={styles.partnerCol}>Partner</th>
-                            <th className={styles.pointsCol}>Points</th>
-                            <th className={styles.incomeCol}>Current Balance</th>
-                            <th className={styles.lifetimeCol}>Lifetime Total</th>
-                            <th className={styles.impactCol}>Impact</th>
+                            <th scope="col" className={styles.rankCol}>Rank</th>
+                            <th scope="col" className={styles.partnerCol}>Partner</th>
+                            <th scope="col" className={styles.pointsCol}>Points</th>
+                            <th scope="col" className={styles.incomeCol}>Current Balance</th>
+                            <th scope="col" className={styles.lifetimeCol}>Lifetime Total</th>
+                            <th scope="col" className={styles.impactCol}>Impact</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -164,7 +165,7 @@ export default function ReferralLeaderboard() {
 
             {leaderboard.length === 0 && !isLoading && (
                 <div className={styles.emptyState}>
-                    <i className="fas fa-users" style={{ fontSize: '2rem', marginBottom: '10px', opacity: 0.5 }}></i>
+                    <i aria-hidden="true" className="fas fa-users" style={{ fontSize: '2rem', marginBottom: '10px', opacity: 0.5 }}></i>
                     <p>No rankings yet. Start sharing to see your name here!</p>
                 </div>
             )}

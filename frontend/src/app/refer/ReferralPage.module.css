@@ -112,7 +112,7 @@
     margin-bottom: 20px;
 }
 
-.benefitItem h4 {
+.benefitItem h2 {
     font-size: 1.5rem;
     color: var(--color-red);
     margin-bottom: 15px;
@@ -166,7 +166,7 @@
     margin: 0 auto 30px;
 }
 
-.flowItem h4 {
+.flowItem h3 {
     font-size: 1.4rem;
     color: var(--color-red);
     margin-bottom: 15px;
@@ -613,7 +613,7 @@
     margin: 0 auto 20px;
 }
 
-.regStep h4 {
+.regStep h3 {
     font-size: 1.25rem;
     color: #000000;
     font-weight: 700;
@@ -966,7 +966,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.onboardingCard h4 {
+.onboardingCard h3 {
     font-size: 1.1rem;
     color: #1e293b;
     margin-bottom: 12px;
@@ -1093,3 +1093,7 @@
 .benefitGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .benefitItem { min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 1024px) { .benefitGrid { grid-template-columns: 1fr; } }
+
+.blockContent, .blockImage { min-width: 0; max-width: 100%; }
+
+.formGroup { min-width: 0; max-width: 100%; }

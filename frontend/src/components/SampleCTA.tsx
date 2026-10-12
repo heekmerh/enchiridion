@@ -1,19 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { books } from "@/lib/data";
 import styles from "./SampleCTA.module.css";
 
 export default function SampleCTA() {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % books.length);
-        }, 4000);
-        return () => clearInterval(interval);
-    }, []);
+    const currentImageIndex = 0;
 
     return (
         <section className={styles.section}>
@@ -32,6 +24,7 @@ export default function SampleCTA() {
                     <div className={styles.bookStack}>
                         {books.map((book, index) => (
                             <div
+                                aria-hidden={index !== currentImageIndex}
                                 key={book.id}
                                 className={`${styles.bookImageWrapper} ${index === currentImageIndex ? styles.active : styles.inactive
                                     }`}

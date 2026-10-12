@@ -24,7 +24,7 @@ export default function SocialShareCard({ username, rank, soulsGuided, referralC
             <div className={styles.logo}>ENCHIRIDION</div>
 
             <div className={styles.badgeWrapper}>
-                <i className={`fas ${isMaster ? "fa-crown" : "fa-medal"} ${styles.badgeIcon}`}></i>
+                <i aria-hidden="true" className={`fas ${isMaster ? "fa-crown" : "fa-medal"} ${styles.badgeIcon}`}></i>
             </div>
 
             <h2 className={styles.rankTitle}>{rank}</h2>
@@ -43,10 +43,10 @@ export default function SocialShareCard({ username, rank, soulsGuided, referralC
 
             <div className={styles.shareButtons}>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={`${styles.shareBtn} ${styles.whatsapp}`}>
-                    <i className="fab fa-whatsapp"></i> Share on WhatsApp
+                    <i aria-hidden="true" className="fab fa-whatsapp"></i> Share on WhatsApp
                 </a>
                 <button className={`${styles.shareBtn} ${styles.instagram}`} onClick={() => alert("Screenshot this card to share on Instagram!")}>
-                    <i className="fab fa-instagram"></i> Share on IG
+                    <i aria-hidden="true" className="fab fa-instagram"></i> Share on IG
                 </button>
             </div>
 

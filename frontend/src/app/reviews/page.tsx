@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ReviewForm from '@/components/ReviewForm';
 import ReviewsFeed from '@/components/ReviewsFeed';
 import styles from './ReviewsPage.module.css';
@@ -9,8 +9,14 @@ export default function ReviewsPage() {
     const [reviewVersion, setReviewVersion] = useState(0);
     const [isFormOpen, setIsFormOpen] = useState(false);
 
-    const handleReviewSubmitted = () => {
+    const triggerRef = useRef<HTMLButtonElement>(null);
+    const closeForm = () => {
         setIsFormOpen(false);
+        requestAnimationFrame(() => triggerRef.current?.focus());
+    };
+
+    const handleReviewSubmitted = () => {
+        closeForm();
         setReviewVersion(version => version + 1);
     };
 
@@ -26,7 +32,7 @@ export default function ReviewsPage() {
 
             <section className={styles.formSection}>
                 <div className={styles.container}>
-                    <button
+                    <button ref={triggerRef}
                         onClick={() => setIsFormOpen(!isFormOpen)}
                         aria-expanded={isFormOpen}
                         aria-controls="review-form-panel"
@@ -37,9 +43,9 @@ export default function ReviewsPage() {
 
                     <div id="review-form-panel" hidden={!isFormOpen} className={`${styles.formDropdown} ${isFormOpen ? styles.formOpen : ""}`}>
                         <div className={styles.formWrapper}>
-                            <ReviewForm
+                            <ReviewForm key={reviewVersion}
                                 onReviewSubmitted={handleReviewSubmitted}
-                                onCancel={() => setIsFormOpen(false)}
+                                onCancel={closeForm}
                             />
                         </div>
                     </div>

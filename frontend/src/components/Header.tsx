@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useDialog } from "@/hooks/useDialog";
 import styles from "./Header.module.css";
@@ -21,6 +21,7 @@ const menuItems = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuTriggerRef = useRef<HTMLButtonElement | null>(null);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedSubMenu, setExpandedSubMenu] = useState<string | null>(null);
@@ -91,8 +92,12 @@ export default function Header() {
     <>
       <header
         className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${activeMenu ? styles.menuOpen : ""}`}
-        onMouseLeave={() => setActiveMenu(null)}
-        onKeyDown={event => { if (event.key === "Escape") setActiveMenu(null); }}
+        onPointerLeave={event => {
+          if (event.pointerType === "mouse" && !event.currentTarget.querySelector("#desktop-navigation-panel")?.contains(document.activeElement)) {
+            setActiveMenu(null);
+          }
+        }}
+        onKeyDown={event => { if (event.key === "Escape" && activeMenu) { setActiveMenu(null); menuTriggerRef.current?.focus(); } }}
         onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setActiveMenu(null); }}
         onClickCapture={event => {
           if (event.target instanceof Element && event.target.closest("a")) {
@@ -104,13 +109,21 @@ export default function Header() {
       >
         <div className={styles.container}>
           {/* Desktop Nav - Left */}
-          <div className={`${styles.navGroup} ${styles.desktopOnly}`}>
+          <nav aria-label="Primary navigation" className={`${styles.navGroup} ${styles.desktopOnly}`}>
             {menuItems.slice(0, 4).map((item) => (
               <div
                 key={item.label}
                 className={styles.navItem}
-                onFocus={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
-                onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
+                onPointerEnter={event => {
+                  if (event.pointerType !== "mouse") return;
+                  const trigger = event.currentTarget.querySelector<HTMLButtonElement>("button[aria-controls]");
+                  if (trigger) {
+                    menuTriggerRef.current = trigger;
+                    setActiveMenu(item.label);
+                  } else {
+                    setActiveMenu(null);
+                  }
+                }}
               >
                 {item.modal ? (
                   <button onClick={handleOpenLogin} className={styles.navLinkButton}>
@@ -119,9 +132,17 @@ export default function Header() {
                 ) : (
                   <Link href={item.href} className={styles.navLink}>{item.label}</Link>
                 )}
+                {["Books", "App", "Referral Program"].includes(item.label) && (
+                  <button type="button" className={styles.navDisclosure}
+                    aria-label={`${activeMenu === item.label ? "Close" : "Open"} ${item.label} menu`}
+                    aria-expanded={activeMenu === item.label} aria-controls="desktop-navigation-panel"
+                    onClick={event => { menuTriggerRef.current = event.currentTarget; setActiveMenu(activeMenu === item.label ? null : item.label); }}>
+                    <span aria-hidden="true">⌄</span>
+                  </button>
+                )}
               </div>
             ))}
-          </div>
+          </nav>
 
           {/* Logo - Both Mobile and Desktop */}
           <div className={styles.logoContainer}>
@@ -139,7 +160,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Nav - Right */}
-          <div className={`${styles.navGroup} ${styles.desktopOnly}`}>
+          <nav aria-label="Account and information" className={`${styles.navGroup} ${styles.desktopOnly}`}>
             {menuItems.slice(4).map((item) => {
               const isLoginItem = item.label === "Partner Login";
               if (isLoginItem && isLoggedIn) {
@@ -153,8 +174,6 @@ export default function Header() {
                 <div
                   key={item.label}
                   className={styles.navItem}
-                  onFocus={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
-                onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
                 >
                   {item.modal ? (
                     <button onClick={handleOpenLogin} className={styles.navLinkButton}>
@@ -166,16 +185,16 @@ export default function Header() {
                 </div>
               );
             })}
-          </div>
+          </nav>
 
           {/* Hamburger Menu Icon */}
           <button className={styles.hamburger} onClick={toggleMenu} aria-label={isMenuOpen ? "Close navigation" : "Open navigation"} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
-            <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+            <i aria-hidden="true" className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
           </button>
         </div>
 
         {/* Mega Dropdown Layer (Desktop Only) */}
-        <div className={`${styles.megaDropdown} ${activeMenu ? styles.active : ""} ${styles.desktopOnly}`}>
+        <div id="desktop-navigation-panel" role="region" aria-label={`${activeMenu || "Expanded"} navigation`} hidden={!activeMenu} className={`${styles.megaDropdown} ${activeMenu ? styles.active : ""} ${styles.desktopOnly}`}>
           <div className={styles.megaContainer}>
             {activeMenu === "Books" && (
               <div className={styles.megaContent}>
@@ -242,7 +261,7 @@ export default function Header() {
       {/* Mobile Sidebar */}
       <div id="mobile-navigation" ref={sidebarRef} role="dialog" aria-modal="true" aria-label="Navigation" tabIndex={-1} hidden={!isMenuOpen} className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
         <button className={styles.closeBtn} aria-label="Close navigation" onClick={() => setIsMenuOpen(false)}>
-          <i className="fas fa-times"></i>
+          <i aria-hidden="true" className="fas fa-times"></i>
         </button>
         <div className={styles.sidebarLinks}>
           {menuItems.map((item) => {

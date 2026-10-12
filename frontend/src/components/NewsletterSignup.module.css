@@ -1,14 +1,14 @@
 .newsletterWrapper {
     width: 100%;
     max-width: var(--max-width);
-    margin: 0 auto var(--spacing-lg);
+    margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .newsletterBtn {
-    background-color: #b93800;
+    background-color: var(--color-red);
     color: white;
     border: none;
     padding: 12px 28px;
@@ -17,13 +17,13 @@
     font-size: 0.95rem;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(185, 28, 28, 0.15);
 }
 
 .newsletterBtn:hover {
     transform: scale(1.05);
-    background-color: #9a3412;
-    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+    background-color: #991b1b;
+    box-shadow: 0 6px 20px rgba(185, 28, 28, 0.2);
 }
 
 .newsletterBtn[aria-expanded="true"] {
@@ -46,7 +46,7 @@
 }
 
 .newsletterDropdown.open {
-    max-height: 800px;
+    max-height: none;
     opacity: 1;
     padding: 30px;
     margin-top: 20px;
@@ -190,3 +190,10 @@
         padding: 20px;
     }
 }
+/* Keep the expanded form usable within the compact footer column. */
+.newsletterDropdown.open { padding: 20px; }
+.formSection { padding: 16px; }
+.inputGroup { flex-direction: column; align-items: stretch; }
+.inputGroup label { text-align: left; }
+.inputGroup input { min-width: 0; width: 100%; }
+.subscribeBtn { padding: 12px; }
