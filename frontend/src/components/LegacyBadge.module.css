@@ -46,7 +46,8 @@
     background: rgba(212, 175, 55, 0.1);
     border-color: rgba(212, 175, 55, 0.3);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
-    animation: goldShimmer 3s 1;
+    animation: goldShimmer 3s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 .master .iconWrapper i {

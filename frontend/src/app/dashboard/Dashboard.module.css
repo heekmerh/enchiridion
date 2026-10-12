@@ -320,7 +320,8 @@
 
 /* Elite Pulse Animation */
 .elitePulse {
-    animation: goldPulse 2s 1;
+    animation: goldPulse 2s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
     border: 2px solid #fbbf24 !important;
 }
 
@@ -508,7 +509,8 @@
     color: #ffd700;
     margin-bottom: 24px;
     filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
-    animation: float 2s ease-in-out 1;
+    animation: float 2s ease-in-out infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 .celebrationCard h2 {
@@ -722,7 +724,8 @@
     background: rgba(251, 191, 36, 0.1) !important;
     color: #fbbf24 !important;
     border: 1px solid rgba(251, 191, 36, 0.3);
-    animation: simplePulse 2s 1;
+    animation: simplePulse 2s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes simplePulse {

@@ -162,6 +162,7 @@
 
 .spinner {
     animation: rotate 1s linear infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes rotate {

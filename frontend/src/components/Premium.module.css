@@ -213,6 +213,7 @@
     border-top-color: var(--color-red);
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    animation-play-state: var(--continuous-animation-state, running);
     margin: 0 auto;
 }
 

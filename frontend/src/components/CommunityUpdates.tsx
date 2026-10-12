@@ -2,16 +2,22 @@
 
 import { useCallback, useEffect, useId, useState } from "react";
 import styles from "./CommunityUpdates.module.css";
+import toastStyles from "./GlobalToast.module.css";
+import impactStyles from "./OnboardingChecklist.module.css";
+import { useContinuousMotion } from "@/hooks/useContinuousMotion";
 
-interface Update { text: string; timestamp?: string; id?: string }
+interface Update { text: string; timestamp?: string; id?: string; type?: string }
 
-/** Updates are user-controlled and remain available until the user closes them. */
-export default function CommunityUpdates({ endpoint, label }: { endpoint: string; label: string }) {
+/** Animated previews accompany a persistent, user-controlled list of updates. */
+export default function CommunityUpdates({ endpoint, label, preview }: { endpoint: string; label: string; preview?: "broadcast" | "milestone" }) {
     const panelId = useId();
     const [updates, setUpdates] = useState<Update[]>([]);
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const motionEnabled = useContinuousMotion();
+    const [previewIndex, setPreviewIndex] = useState(0);
+    const [showPreview, setShowPreview] = useState(preview === "broadcast");
     const load = useCallback(async (): Promise<Update[]> => {
         const response = await fetch(endpoint);
         if (!response.ok) throw new Error("Updates unavailable");
@@ -25,6 +31,21 @@ export default function CommunityUpdates({ endpoint, label }: { endpoint: string
             .finally(() => { if (active) setLoading(false); });
         return () => { active = false; };
     }, [load]);
+    useEffect(() => {
+        if (!preview || !motionEnabled) return;
+        const interval = window.setInterval(() => {
+            load().then(setUpdates).catch(() => { /* Preserve available updates during a temporary outage. */ });
+        }, preview === "broadcast" ? 15000 : 300000);
+        return () => window.clearInterval(interval);
+    }, [load, motionEnabled, preview]);
+    useEffect(() => {
+        if (!preview || !motionEnabled || open || !updates.length) return;
+        const timer = window.setTimeout(() => {
+            setPreviewIndex(index => (index + 1) % updates.length);
+            setShowPreview(preview === "broadcast" || !showPreview);
+        }, preview === "broadcast" ? 6000 : showPreview ? 5000 : 60000 + Math.random() * 60000);
+        return () => window.clearTimeout(timer);
+    }, [preview, motionEnabled, open, updates.length, previewIndex, showPreview]);
     async function refresh() {
         setLoading(true);
         setError(false);
@@ -35,6 +56,13 @@ export default function CommunityUpdates({ endpoint, label }: { endpoint: string
 
     return (
         <section className={styles.panel} aria-label={label}>
+            {preview && showPreview && !open && updates.length > 0 && <div aria-hidden="true" data-motion-preview
+                className={preview === "broadcast" ? toastStyles.globalToastContainer : impactStyles.liveFeedContainer}>
+                <div key={previewIndex} className={preview === "broadcast" ? `${toastStyles.toast} ${toastStyles.toastEnter}` : impactStyles.toast}>
+                    <div className={preview === "broadcast" ? toastStyles.toastText : impactStyles.toastText}>{updates[previewIndex % updates.length].text}</div>
+                    {preview === "broadcast" && updates[previewIndex % updates.length].type === "master_rank" && <div className={toastStyles.confettiMini} />}
+                </div>
+            </div>}
             <div className={styles.actions}>
                 <button type="button" aria-expanded={open} aria-controls={panelId} onClick={() => setOpen(value => !value)}>
                     {label}

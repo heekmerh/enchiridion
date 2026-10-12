@@ -1,4 +1,5 @@
 import BookCarousel from "@/components/BookCarousel";
+import HeroCircle from "@/components/HeroCircle";
 import AppSection from "@/components/AppSection";
 import SampleCTA from "@/components/SampleCTA";
 import ReviewsSection from '@/components/ReviewsSection';
@@ -22,7 +23,7 @@ export default function Home() {
           <div className={styles.smokeParticle} style={{ bottom: '20%', left: '30%', animationDelay: '-3s' }}></div>
 
           <div className={styles.heroContent}>
-            <div className={styles.heroCircleContainer} aria-label="Main call-to-action area">
+            <HeroCircle>
               <h1 className="fade-in">
                 Concise Medical <br />
                 <span>Knowledge.</span>
@@ -35,7 +36,7 @@ export default function Home() {
                 <Link href="/#books" className={styles.primaryBtn}>Explore the Books</Link>
                 <Link href="/#app" className={styles.secondaryBtn}>Download the App</Link>
               </div>
-            </div>
+            </HeroCircle>
           </div>
 
           {/* Floating Medical Icons */}

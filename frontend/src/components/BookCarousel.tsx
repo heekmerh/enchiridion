@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { books } from "@/lib/data";
 import styles from "./BookCarousel.module.css";
+import { useContinuousMotion } from "@/hooks/useContinuousMotion";
 
 export default function BookCarousel() {
     const [detailsDismissed, setDetailsDismissed] = useState(false);
@@ -12,6 +13,25 @@ export default function BookCarousel() {
     const lastHoverRef = useRef<{ x: number; y: number } | null>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    const motionEnabled = useContinuousMotion();
+    const [interacting, setInteracting] = useState(false);
+    const [autoScroll, setAutoScroll] = useState(true);
+
+    useEffect(() => {
+        if (!motionEnabled || interacting || !autoScroll) return;
+        const timer = window.setInterval(() => {
+            const carousel = scrollRef.current;
+            if (!carousel) return;
+            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 5) {
+                carousel.scrollTo({ left: 0, behavior: "smooth" });
+            } else {
+                const card = carousel.firstElementChild as HTMLElement | null;
+                const gap = parseFloat(getComputedStyle(carousel).columnGap) || 0;
+                carousel.scrollBy({ left: (card?.offsetWidth || 320) + gap, behavior: "smooth" });
+            }
+        }, 5000);
+        return () => window.clearInterval(timer);
+    }, [motionEnabled, interacting, autoScroll]);
 
 
 
@@ -69,6 +89,10 @@ export default function BookCarousel() {
     return (
         <section
             className={styles.carouselContainer}
+            onPointerEnter={() => setInteracting(true)}
+            onPointerLeave={event => setInteracting(event.currentTarget.contains(document.activeElement))}
+            onFocus={() => setInteracting(true)}
+            onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(event.currentTarget.matches(":hover")); }}
             onKeyDown={event => { if (event.key === "Escape") setDetailsDismissed(true); }}
         >
             <div className={styles.carouselHeader}>
@@ -77,6 +101,9 @@ export default function BookCarousel() {
                     <p id="book-carousel-help">Swipe or use the arrows to explore.</p>
                 </div>
                 <div className={styles.controls}>
+                    <button type="button" className={styles.navBtn} aria-pressed={!autoScroll} onClick={() => setAutoScroll(value => !value)} aria-label={autoScroll ? "Pause book scrolling" : "Resume book scrolling"}>
+                        <span aria-hidden="true">{autoScroll ? "Ⅱ" : "▶"}</span>
+                    </button>
                     <button
                         onClick={() => scroll("left")}
                         disabled={!canScrollLeft}

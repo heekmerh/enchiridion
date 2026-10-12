@@ -73,7 +73,8 @@
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
-    animation: rotate 4s linear 1;
+    animation: rotate 25s linear infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes rotate {
@@ -197,7 +198,8 @@
 .rankIcon {
     font-size: 4rem;
     margin-bottom: 24px;
-    animation: bounce 3s ease-in-out 1;
+    animation: bounce 3s ease-in-out infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes bounce {
@@ -555,7 +557,8 @@
 .downloadIcon {
     font-size: 4rem;
     color: var(--color-indigo);
-    animation: pulse 2s 1;
+    animation: pulse 2s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes pulse {

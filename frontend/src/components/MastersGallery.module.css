@@ -128,7 +128,8 @@
     bottom: -8px;
     border-radius: 50%;
     border: 2px solid rgba(212, 175, 55, 0.3);
-    animation: pulseGlow 2s 1;
+    animation: pulseGlow 2s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
 }
 
 @keyframes pulseGlow {
@@ -220,6 +221,7 @@
     border-top-color: #D4AF37;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+    animation-play-state: var(--continuous-animation-state, running);
     margin: 0 auto 20px;
 }
 

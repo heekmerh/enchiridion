@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MotionControl from "@/components/MotionControl";
 import "./globals.css";
 import ReferralTracker from "@/components/ReferralTracker";
 import { Suspense } from "react";
@@ -37,6 +38,7 @@ export default function RootLayout({
         </Suspense>
         <main id="main-content" tabIndex={-1} style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer />
+        <MotionControl />
       </body>
     </html>
   );

@@ -6,10 +6,12 @@ import { books } from "@/lib/data";
 import styles from "./AboutPage.module.css";
 import { logActivity } from "@/lib/record";
 import EmailGateModal from "@/components/EmailGateModal";
+import { useContinuousMotion } from "@/hooks/useContinuousMotion";
 
 export default function AboutPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [rotateCovers, setRotateCovers] = useState(false);
+    const [rotateCovers, setRotateCovers] = useState(true);
+    const motionEnabled = useContinuousMotion();
     const [isPreviewLoading, setIsPreviewLoading] = useState(true);
     const [showGlow, setShowGlow] = useState(false);
     const [showFloatingButton, setShowFloatingButton] = useState(false);
@@ -33,10 +35,10 @@ export default function AboutPage() {
     }, []);
 
     useEffect(() => {
-        if (!rotateCovers || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!rotateCovers || !motionEnabled) return;
         const interval = setInterval(() => setCurrentImageIndex(index => (index + 1) % books.length), 4000);
         return () => clearInterval(interval);
-    }, [rotateCovers]);
+    }, [rotateCovers, motionEnabled]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(

@@ -6,6 +6,7 @@ import ReviewForm from './ReviewForm';
 import ReviewCard from './ReviewCard';
 import { Review } from '@/app/api/reviews/route';
 import { manageReviews } from '@/lib/reviews';
+import { useContinuousMotion } from '@/hooks/useContinuousMotion';
 
 export default function ReviewsSection() {
     const [reviews, setReviews] = useState<Review[]>([]);
@@ -13,6 +14,22 @@ export default function ReviewsSection() {
     const [loadError, setLoadError] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
+    const motionEnabled = useContinuousMotion();
+    const [interacting, setInteracting] = useState(false);
+
+    useEffect(() => {
+        if (!motionEnabled || interacting || showForm || reviews.length < 2) return;
+        const timer = window.setInterval(() => {
+            const carousel = carouselRef.current;
+            if (!carousel) return;
+            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+            }
+        }, 5000);
+        return () => window.clearInterval(timer);
+    }, [motionEnabled, interacting, showForm, reviews.length]);
 
     const triggerRef = useRef<HTMLButtonElement>(null);
     const closeForm = () => {
@@ -63,7 +80,11 @@ export default function ReviewsSection() {
                                     <p>No reviews yet. Be the first to share your experience!</p>
                                 </div>
                             ) : (
-                                <div className={styles.carouselContainer}>
+                                <div className={styles.carouselContainer}
+                                    onPointerEnter={() => setInteracting(true)}
+                                    onPointerLeave={event => setInteracting(event.currentTarget.contains(document.activeElement))}
+                                    onFocus={() => setInteracting(true)}
+                                    onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(event.currentTarget.matches(':hover')); }}>
                                     <div className={styles.carousel} ref={carouselRef} tabIndex={0} role="region" aria-label="User reviews">
                                         {reviews.map((review) => (
                                             <div key={review.id} className={styles.cardWrapper}>
