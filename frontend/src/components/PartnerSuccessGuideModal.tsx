@@ -1,5 +1,6 @@
 "use client";
 
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./PartnerSuccessGuideModal.module.css";
 
 interface PartnerSuccessGuideModalProps {
@@ -8,11 +9,12 @@ interface PartnerSuccessGuideModalProps {
 }
 
 export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuccessGuideModalProps) {
+    const dialogRef = useDialog(isOpen, onClose);
     if (!isOpen) return null;
 
     return (
         <div className={styles.overlay} onClick={onClose}>
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Partner success guide" tabIndex={-1} className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
                     <i className="fas fa-times"></i>
                 </button>

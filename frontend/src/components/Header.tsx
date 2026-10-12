@@ -2,21 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./Header.module.css";
 import PartnerLoginModal from "./PartnerLoginModal";
 import { currentSession, onSessionChange } from "@/lib/supabase";
 
 const menuItems = [
-  { label: "Books", href: "#books" },
-  { label: "App", href: "#app" },
+  { label: "Books", href: "/#books" },
+  { label: "App", href: "/#app" },
   { label: "Referral Program", href: "/refer" },
   { label: "Rewards", href: "/rewards" },
   { label: "Premium", href: "/premium" },
   { label: "Partner Login", href: "#login", modal: true },
   { label: "Reviews", href: "/reviews" },
   { label: "About", href: "/about" },
-  { label: "Download", href: "/download" },
+  { label: "Download", href: "/#app" },
 ];
 
 export default function Header() {
@@ -24,6 +24,7 @@ export default function Header() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedSubMenu, setExpandedSubMenu] = useState<string | null>(null);
+  const sidebarRef = useDialog(isMenuOpen, () => setIsMenuOpen(false));
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Temporary state for UI
 
@@ -91,6 +92,8 @@ export default function Header() {
       <header
         className={`${styles.header} ${isScrolled ? styles.scrolled : ""} ${activeMenu ? styles.menuOpen : ""}`}
         onMouseLeave={() => setActiveMenu(null)}
+        onKeyDown={event => { if (event.key === "Escape") setActiveMenu(null); }}
+        onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setActiveMenu(null); }}
         onClickCapture={event => {
           if (event.target instanceof Element && event.target.closest("a")) {
             setActiveMenu(null);
@@ -106,6 +109,7 @@ export default function Header() {
               <div
                 key={item.label}
                 className={styles.navItem}
+                onFocus={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
                 onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
               >
                 {item.modal ? (
@@ -149,7 +153,8 @@ export default function Header() {
                 <div
                   key={item.label}
                   className={styles.navItem}
-                  onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
+                  onFocus={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
+                onMouseEnter={() => ["Books", "App", "Referral Program"].includes(item.label) ? setActiveMenu(item.label) : setActiveMenu(null)}
                 >
                   {item.modal ? (
                     <button onClick={handleOpenLogin} className={styles.navLinkButton}>
@@ -164,7 +169,7 @@ export default function Header() {
           </div>
 
           {/* Hamburger Menu Icon */}
-          <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
+          <button className={styles.hamburger} onClick={toggleMenu} aria-label={isMenuOpen ? "Close navigation" : "Open navigation"} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
             <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
           </button>
         </div>
@@ -177,7 +182,7 @@ export default function Header() {
                 <div className={styles.megaCol}>
                   <h4>Clinical Books</h4>
                   <p>Curated medical handbooks for every specialty.</p>
-                  <Link href="#books" className={styles.megaLink}>View All Books →</Link>
+                  <Link href="/#books" className={styles.megaLink}>View All Books →</Link>
                 </div>
                 <div className={styles.megaCol}>
                   <div className={styles.bookGrid}>
@@ -201,7 +206,7 @@ export default function Header() {
                   <p>Your library everywhere. Searchable, offline, and up-to-date.</p>
                 </div>
                 <div className={styles.megaCol}>
-                  <Link href="/download" className={styles.ctaButton}>Get the App</Link>
+                  <Link href="/#app" className={styles.ctaButton}>Get the App</Link>
                 </div>
               </div>
             )}
@@ -235,8 +240,8 @@ export default function Header() {
       </header>
 
       {/* Mobile Sidebar */}
-      <div className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
-        <button className={styles.closeBtn} onClick={() => setIsMenuOpen(false)}>
+      <div id="mobile-navigation" ref={sidebarRef} role="dialog" aria-modal="true" aria-label="Navigation" tabIndex={-1} hidden={!isMenuOpen} className={`${styles.sidebar} ${isMenuOpen ? styles.sidebarOpen : ""}`}>
+        <button className={styles.closeBtn} aria-label="Close navigation" onClick={() => setIsMenuOpen(false)}>
           <i className="fas fa-times"></i>
         </button>
         <div className={styles.sidebarLinks}>
@@ -252,28 +257,24 @@ export default function Header() {
 
             return (
               <div key={item.label} className={styles.sidebarItem}>
-                <div
-                  className={styles.sidebarLinkContainer}
-                  onClick={() => toggleSubMenu(isPartnershipGroup ? "Partnership" : item.label)}
-                >
-                  <span className={styles.sidebarLink}>{displayLabel}</span>
-                  {hasSubMenu && (
-                    <i className={`fas fa-chevron-down ${styles.chevron} ${isExpanded ? styles.chevronRotated : ""}`}></i>
-                  )}
-                  {!hasSubMenu && (
-                    <Link
-                      href={item.href}
-                      className={styles.sidebarLinkOverlay}
-                      onClick={() => setIsMenuOpen(false)}
-                    />
-                  )}
-                </div>
+                {hasSubMenu ? (
+                  <button type="button" className={styles.sidebarLinkContainer}
+                    aria-expanded={isExpanded} aria-controls={`mobile-${item.label.replaceAll(" ", "-")}`}
+                    onClick={() => toggleSubMenu(isPartnershipGroup ? "Partnership" : item.label)}>
+                    <span className={styles.sidebarLink}>{displayLabel}</span>
+                    <i aria-hidden="true" className={`fas fa-chevron-down ${styles.chevron} ${isExpanded ? styles.chevronRotated : ""}`} />
+                  </button>
+                ) : (
+                  <Link href={item.href} className={styles.sidebarLinkContainer} onClick={() => setIsMenuOpen(false)}>
+                    <span className={styles.sidebarLink}>{displayLabel}</span>
+                  </Link>
+                )}
 
                 {hasSubMenu && (
-                  <div className={`${styles.mobileSubMenu} ${isExpanded ? styles.subMenuOpen : ""}`}>
+                  <div id={`mobile-${item.label.replaceAll(" ", "-")}`} hidden={!isExpanded} className={`${styles.mobileSubMenu} ${isExpanded ? styles.subMenuOpen : ""}`}>
                     {item.label === "Books" && (
                       <div className={styles.mobileSubContent}>
-                        <Link href="#books" onClick={() => setIsMenuOpen(false)}>View All Books</Link>
+                        <Link href="/#books" onClick={() => setIsMenuOpen(false)}>View All Books</Link>
                         <Link href="/books/pediatrics" onClick={() => setIsMenuOpen(false)}>Pediatrics</Link>
                         <Link href="/books/surgery" onClick={() => setIsMenuOpen(false)}>Surgery</Link>
                         <Link href="/books/internal-medicine" onClick={() => setIsMenuOpen(false)}>Internal Medicine</Link>
@@ -282,7 +283,7 @@ export default function Header() {
                     {item.label === "App" && (
                       <div className={styles.mobileSubContent}>
                         <p>Your library everywhere. Searchable, offline, and up-to-date.</p>
-                        <Link href="/download" className={styles.mobileCta} onClick={() => setIsMenuOpen(false)}>Get the App</Link>
+                        <Link href="/#app" className={styles.mobileCta} onClick={() => setIsMenuOpen(false)}>Get the App</Link>
                       </div>
                     )}
                     {isPartnershipGroup && (

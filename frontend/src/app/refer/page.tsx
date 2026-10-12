@@ -108,6 +108,8 @@ export default function ReferralPage() {
         if (formData.password !== formData.confirmPassword) errors.confirmPassword = "Passwords do not match";
         if (!formData.acceptTerms) errors.acceptTerms = "Please accept the Terms and Privacy Policy";
         setFormErrors(errors);
+        const firstInvalid = Object.keys(errors)[0];
+        if (firstInvalid) document.getElementById(firstInvalid)?.focus();
         return Object.keys(errors).length === 0;
     };
 
@@ -490,39 +492,45 @@ export default function ReferralPage() {
                                     <input
                                         type="text"
                                         id="fullName"
+                                        aria-invalid={!!formErrors.fullName}
+                                        aria-describedby={formErrors.fullName ? "registration-fullName-error" : undefined}
                                         name="fullName"
                                         value={formData.fullName}
                                         onChange={handleInputChange}
                                         placeholder="Dr. Jane Smith"
                                         aria-required="true"
                                     />
-                                    {formErrors.fullName && <span className={styles.error}>{formErrors.fullName}</span>}
+                                    {formErrors.fullName && <span id="registration-fullName-error" className={styles.error}>{formErrors.fullName}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="email">Email Address *</label>
                                     <input
                                         type="email"
                                         id="email"
+                                        aria-invalid={!!formErrors.email}
+                                        aria-describedby={formErrors.email ? "registration-email-error" : undefined}
                                         name="email"
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         placeholder="jane@hospital.com"
                                         aria-required="true"
                                     />
-                                    {formErrors.email && <span className={styles.error}>{formErrors.email}</span>}
+                                    {formErrors.email && <span id="registration-email-error" className={styles.error}>{formErrors.email}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="country">Country *</label>
                                     <input
                                         type="text"
                                         id="country"
+                                        aria-invalid={!!formErrors.country}
+                                        aria-describedby={formErrors.country ? "registration-country-error" : undefined}
                                         name="country"
                                         value={formData.country}
                                         onChange={handleInputChange}
                                         placeholder="Nigeria"
                                         aria-required="true"
                                     />
-                                    {formErrors.country && <span className={styles.error}>{formErrors.country}</span>}
+                                    {formErrors.country && <span id="registration-country-error" className={styles.error}>{formErrors.country}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="state">State</label>
@@ -539,6 +547,8 @@ export default function ReferralPage() {
                                     <label htmlFor="profession">Profession *</label>
                                     <select
                                         id="profession"
+                                        aria-invalid={!!formErrors.profession}
+                                        aria-describedby={formErrors.profession ? "registration-profession-error" : undefined}
                                         name="profession"
                                         value={formData.profession}
                                         onChange={handleInputChange}
@@ -551,46 +561,52 @@ export default function ReferralPage() {
                                         <option value="institution">Institution Representative</option>
                                         <option value="other">Other</option>
                                     </select>
-                                    {formErrors.profession && <span className={styles.error}>{formErrors.profession}</span>}
+                                    {formErrors.profession && <span id="registration-profession-error" className={styles.error}>{formErrors.profession}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="phone">Phone Number *</label>
                                     <input
                                         type="tel"
                                         id="phone"
+                                        aria-invalid={!!formErrors.phone}
+                                        aria-describedby={formErrors.phone ? "registration-phone-error" : undefined}
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         placeholder="+234 800 000 0000"
                                         aria-required="true"
                                     />
-                                    {formErrors.phone && <span className={styles.error}>{formErrors.phone}</span>}
+                                    {formErrors.phone && <span id="registration-phone-error" className={styles.error}>{formErrors.phone}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="password">Password *</label>
                                     <input
                                         type="password"
                                         id="password"
+                                        aria-invalid={!!formErrors.password}
+                                        aria-describedby={formErrors.password ? "registration-password-error" : undefined}
                                         name="password"
                                         value={formData.password}
                                         onChange={handleInputChange}
                                         placeholder="Min. 6 characters"
                                         aria-required="true"
                                     />
-                                    {formErrors.password && <span className={styles.error}>{formErrors.password}</span>}
+                                    {formErrors.password && <span id="registration-password-error" className={styles.error}>{formErrors.password}</span>}
                                 </div>
                                 <div className={styles.formGroup}>
                                     <label htmlFor="confirmPassword">Confirm Password *</label>
                                     <input
                                         type="password"
                                         id="confirmPassword"
+                                        aria-invalid={!!formErrors.confirmPassword}
+                                        aria-describedby={formErrors.confirmPassword ? "registration-confirmPassword-error" : undefined}
                                         name="confirmPassword"
                                         value={formData.confirmPassword}
                                         onChange={handleInputChange}
                                         placeholder="Confirm password"
                                         aria-required="true"
                                     />
-                                    {formErrors.confirmPassword && <span className={styles.error}>{formErrors.confirmPassword}</span>}
+                                    {formErrors.confirmPassword && <span id="registration-confirmPassword-error" className={styles.error}>{formErrors.confirmPassword}</span>}
                                 </div>
                                 <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
                                     <label htmlFor="institution">Institution (Optional)</label>
@@ -620,7 +636,7 @@ export default function ReferralPage() {
                             <button type="submit" className={styles.submitBtn} disabled={isLoading}>
                                 {isLoading ? "Creating Account..." : "Create My Referral Account"}
                             </button>
-                            {apiError && <p className={styles.error} style={{ textAlign: 'center', marginTop: '15px' }}>{apiError}</p>}
+                            {apiError && <p role="alert" className={styles.error} style={{ textAlign: 'center', marginTop: '15px' }}>{apiError}</p>}
                             <GoogleButton onClick={handleGoogleSignup} disabled={isLoading}
                                 note="Tick the Terms box above first. Your Google name and email are used for your account." />
                         </form>

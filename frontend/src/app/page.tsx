@@ -25,28 +25,15 @@ export default function Home() {
             <div className={styles.heroCircleContainer} aria-label="Main call-to-action area">
               <h1 className="fade-in">
                 Concise Medical <br />
-                <span className={styles.carouselContainer} aria-live="polite" aria-atomic="true">
-                  <span className={styles.rotatingText}>
-                    <span>Knowledge.</span>
-                    <span>Pediatrics.</span>
-                    <span>Surgery.</span>
-                    <span>O&G.</span>
-                    <span>Orthopaedics.</span>
-                    <span>Dermatology.</span>
-                    <span>Medicine.</span>
-                    <span>Psychiatry.</span>
-                    <span>Radiology.</span>
-                    <span>Ophthalmology.</span>
-                  </span>
-                </span>
+                <span>Knowledge.</span>
               </h1>
               <p className={styles.heroDescription}>
                 Enchiridion is a curated collection of practical medical handbooks
                 designed for students, clinicians, and educators. Anywhere. Anytime.
               </p>
               <div className={styles.heroActions}>
-                <Link href="#books" className={styles.primaryBtn}>Explore the Books</Link>
-                <Link href="#app" className={styles.secondaryBtn}>Download the App</Link>
+                <Link href="/#books" className={styles.primaryBtn}>Explore the Books</Link>
+                <Link href="/#app" className={styles.secondaryBtn}>Download the App</Link>
               </div>
             </div>
           </div>

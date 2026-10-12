@@ -202,3 +202,6 @@
         flex: 0 0 280px;
     }
 }
+.category, .learnMore { color: #5eead4; }
+.card:focus-visible .hoverOverlay { opacity: 1; }
+.card:focus-visible .hoverOverlay p { transform: translateY(0); }

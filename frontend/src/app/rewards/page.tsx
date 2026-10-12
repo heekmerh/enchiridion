@@ -162,7 +162,7 @@ export default function RewardsPage() {
                         <div className={styles.downloadIcon}>
                             <i className="fas fa-rocket"></i>
                         </div>
-                        <Link href="/download" className={styles.referralBtn}>
+                        <Link href="/#app" className={styles.referralBtn}>
                             <i className="fas fa-cloud-download-alt" style={{ marginRight: '10px' }}></i>
                             Download App Now
                         </Link>

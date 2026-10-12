@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useId } from "react";
 import styles from "./Accordion.module.css";
 
 interface AccordionProps {
@@ -18,6 +18,7 @@ export default function Accordion({
     isOpen: controlledOpen,
     onToggle
 }: AccordionProps) {
+    const panelId = useId();
     const [internalOpen, setInternalOpen] = useState(defaultOpen);
 
     const isExpanded = controlledOpen !== undefined ? controlledOpen : internalOpen;
@@ -35,6 +36,8 @@ export default function Accordion({
                 className={styles.header}
                 onClick={handleToggle}
                 aria-expanded={isExpanded}
+                aria-controls={panelId}
+                type="button"
             >
                 <span className={styles.title}>{title}</span>
                 <span className={styles.icon}>
@@ -43,7 +46,7 @@ export default function Accordion({
                     </svg>
                 </span>
             </button>
-            <div className={styles.content}>
+            <div id={panelId} className={styles.content} hidden={!isExpanded}>
                 <div className={styles.inner}>
                     {children}
                 </div>

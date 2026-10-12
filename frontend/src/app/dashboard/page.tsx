@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./Dashboard.module.css";
 import { recordShare } from "@/lib/record";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
@@ -219,6 +220,8 @@ export default function PartnerDashboard() {
     const [showCelebration, setShowCelebration] = useState(false);
     const [celebrationTier, setCelebrationTier] = useState<number | null>(null);
     const [showRules, setShowRules] = useState(false);
+    const rulesRef = useDialog(showRules, () => setShowRules(false));
+    const rankRef = useDialog(!!showRankUp, () => setShowRankUp(null));
     const prevReferralsRef = useRef(0);
     const revenueCardRef = useRef<HTMLDivElement>(null);
     const lifetimeCardRef = useRef<HTMLDivElement>(null);
@@ -613,8 +616,8 @@ export default function PartnerDashboard() {
                     ) : (
                         <form className={styles.payoutForm} onSubmit={handlePayoutSubmit}>
                             <div className={`${styles.field} ${styles.fieldFull}`}>
-                                <label>Account Name</label>
-                                <input
+                                <label htmlFor="payout-field-1">Account Name</label>
+                                <input id="payout-field-1"
                                     type="text"
                                     value={payoutForm.accountName}
                                     onChange={(e) => setPayoutForm({ ...payoutForm, accountName: e.target.value })}
@@ -623,8 +626,8 @@ export default function PartnerDashboard() {
                                 />
                             </div>
                             <div className={styles.field}>
-                                <label>Account Number</label>
-                                <input
+                                <label htmlFor="payout-field-2">Account Number</label>
+                                <input id="payout-field-2"
                                     type="text"
                                     value={payoutForm.accountNumber}
                                     onChange={(e) => setPayoutForm({ ...payoutForm, accountNumber: e.target.value })}
@@ -634,8 +637,8 @@ export default function PartnerDashboard() {
                                 />
                             </div>
                             <div className={styles.field}>
-                                <label>Bank Name</label>
-                                <input
+                                <label htmlFor="payout-field-3">Bank Name</label>
+                                <input id="payout-field-3"
                                     type="text"
                                     value={payoutForm.bankName}
                                     onChange={(e) => setPayoutForm({ ...payoutForm, bankName: e.target.value })}
@@ -675,10 +678,10 @@ export default function PartnerDashboard() {
             {/* Referral Rules Modal */}
             {showRules && (
                 <div className={styles.rulesOverlay} onClick={() => setShowRules(false)}>
-                    <div className={styles.rulesCard} onClick={(e) => e.stopPropagation()}>
+                    <div ref={rulesRef} role="dialog" aria-modal="true" aria-label="Referral rules" tabIndex={-1} className={styles.rulesCard} onClick={(e) => e.stopPropagation()}>
                         <h2>
                             Referral Rules & Milestones
-                            <button className={styles.closeButton} onClick={() => setShowRules(false)}>&times;</button>
+                            <button className={styles.closeButton} aria-label="Close rules" onClick={() => setShowRules(false)}>&times;</button>
                         </h2>
 
                         <div className={styles.ruleSection}>
@@ -716,7 +719,7 @@ export default function PartnerDashboard() {
             {/* Rank Up Celebration Popup */}
             {showRankUp && (
                 <div className={styles.celebrationOverlay} onClick={handleCloseRankUp}>
-                    <div className={styles.celebrationCard} onClick={(e) => e.stopPropagation()}>
+                    <div ref={rankRef} role="dialog" aria-modal="true" aria-label="Rank achievement" tabIndex={-1} className={styles.celebrationCard} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.trophyIcon}>
                             <i className={`fas ${showRankUp.icon}`}></i>
                         </div>
@@ -753,7 +756,7 @@ export default function PartnerDashboard() {
                             {showRankUp.btnText}
                         </button>
 
-                        <button className={styles.closeCelebrationBtn} onClick={handleCloseRankUp}>
+                        <button className={styles.closeCelebrationBtn} aria-label="Close achievement" onClick={handleCloseRankUp}>
                             <i className="fas fa-times"></i>
                         </button>
                     </div>

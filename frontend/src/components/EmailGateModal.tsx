@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useDialog } from "@/hooks/useDialog";
 import styles from './EmailGateModal.module.css';
 import { captureLeadAndGetSample } from '@/lib/record';
 
@@ -10,6 +11,7 @@ interface EmailGateModalProps {
 }
 
 export default function EmailGateModal({ onSuccess, onClose }: EmailGateModalProps) {
+    const dialogRef = useDialog(true, onClose);
     const [email, setEmail] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
@@ -50,7 +52,7 @@ export default function EmailGateModal({ onSuccess, onClose }: EmailGateModalPro
 
     return (
         <div className={styles.overlay} onClick={(e) => e.target === e.currentTarget && onClose()}>
-            <div className={styles.modal}>
+            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Access free sample" tabIndex={-1} className={styles.modal}>
                 <button className={styles.closeBtn} onClick={onClose} aria-label="Close">×</button>
 
                 <div className={styles.header}>
@@ -59,7 +61,7 @@ export default function EmailGateModal({ onSuccess, onClose }: EmailGateModalPro
                 </div>
 
                 <form className={styles.form} onSubmit={handleSubmit}>
-                    {error && <div className={styles.errorMessage}>{error}</div>}
+                    {error && <div role="alert" className={styles.errorMessage}>{error}</div>}
 
                     <div className={styles.inputGroup}>
                         <label htmlFor="gate-email">Professional or Student Email</label>

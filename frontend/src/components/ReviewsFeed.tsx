@@ -8,6 +8,7 @@ import { manageReviews } from '@/lib/reviews';
 export default function ReviewsFeed() {
     const [reviews, setReviews] = useState<Review[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [loadError, setLoadError] = useState(false);
     const [openId, setOpenId] = useState<string | null>(null);
 
     useEffect(() => {
@@ -16,7 +17,8 @@ export default function ReviewsFeed() {
                 const data = await manageReviews('FETCH');
                 setReviews(data);
             } catch (error) {
-                console.error('Failed to fetch reviews:', error);
+                setLoadError(true);
+            console.error('Failed to fetch reviews:', error);
             } finally {
                 setIsLoading(false);
             }
@@ -30,6 +32,8 @@ export default function ReviewsFeed() {
 
     if (isLoading) return <div className={styles.loading}>Loading Community Feedback...</div>;
 
+    if (loadError) return <p role="alert">Community feedback is temporarily unavailable. Please try again later.</p>;
+
     if (reviews.length === 0) return <div className={styles.empty}>No feedback available yet.</div>;
 
     return (
@@ -40,6 +44,7 @@ export default function ReviewsFeed() {
                         className={styles.header}
                         onClick={() => toggleAccordion(review.id)}
                         aria-expanded={openId === review.id}
+                        aria-controls={`review-${review.id}`}
                     >
                         <div className={styles.summary}>
                             <div className={styles.topLine}>
@@ -57,7 +62,7 @@ export default function ReviewsFeed() {
                         <i className={`fas fa-chevron-down ${styles.chevron} ${openId === review.id ? styles.chevronOpen : ""}`}></i>
                     </button>
 
-                    <div className={`${styles.contentWrapper} ${openId === review.id ? styles.contentOpen : ""}`}>
+                    <div id={`review-${review.id}`} hidden={openId !== review.id} className={`${styles.contentWrapper} ${openId === review.id ? styles.contentOpen : ""}`}>
                         <div className={styles.content}>
                             {review.organization && (
                                 <div className={styles.orgInfo}>

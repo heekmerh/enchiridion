@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -31,11 +30,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Header />
         <Suspense fallback={null}>
           <ReferralTracker />
         </Suspense>
-        <main style={{ paddingTop: "var(--header-height)" }}>{children}</main>
+        <main id="main-content" tabIndex={-1} style={{ paddingTop: "var(--header-height)" }}>{children}</main>
         <Footer />
       </body>
     </html>

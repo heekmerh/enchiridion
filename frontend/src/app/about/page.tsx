@@ -9,6 +9,7 @@ import EmailGateModal from "@/components/EmailGateModal";
 
 export default function AboutPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [rotateCovers, setRotateCovers] = useState(false);
     const [isPreviewLoading, setIsPreviewLoading] = useState(true);
     const [showGlow, setShowGlow] = useState(false);
     const [showFloatingButton, setShowFloatingButton] = useState(false);
@@ -29,12 +30,13 @@ export default function AboutPage() {
             setIsUnlocked(isCookieUnlocked || isLSUnlocked);
         }
 
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % books.length);
-        }, 4000); // Rotate every 4 seconds
-
-        return () => clearInterval(interval);
     }, []);
+
+    useEffect(() => {
+        if (!rotateCovers || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const interval = setInterval(() => setCurrentImageIndex(index => (index + 1) % books.length), 4000);
+        return () => clearInterval(interval);
+    }, [rotateCovers]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -110,6 +112,7 @@ export default function AboutPage() {
                 <div className={styles.heroImage}>
                     {books.map((book, index) => (
                         <div
+                            aria-hidden={index !== currentImageIndex}
                             key={book.id}
                             className={`${styles.bookCoverWrapper} ${index === currentImageIndex ? styles.active : styles.inactive}`}
                         >
@@ -124,6 +127,9 @@ export default function AboutPage() {
                         </div>
                     ))}
                 </div>
+                <button type="button" aria-pressed={rotateCovers} onClick={() => setRotateCovers(value => !value)}>
+                    {rotateCovers ? "Pause book covers" : "Rotate book covers"}
+                </button>
             </section>
 
             {/* OVERVIEW SECTION */}

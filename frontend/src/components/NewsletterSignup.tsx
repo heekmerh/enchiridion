@@ -73,13 +73,15 @@ export default function NewsletterSignup() {
                 className={styles.newsletterBtn}
                 onClick={toggleDropdown}
                 aria-expanded={isOpen}
+                aria-controls="newsletter-panel"
             >
                 Join the Newsletter
             </button>
 
             <div
                 className={`${styles.newsletterDropdown} ${isOpen ? styles.open : ""}`}
-                aria-hidden={!isOpen}
+                id="newsletter-panel"
+                hidden={!isOpen}
             >
                 <div className={styles.dropdownContent}>
                     <h2>BE THE FIRST TO KNOW</h2>
@@ -92,18 +94,19 @@ export default function NewsletterSignup() {
                         </p>
 
                         {status === "success" ? (
-                            <div className={styles.successMessage}>
+                            <div role="status" className={styles.successMessage}>
                                 <p>✓ Thank you for subscribing! Check your inbox soon.</p>
                                 <button onClick={() => setStatus("idle")} className={styles.resetBtn}>Subscribe another email</button>
                             </div>
                         ) : status === "error" ? (
-                            <div className={styles.errorMessage}>
+                            <div role="alert" className={styles.errorMessage}>
                                 <p>Something went wrong. Please try again later.</p>
                                 <button onClick={() => setStatus("idle")} className={styles.resetBtn}>Retry</button>
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit} className={styles.form}>
                                 <div className={styles.inputGroup}>
+                                    <label htmlFor="newsletter-email">Email address</label>
                                     <input
                                         type="email"
                                         id="newsletter-email"

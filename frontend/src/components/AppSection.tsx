@@ -1,21 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./AppSection.module.css";
 
 export default function AppSection() {
-    const [platform, setPlatform] = useState<"iOS" | "Android" | "other">("other");
-
-    useEffect(() => {
-        const ua = navigator.userAgent.toLowerCase();
-        if (/iphone|ipad|ipod/.test(ua)) {
-            setPlatform("iOS");
-        } else if (/android/.test(ua)) {
-            setPlatform("Android");
-        }
-    }, []);
-
     const features = [
         { title: "Clinical Protocols", description: "Standardized medical procedures at your fingertips." },
         { title: "Drug Dosing", description: "Accurate dosing calculators for pediatric and adult care." },
@@ -64,12 +52,10 @@ export default function AppSection() {
                     <div className={styles.downloadSection}>
                         <p>Immediate Point-Of-Care Access</p>
                         <div className={styles.badges}>
-                            <a href="#" className={styles.badge} target="_blank">
-                                App Store
-                            </a>
-                            <a href="#" className={styles.badge} target="_blank">
-                                Play Store
-                            </a>
+                            <span>iOS app coming soon</span>
+                            {process.env.NEXT_PUBLIC_PLAY_STORE_URL ? (
+                                <a href={process.env.NEXT_PUBLIC_PLAY_STORE_URL} className={styles.badge} target="_blank" rel="noopener noreferrer">Get it on Google Play</a>
+                            ) : <span>Android download coming soon</span>}
                         </div>
                     </div>
                 </div>

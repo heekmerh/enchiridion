@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./DistributorForm.module.css";
 import { getAccessToken } from "@/lib/supabase";
 
@@ -18,6 +19,7 @@ export default function DistributorForm() {
     const [formShake, setFormShake] = useState(false);
     const [showErrorHint, setShowErrorHint] = useState(false);
     const [showTermsModal, setShowTermsModal] = useState(false);
+    const termsRef = useDialog(showTermsModal, () => setShowTermsModal(false));
     const [acceptedTerms, setAcceptedTerms] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -84,8 +86,8 @@ export default function DistributorForm() {
                 onSubmit={handleSubmit}
             >
                 <div className={styles.formField}>
-                    <label>Full Name</label>
-                    <input
+                    <label htmlFor="distributorform-field-1">Full Name</label>
+                    <input id="distributorform-field-1"
                         type="text"
                         required
                         value={formData.name}
@@ -94,8 +96,8 @@ export default function DistributorForm() {
                     />
                 </div>
                 <div className={styles.formField}>
-                    <label>Phone Number</label>
-                    <input
+                    <label htmlFor="distributorform-field-2">Phone Number</label>
+                    <input id="distributorform-field-2"
                         type="tel"
                         required
                         value={formData.phone}
@@ -128,8 +130,8 @@ export default function DistributorForm() {
                 </div>
                 {!formData.sameAsPhone && (
                     <div className={styles.formField}>
-                        <label>WhatsApp Number</label>
-                        <input
+                        <label htmlFor="distributorform-field-3">WhatsApp Number</label>
+                        <input id="distributorform-field-3"
                             type="tel"
                             required
                             value={formData.whatsapp}
@@ -139,8 +141,8 @@ export default function DistributorForm() {
                     </div>
                 )}
                 <div className={styles.formField}>
-                    <label>Location (State)</label>
-                    <select
+                    <label htmlFor="distributorform-field-4">Location (State)</label>
+                    <select id="distributorform-field-4"
                         required
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
@@ -177,10 +179,10 @@ export default function DistributorForm() {
 
             {showTermsModal && (
                 <div className={styles.modalOverlay} onClick={() => setShowTermsModal(false)}>
-                    <div className={styles.termsModal} onClick={(e) => e.stopPropagation()}>
+                    <div ref={termsRef} role="dialog" aria-modal="true" aria-label="Distributor terms and conditions" tabIndex={-1} className={styles.termsModal} onClick={(e) => e.stopPropagation()}>
                         <div className={styles.modalHeader}>
                             <h2>Distributor Terms & Conditions</h2>
-                            <button className={styles.closeModal} onClick={() => setShowTermsModal(false)}>&times;</button>
+                            <button className={styles.closeModal} aria-label="Close terms" onClick={() => setShowTermsModal(false)}>&times;</button>
                         </div>
                         <div className={styles.modalBody}>
                             <div className={styles.termsContent}>

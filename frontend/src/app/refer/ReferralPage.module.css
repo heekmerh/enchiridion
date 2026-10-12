@@ -210,8 +210,8 @@
 .blockContent p {
     font-size: 1.25rem;
     line-height: 1.8;
-    color: white;
-    font-weight: 700;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .blockImage {
@@ -1079,3 +1079,17 @@
     max-width: 600px;
     margin: 0 auto;
 }
+.statOrange { background-color: #c2410c; }
+.statTeal { background-color: #0f766e; }
+.statSky { background-color: #0369a1; }
+.statGreen { background-color: #15803d; }
+@media (max-width: 768px) {
+  .flowContainer { flex-direction: column; gap: 32px; }
+  .flowItem, .testimonialCard { min-width: 0; }
+  .testimonialGrid { grid-template-columns: 1fr; padding-inline: 16px; }
+  .testimonialCard { padding: 24px; }
+}
+
+.benefitGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.benefitItem { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 1024px) { .benefitGrid { grid-template-columns: 1fr; } }

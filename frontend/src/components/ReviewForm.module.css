@@ -54,7 +54,7 @@
 }
 
 .optional {
-    color: #9ca3af;
+    color: #64748b;
     font-weight: 400;
     font-size: 0.85rem;
 }
@@ -85,7 +85,7 @@
 
 .charCount {
     font-size: 0.85rem;
-    color: #9ca3af;
+    color: #64748b;
     text-align: right;
     margin-top: 6px;
 }
@@ -105,7 +105,10 @@
 }
 
 .starLabel input {
-    display: none;
+    position: absolute;
+    width: 1px; height: 1px;
+    clip-path: inset(50%);
+    overflow: hidden;
 }
 
 .starIcon {
@@ -118,19 +121,19 @@
 .starLabel:hover~.starLabel .starIcon,
 .starLabel input:checked~.starIcon,
 .starLabel input:checked+.starIcon {
-    color: #fbbf24;
+    color: #92400e;
 }
 
 /* This targets the clicked star specifically in the flex-row-reverse setup */
 .starLabel input:checked+.starIcon {
-    color: #fbbf24;
+    color: #92400e;
 }
 
 /* Fixing logic for simple usage - simpler approach often better for react controlled */
 .ratingValue {
     margin-left: auto;
     font-weight: 600;
-    color: #fbbf24;
+    color: #92400e;
 }
 
 
@@ -159,7 +162,7 @@
 
 .primaryBtn:disabled {
     background: #f3f4f6;
-    color: #9ca3af;
+    color: #64748b;
     border-color: #d1d5db;
     cursor: not-allowed;
 }
@@ -177,7 +180,7 @@
 
 .secondaryBtn:hover {
     background: #f3f4f6;
-    border-color: #9ca3af;
+    border-color: #64748b;
 }
 
 .errorMessage {
@@ -218,3 +221,6 @@
     font-size: 1.1rem;
     line-height: 1.6;
 }
+.starLabel { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.starLabel:focus-within { outline: 3px solid #1d4ed8; outline-offset: 3px; border-radius: 4px; }
+@media (max-width: 480px) { .row { flex-direction: column; } .actions { flex-wrap: wrap; } }

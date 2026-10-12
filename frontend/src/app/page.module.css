@@ -831,3 +831,16 @@
     transform: scale(0.8);
   }
 }
+/* Let the hero grow with text zoom instead of compressing it into a circle. */
+.heroCircleContainer { aspect-ratio: auto; min-height: 520px; border-radius: 32px; padding: 40px 32px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 20px; animation: none; }
+.heroDescription { font-size: 1rem; max-width: 100%; }
+.heroActions { flex-wrap: wrap; }
+.primaryBtn, .primaryBtn:hover { background: #bd1230; color: white; }
+@media (max-width: 640px) {
+ .hero { min-height: auto; padding: 64px 16px; }
+ .heroCircleContainer { width: 100%; min-height: 0; padding: 32px 24px; border-radius: 24px; }
+ .hero h1 { font-size: 2rem; }
+ .heroDescription { font-size: 1rem; max-width: 100%; }
+ .heroActions a { width: 100% !important; font-size: 1rem !important; }
+}

@@ -11,7 +11,7 @@ export default function BookCarousel() {
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
 
-    const [isPaused, setIsPaused] = useState(false);
+
 
     const checkScroll = () => {
         if (scrollRef.current) {
@@ -42,38 +42,19 @@ export default function BookCarousel() {
         return () => window.removeEventListener("resize", checkScroll);
     }, []);
 
-    useEffect(() => {
-        if (!isPaused) {
-            const interval = setInterval(() => {
-                if (scrollRef.current) {
-                    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-                    if (scrollLeft >= scrollWidth - clientWidth - 5) {
-                        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-                    } else {
-                        scroll("right");
-                    }
-                }
-            }, 5000);
-            return () => clearInterval(interval);
-        }
-    }, [isPaused]);
-
     function scroll(direction: "left" | "right") {
         if (scrollRef.current) {
             const scrollAmount = 400;
             scrollRef.current.scrollBy({
                 left: direction === "left" ? -scrollAmount : scrollAmount,
-                behavior: "smooth",
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
             });
         }
     }
 
     return (
         <section
-            id="books"
             className={styles.carouselContainer}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
         >
             <div className={styles.carouselHeader}>
                 <h2 className="fade-in">Medical Handbooks</h2>
@@ -121,6 +102,7 @@ export default function BookCarousel() {
                                             src={book.coverImage}
                                             alt={book.title}
                                             fill
+                                            sizes="(max-width: 768px) 80vw, 320px"
                                             className={styles.image}
                                             style={{ objectFit: "cover" }}
                                         />

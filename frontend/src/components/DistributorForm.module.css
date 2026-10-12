@@ -41,7 +41,7 @@
 .formField input:focus,
 .formField select:focus {
     outline: none;
-    border-color: #ff6b00;
+    border-color: #b93800;
     box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
 }
 
@@ -87,7 +87,7 @@
 .termsLink {
     background: none;
     border: none;
-    color: #ff6b00;
+    color: #b93800;
     font-weight: 700;
     cursor: pointer;
     padding: 0;
@@ -103,7 +103,7 @@
 }
 
 .submitBtn {
-    background: #ff6b00;
+    background: #b93800;
     color: white;
     border: none;
     padding: 16px;
@@ -277,7 +277,7 @@
 }
 
 .primaryBtn {
-    background: #ff6b00;
+    background: #b93800;
     color: white;
     border: none;
     padding: 12px 24px;
@@ -285,3 +285,4 @@
     font-weight: 700;
     cursor: pointer;
 }
+.termsModal { max-height: calc(100dvh - 32px); max-width: calc(100vw - 32px); overflow-y: auto; }

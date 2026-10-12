@@ -80,7 +80,7 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                                         >
                                             Find a Distributor
                                         </button>
-                                        <button className={styles.secondaryBtn}>Access Digital</button>
+                                        <Link href="/#app" className={styles.secondaryBtn}>Access Digital</Link>
                                     </div>
 
                                     {showDistributors && (

@@ -42,26 +42,17 @@ export default function Footer() {
                 <div className={styles.socialSection}>
                     <h3 className={styles.socialTitle}>Connect with Us</h3>
                     <div className={styles.socialIcons}>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={`${styles.socialLink} ${styles.facebook}`}>
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={`${styles.socialLink} ${styles.instagram}`}>
-                            <i className="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className={`${styles.socialLink} ${styles.xTwitter}`}>
-                            <i className="fab fa-x-twitter"></i>
-                        </a>
                         <a href="https://www.linkedin.com/company/enchiridion-md" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={`${styles.socialLink} ${styles.linkedin}`}>
                             <i className="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className={`${styles.socialLink} ${styles.whatsapp}`}>
-                            <i className="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
 
                 <div className={styles.bottom}>
                     <div className={styles.legal}>
+                        <Link href="/privacy">Privacy Policy</Link>
+                        {" · "}
+                        <Link href="/terms">Terms and Conditions</Link>
                         <p>&copy; {new Date().getFullYear()} Enchiridion. All rights reserved.</p>
                     </div>
                     <p className={styles.affiliations}>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./CheckoutModal.module.css";
 import { NIGERIAN_STATES, StateDelivery, DELIVERY_ZONES, HUB_STATES, fetchShippingRates, getUserStats } from "@/lib/checkout";
 import { Book } from "@/lib/data";
@@ -25,15 +26,13 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
         email: ""
     });
     const [selectedState, setSelectedState] = useState<StateDelivery | null>(null);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [showStateDropdown, setShowStateDropdown] = useState(false);
     const [paymentBusy, setPaymentBusy] = useState(false);
+    const dialogRef = useDialog(isOpen, onClose, !paymentBusy);
     const [paymentError, setPaymentError] = useState("");
     const [bookPrice, setBookPrice] = useState<number | null>(null);
     const [pendingPayment, setPendingPayment] = useState<{ transaction_id: number; tx_ref: string; email: string } | null>(null);
     const [dynamicRates, setDynamicRates] = useState<(StateDelivery & { isHub: boolean })[]>([]);
     const [userRegisteredState, setUserRegisteredState] = useState<string | null>(null);
-    const dropdownRef = useRef<HTMLDivElement>(null);
     const zoneRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
     // Fetch dynamic data
@@ -131,9 +130,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     };
 
     // Filter states based on search
-    const filteredStates = NIGERIAN_STATES.filter(s =>
-        s.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const normalizeStateName = (name: string) => {
         if (!name) return "";
@@ -175,16 +172,6 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
         return 0;
     });
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setShowStateDropdown(false);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
     if (!isOpen) return null;
 
     const total = (bookPrice ?? 0) + (selectedState?.cost || 0);
@@ -202,8 +189,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
     return (
         <div className={styles.overlay}>
-            <div className={styles.modal}>
-                <button className={styles.closeBtn} disabled={paymentBusy} onClick={onClose}>&times;</button>
+            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Book checkout" tabIndex={-1} className={styles.modal}>
+                <button className={styles.closeBtn} disabled={paymentBusy} onClick={onClose} aria-label="Close checkout">&times;</button>
 
                 {paymentError && <p role="alert">{paymentError}</p>}
                 {step === "shipping" && (
@@ -213,8 +200,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                         <form onSubmit={handleShippingSubmit} className={styles.form}>
                             <div className={styles.field}>
-                                <label>Full Name</label>
-                                <input
+                                <label htmlFor="checkoutmodal-field-1">Full Name</label>
+                                <input id="checkoutmodal-field-1"
                                     type="text"
                                     required
                                     minLength={3}
@@ -226,47 +213,22 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                             </div>
 
                             <div className={styles.field}>
-                                <label>Country</label>
-                                <input type="text" value="Nigeria" readOnly className={styles.readOnly} />
-                            </div>
-
-                            <div className={styles.field} ref={dropdownRef}>
-                                <label>State</label>
-                                <div className={styles.selectWrapper}>
-                                    <input
-                                        type="text"
-                                        placeholder="Search or select state..."
-                                        value={searchTerm || formData.state}
-                                        onFocus={() => setShowStateDropdown(true)}
-                                        onChange={(e) => {
-                                            setSearchTerm(e.target.value);
-                                            setFormData({ ...formData, state: "" });
-                                        }}
-                                        required={!formData.state}
-                                    />
-                                    {showStateDropdown && (
-                                        <div className={styles.dropdown}>
-                                            {filteredStates.map(s => (
-                                                <div
-                                                    key={s.name}
-                                                    className={styles.dropdownOption}
-                                                    onClick={() => {
-                                                        setFormData({ ...formData, state: s.name });
-                                                        setSearchTerm(s.name);
-                                                        setShowStateDropdown(false);
-                                                    }}
-                                                >
-                                                    {s.name}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
+                                <label htmlFor="checkoutmodal-field-2">Country</label>
+                                <input id="checkoutmodal-field-2" type="text" value="Nigeria" readOnly className={styles.readOnly} />
                             </div>
 
                             <div className={styles.field}>
-                                <label>City</label>
-                                <input
+                                <label htmlFor="checkout-state">State</label>
+                                <select id="checkout-state" required value={formData.state}
+                                    onChange={event => setFormData({ ...formData, state: event.target.value })}>
+                                    <option value="">Select your state</option>
+                                    {NIGERIAN_STATES.map(state => <option key={state.name} value={state.name}>{state.name}</option>)}
+                                </select>
+                            </div>
+
+                            <div className={styles.field}>
+                                <label htmlFor="checkoutmodal-field-3">City</label>
+                                <input id="checkoutmodal-field-3"
                                     type="text"
                                     required
                                     minLength={2}
@@ -276,8 +238,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                             </div>
 
                             <div className={styles.field}>
-                                <label>Apartment Number / Detailed Address</label>
-                                <input
+                                <label htmlFor="checkoutmodal-field-4">Apartment Number / Detailed Address</label>
+                                <input id="checkoutmodal-field-4"
                                     type="text"
                                     required
                                     placeholder="Flat 5, Block A, etc."
@@ -288,8 +250,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                             <div className={styles.row}>
                                 <div className={styles.field}>
-                                    <label>Phone Number</label>
-                                    <input
+                                    <label htmlFor="checkoutmodal-field-5">Phone Number</label>
+                                    <input id="checkoutmodal-field-5"
                                         type="tel"
                                         required
                                         pattern="^\+234\d{10}$"
@@ -299,8 +261,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                     />
                                 </div>
                                 <div className={styles.field}>
-                                    <label>Email</label>
-                                    <input
+                                    <label htmlFor="checkoutmodal-field-6">Email</label>
+                                    <input id="checkoutmodal-field-6"
                                         type="email"
                                         required
                                         value={formData.email}
@@ -345,8 +307,9 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                             const priceClass = isHub ? styles.priceGreen : styles.priceRed;
 
                                             return (
-                                                <div
+                                                <button type="button"
                                                     key={stateName}
+                                                    aria-pressed={!!selectedState && normalizeStateName(selectedState.name) === normName}
                                                     className={`${styles.stateCard} ${selectedState && normalizeStateName(selectedState.name) === normName ? styles.selected : ""}`}
                                                     onClick={() => handleDeliverySelect(stateData)}
                                                 >
@@ -354,7 +317,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                                     <span className={`${styles.statePrice} ${priceClass}`}>
                                                         {stateData.costLabel}
                                                     </span>
-                                                </div>
+                                                </button>
                                             );
                                         })}
                                     </div>

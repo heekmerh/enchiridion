@@ -78,7 +78,7 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
                 <p>Share your experience with Enchiridion to help the community.</p>
             </div>
 
-            {status === 'error' && <div className={styles.errorMessage}>{errorMessage}</div>}
+            {status === 'error' && <div role="alert" className={styles.errorMessage}>{errorMessage}</div>}
 
             <div className={styles.inputGroup}>
                 <label htmlFor="name">Full Name <span className={styles.required}>*</span></label>
@@ -121,13 +121,14 @@ export default function ReviewForm({ onReviewSubmitted, onCancel }: ReviewFormPr
             </div>
 
             <div className={styles.inputGroup}>
-                <label htmlFor="rating">Rating <span className={styles.required}>*</span></label>
-                <div className={styles.starSelect}>
+                <span id="review-rating-label">Rating <span className={styles.required}>*</span></span>
+                <div role="radiogroup" aria-labelledby="review-rating-label" className={styles.starSelect}>
                     {[5, 4, 3, 2, 1].map((star) => (
                         <label key={star} className={styles.starLabel}>
                             <input
                                 type="radio"
                                 name="rating"
+                                aria-label={`${star} ${star === 1 ? "star" : "stars"}`}
                                 value={star}
                                 checked={formData.rating === star}
                                 onChange={handleChange}

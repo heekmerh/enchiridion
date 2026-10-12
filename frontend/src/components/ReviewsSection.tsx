@@ -10,15 +10,16 @@ import { manageReviews } from '@/lib/reviews';
 export default function ReviewsSection() {
     const [reviews, setReviews] = useState<Review[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [loadError, setLoadError] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
-    const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
     const fetchReviews = async () => {
         try {
             const data = await manageReviews('FETCH', { limit: 5 });
             setReviews(data);
         } catch (error) {
+            setLoadError(true);
             console.error('Failed to fetch reviews:', error);
         } finally {
             setIsLoading(false);
@@ -28,36 +29,6 @@ export default function ReviewsSection() {
     useEffect(() => {
         fetchReviews();
     }, []);
-
-    // Auto-play logic
-    useEffect(() => {
-        if (reviews.length > 1) {
-            startAutoPlay();
-        }
-        return () => stopAutoPlay();
-    }, [reviews]);
-
-    const startAutoPlay = () => {
-        stopAutoPlay();
-        autoPlayRef.current = setInterval(() => {
-            if (carouselRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-                const maxScroll = scrollWidth - clientWidth;
-
-                if (scrollLeft >= maxScroll - 10) {
-                    carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    carouselRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
-                }
-            }
-        }, 5000);
-    };
-
-    const stopAutoPlay = () => {
-        if (autoPlayRef.current) {
-            clearInterval(autoPlayRef.current);
-        }
-    };
 
     const handleReviewSubmitted = () => {
         setShowForm(false);
@@ -81,15 +52,13 @@ export default function ReviewsSection() {
                         <div className={styles.contentArea}>
                             {isLoading ? (
                                 <div className={styles.loading}>Loading reviews...</div>
-                            ) : reviews.length === 0 ? (
+                            ) : loadError ? (<p role="alert">Reviews are temporarily unavailable. Please try again later.</p>) : reviews.length === 0 ? (
                                 <div className={styles.emptyState}>
                                     <p>No reviews yet. Be the first to share your experience!</p>
                                 </div>
                             ) : (
-                                <div className={styles.carouselContainer}
-                                    onMouseEnter={stopAutoPlay}
-                                    onMouseLeave={startAutoPlay}>
-                                    <div className={styles.carousel} ref={carouselRef}>
+                                <div className={styles.carouselContainer}>
+                                    <div className={styles.carousel} ref={carouselRef} tabIndex={0} role="region" aria-label="User reviews">
                                         {reviews.map((review) => (
                                             <div key={review.id} className={styles.cardWrapper}>
                                                 <ReviewCard review={review} />

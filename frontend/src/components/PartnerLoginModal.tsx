@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useDialog } from "@/hooks/useDialog";
 import styles from "./PartnerLoginModal.module.css";
 import GoogleButton from "@/components/GoogleButton";
 import { authErrorMessage, authorizedFetch, signInWithGoogle, supabase } from "@/lib/supabase";
@@ -14,6 +15,7 @@ interface PartnerLoginModalProps {
 }
 
 export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, redirectTo }: PartnerLoginModalProps) {
+    const dialogRef = useDialog(isOpen, onClose);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [view, setView] = useState<"login" | "forgot">("login");
@@ -100,7 +102,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
 
     return (
         <div className={styles.overlay} onClick={onClose}>
-            <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+            <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Sign in to Enchiridion" tabIndex={-1} className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <button className={styles.closeBtn} onClick={onClose} aria-label="Close modal">
                     <i className="fas fa-times"></i>
                 </button>
@@ -117,7 +119,7 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
 
                 {view === "login" ? (
                     <form className={styles.form} onSubmit={handleSubmit}>
-                        {error && <div className={styles.error}>{error}</div>}
+                        {error && <div role="alert" className={styles.error}>{error}</div>}
 
                         <div className={styles.field}>
                             <label htmlFor="username">Email</label>
@@ -173,8 +175,8 @@ export default function PartnerLoginModal({ isOpen, onClose, onLoginSuccess, red
                     </form>
                 ) : (
                     <form className={styles.form} onSubmit={handleForgotSubmit}>
-                        {error && <div className={styles.error}>{error}</div>}
-                        {message && <div className={styles.message}>{message}</div>}
+                        {error && <div role="alert" className={styles.error}>{error}</div>}
+                        {message && <div role="status" className={styles.message}>{message}</div>}
 
                         {!message && (
                             <div className={styles.field}>
