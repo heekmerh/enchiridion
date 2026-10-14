@@ -253,6 +253,7 @@ export default function ReferralPage() {
                 "You earn 20% commission on book purchases made using your referral code.",
                 "Commission on a given referred user's purchases is payable for 6 months from the date that user first signs up with your referral code. Purchases made by that user after this 6-month window do not generate further commission.",
                 "Commissions are calculated on amounts actually collected by Enchiridion, net of refunds, chargebacks, or failed payments.",
+                "In addition to commissions, you are paid per view your submitted review video garners on your social media platforms (e.g. Instagram, TikTok). View-based pay rates, eligible platforms, and payout terms are not fixed and are determined by a separate agreement between you and Enchiridion.",
             ],
         },
         {

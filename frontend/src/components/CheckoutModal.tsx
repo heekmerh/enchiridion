@@ -3,7 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useDialog } from "@/hooks/useDialog";
 import styles from "./CheckoutModal.module.css";
-import { NIGERIAN_STATES, StateDelivery, DELIVERY_ZONES, HUB_STATES, fetchShippingRates, getUserStats } from "@/lib/checkout";
+import {
+    NIGERIAN_STATES, StateDelivery, DELIVERY_ZONES, getUserStats,
+    normalizeStateName, isHubState, getDeliveryCost, deliveryCostLabel, FulfillmentMode,
+} from "@/lib/checkout";
 import { Book } from "@/lib/data";
 
 interface CheckoutModalProps {
@@ -25,23 +28,24 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
         phone: "+234",
         email: ""
     });
-    const [selectedState, setSelectedState] = useState<StateDelivery | null>(null);
+    const [selectedStateName, setSelectedStateName] = useState<string | null>(null);
+    const [fulfillment, setFulfillment] = useState<FulfillmentMode>("delivery");
     const [paymentBusy, setPaymentBusy] = useState(false);
     const dialogRef = useDialog(isOpen && !paymentBusy, onClose);
     const [paymentError, setPaymentError] = useState("");
     const [bookPrice, setBookPrice] = useState<number | null>(null);
     const [pendingPayment, setPendingPayment] = useState<{ transaction_id: number; tx_ref: string; email: string } | null>(null);
-    const [dynamicRates, setDynamicRates] = useState<(StateDelivery & { isHub: boolean })[]>([]);
     const [userRegisteredState, setUserRegisteredState] = useState<string | null>(null);
     const zoneRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-    // Fetch dynamic data
+    const selectedIsHub = selectedStateName ? isHubState(selectedStateName) : false;
+    const selectedCost = selectedStateName ? getDeliveryCost(selectedStateName, selectedIsHub ? fulfillment : "delivery") : null;
+    const selectedState: StateDelivery | null = selectedStateName && selectedCost !== null
+        ? { name: selectedStateName, cost: selectedCost, costLabel: deliveryCostLabel(selectedCost) }
+        : null;
+
     useEffect(() => {
         if (isOpen) {
-            fetchShippingRates().then(rates => {
-                setDynamicRates(rates);
-                if (!rates.length) setPaymentError("Delivery rates are currently unavailable.");
-            });
             if (step === "success") setStep("shipping");
             getUserStats().then(stats => {
                 if (stats?.state) {
@@ -132,12 +136,6 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     // Filter states based on search
 
     const scrollContainerRef = useRef<HTMLDivElement>(null);
-    const normalizeStateName = (name: string) => {
-        if (!name) return "";
-        let n = name.toLowerCase().trim();
-        if (n.includes("abuja") || n.includes("federal capital territory")) return "abuja";
-        return n;
-    };
 
     // Auto-scroll to registered zone or top when entering delivery step
     useEffect(() => {
@@ -181,9 +179,10 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
         setStep("delivery");
     };
 
-    const handleDeliverySelect = (state: StateDelivery) => {
-        setSelectedState(state);
-        setFormData(previous => ({ ...previous, state: state.name }));
+    const handleDeliverySelect = (stateName: string) => {
+        setSelectedStateName(stateName);
+        setFulfillment("delivery");
+        setFormData(previous => ({ ...previous, state: stateName }));
     };
 
 
@@ -281,6 +280,9 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                     <div className={styles.stepContainer}>
                         <h2>Select Delivery State & Cost</h2>
                         <p className={styles.subtitle}>Find your state delivery cost below.</p>
+                        <p className={styles.estimateNotice}>
+                            Delivery fees shown are estimates and are confirmed by Enchiridion before payment.
+                        </p>
 
                         <div className={styles.zonedWrapper} ref={scrollContainerRef}>
                             {prioritizedZones.map((zone, index) => (
@@ -294,30 +296,22 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                     <div className={styles.stateGrid}>
                                         {zone.states.map((stateName: string) => {
                                             const normName = normalizeStateName(stateName);
-                                            const dynamicData = dynamicRates.find(r => normalizeStateName(r.name) === normName);
-
-                                            if (!dynamicData) return null;
-
-                                            const stateData = {
-                                                name: stateName,
-                                                cost: dynamicData.cost,
-                                                costLabel: `₦${dynamicData.cost.toLocaleString()}`
-                                            };
-
-                                            const isHub = dynamicData ? dynamicData.isHub : HUB_STATES.some(s => normalizeStateName(s) === normName);
+                                            const isHub = isHubState(stateName);
+                                            const costLabel = deliveryCostLabel(getDeliveryCost(stateName, "delivery"));
                                             const priceClass = isHub ? styles.priceGreen : styles.priceRed;
 
                                             return (
                                                 <button type="button"
                                                     key={stateName}
-                                                    aria-pressed={!!selectedState && normalizeStateName(selectedState.name) === normName}
-                                                    className={`${styles.stateCard} ${selectedState && normalizeStateName(selectedState.name) === normName ? styles.selected : ""}`}
-                                                    onClick={() => handleDeliverySelect(stateData)}
+                                                    aria-pressed={!!selectedStateName && normalizeStateName(selectedStateName) === normName}
+                                                    className={`${styles.stateCard} ${selectedStateName && normalizeStateName(selectedStateName) === normName ? styles.selected : ""}`}
+                                                    onClick={() => handleDeliverySelect(stateName)}
                                                 >
                                                     <span className={styles.stateName}>{stateName}</span>
                                                     <span className={`${styles.statePrice} ${priceClass}`}>
-                                                        {stateData.costLabel}
+                                                        {costLabel}
                                                     </span>
+                                                    {isHub && <span className={styles.hubBadge}>Hub</span>}
                                                 </button>
                                             );
                                         })}
@@ -328,12 +322,32 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
                         {selectedState && (
                             <div className={styles.summary}>
+                                {selectedIsHub && (
+                                    <div className={styles.fulfillmentToggle} role="group" aria-label="Delivery or pickup">
+                                        <button
+                                            type="button"
+                                            className={`${styles.fulfillmentBtn} ${fulfillment === "delivery" ? styles.fulfillmentActive : ""}`}
+                                            aria-pressed={fulfillment === "delivery"}
+                                            onClick={() => setFulfillment("delivery")}
+                                        >
+                                            Home Delivery — {deliveryCostLabel(getDeliveryCost(selectedState.name, "delivery"))}
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className={`${styles.fulfillmentBtn} ${fulfillment === "pickup" ? styles.fulfillmentActive : ""}`}
+                                            aria-pressed={fulfillment === "pickup"}
+                                            onClick={() => setFulfillment("pickup")}
+                                        >
+                                            Pickup at Hub — Free
+                                        </button>
+                                    </div>
+                                )}
                                 <div className={styles.summaryRow}>
                                     <span>Book Price:</span>
                                     <span>₦{bookPrice?.toLocaleString() ?? "--"}</span>
                                 </div>
                                 <div className={styles.summaryRow}>
-                                    <span>Delivery to {selectedState.name}:</span>
+                                    <span>{fulfillment === "pickup" ? `Pickup in ${selectedState.name}:` : `Delivery to ${selectedState.name}:`}</span>
                                     <span>{selectedState.costLabel}</span>
                                 </div>
                                 <div className={styles.summaryTotal}>

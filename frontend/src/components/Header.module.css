@@ -559,7 +559,8 @@
 .navLink, .navLinkButton { white-space: nowrap; }
 .navLink:hover, .navLinkButton:hover { font-weight: 500; }
 @media (max-width: 1280px) {
-  .container { padding: 0 16px; justify-content: space-between; gap: 12px; }
+  .container { padding: 0 16px; justify-content: flex-start; gap: 12px; }
+  .hamburger { margin-right: 0; }
   .logoContainer { position: static; transform: none; min-width: 0; }
   .logo { font-size: clamp(0.9rem, 4vw, 1.25rem); letter-spacing: 0.08em; }
   .scrolled .logo { font-size: clamp(0.9rem, 4vw, 1.25rem); }

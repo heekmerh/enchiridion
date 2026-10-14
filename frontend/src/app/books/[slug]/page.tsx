@@ -18,12 +18,46 @@ const states = [
     "Sokoto", "Taraba", "Yobe", "Zamfara", "FCT (Abuja)"
 ];
 
+interface DistributorEntry {
+    hub: string;
+    location: string;
+    phone: string;
+}
+
+const distributors: Record<string, DistributorEntry[]> = {
+    "Kano": [
+        { hub: "Enchiridion Hub", location: "Aminu Kano Teaching Hospital", phone: "0806 577 3610" },
+    ],
+    "FCT (Abuja)": [
+        { hub: "Enchiridion Hub", location: "To be announced", phone: "0806 577 3610" },
+    ],
+    "Benue": [
+        { hub: "Enchiridion Hub", location: "To be announced", phone: "0806 577 3610" },
+    ],
+    "Lagos": [
+        { hub: "Enchiridion Hub", location: "27 Nurudeen Balogun Street, Royal Estate, Isheri-Igando Road, Isheri (by Impress Event Center)", phone: "0806 577 3610" },
+    ],
+    "Oyo": [
+        { hub: "Enchiridion Hub — Ibadan", location: "Number 2, Fashina Street, Orogun, Ibadan", phone: "0806 577 3610" },
+        { hub: "Enchiridion Hub — Ogbomosho", location: "Halal Ventures, Oke Adunni Area, Ogbomosho", phone: "0806 577 3610" },
+    ],
+};
+
+const sortedStates = [...states.filter((s) => distributors[s]), ...states.filter((s) => !distributors[s])];
+
 export default function BookPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = use(params);
     const searchParams = useSearchParams();
     const [showDistributors, setShowDistributors] = useState(false);
     const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
     const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+    const [copiedPhone, setCopiedPhone] = useState<string | null>(null);
+
+    const copyPhone = (phone: string) => {
+        navigator.clipboard.writeText(phone);
+        setCopiedPhone(phone);
+        setTimeout(() => setCopiedPhone((current) => (current === phone ? null : current)), 2000);
+    };
 
     useEffect(() => {
         const tab = searchParams.get("tab");
@@ -85,17 +119,43 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                                                 <h3>Select Your State (Nigeria)</h3>
                                             </div>
                                             <div className={styles.stateList}>
-                                                {states.map((state) => (
-                                                    <div key={state} className={styles.stateItem}>
-                                                        <h4>{state}</h4>
-                                                        <div className={styles.distributorDetails}>
-                                                            <p><span>Distributor:</span> [Coming Soon]</p>
-                                                            <p><span>Location:</span> [TBD]</p>
-                                                            <p><span>Phone:</span> [N/A]</p>
+                                                {sortedStates.map((state) => {
+                                                    const entries = distributors[state];
+                                                    return (
+                                                        <div key={state} className={styles.stateItem}>
+                                                            <h4>{state}</h4>
+                                                            {entries ? (
+                                                                entries.map((d, i) => (
+                                                                    <div key={i} className={styles.distributorDetails}>
+                                                                        <p><span>Distributor:</span> {d.hub}</p>
+                                                                        <p><span>Location:</span> {d.location}</p>
+                                                                        <p className={styles.phoneRow}>
+                                                                            <span>Phone:</span> {d.phone}
+                                                                            <button
+                                                                                type="button"
+                                                                                className={styles.copyPhoneBtn}
+                                                                                onClick={() => copyPhone(d.phone)}
+                                                                                aria-label={`Copy phone number ${d.phone}`}
+                                                                            >
+                                                                                {copiedPhone === d.phone ? "Copied!" : "Copy"}
+                                                                            </button>
+                                                                        </p>
+                                                                    </div>
+                                                                ))
+                                                            ) : (
+                                                                <div className={styles.distributorDetails}>
+                                                                    <p><span>Distributor:</span> [Coming Soon]</p>
+                                                                    <p><span>Location:</span> [TBD]</p>
+                                                                    <p><span>Phone:</span> [N/A]</p>
+                                                                </div>
+                                                            )}
                                                         </div>
-                                                    </div>
-                                                ))}
+                                                    );
+                                                })}
                                             </div>
+                                            <p className={styles.distributorNote}>
+                                                Note: a distributor being available in one state does not mean they are limited to it — the same distributor may also serve other states listed here.
+                                            </p>
                                             <div className={styles.becomeDistributorWrapper}>
                                                 <button
                                                     className={styles.becomeDistributorBtn}

@@ -74,7 +74,7 @@ export default function OnboardingChecklist() {
             benefit: 'Step 4: Own "The Book" to master the Enchiridion & maximize rewards.',
             actionLabel: 'Get The Book',
             actionUrl: '/books/pediatrics',
-            reward: '+1.0 Points'
+            reward: 'Reward Unlocked'
         }
     ];
 
@@ -144,7 +144,7 @@ export default function OnboardingChecklist() {
 
                             {step.id === 'mastery' && step.completed && (
                                 <p className={styles.nudgeText}>
-                                    You've been rewarded. Now, help others master the Enchiridion and earn <b>5.0 points</b> per referral!
+                                    You've been rewarded. Now, help others master the Enchiridion and earn rewards for every referral!
                                 </p>
                             )}
                         </div>

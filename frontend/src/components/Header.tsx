@@ -108,6 +108,11 @@ export default function Header() {
         }}
       >
         <div className={styles.container}>
+          {/* Hamburger Menu Icon (mobile only; rendered first so it sits on the left) */}
+          <button className={styles.hamburger} onClick={toggleMenu} aria-label={isMenuOpen ? "Close navigation" : "Open navigation"} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
+            <i aria-hidden="true" className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
+          </button>
+
           {/* Desktop Nav - Left */}
           <nav aria-label="Primary navigation" className={`${styles.navGroup} ${styles.desktopOnly}`}>
             {menuItems.slice(0, 4).map((item) => (
@@ -186,11 +191,6 @@ export default function Header() {
               );
             })}
           </nav>
-
-          {/* Hamburger Menu Icon */}
-          <button className={styles.hamburger} onClick={toggleMenu} aria-label={isMenuOpen ? "Close navigation" : "Open navigation"} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
-            <i aria-hidden="true" className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
-          </button>
         </div>
 
         {/* Mega Dropdown Layer (Desktop Only) */}

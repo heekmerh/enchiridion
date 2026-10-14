@@ -20,12 +20,7 @@ export default function RewardsPage() {
     useEffect(() => {
         const calculateTimeLeft = () => {
             const now = new Date();
-            const target = new Date(now.getFullYear(), 11, 30); // Dec 30th
-
-            // If target has passed this year, set to next year
-            if (now > target) {
-                target.setFullYear(now.getFullYear() + 1);
-            }
+            const target = new Date(2027, 11, 30); // Dec 30th, 2027
 
             const diff = target.getTime() - now.getTime();
 
@@ -247,28 +242,20 @@ export default function RewardsPage() {
                     <div id="account-payout-rules" hidden={!isTermsOpen} className={`${styles.accordionContent} ${isTermsOpen ? styles.contentOpen : ""}`}>
                         <div className={styles.termsList}>
                             <div className={styles.termsSection}>
-                                <h3>1. Earning Points</h3>
+                                <h3>1. Becoming a Referral Partner</h3>
                                 <ul>
-                                    <li><b>Browsing:</b> Earn 0.1 points (₦10) for every unique visitor who browses the site via your link.</li>
-                                    <li><b>Registration:</b> Earn 0.1 points (₦10) for every user who registers as a referral partner using your link.</li>
-                                    <li><b>Book Sales:</b> Earn 5.0 points (₦500) for every book purchased by a user you referred.</li>
+                                    <li>To activate your Referral Partner account, you must submit <b>one review video</b> of the Enchiridion app or an Enchiridion handbook. The video should be a genuine, first-person review of your experience using the product.</li>
+                                    <li>Your referral code and dashboard access are provisional until this review video is submitted and approved. Enchiridion may request a reasonable resubmission if the video does not meet basic quality or authenticity standards.</li>
                                 </ul>
                             </div>
 
                             <div className={styles.termsSection}>
-                                <h3>2. Conversions & Payouts</h3>
+                                <h3>2. Partner Earnings</h3>
                                 <ul>
-                                    <li>Points are pegged to book sales: 1 point is equivalent to 1% of a standard book sale (₦100).</li>
-                                    <li>The current conversion rate is <b>1 Point = ₦100</b>.</li>
-                                    <li>Payouts are processed to the bank account details provided in your "Payout Settings".</li>
-                                </ul>
-                            </div>
-
-                            <div className={styles.termsSection}>
-                                <h3>3. Tracking</h3>
-                                <ul>
-                                    <li>Activity is logged immediately upon the user's action.</li>
-                                    <li>Self-referrals or fraudulent activity will result in the suspension of the partner account.</li>
+                                    <li>You earn <b>20% commission</b> on app subscription payments made by any user who subscribes using your referral code.</li>
+                                    <li>You earn <b>20% commission</b> on book purchases made using your referral code.</li>
+                                    <li>Commissions are calculated on amounts actually collected by Enchiridion, net of refunds, chargebacks, or failed payments.</li>
+                                    <li>In addition to commissions, you are paid per view your submitted review video garners on your social media platforms (e.g. Instagram, TikTok). View-based pay rates, eligible platforms, and payout terms are not fixed and are determined by a separate agreement between you and Enchiridion.</li>
                                 </ul>
                             </div>
                         </div>

@@ -196,6 +196,54 @@
     color: #ef4444 !important;
 }
 
+.estimateNotice {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.hubBadge {
+    align-self: flex-start;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #047857;
+    background: #d1fae5;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.fulfillmentToggle {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.fulfillmentBtn {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    background: white;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fulfillmentBtn:hover {
+    border-color: var(--accent-primary);
+}
+
+.fulfillmentActive {
+    border-color: var(--accent-primary);
+    background: #fee2e2;
+    color: #111827;
+}
+
 .stateCard {
     padding: 12px;
     border: 1.5px solid #e5e7eb;
