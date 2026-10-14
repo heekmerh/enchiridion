@@ -12,15 +12,18 @@ import { authErrorMessage, PENDING_MARKETING_KEY, signInWithGoogle, supabase, TE
 
 export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
-    const [showFloatingBtn, setShowFloatingBtn] = useState(false);
+    const [heroBtnOutOfView, setHeroBtnOutOfView] = useState(false);
+    const [reachedWelcomeProgram, setReachedWelcomeProgram] = useState(false);
     const staticBtnRef = useRef<HTMLButtonElement>(null);
+    const welcomeProgramRef = useRef<HTMLElement>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const showFloatingBtn = heroBtnOutOfView && !reachedWelcomeProgram;
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
                 // If the static button is NOT intersecting (out of view), show the floating button
-                setShowFloatingBtn(!entry.isIntersecting);
+                setHeroBtnOutOfView(!entry.isIntersecting);
             },
             { threshold: 0.1 }
         );
@@ -32,6 +35,27 @@ export default function ReferralPage() {
         return () => {
             if (staticBtnRef.current) {
                 observer.unobserve(staticBtnRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        // Once the user scrolls to the Welcome Program section, the floating
+        // "Become a Referral Partner" tab is redundant (registration is next) and stays hidden.
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) setReachedWelcomeProgram(true);
+            },
+            { threshold: 0.1 }
+        );
+
+        if (welcomeProgramRef.current) {
+            observer.observe(welcomeProgramRef.current);
+        }
+
+        return () => {
+            if (welcomeProgramRef.current) {
+                observer.unobserve(welcomeProgramRef.current);
             }
         };
     }, []);
@@ -49,6 +73,7 @@ export default function ReferralPage() {
         };
     }, []);
     const [isRegistered, setIsRegistered] = useState(false);
+    const [termsAccepted, setTermsAccepted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [referralCode, setReferralCode] = useState("");
     const [copied, setCopied] = useState(false);
@@ -212,6 +237,64 @@ export default function ReferralPage() {
             text: "Join a trusted network of contributors, reviewers, and advocates shaping modern medical education."
         }
     ];
+
+    const referralTerms = [
+        {
+            title: "1. Becoming a Referral Partner",
+            body: [
+                "To activate your Referral Partner account, you must submit one review video of the Enchiridion app or an Enchiridion handbook. The video should be a genuine, first-person review of your experience using the product.",
+                "Your referral code and dashboard access are provisional until this review video is submitted and approved. Enchiridion may request a reasonable resubmission if the video does not meet basic quality or authenticity standards.",
+            ],
+        },
+        {
+            title: "2. Partner Earnings",
+            body: [
+                "You earn 20% commission on app subscription payments made by any user who subscribes using your referral code.",
+                "You earn 20% commission on book purchases made using your referral code.",
+                "Commission on a given referred user's purchases is payable for 6 months from the date that user first signs up with your referral code. Purchases made by that user after this 6-month window do not generate further commission.",
+                "Commissions are calculated on amounts actually collected by Enchiridion, net of refunds, chargebacks, or failed payments.",
+            ],
+        },
+        {
+            title: "3. Referee Benefits",
+            body: [
+                "New users who enter your referral code receive ₦500 off their app subscription and a 10% discount on book purchases.",
+                "Both discounts are one-time only: the ₦500 discount applies solely to the referee's first app subscription payment, and the 10% discount applies solely to their first book purchase. Subsequent payments and purchases are charged at full price.",
+            ],
+        },
+        {
+            title: "4. Review Video License",
+            body: [
+                "By submitting a review video, you grant the Enchiridion Network a worldwide, royalty-free, perpetual license to use, edit, reproduce, and distribute the video — in whole or in part — across its website, app, social media, and other marketing or promotional channels, with or without attribution.",
+            ],
+        },
+        {
+            title: "5. Eligibility & Conduct",
+            body: [
+                "Referral codes are personal, non-transferable, and intended for sharing within your genuine professional and academic network.",
+                "You may not publicly post your referral code on coupon, deal, or cashback sites, or use paid advertising to promote it without written permission from Enchiridion.",
+                "You may not use your own referral code to purchase books or subscriptions for yourself (\"self-referral\"); such purchases are not eligible for commission and may be reversed.",
+                "Enchiridion reserves the right to withhold, claw back, or cancel commissions, and to suspend or terminate a Partner account, in cases of fraud, abuse, or violation of these Terms.",
+            ],
+        },
+        {
+            title: "6. General",
+            body: [
+                "Enchiridion may update these Terms, commission rates, or discount amounts at any time; continued participation in the program after a change constitutes acceptance of the updated Terms.",
+                "You are responsible for any taxes applicable to the rewards or commissions you earn.",
+                "These Referral Partner Terms are in addition to, and do not replace, the general Enchiridion Terms of Use and Privacy Policy.",
+            ],
+        },
+    ];
+
+    const handleAcceptReferralTerms = () => {
+        if (!formData.acceptTerms) {
+            setFormErrors(prev => ({ ...prev, acceptTerms: "Please check the box to agree to the Referral Partner Terms & Conditions." }));
+            requestAnimationFrame(() => document.getElementById("referral-terms-error")?.focus());
+            return;
+        }
+        setTermsAccepted(true);
+    };
 
     const faqs = [
         { q: "Who can become a Referral Partner?", a: "Everyone. Whether you are a student, resident, consultant, or educator, you can join our mission." },
@@ -409,7 +492,7 @@ export default function ReferralPage() {
             </section>
 
             {/* 6. WELCOME PROGRAM */}
-            <section className={styles.introBlock} style={{ backgroundColor: '#fff', border: 'none' }}>
+            <section ref={welcomeProgramRef} className={styles.introBlock} style={{ backgroundColor: '#fff', border: 'none' }}>
                 <div className={styles.containerSmall}>
                     <h2 className="serif" style={{ color: '#000000', fontWeight: 800 }}>Referral Partner Welcome Program</h2>
                     <ul style={{ listStyle: 'none', padding: 0, marginTop: '40px', textAlign: 'left' }}>
@@ -463,7 +546,7 @@ export default function ReferralPage() {
                         <p>Join the Enchiridion ecosystem by referring doctors, students, and institutions to our books and app. Get a unique referral code, track your impact, and earn exclusive benefits.</p>
                     </div>
 
-                    {/* How It Works - 3 Steps */}
+                    {/* How It Works - 4 Steps */}
                     <div className={styles.registrationSteps}>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>1</div>
@@ -477,13 +560,62 @@ export default function ReferralPage() {
                         </div>
                         <div className={styles.regStep}>
                             <div className={styles.regStepIcon}>3</div>
+                            <h3>Send Your Review Video</h3>
+                            <p>
+                                Send your review video to our WhatsApp number{" "}
+                                <a href="https://wa.me/2348057442660" target="_blank" rel="noopener noreferrer">+234 805 744 2660</a>{" "}
+                                along with your referral code, or tag us on Instagram and TikTok{" "}
+                                <a href="https://www.instagram.com/enchiridion.md/" target="_blank" rel="noopener noreferrer">@enchiridion.md</a>.
+                            </p>
+                        </div>
+                        <div className={styles.regStep}>
+                            <div className={styles.regStepIcon}>4</div>
                             <h3>Earn & Track</h3>
                             <p>Earn rewards, discounts, and early access when people join through you.</p>
                         </div>
                     </div>
 
-                    {/* Registration Form OR Success State */}
+                    {/* Terms Gate, Registration Form, OR Success State */}
                     {!isRegistered ? (
+                        !termsAccepted ? (
+                            <div className={styles.termsGate} id="referral-terms">
+                                <Accordion title="Referral Partner Terms & Conditions">
+                                    <p className={styles.termsIntro}>Please read the following before registering as an Enchiridion Referral Partner.</p>
+                                    {referralTerms.map((section) => (
+                                        <div key={section.title} className={styles.termsSection}>
+                                            <h4>{section.title}</h4>
+                                            {section.body.map((paragraph, i) => (
+                                                <p key={i}>{paragraph}</p>
+                                            ))}
+                                        </div>
+                                    ))}
+                                </Accordion>
+                                <label className={styles.termsCheckboxLabel}>
+                                    <input
+                                        type="checkbox"
+                                        checked={formData.acceptTerms}
+                                        aria-invalid={!!formErrors.acceptTerms}
+                                        aria-describedby={formErrors.acceptTerms ? "referral-terms-error" : undefined}
+                                        onChange={(e) => {
+                                            setFormData(prev => ({ ...prev, acceptTerms: e.target.checked }));
+                                            if (formErrors.acceptTerms) setFormErrors(prev => ({ ...prev, acceptTerms: "" }));
+                                        }}
+                                    />
+                                    <span>
+                                        I have read and agree to the Referral Partner Terms &amp; Conditions above, the Enchiridion{" "}
+                                        <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a>. *
+                                    </span>
+                                </label>
+                                {formErrors.acceptTerms && (
+                                    <span id="referral-terms-error" tabIndex={-1} role="alert" className={styles.error}>
+                                        {formErrors.acceptTerms}
+                                    </span>
+                                )}
+                                <button type="button" className={styles.submitBtn} onClick={handleAcceptReferralTerms}>
+                                    Agree &amp; Continue to Registration
+                                </button>
+                            </div>
+                        ) : (
                         <form className={styles.registrationForm} onSubmit={handleSubmit}>
                             {Object.keys(formErrors).length > 0 && (
                                 <div id="registration-errors" tabIndex={-1} role="alert" className="error-summary">
@@ -628,13 +760,6 @@ export default function ReferralPage() {
                                 </div>
                                 <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
                                     <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
-                                        <input type="checkbox" id="acceptTerms" aria-invalid={!!formErrors.acceptTerms} aria-describedby={formErrors.acceptTerms ? "registration-terms-error" : undefined} name="acceptTerms" checked={formData.acceptTerms} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
-                                        <span>I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a>. *</span>
-                                    </label>
-                                    {formErrors.acceptTerms && <span id="registration-terms-error" className={styles.error}>{formErrors.acceptTerms}</span>}
-                                </div>
-                                <div className={styles.formGroup} style={{ gridColumn: '1 / -1' }}>
-                                    <label style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontWeight: 500 }}>
                                         <input type="checkbox" name="marketingOptIn" checked={formData.marketingOptIn} onChange={handleInputChange} style={{ width: 'auto', marginTop: '6px' }} />
                                         <span>Email me Enchiridion offers, including Premium plans. Optional; unsubscribe any time. Account and security emails are sent regardless.</span>
                                     </label>
@@ -647,6 +772,7 @@ export default function ReferralPage() {
                             <GoogleButton onClick={handleGoogleSignup} disabled={isLoading}
                                 note="Tick the Terms box above first. Your Google name and email are used for your account." />
                         </form>
+                        )
                     ) : (
                         <div role="status" className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>

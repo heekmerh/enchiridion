@@ -1,11 +1,22 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { books } from "@/lib/data";
 import styles from "./SampleCTA.module.css";
+import { useContinuousMotion } from "@/hooks/useContinuousMotion";
 
 export default function SampleCTA() {
-    const currentImageIndex = 0;
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const motionEnabled = useContinuousMotion();
+
+    useEffect(() => {
+        if (!motionEnabled) return;
+        const timer = window.setInterval(() => {
+            setCurrentImageIndex((index) => (index + 1) % books.length);
+        }, 3000);
+        return () => window.clearInterval(timer);
+    }, [motionEnabled]);
 
     return (
         <section className={styles.section}>

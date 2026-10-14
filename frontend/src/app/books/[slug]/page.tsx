@@ -57,11 +57,7 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                             {book.status === "Available" ? "In Stock" : book.status}
                         </span>
                         <h1 className="fade-in">{book.title} Handbook</h1>
-                        <p className={styles.description}>
-                            The authoritative clinical reference for {book.specialty}.
-                            Curated high-yield protocols, evidence-based management,
-                            and seamless digital integration.
-                        </p>
+                        <p className={styles.description}>{book.description}</p>
 
                         <div className={styles.actions}>
                             {book.status === "Available" ? (
@@ -131,11 +127,7 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
                 <div className={styles.container}>
                     <div className={styles.accordionGroup}>
                         <Accordion title="Book Overview" defaultOpen>
-                            <p>
-                                The {book.title} is a meticulously curated resource designed for {book.specialty}
-                                practitioners. It provides high-yield clinical data, evidence-based management
-                                protocols, and authoritative guidance for complex clinical scenarios.
-                            </p>
+                            <p>{book.overview}</p>
                         </Accordion>
 
                         <Accordion title="Format & Availability">
@@ -151,10 +143,9 @@ export default function BookPage({ params }: { params: Promise<{ slug: string }>
 
                         <Accordion title="Content Highlights">
                             <ul>
-                                <li>Life-saving emergency management protocols.</li>
-                                <li>Specialty-specific calculators and scoring systems.</li>
-                                <li>Pediatric and adult dosing guidelines where applicable.</li>
-                                <li>Interactive clinical pearl database via app.</li>
+                                {book.highlights.map((highlight) => (
+                                    <li key={highlight}>{highlight}</li>
+                                ))}
                             </ul>
                         </Accordion>
 
