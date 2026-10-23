@@ -213,6 +213,39 @@
     color: #333333;
 }
 
+.phoneRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.copyPhoneBtn {
+    border: 1px solid var(--accent-primary);
+    background: transparent;
+    color: var(--accent-primary);
+    font-size: 0.7rem !important;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 1.6;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.copyPhoneBtn:hover {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.distributorNote {
+    font-size: 0.8rem;
+    color: #777777;
+    font-style: italic;
+    margin-top: 16px;
+    line-height: 1.5;
+}
+
 .becomeDistributorWrapper {
     margin-top: 24px;
     text-align: center;

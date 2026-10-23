@@ -27,18 +27,19 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
                 <div className={styles.content} role="region" aria-label="Partner handbook" tabIndex={0}>
                     <div className={styles.section}>
                         <h3>1. Getting Started</h3>
-                        <p><b>Your Unique Link:</b> Access your dashboard to find your custom referral link. This link is your 'digital ID'—whenever someone clicks it, our system tracks them for 30 days.</p>
+                        <p><b>Your Unique Link:</b> Access your dashboard to find your custom referral link and code. This is your 'digital ID'—any app subscription or book purchase made with it is attributed to you.</p>
+                        <p><b>Activate Your Account:</b> Submit one genuine review video of the Enchiridion app or a handbook. Your code and dashboard stay provisional until it's approved.</p>
                         <div className={styles.mathHighlight}>
-                            The Math: Every 1 Point = ₦100. Your goal is to reach the ₦5,000 payout threshold.
+                            The Math: You earn 20% commission on every app subscription and book purchase made through your link — for up to 6 months per referred user.
                         </div>
                     </div>
 
                     <div className={styles.section}>
-                        <h3>2. How to Earn Fast</h3>
+                        <h3>2. How to Earn</h3>
                         <ul>
-                            <li><b>The 'Quick Tap' (0.1 Points / ₦10):</b> Share your link in medical study groups or on your WhatsApp status. You earn every time a unique colleague simply browses our site.</li>
-                            <li><b>Building a Network (0.1 Points / ₦10):</b> Encourage others to join the Partner Network. When they register as a partner through your link, you get rewarded instantly.</li>
-                            <li><b>The Big Win (5.0 Points / ₦500):</b> When a referred colleague purchases an Enchiridion book, you earn a high-value commission.</li>
+                            <li><b>App Subscriptions (20% commission):</b> Every payment a referred user makes on their app subscription earns you 20%, for up to 6 months from their signup date.</li>
+                            <li><b>Book Sales (20% commission):</b> Every Enchiridion handbook purchased through your link earns you 20% commission.</li>
+                            <li><b>Review Video Payouts:</b> Beyond commissions, your submitted review video can earn additional per-view payouts on social media — rates and terms are agreed separately with Enchiridion.</li>
                         </ul>
                     </div>
 
@@ -46,7 +47,8 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
                         <h3>3. Pro-Tips for Maximum Impact</h3>
                         <ul>
                             <li><b>Focus on Exams:</b> Mention that our app and books cover UKMLA, USMLE, and MCCQE. Targeting students during exam season is the fastest way to drive book sales.</li>
-                            <li><b>Climb the Leaderboard:</b> Check the 'Rewards' tab to see where you stand. Top rankers don't just get points; they gain prestige in the Enchiridion community.</li>
+                            <li><b>Sell the Discount:</b> Remind your network that your code gets them ₦500 off their first app subscription and 10% off their first book order.</li>
+                            <li><b>Climb the Rankings:</b> Check the 'Rewards' tab to see where you stand. Top partners gain visibility and prestige in the Enchiridion community.</li>
                             <li><b>Use the Share Buttons:</b> Don't manually copy-paste. Use the WhatsApp and Email buttons on your dashboard to send pre-formatted, professional messages.</li>
                         </ul>
                     </div>
@@ -55,8 +57,9 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
                         <h3>4. Payouts & Security</h3>
                         <ul>
                             <li>Ensure your bank details are correct in the 'Payout Settings' tab.</li>
-                            <li>Payouts are processed at the end of the month once you hit the minimum milestone.</li>
-                            <li><b>Note:</b> Self-referrals and fraudulent clicks are monitored and will lead to account suspension.</li>
+                            <li>Payouts follow the schedule shown in your Partner Dashboard.</li>
+                            <li>Referral codes are personal and non-transferable — don't post them on coupon or deal sites.</li>
+                            <li><b>Note:</b> Self-referrals and fraudulent activity are monitored and will lead to commission reversal or account suspension.</li>
                         </ul>
                     </div>
                 </div>
