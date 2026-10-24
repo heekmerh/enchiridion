@@ -1163,3 +1163,19 @@
 .blockContent, .blockImage { min-width: 0; max-width: 100%; }
 
 .formGroup { min-width: 0; max-width: 100%; }
+
+.secondaryBtn {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 12px;
+    padding: 12px 20px;
+}
+
+.secondaryBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}

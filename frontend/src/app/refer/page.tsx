@@ -8,7 +8,7 @@ import Accordion from "@/components/Accordion";
 import DistributorForm from "@/components/DistributorForm";
 import GlobalToast from "@/components/GlobalToast";
 import GoogleButton from "@/components/GoogleButton";
-import { authErrorMessage, PENDING_MARKETING_KEY, signInWithGoogle, supabase, TERMS_VERSION } from "@/lib/supabase";
+import { authErrorMessage, authorizedFetch, PENDING_MARKETING_KEY, signInWithGoogle, supabase, TERMS_VERSION } from "@/lib/supabase";
 
 export default function ReferralPage() {
     const [activeAccordion, setActiveAccordion] = useState<number | null>(null);
@@ -73,6 +73,11 @@ export default function ReferralPage() {
         };
     }, []);
     const [isRegistered, setIsRegistered] = useState(false);
+    const [verifyCode, setVerifyCode] = useState("");
+    const [verifyBusy, setVerifyBusy] = useState(false);
+    const [verifyError, setVerifyError] = useState<string | null>(null);
+    const [verifyMessage, setVerifyMessage] = useState<string | null>(null);
+    const [emailVerified, setEmailVerified] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [referralCode, setReferralCode] = useState("");
@@ -193,6 +198,40 @@ export default function ReferralPage() {
             } finally {
                 setIsLoading(false);
             }
+        }
+    };
+
+    const handleVerifyCode = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setVerifyBusy(true);
+        setVerifyError(null);
+        setVerifyMessage(null);
+        try {
+            const { error } = await supabase().auth.verifyOtp({ email: formData.email.trim(), token: verifyCode.trim(), type: "signup" });
+            if (error) throw error;
+            setEmailVerified(true);
+            await authorizedFetch("/api/v1/communications/dispatch-mine", { method: "POST" }).catch(() => undefined);
+        } catch (err) {
+            setVerifyError(authErrorMessage(err, "That code is invalid or has expired."));
+        } finally {
+            setVerifyBusy(false);
+        }
+    };
+
+    const handleResendCode = async () => {
+        setVerifyBusy(true);
+        setVerifyError(null);
+        setVerifyMessage(null);
+        try {
+            const { error } = await supabase().auth.resend({
+                type: "signup", email: formData.email.trim(), options: { emailRedirectTo: `${window.location.origin}/verify-email` },
+            });
+            if (error) throw error;
+            setVerifyMessage("A new verification email has been sent.");
+        } catch (err) {
+            setVerifyError(authErrorMessage(err, "Unable to send a new email. Please try again shortly."));
+        } finally {
+            setVerifyBusy(false);
         }
     };
 
@@ -778,13 +817,35 @@ export default function ReferralPage() {
                         <div role="status" className={styles.successState}>
                             <div className={styles.successIcon}>✓</div>
                             <h3>Welcome to the Inner Circle, {formData.fullName.split(' ')[0]}!</h3>
-                            <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
-                                We&apos;ve sent an eight-digit verification code to <b>{formData.email}</b>. Select Verify My Email below and enter that code to activate your account. The same account works on the website and in the Enchiridion app.
-                            </p>
-
-                            <Link href="/verify-email" className={styles.primaryBtn}>
-                                Verify My Email
-                            </Link>
+                            {emailVerified ? (
+                                <>
+                                    <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
+                                        Your email is verified and your account is ready. Your personal referral code is <b>{referralCode}</b>.
+                                    </p>
+                                    <Link href="/dashboard" className={styles.primaryBtn}>
+                                        Continue to your dashboard
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    <p style={{ fontSize: '1.2rem', marginBottom: '24px' }}>
+                                        We&apos;ve sent an eight-digit verification code to <b>{formData.email}</b>. Enter it below to activate your account. The same account works on the website and in the Enchiridion app.
+                                    </p>
+                                    <form onSubmit={handleVerifyCode} style={{ marginBottom: '24px' }}>
+                                        <label htmlFor="registration-verify-code">Verification code</label>
+                                        <input id="registration-verify-code" inputMode="numeric" autoComplete="one-time-code" required
+                                            value={verifyCode} onChange={e => setVerifyCode(e.target.value)} />
+                                        {verifyError && <p role="alert" className={styles.error}>{verifyError}</p>}
+                                        {verifyMessage && <p role="status">{verifyMessage}</p>}
+                                        <button type="submit" className={styles.primaryBtn} disabled={verifyBusy || !verifyCode.trim()}>
+                                            {verifyBusy ? "Please wait..." : "Verify My Email"}
+                                        </button>
+                                        <button type="button" className={styles.secondaryBtn} disabled={verifyBusy} onClick={handleResendCode}>
+                                            Send a new code
+                                        </button>
+                                    </form>
+                                </>
+                            )}
 
                             <div className={styles.onboardingSteps}>
                                 <div className={styles.onboardingCard}>

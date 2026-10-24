@@ -10,7 +10,7 @@ import LegacyBadge from "@/components/LegacyBadge";
 import Link from "next/link";
 import GlobalToast from "@/components/GlobalToast";
 import SocialShareCard from "@/components/SocialShareCard";
-import { getAccessToken, signOut } from "@/lib/supabase";
+import { currentSession, getAccessToken, signOut } from "@/lib/supabase";
 
 export default function PartnerDashboard() {
     const [copied, setCopied] = useState(false);
@@ -61,7 +61,19 @@ export default function PartnerDashboard() {
 
         // Fetch actual stats from backend
         const fetchStats = async () => {
-            const token = await getAccessToken();
+            const session = await currentSession();
+            const meta = session?.user.user_metadata ?? {};
+            const metaName = typeof meta.display_name === "string" && meta.display_name ? meta.display_name : (typeof meta.name === "string" ? meta.name.split(" ")[0] : "");
+            const metaRef = typeof meta.referral_code === "string" ? meta.referral_code.toLowerCase() : "";
+            if (metaName || metaRef) {
+                setPartnerData(prev => ({
+                    ...prev,
+                    username: prev.username === "Partner" && metaName ? metaName : prev.username,
+                    refCode: prev.refCode || metaRef,
+                }));
+            }
+
+            const token = session?.access_token ?? await getAccessToken();
             if (!token) return;
 
             try {
@@ -74,7 +86,8 @@ export default function PartnerDashboard() {
                     const stats = await response.json();
                     setPartnerData(prev => ({
                         ...prev,
-                        refCode: stats.referralCode,
+                        refCode: stats.referralCode || prev.refCode,
+                        username: stats.name ? String(stats.name).split(" ")[0] : prev.username,
                         stats: {
                             ...prev.stats,
                             accruedRevenue: stats.revenue,
@@ -459,7 +472,7 @@ export default function PartnerDashboard() {
                     <div className={styles.shareBox}>
                         <p className={styles.shareLabel}>Copy & Paste or Click & Share</p>
                         <div className={styles.linkGroup}>
-                            <div className={styles.linkInput}>{referralLink}</div>
+                            <div className={styles.linkInput}>{partnerData.refCode ? referralLink : "Loading your referral link..."}</div>
                             <button className={styles.copyBtn} onClick={handleCopy}>
                                 {copied ? "Copied!" : "Copy"} <i aria-hidden="true" className="fas fa-copy"></i>
                             </button>

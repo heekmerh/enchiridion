@@ -248,7 +248,7 @@ async def stats(user=USER, db=DB):
     return {
         "points": float(partner["points"]), "revenue": float(partner["points"] * 100),
         "pendingPoints": len(pending) / 10, "lifetimeEarnings": float(partner["lifetime_earnings"]),
-        "totalReferrals": partner["total_referrals"], "referralCode": partner["referral_code"],
+        "totalReferrals": partner["total_referrals"], "referralCode": partner["referral_code"], "name": partner["name"],
         "bankName": partner["bank_name"], "accountName": partner["account_name"], "accountNumber": partner["account_number"],
         "email": partner["email"], "state": partner["state"],
         "milestones": [{"referee": m["referee"], "type": m["milestone_type"], "points": float(m["points"]), "timestamp": m["created_at"].isoformat()} for m in milestones],
