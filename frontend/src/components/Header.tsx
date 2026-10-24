@@ -178,15 +178,7 @@ export default function Header() {
           {/* Desktop Nav - Right */}
           <nav aria-label="Account and information" className={`${styles.navGroup} ${styles.desktopOnly}`}>
             {menuItems.slice(4).map((item) => {
-              const isLoginItem = item.label === "Partner Login";
-              if (isLoginItem && isLoggedIn) {
-                return (
-                  <div key="dashboard" className={styles.navItem}>
-                    <Link href="/dashboard" className={styles.navLink}>Dashboard</Link>
-                    {userEmail && <span className={styles.accountEmail} title={userEmail}>Signed in as {userEmail}</span>}
-                  </div>
-                );
-              }
+              if (item.label === "Partner Login" && isLoggedIn) return null;
               return (
                 <div
                   key={item.label}
@@ -202,6 +194,17 @@ export default function Header() {
                 </div>
               );
             })}
+            {isLoggedIn && (
+              <div className={styles.navItem}>
+                <Link href="/dashboard" className={styles.accountChip} aria-label={`Dashboard, signed in as ${userEmail}`}>
+                  <span className={styles.accountAvatar} aria-hidden="true">{(userEmail[0] || "?").toUpperCase()}</span>
+                  <span className={styles.accountText}>
+                    <span className={styles.accountLabel}>Dashboard</span>
+                    <span className={styles.accountEmail} title={userEmail}>{userEmail}</span>
+                  </span>
+                </Link>
+              </div>
+            )}
           </nav>
         </div>
 
@@ -276,7 +279,15 @@ export default function Header() {
           <i aria-hidden="true" className="fas fa-times"></i>
         </button>
         <div className={styles.sidebarLinks}>
-          {isLoggedIn && userEmail && <p className={styles.sidebarAccount}>Signed in as <b>{userEmail}</b></p>}
+          {isLoggedIn && userEmail && (
+            <Link href="/dashboard" className={styles.sidebarAccount} onClick={() => setIsMenuOpen(false)}>
+              <span className={styles.accountAvatar} aria-hidden="true">{userEmail[0].toUpperCase()}</span>
+              <span className={styles.accountText}>
+                <span className={styles.accountLabel}>Dashboard</span>
+                <span className={styles.accountEmail}>{userEmail}</span>
+              </span>
+            </Link>
+          )}
           {menuItems.map((item) => {
             // Group Partner-related items under "Partnership" in the mobile sidebar
             const partnerLabels = ["Referral Program", "Rewards", "Partner Login"];
