@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useDialog } from "@/hooks/useDialog";
 import styles from "./Header.module.css";
 import PartnerLoginModal from "./PartnerLoginModal";
@@ -28,6 +29,8 @@ export default function Header() {
   const sidebarRef = useDialog(isMenuOpen, () => setIsMenuOpen(false));
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Temporary state for UI
+  const [userEmail, setUserEmail] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,8 +45,16 @@ export default function Header() {
       }
     };
 
-    currentSession().then(session => setIsLoggedIn(!!session));
-    const stopListening = onSessionChange(session => setIsLoggedIn(!!session));
+    currentSession().then(session => { setIsLoggedIn(!!session); setUserEmail(session?.user.email ?? ""); });
+    const stopListening = onSessionChange((session, event) => {
+      setIsLoggedIn(!!session);
+      setUserEmail(session?.user.email ?? "");
+      // Supabase falls back to the site root when the reset link's redirect isn't allow-listed; send recovery sessions to the reset form.
+      if (event === "PASSWORD_RECOVERY") {
+        try { sessionStorage.setItem("enchiridion_password_recovery", "1"); } catch { /* storage unavailable */ }
+        if (window.location.pathname !== "/reset-password") router.replace("/reset-password");
+      }
+    });
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("hashchange", handleHashChange);
@@ -172,6 +183,7 @@ export default function Header() {
                 return (
                   <div key="dashboard" className={styles.navItem}>
                     <Link href="/dashboard" className={styles.navLink}>Dashboard</Link>
+                    {userEmail && <span className={styles.accountEmail} title={userEmail}>Signed in as {userEmail}</span>}
                   </div>
                 );
               }
@@ -264,6 +276,7 @@ export default function Header() {
           <i aria-hidden="true" className="fas fa-times"></i>
         </button>
         <div className={styles.sidebarLinks}>
+          {isLoggedIn && userEmail && <p className={styles.sidebarAccount}>Signed in as <b>{userEmail}</b></p>}
           {menuItems.map((item) => {
             // Group Partner-related items under "Partnership" in the mobile sidebar
             const partnerLabels = ["Referral Program", "Rewards", "Partner Login"];

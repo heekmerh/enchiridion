@@ -573,3 +573,19 @@
 .navGroup { gap: clamp(12px, 1.5vw, 24px); }
 .navLink, .navLinkButton { letter-spacing: 0.08em; }
 .megaDropdown { max-height: calc(100dvh - var(--header-height)); overflow-y: auto; overscroll-behavior: contain; }
+
+.accountEmail {
+    display: block;
+    font-size: 0.7rem;
+    max-width: 180px;
+    opacity: 0.75;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebarAccount {
+    font-size: 0.85rem;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}

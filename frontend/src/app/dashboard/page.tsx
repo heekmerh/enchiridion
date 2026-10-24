@@ -39,6 +39,7 @@ export default function PartnerDashboard() {
     });
 
     const [mounted, setMounted] = useState(false);
+    const [accountEmail, setAccountEmail] = useState("");
     const [milestoneFulfilled, setMilestoneFulfilled] = useState<{ [tier: number]: boolean }>({ 50: false, 100: false });
     const [userProgress, setUserProgress] = useState<any>(null);
     const [showCashbackPulse, setShowCashbackPulse] = useState(false);
@@ -62,6 +63,7 @@ export default function PartnerDashboard() {
         // Fetch actual stats from backend
         const fetchStats = async () => {
             const session = await currentSession();
+            setAccountEmail(session?.user.email ?? "");
             const meta = session?.user.user_metadata ?? {};
             const metaName = typeof meta.display_name === "string" && meta.display_name ? meta.display_name : (typeof meta.name === "string" ? meta.name.split(" ")[0] : "");
             const metaRef = typeof meta.referral_code === "string" ? meta.referral_code.toLowerCase() : "";
@@ -401,6 +403,7 @@ export default function PartnerDashboard() {
                                 <i aria-hidden="true" className="fas fa-sign-out-alt"></i> Logout
                             </button>
                         </div>
+                            {accountEmail && <p>Signed in as <b>{accountEmail}</b></p>}
                         <p>
                             Track your impact and manage your rewards.
                             <Link href="/rewards#pantheon" className={styles.legacyWallLink}>

@@ -19,9 +19,14 @@ export default function ResetPasswordPage() {
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState(false);
 
-    useEffect(() => onSessionChange((_session, event) => {
-        if (event === "PASSWORD_RECOVERY") setHasRecoverySession(true);
-    }), []);
+    useEffect(() => {
+        try {
+            if (sessionStorage.getItem("enchiridion_password_recovery")) setHasRecoverySession(true);
+        } catch { /* storage unavailable */ }
+        return onSessionChange((_session, event) => {
+            if (event === "PASSWORD_RECOVERY") setHasRecoverySession(true);
+        });
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -49,6 +54,7 @@ export default function ResetPasswordPage() {
             }
             const { error: updateError } = await auth.updateUser({ password });
             if (updateError) throw updateError;
+            try { sessionStorage.removeItem("enchiridion_password_recovery"); } catch { /* storage unavailable */ }
             setSuccess(true);
 
         } catch (err) {
