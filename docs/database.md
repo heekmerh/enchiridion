@@ -13,10 +13,20 @@ project**. Everything that creates or changes the schema lives in a single file:
    gate), search for `v_password text := ''`, set a password, and run again.
    Leave it empty in production.
 
-The file is idempotent: run it again after every change to it. It uses
-`create ... if not exists`, `add column if not exists`, `create or replace`, and
-seed rows that are only inserted when missing. Re-running never resets prices,
-grants or accounts.
+The file can be re-run without errors. It uses `create ... if not exists`,
+`add column if not exists`, `create or replace`, and seed rows that are only
+inserted when missing, so prices and other seed rows are not reset. A re-run still
+changes things:
+
+- Every change in the file that is not live yet gets applied.
+- Functions and policies changed by hand in the dashboard are overwritten.
+- If `clinician@enchiridion.app` exists, it is reset to the clinician role, exempted
+  from the device check, and re-granted Premium with no expiry, even if that was
+  revoked and even with `v_password` empty.
+- The `avatars` bucket is forced back to public.
+- Missing profile, communication preference, partner and onboarding rows are created.
+
+To apply one change to a live project, run only that change's block.
 
 On a project that already ran the old scripts, the first run also migrates:
 

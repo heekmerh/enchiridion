@@ -72,7 +72,7 @@ Keep these in a password manager; you fill them in as you go.
 [database.md → Running it](database.md#running-it)
 
 - [ ] SQL Editor → New query → paste all of `supabase/enchiridion_master.sql` → **Run**.
-- [ ] Leave `v_password` empty, unless you want the QA clinician account for testing. If you set it, clear it and re-run before launch.
+- [ ] Leave `v_password` empty, unless you want the QA clinician account for testing. If you set it, clear it and delete the account under **Authentication → Users** before launch; clearing the password alone leaves the account active.
 
 **Check:**
 
