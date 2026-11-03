@@ -204,7 +204,23 @@ class _LibraryScreenState extends State<LibraryScreen>
                         .textTheme
                         .titleMedium
                         ?.copyWith(fontWeight: FontWeight.bold)),
-                const SizedBox(height: 20),
+                const SizedBox(height: 8),
+                ListTile(
+                  leading: const Icon(Icons.feedback_outlined),
+                  title: const Text('Send feedback'),
+                  subtitle: const Text(
+                      'Report a problem or request something new'),
+                  contentPadding: EdgeInsets.zero,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (_) => const FeedbackScreen()),
+                    );
+                  },
+                ),
+                const Divider(),
+                const SizedBox(height: 12),
                 SettingsPanel(
                   settings: settingsProvider.settings,
                   onUpdate: (s) {
@@ -223,20 +239,6 @@ class _LibraryScreenState extends State<LibraryScreen>
                 ),
                 const SizedBox(height: 8),
                 const Divider(),
-                ListTile(
-                  leading: const Icon(Icons.feedback_outlined),
-                  title: const Text('Send feedback'),
-                  subtitle: const Text(
-                      'Report a problem or request something new'),
-                  contentPadding: EdgeInsets.zero,
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (_) => const FeedbackScreen()),
-                    );
-                  },
-                ),
                 ListTile(
                   leading: const Icon(Icons.info_outlined),
                   title: const Text('About Enchiridion'),

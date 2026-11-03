@@ -413,8 +413,6 @@ void main() {
 
       await tester.tap(find.byTooltip('Settings'));
       await tester.pumpAndSettle();
-      await tester.ensureVisible(find.text('Send feedback'));
-      await tester.pumpAndSettle();
       await tester.tap(find.text('Send feedback'));
       await tester.pumpAndSettle();
 
