@@ -210,6 +210,8 @@ These tell the backend about renewals, cancellations, payment failures and refun
    - The cron in `backend/vercel.json` runs `/api/v1/internal/jobs` daily.
    - It recovers missed webhooks, refreshes Google subscriptions and retries acknowledgements, expires lapsed website plans, and sends queued emails.
 2. Set the `MAIL_*` variables so the backend can send purchase, renewal, failure, cancellation and expiry emails.
+3. Optional: set `ADMIN_EMAIL` to choose who receives the feedback digest. It falls back to `MAIL_FROM`.
+   - A second cron runs `/api/v1/internal/feedback-digest` at 23:00 UTC (midnight in Nigeria) and emails all app feedback sent since the last digest. Days with no feedback send nothing.
 
 To run the job by hand at any time:
 
@@ -230,5 +232,6 @@ curl -H "Authorization: Bearer $CRON_SECRET" <BACKEND>/api/v1/internal/jobs
 | `rtdn-push` service account email | backend | `GOOGLE_RTDN_SERVICE_ACCOUNT` |
 | Play listing URL | frontend | `NEXT_PUBLIC_PLAY_STORE_URL` |
 | Cron secret | backend | `CRON_SECRET` |
+| Feedback digest recipient (optional) | backend | `ADMIN_EMAIL` |
 
 Redeploy after changing any variable; Vercel doesn't apply them to running deployments.

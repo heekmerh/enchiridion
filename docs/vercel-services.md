@@ -36,6 +36,7 @@ with test payments and a non-production database when enabling Preview deploymen
 | `MAIL_SERVER` | `smtp.hostinger.com` |
 | `MAIL_PORT` | `587` (backend uses STARTTLS; Supabase retains its working port 465) |
 | `MAIL_FROM_NAME` | `Enchiridion` |
+| `ADMIN_EMAIL` | Optional feedback digest recipient; defaults to `MAIL_FROM` |
 
 Do not manually add `BACKEND_URL`: Vercel injects it through a service binding.
 Remove any existing project variable with that name for combined deployment.
@@ -79,8 +80,9 @@ request to the original PNG does not verify the optimization endpoint.
 4. Request a password reset and follow its email link to `/reset-password`.
 5. Sign in and confirm the account/dashboard API calls succeed.
 6. Ensure production Deployment Protection permits public webhooks.
-7. Confirm the daily cron appears in project Settings; it calls
-   `/api/v1/internal/jobs` at 06:00 UTC with `CRON_SECRET` authentication.
+7. Confirm both daily crons appear in project Settings; they call
+   `/api/v1/internal/jobs` at 06:00 UTC and `/api/v1/internal/feedback-digest`
+   at 23:00 UTC with `CRON_SECRET` authentication.
 
 Add `enchiridion.site` and `www.enchiridion.site` to this combined project.
 Use its public URL for Flutterwave `/api/v1/payments/flutterwave/webhook`

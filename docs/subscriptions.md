@@ -50,8 +50,9 @@ Environment variables — see [`backend/.env.example`](../backend/.env.example):
 | `GOOGLE_PLAY_PACKAGE_NAME` | The app's final `applicationId` |
 | `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` | Service account key (raw JSON or base64) |
 | `GOOGLE_RTDN_AUDIENCE`, `GOOGLE_RTDN_SERVICE_ACCOUNT` | Pub/Sub push authentication |
-| `CRON_SECRET` | Protects the scheduled reconciliation job |
-| `MAIL_*` | SMTP for billing notices and the consented offer email |
+| `CRON_SECRET` | Protects the scheduled reconciliation and feedback digest jobs |
+| `MAIL_*` | SMTP for billing notices, the consented offer email and the feedback digest |
+| `ADMIN_EMAIL` | Optional feedback digest recipient; defaults to `MAIL_FROM` |
 
 `backend/vercel.json` schedules `GET /api/v1/internal/jobs` daily (the Vercel Hobby
 limit). It recovers checkouts whose webhook never arrived, retries failed provider

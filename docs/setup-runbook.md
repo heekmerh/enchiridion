@@ -139,9 +139,9 @@ The frontend and backend share the combined project. Add the domain to that proj
 
 This confirms the code before you spend time in provider consoles.
 
-- [ ] Backend: follow [database.md → Local testing](database.md#local-testing), then `python -m pytest backend/tests -q`. Expect 45 passed.
+- [ ] Backend: follow [database.md → Local testing](database.md#local-testing), then `python -m pytest backend/tests -q`. Expect 56 passed.
 - [ ] Website: `cd frontend && npm ci && npm run build`.
-- [ ] App: `cd enchiridion-app/enchiridion && flutter test`. Expect 318 passed.
+- [ ] App: `cd enchiridion-app/enchiridion && flutter test`. Expect 350 passed.
 
 ---
 
@@ -271,7 +271,7 @@ B5
   ```
 
   It should return a JSON summary, not 401.
-- [ ] In the combined project, open **Settings → Cron Jobs** and confirm the daily job is listed.
+- [ ] In the combined project, open **Settings → Cron Jobs** and confirm both daily jobs are listed.
 - [ ] Work through all 11 rows of [subscriptions.md → 7. Sandbox test plan](subscriptions.md#7-sandbox-test-plan). Rows 1–6 are the website and rows 7–11 are Android.
 - [ ] Confirm the billing emails (activated, cancelled) arrive from your SMTP address.
 

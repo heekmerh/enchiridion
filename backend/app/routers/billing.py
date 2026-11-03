@@ -12,7 +12,7 @@ from pydantic import BaseModel, Field
 
 from .. import flutterwave
 from ..auth import CurrentUser, current_active_superuser, current_active_user
-from ..billing import catalog, copy, events, flutterwave_billing, google_play, jobs, lifecycle
+from ..billing import catalog, copy, events, flutterwave_billing, google_play, jobs, lifecycle, notifications
 from ..database import get_db
 
 logger = logging.getLogger(__name__)
@@ -192,10 +192,21 @@ async def record_refund(subscription_id: uuid.UUID, body: RefundRequest, user: C
     return {"subscription": lifecycle.serialize_subscription(subscription)}
 
 
-@router.get("/internal/jobs")
-async def run_jobs(request: Request, db=DB):
+def require_cron_secret(request: Request):
     secret = os.getenv("CRON_SECRET", "")
     supplied = request.headers.get("authorization", "")
     if not secret or not hmac.compare_digest(supplied, f"Bearer {secret}"):
         raise HTTPException(401, "Unauthorized")
+
+
+@router.get("/internal/jobs")
+async def run_jobs(request: Request, db=DB):
+    require_cron_secret(request)
     return await jobs.run_all(db)
+
+
+@router.get("/internal/feedback-digest")
+async def run_feedback_digest(request: Request, db=DB):
+    require_cron_secret(request)
+    queued = await notifications.enqueue_feedback_digest(db)
+    return {"queued": queued, "emails": await notifications.dispatch(db, kind=notifications.FEEDBACK_DIGEST_KIND, limit=1)}
