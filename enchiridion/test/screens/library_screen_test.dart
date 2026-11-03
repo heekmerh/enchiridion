@@ -11,6 +11,7 @@ import 'package:enchiridion/models/announcement.dart';
 import 'package:enchiridion/providers/announcement_provider.dart';
 import 'package:enchiridion/providers/auth_provider.dart';
 import 'package:enchiridion/providers/settings_provider.dart';
+import 'package:enchiridion/screens/feedback_screen.dart';
 import 'package:enchiridion/screens/library_screen.dart';
 import 'package:enchiridion/screens/calculator_list_screen.dart';
 import 'package:enchiridion/screens/resource_topic_list_screen.dart';
@@ -401,6 +402,21 @@ void main() {
 
       expect(find.byIcon(Icons.menu_book_outlined), findsWidgets);
       expect(find.byIcon(Icons.quiz_outlined), findsNothing);
+    });
+  });
+
+  group('LibraryScreen — settings entry', () {
+    testWidgets('Send feedback in Settings opens the feedback screen',
+        (tester) async {
+      await tester.pumpWidget(_buildSubject(_makeStorage()));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.byTooltip('Settings'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Send feedback'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(FeedbackScreen), findsOneWidget);
     });
   });
 }
