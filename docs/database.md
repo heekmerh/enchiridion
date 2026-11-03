@@ -31,7 +31,7 @@ On a project that already ran the old scripts, the first run also migrates:
 
 | Schema | Owner | Browser/app access |
 | --- | --- | --- |
-| `public` | Flutter app data (profiles, study stats, notes, sync tables, announcements), `communication_preferences`, and two RPCs: `get_my_entitlements()`, `get_my_subscription()` | Row-level security; owner-only rows |
+| `public` | Flutter app data (profiles, study stats, notes, sync tables, announcements, feedback), `communication_preferences`, and two RPCs: `get_my_entitlements()`, `get_my_subscription()` | Row-level security; owner-only rows |
 | `enchiridion_web` | Website: referral partners, rewards, payouts, book orders, reviews, leads, `email_outbox` | None; backend only |
 | `billing` | Plans, versioned prices, provider plan mappings, checkout sessions, subscriptions, transitions (audit), payments, payment events, entitlements, settlements | None; backend only. The app reads through the two `public` RPCs. |
 | `legacy` | Archived pre-migration tables | None |
@@ -76,6 +76,12 @@ select f.id, f.scope, f.question_id, f.reason, f.created_at, u.email
 from public.flagged_questions f join auth.users u on u.id = f.user_id
 where f.status = 'open' order by f.created_at desc;
 update public.flagged_questions set status = 'reviewed' where id = '<id>';
+
+-- Open app feedback (complaints and feature requests), newest first.
+select f.id, f.category, f.message, f.platform, f.created_at, u.email
+from public.app_feedback f join auth.users u on u.id = f.user_id
+where f.status = 'open' order by f.created_at desc;
+update public.app_feedback set status = 'resolved' where id = '<id>';
 ```
 
 ## Before launch
