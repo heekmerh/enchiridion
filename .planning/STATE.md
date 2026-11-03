@@ -73,7 +73,7 @@ See [TESTING_REPORT.md](../TESTING_REPORT.md) for the current issue list and [th
 | 260919-kix | Content extraction: re-extract scripts/content/IV_Cannula_instrumentation.docx so that "Advantages", "Disadvantages", "Precautions", "Complications" are treated as subtopic headers rather than as individual content items in the IV Cannula module. | 2026-09-19 | 8a584b2 | — | .planning/quick/260919-kix-content-extraction-re-extract-scripts-content-iv-cannula-ins |
 | 260919-kiy | Medical Instrumentation: display Medical Instrumentation modules as a list, matching the existing Surgical Instrumentation list UI/pattern. | 2026-09-19 | ba95178 | — | .planning/quick/260919-kiy-medical-instrumentation-display-medical-instrumentation-modu |
 | 260919-kiu | Exam Prep: fix the answered-questions counter bug where a user who answered 4 questions sees the dashboard report only 2 answered; find and correct the underlying tracking/counting logic. | 2026-09-19 | d6c4e08 | — | .planning/quick/260919-kiu-exam-prep-fix-the-answered-questions-counter-bug-where-a-use |
-| 261103-coc | Add in-app feedback for complaints and feature requests, opened from the top of Settings | 2026-11-03 | 1dcd6f9 | complete, live schema step pending | [261103-coc-create-a-feedback-tab-for-users-to-send-](./quick/261103-coc-create-a-feedback-tab-for-users-to-send-/) |
+| 261103-coc | Add in-app feedback for complaints and feature requests, opened from the top of Settings | 2026-11-03 | 1dcd6f9 | complete | [261103-coc-create-a-feedback-tab-for-users-to-send-](./quick/261103-coc-create-a-feedback-tab-for-users-to-send-/) |
 
 Batch `260915-r9f` has five verified completions. The user-provided Supabase SQL Editor output from 2026-09-16 shows all 31 named migration catalog checks and OVERALL passing; [the saved result](../scripts/output/verify_001_004_live_results.md) records that evidence. The agent did not connect directly to the deployed database. See [BATCH.json](quick-batches/260915-r9f/BATCH.json) and the per-item verification reports.
 
@@ -93,4 +93,4 @@ Resume file: none (no HANDOFF.json or .continue-here).
 
 Continue the remaining TESTING_REPORT.md validation and fixes with the user, then decide whether to open a v1.1 milestone. Keep the completed v1.0 roadmap and phase artifacts as historical records.
 
-Last activity: 2026-11-03 - Completed quick task 261103-coc: Add in-app feedback; applying public.app_feedback to the live database is still pending
+Last activity: 2026-11-03 - Completed quick task 261103-coc: Add in-app feedback; live table applied and nightly digest email confirmed by the user

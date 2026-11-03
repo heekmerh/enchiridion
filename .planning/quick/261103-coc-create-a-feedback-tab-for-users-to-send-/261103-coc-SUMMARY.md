@@ -26,7 +26,7 @@ actuals:
 
 # Quick Task 261103-coc: In-app feedback for complaints and feature requests
 
-Signed-in users can open Settings, then Send feedback, pick Complaint, Feature request or Other, and send a message. It is stored as one owner-only row in a new `public.app_feedback` table. Tasks 1 and 2 are done. Task 3, applying the schema to the live database, is PENDING.
+Signed-in users can open Settings, then Send feedback, pick Complaint, Feature request or Other, and send a message. It is stored as one owner-only row in a new `public.app_feedback` table. All three tasks are done, including applying the schema to the live database.
 
 ## Entry point choice
 
@@ -51,25 +51,27 @@ enchiridion-web repo (local `main`):
 
 Neither repo was pushed.
 
-## SQL was not executed
+## How the SQL was checked
 
-The agent did not run the SQL anywhere and did not connect to any database. The new block in `enchiridion_master.sql` has not been syntax-checked by Postgres. The checks run were structural greps only:
+The agent never connected to the live database. During this task the checks were structural greps only:
 - `create table if not exists public.app_feedback` is present
 - exactly one select and one insert policy, no update, delete or all policy
 - the insert policy requires `auth.uid() = user_id and status = 'open'`
 - the block sits before the first `commit;`, and `begin;` and `commit;` counts match
 
-Task 3 is PENDING.
+The master file later ran twice without error on a disposable Postgres built from `backend/tests/supabase_stub.sql`, and the user applied the block to the live project (Task 3).
 
-## Task 3: PENDING (manual, not attempted)
+## Task 3: Applied by the user on 2026-11-03
 
-1. Supabase Dashboard, SQL Editor, New query. Paste all of `enchiridion-web/supabase/enchiridion_master.sql` and Run. The file is idempotent.
-2. Run the app with `flutter run` from `enchiridion/`, signed in with a test account.
-3. Home, Settings icon, Send feedback. Tap Send on the empty form and confirm the inline errors. Choose Feature request, write a sentence, Send, and confirm the thank-you.
-4. Run the "Open app feedback" query from `docs/database.md` and confirm the row is listed.
-5. Optional: airplane mode, send again, and confirm the connection error appears with the text still in the field.
+The user ran only the `public.app_feedback` block of `enchiridion_master.sql` in the Supabase SQL Editor, not the whole file. A full-file run was advised against after review because it has side effects beyond this table; `docs/database.md` now lists them.
 
-Until step 1 is done every submission shows the failure snackbar, because the table does not exist yet. Apply the SQL before shipping a build with this screen.
+Reported result: a Feature request sent from the `clinician@enchiridion.app` account was stored and appeared in the follow-up digest email, sent at 10:06 WAT with platform `web`.
+
+Not reported: the submission was made from a web build, so it was not confirmed on Android. The empty-form errors and the offline failure path were covered by automated tests only.
+
+## Follow-up: nightly digest
+
+Feedback was originally stored with no notification. At the user's request, `enchiridion-web` commit `5c9b17c` added a cron at 23:00 UTC that emails feedback since the last delivered digest. A manual run delivered the email above from `support@enchiridion.site` to the same address.
 
 ## Verification results
 
@@ -115,10 +117,10 @@ None.
 
 ## Threat Flags
 
-None beyond the plan's threat model. T-261103-01 to T-261103-05 are mitigated in the SQL block, the service and the screen. They are enforced server-side only once Task 3 is applied.
+None beyond the plan's threat model. T-261103-01 to T-261103-05 are mitigated in the SQL block, the service and the screen. They are enforced server-side now that Task 3 is applied.
 
 ## Self-Check: PASSED
 
 - Files exist on `main`: `feedback_service.dart`, `feedback_screen.dart`, both new test files.
 - Commits exist: all five listed above.
-- Not checkable by the agent: the SQL has not been run, so the schema and the end-to-end submission are unproven until Task 3.
+- Live schema and end-to-end submission: confirmed by the user's report, not checked directly by the agent.
