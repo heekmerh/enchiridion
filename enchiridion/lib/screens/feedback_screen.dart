@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../services/feedback_service.dart';
 import '../utils/bottom_inset.dart';
 
+const _signInCopy = 'Sign in to send feedback.';
+
 class FeedbackScreen extends StatefulWidget {
   const FeedbackScreen({super.key, this.service});
 
@@ -16,9 +18,16 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   final _formKey = GlobalKey<FormState>();
   final _messageController = TextEditingController();
   late final FeedbackService _service = widget.service ?? FeedbackService();
+  late final bool _signedInOnOpen;
   FeedbackCategory? _category;
   bool _categoryMissing = false;
   bool _sending = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _signedInOnOpen = _service.isSignedIn;
+  }
 
   @override
   void dispose() {
@@ -49,6 +58,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       );
       _showMessage(messenger, 'Thanks — your feedback has been sent.');
       navigator.maybePop();
+    } on FeedbackSignInRequiredException {
+      _showMessage(messenger, _signInCopy);
+      if (mounted) setState(() => _sending = false);
     } catch (_) {
       _showMessage(
         messenger,
@@ -61,74 +73,125 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: const Text('Feedback')),
-      body: Form(
-        key: _formKey,
-        child: ListView(
-          padding: EdgeInsets.fromLTRB(
-            20,
-            16,
-            20,
-            24 + bottomViewportInset(context),
+      body: _signedInOnOpen ? _buildForm(context) : const _SignInNotice(),
+    );
+  }
+
+  Widget _buildForm(BuildContext context) {
+    final theme = Theme.of(context);
+    return Form(
+      key: _formKey,
+      child: ListView(
+        padding: EdgeInsets.fromLTRB(
+          20,
+          16,
+          20,
+          24 + bottomViewportInset(context),
+        ),
+        children: [
+          const Text(
+            'Tell us what is not working or what you would like to see next.',
           ),
-          children: [
-            const Text(
-              'Tell us what is not working or what you would like to see next.',
-            ),
-            const SizedBox(height: 20),
-            Text('What is this about?', style: theme.textTheme.titleSmall),
-            const SizedBox(height: 8),
-            Wrap(
-              spacing: 8,
-              children: [
-                for (final option in FeedbackCategory.values)
-                  ChoiceChip(
-                    label: Text(option.label),
-                    selected: _category == option,
-                    onSelected: (_) => setState(() {
-                      _category = option;
-                      _categoryMissing = false;
-                    }),
+          const SizedBox(height: 20),
+          Text('What is this about?', style: theme.textTheme.titleSmall),
+          const SizedBox(height: 8),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Wrap(
+                spacing: 8,
+                children: [
+                  for (final option in FeedbackCategory.values)
+                    ChoiceChip(
+                      label: Text(option.label),
+                      selected: _category == option,
+                      onSelected: (_) => setState(() {
+                        _category = option;
+                        _categoryMissing = false;
+                      }),
+                    ),
+                ],
+              ),
+              if (_categoryMissing)
+                Padding(
+                  padding: const EdgeInsets.only(top: 8),
+                  child: Text(
+                    'Choose what this feedback is about.',
+                    style: theme.textTheme.bodySmall
+                        ?.copyWith(color: theme.colorScheme.error),
                   ),
-              ],
-            ),
-            if (_categoryMissing)
-              Padding(
-                padding: const EdgeInsets.only(top: 8),
-                child: Text(
-                  'Choose what this feedback is about.',
-                  style: theme.textTheme.bodySmall
-                      ?.copyWith(color: theme.colorScheme.error),
                 ),
-              ),
-            const SizedBox(height: 20),
-            TextFormField(
-              controller: _messageController,
-              minLines: 5,
-              maxLines: 10,
-              maxLength: FeedbackService.maxMessageLength,
-              textCapitalization: TextCapitalization.sentences,
-              keyboardType: TextInputType.multiline,
-              decoration: const InputDecoration(
-                labelText: 'Your message',
-                alignLabelWithHint: true,
-                border: OutlineInputBorder(),
-              ),
-              validator: FeedbackService.validateMessage,
+            ],
+          ),
+          const SizedBox(height: 20),
+          TextFormField(
+            controller: _messageController,
+            minLines: 5,
+            maxLines: 10,
+            maxLength: FeedbackService.maxMessageLength,
+            textCapitalization: TextCapitalization.sentences,
+            keyboardType: TextInputType.multiline,
+            decoration: const InputDecoration(
+              labelText: 'Your message',
+              alignLabelWithHint: true,
+              border: OutlineInputBorder(),
+            ),
+            validator: FeedbackService.validateMessage,
+          ),
+          const SizedBox(height: 16),
+          FilledButton.icon(
+            onPressed: _sending ? null : _send,
+            icon: _sending
+                ? const SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : const Icon(Icons.send),
+            label: const Text('Send'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SignInNotice extends StatelessWidget {
+  const _SignInNotice();
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.fromLTRB(
+          32,
+          24,
+          32,
+          24 + bottomViewportInset(context),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.lock_outline,
+              size: 40,
+              color: theme.colorScheme.onSurfaceVariant,
             ),
             const SizedBox(height: 16),
-            FilledButton.icon(
-              onPressed: _sending ? null : _send,
-              icon: _sending
-                  ? const SizedBox(
-                      width: 18,
-                      height: 18,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : const Icon(Icons.send),
-              label: const Text('Send'),
+            Text(
+              _signInCopy,
+              style: theme.textTheme.titleMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Feedback is tied to your account, so you need to be signed in '
+              'to send it.',
+              style: theme.textTheme.bodyMedium,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
