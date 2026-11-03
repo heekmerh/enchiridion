@@ -1195,6 +1195,32 @@ create policy "Users can insert their own flags"
   on public.flagged_questions for insert with check (auth.uid() = user_id);
 
 
+create table if not exists public.app_feedback (
+  id         uuid primary key default gen_random_uuid(),
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  category   text not null check (category in ('complaint', 'feature_request', 'other')),
+  message    text not null check (char_length(btrim(message)) between 10 and 2000),
+  platform   text check (platform is null or char_length(platform) <= 32),
+  status     text not null default 'open' check (status in ('open', 'reviewed', 'resolved', 'dismissed')),
+  created_at timestamptz not null default timezone('utc', now())
+);
+
+create index if not exists idx_app_feedback_open
+  on public.app_feedback(status, created_at)
+  where status = 'open';
+
+alter table public.app_feedback enable row level security;
+
+drop policy if exists "Users can read their own feedback"   on public.app_feedback;
+drop policy if exists "Users can insert their own feedback" on public.app_feedback;
+
+create policy "Users can read their own feedback"
+  on public.app_feedback for select using (auth.uid() = user_id);
+-- status is pinned to open so users cannot file feedback as already resolved
+create policy "Users can insert their own feedback"
+  on public.app_feedback for insert with check (auth.uid() = user_id and status = 'open');
+
+
 create table if not exists public.pinned_notes (
   user_id       uuid not null references auth.users(id) on delete cascade,
   id            text not null,
