@@ -9,6 +9,7 @@ import '../services/storage_service.dart';
 import '../services/question_visibility.dart';
 import '../screens/reader_screen.dart';
 import '../screens/about_screen.dart';
+import '../screens/feedback_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/calculator_list_screen.dart';
@@ -222,6 +223,20 @@ class _LibraryScreenState extends State<LibraryScreen>
                 ),
                 const SizedBox(height: 8),
                 const Divider(),
+                ListTile(
+                  leading: const Icon(Icons.feedback_outlined),
+                  title: const Text('Send feedback'),
+                  subtitle: const Text(
+                      'Report a problem or request something new'),
+                  contentPadding: EdgeInsets.zero,
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (_) => const FeedbackScreen()),
+                    );
+                  },
+                ),
                 ListTile(
                   leading: const Icon(Icons.info_outlined),
                   title: const Text('About Enchiridion'),
