@@ -31,6 +31,7 @@ import 'services/play_billing_service.dart';
 import 'services/storage_service.dart';
 import 'screens/splash_screen.dart';
 import 'theme/app_theme.dart';
+import 'widgets/common/app_zoom_scope.dart';
 import 'widgets/common/system_navigation_inset.dart';
 import 'widgets/exam_prep/in_app_study_prompt_host.dart';
 
@@ -175,9 +176,11 @@ class _EnchiridionAppState extends State<EnchiridionApp> {
             debugShowCheckedModeBanner: false,
             navigatorKey: rootNavigatorKey,
             theme: AppTheme.getTheme(settingsProvider.settings.theme),
-            builder: (context, child) => SystemNavigationInset(
-              child: InAppStudyPromptHost(
-                child: child ?? const SizedBox.shrink(),
+            builder: (context, child) => AppZoomScope(
+              child: SystemNavigationInset(
+                child: InAppStudyPromptHost(
+                  child: child ?? const SizedBox.shrink(),
+                ),
               ),
             ),
             home: const SplashScreen(),

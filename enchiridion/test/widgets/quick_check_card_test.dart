@@ -78,7 +78,8 @@ void main() {
     expect(
       find.text('Correct'),
       findsOneWidget,
-      reason: 'the verdict follows the option key, never the letter the shuffle handed the row',
+      reason:
+          'the verdict follows the option key, never the letter the shuffle handed the row',
     );
   });
 
@@ -94,7 +95,8 @@ void main() {
     expect(
       find.text('Not quite'),
       findsOneWidget,
-      reason: 'the verdict follows the option key, never the letter the shuffle handed the row',
+      reason:
+          'the verdict follows the option key, never the letter the shuffle handed the row',
     );
   });
 
@@ -116,8 +118,7 @@ void main() {
     expect(find.text('Correct'), findsOneWidget);
     expect(tester.takeException(), isNull);
 
-    final totals =
-        StudyStatsService(storage).getLifetimeTotals();
+    final totals = StudyStatsService(storage).getLifetimeTotals();
     expect(totals.questionsAnswered, 1);
     expect(totals.correctAnswers, 1);
   });

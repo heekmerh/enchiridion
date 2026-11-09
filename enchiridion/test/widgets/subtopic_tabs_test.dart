@@ -122,8 +122,7 @@ Future<void> _dragUntilTabIndex(
 
 void main() {
   group('subtopicTabsFor (pure derivation)', () {
-    test('1 section with 3 subsections yields 3 tabs titled by subsection',
-        () {
+    test('1 section with 3 subsections yields 3 tabs titled by subsection', () {
       final chapter = _chapter([
         _section('sec-1', 'Section One', [
           _subsection('sub-1', 'Alpha'),
@@ -217,7 +216,8 @@ void main() {
       expect(tabs.single.content, isNull);
     });
 
-    test('a blank section or subsection title still produces a non-empty tab label',
+    test(
+        'a blank section or subsection title still produces a non-empty tab label',
         () {
       final subsectionChapter = _chapter([
         _section('sec-1', 'Section One', [
@@ -273,7 +273,8 @@ void main() {
       expect(tester.widget<TabBar>(find.byType(TabBar)).controller!.index, 1);
     });
 
-    testWidgets('a topic whose derivation yields a single entry renders no TabBar',
+    testWidgets(
+        'a topic whose derivation yields a single entry renders no TabBar',
         (tester) async {
       const topic = ResourceTopic(
         id: 'topic-id',
@@ -303,7 +304,8 @@ void main() {
             body: MultiProvider(
               providers: [
                 Provider<StorageService>.value(value: storage),
-                ChangeNotifierProvider(create: (_) => SettingsProvider(storage)),
+                ChangeNotifierProvider(
+                    create: (_) => SettingsProvider(storage)),
                 ChangeNotifierProvider(
                     create: (_) => PinnedNotesProvider(storage)),
               ],
@@ -342,7 +344,8 @@ void main() {
       expect(_inContent(find.text('Sub Four')), findsOneWidget);
     });
 
-    testWidgets('the source section title is rendered exactly once, not once per tab',
+    testWidgets(
+        'the source section title is rendered exactly once, not once per tab',
         (tester) async {
       final chapter = _tallContentChapter();
       await tester
@@ -431,7 +434,8 @@ void main() {
         (tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
-          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+          body: SizedBox(
+              height: 220, child: SubtopicTabsView(topic: outlineTopic)),
         ),
       ));
       await tester.pump();
@@ -451,7 +455,8 @@ void main() {
         (tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
-          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+          body: SizedBox(
+              height: 220, child: SubtopicTabsView(topic: outlineTopic)),
         ),
       ));
       await tester.pump();
@@ -467,7 +472,8 @@ void main() {
         (tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
-          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+          body: SizedBox(
+              height: 220, child: SubtopicTabsView(topic: outlineTopic)),
         ),
       ));
       await tester.pump();
@@ -488,7 +494,8 @@ void main() {
         (tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
-          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+          body: SizedBox(
+              height: 220, child: SubtopicTabsView(topic: outlineTopic)),
         ),
       ));
       await tester.pump();
@@ -517,7 +524,8 @@ void main() {
         (tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
-          body: SizedBox(height: 220, child: SubtopicTabsView(topic: outlineTopic)),
+          body: SizedBox(
+              height: 220, child: SubtopicTabsView(topic: outlineTopic)),
         ),
       ));
       await tester.pump();
@@ -545,7 +553,8 @@ void main() {
             body: MultiProvider(
               providers: [
                 Provider<StorageService>.value(value: storage),
-                ChangeNotifierProvider(create: (_) => SettingsProvider(storage)),
+                ChangeNotifierProvider(
+                    create: (_) => SettingsProvider(storage)),
                 ChangeNotifierProvider(
                     create: (_) => PinnedNotesProvider(storage)),
               ],

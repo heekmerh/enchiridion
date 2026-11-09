@@ -11,6 +11,7 @@ import '../widgets/drawer/custom_drawer.dart';
 import '../widgets/drawer/toc_drawer.dart';
 import '../widgets/drawer/settings_drawer.dart';
 import '../widgets/reader/reader_app_bar.dart';
+import '../widgets/common/app_zoom_scope.dart';
 import '../widgets/reader/reader_content.dart';
 import '../widgets/reader/reader_navigation.dart';
 import '../widgets/reader/reader_progress_bar.dart';
@@ -106,6 +107,7 @@ class _ReaderShellState extends State<_ReaderShell> {
     super.initState();
     _pendingAnchorId = widget.initialAnchorId;
     _scrollController.addListener(_onScroll);
+    AppZoomController.instance.isDoubleTapZoomEnabled = true;
     _checkAccess();
   }
 
@@ -116,6 +118,7 @@ class _ReaderShellState extends State<_ReaderShell> {
 
   @override
   void dispose() {
+    AppZoomController.instance.isDoubleTapZoomEnabled = false;
     _scrollController.removeListener(_onScroll);
     _scrollController.dispose();
     super.dispose();
@@ -149,8 +152,9 @@ class _ReaderShellState extends State<_ReaderShell> {
     if (visibleIndex == null) return;
     String? activeId;
     var activeIndex = -1;
-    for (final section in context.read<BookProvider>().currentChapter?.sections ??
-        const <ChapterSection>[]) {
+    for (final section
+        in context.read<BookProvider>().currentChapter?.sections ??
+            const <ChapterSection>[]) {
       final index = _itemIndexes[section.id];
       if (index != null && index <= visibleIndex && index > activeIndex) {
         activeIndex = index;
@@ -331,20 +335,21 @@ class _ReaderShellState extends State<_ReaderShell> {
                           onNotesPressed: () => _showNotesSheet(chapterId),
                         ),
                         _hasAccess ||
-                                  bookProvider.currentIndex < kFreeChapterCount
-                              ? ReaderContent(
-                                  chapter: chapter,
-                                  bookId: widget.bookId,
-                                  asSliver: true,
-                                  autoScrollController: _scrollController,
-                                  onItemIndexesReady: _onItemIndexesReady,
-                                  onKeysReady: _onKeysReady,
-                                  onAnchorKeysReady: _onAnchorKeysReady,
-                                )
-                              : SliverToBoxAdapter(child: _LockedChapterOverlay(
-                                  bookId: widget.bookId,
-                                  chapter: chapter,
-                                )),
+                                bookProvider.currentIndex < kFreeChapterCount
+                            ? ReaderContent(
+                                chapter: chapter,
+                                bookId: widget.bookId,
+                                asSliver: true,
+                                autoScrollController: _scrollController,
+                                onItemIndexesReady: _onItemIndexesReady,
+                                onKeysReady: _onKeysReady,
+                                onAnchorKeysReady: _onAnchorKeysReady,
+                              )
+                            : SliverToBoxAdapter(
+                                child: _LockedChapterOverlay(
+                                bookId: widget.bookId,
+                                chapter: chapter,
+                              )),
                         SliverToBoxAdapter(
                           child: SizedBox(height: 96 + safeBottomInset),
                         ),

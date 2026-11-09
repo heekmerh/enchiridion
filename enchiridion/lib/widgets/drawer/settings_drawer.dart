@@ -264,9 +264,8 @@ class _StudyBuddyIntervalSliderState extends State<_StudyBuddyIntervalSlider> {
           min: 15,
           max: 120,
           divisions: 21,
-          onChanged: widget.enabled
-              ? (value) => setState(() => _value = value)
-              : null,
+          onChanged:
+              widget.enabled ? (value) => setState(() => _value = value) : null,
           onChangeEnd: widget.enabled
               ? (value) => widget.onChangedEnd(value.round())
               : null,
