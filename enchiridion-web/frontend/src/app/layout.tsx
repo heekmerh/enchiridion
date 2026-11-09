@@ -1,0 +1,43 @@
+import type { Metadata, Viewport } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import "./globals.css";
+import ReferralTracker from "@/components/ReferralTracker";
+import { Suspense } from "react";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://enchiridion.site"),
+  title: { default: "Enchiridion — Modern Medical Reference System", template: "%s | Enchiridion" },
+  description: "Digital companion and curated specialty-based medical books for clinicians and students.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+      </head>
+      <body>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <Header />
+        <Suspense fallback={null}>
+          <ReferralTracker />
+        </Suspense>
+        <main id="main-content" tabIndex={-1} style={{ paddingTop: "var(--header-height)" }}>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

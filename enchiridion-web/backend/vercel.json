@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "fastapi",
+  "crons": [
+    { "path": "/api/v1/internal/jobs", "schedule": "0 6 * * *" },
+    { "path": "/api/v1/internal/feedback-digest", "schedule": "0 23 * * *" }
+  ]
+}

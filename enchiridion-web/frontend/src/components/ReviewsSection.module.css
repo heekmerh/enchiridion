@@ -1,0 +1,147 @@
+.section {
+    padding: 120px 20px;
+    background-color: #ffffff;
+    border-top: 4px solid #111827;
+    /* Strict validation boundary */
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow-wrap: anywhere;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 80px;
+    border-left: 8px solid #4169E1;
+    padding-left: 32px;
+}
+
+.header h2 {
+    font-size: 3rem;
+    color: #111827;
+    font-weight: 900;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.header p {
+    font-size: 1.4rem;
+    color: #4b5563;
+}
+
+
+.formContainer {
+    background: #f9fafb;
+    padding: 40px;
+    border: 2px solid #111827;
+}
+
+.carouselContainer {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    gap: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0 40px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.cardWrapper {
+    flex: 0 0 calc(33.333% - 22px);
+    scroll-snap-align: center;
+    min-width: 380px;
+    transition: transform 0.3s ease;
+}
+
+.loading,
+.emptyState {
+    text-align: center;
+    padding: 60px;
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+.footerActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.loadMoreBtn {
+    background: transparent;
+    border: 1px solid #d1d5db;
+    color: #374151;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.loadMoreBtn:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.writeReviewBtn {
+    background: #111827;
+    color: #ffffff;
+    padding: 16px 48px;
+    border: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.writeReviewBtn:hover {
+    background: #4169E1;
+}
+
+@media (max-width: 1024px) {
+    .cardWrapper {
+        flex: 0 0 calc(50% - 16px);
+        min-width: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 80px 20px;
+    }
+
+    .header {
+        padding-left: 20px;
+        margin-bottom: 60px;
+    }
+
+    .header h2 {
+        font-size: 2.2rem;
+    }
+
+    .cardWrapper {
+        flex: 0 0 100%;
+        min-width: unset;
+    }
+
+    .writeReviewBtn {
+        width: 100%;
+    }
+}

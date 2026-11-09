@@ -1,0 +1,846 @@
+.rewardsPage {
+    min-height: 100vh;
+    padding: 100px 0 80px;
+    background: #ffffff;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(49, 46, 129, 0.05) 0px, transparent 50%),
+        radial-gradient(at 50% 0%, rgba(20, 184, 166, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.05) 0px, transparent 50%);
+    position: relative;
+    overflow-x: hidden;
+    --metal-gold: #FFD700;
+    --metal-silver: #C0C0C0;
+    --metal-bronze: #CD7F32;
+}
+
+/* Decorative Blobs */
+.blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--color-indigo);
+    filter: blur(80px);
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.blob1 {
+    top: 10%;
+    left: -5%;
+}
+
+.blob2 {
+    top: 40%;
+    right: -5%;
+    background: var(--color-teal);
+}
+
+.blob3 {
+    bottom: 10%;
+    left: 20%;
+    background: var(--color-red);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Prize Hero Section */
+.prizeHero {
+    text-align: center;
+    padding: 100px 40px;
+    background: radial-gradient(ellipse at 50% 10%, #1e1b4b 0%, #0d0b2b 50%, #020617 100%);
+    border-radius: 50px;
+    color: white;
+    margin-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -12px rgba(30, 27, 75, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.prizeHero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    animation: rotate 25s linear infinite;
+    animation-play-state: var(--continuous-animation-state, running);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.prizeHero .prizeWelcome {
+    color: #ffffff;
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin-bottom: 32px;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Countdown */
+.countdownContainer {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.countdownItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 20px 25px;
+    border-radius: 24px;
+    min-width: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.countNumber {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    font-family: var(--font-serif);
+    color: #fbbf24;
+    /* Gold */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.countLabel {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Prize Tiers Grid */
+.prizeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 120px;
+}
+
+.prizeCard {
+    background: white;
+    padding: 50px 30px;
+    border-radius: 40px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 2px solid transparent;
+}
+
+.prizeCard:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+.firstPlace {
+    border-color: #fbbf24;
+    box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+}
+
+.firstPlace .rankIcon {
+    color: #fbbf24;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.secondPlace {
+    border-color: #94a3b8;
+    box-shadow: 0 20px 40px rgba(148, 163, 184, 0.15);
+}
+
+.secondPlace .rankIcon {
+    color: #94a3b8;
+    text-shadow: 0 0 20px rgba(148, 163, 184, 0.5);
+}
+
+.thirdPlace {
+    border-color: #92400e;
+    box-shadow: 0 20px 40px rgba(146, 64, 14, 0.15);
+}
+
+.thirdPlace .rankIcon {
+    color: #92400e;
+    text-shadow: 0 0 20px rgba(146, 64, 14, 0.5);
+}
+
+.rankIcon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    animation: bounce 3s ease-in-out infinite;
+    animation-play-state: var(--continuous-animation-state, running);
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spotlightBreath {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.25;
+        transform: translateX(-50%) scale(1.1);
+    }
+}
+
+.prizeTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.prizeValue {
+    font-size: 1.2rem;
+    color: var(--color-indigo);
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* Leaderboard Podium Section */
+.leaderboardSection {
+    margin: 80px 0;
+    text-align: center;
+    padding: 80px 20px 0;
+    background: radial-gradient(ellipse at 50% 10%, #1e1b4b 0%, #0d0b2b 50%, #020617 100%);
+    border-radius: 48px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tagline above box - red, centered */
+.podiumTitle {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #dc2626;
+    text-align: center;
+    text-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+}
+
+/* New Static Image-based Podium */
+.podiumImageContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Enchiridion Blue side-glows to blend edges */
+    box-shadow:
+        -100px 0 150px -80px rgba(30, 58, 138, 0.4),
+        100px 0 150px -80px rgba(30, 58, 138, 0.4);
+}
+
+.podiumImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.1);
+    /* Zoom in to fill background */
+    transform-origin: center top;
+    /* Fade-to-black bottom effect */
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Prize Description Section */
+.prizeDescriptionGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.prizeGlassCard {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.prizeGlassCard h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.prizeIcon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+}
+
+.prizeDesc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Metallic Theme Modifiers */
+.goldTheme {
+    border-color: rgba(255, 215, 0, 0.2);
+}
+
+.goldTheme h3,
+.goldTheme .prizeIcon {
+    color: var(--metal-gold);
+}
+
+.goldTheme:hover {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
+}
+
+.silverTheme {
+    border-color: rgba(192, 192, 192, 0.2);
+}
+
+.silverTheme h3,
+.silverTheme .prizeIcon {
+    color: var(--metal-silver);
+}
+
+.silverTheme:hover {
+    box-shadow: 0 0 40px rgba(192, 192, 192, 0.15);
+}
+
+.bronzeTheme {
+    border-color: rgba(205, 127, 50, 0.2);
+}
+
+.bronzeTheme h3,
+.bronzeTheme .prizeIcon {
+    color: var(--metal-bronze);
+}
+
+.bronzeTheme:hover {
+    box-shadow: 0 0 40px rgba(205, 127, 50, 0.15);
+}
+
+.prizeGlassCard:hover {
+    transform: scale(1.03);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.prizeCTAWrapper {
+    margin: 40px 0 60px;
+    padding-bottom: 80px;
+}
+
+.prizeCTA {
+    background: white;
+    color: #020617;
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.prizeCTA:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+    background: #f8fafc;
+}
+
+/* Anchor Section */
+#referral-link-section {
+    scroll-margin-top: 100px;
+}
+
+.redemptionToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    /* Muted gray */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    margin: 0 auto;
+}
+
+.redemptionToggle:hover {
+    color: #3b82f6;
+    /* Enchiridion Blue */
+}
+
+.redemptionChevron {
+    font-size: 0.8rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.redemptionChevronOpen {
+    transform: rotate(180deg);
+}
+
+.redemptionWrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    opacity: 0;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.redemptionWrapperOpen {
+    max-height: 400px;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+    padding: 20px 0 40px;
+}
+
+.redemptionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.redemptionItem {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.redemptionItem h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.redemptionItem p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .redemptionGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Educational Info */
+.infoSection {
+    background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+    padding: 80px 40px;
+    border-radius: 48px;
+    margin-bottom: 80px;
+    border: 1px solid #f1f5f9;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+}
+
+.infoSection h2 {
+    color: var(--color-indigo);
+    font-size: 2rem;
+    margin-bottom: 24px;
+}
+
+.examTags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.examTag {
+    background: white;
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-indigo);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.2s;
+}
+
+.examTag:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-teal);
+}
+
+/* Action Row */
+.actionRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 50px;
+    padding: 60px;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, rgba(49, 46, 129, 0.05) 100%);
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.downloadIcon {
+    font-size: 4rem;
+    color: var(--color-indigo);
+    animation: pulse 2s infinite;
+    animation-play-state: var(--continuous-animation-state, running);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.referralBtn {
+    background: linear-gradient(to right, var(--color-indigo), #4f46e5);
+    color: white;
+    padding: 22px 48px;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 15px 30px rgba(49, 46, 129, 0.3);
+    transition: all 0.3s;
+}
+
+.referralBtn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(49, 46, 129, 0.4);
+}
+
+.secondaryBtn {
+    background: white;
+    color: var(--color-indigo);
+    border: 2px solid var(--color-indigo);
+}
+
+.secondaryBtn:hover {
+    background: var(--color-indigo);
+    color: white;
+}
+
+/* Rules and Terms Sections */
+.section {
+    margin: 80px 0;
+    padding: 60px 40px;
+    background: white;
+    border-radius: 48px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+}
+
+.section h2 {
+    font-size: 2.2rem;
+    color: #000000;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.rulesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.ruleItem {
+    padding: 30px;
+    background: #f8fafc;
+    border-radius: 32px;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s;
+}
+
+.ruleItem:hover {
+    transform: translateY(-5px);
+}
+
+.ruleItem h3 {
+    color: #000000;
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.ruleItem p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Accordion */
+.accordion {
+    margin: 80px 0;
+    background: white;
+    border-radius: 48px;
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.accordionHeader {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.accordionHeader h2 {
+    margin: 0;
+    color: #000000;
+    font-weight: 800;
+}
+
+.chevron {
+    font-size: 1.5rem;
+    color: var(--color-indigo);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+    opacity: 0;
+}
+
+.contentOpen {
+    max-height: 2000px;
+    opacity: 1;
+    transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+}
+
+.termsList {
+    padding: 0 40px 40px;
+    display: grid;
+    gap: 40px;
+}
+
+.termsSection h3 {
+    color: #000000;
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.termsSection ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+}
+
+.termsSection li {
+    padding-left: 30px;
+    position: relative;
+    color: #475569;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.termsSection li b {
+    color: #000000;
+}
+
+.termsSection li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: 900;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .prizeGrid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .podiumImageContainer {
+        margin-top: 20px;
+        box-shadow: none;
+    }
+
+    .podiumImage {
+        transform: scale(1.25);
+        transform-origin: center top;
+    }
+
+    .prizeDescriptionGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .prizeGlassCard {
+        padding: 30px 20px;
+    }
+
+    .countdownContainer {
+        gap: 20px;
+    }
+
+    .countdownItem {
+        padding: 15px;
+        min-width: 100px;
+    }
+
+    .prizeHero {
+        padding: 60px 20px;
+        border-radius: 30px;
+    }
+}
+
+.guideCard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #e2e8f0;
+    padding: 15px 25px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 450px;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.guideCard:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.guideIcon {
+    width: 48px;
+    height: 48px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 1.5rem;
+}
+
+.guideText h3 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.guideText p {
+    margin: 2px 0 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.guideCard i:last-child {
+    margin-left: auto;
+    color: #cbd5e1;
+    font-size: 0.875rem;
+}
+
+.guideCard:hover i:last-child {
+    color: #2563eb;
+}
+.redemptionWrapperOpen, .accordionBodyOpen { max-height: none; }
+.rulesGrid { grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); }
+.ruleItem { min-width: 0; overflow-wrap: anywhere; }

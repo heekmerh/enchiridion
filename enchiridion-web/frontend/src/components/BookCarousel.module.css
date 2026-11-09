@@ -1,0 +1,212 @@
+.carouselContainer {
+    padding: 0;
+    background-color: transparent;
+    width: 100%;
+    max-width: 1128px;
+}
+
+.carouselHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 0;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carouselHeader { flex-wrap: wrap; gap: 16px; }
+.browseHint { color: #ffffff; text-align: left; }
+.browseHint p { margin: 0; }
+.bookCount { font-weight: 700; font-size: 1.125rem; }
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+.navBtn {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #0f172a;
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.navBtn:hover:not(:disabled) {
+    background-color: var(--color-red);
+    border-color: var(--color-red);
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(200, 16, 46, 0.4);
+}
+
+.navBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.carouselTrack {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 20px 56px;
+    scroll-padding-inline: 56px;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.cardWrapper {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.card {
+    text-decoration: none;
+    display: block;
+    background: #000000;
+    /* Solid black background per request */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #000000;
+    /* Keep black on hover */
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 0 20px 10px rgba(255, 0, 0, 0.4),
+        inset 0 0 15px 5px rgba(255, 80, 80, 0.2);
+    z-index: 2;
+}
+
+.bookImageWrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.coverImage {
+    aspect-ratio: 1 / 1.4;
+    position: relative;
+    overflow: hidden;
+    background-color: #1e293b;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .coverImage {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.image {
+    transition: transform 0.8s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+.hoverOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, var(--color-indigo) 0%, rgba(49, 46, 129, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    color: white;
+}
+
+.card:hover .hoverOverlay {
+    opacity: 1;
+}
+
+.hoverOverlay p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.1s;
+}
+
+.card:hover .hoverOverlay p {
+    transform: translateY(0);
+}
+
+.learnMore {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-teal);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.info {
+    padding: 0 5px;
+}
+
+.category {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-teal);
+    margin-bottom: 8px;
+}
+
+.bookTitle {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+    .cardWrapper { flex-basis: calc((100% - 32px) / 2); }
+}
+@media (max-width: 640px) {
+    .carousel { padding: 20px 40px; scroll-padding-inline: 40px; }
+    .cardWrapper { flex-basis: 100%; }
+    .card { padding: 16px; }
+    .browseHint { width: 100%; }
+    .controls { margin-left: auto; }
+}
+
+.category, .learnMore { color: #5eead4; }
+.card:focus-visible .hoverOverlay { opacity: 1; }
+.card:focus-visible .hoverOverlay p { transform: translateY(0); }

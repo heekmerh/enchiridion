@@ -1,0 +1,30 @@
+# Dependencies and generated output
+**/node_modules/
+**/.next/
+**/out/
+**/build/
+**/coverage/
+**/__pycache__/
+**/*.py[cod]
+**/venv/
+**/.venv/
+**/env/
+**/.pytest_cache/
+**/*.tsbuildinfo
+**/next-env.d.ts
+**/.vercel/
+*.log
+
+# Secrets; commit environment templates and dependency lockfiles.
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+**/*service-account*.json
+**/gen-lang-client-*.json
+**/client_secret*.json
+*.pem
+.DS_Store
+Thumbs.db

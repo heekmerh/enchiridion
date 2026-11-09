@@ -1,0 +1,174 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import styles from './ReferralLeaderboard.module.css';
+
+interface LeaderboardEntry {
+    rank: number;
+    name: string;
+    points: number;
+    revenue: number;
+    lifetimeEarnings: number;
+    impact: string;
+    email: string;
+}
+
+export default function ReferralLeaderboard() {
+    const [leaderboard, setLeaderboard] = useState<LeaderboardEntry[]>([]);
+    const [userEmail, setUserEmail] = useState<string | null>(null);
+    const [userStats, setUserStats] = useState<{ points: number; revenue: number; lifetimeEarnings: number } | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [fetchError, setFetchError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // Get user info from localStorage if available
+                const storedEmail = localStorage.getItem('userEmail');
+                const email = storedEmail?.toLowerCase().trim() || null;
+                setUserEmail(email);
+
+                const response = await fetch('/api/referral/leaderboard');
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('DEBUG: Leaderboard data received:', data);
+                    setLeaderboard(data);
+
+                    // If user is identifies, find their specific stats for the summary
+                    if (email && Array.isArray(data)) {
+                        const userEntry = data.find((e: LeaderboardEntry) => e.email.toLowerCase().trim() === email);
+                        if (userEntry) {
+                            setUserStats({
+                                points: userEntry.points,
+                                revenue: userEntry.revenue,
+                                lifetimeEarnings: userEntry.lifetimeEarnings
+                            });
+                        }
+                    }
+                } else {
+                    setFetchError('Could not load rankings at this time.');
+                }
+            } catch (error) {
+                console.error('Failed to fetch leaderboard:', error);
+                setFetchError('Connection error. Please try again later.');
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return (
+            <div className={styles.loadingContainer}>
+                <div className={styles.spinner}></div>
+                <p>Calculating community impact...</p>
+            </div>
+        );
+    }
+
+    if (fetchError) {
+        return (
+            <div role="alert" className={styles.errorContainer}>
+                <i aria-hidden="true" className="fas fa-exclamation-circle" style={{ fontSize: '2rem', marginBottom: '10px', color: '#ef4444' }}></i>
+                <p>{fetchError}</p>
+                <button onClick={() => window.location.reload()} className={styles.retryBtn}>Retry</button>
+            </div>
+        );
+    }
+
+    return (
+        <section className={styles.leaderboardSection}>
+            <header className={styles.header}>
+                <h2 className={styles.title}>Top Referral Partners</h2>
+                <p className={styles.subtitle}>Tracking the impact of our community.</p>
+            </header>
+
+            {userStats && (
+                <div className={styles.userStatsBar}>
+                    <div className={styles.statCard}>
+                        <span className={styles.statLabel}>Your Accrued Points</span>
+                        <span className={styles.statValue}>{(userStats?.points || 0).toLocaleString()} Pts</span>
+                    </div>
+                    <div className={`${styles.statCard} ${styles.incomeStat}`}>
+                        <span className={styles.statLabel}>Your Accrued Income</span>
+                        <span className={styles.statValue}>₦{(userStats?.revenue || 0).toLocaleString()}</span>
+                    </div>
+                    <div className={`${styles.statCard} ${styles.lifetimeStat}`}>
+                        <span className={styles.statLabel}>Total Lifetime Earnings</span>
+                        <span className={styles.statValue}>₦{(userStats?.lifetimeEarnings || 0).toLocaleString()}</span>
+                    </div>
+                </div>
+            )}
+
+            <div role="region" aria-label="Referral partner rankings" tabIndex={0} className={styles.tableWrapper}>
+                <table className={styles.table}>
+                    <caption className="sr-only">Partner rank, points, current balance, lifetime earnings, and impact</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" className={styles.rankCol}>Rank</th>
+                            <th scope="col" className={styles.partnerCol}>Partner</th>
+                            <th scope="col" className={styles.pointsCol}>Points</th>
+                            <th scope="col" className={styles.incomeCol}>Current Balance</th>
+                            <th scope="col" className={styles.lifetimeCol}>Lifetime Total</th>
+                            <th scope="col" className={styles.impactCol}>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {leaderboard.map((entry) => {
+                            const isUser = userEmail && entry.email.toLowerCase().trim() === userEmail;
+
+                            return (
+                                <tr
+                                    key={entry.rank}
+                                    className={`${styles.row} ${isUser ? styles.userRow : ''}`}
+                                >
+                                    <td className={styles.rankCell}>
+                                        <div className={styles.rankWrapper}>
+                                            {entry.rank === 1 && <span className={styles.medal}>🥇</span>}
+                                            {entry.rank === 2 && <span className={styles.medal}>🥈</span>}
+                                            {entry.rank === 3 && <span className={styles.medal}>🥉</span>}
+                                            <span className={styles.rankNumber}>{entry.rank}</span>
+                                        </div>
+                                    </td>
+                                    <td className={styles.partnerCell}>
+                                        <span className={styles.partnerName}>{entry.name}</span>
+                                    </td>
+                                    <td className={styles.pointsCell}>
+                                        <span className={styles.pointsValue}>
+                                            {(entry.points || 0).toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} Pts
+                                        </span>
+                                    </td>
+                                    <td className={styles.incomeCell}>
+                                        <span className={styles.incomeValue}>
+                                            ₦{(entry.revenue || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        </span>
+                                    </td>
+                                    <td className={styles.lifetimeCell}>
+                                        <span className={styles.lifetimeValue}>
+                                            ₦{(entry.lifetimeEarnings || 0).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        </span>
+                                    </td>
+                                    <td className={styles.impactCell}>
+                                        <span className={`${styles.impactBadge} ${styles[entry.impact.replace(' ', '')]}`}>
+                                            {entry.impact}
+                                        </span>
+                                    </td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
+            </div>
+
+
+            {leaderboard.length === 0 && !isLoading && (
+                <div className={styles.emptyState}>
+                    <i aria-hidden="true" className="fas fa-users" style={{ fontSize: '2rem', marginBottom: '10px', opacity: 0.5 }}></i>
+                    <p>No rankings yet. Start sharing to see your name here!</p>
+                </div>
+            )}
+        </section>
+    );
+}

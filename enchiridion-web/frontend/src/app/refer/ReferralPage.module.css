@@ -1,0 +1,1181 @@
+.page {
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+}
+
+.goalBanner {
+    padding: 30px var(--spacing-md);
+    background-color: white;
+    border-bottom: 2px solid var(--color-soft-red);
+}
+
+.goalContent {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.goalContent blockquote {
+    font-size: 1.25rem;
+    color: var(--color-red);
+    font-weight: 600;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* 1. Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 160px var(--spacing-md) 100px;
+    align-items: center;
+}
+
+.heroContent h1 {
+    font-size: clamp(1.85rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    color: var(--color-red);
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+}
+
+.heroSubtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.heroImage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    background: var(--gradient-hero);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(209, 40, 47, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advocacyImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.visualContent {
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+.visualContent h3 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Benefit Grid */
+.benefitGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 100px auto;
+    padding: 0 var(--spacing-md);
+}
+
+.benefitItem {
+    padding: 40px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+    border-top: 5px solid var(--color-warm-gold);
+}
+
+.benefitItem span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-red);
+    margin-bottom: 20px;
+}
+
+.benefitItem h2 {
+    font-size: 1.5rem;
+    color: var(--color-red);
+    margin-bottom: 15px;
+}
+
+.benefitItem p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #000000;
+    font-weight: 700;
+}
+
+/* 2. How It Works */
+.howItWorks {
+    padding: 120px 0;
+    background-color: var(--color-soft-blue);
+    text-align: center;
+}
+
+.sectionHeader h2 {
+    font-size: clamp(1.75rem, 5vw, 3rem);
+    color: var(--color-red);
+    margin-bottom: 60px;
+}
+
+.flowContainer {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.flowItem {
+    flex: 1;
+    position: relative;
+}
+
+.flowNum {
+    width: 60px;
+    height: 60px;
+    background: var(--color-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 30px;
+}
+
+.flowItem h3 {
+    font-size: 1.4rem;
+    color: var(--color-red);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.flowItem p {
+    font-weight: 700;
+    color: #000000;
+}
+
+/* 3. Themed Blocks */
+.themedBlocks {
+    padding: 100px 0;
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto 100px;
+    padding: 0 var(--spacing-md);
+}
+
+.block:nth-child(even) {
+    direction: rtl;
+}
+
+.block:nth-child(even) .blockContent {
+    direction: ltr;
+}
+
+.blockContent h3 {
+    font-size: 2.5rem;
+    color: var(--color-red);
+    margin-bottom: 25px;
+}
+
+.blockContent p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.blockImage {
+    height: 400px;
+    background: var(--gradient-subtle);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.impactImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.digitalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.communityImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+/* 4. Credibility Grid - Oriflame Style */
+.credibilitySection {
+    margin: 100px auto;
+    padding: 0 var(--spacing-md);
+    max-width: var(--max-width);
+}
+
+.credibilityGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+/* Base Tile Styles */
+.imageTile,
+.statTile {
+    aspect-ratio: 1;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.imageTile:hover,
+.statTile:hover {
+    transform: scale(1.01);
+    z-index: 2;
+}
+
+/* Image Tiles */
+.imageTile {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+}
+
+.tileImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tileLabel {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.imageTile:hover .tileLabel {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.imagePlaceholder span {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+/* Stat Tiles */
+.statTile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 48px;
+    color: white;
+}
+
+.bigNum {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.statTile p {
+    font-size: 1rem;
+    font-weight: 600;
+    max-width: 220px;
+    opacity: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Vibrant Brand Colors */
+.statBlue {
+    background-color: #2563EB;
+}
+
+.statTeal {
+    background-color: #14B8A6;
+}
+
+.statPurple {
+    background-color: #7C3AED;
+}
+
+.statOrange {
+    background-color: #F97316;
+}
+
+.statSky {
+    background-color: #0EA5E9;
+}
+
+.statGreen {
+    background-color: #22C55E;
+}
+
+@media (max-width: 1024px) {
+    .credibilityGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .credibilityGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .bigNum {
+        font-size: 3.5rem;
+    }
+}
+
+/* 5. Testimonials */
+.testimonials {
+    padding: 120px 0;
+    background: white;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #000000;
+    font-weight: 800;
+}
+
+.testimonials p {
+    color: #000000;
+    font-weight: 700;
+}
+
+.testimonialGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+}
+
+.testimonialCard {
+    padding: 40px;
+    background: var(--color-soft-blue);
+    border-radius: 20px;
+}
+
+.testimonialCard blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #000000;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.testimonialCard p {
+    font-weight: 800;
+    color: var(--color-red);
+}
+
+/* 6. FAQ & App Integration */
+.faqAppSection {
+    padding: 120px 0;
+    background: var(--color-soft-red);
+}
+
+.accordionContainer {
+    max-width: 900px;
+    margin: 0 auto 100px;
+    background: white;
+    padding: 40px 60px;
+    border-radius: 24px;
+}
+
+.appBox {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px 80px;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.05);
+}
+
+.appBox h2 {
+    font-size: 2.5rem;
+    color: var(--color-red);
+    margin-bottom: 20px;
+}
+
+.appIcon {
+    width: 320px;
+    height: 320px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: transparent;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.appIcon:hover {
+    transform: scale(1.05) translateY(-5px);
+    filter: drop-shadow(0 25px 50px rgba(209, 40, 47, 0.25));
+}
+
+.appIconImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* CTAs */
+.primaryBtn {
+    background: var(--gradient-cta);
+    color: white;
+    border: none;
+    padding: 1.5rem 4rem;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(209, 40, 47, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-5px);
+}
+
+/* Marker for Intersection Observer */
+
+.floatingReferralCta {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(20px);
+    pointer-events: none;
+}
+
+
+/* 9. Registration Section */
+.registrationSection {
+    padding: 120px 0;
+    background: linear-gradient(180deg, var(--color-soft-red) 0%, #fff5f5 100%);
+}
+
+.registrationContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.registrationHeader {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.registrationHeader h1 {
+    font-size: clamp(1.75rem, 8vw, 3.5rem);
+    color: var(--color-indigo);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.registrationHeader h2 {
+    font-size: 1.5rem;
+    color: var(--color-teal);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.registrationHeader p {
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: 600;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+/* Registration Steps */
+.registrationSteps {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.regStep {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.regStepIcon {
+    width: 56px;
+    height: 56px;
+    background: var(--color-indigo);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.regStep h3 {
+    font-size: 1.25rem;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.regStep p {
+    font-size: 0.95rem;
+    color: #000000;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.regStep p a {
+    color: var(--color-indigo);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* Referral Partner Terms Gate */
+.termsGate {
+    background: white;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    margin-bottom: 60px;
+}
+
+.termsIntro {
+    font-size: 1.05rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.termsSection {
+    padding: 20px 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.termsSection h4 {
+    font-size: 1.15rem;
+    color: var(--color-red);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.termsSection p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #000000;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.termsSection p:last-child {
+    margin-bottom: 0;
+}
+
+.termsCheckboxLabel {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-weight: 500;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.termsCheckboxLabel input {
+    width: auto;
+    margin-top: 6px;
+}
+
+.termsCheckboxLabel span {
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Registration Form */
+.registrationForm {
+    background: white;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    margin-bottom: 60px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+    color: #000000;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: var(--color-indigo);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+}
+
+.formGroup input::placeholder {
+    color: #9ca3af;
+}
+
+.error {
+    color: var(--color-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 20px 40px;
+    background: var(--color-indigo);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+}
+
+/* Success State */
+.successState {
+    background: white;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    background: var(--color-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 24px;
+}
+
+.successState h3 {
+    font-size: 2rem;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.successState>p {
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.codeDisplay,
+.linkDisplay {
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.codeLabel,
+.linkLabel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.codeValue {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-indigo);
+    font-family: monospace;
+}
+
+.linkValue {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-teal);
+    word-break: break-all;
+}
+
+.copyBtn {
+    padding: 10px 20px;
+    background: var(--color-indigo);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.copyBtn:hover {
+    background: #1e40af;
+}
+
+.shareButtons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.shareBtn {
+    padding: 14px 28px;
+    background: white;
+    border: 2px solid var(--color-indigo);
+    color: var(--color-indigo);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.shareBtn:hover {
+    background: var(--color-indigo);
+    color: white;
+}
+
+/* Partner Benefits */
+.partnerBenefits {
+    background: var(--color-soft-blue);
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.partnerBenefits h3 {
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.partnerBenefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.partnerBenefits li {
+    padding: 12px 0;
+    padding-left: 32px;
+    position: relative;
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: 600;
+}
+
+.partnerBenefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-teal);
+    font-weight: 800;
+}
+
+/* Trust Statement */
+.trustStatement {
+    font-size: 0.95rem;
+    color: #6b7280;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+
+    .hero,
+    .block,
+    .appBox {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px var(--spacing-sm);
+    }
+
+    .appIcon {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto 15px;
+    }
+
+    .heroImage {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .benefitGrid,
+    .statGrid,
+    .flowContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .registrationSteps {
+        flex-direction: column;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .benefitItem {
+        padding: 24px;
+    }
+
+    .registrationForm {
+        padding: 24px;
+    }
+
+    .accordionContainer {
+        padding: 24px;
+    }
+
+    .registrationContainer {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .goalBanner {
+        padding: 20px var(--spacing-sm);
+    }
+
+    .benefitGrid {
+        margin: 40px auto;
+    }
+
+    .howItWorks {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .heroContent {
+        text-align: center;
+    }
+}
+
+/* Onboarding & Welcome UI */
+.onboardingSteps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.onboardingCard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 16px;
+    text-align: left;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.onboardingCard:hover {
+    border-color: var(--color-red);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.onboardingCard h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.onboardingCard p {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.badge {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    background: #f1f5f9;
+    color: #475569;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badgeHighlight {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    background: rgba(251, 191, 36, 0.1);
+    color: #b45309;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .registrationHeader h1 {
+        font-size: 2.5rem;
+    }
+
+    .registrationForm {
+        width: 95%;
+        max-width: 500px;
+        margin: 0 auto 60px;
+        padding: 20px;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .floatingReferralCta {
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transform: none;
+    }
+
+    .visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        pointer-events: none;
+    }
+
+    .successState {
+        padding: 40px 24px;
+        width: 95%;
+        margin: 0 auto 60px;
+    }
+
+    .codeDisplay,
+    .linkDisplay {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .shareButtons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .shareBtn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+.distributorSection {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #fff5f5 0%, var(--color-soft-red) 100%);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.distributorFormWrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.statOrange { background-color: #c2410c; }
+.statTeal { background-color: #0f766e; }
+.statSky { background-color: #0369a1; }
+.statGreen { background-color: #15803d; }
+@media (max-width: 768px) {
+  .flowContainer { flex-direction: column; gap: 32px; }
+  .flowItem, .testimonialCard { min-width: 0; }
+  .testimonialGrid { grid-template-columns: 1fr; padding-inline: 16px; }
+  .testimonialCard { padding: 24px; }
+}
+
+.benefitGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.benefitItem { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 1024px) { .benefitGrid { grid-template-columns: 1fr; } }
+
+.blockContent, .blockImage { min-width: 0; max-width: 100%; }
+
+.formGroup { min-width: 0; max-width: 100%; }
+
+.secondaryBtn {
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    margin-top: 12px;
+    padding: 12px 20px;
+}
+
+.secondaryBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
