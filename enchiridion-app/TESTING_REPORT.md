@@ -1,0 +1,158 @@
+# Testing Report
+
+Original issues were logged 2026-06-10 through 2026-08-21 as raw notes/chat messages. The detailed audit below was written on 2026-09-13. Its PARTIAL and NOT IMPLEMENTED sections are historical snapshots: many items were fixed in commits on 2026-09-14 and should not be picked up again without checking the current code.
+
+## Current progress — 2026-09-15
+
+- **Book re-extraction:** the Paediatrics extraction was rerun with `scripts/convert_paediatrics.py`, and the local automated conversion and TOC tests passed. The regenerated `enchiridion/assets/data/paediatrics.json` covers all 12 chapters, places 82 unique body figures inline, uses the direct 24pt-bold heading marker instead of trusting Word's inconsistent style names, and captures source colors per topic. Every generated image path exists. The DOCX package's 86 media entries include four HD Photo fallback files. `scripts/audit_paediatrics_toc.py` independently matches all 211 non-empty TOC entries to book headings in order (211/211); its report is `scripts/output/paediatrics_toc_audit.md`. The first fever table's stale `ARadiation` row was corrected to `Radiation` by regenerating from the updated DOCX. These automated checks do not replace the pending visual/content spot-check on a device, especially because the source document itself is inconsistently authored.
+- **Fixed since the audit:** calculator bottom inset, free-tier question text exposure, repeat-answer stat inflation, question flagging, unique display names, one-primary-device binding, cross-user leaderboard, pinned notes, and real Flutterwave checkout. The 3-hour relearn interval was confirmed as intended. OSCE now has station tabs; only Abdomen has full written content.
+- **Migration verification — 2026-09-16:** the user reports applying SQL migrations `001`–`004` and supplied Supabase SQL Editor output from the corrected `scripts/sql/verify_001_004.sql`: all 31 named catalog checks and OVERALL returned `true`. The saved result is `scripts/output/verify_001_004_live_results.md`. This checks the reported database's tables, constraints, RLS policies, and RPC definitions; the agent did not connect to the database directly. Flutterwave payment grant/replay behavior and deployment remain unverified.
+- **Quick-batch follow-up:** the IV Cannula quick-size rule now renders as a checklist item after correction in its DOCX source and regenerated JSON. `scripts/output/osce_instrumentation_sourcing_checklist.md` was manually checked against registrations, three non-empty DOCX sources, and populated resource JSON: Abdominal Examination is the only full OSCE tab, while Sutures and IV Cannula are separate full instrumentation topics. The read-only SQL catalog verifier and its safety gate are in `scripts/sql/`; a quoted-function bypass and PostgreSQL policy-regex syntax error were fixed. The corrected query passed both a temporary PostgreSQL fixture and the user-reported Supabase SQL Editor check.
+- **Paediatrics spot-check — 2026-09-16:** visually spot-checked the regenerated book in a running Flutter-web instance (a throwaway `ReaderScreen`-only harness, deleted afterward). Confirmed the `Radiation` fever-table fix, all four source heading colors rendering distinctly, clean 2- and 3-column table layout, and one inline figure rendering at correct size with its caption; no console errors. Only 2 of 12 chapters and 1 figure were checked, so this is a spot-check, not full coverage.
+- **Still needs work:** source and add full content for the other OSCE and instrumentation topics; define any planned calculators before adding a “Coming soon” list state; check Android bubble notification behavior on an Android device; and fix and test Flutterwave payment verification. `scripts/content/medical_instrumentation.md` is currently empty and cannot supply new topic content.
+
+The original detailed findings and file references remain below for context. Recheck line numbers before using them; the September 14 changes moved code.
+
+---
+
+## ✅ RESOLVED — verified fixed, no action needed
+
+- **Clip notes don't save / should be editable.** Fully implemented. `lib/services/storage_service.dart:135-183` persists `ClipNote` objects to `SharedPreferences`. `lib/widgets/blocks/block_renderer.dart` (`_ClipsBottomSheet`, `_submitClip`/`_startEditing`/`_deleteClip` around lines 792-1000) supports add, edit, and delete end-to-end.
+- **Chapter notes should be editable.** Fully implemented. `lib/services/storage_service.dart:113-124` (`getNote`/`saveNote`/`deleteNote`) + `lib/screens/reader_screen.dart:402-580` (`_NotesBottomSheet`) load existing notes into the field and resave on edit.
+- **Load `scripts/content/question.json` into exam prep.** Done. `scripts/generate_resource_content.py` repairs the malformed source JSON and writes `enchiridion/assets/data/exam_prep_questions.json` (493 valid questions). Loaded via `lib/services/exam_prep_repository.dart`; originally also rendered in the Exam Prep whole-bank list screen, removed under 260917-ndx.
+- **10 questions accessible under freemium.** Done. `lib/config/freemium_config.dart:5` (`kFreeQuestionCount = 10`), enforced in `lib/services/next_question_selector.dart:47-49` (previously also enforced in the Exam Prep whole-bank list screen, removed under 260917-ndx).
+- **Separate Surgical / Medical Instrumentation tiles.** Done. `lib/screens/library_screen.dart:573-592` — two tiles, using `assets/resources/surgical instrumentation.jpeg` and `assets/resources/clinical instrumentation.jpeg` respectively.
+- **Sutures content under Surgical Instrumentation.** Done. `lib/models/resource_topic.dart:21-31` → `assets/data/resources/sutures.json` (36 subsections), wired in `library_screen.dart:576-581`.
+- **IV Cannula content under Medical Instrumentation.** Done. `resource_topic.dart:33-42` → `assets/data/resources/iv_cannula.json` (28 subsections), wired in `library_screen.dart:586-591`.
+- **Abdominal Examination content under OSCE.** Done. `resource_topic.dart:44-53` → `assets/data/resources/abdominal_examination.json` (69 subsections), wired in `library_screen.dart:596-601`.
+- **Bold headings, differentiated subheadings (instrumentation/OSCE).** Done. `lib/widgets/blocks/block_renderer.dart` defines three visually distinct levels: `_SectionHeader` (larger, bold, accent bar), `_SubsectionHeader` (smaller, bold, tinted color), `_GroupHeader` (tinted background container). Minor content QA note: `iv_cannula.json` has one raw docx line item ("Quick Size Selection Rules Emergency / shock → 2 large-bore (14–16G)") misparsed as a subsection title instead of body text — a content-cleanup nit, not a styling bug.
+
+---
+
+## 🟡 PARTIAL — core work exists, specific gap remains
+
+### Re-extract the entire book content more structurally soundly, preserving image positions inline
+Supersedes/expands the earlier "images from the book should display inline" ask — this is now a full re-extraction of the book pipeline, not just an image add-on. The rendering side is fully built; the gap is entirely in the docx→JSON conversion pipeline.
+- **Rendering already works:** `lib/models/content_block.dart:297-327` (`ImageBlock`) and `lib/widgets/blocks/block_renderer.dart:237-239,575-682` (`_ImageBlockWidget`, tap-to-zoom viewer) already support inline images correctly. No Flutter/UI changes are needed for this item.
+- **Gap 1 — images are dropped entirely, not just unpositioned:** both `scripts/docx_processor.py:342-396` and `scripts/convert_paediatrics.py:100-111` walk `doc.element.body` (or `iter_block_items`) but only handle `w:p` (paragraph) and `w:tbl` (table) XML nodes. Neither inspects `w:drawing`/`w:pict`/inline-shape nodes, so embedded figures in the source docx never reach the JSON at all — confirmed via grep, `assets/data/paediatrics.json` has zero `"type": "image"` blocks and zero `assetPath` keys. Confirmed directly against the source file `scripts/final/enchiridion pediatrics final app copy.docx`: it contains **86 embedded images** (`word/media/image1.png` … `image86.png`, `.docx` is a zip archive), none of which are extracted today — this is not a hypothetical/edge-case gap, the majority of the book's figures are currently missing from the app.
+- **Gap 2 — structural extraction is heuristic and fragile, and this is now confirmed empirically against the source docx (`scripts/final/enchiridion pediatrics final app copy.docx`, 16,259 paragraphs):** Word's own heading styles are applied inconsistently by whoever authored the docx — e.g. the real topic "EXCHANGE BLOOD TRANSFUSION" and its own sub-bullets "GOALS OF EBT", "INDICATIONS FOR EXCHANGE TRANSFUSION" are *all* styled "Heading 1" with no level distinction. Style-name-based detection (`docx_processor.py:100-119`, `convert_paediatrics.py:52-54,462-489`) and bold/ALL-CAPS heuristics cannot reliably tell these apart, and a prior audit already found a resulting misparse in `iv_cannula.json` (a raw docx line item captured as a subsection title). `convert_paediatrics.py` compensates today with a hand-maintained `chapter_map.json` (12 chapters, matched by literal anchor-text substrings) — workable but fragile: a non-matching anchor silently drops that chapter's leading content (`convert_paediatrics.py:407-409`, "skip if no chapter yet"), and only 1 of the 12 chapters (`overview`) has explicit `section_anchors`; the other 11 rely purely on the unreliable Heading-1/bold-caps fallback for section detection.
+  - **A much stronger, currently-unused signal exists:** the author applied direct-run formatting — a consistent 24pt bold font-size override plus a topic-specific color — to real major-topic headings, independent of whatever Word style got attached around them. Verified: 124 of 128 font-overridden "Heading 1" paragraphs are exactly 24pt, and the *same* 24pt marker also appears on paragraphs mistakenly styled "Heading 2" (34 occurrences) and "Heading 3" (10 occurrences) — meaning the ~191 true major-topic headings in this book can be reliably detected by explicit run-level font size, regardless of the (unreliable) paragraph style name. This should replace style-name/bold-caps guessing as the primary heading-level signal.
+  - **Caveat on chapter color:** 58 distinct heading colors were found across those ~191 true headings — colors are assigned per individual topic, not per the app's 12 broad chapter groupings in `chapter_map.json`. If chapter-color theming (see Gap 3) is implemented, it needs to be reconciled against which level of the app's hierarchy ("chapter" vs "section"/topic) the docx author actually intended to color.
+- **Gap 3 — a known, documented requirement was never implemented:** `scripts/output/extractionrules.md` already specifies that "images should be extracted and stored with coordinate and content location to be used by the app to render it appropriately for user view," and separately that each chapter's distinct color should be extracted for themed section/subsection headers. Neither requirement is implemented in either conversion script today.
+- **Constraint — preserve (don't strip) emoji graphics, which the book uses heavily:** confirmed by reading the code that body-paragraph text already passes through untouched in both scripts (only whitespace trimming, no character filtering), and that heading-level leading emoji are deliberately split into a separate `chapter_icon`/`subsection_icon`/`group_icon` field (`docx_processor.py` `split_emoji()`) which the Flutter side actually renders as a standalone glyph at 1.2x font size next to the title (`lib/widgets/blocks/block_renderer.dart:450-453`) — i.e. emoji are enhanced into icons today, not discarded. The rewrite below must preserve this behavior. Known incomplete case worth extending, not fixing: the emoji-split regex only matches an emoji at position 0 of the string, so numbered headings like "2. 💧 SODIUM DISTURBANCES" (number before emoji) keep the emoji inline in the title instead of promoting it to the icon field — still visible, just not iconized; extend the regex to strip an optional leading "N. " before checking for emoji if this should be treated the same way.
+- **Image positioning is tractable — confirmed by direct inspection:** of the 86 embedded images, 80 are simple `wp:inline` drawings sitting directly in the paragraph flow (straightforward to extract in reading order), and only 2-3 are `wp:anchor` (floating) drawings that will need a fallback "nearest preceding paragraph" placement heuristic. Note: the docx also contains 1,326 legacy VML `w:pict` elements, but 1,325 of those are decorative rectangle/line shapes (not real figures) and only 1 wraps an actual image — these should be filtered out, not treated as additional images to extract.
+- **Action:** Rewrite the docx→JSON conversion so that it (a) walks inline drawing/shape XML in document order alongside paragraphs and tables (not as a separate pass), extracts each of the 86 real images (skipping non-`imagedata` `w:pict` shapes) to an asset file registered in `pubspec.yaml`, and emits an `{"type": "image", "assetPath": ...}` block at its exact original position within the surrounding content_group's `blocks` list — using a nearest-paragraph fallback for the handful of floating/anchored images; (b) replaces the style-name/bold-caps heading detection with a check for the direct-run 24pt-bold-color override as the primary "true heading" signal, falling back to paragraph style only when no override is present, so chapter/section/subsection boundaries are structurally faithful to the source docx rather than style-name guesswork; (c) while re-extracting, also captures each heading's run color per `extractionrules.md`, deciding at which hierarchy level (topic vs. broad chapter) that color should apply. Apply this to the full book pipeline (`paediatrics.json` via `convert_paediatrics.py`) and, for consistency, consider carrying the same image/structure fixes into the resource docx pipeline (`scripts/generate_resource_content.py`) used for sutures/IV cannula/abdominal exam content. Given the source document's scale and inconsistent authoring, expect to run a validation/spot-check pass over the re-extracted JSON rather than trusting full automation blindly.
+
+### Device navigation bar overlapping bottom content
+Most screens handle it; two do not.
+- A shared helper `bottomViewportInset()` (`lib/utils/bottom_inset.dart:5-13`) is correctly applied in `reader_screen.dart`, `question_list_screen.dart`, `exam_prep_home_screen.dart`, `resource_topic_detail_screen.dart`, `resource_topic_list_screen.dart`, `question_screen.dart`, `library_screen.dart`.
+- **Gap:** `lib/screens/calculator_screen.dart:99-116` and `lib/screens/calculator_list_screen.dart:54-79` use plain `ListView`/fixed `EdgeInsets` with no `SafeArea` or `bottomViewportInset()` call — content in these two screens can sit under the gesture/3-button nav bar.
+- **Action:** add `bottomViewportInset(context)` to the trailing padding in both files, mirroring the pattern already used in `question_list_screen.dart:178`. Consider a shared Scaffold wrapper so this isn't a recurring per-screen omission.
+
+### Random study cards / daily scoring / leaderboard
+- Random pop-up study cards: done (`lib/widgets/exam_prep/in_app_study_prompt_host.dart:135-180`, `_QuickCheckSheet`, randomized 18-35 min timer).
+- Daily points tracking: done (`lib/services/study_stats_service.dart:20-37`, +10 pts/correct answer, synced to Supabase `daily_study_stats` table per `scripts/sql/000_init_database.sql:304-338`).
+- **Gap — leaderboard is a stub only:** `scripts/sql/000_init_database.sql:340-352` defines a `leaderboard_points_totals` view, but its own SQL comment says it isn't a real cross-user leaderboard yet ("as written each user sees only their own totals... needs a SECURITY DEFINER function"). There is zero UI for a leaderboard anywhere in `lib/` (confirmed via grep).
+- **Action:** add a `SECURITY DEFINER` Postgres function (or equivalent RPC) to safely expose aggregated cross-user rankings, then build a leaderboard screen consuming it.
+
+### Exam prep should not show the full question bank to free users
+- The Exam Prep whole-bank list screen and its "Browse Full Bank" entry point were removed under batch item 260917-ndx. There is no longer any UI that lists the full question bank or previews locked question text to a free user.
+- **Remaining gap:** `lib/screens/exam_prep_home_screen.dart`'s Access card subtitle still discloses the total question count (e.g. "All N questions are unlocked."), which leaks the bank size even though the browsing UI is gone.
+- **Action:** update or remove the count-disclosing subtitle text. Owned by sibling batch items 260917-ndq and 260917-ndt, not this item.
+
+### Wrong answers should resurface 2-4 days later
+- Spaced-repetition scheduling exists and is genuinely used: `lib/models/question_review.dart` + `lib/services/next_question_selector.dart:57-88` prioritize due/lapsed questions.
+- **Gap:** the actual relearn interval is `relearnInterval = Duration(hours: 3)` (`question_review.dart:14,107-118`) — same-day, not 2-4 days as specced. A code comment (lines 12-13) suggests this was a deliberate choice ("bring the question back while the day is still young"), so this needs a product decision, not just a code fix.
+- **Action:** either add a longer "lapsed" interval (2-4 days) matching the original spec, or explicitly confirm the 3-hour same-day relearn as the intended behavior and close this item.
+
+### Add other sections of instrumentation and OSCE
+- Each category currently has exactly one topic: Surgical Instrumentation → only "Sutures"; Medical Instrumentation → only "IV Cannula"; OSCE → only "Abdominal Examination" (`lib/models/resource_topic.dart:21-53`).
+- **Action:** source additional docx content for other instrument types / OSCE stations, run it through `scripts/generate_resource_content.py` (same pipeline used for the three existing topics), and add corresponding `TopicSpec`/`ResourceTopic` entries in `resource_topic.dart`.
+
+### Unlock button should take user to subscribe for full access
+- Navigation is correctly wired: every "Unlock" CTA (`reader_screen.dart:656-659`, `calculator_list_screen.dart:131-137`, `exam_prep_home_screen.dart:194-199`, `question_list_screen.dart:89`) routes to `lib/screens/unlock_screen.dart`. (A fifth CTA on the Exam Prep whole-bank list screen was removed along with that screen under 260917-ndx.)
+- **Gap:** on `unlock_screen.dart`, both purchase buttons ("Unlock X — price TBD" and "Full Subscription — price TBD", lines 89-104) call `_showComingSoon()` (lines 135-143), which only shows a SnackBar ("Payment coming soon…"). There is no real checkout/paywall flow or IAP integration behind it. `in_app_purchase` is not even in `pubspec.yaml`.
+- **Action:** build a real pricing/checkout screen (or integrate `in_app_purchase`/a payment provider) and replace `_showComingSoon()` with real purchase navigation. This is the same underlying gap as "Monthly 1000 / Yearly 10,000 pricing" below — solve both together.
+
+### Add the other aspects of the calculators, even if not ready yet
+- 27 calculators are implemented across 5 categories in `lib/models/calculator_definition.dart`, rendered via `calculator_list_screen.dart`/`calculator_screen.dart`. Free-tier gating is `kFreeCalculatorsPerCategory = 1` (`lib/config/freemium_config.dart:6`).
+- **Gap:** there is no "coming soon" scaffold — the calculator list only ever shows fully-built calculators. There's no UI state for "planned but not yet implemented" distinct from "locked behind paywall."
+- **Action:** if there are planned calculators beyond the current 27, add new `CalculatorDefinition` entries plus a new UI state (e.g. a disabled "Coming soon" tile) distinct from the existing paywall-lock state.
+
+---
+
+## 🔴 NOT IMPLEMENTED — net new work
+
+### Pin notes at any point in the app
+- No general-purpose "pin a note" feature exists. The only "pin" UI is `_ClipPinButton` (`lib/widgets/blocks/block_renderer.dart:312-399`), which is just an icon that opens the section-specific clip-notes sheet — it doesn't let a user pin arbitrary notes from elsewhere in the app (profile, calculators, TOC, etc.).
+- `Bookmark` (`lib/models/bookmark.dart`, `lib/providers/bookmark_provider.dart`) only stores `chapterId`/`name`/`scrollProgress` — no note-text field, so it can't be repurposed for this.
+- There's also no screen anywhere that lists all of a user's notes/clips/pins together.
+- **Action:** design a data model/storage path for a "pinned note" not tied to one section, add a UI entry point reachable from outside the reader, and build a screen to view/manage pinned notes.
+
+### Subscription pricing: Monthly 1000, Yearly 10,000; single account sign-in
+- No pricing tiers, IAP product IDs, or remote config exist anywhere in `lib/`. `unlock_screen.dart:93,103` hardcodes literal "price TBD" text.
+- **Action:** define the Monthly (1000) and Yearly (10,000) price tiers as IAP product IDs or a config file, and display them on `unlock_screen.dart` in place of "price TBD." Pairs with the "Unlock button" item above.
+
+### One account sign-in on one device
+- `lib/services/auth_service.dart`/`lib/providers/auth_provider.dart` use plain Supabase email/password auth with no session-limiting logic. A comment at `auth_provider.dart:42-44` explicitly expects multi-device use ("Catches up on progress made on another device") — multiple concurrent sessions currently work as designed, which is the opposite of what's requested.
+- **Action:** add server-side enforcement (Supabase Edge Function or RLS trigger) that invalidates a user's other active sessions when they sign in on a new device.
+
+### Unique usernames assigned to users
+- Signup (`lib/screens/register_screen.dart:16,48`) collects a free-text `displayName` stored via `auth_service.dart:22,31` with no uniqueness check client-side and no DB-level unique constraint found in `scripts/sql/`.
+- **Action:** either auto-generate unique usernames at signup, or add a uniqueness check (query + DB unique constraint) before account creation completes.
+
+### Same question answered multiple times should count once
+- `lib/services/storage_service.dart:274-283` (`recordAnswer`) and `study_stats_service.dart:20-37` unconditionally increment stats on every submission, with no check for a prior answer to the same question. Since spaced repetition deliberately re-serves the same question later, `questionsAnswered`/`performancePoints` inflate on repeats instead of being deduplicated per question.
+- **Action:** in `recordAnswer` (call site: `lib/screens/question_screen.dart:83-92`), check whether the question has already contributed to the day's/lifetime stats before incrementing counts/points a second time.
+
+### Flag incorrect questions + backend notification
+- No flagging UI or backend hook exists anywhere. (Grep for "flag" only matches an unrelated `RedFlagsBlock` clinical-content widget — not question flagging.) No table/RPC for flags in `scripts/sql/000_init_database.sql`.
+- **Action:** add a "Flag this question" UI affordance on the question screen, a `flagged_questions` table (or similar) in Supabase, and a notification mechanism (e.g. a Supabase Edge Function trigger or admin dashboard query) surfacing new flags to maintainers.
+
+
+## New Testing Report 2026-09-17
+- Also not that across the entire app available content ranks above coming soon.
+- All coming soon topics should be grayed out
+### Exam Prep
+- users should not be able to see the full question bank for now. They should not know how many questions we have in total.
+- The question and answer rendering engine is not making use of the newline feature. it just jumbles everything together into one contiguous text flow.
+- Question stats Dashboard should be clickable: Answered, Correct, Wrong, Points. Such that they can browse the questions they've answered, correct or failed then choose to retry anyone they failed
+- Question numbers should be removed completely from the UI, the user should not have any idea the number questions we have.
+- The question points system is not working correctly. I need to see my correct stats displayed. Accumulated points and question answer stats take some time to update on the dashboard, and I am thinking it should be automatic because it is local first before it pushes scores to supabase when there is connectivity.
+- After I answer a particular question there is no next question feature neither does it automatically serve the next question.
+- How is the randomization of questions being served implemented to ensure repetition doesn't occur.
+- Remove Browse Full Bank, that feature allows users to view the entire bank which we dont want
+- If the user is practicing and they get any question wrong that question should be requeued to be served in 24hrs
+- I have had the app on my device for over 3hours yet no question notification has been served. The user can experience questions in app through the practice now feature which for freemium users allows them 10 questions but while studying questions will be served as notification bubbles.
+- User exam practice experience should be improved. Review it end to end and surface suggestions based on standard practice and innovation.
+
+### Calculators
+- For the calculators all should be part of the list and those not yet implemented should be grayed out with a status of 'Coming Soon'. If their implementation can be found online then implement those and highlight those you cant find.
+
+### Surgical Instrumentation
+- Should be a list starting with 'Sutures' the same way we have a list in OSCE
+- Change the topic name from 'Sutures' to 'Suture Material'
+- It should be such that users can swipe sideways through the tabs of each topic
+
+### Medical Instrumentation
+- The same way calculators are grouped, these should also be grouped.
+- should be a list starting with 'IV Cannula'
+
+### OSCE
+- The topics are implemented nicely but the tab scroll feature is not for the topics, it is for the sub-topics within each topic. You already have access to the sub-topic outline for each topic. For Abdominal which is already implemented you can infer it.
+- Rename Abdominal -> Abdominal Examination
+
+## New Testing Report 2026-09-19
+### Exam Prep
+- When the user answer a question the time lapse before the next question is displayed is not a enough to read the explanation therefore next question should only be triggered by the user and not automatic
+- There is no concept for 'Quick Check' anymore. The user simply engages a mock exam so change the messaging or text there to reflect this fact
+- I answered 4 questions but the dashboard shows I answered 2
+- When scrambling the answer options, moving them with their option label (A,B,C,D) defeats the purpose of the shuffle
+
+### Surgical & Medical Instrumentation
+- The content scroll is not supposed to be sectionalized, it is supposed to be continuous through all sections changing tabs as each sections is arrived upon. Being abrubptly halted while scrolling then having to go change tabs just to continue is very poor user experience. This also affects OSCE
+- Subtopics are being treated as items in the IV Cannula module content. We need to re-extract "scripts/content/IV_Cannula_instrumentation.docx". These are subtopics not items: "Advantages", "Disadvantages", "Precautions", "Complications"
+- Medical intrumentation modules are not displayed as a list like surgical instrumentation. It is supposed to be a list similar to Surgical instrumentation.
+
+### Library
+- The books are colourful and beautiful, these are images so dont gray them out, the previous implementation dim out those tiles and we need that continued in this case.

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "batch_id": "260915-r9f",
+  "created_at": "2026-09-15T18:37:42.841Z",
+  "options": {},
+  "base_revision": "ad737b82ea5d70362c493e9b6846bcca84c062f2",
+  "items": [
+    {
+      "quick_id": "260915-r9g",
+      "client_id": null,
+      "description": "Fix the IV Cannula resource extraction error reported in TESTING_REPORT.md: inspect `scripts/content/IV_Cannula_instrumentation.docx` and `scripts/generate_resource_content.py`, make “Quick Size Selection Rules Emergency / shock → 2 large-bore (14–16G)” render as body or list content rather than a subsection title, regenerate only the affected resource output, and verify unrelated resource topics are unchanged.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/content/IV_Cannula_instrumentation.docx",
+        "enchiridion/assets/data/resources/iv_cannula.json",
+        "enchiridion/assets/resources/content/iv_cannula/image_01.png",
+        "enchiridion/assets/resources/content/iv_cannula/image_02.png"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "8013e70",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260915-r9h",
+      "client_id": null,
+      "description": "Add a read-only SQL verification script under `scripts/sql/` for the already-applied `001_flagged_questions.sql` through `004_payments.sql` migrations; check the expected tables, constraints, RLS policies, and `get_leaderboard` RPC using catalog queries, with no schema changes or secrets, so the live database can be checked after deployment.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/sql/verify_001_004.sql",
+        "scripts/sql/check_verify_001_004_read_only.py"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "f8145cd",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260915-r9i",
+      "client_id": null,
+      "description": "Audit Flutterwave payment-verification readiness from `enchiridion/lib/config/flutterwave_config.dart`, `enchiridion/lib/services/payment_service.dart`, `supabase/functions/verify-flutterwave-payment/index.ts`, and `scripts/sql/004_payments.sql`; write a concise deployment and test checklist under `scripts/output/` that identifies placeholder configuration and how to test a verified grant and replay rejection, without adding credentials or deploying anything.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/output/flutterwave_payment_verification_checklist.md"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "7a6c539",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260915-r9j",
+      "client_id": null,
+      "description": "Inventory the OSCE and instrumentation content gap using `scripts/content/OSCE.md`, the available source DOCX files, resource JSON, and app topic registrations; write a sourcing checklist under `scripts/output/` that names the missing full-content topics and their existing source status, without inventing clinical instructions or adding placeholder content to the app.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "scripts/output/osce_instrumentation_sourcing_checklist.md"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "e4c84d4",
+      "failure_reason": null
+    },
+    {
+      "quick_id": "260915-r9k",
+      "client_id": null,
+      "description": "Update the dated progress note in `TESTING_REPORT.md` to record that the Paediatrics extraction was rerun and passed its automated checks, and that the user reports applying migrations `001`–`004`; distinguish those reports from unverified live-backend, Android-device, and visual-content checks, and keep the older detailed audit explicitly historical.",
+      "status": "complete",
+      "depends_on": [],
+      "planned_files": [
+        "TESTING_REPORT.md"
+      ],
+      "directory": null,
+      "worktree": null,
+      "dispatched_worktree": null,
+      "dispatched_branch": null,
+      "dispatched_base": null,
+      "wave": 0,
+      "commit": "6f43307",
+      "failure_reason": null
+    }
+  ]
+}
