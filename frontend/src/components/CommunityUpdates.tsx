@@ -33,10 +33,34 @@ export default function CommunityUpdates({ endpoint, label, preview }: { endpoin
     }, [load]);
     useEffect(() => {
         if (!preview || !motionEnabled) return;
-        const interval = window.setInterval(() => {
+        // Poll only while the tab is visible; each poll invokes server functions billed as Active CPU.
+        const period = preview === "broadcast" ? 90000 : 300000;
+        let interval: number | undefined;
+        const refreshQuietly = () => {
             load().then(setUpdates).catch(() => { /* Preserve available updates during a temporary outage. */ });
-        }, preview === "broadcast" ? 15000 : 300000);
-        return () => window.clearInterval(interval);
+        };
+        const start = () => {
+            if (interval !== undefined) return;
+            interval = window.setInterval(refreshQuietly, period);
+        };
+        const stop = () => {
+            window.clearInterval(interval);
+            interval = undefined;
+        };
+        const onVisibilityChange = () => {
+            if (document.visibilityState === "visible") {
+                refreshQuietly();
+                start();
+            } else {
+                stop();
+            }
+        };
+        if (document.visibilityState === "visible") start();
+        document.addEventListener("visibilitychange", onVisibilityChange);
+        return () => {
+            stop();
+            document.removeEventListener("visibilitychange", onVisibilityChange);
+        };
     }, [load, motionEnabled, preview]);
     useEffect(() => {
         if (!preview || !motionEnabled || open || !updates.length) return;

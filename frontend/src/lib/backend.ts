@@ -1,6 +1,11 @@
 import "server-only";
 
-export async function proxyBackend(request: Request, path: string) {
+/**
+ * Forwards a request to the FastAPI service. Pass `cacheControl` only for public,
+ * user-independent GET responses so Vercel's CDN can answer repeat requests
+ * without invoking a function.
+ */
+export async function proxyBackend(request: Request, path: string, cacheControl = "no-store") {
     const base = process.env.BACKEND_URL || (process.env.VERCEL ? "" : "http://127.0.0.1:8000");
     if (!base) return Response.json({ detail: "Backend is not configured" }, { status: 503 });
     try {
@@ -17,7 +22,7 @@ export async function proxyBackend(request: Request, path: string) {
             signal: AbortSignal.timeout(45000),
             redirect: "manual",
         });
-        const responseHeaders = new Headers({ "Cache-Control": "no-store" });
+        const responseHeaders = new Headers({ "Cache-Control": upstream.ok ? cacheControl : "no-store" });
         for (const name of ["content-type", "content-disposition"]) {
             const value = upstream.headers.get(name);
             if (value) responseHeaders.set(name, value);
