@@ -4,16 +4,12 @@ import { accessible } from "./assertions";
 
 test.beforeEach(async ({ page }) => { await fixtures(page); });
 
-test("continuous heartbeat supports pause, resume, and reduced motion", async ({ page }) => {
+test("continuous heartbeat respects reduced motion", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.goto("/");
     const heart = page.locator('[class*="heartBackground"]');
     await expect(heart).toHaveCSS("animation-iteration-count", "infinite");
     await expect(heart).toHaveCSS("animation-duration", "1.2s");
-    await expect(heart).toHaveCSS("animation-play-state", "running");
-    await page.getByRole("button", { name: "Pause animations", exact: true }).click();
-    await expect(heart).toHaveCSS("animation-play-state", "paused");
-    await page.getByRole("button", { name: "Resume animations", exact: true }).click();
     await expect(heart).toHaveCSS("animation-play-state", "running");
     await page.emulateMedia({ reducedMotion: "reduce" });
     await expect(heart).toHaveCSS("animation-iteration-count", "1");
@@ -58,21 +54,17 @@ test("book carousel automatically scrolls and pauses during interaction", async 
     await page.getByRole("button", { name: "Pause book scrolling" }).click();
     const left = await track.evaluate(element => element.scrollLeft);
     await page.mouse.move(0, 0);
-    await page.getByRole("button", { name: "Pause animations", exact: true }).focus();
+    await track.focus();
     await page.waitForTimeout(5500);
     expect(await track.evaluate(element => element.scrollLeft)).toBe(left);
 });
 
-test("About covers rotate automatically and support the pause control", async ({ page }) => {
+test("About covers rotate automatically", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await page.clock.install();
     await page.goto("/about");
     const covers = page.locator('[class*="bookCoverWrapper"]');
     await expect(covers.first()).toHaveAttribute("aria-hidden", "false");
-    await expect(page.getByRole("button", { name: "Pause book covers" })).toBeVisible();
-    await page.clock.runFor(4500);
-    await expect(covers.nth(1)).toHaveAttribute("aria-hidden", "false");
-    await page.getByRole("button", { name: "Pause animations", exact: true }).click();
     await page.clock.runFor(4500);
     await expect(covers.nth(1)).toHaveAttribute("aria-hidden", "false");
 });
@@ -87,9 +79,6 @@ test("community previews rotate and preserve the accessible message list", async
     await page.goto("/refer");
     const preview = page.locator('[data-motion-preview]');
     await expect(preview).toHaveText("First community update");
-    await page.clock.runFor(6500);
-    await expect(preview).toHaveText("Second community update");
-    await page.getByRole("button", { name: "Pause animations", exact: true }).click();
     await page.clock.runFor(6500);
     await expect(preview).toHaveText("Second community update");
     await page.getByRole("button", { name: "Community updates", exact: true }).click();

@@ -26,11 +26,9 @@ export default function HeroCircle({ children }: { children: ReactNode }) {
     return <>
         <div className={styles.heroCircleContainer}>
             <div ref={contentRef} className={styles.heroCircleContent} role="region"
-                aria-label="Introduction and book links" tabIndex={scrollable ? 0 : undefined}
-                aria-describedby={scrollable ? "hero-scroll-hint" : undefined}>
+                aria-label="Introduction and book links" tabIndex={scrollable ? 0 : undefined}>
                 {children}
             </div>
         </div>
-        {scrollable && <p id="hero-scroll-hint" className={styles.heroScrollHint}>Scroll inside the circle for the book and app links.</p>}
     </>;
 }

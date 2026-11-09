@@ -10,7 +10,6 @@ import { useContinuousMotion } from "@/hooks/useContinuousMotion";
 
 export default function AboutPage() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [rotateCovers, setRotateCovers] = useState(true);
     const motionEnabled = useContinuousMotion();
     const [isPreviewLoading, setIsPreviewLoading] = useState(true);
     const [showGlow, setShowGlow] = useState(false);
@@ -35,10 +34,10 @@ export default function AboutPage() {
     }, []);
 
     useEffect(() => {
-        if (!rotateCovers || !motionEnabled) return;
+        if (!motionEnabled) return;
         const interval = setInterval(() => setCurrentImageIndex(index => (index + 1) % books.length), 4000);
         return () => clearInterval(interval);
-    }, [rotateCovers, motionEnabled]);
+    }, [motionEnabled]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -131,9 +130,6 @@ export default function AboutPage() {
                         </div>
                     ))}
                 </div>
-                <button type="button" aria-pressed={rotateCovers} onClick={() => setRotateCovers(value => !value)}>
-                    {rotateCovers ? "Pause book covers" : "Rotate book covers"}
-                </button>
             </section>
 
             {/* OVERVIEW SECTION */}
