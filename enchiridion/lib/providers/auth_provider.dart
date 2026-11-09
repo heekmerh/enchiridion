@@ -257,6 +257,7 @@ class AuthProvider with ChangeNotifier {
     required String displayName,
     required String role,
     required String termsVersion,
+    String? referredBy,
   }) async {
     _error = null;
     try {
@@ -266,6 +267,7 @@ class AuthProvider with ChangeNotifier {
         displayName: displayName,
         role: role,
         termsVersion: termsVersion,
+        referredBy: referredBy,
       );
       // No session covers both "confirmation required" and GoTrue's
       // obfuscated already-registered reply (neither session nor user, to

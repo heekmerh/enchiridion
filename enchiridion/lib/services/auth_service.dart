@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:crypto/crypto.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:http/http.dart' as http;
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../config/backend_config.dart';
@@ -35,12 +36,25 @@ class AuthService {
     }
   }
 
+  static Future<bool> isReferralCodeValid(String code) async {
+    try {
+      final response = await http
+          .get(Uri.parse('$kBackendBaseUrl/api/referral/referrer-name')
+              .replace(queryParameters: {'refCode': code}))
+          .timeout(const Duration(seconds: 8));
+      return response.statusCode != 404;
+    } catch (_) {
+      return true;
+    }
+  }
+
   static Future<AuthResponse> signUp({
     required String email,
     required String password,
     required String displayName,
     required String role,
     required String termsVersion,
+    String? referredBy,
   }) async {
     final acceptedAt = DateTime.now().toUtc().toIso8601String();
     final response = await _client.auth.signUp(
@@ -53,6 +67,7 @@ class AuthService {
         'terms_version': termsVersion,
         'terms_accepted_at': acceptedAt,
         'signup_source': 'android_app',
+        if (referredBy != null) 'referred_by': referredBy,
       },
     );
 

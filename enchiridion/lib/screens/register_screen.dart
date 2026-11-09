@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../config/google_sign_in_config.dart';
 import '../constants/about_config.dart';
 import '../providers/auth_provider.dart';
@@ -24,6 +25,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _emailCtrl = TextEditingController();
   final _passwordCtrl = TextEditingController();
   final _confirmCtrl = TextEditingController();
+  final _referralCtrl = TextEditingController();
+  bool _referralApplied = false;
   String _selectedRole = 'student';
   bool _obscurePassword = true;
   bool _obscureConfirm = true;
@@ -34,6 +37,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final List<TapGestureRecognizer> _legalLinkRecognizers = [];
 
   static const _roles = ['student', 'clinician', 'other'];
+  static const _referralAppliedKey = 'referral_code_applied';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadReferralApplied();
+  }
+
+  Future<void> _loadReferralApplied() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (!mounted) return;
+    setState(
+        () => _referralApplied = prefs.getBool(_referralAppliedKey) ?? false);
+  }
 
   @override
   void dispose() {
@@ -44,6 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _emailCtrl.dispose();
     _passwordCtrl.dispose();
     _confirmCtrl.dispose();
+    _referralCtrl.dispose();
     super.dispose();
   }
 
@@ -112,6 +130,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
       return;
     }
 
+    final referralCode =
+        _referralApplied ? '' : _referralCtrl.text.trim().toLowerCase();
+    if (referralCode.isNotEmpty) {
+      final referralValid = await AuthService.isReferralCodeValid(referralCode);
+      if (!mounted) return;
+      if (!referralValid) {
+        setState(() {
+          _loading = false;
+          _errorMessage = 'That referral code was not found.';
+        });
+        return;
+      }
+    }
+
     if (!mounted) return;
     final error = await context.read<AuthProvider>().signUp(
           email: _emailCtrl.text.trim(),
@@ -119,7 +151,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
           displayName: displayName,
           role: _selectedRole,
           termsVersion: AboutConfig.termsVersion,
+          referredBy: referralCode.isEmpty ? null : referralCode,
         );
+
+    if (referralCode.isNotEmpty &&
+        (error == null || error == 'confirm_email')) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool(_referralAppliedKey, true);
+    }
 
     if (!mounted) return;
     setState(() => _loading = false);
@@ -293,6 +332,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         return null;
                       },
                     ),
+
+                    if (!_referralApplied) ...[
+                      const SizedBox(height: 16),
+                      TextFormField(
+                        controller: _referralCtrl,
+                        textInputAction: TextInputAction.done,
+                        autocorrect: false,
+                        decoration: const InputDecoration(
+                          labelText: 'Referral code (optional)',
+                          prefixIcon: Icon(Icons.card_giftcard_outlined),
+                        ),
+                        validator: (v) {
+                          final code = v?.trim() ?? '';
+                          if (code.isEmpty) return null;
+                          return RegExp(r'^[A-Za-z0-9_-]{3,64}$').hasMatch(code)
+                              ? null
+                              : 'Enter a valid referral code';
+                        },
+                      ),
+                    ],
 
                     const SizedBox(height: 20),
 
