@@ -2,6 +2,7 @@
 
 import logging
 import os
+from html import escape
 
 from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 
@@ -37,3 +38,11 @@ async def send_email(email: str, subject: str, body: str, headers: dict | None =
     except Exception:
         logger.exception("Email delivery failed")
         return False
+
+
+async def notify_support(subject: str, fields: dict) -> bool:
+    """Tells the support inbox about a new lead, using the same SMTP account as other mail."""
+    rows = "".join(f"<tr><td><strong>{escape(label)}</strong></td><td>{escape(str(value or '-'))}</td></tr>"
+                   for label, value in fields.items())
+    return await send_email(os.getenv("SUPPORT_EMAIL", "support@enchiridion.site"), subject,
+                            f"<table cellpadding=\"6\">{rows}</table>")

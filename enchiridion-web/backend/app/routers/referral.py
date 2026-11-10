@@ -8,13 +8,14 @@ from datetime import datetime, timezone
 from decimal import Decimal, InvalidOperation
 from typing import Literal
 
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
+from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, Query, Request, Response
 from pydantic import BaseModel, EmailStr, Field
 from psycopg import sql
 from psycopg.types.json import Jsonb
 
 from ..auth import current_active_user, current_active_superuser, optional_user
 from ..database import get_db
+from .. import mailer
 from ..flutterwave import verify_transaction
 from ..models import LeadCapture, DistributorLead, PayoutSettings, MarkAsPaidRequest, SessionTrack
 from ..rewards import credit, reward_referrer, process_payment, sync_verified_partner
@@ -72,12 +73,15 @@ async def capture_lead(lead: LeadCapture, db=DB):
 
 
 @router.post("/subscribe-newsletter")
-async def subscribe_newsletter(lead: LeadCapture, db=DB):
-    return await save_lead(db, lead, "newsletter")
+async def subscribe_newsletter(lead: LeadCapture, background: BackgroundTasks, db=DB):
+    result = await save_lead(db, lead, "newsletter")
+    background.add_task(mailer.notify_support, "New newsletter subscriber",
+                        {"Email": lead.email.lower(), "Referral code": lead.refCode})
+    return result
 
 
 @router.post("/distributor-lead")
-async def distributor_lead(lead: DistributorLead, user=OPTIONAL_USER, db=DB):
+async def distributor_lead(lead: DistributorLead, background: BackgroundTasks, user=OPTIONAL_USER, db=DB):
     await db.execute(
         "INSERT INTO leads(kind,name,phone,whatsapp,location,ref_code) VALUES ('distributor',%s,%s,%s,%s,%s)",
         (lead.name, lead.phone, lead.whatsapp, lead.location, lead.refCode or ""),
@@ -85,6 +89,9 @@ async def distributor_lead(lead: DistributorLead, user=OPTIONAL_USER, db=DB):
     if user:
         await db.execute("UPDATE onboarding SET is_distributor=true,last_updated=now() WHERE user_id=%s", (user.id,))
         await reward_referrer(db, user.email, "distributor")
+    background.add_task(mailer.notify_support, "New distributor application",
+                        {"Name": lead.name, "Phone": lead.phone, "WhatsApp": lead.whatsapp, "Location": lead.location,
+                         "Account email": user.email if user else "", "Referral code": lead.refCode})
     return {"success": True}
 
 

@@ -213,3 +213,17 @@ def test_book_checkout_uses_server_price_and_shipping(client, db_url, monkeypatc
     row = fetch(db_url, "SELECT amount, metadata FROM enchiridion_web.purchase_orders")[0]
     assert row["amount"] == 23000
     assert row["metadata"]["address"] == "1 Test Street"
+
+
+@pytest.mark.asyncio
+async def test_support_is_notified_of_leads(monkeypatch):
+    from unittest.mock import AsyncMock
+    from app import mailer
+    monkeypatch.delenv("SUPPORT_EMAIL", raising=False)
+    send = AsyncMock(return_value=True)
+    monkeypatch.setattr(mailer, "send_email", send)
+    await mailer.notify_support("New distributor application", {"Name": "<b>Ada</b>", "Phone": ""})
+    recipient, subject, body = send.await_args.args
+    assert recipient == "support@enchiridion.site"
+    assert subject == "New distributor application"
+    assert "&lt;b&gt;Ada&lt;/b&gt;" in body and "<b>Ada</b>" not in body
