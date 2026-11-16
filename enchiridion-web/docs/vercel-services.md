@@ -37,6 +37,7 @@ with test payments and a non-production database when enabling Preview deploymen
 | `MAIL_PORT` | `587` (backend uses STARTTLS; Supabase retains its working port 465) |
 | `MAIL_FROM_NAME` | `Enchiridion` |
 | `ADMIN_EMAIL` | Optional feedback digest recipient; defaults to `MAIL_FROM` |
+| `SUPPORT_EMAIL` | Inbox that gets distributor applications and newsletter sign-ups; defaults to `support@enchiridion.site`, so set it to a mailbox someone reads |
 
 Do not manually add `BACKEND_URL`: Vercel injects it through a service binding.
 Remove any existing project variable with that name for combined deployment.

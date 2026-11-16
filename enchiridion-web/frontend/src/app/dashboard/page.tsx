@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useDialog } from "@/hooks/useDialog";
 import styles from "./Dashboard.module.css";
 import { recordShare } from "@/lib/record";
+import { referralLink as buildReferralLink, whatsappShareUrl } from "@/lib/referral";
 import OnboardingChecklist from "@/components/OnboardingChecklist";
 import ImpactLiveFeed from "@/components/ImpactLiveFeed";
 import LegacyBadge from "@/components/LegacyBadge";
@@ -234,9 +235,9 @@ export default function PartnerDashboard() {
     const revenueCardRef = useRef<HTMLDivElement>(null);
     const lifetimeCardRef = useRef<HTMLDivElement>(null);
 
-    const referralLink = mounted ? `${window.location.origin}/refer?ref=${partnerData.refCode}` : `https://enchiridion.site/refer?ref=${partnerData.refCode}`;
-    const whatsappMessage = `Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Users, referral partners and distributors are eligible for incredible rewards and discounts! Plus, check out the official Book—it’s a game-changer for anyone in the medical space!\n\nJoin here: ${referralLink}`;
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+    // Built after mount from the real origin, so server and browser renders agree.
+    const referralLink = mounted ? buildReferralLink(partnerData.refCode) : "";
+    const whatsappUrl = mounted ? whatsappShareUrl(partnerData.refCode) : "";
 
     const handleCopy = async () => {
         try {

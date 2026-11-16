@@ -312,6 +312,7 @@ create table if not exists enchiridion_web.email_outbox (
 );
 create index if not exists email_outbox_pending_idx on enchiridion_web.email_outbox(created_at) where status = 'pending';
 
+-- Legacy: checkout prices delivery from backend/app/delivery.py and no longer reads this table.
 insert into enchiridion_web.shipping_rates(name, cost, is_hub) values
 ('Abia',4500,false),('Adamawa',5000,false),('Akwa Ibom',4500,false),
 ('Anambra',4000,false),('Bauchi',4500,false),('Bayelsa',5000,false),

@@ -8,6 +8,7 @@ import Accordion from "@/components/Accordion";
 import DistributorForm from "@/components/DistributorForm";
 import GlobalToast from "@/components/GlobalToast";
 import GoogleButton from "@/components/GoogleButton";
+import { proposeReferralCode, whatsappShareUrl } from "@/lib/referral";
 import { authErrorMessage, authorizedFetch, PENDING_MARKETING_KEY, signInWithGoogle, supabase, TERMS_VERSION } from "@/lib/supabase";
 
 export default function ReferralPage() {
@@ -103,11 +104,6 @@ export default function ReferralPage() {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 
-    const generateReferralCode = (name: string) => {
-        const initials = name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) || "RE";
-        const randomDigits = Math.floor(1000 + Math.random() * 9000); // 4 random digits
-        return `${initials}${randomDigits}`;
-    };
 
     const scrollToRegistration = () => {
         const element = document.getElementById("become-referral-partner");
@@ -162,7 +158,7 @@ export default function ReferralPage() {
 
         if (validateForm()) {
             setIsLoading(true);
-            const code = generateReferralCode(formData.fullName);
+            const code = proposeReferralCode(formData.fullName);
 
             // Get referral code from storage if user was referred
             const referredBy = localStorage.getItem("enchiridion_ref") || "";
@@ -888,7 +884,7 @@ export default function ReferralPage() {
                                 </button>
                                 <div style={{ display: 'flex', gap: '10px' }}>
                                     <a
-                                        href={`https://wa.me/?text=${encodeURIComponent(`Hey! I’ve been using these Concise Medical Handbooks from Enchiridion—they are incredibly practical for students and clinicians. Plus, check out the official Book—it’s a game-changer!\n\nJoin here: https://enchiridion.site/refer?ref=${referralCode}`)}`}
+                                        href={whatsappShareUrl(referralCode)}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={styles.shareBtn}

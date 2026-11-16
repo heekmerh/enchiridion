@@ -13,6 +13,7 @@ from fastapi.testclient import TestClient
 from psycopg.rows import dict_row
 
 from app import mailer
+from app.billing import notifications
 from app.database import get_db
 from app.main import app
 
@@ -38,6 +39,8 @@ def db_url(monkeypatch):
     monkeypatch.delenv("SUPABASE_URL", raising=False)
     monkeypatch.setenv("SUPABASE_JWT_SECRET", TEST_JWT_SECRET)
     monkeypatch.setattr(mailer, "send_email", AsyncMock(return_value=True))
+    # Background sends open their own connection from SUPABASE_DB_URL; tests must never reach a real project.
+    monkeypatch.setattr(notifications, "deliver_lead_emails", AsyncMock())
     with psycopg.connect(url, autocommit=True) as db:
         db.execute("ALTER TABLE billing.plan_prices DISABLE TRIGGER plan_prices_immutable")
         db.execute("TRUNCATE " + ", ".join(RESET_TABLES) + " CASCADE")

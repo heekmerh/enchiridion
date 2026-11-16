@@ -7,7 +7,7 @@ from datetime import datetime
 
 from psycopg.types.json import Jsonb
 
-from .. import mailer
+from .. import database, mailer
 from . import catalog, copy
 
 logger = logging.getLogger(__name__)
@@ -16,6 +16,9 @@ MAX_ATTEMPTS = 5
 FEEDBACK_DIGEST_KIND = "feedback_digest"
 FEEDBACK_CATEGORY_LABELS = {"complaint": "Complaint", "feature_request": "Feature request", "other": "Other"}
 MARKETING_KINDS = frozenset({"premium_offer"})
+SUPPORT_ALERT_KIND = "support_alert"
+NEWSLETTER_WELCOME_KIND = "newsletter_welcome"
+LEAD_EMAIL_KINDS = (SUPPORT_ALERT_KIND, NEWSLETTER_WELCOME_KIND)
 TRANSACTIONAL_SUBJECTS = {
     "purchase_verified": ("Your Enchiridion Premium subscription is active", copy.PURCHASE_VERIFIED),
     "renewal_verified": ("Your Enchiridion Premium subscription has renewed", copy.RENEWAL_VERIFIED),
@@ -42,6 +45,49 @@ async def enqueue_for_subscription(db, subscription: dict, kind: str, dedupe_suf
                   dedupe_key=f"{kind}:{subscription['id']}:{dedupe_suffix}",
                   payload={"provider": subscription["provider"], "plan_id": subscription["plan_id"],
                            "access_until": access_until.isoformat() if isinstance(access_until, datetime) else None})
+
+
+async def enqueue_support_alert(db, *, subject: str, fields: dict, dedupe_key: str):
+    """Queues a note to the support inbox; the outbox retries it until SMTP accepts it."""
+    await db.execute(
+        """INSERT INTO email_outbox(kind, recipient, dedupe_key, payload) VALUES (%s, %s, %s, %s)
+           ON CONFLICT (dedupe_key) DO NOTHING""",
+        (SUPPORT_ALERT_KIND, mailer.support_email(), dedupe_key,
+         Jsonb({"subject": subject, "fields": {k: str(v or "") for k, v in fields.items()}})),
+    )
+
+
+async def enqueue_newsletter_welcome(db, email: str):
+    """Queues one welcome email per address; subscribing again does not send a second one."""
+    address = email.strip().lower()
+    await db.execute(
+        """INSERT INTO email_outbox(kind, recipient, dedupe_key, payload) VALUES (%s, %s, %s, '{}')
+           ON CONFLICT (dedupe_key) DO NOTHING""",
+        (NEWSLETTER_WELCOME_KIND, address, f"{NEWSLETTER_WELCOME_KIND}:{address}"),
+    )
+
+
+def render_support_alert(row: dict) -> tuple[str, str, dict]:
+    payload = row["payload"] or {}
+    return payload.get("subject") or "New Enchiridion lead", mailer.support_alert_body(payload.get("fields") or {}), {}
+
+
+def render_newsletter_welcome(row: dict) -> tuple[str, str, dict]:
+    site = mailer.frontend_url()
+    support = mailer.support_email()
+    body = "".join([
+        paragraph("Hello,"),
+        paragraph("Thanks for signing up for Enchiridion emails. You'll hear from us about app updates, "
+                  "new book arrivals, rewards and streak winner announcements."),
+        paragraph("While you wait for the next one, you can read a sample chapter on our website."),
+        button("Visit Enchiridion", site),
+        paragraph("The Enchiridion Team"),
+        f'<p style="font-size:12px;color:#64748b">You received this because this address was entered in the '
+        f'newsletter form at {html.escape(site)}. To stop these emails, reply with "unsubscribe" or write to '
+        f'{html.escape(support)}.</p>',
+    ])
+    headers = {"List-Unsubscribe": f"<mailto:{support}?subject=unsubscribe>"}
+    return "Welcome to Enchiridion emails", body, headers
 
 
 def paragraph(text: str) -> str:
@@ -197,6 +243,10 @@ async def dispatch(db, *, user_id=None, kind: str | None = None, limit: int = 25
                 counts["skipped"] += 1
                 continue
             subject, body, headers = render_transactional(row)
+        elif row["kind"] == SUPPORT_ALERT_KIND:
+            subject, body, headers = render_support_alert(row)
+        elif row["kind"] == NEWSLETTER_WELCOME_KIND:
+            subject, body, headers = render_newsletter_welcome(row)
         elif row["kind"] == FEEDBACK_DIGEST_KIND:
             rendered = await render_feedback_digest(db, row)
             if rendered is None:
@@ -221,3 +271,13 @@ async def dispatch(db, *, user_id=None, kind: str | None = None, limit: int = 25
             )
             counts["failed"] += 1
     return counts
+
+
+async def deliver_lead_emails():
+    """Background send for just-queued lead emails. Anything left pending is retried by the daily jobs run."""
+    try:
+        async with database.transaction() as db:
+            for kind in LEAD_EMAIL_KINDS:
+                await dispatch(db, kind=kind, limit=10)
+    except Exception as exc:
+        logger.warning("Lead email delivery deferred to the next jobs run: %s", type(exc).__name__)

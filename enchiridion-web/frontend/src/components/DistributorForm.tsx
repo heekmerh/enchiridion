@@ -43,8 +43,6 @@ export default function DistributorForm() {
         const token = await getAccessToken();
         const refCode = localStorage.getItem("enchiridion_user_ref") || localStorage.getItem("enchiridion_ref");
 
-        console.log("DEBUG: Submitting distributor lead. RefCode:", refCode, "Token present:", !!token);
-
         setIsLoading(true);
         try {
             const res = await fetch("/api/referral/distributor-lead", {
@@ -63,9 +61,12 @@ export default function DistributorForm() {
             });
             if (res.ok) {
                 setIsSubmitted(true);
+            } else {
+                setSubmitError("We couldn't save your application. Please try again, or contact us on WhatsApp.");
             }
         } catch (err) {
             console.error("Submission failed:", err);
+            setSubmitError("We couldn't reach Enchiridion. Check your connection and try again.");
         } finally {
             setIsLoading(false);
         }

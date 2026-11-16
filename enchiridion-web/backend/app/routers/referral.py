@@ -15,7 +15,8 @@ from psycopg.types.json import Jsonb
 
 from ..auth import current_active_user, current_active_superuser, optional_user
 from ..database import get_db
-from .. import mailer
+from .. import delivery
+from ..billing import notifications
 from ..flutterwave import verify_transaction
 from ..models import LeadCapture, DistributorLead, PayoutSettings, MarkAsPaidRequest, SessionTrack
 from ..rewards import credit, reward_referrer, process_payment, sync_verified_partner
@@ -62,36 +63,44 @@ async def log_activity(body: ActivityInput, db=DB):
 
 
 async def save_lead(db, lead, kind):
-    await db.execute("INSERT INTO leads(kind,email,ref_code,details) VALUES (%s,%s,%s,%s)",
-                     (kind, lead.email.lower(), lead.refCode, Jsonb(lead.details or {})))
-    return {"success": True}
+    row = await (await db.execute("INSERT INTO leads(kind,email,ref_code,details) VALUES (%s,%s,%s,%s) RETURNING id",
+                                  (kind, lead.email.lower(), lead.refCode, Jsonb(lead.details or {})))).fetchone()
+    return row["id"]
 
 
 @router.post("/capture-lead")
 async def capture_lead(lead: LeadCapture, db=DB):
-    return await save_lead(db, lead, "sample")
+    await save_lead(db, lead, "sample")
+    return {"success": True}
 
 
 @router.post("/subscribe-newsletter")
 async def subscribe_newsletter(lead: LeadCapture, background: BackgroundTasks, db=DB):
-    result = await save_lead(db, lead, "newsletter")
-    background.add_task(mailer.notify_support, "New newsletter subscriber",
-                        {"Email": lead.email.lower(), "Referral code": lead.refCode})
-    return result
+    lead_id = await save_lead(db, lead, "newsletter")
+    # Queued in the same transaction as the lead, so a mail outage delays these emails instead of losing them.
+    await notifications.enqueue_newsletter_welcome(db, lead.email)
+    await notifications.enqueue_support_alert(db, subject="New newsletter subscriber", dedupe_key=f"lead:{lead_id}",
+                                              fields={"Email": lead.email.lower(), "Referral code": lead.refCode})
+    background.add_task(notifications.deliver_lead_emails)
+    return {"success": True}
 
 
 @router.post("/distributor-lead")
 async def distributor_lead(lead: DistributorLead, background: BackgroundTasks, user=OPTIONAL_USER, db=DB):
-    await db.execute(
-        "INSERT INTO leads(kind,name,phone,whatsapp,location,ref_code) VALUES ('distributor',%s,%s,%s,%s,%s)",
-        (lead.name, lead.phone, lead.whatsapp, lead.location, lead.refCode or ""),
-    )
+    row = await (await db.execute(
+        "INSERT INTO leads(kind,email,name,phone,whatsapp,location,ref_code) "
+        "VALUES ('distributor',%s,%s,%s,%s,%s,%s) RETURNING id",
+        (user.email.lower() if user and user.email else None, lead.name, lead.phone, lead.whatsapp, lead.location,
+         lead.refCode or ""),
+    )).fetchone()
     if user:
         await db.execute("UPDATE onboarding SET is_distributor=true,last_updated=now() WHERE user_id=%s", (user.id,))
         await reward_referrer(db, user.email, "distributor")
-    background.add_task(mailer.notify_support, "New distributor application",
-                        {"Name": lead.name, "Phone": lead.phone, "WhatsApp": lead.whatsapp, "Location": lead.location,
-                         "Account email": user.email if user else "", "Referral code": lead.refCode})
+    await notifications.enqueue_support_alert(
+        db, subject="New distributor application", dedupe_key=f"lead:{row['id']}",
+        fields={"Name": lead.name, "Phone": lead.phone, "WhatsApp": lead.whatsapp, "Location": lead.location,
+                "Account email": user.email if user else "", "Referral code": lead.refCode})
+    background.add_task(notifications.deliver_lead_emails)
     return {"success": True}
 
 
@@ -123,13 +132,14 @@ def book_price():
 
 @router.get("/checkout-config")
 async def checkout_config():
-    return {"bookPrice": float(book_price()), "currency": "NGN"}
+    return {"bookPrice": float(book_price()), "currency": "NGN", "delivery": delivery.pricing_config()}
 
 
 @router.get("/shipping-rates")
-async def shipping_rates(db=DB):
-    rows = await (await db.execute("SELECT name,cost,is_hub FROM shipping_rates ORDER BY name")).fetchall()
-    return [{"name": row["name"], "cost": float(row["cost"]), "isHub": row["is_hub"]} for row in rows]
+async def shipping_rates():
+    # Home-delivery price per state, from the same rules checkout charges.
+    return [{"name": state, "cost": float(delivery.delivery_cost(state)), "isHub": delivery.is_hub(state)}
+            for state in delivery.all_states()]
 
 
 class PurchaseOrder(BaseModel):
@@ -142,23 +152,31 @@ class PurchaseOrder(BaseModel):
     phone: str = Field(min_length=5, max_length=40)
     book: str = Field(default="Enchiridion", max_length=200)
     refCode: str = Field(default="", max_length=64)
+    fulfillment: delivery.Fulfillment = "delivery"
 
 
 @router.post("/initialize-purchase")
 async def initialize_purchase(body: PurchaseOrder, db=DB):
     if not os.getenv("FLUTTERWAVE_SECRET_KEY"):
         raise HTTPException(503, "Flutterwave checkout is not configured")
-    rate = await (await db.execute("SELECT cost FROM shipping_rates WHERE lower(name)=lower(%s)", (body.state,))).fetchone()
-    if not rate:
+    try:
+        state = delivery.canonical_state(body.state)
+        delivery_fee = delivery.delivery_cost(state, body.fulfillment)
+    except delivery.UnknownState:
         raise HTTPException(400, "Delivery is not configured for the selected state")
-    amount = book_price() * body.quantity + rate["cost"]
+    except ValueError as exc:
+        raise HTTPException(400, str(exc))
+    unit_price = book_price()
+    amount = unit_price * body.quantity + delivery_fee
     tx_ref = "ENCH-" + uuid.uuid4().hex
-    metadata = {**body.model_dump(mode="json"), "product": "book"}
+    metadata = {**body.model_dump(mode="json"), "state": state, "product": "book",
+                "book_price": str(unit_price), "delivery_cost": delivery_fee}
     await db.execute(
         "INSERT INTO purchase_orders(tx_ref,email,amount,quantity,state,metadata) VALUES (%s,%s,%s,%s,%s,%s)",
-        (tx_ref, body.email.lower(), amount, body.quantity, body.state, Jsonb(metadata)),
+        (tx_ref, body.email.lower(), amount, body.quantity, state, Jsonb(metadata)),
     )
-    return {"tx_ref": tx_ref, "amount": float(amount), "currency": "NGN"}
+    return {"tx_ref": tx_ref, "amount": float(amount), "currency": "NGN", "bookPrice": float(unit_price),
+            "quantity": body.quantity, "deliveryCost": delivery_fee, "fulfillment": body.fulfillment, "state": state}
 
 
 class CompletePurchase(BaseModel):
