@@ -8,6 +8,7 @@ import '../utils/osce_subtopics.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/common/subtopic_tabs.dart';
 import 'pinned_notes_screen.dart';
+import '../widgets/notes/chapter_notes_sheet.dart';
 
 /// Browse stations first; opening a station shows tabs for that station's
 /// own sub-topics (see `subtopic_tabs.dart`) — never a strip of other
@@ -28,7 +29,8 @@ class OsceScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('OSCE')),
       body: ListView.builder(
-        padding: EdgeInsets.only(top: 8, bottom: 8 + bottomViewportInset(context)),
+        padding:
+            EdgeInsets.only(top: 8, bottom: 8 + bottomViewportInset(context)),
         itemCount: kOsceTopicsInDisplayOrder.length,
         itemBuilder: (context, index) {
           final topic = kOsceTopicsInDisplayOrder[index];
@@ -69,7 +71,8 @@ class OsceScreen extends StatelessWidget {
             onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
               builder: (_) => _OsceDetailScreen(
                 topic: topic,
-                chapterLoader: testChapterLoader ?? ResourceTopicService.loadChapter,
+                chapterLoader:
+                    testChapterLoader ?? ResourceTopicService.loadChapter,
               ),
             )),
           );
@@ -120,16 +123,26 @@ class _OsceDetailScreenState extends State<_OsceDetailScreen> {
         title: Text(widget.topic.title),
         actions: [
           IconButton(
+            icon: const Icon(Icons.edit_note_outlined),
+            tooltip: 'Topic notes',
+            onPressed: () => showChapterNotesSheet(
+              context,
+              bookId: widget.topic.notesScope,
+              chapterId: widget.topic.id,
+              noun: 'topic',
+            ),
+          ),
+          IconButton(
             icon: const Icon(Icons.push_pin_outlined),
             tooltip: 'Notes for ${widget.topic.title}',
             onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => const PinnedNotesScreen()),
+              MaterialPageRoute(builder: (_) => const PinnedNotesScreen()),
             ),
           ),
         ],
       ),
-      body: isLoading          ? const Center(child: CircularProgressIndicator())
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
           : _error != null
               ? Center(
                   child: Padding(

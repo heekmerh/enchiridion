@@ -12,6 +12,7 @@ import '../widgets/drawer/toc_drawer.dart';
 import '../widgets/drawer/settings_drawer.dart';
 import '../widgets/reader/reader_app_bar.dart';
 import '../widgets/common/app_zoom_scope.dart';
+import '../widgets/notes/chapter_notes_sheet.dart';
 import '../widgets/reader/reader_content.dart';
 import '../widgets/reader/reader_navigation.dart';
 import '../widgets/reader/reader_progress_bar.dart';
@@ -240,29 +241,6 @@ class _ReaderShellState extends State<_ReaderShell> {
     }
   }
 
-  Future<void> _showNotesSheet(String chapterId) async {
-    final saved = await showModalBottomSheet<bool>(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
-      ),
-      builder: (_) => _NotesBottomSheet(
-        bookId: widget.bookId,
-        chapterId: chapterId,
-        storage: context.read<StorageService>(),
-      ),
-    );
-    if (!mounted || saved != true) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Chapter note saved'),
-        behavior: SnackBarBehavior.floating,
-        duration: Duration(seconds: 2),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<BookProvider>(
@@ -332,7 +310,11 @@ class _ReaderShellState extends State<_ReaderShell> {
                           onSettingsPressed: () => setState(() {
                             _isSettingsOpen = !_isSettingsOpen;
                           }),
-                          onNotesPressed: () => _showNotesSheet(chapterId),
+                          onNotesPressed: () => showChapterNotesSheet(
+                            context,
+                            bookId: widget.bookId,
+                            chapterId: chapterId,
+                          ),
                         ),
                         _hasAccess ||
                                 bookProvider.currentIndex < kFreeChapterCount
@@ -488,191 +470,6 @@ class _ReaderShellState extends State<_ReaderShell> {
           },
         );
       },
-    );
-  }
-}
-
-// Notes bottom sheet (US-006)
-
-class _NotesBottomSheet extends StatefulWidget {
-  final String bookId;
-  final String chapterId;
-  final StorageService storage;
-
-  const _NotesBottomSheet({
-    required this.bookId,
-    required this.chapterId,
-    required this.storage,
-  });
-
-  @override
-  State<_NotesBottomSheet> createState() => _NotesBottomSheetState();
-}
-
-class _NotesBottomSheetState extends State<_NotesBottomSheet> {
-  final _ctrl = TextEditingController();
-  bool _saving = false;
-  bool _hasExistingNote = false;
-
-  @override
-  void initState() {
-    super.initState();
-    final existingNote =
-        widget.storage.getNote(widget.bookId, widget.chapterId) ?? '';
-    _ctrl.text = existingNote;
-    _hasExistingNote = existingNote.trim().isNotEmpty;
-  }
-
-  @override
-  void dispose() {
-    _ctrl.dispose();
-    super.dispose();
-  }
-
-  Future<void> _save() async {
-    setState(() => _saving = true);
-    final text = _ctrl.text.trim();
-    await widget.storage.saveNote(widget.bookId, widget.chapterId, text);
-    if (mounted) {
-      Navigator.of(context).pop(true);
-    }
-  }
-
-  Future<void> _startFresh() async {
-    if (_saving) return;
-    setState(() => _ctrl.clear());
-  }
-
-  Future<void> _clearSavedNote() async {
-    if (_saving) return;
-    await widget.storage.deleteNote(widget.bookId, widget.chapterId);
-    if (mounted) {
-      setState(() {
-        _ctrl.clear();
-        _hasExistingNote = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Saved chapter note removed'),
-          behavior: SnackBarBehavior.floating,
-          duration: Duration(seconds: 2),
-        ),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final cs = theme.colorScheme;
-    final keyboardInset = MediaQuery.viewInsetsOf(context).bottom;
-    final safeBottomInset = bottomViewportInset(context);
-
-    return AnimatedPadding(
-      duration: const Duration(milliseconds: 220),
-      curve: Curves.easeOutCubic,
-      padding: EdgeInsets.only(bottom: keyboardInset),
-      child: DraggableScrollableSheet(
-        initialChildSize: 0.65,
-        minChildSize: 0.35,
-        maxChildSize: 0.95,
-        expand: false,
-        builder: (_, __) => Padding(
-          padding: EdgeInsets.fromLTRB(
-            16,
-            12,
-            16,
-            16 + safeBottomInset,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Center(
-                child: Container(
-                  width: 40,
-                  height: 4,
-                  decoration: BoxDecoration(
-                    color: cs.outline.withValues(alpha: 0.4),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  const Icon(Icons.edit_note_outlined, size: 20),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Chapter Notes',
-                    style: theme.textTheme.titleSmall
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    onPressed: _startFresh,
-                    child: const Text('Start Fresh'),
-                  ),
-                  TextButton(
-                    onPressed: _hasExistingNote ? _clearSavedNote : null,
-                    child: const Text('Delete Saved'),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                _hasExistingNote
-                    ? 'Your saved chapter note is loaded below. Edit it and save again, or start fresh.'
-                    : 'Write a chapter note and save. The sheet will close once it is stored.',
-                style: theme.textTheme.bodySmall?.copyWith(
-                  color: cs.onSurface.withValues(alpha: 0.72),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Expanded(
-                child: TextField(
-                  controller: _ctrl,
-                  maxLines: null,
-                  expands: true,
-                  textAlignVertical: TextAlignVertical.top,
-                  scrollPadding: const EdgeInsets.only(bottom: 96),
-                  decoration: InputDecoration(
-                    hintText: 'Write your notes for this chapter…',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    contentPadding: const EdgeInsets.all(12),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: OutlinedButton(
-                      onPressed:
-                          _saving ? null : () => Navigator.of(context).pop(),
-                      child: const Text('Cancel'),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: FilledButton(
-                      onPressed: _saving ? null : _save,
-                      child: _saving
-                          ? const SizedBox(
-                              height: 18,
-                              width: 18,
-                              child: CircularProgressIndicator(strokeWidth: 2),
-                            )
-                          : const Text('Save Note'),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }
