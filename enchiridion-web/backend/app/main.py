@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import psycopg
 
+from . import mailer
 from .database import get_db
 from .routers import billing, communications, referral, reviews, users
 
@@ -40,4 +41,5 @@ async def root():
 async def readiness(db=Depends(get_db, scope="function")):
     await db.execute("SELECT id FROM partners LIMIT 0")
     await db.execute("SELECT id FROM billing.plans LIMIT 0")
-    return {"status": "ready", "storage": "supabase"}
+    # Lead alerts, newsletter welcomes and billing notices queue up silently until SMTP is set.
+    return {"status": "ready", "storage": "supabase", "email": "configured" if mailer.is_configured() else "not_configured"}

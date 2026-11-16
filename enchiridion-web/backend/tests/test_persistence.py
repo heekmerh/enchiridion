@@ -203,16 +203,15 @@ def test_failed_commit_never_returns_success(client, db_url):
 def test_book_checkout_uses_server_price_and_shipping(client, db_url, monkeypatch):
     monkeypatch.setenv("FLUTTERWAVE_SECRET_KEY", "test-only")
     monkeypatch.setenv("BOOK_PRICE_NGN", "10000")
-    with psycopg.connect(db_url) as db:
-        db.execute("INSERT INTO enchiridion_web.shipping_rates(name,cost) VALUES ('Lagos',3000)")
     body = {"email": "guest@example.com", "quantity": 2, "state": "Lagos", "fullName": "Reader",
             "address": "1 Test Street", "city": "Ikeja", "phone": "+2348000000000", "amount": 1}
     response = client.post("/referral/initialize-purchase", json=body)
     assert response.status_code == 200, response.text
-    assert response.json()["amount"] == 23000
+    assert response.json()["amount"] == 21500
     row = fetch(db_url, "SELECT amount, metadata FROM enchiridion_web.purchase_orders")[0]
-    assert row["amount"] == 23000
+    assert row["amount"] == 21500
     assert row["metadata"]["address"] == "1 Test Street"
+    assert row["metadata"]["delivery_cost"] == 1500
 
 
 @pytest.mark.asyncio

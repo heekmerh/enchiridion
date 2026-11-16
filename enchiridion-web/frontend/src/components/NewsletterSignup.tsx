@@ -36,7 +36,8 @@ export default function NewsletterSignup() {
 
         try {
             // Get referral code from localStorage if available
-            const refCode = localStorage.getItem('referralCode') || "";
+            // The referral code the visitor arrived with, stored by ReferralTracker.
+            const refCode = localStorage.getItem("enchiridion_ref") || "";
 
             const response = await fetch('/api/referral/subscribe-newsletter', {
                 method: 'POST',

@@ -40,9 +40,16 @@ async def send_email(email: str, subject: str, body: str, headers: dict | None =
         return False
 
 
-async def notify_support(subject: str, fields: dict) -> bool:
-    """Tells the support inbox about a new lead, using the same SMTP account as other mail."""
+def support_email() -> str:
+    return (os.getenv("SUPPORT_EMAIL") or "support@enchiridion.site").strip().lower()
+
+
+def support_alert_body(fields: dict) -> str:
     rows = "".join(f"<tr><td><strong>{escape(label)}</strong></td><td>{escape(str(value or '-'))}</td></tr>"
                    for label, value in fields.items())
-    return await send_email(os.getenv("SUPPORT_EMAIL", "support@enchiridion.site"), subject,
-                            f"<table cellpadding=\"6\">{rows}</table>")
+    return f"<table cellpadding=\"6\">{rows}</table>"
+
+
+async def notify_support(subject: str, fields: dict) -> bool:
+    """Tells the support inbox about a new lead, using the same SMTP account as other mail."""
+    return await send_email(support_email(), subject, support_alert_body(fields))

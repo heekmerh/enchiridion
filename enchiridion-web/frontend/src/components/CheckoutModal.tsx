@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useDialog } from "@/hooks/useDialog";
 import styles from "./CheckoutModal.module.css";
 import {
-    NIGERIAN_STATES, StateDelivery, DELIVERY_ZONES, getUserStats,
+    NIGERIAN_STATES, StateDelivery, DeliveryPricing, getUserStats,
     normalizeStateName, isHubState, getDeliveryCost, deliveryCostLabel, FulfillmentMode,
 } from "@/lib/checkout";
 import { Book } from "@/lib/data";
@@ -16,6 +16,17 @@ interface CheckoutModalProps {
 }
 
 type Step = "shipping" | "delivery" | "payment" | "success";
+
+// The order the backend created: its amount is what Flutterwave charges.
+interface ServerOrder {
+    tx_ref: string;
+    amount: number;
+    currency: string;
+    bookPrice: number;
+    deliveryCost: number;
+    state: string;
+    fulfillment: FulfillmentMode;
+}
 
 export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalProps) {
     const [step, setStep] = useState<Step>("shipping");
@@ -34,12 +45,15 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     const dialogRef = useDialog(isOpen && !paymentBusy, onClose);
     const [paymentError, setPaymentError] = useState("");
     const [bookPrice, setBookPrice] = useState<number | null>(null);
+    const [pricing, setPricing] = useState<DeliveryPricing | null>(null);
+    const [serverOrder, setServerOrder] = useState<ServerOrder | null>(null);
     const [pendingPayment, setPendingPayment] = useState<{ transaction_id: number; tx_ref: string; email: string } | null>(null);
     const [userRegisteredState, setUserRegisteredState] = useState<string | null>(null);
     const zoneRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-    const selectedIsHub = selectedStateName ? isHubState(selectedStateName) : false;
-    const selectedCost = selectedStateName ? getDeliveryCost(selectedStateName, selectedIsHub ? fulfillment : "delivery") : null;
+    const selectedIsHub = selectedStateName && pricing ? isHubState(selectedStateName, pricing) : false;
+    const effectiveFulfillment: FulfillmentMode = selectedIsHub ? fulfillment : "delivery";
+    const selectedCost = selectedStateName && pricing ? getDeliveryCost(selectedStateName, effectiveFulfillment, pricing) : null;
     const selectedState: StateDelivery | null = selectedStateName && selectedCost !== null
         ? { name: selectedStateName, cost: selectedCost, costLabel: deliveryCostLabel(selectedCost) }
         : null;
@@ -59,6 +73,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                 if (!response.ok) throw new Error("Checkout is unavailable");
                 const config = await response.json();
                 setBookPrice(config.bookPrice);
+                setPricing(config.delivery);
             }).catch(() => setPaymentError("Checkout is temporarily unavailable."));
             if (!document.getElementById("flutterwave-checkout")) {
                 const script = document.createElement("script");
@@ -90,6 +105,26 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
         }
     };
 
+    const openFlutterwave = (publicKey: string, order: ServerOrder) => {
+        if (!window.FlutterwaveCheckout) {
+            setPaymentError("Flutterwave checkout is not available yet.");
+            setPaymentBusy(false);
+            return;
+        }
+        const modal = window.FlutterwaveCheckout({
+            public_key: publicKey, tx_ref: order.tx_ref, amount: order.amount, currency: order.currency,
+            customer: { email: formData.email, name: formData.fullName, phone_number: formData.phone },
+            customizations: { title: "Enchiridion", description: book.title },
+            meta: { product: "book" },
+            callback: (payment) => {
+                modal.close();
+                void confirmPayment({ transaction_id: payment.transaction_id || payment.id,
+                    tx_ref: order.tx_ref, email: formData.email });
+            },
+            onclose: () => setPaymentBusy(false),
+        });
+    };
+
     const payWithFlutterwave = async () => {
         setPaymentError("");
         if (pendingPayment) return confirmPayment(pendingPayment);
@@ -103,30 +138,27 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
             return;
         }
         setPaymentBusy(true);
+        if (serverOrder) {
+            // The buyer has now seen the server's total for this exact order.
+            openFlutterwave(publicKey, serverOrder);
+            return;
+        }
         try {
             const response = await fetch("/api/referral/initialize-purchase", {
                 method: "POST", headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...formData, state: selectedState.name, quantity: 1,
+                body: JSON.stringify({ ...formData, state: selectedState.name, quantity: 1, fulfillment: effectiveFulfillment,
                     book: book.title, refCode: localStorage.getItem("enchiridion_ref") || "" }),
             });
-            const order = await response.json();
+            const order: ServerOrder & { detail?: unknown } = await response.json();
             if (!response.ok) throw new Error(typeof order.detail === "string" ? order.detail : "Unable to create order.");
-            const expectedTotal = bookPrice + selectedState.cost;
-            if (order.amount !== expectedTotal) {
-                throw new Error("The price has changed. Reopen checkout to review the updated total.");
+            if (order.amount !== shownTotal) {
+                // Prices changed since the page loaded: show the server's total and let the buyer confirm it.
+                setServerOrder(order);
+                setPaymentBusy(false);
+                setPaymentError(`The total is now ₦${order.amount.toLocaleString()}. Check it below, then tap Pay again.`);
+                return;
             }
-            const modal = window.FlutterwaveCheckout({
-                public_key: publicKey, tx_ref: order.tx_ref, amount: order.amount, currency: order.currency,
-                customer: { email: formData.email, name: formData.fullName, phone_number: formData.phone },
-                customizations: { title: "Enchiridion", description: book.title },
-                meta: { product: "book" },
-                callback: (payment) => {
-                    modal.close();
-                    void confirmPayment({ transaction_id: payment.transaction_id || payment.id,
-                        tx_ref: order.tx_ref, email: formData.email });
-                },
-                onclose: () => setPaymentBusy(false),
-            });
+            openFlutterwave(publicKey, order);
         } catch (error) {
             setPaymentError(error instanceof Error ? error.message : "Unable to start checkout.");
             setPaymentBusy(false);
@@ -143,7 +175,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
             const targetState = formData.state || userRegisteredState;
             if (targetState) {
                 const normTarget = normalizeStateName(targetState);
-                const targetZone = DELIVERY_ZONES.find(z =>
+                const targetZone = (pricing?.zones ?? []).find(z =>
                     z.states.some(s => normalizeStateName(s) === normTarget)
                 );
                 if (targetZone && zoneRefs.current[targetZone.id]) {
@@ -157,10 +189,10 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                 scrollContainerRef.current.scrollTop = 0;
             }
         }
-    }, [step, formData.state, userRegisteredState]);
+    }, [step, formData.state, userRegisteredState, pricing]);
 
     // Dynamic Prioritization Logic
-    const prioritizedZones = [...DELIVERY_ZONES].sort((a, b) => {
+    const prioritizedZones = [...(pricing?.zones ?? [])].sort((a, b) => {
         const preferredState = formData.state || userRegisteredState || "";
         const normPreferred = normalizeStateName(preferredState);
         const isAInZone = a.states.some(s => normalizeStateName(s) === normPreferred);
@@ -172,14 +204,25 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
 
     if (!isOpen) return null;
 
-    const total = (bookPrice ?? 0) + (selectedState?.cost || 0);
+    const shownTotal = (bookPrice ?? 0) + (selectedState?.cost || 0);
+    // Once the server has priced the order, its figures are the ones shown and charged.
+    const summary = serverOrder
+        ? { book: serverOrder.bookPrice, delivery: serverOrder.deliveryCost, total: serverOrder.amount }
+        : { book: bookPrice, delivery: selectedState?.cost ?? null, total: shownTotal };
 
     const handleShippingSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        setServerOrder(null);
         setStep("delivery");
     };
 
+    const chooseFulfillment = (mode: FulfillmentMode) => {
+        setServerOrder(null);
+        setFulfillment(mode);
+    };
+
     const handleDeliverySelect = (stateName: string) => {
+        setServerOrder(null);
         setSelectedStateName(stateName);
         setFulfillment("delivery");
         setFormData(previous => ({ ...previous, state: stateName }));
@@ -221,7 +264,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                 <select id="checkout-state" autoComplete="address-level1" required value={formData.state}
                                     onChange={event => setFormData({ ...formData, state: event.target.value })}>
                                     <option value="">Select your state</option>
-                                    {NIGERIAN_STATES.map(state => <option key={state.name} value={state.name}>{state.name}</option>)}
+                                    {NIGERIAN_STATES.map(state => <option key={state} value={state}>{state}</option>)}
                                 </select>
                             </div>
 
@@ -281,8 +324,9 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                         <h2>Select Delivery State & Cost</h2>
                         <p className={styles.subtitle}>Find your state delivery cost below.</p>
                         <p className={styles.estimateNotice}>
-                            Delivery fees shown are estimates and are confirmed by Enchiridion before payment.
+                            The total you see before paying is the amount you are charged.
                         </p>
+                        {!pricing && <p className={styles.subtitle}>Loading delivery prices...</p>}
 
                         <div className={styles.zonedWrapper} ref={scrollContainerRef}>
                             {prioritizedZones.map((zone, index) => (
@@ -296,8 +340,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                     <div className={styles.stateGrid}>
                                         {zone.states.map((stateName: string) => {
                                             const normName = normalizeStateName(stateName);
-                                            const isHub = isHubState(stateName);
-                                            const costLabel = deliveryCostLabel(getDeliveryCost(stateName, "delivery"));
+                                            const isHub = pricing ? isHubState(stateName, pricing) : false;
+                                            const costLabel = pricing ? deliveryCostLabel(getDeliveryCost(stateName, "delivery", pricing)) : "";
                                             const priceClass = isHub ? styles.priceGreen : styles.priceRed;
 
                                             return (
@@ -328,15 +372,15 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                             type="button"
                                             className={`${styles.fulfillmentBtn} ${fulfillment === "delivery" ? styles.fulfillmentActive : ""}`}
                                             aria-pressed={fulfillment === "delivery"}
-                                            onClick={() => setFulfillment("delivery")}
+                                            onClick={() => chooseFulfillment("delivery")}
                                         >
-                                            Home Delivery — {deliveryCostLabel(getDeliveryCost(selectedState.name, "delivery"))}
+                                            Home Delivery — {pricing ? deliveryCostLabel(getDeliveryCost(selectedState.name, "delivery", pricing)) : ""}
                                         </button>
                                         <button
                                             type="button"
                                             className={`${styles.fulfillmentBtn} ${fulfillment === "pickup" ? styles.fulfillmentActive : ""}`}
                                             aria-pressed={fulfillment === "pickup"}
-                                            onClick={() => setFulfillment("pickup")}
+                                            onClick={() => chooseFulfillment("pickup")}
                                         >
                                             Pickup at Hub — Free
                                         </button>
@@ -352,7 +396,7 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                 </div>
                                 <div className={styles.summaryTotal}>
                                     <span>Total:</span>
-                                    <span>₦{total.toLocaleString()}</span>
+                                    <span>₦{shownTotal.toLocaleString()}</span>
                                 </div>
                                 <button className={styles.primaryBtn} disabled={bookPrice === null} onClick={() => setStep("payment")}>Continue to Pay</button>
                             </div>
@@ -372,12 +416,16 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                 <span>{book.title}</span>
                             </div>
                             <div className={styles.summaryRow}>
-                                <span>Shipping to {formData.state}:</span>
-                                <span>{selectedState?.costLabel}</span>
+                                <span>Book Price:</span>
+                                <span>{summary.book === null ? "--" : `₦${summary.book.toLocaleString()}`}</span>
+                            </div>
+                            <div className={styles.summaryRow}>
+                                <span>{effectiveFulfillment === "pickup" ? `Pickup in ${selectedState?.name}:` : `Delivery to ${selectedState?.name}:`}</span>
+                                <span>{summary.delivery === null ? "--" : deliveryCostLabel(summary.delivery)}</span>
                             </div>
                             <div className={styles.paymentTotal}>
                                 <span>Amount Due:</span>
-                                <span>₦{total.toLocaleString()}</span>
+                                <span>₦{summary.total.toLocaleString()}</span>
                             </div>
                         </div>
 
