@@ -625,18 +625,6 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         )),
       ),
       _ResourceCategory(
-        title: 'Surgical instrumentation',
-        assetPath: 'assets/resources/surgical instrumentation.jpeg',
-        onTap: _openTopics(
-            'Surgical instrumentation', kSurgicalInstrumentationTopics),
-      ),
-      _ResourceCategory(
-        title: 'Instrumentation in medicine & pediatrics',
-        assetPath: 'assets/resources/clinical instrumentation.jpeg',
-        onTap: _openTopics('Instrumentation in medicine & pediatrics',
-            kMedicalInstrumentationTopics),
-      ),
-      _ResourceCategory(
         title: 'Medical examination OSCE',
         assetPath: 'assets/resources/osce.jpeg',
         onTap: _openTopics('Medical examination OSCE', kOsceTopics),
@@ -648,9 +636,21 @@ class _ResourcesTabState extends State<_ResourcesTab> {
             _openTopics('Obstetrics & gynaecology OSCE', kObstetricsOsceTopics),
       ),
       _ResourceCategory(
+        title: 'Instrumentation in medicine & pediatrics',
+        assetPath: 'assets/resources/clinical instrumentation.jpeg',
+        onTap: _openTopics('Instrumentation in medicine & pediatrics',
+            kMedicalInstrumentationTopics),
+      ),
+      _ResourceCategory(
         title: 'Pediatrics OSCE',
         assetPath: 'assets/resources/pediatrics_osce.jpg',
         onTap: _openTopics('Pediatrics OSCE', kPediatricsOsceTopics),
+      ),
+      _ResourceCategory(
+        title: 'Surgical instrumentation',
+        assetPath: 'assets/resources/surgical instrumentation.jpeg',
+        onTap: _openTopics(
+            'Surgical instrumentation', kSurgicalInstrumentationTopics),
       ),
       _ResourceCategory(
         title: 'OSCE quick reference',
