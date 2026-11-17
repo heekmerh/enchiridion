@@ -29,6 +29,8 @@ from docx.text.paragraph import Paragraph
 from docx.text.run import Run
 from PIL import Image, UnidentifiedImageError
 
+from normalize_sounds import normalize
+
 from generate_resource_content import (
     APP_DIR,
     RESOURCE_ASSET_DIR,
@@ -548,6 +550,7 @@ def build_sounds(manifest: dict, source_dir: Path) -> dict[str, dict]:
                 continue
             name = f"{slug}_{number}.mp3"
             shutil.copyfile(source, SOUND_DIR / name)
+            normalize(SOUND_DIR / name)
             tracks.append(f"assets/audio/sounds/{name}")
         sounds[norm(sound["title"])] = {"type": "audio", "title": sound["title"], "tracks": tracks}
     return sounds
