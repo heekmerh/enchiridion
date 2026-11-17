@@ -12,6 +12,7 @@ import '../../services/storage_service.dart';
 import '../../theme/app_colors.dart';
 import '../../utils/bottom_inset.dart';
 import 'algorithm_block.dart';
+import 'audio_block.dart';
 import 'checklist_block.dart';
 import 'clinical_pearls_block.dart';
 import 'key_value_block.dart';
@@ -330,6 +331,8 @@ class _ChapterView extends StatelessWidget {
     } else if (block is AgeReferenceBlock) {
       return _AgeReferenceWidget(
           block: block, fontSize: fontSize, lineHeight: lineHeight);
+    } else if (block is AudioBlock) {
+      return AudioBlockWidget(block: block, fontSize: fontSize);
     }
     return const SizedBox.shrink();
   }

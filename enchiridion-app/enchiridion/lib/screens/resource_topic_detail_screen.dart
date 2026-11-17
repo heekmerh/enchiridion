@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/chapter.dart';
 import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
+import '../services/sound_player.dart';
 import 'pinned_notes_screen.dart';
 import '../widgets/common/subtopic_tabs.dart';
 
@@ -28,6 +29,12 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
   void initState() {
     super.initState();
     _load();
+  }
+
+  @override
+  void dispose() {
+    SoundPlayer.instance.stop();
+    super.dispose();
   }
 
   Future<void> _load() async {
