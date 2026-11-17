@@ -74,6 +74,13 @@ jobs:
             mv "app-$abi-release.apk" "enchiridion-${{ github.run_number }}-$abi.apk"
           done
 
+      - name: Show the signing certificate
+        run: |
+          apksigner=$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)apksigner
+          "$apksigner" verify --print-certs \
+            "build/app/outputs/flutter-apk/enchiridion-${{ github.run_number }}-arm64-v8a.apk" \
+            | grep -E "certificate DN|SHA-256 digest"
+
       # Each APK is uploaded on its own and unzipped, so it downloads as a
       # plain .apk file. With archive false the file name is the artifact name.
       - name: Upload arm64-v8a APK (most phones)
