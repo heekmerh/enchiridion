@@ -1,0 +1,986 @@
+{
+  "chapter_metadata": {
+    "chapter_id": "glucometer",
+    "chapter_title": "Glucometer",
+    "chapter_icon": null,
+    "description": null,
+    "position_in_book": 1,
+    "tags": [
+      "Glucometer"
+    ],
+    "chapter_color": null
+  },
+  "sections": [
+    {
+      "section_id": "glucometer_section_1",
+      "section_title": "Glucometer",
+      "section_order": 1,
+      "subsections": [
+        {
+          "subsection_id": "glucometer_subsection_1",
+          "subsection_title": "Overview",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_1",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_01.webp",
+                  "caption": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_2",
+          "subsection_title": "Identification and definition",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_2",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A glucometer is a portable device used to measure blood glucose concentration, usually from a small sample of capillary blood obtained by finger prick."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "It is used in the screening and monitoring of diabetes mellitus, the detection of hypoglycaemia, and the assessment of patients with suspected glucose disturbances."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Typical OSCE instruction: “Identify the instrument, list its uses, demonstrate capillary blood glucose measurement, interpret the result, and discuss precautions and complications.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_3",
+          "subsection_title": "Types of glucose-measuring devices",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_3",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_02.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "A. Handheld glucometer"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Uses a disposable test strip and a small blood sample."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Uses: Bedside glucose measurement, diabetes monitoring and assessment of suspected hypoglycaemia."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "B. Hospital point-of-care glucose meter"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A clinical device used by trained staff, sometimes with patient identification, quality-control and electronic documentation features."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Uses: Emergency departments, wards, operating theatres and critical care."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "C. Continuous glucose monitoring (CGM) system"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Uses a sensor inserted under the skin to estimate glucose in interstitial fluid."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important distinction: A CGM is not a conventional finger-prick glucometer. It provides trends and repeated readings, but its measurements can differ from blood glucose, particularly during rapid changes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_4",
+          "subsection_title": "Parts and functions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_4",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Component",
+                    "Function"
+                  ],
+                  "rows": [
+                    [
+                      "Meter",
+                      "Reads and displays the glucose result."
+                    ],
+                    [
+                      "Test strip",
+                      "Contains the chemistry needed to detect glucose."
+                    ],
+                    [
+                      "Lancet",
+                      "Makes a small puncture to obtain capillary blood."
+                    ],
+                    [
+                      "Lancing device",
+                      "Holds and activates the lancet, where used."
+                    ],
+                    [
+                      "Display",
+                      "Shows glucose concentration and sometimes time, date or trend information."
+                    ],
+                    [
+                      "Battery or power source",
+                      "Powers the meter."
+                    ],
+                    [
+                      "Control solution, where applicable",
+                      "Checks meter and strip performance according to manufacturer instructions."
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE distinction: The lancet punctures the skin; the test strip collects the blood sample; the meter measures the glucose concentration."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_5",
+          "subsection_title": "Principle of operation",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_5",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Most modern glucometers use an enzymatic electrochemical method. The blood sample reacts with enzymes on the test strip, producing an electrical signal related to the glucose concentration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The meter processes this signal and displays a numerical result."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Some devices use different technologies, and not every strip uses the same enzyme system."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Glucose may be displayed in:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "mmol/L — commonly used in Nigeria and many other countries."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "mg/dL — commonly used in the United States and some other settings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Conversion:"
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "\\[ \\text{mg/dL} \\approx \\text{mmol/L}\\times18 \\]"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For example, 5.0 mmol/L is approximately 90 mg/dL."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_6",
+          "subsection_title": "Uses and indications",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_6",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Suspected hypoglycaemia, especially in patients with altered consciousness."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Monitoring patients with known diabetes mellitus."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assessment of suspected hyperglycaemia."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Monitoring glucose during insulin treatment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assessment of acutely ill patients when glucose abnormalities may affect management."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Monitoring glucose in selected neonatal and pediatric settings using an appropriate device and protocol."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Monitoring patients receiving treatment that may cause hypoglycaemia."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Perioperative and critical-care glucose monitoring."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emergency point: In an unconscious patient, check glucose promptly as part of the initial assessment, but do not delay resuscitation or treatment of immediately life-threatening problems."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_7",
+          "subsection_title": "Advantages",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_7",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Rapid bedside results."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Requires only a small blood sample."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Portable and relatively easy to operate."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Useful for detecting potentially dangerous hypoglycaemia."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enables repeated monitoring during treatment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Supports insulin adjustment and diabetes self-management."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Useful in emergency, ward, outpatient, pediatric and selected neonatal settings."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_8",
+          "subsection_title": "Disadvantages and limitations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_8",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Requires a blood sample and skin puncture."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Results can be affected by poor technique, contaminated fingers and damaged or expired strips."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Accuracy may be reduced at very low or very high glucose concentrations."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Poor peripheral perfusion, shock, dehydration and certain haematocrit levels can affect readings, depending on the device."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Some medications or interfering substances can affect specific meters."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A capillary result may differ from a laboratory plasma glucose result."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Requires compatible strips, batteries or other power sources."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Repeated finger pricks may cause pain, bruising or callus formation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: A glucometer is useful for rapid assessment, but laboratory testing may be required to confirm a diagnosis of diabetes. In an emergency, treatment of suspected severe hypoglycaemia should not be delayed while awaiting laboratory confirmation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_9",
+          "subsection_title": "How to measure capillary blood glucose: OSCE demonstration",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_9",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/glucometer_06.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_10",
+              "group_title": "Practical checklist",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "0 of 14 steps completed",
+                    "Reset"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1. Perform hand hygiene, introduce yourself, confirm patient identity, explain the procedure and obtain consent."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Check the meter, compatible test strips, expiry dates and any required quality-control status."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. Confirm the units displayed by the meter: mmol/L or mg/dL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Put on appropriate gloves and prepare a single-use safety lancet."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. Ask the patient to wash their hands with soap and water and dry them thoroughly, where feasible."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. Insert the test strip according to the manufacturer's instructions and ensure the meter is ready."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. Choose the side of a fingertip, avoiding damaged, infected or previously punctured areas where possible."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Use the single-use lancet to puncture the skin safely."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. If needed, gently encourage a blood drop without excessive squeezing."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. Apply the blood to the designated area of the strip according to the device instructions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "11. Wait for the meter to display the result and assess whether it is clinically plausible."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "12. Record the result, units, time, relevant symptoms and relation to meals or treatment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "13. Dispose of the lancet immediately into an approved sharps container and discard the strip appropriately."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "14. Remove gloves, perform hand hygiene and act on abnormal results according to the clinical situation."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_11",
+              "group_title": "Why use the side of the fingertip?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The sides of the fingertip are generally less painful than the centre while providing a suitable capillary blood sample."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For routine adult testing, the middle or ring finger is often convenient. In infants and young children, use only an age-appropriate approved sampling method and device."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_12",
+              "group_title": "Why must the hands be clean and dry?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Food residue, particularly sugar-containing substances, can falsely elevate the result. Excess water can dilute the sample, while alcohol or other cleaning agents that have not dried properly may interfere with measurement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Best practice: Soap and water followed by thorough drying is preferred when possible."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_10",
+          "subsection_title": "Interpretation of blood glucose results",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_13",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "These are general reference points for non-pregnant adults, not universal treatment targets."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Blood glucose",
+                    "General interpretation"
+                  ],
+                  "rows": [
+                    [
+                      "Below 3.0 mmol/L",
+                      "Clinically significant hypoglycaemia"
+                    ],
+                    [
+                      "Below 3.9 mmol/L",
+                      "Hypoglycaemia alert threshold in many diabetes protocols"
+                    ],
+                    [
+                      "3.9–5.5 mmol/L fasting",
+                      "Commonly within the normal fasting range"
+                    ],
+                    [
+                      "5.6–6.9 mmol/L fasting",
+                      "Impaired fasting glucose under ADA criteria"
+                    ],
+                    [
+                      "7.0 mmol/L or above fasting",
+                      "Diabetes-range result requiring appropriate diagnostic confirmation in most circumstances"
+                    ],
+                    [
+                      "11.1 mmol/L or above at random",
+                      "Diabetes-range when accompanied by classic symptoms or hyperglycaemic crisis; otherwise further confirmation is generally needed"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For diagnosis, fasting plasma glucose and laboratory-based criteria should be used according to the applicable guideline. A bedside capillary reading alone should not ordinarily be used to establish a new diagnosis of diabetes."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_14",
+              "group_title": "Important OSCE distinction: Hypoglycaemia",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Hypoglycaemia may cause:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sweating and tremor."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Palpitations and hunger."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Confusion or abnormal behaviour."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Seizures or loss of consciousness in severe cases."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If a conscious patient can swallow safely and has hypoglycaemia, give rapid-acting oral glucose according to the local protocol and recheck the glucose after approximately 10–15 minutes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If the patient is unconscious, having seizures, or unable to swallow safely, do not give anything orally. Activate emergency care and administer appropriate glucose treatment according to the local protocol."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_15",
+              "group_title": "Hyperglycaemia",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "High glucose may be associated with:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Polyuria and polydipsia."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dehydration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Weight loss."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Vomiting and abdominal pain."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Deep, laboured breathing and altered consciousness in diabetic ketoacidosis (DKA)."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A patient with suspected DKA or hyperosmolar hyperglycaemic state requires urgent clinical assessment, including appropriate laboratory investigations. A glucometer alone cannot diagnose or exclude these emergencies."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_11",
+          "subsection_title": "Contraindications and precautions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_16",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "There are no major absolute contraindications to routine capillary glucose testing, but appropriate precautions are essential."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Precautions:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use a new, single-use lancet for every patient and every test."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Never share finger-pricking devices between patients."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not use expired, damaged or improperly stored strips."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Avoid sampling sites with poor perfusion, infection or significant injury."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Follow the meter manufacturer's requirements for haematocrit range and interfering substances."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use validated equipment and appropriate sampling protocols for neonates."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Confirm unexpected results when clinically appropriate, but do not delay emergency treatment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Infection control: A shared meter must be cleaned and disinfected according to its manufacturer's instructions and the healthcare facility's policy."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_17",
+              "group_title": "Complications",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Pain at the puncture site."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Minor bleeding or bruising."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Local infection if aseptic precautions are inadequate."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sharps injury to the operator."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mismanagement due to a falsely low or high result."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_12",
+          "subsection_title": "Pediatric and neonatal considerations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_18",
+              "group_title": "Children",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Explain the procedure in age-appropriate language."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use an appropriate safety lancet and avoid repeated punctures at the same site."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Select a suitable finger and avoid squeezing excessively."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check the glucose promptly in a child with altered consciousness, seizures or suspected metabolic illness."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Interpret results in the context of symptoms, recent food intake, medication and clinical status."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_19",
+              "group_title": "Neonates",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Neonates are vulnerable to hypoglycaemia, particularly those who are premature, small or large for gestational age, born to mothers with diabetes, or clinically unwell."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sampling may involve an approved heel-prick technique rather than a finger prick."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use neonatal-approved equipment and local protocols."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bedside meters may be less accurate at very low glucose concentrations and in neonatal samples with particular haematocrit levels."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Confirm low or unexpected neonatal readings using an appropriate laboratory method when indicated, without delaying treatment in a symptomatic or severely hypoglycaemic infant."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "High-yield point: Neonatal glucose thresholds and treatment decisions depend on the infant's age, symptoms, risk factors and applicable neonatal guideline. Adult reference ranges should not be applied indiscriminately."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_13",
+          "subsection_title": "Mnemonics and memory tips",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_20",
+              "group_title": "For accurate testing: CLEAN",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "C — Check the meter and strip."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "L — Let the hands be clean and dry."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "E — Ensure a suitable sampling site."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A — Apply blood correctly."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "N — Note the result and units."
+                }
+              ]
+            },
+            {
+              "group_id": "glucometer_group_21",
+              "group_title": "For hypoglycaemia symptoms: SHAC",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "S — Sweating."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "H — Hunger."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A — Altered behaviour or awareness."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C — Confusion, seizures or coma in severe cases."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_14",
+          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_22",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Q1. What is the function of a glucometer?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "It measures blood glucose concentration, usually using a small capillary blood sample."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q2. Why should the patient's hands be washed and dried?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "To remove contaminants that may distort the result and to avoid dilution of the blood sample."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q3. What glucose level is commonly used as the hypoglycaemia alert threshold?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Below 3.9 mmol/L in many diabetes protocols. Below 3.0 mmol/L is clinically significant hypoglycaemia."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q4. Can a glucometer diagnose diabetes definitively?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A bedside meter is useful for screening and monitoring, but laboratory-based diagnostic criteria are generally required to establish a new diagnosis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q5. Why should lancets never be reused between patients?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reuse can transmit blood-borne infections and cause sharps injuries."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q6. What is your immediate action if an unconscious patient has a glucose of 2.1 mmol/L?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Activate emergency assistance, assess and support airway, breathing and circulation, and give appropriate emergency glucose treatment according to the local protocol. Do not administer oral glucose to an unconscious patient."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q7. Why might a glucometer be unreliable in a neonate?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Accuracy can be affected by low glucose concentrations, neonatal haematocrit and poor peripheral perfusion, depending on the device."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "glucometer_subsection_15",
+          "subsection_title": "Common mistakes that lose OSCE marks",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "glucometer_group_23",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Failing to check the units."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Using expired or incompatible test strips."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sampling a finger contaminated with food or sugar."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Applying insufficient blood or using the strip incorrectly."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Excessively squeezing the finger."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reusing lancets."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Failing to document the result and relevant symptoms."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Treating a critically unwell patient as stable because a glucose reading appears normal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Giving oral glucose to a patient who cannot swallow safely."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Delaying treatment of severe hypoglycaemia while awaiting laboratory confirmation."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

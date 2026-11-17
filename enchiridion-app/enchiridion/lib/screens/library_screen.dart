@@ -13,9 +13,10 @@ import '../screens/feedback_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/calculator_list_screen.dart';
-import '../screens/exam_modules_screen.dart';import '../screens/question_list_screen.dart';
+import '../screens/exam_modules_screen.dart';
+import '../screens/question_list_screen.dart';
 import '../screens/resource_topic_list_screen.dart';
-import '../screens/osce_screen.dart';
+import '../screens/quick_reference_screen.dart';
 import '../screens/pinned_notes_screen.dart';
 import '../models/resource_topic.dart';
 import '../widgets/common/announcement_banner.dart';
@@ -117,8 +118,7 @@ class _LibraryScreenState extends State<LibraryScreen>
 
   void _showBookOptions(CatalogBook book) {
     final storage = context.read<StorageService>();
-    final canReview =
-        hasReviewableQuestions(storage.getAnswers(book.id));
+    final canReview = hasReviewableQuestions(storage.getAnswers(book.id));
 
     showModalBottomSheet(
       context: context,
@@ -208,14 +208,13 @@ class _LibraryScreenState extends State<LibraryScreen>
                 ListTile(
                   leading: const Icon(Icons.feedback_outlined),
                   title: const Text('Send feedback'),
-                  subtitle: const Text(
-                      'Report a problem or request something new'),
+                  subtitle:
+                      const Text('Report a problem or request something new'),
                   contentPadding: EdgeInsets.zero,
                   onTap: () {
                     Navigator.pop(context);
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (_) => const FeedbackScreen()),
+                      MaterialPageRoute(builder: (_) => const FeedbackScreen()),
                     );
                   },
                 ),
@@ -248,8 +247,7 @@ class _LibraryScreenState extends State<LibraryScreen>
                   onTap: () {
                     Navigator.pop(context);
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (_) => const AboutScreen()),
+                      MaterialPageRoute(builder: (_) => const AboutScreen()),
                     );
                   },
                 ),
@@ -579,6 +577,17 @@ class _BookPage extends StatelessWidget {
 
 // Resources tab
 
+void Function(BuildContext) _openTopics(
+    String title, List<ResourceTopic> topics) {
+  return (context) => Navigator.of(context).push(MaterialPageRoute(
+        builder: (_) => ResourceTopicListScreen(
+          title: title,
+          topics: topics,
+          dense: true,
+        ),
+      ));
+}
+
 class _ResourcesTab extends StatefulWidget {
   const _ResourcesTab();
 
@@ -616,33 +625,50 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         )),
       ),
       _ResourceCategory(
-        title: 'Surgical Instrumentation',
+        title: 'Surgical instrumentation',
         assetPath: 'assets/resources/surgical instrumentation.jpeg',
-        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => const ResourceTopicListScreen(
-            title: 'Surgical Instrumentation',
-            topics: kSurgicalInstrumentationTopics,
-            dense: true,
-          ),
-        )),
+        onTap: _openTopics(
+            'Surgical instrumentation', kSurgicalInstrumentationTopics),
       ),
       _ResourceCategory(
-        title: 'Medical Instrumentation',
+        title: 'Instrumentation in medicine & pediatrics',
         assetPath: 'assets/resources/clinical instrumentation.jpeg',
+        onTap: _openTopics('Instrumentation in medicine & pediatrics',
+            kMedicalInstrumentationTopics),
+      ),
+      _ResourceCategory(
+        title: 'Medical examination OSCE',
+        assetPath: 'assets/resources/osce.jpeg',
+        onTap: _openTopics('Medical examination OSCE', kOsceTopics),
+      ),
+      _ResourceCategory(
+        title: 'Obstetrics & gynaecology OSCE',
+        assetPath: 'assets/resources/og_osce.jpg',
+        onTap:
+            _openTopics('Obstetrics & gynaecology OSCE', kObstetricsOsceTopics),
+      ),
+      _ResourceCategory(
+        title: 'Pediatrics OSCE',
+        assetPath: 'assets/resources/pediatrics_osce.jpg',
+        onTap: _openTopics('Pediatrics OSCE', kPediatricsOsceTopics),
+      ),
+      _ResourceCategory(
+        title: 'OSCE quick reference',
+        assetPath: 'assets/resources/quick_reference.jpg',
         onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => ResourceTopicListScreen(
-            title: 'Medical Instrumentation',
-            topics: kMedicalInstrumentationTopicsInDisplayOrder,
-            dense: true,
-          ),
+          builder: (_) => const QuickReferenceScreen(),
         )),
       ),
       _ResourceCategory(
-        title: 'OSCE',
-        assetPath: 'assets/resources/osce.jpeg',
-        onTap: (context) => Navigator.of(context).push(MaterialPageRoute(
-          builder: (_) => const OsceScreen(),
-        )),
+        title: 'Prescriptions & medication guide',
+        assetPath: 'assets/resources/prescriptions.jpg',
+        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content:
+                Text('Prescriptions & medication guide — $kComingSoonLabel'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
       ),
     ];
   }
@@ -725,8 +751,8 @@ class _ProfileAvatarButtonState extends State<_ProfileAvatarButton> {
   }
 
   Future<void> _openProfile() async {
-    await Navigator.push(context,
-        MaterialPageRoute(builder: (_) => const ProfileScreen()));
+    await Navigator.push(
+        context, MaterialPageRoute(builder: (_) => const ProfileScreen()));
     if (!mounted) return;
     final userId = context.read<AuthProvider>().user?.id;
     setState(() {
@@ -759,7 +785,8 @@ class _ProfileAvatarButtonState extends State<_ProfileAvatarButton> {
   }
 }
 
-class _ResourceCard extends StatelessWidget {  final _ResourceCategory category;
+class _ResourceCard extends StatelessWidget {
+  final _ResourceCategory category;
   final VoidCallback onTap;
 
   const _ResourceCard({required this.category, required this.onTap});

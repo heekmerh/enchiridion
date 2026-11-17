@@ -5,6 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../models/bookmark.dart';
 import '../models/clip_note.dart';
+import '../models/notebook_entry.dart';
 import '../models/pinned_note.dart';
 import '../models/question.dart';
 import 'auth_service.dart';
@@ -49,6 +50,8 @@ class UserDataSyncService {
         return _pushSettings();
       case UserDataEntity.bookHistory:
         return _pushBookHistory();
+      case UserDataEntity.notebookEntries:
+        return _pushNotebookEntries();
     }
   }
 
@@ -65,6 +68,7 @@ class UserDataSyncService {
       'answers',
       'settings',
       'reading history',
+      'notebook',
     ];
     const entities = UserDataEntity.values;
     for (var i = 0; i < entities.length; i++) {
@@ -79,7 +83,7 @@ class UserDataSyncService {
   /// everything before the user starts studying. Reports per-domain
   /// progress through [onProgress] when given.
   Future<void> pullAndMergeAll({SyncProgressCallback? onProgress}) async {
-    const totalStages = 9;
+    const totalStages = 10;
     var done = 0;
     void report(String label) {
       done += 1;
@@ -104,6 +108,8 @@ class UserDataSyncService {
       report('settings');
       await _pullBookHistory();
       report('reading history');
+      await _pullNotebookEntries();
+      report('notebook');
       await _pullDeletions();
       await _storage.purgeOldDeletions();
       report('tidying up');
@@ -346,6 +352,62 @@ class UserDataSyncService {
     }
   }
 
+  Future<void> _pushNotebookEntries() async {
+    try {
+      final user = AuthService.currentUser;
+      if (user == null) return;
+      final client = Supabase.instance.client;
+      final entries = _storage.getNotebookEntries();
+      if (entries.isNotEmpty) {
+        await client.from('notebook_entries').upsert([
+          for (final entry in entries)
+            {
+              'user_id': user.id,
+              'id': entry.id,
+              'kind': entry.kind.name,
+              'content': entry.content,
+              'position': entry.position,
+              'created_at': entry.createdAt.toIso8601String(),
+              'updated_at': entry.updatedAt.toIso8601String(),
+            },
+        ]);
+      }
+      final uploaded = _storage.getUploadedNotebookImages();
+      for (final entry in entries) {
+        if (entry.kind != NotebookEntryKind.image ||
+            uploaded.contains(entry.id)) {
+          continue;
+        }
+        final bytes = await _storage.notebookImages.read(entry.id);
+        if (bytes == null) continue;
+        await client.storage.from(_notebookBucket).uploadBinary(
+              _notebookImagePath(user.id, entry.id),
+              bytes,
+              fileOptions:
+                  const FileOptions(upsert: true, contentType: 'image/jpeg'),
+            );
+        await _storage.markNotebookImageUploaded(entry.id);
+      }
+      await _pushDeletions(UserDataEntity.notebookEntries, (deletion) async {
+        await client
+            .from('notebook_entries')
+            .delete()
+            .eq('user_id', user.id)
+            .eq('id', deletion.id);
+        await client.storage
+            .from(_notebookBucket)
+            .remove([_notebookImagePath(user.id, deletion.id)]);
+      });
+    } catch (e) {
+      developer.log('Could not push notebook: $e', name: _logName);
+    }
+  }
+
+  static const _notebookBucket = 'notebook-images';
+
+  static String _notebookImagePath(String userId, String id) =>
+      '$userId/$id.jpg';
+
   /// Uploads pending tombstones for [entity], deletes the matching remote
   /// rows, and clears the pushed tombstones locally.
   Future<void> _pushDeletions(
@@ -379,6 +441,49 @@ class UserDataSyncService {
   }
 
   // ── Pull & merge ───────────────────────────────────────────────────────────
+
+  Future<void> _pullNotebookEntries() async {
+    final user = AuthService.currentUser;
+    if (user == null) return;
+    try {
+      final client = Supabase.instance.client;
+      final rows = await client
+          .from('notebook_entries')
+          .select()
+          .eq('user_id', user.id);
+      final remote = <NotebookEntry>[];
+      for (final row in rows as List) {
+        final map = row as Map<String, dynamic>;
+        remote.add(NotebookEntry(
+          id: map['id']?.toString() ?? '',
+          kind: NotebookEntry.kindFromName(map['kind']?.toString()),
+          content: map['content']?.toString() ?? '',
+          position: (map['position'] as num?)?.toDouble() ?? 0,
+          createdAt: DateTime.tryParse(map['created_at']?.toString() ?? '') ??
+              DateTime.fromMillisecondsSinceEpoch(0),
+          updatedAt: DateTime.tryParse(map['updated_at']?.toString() ?? '') ??
+              DateTime.fromMillisecondsSinceEpoch(0),
+        ));
+      }
+      await _storage.mergeNotebookEntries(remote);
+      for (final entry in _storage.getNotebookEntries()) {
+        if (entry.kind != NotebookEntryKind.image) continue;
+        if (await _storage.notebookImages.read(entry.id) != null) continue;
+        try {
+          final bytes = await client.storage
+              .from(_notebookBucket)
+              .download(_notebookImagePath(user.id, entry.id));
+          await _storage.notebookImages.write(entry.id, bytes);
+          await _storage.markNotebookImageUploaded(entry.id);
+        } catch (e) {
+          developer.log('Could not download notebook image: $e',
+              name: _logName);
+        }
+      }
+    } catch (e) {
+      developer.log('Could not pull notebook: $e', name: _logName);
+    }
+  }
 
   Future<void> _pullPinnedNotes() async {
     final user = AuthService.currentUser;

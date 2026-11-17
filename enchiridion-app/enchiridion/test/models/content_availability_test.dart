@@ -102,14 +102,14 @@ void main() {
   });
 
   group('isComingSoon', () {
-    test('ResourceTopic.isComingSoon is true for cardiovascular-system and '
-        'false for abdominal-examination', () {
-      final cardiovascular =
-          kOsceTopics.firstWhere((t) => t.id == 'cardiovascular-system');
+    test('ResourceTopic.isComingSoon is true for neurological-examination '
+        'and false for abdominal-examination', () {
+      final neurological =
+          kOsceTopics.firstWhere((t) => t.id == 'neurological-examination');
       final abdominal =
           kOsceTopics.firstWhere((t) => t.id == 'abdominal-examination');
 
-      expect(cardiovascular.isComingSoon, isTrue);
+      expect(neurological.isComingSoon, isTrue);
       expect(abdominal.isComingSoon, isFalse);
     });
 

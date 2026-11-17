@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:developer' as developer;
+import 'dart:typed_data';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/clip_note.dart';
+import '../models/notebook_entry.dart';
 import '../models/pinned_note.dart';
 import '../models/user_settings.dart';
 import '../models/bookmark.dart';
@@ -9,6 +11,7 @@ import '../models/question.dart';
 import '../models/question_review.dart';
 import '../models/serve_log.dart';
 import '../models/study_day_stats.dart';
+import 'notebook_image_store.dart';
 
 /// User-data domains mirrored to Supabase for cross-device continuity (see
 /// `UserDataSyncService`). Serve logs and last-read chapter are
@@ -23,6 +26,7 @@ enum UserDataEntity {
   answers,
   settings,
   bookHistory,
+  notebookEntries,
 }
 
 /// One free-text reading note with its location, for sync upload/merge.
@@ -98,8 +102,10 @@ class StorageService {
   static const _visitedKey = 'enchiridion_visited_chapters';
 
   final SharedPreferences _prefs;
+  final NotebookImageStore notebookImages;
 
-  StorageService(this._prefs);
+  StorageService(this._prefs, {NotebookImageStore? notebookImages})
+      : notebookImages = notebookImages ?? NotebookImageStore.platform(_prefs);
 
   /// Fired at the end of every user-data mutation so cross-device sync can
   /// push the change. Wired once in `main()`; null in tests, where mutations
@@ -280,6 +286,14 @@ class StorageService {
         clips.removeWhere((c) => c.id == parts[3]);
         if (clips.length == before) return false;
         await _saveClips(parts[0], parts[1], parts[2], clips);
+        return true;
+      case UserDataEntity.notebookEntries:
+        final entries = getNotebookEntries();
+        final before = entries.length;
+        entries.removeWhere((e) => e.id == deletion.id);
+        if (entries.length == before) return false;
+        await _saveNotebookEntries(entries);
+        await notebookImages.delete(deletion.id);
         return true;
       case UserDataEntity.answers:
       case UserDataEntity.settings:
@@ -865,6 +879,132 @@ class StorageService {
     }
     if (!changed) return false;
     await runQuietly(() => _savePinnedNotes(local.values.toList()));
+    return true;
+  }
+
+  // Notebook
+
+  static const _notebookKey = 'notebook_entries';
+  static const _notebookUploadedImagesKey = 'notebook_uploaded_images';
+
+  List<NotebookEntry> getNotebookEntries() {
+    try {
+      final raw = _prefs.getString(_notebookKey);
+      if (raw == null) return [];
+      return (jsonDecode(raw) as List<dynamic>)
+          .map((item) => NotebookEntry.fromJson(item as Map<String, dynamic>))
+          .toList()
+        ..sort((a, b) {
+          final byPosition = a.position.compareTo(b.position);
+          return byPosition != 0
+              ? byPosition
+              : a.createdAt.compareTo(b.createdAt);
+        });
+    } catch (_) {
+      return [];
+    }
+  }
+
+  Future<void> _saveNotebookEntries(List<NotebookEntry> entries) async {
+    await _prefs.setString(
+      _notebookKey,
+      jsonEncode(entries.map((e) => e.toJson()).toList()),
+    );
+  }
+
+  Future<NotebookEntry> _addNotebookEntry(
+      NotebookEntryKind kind, String content, String? id) async {
+    final entries = getNotebookEntries();
+    final now = DateTime.now().toUtc();
+    final entry = NotebookEntry(
+      id: id ?? now.microsecondsSinceEpoch.toString(),
+      kind: kind,
+      content: content,
+      position: entries.isEmpty ? 1 : entries.last.position + 1,
+      createdAt: now,
+      updatedAt: now,
+    );
+    entries.add(entry);
+    await _saveNotebookEntries(entries);
+    return entry;
+  }
+
+  Future<NotebookEntry> addNotebookText(String content) async {
+    final entry =
+        await _addNotebookEntry(NotebookEntryKind.text, content, null);
+    _notify(UserDataEntity.notebookEntries);
+    return entry;
+  }
+
+  Future<NotebookEntry> addNotebookImage(Uint8List bytes) async {
+    final id = DateTime.now().toUtc().microsecondsSinceEpoch.toString();
+    await notebookImages.write(id, bytes);
+    final entry = await _addNotebookEntry(NotebookEntryKind.image, '', id);
+    _notify(UserDataEntity.notebookEntries);
+    return entry;
+  }
+
+  Future<void> updateNotebookEntry(String id, String content) async {
+    final entries = getNotebookEntries()
+        .map((e) => e.id == id
+            ? e.copyWith(content: content, updatedAt: DateTime.now().toUtc())
+            : e)
+        .toList();
+    await _saveNotebookEntries(entries);
+    _notify(UserDataEntity.notebookEntries);
+  }
+
+  Future<void> moveNotebookEntry(String id, int newIndex) async {
+    final entries = getNotebookEntries();
+    final from = entries.indexWhere((e) => e.id == id);
+    if (from < 0) return;
+    final moving = entries.removeAt(from);
+    final to = newIndex.clamp(0, entries.length);
+    if (to == from) return;
+    final before = to > 0 ? entries[to - 1].position : null;
+    final after = to < entries.length ? entries[to].position : null;
+    final position = before == null
+        ? (after ?? 1) - 1
+        : after == null
+            ? before + 1
+            : (before + after) / 2;
+    entries.insert(
+        to,
+        moving.copyWith(
+            position: position, updatedAt: DateTime.now().toUtc()));
+    await _saveNotebookEntries(entries);
+    _notify(UserDataEntity.notebookEntries);
+  }
+
+  Future<void> deleteNotebookEntry(String id) async {
+    final entries = getNotebookEntries();
+    entries.removeWhere((e) => e.id == id);
+    await _saveNotebookEntries(entries);
+    await notebookImages.delete(id);
+    await recordDeletion(UserDataEntity.notebookEntries, id);
+    _notify(UserDataEntity.notebookEntries);
+  }
+
+  Set<String> getUploadedNotebookImages() =>
+      (_prefs.getStringList(_notebookUploadedImagesKey) ?? []).toSet();
+
+  Future<void> markNotebookImageUploaded(String id) async {
+    final ids = getUploadedNotebookImages()..add(id);
+    await _prefs.setStringList(_notebookUploadedImagesKey, ids.toList());
+  }
+
+  Future<bool> mergeNotebookEntries(List<NotebookEntry> remote) async {
+    final local = {for (final e in getNotebookEntries()) e.id: e};
+    var changed = false;
+    for (final entry in remote) {
+      final existing = local[entry.id];
+      if (existing == null || entry.updatedAt.isAfter(existing.updatedAt)) {
+        local[entry.id] = entry;
+        changed = true;
+      }
+    }
+    if (!changed) return false;
+    await runQuietly(() => _saveNotebookEntries(local.values.toList()));
     return true;
   }
 

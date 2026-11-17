@@ -9,6 +9,7 @@ enum BlockType {
   keyValue,
   image,
   paragraph,
+  audio,
   unknown
 }
 
@@ -51,6 +52,8 @@ abstract class ContentBlock {
         return ImageBlock.fromJson(json);
       case 'paragraph':
         return ParagraphBlock.fromJson(json);
+      case 'audio':
+        return AudioBlock.fromJson(json);
       default:
         return ParagraphBlock.fromJson(json);
     }
@@ -323,5 +326,29 @@ class ImageBlock extends ContentBlock {
         'caption': caption,
         'width': width,
         'height': height,
+      };
+}
+
+class AudioBlock extends ContentBlock {
+  final String title;
+  final List<String> tracks;
+
+  AudioBlock({required this.title, required this.tracks})
+      : super(type: BlockType.audio);
+
+  factory AudioBlock.fromJson(Map<String, dynamic> json) {
+    return AudioBlock(
+      title: json['title']?.toString() ?? '',
+      tracks: (json['tracks'] as List<dynamic>? ?? const [])
+          .map((e) => e.toString())
+          .toList(),
+    );
+  }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'type': 'audio',
+        'title': title,
+        'tracks': tracks,
       };
 }

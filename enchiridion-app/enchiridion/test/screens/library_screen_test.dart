@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:enchiridion/models/resource_topic.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -186,9 +187,9 @@ void main() {
       expect(find.text('Calculators'), findsOneWidget);
     });
 
-    // (c) Indicator dots present: exactly 5 AnimatedContainers render
+    // (c) Indicator dots present: one AnimatedContainer per Resources card
     //     after switching to the Resources tab.
-    testWidgets('Resources tab renders exactly 5 indicator dots',
+    testWidgets('Resources tab renders exactly 9 indicator dots',
         (tester) async {
       await tester.pumpWidget(_buildSubject(_makeStorage()));
       await tester.pumpAndSettle();
@@ -204,8 +205,8 @@ void main() {
           tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
       expect(
         animatedContainers.length,
-        equals(5),
-        reason: 'The Resources tab right-side indicator must show 5 dots',
+        equals(9),
+        reason: 'The Resources tab right-side indicator must show 9 dots',
       );
     });
 
@@ -234,10 +235,10 @@ void main() {
       // Second card title 'Exam Prep' should now be visible.
       expect(find.text('Exam Prep'), findsOneWidget);
 
-      // Dot count must remain 5.
+      // Dot count must remain 9.
       final dotsAfterSwipe =
           tester.widgetList<AnimatedContainer>(find.byType(AnimatedContainer));
-      expect(dotsAfterSwipe.length, equals(5));
+      expect(dotsAfterSwipe.length, equals(9));
     });
 
     // (e) Calculators routing: tap card → CalculatorListScreen appears.
@@ -259,9 +260,9 @@ void main() {
 
     // (f) Medical Instrumentation routing: tap card → ResourceTopicListScreen
     //     renders the dense (ListTile) presentation, not the hero-image card
-    //     presentation, with IV Cannula still leading.
+    //     presentation, with its first authored topic leading.
     testWidgets(
-        'tapping Medical Instrumentation card navigates to a dense ResourceTopicListScreen',
+        'tapping the Instrumentation in medicine & pediatrics card navigates to a dense ResourceTopicListScreen',
         (tester) async {
       await tester.pumpWidget(_buildSubject(_makeStorage()));
       await tester.pumpAndSettle();
@@ -274,12 +275,15 @@ void main() {
       // Bounded loop: fail with a clear reason if the card never appears,
       // rather than a confusing tap-on-nothing error further down.
       var attempts = 0;
-      while (find.text('Medical Instrumentation').evaluate().isEmpty) {
+      while (find
+          .text('Instrumentation in medicine & pediatrics')
+          .evaluate()
+          .isEmpty) {
         attempts++;
-        if (attempts > 6) {
+        if (attempts > 8) {
           fail(
-            'Medical Instrumentation card did not appear in the Resources '
-            'carousel after 6 swipes — carousel order may have changed.',
+            'Instrumentation card did not appear in the Resources '
+            'carousel after 8 swipes — carousel order may have changed.',
           );
         }
         await tester.fling(
@@ -291,7 +295,7 @@ void main() {
       }
 
       // Tap the card.
-      await tester.tap(find.text('Medical Instrumentation'));
+      await tester.tap(find.text('Instrumentation in medicine & pediatrics'));
       await tester.pumpAndSettle();
 
       expect(find.byType(ResourceTopicListScreen), findsOneWidget);
@@ -319,8 +323,8 @@ void main() {
         findsNothing,
       );
 
-      // Preserved-behavior assertion: IV Cannula still leads the list.
-      expect(find.text('IV Cannula'), findsWidgets);
+      expect(find.text(kMedicalInstrumentationTopics.first.title),
+          findsWidgets);
     });
   });
 
