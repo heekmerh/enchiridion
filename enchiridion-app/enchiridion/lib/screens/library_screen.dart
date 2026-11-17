@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/common/brand_division.dart';
 import '../models/book_catalog.dart';
 import '../providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
@@ -296,15 +295,9 @@ class _LibraryScreenState extends State<LibraryScreen>
                           width: 30, height: 30),
                       const SizedBox(width: 10),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Enchiridion',
-                                style: theme.textTheme.titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.bold)),
-                            const BrandDivision(),
-                          ],
-                        ),
+                        child: Text('Enchiridion',
+                            style: theme.textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ),
                       IconButton(
                         icon: const Icon(Icons.push_pin_outlined),
