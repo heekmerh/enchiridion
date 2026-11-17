@@ -43,7 +43,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -53,50 +53,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario A — Focused history"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario A — Focused history"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 62-year-old woman presents with vaginal bleeding three years after menopause. Take a focused history and discuss your differential diagnoses."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario B — Investigation interpretation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario B — Investigation interpretation"
                 },
                 {
                   "type": "paragraph",
                   "text": "Transvaginal ultrasound shows an endometrial thickness of 12 mm in a woman with postmenopausal bleeding. Interpret the finding and explain the next step."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario C — Counselling"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario C — Counselling"
                 },
                 {
                   "type": "paragraph",
                   "text": "An endometrial biopsy has confirmed endometrioid adenocarcinoma. Explain the diagnosis and the investigations required."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario D — Management"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario D — Management"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 58-year-old woman is diagnosed with endometrial cancer. Discuss staging and treatment options."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario E — Viva"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario E — Viva"
                 },
                 {
                   "type": "paragraph",
@@ -108,7 +98,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_3",
-          "subsection_title": "Definition and classification",
+          "subsection_title": "2. Definition and classification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -139,10 +129,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Endometrioid carcinoma"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Endometrioid carcinoma"
                 },
                 {
                   "type": "paragraph",
@@ -158,10 +146,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Serous carcinoma"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Serous carcinoma"
                 },
                 {
                   "type": "paragraph",
@@ -173,10 +159,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Clear cell carcinoma and other uncommon types"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Clear cell carcinoma and other uncommon types"
                 },
                 {
                   "type": "paragraph",
@@ -195,16 +179,18 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Endometrial cancers have historically been divided into two broad groups:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Type I: typically endometrioid, often oestrogen-associated and frequently lower grade."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Type II: traditionally includes serous and clear cell carcinomas, which are often more aggressive."
+                  "type": "list",
+                  "title": "Endometrial cancers have historically been divided into two broad groups:",
+                  "items": [
+                    {
+                      "text": "Type I: typically endometrioid, often oestrogen-associated and frequently lower grade.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Type II: traditionally includes serous and clear cell carcinomas, which are often more aggressive.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -216,7 +202,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_4",
-          "subsection_title": "Risk factors and pathophysiology",
+          "subsection_title": "3. Risk factors and pathophysiology",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -226,40 +212,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Obesity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chronic anovulation, including polycystic ovary syndrome (PCOS)."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prolonged exposure to oestrogen without adequate progesterone opposition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nulliparity and infertility in some clinical contexts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Early menarche or late menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diabetes mellitus and metabolic syndrome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tamoxifen exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lynch syndrome and other relevant inherited cancer predispositions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increasing age."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Obesity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic anovulation, including polycystic ovary syndrome (PCOS).",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged exposure to oestrogen without adequate progesterone opposition.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nulliparity and infertility in some clinical contexts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Early menarche or late menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes mellitus and metabolic syndrome.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tamoxifen exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lynch syndrome and other relevant inherited cancer predispositions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increasing age.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -274,13 +265,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Prolonged oestrogen stimulation without adequate progesterone opposition",
-                    "Endometrial proliferation and possible hyperplasia",
-                    "Accumulation of cellular and molecular abnormalities",
-                    "Development of endometrioid carcinoma in a subset of patients"
-                  ]
+                  "type": "paragraph",
+                  "text": "Prolonged oestrogen stimulation without adequate progesterone opposition"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Endometrial proliferation and possible hyperplasia"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Accumulation of cellular and molecular abnormalities"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Development of endometrioid carcinoma in a subset of patients"
                 }
               ]
             },
@@ -316,7 +314,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_5",
-          "subsection_title": "Clinical presentation",
+          "subsection_title": "4. Clinical presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -326,24 +324,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Postmenopausal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intermenstrual bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Heavy or irregular menstrual bleeding in perimenopausal women."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent abnormal uterine bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Watery or blood-stained vaginal discharge."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Postmenopausal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intermenstrual bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heavy or irregular menstrual bleeding in perimenopausal women.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent abnormal uterine bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Watery or blood-stained vaginal discharge.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -354,28 +357,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pelvic or abdominal pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abdominal distension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary or bowel symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptoms related to metastatic disease."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pelvic or abdominal pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal distension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary or bowel symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms related to metastatic disease.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -387,7 +395,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_6",
-          "subsection_title": "Focused history taking",
+          "subsection_title": "5. Focused history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -397,24 +405,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Introduce yourself and confirm identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the purpose of the consultation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure privacy and use sensitive, non-judgmental language."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Introduce yourself and confirm identity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Explain the purpose of the consultation.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Obtain consent.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure privacy and use sensitive, non-judgmental language.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -422,7 +440,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I understand you have experienced vaginal bleeding after menopause. I would like to ask some questions about the bleeding, your previous menstrual history, medications and general health to determine the possible causes and appropriate investigations.\""
+                  "text": "\"I understand you have experienced vaginal bleeding after menopause. I would like to ask some questions about the bleeding, your previous menstrual history, medications and general health to determine the possible causes and appropriate investigations.\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -433,40 +452,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When did the bleeding begin?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How many episodes have occurred?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it spotting, moderate bleeding or heavy bleeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it associated with pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there vaginal discharge?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has it occurred after intercourse?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there clots?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has she used any medication or hormone therapy?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "When did the bleeding begin?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How many episodes have occurred?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it spotting, moderate bleeding or heavy bleeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it associated with pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there vaginal discharge?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has it occurred after intercourse?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are there clots?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has she used any medication or hormone therapy?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -477,32 +498,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Age at menarche and menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gravidity and parity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous infertility or chronic anovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "History of PCOS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous endometrial hyperplasia or polyps."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous abnormal uterine bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use of hormonal contraception or menopausal hormone therapy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Age at menarche and menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gravidity and parity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous infertility or chronic anovulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "History of PCOS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous endometrial hyperplasia or polyps.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous abnormal uterine bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use of hormonal contraception or menopausal hormone therapy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -513,28 +539,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obesity, diabetes and hypertension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tamoxifen use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lynch syndrome or a relevant family history of endometrial and colorectal cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous malignancies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current medications, particularly anticoagulants."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Obesity, diabetes and hypertension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tamoxifen use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lynch syndrome or a relevant family history of endometrial and colorectal cancer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous malignancies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current medications, particularly anticoagulants.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -549,28 +577,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Urgent assessment is indicated for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Heavy ongoing bleeding with haemodynamic compromise."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe pelvic pain or suspected sepsis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Significant anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A pelvic mass or findings concerning for advanced malignancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary obstruction or other evidence of advanced disease."
+                  "type": "list",
+                  "title": "Urgent assessment is indicated for:",
+                  "items": [
+                    {
+                      "text": "Heavy ongoing bleeding with haemodynamic compromise.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe pelvic pain or suspected sepsis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant anaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A pelvic mass or findings concerning for advanced malignancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary obstruction or other evidence of advanced disease.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -578,7 +608,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_7",
-          "subsection_title": "Physical examination",
+          "subsection_title": "6. Physical examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -588,32 +618,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "General appearance and performance status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pulse, blood pressure, temperature and respiratory rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pallor."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Body mass index and nutritional status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Peripheral lymph nodes if clinically indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs of systemic illness."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "General appearance and performance status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulse, blood pressure, temperature and respiratory rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Body mass index and nutritional status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral lymph nodes if clinically indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of systemic illness.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -624,28 +656,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abdominal distension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpable pelvic or abdominal masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ascites."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Organomegaly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Abdominal distension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpable pelvic or abdominal masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Organomegaly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -660,28 +694,30 @@
                   "text": "With consent and a chaperone, examine the external genitalia and perform speculum examination as appropriate."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal atrophy or trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervical lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood emerging from the cervical os."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal or cervical masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal discharge."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Vaginal atrophy or trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood emerging from the cervical os.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal or cervical masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal discharge.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -697,7 +733,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_8",
-          "subsection_title": "Investigations",
+          "subsection_title": "7. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -723,28 +759,30 @@
                   "text": "TVUS is a common initial investigation for postmenopausal bleeding in appropriate patients."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It assesses:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial thickness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial morphology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Focal lesions, including polyps."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine anatomy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Adnexal abnormalities."
+                  "type": "list",
+                  "title": "It assesses:",
+                  "items": [
+                    {
+                      "text": "Endometrial thickness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial morphology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal lesions, including polyps.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine anatomy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -779,24 +817,26 @@
                   "text": "It may be performed using an outpatient sampling device, depending on the patient and local practice."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It can identify:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Benign endometrium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial hyperplasia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial intraepithelial neoplasia (EIN)."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial carcinoma."
+                  "type": "list",
+                  "title": "It can identify:",
+                  "items": [
+                    {
+                      "text": "Benign endometrium.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial hyperplasia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial intraepithelial neoplasia (EIN).",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial carcinoma.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -815,24 +855,26 @@
                   "text": "Hysteroscopy allows direct visualisation of the uterine cavity and targeted biopsy of suspicious lesions."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It is particularly useful when:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A focal lesion is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Outpatient biopsy is inadequate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding persists despite reassuring initial results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Further assessment of the uterine cavity is required."
+                  "type": "list",
+                  "title": "It is particularly useful when:",
+                  "items": [
+                    {
+                      "text": "A focal lesion is suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Outpatient biopsy is inadequate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding persists despite reassuring initial results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Further assessment of the uterine cavity is required.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -843,24 +885,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Full blood count."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Renal and liver function where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic MRI for selected local staging questions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CT or PET-CT when indicated to assess nodal or distant disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Molecular and immunohistochemical testing of tumour tissue as appropriate."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Full blood count.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal and liver function where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic MRI for selected local staging questions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CT or PET-CT when indicated to assess nodal or distant disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Molecular and immunohistochemical testing of tumour tissue as appropriate.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -868,7 +915,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_9",
-          "subsection_title": "Histology and molecular classification",
+          "subsection_title": "8. Histology and molecular classification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -882,24 +929,26 @@
                   "text": "Once endometrial cancer is confirmed, the pathology report should establish the tumour type and grade, and the specialist team may request molecular testing."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Important molecular groups include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "POLE-mutated: often associated with a favourable prognosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mismatch repair-deficient (MMRd): may prompt evaluation for Lynch syndrome, depending on the findings and clinical context."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "p53-abnormal: commonly associated with more aggressive tumour biology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No specific molecular profile (NSMP): a group without the defining features of the other categories."
+                  "type": "list",
+                  "title": "Important molecular groups include:",
+                  "items": [
+                    {
+                      "text": "POLE-mutated: often associated with a favourable prognosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mismatch repair-deficient (MMRd): may prompt evaluation for Lynch syndrome, depending on the findings and clinical context.",
+                      "level": 0
+                    },
+                    {
+                      "text": "p53-abnormal: commonly associated with more aggressive tumour biology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No specific molecular profile (NSMP): a group without the defining features of the other categories.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -911,7 +960,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_10",
-          "subsection_title": "FIGO staging of endometrial cancer",
+          "subsection_title": "9. FIGO staging of endometrial cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -967,7 +1016,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_11",
-          "subsection_title": "Management of endometrial cancer",
+          "subsection_title": "10. Management of endometrial cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1005,24 +1054,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on risk, pathology and stage, additional treatment may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal brachytherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "External-beam radiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chemotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Combined approaches in selected high-risk disease."
+                  "type": "list",
+                  "title": "Depending on risk, pathology and stage, additional treatment may include:",
+                  "items": [
+                    {
+                      "text": "Vaginal brachytherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "External-beam radiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chemotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Combined approaches in selected high-risk disease.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1053,32 +1104,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Options may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery in selected cases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Systemic chemotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormonal treatment for selected hormone-sensitive tumours."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immunotherapy or targeted treatment when indicated by tumour characteristics and current guidance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palliative care and symptom control."
+                  "type": "list",
+                  "title": "Options may include:",
+                  "items": [
+                    {
+                      "text": "Surgery in selected cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Systemic chemotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal treatment for selected hormone-sensitive tumours.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immunotherapy or targeted treatment when indicated by tumour characteristics and current guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palliative care and symptom control.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1089,32 +1142,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Address:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anaemia and bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nutritional status and comorbidities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Psychological distress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fertility and sexual health."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Genetic counselling when an inherited cancer syndrome is suspected."
+                  "type": "list",
+                  "title": "Address:",
+                  "items": [
+                    {
+                      "text": "Anaemia and bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional status and comorbidities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psychological distress.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fertility and sexual health.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic counselling when an inherited cancer syndrome is suspected.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1122,7 +1177,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_12",
-          "subsection_title": "Counselling a patient with confirmed endometrial cancer",
+          "subsection_title": "11. Counselling a patient with confirmed endometrial cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1137,7 +1192,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The biopsy has shown cancer arising from the lining of the uterus. I appreciate that this may be difficult news to receive. The next step is to review the exact tumour type and grade and determine whether it has spread beyond the uterus."
+                  "text": "\"The biopsy has shown cancer arising from the lining of the uterus. I appreciate that this may be difficult news to receive. The next step is to review the exact tumour type and grade and determine whether it has spread beyond the uterus.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1153,7 +1209,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_13",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "12. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1248,7 +1304,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_14",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "13. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1258,44 +1314,59 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Dismissing postmenopausal bleeding as normal ageing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Attributing bleeding solely to anticoagulants or hormone therapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using the 4 mm ultrasound threshold inappropriately in premenopausal women."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming a thin endometrium excludes cancer despite persistent bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting endometrial sampling when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing endometrial cancer with cervical cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving definitive treatment recommendations without histology and staging."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring Lynch syndrome and relevant family history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting fertility wishes and the possibility of selected fertility-sparing management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to explain the diagnosis compassionately."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Dismissing postmenopausal bleeding as normal ageing.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Attributing bleeding solely to anticoagulants or hormone therapy.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Using the 4 mm ultrasound threshold inappropriately in premenopausal women.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assuming a thin endometrium excludes cancer despite persistent bleeding.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Forgetting endometrial sampling when indicated.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Confusing endometrial cancer with cervical cancer.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Giving definitive treatment recommendations without histology and staging.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Ignoring Lynch syndrome and relevant family history.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Forgetting fertility wishes and the possibility of selected fertility-sparing management.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Failing to explain the diagnosis compassionately.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             }
@@ -1303,7 +1374,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_15",
-          "subsection_title": "Mnemonics and rapid revision",
+          "subsection_title": "14. Mnemonics and rapid revision",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1313,40 +1384,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "O — Obesity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Endometrial hyperplasia or EIN."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Syndrome: Lynch syndrome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Tamoxifen exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "R — Reproductive factors, including nulliparity in relevant contexts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Oestrogen without adequate progesterone opposition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "G — Glucose intolerance and diabetes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Early menarche or late menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — No ovulation or chronic anovulation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "O — Obesity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Endometrial hyperplasia or EIN.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Syndrome: Lynch syndrome.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Tamoxifen exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Reproductive factors, including nulliparity in relevant contexts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Oestrogen without adequate progesterone opposition.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G — Glucose intolerance and diabetes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Early menarche or late menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — No ovulation or chronic anovulation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1357,28 +1433,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "S — Symptoms and clinical assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Assess endometrial thickness on TVUS where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "M — Microscopic diagnosis through histology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Pelvic imaging for selected staging questions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Laboratory tests and baseline fitness assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Evaluate extent of disease and relevant molecular markers."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "S — Symptoms and clinical assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Assess endometrial thickness on TVUS where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "M — Microscopic diagnosis through histology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Pelvic imaging for selected staging questions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Laboratory tests and baseline fitness assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Evaluate extent of disease and relevant molecular markers.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1389,24 +1470,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Postmenopausal bleeding is the classic symptom."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obesity and unopposed oestrogen are important risk factors for endometrioid carcinoma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial biopsy establishes the tissue diagnosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent bleeding requires further assessment even with a thin endometrium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treatment depends on histology, stage, molecular risk and patient factors."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Postmenopausal bleeding is the classic symptom.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Obesity and unopposed oestrogen are important risk factors for endometrioid carcinoma.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Endometrial biopsy establishes the tissue diagnosis.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Persistent bleeding requires further assessment even with a thin endometrium.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Treatment depends on histology, stage, molecular risk and patient factors.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             }
@@ -1414,7 +1505,7 @@
         },
         {
           "subsection_id": "endometrial_cancer_subsection_16",
-          "subsection_title": "Mini OSCE practice",
+          "subsection_title": "15. Mini OSCE practice",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1424,10 +1515,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Exam practice"
-                  ]
+                  "type": "paragraph",
+                  "text": "Exam practice"
                 },
                 {
                   "type": "paragraph",

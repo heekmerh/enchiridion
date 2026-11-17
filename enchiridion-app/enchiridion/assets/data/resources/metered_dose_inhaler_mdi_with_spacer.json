@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_2",
-          "subsection_title": "Identification",
+          "subsection_title": "1. Identification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -60,24 +60,26 @@
                   "text": "Classification: Therapeutic respiratory instrument."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common examples:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salbutamol MDI — a short-acting bronchodilator used for rapid relief of bronchospasm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Beclometasone MDI — an inhaled corticosteroid used for asthma control."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ipratropium MDI — an antimuscarinic bronchodilator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Combination inhalers containing an inhaled corticosteroid and a long-acting bronchodilator."
+                  "type": "list",
+                  "title": "Common examples:",
+                  "items": [
+                    {
+                      "text": "Salbutamol MDI — a short-acting bronchodilator used for rapid relief of bronchospasm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Beclometasone MDI — an inhaled corticosteroid used for asthma control.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ipratropium MDI — an antimuscarinic bronchodilator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Combination inhalers containing an inhaled corticosteroid and a long-acting bronchodilator.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -93,7 +95,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_3",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "2. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -149,7 +151,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_4",
-          "subsection_title": "Parts and functions",
+          "subsection_title": "3. Parts and functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -169,10 +171,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Pressurized canister"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Pressurized canister"
                 },
                 {
                   "type": "paragraph",
@@ -184,10 +184,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Actuator and nozzle"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Actuator and nozzle"
                 },
                 {
                   "type": "paragraph",
@@ -199,10 +197,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Spacer chamber"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Spacer chamber"
                 },
                 {
                   "type": "paragraph",
@@ -214,10 +210,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Mouthpiece or face mask"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Mouthpiece or face mask"
                 },
                 {
                   "type": "paragraph",
@@ -229,10 +223,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. One-way valve, when present"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. One-way valve, when present"
                 },
                 {
                   "type": "paragraph",
@@ -244,7 +236,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_5",
-          "subsection_title": "Advantages",
+          "subsection_title": "4. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -254,32 +246,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Improves drug delivery: Reduces dependence on precise coordination between pressing the inhaler and breathing in."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduces oropharyngeal deposition: Can reduce drug deposition in the mouth and throat, particularly with inhaled corticosteroids."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful in children: A face mask allows administration to infants and young children."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Portable: Easier to carry than most nebulizer systems."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rapid administration: Several inhaled bronchodilator doses can be given efficiently when prescribed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No external power required: Most conventional MDIs and spacers do not require electricity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cost-effective: Often less expensive than repeated nebulizer treatment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Improves drug delivery: Reduces dependence on precise coordination between pressing the inhaler and breathing in.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Reduces oropharyngeal deposition: Can reduce drug deposition in the mouth and throat, particularly with inhaled corticosteroids.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Useful in children: A face mask allows administration to infants and young children.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Portable: Easier to carry than most nebulizer systems.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Rapid administration: Several inhaled bronchodilator doses can be given efficiently when prescribed.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "No external power required: Most conventional MDIs and spacers do not require electricity.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Cost-effective: Often less expensive than repeated nebulizer treatment.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }
@@ -287,7 +291,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_6",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "5. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -297,32 +301,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Incorrect technique can substantially reduce medication delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The spacer must be compatible with the inhaler and used correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Poor mask seal can cause medication leakage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Some spacer materials can develop static electricity, causing aerosol particles to adhere to the chamber."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The chamber requires appropriate cleaning and drying according to the manufacturer's instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The device does not itself diagnose or treat the underlying cause of respiratory distress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A patient with severe respiratory failure or inadequate spontaneous breathing may require advanced respiratory support."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Incorrect technique can substantially reduce medication delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The spacer must be compatible with the inhaler and used correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor mask seal can cause medication leakage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some spacer materials can develop static electricity, causing aerosol particles to adhere to the chamber.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The chamber requires appropriate cleaning and drying according to the manufacturer's instructions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The device does not itself diagnose or treat the underlying cause of respiratory distress.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A patient with severe respiratory failure or inadequate spontaneous breathing may require advanced respiratory support.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -334,7 +343,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_7",
-          "subsection_title": "Preparation and precautions",
+          "subsection_title": "6. Preparation and precautions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -344,48 +353,60 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before demonstrating its use:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity and the medication prescription."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the drug name, expiry date, dose, and inhaler condition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Determine whether the inhaler requires shaking or priming, following the manufacturer's instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the spacer for cracks, obstruction, contamination, and a functioning valve if present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Choose the appropriate interface: mouthpiece or face mask."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the procedure to the patient or caregiver and obtain cooperation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position the patient comfortably, preferably sitting upright if clinically appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check that the prescribed medication is appropriate for the indication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If administering an inhaled corticosteroid, explain the need to rinse the mouth after use when feasible; for a child using a face mask, wash the face after administration if medication residue may remain on the skin."
+                  "type": "list",
+                  "title": "Before demonstrating its use:",
+                  "items": [
+                    {
+                      "text": "Confirm the patient's identity and the medication prescription.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Check the drug name, expiry date, dose, and inhaler condition.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Determine whether the inhaler requires shaking or priming, following the manufacturer's instructions.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Inspect the spacer for cracks, obstruction, contamination, and a functioning valve if present.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Choose the appropriate interface: mouthpiece or face mask.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Explain the procedure to the patient or caregiver and obtain cooperation.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Perform hand hygiene.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Position the patient comfortably, preferably sitting upright if clinically appropriate.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Check that the prescribed medication is appropriate for the indication.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "If administering an inhaled corticosteroid, explain the need to rinse the mouth after use when feasible; for a child using a face mask, wash the face after administration if medication residue may remain on the skin.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -397,7 +418,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_8",
-          "subsection_title": "How to use an MDI with spacer: step-by-step OSCE demonstration",
+          "subsection_title": "7. How to use an MDI with spacer: step-by-step OSCE demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -429,20 +450,25 @@
                   "text": "Step 1: Prepare the inhaler."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Remove the cap."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the mouthpiece for debris."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shake the inhaler if required by its instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Insert it securely into the spacer."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Remove the cap.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inspect the mouthpiece for debris.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shake the inhaler if required by its instructions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Insert it securely into the spacer.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -513,30 +539,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Apply the mask"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Apply the mask"
                 },
                 {
                   "type": "paragraph",
                   "text": "Position it over both the nose and mouth, ensuring a good seal without obstructing breathing."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Release one puff"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Release one puff"
                 },
                 {
                   "type": "paragraph",
                   "text": "Actuate the inhaler once with the mask securely positioned."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Allow several breaths"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Allow several breaths"
                 },
                 {
                   "type": "paragraph",
@@ -552,7 +572,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_9",
-          "subsection_title": "Contraindications and complications",
+          "subsection_title": "8. Contraindications and complications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -612,7 +632,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_10",
-          "subsection_title": "Normal and abnormal findings",
+          "subsection_title": "9. Normal and abnormal findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -626,60 +646,66 @@
                   "text": "The MDI-spacer is a therapeutic device, so it does not produce diagnostic findings in the same way as an ECG or ophthalmoscope. Assessment focuses on device function, administration technique, and the patient's response."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Normal or satisfactory findings"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Normal or satisfactory findings"
+                    {
+                      "text": "The inhaler actuates correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The spacer is intact and unobstructed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The valve moves appropriately, where present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The patient maintains an effective mouthpiece seal or mask seal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The medication is administered as prescribed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory symptoms and work of breathing improve when treatment is effective.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "The inhaler actuates correctly."
+                  "text": "Abnormal findings"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The spacer is intact and unobstructed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The valve moves appropriately, where present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The patient maintains an effective mouthpiece seal or mask seal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The medication is administered as prescribed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory symptoms and work of breathing improve when treatment is effective."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Abnormal findings"
+                    {
+                      "text": "The inhaler does not release medication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The chamber or valve is obstructed or damaged.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The mask leaks around the face.",
+                      "level": 0
+                    },
+                    {
+                      "text": "There is no clinical improvement or respiratory distress worsens.",
+                      "level": 0
+                    },
+                    {
+                      "text": "New severe tachycardia, tremor, or other significant adverse effects occur.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The inhaler does not release medication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The chamber or valve is obstructed or damaged."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The mask leaks around the face."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "There is no clinical improvement or respiratory distress worsens."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "New severe tachycardia, tremor, or other significant adverse effects occur."
                 },
                 {
                   "type": "paragraph",
@@ -691,7 +717,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_11",
-          "subsection_title": "Pediatric considerations",
+          "subsection_title": "10. Pediatric considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -705,32 +731,37 @@
                   "text": "This section is particularly important for neonatology and pediatric OSCEs."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Infants: Usually require a valved holding chamber with a properly fitting face mask."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Toddlers: Usually use a mask until they can reliably seal their lips around a mouthpiece and follow instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Older children: Can transition to a mouthpiece when they demonstrate correct technique."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neonates: Routine MDI-spacer use is not interchangeable with neonatal respiratory support. Inhaled medication delivery requires an appropriate neonatal interface and specialist protocol, particularly in ventilated infants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acute asthma: A spacer can be used to administer prescribed bronchodilators, including in children with significant symptoms while emergency assessment proceeds."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Caregiver education: Demonstrate the technique, ask the caregiver to repeat it, and correct errors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cleaning: Follow the device-specific instructions. Some plastic spacers require detergent washing and air-drying to reduce static; do not assume that wiping or towel-drying is always appropriate."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Infants: Usually require a valved holding chamber with a properly fitting face mask.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toddlers: Usually use a mask until they can reliably seal their lips around a mouthpiece and follow instructions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Older children: Can transition to a mouthpiece when they demonstrate correct technique.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonates: Routine MDI-spacer use is not interchangeable with neonatal respiratory support. Inhaled medication delivery requires an appropriate neonatal interface and specialist protocol, particularly in ventilated infants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acute asthma: A spacer can be used to administer prescribed bronchodilators, including in children with significant symptoms while emergency assessment proceeds.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caregiver education: Demonstrate the technique, ask the caregiver to repeat it, and correct errors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cleaning: Follow the device-specific instructions. Some plastic spacers require detergent washing and air-drying to reduce static; do not assume that wiping or towel-drying is always appropriate.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -742,7 +773,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_12",
-          "subsection_title": "Mnemonic for correct technique: “SHAKE”",
+          "subsection_title": "11. Mnemonic for correct technique: “SHAKE”",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -752,10 +783,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Shake and check"
-                  ]
+                  "type": "paragraph",
+                  "text": "Shake and check"
                 },
                 {
                   "type": "paragraph",
@@ -770,10 +799,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hook up"
-                  ]
+                  "type": "paragraph",
+                  "text": "Hook up"
                 },
                 {
                   "type": "paragraph",
@@ -788,10 +815,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Air out"
-                  ]
+                  "type": "paragraph",
+                  "text": "Air out"
                 },
                 {
                   "type": "paragraph",
@@ -806,10 +831,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Keep a seal"
-                  ]
+                  "type": "paragraph",
+                  "text": "Keep a seal"
                 },
                 {
                   "type": "paragraph",
@@ -824,10 +847,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Exhale, then repeat if needed"
-                  ]
+                  "type": "paragraph",
+                  "text": "Exhale, then repeat if needed"
                 },
                 {
                   "type": "paragraph",
@@ -839,7 +860,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_13",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "12. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -934,7 +955,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_14",
-          "subsection_title": "Common mistakes and examiner tips",
+          "subsection_title": "13. Common mistakes and examiner tips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -985,7 +1006,7 @@
         },
         {
           "subsection_id": "metered_dose_inhaler_mdi_with_spacer_subsection_15",
-          "subsection_title": "Mini-OSCE practice station",
+          "subsection_title": "14. Mini-OSCE practice station",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -995,41 +1016,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Practice station",
-                    "Scenario"
-                  ]
+                  "type": "paragraph",
+                  "text": "Practice station"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Scenario"
                 },
                 {
                   "type": "paragraph",
                   "text": "You are given a salbutamol metered-dose inhaler and a valved holding chamber with a face mask. A 2-year-old child presents with wheezing. The examiner asks you to identify the equipment, explain its purpose, and demonstrate how to administer a prescribed dose."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Your tasks"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Your tasks"
+                    {
+                      "text": "Identify the equipment and state two indications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Name three important components and their functions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Demonstrate safe administration using the face mask.",
+                      "level": 0
+                    },
+                    {
+                      "text": "State two advantages and two potential errors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain how you would assess the child's response.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the equipment and state two indications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Name three important components and their functions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Demonstrate safe administration using the face mask."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State two advantages and two potential errors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain how you would assess the child's response."
                 }
               ]
             },
@@ -1040,32 +1065,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before leaving this station, make sure you can recall:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identification: MDI plus holding chamber."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Main purpose: delivery of inhaled medication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pediatric interface: face mask for children unable to use a mouthpiece."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Technique: one puff at a time, prompt inhalation, good seal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Safety: correct prescription, device-specific preparation, reassessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Key limitation: it does not provide oxygen or ventilatory support."
+                  "type": "list",
+                  "title": "Before leaving this station, make sure you can recall:",
+                  "items": [
+                    {
+                      "text": "Identification: MDI plus holding chamber.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Main purpose: delivery of inhaled medication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pediatric interface: face mask for children unable to use a mouthpiece.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Technique: one puff at a time, prompt inhalation, good seal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Safety: correct prescription, device-specific preparation, reassessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Key limitation: it does not provide oxygen or ventilatory support.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

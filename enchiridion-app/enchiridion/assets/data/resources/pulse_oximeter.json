@@ -48,7 +48,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_2",
-          "subsection_title": "Identification and definition",
+          "subsection_title": "1. Identification and definition",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -75,7 +75,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_3",
-          "subsection_title": "Types of pulse oximeters",
+          "subsection_title": "2. Types of pulse oximeters",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -90,10 +90,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Fingertip pulse oximeter"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Fingertip pulse oximeter"
                 },
                 {
                   "type": "paragraph",
@@ -109,10 +107,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Bedside pulse oximeter"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Bedside pulse oximeter"
                 },
                 {
                   "type": "paragraph",
@@ -128,10 +124,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Pediatric and neonatal pulse oximeter"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Pediatric and neonatal pulse oximeter"
                 },
                 {
                   "type": "paragraph",
@@ -147,7 +141,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_4",
-          "subsection_title": "Parts and functions",
+          "subsection_title": "3. Parts and functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -195,7 +189,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_5",
-          "subsection_title": "Principle of operation",
+          "subsection_title": "4. Principle of operation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -209,16 +203,21 @@
                   "text": "Pulse oximetry relies on differences in light absorption by oxygenated and deoxygenated haemoglobin."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Oxygenated haemoglobin absorbs relatively more infrared light."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deoxygenated haemoglobin absorbs relatively more red light."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The device analyzes changes in transmitted or reflected light associated with pulsatile arterial blood flow."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Oxygenated haemoglobin absorbs relatively more infrared light.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deoxygenated haemoglobin absorbs relatively more red light.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The device analyzes changes in transmitted or reflected light associated with pulsatile arterial blood flow.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -234,7 +233,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_6",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "5. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -244,40 +243,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assessing oxygenation in patients with respiratory distress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring patients with pneumonia, asthma, COPD and other respiratory disorders."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring oxygenation during anaesthesia, sedation and recovery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assessing critically ill patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring patients receiving supplemental oxygen."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evaluating children with respiratory illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supporting neonatal resuscitation and monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Screening newborns for critical congenital heart disease using an appropriate protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring patients during transport and selected procedures."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assessing oxygenation in patients with respiratory distress.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Monitoring patients with pneumonia, asthma, COPD and other respiratory disorders.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Monitoring oxygenation during anaesthesia, sedation and recovery.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assessing critically ill patients.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Monitoring patients receiving supplemental oxygen.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Evaluating children with respiratory illness.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Supporting neonatal resuscitation and monitoring.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Screening newborns for critical congenital heart disease using an appropriate protocol.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Monitoring patients during transport and selected procedures.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -289,7 +302,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_7",
-          "subsection_title": "Normal and abnormal SpO₂ readings",
+          "subsection_title": "6. Normal and abnormal SpO₂ readings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -341,7 +354,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_8",
-          "subsection_title": "Advantages",
+          "subsection_title": "7. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -351,32 +364,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Non-invasive and painless."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provides rapid estimates of oxygen saturation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Portable and easy to use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Enables continuous monitoring with suitable equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful in adults, children and neonates with appropriate probes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Helps assess response to oxygen therapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can identify falling oxygen saturation before obvious cyanosis develops."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Non-invasive and painless.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provides rapid estimates of oxygen saturation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Portable and easy to use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enables continuous monitoring with suitable equipment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful in adults, children and neonates with appropriate probes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Helps assess response to oxygen therapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can identify falling oxygen saturation before obvious cyanosis develops.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -384,7 +402,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_9",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "8. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -394,36 +412,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Does not directly measure PaO₂ or PaCO₂."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can be inaccurate with poor peripheral perfusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Motion can interfere with the signal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nail polish and artificial nails can interfere with some sensors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accuracy can be affected by dyshemoglobins, including carboxyhaemoglobin and methaemoglobin."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Skin pigmentation can contribute to measurement bias; some devices may overestimate oxygen saturation in people with darker skin, potentially concealing hypoxaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accuracy varies by device, sensor, saturation range and clinical circumstances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A reading may be unreliable if the probe is incorrectly positioned."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Does not directly measure PaO₂ or PaCO₂.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be inaccurate with poor peripheral perfusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Motion can interfere with the signal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nail polish and artificial nails can interfere with some sensors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accuracy can be affected by dyshemoglobins, including carboxyhaemoglobin and methaemoglobin.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin pigmentation can contribute to measurement bias; some devices may overestimate oxygen saturation in people with darker skin, potentially concealing hypoxaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accuracy varies by device, sensor, saturation range and clinical circumstances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A reading may be unreliable if the probe is incorrectly positioned.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -431,7 +454,7 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_10",
-          "subsection_title": "How to use a pulse oximeter: OSCE demonstration",
+          "subsection_title": "9. How to use a pulse oximeter: OSCE demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -459,10 +482,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0 of 10 steps completed"
-                  ]
+                  "type": "paragraph",
+                  "text": "0 of 10 steps completed"
                 },
                 {
                   "type": "paragraph",
@@ -503,15 +524,12 @@
                 {
                   "type": "paragraph",
                   "text": "10. If the result is unexpected, assess the patient first, check the probe and signal, and repeat or confirm the measurement as clinically appropriate."
-                }
-              ]
-            },
-            {
-              "group_id": "pulse_oximeter_group_12",
-              "group_title": "How to report the result",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**How to report the result**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "A good OSCE report includes the saturation, pulse rate, and oxygen support."
@@ -522,7 +540,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The patient's SpO₂ is 97% on room air, with a pulse rate of 84 beats per minute. The reading is stable with a satisfactory signal.”"
+                  "text": "“The patient's SpO₂ is 97% on room air, with a pulse rate of 84 beats per minute. The reading is stable with a satisfactory signal.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -530,7 +549,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The patient's SpO₂ is 88% while receiving supplemental oxygen. This is concerning and requires immediate clinical reassessment and appropriate escalation.”"
+                  "text": "“The patient's SpO₂ is 88% while receiving supplemental oxygen. This is concerning and requires immediate clinical reassessment and appropriate escalation.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -542,11 +562,11 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_11",
-          "subsection_title": "Common causes of inaccurate readings",
+          "subsection_title": "10. Common causes of inaccurate readings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_13",
+              "group_id": "pulse_oximeter_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -603,7 +623,7 @@
               ]
             },
             {
-              "group_id": "pulse_oximeter_group_14",
+              "group_id": "pulse_oximeter_group_13",
               "group_title": "Important examiner question: Why can SpO₂ be normal in severe anaemia?",
               "group_subtitle": null,
               "group_icon": null,
@@ -626,11 +646,11 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_12",
-          "subsection_title": "Contraindications and complications",
+          "subsection_title": "11. Contraindications and complications",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_15",
+              "group_id": "pulse_oximeter_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -640,24 +660,26 @@
                   "text": "Contraindications: There are no major absolute contraindications to routine pulse oximetry. However, the probe should not be applied to an injured, infected, poorly perfused or otherwise unsuitable site if doing so could cause harm."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential complications and precautions:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Skin irritation or pressure injury from prolonged sensor application."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Thermal injury from some sensors, especially with prolonged use or poor positioning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Misleading reassurance from inaccurate readings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unnecessary intervention from artefacts or false low readings."
+                  "type": "list",
+                  "title": "Potential complications and precautions:",
+                  "items": [
+                    {
+                      "text": "Skin irritation or pressure injury from prolonged sensor application.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thermal injury from some sensors, especially with prolonged use or poor positioning.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Misleading reassurance from inaccurate readings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unnecessary intervention from artefacts or false low readings.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -669,11 +691,11 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_13",
-          "subsection_title": "Pediatric and neonatal considerations",
+          "subsection_title": "12. Pediatric and neonatal considerations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_16",
+              "group_id": "pulse_oximeter_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -689,32 +711,37 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use a sensor validated for the child's age and size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid placing an adult fingertip device on a neonate unless the device and probe are approved for that use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure the sensor is not excessively tight."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the skin regularly for pressure injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret the reading in conjunction with respiratory effort, heart rate, perfusion and colour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "During neonatal resuscitation, use the recommended preductal sensor placement on the right hand or wrist when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "For newborn screening for critical congenital heart disease, use the recommended screening protocol, which commonly includes right-hand and foot measurements."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use a sensor validated for the child's age and size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid placing an adult fingertip device on a neonate unless the device and probe are approved for that use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure the sensor is not excessively tight.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check the skin regularly for pressure injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpret the reading in conjunction with respiratory effort, heart rate, perfusion and colour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "During neonatal resuscitation, use the recommended preductal sensor placement on the right hand or wrist when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "For newborn screening for critical congenital heart disease, use the recommended screening protocol, which commonly includes right-hand and foot measurements.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -726,43 +753,48 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_14",
-          "subsection_title": "Mnemonics and memory tips",
+          "subsection_title": "13. Mnemonics and memory tips",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_17",
+              "group_id": "pulse_oximeter_group_16",
               "group_title": "For checking an unexpected reading: SIGNAL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "S — Sensor correctly positioned."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Inspect the patient first."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "G — Good peripheral perfusion?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — Nail products or other interference?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Assess waveform and pulse agreement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Look again or use an alternative assessment if unreliable."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "S — Sensor correctly positioned.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Inspect the patient first.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G — Good peripheral perfusion?",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Nail products or other interference?",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Assess waveform and pulse agreement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Look again or use an alternative assessment if unreliable.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "pulse_oximeter_group_18",
+              "group_id": "pulse_oximeter_group_17",
               "group_title": "For the key limitation: SpO₂ is not PaO₂",
               "group_subtitle": null,
               "group_icon": null,
@@ -777,11 +809,11 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_15",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "14. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_19",
+              "group_id": "pulse_oximeter_group_18",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -848,46 +880,51 @@
         },
         {
           "subsection_id": "pulse_oximeter_subsection_16",
-          "subsection_title": "Common mistakes that lose OSCE marks",
+          "subsection_title": "15. Common mistakes that lose OSCE marks",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pulse_oximeter_group_20",
+              "group_id": "pulse_oximeter_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Quoting a reading without checking whether the signal is reliable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring the patient's clinical appearance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using an adult probe on a neonate without checking suitability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to record whether the patient is on room air or supplemental oxygen."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming a normal saturation excludes respiratory failure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting the limitations in carbon monoxide poisoning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to inspect the sensor site during prolonged monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delaying emergency care while troubleshooting the equipment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Quoting a reading without checking whether the signal is reliable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring the patient's clinical appearance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using an adult probe on a neonate without checking suitability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to record whether the patient is on room air or supplemental oxygen.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming a normal saturation excludes respiratory failure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting the limitations in carbon monoxide poisoning.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to inspect the sensor site during prolonged monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delaying emergency care while troubleshooting the equipment.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

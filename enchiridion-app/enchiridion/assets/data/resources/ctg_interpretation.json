@@ -48,7 +48,7 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -58,30 +58,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples of OSCE instructions include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples of OSCE instructions include:",
                   "items": [
-                    "“Interpret the CTG provided and report your findings.”"
+                    {
+                      "text": "“Interpret the CTG provided and report your findings.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“A 28-year-old primigravida at 40 weeks is undergoing CTG monitoring. Interpret the trace and advise on management.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“A woman in labour has recurrent fetal heart rate decelerations. Assess the CTG and discuss the next steps.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Identify the abnormalities on this CTG and explain their clinical significance.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“A CTG shows a fetal heart rate of 170 beats/min with reduced variability. What is your interpretation and management?”",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“A 28-year-old primigravida at 40 weeks is undergoing CTG monitoring. Interpret the trace and advise on management.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“A woman in labour has recurrent fetal heart rate decelerations. Assess the CTG and discuss the next steps.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Identify the abnormalities on this CTG and explain their clinical significance.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“A CTG shows a fetal heart rate of 170 beats/min with reduced variability. What is your interpretation and management?”"
                 }
               ]
             }
@@ -89,7 +89,7 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_3",
-          "subsection_title": "What is a CTG?",
+          "subsection_title": "2. What is a CTG?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -104,16 +104,18 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Cardiotocography is a method of simultaneously recording:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal heart rate (FHR): usually the upper trace."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine activity: usually the lower trace, showing the timing and approximate frequency of contractions."
+                  "type": "list",
+                  "title": "Cardiotocography is a method of simultaneously recording:",
+                  "items": [
+                    {
+                      "text": "Fetal heart rate (FHR): usually the upper trace.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine activity: usually the lower trace, showing the timing and approximate frequency of contractions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -129,7 +131,7 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_4",
-          "subsection_title": "Introduction and initial assessment",
+          "subsection_title": "3. Introduction and initial assessment",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -143,36 +145,49 @@
                   "text": "If the station involves a clinical scenario rather than an image alone, begin by stating that you would:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands and introduce yourself."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain CTG monitoring and obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish the gestational age and whether she is in labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about fetal movements, vaginal bleeding, liquor drainage and abdominal pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review relevant risk factors, including previous caesarean section, hypertension, diabetes, fetal growth restriction and meconium-stained liquor."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the mother's observations and general clinical condition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm that the CTG trace is correctly labelled and that the recorded rate is fetal rather than maternal."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands and introduce yourself.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confirm the patient's identity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Explain CTG monitoring and obtain consent.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Establish the gestational age and whether she is in labour.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ask about fetal movements, vaginal bleeding, liquor drainage and abdominal pain.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Review relevant risk factors, including previous caesarean section, hypertension, diabetes, fetal growth restriction and meconium-stained liquor.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Assess the mother's observations and general clinical condition.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Confirm that the CTG trace is correctly labelled and that the recorded rate is fetal rather than maternal.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -184,7 +199,7 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_5",
-          "subsection_title": "Systematic CTG interpretation: the 6-step method",
+          "subsection_title": "4. Systematic CTG interpretation: the 6-step method",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -194,18 +209,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use the mnemonic “C-B-V-D-A-O”:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Use the mnemonic “C-B-V-D-A-O”:",
                   "items": [
-                    "C — Contractions",
-                    "B — Baseline fetal heart rate",
-                    "V — Variability",
-                    "D — Decelerations",
-                    "A — Accelerations",
-                    "O — Overall classification"
+                    {
+                      "text": "C — Contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "B — Baseline fetal heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "V — Variability",
+                      "level": 0
+                    },
+                    {
+                      "text": "D — Decelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Accelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Overall classification",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -218,10 +248,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 }
               ]
             },
@@ -232,36 +260,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before interpreting the waveform, establish:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient's name and identification details."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether the trace is antenatal or intrapartum."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Date and time of recording."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Duration and quality of the trace."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal pulse and whether it could be mistaken for the fetal heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relevant clinical history, medications and previous CTG changes."
+                  "type": "list",
+                  "title": "Before interpreting the waveform, establish:",
+                  "items": [
+                    {
+                      "text": "Patient's name and identification details.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gestational age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether the trace is antenatal or intrapartum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Date and time of recording.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration and quality of the trace.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal pulse and whether it could be mistaken for the fetal heart rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relevant clinical history, medications and previous CTG changes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -273,10 +303,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 }
               ]
             },
@@ -292,10 +320,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "medical.uworld.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "medical.uworld.com"
                 },
                 {
                   "type": "paragraph",
@@ -336,10 +362,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 },
                 {
                   "type": "paragraph",
@@ -351,7 +375,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There are approximately four contractions in 10 minutes, with adequate relaxation between contractions and no evidence of uterine hypertonus.”"
+                  "text": "“There are approximately four contractions in 10 minutes, with adequate relaxation between contractions and no evidence of uterine hypertonus.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -359,7 +384,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There are six contractions in 10 minutes, consistent with excessive uterine activity. I would review any uterotonic medication, assess the fetal heart rate and maternal condition, and initiate appropriate measures.”"
+                  "text": "“There are six contractions in 10 minutes, consistent with excessive uterine activity. I would review any uterotonic medication, assess the fetal heart rate and maternal condition, and initiate appropriate measures.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -382,10 +408,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Usual normal baseline in labour"
-                  ]
+                  "type": "paragraph",
+                  "text": "Usual normal baseline in labour"
                 }
               ]
             },
@@ -417,95 +441,98 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "NICE"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Causes of an abnormal baseline**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A. Fetal tachycardia: above 160 beats/min"
+                },
+                {
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "NICE",
-                    "Causes of an abnormal baseline",
-                    "A. Fetal tachycardia: above 160 beats/min"
+                    {
+                      "text": "Maternal fever or intra-amniotic infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal dehydration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal anxiety or pain, sometimes contributing to an increased rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal medications, including beta-agonists.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal tachyarrhythmia.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal fever or intra-amniotic infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal dehydration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal anxiety or pain, sometimes contributing to an increased rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal medications, including beta-agonists."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal tachyarrhythmia."
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "B. Fetal bradycardia: below 110 beats/min"
-                  ]
+                  "text": "B. Fetal bradycardia: below 110 beats/min"
                 },
                 {
                   "type": "paragraph",
                   "text": "A rate between 100 and 109 may sometimes be acceptable if stable and accompanied by normal variability and no decelerations. A rate below 100 is more concerning in the NICE intrapartum system."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Umbilical cord compression or prolapse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excessive uterine activity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal conduction abnormalities or other arrhythmias."
+                  "type": "list",
+                  "title": "Possible causes include:",
+                  "items": [
+                    {
+                      "text": "Fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical cord compression or prolapse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive uterine activity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal conduction abnormalities or other arrhythmias.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Exam tip: A sudden drop in fetal heart rate is more urgent than a mildly abnormal but stable baseline. Always assess the rate's trend, associated variability and decelerations, and the clinical context."
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_12",
-              "group_title": "Step 4: Assess baseline variability",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Step 4: Assess baseline variability**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Variability is the normal fluctuation in fetal heart rate around the baseline, caused largely by the interaction of the fetal autonomic nervous system and other physiological influences."
@@ -550,51 +577,53 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "NICE"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Causes of reduced variability**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "NICE",
-                    "Causes of reduced variability"
+                    {
+                      "text": "Fetal sleep cycle.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Opioid or sedative medication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prematurity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia or acidosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological abnormalities.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal sleep cycle."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Opioid or sedative medication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prematurity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia or acidosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neurological abnormalities."
                 },
                 {
                   "type": "paragraph",
                   "text": "A short period of reduced variability may be physiological. However, prolonged reduction, especially with a rising baseline or recurrent decelerations, is concerning."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Increased variability"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Increased variability**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Marked variability may be associated with transient fetal stress or evolving compromise, particularly when sustained or accompanied by decelerations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sinusoidal pattern"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Sinusoidal pattern**"
                 },
                 {
                   "type": "paragraph",
@@ -610,7 +639,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Baseline variability is approximately 10 beats per minute, which is within the normal range.”"
+                  "text": "“Baseline variability is approximately 10 beats per minute, which is within the normal range.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -618,16 +648,14 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is persistently reduced baseline variability, which raises concern for fetal compromise, particularly in the presence of recurrent decelerations.”"
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_13",
-              "group_title": "Step 5: Assess accelerations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "“There is persistently reduced baseline variability, which raises concern for fetal compromise, particularly in the presence of recurrent decelerations.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Step 5: Assess accelerations**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "An acceleration is a transient rise in fetal heart rate of at least 15 beats/min above baseline, lasting at least 15 seconds, in the usual term intrapartum assessment."
@@ -638,30 +666,30 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "stepwards.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "stepwards.com"
                 },
                 {
                   "type": "paragraph",
                   "text": "Accelerations are generally reassuring because they indicate fetal responsiveness."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Remember:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accelerations may occur with fetal movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Their presence is generally reassuring, even when some variability is reduced."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Their absence on an otherwise normal intrapartum trace does not, by itself, establish fetal acidosis."
+                  "type": "list",
+                  "title": "Remember:",
+                  "items": [
+                    {
+                      "text": "Accelerations may occur with fetal movement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Their presence is generally reassuring, even when some variability is reduced.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Their absence on an otherwise normal intrapartum trace does not, by itself, establish fetal acidosis.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "image",
@@ -669,10 +697,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 },
                 {
                   "type": "paragraph",
@@ -680,20 +706,18 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There are two clear accelerations of at least 15 beats per minute lasting at least 15 seconds, which is a reassuring feature.”"
+                  "text": "“There are two clear accelerations of at least 15 beats per minute lasting at least 15 seconds, which is a reassuring feature.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Do not make the mistake of diagnosing fetal distress solely because accelerations are absent."
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_14",
-              "group_title": "Step 6: Assess decelerations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Step 6: Assess decelerations**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "A deceleration is a transient fall in fetal heart rate. In the usual definition, the rate falls by more than 15 beats/min for at least 15 seconds."
@@ -706,20 +730,15 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/ctg_interpretation_09.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_15",
-              "group_title": "A. Early decelerations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Usually benign"
-                  ]
+                  "type": "paragraph",
+                  "text": "**A. Early decelerations**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Usually benign"
                 },
                 {
                   "type": "paragraph",
@@ -737,20 +756,15 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/ctg_interpretation_10.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_16",
-              "group_title": "B. Variable decelerations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Assess severity"
-                  ]
+                  "type": "paragraph",
+                  "text": "**B. Variable decelerations**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess severity"
                 },
                 {
                   "type": "paragraph",
@@ -772,20 +786,15 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/ctg_interpretation_11.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_17",
-              "group_title": "C. Late decelerations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Concerning"
-                  ]
+                  "type": "paragraph",
+                  "text": "**C. Late decelerations**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Concerning"
                 },
                 {
                   "type": "paragraph",
@@ -803,20 +812,15 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/ctg_interpretation_12.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_18",
-              "group_title": "D. Prolonged deceleration",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Obstetric emergency if persistent"
-                  ]
+                  "type": "paragraph",
+                  "text": "**D. Prolonged deceleration**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Obstetric emergency if persistent"
                 },
                 {
                   "type": "paragraph",
@@ -840,22 +844,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Memory aid:"
+                  "text": "NICE"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Memory aid:",
                   "items": [
-                    "Early = head",
-                    "Variable = cord",
-                    "Late = placenta",
-                    "Prolonged = investigate immediately"
+                    {
+                      "text": "Early = head",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable = cord",
+                      "level": 0
+                    },
+                    {
+                      "text": "Late = placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged = investigate immediately",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -868,11 +879,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_6",
-          "subsection_title": "Overall CTG classification",
+          "subsection_title": "5. Overall CTG classification",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_19",
+              "group_id": "ctg_interpretation_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -882,30 +893,24 @@
                   "text": "For intrapartum CTG interpretation using the NICE system, each of four features is assessed: contractions, baseline, variability and decelerations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Normal CTG"
-                  ]
+                  "type": "paragraph",
+                  "text": "Normal CTG"
                 },
                 {
                   "type": "paragraph",
                   "text": "All four features are white, with no amber or red features."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Suspicious CTG"
-                  ]
+                  "type": "paragraph",
+                  "text": "Suspicious CTG"
                 },
                 {
                   "type": "paragraph",
                   "text": "One amber feature, with no red features."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pathological CTG"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pathological CTG"
                 },
                 {
                   "type": "paragraph",
@@ -917,15 +922,13 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_20",
+              "group_id": "ctg_interpretation_group_13",
               "group_title": "Important classification caveat",
               "group_subtitle": null,
               "group_icon": null,
@@ -944,11 +947,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_7",
-          "subsection_title": "Management according to CTG findings",
+          "subsection_title": "6. Management according to CTG findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_21",
+              "group_id": "ctg_interpretation_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -960,94 +963,122 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_22",
+              "group_id": "ctg_interpretation_group_15",
               "group_title": "A. Normal CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Continue appropriate intrapartum monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continue regular assessment of maternal and fetal risk factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review the trace over time rather than interpreting a single segment in isolation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Document the findings and ongoing plan."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Continue appropriate intrapartum monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continue regular assessment of maternal and fetal risk factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review the trace over time rather than interpreting a single segment in isolation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Document the findings and ongoing plan.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_23",
+              "group_id": "ctg_interpretation_group_16",
               "group_title": "B. Suspicious CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Call for a senior review when indicated by the clinical picture or local protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess maternal observations, including temperature, pulse and blood pressure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess contraction frequency and uterine relaxation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review oxytocin, prostaglandins, opioids and other relevant medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Correct reversible causes, such as maternal hypotension or dehydration, where present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassess the trace and escalate if abnormalities persist or worsen."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Call for a senior review when indicated by the clinical picture or local protocol.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess maternal observations, including temperature, pulse and blood pressure.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Assess contraction frequency and uterine relaxation.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Review oxytocin, prostaglandins, opioids and other relevant medications.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Correct reversible causes, such as maternal hypotension or dehydration, where present.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Reassess the trace and escalate if abnormalities persist or worsen.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_24",
+              "group_id": "ctg_interpretation_group_17",
               "group_title": "C. Pathological CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Summon urgent obstetric assistance and senior midwifery support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for acute events such as cord prolapse, placental abruption or uterine rupture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reposition the woman, avoiding a supine position where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop or reduce oxytocin if excessive uterine activity is present, according to protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treat maternal hypotension and other reversible causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider acute tocolysis when indicated for excessive uterine activity, under the appropriate clinical protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evaluate the need for expedited birth and arrange neonatal support."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Summon urgent obstetric assistance and senior midwifery support.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess for acute events such as cord prolapse, placental abruption or uterine rupture.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Reposition the woman, avoiding a supine position where appropriate.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Stop or reduce oxytocin if excessive uterine activity is present, according to protocol.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Treat maternal hypotension and other reversible causes.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Consider acute tocolysis when indicated for excessive uterine activity, under the appropriate clinical protocol.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Evaluate the need for expedited birth and arrange neonatal support.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1063,38 +1094,38 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NICE"
-                  ]
+                  "type": "paragraph",
+                  "text": "NICE"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_25",
+              "group_id": "ctg_interpretation_group_18",
               "group_title": "When should delivery be expedited?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider expedited birth when there is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent pathological CTG despite appropriate corrective measures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acute bradycardia or a prolonged deceleration that does not recover."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected cord prolapse, uterine rupture or significant placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evidence of evolving fetal compromise in the context of additional risk factors."
+                  "type": "list",
+                  "title": "Consider expedited birth when there is:",
+                  "items": [
+                    {
+                      "text": "Persistent pathological CTG despite appropriate corrective measures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acute bradycardia or a prolonged deceleration that does not recover.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected cord prolapse, uterine rupture or significant placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of evolving fetal compromise in the context of additional risk factors.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1110,11 +1141,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_8",
-          "subsection_title": "How to report a CTG in the OSCE",
+          "subsection_title": "7. How to report a CTG in the OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_26",
+              "group_id": "ctg_interpretation_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1126,50 +1157,54 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_27",
+              "group_id": "ctg_interpretation_group_20",
               "group_title": "Example 1: Normal CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is an intrapartum CTG of adequate quality. There are four uterine contractions in 10 minutes with adequate relaxation between contractions. The baseline fetal heart rate is approximately 140 beats per minute. Baseline variability is normal at approximately 10 beats per minute. There are no pathological decelerations, and accelerations are present. All four classification features are reassuring, making this a normal CTG under the NICE intrapartum classification system. I would continue appropriate monitoring and regular clinical reassessment.”"
+                  "text": "“This is an intrapartum CTG of adequate quality. There are four uterine contractions in 10 minutes with adequate relaxation between contractions. The baseline fetal heart rate is approximately 140 beats per minute. Baseline variability is normal at approximately 10 beats per minute. There are no pathological decelerations, and accelerations are present. All four classification features are reassuring, making this a normal CTG under the NICE intrapartum classification system. I would continue appropriate monitoring and regular clinical reassessment.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_28",
+              "group_id": "ctg_interpretation_group_21",
               "group_title": "Example 2: Fetal tachycardia with reduced variability",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The baseline fetal heart rate is approximately 175 beats per minute, with reduced variability and no clear accelerations. These findings are concerning for possible fetal compromise. I would assess the maternal temperature and observations, investigate possible infection or other reversible causes, review the uterine activity and medications, and obtain urgent senior obstetric review. The need for expedited birth would depend on the full clinical picture and response to initial measures.”"
+                  "text": "“The baseline fetal heart rate is approximately 175 beats per minute, with reduced variability and no clear accelerations. These findings are concerning for possible fetal compromise. I would assess the maternal temperature and observations, investigate possible infection or other reversible causes, review the uterine activity and medications, and obtain urgent senior obstetric review. The need for expedited birth would depend on the full clinical picture and response to initial measures.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_29",
+              "group_id": "ctg_interpretation_group_22",
               "group_title": "Example 3: Recurrent late decelerations",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The baseline fetal heart rate is approximately 150 beats per minute. Recurrent late decelerations are present in relation to uterine contractions. This is a concerning feature suggestive of possible uteroplacental insufficiency and fetal hypoxia. I would summon urgent obstetric assistance, assess for reversible causes, initiate appropriate corrective measures and consider expedited birth if the abnormal pattern persists or the clinical circumstances demand it.”"
+                  "text": "“The baseline fetal heart rate is approximately 150 beats per minute. Recurrent late decelerations are present in relation to uterine contractions. This is a concerning feature suggestive of possible uteroplacental insufficiency and fetal hypoxia. I would summon urgent obstetric assistance, assess for reversible causes, initiate appropriate corrective measures and consider expedited birth if the abnormal pattern persists or the clinical circumstances demand it.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_30",
+              "group_id": "ctg_interpretation_group_23",
               "group_title": "Example 4: Acute prolonged deceleration",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is an acute, sustained fall in the fetal heart rate from a baseline of 140 beats per minute to approximately 70 beats per minute. This is an obstetric emergency until the cause is established. I would call for immediate assistance, assess the maternal condition and uterine activity, exclude cord prolapse and other acute obstetric events, initiate appropriate corrective measures and prepare for urgent birth if the bradycardia persists.”"
+                  "text": "“There is an acute, sustained fall in the fetal heart rate from a baseline of 140 beats per minute to approximately 70 beats per minute. This is an obstetric emergency until the cause is established. I would call for immediate assistance, assess the maternal condition and uterine activity, exclude cord prolapse and other acute obstetric events, initiate appropriate corrective measures and prepare for urgent birth if the bradycardia persists.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1177,11 +1212,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_9",
-          "subsection_title": "Differential diagnoses for an abnormal CTG",
+          "subsection_title": "8. Differential diagnoses for an abnormal CTG",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_31",
+              "group_id": "ctg_interpretation_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1233,11 +1268,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_10",
-          "subsection_title": "Investigations and further assessment",
+          "subsection_title": "9. Investigations and further assessment",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_32",
+              "group_id": "ctg_interpretation_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1247,24 +1282,29 @@
                   "text": "CTG interpretation is primarily a clinical assessment. Additional investigations depend on the abnormality and the urgency of the situation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Maternal observations: Temperature, pulse, blood pressure, oxygen saturation and hydration status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bedside assessment: Palpate uterine activity and confirm that the recorded rate is fetal rather than maternal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood tests: Full blood count, inflammatory markers, cultures or other tests when infection or another maternal condition is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ultrasound: Useful in selected situations to assess fetal viability, presentation, amniotic fluid or other antenatal concerns."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal blood sampling: May be considered only in selected settings where available, appropriate and safe under local protocols; it must not delay urgent delivery when indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Maternal observations: Temperature, pulse, blood pressure, oxygen saturation and hydration status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bedside assessment: Palpate uterine activity and confirm that the recorded rate is fetal rather than maternal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood tests: Full blood count, inflammatory markers, cultures or other tests when infection or another maternal condition is suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound: Useful in selected situations to assess fetal viability, presentation, amniotic fluid or other antenatal concerns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal blood sampling: May be considered only in selected settings where available, appropriate and safe under local protocols; it must not delay urgent delivery when indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1272,11 +1312,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_11",
-          "subsection_title": "Questions the examiner may ask",
+          "subsection_title": "10. Questions the examiner may ask",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_33",
+              "group_id": "ctg_interpretation_group_26",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1327,58 +1367,63 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_12",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "11. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_34",
+              "group_id": "ctg_interpretation_group_27",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Calling a CTG normal after checking only the baseline."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting to assess contractions and uterine relaxation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing variability with accelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to describe decelerations in relation to contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating every variable deceleration as pathological."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming absent accelerations alone establish fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to consider maternal fever, hypotension or medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving routine oxygen to a non-hypoxic mother."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delaying escalation while completing a detailed interpretation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recommending caesarean section without considering the clinical circumstances and feasibility of other methods of birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Applying an intrapartum classification system uncritically to an antenatal CTG."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Calling a CTG normal after checking only the baseline.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to assess contractions and uterine relaxation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing variability with accelerations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to describe decelerations in relation to contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treating every variable deceleration as pathological.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming absent accelerations alone establish fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to consider maternal fever, hypotension or medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving routine oxygen to a non-hypoxic mother.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delaying escalation while completing a detailed interpretation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recommending caesarean section without considering the clinical circumstances and feasibility of other methods of birth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Applying an intrapartum classification system uncritically to an antenatal CTG.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1386,12 +1431,12 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_13",
-          "subsection_title": "Cardiotocography (CTG) Interpretation",
+          "subsection_title": "CTG interpretation",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_35",
-              "group_title": "",
+              "group_id": "ctg_interpretation_group_28",
+              "group_title": "Cardiotocography (CTG) Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -1418,11 +1463,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_14",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_36",
+              "group_id": "ctg_interpretation_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1432,36 +1477,45 @@
                   "text": "You are asked to review a CTG for a woman in labour at 39 weeks' gestation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The examiner may ask you to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient and the indication for CTG."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the baseline fetal heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess baseline variability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify accelerations and decelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess uterine contraction frequency and duration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Classify the CTG using the system specified by the examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State your interpretation and management plan."
+                  "type": "list",
+                  "title": "The examiner may ask you to:",
+                  "items": [
+                    {
+                      "text": "Confirm the patient and the indication for CTG.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Identify the baseline fetal heart rate.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Assess baseline variability.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Identify accelerations and decelerations.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess uterine contraction frequency and duration.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Classify the CTG using the system specified by the examination.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "State your interpretation and management plan.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1473,11 +1527,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_15",
-          "subsection_title": "What is CTG?",
+          "subsection_title": "2. What is CTG?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_37",
+              "group_id": "ctg_interpretation_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1492,10 +1546,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Upper trace — fetal heart rate"
-                  ]
+                  "type": "paragraph",
+                  "text": "Upper trace — fetal heart rate"
                 },
                 {
                   "type": "paragraph",
@@ -1507,10 +1559,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Lower trace — uterine activity"
-                  ]
+                  "type": "paragraph",
+                  "text": "Lower trace — uterine activity"
                 },
                 {
                   "type": "paragraph",
@@ -1526,46 +1576,48 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_16",
-          "subsection_title": "First: check the patient and the trace",
+          "subsection_title": "3. First: check the patient and the trace",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_38",
+              "group_id": "ctg_interpretation_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before interpreting the pattern:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the woman's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish the gestational age and whether she is in labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify why CTG was requested."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review maternal observations, including pulse, blood pressure, temperature and oxygen saturation where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check medications, especially oxytocin and recent regional analgesia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish whether membranes have ruptured and whether there are risk factors for cord prolapse or placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm that the recorded rate is fetal rather than maternal."
+                  "type": "list",
+                  "title": "Before interpreting the pattern:",
+                  "items": [
+                    {
+                      "text": "Confirm the woman's identity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Establish the gestational age and whether she is in labour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Identify why CTG was requested.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review maternal observations, including pulse, blood pressure, temperature and oxygen saturation where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check medications, especially oxytocin and recent regional analgesia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Establish whether membranes have ruptured and whether there are risk factors for cord prolapse or placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm that the recorded rate is fetal rather than maternal.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1577,34 +1629,36 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_17",
-          "subsection_title": "The four essential components of fetal heart rate",
+          "subsection_title": "4. The four essential components of fetal heart rate",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_39",
+              "group_id": "ctg_interpretation_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use the mnemonic B-V-A-D:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "B — Baseline."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V — Variability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Accelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "D — Decelerations."
+                  "type": "list",
+                  "title": "Use the mnemonic B-V-A-D:",
+                  "items": [
+                    {
+                      "text": "B — Baseline.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V — Variability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Accelerations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "D — Decelerations.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1616,11 +1670,11 @@
         },
         {
           "subsection_id": "ctg_interpretation_subsection_18",
-          "subsection_title": "Baseline fetal heart rate",
+          "subsection_title": "5. Baseline fetal heart rate",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_40",
+              "group_id": "ctg_interpretation_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1630,51 +1684,41 @@
                   "text": "The baseline is the average fetal heart rate over a 10-minute period, excluding accelerations, decelerations and periods of marked variability. There should generally be at least 2 minutes of identifiable baseline within that period; otherwise, the baseline may be described as indeterminate."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Typical baseline"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "ctg_interpretation_subsection_19",
-          "subsection_title": "–160 bpm",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "ctg_interpretation_group_41",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Normal range",
-                    "Bradycardia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Typical baseline"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_42",
+              "group_id": "ctg_interpretation_group_34",
+              "group_title": "110–160 bpm",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Normal range"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bradycardia"
+                }
+              ]
+            },
+            {
+              "group_id": "ctg_interpretation_group_35",
               "group_title": "Below 110 bpm",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Tachycardia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Tachycardia"
                 }
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_43",
+              "group_id": "ctg_interpretation_group_36",
               "group_title": "Above 160 bpm",
               "group_subtitle": null,
               "group_icon": null,
@@ -1682,98 +1726,93 @@
                 {
                   "type": "paragraph",
                   "text": "These are commonly used intrapartum reference values; the significance depends on duration, associated features and the clinical context."
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_44",
-              "group_title": "A. Normal baseline",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Normal baseline**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "A baseline of 140 bpm with normal variability and no concerning decelerations is generally reassuring."
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_45",
-              "group_title": "B. Fetal bradycardia",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A baseline below 110 bpm may be associated with:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maternal hypotension."
+                  "text": "**B. Fetal bradycardia**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cord compression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Some medications or maternal cardiac conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A fetal rhythm abnormality."
+                  "type": "list",
+                  "title": "A baseline below 110 bpm may be associated with:",
+                  "items": [
+                    {
+                      "text": "Maternal hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cord compression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some medications or maternal cardiac conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A fetal rhythm abnormality.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "A persistent low baseline requires prompt assessment. A sudden sustained fall in the fetal heart rate is particularly concerning."
-                }
-              ]
-            },
-            {
-              "group_id": "ctg_interpretation_group_46",
-              "group_title": "C. Fetal tachycardia",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Potential causes include:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maternal fever or infection."
+                  "text": "**C. Fetal tachycardia**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Maternal dehydration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal anxiety, pain or catecholamine response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Certain medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal anaemia or arrhythmia."
+                  "type": "list",
+                  "title": "Potential causes include:",
+                  "items": [
+                    {
+                      "text": "Maternal fever or infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal dehydration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal anxiety, pain or catecholamine response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal anaemia or arrhythmia.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1784,12 +1823,12 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_20",
-          "subsection_title": "Baseline variability",
+          "subsection_id": "ctg_interpretation_subsection_19",
+          "subsection_title": "6. Baseline variability",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_47",
+              "group_id": "ctg_interpretation_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1799,20 +1838,22 @@
                   "text": "Variability refers to the small fluctuations around the baseline fetal heart rate. It reflects the interaction between the fetal autonomic nervous system and the heart."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common intrapartum reference ranges are:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Normal/moderate variability: approximately 5–25 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced variability: less than 5 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increased variability: greater than 25 bpm, often described as marked variability or a saltatory pattern."
+                  "type": "list",
+                  "title": "Common intrapartum reference ranges are:",
+                  "items": [
+                    {
+                      "text": "Normal/moderate variability: approximately 5–25 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced variability: less than 5 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased variability: greater than 25 bpm, often described as marked variability or a saltatory pattern.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1821,7 +1862,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_48",
+              "group_id": "ctg_interpretation_group_38",
               "group_title": "A. Normal variability",
               "group_subtitle": null,
               "group_icon": null,
@@ -1832,10 +1873,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "slideshare.net"
-                  ]
+                  "type": "paragraph",
+                  "text": "slideshare.net"
                 },
                 {
                   "type": "paragraph",
@@ -1844,34 +1883,36 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_49",
+              "group_id": "ctg_interpretation_group_39",
               "group_title": "B. Reduced variability",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal sleep cycle."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prematurity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Opioids, sedatives or other medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal hypoxia or acidaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neurological abnormalities."
+                  "type": "list",
+                  "title": "Possible causes include:",
+                  "items": [
+                    {
+                      "text": "Fetal sleep cycle.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prematurity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Opioids, sedatives or other medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia or acidaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1880,7 +1921,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_50",
+              "group_id": "ctg_interpretation_group_40",
               "group_title": "C. Increased variability",
               "group_subtitle": null,
               "group_icon": null,
@@ -1892,7 +1933,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_51",
+              "group_id": "ctg_interpretation_group_41",
               "group_title": "D. Absent variability",
               "group_subtitle": null,
               "group_icon": null,
@@ -1910,12 +1951,12 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_21",
-          "subsection_title": "Accelerations",
+          "subsection_id": "ctg_interpretation_subsection_20",
+          "subsection_title": "7. Accelerations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_52",
+              "group_id": "ctg_interpretation_group_42",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1935,7 +1976,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_53",
+              "group_id": "ctg_interpretation_group_43",
               "group_title": "Significance",
               "group_subtitle": null,
               "group_icon": null,
@@ -1945,28 +1986,30 @@
                   "text": "Accelerations are generally reassuring because they are commonly associated with an intact fetal autonomic response."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "However:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The absence of accelerations during labour does not, by itself, establish fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accelerations should be interpreted alongside baseline, variability, decelerations and the clinical situation."
+                  "type": "list",
+                  "title": "However:",
+                  "items": [
+                    {
+                      "text": "The absence of accelerations during labour does not, by itself, establish fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accelerations should be interpreted alongside baseline, variability, decelerations and the clinical situation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_22",
-          "subsection_title": "Decelerations",
+          "subsection_id": "ctg_interpretation_subsection_21",
+          "subsection_title": "8. Decelerations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_54",
+              "group_id": "ctg_interpretation_group_44",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1982,7 +2025,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_55",
+              "group_id": "ctg_interpretation_group_45",
               "group_title": "A. Early decelerations",
               "group_subtitle": null,
               "group_icon": null,
@@ -1993,26 +2036,26 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "slideshare.net"
+                },
+                {
+                  "type": "list",
+                  "title": "Features:",
                   "items": [
-                    "slideshare.net"
+                    {
+                      "text": "Gradual fall and recovery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Timing usually mirrors the uterine contraction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nadir usually coincides with the contraction peak.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Features:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gradual fall and recovery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Timing usually mirrors the uterine contraction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nadir usually coincides with the contraction peak."
                 },
                 {
                   "type": "paragraph",
@@ -2029,7 +2072,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_56",
+              "group_id": "ctg_interpretation_group_46",
               "group_title": "B. Variable decelerations",
               "group_subtitle": null,
               "group_icon": null,
@@ -2040,78 +2083,87 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "ob-efm.com"
+                },
+                {
+                  "type": "list",
+                  "title": "Features:",
                   "items": [
-                    "ob-efm.com"
+                    {
+                      "text": "Abrupt decrease in fetal heart rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable timing in relation to contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May have a V-shaped or W-shaped appearance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May have shoulders, overshoots or slow recovery.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Features:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abrupt decrease in fetal heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variable timing in relation to contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May have a V-shaped or W-shaped appearance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May have shoulders, overshoots or slow recovery."
                 },
                 {
                   "type": "paragraph",
                   "text": "Likely mechanism: Umbilical cord compression."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes or associations:"
+                  "type": "list",
+                  "title": "Possible causes or associations:",
+                  "items": [
+                    {
+                      "text": "Oligohydramnios.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cord compression during contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cord prolapse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other conditions affecting cord blood flow.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Oligohydramnios."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cord compression during contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cord prolapse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other conditions affecting cord blood flow."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Management depends on the pattern:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess frequency, depth, duration and recovery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check maternal observations and the progress of labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassess oxytocin and uterine activity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider cord prolapse when clinically suspected, particularly after membrane rupture with an acute fetal heart rate change."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Escalate promptly if decelerations are recurrent, prolonged or associated with reduced variability."
+                  "type": "list",
+                  "title": "Management depends on the pattern:",
+                  "items": [
+                    {
+                      "text": "Assess frequency, depth, duration and recovery.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Check maternal observations and the progress of labour.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Reassess oxytocin and uterine activity.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Consider cord prolapse when clinically suspected, particularly after membrane rupture with an acute fetal heart rate change.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Escalate promptly if decelerations are recurrent, prolonged or associated with reduced variability.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2120,7 +2172,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_57",
+              "group_id": "ctg_interpretation_group_47",
               "group_title": "C. Late decelerations",
               "group_subtitle": null,
               "group_icon": null,
@@ -2131,82 +2183,86 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "step2.medbullets.com"
+                },
+                {
+                  "type": "list",
+                  "title": "Features:",
                   "items": [
-                    "step2.medbullets.com"
+                    {
+                      "text": "Gradual fall in fetal heart rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Onset and recovery occur later than the associated contraction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The nadir usually occurs after the contraction peak.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Features:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gradual fall in fetal heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Onset and recovery occur later than the associated contraction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The nadir usually occurs after the contraction peak."
                 },
                 {
                   "type": "paragraph",
                   "text": "Likely mechanism: Impaired uteroplacental oxygen transfer."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes:"
+                  "type": "list",
+                  "title": "Possible causes:",
+                  "items": [
+                    {
+                      "text": "Uteroplacental insufficiency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive uterine activity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption or other placental pathology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal hypoxaemia or severe systemic illness.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Uteroplacental insufficiency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excessive uterine activity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption or other placental pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal hypoxaemia or severe systemic illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Management:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the mother and review the trace urgently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position laterally where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treat maternal hypotension or another identifiable cause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop or reduce oxytocin if excessive uterine activity is contributing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Escalate to senior obstetric review."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange expedited birth if the trace remains pathological or there is evidence of significant fetal compromise."
+                  "type": "list",
+                  "title": "Management:",
+                  "items": [
+                    {
+                      "text": "Assess the mother and review the trace urgently.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position laterally where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treat maternal hypotension or another identifiable cause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stop or reduce oxytocin if excessive uterine activity is contributing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Escalate to senior obstetric review.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrange expedited birth if the trace remains pathological or there is evidence of significant fetal compromise.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2215,7 +2271,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_58",
+              "group_id": "ctg_interpretation_group_48",
               "group_title": "D. Prolonged deceleration",
               "group_subtitle": null,
               "group_icon": null,
@@ -2225,60 +2281,70 @@
                   "text": "A prolonged deceleration is a sustained fall in fetal heart rate. Definitions differ between classification systems; a fall lasting 3 minutes or longer is generally considered an acute event requiring urgent assessment."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential causes include:"
+                  "type": "list",
+                  "title": "Potential causes include:",
+                  "items": [
+                    {
+                      "text": "Cord prolapse or acute cord compression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine hyperstimulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal seizure or collapse.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Cord prolapse or acute cord compression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine hyperstimulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal seizure or collapse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immediate response:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Call for urgent obstetric assistance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess maternal ABCDE and vital signs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check for cord prolapse or another acute obstetric cause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop or reduce oxytocin if indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Correct reversible maternal factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prepare for urgent birth if the fetal heart rate does not recover promptly or the clinical situation suggests an immediate threat."
+                  "type": "list",
+                  "title": "Immediate response:",
+                  "items": [
+                    {
+                      "text": "Call for urgent obstetric assistance.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess maternal ABCDE and vital signs.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Check for cord prolapse or another acute obstetric cause.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Stop or reduce oxytocin if indicated.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Correct reversible maternal factors.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Prepare for urgent birth if the fetal heart rate does not recover promptly or the clinical situation suggests an immediate threat.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2289,39 +2355,41 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_23",
-          "subsection_title": "Uterine contractions",
+          "subsection_id": "ctg_interpretation_subsection_22",
+          "subsection_title": "9. Uterine contractions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_59",
+              "group_id": "ctg_interpretation_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Frequency: number of contractions in 10 minutes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Duration: how long each contraction lasts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Resting intervals between contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether uterine activity is excessive."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relationship between contractions and fetal heart rate abnormalities."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Frequency: number of contractions in 10 minutes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration: how long each contraction lasts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Resting intervals between contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether uterine activity is excessive.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship between contractions and fetal heart rate abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2330,7 +2398,7 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_60",
+              "group_id": "ctg_interpretation_group_50",
               "group_title": "Why excessive contractions matter",
               "group_subtitle": null,
               "group_icon": null,
@@ -2340,40 +2408,42 @@
                   "text": "Frequent or prolonged contractions can reduce the time available for placental reperfusion between contractions and may contribute to fetal compromise."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If excessive uterine activity is accompanied by fetal heart rate abnormalities:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop or reduce oxytocin as indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassess maternal and fetal condition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Call for senior review."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider acute tocolysis under the relevant protocol when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Expedite birth if abnormalities persist and delivery is required."
+                  "type": "list",
+                  "title": "If excessive uterine activity is accompanied by fetal heart rate abnormalities:",
+                  "items": [
+                    {
+                      "text": "Stop or reduce oxytocin as indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reassess maternal and fetal condition.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Call for senior review.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider acute tocolysis under the relevant protocol when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Expedite birth if abnormalities persist and delivery is required.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_24",
-          "subsection_title": "Classifying the CTG",
+          "subsection_id": "ctg_interpretation_subsection_23",
+          "subsection_title": "10. Classifying the CTG",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_61",
+              "group_id": "ctg_interpretation_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2385,44 +2455,48 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_62",
+              "group_id": "ctg_interpretation_group_52",
               "group_title": "A practical three-category approach",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Category I — Normal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reassuring"
+                },
+                {
+                  "type": "list",
+                  "title": "Typically includes:",
                   "items": [
-                    "Category I — Normal",
-                    "Reassuring"
+                    {
+                      "text": "Baseline 110–160 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moderate variability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No late or variable decelerations.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typically includes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Baseline 110–160 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Moderate variability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No late or variable decelerations."
                 },
                 {
                   "type": "paragraph",
                   "text": "Action: Continue appropriate monitoring and routine care if the clinical situation remains reassuring."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Category II — Indeterminate",
-                    "Requires assessment"
-                  ]
+                  "type": "paragraph",
+                  "text": "Category II — Indeterminate"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Requires assessment"
                 },
                 {
                   "type": "paragraph",
@@ -2437,11 +2511,12 @@
                   "text": "Action: Review the whole trace, reassess the mother, identify reversible causes, increase vigilance and seek senior input when indicated."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Category III — Abnormal",
-                    "Urgent response"
-                  ]
+                  "type": "paragraph",
+                  "text": "Category III — Abnormal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Urgent response"
                 },
                 {
                   "type": "paragraph",
@@ -2460,12 +2535,12 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_25",
-          "subsection_title": "A systematic CTG interpretation checklist",
+          "subsection_id": "ctg_interpretation_subsection_24",
+          "subsection_title": "11. A systematic CTG interpretation checklist",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_63",
+              "group_id": "ctg_interpretation_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2477,66 +2552,99 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_64",
+              "group_id": "ctg_interpretation_group_54",
               "group_title": "Practice checklist",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0/10 completed",
-                    "Confirm patient, gestational age and indication",
-                    "Check signal quality and distinguish fetal from maternal pulse",
-                    "Assess baseline fetal heart rate",
-                    "Assess baseline variability",
-                    "Identify accelerations",
-                    "Identify type, frequency and duration of decelerations",
-                    "Assess uterine contraction frequency and duration",
-                    "Review maternal observations, medications and labour progress",
-                    "Classify the trace using the required guideline",
-                    "State immediate management and escalation plan",
-                    "Reset checklist"
-                  ]
+                  "type": "paragraph",
+                  "text": "0/10 completed"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Confirm patient, gestational age and indication"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check signal quality and distinguish fetal from maternal pulse"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess baseline fetal heart rate"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess baseline variability"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify accelerations"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify type, frequency and duration of decelerations"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess uterine contraction frequency and duration"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review maternal observations, medications and labour progress"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classify the trace using the required guideline"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State immediate management and escalation plan"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reset checklist"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_26",
-          "subsection_title": "Worked OSCE examples",
+          "subsection_id": "ctg_interpretation_subsection_25",
+          "subsection_title": "12. Worked OSCE examples",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_65",
+              "group_id": "ctg_interpretation_group_55",
               "group_title": "Example 1: Reassuring CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Baseline: 140 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variability: 10 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accelerations present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No decelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Three contractions in 10 minutes."
+                  "type": "list",
+                  "title": "Findings:",
+                  "items": [
+                    {
+                      "text": "Baseline: 140 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variability: 10 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accelerations present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No decelerations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Three contractions in 10 minutes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2549,30 +2657,32 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_66",
+              "group_id": "ctg_interpretation_group_56",
               "group_title": "Example 2: Fetal tachycardia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Baseline: 175 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variability: 10 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No recurrent decelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal temperature: 38.5°C."
+                  "type": "list",
+                  "title": "Findings:",
+                  "items": [
+                    {
+                      "text": "Baseline: 175 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variability: 10 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No recurrent decelerations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal temperature: 38.5°C.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2583,28 +2693,30 @@
                   "text": "Differential diagnoses: Intra-amniotic infection, maternal infection, dehydration or other causes of fetal tachycardia."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urgently assess the mother and fetus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evaluate for sepsis and intra-amniotic infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treat the underlying maternal condition according to protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review the remainder of the trace and the progress of labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Escalate according to the clinical findings."
+                  "type": "list",
+                  "title": "Management:",
+                  "items": [
+                    {
+                      "text": "Urgently assess the mother and fetus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evaluate for sepsis and intra-amniotic infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treat the underlying maternal condition according to protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review the remainder of the trace and the progress of labour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Escalate according to the clinical findings.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2613,62 +2725,72 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_67",
+              "group_id": "ctg_interpretation_group_57",
               "group_title": "Example 3: Recurrent late decelerations",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Baseline: 150 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variability: 3 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recurrent late decelerations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Six contractions in 10 minutes."
+                  "type": "list",
+                  "title": "Findings:",
+                  "items": [
+                    {
+                      "text": "Baseline: 150 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variability: 3 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent late decelerations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Six contractions in 10 minutes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Interpretation: Concerning CTG with reduced variability, recurrent late decelerations and excessive uterine activity."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Immediate management:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Call for urgent senior obstetric review."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop oxytocin if it is running."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reposition the mother laterally where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess and correct maternal hypotension or other reversible causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider acute tocolysis under protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prepare for expedited birth if abnormalities persist."
+                  "type": "list",
+                  "title": "Immediate management:",
+                  "items": [
+                    {
+                      "text": "Call for urgent senior obstetric review.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Stop oxytocin if it is running.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Reposition the mother laterally where appropriate.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess and correct maternal hypotension or other reversible causes.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Consider acute tocolysis under protocol.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Prepare for expedited birth if abnormalities persist.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2677,46 +2799,50 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_68",
+              "group_id": "ctg_interpretation_group_58",
               "group_title": "Example 4: Sudden prolonged deceleration after membrane rupture",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Findings:"
+                  "type": "list",
+                  "title": "Findings:",
+                  "items": [
+                    {
+                      "text": "Sudden fetal heart rate drop from 140 to 70 bpm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Membranes ruptured moments earlier.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The fetal heart rate has not recovered promptly.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Sudden fetal heart rate drop from 140 to 70 bpm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Membranes ruptured moments earlier."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The fetal heart rate has not recovered promptly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Differential diagnoses:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Umbilical cord prolapse or acute cord compression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture, depending on the clinical context."
+                  "type": "list",
+                  "title": "Differential diagnoses:",
+                  "items": [
+                    {
+                      "text": "Umbilical cord prolapse or acute cord compression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture, depending on the clinical context.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2727,12 +2853,12 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_27",
-          "subsection_title": "How to report a CTG in the examination",
+          "subsection_id": "ctg_interpretation_subsection_26",
+          "subsection_title": "13. How to report a CTG in the examination",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_69",
+              "group_id": "ctg_interpretation_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2743,7 +2869,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“ This CTG was performed for [indication] at [gestational age]. The trace quality is [adequate/limited]. The baseline fetal heart rate is approximately [value] bpm, with [normal/reduced/increased] variability. Accelerations are [present/absent]. Decelerations are [absent/present, with type and pattern]. Uterine activity is approximately [number] contractions per 10 minutes, lasting [duration]. Overall, the CTG is classified as [classification under the specified guideline]. My management plan is to [actions], with [level of urgency] senior review and reassessment.”"
+                  "text": "“ This CTG was performed for [indication] at [gestational age]. The trace quality is [adequate/limited]. The baseline fetal heart rate is approximately [value] bpm, with [normal/reduced/increased] variability. Accelerations are [present/absent]. Decelerations are [absent/present, with type and pattern]. Uterine activity is approximately [number] contractions per 10 minutes, lasting [duration]. Overall, the CTG is classified as [classification under the specified guideline]. My management plan is to [actions], with [level of urgency] senior review and reassessment.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2754,12 +2881,12 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_28",
-          "subsection_title": "Common examiner questions",
+          "subsection_id": "ctg_interpretation_subsection_27",
+          "subsection_title": "14. Common examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_70",
+              "group_id": "ctg_interpretation_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2833,76 +2960,79 @@
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_29",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "ctg_interpretation_subsection_28",
+          "subsection_title": "15. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_71",
+              "group_id": "ctg_interpretation_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Failing to confirm that the trace is fetal rather than maternal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving a classification without describing the components."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring uterine contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming absent accelerations always indicate fetal hypoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to recognise a prolonged deceleration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving oxygen routinely despite normal maternal oxygenation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continuing oxytocin despite concerning excessive uterine activity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delaying senior review or urgent delivery when the pattern remains severely abnormal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mixing classification systems without identifying which guideline is being used."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to document the trace and the response to intervention."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to confirm that the trace is fetal rather than maternal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving a classification without describing the components.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring uterine contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming absent accelerations always indicate fetal hypoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to recognise a prolonged deceleration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving oxygen routinely despite normal maternal oxygenation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuing oxytocin despite concerning excessive uterine activity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delaying senior review or urgent delivery when the pattern remains severely abnormal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mixing classification systems without identifying which guideline is being used.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to document the trace and the response to intervention.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ctg_interpretation_subsection_30",
-          "subsection_title": "Mnemonic: CTG SAFE",
+          "subsection_id": "ctg_interpretation_subsection_29",
+          "subsection_title": "16. Mnemonic: CTG SAFE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ctg_interpretation_group_72",
+              "group_id": "ctg_interpretation_group_62",
               "group_title": "C",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Confirm the trace"
-                  ]
+                  "type": "paragraph",
+                  "text": "Confirm the trace"
                 },
                 {
                   "type": "paragraph",
@@ -2911,16 +3041,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_73",
+              "group_id": "ctg_interpretation_group_63",
               "group_title": "T",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Trace the baseline and variability"
-                  ]
+                  "type": "paragraph",
+                  "text": "Trace the baseline and variability"
                 },
                 {
                   "type": "paragraph",
@@ -2929,16 +3057,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_74",
+              "group_id": "ctg_interpretation_group_64",
               "group_title": "G",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Gauge accelerations, decelerations and contractions"
-                  ]
+                  "type": "paragraph",
+                  "text": "Gauge accelerations, decelerations and contractions"
                 },
                 {
                   "type": "paragraph",
@@ -2947,16 +3073,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_75",
+              "group_id": "ctg_interpretation_group_65",
               "group_title": "S",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Summarise the classification"
-                  ]
+                  "type": "paragraph",
+                  "text": "Summarise the classification"
                 },
                 {
                   "type": "paragraph",
@@ -2965,16 +3089,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_76",
+              "group_id": "ctg_interpretation_group_66",
               "group_title": "A",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Act on abnormalities"
-                  ]
+                  "type": "paragraph",
+                  "text": "Act on abnormalities"
                 },
                 {
                   "type": "paragraph",
@@ -2983,16 +3105,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_77",
+              "group_id": "ctg_interpretation_group_67",
               "group_title": "F",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Follow up and reassess"
-                  ]
+                  "type": "paragraph",
+                  "text": "Follow up and reassess"
                 },
                 {
                   "type": "paragraph",
@@ -3001,16 +3121,14 @@
               ]
             },
             {
-              "group_id": "ctg_interpretation_group_78",
+              "group_id": "ctg_interpretation_group_68",
               "group_title": "E",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Escalate when needed"
-                  ]
+                  "type": "paragraph",
+                  "text": "Escalate when needed"
                 },
                 {
                   "type": "paragraph",

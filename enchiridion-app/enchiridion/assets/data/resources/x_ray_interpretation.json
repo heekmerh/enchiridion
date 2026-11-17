@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "x_ray_interpretation_subsection_1",
-          "subsection_title": "X-rays",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "x_ray_interpretation_group_1",
-              "group_title": "",
+              "group_title": "X-rays",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -41,10 +41,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Foundations of X-ray interpretation"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Foundations of X-ray interpretation"
                 },
                 {
                   "type": "paragraph",
@@ -56,10 +54,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Chest X-rays"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Chest X-rays"
                 },
                 {
                   "type": "paragraph",
@@ -71,10 +67,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Abdominal X-rays"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Abdominal X-rays"
                 },
                 {
                   "type": "paragraph",
@@ -86,10 +80,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Musculoskeletal X-rays"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Musculoskeletal X-rays"
                 },
                 {
                   "type": "paragraph",
@@ -101,10 +93,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Other high-yield films"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. Other high-yield films"
                 },
                 {
                   "type": "paragraph",
@@ -116,7 +106,7 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_2",
-          "subsection_title": "Foundations of X-ray interpretation",
+          "subsection_title": "1. Foundations of X-ray interpretation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -147,11 +137,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Metal / contrast material",
-                    "Very white"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Metal / contrast material"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Very white"
                 },
                 {
                   "type": "paragraph",
@@ -163,11 +154,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Bone / calcium",
-                    "White"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Bone / calcium"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "White"
                 },
                 {
                   "type": "paragraph",
@@ -179,11 +171,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Soft tissue / fluid",
-                    "Grey"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Soft tissue / fluid"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Grey"
                 },
                 {
                   "type": "paragraph",
@@ -195,11 +188,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Fat",
-                    "Dark grey"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Fat"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dark grey"
                 },
                 {
                   "type": "paragraph",
@@ -211,11 +205,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Air / gas",
-                    "Black"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. Air / gas"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Black"
                 },
                 {
                   "type": "paragraph",
@@ -293,30 +288,32 @@
                       "New bone formation along the periosteum"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_5",
-              "group_title": "Do not confuse these terms",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Opacity describes an appearance, not a diagnosis."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Consolidation is a pattern that may occur in pneumonia, but other causes exist."
+                  "text": "**Do not confuse these terms**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Fracture means a break in bone continuity; it may be subtle and difficult to see."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lucency can represent normal anatomy, air, a cyst, or bone destruction depending on the location."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Opacity describes an appearance, not a diagnosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolidation is a pattern that may occur in pneumonia, but other causes exist.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fracture means a break in bone continuity; it may be subtle and difficult to see.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lucency can represent normal anatomy, air, a cyst, or bone destruction depending on the location.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -324,11 +321,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_3",
-          "subsection_title": "Before interpreting: check the image",
+          "subsection_title": "2. Before interpreting: check the image",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_6",
+              "group_id": "x_ray_interpretation_group_5",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -340,42 +337,51 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_7",
+              "group_id": "x_ray_interpretation_group_6",
               "group_title": "A. Identify the film",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "State or mentally check the following:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient: Confirm the name or identifier and age where available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Date: Check when the image was obtained."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anatomical region: Chest, abdomen, wrist, pelvis, etc."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Projection / view: PA, AP, lateral, oblique, supine or erect."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Side marker: Confirm left (L) or right (R)."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clinical indication: Why was the X-ray requested?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Comparison: Are previous films available?"
+                  "type": "list",
+                  "title": "State or mentally check the following:",
+                  "items": [
+                    {
+                      "text": "Patient: Confirm the name or identifier and age where available.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Date: Check when the image was obtained.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Anatomical region: Chest, abdomen, wrist, pelvis, etc.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Projection / view: PA, AP, lateral, oblique, supine or erect.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Side marker: Confirm left (L) or right (R).",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Clinical indication: Why was the X-ray requested?",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Comparison: Are previous films available?",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -384,7 +390,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_8",
+              "group_id": "x_ray_interpretation_group_7",
               "group_title": "B. Understand the common projections",
               "group_subtitle": null,
               "group_icon": null,
@@ -395,26 +401,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "PA — posteroanterior"
-                  ]
+                  "type": "paragraph",
+                  "text": "PA — posteroanterior"
                 },
                 {
                   "type": "paragraph",
                   "text": "The beam passes from the posterior chest to the anterior chest. Usually taken upright."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Preferred routine projection for an ambulant patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The heart is relatively close to the detector."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cardiac enlargement is assessed more reliably than on an AP film."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Preferred routine projection for an ambulant patient.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The heart is relatively close to the detector.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac enlargement is assessed more reliably than on an AP film.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "image",
@@ -422,26 +431,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "AP — anteroposterior"
-                  ]
+                  "type": "paragraph",
+                  "text": "AP — anteroposterior"
                 },
                 {
                   "type": "paragraph",
                   "text": "The beam passes from the anterior chest to the posterior chest."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common for bedbound, critically ill, and paediatric patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The heart may appear magnified."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Poor inspiration and rotation are common limitations."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Common for bedbound, critically ill, and paediatric patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The heart may appear magnified.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor inspiration and rotation are common limitations.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "image",
@@ -449,22 +461,25 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Lateral view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Lateral view"
                 },
                 {
                   "type": "paragraph",
                   "text": "Provides a second plane and helps localise abnormalities."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Useful for retrosternal and retrocardiac regions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can help identify lower-lobe disease and assess the thoracic spine."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Useful for retrosternal and retrocardiac regions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can help identify lower-lobe disease and assess the thoracic spine.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "image",
@@ -472,10 +487,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oblique view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Oblique view"
                 },
                 {
                   "type": "paragraph",
@@ -492,7 +505,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_9",
+              "group_id": "x_ray_interpretation_group_8",
               "group_title": "C. Assess image quality",
               "group_subtitle": null,
               "group_icon": null,
@@ -502,10 +515,8 @@
                   "text": "For a chest X-ray, use RIPE:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "R — Rotation"
-                  ]
+                  "type": "paragraph",
+                  "text": "R — Rotation"
                 },
                 {
                   "type": "paragraph",
@@ -516,10 +527,8 @@
                   "text": "Rotation can distort the mediastinum and make one lung appear different from the other."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "I — Inspiration"
-                  ]
+                  "type": "paragraph",
+                  "text": "I — Inspiration"
                 },
                 {
                   "type": "paragraph",
@@ -530,10 +539,8 @@
                   "text": "Poor inspiration crowds the lung markings and can falsely suggest basal opacity or an enlarged heart."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "P — Projection"
-                  ]
+                  "type": "paragraph",
+                  "text": "P — Projection"
                 },
                 {
                   "type": "paragraph",
@@ -544,10 +551,8 @@
                   "text": "Projection affects heart size and the distribution of pleural fluid or air."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "E — Exposure"
-                  ]
+                  "type": "paragraph",
+                  "text": "E — Exposure"
                 },
                 {
                   "type": "paragraph",
@@ -560,15 +565,12 @@
                 {
                   "type": "paragraph",
                   "text": "Some teaching resources use different wording for the letters in RIPE. The important skill is to assess rotation, inspiration, projection and exposure consistently."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_10",
-              "group_title": "What if the film is technically poor?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What if the film is technically poor?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Do not automatically call an abnormality. State the limitation, decide whether the film remains interpretable, and consider whether repeat imaging or another modality is justified. In emergencies, act on important findings while obtaining further imaging if needed."
@@ -579,11 +581,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_4",
-          "subsection_title": "The universal method for reporting X-rays",
+          "subsection_title": "3. The universal method for reporting X-rays",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_11",
+              "group_id": "x_ray_interpretation_group_9",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -593,50 +595,40 @@
                   "text": "A strong report follows a predictable order:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Identification and view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Identification and view"
                 },
                 {
                   "type": "paragraph",
                   "text": "What body part, which side, which projection?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Technical adequacy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Technical adequacy"
                 },
                 {
                   "type": "paragraph",
                   "text": "Is the image suitable for interpretation?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Systematic anatomical review"
-                  ]
+                  "type": "paragraph",
+                  "text": "Systematic anatomical review"
                 },
                 {
                   "type": "paragraph",
                   "text": "Examine all relevant structures in a consistent order."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Describe the abnormality"
-                  ]
+                  "type": "paragraph",
+                  "text": "Describe the abnormality"
                 },
                 {
                   "type": "paragraph",
                   "text": "Location, appearance, distribution, size, extent and associated findings."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Impression and action"
-                  ]
+                  "type": "paragraph",
+                  "text": "Impression and action"
                 },
                 {
                   "type": "paragraph",
@@ -645,38 +637,40 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_12",
+              "group_id": "x_ray_interpretation_group_10",
               "group_title": "How to describe an abnormality",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Whenever you see an abnormality, ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Where? Which anatomical region, lobe, bone, joint or side?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What? Opacity, lucency, fracture, displacement, calcification or other finding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How much? Size, number, extent or severity?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What pattern? Focal, diffuse, linear, lobar, multifocal, destructive or sclerotic?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What else? Associated effusion, soft-tissue swelling, collapse, dislocation or other complication?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What does it mean? What diagnosis best explains the complete picture?"
+                  "type": "list",
+                  "title": "Whenever you see an abnormality, ask:",
+                  "items": [
+                    {
+                      "text": "Where? Which anatomical region, lobe, bone, joint or side?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What? Opacity, lucency, fracture, displacement, calcification or other finding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How much? Size, number, extent or severity?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What pattern? Focal, diffuse, linear, lobar, multifocal, destructive or sclerotic?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What else? Associated effusion, soft-tissue swelling, collapse, dislocation or other complication?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What does it mean? What diagnosis best explains the complete picture?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -692,11 +686,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_5",
-          "subsection_title": "Chest X-ray: the most important OSCE application",
+          "subsection_title": "4. Chest X-ray: the most important OSCE application",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_13",
+              "group_id": "x_ray_interpretation_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -708,7 +702,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_14",
+              "group_id": "x_ray_interpretation_group_12",
               "group_title": "A. Use ABCDE for the chest",
               "group_subtitle": null,
               "group_icon": null,
@@ -723,52 +717,58 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "A — Airway"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "A — Airway"
+                    {
+                      "text": "Is the trachea central?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is the carina visible?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are the main bronchi patent where visible?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there mediastinal shift?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the trachea central?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the carina visible?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are the main bronchi patent where visible?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there mediastinal shift?"
                 },
                 {
                   "type": "paragraph",
                   "text": "Key clue: Shift towards a side may occur with volume loss, while shift away may occur with a large space-occupying process, such as tension pneumothorax or a large effusion."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "B — Breathing"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "B — Breathing"
+                    {
+                      "text": "Compare both lung fields.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess lung markings and symmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Look for consolidation, collapse, nodules, pneumothorax and pleural effusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inspect the apices and lung bases carefully.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Compare both lung fields."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess lung markings and symmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for consolidation, collapse, nodules, pneumothorax and pleural effusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the apices and lung bases carefully."
                 },
                 {
                   "type": "image",
@@ -776,26 +776,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "C — Circulation"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "C — Circulation"
+                    {
+                      "text": "Assess heart size and contour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Examine the mediastinum and hila.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Look at the aortic arch and pulmonary vascularity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider pulmonary oedema or vascular congestion.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess heart size and contour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examine the mediastinum and hila."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look at the aortic arch and pulmonary vascularity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider pulmonary oedema or vascular congestion."
                 },
                 {
                   "type": "image",
@@ -803,26 +806,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "D — Diaphragm"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "D — Diaphragm"
+                    {
+                      "text": "Compare the hemidiaphragms; the right is usually higher.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check both costophrenic angles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Look for free subdiaphragmatic air.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess abnormal elevation or flattening.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Compare the hemidiaphragms; the right is usually higher."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check both costophrenic angles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for free subdiaphragmatic air."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess abnormal elevation or flattening."
                 },
                 {
                   "type": "image",
@@ -830,26 +836,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "E — Everything else"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "E — Everything else"
+                    {
+                      "text": "Ribs, clavicles, scapulae and visible spine.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Soft tissues, including the neck and chest wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lines, tubes, pacemakers and other devices.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review the entire film, including areas outside the lungs.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ribs, clavicles, scapulae and visible spine."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Soft tissues, including the neck and chest wall."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lines, tubes, pacemakers and other devices."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review the entire film, including areas outside the lungs."
                 },
                 {
                   "type": "paragraph",
@@ -858,7 +867,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_15",
+              "group_id": "x_ray_interpretation_group_13",
               "group_title": "B. Recognising common chest X-ray abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -874,10 +883,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Consolidation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Consolidation"
                 },
                 {
                   "type": "paragraph",
@@ -893,10 +900,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pleural effusion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pleural effusion"
                 },
                 {
                   "type": "paragraph",
@@ -917,10 +922,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pneumothorax"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pneumothorax"
                 },
                 {
                   "type": "paragraph",
@@ -940,10 +943,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Lobar collapse"
-                  ]
+                  "type": "paragraph",
+                  "text": "Lobar collapse"
                 },
                 {
                   "type": "paragraph",
@@ -959,10 +960,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pulmonary oedema"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pulmonary oedema"
                 },
                 {
                   "type": "paragraph",
@@ -982,11 +981,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_6",
-          "subsection_title": "Skeletal X-rays: how to avoid missing fractures",
+          "subsection_title": "5. Skeletal X-rays: how to avoid missing fractures",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_16",
+              "group_id": "x_ray_interpretation_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1001,20 +1000,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A — Alignment"
-                  ]
+                  "type": "paragraph",
+                  "text": "A — Alignment"
                 },
                 {
                   "type": "paragraph",
                   "text": "Follow the normal axes of the bones. Look for displacement, angulation, rotation, subluxation or dislocation."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B — Bones"
-                  ]
+                  "type": "paragraph",
+                  "text": "B — Bones"
                 },
                 {
                   "type": "paragraph",
@@ -1026,20 +1021,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C — Cartilage / joint spaces"
-                  ]
+                  "type": "paragraph",
+                  "text": "C — Cartilage / joint spaces"
                 },
                 {
                   "type": "paragraph",
                   "text": "X-rays do not directly show most articular cartilage. Assess joint-space width, congruity, alignment, osteophytes and subchondral changes."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "S — Soft tissues"
-                  ]
+                  "type": "paragraph",
+                  "text": "S — Soft tissues"
                 },
                 {
                   "type": "paragraph",
@@ -1048,42 +1039,51 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_17",
+              "group_id": "x_ray_interpretation_group_15",
               "group_title": "The fracture checklist",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "When a fracture is present, report:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bone and side."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anatomical location: proximal, middle or distal third; metaphysis, diaphysis or epiphysis; intra-articular or extra-articular."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pattern: transverse, oblique, spiral, comminuted, impacted or avulsion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Displacement: direction and degree where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Angulation and shortening, if present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated dislocation, joint involvement and soft-tissue findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any relevant complications or additional fractures."
+                  "type": "list",
+                  "title": "When a fracture is present, report:",
+                  "items": [
+                    {
+                      "text": "Bone and side.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Anatomical location: proximal, middle or distal third; metaphysis, diaphysis or epiphysis; intra-articular or extra-articular.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Pattern: transverse, oblique, spiral, comminuted, impacted or avulsion.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Displacement: direction and degree where relevant.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Angulation and shortening, if present.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Associated dislocation, joint involvement and soft-tissue findings.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Any relevant complications or additional fractures.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1099,11 +1099,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_7",
-          "subsection_title": "How to present an X-ray in an OSCE",
+          "subsection_title": "6. How to present an X-ray in an OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_18",
+              "group_id": "x_ray_interpretation_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1115,7 +1115,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_19",
+              "group_id": "x_ray_interpretation_group_17",
               "group_title": "Example 1: Normal chest X-ray",
               "group_subtitle": null,
               "group_icon": null,
@@ -1127,7 +1127,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I have been presented with an X-ray of the [anatomical region] of a [patient’s age]-year-old [male/female], performed on [date, if available], for the clinical indication of [indication]."
+                  "text": "“I have been presented with an X-ray of the [anatomical region] of a [patient’s age]-year-old [male/female], performed on [date, if available], for the clinical indication of [indication].",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1135,11 +1136,11 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Image quality and technical assessment: The images are of satisfactory technical quality for interpretation. The anatomical region of interest is adequately included. The patient’s positioning and alignment are appropriate. There is no significant motion artefact, and the exposure and penetration permit assessment of the relevant anatomical structures. [Mention any limitation if present.]"
+                  "text": "**Image quality and technical assessment:** The images are of satisfactory technical quality for interpretation. The anatomical region of interest is adequately included. The patient’s positioning and alignment are appropriate. There is no significant motion artefact, and the exposure and penetration permit assessment of the relevant anatomical structures. [Mention any limitation if present.]"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Systematic review: I will assess the images systematically, including the alignment, bones, joints, soft tissues and any region-specific anatomical structures."
+                  "text": "**Systematic review:** I will assess the images systematically, including the alignment, bones, joints, soft tissues and any region-specific anatomical structures."
                 },
                 {
                   "type": "paragraph",
@@ -1159,116 +1160,96 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Impression: Normal radiographic appearance of the [anatomical region], with no acute osseous or other significant abnormality identified."
+                  "text": "**Impression:** Normal radiographic appearance of the [anatomical region], with no acute osseous or other significant abnormality identified."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Limitations: The assessment is limited to the structures visualised and the capabilities of plain radiography. If clinically indicated, further imaging may be required.”"
+                  "text": "**Limitations:** The assessment is limited to the structures visualised and the capabilities of plain radiography. If clinically indicated, further imaging may be required.”"
                 },
                 {
                   "type": "paragraph",
-                  "text": "B. “I have been presented with a chest radiograph of a [patient’s age]-year-old [male/female], performed for [clinical indication]."
+                  "text": "**B.** “I have been presented with a chest radiograph of a [patient’s age]-year-old [male/female], performed for [clinical indication]."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Views and image quality"
-                  ]
+                  "type": "paragraph",
+                  "text": "**1. Views and image quality**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The examination consists of [PA/AP] and [lateral, if available] views. The image is appropriately labelled and correctly oriented. Image quality is satisfactory, with adequate inspiration, appropriate exposure and penetration, and no significant rotation or motion artefact. The entire relevant thorax is included."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Airway and trachea"
-                  ]
+                  "type": "paragraph",
+                  "text": "**2. Airway and trachea**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The trachea is central, with no significant deviation. The visualised central airways are patent where assessable."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Lungs and lung fields"
-                  ]
+                  "type": "paragraph",
+                  "text": "**3. Lungs and lung fields**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Both lungs are adequately expanded and demonstrate normal aeration. The lung fields are clear, with no focal air-space consolidation, collapse, suspicious pulmonary opacity or interstitial abnormality identified. There is no visible pulmonary nodule or mass on the supplied views."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Pleura"
-                  ]
+                  "type": "paragraph",
+                  "text": "**4. Pleura**"
                 },
                 {
                   "type": "paragraph",
                   "text": "There is no pleural effusion or pneumothorax. The pleural surfaces show no significant thickening on the supplied images."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Hila and pulmonary vasculature"
-                  ]
+                  "type": "paragraph",
+                  "text": "**5. Hila and pulmonary vasculature**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The hilar structures are not enlarged. The pulmonary vascular markings are within expected limits, with no convincing evidence of pulmonary vascular congestion."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "6. Heart and mediastinum"
-                  ]
+                  "type": "paragraph",
+                  "text": "**6. Heart and mediastinum**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The cardiac silhouette is within normal size limits for the projection used. The mediastinal contours are not widened. The aortic contour is unremarkable for the patient’s age and the projection."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "7. Diaphragms and costophrenic angles"
-                  ]
+                  "type": "paragraph",
+                  "text": "**7. Diaphragms and costophrenic angles**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Both hemidiaphragms are normally positioned and clearly outlined. The right hemidiaphragm is normally slightly higher than the left. Both costophrenic angles are sharp. No free subdiaphragmatic gas is identified on the supplied views, if the relevant regions are included."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "8. Bones and soft tissues"
-                  ]
+                  "type": "paragraph",
+                  "text": "**8. Bones and soft tissues**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The visualised ribs, clavicles, scapulae, vertebral structures and other included bones show no acute osseous abnormality. The chest wall soft tissues are unremarkable, with no obvious subcutaneous emphysema or radiopaque foreign body."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "9. Additional structures"
-                  ]
+                  "type": "paragraph",
+                  "text": "**9. Additional structures**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The visualised upper abdominal structures show no significant abnormality within the limits of the examination."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Impression: No acute cardiopulmonary abnormality identified on this chest radiograph.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Impression:** No acute cardiopulmonary abnormality identified on this chest radiograph.”"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_20",
+              "group_id": "x_ray_interpretation_group_18",
               "group_title": "Chest X-ray: technical points you must mention when relevant",
               "group_subtitle": null,
               "group_icon": null,
@@ -1311,19 +1292,14 @@
                   ]
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "These are technical checks, not a replacement for anatomical reporting"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_21",
-              "group_title": "Example 2: Normal X-ray of the abdomen",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "These are technical checks, not a replacement for anatomical reporting"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Example 2: Normal X-ray of the abdomen**",
+                  "style": "heading"
+                },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_29.webp",
@@ -1331,52 +1307,53 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I have been presented with an abdominal radiograph of a [patient’s age]-year-old [male/female], performed for [clinical indication]."
+                  "text": "“I have been presented with an abdominal radiograph of a [patient’s age]-year-old [male/female], performed for [clinical indication].",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "1. Technical assessment: The image is appropriately labelled and positioned. The projection is [supine/erect/decubitus], and the exposure is satisfactory. The anatomical coverage is [describe the structures included], with no significant motion artefact."
+                  "text": "**1. Technical assessment:** The image is appropriately labelled and positioned. The projection is [supine/erect/decubitus], and the exposure is satisfactory. The anatomical coverage is [describe the structures included], with no significant motion artefact."
                 },
                 {
                   "type": "paragraph",
-                  "text": "2. Bowel gas pattern: The bowel gas distribution is within expected limits. There is no convincing dilatation of the small or large bowel. No abnormal air-fluid levels are identified on the supplied erect or decubitus views, if performed. There is no obvious evidence of bowel obstruction."
+                  "text": "**2. Bowel gas pattern:** The bowel gas distribution is within expected limits. There is no convincing dilatation of the small or large bowel. No abnormal air-fluid levels are identified on the supplied erect or decubitus views, if performed. There is no obvious evidence of bowel obstruction."
                 },
                 {
                   "type": "paragraph",
-                  "text": "3. Bowel contents: The visualised bowel contents and faecal loading are within expected limits for the clinical context. There is no obvious abnormal faecal loading pattern or faecal impaction identified."
+                  "text": "**3. Bowel contents:** The visualised bowel contents and faecal loading are within expected limits for the clinical context. There is no obvious abnormal faecal loading pattern or faecal impaction identified."
                 },
                 {
                   "type": "paragraph",
-                  "text": "4. Free intraperitoneal gas: No convincing free intraperitoneal gas is identified on the supplied views. The sensitivity of this assessment depends on the projection and positioning."
+                  "text": "**4. Free intraperitoneal gas:** No convincing free intraperitoneal gas is identified on the supplied views. The sensitivity of this assessment depends on the projection and positioning."
                 },
                 {
                   "type": "paragraph",
-                  "text": "5. Abdominal soft tissues and organ outlines: The visualised soft-tissue outlines are unremarkable. There is no obvious abnormal organ enlargement where assessable on the radiograph."
+                  "text": "**5. Abdominal soft tissues and organ outlines:** The visualised soft-tissue outlines are unremarkable. There is no obvious abnormal organ enlargement where assessable on the radiograph."
                 },
                 {
                   "type": "paragraph",
-                  "text": "6. Calcifications and urinary tract: No abnormal radiopaque calculus is identified along the expected renal, ureteric or bladder regions. The kidneys and urinary bladder are assessed only to the extent permitted by the radiograph."
+                  "text": "**6. Calcifications and urinary tract:** No abnormal radiopaque calculus is identified along the expected renal, ureteric or bladder regions. The kidneys and urinary bladder are assessed only to the extent permitted by the radiograph."
                 },
                 {
                   "type": "paragraph",
-                  "text": "7. Bones: The visualised lumbar vertebrae, pelvis, sacrum and included hips show no acute osseous abnormality."
+                  "text": "**7. Bones:** The visualised lumbar vertebrae, pelvis, sacrum and included hips show no acute osseous abnormality."
                 },
                 {
                   "type": "paragraph",
-                  "text": "8. Foreign bodies and other findings: No unexpected radiopaque foreign body or abnormal calcification is identified. Any visible devices, tubes or lines are assessed for their position if present."
+                  "text": "**8. Foreign bodies and other findings:** No unexpected radiopaque foreign body or abnormal calcification is identified. Any visible devices, tubes or lines are assessed for their position if present."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Impression: No acute abnormality identified on the supplied abdominal radiograph."
+                  "text": "**Impression:** No acute abnormality identified on the supplied abdominal radiograph."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Limitation: Plain abdominal radiography has limited sensitivity for many soft-tissue, visceral and urinary tract abnormalities. A normal radiograph does not exclude bowel obstruction, perforation, urinary calculi or other abdominal pathology when clinical suspicion remains high.”"
+                  "text": "**Limitation:** Plain abdominal radiography has limited sensitivity for many soft-tissue, visceral and urinary tract abnormalities. A normal radiograph does not exclude bowel obstruction, perforation, urinary calculi or other abdominal pathology when clinical suspicion remains high.”"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_22",
+              "group_id": "x_ray_interpretation_group_19",
               "group_title": "Example 3: Normal X-ray of bones and joints",
               "group_subtitle": null,
               "group_icon": null,
@@ -1388,39 +1365,40 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I have been presented with radiographs of the [right/left] [named bone or joint], obtained in [AP/lateral/oblique/other] projections."
+                  "text": "“I have been presented with radiographs of the [right/left] [named bone or joint], obtained in [AP/lateral/oblique/other] projections.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "1. Technical assessment: The images are appropriately labelled, with the relevant anatomical region adequately visualised in the available projections. Image quality is satisfactory for assessment."
+                  "text": "**1. Technical assessment:** The images are appropriately labelled, with the relevant anatomical region adequately visualised in the available projections. Image quality is satisfactory for assessment."
                 },
                 {
                   "type": "paragraph",
-                  "text": "2. Alignment: The bones demonstrate normal anatomical alignment. There is no dislocation, subluxation or significant malalignment."
+                  "text": "**2. Alignment:** The bones demonstrate normal anatomical alignment. There is no dislocation, subluxation or significant malalignment."
                 },
                 {
                   "type": "paragraph",
-                  "text": "3. Bones: The visualised bones demonstrate preserved cortical continuity, normal mineralisation and an expected trabecular pattern. There is no acute fracture, focal lytic lesion, suspicious sclerosis or other focal osseous abnormality identified."
+                  "text": "**3. Bones:** The visualised bones demonstrate preserved cortical continuity, normal mineralisation and an expected trabecular pattern. There is no acute fracture, focal lytic lesion, suspicious sclerosis or other focal osseous abnormality identified."
                 },
                 {
                   "type": "paragraph",
-                  "text": "4. Joint spaces: The joint spaces are maintained, with no significant narrowing or widening. The articular surfaces are preserved, with no obvious erosion or osteochondral defect."
+                  "text": "**4. Joint spaces:** The joint spaces are maintained, with no significant narrowing or widening. The articular surfaces are preserved, with no obvious erosion or osteochondral defect."
                 },
                 {
                   "type": "paragraph",
-                  "text": "5. Soft tissues: The surrounding soft tissues demonstrate no significant swelling, abnormal calcification, radiopaque foreign body or soft-tissue gas. No joint effusion is identified where it can be assessed on the supplied views."
+                  "text": "**5. Soft tissues:** The surrounding soft tissues demonstrate no significant swelling, abnormal calcification, radiopaque foreign body or soft-tissue gas. No joint effusion is identified where it can be assessed on the supplied views."
                 },
                 {
                   "type": "paragraph",
-                  "text": "6. Adjacent structures: The adjacent bones and joints included in the images show no acute abnormality."
+                  "text": "**6. Adjacent structures:** The adjacent bones and joints included in the images show no acute abnormality."
                 },
                 {
                   "type": "paragraph",
-                  "text": "7. Additional findings: No other significant radiographic abnormality is identified."
+                  "text": "**7. Additional findings:** No other significant radiographic abnormality is identified."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Impression: Normal radiographic appearance of the [right/left] [anatomical region], with no acute fracture or dislocation identified.”"
+                  "text": "**Impression:** Normal radiographic appearance of the [right/left] [anatomical region], with no acute fracture or dislocation identified.”"
                 }
               ]
             }
@@ -1428,11 +1406,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_8",
-          "subsection_title": "Common OSCE viva questions",
+          "subsection_title": "7. Common OSCE viva questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_23",
+              "group_id": "x_ray_interpretation_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1475,42 +1453,47 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_9",
-          "subsection_title": "Final checklist before leaving the station",
+          "subsection_title": "8. Final checklist before leaving the station",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_24",
+              "group_id": "x_ray_interpretation_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Identify the patient, body part, side and projection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check technical adequacy and limitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use a consistent anatomical search pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe abnormalities before naming the diagnosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for associated findings and complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give a clear impression and appropriate next steps."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recognise urgent findings and escalate immediately."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Identify the patient, body part, side and projection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check technical adequacy and limitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use a consistent anatomical search pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Describe abnormalities before naming the diagnosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Look for associated findings and complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Give a clear impression and appropriate next steps.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recognise urgent findings and escalate immediately.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1522,11 +1505,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_10",
-          "subsection_title": "Presenting Abnormal X-ray Findings",
+          "subsection_title": "9. Presenting Abnormal X-ray Findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_25",
+              "group_id": "x_ray_interpretation_group_22",
               "group_title": "A. Consolidation — e.g. pneumonia",
               "group_subtitle": null,
               "group_icon": null,
@@ -1545,50 +1528,50 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_33.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_26",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Focal or multifocal air-space opacity."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Lobar or segmental distribution."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Focal or multifocal air-space opacity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lobar or segmental distribution.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Air bronchograms, if present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Silhouette sign: loss of a normal border where adjacent structures have similar opacity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated pleural effusion or volume loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distribution: upper, middle, lower zone; unilateral or bilateral.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Air bronchograms, if present."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Silhouette sign: loss of a normal border where adjacent structures have similar opacity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated pleural effusion or volume loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Distribution: upper, middle, lower zone; unilateral or bilateral."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_27",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“This is a chest radiograph in the [PA/AP] projection. The image is [adequate/limited by …]. There is a focal air-space opacity in the [right/left] [upper/middle/lower] lung zone, with [air bronchograms, if present]. The remaining lung fields are [describe findings]. I would assess the cardiomediastinal silhouette, pleural spaces and costophrenic angles for associated abnormalities."
+                  "text": "“This is a chest radiograph in the [PA/AP] projection. The image is [adequate/limited by …]. There is a focal air-space opacity in the [right/left] [upper/middle/lower] lung zone, with [air bronchograms, if present]. The remaining lung fields are [describe findings]. I would assess the cardiomediastinal silhouette, pleural spaces and costophrenic angles for associated abnormalities.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1601,7 +1584,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_28",
+              "group_id": "x_ray_interpretation_group_23",
               "group_title": "B. Pleural effusion",
               "group_subtitle": null,
               "group_icon": null,
@@ -1615,50 +1598,50 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_35.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_29",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Blunting of the costophrenic angle."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Homogeneous basal opacity."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Blunting of the costophrenic angle.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Homogeneous basal opacity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Meniscus sign on an upright film.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of the hemidiaphragm outline.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mediastinal shift away from a very large effusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "On supine films, diffuse haziness rather than a classic meniscus may occur.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Meniscus sign on an upright film."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Loss of the hemidiaphragm outline."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mediastinal shift away from a very large effusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "On supine films, diffuse haziness rather than a classic meniscus may occur."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_30",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“This is a chest radiograph in the [projection]. There is homogeneous opacity in the [right/left] lower hemithorax with blunting of the corresponding costophrenic angle and [a visible meniscus, if present]. The appearance is consistent with a pleural effusion. I would assess its extent and look for associated consolidation, collapse or mediastinal displacement."
+                  "text": "“This is a chest radiograph in the [projection]. There is homogeneous opacity in the [right/left] lower hemithorax with blunting of the corresponding costophrenic angle and [a visible meniscus, if present]. The appearance is consistent with a pleural effusion. I would assess its extent and look for associated consolidation, collapse or mediastinal displacement.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1671,7 +1654,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_31",
+              "group_id": "x_ray_interpretation_group_24",
               "group_title": "C. Pneumothorax",
               "group_subtitle": null,
               "group_icon": null,
@@ -1690,50 +1673,50 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_38.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_32",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Visceral pleural line."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Absence of peripheral lung markings beyond that line."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Visceral pleural line.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absence of peripheral lung markings beyond that line.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Partial or complete lung collapse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size and extent of the pneumothorax.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mediastinal shift or diaphragmatic depression in tension physiology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "On a supine film, a deep sulcus sign may be present.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Partial or complete lung collapse."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Size and extent of the pneumothorax."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mediastinal shift or diaphragmatic depression in tension physiology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "On a supine film, a deep sulcus sign may be present."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_33",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“This is a chest radiograph demonstrating a [right/left]-sided pneumothorax. There is a visible visceral pleural line with absence of lung markings peripheral to it. The extent of the pneumothorax is [describe, if assessable]. I would assess for mediastinal shift and other signs of tension physiology."
+                  "text": "“This is a chest radiograph demonstrating a [right/left]-sided pneumothorax. There is a visible visceral pleural line with absence of lung markings peripheral to it. The extent of the pneumothorax is [describe, if assessable]. I would assess for mediastinal shift and other signs of tension physiology.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1746,7 +1729,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_34",
+              "group_id": "x_ray_interpretation_group_25",
               "group_title": "D. Lobar collapse (atelectasis)",
               "group_subtitle": null,
               "group_icon": null,
@@ -1765,54 +1748,54 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_40.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_35",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Increased opacity in the affected lobe."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Volume loss."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Increased opacity in the affected lobe.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Volume loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fissure displacement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hilar or mediastinal shift towards the affected side.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Elevated hemidiaphragm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crowding of bronchovascular markings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Compensatory hyperinflation of adjacent lung.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fissure displacement."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Hilar or mediastinal shift towards the affected side."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevated hemidiaphragm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Crowding of bronchovascular markings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Compensatory hyperinflation of adjacent lung."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_36",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is increased opacity involving the [specified lobe], associated with volume loss and [fissure displacement, hilar displacement or other visible signs]. The findings are consistent with lobar collapse."
+                  "text": "“There is increased opacity involving the [specified lobe], associated with volume loss and [fissure displacement, hilar displacement or other visible signs]. The findings are consistent with lobar collapse.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1825,7 +1808,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_37",
+              "group_id": "x_ray_interpretation_group_26",
               "group_title": "E. Pulmonary oedema",
               "group_subtitle": null,
               "group_icon": null,
@@ -1844,50 +1827,50 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_43.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_38",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Bilateral perihilar air-space opacities."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pulmonary vascular redistribution or congestion."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Bilateral perihilar air-space opacities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary vascular redistribution or congestion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interstitial markings and Kerley B lines.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiomegaly, especially on an adequate PA film.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bilateral pleural effusions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other signs of fluid overload.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Interstitial markings and Kerley B lines."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cardiomegaly, especially on an adequate PA film."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bilateral pleural effusions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other signs of fluid overload."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_39",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The chest radiograph demonstrates bilateral pulmonary opacities with [perihilar predominance/interstitial prominence], accompanied by [vascular congestion, cardiomegaly or bilateral pleural effusions, if present]. This pattern is suspicious for pulmonary oedema in the appropriate clinical context."
+                  "text": "“The chest radiograph demonstrates bilateral pulmonary opacities with [perihilar predominance/interstitial prominence], accompanied by [vascular congestion, cardiomegaly or bilateral pleural effusions, if present]. This pattern is suspicious for pulmonary oedema in the appropriate clinical context.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1896,7 +1879,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_40",
+              "group_id": "x_ray_interpretation_group_27",
               "group_title": "F. Cardiomegaly",
               "group_subtitle": null,
               "group_icon": null,
@@ -1907,42 +1890,40 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "pacs.de"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "pacs.de"
+                    {
+                      "text": "Enlarged cardiac silhouette.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiothoracic ratio greater than approximately 0.5 on a properly positioned adult PA chest radiograph.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated vascular congestion, pulmonary oedema or pleural effusions.",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_41",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Enlarged cardiac silhouette."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cardiothoracic ratio greater than approximately 0.5 on a properly positioned adult PA chest radiograph."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Associated vascular congestion, pulmonary oedema or pleural effusions."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_42",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The cardiac silhouette appears enlarged, with a cardiothoracic ratio exceeding 50% on this [adequate PA] radiograph. The findings suggest cardiomegaly. I would assess for associated pulmonary vascular congestion or oedema and correlate with the clinical examination and echocardiographic findings.”"
+                  "text": "“The cardiac silhouette appears enlarged, with a cardiothoracic ratio exceeding 50% on this [adequate PA] radiograph. The findings suggest cardiomegaly. I would assess for associated pulmonary vascular congestion or oedema and correlate with the clinical examination and echocardiographic findings.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1951,7 +1932,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_43",
+              "group_id": "x_ray_interpretation_group_28",
               "group_title": "G. Other important chest X-ray abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -2011,26 +1992,35 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_11",
-          "subsection_title": "Skeletal X-rays: presenting fractures and joint abnormalities",
+          "subsection_title": "10. Skeletal X-rays: presenting fractures and joint abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_44",
+              "group_id": "x_ray_interpretation_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For any skeletal X-ray, use ABCS:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For any skeletal X-ray, use ABCS:",
                   "items": [
-                    "A — Alignment",
-                    "B — Bones",
-                    "C — Cartilage and joint spaces",
-                    "S — Soft tissues"
+                    {
+                      "text": "A — Alignment",
+                      "level": 0
+                    },
+                    {
+                      "text": "B — Bones",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Cartilage and joint spaces",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Soft tissues",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2040,7 +2030,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_45",
+              "group_id": "x_ray_interpretation_group_30",
               "group_title": "A. How to present any fracture",
               "group_subtitle": null,
               "group_icon": null,
@@ -2061,52 +2051,60 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Describe the following features:"
+                  "type": "list",
+                  "title": "Describe the following features:",
+                  "items": [
+                    {
+                      "text": "Bone and side.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Anatomical location.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Fracture pattern.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Displacement and angulation.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Shortening or rotation, if assessable.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Extension into the joint.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Associated fractures or dislocations.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Soft-tissue abnormalities and important complications.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Bone and side."
+                  "text": "**Full fracture presentation template**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Anatomical location."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fracture pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Displacement and angulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shortening or rotation, if assessable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Extension into the joint."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated fractures or dislocations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Soft-tissue abnormalities and important complications."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_46",
-              "group_title": "Full fracture presentation template",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“These are [AP/lateral/oblique] radiographs of the [right/left] [bone or joint]. There is a fracture involving the [specific anatomical region]. The fracture is [transverse/oblique/spiral/comminuted/other] and is [displaced/undisplaced], with [direction and degree of angulation or displacement where assessable]."
+                  "text": "“These are [AP/lateral/oblique] radiographs of the [right/left] [bone or joint]. There is a fracture involving the [specific anatomical region]. The fracture is [transverse/oblique/spiral/comminuted/other] and is [displaced/undisplaced], with [direction and degree of angulation or displacement where assessable].",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2119,7 +2117,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_47",
+              "group_id": "x_ray_interpretation_group_31",
               "group_title": "B. Fracture terminology you must use correctly",
               "group_subtitle": null,
               "group_icon": null,
@@ -2172,26 +2170,28 @@
                       "Fragments have lost their normal anatomical relationship"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_48",
-              "group_title": "Displacement versus angulation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Displacement: Describe how the distal fragment lies relative to the proximal fragment, using a clearly stated reference."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Angulation: Describe the direction of the distal fragment's tilt relative to the proximal segment."
+                  "text": "**Displacement versus angulation**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Shortening: State when there is overlap or loss of normal bone length."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Displacement: Describe how the distal fragment lies relative to the proximal fragment, using a clearly stated reference.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Angulation: Describe the direction of the distal fragment's tilt relative to the proximal segment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shortening: State when there is overlap or loss of normal bone length.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2200,7 +2200,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_49",
+              "group_id": "x_ray_interpretation_group_32",
               "group_title": "C. Dislocation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2219,46 +2219,46 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_50.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_50",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Loss of normal joint congruity."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Abnormal position of the articulating surfaces."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Loss of normal joint congruity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal position of the articulating surfaces.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated fractures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Joint effusion or soft-tissue swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurovascular risk based on the joint involved.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Associated fractures."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Joint effusion or soft-tissue swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neurovascular risk based on the joint involved."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_51",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The radiograph demonstrates loss of normal alignment at the [specified] joint, with the [distal or named bone] displaced [direction] relative to the [reference bone]. This is consistent with a [direction/type] dislocation. I would inspect for associated fractures and assess neurovascular status urgently. Prompt reduction by an appropriately trained clinician and post-reduction imaging are indicated according to the clinical situation.”"
+                  "text": "“The radiograph demonstrates loss of normal alignment at the [specified] joint, with the [distal or named bone] displaced [direction] relative to the [reference bone]. This is consistent with a [direction/type] dislocation. I would inspect for associated fractures and assess neurovascular status urgently. Prompt reduction by an appropriately trained clinician and post-reduction imaging are indicated according to the clinical situation.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2267,7 +2267,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_52",
+              "group_id": "x_ray_interpretation_group_33",
               "group_title": "D. Osteoarthritis",
               "group_subtitle": null,
               "group_icon": null,
@@ -2281,46 +2281,46 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_52.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_53",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Joint-space narrowing."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Osteophytes."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Joint-space narrowing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Osteophytes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subchondral sclerosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subchondral cysts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformity or altered alignment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Subchondral sclerosis."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Subchondral cysts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deformity or altered alignment."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_54",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The radiograph demonstrates joint-space narrowing involving the [specified compartment], with marginal osteophyte formation and subchondral sclerosis. There is [no/present] associated deformity. These findings are consistent with osteoarthritis, predominantly affecting the [compartment or joint].”"
+                  "text": "“The radiograph demonstrates joint-space narrowing involving the [specified compartment], with marginal osteophyte formation and subchondral sclerosis. There is [no/present] associated deformity. These findings are consistent with osteoarthritis, predominantly affecting the [compartment or joint].”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2329,7 +2329,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_55",
+              "group_id": "x_ray_interpretation_group_34",
               "group_title": "E. Osteomyelitis",
               "group_subtitle": null,
               "group_icon": null,
@@ -2340,50 +2340,48 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "bionicenter.com.br"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "bionicenter.com.br"
+                    {
+                      "text": "Bone destruction or lucency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cortical irregularity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periosteal reaction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Soft-tissue swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In chronic disease, sclerosis, sequestrum or involucrum.",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_56",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Bone destruction or lucency."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cortical irregularity."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Periosteal reaction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Soft-tissue swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "In chronic disease, sclerosis, sequestrum or involucrum."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_57",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is an abnormal area of bone lucency and cortical irregularity involving the [bone and anatomical region], with [periosteal reaction or other findings]. In the appropriate clinical context, this raises suspicion for osteomyelitis. Early osteomyelitis may not be visible on plain radiographs, so MRI and relevant laboratory and microbiological investigations may be required.”"
+                  "text": "“There is an abnormal area of bone lucency and cortical irregularity involving the [bone and anatomical region], with [periosteal reaction or other findings]. In the appropriate clinical context, this raises suspicion for osteomyelitis. Early osteomyelitis may not be visible on plain radiographs, so MRI and relevant laboratory and microbiological investigations may be required.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2391,11 +2389,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_12",
-          "subsection_title": "Abdominal X-rays: presenting abnormal findings in full",
+          "subsection_title": "11. Abdominal X-rays: presenting abnormal findings in full",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_58",
+              "group_id": "x_ray_interpretation_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2411,7 +2409,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_59",
+              "group_id": "x_ray_interpretation_group_36",
               "group_title": "A. Small-bowel obstruction",
               "group_subtitle": null,
               "group_icon": null,
@@ -2430,46 +2428,46 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_56.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_60",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Dilated central small-bowel loops."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Valvulae conniventes traversing the full width of the bowel."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Dilated central small-bowel loops.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Valvulae conniventes traversing the full width of the bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple air-fluid levels on an erect or appropriately positioned film.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relative paucity of distal colonic gas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs suggesting complications, although plain films cannot reliably exclude bowel ischaemia.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Multiple air-fluid levels on an erect or appropriately positioned film."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Relative paucity of distal colonic gas."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs suggesting complications, although plain films cannot reliably exclude bowel ischaemia."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_61",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“This is an abdominal radiograph in the [supine/erect] projection. There are multiple dilated central small-bowel loops, with visible valvulae conniventes extending across the bowel lumen. There are [multiple air-fluid levels, if demonstrated] and [relative paucity of distal bowel gas, if present]."
+                  "text": "“This is an abdominal radiograph in the [supine/erect] projection. There are multiple dilated central small-bowel loops, with visible valvulae conniventes extending across the bowel lumen. There are [multiple air-fluid levels, if demonstrated] and [relative paucity of distal bowel gas, if present].",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2478,7 +2476,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_62",
+              "group_id": "x_ray_interpretation_group_37",
               "group_title": "B. Large-bowel obstruction",
               "group_subtitle": null,
               "group_icon": null,
@@ -2489,50 +2487,48 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "cambridge.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "cambridge.org"
+                    {
+                      "text": "Dilated colon, usually more peripheral than small-bowel loops.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haustral markings that do not normally traverse the full bowel diameter.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Marked caecal dilatation where present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relative decompression distal to the obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated small-bowel dilatation if the ileocaecal valve is incompetent.",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_63",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Dilated colon, usually more peripheral than small-bowel loops."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Haustral markings that do not normally traverse the full bowel diameter."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Marked caecal dilatation where present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relative decompression distal to the obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated small-bowel dilatation if the ileocaecal valve is incompetent."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_64",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The abdominal radiograph demonstrates dilatation of the large bowel, predominantly involving the [specified segments], with visible haustral markings. There is [relative distal decompression or other relevant findings]. The appearance is concerning for large-bowel obstruction."
+                  "text": "“The abdominal radiograph demonstrates dilatation of the large bowel, predominantly involving the [specified segments], with visible haustral markings. There is [relative distal decompression or other relevant findings]. The appearance is concerning for large-bowel obstruction.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2541,7 +2537,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_65",
+              "group_id": "x_ray_interpretation_group_38",
               "group_title": "C. Pneumoperitoneum",
               "group_subtitle": null,
               "group_icon": null,
@@ -2560,42 +2556,42 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/x_ray_interpretation_60.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_66",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Free gas beneath the diaphragm on an erect chest or abdominal radiograph."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Free gas in the abdomen on appropriate decubitus or supine views."
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Free gas beneath the diaphragm on an erect chest or abdominal radiograph.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Free gas in the abdomen on appropriate decubitus or supine views.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rigler sign, in which both sides of the bowel wall become visible, in suitable circumstances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other signs of abnormal intraperitoneal gas.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Rigler sign, in which both sides of the bowel wall become visible, in suitable circumstances."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Other signs of abnormal intraperitoneal gas."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_67",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is free gas beneath the [right/left] hemidiaphragm, consistent with pneumoperitoneum. In a patient without a recent operation or another recognised explanation, this raises strong concern for hollow-viscus perforation."
+                  "text": "“There is free gas beneath the [right/left] hemidiaphragm, consistent with pneumoperitoneum. In a patient without a recent operation or another recognised explanation, this raises strong concern for hollow-viscus perforation.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2604,7 +2600,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_68",
+              "group_id": "x_ray_interpretation_group_39",
               "group_title": "D. Ileus",
               "group_subtitle": null,
               "group_icon": null,
@@ -2615,47 +2611,45 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "sdelatmrt.spb.ru"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "sdelatmrt.spb.ru"
+                    {
+                      "text": "Diffuse bowel dilatation involving both small and large bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gas extending into the colon and rectum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No convincing discrete transition point on the available film.",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_69",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Diffuse bowel dilatation involving both small and large bowel."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Gas extending into the colon and rectum."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "No convincing discrete transition point on the available film."
+                  "text": "“The abdominal radiograph demonstrates diffuse gaseous dilatation of both small and large bowel, with gas extending into the distal bowel. There is no definite focal transition point visible on this examination. The appearance may represent an ileus, although mechanical obstruction cannot be excluded on plain radiography alone.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_70",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The abdominal radiograph demonstrates diffuse gaseous dilatation of both small and large bowel, with gas extending into the distal bowel. There is no definite focal transition point visible on this examination. The appearance may represent an ileus, although mechanical obstruction cannot be excluded on plain radiography alone.”"
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_71",
+              "group_id": "x_ray_interpretation_group_40",
               "group_title": "E. Other abdominal X-ray abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -2699,11 +2693,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_13",
-          "subsection_title": "Skull and facial bone X-rays",
+          "subsection_title": "12. Skull and facial bone X-rays",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_72",
+              "group_id": "x_ray_interpretation_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2715,7 +2709,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_73",
+              "group_id": "x_ray_interpretation_group_42",
               "group_title": "A. Skull fracture",
               "group_subtitle": null,
               "group_icon": null,
@@ -2726,51 +2720,49 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "epos.myesr.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "epos.myesr.org"
+                    {
+                      "text": "Linear lucency that may cross normal skull markings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Depressed or displaced bone fragments.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diastasis of sutures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated soft-tissue swelling.",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The skull radiograph demonstrates a linear lucency involving the [specified region], suspicious for a skull fracture. I would assess for displacement and associated injury. In a patient with significant head trauma or neurological symptoms, CT head is the appropriate investigation when indicated.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_74",
-              "group_title": "What to look for",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Linear lucency that may cross normal skull markings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Depressed or displaced bone fragments."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diastasis of sutures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated soft-tissue swelling."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_75",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The skull radiograph demonstrates a linear lucency involving the [specified region], suspicious for a skull fracture. I would assess for displacement and associated injury. In a patient with significant head trauma or neurological symptoms, CT head is the appropriate investigation when indicated.”"
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_76",
+              "group_id": "x_ray_interpretation_group_43",
               "group_title": "B. Facial bone abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -2789,11 +2781,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_14",
-          "subsection_title": "Bone lesions: presenting lytic, sclerotic and aggressive abnormalities",
+          "subsection_title": "13. Bone lesions: presenting lytic, sclerotic and aggressive abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_77",
+              "group_id": "x_ray_interpretation_group_44",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2815,7 +2807,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_78",
+              "group_id": "x_ray_interpretation_group_45",
               "group_title": "A. Lytic lesion",
               "group_subtitle": null,
               "group_icon": null,
@@ -2825,48 +2817,48 @@
                   "text": "A lytic lesion appears as an area of increased radiolucency within bone, suggesting reduced bone density or destruction."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Anatomical location and bone involved.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether the lesion is central, eccentric, metaphyseal, diaphyseal or epiphyseal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Geographic, moth-eaten or permeative pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Zone of transition and margin definition.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cortical thinning or destruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periosteal reaction and soft-tissue mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pathological fracture, if present.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Anatomical location and bone involved."
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Whether the lesion is central, eccentric, metaphyseal, diaphyseal or epiphyseal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Geographic, moth-eaten or permeative pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Zone of transition and margin definition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cortical thinning or destruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Periosteal reaction and soft-tissue mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pathological fracture, if present."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_79",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a lytic lesion involving the [bone and anatomical region]. The lesion is [well-defined/ill-defined] with a [narrow/wide] zone of transition. There is [no/present] cortical destruction, periosteal reaction or associated soft-tissue mass. These features suggest a [less aggressive/aggressive] bone lesion, although the diagnosis cannot be established from this finding alone. Further assessment with appropriate imaging and specialist review is indicated.”"
+                  "text": "“There is a lytic lesion involving the [bone and anatomical region]. The lesion is [well-defined/ill-defined] with a [narrow/wide] zone of transition. There is [no/present] cortical destruction, periosteal reaction or associated soft-tissue mass. These features suggest a [less aggressive/aggressive] bone lesion, although the diagnosis cannot be established from this finding alone. Further assessment with appropriate imaging and specialist review is indicated.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2875,7 +2867,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_80",
+              "group_id": "x_ray_interpretation_group_46",
               "group_title": "B. Sclerotic lesion",
               "group_subtitle": null,
               "group_icon": null,
@@ -2883,18 +2875,16 @@
                 {
                   "type": "paragraph",
                   "text": "A sclerotic lesion appears more radiopaque than the surrounding bone."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_81",
-              "group_title": "Full OSCE presentation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "“There is a focal area of increased bone density involving the [bone and location]. The lesion is [well-defined/ill-defined] and demonstrates [describe margins, cortical involvement and other features]. This represents a sclerotic bone lesion. The differential diagnosis depends on the patient's age, clinical history, lesion morphology and distribution.”"
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a focal area of increased bone density involving the [bone and location]. The lesion is [well-defined/ill-defined] and demonstrates [describe margins, cortical involvement and other features]. This represents a sclerotic bone lesion. The differential diagnosis depends on the patient's age, clinical history, lesion morphology and distribution.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2903,16 +2893,14 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_82",
+              "group_id": "x_ray_interpretation_group_47",
               "group_title": "C. Periosteal reaction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Describe the pattern rather than merely saying “periosteal reaction present.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "Describe the pattern rather than merely saying “periosteal reaction present.”"
                 },
                 {
                   "type": "table",
@@ -2949,11 +2937,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_15",
-          "subsection_title": "Paediatric X-rays: high-yield abnormal findings",
+          "subsection_title": "13. Paediatric X-rays: high-yield abnormal findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_83",
+              "group_id": "x_ray_interpretation_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2980,31 +2968,33 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_84",
+              "group_id": "x_ray_interpretation_group_49",
               "group_title": "A. Greenstick fracture",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The radiograph demonstrates an incomplete fracture of the [bone], with disruption of one cortex and bending of the opposite cortex. The appearance is consistent with a greenstick fracture. I would assess angulation, displacement and the adjacent growth plate.”"
+                  "text": "“The radiograph demonstrates an incomplete fracture of the [bone], with disruption of one cortex and bending of the opposite cortex. The appearance is consistent with a greenstick fracture. I would assess angulation, displacement and the adjacent growth plate.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_85",
+              "group_id": "x_ray_interpretation_group_50",
               "group_title": "B. Buckle (torus) fracture",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is cortical buckling involving the [bone and location], without a complete fracture line traversing both cortices. This is consistent with a buckle fracture.”"
+                  "text": "“There is cortical buckling involving the [bone and location], without a complete fracture line traversing both cortices. This is consistent with a buckle fracture.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_86",
+              "group_id": "x_ray_interpretation_group_51",
               "group_title": "C. Salter–Harris fracture",
               "group_subtitle": null,
               "group_icon": null,
@@ -3045,18 +3035,16 @@
                 {
                   "type": "paragraph",
                   "text": "A Salter–Harris type V injury can be radiographically subtle or initially occult."
-                }
-              ]
-            },
-            {
-              "group_id": "x_ray_interpretation_group_87",
-              "group_title": "Full presentation example: Salter–Harris II",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "“There is a fracture involving the distal [bone], extending through the physis into the metaphysis, with a metaphyseal fragment visible. The pattern is consistent with a Salter–Harris type II fracture. I would assess displacement, alignment and joint congruity, and arrange appropriate paediatric orthopaedic management.”"
+                  "text": "**Full presentation example: Salter–Harris II**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a fracture involving the distal [bone], extending through the physis into the metaphysis, with a metaphyseal fragment visible. The pattern is consistent with a Salter–Harris type II fracture. I would assess displacement, alignment and joint congruity, and arrange appropriate paediatric orthopaedic management.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3068,11 +3056,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_16",
-          "subsection_title": "How to present multiple abnormalities on one X-ray",
+          "subsection_title": "14. How to present multiple abnormalities on one X-ray",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_88",
+              "group_id": "x_ray_interpretation_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3082,52 +3070,61 @@
                   "text": "Sometimes the examiner deliberately gives you a film with more than one finding."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use this priority order:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the most urgent or clinically significant abnormality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe it fully."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mention other relevant abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State the overall impression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify urgent action and additional assessment."
+                  "type": "list",
+                  "title": "Use this priority order:",
+                  "items": [
+                    {
+                      "text": "Identify the most urgent or clinically significant abnormality.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Describe it fully.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Mention other relevant abnormalities.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "State the overall impression.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Identify urgent action and additional assessment.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_89",
+              "group_id": "x_ray_interpretation_group_53",
               "group_title": "Example: rib fractures with pneumothorax",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is a chest radiograph demonstrating fractures of the right lateral ribs, with an associated right-sided pneumothorax. The pneumothorax is the immediate concern because it may compromise ventilation. I would assess the patient's respiratory status and haemodynamic stability urgently, examine for associated haemothorax and other thoracic injuries, and arrange immediate management according to clinical severity.”"
+                  "text": "“This is a chest radiograph demonstrating fractures of the right lateral ribs, with an associated right-sided pneumothorax. The pneumothorax is the immediate concern because it may compromise ventilation. I would assess the patient's respiratory status and haemodynamic stability urgently, examine for associated haemothorax and other thoracic injuries, and arrange immediate management according to clinical severity.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_90",
+              "group_id": "x_ray_interpretation_group_54",
               "group_title": "Example: fracture with dislocation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The radiographs demonstrate a displaced fracture of the [bone] involving the [anatomical region], associated with dislocation of the adjacent joint. I would describe the fracture pattern and displacement, assess joint congruity and look for additional fractures. I would urgently assess neurovascular status and arrange appropriate orthopaedic management.”"
+                  "text": "“The radiographs demonstrate a displaced fracture of the [bone] involving the [anatomical region], associated with dislocation of the adjacent joint. I would describe the fracture pattern and displacement, assess joint congruity and look for additional fractures. I would urgently assess neurovascular status and arrange appropriate orthopaedic management.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3139,11 +3136,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_17",
-          "subsection_title": "Normal versus abnormal presentation: what changes?",
+          "subsection_title": "15. Normal versus abnormal presentation: what changes?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_91",
+              "group_id": "x_ray_interpretation_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3212,11 +3209,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_18",
-          "subsection_title": "Phrases that improve your OSCE performance",
+          "subsection_title": "16. Phrases that improve your OSCE performance",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_92",
+              "group_id": "x_ray_interpretation_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3226,31 +3223,56 @@
                   "text": "Use these phrases to sound precise and clinically safe."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "When you are confident",
-                    "“The findings are consistent with …”",
-                    "“The radiographic appearance is characteristic of …”",
-                    "“There is a fracture involving …, with associated …”",
-                    "When the findings are suggestive but not definitive",
-                    "“The findings are suspicious for …”",
-                    "“The appearance raises the possibility of …”"
-                  ]
+                  "type": "paragraph",
+                  "text": "When you are confident"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This pattern may represent …; clinical correlation and further imaging may be required.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "When the image is limited",
-                    "“Interpretation is limited by poor inspiration and patient rotation.”"
-                  ]
+                  "text": "“The findings are consistent with …”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“No definite fracture is identified on these views; however, an occult fracture cannot be excluded if clinical suspicion remains high.”"
+                  "text": "“The radiographic appearance is characteristic of …”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a fracture involving …, with associated …”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When the findings are suggestive but not definitive"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The findings are suspicious for …”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The appearance raises the possibility of …”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“This pattern may represent …; clinical correlation and further imaging may be required.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When the image is limited"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Interpretation is limited by poor inspiration and patient rotation.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“No definite fracture is identified on these views; however, an occult fracture cannot be excluded if clinical suspicion remains high.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3262,11 +3284,11 @@
         },
         {
           "subsection_id": "x_ray_interpretation_subsection_19",
-          "subsection_title": "Common examiner questions after you present an abnormal X-ray",
+          "subsection_title": "17. Common examiner questions after you present an abnormal X-ray",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "x_ray_interpretation_group_93",
+              "group_id": "x_ray_interpretation_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3311,7 +3333,7 @@
               ]
             },
             {
-              "group_id": "x_ray_interpretation_group_94",
+              "group_id": "x_ray_interpretation_group_58",
               "group_title": "A model response to “What would you do next?”",
               "group_subtitle": null,
               "group_icon": null,
@@ -3322,7 +3344,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would assess the patient clinically, including distal neurovascular status, check for an open injury and examine for associated injuries. I would provide appropriate analgesia and immobilisation, arrange orthopaedic review and obtain further imaging if required by the fracture pattern.”"
+                  "text": "“I would assess the patient clinically, including distal neurovascular status, check for an open injury and examine for associated injuries. I would provide appropriate analgesia and immobilisation, arrange orthopaedic review and obtain further imaging if required by the fracture pattern.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3330,7 +3353,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would immediately assess airway, breathing and circulation, check oxygenation and haemodynamic status, and determine whether tension physiology is present. If tension pneumothorax is suspected in an unstable patient, I would arrange immediate decompression according to emergency protocols without delaying for imaging.”"
+                  "text": "“I would immediately assess airway, breathing and circulation, check oxygenation and haemodynamic status, and determine whether tension physiology is present. If tension pneumothorax is suspected in an unstable patient, I would arrange immediate decompression according to emergency protocols without delaying for imaging.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3338,7 +3362,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would assess the patient for dehydration, peritonism and signs of bowel ischaemia, commence appropriate resuscitation and arrange urgent surgical assessment. CT may be required to identify the cause and complications.”"
+                  "text": "“I would assess the patient for dehydration, peritonism and signs of bowel ischaemia, commence appropriate resuscitation and arrange urgent surgical assessment. CT may be required to identify the cause and complications.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",

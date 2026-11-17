@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "amenorrhoea_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -28,40 +28,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario A — Primary amenorrhoea"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario A — Primary amenorrhoea"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 16-year-old girl has never menstruated. Take a focused history, outline the examination and discuss your investigations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario B — Secondary amenorrhoea"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario B — Secondary amenorrhoea"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 27-year-old woman who previously had regular periods has not menstruated for six months. Assess her and formulate a differential diagnosis."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario C — Amenorrhoea with galactorrhoea"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario C — Amenorrhoea with galactorrhoea"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 30-year-old woman presents with absent periods, milky nipple discharge and headaches. Discuss the likely diagnosis and investigations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario D — Amenorrhoea in an athlete"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario D — Amenorrhoea in an athlete"
                 },
                 {
                   "type": "paragraph",
@@ -73,7 +65,7 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_2",
-          "subsection_title": "Definition and classification",
+          "subsection_title": "2. Definition and classification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -87,18 +79,18 @@
                   "text": "Primary amenorrhoea means menstruation has not started by the expected age of pubertal development."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A common clinical threshold for investigation is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A common clinical threshold for investigation is:",
                   "items": [
-                    "No menarche by age 15 years, or"
+                    {
+                      "text": "No menarche by age 15 years, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "No menarche within approximately three years of breast development beginning.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No menarche within approximately three years of breast development beginning."
                 },
                 {
                   "type": "paragraph",
@@ -117,16 +109,18 @@
                   "text": "Secondary amenorrhoea is the cessation of menstruation in someone who has menstruated previously."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Investigation is generally appropriate when there is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No menstruation for three months in someone whose cycles were previously regular, or"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No menstruation for six months in someone whose cycles were previously irregular."
+                  "type": "list",
+                  "title": "Investigation is generally appropriate when there is:",
+                  "items": [
+                    {
+                      "text": "No menstruation for three months in someone whose cycles were previously regular, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "No menstruation for six months in someone whose cycles were previously irregular.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -150,7 +144,7 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_3",
-          "subsection_title": "Introduction, consent and communication",
+          "subsection_title": "3. Introduction, consent and communication",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -165,35 +159,44 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is …, and I am a medical doctor. I understand that you have concerns about your menstrual periods. I would like to ask you some questions about your menstrual history, general health and development to help determine the cause. Some questions may be personal, but I will treat the information confidentially. Is that okay?”"
+                  "text": "“Good morning. My name is …, and I am a medical doctor. I understand that you have concerns about your menstrual periods. I would like to ask you some questions about your menstrual history, general health and development to help determine the cause. Some questions may be personal, but I will treat the information confidentially. Is that okay?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity and age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish whether menstruation has never occurred or has stopped."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about current pain or other urgent symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent before proceeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain confidentiality and its limits where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask sensitive questions respectfully and without assumptions."
+                  "type": "list",
+                  "title": "Then:",
+                  "items": [
+                    {
+                      "text": "Confirm the patient's identity and age.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Establish whether menstruation has never occurred or has stopped.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask about current pain or other urgent symptoms.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Obtain consent before proceeding.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Explain confidentiality and its limits where relevant.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Ask sensitive questions respectfully and without assumptions.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -205,7 +208,7 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_4",
-          "subsection_title": "Step-by-step history taking",
+          "subsection_title": "4. Step-by-step history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -227,66 +230,68 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For primary amenorrhoea, ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has menstruation ever occurred?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "At what age did breast development begin?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When did pubic and axillary hair appear?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has there been any cyclical lower abdominal pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has the patient noticed normal pubertal growth?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there a family history of late puberty or absent menstruation?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "For secondary amenorrhoea, ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When was the last menstrual period?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What were the usual cycle intervals before menstruation stopped?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long has menstruation been absent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Were the periods previously regular?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Did the change occur suddenly or gradually?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has there been spotting or any other vaginal bleeding?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For primary amenorrhoea, ask:",
                   "items": [
-                    "Interpretation"
+                    {
+                      "text": "Has menstruation ever occurred?",
+                      "level": 0
+                    },
+                    {
+                      "text": "At what age did breast development begin?",
+                      "level": 0
+                    },
+                    {
+                      "text": "When did pubic and axillary hair appear?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has there been any cyclical lower abdominal pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has the patient noticed normal pubertal growth?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there a family history of late puberty or absent menstruation?",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "list",
+                  "title": "For secondary amenorrhoea, ask:",
+                  "items": [
+                    {
+                      "text": "When was the last menstrual period?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What were the usual cycle intervals before menstruation stopped?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long has menstruation been absent?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Were the periods previously regular?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Did the change occur suddenly or gradually?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has there been spotting or any other vaginal bleeding?",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Interpretation"
                 },
                 {
                   "type": "table",
@@ -334,40 +339,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When was the last menstrual period?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is pregnancy possible?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are you sexually active, if relevant?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What contraception do you use?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you missed any contraceptive doses?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you recently given birth, miscarried or breastfed?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you previously been pregnant?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you experienced an ectopic pregnancy?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "When was the last menstrual period?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is pregnancy possible?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are you sexually active, if relevant?",
+                      "level": 0
+                    },
+                    {
+                      "text": "What contraception do you use?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have you missed any contraceptive doses?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have you recently given birth, miscarried or breastfed?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have you previously been pregnant?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have you experienced an ectopic pregnancy?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -390,52 +397,56 @@
                   "text": "This is especially important in primary amenorrhoea."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breast development."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pubic and axillary hair."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Growth during adolescence."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sense of smell, particularly if puberty has not started."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous hormonal treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "History of chronic childhood illness or nutritional problems."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Breast development.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pubic and axillary hair.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth during adolescence.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sense of smell, particularly if puberty has not started.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous hormonal treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "History of chronic childhood illness or nutritional problems.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "The presence or absence of breast development helps localise the underlying problem."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breast development indicates previous oestrogen exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Absent breast development raises concern for inadequate oestrogen production or delayed puberty."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Normal breast development with absent menstruation raises the possibility of anatomical obstruction, uterine absence or other reproductive tract abnormalities."
+                  "type": "list",
+                  "title": "For example:",
+                  "items": [
+                    {
+                      "text": "Breast development indicates previous oestrogen exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent breast development raises concern for inadequate oestrogen production or delayed puberty.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal breast development with absent menstruation raises the possibility of anatomical obstruction, uterine absence or other reproductive tract abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -499,36 +510,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recent weight loss or gain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Restrictive eating or disordered eating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intense exercise or athletic training."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Emotional stress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sleep disruption."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chronic illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nutritional intake."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Recent weight loss or gain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restrictive eating or disordered eating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intense exercise or athletic training.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Emotional stress.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sleep disruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic illness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional intake.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -547,36 +560,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pelvic surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous uterine curettage or other intrauterine procedures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous chemotherapy or radiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Known congenital reproductive tract abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous ovarian surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormonal contraception and recent discontinuation."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Previous pelvic surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous uterine curettage or other intrauterine procedures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous chemotherapy or radiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Known congenital reproductive tract abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ovarian surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal contraception and recent discontinuation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -591,36 +606,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Thyroid disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diabetes and other chronic illnesses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Autoimmune disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Family history of early menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Family history of delayed puberty or amenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Known genetic conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pituitary or ovarian disorders."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Thyroid disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes and other chronic illnesses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Autoimmune disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history of early menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history of delayed puberty or amenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Known genetic conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pituitary or ovarian disorders.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -648,7 +665,7 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_5",
-          "subsection_title": "Examination",
+          "subsection_title": "5. Examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -670,28 +687,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Height, weight and BMI."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "General appearance and nutritional status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vital signs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pallor or other systemic signs where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs of chronic illness."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Height, weight and BMI.",
+                      "level": 0
+                    },
+                    {
+                      "text": "General appearance and nutritional status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vital signs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor or other systemic signs where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of chronic illness.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -702,28 +721,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breast development."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pubic and axillary hair."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Distribution of body hair."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acne and hirsutism."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs of virilisation, such as voice deepening or clitoromegaly, when indicated."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Breast development.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pubic and axillary hair.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distribution of body hair.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acne and hirsutism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of virilisation, such as voice deepening or clitoromegaly, when indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -738,28 +759,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Thyroid enlargement or other signs of thyroid disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Galactorrhoea, if appropriate to assess with consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Visual field abnormalities if pituitary pathology is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Features of Cushing syndrome when clinically indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs of androgen excess."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Thyroid enlargement or other signs of thyroid disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Galactorrhoea, if appropriate to assess with consent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual field abnormalities if pituitary pathology is suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Features of Cushing syndrome when clinically indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of androgen excess.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -786,34 +809,31 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Example 1 — Suspected functional hypothalamic amenorrhoea"
-                  ]
+                  "type": "paragraph",
+                  "text": "Example 1 — Suspected functional hypothalamic amenorrhoea"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The patient is clinically stable, with a history of recent weight loss and intensive exercise. Examination suggests reduced nutritional status, without obvious signs of androgen excess or thyroid disease. Functional hypothalamic amenorrhoea is a possibility, but pregnancy and other endocrine causes must be excluded.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Example 2 — Suspected hyperandrogenism"
-                  ]
+                  "text": "“The patient is clinically stable, with a history of recent weight loss and intensive exercise. Examination suggests reduced nutritional status, without obvious signs of androgen excess or thyroid disease. Functional hypothalamic amenorrhoea is a possibility, but pregnancy and other endocrine causes must be excluded.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The patient has amenorrhoea associated with acne and hirsutism. These findings suggest androgen excess, with PCOS among the differential diagnoses. I would assess for other causes of hyperandrogenism and request appropriate hormonal investigations.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Example 3 — Primary amenorrhoea with absent breast development"
-                  ]
+                  "text": "Example 2 — Suspected hyperandrogenism"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The patient has primary amenorrhoea and limited breast development. This raises concern for delayed puberty or hypogonadism. I would assess pubertal development, request gonadotropins and oestradiol, and arrange pelvic imaging and specialist assessment.”"
+                  "text": "“The patient has amenorrhoea associated with acne and hirsutism. These findings suggest androgen excess, with PCOS among the differential diagnoses. I would assess for other causes of hyperandrogenism and request appropriate hormonal investigations.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Example 3 — Primary amenorrhoea with absent breast development"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The patient has primary amenorrhoea and limited breast development. This raises concern for delayed puberty or hypogonadism. I would assess pubertal development, request gonadotropins and oestradiol, and arrange pelvic imaging and specialist assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -821,7 +841,7 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_6",
-          "subsection_title": "Differential diagnoses",
+          "subsection_title": "6. Differential diagnoses",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -848,81 +868,72 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Hypothalamus"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Hypothalamus"
                 },
                 {
                   "type": "paragraph",
                   "text": "Functional hypothalamic amenorrhoea, low energy availability, excessive exercise, stress and congenital GnRH deficiency."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Pituitary"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Pituitary"
                 },
                 {
                   "type": "paragraph",
                   "text": "Hyperprolactinaemia, prolactinoma, other pituitary lesions and selected pituitary disorders."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Ovaries"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Ovaries"
                 },
                 {
                   "type": "paragraph",
                   "text": "PCOS, premature ovarian insufficiency and other causes of impaired ovarian function."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Uterus and outflow tract"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Uterus and outflow tract"
                 },
                 {
                   "type": "paragraph",
                   "text": "Müllerian agenesis, imperforate hymen, transverse vaginal septum, cervical stenosis and intrauterine adhesions."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Other important causes include:"
+                  "type": "list",
+                  "title": "Other important causes include:",
+                  "items": [
+                    {
+                      "text": "Pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lactation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal contraception and other medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic systemic illness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perimenopause or menopause, depending on age.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pregnancy."
+                  "text": "**Important primary amenorrhoea differentials**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "Thyroid dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lactation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormonal contraception and other medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chronic systemic illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perimenopause or menopause, depending on age."
-                }
-              ]
-            },
-            {
-              "group_id": "amenorrhoea_group_23",
-              "group_title": "Important primary amenorrhoea differentials",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Müllerian agenesis (MRKH syndrome): the uterus and upper vagina are absent or underdeveloped, while ovarian function and breast development are usually normal."
@@ -949,11 +960,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_7",
-          "subsection_title": "Investigations",
+          "subsection_title": "7. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_24",
+              "group_id": "amenorrhoea_group_23",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -965,56 +976,46 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_25",
+              "group_id": "amenorrhoea_group_24",
               "group_title": "A. First-line investigations",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Pregnancy test — β-hCG"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Pregnancy test — β-hCG"
                 },
                 {
                   "type": "paragraph",
                   "text": "First-line in anyone who could be pregnant. A positive result redirects the assessment to pregnancy-specific care."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. FSH and LH"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. FSH and LH"
                 },
                 {
                   "type": "paragraph",
                   "text": "Help distinguish ovarian insufficiency from hypothalamic or pituitary dysfunction. Interpret alongside oestradiol and the clinical presentation."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. TSH"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. TSH"
                 },
                 {
                   "type": "paragraph",
                   "text": "Identifies thyroid dysfunction that may disrupt menstruation."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Serum prolactin"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Serum prolactin"
                 },
                 {
                   "type": "paragraph",
                   "text": "Important in amenorrhoea, particularly when galactorrhoea, headache or visual symptoms are present."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Pelvic ultrasound"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. Pelvic ultrasound"
                 },
                 {
                   "type": "paragraph",
@@ -1023,7 +1024,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_26",
+              "group_id": "amenorrhoea_group_25",
               "group_title": "B. Additional investigations",
               "group_subtitle": null,
               "group_icon": null,
@@ -1080,7 +1081,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_27",
+              "group_id": "amenorrhoea_group_26",
               "group_title": "C. Interpretation of hormonal results",
               "group_subtitle": null,
               "group_icon": null,
@@ -1129,42 +1130,51 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_28",
+              "group_id": "amenorrhoea_group_27",
               "group_title": "D. Classic examiner question: How do you investigate primary amenorrhoea?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A structured answer is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take a detailed history of pubertal development and cyclic pelvic pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform an appropriate examination, including assessment of secondary sexual characteristics."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exclude pregnancy when possible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Request FSH, LH, oestradiol, TSH and prolactin as appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform pelvic ultrasound to establish whether the uterus is present and assess the ovaries."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange further genetic testing or MRI when indicated by the findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Refer for specialist assessment."
+                  "type": "list",
+                  "title": "A structured answer is:",
+                  "items": [
+                    {
+                      "text": "Take a detailed history of pubertal development and cyclic pelvic pain.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Perform an appropriate examination, including assessment of secondary sexual characteristics.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Exclude pregnancy when possible.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Request FSH, LH, oestradiol, TSH and prolactin as appropriate.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Perform pelvic ultrasound to establish whether the uterus is present and assess the ovaries.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Arrange further genetic testing or MRI when indicated by the findings.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Refer for specialist assessment.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }
@@ -1172,11 +1182,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_8",
-          "subsection_title": "Management of amenorrhoea",
+          "subsection_title": "8. Management of amenorrhoea",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_29",
+              "group_id": "amenorrhoea_group_28",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1188,31 +1198,33 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_30",
+              "group_id": "amenorrhoea_group_29",
               "group_title": "A. Pregnancy-related amenorrhoea",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If the pregnancy test is positive:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish gestational age and assess symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If there is pain, bleeding, syncope or haemodynamic instability, urgently assess for ectopic pregnancy and other complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange routine antenatal care if the pregnancy is confirmed and uncomplicated."
+                  "type": "list",
+                  "title": "If the pregnancy test is positive:",
+                  "items": [
+                    {
+                      "text": "Establish gestational age and assess symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "If there is pain, bleeding, syncope or haemodynamic instability, urgently assess for ectopic pregnancy and other complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrange routine antenatal care if the pregnancy is confirmed and uncomplicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "amenorrhoea_group_31",
+              "group_id": "amenorrhoea_group_30",
               "group_title": "B. Functional hypothalamic amenorrhoea",
               "group_subtitle": null,
               "group_icon": null,
@@ -1222,32 +1234,34 @@
                   "text": "Often associated with low energy availability, significant weight loss, excessive exercise or psychological stress."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management includes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Restoring adequate energy intake and nutritional balance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Modifying exercise intensity when necessary."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Addressing eating disorders or disordered eating with appropriate multidisciplinary support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supporting psychological wellbeing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring bone health when amenorrhoea is prolonged."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Considering specialist-directed hormonal treatment when indicated for persistent hypo-oestrogenism and bone protection."
+                  "type": "list",
+                  "title": "Management includes:",
+                  "items": [
+                    {
+                      "text": "Restoring adequate energy intake and nutritional balance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Modifying exercise intensity when necessary.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Addressing eating disorders or disordered eating with appropriate multidisciplinary support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supporting psychological wellbeing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitoring bone health when amenorrhoea is prolonged.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Considering specialist-directed hormonal treatment when indicated for persistent hypo-oestrogenism and bone protection.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1256,7 +1270,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_32",
+              "group_id": "amenorrhoea_group_31",
               "group_title": "C. PCOS-related amenorrhoea",
               "group_subtitle": null,
               "group_icon": null,
@@ -1266,60 +1280,69 @@
                   "text": "Management depends on whether the patient wants pregnancy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If pregnancy is not currently desired:"
+                  "type": "list",
+                  "title": "If pregnancy is not currently desired:",
+                  "items": [
+                    {
+                      "text": "Offer appropriate cycle regulation and endometrial protection, such as a combined oral contraceptive or intermittent progestogen when suitable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Address metabolic risk factors and lifestyle in a supportive, non-stigmatising manner.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evaluate significant androgen excess or atypical features.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Offer appropriate cycle regulation and endometrial protection, such as a combined oral contraceptive or intermittent progestogen when suitable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Address metabolic risk factors and lifestyle in a supportive, non-stigmatising manner."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evaluate significant androgen excess or atypical features."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If pregnancy is desired:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess ovulatory dysfunction and other infertility factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Address relevant metabolic health."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider letrozole as first-line pharmacological ovulation induction for anovulatory infertility due to PCOS when there are no other infertility factors and the treatment is appropriate under local guidance."
+                  "type": "list",
+                  "title": "If pregnancy is desired:",
+                  "items": [
+                    {
+                      "text": "Assess ovulatory dysfunction and other infertility factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Address relevant metabolic health.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider letrozole as first-line pharmacological ovulation induction for anovulatory infertility due to PCOS when there are no other infertility factors and the treatment is appropriate under local guidance.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "amenorrhoea_group_33",
+              "group_id": "amenorrhoea_group_32",
               "group_title": "D. Hyperprolactinaemia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Review medications and exclude pregnancy and hypothyroidism."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Repeat or confirm the result when appropriate, particularly if the elevation is mild."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Investigate persistent unexplained elevation and arrange pituitary MRI when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treat the underlying cause."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Review medications and exclude pregnancy and hypothyroidism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Repeat or confirm the result when appropriate, particularly if the elevation is mild.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Investigate persistent unexplained elevation and arrange pituitary MRI when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treat the underlying cause.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1328,7 +1351,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_34",
+              "group_id": "amenorrhoea_group_33",
               "group_title": "E. Thyroid dysfunction",
               "group_subtitle": null,
               "group_icon": null,
@@ -1340,7 +1363,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_35",
+              "group_id": "amenorrhoea_group_34",
               "group_title": "F. Premature ovarian insufficiency (POI)",
               "group_subtitle": null,
               "group_icon": null,
@@ -1350,28 +1373,30 @@
                   "text": "POI refers to loss of ovarian activity before age 40."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirming the diagnosis with appropriate assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist counselling about fertility and reproductive options."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormone replacement therapy, unless contraindicated, generally until the usual age of menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bone health assessment and prevention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cardiovascular risk assessment and psychological support."
+                  "type": "list",
+                  "title": "Management may include:",
+                  "items": [
+                    {
+                      "text": "Confirming the diagnosis with appropriate assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist counselling about fertility and reproductive options.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormone replacement therapy, unless contraindicated, generally until the usual age of menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bone health assessment and prevention.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular risk assessment and psychological support.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1380,7 +1405,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_36",
+              "group_id": "amenorrhoea_group_35",
               "group_title": "G. Anatomical causes",
               "group_subtitle": null,
               "group_icon": null,
@@ -1424,11 +1449,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_9",
-          "subsection_title": "Complications of untreated amenorrhoea",
+          "subsection_title": "9. Complications of untreated amenorrhoea",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_37",
+              "group_id": "amenorrhoea_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1438,28 +1463,33 @@
                   "text": "The complications depend on the underlying cause."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Bone loss: prolonged oestrogen deficiency can reduce bone mineral density."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infertility or subfertility: may occur if ovulation is absent or reproductive anatomy is abnormal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial hyperplasia: prolonged unopposed oestrogen exposure in chronic anovulation can increase risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Metabolic complications: may accompany PCOS, including insulin resistance and increased risk of type 2 diabetes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Psychological distress: concerns about fertility, puberty, sexuality and body image can be significant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delayed diagnosis of systemic disease: amenorrhoea may be a presenting feature of thyroid, pituitary or other medical conditions."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Bone loss: prolonged oestrogen deficiency can reduce bone mineral density.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infertility or subfertility: may occur if ovulation is absent or reproductive anatomy is abnormal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial hyperplasia: prolonged unopposed oestrogen exposure in chronic anovulation can increase risk.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Metabolic complications: may accompany PCOS, including insulin resistance and increased risk of type 2 diabetes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psychological distress: concerns about fertility, puberty, sexuality and body image can be significant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delayed diagnosis of systemic disease: amenorrhoea may be a presenting feature of thyroid, pituitary or other medical conditions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1471,18 +1501,19 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_10",
-          "subsection_title": "Counselling the patient",
+          "subsection_title": "10. Counselling the patient",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_38",
+              "group_id": "amenorrhoea_group_37",
               "group_title": "Model counselling script",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The absence of your periods can have several causes. These include pregnancy, hormonal disturbances, changes in weight or exercise, problems with the ovaries or pituitary gland, and occasionally abnormalities in the reproductive tract."
+                  "text": "“The absence of your periods can have several causes. These include pregnancy, hormonal disturbances, changes in weight or exercise, problems with the ovaries or pituitary gland, and occasionally abnormalities in the reproductive tract.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1506,11 +1537,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_11",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "11. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_39",
+              "group_id": "amenorrhoea_group_38",
               "group_title": "Question 1: What is your first investigation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1522,7 +1553,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_40",
+              "group_id": "amenorrhoea_group_39",
               "group_title": "Question 2: What does high FSH with low oestradiol suggest?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1534,7 +1565,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_41",
+              "group_id": "amenorrhoea_group_40",
               "group_title": "Question 3: What does low FSH with low oestradiol suggest?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1546,7 +1577,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_42",
+              "group_id": "amenorrhoea_group_41",
               "group_title": "Question 4: What are the causes of primary amenorrhoea with normal breast development?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1558,7 +1589,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_43",
+              "group_id": "amenorrhoea_group_42",
               "group_title": "Question 5: What causes amenorrhoea with galactorrhoea?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1570,7 +1601,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_44",
+              "group_id": "amenorrhoea_group_43",
               "group_title": "Question 6: Why is prolonged amenorrhoea associated with low bone density?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1582,7 +1613,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_45",
+              "group_id": "amenorrhoea_group_44",
               "group_title": "Question 7: What is the significance of amenorrhoea with cyclical pelvic pain?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1594,7 +1625,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_46",
+              "group_id": "amenorrhoea_group_45",
               "group_title": "Question 8: How would you manage a patient with PCOS-related amenorrhoea who wants pregnancy?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1609,54 +1640,59 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_12",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "12. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_47",
+              "group_id": "amenorrhoea_group_46",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Forgetting to exclude pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing primary with secondary amenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to ask about pubertal development."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring weight loss, excessive exercise and nutritional intake."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to ask about headaches, visual changes or galactorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpreting FSH without considering oestradiol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming a normal ultrasound excludes all anatomical or endocrine causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating PCOS-related amenorrhoea without considering endometrial protection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prescribing hormones without discussing fertility plans or contraindications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to consider bone health in prolonged hypo-oestrogenism."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Forgetting to exclude pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing primary with secondary amenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to ask about pubertal development.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring weight loss, excessive exercise and nutritional intake.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to ask about headaches, visual changes or galactorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpreting FSH without considering oestradiol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming a normal ultrasound excludes all anatomical or endocrine causes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treating PCOS-related amenorrhoea without considering endometrial protection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prescribing hormones without discussing fertility plans or contraindications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to consider bone health in prolonged hypo-oestrogenism.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1664,11 +1700,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_13",
-          "subsection_title": "OSCE mnemonics",
+          "subsection_title": "13. OSCE mnemonics",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_48",
+              "group_id": "amenorrhoea_group_47",
               "group_title": "Mnemonic 1: PREGNANCY — First priority",
               "group_subtitle": null,
               "group_icon": null,
@@ -1684,7 +1720,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_49",
+              "group_id": "amenorrhoea_group_48",
               "group_title": "Mnemonic 2: HOPES — Causes of amenorrhoea",
               "group_subtitle": null,
               "group_icon": null,
@@ -1712,7 +1748,7 @@
               ]
             },
             {
-              "group_id": "amenorrhoea_group_50",
+              "group_id": "amenorrhoea_group_49",
               "group_title": "Mnemonic 3: HISTORY — Focused assessment",
               "group_subtitle": null,
               "group_icon": null,
@@ -1751,11 +1787,11 @@
         },
         {
           "subsection_id": "amenorrhoea_subsection_14",
-          "subsection_title": "Quick self-test",
+          "subsection_title": "14. Quick self-test",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "amenorrhoea_group_51",
+              "group_id": "amenorrhoea_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1765,39 +1801,60 @@
                   "text": "1. A 26-year-old woman has amenorrhoea, galactorrhoea and headaches. Which investigation is particularly relevant?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Serum prolactin",
-                    "Serum calcium only",
-                    "Routine chest X-ray",
-                    "Semen analysis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Serum prolactin"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Serum calcium only"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Routine chest X-ray"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Semen analysis"
                 },
                 {
                   "type": "paragraph",
                   "text": "2. High FSH with low oestradiol most strongly suggests which pattern?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hyperprolactinaemia",
-                    "Hypergonadotropic hypogonadism",
-                    "Normal ovarian function",
-                    "Pregnancy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Hyperprolactinaemia"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Hypergonadotropic hypogonadism"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal ovarian function"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pregnancy"
                 },
                 {
                   "type": "paragraph",
                   "text": "3. A 16-year-old has never menstruated and experiences cyclical pelvic pain. What should you consider?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Primary dysmenorrhoea alone",
-                    "Outflow tract obstruction",
-                    "Normal menopause",
-                    "Uncomplicated PCOS only"
-                  ]
+                  "type": "paragraph",
+                  "text": "Primary dysmenorrhoea alone"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Outflow tract obstruction"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal menopause"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Uncomplicated PCOS only"
                 }
               ]
             }

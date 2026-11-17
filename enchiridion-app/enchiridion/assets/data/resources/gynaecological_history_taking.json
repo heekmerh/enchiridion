@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "gynaecological_history_taking_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"You are seeing a 32-year-old woman in the gynaecology clinic. Take an appropriate gynaecological history.\""
+                  "text": "**\"You are seeing a 32-year-old woman in the gynaecology clinic. Take an appropriate gynaecological history.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -37,22 +38,27 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Take a history from this woman presenting with heavy menstrual bleeding.\""
+                  "text": "\"Take a history from this woman presenting with heavy menstrual bleeding.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Take a history from this woman presenting with lower abdominal pain.\""
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Take a history from this woman presenting with vaginal discharge.\"",
-                    "\"Take a history from this woman with postmenopausal bleeding.\""
-                  ]
+                  "text": "\"Take a history from this woman presenting with lower abdominal pain.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "The framework remains the same, but your questioning becomes focused according to the presenting complaint."
+                  "text": "\"Take a history from this woman presenting with vaginal discharge.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Take a history from this woman with postmenopausal bleeding.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The **framework remains the same**, but your questioning becomes focused according to the presenting complaint."
                 }
               ]
             }
@@ -60,7 +66,7 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_2",
-          "subsection_title": "THE BASIC STRUCTURE",
+          "subsection_title": "2. THE BASIC STRUCTURE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -75,12 +81,60 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "P → M → G → S → C → O → M → F → S"
+                  "text": "**P → M → G → S → C → O → M → F → S**"
                 }
               ]
             },
             {
               "group_id": "gynaecological_history_taking_group_3",
+              "group_title": "P — Presenting complaint",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**M — Menstrual history**"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_4",
+              "group_title": "G — Gynaecological history",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**S — Sexual history**"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_5",
+              "group_title": "C — Contraceptive history",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**O — Obstetric history**"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_6",
+              "group_title": "M — Medical/surgical history",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**F — Family history**"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_7",
               "group_title": "S — Social history",
               "group_subtitle": null,
               "group_icon": null,
@@ -90,10 +144,8 @@
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Summarise → Differential diagnosis → Examination → Investigations → Management"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Summarise → Differential diagnosis → Examination → Investigations → Management**"
                 }
               ]
             }
@@ -101,11 +153,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_3",
-          "subsection_title": "INTRODUCTION",
+          "subsection_title": "3. INTRODUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_4",
+              "group_id": "gynaecological_history_taking_group_8",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -116,51 +168,54 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Good morning. My name is Dr ___. I'm one of the doctors in the gynaecology team.\""
+                  "text": "\"Good morning. My name is Dr ___. I'm one of the doctors in the gynaecology team.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Could I confirm your name and age, please?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"I'd like to ask you some questions about your symptoms and your general gynaecological and reproductive health.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Some of the questions may be personal, but I ask them routinely because they can help us understand what is causing your symptoms.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Is that okay?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "\"Could I confirm your name and age, please?\""
+                    {
+                      "text": "Wash hands.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure privacy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sit appropriately.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain confidentiality.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use non-judgemental language.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"I'd like to ask you some questions about your symptoms and your general gynaecological and reproductive health.\""
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"Some of the questions may be personal, but I ask them routinely because they can help us understand what is causing your symptoms.\""
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Is that okay?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wash hands."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure privacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sit appropriately."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maintain confidentiality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use non-judgemental language."
                 }
               ]
             }
@@ -168,11 +223,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_4",
-          "subsection_title": "PRESENTING COMPLAINT",
+          "subsection_title": "4. PRESENTING COMPLAINT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_5",
+              "group_id": "gynaecological_history_taking_group_9",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -182,42 +237,43 @@
                   "text": "Start open-ended."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What brought you to the hospital today?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"What brought you to the hospital today?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Allow the patient to speak."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then clarify:"
+                  "type": "list",
+                  "title": "Then clarify:",
+                  "items": [
+                    {
+                      "text": "What is the main problem?",
+                      "level": 0
+                    },
+                    {
+                      "text": "When did it start?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has it happened before?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it getting better or worse?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How does it affect her daily life?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "What is the main problem?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When did it start?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has it happened before?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it getting better or worse?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How does it affect her daily life?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then move into a focused history of the presenting complaint."
+                  "text": "Then move into a **focused history of the presenting complaint**."
                 }
               ]
             }
@@ -225,11 +281,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_5",
-          "subsection_title": "PAIN",
+          "subsection_title": "5. PAIN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_6",
+              "group_id": "gynaecological_history_taking_group_10",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -245,129 +301,160 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_7",
-              "group_title": "S — Site",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Where exactly is the pain?\""
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_8",
-              "group_title": "O — Onset",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"When did it start?\""
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_9",
-              "group_title": "C — Character",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"What does the pain feel like?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Cramping",
-                    "Sharp",
-                    "Stabbing",
-                    "Burning",
-                    "Dull",
-                    "Aching"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_10",
-              "group_title": "R — Radiation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Does the pain move anywhere else?\""
-                  ]
-                }
-              ]
-            },
-            {
               "group_id": "gynaecological_history_taking_group_11",
-              "group_title": "A — Associated symptoms",
+              "group_title": "SOCRATES",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Ask about:"
+                  "text": "**S — Site**",
+                  "style": "heading"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Vaginal bleeding",
-                    "Vaginal discharge",
-                    "Fever",
-                    "Vomiting",
-                    "Dysuria",
-                    "Urinary frequency",
-                    "Constipation",
-                    "Diarrhoea",
-                    "Dyspareunia",
-                    "Menstrual relationship",
-                    "Pregnancy symptoms"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_12",
-              "group_title": "T — Timing",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "\"Where exactly is the pain?\"",
+                  "style": "quote"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Is it constant or does it come and go?\""
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_13",
-              "group_title": "S — Severity",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**O — Onset**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"When did it start?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Character**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"What does the pain feel like?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "\"On a scale of 0–10, how severe is it?\""
+                    {
+                      "text": "Cramping",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sharp",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stabbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Burning",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dull",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aching",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**R — Radiation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Does the pain move anywhere else?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A — Associated symptoms**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary frequency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constipation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diarrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dyspareunia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Menstrual relationship",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy symptoms",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**T — Timing**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Is it constant or does it come and go?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**E — Exacerbating/relieving factors**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**S — Severity**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"On a scale of 0–10, how severe is it?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -375,7 +462,103 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_6",
-          "subsection_title": "MENSTRUAL HISTORY",
+          "subsection_title": "6. MENSTRUAL HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_12",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "This is **mandatory** in almost every gynaecological history."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Start:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"I'd like to ask you a few questions about your periods.\"",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_13",
+              "group_title": "Ask",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Age at menarche",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "LMP",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Cycle length",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Regularity",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Duration",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Amount of bleeding",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Clots",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Intermenstrual bleeding",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Dysmenorrhoea",
+                      "level": 0,
+                      "label": "10."
+                    },
+                    {
+                      "text": "Premenstrual symptoms",
+                      "level": 0,
+                      "label": "11."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_7",
+          "subsection_title": "7. AGE AT MENARCHE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -386,60 +569,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is mandatory in almost every gynaecological history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Start:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"I'd like to ask you a few questions about your periods.\""
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_15",
-              "group_title": "Ask",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Age at menarche",
-                    "LMP",
-                    "Cycle length",
-                    "Regularity",
-                    "Duration",
-                    "Amount of bleeding",
-                    "Clots",
-                    "Intermenstrual bleeding",
-                    "Postcoital bleeding",
-                    "Dysmenorrhoea",
-                    "Premenstrual symptoms"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_7",
-          "subsection_title": "AGE AT MENARCHE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_16",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"How old were you when you had your first period?\""
-                  ]
+                  "text": "\"How old were you when you had your first period?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -451,32 +582,40 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_8",
-          "subsection_title": "LAST MENSTRUAL PERIOD",
+          "subsection_title": "8. LAST MENSTRUAL PERIOD",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_17",
+              "group_id": "gynaecological_history_taking_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"When was the first day of your last period?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "This is important because it helps determine:"
+                  "text": "\"When was the first day of your last period?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This is important because it helps determine:",
                   "items": [
-                    "Current menstrual status",
-                    "Possible pregnancy",
-                    "Menstrual pattern",
-                    "Timing of symptoms"
+                    {
+                      "text": "Current menstrual status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Menstrual pattern",
+                      "level": 0
+                    },
+                    {
+                      "text": "Timing of symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -485,11 +624,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_9",
-          "subsection_title": "CYCLE LENGTH",
+          "subsection_title": "9. CYCLE LENGTH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_18",
+              "group_id": "gynaecological_history_taking_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -500,17 +639,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"How many days are there from the first day of one period to the first day of the next?\""
+                  "text": "\"How many days are there from the first day of one period to the first day of the next?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "For example:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Is it usually every 28 days?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Is it usually every 28 days?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -522,7 +661,73 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_10",
-          "subsection_title": "REGULARITY",
+          "subsection_title": "10. REGULARITY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_17",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"Are your periods regular?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Possible patterns:",
+                  "items": [
+                    {
+                      "text": "Regular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged intervals",
+                      "level": 0
+                    },
+                    {
+                      "text": "Frequent periods",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_11",
+          "subsection_title": "11. DURATION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_18",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"How many days does your period usually last?\"",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_12",
+          "subsection_title": "12. AMOUNT OF BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -532,53 +737,76 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Are your periods regular?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "This is particularly important when assessing **heavy menstrual bleeding**."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Possible patterns:"
+                  "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"How heavy are your periods?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Then make it objective:",
                   "items": [
-                    "Regular",
-                    "Irregular",
-                    "Variable",
-                    "Prolonged intervals",
-                    "Frequent periods"
+                    {
+                      "text": "Number of pads/tampons used",
+                      "level": 0
+                    },
+                    {
+                      "text": "Frequency of changing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Soaking through clothes/bedding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Flooding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clots",
+                      "level": 0
+                    },
+                    {
+                      "text": "Need to double protection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Impact on work/school",
+                      "level": 0
+                    },
+                    {
+                      "text": "Need to stay at home",
+                      "level": 0
+                    }
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_11",
-          "subsection_title": "DURATION",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "gynaecological_history_taking_group_20",
-              "group_title": "",
+              "group_title": "Excellent OSCE question",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How many days does your period usually last?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Do you ever soak through your sanitary pad or clothes despite changing regularly?\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "gynaecological_history_taking_subsection_12",
-          "subsection_title": "AMOUNT OF BLEEDING",
+          "subsection_id": "gynaecological_history_taking_subsection_13",
+          "subsection_title": "13. BLOOD CLOTS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -589,77 +817,17 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is particularly important when assessing heavy menstrual bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"How heavy are your periods?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then make it objective:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Number of pads/tampons used",
-                    "Frequency of changing",
-                    "Soaking through clothes/bedding",
-                    "Flooding",
-                    "Clots",
-                    "Need to double protection",
-                    "Impact on work/school",
-                    "Need to stay at home"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_22",
-              "group_title": "Excellent OSCE question",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "\"Do you ever soak through your sanitary pad or clothes despite changing regularly?\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_13",
-          "subsection_title": "BLOOD CLOTS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_23",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you pass blood clots?\""
-                  ]
+                  "text": "\"Do you pass blood clots?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How large are they?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"How large are they?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -671,34 +839,48 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_14",
-          "subsection_title": "INTERMENSTRUAL BLEEDING",
+          "subsection_title": "14. INTERMENSTRUAL BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_24",
+              "group_id": "gynaecological_history_taking_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you ever bleed between your periods?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "This can occur with:"
+                  "text": "\"Do you ever bleed between your periods?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This can occur with:",
                   "items": [
-                    "Structural uterine disease",
-                    "Cervical pathology",
-                    "Endometrial pathology",
-                    "Hormonal disturbances",
-                    "Contraception",
-                    "Infection"
+                    {
+                      "text": "Structural uterine disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal disturbances",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraception",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -707,11 +889,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_15",
-          "subsection_title": "POSTCOITAL BLEEDING",
+          "subsection_title": "15. POSTCOITAL BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_25",
+              "group_id": "gynaecological_history_taking_group_23",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -721,24 +903,35 @@
                   "text": "Ask sensitively:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Have you ever noticed bleeding after sexual intercourse?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "This is particularly important because it may occur with:",
                   "items": [
-                    "\"Have you ever noticed bleeding after sexual intercourse?\""
+                    {
+                      "text": "Cervical ectropion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervicitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical polyps",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical malignancy",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "This is particularly important because it may occur with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Cervical ectropion",
-                    "Cervicitis",
-                    "Cervical polyps",
-                    "Cervical malignancy",
-                    "\\"
-                  ]
+                  "text": "\\"
                 }
               ]
             }
@@ -746,7 +939,115 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_16",
-          "subsection_title": "DYSMENORRHOEA",
+          "subsection_title": "16. DYSMENORRHOEA",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_24",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"Are your periods painful?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "If yes:",
+                  "items": [
+                    {
+                      "text": "When does the pain start?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Before bleeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "With bleeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long does it last?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How severe?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does it affect activities?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does it respond to analgesics?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there deep dyspareunia?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any infertility?",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_25",
+              "group_title": "Think",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Primary dysmenorrhoea**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "vs"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Secondary dysmenorrhoea**"
+                },
+                {
+                  "type": "list",
+                  "title": "Secondary causes include:",
+                  "items": [
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenomyosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "PID",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\\"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_17",
+          "subsection_title": "17. GYNAECOLOGICAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -756,114 +1057,53 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about previous diagnoses:",
                   "items": [
-                    "\"Are your periods painful?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If yes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When does the pain start?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Before bleeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "With bleeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long does it last?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How severe?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does it affect activities?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does it respond to analgesics?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there deep dyspareunia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any infertility?"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_27",
-              "group_title": "Think",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Primary dysmenorrhoea",
-                    "vs",
-                    "Secondary dysmenorrhoea"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Secondary causes include:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Endometriosis",
-                    "Adenomyosis",
-                    "Fibroids",
-                    "PID",
-                    "\\"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_17",
-          "subsection_title": "GYNAECOLOGICAL HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_28",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about previous diagnoses:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Fibroids",
-                    "Endometriosis",
-                    "Adenomyosis",
-                    "Ovarian cysts",
-                    "PCOS",
-                    "PID",
-                    "STIs",
-                    "Cervical disease",
-                    "Vaginal disease",
-                    "Vulval disease",
-                    "Endometrial disease"
+                    {
+                      "text": "Fibroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenomyosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian cysts",
+                      "level": 0
+                    },
+                    {
+                      "text": "PCOS",
+                      "level": 0
+                    },
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "STIs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vulval disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -871,10 +1111,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you ever been diagnosed with any gynaecological condition?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Have you ever been diagnosed with any gynaecological condition?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -882,32 +1121,59 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_18",
-          "subsection_title": "PREVIOUS GYNAECOLOGICAL PROCEDURES",
+          "subsection_title": "18. PREVIOUS GYNAECOLOGICAL PROCEDURES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_29",
+              "group_id": "gynaecological_history_taking_group_27",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Dilation and curettage",
-                    "Hysteroscopy",
-                    "Laparoscopy",
-                    "Laparotomy",
-                    "Myomectomy",
-                    "Ovarian surgery",
-                    "Cervical procedures",
-                    "Colposcopy",
-                    "Biopsy",
-                    "Previous ectopic pregnancy surgery"
+                    {
+                      "text": "Dilation and curettage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysteroscopy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparotomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Myomectomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical procedures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colposcopy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Biopsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ectopic pregnancy surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -916,11 +1182,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_19",
-          "subsection_title": "VAGINAL DISCHARGE",
+          "subsection_title": "19. VAGINAL DISCHARGE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_30",
+              "group_id": "gynaecological_history_taking_group_28",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -932,55 +1198,112 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_31",
+              "group_id": "gynaecological_history_taking_group_29",
               "group_title": "Colour",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "White",
-                    "Yellow",
-                    "Green",
-                    "Grey",
-                    "Blood-stained"
+                    {
+                      "text": "White",
+                      "level": 0
+                    },
+                    {
+                      "text": "Yellow",
+                      "level": 0
+                    },
+                    {
+                      "text": "Green",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grey",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood-stained",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_32",
+              "group_id": "gynaecological_history_taking_group_30",
               "group_title": "Consistency",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Thin",
-                    "Thick",
-                    "Frothy",
-                    "Curdy"
+                    {
+                      "text": "Thin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thick",
+                      "level": 0
+                    },
+                    {
+                      "text": "Frothy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Curdy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_33",
+              "group_id": "gynaecological_history_taking_group_31",
+              "group_title": "Odour",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Quantity**"
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_32",
               "group_title": "Associated symptoms",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Itching",
-                    "Vulval irritation",
-                    "Dysuria",
-                    "Dyspareunia",
-                    "Pelvic pain",
-                    "Fever"
+                    {
+                      "text": "Itching",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vulval irritation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dyspareunia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -989,11 +1312,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_20",
-          "subsection_title": "SEXUAL HISTORY",
+          "subsection_title": "20. SEXUAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_34",
+              "group_id": "gynaecological_history_taking_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1008,27 +1331,49 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I'd now like to ask some questions about your sexual health. These questions are routine and help us identify infections and other possible causes of your symptoms.\""
+                  "text": "\"I'd now like to ask some questions about your sexual health. These questions are routine and help us identify infections and other possible causes of your symptoms.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Currently sexually active?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Number/sex of partners where clinically relevant",
-                    "New partner",
-                    "Barrier contraception",
-                    "Previous STIs",
-                    "Previous PID",
-                    "Previous STI treatment",
-                    "Dyspareunia",
-                    "Postcoital bleeding"
+                    {
+                      "text": "Currently sexually active?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Number/sex of partners where clinically relevant",
+                      "level": 0
+                    },
+                    {
+                      "text": "New partner",
+                      "level": 0
+                    },
+                    {
+                      "text": "Barrier contraception",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous STIs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous STI treatment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dyspareunia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1037,11 +1382,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_21",
-          "subsection_title": "DYSPAREUNIA",
+          "subsection_title": "21. DYSPAREUNIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_35",
+              "group_id": "gynaecological_history_taking_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1051,10 +1396,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you experience any pain during sexual intercourse?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you experience any pain during sexual intercourse?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1063,7 +1407,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_36",
+              "group_id": "gynaecological_history_taking_group_35",
               "group_title": "Superficial",
               "group_subtitle": null,
               "group_icon": null,
@@ -1073,22 +1417,31 @@
                   "text": "Pain at the vaginal entrance."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Infection",
-                    "Vulval disorders",
-                    "Vaginal dryness",
-                    "Vaginismus"
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vulval disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal dryness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginismus",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_37",
+              "group_id": "gynaecological_history_taking_group_36",
               "group_title": "Deep",
               "group_subtitle": null,
               "group_icon": null,
@@ -1098,16 +1451,25 @@
                   "text": "Pain deeper in the pelvis."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Endometriosis",
-                    "PID",
-                    "Adnexal pathology",
-                    "Pelvic adhesions"
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic adhesions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1116,11 +1478,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_22",
-          "subsection_title": "CONTRACEPTIVE HISTORY",
+          "subsection_title": "22. CONTRACEPTIVE HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_38",
+              "group_id": "gynaecological_history_taking_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1130,51 +1492,76 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Are you currently using any form of contraception?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "If yes:",
                   "items": [
-                    "\"Are you currently using any form of contraception?\""
+                    {
+                      "text": "What method?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Compliance?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Side effects?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Why was it chosen?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If yes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What method?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Compliance?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Side effects?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Why was it chosen?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous methods:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Previous methods:",
                   "items": [
-                    "Combined oral contraceptive pill",
-                    "Progestogen-only pill",
-                    "Implant",
-                    "Injectable",
-                    "IUCD",
-                    "LNG-IUS",
-                    "Condoms",
-                    "Emergency contraception",
-                    "Natural methods"
+                    {
+                      "text": "Combined oral contraceptive pill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Progestogen-only pill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Implant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Injectable",
+                      "level": 0
+                    },
+                    {
+                      "text": "IUCD",
+                      "level": 0
+                    },
+                    {
+                      "text": "LNG-IUS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Condoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Emergency contraception",
+                      "level": 0
+                    },
+                    {
+                      "text": "Natural methods",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1187,7 +1574,86 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_23",
-          "subsection_title": "OBSTETRIC HISTORY",
+          "subsection_title": "23. OBSTETRIC HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_38",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Even in a gynaecology patient, ask about pregnancies."
+                },
+                {
+                  "type": "list",
+                  "title": "Establish:",
+                  "items": [
+                    {
+                      "text": "Gravidity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Parity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriages",
+                      "level": 0
+                    },
+                    {
+                      "text": "Terminations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirths",
+                      "level": 0
+                    },
+                    {
+                      "text": "Living children",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "For previous pregnancies:",
+                  "items": [
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mode of delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Birth weight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal outcome",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_24",
+          "subsection_title": "24. FERTILITY HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1198,36 +1664,75 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Even in a gynaecology patient, ask about pregnancies."
+                  "text": "Ask:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Establish:"
+                  "text": "\"Have you ever tried to become pregnant?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If yes:",
                   "items": [
-                    "Gravidity",
-                    "Parity",
-                    "Miscarriages",
-                    "Terminations",
-                    "Ectopic pregnancies",
-                    "Stillbirths",
-                    "Living children"
+                    {
+                      "text": "How long?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pregnancies?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous infertility assessment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous treatment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Partner assessment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Semen analysis?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovulation assessment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubal assessment?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For previous pregnancies:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This becomes particularly important in:",
                   "items": [
-                    "Gestational age",
-                    "Mode of delivery",
-                    "Complications",
-                    "Birth weight",
-                    "Neonatal outcome"
+                    {
+                      "text": "Amenorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "PCOS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent miscarriage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subfertility",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1235,8 +1740,8 @@
           ]
         },
         {
-          "subsection_id": "gynaecological_history_taking_subsection_24",
-          "subsection_title": "FERTILITY HISTORY",
+          "subsection_id": "gynaecological_history_taking_subsection_25",
+          "subsection_title": "25. PAST MEDICAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1246,63 +1751,57 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "\"Have you ever tried to become pregnant?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If yes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pregnancies?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous infertility assessment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous treatment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Partner assessment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Semen analysis?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ovulation assessment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tubal assessment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "This becomes particularly important in:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Amenorrhoea",
-                    "PCOS",
-                    "Endometriosis",
-                    "Recurrent miscarriage",
-                    "Subfertility"
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epilepsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thromboembolic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Autoimmune disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psychiatric illness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1310,8 +1809,8 @@
           ]
         },
         {
-          "subsection_id": "gynaecological_history_taking_subsection_25",
-          "subsection_title": "PAST MEDICAL HISTORY",
+          "subsection_id": "gynaecological_history_taking_subsection_26",
+          "subsection_title": "26. SURGICAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1322,65 +1821,49 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Diabetes",
-                    "Hypertension",
-                    "Thyroid disease",
-                    "Renal disease",
-                    "Liver disease",
-                    "Epilepsy",
-                    "Thromboembolic disease",
-                    "Autoimmune disease",
-                    "Bleeding disorders",
-                    "Anaemia",
-                    "Obesity",
-                    "Psychiatric illness"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_26",
-          "subsection_title": "SURGICAL HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_42",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you had any operations in the past?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Especially:"
+                  "text": "\"Have you had any operations in the past?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially:",
                   "items": [
-                    "Pelvic surgery",
-                    "Caesarean section",
-                    "Myomectomy",
-                    "Ovarian surgery",
-                    "Ectopic surgery",
-                    "Appendectomy",
-                    "Bowel surgery",
-                    "Previous D&C"
+                    {
+                      "text": "Pelvic surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Myomectomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appendectomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bowel surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous D&C",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1393,43 +1876,57 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_27",
-          "subsection_title": "DRUG HISTORY",
+          "subsection_title": "27. DRUG HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_43",
+              "group_id": "gynaecological_history_taking_group_42",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Prescription medications",
-                    "OTC medications",
-                    "Hormonal medications",
-                    "Anticoagulants",
-                    "Steroids",
-                    "Herbal/traditional medications"
+                    {
+                      "text": "Prescription medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "OTC medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anticoagulants",
+                      "level": 0
+                    },
+                    {
+                      "text": "Steroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Herbal/traditional medications",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_44",
+              "group_id": "gynaecological_history_taking_group_43",
               "group_title": "Always ask",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you take any medications or herbal preparations?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you take any medications or herbal preparations?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1437,7 +1934,36 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_28",
-          "subsection_title": "ALLERGIES",
+          "subsection_title": "28. ALLERGIES",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "gynaecological_history_taking_group_44",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"Do you have any allergies?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"What reaction do you have?\"",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "gynaecological_history_taking_subsection_29",
+          "subsection_title": "29. FAMILY HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1447,58 +1973,51 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "\"Do you have any allergies?\""
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"What reaction do you have?\""
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_29",
-          "subsection_title": "FAMILY HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_46",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Breast cancer",
-                    "Ovarian cancer",
-                    "Endometrial cancer",
-                    "Cervical cancer",
-                    "Colon cancer",
-                    "Thromboembolic disease",
-                    "Diabetes",
-                    "Hypertension",
-                    "Endometriosis where relevant"
+                    {
+                      "text": "Breast cancer",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian cancer",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial cancer",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical cancer",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colon cancer",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thromboembolic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis where relevant",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_47",
+              "group_id": "gynaecological_history_taking_group_46",
               "group_title": "Particularly important",
               "group_subtitle": null,
               "group_icon": null,
@@ -1509,7 +2028,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Has anyone in your family had breast, ovarian or bowel cancer?\""
+                  "text": "\"Has anyone in your family had breast, ovarian or bowel cancer?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1517,31 +2037,55 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_30",
-          "subsection_title": "SOCIAL HISTORY",
+          "subsection_title": "30. SOCIAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_48",
+              "group_id": "gynaecological_history_taking_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Occupation",
-                    "Smoking",
-                    "Alcohol",
-                    "Recreational drugs",
-                    "Relationship status",
-                    "Living circumstances",
-                    "Social support",
-                    "Exercise",
-                    "Nutrition"
+                    {
+                      "text": "Occupation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alcohol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recreational drugs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Living circumstances",
+                      "level": 0
+                    },
+                    {
+                      "text": "Social support",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exercise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutrition",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1551,17 +2095,20 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_49",
+              "group_id": "gynaecological_history_taking_group_48",
               "group_title": "Safeguarding",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you feel safe at home?\"",
-                    "\"Has anyone ever hurt or threatened you?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you feel safe at home?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Has anyone ever hurt or threatened you?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1569,11 +2116,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_31",
-          "subsection_title": "MENOPAUSAL HISTORY",
+          "subsection_title": "31. MENOPAUSAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_50",
+              "group_id": "gynaecological_history_taking_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1587,49 +2134,77 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"When was your last menstrual period?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"When was your last menstrual period?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "If periods have stopped:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"How long ago did they stop?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Then ask about:",
                   "items": [
-                    "\"How long ago did they stop?\""
+                    {
+                      "text": "Hot flushes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Night sweats",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sleep disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mood changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal dryness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dyspareunia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual difficulties",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also ask about:",
                   "items": [
-                    "Hot flushes",
-                    "Night sweats",
-                    "Sleep disturbance",
-                    "Mood changes",
-                    "Vaginal dryness",
-                    "Dyspareunia",
-                    "Urinary symptoms",
-                    "Sexual difficulties"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Also ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "HRT",
-                    "Previous HRT",
-                    "Contraindications/risk factors",
-                    "Postmenopausal bleeding"
+                    {
+                      "text": "HRT",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous HRT",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraindications/risk factors",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postmenopausal bleeding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1638,50 +2213,96 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_32",
-          "subsection_title": "POSTMENOPAUSAL BLEEDING",
+          "subsection_title": "32. POSTMENOPAUSAL BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_51",
+              "group_id": "gynaecological_history_taking_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This deserves a focused history."
+                  "text": "This deserves a **focused history**."
                 },
                 {
                   "type": "paragraph",
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"When did you go through menopause?\"",
-                    "\"When did the bleeding occur?\"",
-                    "\"How much bleeding was there?\"",
-                    "\"Was it a single episode or recurrent?\"",
-                    "\"Was it associated with intercourse?\"",
-                    "\"Any pelvic pain?\"",
-                    "\"Any abnormal discharge?\"",
-                    "\"Any weight loss?\"",
-                    "\"Any change in appetite or bowel/bladder function?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"When did you go through menopause?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then ask about:"
+                  "text": "\"When did the bleeding occur?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"How much bleeding was there?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Was it a single episode or recurrent?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Was it associated with intercourse?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Any pelvic pain?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Any abnormal discharge?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Any weight loss?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Any change in appetite or bowel/bladder function?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Then ask about:",
                   "items": [
-                    "HRT",
-                    "Tamoxifen",
-                    "Obesity",
-                    "Diabetes",
-                    "Previous endometrial pathology",
-                    "Family history of malignancy"
+                    {
+                      "text": "HRT",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tamoxifen",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous endometrial pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history of malignancy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1690,11 +2311,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_33",
-          "subsection_title": "HOW TO SUMMARISE",
+          "subsection_title": "33. HOW TO SUMMARISE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_52",
+              "group_id": "gynaecological_history_taking_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1706,7 +2327,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_53",
+              "group_id": "gynaecological_history_taking_group_52",
               "group_title": "WHO + PRESENTATION + KEY POSITIVES + KEY NEGATIVES + RISK FACTORS",
               "group_subtitle": null,
               "group_icon": null,
@@ -1717,7 +2338,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 38-year-old woman presenting with a two-year history of progressively heavy, regular menstrual bleeding associated with passage of clots and significant impact on her daily activities. She also reports progressively worsening dysmenorrhoea but no intermenstrual or postcoital bleeding. She has completed her family and has no significant medical or surgical history.\""
+                  "text": "\"This is a 38-year-old woman presenting with a two-year history of progressively heavy, regular menstrual bleeding associated with passage of clots and significant impact on her daily activities. She also reports progressively worsening dysmenorrhoea but no intermenstrual or postcoital bleeding. She has completed her family and has no significant medical or surgical history.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1725,7 +2347,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The main differential diagnoses would include uterine fibroids, adenomyosis and endometrial pathology, and I would like to examine her and arrange appropriate investigations.\""
+                  "text": "\"The main differential diagnoses would include uterine fibroids, adenomyosis and endometrial pathology, and I would like to examine her and arrange appropriate investigations.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1733,11 +2356,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_34",
-          "subsection_title": "EXAMPLE: ENDOMETRIOSIS",
+          "subsection_title": "34. EXAMPLE: ENDOMETRIOSIS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_54",
+              "group_id": "gynaecological_history_taking_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1748,21 +2371,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 29-year-old woman with a three-year history of progressively worsening cyclical pelvic pain, severe dysmenorrhoea and deep dyspareunia. She also reports cyclical pain with bowel movements and has been trying to conceive for two years.\""
+                  "text": "\"This is a 29-year-old woman with a three-year history of progressively worsening cyclical pelvic pain, severe dysmenorrhoea and deep dyspareunia. She also reports cyclical pain with bowel movements and has been trying to conceive for two years.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_55",
+              "group_id": "gynaecological_history_taking_group_54",
               "group_title": "Think",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Endometriosis"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Endometriosis**"
                 },
                 {
                   "type": "paragraph",
@@ -1770,7 +2392,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Painful periods + chronic pelvic pain + deep dyspareunia + infertility + cyclical bowel/bladder symptoms"
+                  "text": "**Painful periods + chronic pelvic pain + deep dyspareunia + infertility + cyclical bowel/bladder symptoms**"
                 }
               ]
             }
@@ -1778,42 +2400,39 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_35",
-          "subsection_title": "EXAMPLE: FIBROIDS",
+          "subsection_title": "35. EXAMPLE: FIBROIDS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_56",
+              "group_id": "gynaecological_history_taking_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 42-year-old woman with progressively heavy regular menstrual bleeding associated with passage of large clots and symptoms of anaemia. She also reports increasing abdominal fullness and urinary frequency.\""
+                  "text": "\"This is a 42-year-old woman with progressively heavy regular menstrual bleeding associated with passage of large clots and symptoms of anaemia. She also reports increasing abdominal fullness and urinary frequency.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_57",
+              "group_id": "gynaecological_history_taking_group_56",
               "group_title": "Think",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fibroids"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fibroids**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Clues:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Heavy menstrual bleeding + pressure symptoms + enlarged uterus"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Heavy menstrual bleeding + pressure symptoms + enlarged uterus**"
                 }
               ]
             }
@@ -1821,28 +2440,27 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_36",
-          "subsection_title": "EXAMPLE: PCOS",
+          "subsection_title": "36. EXAMPLE: PCOS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_58",
+              "group_id": "gynaecological_history_taking_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 25-year-old woman with irregular menstrual cycles occurring every 2–4 months, associated with increased facial hair and acne. She has gained significant weight over the past few years and has been trying to conceive.\""
+                  "text": "\"This is a 25-year-old woman with irregular menstrual cycles occurring every 2–4 months, associated with increased facial hair and acne. She has gained significant weight over the past few years and has been trying to conceive.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "PCOS"
-                  ]
+                  "type": "paragraph",
+                  "text": "**PCOS**"
                 },
                 {
                   "type": "paragraph",
@@ -1851,14 +2469,14 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_59",
+              "group_id": "gynaecological_history_taking_group_58",
               "group_title": "Irregular ovulation + hyperandrogenism + polycystic ovaries",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "But remember that diagnosis is not simply based on seeing polycystic ovaries on ultrasound."
+                  "text": "But remember that diagnosis is **not simply based on seeing polycystic ovaries on ultrasound**."
                 }
               ]
             }
@@ -1866,28 +2484,27 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_37",
-          "subsection_title": "EXAMPLE: PID",
+          "subsection_title": "37. EXAMPLE: PID",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_60",
+              "group_id": "gynaecological_history_taking_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 27-year-old woman presenting with acute-onset lower abdominal pain associated with abnormal vaginal discharge, deep dyspareunia and fever. She has a new sexual partner and previous history of an STI.\""
+                  "text": "\"This is a 27-year-old woman presenting with acute-onset lower abdominal pain associated with abnormal vaginal discharge, deep dyspareunia and fever. She has a new sexual partner and previous history of an STI.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pelvic inflammatory disease"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pelvic inflammatory disease**"
                 }
               ]
             }
@@ -1895,18 +2512,18 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_38",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_title": "38. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_61",
+              "group_id": "gynaecological_history_taking_group_60",
               "group_title": "Q: What are the important components of a menstrual history?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1915,14 +2532,14 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_62",
+              "group_id": "gynaecological_history_taking_group_61",
               "group_title": "Q: What questions would you ask in heavy menstrual bleeding?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1931,7 +2548,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_63",
+              "group_id": "gynaecological_history_taking_group_62",
               "group_title": "Q: Why ask about postcoital bleeding?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1943,7 +2560,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_64",
+              "group_id": "gynaecological_history_taking_group_63",
               "group_title": "Q: Why is sexual history important?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1955,7 +2572,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_65",
+              "group_id": "gynaecological_history_taking_group_64",
               "group_title": "Q: Why ask about previous pelvic surgery?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1970,11 +2587,11 @@
         },
         {
           "subsection_id": "gynaecological_history_taking_subsection_39",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_title": "39. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_history_taking_group_66",
+              "group_id": "gynaecological_history_taking_group_65",
               "group_title": "❌ Mistake 1: Forgetting the LMP",
               "group_subtitle": null,
               "group_icon": null,
@@ -1986,7 +2603,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_67",
+              "group_id": "gynaecological_history_taking_group_66",
               "group_title": "❌ Mistake 2: Saying \"heavy periods\" without quantifying them",
               "group_subtitle": null,
               "group_icon": null,
@@ -2002,7 +2619,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_68",
+              "group_id": "gynaecological_history_taking_group_67",
               "group_title": "❌ Mistake 3: Ignoring pregnancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -2018,7 +2635,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_69",
+              "group_id": "gynaecological_history_taking_group_68",
               "group_title": "❌ Mistake 4: Asking sexual questions judgementally",
               "group_subtitle": null,
               "group_icon": null,
@@ -2030,86 +2647,95 @@
               ]
             },
             {
-              "group_id": "gynaecological_history_taking_group_70",
+              "group_id": "gynaecological_history_taking_group_69",
               "group_title": "❌ Mistake 5: Forgetting contraception",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Especially important in:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially important in:",
                   "items": [
-                    "Abnormal bleeding",
-                    "Amenorrhoea",
-                    "Pelvic pain",
-                    "Vaginal discharge",
-                    "Pregnancy-related presentations"
+                    {
+                      "text": "Abnormal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amenorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy-related presentations",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_history_taking_group_70",
+              "group_title": "❌ Mistake 6: Not asking about previous cervical screening",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Particularly important when there is:",
+                  "items": [
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected cervical pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "gynaecological_history_taking_group_71",
-              "group_title": "❌ Mistake 6: Not asking about previous cervical screening",
+              "group_title": "🧠 RAPID MEMORY FRAMEWORK",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Particularly important when there is:"
+                  "text": "For a **general gynaecological history**, remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Postcoital bleeding",
-                    "Abnormal discharge",
-                    "Abnormal cervix",
-                    "Suspected cervical pathology"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "gynaecological_history_taking_subsection_40",
-          "subsection_title": "🧠 RAPID MEMORY FRAMEWORK",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "gynaecological_history_taking_group_72",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**\"P-M-G-S-C-O-M-F-S\"**",
+                  "style": "quote"
+                },
                 {
                   "type": "paragraph",
-                  "text": "For a general gynaecological history, remember:"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_history_taking_group_73",
-              "group_title": "\"P-M-G-S-C-O-M-F-S\"",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "P — Presenting complaint M — Menstrual G — Gynaecological S — Sexual C — Contraceptive O — Obstetric M — Medical/surgical F — Family S — Social"
+                  "text": "**P** — Presenting complaint\n**M** — Menstrual\n**G** — Gynaecological\n**S** — Sexual\n**C** — Contraceptive\n**O** — Obstetric\n**M** — Medical/surgical\n**F** — Family\n**S** — Social"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "SUMMARISE → DIFFERENTIALS → EXAMINE → INVESTIGATE → MANAGE"
-                  ]
+                  "type": "paragraph",
+                  "text": "**SUMMARISE → DIFFERENTIALS → EXAMINE → INVESTIGATE → MANAGE**"
                 }
               ]
             }

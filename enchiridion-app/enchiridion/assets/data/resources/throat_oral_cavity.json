@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "throat_oral_cavity_subsection_1",
-          "subsection_title": "Throat and Oral Cavity Examination",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "throat_oral_cavity_group_1",
-              "group_title": "",
+              "group_title": "Throat and Oral Cavity Examination",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -45,7 +45,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_2",
-          "subsection_title": "Preparation and equipment",
+          "subsection_title": "1. Preparation and equipment",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -60,10 +60,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pen torch"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pen torch"
                 },
                 {
                   "type": "paragraph",
@@ -75,10 +73,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Tongue depressors"
-                  ]
+                  "type": "paragraph",
+                  "text": "Tongue depressors"
                 },
                 {
                   "type": "paragraph",
@@ -90,10 +86,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Disposable gloves"
-                  ]
+                  "type": "paragraph",
+                  "text": "Disposable gloves"
                 },
                 {
                   "type": "paragraph",
@@ -105,10 +99,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Gauze and mouth mirror, if available"
-                  ]
+                  "type": "paragraph",
+                  "text": "Gauze and mouth mirror, if available"
                 },
                 {
                   "type": "paragraph",
@@ -123,32 +115,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands and introduce yourself."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity and explain the examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent and position the patient sitting upright."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about oral pain, sore throat, difficulty swallowing, voice changes and dental problems."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure adequate lighting and use a tongue depressor when necessary."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wear gloves if contact with the oral mucosa or secretions is expected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about dentures, oral appliances, recent dental procedures and relevant allergies if applicable."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands and introduce yourself.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confirm the patient's identity and explain the examination.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Obtain consent and position the patient sitting upright.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask about oral pain, sore throat, difficulty swallowing, voice changes and dental problems.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure adequate lighting and use a tongue depressor when necessary.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Wear gloves if contact with the oral mucosa or secretions is expected.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Ask about dentures, oral appliances, recent dental procedures and relevant allergies if applicable.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -160,7 +164,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_3",
-          "subsection_title": "General inspection before examining individual structures",
+          "subsection_title": "2. General inspection before examining individual structures",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -174,44 +178,46 @@
                   "text": "Begin by observing the patient before asking them to open their mouth."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Facial symmetry and swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mouth breathing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drooling or inability to handle secretions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty speaking or a muffled voice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hoarseness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obvious lip swelling or lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory distress or stridor."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trismus, meaning difficulty opening the mouth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dehydration, such as dry mucous membranes."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Facial symmetry and swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mouth breathing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drooling or inability to handle secretions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty speaking or a muffled voice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hoarseness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obvious lip swelling or lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory distress or stridor.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trismus, meaning difficulty opening the mouth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dehydration, such as dry mucous membranes.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -222,20 +228,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Muffled “hot-potato” voice, trismus and unilateral throat swelling may indicate a peritonsillar abscess."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drooling, dysphagia, stridor and respiratory distress may indicate a serious airway or deep neck emergency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hoarseness lasting more than a few weeks, especially with smoking history, a neck mass or progressive symptoms, warrants appropriate ENT assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trismus can result from dental infection, peritonsillar infection, temporomandibular joint disease or other pathology."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Muffled “hot-potato” voice, trismus and unilateral throat swelling may indicate a peritonsillar abscess.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drooling, dysphagia, stridor and respiratory distress may indicate a serious airway or deep neck emergency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hoarseness lasting more than a few weeks, especially with smoking history, a neck mass or progressive symptoms, warrants appropriate ENT assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trismus can result from dental infection, peritonsillar infection, temporomandibular joint disease or other pathology.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -243,7 +254,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_4",
-          "subsection_title": "Examination of the lips",
+          "subsection_title": "3. Examination of the lips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -257,44 +268,46 @@
                   "text": "Inspect the upper and lower lips, the vermilion border, corners of the mouth and visible inner lip mucosa."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Moisture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cracks or fissures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers and vesicles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pigmentation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Masses or suspicious lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Scarring and deformity."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Colour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moisture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cracks or fissures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers and vesicles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pigmentation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses or suspicious lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scarring and deformity.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -310,10 +323,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Angular cheilitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Angular cheilitis"
                 },
                 {
                   "type": "paragraph",
@@ -325,10 +336,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Herpes labialis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Herpes labialis"
                 },
                 {
                   "type": "paragraph",
@@ -340,10 +349,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Persistent lip or mucosal lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Persistent lip or mucosal lesion"
                 },
                 {
                   "type": "paragraph",
@@ -358,20 +365,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Dry, cracked lips may occur with dehydration, environmental exposure or lip licking."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pallor may accompany anaemia but should be assessed alongside other clinical findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Central or peripheral cyanosis requires interpretation in the context of oxygenation and circulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent induration, bleeding, an enlarging lesion or a non-healing ulcer raises concern for malignancy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Dry, cracked lips may occur with dehydration, environmental exposure or lip licking.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor may accompany anaemia but should be assessed alongside other clinical findings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Central or peripheral cyanosis requires interpretation in the context of oxygenation and circulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent induration, bleeding, an enlarging lesion or a non-healing ulcer raises concern for malignancy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -383,7 +395,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_5",
-          "subsection_title": "Examination of the oral mucosa and buccal cavity",
+          "subsection_title": "4. Examination of the oral mucosa and buccal cavity",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -405,32 +417,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to open their mouth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use the pen torch to illuminate the oral cavity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the inner surface of the upper and lower lips."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask the patient to open their cheeks gently, using a tongue depressor if needed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect both buccal mucosal surfaces."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for lesions, patches, ulcers, pigmentation and swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the opening of the parotid duct opposite the upper second molar on each side."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ask the patient to open their mouth.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Use the pen torch to illuminate the oral cavity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Inspect the inner surface of the upper and lower lips.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask the patient to open their cheeks gently, using a tongue depressor if needed.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Inspect both buccal mucosal surfaces.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Look for lesions, patches, ulcers, pigmentation and swelling.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Inspect the opening of the parotid duct opposite the upper second molar on each side.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -441,36 +465,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Colour and moisture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers or erosions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "White plaques."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Red patches."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pigmented lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Scarring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary duct openings and discharge."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Colour and moisture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers or erosions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "White plaques.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Red patches.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pigmented lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scarring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary duct openings and discharge.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -481,10 +510,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oral candidiasis (thrush)"
-                  ]
+                  "type": "paragraph",
+                  "text": "Oral candidiasis (thrush)"
                 },
                 {
                   "type": "image",
@@ -496,10 +523,8 @@
                   "text": "White plaques that can often be wiped away, leaving an erythematous surface. It is associated with factors such as recent antibiotics, inhaled corticosteroids, immunosuppression and diabetes. Not every white oral lesion is candidiasis."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Leukoplakia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Leukoplakia"
                 },
                 {
                   "type": "image",
@@ -511,10 +536,8 @@
                   "text": "A predominantly white plaque that cannot be classified as another specific disorder. Persistent unexplained white patches require assessment because some lesions have premalignant potential."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Erythroplakia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Erythroplakia"
                 },
                 {
                   "type": "image",
@@ -526,10 +549,8 @@
                   "text": "A persistent red patch that cannot readily be attributed to another condition. It warrants prompt specialist assessment because of its association with oral epithelial dysplasia and malignancy."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Aphthous ulceration"
-                  ]
+                  "type": "paragraph",
+                  "text": "Aphthous ulceration"
                 },
                 {
                   "type": "image",
@@ -550,7 +571,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_6",
-          "subsection_title": "Examination of the teeth",
+          "subsection_title": "5. Examination of the teeth",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -581,44 +602,46 @@
                   "text": "Ask the patient to open their mouth widely. Inspect the upper and lower dental arches systematically."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Number of teeth and missing teeth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tooth alignment and occlusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour and visible deposits."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dental caries."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fractures or damaged teeth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Loose or displaced teeth, if apparent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Plaque and calculus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dentures, crowns and other dental appliances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evidence of previous dental treatment."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Number of teeth and missing teeth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tooth alignment and occlusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour and visible deposits.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dental caries.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fractures or damaged teeth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loose or displaced teeth, if apparent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Plaque and calculus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dentures, crowns and other dental appliances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of previous dental treatment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -678,36 +701,38 @@
                   "text": "Inspect the gingiva around the teeth."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness and swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recession."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulceration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pus or discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Periodontal pockets, if you are equipped and trained to assess them."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gingival overgrowth."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Redness and swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recession.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pus or discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periodontal pockets, if you are equipped and trained to assess them.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gingival overgrowth.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -727,28 +752,30 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A dental abscess may present with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Localised tooth pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness around a tooth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling of the gum or face."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pus or a draining sinus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fever or systemic illness in more severe cases."
+                  "type": "list",
+                  "title": "A dental abscess may present with:",
+                  "items": [
+                    {
+                      "text": "Localised tooth pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness around a tooth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling of the gum or face.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pus or a draining sinus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever or systemic illness in more severe cases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -764,7 +791,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_7",
-          "subsection_title": "Examination of the tongue",
+          "subsection_title": "6. Examination of the tongue",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -795,44 +822,46 @@
                   "text": "Ask the patient to protrude the tongue."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Observe:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Size and symmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Moisture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Coating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Papillae."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers or plaques."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fissures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tremor or fasciculations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deviation from the midline."
+                  "type": "list",
+                  "title": "Observe:",
+                  "items": [
+                    {
+                      "text": "Size and symmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moisture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Papillae.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers or plaques.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fissures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tremor or fasciculations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deviation from the midline.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -855,36 +884,38 @@
                   "text": "For a more complete examination, gently hold the tip of the tongue with gauze, using appropriate infection-control precautions, and inspect the lateral borders and ventral surface."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Red or white patches."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Induration or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Enlarged veins."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lesions beneath the tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal tethering."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary duct abnormalities."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Ulcers.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Red or white patches.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Induration or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarged veins.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lesions beneath the tongue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal tethering.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary duct abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -899,24 +930,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Protrude the tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Move it to the left and right."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Push it against the inside of each cheek."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevate it towards the palate."
+                  "type": "list",
+                  "title": "Ask the patient to:",
+                  "items": [
+                    {
+                      "text": "Protrude the tongue.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Move it to the left and right.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Push it against the inside of each cheek.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Elevate it towards the palate.",
+                      "level": 0,
+                      "label": "4."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -945,10 +982,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Glossitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Glossitis"
                 },
                 {
                   "type": "paragraph",
@@ -960,10 +995,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Geographic tongue"
-                  ]
+                  "type": "paragraph",
+                  "text": "Geographic tongue"
                 },
                 {
                   "type": "paragraph",
@@ -975,10 +1008,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oral candidiasis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Oral candidiasis"
                 },
                 {
                   "type": "paragraph",
@@ -990,10 +1021,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Suspicious tongue lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Suspicious tongue lesion"
                 },
                 {
                   "type": "paragraph",
@@ -1012,32 +1041,34 @@
                   "text": "Ask the patient to lift the tongue and inspect the floor of the mouth."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary duct openings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary stones or discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevation of the tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness or induration."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary duct openings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary stones or discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Elevation of the tongue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Redness or induration.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1049,7 +1080,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_8",
-          "subsection_title": "Examination of the hard palate and soft palate",
+          "subsection_title": "7. Examination of the hard palate and soft palate",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1085,46 +1116,46 @@
                   "text": "The hard palate is the anterior bony portion of the roof of the mouth."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Procedure"
-                  ]
+                  "type": "paragraph",
+                  "text": "Procedure"
                 },
                 {
                   "type": "paragraph",
                   "text": "Ask the patient to open their mouth and tilt their head slightly backwards if comfortable. Illuminate the roof of the mouth."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Inspect for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour and surface."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pigmentation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trauma or burns."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cleft palate or other congenital abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Denture-related irritation."
+                  "type": "list",
+                  "title": "Inspect for:",
+                  "items": [
+                    {
+                      "text": "Colour and surface.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pigmentation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma or burns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cleft palate or other congenital abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Denture-related irritation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1147,38 +1178,38 @@
                   "text": "The soft palate is the posterior muscular portion of the roof of the mouth."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Ask the patient to open their mouth and say “ah.”"
+                },
+                {
+                  "type": "list",
+                  "title": "Observe:",
                   "items": [
-                    "Ask the patient to open their mouth and say “ah.”"
+                    {
+                      "text": "Symmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Elevation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Movement relative to the pharyngeal walls.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Observe:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulceration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Movement relative to the pharyngeal walls."
                 },
                 {
                   "type": "paragraph",
@@ -1197,20 +1228,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Unilateral palatal weakness may occur with vagal pathway dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nasal regurgitation of liquids can suggest impaired palatal closure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A bifid uvula may be associated with a submucous cleft palate in some patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palatal petechiae may occur in streptococcal pharyngitis and other conditions, but are not diagnostic on their own."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Unilateral palatal weakness may occur with vagal pathway dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal regurgitation of liquids can suggest impaired palatal closure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A bifid uvula may be associated with a submucous cleft palate in some patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palatal petechiae may occur in streptococcal pharyngitis and other conditions, but are not diagnostic on their own.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1218,7 +1254,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_9",
-          "subsection_title": "Examination of the uvula",
+          "subsection_title": "8. Examination of the uvula",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1245,30 +1281,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to open their mouth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Illuminate the oropharynx."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Ask the patient to say “ah.”"
+                    {
+                      "text": "Ask the patient to open their mouth.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Illuminate the oropharynx.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask the patient to say “ah.”",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Observe the uvula's position and movement.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess whether the soft palate rises symmetrically.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Look for swelling, ulceration, erythema or displacement.",
+                      "level": 0,
+                      "label": "6."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Observe the uvula's position and movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess whether the soft palate rises symmetrically."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for swelling, ulceration, erythema or displacement."
                 }
               ]
             },
@@ -1291,10 +1336,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Uvula deviation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Uvula deviation"
                 },
                 {
                   "type": "image",
@@ -1310,10 +1353,8 @@
                   "text": "Deviation may also result from palatal weakness or other structural abnormalities."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Uvulitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Uvulitis"
                 },
                 {
                   "type": "image",
@@ -1325,10 +1366,8 @@
                   "text": "Inflammation causes swelling, erythema and sometimes pain or a foreign-body sensation. Severe swelling associated with breathing difficulty requires emergency assessment."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Bifid uvula"
-                  ]
+                  "type": "paragraph",
+                  "text": "Bifid uvula"
                 },
                 {
                   "type": "image",
@@ -1348,16 +1387,18 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The gag reflex involves:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Afferent limb: glossopharyngeal nerve (CN IX)."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Efferent limb: vagus nerve (CN X)."
+                  "type": "list",
+                  "title": "The gag reflex involves:",
+                  "items": [
+                    {
+                      "text": "Afferent limb: glossopharyngeal nerve (CN IX).",
+                      "level": 0
+                    },
+                    {
+                      "text": "Efferent limb: vagus nerve (CN X).",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1373,7 +1414,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_10",
-          "subsection_title": "Examination of the tonsils",
+          "subsection_title": "9. Examination of the tonsils",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1400,42 +1441,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to open their mouth widely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shine the pen torch into the oropharynx."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Ask them to say “ah.”"
+                    {
+                      "text": "Ask the patient to open their mouth widely.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Shine the pen torch into the oropharynx.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask them to say “ah.”",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "If the tonsils are difficult to visualise, use a tongue depressor to depress the anterior tongue gently.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Inspect both tonsils and compare their size.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Examine the anterior and posterior pillars.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Assess colour, surface, exudate, ulceration and surrounding swelling.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Observe the position of the uvula.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Assess for trismus, drooling, voice changes or respiratory difficulty.",
+                      "level": 0,
+                      "label": "9."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If the tonsils are difficult to visualise, use a tongue depressor to depress the anterior tongue gently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect both tonsils and compare their size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examine the anterior and posterior pillars."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess colour, surface, exudate, ulceration and surrounding swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Observe the position of the uvula."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for trismus, drooling, voice changes or respiratory difficulty."
                 },
                 {
                   "type": "paragraph",
@@ -1450,36 +1503,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Tonsillar size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Erythema."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exudate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulceration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Crypts or tonsilloliths."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Peritonsillar swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uvular displacement."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Tonsillar size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erythema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exudate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crypts or tonsilloliths.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peritonsillar swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uvular displacement.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1540,10 +1598,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Acute tonsillitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Acute tonsillitis"
                 },
                 {
                   "type": "paragraph",
@@ -1555,10 +1611,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Peritonsillar abscess (quinsy)"
-                  ]
+                  "type": "paragraph",
+                  "text": "Peritonsillar abscess (quinsy)"
                 },
                 {
                   "type": "paragraph",
@@ -1570,10 +1624,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Tonsillolith"
-                  ]
+                  "type": "paragraph",
+                  "text": "Tonsillolith"
                 },
                 {
                   "type": "paragraph",
@@ -1588,32 +1640,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Persistent or unexplained unilateral enlargement deserves assessment, particularly when associated with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A neck mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulceration or irregularity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent unilateral throat pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Referred ear pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unexplained weight loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding or constitutional symptoms."
+                  "type": "list",
+                  "title": "Persistent or unexplained unilateral enlargement deserves assessment, particularly when associated with:",
+                  "items": [
+                    {
+                      "text": "A neck mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration or irregularity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent unilateral throat pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Referred ear pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unexplained weight loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding or constitutional symptoms.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1625,7 +1679,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_11",
-          "subsection_title": "Examination of the oropharynx and posterior pharyngeal wall",
+          "subsection_title": "10. Examination of the oropharynx and posterior pharyngeal wall",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1652,32 +1706,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to open their mouth widely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Illuminate the oropharynx."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask them to say “ah” to assess palatal movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use a tongue depressor gently if the tongue obscures the view."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the posterior pharyngeal wall, tonsillar pillars and surrounding mucosa."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for erythema, exudate, ulcers, swelling, asymmetry, postnasal secretions or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Observe for pooling of secretions or difficulty handling saliva."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ask the patient to open their mouth widely.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Illuminate the oropharynx.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask them to say “ah” to assess palatal movement.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Use a tongue depressor gently if the tongue obscures the view.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Inspect the posterior pharyngeal wall, tonsillar pillars and surrounding mucosa.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Look for erythema, exudate, ulcers, swelling, asymmetry, postnasal secretions or masses.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Observe for pooling of secretions or difficulty handling saliva.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -1688,10 +1754,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pharyngitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pharyngitis"
                 },
                 {
                   "type": "image",
@@ -1703,10 +1767,8 @@
                   "text": "Inflammation of the pharynx can cause erythema, pain and discomfort on swallowing. Viral causes are common, but bacterial infection is also possible. Appearance alone is insufficient to determine the cause."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Posterior pharyngeal cobblestoning"
-                  ]
+                  "type": "paragraph",
+                  "text": "Posterior pharyngeal cobblestoning"
                 },
                 {
                   "type": "image",
@@ -1718,20 +1780,16 @@
                   "text": "A bumpy appearance may be associated with chronic irritation, including postnasal drainage or allergic rhinitis. It is not diagnostic on its own."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Exudate"
-                  ]
+                  "type": "paragraph",
+                  "text": "Exudate"
                 },
                 {
                   "type": "paragraph",
                   "text": "White or yellow material can occur in several conditions, including streptococcal infection, infectious mononucleosis and other infections. Clinical features and appropriate testing guide the diagnosis."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Asymmetrical swelling or a bulging posterior pharyngeal wall"
-                  ]
+                  "type": "paragraph",
+                  "text": "Asymmetrical swelling or a bulging posterior pharyngeal wall"
                 },
                 {
                   "type": "image",
@@ -1752,7 +1810,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_12",
-          "subsection_title": "Assessment of the floor of the mouth and salivary glands",
+          "subsection_title": "11. Assessment of the floor of the mouth and salivary glands",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1778,28 +1836,30 @@
                   "text": "Ask the patient to raise their tongue."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Inspect for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling or elevation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulcers or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary duct openings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salivary stones."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness or discharge."
+                  "type": "list",
+                  "title": "Inspect for:",
+                  "items": [
+                    {
+                      "text": "Swelling or elevation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary duct openings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salivary stones.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Redness or discharge.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1818,32 +1878,34 @@
                   "text": "Inspect and palpate the parotid and submandibular regions if indicated."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Asymmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain associated with meals."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dry mouth or reduced salivary flow."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Asymmetry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Redness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain associated with meals.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dry mouth or reduced salivary flow.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1872,32 +1934,34 @@
                   "text": "This is a rapidly progressive infection of the floor of the mouth and submandibular spaces, often arising from a dental source."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Warning signs include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Firm swelling under the jaw."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevated or displaced tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty swallowing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drooling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Muffled voice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breathing difficulty."
+                  "type": "list",
+                  "title": "Warning signs include:",
+                  "items": [
+                    {
+                      "text": "Firm swelling under the jaw.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Elevated or displaced tongue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty swallowing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drooling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Muffled voice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathing difficulty.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1909,7 +1973,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_13",
-          "subsection_title": "Examination of cervical lymph nodes",
+          "subsection_title": "12. Examination of cervical lymph nodes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1936,28 +2000,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain that you will examine the neck and obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position the patient comfortably, with the neck slightly flexed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect for visible swelling or asymmetry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpate systematically, comparing both sides."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess any enlarged nodes for tenderness, size, consistency, mobility and matting."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examine the supraclavicular regions when indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain that you will examine the neck and obtain consent.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Position the patient comfortably, with the neck slightly flexed.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Inspect for visible swelling or asymmetry.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Palpate systematically, comparing both sides.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess any enlarged nodes for tenderness, size, consistency, mobility and matting.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Examine the supraclavicular regions when indicated.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             },
@@ -1968,40 +2043,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Submental."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Submandibular."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tonsillar or jugulodigastric."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Preauricular and postauricular, when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Superficial cervical."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anterior cervical."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Posterior cervical."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deep cervical chain, using appropriate technique."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supraclavicular."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Submental.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Submandibular.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tonsillar or jugulodigastric.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Preauricular and postauricular, when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Superficial cervical.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anterior cervical.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior cervical.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deep cervical chain, using appropriate technique.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supraclavicular.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -2050,7 +2130,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_14",
-          "subsection_title": "Voice, speech and swallowing assessment",
+          "subsection_title": "13. Voice, speech and swallowing assessment",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2072,54 +2152,59 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the patient to speak in a normal voice and listen for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hoarseness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weak or breathy voice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Muffled speech."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypernasal speech."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dysarthria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stridor or noisy breathing."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask the patient to speak in a normal voice and listen for:",
                   "items": [
-                    "Clinical interpretation"
+                    {
+                      "text": "Hoarseness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weak or breathy voice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Muffled speech.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypernasal speech.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysarthria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stridor or noisy breathing.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Hoarseness may result from laryngitis, vocal cord pathology or recurrent laryngeal nerve dysfunction."
+                  "text": "Clinical interpretation"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Hypernasal speech may occur when the soft palate does not close adequately against the pharynx."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A muffled voice with trismus and unilateral throat swelling may suggest a peritonsillar abscess."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stridor suggests upper airway narrowing and may represent an emergency."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hoarseness may result from laryngitis, vocal cord pathology or recurrent laryngeal nerve dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypernasal speech may occur when the soft palate does not close adequately against the pharynx.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A muffled voice with trismus and unilateral throat swelling may suggest a peritonsillar abscess.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stridor suggests upper airway narrowing and may represent an emergency.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -2134,24 +2219,26 @@
                   "text": "Ask whether the patient has difficulty swallowing food, liquids or saliva."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Differentiate:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dysphagia: difficulty swallowing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Odynophagia: painful swallowing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Globus sensation: a sensation of a lump in the throat, often without actual obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nasal regurgitation: liquids or food passing into the nose, which may indicate impaired palatal closure."
+                  "type": "list",
+                  "title": "Differentiate:",
+                  "items": [
+                    {
+                      "text": "Dysphagia: difficulty swallowing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Odynophagia: painful swallowing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Globus sensation: a sensation of a lump in the throat, often without actual obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal regurgitation: liquids or food passing into the nose, which may indicate impaired palatal closure.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2208,7 +2295,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_15",
-          "subsection_title": "Special investigations and additional examinations",
+          "subsection_title": "14. Special investigations and additional examinations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2262,28 +2349,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Imaging may be indicated when there is concern for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A deep neck space infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An abscess extending beyond the visible tissues."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A suspicious mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Significant trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Complications of infection."
+                  "type": "list",
+                  "title": "Imaging may be indicated when there is concern for:",
+                  "items": [
+                    {
+                      "text": "A deep neck space infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An abscess extending beyond the visible tissues.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A suspicious mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complications of infection.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -2311,7 +2400,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_16",
-          "subsection_title": "Important clinical patterns to recognise",
+          "subsection_title": "15. Important clinical patterns to recognise",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2326,10 +2415,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Acute tonsillitis or pharyngitis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Acute tonsillitis or pharyngitis"
                 },
                 {
                   "type": "paragraph",
@@ -2341,10 +2428,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Peritonsillar abscess (quinsy)"
-                  ]
+                  "type": "paragraph",
+                  "text": "Peritonsillar abscess (quinsy)"
                 },
                 {
                   "type": "paragraph",
@@ -2356,10 +2441,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oral candidiasis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Oral candidiasis"
                 },
                 {
                   "type": "paragraph",
@@ -2371,10 +2454,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ludwig angina"
-                  ]
+                  "type": "paragraph",
+                  "text": "Ludwig angina"
                 },
                 {
                   "type": "paragraph",
@@ -2386,10 +2467,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Possible oral malignancy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Possible oral malignancy"
                 },
                 {
                   "type": "paragraph",
@@ -2401,7 +2480,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_17",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "16. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2411,44 +2490,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examining the tonsils but forgetting the lips, buccal mucosa, gums and teeth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to inspect the lateral and ventral surfaces of the tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Missing lesions on the floor of the mouth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using the tongue depressor too forcefully or provoking excessive gagging."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recording tonsillar exudate as proof of bacterial infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring the soft palate and uvula while asking the patient to say “ah.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting cervical lymph nodes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to assess voice, swallowing or airway symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Manipulating the throat when a deep neck infection or airway emergency is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Documenting normal findings in areas that were not adequately visualised."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Examining the tonsils but forgetting the lips, buccal mucosa, gums and teeth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to inspect the lateral and ventral surfaces of the tongue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Missing lesions on the floor of the mouth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using the tongue depressor too forcefully or provoking excessive gagging.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recording tonsillar exudate as proof of bacterial infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring the soft palate and uvula while asking the patient to say “ah.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting cervical lymph nodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to assess voice, swallowing or airway symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manipulating the throat when a deep neck infection or airway emergency is suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Documenting normal findings in areas that were not adequately visualised.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -2456,7 +2540,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_18",
-          "subsection_title": "How to present your findings to the examiner",
+          "subsection_title": "17. How to present your findings to the examiner",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2470,10 +2554,8 @@
                   "text": "A good presentation should follow the anatomical sequence and include the important positive and negative findings."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oral Cavity and Throat Examination — Sample Normal Findings"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Oral Cavity and Throat Examination — Sample Normal Findings**"
                 },
                 {
                   "type": "paragraph",
@@ -2497,7 +2579,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Conclusion: No obvious abnormality was identified in the components of the oral cavity and throat examination performed."
+                  "text": "**Conclusion:** No obvious abnormality was identified in the components of the oral cavity and throat examination performed."
                 },
                 {
                   "type": "paragraph",
@@ -2509,7 +2591,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_19",
-          "subsection_title": "Final OSCE checklist",
+          "subsection_title": "18. Final OSCE checklist",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2531,35 +2613,76 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0 of 17",
-                    "Introduce yourself, obtain consent and assess airway warning signs",
-                    "Inspect the face, lips and corners of the mouth",
-                    "Inspect inner lips and buccal mucosa",
-                    "Inspect teeth, gums and dental arches",
-                    "Inspect dorsal, lateral and ventral surfaces of the tongue",
-                    "Assess tongue protrusion and movement",
-                    "Inspect the floor of the mouth and salivary duct openings",
-                    "Inspect the hard palate"
-                  ]
+                  "type": "paragraph",
+                  "text": "0 of 17"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Introduce yourself, obtain consent and assess airway warning signs"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect the face, lips and corners of the mouth"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect inner lips and buccal mucosa"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect teeth, gums and dental arches"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect dorsal, lateral and ventral surfaces of the tongue"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess tongue protrusion and movement"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect the floor of the mouth and salivary duct openings"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect the hard palate"
                 },
                 {
                   "type": "paragraph",
                   "text": "Ask the patient to say 'ah' and assess soft palate movement"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Inspect the uvula for position, symmetry and lesions",
-                    "Inspect both tonsils, tonsillar pillars and surrounding tissues",
-                    "Inspect the posterior pharyngeal wall",
-                    "Assess voice, speech and swallowing symptoms",
-                    "Palpate relevant cervical lymph node groups",
-                    "Assess cranial nerves when indicated",
-                    "Identify suspicious lesions and urgent airway or infection warning signs",
-                    "Present findings clearly and state any limitations"
-                  ]
+                  "type": "paragraph",
+                  "text": "Inspect the uvula for position, symmetry and lesions"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect both tonsils, tonsillar pillars and surrounding tissues"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect the posterior pharyngeal wall"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess voice, speech and swallowing symptoms"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Palpate relevant cervical lymph node groups"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess cranial nerves when indicated"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify suspicious lesions and urgent airway or infection warning signs"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Present findings clearly and state any limitations"
                 }
               ]
             }
@@ -2567,7 +2690,7 @@
         },
         {
           "subsection_id": "throat_oral_cavity_subsection_20",
-          "subsection_title": "High-yield facts for clinical examinations",
+          "subsection_title": "19. High-yield facts for clinical examinations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2577,40 +2700,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "CN IX: afferent limb of the gag reflex."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CN X: efferent limb of the gag reflex; also important for palatal movement, voice and swallowing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CN XII: controls tongue movement; a lower motor neuron lesion may cause ipsilateral deviation, wasting and fasciculations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uvula deviation away from a unilateral swelling: consider a peritonsillar abscess in the appropriate clinical context."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trismus, unilateral throat swelling and a muffled voice: suspect quinsy or another deep infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "White oral plaques: consider candidiasis, but exclude other mucosal disorders."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent oral ulcer or suspicious red or white patch: requires assessment rather than repeated empirical treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tongue elevation with floor-of-mouth swelling: consider Ludwig angina."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drooling, stridor or inability to swallow secretions: prioritise emergency airway assessment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "CN IX: afferent limb of the gag reflex.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CN X: efferent limb of the gag reflex; also important for palatal movement, voice and swallowing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CN XII: controls tongue movement; a lower motor neuron lesion may cause ipsilateral deviation, wasting and fasciculations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uvula deviation away from a unilateral swelling: consider a peritonsillar abscess in the appropriate clinical context.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trismus, unilateral throat swelling and a muffled voice: suspect quinsy or another deep infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "White oral plaques: consider candidiasis, but exclude other mucosal disorders.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent oral ulcer or suspicious red or white patch: requires assessment rather than repeated empirical treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tongue elevation with floor-of-mouth swelling: consider Ludwig angina.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drooling, stridor or inability to swallow secretions: prioritise emergency airway assessment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",

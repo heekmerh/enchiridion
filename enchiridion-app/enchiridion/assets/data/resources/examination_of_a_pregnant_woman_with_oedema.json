@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,27 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 32-week pregnant woman presents with swollen feet. Examine her and determine the cause of the oedema.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Or:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Assess this pregnant woman with bilateral leg swelling.”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Or:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Examine this patient for signs of pre-eclampsia.”"
-                  ]
+                  "text": "**“A 32-week pregnant woman presents with swollen feet. Examine her and determine the cause of the oedema.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -57,7 +38,26 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“A pregnant woman presents with facial and leg swelling. Perform an appropriate examination.”"
+                  "text": "**“Assess this pregnant woman with bilateral leg swelling.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Or:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“Examine this patient for signs of pre-eclampsia.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Or:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“A pregnant woman presents with facial and leg swelling. Perform an appropriate examination.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -65,7 +65,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_2",
-          "subsection_title": "YOUR OBJECTIVES",
+          "subsection_title": "2. YOUR OBJECTIVES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -75,48 +75,60 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You need to establish:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the oedema unilateral or bilateral?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it dependent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it pitting?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there evidence of DVT?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there hypertension?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there proteinuria?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there neurological signs?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there features of severe pre-eclampsia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there signs of cardiac failure?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there signs of renal/hepatic disease?"
+                  "type": "list",
+                  "title": "You need to establish:",
+                  "items": [
+                    {
+                      "text": "Is the oedema unilateral or bilateral?",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Is it dependent?",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Is it pitting?",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Is there evidence of DVT?",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Is there hypertension?",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Is there proteinuria?",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Are there neurological signs?",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Are there features of severe pre-eclampsia?",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Are there signs of cardiac failure?",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Are there signs of renal/hepatic disease?",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             }
@@ -124,7 +136,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_3",
-          "subsection_title": "IMPORTANT OSCE PRINCIPLE",
+          "subsection_title": "3. IMPORTANT OSCE PRINCIPLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -138,22 +150,49 @@
                   "text": "Mild dependent ankle oedema can occur normally in pregnancy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "More concerning findings include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "More concerning findings include:",
                   "items": [
-                    "Hypertension",
-                    "Proteinuria",
-                    "New facial/hand swelling",
-                    "Severe headache",
-                    "Visual disturbance",
-                    "Epigastric/RUQ pain",
-                    "Hyperreflexia/clonus",
-                    "Reduced urine output",
-                    "Breathlessness/pulmonary oedema",
-                    "Other evidence of maternal organ dysfunction"
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Proteinuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "New facial/hand swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric/RUQ pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperreflexia/clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathlessness/pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other evidence of maternal organ dysfunction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -162,7 +201,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_4",
-          "subsection_title": "INTRODUCTION",
+          "subsection_title": "4. INTRODUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -173,7 +212,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I understand you have noticed swelling during your pregnancy. I would like to examine you to assess the swelling and look for any signs that may indicate a complication of pregnancy.”"
+                  "text": "“Good morning. My name is Dr ____. I understand you have noticed swelling during your pregnancy. I would like to examine you to assess the swelling and look for any signs that may indicate a complication of pregnancy.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -197,7 +237,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_5",
-          "subsection_title": "GENERAL OBSERVATION",
+          "subsection_title": "5. GENERAL OBSERVATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -211,21 +251,45 @@
                   "text": "Before touching the patient, look."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "General appearance",
-                    "Level of consciousness",
-                    "Distress",
-                    "Breathlessness",
-                    "Pallor",
-                    "Jaundice",
-                    "Facial oedema",
-                    "Hand oedema",
-                    "Leg oedema"
+                    {
+                      "text": "General appearance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Level of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hand oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leg oedema",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -233,20 +297,16 @@
                   "text": "Look particularly for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Facial/periorbital swelling"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Facial/periorbital swelling**"
                 },
                 {
                   "type": "paragraph",
                   "text": "and:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Generalized oedema"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Generalized oedema**"
                 }
               ]
             }
@@ -254,7 +314,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_6",
-          "subsection_title": "VITAL SIGNS",
+          "subsection_title": "6. VITAL SIGNS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -292,15 +352,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Rate",
-                    "Rhythm",
-                    "Character"
+                    {
+                      "text": "Rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Character",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -312,15 +378,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Especially important if there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially important if there is:",
                   "items": [
-                    "Breathlessness",
-                    "Pulmonary oedema",
-                    "Cardiac disease"
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -344,16 +416,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Particularly if:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Particularly if:",
                   "items": [
-                    "Breathlessness",
-                    "Chest symptoms",
-                    "Suspected pulmonary oedema",
-                    "Cardiac disease"
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -362,7 +443,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_7",
-          "subsection_title": "BLOOD PRESSURE IN PREGNANCY",
+          "subsection_title": "7. BLOOD PRESSURE IN PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -376,10 +457,8 @@
                   "text": "Hypertension in pregnancy is generally defined as:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BP ≥140/90 mmHg"
-                  ]
+                  "type": "paragraph",
+                  "text": "**BP ≥140/90 mmHg**"
                 },
                 {
                   "type": "paragraph",
@@ -390,10 +469,8 @@
                   "text": "Severe hypertension is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "≥160 systolic or ≥110 diastolic mmHg"
-                  ]
+                  "type": "paragraph",
+                  "text": "**≥160 systolic or ≥110 diastolic mmHg**"
                 },
                 {
                   "type": "paragraph",
@@ -413,7 +490,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not simply write it down and move on."
+                  "text": "**Do not simply write it down and move on.**"
                 },
                 {
                   "type": "paragraph",
@@ -425,7 +502,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_8",
-          "subsection_title": "HANDS",
+          "subsection_title": "8. HANDS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -435,18 +512,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Inspect the hands for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Inspect the hands for:",
                   "items": [
-                    "Oedema",
-                    "Pallor",
-                    "Cyanosis",
-                    "Clubbing",
-                    "Tremor",
-                    "Capillary refill"
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tremor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Capillary refill",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -454,10 +546,8 @@
                   "text": "Look for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Swelling of the fingers/hands"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Swelling of the fingers/hands**"
                 },
                 {
                   "type": "paragraph",
@@ -469,7 +559,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_9",
-          "subsection_title": "FACE AND EYES",
+          "subsection_title": "9. FACE AND EYES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -479,16 +569,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Facial oedema",
-                    "Periorbital oedema",
-                    "Pallor",
-                    "Jaundice"
+                    {
+                      "text": "Facial oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periorbital oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -504,10 +603,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Have you had any severe or persistent headache?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Have you had any severe or persistent headache?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -519,7 +617,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Have you noticed blurred vision, flashing lights or other changes in your vision?”"
+                  "text": "“Have you noticed blurred vision, flashing lights or other changes in your vision?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -531,7 +630,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_10",
-          "subsection_title": "MOUTH",
+          "subsection_title": "10. MOUTH",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -541,15 +640,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Hydration",
-                    "Mucous membranes",
-                    "Pallor"
+                    {
+                      "text": "Hydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mucous membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -562,7 +667,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_11",
-          "subsection_title": "NECK",
+          "subsection_title": "11. NECK",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -584,14 +689,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Elevated JVP may suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Elevated JVP may suggest:",
                   "items": [
-                    "Heart failure",
-                    "Fluid overload"
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fluid overload",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -604,7 +712,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_12",
-          "subsection_title": "CARDIOVASCULAR EXAMINATION",
+          "subsection_title": "12. CARDIOVASCULAR EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -614,30 +722,51 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Pulse",
-                    "Blood pressure",
-                    "JVP",
-                    "Heart sounds",
-                    "Murmurs",
-                    "Peripheral oedema"
+                    {
+                      "text": "Pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood pressure",
+                      "level": 0
+                    },
+                    {
+                      "text": "JVP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Murmurs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral oedema",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Listen for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Listen for:",
                   "items": [
-                    "Tachycardia",
-                    "Gallop rhythm",
-                    "Murmurs"
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gallop rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Murmurs",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -646,7 +775,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_13",
-          "subsection_title": "RESPIRATORY EXAMINATION",
+          "subsection_title": "13. RESPIRATORY EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -660,16 +789,25 @@
                   "text": "This is particularly important if the woman is breathless."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Respiratory rate",
-                    "Oxygen saturation",
-                    "Chest expansion",
-                    "Breath sounds"
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen saturation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest expansion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breath sounds",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -677,10 +815,8 @@
                   "text": "Listen for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fine basal crackles"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fine basal crackles**"
                 },
                 {
                   "type": "paragraph",
@@ -704,7 +840,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_14",
-          "subsection_title": "ABDOMEN",
+          "subsection_title": "14. ABDOMEN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -718,17 +854,29 @@
                   "text": "Perform an appropriate abdominal examination."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Hepatomegaly",
-                    "Ascites",
-                    "Right upper quadrant/epigastric tenderness",
-                    "Uterine size",
-                    "Fetal wellbeing as appropriate"
+                    {
+                      "text": "Hepatomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Right upper quadrant/epigastric tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal wellbeing as appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -753,7 +901,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_15",
-          "subsection_title": "EXAMINE THE LEGS",
+          "subsection_title": "15. EXAMINE THE LEGS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -771,18 +919,33 @@
                   "text": "Compare both legs."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Swelling",
-                    "Asymmetry",
-                    "Skin colour",
-                    "Warmth",
-                    "Varicose veins",
-                    "Tenderness"
+                    {
+                      "text": "Swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Asymmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warmth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Varicose veins",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -791,7 +954,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_16",
-          "subsection_title": "IS THE OEDEMA UNILATERAL OR BILATERAL?",
+          "subsection_title": "16. IS THE OEDEMA UNILATERAL OR BILATERAL?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -813,18 +976,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Physiological pregnancy oedema",
-                    "Pre-eclampsia",
-                    "Heart failure",
-                    "Renal disease",
-                    "Hypoproteinaemia",
-                    "Other systemic causes"
+                    {
+                      "text": "Physiological pregnancy oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoproteinaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other systemic causes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -840,10 +1018,8 @@
                   "text": "Think particularly:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "DVT"
-                  ]
+                  "type": "paragraph",
+                  "text": "**DVT**"
                 },
                 {
                   "type": "paragraph",
@@ -855,7 +1031,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_17",
-          "subsection_title": "PITTING OEDEMA",
+          "subsection_title": "17. PITTING OEDEMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -869,14 +1045,17 @@
                   "text": "Press firmly over a bony prominence for several seconds."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common sites:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common sites:",
                   "items": [
-                    "Medial malleolus",
-                    "Shin"
+                    {
+                      "text": "Medial malleolus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shin",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -888,26 +1067,33 @@
                   "text": "If an indentation remains:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pitting oedema"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pitting oedema**"
                 },
                 {
                   "type": "paragraph",
                   "text": "is present."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Describe:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Describe:",
                   "items": [
-                    "Site",
-                    "Extent",
-                    "Symmetry",
-                    "Severity"
+                    {
+                      "text": "Site",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extent",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -916,7 +1102,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_18",
-          "subsection_title": "REPORTING PITTING OEDEMA",
+          "subsection_title": "18. REPORTING PITTING OEDEMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -930,30 +1116,27 @@
                   "text": "Instead of saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“She has oedema.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“She has oedema.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“There is bilateral pitting oedema extending to the ankles.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“There is bilateral pitting oedema extending to the ankles.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“There is bilateral pitting oedema extending to the mid-shins.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“There is bilateral pitting oedema extending to the mid-shins.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -965,7 +1148,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_19",
-          "subsection_title": "PHYSIOLOGICAL DEPENDENT OEDEMA",
+          "subsection_title": "19. PHYSIOLOGICAL DEPENDENT OEDEMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -975,19 +1158,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Typical features:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Typical features:",
                   "items": [
-                    "Mild",
-                    "Bilateral",
-                    "Dependent",
-                    "Worse towards the end of the day",
-                    "Improves with elevation/rest",
-                    "No hypertension",
-                    "No significant systemic symptoms"
+                    {
+                      "text": "Mild",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bilateral",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dependent",
+                      "level": 0
+                    },
+                    {
+                      "text": "Worse towards the end of the day",
+                      "level": 0
+                    },
+                    {
+                      "text": "Improves with elevation/rest",
+                      "level": 0
+                    },
+                    {
+                      "text": "No hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "No significant systemic symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1000,7 +1201,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is mild symmetrical dependent pitting oedema of both ankles, with no associated calf tenderness or asymmetry. Her blood pressure is normal and there are no symptoms suggestive of pre-eclampsia.”"
+                  "text": "“There is mild symmetrical dependent pitting oedema of both ankles, with no associated calf tenderness or asymmetry. Her blood pressure is normal and there are no symptoms suggestive of pre-eclampsia.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1008,7 +1210,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_20",
-          "subsection_title": "OEDEMA SUGGESTING PRE-ECLAMPSIA",
+          "subsection_title": "20. OEDEMA SUGGESTING PRE-ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1022,22 +1224,49 @@
                   "text": "Do not diagnose pre-eclampsia from oedema alone."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Hypertension",
-                    "Proteinuria",
-                    "Headache",
-                    "Visual symptoms",
-                    "Epigastric/RUQ pain",
-                    "Hyperreflexia",
-                    "Clonus",
-                    "Reduced urine output",
-                    "Fetal growth concerns",
-                    "Pulmonary oedema"
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Proteinuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric/RUQ pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperreflexia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal growth concerns",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1050,7 +1279,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient has bilateral lower-limb oedema associated with a blood pressure of 150/100 mmHg and reports persistent headache and visual disturbance. These findings are concerning for pre-eclampsia and require urgent assessment.”"
+                  "text": "“The patient has bilateral lower-limb oedema associated with a blood pressure of 150/100 mmHg and reports persistent headache and visual disturbance. These findings are concerning for pre-eclampsia and require urgent assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1058,7 +1288,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_21",
-          "subsection_title": "NEUROLOGICAL EXAMINATION",
+          "subsection_title": "21. NEUROLOGICAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1084,21 +1314,25 @@
                   "text": "Particularly:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Patellar/knee reflex"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Look for:"
+                  "text": "**Patellar/knee reflex**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Normal",
-                    "Brisk/hyperreflexic",
-                    "Reduced/absent"
+                    {
+                      "text": "Normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brisk/hyperreflexic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced/absent",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1123,7 +1357,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_22",
-          "subsection_title": "CLONUS",
+          "subsection_title": "22. CLONUS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1138,40 +1372,50 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Neuromuscular irritability associated with severe pre-eclampsia."
+                  "text": "**Neuromuscular irritability associated with severe pre-eclampsia.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "If you find it:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“There is ankle clonus.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“There is ankle clonus.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Do not simply write:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Pre-eclampsia.”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Interpret it alongside:"
+                  "text": "“Pre-eclampsia.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Interpret it alongside:",
                   "items": [
-                    "BP",
-                    "Symptoms",
-                    "Urinalysis",
-                    "Blood tests",
-                    "Maternal/fetal assessment"
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinalysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood tests",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal/fetal assessment",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1180,7 +1424,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_23",
-          "subsection_title": "DVT ASSESSMENT",
+          "subsection_title": "23. DVT ASSESSMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1194,18 +1438,33 @@
                   "text": "A pregnant woman has increased risk of venous thromboembolism."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Unilateral swelling",
-                    "Calf tenderness",
-                    "Warmth",
-                    "Erythema",
-                    "Increased calf circumference",
-                    "Asymmetry"
+                    {
+                      "text": "Unilateral swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calf tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warmth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erythema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased calf circumference",
+                      "level": 0
+                    },
+                    {
+                      "text": "Asymmetry",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1218,7 +1477,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not repeatedly massage or vigorously manipulate a painful swollen calf."
+                  "text": "Do **not** repeatedly massage or vigorously manipulate a painful swollen calf."
                 },
                 {
                   "type": "paragraph",
@@ -1234,7 +1493,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_24",
-          "subsection_title": "REPORT — SUSPECTED DVT",
+          "subsection_title": "24. REPORT — SUSPECTED DVT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1245,7 +1504,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is unilateral swelling of the left lower limb with increased calf circumference compared with the right, associated with warmth and calf tenderness. These findings raise suspicion for DVT and require urgent objective assessment.”"
+                  "text": "“There is unilateral swelling of the left lower limb with increased calf circumference compared with the right, associated with warmth and calf tenderness. These findings raise suspicion for DVT and require urgent objective assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1253,7 +1513,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_25",
-          "subsection_title": "HEART FAILURE / FLUID OVERLOAD",
+          "subsection_title": "25. HEART FAILURE / FLUID OVERLOAD",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1263,19 +1523,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider systemic causes when oedema is accompanied by:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider systemic causes when oedema is accompanied by:",
                   "items": [
-                    "Breathlessness",
-                    "Orthopnoea",
-                    "Raised JVP",
-                    "Tachycardia",
-                    "Basal crackles",
-                    "Reduced exercise tolerance",
-                    "Generalized oedema"
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Orthopnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Raised JVP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Basal crackles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced exercise tolerance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Generalized oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1288,7 +1566,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is bilateral pitting oedema associated with elevated JVP and bibasal crackles. In the context of breathlessness, these findings raise concern for fluid overload or cardiac failure.”"
+                  "text": "“There is bilateral pitting oedema associated with elevated JVP and bibasal crackles. In the context of breathlessness, these findings raise concern for fluid overload or cardiac failure.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1296,7 +1575,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_26",
-          "subsection_title": "RENAL DISEASE",
+          "subsection_title": "26. RENAL DISEASE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1306,29 +1585,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible clues:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible clues:",
                   "items": [
-                    "Generalized oedema",
-                    "Periorbital oedema",
-                    "Hypertension",
-                    "Proteinuria",
-                    "Reduced urine output"
+                    {
+                      "text": "Generalized oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periorbital oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Proteinuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "Renal disease",
-                    "Nephrotic syndrome",
-                    "Pre-eclampsia"
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nephrotic syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-eclampsia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1341,7 +1638,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_27",
-          "subsection_title": "LIVER/HYPOALBUMINAEMIA",
+          "subsection_title": "27. LIVER/HYPOALBUMINAEMIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1351,28 +1648,43 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Generalized oedema may also occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Generalized oedema may also occur with:",
                   "items": [
-                    "Liver disease",
-                    "Hypoalbuminaemia",
-                    "Malnutrition"
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoalbuminaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malnutrition",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Jaundice",
-                    "Ascites",
-                    "Muscle wasting",
-                    "Other systemic signs"
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Muscle wasting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other systemic signs",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1381,7 +1693,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_28",
-          "subsection_title": "IMPORTANT HISTORY TO TAKE",
+          "subsection_title": "28. IMPORTANT HISTORY TO TAKE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1395,10 +1707,9 @@
                   "text": "Even though this is an examination station, the examiner may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What else would you ask?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“What else would you ask?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1413,24 +1724,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "When did it start?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sudden or gradual?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "One or both legs?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Worse at the end of the day?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Improves with elevation?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "When did it start?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sudden or gradual?",
+                      "level": 0
+                    },
+                    {
+                      "text": "One or both legs?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Worse at the end of the day?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Improves with elevation?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1441,28 +1757,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Severe headache?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Visual disturbance?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Epigastric/RUQ pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nausea/vomiting?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced urine output?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sudden facial/hand swelling?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Severe headache?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric/RUQ pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nausea/vomiting?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sudden facial/hand swelling?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1473,16 +1794,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Calf pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Leg warmth?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unilateral swelling?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Calf pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leg warmth?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unilateral swelling?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1493,20 +1819,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Breathlessness?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Orthopnoea?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chest pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cough?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Breathlessness?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Orthopnoea?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cough?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1517,20 +1848,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Vaginal bleeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abdominal pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contractions?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced fetal movements?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Vaginal bleeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contractions?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced fetal movements?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1538,7 +1874,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_29",
-          "subsection_title": "URINALYSIS",
+          "subsection_title": "29. URINALYSIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1552,10 +1888,8 @@
                   "text": "In suspected pre-eclampsia, assess urine for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Proteinuria"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Proteinuria**"
                 },
                 {
                   "type": "paragraph",
@@ -1571,7 +1905,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_30",
-          "subsection_title": "INVESTIGATIONS FOR SUSPECTED PRE-ECLAMPSIA",
+          "subsection_title": "30. INVESTIGATIONS FOR SUSPECTED PRE-ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1593,14 +1927,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Urinalysis/protein assessment",
-                    "FBC",
-                    "Platelet count",
-                    "Renal function",
-                    "Liver function",
-                    "Electrolytes where appropriate"
+                    {
+                      "text": "Urinalysis/protein assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Platelet count",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal function",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver function",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolytes where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1612,13 +1964,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Fetal heart assessment",
-                    "CTG when indicated",
-                    "Ultrasound for growth",
-                    "Amniotic fluid assessment",
-                    "Doppler studies where indicated"
+                    {
+                      "text": "Fetal heart assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound for growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Doppler studies where indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1627,7 +1994,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_31",
-          "subsection_title": "PRE-ECLAMPSIA — EXAMINER QUESTION",
+          "subsection_title": "31. PRE-ECLAMPSIA — EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1638,26 +2005,56 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Important features include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important features include:",
                   "items": [
-                    "Severe hypertension",
-                    "Severe/persistent headache",
-                    "Visual disturbance",
-                    "Epigastric or right upper quadrant pain",
-                    "Neurological irritability/hyperreflexia or clonus",
-                    "Pulmonary oedema",
-                    "Reduced urine output",
-                    "Thrombocytopenia",
-                    "Abnormal renal or liver function",
-                    "Other evidence of maternal organ dysfunction",
-                    "Fetal compromise or growth restriction"
+                    {
+                      "text": "Severe hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe/persistent headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric or right upper quadrant pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological irritability/hyperreflexia or clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrombocytopenia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal renal or liver function",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other evidence of maternal organ dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal compromise or growth restriction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1666,7 +2063,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_32",
-          "subsection_title": "MANAGEMENT — PHYSIOLOGICAL OEDEMA",
+          "subsection_title": "32. MANAGEMENT — PHYSIOLOGICAL OEDEMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1676,18 +2073,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If examination is reassuring:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If examination is reassuring:",
                   "items": [
-                    "Reassure",
-                    "Encourage appropriate leg elevation",
-                    "Avoid prolonged standing",
-                    "Encourage comfortable movement",
-                    "Review footwear",
-                    "Continue routine antenatal care"
+                    {
+                      "text": "Reassure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encourage appropriate leg elevation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid prolonged standing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encourage comfortable movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review footwear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continue routine antenatal care",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1700,7 +2112,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_33",
-          "subsection_title": "MANAGEMENT — SUSPECTED PRE-ECLAMPSIA",
+          "subsection_title": "33. MANAGEMENT — SUSPECTED PRE-ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1711,36 +2123,66 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is not a reassurance-only situation."
+                  "text": "This is **not** a reassurance-only situation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management depends on:",
                   "items": [
-                    "Gestational age",
-                    "BP severity",
-                    "Symptoms",
-                    "Maternal organ involvement",
-                    "Fetal condition"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal organ involvement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May include:",
                   "items": [
-                    "Urgent obstetric assessment",
-                    "BP monitoring",
-                    "Antihypertensive therapy when indicated",
-                    "Seizure prophylaxis with magnesium sulfate in appropriate severe cases",
-                    "Corticosteroids for fetal lung maturation when indicated",
-                    "Fetal surveillance",
-                    "Timing of delivery based on maternal/fetal status"
+                    {
+                      "text": "Urgent obstetric assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP monitoring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antihypertensive therapy when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizure prophylaxis with magnesium sulfate in appropriate severe cases",
+                      "level": 0
+                    },
+                    {
+                      "text": "Corticosteroids for fetal lung maturation when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal surveillance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Timing of delivery based on maternal/fetal status",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1749,7 +2191,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_34",
-          "subsection_title": "MANAGEMENT — DVT",
+          "subsection_title": "34. MANAGEMENT — DVT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1764,7 +2206,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Urgent objective assessment."
+                  "text": "**Urgent objective assessment.**"
                 },
                 {
                   "type": "paragraph",
@@ -1775,10 +2217,8 @@
                   "text": "If confirmed or strongly suspected clinically, anticoagulation is generally managed with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Low-molecular-weight heparin"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Low-molecular-weight heparin**"
                 },
                 {
                   "type": "paragraph",
@@ -1794,7 +2234,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_35",
-          "subsection_title": "MANAGEMENT — PULMONARY OEDEMA",
+          "subsection_title": "35. MANAGEMENT — PULMONARY OEDEMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1808,20 +2248,41 @@
                   "text": "This is an emergency."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management includes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management includes:",
                   "items": [
-                    "Urgent senior obstetric/medical review",
-                    "ABC assessment",
-                    "Oxygen if hypoxaemic",
-                    "Appropriate positioning",
-                    "Fluid restriction/strict fluid balance as appropriate",
-                    "Treatment of the underlying cause",
-                    "Diuretics when clinically indicated",
-                    "Management of severe hypertension if present"
+                    {
+                      "text": "Urgent senior obstetric/medical review",
+                      "level": 0
+                    },
+                    {
+                      "text": "ABC assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen if hypoxaemic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate positioning",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fluid restriction/strict fluid balance as appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treatment of the underlying cause",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diuretics when clinically indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Management of severe hypertension if present",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1830,7 +2291,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_36",
-          "subsection_title": "COMPLETE NORMAL REPORT",
+          "subsection_title": "36. COMPLETE NORMAL REPORT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1841,7 +2302,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient is comfortable at rest and not in respiratory distress. There is mild bilateral dependent pitting oedema around the ankles with no asymmetry, warmth or calf tenderness. There is no significant facial or hand oedema. Her pulse and blood pressure are within the expected range, and there are no clinical features of pulmonary oedema or heart failure. There is no neurological irritability or clonus.”"
+                  "text": "“The patient is comfortable at rest and not in respiratory distress. There is mild bilateral dependent pitting oedema around the ankles with no asymmetry, warmth or calf tenderness. There is no significant facial or hand oedema. Her pulse and blood pressure are within the expected range, and there are no clinical features of pulmonary oedema or heart failure. There is no neurological irritability or clonus.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1849,7 +2311,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_37",
-          "subsection_title": "REPORT — PRE-ECLAMPSIA CONCERN",
+          "subsection_title": "37. REPORT — PRE-ECLAMPSIA CONCERN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1860,7 +2322,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is bilateral lower-limb pitting oedema with associated hand and facial oedema. Her blood pressure is 155/105 mmHg. She reports persistent headache and visual disturbance, and brisk lower-limb reflexes with ankle clonus are present. These findings are concerning for pre-eclampsia with severe features and require urgent obstetric assessment.”"
+                  "text": "“There is bilateral lower-limb pitting oedema with associated hand and facial oedema. Her blood pressure is 155/105 mmHg. She reports persistent headache and visual disturbance, and brisk lower-limb reflexes with ankle clonus are present. These findings are concerning for pre-eclampsia with severe features and require urgent obstetric assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1868,7 +2331,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_38",
-          "subsection_title": "REPORT — DVT",
+          "subsection_title": "38. REPORT — DVT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1879,7 +2342,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is unilateral right lower-limb swelling extending to the calf, with increased calf circumference, warmth and localized tenderness. The findings are concerning for DVT. I would arrange urgent objective assessment and avoid vigorous manipulation of the limb.”"
+                  "text": "“There is unilateral right lower-limb swelling extending to the calf, with increased calf circumference, warmth and localized tenderness. The findings are concerning for DVT. I would arrange urgent objective assessment and avoid vigorous manipulation of the limb.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1887,7 +2351,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_39",
-          "subsection_title": "REPORT — HEART FAILURE",
+          "subsection_title": "39. REPORT — HEART FAILURE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1898,7 +2362,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is bilateral pitting oedema extending to the shins, associated with raised JVP, tachycardia and bibasal fine crackles. In the context of breathlessness, these findings raise concern for cardiac failure or fluid overload and require urgent assessment.”"
+                  "text": "“There is bilateral pitting oedema extending to the shins, associated with raised JVP, tachycardia and bibasal fine crackles. In the context of breathlessness, these findings raise concern for cardiac failure or fluid overload and require urgent assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1906,7 +2371,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_40",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_title": "40. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1917,7 +2382,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1933,7 +2398,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1949,11 +2414,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "A blood pressure of 140/90 mmHg or higher, appropriately confirmed according to the clinical context."
+                  "text": "A blood pressure of **140/90 mmHg or higher**, appropriately confirmed according to the clinical context."
                 }
               ]
             },
@@ -1965,7 +2430,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1973,7 +2438,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "160/110 mmHg or higher."
+                  "text": "**160/110 mmHg or higher.**"
                 },
                 {
                   "type": "paragraph",
@@ -1988,15 +2453,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Hyperreflexia",
-                    "Clonus",
-                    "Altered neurological state where severe disease is suspected"
+                    {
+                      "text": "Hyperreflexia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered neurological state where severe disease is suspected",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2009,7 +2480,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2024,17 +2495,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Unilateral leg swelling",
-                    "Calf pain/tenderness",
-                    "Warmth",
-                    "Erythema",
-                    "Increased calf circumference"
+                    {
+                      "text": "Unilateral leg swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calf pain/tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warmth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erythema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased calf circumference",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2046,18 +2529,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Acute breathlessness",
-                    "Hypoxia",
-                    "Tachypnoea",
-                    "Crackles",
-                    "Possible raised JVP",
-                    "Severe respiratory distress"
+                    {
+                      "text": "Acute breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crackles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible raised JVP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe respiratory distress",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2066,7 +2564,7 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_41",
-          "subsection_title": "DIFFERENTIAL TABLE",
+          "subsection_title": "41. DIFFERENTIAL TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2122,79 +2620,111 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_42",
-          "subsection_title": "OSCE MNEMONIC",
+          "subsection_title": "42. OSCE MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "examination_of_a_pregnant_woman_with_oedema_group_75",
-              "group_title": "S — Symptoms",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Headache",
-                    "Vision",
-                    "RUQ pain",
-                    "Breathlessness",
-                    "Calf pain"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_76",
-              "group_title": "W — Weight/whole-body assessment",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Generalized swelling",
-                    "Rapid weight gain where relevant"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_77",
-              "group_title": "E — Examine",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "BP",
-                    "Reflexes",
-                    "Clonus",
-                    "JVP",
-                    "Chest",
-                    "Legs"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_78",
-              "group_title": "L — Look for proteinuria",
+              "group_title": "SWELL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**S — Symptoms**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vision",
+                      "level": 0
+                    },
+                    {
+                      "text": "RUQ pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calf pain",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**W — Weight/whole-body assessment**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Generalized swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rapid weight gain where relevant",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**E — Examine**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reflexes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "JVP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest",
+                      "level": 0
+                    },
+                    {
+                      "text": "Legs",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**L — Look for proteinuria**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Urinalysis/quantification as appropriate."
-                }
-              ]
-            },
-            {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_79",
-              "group_title": "L — Look after mother and baby",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**L — Look after mother and baby**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Maternal bloods + fetal assessment."
@@ -2205,11 +2735,11 @@
         },
         {
           "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_43",
-          "subsection_title": "RAPID 60-SECOND OSCE",
+          "subsection_title": "43. RAPID 60-SECOND OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_80",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_76",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2219,10 +2749,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Examine this pregnant woman with oedema.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Examine this pregnant woman with oedema.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2231,7 +2760,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_81",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_77",
               "group_title": "LOOK",
               "group_subtitle": null,
               "group_icon": null,
@@ -2243,7 +2772,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_82",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_78",
               "group_title": "VITALS",
               "group_subtitle": null,
               "group_icon": null,
@@ -2255,7 +2784,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_83",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_79",
               "group_title": "LEGS",
               "group_subtitle": null,
               "group_icon": null,
@@ -2267,7 +2796,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_84",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_80",
               "group_title": "HEART",
               "group_subtitle": null,
               "group_icon": null,
@@ -2279,7 +2808,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_85",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_81",
               "group_title": "CHEST",
               "group_subtitle": null,
               "group_icon": null,
@@ -2291,7 +2820,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_86",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_82",
               "group_title": "NEURO",
               "group_subtitle": null,
               "group_icon": null,
@@ -2303,7 +2832,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_87",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_83",
               "group_title": "ABDOMEN",
               "group_subtitle": null,
               "group_icon": null,
@@ -2315,7 +2844,7 @@
               ]
             },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_88",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_84",
               "group_title": "URINE",
               "group_subtitle": null,
               "group_icon": null,
@@ -2330,20 +2859,14 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would assess maternal and fetal wellbeing and investigate for pre-eclampsia, DVT or systemic causes according to the findings.”"
+                  "text": "**“I would assess maternal and fetal wellbeing and investigate for pre-eclampsia, DVT or systemic causes according to the findings.”**",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "examination_of_a_pregnant_woman_with_oedema_subsection_44",
-          "subsection_title": "🔥 EXAM PEARL",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_89",
-              "group_title": "",
+              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_85",
+              "group_title": "🔥 EXAM PEARL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2352,46 +2875,42 @@
                   "text": "The biggest trap in this station is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Pregnant + oedema = pre-eclampsia.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Pregnant + oedema = pre-eclampsia.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "That is wrong."
+                  "text": "That is **wrong**."
                 },
                 {
                   "type": "paragraph",
                   "text": "Instead, think:"
-                }
-              ]
-            },
-            {
-              "group_id": "examination_of_a_pregnant_woman_with_oedema_group_90",
-              "group_title": "OEDEMA + WHAT ELSE?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Oedema alone → may be physiological."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oedema + hypertension/proteinuria → think pre-eclampsia."
+                  "text": "**OEDEMA + WHAT ELSE?**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oedema + headache/visual symptoms/RUQ pain/clonus → urgent concern for severe disease."
+                  "text": "**Oedema alone**\n→ may be physiological."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Unilateral oedema + calf pain/warmth → DVT."
+                  "text": "**Oedema + hypertension/proteinuria**\n→ think pre-eclampsia."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oedema + breathlessness/JVP/crackles → cardiac failure/pulmonary oedema."
+                  "text": "**Oedema + headache/visual symptoms/RUQ pain/clonus**\n→ urgent concern for severe disease."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Unilateral oedema + calf pain/warmth**\n→ DVT."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Oedema + breathlessness/JVP/crackles**\n→ cardiac failure/pulmonary oedema."
                 },
                 {
                   "type": "paragraph",

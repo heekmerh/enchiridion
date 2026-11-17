@@ -48,7 +48,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -58,27 +58,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples of OSCE instructions:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples of OSCE instructions:",
                   "items": [
-                    "“Interpret this pelvic radiograph and identify the anatomical landmarks.”",
-                    "“Describe the findings on this AP pelvis X-ray.”"
+                    {
+                      "text": "“Interpret this pelvic radiograph and identify the anatomical landmarks.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Describe the findings on this AP pelvis X-ray.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“A pregnant woman has sustained trauma. What are the important findings and your immediate priorities?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“What is pelvimetry, and what are its limitations in obstetric practice?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Identify the pelvic abnormality and discuss its relevance to pregnancy and delivery.”",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“A pregnant woman has sustained trauma. What are the important findings and your immediate priorities?”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“What is pelvimetry, and what are its limitations in obstetric practice?”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Identify the pelvic abnormality and discuss its relevance to pregnancy and delivery.”"
                 }
               ]
             }
@@ -86,7 +89,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_3",
-          "subsection_title": "Introduction and systematic approach",
+          "subsection_title": "2. Introduction and systematic approach",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -100,36 +103,49 @@
                   "text": "For an image-based station, use a structured radiology approach."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity and relevant clinical history, if provided."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the modality: plain radiograph."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the projection: usually an anteroposterior (AP) pelvis view."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess image quality and positioning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review the bones and joints systematically."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for fractures, dislocations, deformities, abnormal calcifications and other visible abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State the most likely interpretation and relevant differential diagnoses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the clinical significance and further management."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm the patient's identity and relevant clinical history, if provided.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Identify the modality: plain radiograph.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Identify the projection: usually an anteroposterior (AP) pelvis view.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess image quality and positioning.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Review the bones and joints systematically.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Look for fractures, dislocations, deformities, abnormal calcifications and other visible abnormalities.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "State the most likely interpretation and relevant differential diagnoses.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Explain the clinical significance and further management.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -141,7 +157,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_4",
-          "subsection_title": "Assess image quality",
+          "subsection_title": "3. Assess image quality",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -160,10 +176,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Rotation"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Rotation"
                 },
                 {
                   "type": "paragraph",
@@ -175,10 +189,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Positioning"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Positioning"
                 },
                 {
                   "type": "paragraph",
@@ -190,10 +202,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Exposure and coverage"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Exposure and coverage"
                 },
                 {
                   "type": "paragraph",
@@ -209,7 +219,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_5",
-          "subsection_title": "Identify the important pelvic anatomy",
+          "subsection_title": "4. Identify the important pelvic anatomy",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -224,10 +234,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "grepmed.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "grepmed.com"
                 },
                 {
                   "type": "paragraph",
@@ -296,7 +304,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_6",
-          "subsection_title": "Systematic interpretation: the ABCS approach",
+          "subsection_title": "5. Systematic interpretation: the ABCS approach",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -318,28 +326,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symmetry of the pelvic ring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Alignment of the sacroiliac joints."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Alignment of the pubic symphysis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Alignment of the femoral heads within the acetabula."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any displacement or dislocation."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Symmetry of the pelvic ring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alignment of the sacroiliac joints.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alignment of the pubic symphysis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alignment of the femoral heads within the acetabula.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any displacement or dislocation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -354,32 +364,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Inspect the cortical outline of:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ilium and iliac wings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sacrum and coccyx."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pubic bones and rami."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ischia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acetabula."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Visible proximal femora."
+                  "type": "list",
+                  "title": "Inspect the cortical outline of:",
+                  "items": [
+                    {
+                      "text": "Ilium and iliac wings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sacrum and coccyx.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pubic bones and rami.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ischia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acetabula.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible proximal femora.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -394,24 +406,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pubic symphysis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sacroiliac joints."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hip joint spaces."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acetabular alignment."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Pubic symphysis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sacroiliac joints.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hip joint spaces.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acetabular alignment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -426,24 +440,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Review the visible soft tissues for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Soft-tissue gas."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Calcifications, including possible urinary tract or pelvic calcifications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other visible abnormalities."
+                  "type": "list",
+                  "title": "Review the visible soft tissues for:",
+                  "items": [
+                    {
+                      "text": "Abnormal swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Soft-tissue gas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calcifications, including possible urinary tract or pelvic calcifications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other visible abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -455,7 +471,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_7",
-          "subsection_title": "Obstetric pelvimetry: the high-yield theory",
+          "subsection_title": "6. Obstetric pelvimetry: the high-yield theory",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -486,10 +502,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Pelvic inlet"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Pelvic inlet"
                 },
                 {
                   "type": "paragraph",
@@ -505,10 +519,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Midpelvis"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Midpelvis"
                 },
                 {
                   "type": "paragraph",
@@ -524,10 +536,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Pelvic outlet"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Pelvic outlet"
                 },
                 {
                   "type": "paragraph",
@@ -543,10 +553,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Pelvic axis"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Pelvic axis"
                 },
                 {
                   "type": "paragraph",
@@ -565,16 +573,21 @@
                   "text": "These are frequently tested in viva questions."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Diagonal conjugate: Distance from the inferior border of the pubic symphysis to the sacral promontory. It can be estimated clinically during an appropriately performed vaginal examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obstetric conjugate: Distance from the posterior surface of the pubic symphysis to the sacral promontory at the narrowest anteroposterior point of the inlet. It cannot be measured directly by routine clinical examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The obstetric conjugate is estimated from the diagonal conjugate, conventionally subtracting approximately 1.5–2 cm, although the relationship varies with pelvic anatomy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Diagonal conjugate: Distance from the inferior border of the pubic symphysis to the sacral promontory. It can be estimated clinically during an appropriately performed vaginal examination.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obstetric conjugate: Distance from the posterior surface of the pubic symphysis to the sacral promontory at the narrowest anteroposterior point of the inlet. It cannot be measured directly by routine clinical examination.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The obstetric conjugate is estimated from the diagonal conjugate, conventionally subtracting approximately 1.5–2 cm, although the relationship varies with pelvic anatomy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -586,7 +599,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_8",
-          "subsection_title": "Common abnormal pelvic X-ray findings",
+          "subsection_title": "7. Common abnormal pelvic X-ray findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -601,10 +614,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Pubic rami fracture"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Pubic rami fracture"
                 },
                 {
                   "type": "paragraph",
@@ -624,10 +635,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Pelvic ring disruption"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Pelvic ring disruption"
                 },
                 {
                   "type": "paragraph",
@@ -643,10 +652,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Hip dislocation"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Hip dislocation"
                 },
                 {
                   "type": "paragraph",
@@ -662,10 +669,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "D. Osteoarthritis"
-                  ]
+                  "type": "paragraph",
+                  "text": "D. Osteoarthritis"
                 },
                 {
                   "type": "paragraph",
@@ -681,10 +686,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "E. Pubic symphysis abnormality"
-                  ]
+                  "type": "paragraph",
+                  "text": "E. Pubic symphysis abnormality"
                 },
                 {
                   "type": "paragraph",
@@ -708,7 +711,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_9",
-          "subsection_title": "Pelvic X-ray in pregnancy: what should you say?",
+          "subsection_title": "8. Pelvic X-ray in pregnancy: what should you say?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -726,28 +729,35 @@
                   "text": "Pregnancy is not an absolute contraindication to a medically necessary X-ray. The decision depends on the clinical indication, the anatomical region being imaged, expected fetal exposure and whether an alternative test can answer the clinical question adequately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "In a pregnant woman with significant trauma:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stabilise the mother using standard trauma principles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not delay necessary imaging when it is required to diagnose a potentially serious maternal injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use appropriate radiation optimisation and the lowest exposure that achieves diagnostic image quality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Involve radiology and the relevant obstetric or trauma team."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider ultrasound or MRI when suitable, but do not substitute a less appropriate test if it would delay or miss an important diagnosis."
+                  "type": "list",
+                  "title": "In a pregnant woman with significant trauma:",
+                  "items": [
+                    {
+                      "text": "Stabilise the mother using standard trauma principles.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Do not delay necessary imaging when it is required to diagnose a potentially serious maternal injury.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Use appropriate radiation optimisation and the lowest exposure that achieves diagnostic image quality.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Involve radiology and the relevant obstetric or trauma team.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Consider ultrasound or MRI when suitable, but do not substitute a less appropriate test if it would delay or miss an important diagnosis.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -763,7 +773,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_10",
-          "subsection_title": "Model OSCE reports",
+          "subsection_title": "9. Model OSCE reports",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -774,7 +784,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is an AP radiograph of the pelvis. Image quality is adequate, with no major rotation. The pelvic ring appears intact, and the sacroiliac joints and pubic symphysis are aligned. The acetabula and visible proximal femora show no obvious fracture or dislocation. No acute osseous abnormality is identified on this image. I would correlate with the clinical findings and consider further imaging if there remains a strong suspicion of injury.”"
+                  "text": "“This is an AP radiograph of the pelvis. Image quality is adequate, with no major rotation. The pelvic ring appears intact, and the sacroiliac joints and pubic symphysis are aligned. The acetabula and visible proximal femora show no obvious fracture or dislocation. No acute osseous abnormality is identified on this image. I would correlate with the clinical findings and consider further imaging if there remains a strong suspicion of injury.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -786,7 +797,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is an AP pelvic radiograph demonstrating disruption of the pelvic ring, with abnormal alignment of the pubic symphysis and a suspected associated fracture. These findings raise concern for an unstable pelvic injury. I would immediately alert the trauma team, assess and manage haemodynamic instability, and arrange appropriate further imaging and definitive management according to the patient's condition.”"
+                  "text": "“This is an AP pelvic radiograph demonstrating disruption of the pelvic ring, with abnormal alignment of the pubic symphysis and a suspected associated fracture. These findings raise concern for an unstable pelvic injury. I would immediately alert the trauma team, assess and manage haemodynamic instability, and arrange appropriate further imaging and definitive management according to the patient's condition.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -798,7 +810,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Pelvimetry is the assessment of the dimensions of the maternal pelvis. Although X-ray pelvimetry has historically been used to estimate the adequacy of the pelvis for vaginal delivery, it is not recommended routinely because it does not reliably predict the outcome of labour and involves ionising radiation. I would assess the woman's obstetric history, clinical progress, fetal presentation and position, and maternal and fetal condition rather than relying on pelvic measurements alone.”"
+                  "text": "“Pelvimetry is the assessment of the dimensions of the maternal pelvis. Although X-ray pelvimetry has historically been used to estimate the adequacy of the pelvis for vaginal delivery, it is not recommended routinely because it does not reliably predict the outcome of labour and involves ionising radiation. I would assess the woman's obstetric history, clinical progress, fetal presentation and position, and maternal and fetal condition rather than relying on pelvic measurements alone.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -806,7 +819,7 @@
         },
         {
           "subsection_id": "pelvic_x_ray_subsection_11",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "10. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {

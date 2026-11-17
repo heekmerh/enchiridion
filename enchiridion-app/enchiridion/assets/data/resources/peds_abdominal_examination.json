@@ -32,64 +32,64 @@
                   "text": "The examiner may say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Examine the abdomen of this child and report your findings.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Examine the abdomen of this child and report your findings.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**“Examine this child with abdominal distension.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Your objectives are to determine:",
                   "items": [
-                    "“Examine this child with abdominal distension.”"
+                    {
+                      "text": "Is the abdomen distended?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there pain or tenderness?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there hepatomegaly?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there splenomegaly?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are the kidneys palpable?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there an abdominal mass?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there ascites?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are there hernias or umbilical abnormalities?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are bowel sounds normal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are there associated systemic findings?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Your objectives are to determine:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the abdomen distended?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there pain or tenderness?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there hepatomegaly?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there splenomegaly?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are the kidneys palpable?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there an abdominal mass?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there ascites?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there hernias or umbilical abnormalities?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are bowel sounds normal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there associated systemic findings?"
                 }
               ]
             }
@@ -97,7 +97,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_2",
-          "subsection_title": "Before you begin",
+          "subsection_title": "1. Before you begin",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -112,7 +112,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's tummy. Is that okay?”"
+                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's tummy. Is that okay?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -136,7 +137,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Child lying comfortably supine, with the head supported and knees slightly flexed if needed."
+                  "text": "**Child lying comfortably supine, with the head supported and knees slightly flexed if needed.**"
                 },
                 {
                   "type": "paragraph",
@@ -144,7 +145,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "From the nipples/xiphisternum to the pubic region, while maintaining dignity."
+                  "text": "**From the nipples/xiphisternum to the pubic region**, while maintaining dignity."
                 },
                 {
                   "type": "paragraph",
@@ -156,7 +157,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_3",
-          "subsection_title": "Important pediatric principle",
+          "subsection_title": "2. Important pediatric principle",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -166,15 +167,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A crying child will have:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A crying child will have:",
                   "items": [
-                    "Tense abdominal muscles",
-                    "Increased abdominal movement",
-                    "Difficulty with palpation"
+                    {
+                      "text": "Tense abdominal muscles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased abdominal movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty with palpation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -182,16 +189,25 @@
                   "text": "Therefore, use distraction."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You can:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You can:",
                   "items": [
-                    "Give the child a toy",
-                    "Let the parent hold their hand",
-                    "Talk to them",
-                    "Examine while they are distracted"
+                    {
+                      "text": "Give the child a toy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Let the parent hold their hand",
+                      "level": 0
+                    },
+                    {
+                      "text": "Talk to them",
+                      "level": 0
+                    },
+                    {
+                      "text": "Examine while they are distracted",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -204,7 +220,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do the least uncomfortable parts first."
+                  "text": "**Do the least uncomfortable parts first.**"
                 },
                 {
                   "type": "paragraph",
@@ -212,7 +228,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Look → listen → palpate non-tender areas → examine painful areas last."
+                  "text": "**Look → listen → palpate non-tender areas → examine painful areas last.**"
                 }
               ]
             }
@@ -220,7 +236,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_4",
-          "subsection_title": "Start at the end of the bed",
+          "subsection_title": "3. Start at the end of the bed",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -242,19 +258,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Pallor",
-                    "Jaundice",
-                    "Cyanosis",
-                    "Respiratory distress",
-                    "Dehydration",
-                    "Oedema",
-                    "Nutritional status"
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional status",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -266,20 +300,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Distension",
-                    "Scars",
-                    "Visible veins",
-                    "Masses",
-                    "Hernias",
-                    "Umbilical abnormalities",
-                    "Visible peristalsis",
-                    "Visible pulsations"
+                    {
+                      "text": "Distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible veins",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hernias",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible peristalsis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible pulsations",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -288,7 +343,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_5",
-          "subsection_title": "Inspection",
+          "subsection_title": "4. Inspection",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -315,24 +370,26 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Is the abdomen:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Flat?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Scaphoid?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Distended?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Globular?"
+                  "type": "list",
+                  "title": "Is the abdomen:",
+                  "items": [
+                    {
+                      "text": "Flat?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scaphoid?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distended?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Globular?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -343,19 +400,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Ascites",
-                    "Intestinal obstruction",
-                    "Constipation",
-                    "Organomegaly",
-                    "Abdominal mass",
-                    "Malnutrition",
-                    "Gas/distension"
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intestinal obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constipation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Organomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malnutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gas/distension",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -364,7 +439,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_6",
-          "subsection_title": "Umbilicus",
+          "subsection_title": "5. Umbilicus",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -378,14 +453,17 @@
                   "text": "Inspect the umbilicus."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Position",
-                    "Discharge"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -394,9 +472,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Inflammation"
+                    {
+                      "text": "Inflammation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -405,9 +486,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Granuloma"
+                    {
+                      "text": "Granuloma",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -416,9 +500,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hernia"
+                    {
+                      "text": "Hernia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -427,9 +514,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Protrusion"
+                    {
+                      "text": "Protrusion",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -438,10 +528,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Scarring",
-                    "Hematoma"
+                    {
+                      "text": "Scarring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hematoma",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -462,14 +558,17 @@
                   "text": "Common in young children."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for a swelling that:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for a swelling that:",
                   "items": [
-                    "Becomes more prominent with crying",
-                    "May be reducible"
+                    {
+                      "text": "Becomes more prominent with crying",
+                      "level": 0
+                    },
+                    {
+                      "text": "May be reducible",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -477,10 +576,9 @@
                   "text": "Ask the caregiver about:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does the swelling change when the child cries or strains?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Does the swelling change when the child cries or strains?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -488,7 +586,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_7",
-          "subsection_title": "Hernias",
+          "subsection_title": "6. Hernias",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -519,14 +617,17 @@
                   "text": "Inspect the groin."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask the child to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask the child to:",
                   "items": [
-                    "Cough if old enough",
-                    "Stand if appropriate"
+                    {
+                      "text": "Cough if old enough",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stand if appropriate",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -534,14 +635,17 @@
                   "text": "In infants, observe during crying."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Groin swelling",
-                    "Scrotal swelling"
+                    {
+                      "text": "Groin swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scrotal swelling",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -557,10 +661,8 @@
                   "text": "A painful, irreducible hernia with vomiting/abdominal symptoms may represent:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Incarceration/strangulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Incarceration/strangulation**"
                 },
                 {
                   "type": "paragraph",
@@ -572,7 +674,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_8",
-          "subsection_title": "Abdominal scars",
+          "subsection_title": "7. Abdominal scars",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -582,13 +684,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for scars suggesting:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for scars suggesting:",
                   "items": [
-                    "Previous laparotomy"
+                    {
+                      "text": "Previous laparotomy",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -597,9 +699,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Appendicectomy"
+                    {
+                      "text": "Appendicectomy",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -608,11 +713,20 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Bowel surgery",
-                    "Congenital anomaly repair",
-                    "Stoma surgery"
+                    {
+                      "text": "Bowel surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital anomaly repair",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stoma surgery",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -629,7 +743,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_9",
-          "subsection_title": "Skin and veins",
+          "subsection_title": "8. Skin and veins",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -651,14 +765,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May suggest:",
                   "items": [
-                    "Portal hypertension",
-                    "Inferior vena cava obstruction"
+                    {
+                      "text": "Portal hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inferior vena cava obstruction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -670,15 +787,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May indicate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May indicate:",
                   "items": [
-                    "Trauma",
-                    "Bleeding disorder",
-                    "Non-accidental injury"
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding disorder",
+                      "level": 0
+                    },
+                    {
+                      "text": "Non-accidental injury",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -699,7 +822,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_10",
-          "subsection_title": "Listen — bowel sounds",
+          "subsection_title": "9. Listen — bowel sounds",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -710,7 +833,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Auscultation is performed before palpation/percussion because manipulation may alter bowel sounds."
+                  "text": "**Auscultation is performed before palpation/percussion** because manipulation may alter bowel sounds."
                 },
                 {
                   "type": "paragraph",
@@ -721,22 +844,29 @@
                   "text": "Listen for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Bowel sounds"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Assess:"
+                  "text": "**Bowel sounds**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Present",
-                    "Reduced",
-                    "Increased",
-                    "Absent"
+                    {
+                      "text": "Present",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -752,10 +882,8 @@
                   "text": "May occur in:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Intestinal obstruction"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Intestinal obstruction**"
                 }
               ]
             },
@@ -771,7 +899,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ileus or advanced obstruction, depending on context."
+                  "text": "**Ileus or advanced obstruction**, depending on context."
                 },
                 {
                   "type": "paragraph",
@@ -783,7 +911,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_11",
-          "subsection_title": "Listen for bruits where appropriate",
+          "subsection_title": "10. Listen for bruits where appropriate",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -793,15 +921,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Auscultate over:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Auscultate over:",
                   "items": [
-                    "Aorta",
-                    "Renal arteries",
-                    "Hepatic region where indicated"
+                    {
+                      "text": "Aorta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal arteries",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic region where indicated",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -818,7 +952,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_12",
-          "subsection_title": "Palpation — general principles",
+          "subsection_title": "11. Palpation — general principles",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -837,7 +971,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I'm going to gently feel your tummy. Tell me if anything hurts.”"
+                  "text": "“I'm going to gently feel your tummy. Tell me if anything hurts.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -845,7 +980,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Away from the area of pain."
+                  "text": "**Away from the area of pain.**"
                 },
                 {
                   "type": "paragraph",
@@ -861,7 +996,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_13",
-          "subsection_title": "Assess tenderness",
+          "subsection_title": "12. Assess tenderness",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -875,10 +1010,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does this hurt?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Does this hurt?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -889,16 +1023,25 @@
                   "text": "In young children, facial expression and behaviour can be more informative than verbal responses."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Site",
-                    "Severity",
-                    "Guarding",
-                    "Rebound where clinically necessary"
+                    {
+                      "text": "Site",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Guarding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rebound where clinically necessary",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -915,7 +1058,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Peritoneal irritation."
+                  "text": "**Peritoneal irritation.**"
                 }
               ]
             }
@@ -923,7 +1066,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_14",
-          "subsection_title": "Rebound tenderness",
+          "subsection_title": "13. Rebound tenderness",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -950,7 +1093,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would assess for rebound tenderness only if clinically indicated because this may cause discomfort.”"
+                  "text": "“I would assess for rebound tenderness only if clinically indicated because this may cause discomfort.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -962,7 +1106,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_15",
-          "subsection_title": "Palpate the liver",
+          "subsection_title": "14. Palpate the liver",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -996,14 +1140,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "How far below the costal margin",
-                    "Edge",
-                    "Surface",
-                    "Consistency",
-                    "Tenderness",
-                    "Pulsatility"
+                    {
+                      "text": "How far below the costal margin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Edge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surface",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulsatility",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1012,7 +1174,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_16",
-          "subsection_title": "Liver edge",
+          "subsection_title": "15. Liver edge",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1027,7 +1189,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The liver edge is palpable ___ cm below the right costal margin in the mid-clavicular line.”"
+                  "text": "“The liver edge is palpable ___ cm below the right costal margin in the mid-clavicular line.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1046,16 +1209,25 @@
                   "text": "The liver can normally be palpable below the costal margin in young children, particularly infants."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Interpret according to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Interpret according to:",
                   "items": [
-                    "Age",
-                    "Clinical context",
-                    "Position of the liver",
-                    "Size below the costal margin"
+                    {
+                      "text": "Age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clinical context",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position of the liver",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size below the costal margin",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1064,7 +1236,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_17",
-          "subsection_title": "Hepatomegaly",
+          "subsection_title": "16. Hepatomegaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1098,11 +1270,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Smooth",
-                    "Irregular",
-                    "Nodular"
+                    {
+                      "text": "Smooth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nodular",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1114,11 +1295,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Soft",
-                    "Firm",
-                    "Hard"
+                    {
+                      "text": "Soft",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hard",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1130,10 +1320,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tender",
-                    "Non-tender"
+                    {
+                      "text": "Tender",
+                      "level": 0
+                    },
+                    {
+                      "text": "Non-tender",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1149,10 +1345,8 @@
                   "text": "A pulsatile liver may suggest:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Right-sided heart failure / tricuspid regurgitation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Right-sided heart failure / tricuspid regurgitation**"
                 },
                 {
                   "type": "paragraph",
@@ -1164,7 +1358,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_18",
-          "subsection_title": "Causes of hepatomegaly in children",
+          "subsection_title": "17. Causes of hepatomegaly in children",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1186,13 +1380,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Malaria",
-                    "Viral hepatitis",
-                    "Sepsis",
-                    "EBV/CMV",
-                    "Other infections"
+                    {
+                      "text": "Malaria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Viral hepatitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sepsis",
+                      "level": 0
+                    },
+                    {
+                      "text": "EBV/CMV",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other infections",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1204,10 +1413,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Heart failure",
-                    "Congestive hepatomegaly"
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congestive hepatomegaly",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1219,11 +1434,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Sickle cell disease",
-                    "Haemolytic disorders",
-                    "Leukaemia"
+                    {
+                      "text": "Sickle cell disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemolytic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leukaemia",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1235,10 +1459,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Glycogen storage diseases",
-                    "Lysosomal storage disorders"
+                    {
+                      "text": "Glycogen storage diseases",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lysosomal storage disorders",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1250,12 +1480,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Leukaemia",
-                    "Lymphoma",
-                    "Neuroblastoma",
-                    "Hepatic tumours"
+                    {
+                      "text": "Leukaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymphoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neuroblastoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic tumours",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1276,7 +1518,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_19",
-          "subsection_title": "Palpate the spleen",
+          "subsection_title": "18. Palpate the spleen",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1306,18 +1548,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Size",
-                    "Edge",
-                    "Surface",
-                    "Consistency",
-                    "Tenderness",
-                    "Notch"
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Edge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surface",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Notch",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1326,7 +1583,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_20",
-          "subsection_title": "The splenic notch",
+          "subsection_title": "19. The splenic notch",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1340,10 +1597,9 @@
                   "text": "A classic examiner question:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How do you distinguish the spleen from another abdominal mass?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“How do you distinguish the spleen from another abdominal mass?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1351,7 +1607,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A palpable notch on its medial/anterior border."
+                  "text": "**A palpable notch on its medial/anterior border.**"
                 },
                 {
                   "type": "paragraph",
@@ -1363,7 +1619,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_21",
-          "subsection_title": "Splenomegaly",
+          "subsection_title": "20. Splenomegaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1378,19 +1634,29 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The spleen is palpable ___ cm below the left costal margin.”"
+                  "text": "“The spleen is palpable ___ cm below the left costal margin.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then describe:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then describe:",
                   "items": [
-                    "Edge",
-                    "Consistency",
-                    "Tenderness",
-                    "Surface"
+                    {
+                      "text": "Edge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surface",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1402,20 +1668,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important causes include:",
                   "items": [
-                    "Malaria",
-                    "Sickle cell disease",
-                    "Other infections",
-                    "Portal hypertension",
-                    "Haematological disorders",
-                    "Leukaemia",
-                    "Lymphoma",
-                    "Storage disorders"
+                    {
+                      "text": "Malaria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sickle cell disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other infections",
+                      "level": 0
+                    },
+                    {
+                      "text": "Portal hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematological disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leukaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymphoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Storage disorders",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1424,7 +1711,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_22",
-          "subsection_title": "Palpate the kidneys",
+          "subsection_title": "21. Palpate the kidneys",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1455,7 +1742,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Try to capture the kidney between your hands."
+                  "text": "Try to **capture the kidney between your hands**."
                 }
               ]
             },
@@ -1475,7 +1762,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_23",
-          "subsection_title": "Why are kidneys particularly important in children?",
+          "subsection_title": "22. Why are kidneys particularly important in children?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1485,17 +1772,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Children can present with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Children can present with:",
                   "items": [
-                    "Enlarged kidneys",
-                    "Congenital renal abnormalities",
-                    "Hydronephrosis",
-                    "Polycystic kidney disease",
-                    "Wilms tumour"
+                    {
+                      "text": "Enlarged kidneys",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital renal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydronephrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polycystic kidney disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wilms tumour",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1504,7 +1803,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_24",
-          "subsection_title": "Wilms tumour",
+          "subsection_title": "23. Wilms tumour",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1528,19 +1827,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A painless abdominal mass."
+                  "text": "**A painless abdominal mass.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You should think about Wilms tumour particularly when there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You should think about Wilms tumour particularly when there is:",
                   "items": [
-                    "Unilateral abdominal mass",
-                    "Haematuria",
-                    "Hypertension",
-                    "Abdominal distension"
+                    {
+                      "text": "Unilateral abdominal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal distension",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1557,7 +1865,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Don't repeatedly or aggressively palpate it."
+                  "text": "**Don't repeatedly or aggressively palpate it.**"
                 },
                 {
                   "type": "paragraph",
@@ -1569,7 +1877,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_25",
-          "subsection_title": "Neuroblastoma",
+          "subsection_title": "24. Neuroblastoma",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1592,25 +1900,41 @@
                   "text": "It may arise from:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Adrenal/sympathetic tissue"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Features may include:"
+                  "text": "**Adrenal/sympathetic tissue**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Features may include:",
                   "items": [
-                    "Abdominal mass",
-                    "Weight loss",
-                    "Pain",
-                    "Fever",
-                    "Bone pain",
-                    "Hypertension",
-                    "Periorbital bruising in metastatic disease"
+                    {
+                      "text": "Abdominal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bone pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periorbital bruising in metastatic disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1623,7 +1947,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_26",
-          "subsection_title": "Assess for ascites",
+          "subsection_title": "25. Assess for ascites",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1633,14 +1957,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Generalized distension",
-                    "Flank fullness"
+                    {
+                      "text": "Generalized distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Flank fullness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1656,10 +1983,8 @@
                   "text": "Percuss from:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Centre → flank"
-                  ]
+                  "type": "paragraph",
+                  "text": "Centre → flank"
                 },
                 {
                   "type": "paragraph",
@@ -1671,7 +1996,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Shifting dullness, supporting free intraperitoneal fluid."
+                  "text": "**Shifting dullness**, supporting free intraperitoneal fluid."
                 }
               ]
             },
@@ -1695,7 +2020,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_27",
-          "subsection_title": "Abdominal masses",
+          "subsection_title": "26. Abdominal masses",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1713,10 +2038,8 @@
                   "text": "Use:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "S O C M M M"
-                  ]
+                  "type": "paragraph",
+                  "text": "**S O C M M** **M**"
                 }
               ]
             },
@@ -1787,12 +2110,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Size",
-                    "Consistency",
-                    "Tenderness",
-                    "Pulsatility"
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulsatility",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1801,7 +2136,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_28",
-          "subsection_title": "How to differentiate common organomegaly",
+          "subsection_title": "27. How to differentiate common organomegaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1811,11 +2146,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Right upper quadrant",
-                    "Moves with respiration",
-                    "Smooth edge usually"
+                    {
+                      "text": "Right upper quadrant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moves with respiration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smooth edge usually",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1827,11 +2171,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Left upper quadrant",
-                    "Moves with respiration",
-                    "Notch may be palpable"
+                    {
+                      "text": "Left upper quadrant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moves with respiration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Notch may be palpable",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1843,11 +2196,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Bimanually palpable",
-                    "Ballotable",
-                    "Usually moves less with respiration"
+                    {
+                      "text": "Bimanually palpable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ballotable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Usually moves less with respiration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1856,7 +2218,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_29",
-          "subsection_title": "Percussion",
+          "subsection_title": "28. Percussion",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1870,17 +2232,29 @@
                   "text": "Percuss the abdomen systematically."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "General percussion note",
-                    "Liver span where appropriate",
-                    "Splenic percussion where indicated",
-                    "Areas of dullness",
-                    "Tympany"
+                    {
+                      "text": "General percussion note",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver span where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Splenic percussion where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Areas of dullness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tympany",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1904,16 +2278,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May occur with:",
                   "items": [
-                    "Solid organs",
-                    "Masses",
-                    "Fluid",
-                    "Faecal loading"
+                    {
+                      "text": "Solid organs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Faecal loading",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1922,7 +2305,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_30",
-          "subsection_title": "Liver span",
+          "subsection_title": "29. Liver span",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1941,7 +2324,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal liver size varies with age and body habitus."
+                  "text": "**Normal liver size varies with age and body habitus.**"
                 },
                 {
                   "type": "paragraph",
@@ -1953,7 +2336,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_31",
-          "subsection_title": "Genital examination",
+          "subsection_title": "30. Genital examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1967,18 +2350,33 @@
                   "text": "Perform when clinically indicated."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "Abdominal mass",
-                    "Groin swelling",
-                    "Ambiguous genitalia",
-                    "Renal disease",
-                    "Suspected hernia",
-                    "Testicular pathology"
+                    {
+                      "text": "Abdominal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Groin swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ambiguous genitalia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected hernia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1990,16 +2388,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Testicular position",
-                    "Scrotal swelling",
-                    "Inguinal hernia",
-                    "Hydrocele"
+                    {
+                      "text": "Testicular position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scrotal swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inguinal hernia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydrocele",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2020,7 +2427,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_32",
-          "subsection_title": "Examine the spine and back",
+          "subsection_title": "31. Examine the spine and back",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2030,29 +2437,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Especially if there are:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially if there are:",
                   "items": [
-                    "Urinary symptoms",
-                    "Neurological abnormalities",
-                    "Sacral abnormalities",
-                    "Suspected congenital conditions"
+                    {
+                      "text": "Urinary symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sacral abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected congenital conditions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Sacral dimples",
-                    "Tufts of hair",
-                    "Swelling",
-                    "Deformity"
+                    {
+                      "text": "Sacral dimples",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tufts of hair",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2061,7 +2486,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_33",
-          "subsection_title": "Don't forget the cardiovascular system",
+          "subsection_title": "32. Don't forget the cardiovascular system",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2076,21 +2501,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Could this be heart failure?"
+                  "text": "**Could this be heart failure?**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examine:",
                   "items": [
-                    "JVP where appropriate",
-                    "Heart sounds",
-                    "Pulses",
-                    "Respiratory system",
-                    "Hepatomegaly",
-                    "Oedema"
+                    {
+                      "text": "JVP where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory system",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2099,7 +2539,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_34",
-          "subsection_title": "Don't forget lymph nodes",
+          "subsection_title": "33. Don't forget lymph nodes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2109,40 +2549,61 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "In a child with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "In a child with:",
                   "items": [
-                    "Hepatosplenomegaly",
-                    "Abdominal mass",
-                    "Fever",
-                    "Weight loss"
+                    {
+                      "text": "Hepatosplenomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "examine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "examine:",
                   "items": [
-                    "Cervical nodes",
-                    "Axillary nodes",
-                    "Inguinal nodes"
+                    {
+                      "text": "Cervical nodes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Axillary nodes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inguinal nodes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "This may help identify:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This may help identify:",
                   "items": [
-                    "Malignancy",
-                    "Infection",
-                    "Systemic disease"
+                    {
+                      "text": "Malignancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Systemic disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2151,7 +2612,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_35",
-          "subsection_title": "Complete the examination",
+          "subsection_title": "34. Complete the examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2166,7 +2627,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would complete the examination by assessing the cardiovascular and respiratory systems, examining the lymph nodes, assessing hydration and nutritional status, and performing a relevant genital examination.”"
+                  "text": "“I would complete the examination by assessing the cardiovascular and respiratory systems, examining the lymph nodes, assessing hydration and nutritional status, and performing a relevant genital examination.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2174,7 +2636,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_36",
-          "subsection_title": "NORMAL abdominal examination presentation",
+          "subsection_title": "35. NORMAL abdominal examination presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2189,17 +2651,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The abdomen is soft, non-distended and non-tender. There are no visible scars, masses, hernias or abnormal umbilical findings. Bowel sounds are present. There is no palpable hepatomegaly or splenomegaly. Both kidneys are not ballotable or palpably enlarged. There is no clinically detectable ascites. There is no abdominal tenderness, guarding or rigidity.”"
+                  "text": "“The abdomen is soft, non-distended and non-tender. There are no visible scars, masses, hernias or abnormal umbilical findings. Bowel sounds are present. There is no palpable hepatomegaly or splenomegaly. Both kidneys are not ballotable or palpably enlarged. There is no clinically detectable ascites. There is no abdominal tenderness, guarding or rigidity.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The abdominal examination is essentially normal.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The abdominal examination is essentially normal.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2207,7 +2669,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_37",
-          "subsection_title": "Hepatosplenomegaly presentation",
+          "subsection_title": "36. Hepatosplenomegaly presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2218,7 +2680,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The abdomen is soft and non-distended. The liver is palpable approximately 4 cm below the right costal margin, with a smooth, firm, non-tender edge. The spleen is palpable approximately 5 cm below the left costal margin, with a smooth, non-tender edge. There is no ascites. These findings indicate hepatosplenomegaly.”"
+                  "text": "“The abdomen is soft and non-distended. The liver is palpable approximately 4 cm below the right costal margin, with a smooth, firm, non-tender edge. The spleen is palpable approximately 5 cm below the left costal margin, with a smooth, non-tender edge. There is no ascites. These findings indicate hepatosplenomegaly.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2226,7 +2689,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“In this child, I would consider infectious, haematological and infiltrative causes, among others.”"
+                  "text": "“In this child, I would consider infectious, haematological and infiltrative causes, among others.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2234,7 +2698,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_38",
-          "subsection_title": "Heart failure presentation",
+          "subsection_title": "37. Heart failure presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2245,7 +2709,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a smooth, tender hepatomegaly with associated tachypnoea and other features of circulatory congestion. In the appropriate clinical context, this raises concern for congestive hepatomegaly secondary to heart failure.”"
+                  "text": "“There is a smooth, tender hepatomegaly with associated tachypnoea and other features of circulatory congestion. In the appropriate clinical context, this raises concern for congestive hepatomegaly secondary to heart failure.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2253,7 +2718,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_39",
-          "subsection_title": "Ascites presentation",
+          "subsection_title": "38. Ascites presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2264,7 +2729,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The abdomen is distended with flank fullness and shifting dullness, consistent with free intraperitoneal fluid.”"
+                  "text": "“The abdomen is distended with flank fullness and shifting dullness, consistent with free intraperitoneal fluid.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2272,7 +2738,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would assess for underlying hepatic, renal, cardiac, nutritional and other causes.”"
+                  "text": "“I would assess for underlying hepatic, renal, cardiac, nutritional and other causes.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2280,7 +2747,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_40",
-          "subsection_title": "Abdominal mass presentation",
+          "subsection_title": "39. Abdominal mass presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2291,21 +2758,21 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a firm, non-tender abdominal mass arising from the right flank. It is relatively smooth and does not appear to move significantly with respiration. The kidneys and liver require further assessment, and an abdominal mass of this nature would require urgent investigation.”"
+                  "text": "“There is a firm, non-tender abdominal mass arising from the right flank. It is relatively smooth and does not appear to move significantly with respiration. The kidneys and liver require further assessment, and an abdominal mass of this nature would require urgent investigation.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Don't immediately declare:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This is Wilms tumour.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This is Wilms tumour.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "The examination gives you a differential diagnosis, not a definitive histological diagnosis."
+                  "text": "The examination gives you a **differential diagnosis**, not a definitive histological diagnosis."
                 }
               ]
             }
@@ -2313,7 +2780,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_41",
-          "subsection_title": "Examiner questions",
+          "subsection_title": "40. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2323,29 +2790,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A spleen:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A spleen:",
                   "items": [
-                    "Moves with respiration",
-                    "Has a characteristic notch",
-                    "Has a more palpable medial edge",
-                    "Is not usually ballotable"
+                    {
+                      "text": "Moves with respiration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has a characteristic notch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has a more palpable medial edge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is not usually ballotable",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A kidney:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A kidney:",
                   "items": [
-                    "Is bimanually palpable",
-                    "Can be ballotable",
-                    "Has a more rounded contour",
-                    "Does not have a splenic notch"
+                    {
+                      "text": "Is bimanually palpable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be ballotable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has a more rounded contour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does not have a splenic notch",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2385,10 +2870,8 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Infection + blood + storage/infiltration + malignancy + portal hypertension"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Infection + blood + storage/infiltration + malignancy + portal hypertension**"
                 }
               ]
             },
@@ -2416,21 +2899,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Gas + stool + fluid + organomegaly + mass + pregnancy in an adolescent where relevant"
+                  "text": "**Gas + stool + fluid + organomegaly + mass + pregnancy in an adolescent where relevant**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "More specifically:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "More specifically:",
                   "items": [
-                    "Intestinal obstruction",
-                    "Constipation",
-                    "Ascites",
-                    "Hepatosplenomegaly",
-                    "Tumour",
-                    "Severe malnutrition"
+                    {
+                      "text": "Intestinal obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constipation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatosplenomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tumour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe malnutrition",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2442,21 +2940,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important causes include:",
                   "items": [
-                    "Faecal mass",
-                    "Distended bladder",
-                    "Wilms tumour",
-                    "Neuroblastoma",
-                    "Hepatoblastoma",
-                    "Lymphoma",
-                    "Ovarian masses",
-                    "Hydronephrosis",
-                    "Splenomegaly/hepatomegaly"
+                    {
+                      "text": "Faecal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distended bladder",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wilms tumour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neuroblastoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatoblastoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymphoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydronephrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Splenomegaly/hepatomegaly",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2480,14 +3002,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Abdominal distension",
-                    "Vomiting",
-                    "Abdominal pain",
-                    "Altered/absent stool or flatus",
-                    "Abnormal bowel sounds",
-                    "Visible peristalsis in some cases"
+                    {
+                      "text": "Abdominal distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered/absent stool or flatus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal bowel sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible peristalsis in some cases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2508,7 +3048,7 @@
         },
         {
           "subsection_id": "peds_abdominal_examination_subsection_42",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "41. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2522,10 +3062,8 @@
                   "text": "For a conventional abdominal examination:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Inspect → Auscultate → Percuss → Palpate"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Inspect → Auscultate → Percuss → Palpate**"
                 }
               ]
             },
@@ -2548,16 +3086,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Hernia",
-                    "Discharge",
-                    "Infection",
-                    "Abnormality"
+                    {
+                      "text": "Hernia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormality",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2569,14 +3116,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check the:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check the:",
                   "items": [
-                    "Umbilicus",
-                    "Inguinal region"
+                    {
+                      "text": "Umbilicus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inguinal region",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2605,7 +3155,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Pediatric abdominal examination = liver + spleen + kidneys."
+                  "text": "**Pediatric abdominal examination = liver + spleen + kidneys.**"
                 }
               ]
             },
@@ -2628,15 +3178,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Abdominal examination should be interpreted alongside:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Abdominal examination should be interpreted alongside:",
                   "items": [
-                    "Growth",
-                    "Nutrition",
-                    "Hydration"
+                    {
+                      "text": "Growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2652,17 +3208,10 @@
                   "text": "This is a classic pediatric clue."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "peds_abdominal_examination_subsection_43",
-          "subsection_title": "⭐ Pediatric abdominal OSCE mental checklist",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "peds_abdominal_examination_group_107",
-              "group_title": "",
+              "group_title": "⭐ Pediatric abdominal OSCE mental checklist",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2672,120 +3221,161 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "LOOK → LISTEN → PALPATE → LIVER → SPLEEN → KIDNEYS → PERCUSS → ASCITES → HERNIA → GENITALS → COMPLETE"
+                  "text": "**LOOK → LISTEN → PALPATE → LIVER → SPLEEN → KIDNEYS → PERCUSS → ASCITES → HERNIA → GENITALS → COMPLETE**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**LOOK**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars",
+                      "level": 0
+                    },
+                    {
+                      "text": "Veins",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilicus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hernias",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**LISTEN**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Bowel sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bruits where indicated",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**PALPATE**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Guarding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**ORGANS**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Liver",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spleen",
+                      "level": 0
+                    },
+                    {
+                      "text": "Kidneys",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**PERCUSS**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "General abdomen",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver span",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FINISH**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hernias",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genital examination if indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymph nodes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular/respiratory examination",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth/nutrition",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
               "group_id": "peds_abdominal_examination_group_108",
-              "group_title": "LOOK",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Distension",
-                    "Scars",
-                    "Veins",
-                    "Umbilicus",
-                    "Hernias",
-                    "Masses"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "peds_abdominal_examination_group_109",
-              "group_title": "LISTEN",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Bowel sounds",
-                    "Bruits where indicated"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "peds_abdominal_examination_group_110",
-              "group_title": "PALPATE",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Tenderness",
-                    "Guarding",
-                    "Masses"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "peds_abdominal_examination_group_111",
-              "group_title": "ORGANS",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Liver",
-                    "Spleen",
-                    "Kidneys"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "peds_abdominal_examination_group_112",
-              "group_title": "PERCUSS",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "General abdomen",
-                    "Liver span",
-                    "Ascites"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "peds_abdominal_examination_group_113",
-              "group_title": "FINISH",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Hernias",
-                    "Genital examination if indicated",
-                    "Lymph nodes",
-                    "Cardiovascular/respiratory examination",
-                    "Growth/nutrition"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "peds_abdominal_examination_subsection_44",
-          "subsection_title": "🔥 High-yield findings",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "peds_abdominal_examination_group_114",
-              "group_title": "",
+              "group_title": "🔥 High-yield findings",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2849,7 +3439,7 @@
               ]
             },
             {
-              "group_id": "peds_abdominal_examination_group_115",
+              "group_id": "peds_abdominal_examination_group_109",
               "group_title": "The most important pediatric abdominal principle",
               "group_subtitle": null,
               "group_icon": null,
@@ -2859,10 +3449,9 @@
                   "text": "When you find an abnormality, don't stop at:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The liver is enlarged.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“The liver is enlarged.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2870,11 +3459,11 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "How large? What is the edge like? What is the consistency? Is it tender? Is the spleen enlarged? Are the lymph nodes enlarged? Is there ascites? What does the cardiovascular examination show? What does the child's growth and general condition look like?"
+                  "text": "**How large? What is the edge like? What is the consistency? Is it tender? Is the spleen enlarged? Are the lymph nodes enlarged? Is there ascites? What does the cardiovascular examination show? What does the child's growth and general condition look like?**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "That turns a basic examination into a clinical examination."
+                  "text": "That turns a **basic examination** into a **clinical examination**."
                 }
               ]
             }

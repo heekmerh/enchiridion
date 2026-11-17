@@ -18,11 +18,25 @@
       "subsections": [
         {
           "subsection_id": "bimanual_examination_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "bimanual_examination_group_1",
+              "group_title": "Bimanual Pelvic Examination",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "bimanual_examination_subsection_2",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "bimanual_examination_group_2",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -32,40 +46,41 @@
                   "text": "You may be asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a bimanual pelvic examination.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a bimanual pelvic examination.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Perform a pelvic examination on this woman with chronic pelvic pain.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Assess the uterus and adnexa.”"
-                  ]
+                  "text": "**“Perform a pelvic examination on this woman with chronic pelvic pain.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Perform a bimanual examination in a woman with suspected pelvic inflammatory disease.”"
+                  "text": "**“Assess the uterus and adnexa.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Examine this patient with heavy menstrual bleeding and determine whether the uterus is enlarged.”"
+                  "text": "**“Perform a bimanual examination in a woman with suspected pelvic inflammatory disease.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“Examine this patient with heavy menstrual bleeding and determine whether the uterus is enlarged.”**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_2",
-          "subsection_title": "WHAT ARE YOU ASSESSING?",
+          "subsection_id": "bimanual_examination_subsection_3",
+          "subsection_title": "2. WHAT ARE YOU ASSESSING?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_2",
+              "group_id": "bimanual_examination_group_3",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -77,69 +92,117 @@
               ]
             },
             {
-              "group_id": "bimanual_examination_group_3",
+              "group_id": "bimanual_examination_group_4",
               "group_title": "Cervix",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Position",
-                    "Consistency",
-                    "Mobility",
-                    "Cervical motion tenderness"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_4",
-              "group_title": "Uterus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Position",
-                    "Size",
-                    "Shape",
-                    "Contour",
-                    "Mobility",
-                    "Consistency",
-                    "Tenderness"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical motion tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_5",
-              "group_title": "Adnexa",
+              "group_title": "Uterus",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Ovaries",
-                    "Adnexal masses",
-                    "Adnexal tenderness"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shape",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_6",
+              "group_title": "Adnexa",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ovaries",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_7",
               "group_title": "Pouch of Douglas",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tenderness",
-                    "Fullness/mass"
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fullness/mass",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -147,19 +210,19 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_3",
-          "subsection_title": "IMPORTANT PRINCIPLE",
+          "subsection_id": "bimanual_examination_subsection_4",
+          "subsection_title": "3. IMPORTANT PRINCIPLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_7",
+              "group_id": "bimanual_examination_group_8",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is an intimate examination."
+                  "text": "This is an **intimate examination**."
                 },
                 {
                   "type": "paragraph",
@@ -171,52 +234,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Consent → Chaperone → Privacy → Explanation → Comfort → Examination → Findings → Aftercare"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "bimanual_examination_subsection_4",
-          "subsection_title": "INTRODUCTION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "bimanual_examination_group_8",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I have been asked to examine your pelvis to assess your uterus and ovaries.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“I will first examine the outside of the genital area and then, with your permission, gently examine inside the vagina using two fingers while placing my other hand on your abdomen.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain possible discomfort."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“The examination may feel uncomfortable, but it should not be painful. Please let me know if you want me to stop.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Do I have your permission to proceed?”"
-                  ]
+                  "text": "**Consent → Chaperone → Privacy → Explanation → Comfort → Examination → Findings → Aftercare**"
                 }
               ]
             }
@@ -224,7 +242,7 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_5",
-          "subsection_title": "CHAPERONE",
+          "subsection_title": "4. INTRODUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -235,15 +253,35 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Offer an appropriate:"
+                  "text": "“Good morning. My name is Dr ____. I have been asked to examine your pelvis to assess your uterus and ovaries.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Chaperone."
+                  "text": "Explain:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maintain privacy and dignity throughout."
+                  "text": "“I will first examine the outside of the genital area and then, with your permission, gently examine inside the vagina using two fingers while placing my other hand on your abdomen.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Explain possible discomfort."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The examination may feel uncomfortable, but it should not be painful. Please let me know if you want me to stop.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Do I have your permission to proceed?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -251,7 +289,7 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_6",
-          "subsection_title": "PREPARATION",
+          "subsection_title": "5. CHAPERONE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -262,16 +300,55 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Equipment:"
+                  "text": "Offer an appropriate:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Chaperone.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Maintain privacy and dignity throughout."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "bimanual_examination_subsection_7",
+          "subsection_title": "6. PREPARATION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "bimanual_examination_group_11",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Equipment:",
                   "items": [
-                    "Gloves",
-                    "Lubricant",
-                    "Examination couch",
-                    "Good lighting",
-                    "Disposable sheet"
+                    {
+                      "text": "Gloves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lubricant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Examination couch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Good lighting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Disposable sheet",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -283,12 +360,12 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_7",
-          "subsection_title": "POSITION",
+          "subsection_id": "bimanual_examination_subsection_8",
+          "subsection_title": "7. POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_11",
+              "group_id": "bimanual_examination_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -298,21 +375,25 @@
                   "text": "Use:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Dorsal/lithotomy position"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "with:"
+                  "text": "**Dorsal/lithotomy position**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "with:",
                   "items": [
-                    "Knees flexed",
-                    "Hips abducted",
-                    "Appropriate draping"
+                    {
+                      "text": "Knees flexed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hips abducted",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate draping",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -324,45 +405,78 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_8",
-          "subsection_title": "EXTERNAL INSPECTION",
+          "subsection_id": "bimanual_examination_subsection_9",
+          "subsection_title": "8. EXTERNAL INSPECTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_12",
+              "group_id": "bimanual_examination_group_13",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before inserting your fingers, inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Before inserting your fingers, inspect:",
                   "items": [
-                    "Vulva",
-                    "Perineum",
-                    "Introitus"
+                    {
+                      "text": "Vulva",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Introitus",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Ulcers",
-                    "Warts",
-                    "Vesicles",
-                    "Discharge",
-                    "Bleeding",
-                    "Swelling",
-                    "Scarring",
-                    "Prolapse",
-                    "Atrophy",
-                    "Lesions"
+                    {
+                      "text": "Ulcers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warts",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vesicles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scarring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atrophy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lesions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -374,12 +488,12 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_9",
-          "subsection_title": "INSERTING THE FINGERS",
+          "subsection_id": "bimanual_examination_subsection_10",
+          "subsection_title": "9. INSERTING THE FINGERS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_13",
+              "group_id": "bimanual_examination_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -390,59 +504,73 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I am going to insert two lubricated fingers gently into the vagina now.”"
+                  "text": "“I am going to insert two lubricated fingers gently into the vagina now.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "bimanual_examination_group_14",
+              "group_id": "bimanual_examination_group_15",
               "group_title": "Technique",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Wash hands and wear gloves."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply lubricant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Separate the labia gently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Introduce the index and middle fingers slowly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Direct the fingers posteriorly initially."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the vagina and cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place the other hand gently over the lower abdomen."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform systematic bimanual palpation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash hands and wear gloves.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Apply lubricant.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Separate the labia gently.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Introduce the index and middle fingers slowly.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Direct the fingers posteriorly initially.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Assess the vagina and cervix.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Place the other hand gently over the lower abdomen.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Perform systematic bimanual palpation.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_10",
-          "subsection_title": "FIRST — FIND THE CERVIX",
+          "subsection_id": "bimanual_examination_subsection_11",
+          "subsection_title": "10. FIRST — FIND THE CERVIX",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_15",
+              "group_id": "bimanual_examination_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -452,28 +580,43 @@
                   "text": "Identify the cervix."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Position",
-                    "Consistency",
-                    "Mobility",
-                    "Tenderness"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The cervix may be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The cervix may be:",
                   "items": [
-                    "Anterior",
-                    "Mid-position",
-                    "Posterior"
+                    {
+                      "text": "Anterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mid-position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -481,12 +624,12 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_11",
-          "subsection_title": "CERVICAL MOTION TENDERNESS",
+          "subsection_id": "bimanual_examination_subsection_12",
+          "subsection_title": "11. CERVICAL MOTION TENDERNESS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_16",
+              "group_id": "bimanual_examination_group_17",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -500,10 +643,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does that feel painful?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Does that feel painful?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -511,19 +653,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cervical motion tenderness."
+                  "text": "**Cervical motion tenderness.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "This is an important finding in:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This is an important finding in:",
                   "items": [
-                    "Pelvic inflammatory disease",
-                    "Cervicitis",
-                    "Ectopic pregnancy",
-                    "Other pelvic inflammatory pathology"
+                    {
+                      "text": "Pelvic inflammatory disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervicitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other pelvic inflammatory pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -531,12 +682,12 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_12",
-          "subsection_title": "IMPORTANT SAFETY POINT",
+          "subsection_id": "bimanual_examination_subsection_13",
+          "subsection_title": "12. IMPORTANT SAFETY POINT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_17",
+              "group_id": "bimanual_examination_group_18",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -547,7 +698,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The purpose is to determine whether movement causes tenderness, not to cause unnecessary pain."
+                  "text": "The purpose is to determine whether movement causes tenderness, **not to cause unnecessary pain**."
                 },
                 {
                   "type": "paragraph",
@@ -562,12 +713,12 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_13",
-          "subsection_title": "ASSESS THE UTERUS",
+          "subsection_id": "bimanual_examination_subsection_14",
+          "subsection_title": "13. ASSESS THE UTERUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_18",
+              "group_id": "bimanual_examination_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -586,7 +737,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Bimanual palpation."
+                  "text": "**Bimanual palpation.**"
                 },
                 {
                   "type": "paragraph",
@@ -595,156 +746,161 @@
               ]
             },
             {
-              "group_id": "bimanual_examination_group_19",
+              "group_id": "bimanual_examination_group_20",
               "group_title": "Size",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is it:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Is it:",
                   "items": [
-                    "Normal",
-                    "Enlarged",
-                    "Small"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_20",
-              "group_title": "Shape",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Regular",
-                    "Irregular"
+                    {
+                      "text": "Normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarged",
+                      "level": 0
+                    },
+                    {
+                      "text": "Small",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_21",
-              "group_title": "Contour",
+              "group_title": "Shape",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Smooth",
-                    "Nodular"
+                    {
+                      "text": "Regular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_22",
-              "group_title": "Position",
+              "group_title": "Contour",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Anteverted",
-                    "Axial",
-                    "Retroverted"
+                    {
+                      "text": "Smooth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nodular",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_23",
-              "group_title": "Mobility",
+              "group_title": "Position",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Mobile",
-                    "Restricted/fixed"
+                    {
+                      "text": "Anteverted",
+                      "level": 0
+                    },
+                    {
+                      "text": "Axial",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retroverted",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_24",
-              "group_title": "Consistency",
+              "group_title": "Mobility",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Firm",
-                    "Soft",
-                    "Irregular"
+                    {
+                      "text": "Mobile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restricted/fixed",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "bimanual_examination_group_25",
-              "group_title": "Tenderness",
+              "group_title": "Consistency",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Present",
-                    "Absent"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "bimanual_examination_subsection_14",
-          "subsection_title": "NORMAL UTERUS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "bimanual_examination_group_26",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A normal non-pregnant uterus is generally:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Small",
-                    "Firm",
-                    "Smooth",
-                    "Mobile",
-                    "Non-tender"
+                    {
+                      "text": "Firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Soft",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "bimanual_examination_group_27",
-              "group_title": "Report",
+              "group_id": "bimanual_examination_group_26",
+              "group_title": "Tenderness",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "“The uterus is small, firm, smooth, mobile and non-tender.”"
+                    {
+                      "text": "Present",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -753,38 +909,53 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_15",
-          "subsection_title": "UTERINE SIZE",
+          "subsection_title": "14. NORMAL UTERUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_28",
+              "group_id": "bimanual_examination_group_27",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A useful clinical description is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A normal non-pregnant uterus is generally:",
                   "items": [
-                    "“Approximately X-week-sized uterus.”"
+                    {
+                      "text": "Small",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smooth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Non-tender",
+                      "level": 0
+                    }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_28",
+              "group_title": "Report",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“The uterus feels approximately 10-week sized.”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "However, avoid falsely precise dating from bimanual examination."
+                  "text": "“The uterus is small, firm, smooth, mobile and non-tender.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -792,7 +963,7 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_16",
-          "subsection_title": "ENLARGED UTERUS — DIFFERENTIALS",
+          "subsection_title": "15. UTERINE SIZE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -803,16 +974,65 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "An enlarged uterus may be caused by:"
+                  "text": "A useful clinical description is:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**“Approximately X-week-sized uterus.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For example:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The uterus feels approximately 10-week sized.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "However, avoid falsely precise dating from bimanual examination."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "bimanual_examination_subsection_17",
+          "subsection_title": "16. ENLARGED UTERUS — DIFFERENTIALS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "bimanual_examination_group_30",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "An enlarged uterus may be caused by:",
                   "items": [
-                    "Pregnancy",
-                    "Fibroids",
-                    "Adenomyosis",
-                    "Endometrial pathology",
-                    "Rarely other uterine masses"
+                    {
+                      "text": "Pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenomyosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rarely other uterine masses",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -824,41 +1044,54 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_17",
-          "subsection_title": "FIBROID UTERUS",
+          "subsection_id": "bimanual_examination_subsection_18",
+          "subsection_title": "17. FIBROID UTERUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_30",
+              "group_id": "bimanual_examination_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A fibroid uterus may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A fibroid uterus may feel:",
                   "items": [
-                    "Enlarged",
-                    "Firm",
-                    "Irregular",
-                    "Nodular",
-                    "Sometimes mobile"
+                    {
+                      "text": "Enlarged",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nodular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sometimes mobile",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "bimanual_examination_group_31",
+              "group_id": "bimanual_examination_group_32",
               "group_title": "Report",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The uterus is enlarged and irregular in contour, with a firm nodular consistency, which is suggestive of uterine fibroids.”"
+                  "text": "“The uterus is enlarged and irregular in contour, with a firm nodular consistency, which is suggestive of uterine fibroids.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -869,63 +1102,76 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_18",
-          "subsection_title": "ADENOMYOSIS",
+          "subsection_id": "bimanual_examination_subsection_19",
+          "subsection_title": "18. ADENOMYOSIS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_32",
+              "group_id": "bimanual_examination_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The uterus may be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The uterus may be:",
                   "items": [
-                    "Enlarged",
-                    "Globular",
-                    "Firm/boggy",
-                    "Tender"
+                    {
+                      "text": "Enlarged",
+                      "level": 0
+                    },
+                    {
+                      "text": "Globular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm/boggy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tender",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Often associated clinically with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Often associated clinically with:",
                   "items": [
-                    "Heavy menstrual bleeding",
-                    "Dysmenorrhoea"
+                    {
+                      "text": "Heavy menstrual bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmenorrhoea",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "bimanual_examination_group_33",
+              "group_id": "bimanual_examination_group_34",
               "group_title": "Report",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The uterus feels mildly enlarged and globular, with some tenderness. Adenomyosis is a consideration in the appropriate clinical context.”"
+                  "text": "“The uterus feels mildly enlarged and globular, with some tenderness. Adenomyosis is a consideration in the appropriate clinical context.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_19",
-          "subsection_title": "RETROVERTED UTERUS",
+          "subsection_id": "bimanual_examination_subsection_20",
+          "subsection_title": "19. RETROVERTED UTERUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_34",
+              "group_id": "bimanual_examination_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -941,7 +1187,7 @@
               ]
             },
             {
-              "group_id": "bimanual_examination_group_35",
+              "group_id": "bimanual_examination_group_36",
               "group_title": "Important",
               "group_subtitle": null,
               "group_icon": null,
@@ -955,51 +1201,9 @@
                   "text": "Report:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The uterus is retroverted, mobile and non-tender.”"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "bimanual_examination_subsection_20",
-          "subsection_title": "FIXED UTERUS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "bimanual_examination_group_36",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
                   "type": "paragraph",
-                  "text": "A uterus that has markedly reduced mobility may occur with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Endometriosis",
-                    "Pelvic adhesions",
-                    "Severe PID",
-                    "Malignancy",
-                    "Previous pelvic surgery"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_37",
-              "group_title": "Report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The uterus has reduced mobility and feels relatively fixed. This may indicate pelvic adhesions or other significant pelvic pathology and requires further assessment.”"
+                  "text": "“The uterus is retroverted, mobile and non-tender.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1007,42 +1211,53 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_21",
-          "subsection_title": "UTERINE TENDERNESS",
+          "subsection_title": "20. FIXED UTERUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_38",
+              "group_id": "bimanual_examination_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Uterine tenderness may occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A uterus that has markedly reduced mobility may occur with:",
                   "items": [
-                    "PID",
-                    "Endometriosis",
-                    "Adenomyosis",
-                    "Pregnancy-related pathology",
-                    "Other pelvic inflammatory conditions"
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic adhesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malignancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic surgery",
+                      "level": 0
+                    }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_38",
+              "group_title": "Report",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Interpret it together with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "History",
-                    "Cervical motion tenderness",
-                    "Adnexal findings",
-                    "Pregnancy status",
-                    "Vital signs"
-                  ]
+                  "text": "“The uterus has reduced mobility and feels relatively fixed. This may indicate pelvic adhesions or other significant pelvic pathology and requires further assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1050,11 +1265,78 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_22",
-          "subsection_title": "ASSESS THE ADNEXA",
+          "subsection_title": "21. UTERINE TENDERNESS",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "bimanual_examination_group_39",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Uterine tenderness may occur with:",
+                  "items": [
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenomyosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy-related pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other pelvic inflammatory conditions",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Interpret it together with:",
+                  "items": [
+                    {
+                      "text": "History",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical motion tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal findings",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vital signs",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "bimanual_examination_subsection_23",
+          "subsection_title": "22. ASSESS THE ADNEXA",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "bimanual_examination_group_40",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1072,26 +1354,33 @@
                   "text": "Attempt to palpate the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Adnexa/ovary"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Adnexa/ovary**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Repeat on the other side."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Mass",
-                    "Size",
-                    "Mobility",
-                    "Tenderness"
+                    {
+                      "text": "Mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1099,26 +1388,32 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_23",
-          "subsection_title": "NORMAL OVARIES",
+          "subsection_id": "bimanual_examination_subsection_24",
+          "subsection_title": "23. NORMAL OVARIES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_40",
+              "group_id": "bimanual_examination_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Normal ovaries may be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Normal ovaries may be:",
                   "items": [
-                    "Small",
-                    "Mobile",
-                    "Non-tender"
+                    {
+                      "text": "Small",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Non-tender",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1127,7 +1422,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal ovaries are not always palpable on bimanual examination."
+                  "text": "**Normal ovaries are not always palpable on bimanual examination.**"
                 },
                 {
                   "type": "paragraph",
@@ -1138,10 +1433,9 @@
                   "text": "Do not say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“I can't feel the ovaries, therefore the examination is abnormal.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“I can't feel the ovaries, therefore the examination is abnormal.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1149,19 +1443,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The adnexa are not palpable and there is no adnexal tenderness or mass appreciated.”"
+                  "text": "“The adnexa are not palpable and there is no adnexal tenderness or mass appreciated.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_24",
-          "subsection_title": "ADNEXAL MASS",
+          "subsection_id": "bimanual_examination_subsection_25",
+          "subsection_title": "24. ADNEXAL MASS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_41",
+              "group_id": "bimanual_examination_group_42",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1173,26 +1468,27 @@
               ]
             },
             {
-              "group_id": "bimanual_examination_group_42",
+              "group_id": "bimanual_examination_group_43",
               "group_title": "S-I-M-T",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Size Irregularity Mobility Tenderness"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Also consider:"
+                  "text": "**S**ize\n**I**rregularity\n**M**obility\n**T**enderness"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also consider:",
                   "items": [
-                    "Consistency",
-                    "Laterality"
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laterality",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1200,33 +1496,49 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_25",
-          "subsection_title": "EXAMPLE — RIGHT ADNEXAL MASS",
+          "subsection_id": "bimanual_examination_subsection_26",
+          "subsection_title": "25. EXAMPLE — RIGHT ADNEXAL MASS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_43",
+              "group_id": "bimanual_examination_group_44",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a right adnexal mass approximately 6 cm in size. It feels smooth and mobile, with mild tenderness.”"
+                  "text": "“There is a right adnexal mass approximately 6 cm in size. It feels smooth and mobile, with mild tenderness.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Differentials could include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Differentials could include:",
                   "items": [
-                    "Functional ovarian cyst",
-                    "Benign ovarian neoplasm",
-                    "Endometrioma",
-                    "Ectopic pregnancy if pregnancy is possible",
-                    "Tubo-ovarian abscess",
-                    "Other adnexal pathology"
+                    {
+                      "text": "Functional ovarian cyst",
+                      "level": 0
+                    },
+                    {
+                      "text": "Benign ovarian neoplasm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrioma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy if pregnancy is possible",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubo-ovarian abscess",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other adnexal pathology",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1238,49 +1550,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_26",
-          "subsection_title": "ADNEXAL TENDERNESS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "bimanual_examination_group_44",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Adnexal tenderness can occur with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "PID",
-                    "Ectopic pregnancy",
-                    "Ovarian pathology",
-                    "Endometriosis",
-                    "Tubo-ovarian abscess"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If severe acute pain is present, consider emergencies such as:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Ectopic pregnancy",
-                    "Ovarian torsion",
-                    "Ruptured ovarian cyst"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "subsection_id": "bimanual_examination_subsection_27",
-          "subsection_title": "POUCH OF DOUGLAS",
+          "subsection_title": "26. ADNEXAL TENDERNESS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1290,36 +1561,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The posterior vaginal fornix provides access to the:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pouch of Douglas/rectouterine pouch."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Adnexal tenderness can occur with:",
                   "items": [
-                    "Tenderness",
-                    "Fullness",
-                    "Mass"
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubo-ovarian abscess",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A tender/full pouch can occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If severe acute pain is present, consider emergencies such as:",
                   "items": [
-                    "Endometriosis",
-                    "Pelvic infection",
-                    "Blood in the pelvis",
-                    "Pelvic mass"
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian torsion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ruptured ovarian cyst",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1328,7 +1610,7 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_28",
-          "subsection_title": "ENDOMETRIOSIS",
+          "subsection_title": "27. POUCH OF DOUGLAS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1339,30 +1621,51 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Possible bimanual findings:"
+                  "text": "The posterior vaginal fornix provides access to the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Uterine tenderness",
-                    "Posterior tenderness",
-                    "Reduced uterine mobility",
-                    "Adnexal tenderness",
-                    "Fixed retroverted uterus",
-                    "Adnexal mass/endometrioma"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_47",
-              "group_title": "Report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
                   "type": "paragraph",
-                  "text": "“The uterus is retroverted and has reduced mobility, with posterior pelvic tenderness. There is also left adnexal tenderness. These findings could be consistent with endometriosis in the appropriate clinical context.”"
+                  "text": "**Pouch of Douglas/rectouterine pouch.**"
+                },
+                {
+                  "type": "list",
+                  "title": "Assess for:",
+                  "items": [
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fullness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mass",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "A tender/full pouch can occur with:",
+                  "items": [
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood in the pelvis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic mass",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1370,11 +1673,69 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_29",
-          "subsection_title": "PID",
+          "subsection_title": "28. ENDOMETRIOSIS",
           "subsection_icon": null,
           "content_groups": [
             {
+              "group_id": "bimanual_examination_group_47",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Possible bimanual findings:",
+                  "items": [
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced uterine mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fixed retroverted uterus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal mass/endometrioma",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "group_id": "bimanual_examination_group_48",
+              "group_title": "Report",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The uterus is retroverted and has reduced mobility, with posterior pelvic tenderness. There is also left adnexal tenderness. These findings could be consistent with endometriosis in the appropriate clinical context.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "bimanual_examination_subsection_30",
+          "subsection_title": "29. PID",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "bimanual_examination_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1386,52 +1747,54 @@
               ]
             },
             {
-              "group_id": "bimanual_examination_group_49",
+              "group_id": "bimanual_examination_group_50",
               "group_title": "C-U-A",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Cervical motion tenderness Uterine tenderness Adnexal tenderness"
-                  ]
+                  "type": "paragraph",
+                  "text": "**C**ervical motion tenderness\n**U**terine tenderness\n**A**dnexal tenderness"
                 },
                 {
                   "type": "paragraph",
                   "text": "These are important clinical findings in suspected PID."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You may also find:"
+                  "type": "list",
+                  "title": "You may also find:",
+                  "items": [
+                    {
+                      "text": "Cervical discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pain",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Cervical discharge",
-                    "Fever",
-                    "Pelvic pain"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_50",
-              "group_title": "Report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Report**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
-                  "text": "“There is cervical motion tenderness with uterine and bilateral adnexal tenderness. In the appropriate clinical context, these findings raise suspicion for pelvic inflammatory disease.”"
+                  "text": "“There is cervical motion tenderness with uterine and bilateral adnexal tenderness. In the appropriate clinical context, these findings raise suspicion for pelvic inflammatory disease.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_30",
-          "subsection_title": "ECTOPIC PREGNANCY",
+          "subsection_id": "bimanual_examination_subsection_31",
+          "subsection_title": "30. ECTOPIC PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1441,17 +1804,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A woman of reproductive age with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A woman of reproductive age with:",
                   "items": [
-                    "Missed period",
-                    "Pelvic pain",
-                    "Vaginal bleeding",
-                    "Cervical motion tenderness",
-                    "Adnexal tenderness/mass"
+                    {
+                      "text": "Missed period",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical motion tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness/mass",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1460,7 +1835,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ectopic pregnancy."
+                  "text": "**Ectopic pregnancy.**"
                 },
                 {
                   "type": "paragraph",
@@ -1476,15 +1851,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would perform a pregnancy test and arrange urgent assessment, including quantitative β-hCG and transvaginal ultrasound as clinically indicated.”"
+                  "text": "“I would perform a pregnancy test and arrange urgent assessment, including quantitative β-hCG and transvaginal ultrasound as clinically indicated.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_31",
-          "subsection_title": "OVARIAN TORSION",
+          "subsection_id": "bimanual_examination_subsection_32",
+          "subsection_title": "31. OVARIAN TORSION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1494,15 +1870,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible clinical picture:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible clinical picture:",
                   "items": [
-                    "Sudden severe unilateral pelvic pain",
-                    "Nausea/vomiting",
-                    "Adnexal tenderness"
+                    {
+                      "text": "Sudden severe unilateral pelvic pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nausea/vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1519,15 +1901,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Ovarian torsion is an important differential and requires urgent gynaecological assessment and pelvic ultrasound, with Doppler where appropriate.”"
+                  "text": "“Ovarian torsion is an important differential and requires urgent gynaecological assessment and pelvic ultrasound, with Doppler where appropriate.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_32",
-          "subsection_title": "COMPLETE NORMAL REPORT",
+          "subsection_id": "bimanual_examination_subsection_33",
+          "subsection_title": "32. COMPLETE NORMAL REPORT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1538,7 +1921,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The external genitalia appear normal. There is no abnormal discharge, bleeding or visible lesion. The vagina is unremarkable. The cervix is mobile and non-tender. The uterus is small, anteverted, firm, smooth, mobile and non-tender. Both adnexa are non-tender with no palpable masses. There is no posterior fornix tenderness or fullness.”"
+                  "text": "“The external genitalia appear normal. There is no abnormal discharge, bleeding or visible lesion. The vagina is unremarkable. The cervix is mobile and non-tender. The uterus is small, anteverted, firm, smooth, mobile and non-tender. Both adnexa are non-tender with no palpable masses. There is no posterior fornix tenderness or fullness.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1549,8 +1933,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_33",
-          "subsection_title": "REPORT — FIBROIDS",
+          "subsection_id": "bimanual_examination_subsection_34",
+          "subsection_title": "33. REPORT — FIBROIDS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1561,15 +1945,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is mobile and non-tender. The uterus is enlarged to approximately 14-week size, firm and irregular with a nodular contour, but remains mobile. There is no significant adnexal tenderness or palpable adnexal mass. The findings are suggestive of a fibroid uterus.”"
+                  "text": "“The cervix is mobile and non-tender. The uterus is enlarged to approximately 14-week size, firm and irregular with a nodular contour, but remains mobile. There is no significant adnexal tenderness or palpable adnexal mass. The findings are suggestive of a fibroid uterus.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_34",
-          "subsection_title": "REPORT — PID",
+          "subsection_id": "bimanual_examination_subsection_35",
+          "subsection_title": "34. REPORT — PID",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1580,15 +1965,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is significant cervical motion tenderness, with uterine and bilateral adnexal tenderness. There is also mucopurulent cervical discharge. These findings raise suspicion for pelvic inflammatory disease.”"
+                  "text": "“There is significant cervical motion tenderness, with uterine and bilateral adnexal tenderness. There is also mucopurulent cervical discharge. These findings raise suspicion for pelvic inflammatory disease.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_35",
-          "subsection_title": "REPORT — ENDOMETRIOSIS",
+          "subsection_id": "bimanual_examination_subsection_36",
+          "subsection_title": "35. REPORT — ENDOMETRIOSIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1599,15 +1985,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The uterus is retroverted with reduced mobility and posterior tenderness. There is left adnexal tenderness and posterior fornix tenderness. These findings raise suspicion for endometriosis.”"
+                  "text": "“The uterus is retroverted with reduced mobility and posterior tenderness. There is left adnexal tenderness and posterior fornix tenderness. These findings raise suspicion for endometriosis.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_36",
-          "subsection_title": "REPORT — ADNEXAL MASS",
+          "subsection_id": "bimanual_examination_subsection_37",
+          "subsection_title": "36. REPORT — ADNEXAL MASS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1618,15 +2005,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The uterus is normal in size and mobile. A smooth, approximately 7 cm right adnexal mass is palpable. It is relatively mobile with mild tenderness. The left adnexa are unremarkable. Further assessment with pelvic ultrasound is required.”"
+                  "text": "“The uterus is normal in size and mobile. A smooth, approximately 7 cm right adnexal mass is palpable. It is relatively mobile with mild tenderness. The left adnexa are unremarkable. Further assessment with pelvic ultrasound is required.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_37",
-          "subsection_title": "REPORT — POSSIBLE ECTOPIC",
+          "subsection_id": "bimanual_examination_subsection_38",
+          "subsection_title": "37. REPORT — POSSIBLE ECTOPIC",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1637,35 +2025,34 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is marked cervical motion tenderness and right adnexal tenderness in a patient with a positive pregnancy test and pelvic pain. Ectopic pregnancy must be urgently excluded.”"
+                  "text": "“There is marked cervical motion tenderness and right adnexal tenderness in a patient with a positive pregnancy test and pelvic pain. Ectopic pregnancy must be urgently excluded.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Notice the wording:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Must be excluded.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Must be excluded.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Not:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This is definitely an ectopic.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This is definitely an ectopic.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_38",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "bimanual_examination_subsection_39",
+          "subsection_title": "38. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1675,16 +2062,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Cervix",
-                    "Uterus",
-                    "Adnexa",
-                    "Pouch of Douglas"
+                    {
+                      "text": "Cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexa",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pouch of Douglas",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1697,7 +2093,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1713,18 +2109,24 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common important causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common important causes include:",
                   "items": [
-                    "PID",
-                    "Ectopic pregnancy",
-                    "Other pelvic inflammatory pathology"
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other pelvic inflammatory pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1736,15 +2138,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Cervical motion tenderness",
-                    "Uterine tenderness",
-                    "Adnexal tenderness"
+                    {
+                      "text": "Cervical motion tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1757,7 +2165,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1773,7 +2181,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1789,7 +2197,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1805,7 +2213,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1821,7 +2229,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1829,11 +2237,11 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Q: What is the most important diagnosis to exclude in a woman with pelvic pain and a positive pregnancy test?"
+                  "text": "**Q: What is the most important diagnosis to exclude in a woman with pelvic pain and a positive pregnancy test?**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1844,8 +2252,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_39",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "bimanual_examination_subsection_40",
+          "subsection_title": "39. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1931,10 +2339,9 @@
                   "text": "Instead:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“No adnexal masses or tenderness were appreciated.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“No adnexal masses or tenderness were appreciated.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1949,10 +2356,8 @@
                   "text": "A palpable mass is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "an adnexal mass"
-                  ]
+                  "type": "paragraph",
+                  "text": "**an adnexal mass**"
                 },
                 {
                   "type": "paragraph",
@@ -1979,8 +2384,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_40",
-          "subsection_title": "HIGH-YIELD DIFFERENTIAL TABLE",
+          "subsection_id": "bimanual_examination_subsection_41",
+          "subsection_title": "40. HIGH-YIELD DIFFERENTIAL TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2039,8 +2444,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_41",
-          "subsection_title": "INVESTIGATIONS AFTER ABNORMAL FINDINGS",
+          "subsection_id": "bimanual_examination_subsection_42",
+          "subsection_title": "41. INVESTIGATIONS AFTER ABNORMAL FINDINGS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2066,11 +2471,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Urine pregnancy test",
-                    "Serum β-hCG",
-                    "Transvaginal ultrasound"
+                    {
+                      "text": "Urine pregnancy test",
+                      "level": 0
+                    },
+                    {
+                      "text": "Serum β-hCG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Transvaginal ultrasound",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2082,10 +2496,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pelvic ultrasound",
-                    "Further imaging depending on clinical circumstances"
+                    {
+                      "text": "Pelvic ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Further imaging depending on clinical circumstances",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2097,10 +2517,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pelvic/transvaginal ultrasound",
-                    "Further tests based on ultrasound and clinical risk"
+                    {
+                      "text": "Pelvic/transvaginal ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Further tests based on ultrasound and clinical risk",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2112,12 +2538,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "STI testing",
-                    "Pregnancy test",
-                    "Appropriate microbiology",
-                    "Blood tests where clinically indicated"
+                    {
+                      "text": "STI testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy test",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate microbiology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood tests where clinically indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2137,8 +2575,8 @@
           ]
         },
         {
-          "subsection_id": "bimanual_examination_subsection_42",
-          "subsection_title": "THE OSCE MEMORY FRAMEWORK",
+          "subsection_id": "bimanual_examination_subsection_43",
+          "subsection_title": "42. THE OSCE MEMORY FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2150,122 +2588,114 @@
                 {
                   "type": "paragraph",
                   "text": "After inserting your fingers:"
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_87",
-              "group_title": "C — Cervix",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Position",
-                    "Consistency",
-                    "Mobility",
-                    "Motion tenderness"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_88",
-              "group_title": "U — Uterus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Size",
-                    "Position",
-                    "Shape",
-                    "Mobility",
-                    "Consistency",
-                    "Tenderness"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_89",
-              "group_title": "A — Adnexa",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Mass",
-                    "Size",
-                    "Mobility",
-                    "Tenderness"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_90",
-              "group_title": "P — Pouch of Douglas",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Tenderness",
-                    "Fullness",
-                    "Mass"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "bimanual_examination_subsection_43",
-          "subsection_title": "RAPID 60-SECOND VERSION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "bimanual_examination_group_91",
-              "group_title": "Before",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Consent → Chaperone → Privacy → Position → Explain"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_92",
-              "group_title": "Examination",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "External → Cervix → Uterus → Adnexa → Pouch"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "bimanual_examination_group_93",
-              "group_title": "Report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "“Cervix mobile/non-tender; uterus size, position, consistency and mobility; adnexa; pouch of Douglas.”"
+                  "text": "**C — Cervix**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Motion tenderness",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**U — Uterus**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shape",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A — Adnexa**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**P — Pouch of Douglas**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fullness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mass",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -2273,12 +2703,49 @@
         },
         {
           "subsection_id": "bimanual_examination_subsection_44",
-          "subsection_title": "🔥 FINAL OSCE PEARL",
+          "subsection_title": "43. RAPID 60-SECOND VERSION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "bimanual_examination_group_94",
-              "group_title": "",
+              "group_id": "bimanual_examination_group_87",
+              "group_title": "Before",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Consent → Chaperone → Privacy → Position → Explain**"
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_88",
+              "group_title": "Examination",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**External → Cervix → Uterus → Adnexa → Pouch**"
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_89",
+              "group_title": "Report",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“Cervix mobile/non-tender; uterus size, position, consistency and mobility; adnexa; pouch of Douglas.”**",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "bimanual_examination_group_90",
+              "group_title": "🔥 FINAL OSCE PEARL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2287,10 +2754,9 @@
                   "text": "If the examiner gives you:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“A 25-year-old woman with lower abdominal pain.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“A 25-year-old woman with lower abdominal pain.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2302,7 +2768,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pelvic pain → pregnancy status → ectopic pregnancy? → PID? → ovarian pathology? → endometriosis?"
+                  "text": "**Pelvic pain → pregnancy status → ectopic pregnancy? → PID? → ovarian pathology? → endometriosis?**"
                 },
                 {
                   "type": "paragraph",
@@ -2310,27 +2776,27 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cervical motion tenderness + uterine tenderness + adnexal tenderness → PID becomes important."
+                  "text": "**Cervical motion tenderness + uterine tenderness + adnexal tenderness → PID becomes important.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Positive pregnancy test + unilateral adnexal tenderness → ectopic must be excluded."
+                  "text": "**Positive pregnancy test + unilateral adnexal tenderness → ectopic must be excluded.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Enlarged irregular uterus → fibroids."
+                  "text": "**Enlarged irregular uterus → fibroids.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fixed retroverted tender uterus → endometriosis/adhesions."
+                  "text": "**Fixed retroverted tender uterus → endometriosis/adhesions.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Acute unilateral pain + adnexal tenderness → consider torsion."
+                  "text": "**Acute unilateral pain + adnexal tenderness → consider torsion.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "The best OSCE candidates don't just say what they felt. They explain what the finding means and what they would do next."
+                  "text": "The best OSCE candidates don't just say **what they felt**. They explain **what the finding means and what they would do next**."
                 }
               ]
             }

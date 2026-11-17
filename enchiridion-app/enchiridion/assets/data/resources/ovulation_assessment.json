@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "ovulation_assessment_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -32,54 +32,64 @@
                   "text": "A 27-year-old woman presents with infertility of 18 months' duration. Her menstrual cycles occur every 45–60 days. You are asked to assess whether she is ovulating and outline further investigations."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Tasks:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take a focused history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the physiology of ovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe the investigations used to assess ovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret common investigation results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Outline management according to the likely cause."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Tasks:",
                   "items": [
-                    "Alternative scenarios"
+                    {
+                      "text": "Take a focused history.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the physiology of ovulation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Describe the investigations used to assess ovulation.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Interpret common investigation results.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Outline management according to the likely cause.",
+                      "level": 0,
+                      "label": "5."
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "A woman with regular cycles who needs confirmation of ovulation."
+                  "text": "Alternative scenarios"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A patient whose serum progesterone was measured on day 21."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman with amenorrhoea, hirsutism and suspected PCOS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A patient undergoing ultrasound follicular monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman with elevated prolactin and anovulation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "A woman with regular cycles who needs confirmation of ovulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A patient whose serum progesterone was measured on day 21.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A woman with amenorrhoea, hirsutism and suspected PCOS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A patient undergoing ultrasound follicular monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A woman with elevated prolactin and anovulation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -87,7 +97,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_2",
-          "subsection_title": "Definition of ovulation",
+          "subsection_title": "2. Definition of ovulation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -105,36 +115,38 @@
                   "text": "It is essential for natural conception because fertilisation generally occurs when sperm meets the released oocyte in the fallopian tube."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ovulation assessment is useful when evaluating:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infertility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Irregular menstruation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amenorrhoea or oligomenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected PCOS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected hypothalamic dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected primary ovarian insufficiency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Response to ovulation-induction treatment."
+                  "type": "list",
+                  "title": "Ovulation assessment is useful when evaluating:",
+                  "items": [
+                    {
+                      "text": "Infertility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular menstruation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amenorrhoea or oligomenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected PCOS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected hypothalamic dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected primary ovarian insufficiency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Response to ovulation-induction treatment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -146,7 +158,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_3",
-          "subsection_title": "Physiology of ovulation",
+          "subsection_title": "3. Physiology of ovulation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -160,23 +172,60 @@
                   "text": "Understanding the hormonal sequence helps you interpret investigations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hypothalamus",
-                    "Pulsatile GnRH secretion",
-                    "Anterior pituitary",
-                    "FSH and LH secretion",
-                    "FSH",
-                    "Follicular growth and granulosa-cell activity",
-                    "LH",
-                    "Theca-cell androgen production and ovulatory trigger",
-                    "Dominant follicle develops",
-                    "Estradiol rises as the follicle matures",
-                    "LH surge",
-                    "Triggers the ovulatory process",
-                    "Ovulation and corpus luteum formation",
-                    "Progesterone rises after ovulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Hypothalamus"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pulsatile GnRH secretion"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Anterior pituitary"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FSH and LH secretion"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FSH"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Follicular growth and granulosa-cell activity"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "LH"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Theca-cell androgen production and ovulatory trigger"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dominant follicle develops"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Estradiol rises as the follicle matures"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "LH surge"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Triggers the ovulatory process"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ovulation and corpus luteum formation"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Progesterone rises after ovulation"
                 }
               ]
             },
@@ -237,16 +286,21 @@
                   "text": "In a typical 28-day cycle, ovulation often occurs around day 14, but this is only an approximation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Follicular phase: Begins on the first day of menstruation and continues until ovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ovulation: Occurs after the LH surge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Luteal phase: Follows ovulation; progesterone rises and the corpus luteum eventually regresses if pregnancy does not occur."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Follicular phase: Begins on the first day of menstruation and continues until ovulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovulation: Occurs after the LH surge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Luteal phase: Follows ovulation; progesterone rises and the corpus luteum eventually regresses if pregnancy does not occur.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -258,7 +312,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_4",
-          "subsection_title": "Focused history taking",
+          "subsection_title": "4. Focused history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -268,36 +322,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Age at menarche."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "First day of the last menstrual period."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cycle length and regularity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Duration and volume of bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Periods of amenorrhoea or oligomenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recent changes in cycle pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dysmenorrhoea and intermenstrual bleeding."
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Age at menarche.",
+                      "level": 0
+                    },
+                    {
+                      "text": "First day of the last menstrual period.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cycle length and regularity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration and volume of bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periods of amenorrhoea or oligomenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recent changes in cycle pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmenorrhoea and intermenstrual bleeding.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -345,36 +401,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hirsutism, acne and scalp hair thinning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Galactorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Headache or visual disturbance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Heat or cold intolerance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excessive exercise or restrictive eating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hot flushes and vaginal dryness."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Hirsutism, acne and scalp hair thinning.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Galactorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Headache or visual disturbance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heat or cold intolerance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive exercise or restrictive eating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hot flushes and vaginal dryness.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -389,36 +447,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "PCOS, thyroid disease and pituitary disorders."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diabetes and other chronic illnesses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous ovarian surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chemotherapy or radiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Antipsychotics and other medications that may increase prolactin."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormonal contraception and when it was discontinued."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fertility medications already used."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "PCOS, thyroid disease and pituitary disorders.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes and other chronic illnesses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ovarian surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chemotherapy or radiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antipsychotics and other medications that may increase prolactin.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal contraception and when it was discontinued.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fertility medications already used.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -442,7 +502,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_5",
-          "subsection_title": "Clinical methods of assessing ovulation",
+          "subsection_title": "5. Clinical methods of assessing ovulation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -456,20 +516,16 @@
                   "text": "There are several ways to assess ovulation. They differ in what they measure and how reliably they answer the clinical question."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Menstrual history"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Menstrual history"
                 },
                 {
                   "type": "paragraph",
                   "text": "Regular, predictable cycles make ovulation likely. Irregular cycles raise suspicion of ovulatory dysfunction but do not identify its cause."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Serum progesterone"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Serum progesterone"
                 },
                 {
                   "type": "paragraph",
@@ -481,10 +537,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Urinary LH testing"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Urinary LH testing"
                 },
                 {
                   "type": "paragraph",
@@ -496,20 +550,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Ultrasound follicular monitoring"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Ultrasound follicular monitoring"
                 },
                 {
                   "type": "paragraph",
                   "text": "Serial ultrasound can demonstrate follicular growth and subsequent changes consistent with ovulation. It is particularly useful during selected fertility treatments."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Basal body temperature"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. Basal body temperature"
                 },
                 {
                   "type": "paragraph",
@@ -521,7 +571,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_6",
-          "subsection_title": "Serum progesterone: the high-yield OSCE investigation",
+          "subsection_title": "6. Serum progesterone: the high-yield OSCE investigation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -584,24 +634,26 @@
                   "text": "A serum progesterone concentration above 3 ng/mL (approximately 9.5 nmol/L) is commonly used as evidence supporting recent ovulation, although the laboratory method and clinical guideline should be considered."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Remember:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Progesterone fluctuates substantially during the luteal phase."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A low result may reflect incorrect timing rather than anovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A single result cannot reliably assess the overall quality of the luteal phase."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A progesterone result is not a reliable stand-alone measure of fertility."
+                  "type": "list",
+                  "title": "Remember:",
+                  "items": [
+                    {
+                      "text": "Progesterone fluctuates substantially during the luteal phase.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A low result may reflect incorrect timing rather than anovulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A single result cannot reliably assess the overall quality of the luteal phase.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A progesterone result is not a reliable stand-alone measure of fertility.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -612,10 +664,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Case 1: Progesterone 18 ng/mL"
-                  ]
+                  "type": "paragraph",
+                  "text": "Case 1: Progesterone 18 ng/mL"
                 },
                 {
                   "type": "paragraph",
@@ -630,10 +680,8 @@
                   "text": "Next step: Continue the wider infertility assessment, including semen analysis and tubal evaluation when indicated."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Case 2: Progesterone 1.2 ng/mL"
-                  ]
+                  "type": "paragraph",
+                  "text": "Case 2: Progesterone 1.2 ng/mL"
                 },
                 {
                   "type": "paragraph",
@@ -648,10 +696,8 @@
                   "text": "Next step: Repeat testing at an appropriately timed point or use other methods of assessing the cycle."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Case 3: Progesterone 0.8 ng/mL in a woman with amenorrhoea"
-                  ]
+                  "type": "paragraph",
+                  "text": "Case 3: Progesterone 0.8 ng/mL in a woman with amenorrhoea"
                 },
                 {
                   "type": "paragraph",
@@ -671,7 +717,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_7",
-          "subsection_title": "Other hormonal investigations",
+          "subsection_title": "7. Other hormonal investigations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -730,16 +776,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "High FSH with low estradiol: Raises suspicion of primary ovarian insufficiency, particularly in a younger woman with irregular or absent menstruation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Low or inappropriately normal FSH with low estradiol: May suggest hypothalamic or pituitary dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Normal results: Do not exclude every cause of ovulatory dysfunction."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "High FSH with low estradiol: Raises suspicion of primary ovarian insufficiency, particularly in a younger woman with irregular or absent menstruation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low or inappropriately normal FSH with low estradiol: May suggest hypothalamic or pituitary dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal results: Do not exclude every cause of ovulatory dysfunction.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -758,28 +809,30 @@
                   "text": "Elevated prolactin can suppress GnRH secretion, disrupt gonadotrophin release and cause irregular menstruation or anovulation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential causes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy and breastfeeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dopamine-antagonist medications, including some antipsychotics."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypothyroidism."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pituitary disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other physiological or medical causes."
+                  "type": "list",
+                  "title": "Potential causes include:",
+                  "items": [
+                    {
+                      "text": "Pregnancy and breastfeeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dopamine-antagonist medications, including some antipsychotics.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothyroidism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pituitary disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other physiological or medical causes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -807,7 +860,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_8",
-          "subsection_title": "Ultrasound follicular monitoring",
+          "subsection_title": "8. Ultrasound follicular monitoring",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -834,10 +887,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Before ovulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Before ovulation"
                 },
                 {
                   "type": "paragraph",
@@ -849,10 +900,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "After ovulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "After ovulation"
                 },
                 {
                   "type": "paragraph",
@@ -872,7 +921,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Serial transvaginal ultrasound demonstrates development of a dominant follicle followed by follicular collapse and corpus luteum formation. These findings are consistent with recent ovulation.”"
+                  "text": "“Serial transvaginal ultrasound demonstrates development of a dominant follicle followed by follicular collapse and corpus luteum formation. These findings are consistent with recent ovulation.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -892,7 +942,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_9",
-          "subsection_title": "Differential diagnoses of anovulation",
+          "subsection_title": "9. Differential diagnoses of anovulation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -906,60 +956,48 @@
                   "text": "Use the mnemonic POT-HAM as a memory aid."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "P — PCOS"
-                  ]
+                  "type": "paragraph",
+                  "text": "P — PCOS"
                 },
                 {
                   "type": "paragraph",
                   "text": "Often associated with irregular cycles, hirsutism, acne and biochemical or clinical androgen excess."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "O — Ovarian insufficiency"
-                  ]
+                  "type": "paragraph",
+                  "text": "O — Ovarian insufficiency"
                 },
                 {
                   "type": "paragraph",
                   "text": "Consider primary ovarian insufficiency in a woman younger than 40 with persistent menstrual disturbance and evidence of impaired ovarian function."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "T — Thyroid disease"
-                  ]
+                  "type": "paragraph",
+                  "text": "T — Thyroid disease"
                 },
                 {
                   "type": "paragraph",
                   "text": "Both hypothyroidism and hyperthyroidism can disturb menstrual function and ovulation."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "H — Hypothalamic or pituitary dysfunction"
-                  ]
+                  "type": "paragraph",
+                  "text": "H — Hypothalamic or pituitary dysfunction"
                 },
                 {
                   "type": "paragraph",
                   "text": "Consider low energy availability, excessive exercise, significant weight loss, stress-related hypothalamic dysfunction and pituitary disease."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A — Amenorrhoea due to pregnancy"
-                  ]
+                  "type": "paragraph",
+                  "text": "A — Amenorrhoea due to pregnancy"
                 },
                 {
                   "type": "paragraph",
                   "text": "Always exclude pregnancy when assessing amenorrhoea or a missed period."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "M — Medication-related or other causes"
-                  ]
+                  "type": "paragraph",
+                  "text": "M — Medication-related or other causes"
                 },
                 {
                   "type": "paragraph",
@@ -975,7 +1013,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_10",
-          "subsection_title": "Management of ovulatory disorders",
+          "subsection_title": "10. Management of ovulatory disorders",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -997,24 +1035,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain the diagnosis and address metabolic risk factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Encourage appropriate nutrition, physical activity and weight management where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for other infertility factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Letrozole is generally first-line pharmacological ovulation induction in appropriate patients with PCOS-related anovulatory infertility when no other infertility factor has been identified."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor treatment according to the clinical protocol and discuss the risk of multiple pregnancy where relevant."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain the diagnosis and address metabolic risk factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encourage appropriate nutrition, physical activity and weight management where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess for other infertility factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Letrozole is generally first-line pharmacological ovulation induction in appropriate patients with PCOS-related anovulatory infertility when no other infertility factor has been identified.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor treatment according to the clinical protocol and discuss the risk of multiple pregnancy where relevant.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1029,20 +1072,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Address inadequate energy intake, excessive exercise or other contributing factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Optimise nutritional and general health status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Refer for specialist management if ovulation does not recover or pregnancy is being pursued."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected patients may require pulsatile GnRH or gonadotrophin therapy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Address inadequate energy intake, excessive exercise or other contributing factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Optimise nutritional and general health status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Refer for specialist management if ovulation does not recover or pregnancy is being pursued.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected patients may require pulsatile GnRH or gonadotrophin therapy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1053,20 +1101,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm and investigate the elevation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review medication causes with the treating clinician."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treat hypothyroidism if present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dopamine agonists may be indicated for selected patients, particularly those with prolactinoma or clinically significant hyperprolactinaemia."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm and investigate the elevation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review medication causes with the treating clinician.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treat hypothyroidism if present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dopamine agonists may be indicated for selected patients, particularly those with prolactinoma or clinically significant hyperprolactinaemia.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1077,20 +1130,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm the diagnosis using appropriate clinical and biochemical criteria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Investigate the cause where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss the implications for fertility and long-term health."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Refer for specialist reproductive counselling. Donor-oocyte IVF may be an option for some patients, depending on availability, personal preferences and local regulations."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm the diagnosis using appropriate clinical and biochemical criteria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Investigate the cause where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discuss the implications for fertility and long-term health.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Refer for specialist reproductive counselling. Donor-oocyte IVF may be an option for some patients, depending on availability, personal preferences and local regulations.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1122,7 +1180,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_11",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "11. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1201,7 +1259,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_12",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "12. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1211,40 +1269,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Measuring progesterone on day 21 in every patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diagnosing anovulation from one poorly timed progesterone result."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming a positive urinary LH test proves ovulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using AMH as a direct measure of whether ovulation occurred."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming all women with irregular cycles have PCOS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting to exclude pregnancy in a woman with amenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ordering every hormone test without considering the history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Starting ovulation induction without evaluating other relevant infertility factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to consider the male partner and tubal patency."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Measuring progesterone on day 21 in every patient.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diagnosing anovulation from one poorly timed progesterone result.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming a positive urinary LH test proves ovulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using AMH as a direct measure of whether ovulation occurred.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming all women with irregular cycles have PCOS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to exclude pregnancy in a woman with amenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ordering every hormone test without considering the history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Starting ovulation induction without evaluating other relevant infertility factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to consider the male partner and tubal patency.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1252,7 +1315,7 @@
         },
         {
           "subsection_id": "ovulation_assessment_subsection_13",
-          "subsection_title": "Rapid revision mnemonics",
+          "subsection_title": "13. Rapid revision mnemonics",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1262,52 +1325,58 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Ovulation assessment: H-P-U"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Ovulation assessment: H-P-U"
+                    {
+                      "text": "H — History of menstrual cycles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Progesterone, appropriately timed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "U — Ultrasound or other targeted investigations when indicated.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "H — History of menstrual cycles."
+                  "text": "Hormonal causes of anovulation: POT-HAM"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "P — Progesterone, appropriately timed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "U — Ultrasound or other targeted investigations when indicated."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hormonal causes of anovulation: POT-HAM"
+                    {
+                      "text": "P — PCOS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Ovarian insufficiency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Thyroid disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "H — Hypothalamic or pituitary dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Amenorrhoea due to pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "M — Medication-related or other causes.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — PCOS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Ovarian insufficiency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Thyroid disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "H — Hypothalamic or pituitary dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Amenorrhoea due to pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "M — Medication-related or other causes."
                 }
               ]
             }

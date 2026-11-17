@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "injectable_contraception_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -28,48 +28,60 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Typical scenarios include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A 24-year-old woman requests an injectable contraceptive."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A breastfeeding woman wants to start DMPA after delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman presents late for her scheduled injection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A patient wants to conceive after stopping DMPA."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman reports irregular bleeding after several injections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A patient is worried that DMPA causes infertility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman with osteoporosis risk factors requests injectable contraception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An adolescent wants DMPA but is concerned about weight gain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A patient taking enzyme-inducing medication asks whether injectable contraception will still work."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An examiner asks you to counsel a woman on the benefits, risks and administration of DMPA."
+                  "type": "list",
+                  "title": "Typical scenarios include:",
+                  "items": [
+                    {
+                      "text": "A 24-year-old woman requests an injectable contraceptive.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "A breastfeeding woman wants to start DMPA after delivery.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "A woman presents late for her scheduled injection.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "A patient wants to conceive after stopping DMPA.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "A woman reports irregular bleeding after several injections.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "A patient is worried that DMPA causes infertility.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "A woman with osteoporosis risk factors requests injectable contraception.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "An adolescent wants DMPA but is concerned about weight gain.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "A patient taking enzyme-inducing medication asks whether injectable contraception will still work.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "An examiner asks you to counsel a woman on the benefits, risks and administration of DMPA.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             }
@@ -77,7 +89,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_2",
-          "subsection_title": "Introduction, consent and communication",
+          "subsection_title": "2. Introduction, consent and communication",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -87,14 +99,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Model introduction"
-                  ]
+                  "type": "paragraph",
+                  "text": "Model introduction"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I understand you are considering injectable contraception. I would like to ask about your medical history, menstrual cycle, pregnancy plans and current medicines. I will then explain the available injections, how often they are given, their benefits and possible side effects, including changes in bleeding and the time it may take for fertility to return after stopping. Is that alright?”"
+                  "text": "“Good morning. My name is Dr ____. I understand you are considering injectable contraception. I would like to ask about your medical history, menstrual cycle, pregnancy plans and current medicines. I will then explain the available injections, how often they are given, their benefits and possible side effects, including changes in bleeding and the time it may take for fertility to return after stopping. Is that alright?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -106,7 +117,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_3",
-          "subsection_title": "Focused history before prescribing",
+          "subsection_title": "3. Focused history before prescribing",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -128,24 +139,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Why does she prefer an injection?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long does she wish to avoid pregnancy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does she want children in the future?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How important is rapid return to fertility?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Would she prefer an injection every two or three months, or a longer-acting method?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Why does she prefer an injection?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long does she wish to avoid pregnancy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does she want children in the future?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How important is rapid return to fertility?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Would she prefer an injection every two or three months, or a longer-acting method?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -156,32 +172,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Date of the last menstrual period."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Menstrual regularity and bleeding pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recent unprotected intercourse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current contraceptive method."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous injection and date it was administered."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recent delivery, miscarriage or abortion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possibility of pregnancy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Date of the last menstrual period.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Menstrual regularity and bleeding pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recent unprotected intercourse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current contraceptive method.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous injection and date it was administered.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recent delivery, miscarriage or abortion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possibility of pregnancy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -192,32 +213,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current or previous breast cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe active liver disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unexplained vaginal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Osteoporosis or significant fracture risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypertension, diabetes and cardiovascular disease, where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other important medical conditions that may affect eligibility."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Current or previous breast cancer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe active liver disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unexplained vaginal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Osteoporosis or significant fracture risk.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension, diabetes and cardiovascular disease, where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other important medical conditions that may affect eligibility.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -244,24 +267,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long ago did she deliver?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she breastfeeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Were there postpartum complications?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there a risk of postpartum venous thromboembolism or another relevant complication?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "How long ago did she deliver?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is she breastfeeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Were there postpartum complications?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there a risk of postpartum venous thromboembolism or another relevant complication?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -276,32 +301,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous irregular bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight changes with prior injections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mood symptoms or headaches."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty attending appointments."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ability to return for the next injection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Concerns about fertility, bone health or privacy."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Previous irregular bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight changes with prior injections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mood symptoms or headaches.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty attending appointments.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ability to return for the next injection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concerns about fertility, bone health or privacy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -313,7 +340,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_4",
-          "subsection_title": "Types of injectable contraceptives",
+          "subsection_title": "4. Types of injectable contraceptives",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -328,26 +355,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "A. Depot medroxyprogesterone acetate (DMPA)"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "A. Depot medroxyprogesterone acetate (DMPA)"
+                    {
+                      "text": "Commonly known as Depo-Provera.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Standard intramuscular formulation: 150 mg.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Typically administered every 13 weeks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A subcutaneous formulation, DMPA-SC 104 mg, is also available and is generally administered every 12–14 weeks, according to product instructions.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Commonly known as Depo-Provera."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Standard intramuscular formulation: 150 mg."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typically administered every 13 weeks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A subcutaneous formulation, DMPA-SC 104 mg, is also available and is generally administered every 12–14 weeks, according to product instructions."
                 },
                 {
                   "type": "image",
@@ -355,26 +385,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "B. Norethisterone enanthate (NET-EN)"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "B. Norethisterone enanthate (NET-EN)"
+                    {
+                      "text": "Progestogen-only injectable contraception.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Common dose: 200 mg intramuscularly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Typically repeated every eight weeks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Availability varies by country.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Progestogen-only injectable contraception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Common dose: 200 mg intramuscularly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typically repeated every eight weeks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Availability varies by country."
                 },
                 {
                   "type": "image",
@@ -382,22 +415,25 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "C. DMPA-SC self-injection"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "C. DMPA-SC self-injection"
+                    {
+                      "text": "A subcutaneous DMPA formulation supplied in a prefilled device in some settings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May be self-administered after appropriate training where permitted.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow the exact product's storage, administration and repeat-injection instructions.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A subcutaneous DMPA formulation supplied in a prefilled device in some settings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May be self-administered after appropriate training where permitted."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the exact product's storage, administration and repeat-injection instructions."
                 },
                 {
                   "type": "paragraph",
@@ -409,7 +445,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_5",
-          "subsection_title": "Mechanism of action",
+          "subsection_title": "5. Mechanism of action",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -419,20 +455,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Injectable progestogens prevent pregnancy primarily through:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suppression of ovulation: inhibit the hormonal events needed for the release of an ovum."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Thickening of cervical mucus: reduce sperm penetration through the cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial changes: alter the endometrium."
+                  "type": "list",
+                  "title": "Injectable progestogens prevent pregnancy primarily through:",
+                  "items": [
+                    {
+                      "text": "Suppression of ovulation: inhibit the hormonal events needed for the release of an ovum.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Thickening of cervical mucus: reduce sperm penetration through the cervix.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Endometrial changes: alter the endometrium.",
+                      "level": 0,
+                      "label": "3."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -448,7 +489,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_6",
-          "subsection_title": "Effectiveness and advantages",
+          "subsection_title": "6. Effectiveness and advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -462,40 +503,42 @@
                   "text": "Injectable contraception is highly effective when injections are received on schedule."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Advantages include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No daily pill to remember."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discreet administration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No oestrogen."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Generally compatible with breastfeeding, subject to postpartum guidance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May reduce menstrual bleeding over time."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amenorrhoea is common with continued DMPA use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May reduce dysmenorrhoea in some women."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "DMPA effectiveness is generally not reduced by the enzyme-inducing medicines that compromise many pills and implants."
+                  "type": "list",
+                  "title": "Advantages include:",
+                  "items": [
+                    {
+                      "text": "No daily pill to remember.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discreet administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No oestrogen.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Generally compatible with breastfeeding, subject to postpartum guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May reduce menstrual bleeding over time.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amenorrhoea is common with continued DMPA use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May reduce dysmenorrhoea in some women.",
+                      "level": 0
+                    },
+                    {
+                      "text": "DMPA effectiveness is generally not reduced by the enzyme-inducing medicines that compromise many pills and implants.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -511,7 +554,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_7",
-          "subsection_title": "Adverse effects and counselling",
+          "subsection_title": "7. Adverse effects and counselling",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -525,24 +568,26 @@
                   "text": "This is one of the most important counselling topics."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Patients may experience:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Irregular bleeding or spotting."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prolonged bleeding, particularly initially."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infrequent menstruation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amenorrhoea after continued use."
+                  "type": "list",
+                  "title": "Patients may experience:",
+                  "items": [
+                    {
+                      "text": "Irregular bleeding or spotting.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged bleeding, particularly initially.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infrequent menstruation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amenorrhoea after continued use.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -597,24 +642,29 @@
                   "text": "DMPA is associated with a reduction in bone mineral density during use. Recovery generally occurs after discontinuation, although the degree and time course vary."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess individual osteoporosis and fracture risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Encourage adequate calcium and vitamin D intake and weight-bearing exercise."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not automatically deny DMPA to every adolescent or young woman."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss the balance of benefits and risks, particularly when other bone-health risk factors are present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow current guidance on duration of use and the need for further assessment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assess individual osteoporosis and fracture risk.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encourage adequate calcium and vitamin D intake and weight-bearing exercise.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not automatically deny DMPA to every adolescent or young woman.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discuss the balance of benefits and risks, particularly when other bone-health risk factors are present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow current guidance on duration of use and the need for further assessment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -629,28 +679,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Headache."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breast tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acne."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mood changes in some users."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Changes in libido."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Injection-site pain or reactions."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Headache.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breast tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acne.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mood changes in some users.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Changes in libido.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Injection-site pain or reactions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -662,7 +717,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_8",
-          "subsection_title": "Contraindications and medical eligibility",
+          "subsection_title": "8. Contraindications and medical eligibility",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -722,7 +777,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_9",
-          "subsection_title": "How to initiate injectable contraception",
+          "subsection_title": "9. How to initiate injectable contraception",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -772,40 +827,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For an OSCE practical station:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the prescription, product, dose, expiry date and patient identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the procedure and obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check allergies and relevant medical history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene and prepare the appropriate equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect and prepare the product according to its instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Administer the correct formulation using the recommended route and technique."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dispose of sharps safely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Document the product, dose, route, date, site and planned repeat date."
+                  "type": "list",
+                  "title": "For an OSCE practical station:",
+                  "items": [
+                    {
+                      "text": "Confirm the prescription, product, dose, expiry date and patient identity.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the procedure and obtain consent.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Check allergies and relevant medical history.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Perform hand hygiene and prepare the appropriate equipment.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Inspect and prepare the product according to its instructions.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Administer the correct formulation using the recommended route and technique.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Dispose of sharps safely.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Document the product, dose, route, date, site and planned repeat date.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -820,12 +885,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "DMPA: typically every 13 weeks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "NET-EN: typically every eight weeks."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "DMPA: typically every 13 weeks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "NET-EN: typically every eight weeks.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -837,7 +907,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_10",
-          "subsection_title": "Missed or late injections",
+          "subsection_title": "10. Missed or late injections",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -867,28 +937,35 @@
                   "text": "Under CDC guidance, a repeat DMPA injection may be given up to 15 weeks after the previous injection without additional contraceptive protection."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If more than 15 weeks have elapsed:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess pregnancy risk and exclude pregnancy as reasonably as possible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give the injection if appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Advise condoms or abstinence for the next seven days."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the need for emergency contraception if unprotected intercourse has occurred."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange follow-up pregnancy testing when indicated."
+                  "type": "list",
+                  "title": "If more than 15 weeks have elapsed:",
+                  "items": [
+                    {
+                      "text": "Assess pregnancy risk and exclude pregnancy as reasonably as possible.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Give the injection if appropriate.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Advise condoms or abstinence for the next seven days.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess the need for emergency contraception if unprotected intercourse has occurred.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Arrange follow-up pregnancy testing when indicated.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -916,7 +993,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_11",
-          "subsection_title": "Injectable contraception in special situations",
+          "subsection_title": "11. Injectable contraception in special situations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -930,28 +1007,30 @@
                   "text": "DMPA is generally compatible with breastfeeding, but the timing of initiation after delivery should follow current national guidance and the woman's individual postpartum circumstances."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Time since delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exclusive or partial breastfeeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postpartum haemorrhage or other complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "VTE risk and other medical conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether she prefers a method that allows rapid return to fertility."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Time since delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exclusive or partial breastfeeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postpartum haemorrhage or other complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "VTE risk and other medical conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether she prefers a method that allows rapid return to fertility.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1015,7 +1094,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_12",
-          "subsection_title": "Management of common problems",
+          "subsection_title": "12. Management of common problems",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1025,40 +1104,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "History"
-                  ]
+                  "type": "paragraph",
+                  "text": "History"
                 },
                 {
                   "type": "paragraph",
                   "text": "Ask about bleeding duration, amount, pain, pregnancy possibility, injection dates, STI risk and symptoms suggesting another cause."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Management"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Management"
+                    {
+                      "text": "Assess severity and haemodynamic stability if bleeding is heavy.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Consider pregnancy testing and investigations for infection or other pathology.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Reassure the patient if bleeding is consistent with expected side effects and there are no concerning features.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Consider short-term treatment under current guidance if the bleeding is troublesome.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Offer an alternative contraceptive method or discontinuation if she prefers.",
+                      "level": 0,
+                      "label": "5."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess severity and haemodynamic stability if bleeding is heavy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider pregnancy testing and investigations for infection or other pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassure the patient if bleeding is consistent with expected side effects and there are no concerning features."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider short-term treatment under current guidance if the bleeding is troublesome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer an alternative contraceptive method or discontinuation if she prefers."
                 }
               ]
             },
@@ -1069,20 +1154,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Establish the amount and timing of weight change."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review diet, activity and other possible causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss the possibility of an association with DMPA without assuming causation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider alternatives if weight change is unacceptable to the patient."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Establish the amount and timing of weight change.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review diet, activity and other possible causes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discuss the possibility of an association with DMPA without assuming causation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider alternatives if weight change is unacceptable to the patient.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1093,24 +1183,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain that delayed ovulation is expected in some users."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassure her that this does not automatically indicate infertility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review her age, menstrual history and other fertility factors."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provide preconception counselling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange fertility assessment if clinically indicated, rather than attributing all delays to the injection."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain that delayed ovulation is expected in some users.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reassure her that this does not automatically indicate infertility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review her age, menstrual history and other fertility factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provide preconception counselling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrange fertility assessment if clinically indicated, rather than attributing all delays to the injection.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1121,28 +1216,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Identify the injectable and date of the last dose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess pregnancy risk and recent unprotected intercourse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the appropriate grace period."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provide backup contraception if required."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider emergency contraception where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange pregnancy testing and a clear follow-up plan."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Identify the injectable and date of the last dose.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess pregnancy risk and recent unprotected intercourse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow the appropriate grace period.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provide backup contraception if required.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider emergency contraception where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrange pregnancy testing and a clear follow-up plan.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1150,7 +1250,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_13",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "13. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1229,7 +1329,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_14",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "14. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1239,44 +1339,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confusing the repeat intervals for DMPA and NET-EN."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to ask when the last injection was administered."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting to discuss delayed return to fertility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to counsel about irregular bleeding and possible amenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Telling every patient that DMPA causes permanent infertility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring bone mineral density and individual fracture risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to assess pregnancy risk after a late injection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Applying the DMPA grace period to NET-EN without checking guidance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting STI prevention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to document the injection and schedule the next appointment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confusing the repeat intervals for DMPA and NET-EN.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to ask when the last injection was administered.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to discuss delayed return to fertility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to counsel about irregular bleeding and possible amenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Telling every patient that DMPA causes permanent infertility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring bone mineral density and individual fracture risk.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to assess pregnancy risk after a late injection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Applying the DMPA grace period to NET-EN without checking guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting STI prevention.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to document the injection and schedule the next appointment.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1284,7 +1389,7 @@
         },
         {
           "subsection_id": "injectable_contraception_subsection_15",
-          "subsection_title": "OSCE mnemonics",
+          "subsection_title": "15. OSCE mnemonics",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1294,52 +1399,56 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Remember INJECT for the history:"
+                  "type": "list",
+                  "title": "Remember INJECT for the history:",
+                  "items": [
+                    {
+                      "text": "I — Intention and reproductive plans.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Normal menstrual and pregnancy history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "J — Judicious review of medical conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Existing medicines.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Childbirth and breastfeeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Tolerability and timing.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "I — Intention and reproductive plans."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — Normal menstrual and pregnancy history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "J — Judicious review of medical conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Existing medicines."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Childbirth and breastfeeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Tolerability and timing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remember BONE for DMPA counselling:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "B — Bleeding changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Ovulation may return slowly after the last injection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — No protection against STIs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Effects on bone mineral density."
+                  "type": "list",
+                  "title": "Remember BONE for DMPA counselling:",
+                  "items": [
+                    {
+                      "text": "B — Bleeding changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Ovulation may return slowly after the last injection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — No protection against STIs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Effects on bone mineral density.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

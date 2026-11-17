@@ -18,54 +18,76 @@
       "subsections": [
         {
           "subsection_id": "joints_examination_subsection_1",
-          "subsection_title": "Objectives of the examination",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "joints_examination_group_1",
+              "group_title": "Joint Examination",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "joints_examination_subsection_2",
+          "subsection_title": "1. Objectives of the examination",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "joints_examination_group_2",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "By the end of this guide, you should be able to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examine joints systematically using inspection, palpation, movement and special tests."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify inflammatory, degenerative, traumatic and infective joint pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Distinguish normal from abnormal findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recognise joint effusions, deformities, instability and restricted movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Present findings in a structured OSCE format."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify red flags requiring urgent assessment."
+                  "type": "list",
+                  "title": "By the end of this guide, you should be able to:",
+                  "items": [
+                    {
+                      "text": "Examine joints systematically using inspection, palpation, movement and special tests.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Identify inflammatory, degenerative, traumatic and infective joint pathology.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Distinguish normal from abnormal findings.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Recognise joint effusions, deformities, instability and restricted movement.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Present findings in a structured OSCE format.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Identify red flags requiring urgent assessment.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_2",
-          "subsection_title": "The general approach: Look, Feel, Move, Function",
+          "subsection_id": "joints_examination_subsection_3",
+          "subsection_title": "2. The general approach: Look, Feel, Move, Function",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_2",
+              "group_id": "joints_examination_group_3",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -76,10 +98,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Look"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Look"
                 },
                 {
                   "type": "paragraph",
@@ -91,10 +111,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Feel"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Feel"
                 },
                 {
                   "type": "paragraph",
@@ -106,10 +124,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Move"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Move"
                 },
                 {
                   "type": "paragraph",
@@ -121,10 +137,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Function"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Function"
                 },
                 {
                   "type": "paragraph",
@@ -139,83 +153,95 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_3",
-          "subsection_title": "Preparation and introduction",
+          "subsection_id": "joints_examination_subsection_4",
+          "subsection_title": "3. Preparation and introduction",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_3",
+              "group_id": "joints_examination_group_4",
               "group_title": "Equipment",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the joint and station, you may need:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examination couch."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Goniometer for measuring range of motion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Measuring tape."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reflex hammer where neurological assessment is relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Appropriate examination gloves if a wound is present."
+                  "type": "list",
+                  "title": "Depending on the joint and station, you may need:",
+                  "items": [
+                    {
+                      "text": "Examination couch.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Goniometer for measuring range of motion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Measuring tape.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reflex hammer where neurological assessment is relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate examination gloves if a wound is present.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_4",
+              "group_id": "joints_examination_group_5",
               "group_title": "Introduction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is … I have been asked to examine your joint. I will inspect it, feel around it, assess its movements and perform some specific tests if necessary. Some movements may cause discomfort, so please let me know if you experience pain. Is that alright?”"
+                  "text": "“Good morning. My name is … I have been asked to examine your joint. I will inspect it, feel around it, assess its movements and perform some specific tests if necessary. Some movements may cause discomfort, so please let me know if you experience pain. Is that alright?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the procedure and obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about pain before beginning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Expose the joint adequately while maintaining privacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position the patient comfortably."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wash your hands."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer a chaperone if appropriate."
+                  "type": "list",
+                  "title": "Then:",
+                  "items": [
+                    {
+                      "text": "Confirm the patient's identity.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the procedure and obtain consent.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask about pain before beginning.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Expose the joint adequately while maintaining privacy.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Position the patient comfortably.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Wash your hands.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Offer a chaperone if appropriate.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -226,12 +252,12 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_4",
-          "subsection_title": "History you should know before examining",
+          "subsection_id": "joints_examination_subsection_5",
+          "subsection_title": "4. History you should know before examining",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_5",
+              "group_id": "joints_examination_group_6",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -241,65 +267,67 @@
                   "text": "Although this is an examination station, the examiner may ask what history you would obtain."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Onset: sudden or gradual."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Duration and progression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Site and number of joints involved."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain severity and character."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Morning stiffness and its duration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swelling, redness and warmth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Restriction of movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trauma or repetitive use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fever or systemic symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous episodes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other joint symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Functional limitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relevant medical history, medications and family history."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Onset: sudden or gradual.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration and progression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Site and number of joints involved.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain severity and character.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Morning stiffness and its duration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling, redness and warmth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restriction of movement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma or repetitive use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever or systemic symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous episodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other joint symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Functional limitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relevant medical history, medications and family history.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_6",
+              "group_id": "joints_examination_group_7",
               "group_title": "Clinical clues",
               "group_subtitle": null,
               "group_icon": null,
@@ -346,12 +374,12 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_5",
-          "subsection_title": "Step-by-step joint examination",
+          "subsection_id": "joints_examination_subsection_6",
+          "subsection_title": "5. Step-by-step joint examination",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_7",
+              "group_id": "joints_examination_group_8",
               "group_title": "Step 1: General inspection",
               "group_subtitle": null,
               "group_icon": null,
@@ -361,32 +389,34 @@
                   "text": "Before examining an individual joint, observe the patient generally."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty walking or transferring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use of walking aids or splints."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal posture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Multiple joint deformities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Muscle wasting."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Skin lesions, rashes or nodules that may suggest systemic disease."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Difficulty walking or transferring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use of walking aids or splints.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal posture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple joint deformities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Muscle wasting.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin lesions, rashes or nodules that may suggest systemic disease.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -395,7 +425,7 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_8",
+              "group_id": "joints_examination_group_9",
               "group_title": "Step 2: Inspection of the joint",
               "group_subtitle": null,
               "group_icon": null,
@@ -409,96 +439,94 @@
                   "text": "Look for:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "A. Swelling"
+                },
+                {
+                  "type": "list",
+                  "title": "Determine whether it is:",
                   "items": [
-                    "A. Swelling"
+                    {
+                      "text": "Intra-articular, involving the joint itself.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periarticular, involving surrounding soft tissues.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Localised to a bursa, tendon sheath or cyst.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Determine whether it is:"
+                  "text": "B. Skin changes"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Intra-articular, involving the joint itself."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Periarticular, involving surrounding soft tissues."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Localised to a bursa, tendon sheath or cyst."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "B. Skin changes"
+                    {
+                      "text": "Redness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars from previous surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sinuses or wounds.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bruising.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psoriatic plaques.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rheumatoid nodules or other relevant lesions.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Look for:"
+                  "text": "C. Deformity"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Redness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Scars from previous surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sinuses or wounds."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bruising."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Psoriatic plaques."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rheumatoid nodules or other relevant lesions."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples include:",
                   "items": [
-                    "C. Deformity"
+                    {
+                      "text": "Varus or valgus alignment at the knee.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulnar deviation at the metacarpophalangeal joints.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Boutonnière or swan-neck deformities in the fingers.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fixed flexion deformity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Joint subluxation or dislocation.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Varus or valgus alignment at the knee."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulnar deviation at the metacarpophalangeal joints."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Boutonnière or swan-neck deformities in the fingers."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fixed flexion deformity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Joint subluxation or dislocation."
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "D. Muscle wasting"
-                  ]
+                  "text": "D. Muscle wasting"
                 },
                 {
                   "type": "paragraph",
@@ -515,7 +543,7 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_9",
+              "group_id": "joints_examination_group_10",
               "group_title": "Step 3: Palpation",
               "group_subtitle": null,
               "group_icon": null,
@@ -523,39 +551,38 @@
                 {
                   "type": "paragraph",
                   "text": "Ask permission before touching the patient and begin gently."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_10",
-              "group_title": "A. Temperature",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Temperature**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Use the dorsum of your hand to compare the temperature of corresponding joints."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Normal: similar temperature on both sides."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal: increased warmth may indicate inflammation, infection or recent injury."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Normal: similar temperature on both sides.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal: increased warmth may indicate inflammation, infection or recent injury.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "A hot joint is particularly concerning when accompanied by acute pain, swelling and restricted movement."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_11",
-              "group_title": "B. Tenderness",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Tenderness**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Palpate relevant anatomical landmarks, joint lines and surrounding soft tissues."
@@ -565,29 +592,31 @@
                   "text": "Ask the patient whether the area is painful and note the exact location."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Joint-line tenderness may indicate intra-articular pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tendon tenderness may suggest tendinopathy or tenosynovitis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bony tenderness after trauma may raise concern for fracture."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Joint-line tenderness may indicate intra-articular pathology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tendon tenderness may suggest tendinopathy or tenosynovitis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bony tenderness after trauma may raise concern for fracture.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Do not apply unnecessary pressure to an acutely inflamed joint."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_12",
-              "group_title": "C. Swelling and effusion",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Swelling and effusion**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Assess whether the swelling is diffuse, localised, soft, firm or fluctuant."
@@ -599,15 +628,12 @@
                 {
                   "type": "paragraph",
                   "text": "For example, in the knee, you may use the bulge sign or patellar tap when appropriate."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_13",
-              "group_title": "D. Crepitus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**D. Crepitus**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Crepitus is a grating, crackling or clicking sensation during joint movement."
@@ -627,7 +653,7 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_14",
+              "group_id": "joints_examination_group_11",
               "group_title": "Step 4: Assess range of motion",
               "group_subtitle": null,
               "group_icon": null,
@@ -642,10 +668,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Active range of motion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Active range of motion"
                 },
                 {
                   "type": "paragraph",
@@ -657,23 +681,18 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Passive range of motion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Passive range of motion"
                 },
                 {
                   "type": "paragraph",
                   "text": "Gently move the relaxed joint yourself. This helps assess joint restriction, pain, capsular limitation and mechanical obstruction."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_15",
-              "group_title": "Movements to assess",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Movements to assess**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "The movements depend on the joint. Common examples include:"
@@ -718,30 +737,32 @@
                 {
                   "type": "paragraph",
                   "text": "Record whether movements are full or restricted, painful or painless, and whether restriction occurs actively, passively or both."
-                }
-              ]
-            },
-            {
-              "group_id": "joints_examination_group_16",
-              "group_title": "Interpreting movement",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Active movement restricted, passive movement relatively preserved: Consider muscle weakness, tendon injury, pain inhibition or neurological dysfunction."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Both active and passive movement restricted: Consider joint disease, capsular restriction, effusion or mechanical obstruction."
+                  "text": "**Interpreting movement**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Pain during movement: May reflect inflammation, injury or degenerative pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Painful restriction with a hot, swollen joint: Requires urgent consideration of infection."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Active movement restricted, passive movement relatively preserved: Consider muscle weakness, tendon injury, pain inhibition or neurological dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Both active and passive movement restricted: Consider joint disease, capsular restriction, effusion or mechanical obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain during movement: May reflect inflammation, injury or degenerative pathology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Painful restriction with a hot, swollen joint: Requires urgent consideration of infection.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -750,7 +771,7 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_17",
+              "group_id": "joints_examination_group_12",
               "group_title": "Step 5: Assess strength",
               "group_subtitle": null,
               "group_icon": null,
@@ -803,7 +824,7 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_18",
+              "group_id": "joints_examination_group_13",
               "group_title": "Step 6: Assess stability and special tests",
               "group_subtitle": null,
               "group_icon": null,
@@ -813,24 +834,26 @@
                   "text": "Perform special tests only when indicated by the history and initial examination."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Knee: Lachman test, anterior and posterior drawer tests, varus and valgus stress tests."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shoulder: selected rotator cuff and instability tests."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hip: tests for hip pathology and relevant gait abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wrist and hand: selected tendon, ligament and nerve-compression tests."
+                  "type": "list",
+                  "title": "Examples include:",
+                  "items": [
+                    {
+                      "text": "Knee: Lachman test, anterior and posterior drawer tests, varus and valgus stress tests.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shoulder: selected rotator cuff and instability tests.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hip: tests for hip pathology and relevant gait abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wrist and hand: selected tendon, ligament and nerve-compression tests.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -839,30 +862,32 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_19",
+              "group_id": "joints_examination_group_14",
               "group_title": "Step 7: Functional assessment",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess function appropriate to the joint:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shoulder: reaching overhead or behind the back."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hand: making a fist, picking up an object or performing a grip."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hip and knee: standing from a chair, walking and climbing steps."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ankle: walking and heel or toe raises if safe."
+                  "type": "list",
+                  "title": "Assess function appropriate to the joint:",
+                  "items": [
+                    {
+                      "text": "Shoulder: reaching overhead or behind the back.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hand: making a fist, picking up an object or performing a grip.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hip and knee: standing from a chair, walking and climbing steps.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ankle: walking and heel or toe raises if safe.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -873,12 +898,12 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_6",
-          "subsection_title": "Important patterns of joint disease",
+          "subsection_id": "joints_examination_subsection_7",
+          "subsection_title": "6. Important patterns of joint disease",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_20",
+              "group_id": "joints_examination_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -889,10 +914,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Osteoarthritis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Osteoarthritis"
                 },
                 {
                   "type": "paragraph",
@@ -904,10 +927,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Rheumatoid arthritis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Rheumatoid arthritis"
                 },
                 {
                   "type": "paragraph",
@@ -919,10 +940,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Gout"
-                  ]
+                  "type": "paragraph",
+                  "text": "Gout"
                 },
                 {
                   "type": "paragraph",
@@ -934,10 +953,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Septic arthritis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Septic arthritis"
                 },
                 {
                   "type": "paragraph",
@@ -952,12 +969,12 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_7",
-          "subsection_title": "How to present normal findings",
+          "subsection_id": "joints_examination_subsection_8",
+          "subsection_title": "7. How to present normal findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_21",
+              "group_id": "joints_examination_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -972,7 +989,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“On examination, the joint is symmetrical with the contralateral side. There is no swelling, erythema, deformity, muscle wasting or abnormal skin change. The joint is not warm or tender, and there is no clinically detectable effusion. Active and passive ranges of motion are full and painless, with no abnormal crepitus. Muscle power is preserved, and the relevant stability tests are normal."
+                  "text": "“On examination, the joint is symmetrical with the contralateral side. There is no swelling, erythema, deformity, muscle wasting or abnormal skin change. The joint is not warm or tender, and there is no clinically detectable effusion. Active and passive ranges of motion are full and painless, with no abnormal crepitus. Muscle power is preserved, and the relevant stability tests are normal.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -987,102 +1005,109 @@
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_8",
-          "subsection_title": "How to present abnormal findings",
+          "subsection_id": "joints_examination_subsection_9",
+          "subsection_title": "8. How to present abnormal findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_22",
+              "group_id": "joints_examination_group_17",
               "group_title": "Scenario A: Osteoarthritis",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is bony enlargement of the joint with crepitus and restricted movement. The joint is not markedly warm or erythematous. These findings are suggestive of osteoarthritis, subject to the clinical context.”"
+                  "text": "“There is bony enlargement of the joint with crepitus and restricted movement. The joint is not markedly warm or erythematous. These findings are suggestive of osteoarthritis, subject to the clinical context.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_23",
+              "group_id": "joints_examination_group_18",
               "group_title": "Scenario B: Inflammatory arthritis",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is symmetrical joint swelling, warmth and tenderness, with restriction of movement. The findings suggest an inflammatory arthropathy, such as rheumatoid arthritis, depending on the distribution and associated clinical features.”"
+                  "text": "“There is symmetrical joint swelling, warmth and tenderness, with restriction of movement. The findings suggest an inflammatory arthropathy, such as rheumatoid arthritis, depending on the distribution and associated clinical features.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_24",
+              "group_id": "joints_examination_group_19",
               "group_title": "Scenario C: Septic arthritis",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The joint is acutely swollen, warm and severely tender, with marked restriction of active and passive movement. Septic arthritis must be excluded urgently. I would arrange immediate clinical assessment and joint aspiration as appropriate.”"
+                  "text": "“The joint is acutely swollen, warm and severely tender, with marked restriction of active and passive movement. Septic arthritis must be excluded urgently. I would arrange immediate clinical assessment and joint aspiration as appropriate.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_25",
+              "group_id": "joints_examination_group_20",
               "group_title": "Scenario D: Joint effusion",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is visible swelling with evidence of an intra-articular effusion. I would correlate this with the history and other examination findings and consider imaging or joint aspiration depending on the suspected cause.”"
+                  "text": "“There is visible swelling with evidence of an intra-articular effusion. I would correlate this with the history and other examination findings and consider imaging or joint aspiration depending on the suspected cause.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "joints_examination_group_26",
+              "group_id": "joints_examination_group_21",
               "group_title": "Scenario E: Joint deformity",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a fixed deformity with restricted range of movement and associated muscle wasting. I would document the type and degree of deformity, assess functional impairment and investigate the underlying cause.”"
+                  "text": "“There is a fixed deformity with restricted range of movement and associated muscle wasting. I would document the type and degree of deformity, assess functional impairment and investigate the underlying cause.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "joints_examination_subsection_9",
-          "subsection_title": "Additional information examiners expect",
+          "subsection_id": "joints_examination_subsection_10",
+          "subsection_title": "9. Additional information examiners expect",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_27",
+              "group_id": "joints_examination_group_22",
               "group_title": "A. When should you consider joint aspiration?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Joint aspiration may be indicated when there is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected septic arthritis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An unexplained acute monoarthritis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A suspected crystal arthritis when the diagnosis is uncertain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A significant effusion requiring diagnostic or therapeutic aspiration."
+                  "type": "list",
+                  "title": "Joint aspiration may be indicated when there is:",
+                  "items": [
+                    {
+                      "text": "Suspected septic arthritis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An unexplained acute monoarthritis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A suspected crystal arthritis when the diagnosis is uncertain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A significant effusion requiring diagnostic or therapeutic aspiration.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1091,22 +1116,27 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_28",
+              "group_id": "joints_examination_group_23",
               "group_title": "B. When is imaging appropriate?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Plain radiographs: suspected fracture, established osteoarthritis or structural abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ultrasound: selected effusions, synovitis, tendon pathology and image-guided aspiration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "MRI: selected ligament, meniscal, cartilage, bone marrow or soft-tissue pathology."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Plain radiographs: suspected fracture, established osteoarthritis or structural abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound: selected effusions, synovitis, tendon pathology and image-guided aspiration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "MRI: selected ligament, meniscal, cartilage, bone marrow or soft-tissue pathology.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1115,85 +1145,36 @@
               ]
             },
             {
-              "group_id": "joints_examination_group_29",
+              "group_id": "joints_examination_group_24",
               "group_title": "C. Red flags",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Arrange urgent assessment for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A hot, swollen joint with suspected infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acute severe joint pain with systemic illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Significant trauma with deformity or inability to bear weight."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A suspected fracture or dislocation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A rapidly progressive neurological or vascular deficit affecting the limb."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "joints_examination_subsection_10",
-          "subsection_title": "Common OSCE mistakes",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "joints_examination_group_30",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Failing to compare both sides."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting to expose the joint adequately."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Starting with painful passive movements before inspection and gentle palpation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Not distinguishing active from passive range of motion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to examine adjacent joints when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Performing special tests without understanding their purpose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring functional limitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Declaring a joint normal without assessing tenderness, movement and relevant stability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Missing a hot joint that may represent septic arthritis."
+                  "type": "list",
+                  "title": "Arrange urgent assessment for:",
+                  "items": [
+                    {
+                      "text": "A hot, swollen joint with suspected infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acute severe joint pain with systemic illness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant trauma with deformity or inability to bear weight.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A suspected fracture or dislocation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A rapidly progressive neurological or vascular deficit affecting the limb.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1201,32 +1182,122 @@
         },
         {
           "subsection_id": "joints_examination_subsection_11",
-          "subsection_title": "Final practice checklist",
+          "subsection_title": "10. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "joints_examination_group_31",
+              "group_id": "joints_examination_group_25",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to compare both sides.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to expose the joint adequately.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Starting with painful passive movements before inspection and gentle palpation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not distinguishing active from passive range of motion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to examine adjacent joints when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Performing special tests without understanding their purpose.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring functional limitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Declaring a joint normal without assessing tenderness, movement and relevant stability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Missing a hot joint that may represent septic arthritis.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "joints_examination_subsection_12",
+          "subsection_title": "11. Final practice checklist",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "joints_examination_group_26",
               "group_title": "Joint examination tracker",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0 of 12",
-                    "Introduce yourself, obtain consent and assess pain",
-                    "Observe posture, gait and general joint involvement",
-                    "Inspect both sides for swelling, deformity and muscle wasting",
-                    "Palpate temperature, tenderness and relevant anatomical landmarks",
-                    "Assess effusion when appropriate",
-                    "Test active range of motion",
-                    "Test passive range of motion gently",
-                    "Assess muscle power",
-                    "Perform indicated stability and special tests",
-                    "Assess relevant functional movements safely",
-                    "Identify red flags and state the next steps",
-                    "Present findings in a structured clinical summary"
-                  ]
+                  "type": "paragraph",
+                  "text": "0 of 12"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Introduce yourself, obtain consent and assess pain"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Observe posture, gait and general joint involvement"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inspect both sides for swelling, deformity and muscle wasting"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Palpate temperature, tenderness and relevant anatomical landmarks"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess effusion when appropriate"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Test active range of motion"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Test passive range of motion gently"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess muscle power"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Perform indicated stability and special tests"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess relevant functional movements safely"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify red flags and state the next steps"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Present findings in a structured clinical summary"
                 },
                 {
                   "type": "paragraph",

@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "respiratory_examination_subsection_1",
-          "subsection_title": "Respiratory System Examination",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "respiratory_examination_group_1",
-              "group_title": "",
+              "group_title": "Respiratory System Examination",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -33,41 +33,48 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Examine the respiratory system of this child and report your findings.”"
+                  "text": "**“Examine the respiratory system of this child and report your findings.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**“Examine this child who presents with cough and difficulty breathing.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Your goals are to determine:",
                   "items": [
-                    "“Examine this child who presents with cough and difficulty breathing.”"
+                    {
+                      "text": "**Is the child in respiratory distress?**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Is there an upper or lower airway problem?**",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Is there focal or diffuse lung disease?**",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Are there signs of chronic respiratory disease?**",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "**Are there associated cardiovascular or systemic findings?**",
+                      "level": 0,
+                      "label": "5."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Your goals are to determine:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the child in respiratory distress?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there an upper or lower airway problem?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there focal or diffuse lung disease?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there signs of chronic respiratory disease?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are there associated cardiovascular or systemic findings?"
                 }
               ]
             }
@@ -75,7 +82,7 @@
         },
         {
           "subsection_id": "respiratory_examination_subsection_2",
-          "subsection_title": "Before you begin",
+          "subsection_title": "1. Before you begin",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -86,7 +93,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's breathing and chest. Is that okay?”"
+                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's breathing and chest. Is that okay?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -110,7 +118,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Examine the least distressing parts first."
+                  "text": "**Examine the least distressing parts first.**"
                 },
                 {
                   "type": "paragraph",
@@ -118,7 +126,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Observe → hands → face/neck → respiratory rate → chest → posterior chest → lymph nodes → complete relevant examination."
+                  "text": "**Observe → hands → face/neck → respiratory rate → chest → posterior chest → lymph nodes → complete relevant examination.**"
                 },
                 {
                   "type": "paragraph",
@@ -130,7 +138,7 @@
         },
         {
           "subsection_id": "respiratory_examination_subsection_3",
-          "subsection_title": "Position",
+          "subsection_title": "2. Position",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -140,15 +148,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Can initially be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Can initially be:",
                   "items": [
-                    "In parent's arms",
-                    "Sitting/held upright",
-                    "Then examined supine if necessary"
+                    {
+                      "text": "In parent's arms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sitting/held upright",
+                      "level": 0
+                    },
+                    {
+                      "text": "Then examined supine if necessary",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -164,25 +178,29 @@
                   "text": "Usually:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sitting at approximately 45–90°"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Sitting at approximately 45–90°**"
                 },
                 {
                   "type": "paragraph",
                   "text": "depending on the examination and child's comfort."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You need access to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You need access to:",
                   "items": [
-                    "Front of chest",
-                    "Sides",
-                    "Back"
+                    {
+                      "text": "Front of chest",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sides",
+                      "level": 0
+                    },
+                    {
+                      "text": "Back",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -191,7 +209,7 @@
         },
         {
           "subsection_id": "respiratory_examination_subsection_4",
-          "subsection_title": "Start at the end of the bed",
+          "subsection_title": "3. Start at the end of the bed",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -209,10 +227,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does this child look comfortable?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Does this child look comfortable?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -227,15 +244,36 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Alertness",
-                    "Irritability",
-                    "Lethargy",
-                    "Anxiety",
-                    "Cyanosis",
-                    "Pallor",
-                    "Nutritional state"
+                    {
+                      "text": "Alertness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irritability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lethargy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anxiety",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional state",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -247,22 +285,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look specifically for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look specifically for:",
                   "items": [
-                    "Tachypnoea",
-                    "Nasal flaring",
-                    "Chest recession",
-                    "Intercostal recession",
-                    "Subcostal recession",
-                    "Suprasternal recession",
-                    "Tracheal tug",
-                    "Grunting",
-                    "Head bobbing",
-                    "Accessory muscle use"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal flaring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intercostal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subcostal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suprasternal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tracheal tug",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grunting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head bobbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accessory muscle use",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -271,7 +336,7 @@
         },
         {
           "subsection_id": "respiratory_examination_subsection_5",
-          "subsection_title": "Is the child in respiratory distress?",
+          "subsection_title": "4. Is the child in respiratory distress?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -282,7 +347,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This should be your first major question."
+                  "text": "This should be your **first major question**."
                 }
               ]
             },
@@ -293,33 +358,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Increased respiratory rate",
-                    "Nasal flaring",
-                    "Chest recession",
-                    "Grunting",
-                    "Stridor",
-                    "Wheeze",
-                    "Cyanosis",
-                    "Head bobbing",
-                    "Use of accessory muscles",
-                    "Difficulty feeding",
-                    "Altered consciousness"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Increased respiratory rate**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Nasal flaring**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Chest recession**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Grunting**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Stridor**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Wheeze**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Cyanosis**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Head bobbing**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Use of accessory muscles**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Difficulty feeding**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Altered consciousness**"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "respiratory_examination_subsection_6",
-          "subsection_title": "⭐ Important pediatric point",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "respiratory_examination_group_11",
-              "group_title": "",
+              "group_title": "⭐ Important pediatric point",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -329,7 +415,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Difficulty feeding can be a sign of respiratory distress."
+                  "text": "**Difficulty feeding can be a sign of respiratory distress.**"
                 },
                 {
                   "type": "paragraph",
@@ -340,18 +426,17 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is the baby able to breastfeed normally?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Is the baby able to breastfeed normally?”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_7",
-          "subsection_title": "Respiratory rate",
+          "subsection_id": "respiratory_examination_subsection_6",
+          "subsection_title": "5. Respiratory rate",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -373,15 +458,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ideally count when the child is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ideally count when the child is:",
                   "items": [
-                    "Calm",
-                    "Not crying",
-                    "At rest"
+                    {
+                      "text": "Calm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not crying",
+                      "level": 0
+                    },
+                    {
+                      "text": "At rest",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -389,14 +480,12 @@
                   "text": "Watch:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Chest/abdominal movements"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Chest/abdominal movements**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Count for a full 60 seconds, particularly in infants and young children."
+                  "text": "Count for a **full 60 seconds**, particularly in infants and young children."
                 },
                 {
                   "type": "paragraph",
@@ -411,8 +500,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_8",
-          "subsection_title": "What is tachypnoea?",
+          "subsection_id": "respiratory_examination_subsection_7",
+          "subsection_title": "6. What is tachypnoea?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -427,7 +516,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The threshold is age dependent."
+                  "text": "The threshold is **age dependent**."
                 },
                 {
                   "type": "paragraph",
@@ -456,15 +545,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "For an OSCE, always clarify that normal respiratory rates vary with age and clinical context."
+                  "text": "For an OSCE, always clarify that **normal respiratory rates vary with age and clinical context**."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_9",
-          "subsection_title": "Observe the pattern of breathing",
+          "subsection_id": "respiratory_examination_subsection_8",
+          "subsection_title": "7. Observe the pattern of breathing",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -486,10 +575,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Regular breathing",
-                    "Appropriate effort"
+                    {
+                      "text": "Regular breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate effort",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -501,14 +596,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tachypnoea",
-                    "Bradypnoea",
-                    "Apnoea",
-                    "Periodic breathing",
-                    "Kussmaul-type breathing",
-                    "Irregular breathing"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bradypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periodic breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Kussmaul-type breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular breathing",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -517,15 +630,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fast and laboured vs fast but relatively effortless."
+                  "text": "**Fast and laboured vs fast but relatively effortless.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_10",
-          "subsection_title": "Look at the nose",
+          "subsection_id": "respiratory_examination_subsection_9",
+          "subsection_title": "8. Look at the nose",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -544,19 +657,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Increased work of breathing."
+                  "text": "**Increased work of breathing.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Also look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also look for:",
                   "items": [
-                    "Nasal discharge",
-                    "Obstruction",
-                    "Crusting",
-                    "Foreign body where appropriate"
+                    {
+                      "text": "Nasal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crusting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foreign body where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -564,8 +686,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_11",
-          "subsection_title": "Listen before using the stethoscope",
+          "subsection_id": "respiratory_examination_subsection_10",
+          "subsection_title": "9. Listen before using the stethoscope",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -600,19 +722,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Upper airway obstruction."
+                  "text": "**Upper airway obstruction.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential causes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential causes:",
                   "items": [
-                    "Croup",
-                    "Foreign body",
-                    "Laryngomalacia",
-                    "Other upper airway obstruction"
+                    {
+                      "text": "Croup",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foreign body",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laryngomalacia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other upper airway obstruction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -633,18 +764,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Lower airway narrowing."
+                  "text": "**Lower airway narrowing.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Commonly:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Commonly:",
                   "items": [
-                    "Asthma",
-                    "Bronchiolitis",
-                    "Viral-induced wheeze"
+                    {
+                      "text": "Asthma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiolitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Viral-induced wheeze",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -665,15 +802,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Significant respiratory distress, particularly in infants."
+                  "text": "**Significant respiratory distress**, particularly in infants."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_12",
-          "subsection_title": "Inspect the chest",
+          "subsection_id": "respiratory_examination_subsection_11",
+          "subsection_title": "10. Inspect the chest",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -687,15 +824,21 @@
                   "text": "Expose the chest adequately while maintaining dignity."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look from:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look from:",
                   "items": [
-                    "Front",
-                    "Side",
-                    "Back"
+                    {
+                      "text": "Front",
+                      "level": 0
+                    },
+                    {
+                      "text": "Side",
+                      "level": 0
+                    },
+                    {
+                      "text": "Back",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -707,13 +850,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Barrel chest"
+                    {
+                      "text": "Barrel chest",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -722,9 +865,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pectus excavatum"
+                    {
+                      "text": "Pectus excavatum",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -733,9 +879,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pectus carinatum"
+                    {
+                      "text": "Pectus carinatum",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -744,9 +893,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Harrison sulcus"
+                    {
+                      "text": "Harrison sulcus",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -755,9 +907,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Kyphosis"
+                    {
+                      "text": "Kyphosis",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -766,9 +921,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Scoliosis"
+                    {
+                      "text": "Scoliosis",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -777,9 +935,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Asymmetry"
+                    {
+                      "text": "Asymmetry",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -791,16 +952,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Observe:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Observe:",
                   "items": [
-                    "Chest movement",
-                    "Abdominal movement",
-                    "Retractions",
-                    "Chest wall deformities"
+                    {
+                      "text": "Chest movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest wall deformities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -808,8 +978,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_13",
-          "subsection_title": "Chest symmetry",
+          "subsection_id": "respiratory_examination_subsection_12",
+          "subsection_title": "11. Chest symmetry",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -827,23 +997,34 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Are both sides moving equally?”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Reduced movement on one side may suggest:"
+                  "text": "“Are both sides moving equally?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Reduced movement on one side may suggest:",
                   "items": [
-                    "Pleural effusion",
-                    "Pneumothorax",
-                    "Consolidation",
-                    "Atelectasis",
-                    "Severe unilateral obstruction"
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolidation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atelectasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe unilateral obstruction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -851,8 +1032,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_14",
-          "subsection_title": "Chest expansion",
+          "subsection_id": "respiratory_examination_subsection_13",
+          "subsection_title": "12. Chest expansion",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -880,10 +1061,9 @@
                   "text": "Ask the child to:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Take a deep breath in.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Take a deep breath in.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -923,19 +1103,28 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Reduced unilateral expansion:"
+                  "text": "**Reduced unilateral expansion:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Pleural effusion",
-                    "Pneumothorax",
-                    "Collapse",
-                    "Consolidation"
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Collapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolidation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -943,8 +1132,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_15",
-          "subsection_title": "Tracheal position",
+          "subsection_id": "respiratory_examination_subsection_14",
+          "subsection_title": "13. Tracheal position",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -968,7 +1157,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Central or deviated."
+                  "text": "**Central or deviated.**"
                 }
               ]
             },
@@ -979,11 +1168,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Large pleural effusion",
-                    "Tension pneumothorax",
-                    "Major volume loss"
+                    {
+                      "text": "Large pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tension pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Major volume loss",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -992,15 +1190,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Many pediatric respiratory illnesses will have a central trachea."
+                  "text": "**Many pediatric respiratory illnesses will have a central trachea.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_16",
-          "subsection_title": "Palpate for chest tenderness",
+          "subsection_id": "respiratory_examination_subsection_15",
+          "subsection_title": "14. Palpate for chest tenderness",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1014,15 +1212,21 @@
                   "text": "Ask the child where it hurts."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If appropriate, gently palpate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If appropriate, gently palpate:",
                   "items": [
-                    "Chest wall",
-                    "Ribs",
-                    "Sternum"
+                    {
+                      "text": "Chest wall",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ribs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sternum",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1034,8 +1238,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_17",
-          "subsection_title": "Tactile vocal fremitus",
+          "subsection_id": "respiratory_examination_subsection_16",
+          "subsection_title": "15. Tactile vocal fremitus",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1057,10 +1261,9 @@
                   "text": "Place your hands symmetrically on corresponding areas of the chest and ask the child to repeat:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“99”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“99”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1083,10 +1286,8 @@
                   "text": "Can occur with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Lung consolidation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Lung consolidation**"
                 }
               ]
             },
@@ -1097,15 +1298,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Can occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Can occur with:",
                   "items": [
-                    "Pleural effusion",
-                    "Pneumothorax",
-                    "Other causes of reduced transmission"
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other causes of reduced transmission",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1113,8 +1320,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_18",
-          "subsection_title": "Percussion",
+          "subsection_id": "respiratory_examination_subsection_17",
+          "subsection_title": "16. Percussion",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1128,15 +1335,21 @@
                   "text": "Percuss corresponding areas on both sides."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Compare:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Compare:",
                   "items": [
-                    "Right vs left",
-                    "Upper vs lower zones",
-                    "Anterior vs posterior chest"
+                    {
+                      "text": "Right vs left",
+                      "level": 0
+                    },
+                    {
+                      "text": "Upper vs lower zones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anterior vs posterior chest",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1148,10 +1361,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Resonant"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Resonant**"
                 }
               ]
             },
@@ -1162,15 +1373,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May suggest:",
                   "items": [
-                    "Consolidation",
-                    "Pleural effusion",
-                    "Collapse"
+                    {
+                      "text": "Consolidation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Collapse",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1182,14 +1399,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May suggest:",
                   "items": [
-                    "Pneumothorax",
-                    "Hyperinflation"
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperinflation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1197,8 +1417,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_19",
-          "subsection_title": "Important pediatric modification",
+          "subsection_id": "respiratory_examination_subsection_18",
+          "subsection_title": "17. Important pediatric modification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1217,7 +1437,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Prioritize information that will actually change your clinical assessment."
+                  "text": "**Prioritize information that will actually change your clinical assessment.**"
                 },
                 {
                   "type": "paragraph",
@@ -1228,8 +1448,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_20",
-          "subsection_title": "Auscultation",
+          "subsection_id": "respiratory_examination_subsection_19",
+          "subsection_title": "18. Auscultation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1255,11 +1475,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Upper zones",
-                    "Middle zones",
-                    "Lower zones"
+                    {
+                      "text": "Upper zones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Middle zones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower zones",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1271,9 +1500,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Axillary regions"
+                    {
+                      "text": "Axillary regions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1285,11 +1517,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Upper",
-                    "Middle",
-                    "Lower zones"
+                    {
+                      "text": "Upper",
+                      "level": 0
+                    },
+                    {
+                      "text": "Middle",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower zones",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1305,20 +1546,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is it:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Equal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Absent?"
+                  "type": "list",
+                  "title": "Is it:",
+                  "items": [
+                    {
+                      "text": "Equal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1329,11 +1572,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vesicular",
-                    "Bronchial",
-                    "Bronchovesicular where appropriate"
+                    {
+                      "text": "Vesicular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchial",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchovesicular where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1345,12 +1597,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Wheeze",
-                    "Crackles",
-                    "Stridor",
-                    "Pleural rub"
+                    {
+                      "text": "Wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crackles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stridor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural rub",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1358,8 +1622,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_21",
-          "subsection_title": "Normal breath sounds",
+          "subsection_id": "respiratory_examination_subsection_20",
+          "subsection_title": "19. Normal breath sounds",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1374,7 +1638,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Vesicular breath sounds with equal air entry bilaterally."
+                  "text": "**Vesicular breath sounds with equal air entry bilaterally.**"
                 },
                 {
                   "type": "paragraph",
@@ -1382,15 +1646,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Air entry is equal bilaterally with vesicular breath sounds and no added sounds.”"
+                  "text": "“Air entry is equal bilaterally with vesicular breath sounds and no added sounds.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_22",
-          "subsection_title": "Reduced air entry",
+          "subsection_id": "respiratory_examination_subsection_21",
+          "subsection_title": "20. Reduced air entry",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1400,17 +1665,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If air entry is reduced on one side, think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If air entry is reduced on one side, think:",
                   "items": [
-                    "Pleural effusion",
-                    "Pneumothorax",
-                    "Collapse",
-                    "Severe consolidation",
-                    "Airway obstruction"
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Collapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe consolidation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway obstruction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1422,15 +1699,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Could occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Could occur with:",
                   "items": [
-                    "Severe asthma",
-                    "Severe airway obstruction",
-                    "Poor respiratory effort"
+                    {
+                      "text": "Severe asthma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe airway obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor respiratory effort",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1442,22 +1725,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A child with severe asthma may have a “silent chest.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "A child with severe asthma may have a **“silent chest.”**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "That is a danger sign, not reassurance."
+                  "text": "That is a **danger sign**, not reassurance."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_23",
-          "subsection_title": "Crackles",
+          "subsection_id": "respiratory_examination_subsection_22",
+          "subsection_title": "21. Crackles",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1479,15 +1760,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May occur in:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May occur in:",
                   "items": [
-                    "Pulmonary oedema",
-                    "Interstitial disease",
-                    "Some pneumonias"
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interstitial disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some pneumonias",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1499,15 +1786,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May occur with:",
                   "items": [
-                    "Secretions",
-                    "Bronchiectasis",
-                    "Pneumonia"
+                    {
+                      "text": "Secretions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiectasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumonia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1519,8 +1812,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_24",
-          "subsection_title": "Wheeze",
+          "subsection_id": "respiratory_examination_subsection_23",
+          "subsection_title": "22. Wheeze",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1535,19 +1828,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Musical, continuous and often expiratory."
+                  "text": "**Musical, continuous and often expiratory.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common causes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common causes:",
                   "items": [
-                    "Asthma",
-                    "Viral-induced wheeze",
-                    "Bronchiolitis",
-                    "Foreign body aspiration"
+                    {
+                      "text": "Asthma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Viral-induced wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiolitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foreign body aspiration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1563,10 +1865,8 @@
                   "text": "Think particularly about:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Foreign body aspiration"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Foreign body aspiration**"
                 },
                 {
                   "type": "paragraph",
@@ -1577,8 +1877,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_25",
-          "subsection_title": "Bronchial breath sounds",
+          "subsection_id": "respiratory_examination_subsection_24",
+          "subsection_title": "23. Bronchial breath sounds",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1592,10 +1892,8 @@
                   "text": "Bronchial breathing heard over peripheral lung fields may suggest:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Consolidation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Consolidation**"
                 },
                 {
                   "type": "paragraph",
@@ -1606,8 +1904,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_26",
-          "subsection_title": "Vocal resonance",
+          "subsection_id": "respiratory_examination_subsection_25",
+          "subsection_title": "24. Vocal resonance",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1621,10 +1919,9 @@
                   "text": "In an older cooperative child, ask them to say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“99”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“99”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1643,10 +1940,8 @@
                   "text": "May occur with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Consolidation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Consolidation**"
                 }
               ]
             },
@@ -1657,14 +1952,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May occur with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May occur with:",
                   "items": [
-                    "Pleural effusion",
-                    "Pneumothorax"
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1672,8 +1970,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_27",
-          "subsection_title": "Examine the posterior chest",
+          "subsection_id": "respiratory_examination_subsection_26",
+          "subsection_title": "25. Examine the posterior chest",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1691,16 +1989,25 @@
                   "text": "Ask the child to sit forward or lean appropriately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Inspect:",
                   "items": [
-                    "Chest symmetry",
-                    "Spine",
-                    "Scapulae",
-                    "Deformities"
+                    {
+                      "text": "Chest symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scapulae",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformities",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1716,8 +2023,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_28",
-          "subsection_title": "Examine cervical and supraclavicular lymph nodes",
+          "subsection_id": "respiratory_examination_subsection_27",
+          "subsection_title": "26. Examine cervical and supraclavicular lymph nodes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1727,28 +2034,43 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Especially if there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially if there is:",
                   "items": [
-                    "Chronic cough",
-                    "Suspected tuberculosis",
-                    "Recurrent infection",
-                    "Malignancy",
-                    "Head/neck infection"
+                    {
+                      "text": "Chronic cough",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected tuberculosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malignancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head/neck infection",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Cervical nodes",
-                    "Supraclavicular nodes"
+                    {
+                      "text": "Cervical nodes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supraclavicular nodes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1760,8 +2082,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_29",
-          "subsection_title": "Look for signs of chronic respiratory disease",
+          "subsection_id": "respiratory_examination_subsection_28",
+          "subsection_title": "27. Look for signs of chronic respiratory disease",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1783,9 +2105,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Clubbing"
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1797,11 +2122,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Barrel chest",
-                    "Deformities",
-                    "Harrison sulcus"
+                    {
+                      "text": "Barrel chest",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Harrison sulcus",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1813,10 +2147,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Poor weight gain",
-                    "Short stature"
+                    {
+                      "text": "Poor weight gain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Short stature",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1828,10 +2168,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Nasal obstruction",
-                    "Mouth breathing"
+                    {
+                      "text": "Nasal obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mouth breathing",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1843,24 +2189,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Persistent cough",
-                    "Recurrent infections"
+                    {
+                      "text": "Persistent cough",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent infections",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Cystic fibrosis",
-                    "Bronchiectasis",
-                    "Chronic suppurative lung disease",
-                    "Chronic asthma",
-                    "Congenital disease"
+                    {
+                      "text": "Cystic fibrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiectasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic suppurative lung disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic asthma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1868,8 +2232,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_30",
-          "subsection_title": "Look for signs of chronic hypoxia",
+          "subsection_id": "respiratory_examination_subsection_29",
+          "subsection_title": "28. Look for signs of chronic hypoxia",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1879,26 +2243,35 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Especially:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially:",
                   "items": [
-                    "Central cyanosis",
-                    "Clubbing",
-                    "Polycythaemic appearance where relevant"
+                    {
+                      "text": "Central cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polycythaemic appearance where relevant",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Chronic lung disease"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic lung disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1906,8 +2279,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_31",
-          "subsection_title": "Complete the examination",
+          "subsection_id": "respiratory_examination_subsection_30",
+          "subsection_title": "29. Complete the examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1922,7 +2295,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would complete the examination by assessing the cardiovascular system, particularly looking for signs of pulmonary hypertension or heart failure, and perform a full general examination including growth and nutritional assessment.”"
+                  "text": "“I would complete the examination by assessing the cardiovascular system, particularly looking for signs of pulmonary hypertension or heart failure, and perform a full general examination including growth and nutritional assessment.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1933,8 +2307,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_32",
-          "subsection_title": "How to present a NORMAL respiratory examination",
+          "subsection_id": "respiratory_examination_subsection_31",
+          "subsection_title": "30. How to present a NORMAL respiratory examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1949,25 +2323,25 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a child who is alert and comfortable at rest with no evidence of respiratory distress. The respiratory rate is ___ breaths per minute and oxygen saturation is ___% on room air. There is no nasal flaring, chest recession or cyanosis. The trachea is central and chest expansion is symmetrical. Percussion is resonant bilaterally. Air entry is equal with vesicular breath sounds and there are no added sounds. There is no cervical or supraclavicular lymphadenopathy or digital clubbing.”"
+                  "text": "“This is a child who is alert and comfortable at rest with no evidence of respiratory distress. The respiratory rate is ___ breaths per minute and oxygen saturation is ___% on room air. There is no nasal flaring, chest recession or cyanosis. The trachea is central and chest expansion is symmetrical. Percussion is resonant bilaterally. Air entry is equal with vesicular breath sounds and there are no added sounds. There is no cervical or supraclavicular lymphadenopathy or digital clubbing.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The respiratory examination is essentially normal.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The respiratory examination is essentially normal.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_33",
-          "subsection_title": "How to present CONSOLIDATION",
+          "subsection_id": "respiratory_examination_subsection_32",
+          "subsection_title": "31. How to present CONSOLIDATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1977,19 +2351,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose you find:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose you find:",
                   "items": [
-                    "Fever",
-                    "Tachypnoea",
-                    "Reduced expansion",
-                    "Dullness",
-                    "Bronchial breathing",
-                    "Increased vocal resonance",
-                    "Crackles"
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced expansion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dullness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchial breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased vocal resonance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crackles",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1998,15 +2390,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The child is tachypnoeic with increased work of breathing. There is reduced expansion of the right lower chest with dullness to percussion and bronchial breath sounds with increased vocal resonance over the right lower zone. There are associated crackles. These findings are consistent with right lower-zone pulmonary consolidation, clinically suggestive of pneumonia.”"
+                  "text": "“The child is tachypnoeic with increased work of breathing. There is reduced expansion of the right lower chest with dullness to percussion and bronchial breath sounds with increased vocal resonance over the right lower zone. There are associated crackles. These findings are consistent with right lower-zone pulmonary consolidation, clinically suggestive of pneumonia.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_34",
-          "subsection_title": "How to present PLEURAL EFFUSION",
+          "subsection_id": "respiratory_examination_subsection_33",
+          "subsection_title": "32. How to present PLEURAL EFFUSION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2016,16 +2409,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings:",
                   "items": [
-                    "Reduced expansion",
-                    "Stony dull percussion",
-                    "Reduced breath sounds",
-                    "Reduced vocal resonance"
+                    {
+                      "text": "Reduced expansion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stony dull percussion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced breath sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced vocal resonance",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2034,15 +2436,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is reduced expansion of the right hemithorax with marked dullness to percussion and reduced breath sounds and vocal resonance over the right lower and mid zones. These findings are suggestive of a right-sided pleural effusion.”"
+                  "text": "“There is reduced expansion of the right hemithorax with marked dullness to percussion and reduced breath sounds and vocal resonance over the right lower and mid zones. These findings are suggestive of a right-sided pleural effusion.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_35",
-          "subsection_title": "How to present PNEUMOTHORAX",
+          "subsection_id": "respiratory_examination_subsection_34",
+          "subsection_title": "33. How to present PNEUMOTHORAX",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2052,16 +2455,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings:",
                   "items": [
-                    "Reduced expansion",
-                    "Hyperresonance",
-                    "Reduced/absent breath sounds",
-                    "Possibly tracheal deviation if tension"
+                    {
+                      "text": "Reduced expansion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperresonance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced/absent breath sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possibly tracheal deviation if tension",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2070,7 +2482,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is reduced expansion of the affected hemithorax with hyperresonance to percussion and markedly reduced breath sounds. In the appropriate clinical context, these findings suggest pneumothorax.”"
+                  "text": "“There is reduced expansion of the affected hemithorax with hyperresonance to percussion and markedly reduced breath sounds. In the appropriate clinical context, these findings suggest pneumothorax.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2078,15 +2491,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The child is acutely unwell with features suggestive of tension pneumothorax, which requires immediate emergency management.”"
+                  "text": "“The child is acutely unwell with features suggestive of tension pneumothorax, which requires immediate emergency management.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_36",
-          "subsection_title": "How to present ASTHMA",
+          "subsection_id": "respiratory_examination_subsection_35",
+          "subsection_title": "34. How to present ASTHMA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2096,17 +2510,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings:",
                   "items": [
-                    "Tachypnoea",
-                    "Increased work of breathing",
-                    "Prolonged expiration",
-                    "Bilateral polyphonic wheeze",
-                    "Reduced air entry in severe disease"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased work of breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged expiration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bilateral polyphonic wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced air entry in severe disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2115,15 +2541,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is increased work of breathing with bilateral reduced air entry and widespread expiratory wheeze with a prolonged expiratory phase, consistent with lower airway obstruction, clinically suggestive of an acute asthma exacerbation.”"
+                  "text": "“There is increased work of breathing with bilateral reduced air entry and widespread expiratory wheeze with a prolonged expiratory phase, consistent with lower airway obstruction, clinically suggestive of an acute asthma exacerbation.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_37",
-          "subsection_title": "How to present BRONCHIOLITIS",
+          "subsection_id": "respiratory_examination_subsection_36",
+          "subsection_title": "35. How to present BRONCHIOLITIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2133,17 +2560,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "In an infant:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "In an infant:",
                   "items": [
-                    "Tachypnoea",
-                    "Increased work of breathing",
-                    "Wheeze",
-                    "Crackles",
-                    "Feeding difficulty"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased work of breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crackles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding difficulty",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2152,15 +2591,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The infant is tachypnoeic with increased work of breathing and bilateral widespread wheeze and fine crackles, with associated feeding difficulty. In the appropriate age group and clinical context, this is suggestive of bronchiolitis.”"
+                  "text": "“The infant is tachypnoeic with increased work of breathing and bilateral widespread wheeze and fine crackles, with associated feeding difficulty. In the appropriate age group and clinical context, this is suggestive of bronchiolitis.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_38",
-          "subsection_title": "How to present a FOREIGN BODY",
+          "subsection_id": "respiratory_examination_subsection_37",
+          "subsection_title": "36. How to present a FOREIGN BODY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2170,15 +2610,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose there is:",
                   "items": [
-                    "Sudden onset",
-                    "Unilateral wheeze",
-                    "Asymmetrical air entry"
+                    {
+                      "text": "Sudden onset",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unilateral wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Asymmetrical air entry",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2187,15 +2633,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is asymmetrical air entry with localized wheeze on the right, following a sudden onset episode of coughing/choking. This raises suspicion of a foreign body aspiration.”"
+                  "text": "“There is asymmetrical air entry with localized wheeze on the right, following a sudden onset episode of coughing/choking. This raises suspicion of a foreign body aspiration.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_39",
-          "subsection_title": "Examiner questions",
+          "subsection_id": "respiratory_examination_subsection_38",
+          "subsection_title": "37. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2321,8 +2768,8 @@
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_40",
-          "subsection_title": "Respiratory examination in infants — special points",
+          "subsection_id": "respiratory_examination_subsection_39",
+          "subsection_title": "38. Respiratory examination in infants — special points",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2344,10 +2791,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Take a deep breath.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Take a deep breath.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2366,15 +2812,36 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Respiratory rate",
-                    "Chest movement",
-                    "Abdominal movement",
-                    "Retractions",
-                    "Nasal flaring",
-                    "Grunting",
-                    "Head bobbing"
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal flaring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grunting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head bobbing",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2386,16 +2853,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You can often obtain useful auscultation while the infant is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You can often obtain useful auscultation while the infant is:",
                   "items": [
-                    "Being held",
-                    "Calm",
-                    "Feeding, when appropriate",
-                    "Distracted"
+                    {
+                      "text": "Being held",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding, when appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distracted",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2408,15 +2884,15 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Infants are predominantly diaphragmatic breathers, so abdominal movement is important."
+                  "text": "Infants are predominantly **diaphragmatic breathers**, so abdominal movement is important."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "respiratory_examination_subsection_41",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "respiratory_examination_subsection_40",
+          "subsection_title": "39. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2431,7 +2907,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Is the child sick?"
+                  "text": "**Is the child sick?**"
                 }
               ]
             },
@@ -2487,7 +2963,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Like with like."
+                  "text": "**Like with like.**"
                 },
                 {
                   "type": "paragraph",
@@ -2534,10 +3010,9 @@
                   "text": "Say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Air entry is equal bilaterally, with vesicular breath sounds.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Air entry is equal bilaterally, with vesicular breath sounds.”**",
+                  "style": "quote"
                 }
               ]
             },
@@ -2565,20 +3040,13 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Less wheeze + worsening respiratory distress can mean critically reduced air movement."
+                  "text": "**Less wheeze + worsening respiratory distress can mean critically reduced air movement.**"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "respiratory_examination_subsection_42",
-          "subsection_title": "⭐ Respiratory OSCE Mental Checklist",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "respiratory_examination_group_103",
-              "group_title": "",
+              "group_title": "⭐ Respiratory OSCE Mental Checklist",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2588,49 +3056,67 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "LOOK → RATE → EFFORT → SHAPE → TRACHEA → EXPANSION → PERCUSS → AUSCULTATE → VOCAL RESONANCE → NODES → COMPLETE"
+                  "text": "**LOOK → RATE → EFFORT → SHAPE → TRACHEA → EXPANSION → PERCUSS → AUSCULTATE → VOCAL RESONANCE → NODES → COMPLETE**"
                 },
                 {
                   "type": "paragraph",
                   "text": "More specifically:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Look"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Look**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "→ General condition → Cyanosis → Respiratory distress → Chest deformity"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Rate",
-                    "→ Respiratory rate → Oxygen saturation",
-                    "Effort",
-                    "→ Recession → Nasal flaring → Grunting → Accessory muscles",
-                    "Palpate",
-                    "→ Trachea → Expansion → Tactile fremitus if appropriate",
-                    "Percuss",
-                    "→ Resonant / dull / hyperresonant",
-                    "Auscultate"
-                  ]
+                  "text": "→ General condition\n→ Cyanosis\n→ Respiratory distress\n→ Chest deformity"
                 },
                 {
                   "type": "paragraph",
-                  "text": "→ Air entry → Breath sounds → Wheeze → Crackles → Other added sounds"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Finish"
-                  ]
+                  "text": "**Rate**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "→ Lymph nodes → Clubbing → Cardiovascular examination → General/growth assessment"
+                  "text": "→ Respiratory rate\n→ Oxygen saturation"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Effort**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "→ Recession\n→ Nasal flaring\n→ Grunting\n→ Accessory muscles"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Palpate**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "→ Trachea\n→ Expansion\n→ Tactile fremitus if appropriate"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Percuss**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "→ Resonant / dull / hyperresonant"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Auscultate**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "→ Air entry\n→ Breath sounds\n→ Wheeze\n→ Crackles\n→ Other added sounds"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Finish**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "→ Lymph nodes\n→ Clubbing\n→ Cardiovascular examination\n→ General/growth assessment"
                 }
               ]
             },
@@ -2700,32 +3186,28 @@
                       "Significant respiratory distress"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "respiratory_examination_group_105",
-              "group_title": "The most important sequence to internalize",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "A child with breathing difficulty → first assess severity, then localize the respiratory problem."
+                  "text": "**The most important sequence to internalize**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A child with breathing difficulty → first assess severity, then localize the respiratory problem.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Don't start by thinking “What disease is this?” Start with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is this child maintaining their airway, ventilation and oxygenation?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Is this child maintaining their airway, ventilation and oxygenation?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then determine whether the findings suggest upper airway obstruction, lower airway obstruction, consolidation, pleural disease, or another process."
+                  "text": "Then determine whether the findings suggest **upper airway obstruction, lower airway obstruction, consolidation, pleural disease, or another process**."
                 }
               ]
             }

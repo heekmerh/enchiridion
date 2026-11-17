@@ -18,11 +18,25 @@
       "subsections": [
         {
           "subsection_id": "ultrasound_interpretation_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "ultrasound_interpretation_group_1",
+              "group_title": "ULTRASOUND INTERPRETATION IN OBSTETRICS",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "ultrasound_interpretation_subsection_2",
+          "subsection_title": "1. What the station may say",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ultrasound_interpretation_group_2",
               "group_title": "Station A — Interpret a scan",
               "group_subtitle": null,
               "group_icon": null,
@@ -34,7 +48,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_2",
+              "group_id": "ultrasound_interpretation_group_3",
               "group_title": "Station B — Early pregnancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -46,7 +60,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_3",
+              "group_id": "ultrasound_interpretation_group_4",
               "group_title": "Station C — Growth scan",
               "group_subtitle": null,
               "group_icon": null,
@@ -58,7 +72,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_4",
+              "group_id": "ultrasound_interpretation_group_5",
               "group_title": "Station D — Multiple pregnancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -70,7 +84,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_5",
+              "group_id": "ultrasound_interpretation_group_6",
               "group_title": "Station E — Placental location",
               "group_subtitle": null,
               "group_icon": null,
@@ -84,27 +98,8 @@
           ]
         },
         {
-          "subsection_id": "ultrasound_interpretation_subsection_2",
-          "subsection_title": "The OSCE ultrasound framework",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "ultrasound_interpretation_group_6",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "When shown any obstetric ultrasound, use:"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "subsection_id": "ultrasound_interpretation_subsection_3",
-          "subsection_title": "PREGNANCY → DATING → NUMBER → ANATOMY → GROWTH → PLACENTA → LIQUOR → WELLBEING",
+          "subsection_title": "2. The OSCE ultrasound framework",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -115,6 +110,14 @@
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "When shown **any obstetric ultrasound**, use:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**PREGNANCY → DATING → NUMBER → ANATOMY → GROWTH → PLACENTA → LIQUOR → WELLBEING**"
+                },
+                {
+                  "type": "paragraph",
                   "text": "This gives you a reliable systematic approach."
                 }
               ]
@@ -123,7 +126,7 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_4",
-          "subsection_title": "Step 1 — Pregnancy",
+          "subsection_title": "3. Step 1 — Pregnancy",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -145,38 +148,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Intrauterine gestational sac",
-                    "Yolk sac",
-                    "Embryo/fetus",
-                    "Cardiac activity where appropriate"
+                    {
+                      "text": "Intrauterine gestational sac",
+                      "level": 0
+                    },
+                    {
+                      "text": "Yolk sac",
+                      "level": 0
+                    },
+                    {
+                      "text": "Embryo/fetus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac activity where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_10",
-              "group_title": "Intrauterine pregnancy",
+              "group_title": "Important distinction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**Intrauterine pregnancy**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Pregnancy located within the uterine cavity."
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_11",
-              "group_title": "Ectopic pregnancy",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Ectopic pregnancy**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Pregnancy implanted outside the uterine cavity."
@@ -186,10 +200,8 @@
                   "text": "The classic location is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fallopian tube"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fallopian tube**"
                 }
               ]
             }
@@ -197,11 +209,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_5",
-          "subsection_title": "Early pregnancy ultrasound",
+          "subsection_title": "4. Early pregnancy ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_12",
+              "group_id": "ultrasound_interpretation_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -218,7 +230,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_13",
+              "group_id": "ultrasound_interpretation_group_12",
               "group_title": "Gestational sac",
               "group_subtitle": null,
               "group_icon": null,
@@ -230,7 +242,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_14",
+              "group_id": "ultrasound_interpretation_group_13",
               "group_title": "Yolk sac",
               "group_subtitle": null,
               "group_icon": null,
@@ -242,7 +254,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_15",
+              "group_id": "ultrasound_interpretation_group_14",
               "group_title": "Embryo",
               "group_subtitle": null,
               "group_icon": null,
@@ -254,7 +266,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_16",
+              "group_id": "ultrasound_interpretation_group_15",
               "group_title": "Cardiac activity",
               "group_subtitle": null,
               "group_icon": null,
@@ -269,11 +281,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_6",
-          "subsection_title": "Step 2 — Dating",
+          "subsection_title": "5. Step 2 — Dating",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_17",
+              "group_id": "ultrasound_interpretation_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -283,49 +295,55 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How far along is the pregnancy?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"How far along is the pregnancy?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "In early pregnancy:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CRL — crown-rump length"
-                  ]
+                  "type": "paragraph",
+                  "text": "**CRL — crown-rump length**"
                 },
                 {
                   "type": "paragraph",
                   "text": "is particularly useful."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Later pregnancy uses:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Later pregnancy uses:",
                   "items": [
-                    "BPD",
-                    "HC",
-                    "AC",
-                    "FL"
+                    {
+                      "text": "BPD",
+                      "level": 0
+                    },
+                    {
+                      "text": "HC",
+                      "level": 0
+                    },
+                    {
+                      "text": "AC",
+                      "level": 0
+                    },
+                    {
+                      "text": "FL",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_18",
+              "group_id": "ultrasound_interpretation_group_17",
               "group_title": "Remember",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Dating early; growth later."
+                  "text": "**Dating early; growth later.**"
                 },
                 {
                   "type": "paragraph",
@@ -337,11 +355,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_7",
-          "subsection_title": "Step 3 — Number of fetuses",
+          "subsection_title": "6. Step 3 — Number of fetuses",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_19",
+              "group_id": "ultrasound_interpretation_group_18",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -352,7 +370,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Singleton or multiple pregnancy?"
+                  "text": "**Singleton or multiple pregnancy?**"
                 },
                 {
                   "type": "paragraph",
@@ -365,7 +383,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_20",
+              "group_id": "ultrasound_interpretation_group_19",
               "group_title": "Chorionicity",
               "group_subtitle": null,
               "group_icon": null,
@@ -377,7 +395,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_21",
+              "group_id": "ultrasound_interpretation_group_20",
               "group_title": "Amnionicity",
               "group_subtitle": null,
               "group_icon": null,
@@ -392,11 +410,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_8",
-          "subsection_title": "Twin pregnancy",
+          "subsection_title": "7. Twin pregnancy",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_22",
+              "group_id": "ultrasound_interpretation_group_21",
               "group_title": "Dichorionic diamniotic twins",
               "group_subtitle": null,
               "group_icon": null,
@@ -416,12 +434,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Two placentas, although they may appear fused."
+                  "text": "**Two placentas**, although they may appear fused."
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_23",
+              "group_id": "ultrasound_interpretation_group_22",
               "group_title": "Monochorionic diamniotic",
               "group_subtitle": null,
               "group_icon": null,
@@ -438,7 +456,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_24",
+              "group_id": "ultrasound_interpretation_group_23",
               "group_title": "Monochorionic monoamniotic",
               "group_subtitle": null,
               "group_icon": null,
@@ -455,7 +473,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_25",
+              "group_id": "ultrasound_interpretation_group_24",
               "group_title": "Exam importance",
               "group_subtitle": null,
               "group_icon": null,
@@ -466,7 +484,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Monochorionic twins can develop twin-to-twin transfusion syndrome and other complications related to shared placental circulation."
+                  "text": "**Monochorionic twins can develop twin-to-twin transfusion syndrome and other complications related to shared placental circulation.**"
                 }
               ]
             }
@@ -474,11 +492,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_9",
-          "subsection_title": "Step 4 — Fetal anatomy",
+          "subsection_title": "8. Step 4 — Fetal anatomy",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_26",
+              "group_id": "ultrasound_interpretation_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -490,121 +508,193 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_27",
+              "group_id": "ultrasound_interpretation_group_26",
               "group_title": "Head",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Skull",
-                    "Brain",
-                    "Ventricles",
-                    "Midline structures",
-                    "Cerebellum",
-                    "Posterior fossa"
+                    {
+                      "text": "Skull",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventricles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midline structures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebellum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior fossa",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ultrasound_interpretation_group_27",
+              "group_title": "Face",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Orbits",
+                      "level": 0
+                    },
+                    {
+                      "text": "Profile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Upper lip",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_28",
-              "group_title": "Face",
+              "group_title": "Spine",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Orbits",
-                    "Profile",
-                    "Upper lip"
+                    {
+                      "text": "Alignment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin covering",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vertebral structures",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_29",
-              "group_title": "Spine",
+              "group_title": "Chest",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Alignment",
-                    "Skin covering",
-                    "Vertebral structures"
+                    {
+                      "text": "Lungs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diaphragm",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_30",
-              "group_title": "Chest",
+              "group_title": "Heart",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Lungs",
-                    "Diaphragm"
+                    {
+                      "text": "Four-chamber view",
+                      "level": 0
+                    },
+                    {
+                      "text": "Outflow tracts",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac position",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_31",
-              "group_title": "Heart",
+              "group_title": "Abdomen",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Four-chamber view",
-                    "Outflow tracts",
-                    "Cardiac position"
+                    {
+                      "text": "Stomach",
+                      "level": 0
+                    },
+                    {
+                      "text": "Kidneys",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bladder",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal wall",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical cord insertion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_32",
-              "group_title": "Abdomen",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Stomach",
-                    "Kidneys",
-                    "Bladder",
-                    "Abdominal wall",
-                    "Umbilical cord insertion"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_33",
               "group_title": "Limbs",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Long bones",
-                    "Hands",
-                    "Feet"
+                    {
+                      "text": "Long bones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hands",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feet",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -613,11 +703,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_10",
-          "subsection_title": "The four-chamber view",
+          "subsection_title": "9. The four-chamber view",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_34",
+              "group_id": "ultrasound_interpretation_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -627,19 +717,37 @@
                   "text": "A common OSCE image."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You should assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You should assess:",
                   "items": [
-                    "Four cardiac chambers",
-                    "Cardiac position",
-                    "Chamber symmetry",
-                    "Septa where visible",
-                    "AV valves",
-                    "Pericardial space",
-                    "Cardiac rhythm"
+                    {
+                      "text": "Four cardiac chambers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chamber symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Septa where visible",
+                      "level": 0
+                    },
+                    {
+                      "text": "AV valves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pericardial space",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac rhythm",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -648,7 +756,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A normal four-chamber view does not exclude all congenital heart disease."
+                  "text": "**A normal four-chamber view does not exclude all congenital heart disease.**"
                 },
                 {
                   "type": "paragraph",
@@ -660,11 +768,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_11",
-          "subsection_title": "Step 5 — Fetal growth",
+          "subsection_title": "10. Step 5 — Fetal growth",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_35",
+              "group_id": "ultrasound_interpretation_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -676,68 +784,58 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_36",
+              "group_id": "ultrasound_interpretation_group_35",
               "group_title": "BPD",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Biparietal diameter"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Biparietal diameter**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_37",
+              "group_id": "ultrasound_interpretation_group_36",
               "group_title": "HC",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Head circumference"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Head circumference**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_38",
+              "group_id": "ultrasound_interpretation_group_37",
               "group_title": "AC",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Abdominal circumference"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Abdominal circumference**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_39",
+              "group_id": "ultrasound_interpretation_group_38",
               "group_title": "FL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Femur length"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Femur length**"
                 },
                 {
                   "type": "paragraph",
                   "text": "These are used to estimate:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal size and growth"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fetal size and growth**"
                 },
                 {
                   "type": "paragraph",
@@ -745,7 +843,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Estimated fetal weight (EFW)."
+                  "text": "**Estimated fetal weight (EFW).**"
                 }
               ]
             }
@@ -753,11 +851,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_12",
-          "subsection_title": "Estimated fetal weight",
+          "subsection_title": "11. Estimated fetal weight",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_40",
+              "group_id": "ultrasound_interpretation_group_39",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -767,10 +865,8 @@
                   "text": "The ultrasound machine can calculate an:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Estimated fetal weight"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Estimated fetal weight**"
                 },
                 {
                   "type": "paragraph",
@@ -781,10 +877,8 @@
                   "text": "Commonly:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "HC/BPD + AC + FL"
-                  ]
+                  "type": "paragraph",
+                  "text": "HC/BPD + AC + FL"
                 },
                 {
                   "type": "paragraph",
@@ -800,18 +894,18 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_13",
-          "subsection_title": "Centiles",
+          "subsection_title": "12. Centiles",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_41",
+              "group_id": "ultrasound_interpretation_group_40",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is very important for OSCEs."
+                  "text": "This is **very important for OSCEs**."
                 },
                 {
                   "type": "paragraph",
@@ -827,7 +921,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "It does not automatically mean:"
+                  "text": "It does **not automatically mean**:"
                 },
                 {
                   "type": "paragraph",
@@ -839,11 +933,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_14",
-          "subsection_title": "SGA vs FGR",
+          "subsection_title": "13. SGA vs FGR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_42",
+              "group_id": "ultrasound_interpretation_group_41",
               "group_title": "Small-for-gestational-age (SGA)",
               "group_subtitle": null,
               "group_icon": null,
@@ -862,12 +956,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Constitutionally small."
+                  "text": "**Constitutionally small.**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_43",
+              "group_id": "ultrasound_interpretation_group_42",
               "group_title": "Fetal growth restriction (FGR)",
               "group_subtitle": null,
               "group_icon": null,
@@ -887,14 +981,14 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_44",
+              "group_id": "ultrasound_interpretation_group_43",
               "group_title": "Key distinction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "SGA is a size description. FGR is a pathological diagnosis."
+                  "text": "**SGA is a size description. FGR is a pathological diagnosis.**"
                 }
               ]
             }
@@ -902,7 +996,64 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_15",
-          "subsection_title": "How ultrasound helps diagnose FGR",
+          "subsection_title": "14. How ultrasound helps diagnose FGR",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ultrasound_interpretation_group_44",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Look beyond EFW."
+                },
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "AC",
+                      "level": 0
+                    },
+                    {
+                      "text": "EFW",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth trajectory",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical artery Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "Middle cerebral artery Doppler where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ductus venosus in selected cases",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other clinical findings",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ultrasound_interpretation_subsection_16",
+          "subsection_title": "15. Step 6 — Placenta",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -913,80 +1064,46 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Look beyond EFW."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "AC",
-                    "EFW",
-                    "Growth trajectory",
-                    "Amniotic fluid",
-                    "Umbilical artery Doppler",
-                    "Middle cerebral artery Doppler where indicated",
-                    "Ductus venosus in selected cases",
-                    "Other clinical findings"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "ultrasound_interpretation_subsection_16",
-          "subsection_title": "Step 6 — Placenta",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "ultrasound_interpretation_group_46",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "Assess:"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_47",
+              "group_id": "ultrasound_interpretation_group_46",
               "group_title": "Location",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is it:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anterior?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Posterior?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fundal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lateral?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Low-lying?"
+                  "type": "list",
+                  "title": "Is it:",
+                  "items": [
+                    {
+                      "text": "Anterior?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fundal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lateral?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low-lying?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_48",
+              "group_id": "ultrasound_interpretation_group_47",
               "group_title": "Relationship to cervix",
               "group_subtitle": null,
               "group_icon": null,
@@ -996,10 +1113,8 @@
                   "text": "Particularly:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Internal cervical os"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Internal cervical os**"
                 },
                 {
                   "type": "paragraph",
@@ -1011,11 +1126,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_17",
-          "subsection_title": "Placenta praevia vs low-lying placenta",
+          "subsection_title": "16. Placenta praevia vs low-lying placenta",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_49",
+              "group_id": "ultrasound_interpretation_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1031,7 +1146,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_50",
+              "group_id": "ultrasound_interpretation_group_49",
               "group_title": "OSCE principle",
               "group_subtitle": null,
               "group_icon": null,
@@ -1042,7 +1157,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Document its relationship to the internal cervical os and arrange appropriate follow-up."
+                  "text": "**Document its relationship to the internal cervical os and arrange appropriate follow-up.**"
                 }
               ]
             }
@@ -1050,11 +1165,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_18",
-          "subsection_title": "Placental abnormalities",
+          "subsection_title": "17. Placental abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_51",
+              "group_id": "ultrasound_interpretation_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1066,7 +1181,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_52",
+              "group_id": "ultrasound_interpretation_group_51",
               "group_title": "Placenta praevia",
               "group_subtitle": null,
               "group_icon": null,
@@ -1083,7 +1198,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_53",
+              "group_id": "ultrasound_interpretation_group_52",
               "group_title": "Low-lying placenta",
               "group_subtitle": null,
               "group_icon": null,
@@ -1100,7 +1215,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_54",
+              "group_id": "ultrasound_interpretation_group_53",
               "group_title": "Placenta accreta spectrum",
               "group_subtitle": null,
               "group_icon": null,
@@ -1115,15 +1230,21 @@
                   "text": "Abnormally adherent/invasive placenta."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Risk factors include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Risk factors include:",
                   "items": [
-                    "Previous caesarean section",
-                    "Placenta praevia",
-                    "Previous uterine surgery"
+                    {
+                      "text": "Previous caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta praevia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous uterine surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1132,11 +1253,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_19",
-          "subsection_title": "Step 7 — Amniotic fluid",
+          "subsection_title": "18. Step 7 — Amniotic fluid",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_55",
+              "group_id": "ultrasound_interpretation_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1148,40 +1269,39 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_56",
+              "group_id": "ultrasound_interpretation_group_55",
               "group_title": "Too much",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Polyhydramnios"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Polyhydramnios**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_57",
+              "group_id": "ultrasound_interpretation_group_56",
               "group_title": "Too little",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oligohydramnios"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Measurements include:"
+                  "text": "**Oligohydramnios**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Measurements include:",
                   "items": [
-                    "AFI — amniotic fluid index",
-                    "Single deepest pocket"
+                    {
+                      "text": "**AFI — amniotic fluid index**",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Single deepest pocket**",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1194,11 +1314,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_20",
-          "subsection_title": "Polyhydramnios",
+          "subsection_title": "19. Polyhydramnios",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_58",
+              "group_id": "ultrasound_interpretation_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1210,46 +1330,64 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_59",
+              "group_id": "ultrasound_interpretation_group_58",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Diabetes"
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ultrasound_interpretation_group_59",
+              "group_title": "Fetal",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Gastrointestinal obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological abnormalities affecting swallowing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Structural abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple pregnancy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_60",
-              "group_title": "Fetal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Gastrointestinal obstruction",
-                    "Neurological abnormalities affecting swallowing",
-                    "Structural abnormalities",
-                    "Multiple pregnancy"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_61",
               "group_title": "Other",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Idiopathic"
+                    {
+                      "text": "Idiopathic",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1258,11 +1396,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_21",
-          "subsection_title": "Oligohydramnios",
+          "subsection_title": "20. Oligohydramnios",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_62",
+              "group_id": "ultrasound_interpretation_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1274,7 +1412,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_63",
+              "group_id": "ultrasound_interpretation_group_62",
               "group_title": "Placental insufficiency",
               "group_subtitle": null,
               "group_icon": null,
@@ -1290,35 +1428,39 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_64",
+              "group_id": "ultrasound_interpretation_group_63",
               "group_title": "Ruptured membranes",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "PPROM/PROM"
-                  ]
+                  "type": "paragraph",
+                  "text": "PPROM/PROM"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_65",
+              "group_id": "ultrasound_interpretation_group_64",
               "group_title": "Fetal renal/urinary abnormalities",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "Renal agenesis",
-                    "Severe renal dysfunction",
-                    "Urinary tract abnormalities"
+                    {
+                      "text": "Renal agenesis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe renal dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary tract abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1327,28 +1469,43 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_22",
-          "subsection_title": "Step 8 — Fetal wellbeing",
+          "subsection_title": "21. Step 8 — Fetal wellbeing",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_66",
+              "group_id": "ultrasound_interpretation_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the gestational age and clinical situation, assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the gestational age and clinical situation, assess:",
                   "items": [
-                    "Fetal heart activity",
-                    "Fetal movements",
-                    "Fetal tone",
-                    "Amniotic fluid",
-                    "Growth",
-                    "Doppler studies"
+                    {
+                      "text": "Fetal heart activity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal tone",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Doppler studies",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1356,10 +1513,8 @@
                   "text": "Ultrasound may be combined with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CTG"
-                  ]
+                  "type": "paragraph",
+                  "text": "**CTG**"
                 },
                 {
                   "type": "paragraph",
@@ -1371,11 +1526,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_23",
-          "subsection_title": "Doppler ultrasound",
+          "subsection_title": "22. Doppler ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_67",
+              "group_id": "ultrasound_interpretation_group_66",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1387,7 +1542,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_68",
+              "group_id": "ultrasound_interpretation_group_67",
               "group_title": "Umbilical artery Doppler",
               "group_subtitle": null,
               "group_icon": null,
@@ -1398,7 +1553,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Placental resistance."
+                  "text": "**Placental resistance.**"
                 },
                 {
                   "type": "paragraph",
@@ -1406,7 +1561,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fetal growth restriction."
+                  "text": "**Fetal growth restriction.**"
                 }
               ]
             }
@@ -1414,11 +1569,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_24",
-          "subsection_title": "Normal umbilical artery Doppler",
+          "subsection_title": "23. Normal umbilical artery Doppler",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_69",
+              "group_id": "ultrasound_interpretation_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1429,7 +1584,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Forward end-diastolic flow."
+                  "text": "**Forward end-diastolic flow.**"
                 },
                 {
                   "type": "paragraph",
@@ -1438,7 +1593,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_70",
+              "group_id": "ultrasound_interpretation_group_69",
               "group_title": "Reduced resistance",
               "group_subtitle": null,
               "group_icon": null,
@@ -1450,30 +1605,26 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_71",
+              "group_id": "ultrasound_interpretation_group_70",
               "group_title": "Absent end-diastolic flow",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "AEDF"
-                  ]
+                  "type": "paragraph",
+                  "text": "**AEDF**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_72",
+              "group_id": "ultrasound_interpretation_group_71",
               "group_title": "Reversed end-diastolic flow",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "REDF"
-                  ]
+                  "type": "paragraph",
+                  "text": "**REDF**"
                 },
                 {
                   "type": "paragraph",
@@ -1485,11 +1636,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_25",
-          "subsection_title": "Middle cerebral artery Doppler",
+          "subsection_title": "24. Middle cerebral artery Doppler",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_73",
+              "group_id": "ultrasound_interpretation_group_72",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1499,10 +1650,8 @@
                   "text": "The:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "MCA Doppler"
-                  ]
+                  "type": "paragraph",
+                  "text": "**MCA Doppler**"
                 },
                 {
                   "type": "paragraph",
@@ -1513,11 +1662,12 @@
                   "text": "A classic finding is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Reduced MCA pulsatility index",
-                    "which may indicate cerebral redistribution/\"brain sparing.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**Reduced MCA pulsatility index**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "which may indicate cerebral redistribution/\"brain sparing.\""
                 }
               ]
             }
@@ -1525,11 +1675,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_26",
-          "subsection_title": "Ductus venosus",
+          "subsection_title": "25. Ductus venosus",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_74",
+              "group_id": "ultrasound_interpretation_group_73",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1539,10 +1689,8 @@
                   "text": "The ductus venosus Doppler can provide information about:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal cardiovascular compromise"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fetal cardiovascular compromise**"
                 },
                 {
                   "type": "paragraph",
@@ -1558,11 +1706,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_27",
-          "subsection_title": "Common ultrasound abnormalities",
+          "subsection_title": "26. Common ultrasound abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_75",
+              "group_id": "ultrasound_interpretation_group_74",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1574,80 +1722,122 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_76",
+              "group_id": "ultrasound_interpretation_group_75",
               "group_title": "Pregnancy",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Ectopic pregnancy",
-                    "Miscarriage",
-                    "Molar pregnancy"
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Molar pregnancy",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ultrasound_interpretation_group_76",
+              "group_title": "Fetus",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Growth restriction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Structural abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anomalies",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_77",
-              "group_title": "Fetus",
+              "group_title": "Placenta",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Growth restriction",
-                    "Macrosomia",
-                    "Structural abnormalities",
-                    "Anomalies"
+                    {
+                      "text": "Placenta praevia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption — ultrasound can be normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta accreta spectrum",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_78",
-              "group_title": "Placenta",
+              "group_title": "Fluid",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Placenta praevia",
-                    "Placental abruption — ultrasound can be normal",
-                    "Placenta accreta spectrum"
+                    {
+                      "text": "Oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polyhydramnios",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_79",
-              "group_title": "Fluid",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Oligohydramnios",
-                    "Polyhydramnios"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_80",
               "group_title": "Number",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Twins",
-                    "Higher-order multiples"
+                    {
+                      "text": "Twins",
+                      "level": 0
+                    },
+                    {
+                      "text": "Higher-order multiples",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1656,32 +1846,31 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_28",
-          "subsection_title": "Important trap: placental abruption",
+          "subsection_title": "27. Important trap: placental abruption",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_81",
+              "group_id": "ultrasound_interpretation_group_80",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Can a normal ultrasound exclude placental abruption?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Can a normal ultrasound exclude placental abruption?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_82",
+              "group_id": "ultrasound_interpretation_group_81",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -1689,7 +1878,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A normal ultrasound does not exclude placental abruption."
+                  "text": "**A normal ultrasound does not exclude placental abruption.**"
                 },
                 {
                   "type": "paragraph",
@@ -1701,25 +1890,24 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_29",
-          "subsection_title": "Important trap: ultrasound and fetal distress",
+          "subsection_title": "28. Important trap: ultrasound and fetal distress",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_83",
+              "group_id": "ultrasound_interpretation_group_82",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Can ultrasound alone diagnose acute fetal distress?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Can ultrasound alone diagnose acute fetal distress?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_84",
+              "group_id": "ultrasound_interpretation_group_83",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
@@ -1734,7 +1922,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Clinical assessment + fetal heart rate/CTG where appropriate, with ultrasound providing additional information in selected circumstances."
+                  "text": "**Clinical assessment + fetal heart rate/CTG where appropriate**, with ultrasound providing additional information in selected circumstances."
                 }
               ]
             }
@@ -1742,11 +1930,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_30",
-          "subsection_title": "How to interpret an ultrasound report",
+          "subsection_title": "29. How to interpret an ultrasound report",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_85",
+              "group_id": "ultrasound_interpretation_group_84",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1757,7 +1945,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Singleton live intrauterine pregnancy. CRL = 63 mm. NT = 1.5 mm. Placenta posterior. Normal amniotic fluid. No obvious structural abnormality."
+                  "text": "Singleton live intrauterine pregnancy.\nCRL = 63 mm.\nNT = 1.5 mm.\nPlacenta posterior.\nNormal amniotic fluid.\nNo obvious structural abnormality."
                 },
                 {
                   "type": "paragraph",
@@ -1765,7 +1953,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is a live singleton intrauterine pregnancy. The CRL is consistent with the stated gestational age. The nuchal translucency is not reported as increased. The placenta is posterior and there is no reported placental abnormality. Amniotic fluid volume is normal and no obvious structural abnormality has been identified on the examination.\""
+                  "text": "\"This is a live singleton intrauterine pregnancy. The CRL is consistent with the stated gestational age. The nuchal translucency is not reported as increased. The placenta is posterior and there is no reported placental abnormality. Amniotic fluid volume is normal and no obvious structural abnormality has been identified on the examination.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1773,11 +1962,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_31",
-          "subsection_title": "Example: FGR scan",
+          "subsection_title": "30. Example: FGR scan",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_86",
+              "group_id": "ultrasound_interpretation_group_85",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1788,19 +1977,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "EFW 4th centile AC 3rd centile Oligohydramnios Abnormal umbilical artery Doppler"
+                  "text": "EFW 4th centile\nAC 3rd centile\nOligohydramnios\nAbnormal umbilical artery Doppler"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_87",
+              "group_id": "ultrasound_interpretation_group_86",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a fetus with significant growth restriction, with an estimated fetal weight and abdominal circumference below the 10th centile. There is reduced amniotic fluid and abnormal umbilical artery Doppler, suggesting placental insufficiency. This requires urgent obstetric/fetal medicine assessment and ongoing fetal surveillance.\""
+                  "text": "\"This is a fetus with significant growth restriction, with an estimated fetal weight and abdominal circumference below the 10th centile. There is reduced amniotic fluid and abnormal umbilical artery Doppler, suggesting placental insufficiency. This requires urgent obstetric/fetal medicine assessment and ongoing fetal surveillance.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1808,11 +1998,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_32",
-          "subsection_title": "Example: macrosomia",
+          "subsection_title": "31. Example: macrosomia",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_88",
+              "group_id": "ultrasound_interpretation_group_87",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1826,39 +2016,63 @@
                   "text": "EFW >90th centile."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You should consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You should consider:",
                   "items": [
-                    "Maternal diabetes",
-                    "Excessive maternal weight gain",
-                    "Previous macrosomic infant",
-                    "Post-term pregnancy",
-                    "Constitutional factors"
+                    {
+                      "text": "Maternal diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive maternal weight gain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous macrosomic infant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Post-term pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constitutional factors",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_89",
+              "group_id": "ultrasound_interpretation_group_88",
               "group_title": "Management",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depends on:",
                   "items": [
-                    "Gestational age",
-                    "Degree of suspected macrosomia",
-                    "Diabetes status",
-                    "Previous obstetric history",
-                    "Local guideline"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Degree of suspected macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous obstetric history",
+                      "level": 0
+                    },
+                    {
+                      "text": "Local guideline",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1867,11 +2081,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_33",
-          "subsection_title": "Example: polyhydramnios",
+          "subsection_title": "32. Example: polyhydramnios",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_90",
+              "group_id": "ultrasound_interpretation_group_89",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1891,14 +2105,14 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_91",
+              "group_id": "ultrasound_interpretation_group_90",
               "group_title": "3 D's",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "D — Diabetes D — Defective fetal swallowing/structural abnormality D — Double pregnancy (multiple pregnancy)"
+                  "text": "**D** — Diabetes\n**D** — Defective fetal swallowing/structural abnormality\n**D** — Double pregnancy (multiple pregnancy)"
                 },
                 {
                   "type": "paragraph",
@@ -1914,11 +2128,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_34",
-          "subsection_title": "Example: oligohydramnios",
+          "subsection_title": "33. Example: oligohydramnios",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_92",
+              "group_id": "ultrasound_interpretation_group_91",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1930,14 +2144,14 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_93",
+              "group_id": "ultrasound_interpretation_group_92",
               "group_title": "P-F-U",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "P — Placental insufficiency F — Fluid loss from ruptured membranes U — Urinary tract/renal abnormality"
+                  "text": "**P** — Placental insufficiency\n**F** — Fluid loss from ruptured membranes\n**U** — Urinary tract/renal abnormality"
                 }
               ]
             }
@@ -1945,11 +2159,11 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_35",
-          "subsection_title": "Example: placenta praevia",
+          "subsection_title": "34. Example: placenta praevia",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_94",
+              "group_id": "ultrasound_interpretation_group_93",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1965,19 +2179,20 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_95",
+              "group_id": "ultrasound_interpretation_group_94",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The placenta is centrally located over the internal cervical os, consistent with placenta praevia.\""
+                  "text": "\"The placenta is centrally located over the internal cervical os, consistent with placenta praevia.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_96",
+              "group_id": "ultrasound_interpretation_group_95",
               "group_title": "Clinical implication",
               "group_subtitle": null,
               "group_icon": null,
@@ -1988,7 +2203,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Painless antepartum haemorrhage."
+                  "text": "**Painless antepartum haemorrhage.**"
                 },
                 {
                   "type": "paragraph",
@@ -2004,27 +2219,39 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_36",
-          "subsection_title": "Ultrasound in ectopic pregnancy",
+          "subsection_title": "35. Ultrasound in ectopic pregnancy",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_97",
+              "group_id": "ultrasound_interpretation_group_96",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings:",
                   "items": [
-                    "Empty uterine cavity",
-                    "Adnexal mass",
-                    "Extrauterine gestational sac",
-                    "Extrauterine embryo",
-                    "Free fluid/haemoperitoneum"
+                    {
+                      "text": "Empty uterine cavity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extrauterine gestational sac",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extrauterine embryo",
+                      "level": 0
+                    },
+                    {
+                      "text": "Free fluid/haemoperitoneum",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2033,7 +2260,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "An empty uterus alone does not diagnose ectopic pregnancy."
+                  "text": "**An empty uterus alone does not diagnose ectopic pregnancy.**"
                 },
                 {
                   "type": "paragraph",
@@ -2045,7 +2272,70 @@
         },
         {
           "subsection_id": "ultrasound_interpretation_subsection_37",
-          "subsection_title": "Ultrasound in molar pregnancy",
+          "subsection_title": "36. Ultrasound in molar pregnancy",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ultrasound_interpretation_group_97",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Possible features:",
+                  "items": [
+                    {
+                      "text": "Abnormal intrauterine tissue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic appearance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple small vesicles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absence of a normal viable fetus in a complete mole",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Clinical correlation includes:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Very high β-hCG**"
+                },
+                {
+                  "type": "list",
+                  "title": "and symptoms such as:",
+                  "items": [
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperemesis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine size greater than expected",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ultrasound_interpretation_subsection_38",
+          "subsection_title": "37. How to report an ultrasound systematically",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2056,73 +2346,61 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Possible features:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Abnormal intrauterine tissue",
-                    "Cystic appearance",
-                    "Multiple small vesicles",
-                    "Absence of a normal viable fetus in a complete mole"
-                  ]
+                  "text": "Use:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Clinical correlation includes:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Very high β-hCG"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "and symptoms such as:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Vaginal bleeding",
-                    "Hyperemesis",
-                    "Uterine size greater than expected"
-                  ]
+                  "text": "**\"I-D-N-A-G-P-F-W\"**",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "ultrasound_interpretation_subsection_38",
-          "subsection_title": "How to report an ultrasound systematically",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "ultrasound_interpretation_group_99",
-              "group_title": "",
+              "group_title": "I — Intrauterine pregnancy",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Use:"
+                  "text": "**D — Dating**"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "ultrasound_interpretation_subsection_39",
-          "subsection_title": "\"I-D-N-A-G-P-F-W\"",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "ultrasound_interpretation_group_100",
-              "group_title": "W — Wellbeing",
+              "group_title": "N — Number",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**A — Anatomy**"
+                }
+              ]
+            },
+            {
+              "group_id": "ultrasound_interpretation_group_101",
+              "group_title": "G — Growth",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**P — Placenta**"
+                }
+              ]
+            },
+            {
+              "group_id": "ultrasound_interpretation_group_102",
+              "group_title": "F — Fluid",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**W — Wellbeing**"
+                },
                 {
                   "type": "paragraph",
                   "text": "This is an excellent OSCE mnemonic."
@@ -2132,31 +2410,32 @@
           ]
         },
         {
-          "subsection_id": "ultrasound_interpretation_subsection_40",
-          "subsection_title": "Full model ultrasound report",
+          "subsection_id": "ultrasound_interpretation_subsection_39",
+          "subsection_title": "38. Full model ultrasound report",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_101",
+              "group_id": "ultrasound_interpretation_group_103",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a singleton live intrauterine pregnancy. The gestational age is consistent with the established dates. The fetal anatomy visualised appears normal on this examination, with no obvious structural abnormality identified. Fetal biometry is appropriate for gestational age, with estimated fetal weight around the appropriate centile. The placenta is posterior and clear of the internal cervical os. Amniotic fluid volume is normal. There are no obvious sonographic features of fetal compromise on this examination.\""
+                  "text": "\"This is a singleton live intrauterine pregnancy. The gestational age is consistent with the established dates. The fetal anatomy visualised appears normal on this examination, with no obvious structural abnormality identified. Fetal biometry is appropriate for gestational age, with estimated fetal weight around the appropriate centile. The placenta is posterior and clear of the internal cervical os. Amniotic fluid volume is normal. There are no obvious sonographic features of fetal compromise on this examination.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ultrasound_interpretation_subsection_41",
-          "subsection_title": "If the scan is abnormal",
+          "subsection_id": "ultrasound_interpretation_subsection_40",
+          "subsection_title": "39. If the scan is abnormal",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_102",
+              "group_id": "ultrasound_interpretation_group_104",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2170,34 +2449,33 @@
                   "text": "Use:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Finding → Significance → Differential → Next step"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Finding → Significance → Differential → Next step**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_103",
+              "group_id": "ultrasound_interpretation_group_105",
               "group_title": "Example",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The estimated fetal weight is below the 10th centile, which raises concern for a small-for-gestational-age fetus and possible fetal growth restriction. I would assess growth trajectory, liquor volume and Doppler studies and arrange appropriate obstetric/fetal medicine follow-up.\""
+                  "text": "\"The estimated fetal weight is below the 10th centile, which raises concern for a small-for-gestational-age fetus and possible fetal growth restriction. I would assess growth trajectory, liquor volume and Doppler studies and arrange appropriate obstetric/fetal medicine follow-up.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "ultrasound_interpretation_subsection_42",
-          "subsection_title": "Examiner questions",
+          "subsection_id": "ultrasound_interpretation_subsection_41",
+          "subsection_title": "40. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_104",
+              "group_id": "ultrasound_interpretation_group_106",
               "group_title": "Q1. What is CRL?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2209,7 +2487,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_105",
+              "group_id": "ultrasound_interpretation_group_107",
               "group_title": "Q2. What is CRL primarily used for?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2221,7 +2499,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_106",
+              "group_id": "ultrasound_interpretation_group_108",
               "group_title": "Q3. What parameters are used for fetal biometry?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2233,7 +2511,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_107",
+              "group_id": "ultrasound_interpretation_group_109",
               "group_title": "Q4. What is EFW?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2245,7 +2523,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_108",
+              "group_id": "ultrasound_interpretation_group_110",
               "group_title": "Q5. What is the difference between SGA and FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2257,7 +2535,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_109",
+              "group_id": "ultrasound_interpretation_group_111",
               "group_title": "Q6. What Doppler is particularly important in FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2269,7 +2547,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_110",
+              "group_id": "ultrasound_interpretation_group_112",
               "group_title": "Q7. What does absent end-diastolic flow mean?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2281,7 +2559,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_111",
+              "group_id": "ultrasound_interpretation_group_113",
               "group_title": "Q8. What does reversed end-diastolic flow mean?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2293,7 +2571,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_112",
+              "group_id": "ultrasound_interpretation_group_114",
               "group_title": "Q9. What does increased amniotic fluid suggest?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2305,7 +2583,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_113",
+              "group_id": "ultrasound_interpretation_group_115",
               "group_title": "Q10. What causes oligohydramnios?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2317,7 +2595,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_114",
+              "group_id": "ultrasound_interpretation_group_116",
               "group_title": "Q11. Can ultrasound exclude placental abruption?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2329,7 +2607,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_115",
+              "group_id": "ultrasound_interpretation_group_117",
               "group_title": "Q12. What is chorionicity?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2341,7 +2619,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_116",
+              "group_id": "ultrasound_interpretation_group_118",
               "group_title": "Q13. What is amnionicity?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2353,7 +2631,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_117",
+              "group_id": "ultrasound_interpretation_group_119",
               "group_title": "Q14. Why is chorionicity important?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2367,12 +2645,12 @@
           ]
         },
         {
-          "subsection_id": "ultrasound_interpretation_subsection_43",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "ultrasound_interpretation_subsection_42",
+          "subsection_title": "41. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "ultrasound_interpretation_group_118",
+              "group_id": "ultrasound_interpretation_group_120",
               "group_title": "❌ Looking at the picture randomly",
               "group_subtitle": null,
               "group_icon": null,
@@ -2384,7 +2662,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_119",
+              "group_id": "ultrasound_interpretation_group_121",
               "group_title": "❌ Calling every fetus below the 10th centile \"FGR\"",
               "group_subtitle": null,
               "group_icon": null,
@@ -2395,12 +2673,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "SGA ≠ automatically FGR."
+                  "text": "**SGA ≠ automatically FGR.**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_120",
+              "group_id": "ultrasound_interpretation_group_122",
               "group_title": "❌ Using late ultrasound to change established dates",
               "group_subtitle": null,
               "group_icon": null,
@@ -2412,7 +2690,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_121",
+              "group_id": "ultrasound_interpretation_group_123",
               "group_title": "❌ Saying a normal ultrasound excludes all abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -2424,7 +2702,7 @@
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_122",
+              "group_id": "ultrasound_interpretation_group_124",
               "group_title": "❌ Forgetting placenta",
               "group_subtitle": null,
               "group_icon": null,
@@ -2435,12 +2713,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Location + relationship to cervix."
+                  "text": "**Location + relationship to cervix.**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_123",
+              "group_id": "ultrasound_interpretation_group_125",
               "group_title": "❌ Forgetting amniotic fluid",
               "group_subtitle": null,
               "group_icon": null,
@@ -2451,12 +2729,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Liquor volume."
+                  "text": "**Liquor volume.**"
                 }
               ]
             },
             {
-              "group_id": "ultrasound_interpretation_group_124",
+              "group_id": "ultrasound_interpretation_group_126",
               "group_title": "❌ Ignoring Dopplers in suspected FGR",
               "group_subtitle": null,
               "group_icon": null,
@@ -2466,123 +2744,92 @@
                   "text": "Umbilical artery Doppler is particularly important."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "ultrasound_interpretation_subsection_44",
-          "subsection_title": "🧠 RAPID REVISION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "ultrasound_interpretation_group_125",
-              "group_title": "Obstetric ultrasound =",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "I-D-N-A-G-P-F-W"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Intrauterine pregnancy D — Dating N — Number A — Anatomy G — Growth P — Placenta F — Fluid W — Wellbeing"
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_126",
-              "group_title": "Growth",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "BPD + HC + AC + FL → EFW → centile"
-                }
-              ]
             },
             {
               "group_id": "ultrasound_interpretation_group_127",
-              "group_title": "FGR",
+              "group_title": "🧠 RAPID REVISION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Growth + liquor + Dopplers + trajectory"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Obstetric ultrasound =**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**I-D-N-A-G-P-F-W**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**I** — Intrauterine pregnancy\n**D** — Dating\n**N** — Number\n**A** — Anatomy\n**G** — Growth\n**P** — Placenta\n**F** — Fluid\n**W** — Wellbeing"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Growth**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BPD + HC + AC + FL → EFW → centile**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FGR**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Growth + liquor + Dopplers + trajectory**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Twins**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Chorionicity + amnionicity**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Placenta**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Location + internal cervical os**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Fluid**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Too much = polyhydramnios**\n**Too little = oligohydramnios**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Doppler**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Umbilical artery → placental resistance**"
                 }
               ]
             },
             {
               "group_id": "ultrasound_interpretation_group_128",
-              "group_title": "Twins",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Chorionicity + amnionicity"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_129",
-              "group_title": "Placenta",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Location + internal cervical os"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_130",
-              "group_title": "Fluid",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Too much = polyhydramnios Too little = oligohydramnios"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_131",
-              "group_title": "Doppler",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Umbilical artery → placental resistance"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "ultrasound_interpretation_group_132",
               "group_title": "⭐ Examiner's favourite question",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"You have a fetus with an estimated weight below the 10th centile. What would you do?\""
+                  "text": "**\"You have a fetus with an estimated weight below the 10th centile. What would you do?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2590,11 +2837,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would not automatically label this as pathological growth restriction. I would assess the clinical context and growth trajectory, confirm fetal biometry, assess amniotic fluid and perform appropriate Doppler studies, particularly umbilical artery Doppler. I would then determine whether the fetus is constitutionally small or has evidence of fetal growth restriction and arrange appropriate surveillance.\""
+                  "text": "\"I would not automatically label this as pathological growth restriction. I would assess the clinical context and growth trajectory, confirm fetal biometry, assess amniotic fluid and perform appropriate Doppler studies, particularly umbilical artery Doppler. I would then determine whether the fetus is constitutionally small or has evidence of fetal growth restriction and arrange appropriate surveillance.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "That answer demonstrates clinical reasoning rather than simply reading numbers."
+                  "text": "That answer demonstrates **clinical reasoning rather than simply reading numbers**."
                 }
               ]
             }

@@ -37,7 +37,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_2",
-          "subsection_title": "Identification",
+          "subsection_title": "1. Identification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -60,18 +60,33 @@
                   "text": "Personal protective equipment (PPE): Equipment worn to protect the healthcare worker from exposure to infectious agents, blood, body fluids, chemicals, and other occupational hazards."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "PPE may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "PPE may include:",
                   "items": [
-                    "Gloves",
-                    "Apron or protective gown",
-                    "Surgical mask",
-                    "Respirator, such as an N95 or FFP2",
-                    "Goggles or face shield",
-                    "Head covering and footwear protection when indicated"
+                    {
+                      "text": "Gloves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apron or protective gown",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgical mask",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respirator, such as an N95 or FFP2",
+                      "level": 0
+                    },
+                    {
+                      "text": "Goggles or face shield",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head covering and footwear protection when indicated",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -80,7 +95,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"These are examination gloves and personal protective equipment. They are used according to the anticipated exposure risk to prevent transmission of infection and protect both healthcare workers and patients.\""
+                  "text": "\"These are examination gloves and personal protective equipment. They are used according to the anticipated exposure risk to prevent transmission of infection and protect both healthcare workers and patients.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -88,7 +104,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_3",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "2. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -148,7 +164,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_4",
-          "subsection_title": "Types, parts, and functions",
+          "subsection_title": "3. Types, parts, and functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -163,10 +179,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Nitrile gloves"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Nitrile gloves"
                 },
                 {
                   "type": "paragraph",
@@ -178,10 +192,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Latex gloves"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Latex gloves"
                 },
                 {
                   "type": "paragraph",
@@ -193,10 +205,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Vinyl gloves"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Vinyl gloves"
                 },
                 {
                   "type": "paragraph",
@@ -211,16 +221,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Non-sterile examination gloves: Routine examinations and procedures where sterile gloves are not required."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sterile surgical gloves: Sterile procedures, including surgery and selected invasive procedures requiring a sterile field."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Heavy-duty utility gloves: Cleaning, decontamination, and handling contaminated equipment when appropriate."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Non-sterile examination gloves: Routine examinations and procedures where sterile gloves are not required.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sterile surgical gloves: Sterile procedures, including surgery and selected invasive procedures requiring a sterile field.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heavy-duty utility gloves: Cleaning, decontamination, and handling contaminated equipment when appropriate.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -281,7 +296,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_5",
-          "subsection_title": "Advantages",
+          "subsection_title": "4. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -291,24 +306,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Reduces exposure to blood, body fluids, and infectious material."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Helps prevent cross-transmission between patients when combined with hand hygiene and appropriate technique."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Protects mucous membranes and skin when the correct PPE is selected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Allows healthcare workers to perform procedures more safely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supports infection prevention and control in wards, clinics, operating theatres, and emergency settings."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Reduces exposure to blood, body fluids, and infectious material.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Helps prevent cross-transmission between patients when combined with hand hygiene and appropriate technique.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Protects mucous membranes and skin when the correct PPE is selected.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Allows healthcare workers to perform procedures more safely.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Supports infection prevention and control in wards, clinics, operating theatres, and emergency settings.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             }
@@ -316,7 +341,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_6",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "5. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -326,36 +351,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Gloves can tear, puncture, or leak."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prolonged use can cause sweating, skin irritation, or contact dermatitis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Latex may cause allergic reactions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Incorrect removal can contaminate hands or clothing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Gloves may reduce tactile sensitivity during examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "PPE can create heat and discomfort during prolonged use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Incorrectly selected PPE may provide inadequate protection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respirators require appropriate fit testing and a proper seal; facial hair can interfere with the seal of tight-fitting models."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Gloves can tear, puncture, or leak.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged use can cause sweating, skin irritation, or contact dermatitis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Latex may cause allergic reactions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrect removal can contaminate hands or clothing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gloves may reduce tactile sensitivity during examination.",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPE can create heat and discomfort during prolonged use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrectly selected PPE may provide inadequate protection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respirators require appropriate fit testing and a proper seal; facial hair can interfere with the seal of tight-fitting models.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -367,7 +397,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_7",
-          "subsection_title": "Preparation and precautions",
+          "subsection_title": "6. Preparation and precautions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -377,36 +407,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before selecting PPE:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the task and anticipated exposure to blood, body fluids, droplets, or airborne particles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select the correct glove type and size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect gloves for tears, holes, or damage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check that gowns, masks, respirators, and eye protection are appropriate and intact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure reusable equipment has been appropriately cleaned and disinfected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remove jewellery that may interfere with glove integrity or hand hygiene, according to local policy."
+                  "type": "list",
+                  "title": "Before selecting PPE:",
+                  "items": [
+                    {
+                      "text": "Assess the task and anticipated exposure to blood, body fluids, droplets, or airborne particles.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Perform hand hygiene.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Select the correct glove type and size.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Inspect gloves for tears, holes, or damage.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Check that gowns, masks, respirators, and eye protection are appropriate and intact.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Ensure reusable equipment has been appropriately cleaned and disinfected.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Remove jewellery that may interfere with glove integrity or hand hygiene, according to local policy.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -418,7 +457,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_8",
-          "subsection_title": "How to use it — step-by-step OSCE demonstration",
+          "subsection_title": "7. How to use it — step-by-step OSCE demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -433,10 +472,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 1: Hand hygiene"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 1: Hand hygiene"
                 },
                 {
                   "type": "paragraph",
@@ -448,10 +485,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 2: Inspect and select"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 2: Inspect and select"
                 },
                 {
                   "type": "paragraph",
@@ -463,10 +498,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 3: Put on the first glove"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 3: Put on the first glove"
                 },
                 {
                   "type": "paragraph",
@@ -478,20 +511,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 4: Put on the second glove"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 4: Put on the second glove"
                 },
                 {
                   "type": "paragraph",
                   "text": "Insert the other hand and adjust the fit without contaminating the gloved hands."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 5: Perform the procedure"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 5: Perform the procedure"
                 },
                 {
                   "type": "paragraph",
@@ -510,10 +539,8 @@
                   "text": "This is particularly important because the outside of the gloves may be contaminated."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 1"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 1"
                 },
                 {
                   "type": "paragraph",
@@ -525,10 +552,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 2"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 2"
                 },
                 {
                   "type": "paragraph",
@@ -540,10 +565,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 3"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 3"
                 },
                 {
                   "type": "paragraph",
@@ -555,10 +578,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 4"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 4"
                 },
                 {
                   "type": "paragraph",
@@ -570,10 +591,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 5"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 5"
                 },
                 {
                   "type": "paragraph",
@@ -592,28 +611,39 @@
                   "text": "The exact order depends on the PPE ensemble and institutional protocol. A common sequence is:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Put on the gown."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Put on the mask or respirator and ensure the correct fit."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Put on goggles or a face shield."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Put on gloves, extending them over the gown cuffs where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check that all exposed areas are adequately covered."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Perform hand hygiene.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Put on the gown.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Put on the mask or respirator and ensure the correct fit.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Put on goggles or a face shield.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Put on gloves, extending them over the gown cuffs where appropriate.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Check that all exposed areas are adequately covered.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             },
@@ -637,7 +667,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_9",
-          "subsection_title": "Contraindications and complications",
+          "subsection_title": "8. Contraindications and complications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -647,24 +677,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "There is no general contraindication to wearing appropriate PPE. However:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid latex gloves in people with known latex allergy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure the selected gloves are compatible with the chemicals or substances being handled."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Choose sterile rather than non-sterile gloves when a sterile procedure requires them."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select a properly fitted respirator when respiratory protection is indicated."
+                  "type": "list",
+                  "title": "There is no general contraindication to wearing appropriate PPE. However:",
+                  "items": [
+                    {
+                      "text": "Avoid latex gloves in people with known latex allergy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure the selected gloves are compatible with the chemicals or substances being handled.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Choose sterile rather than non-sterile gloves when a sterile procedure requires them.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Select a properly fitted respirator when respiratory protection is indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -721,7 +753,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_10",
-          "subsection_title": "Normal and abnormal findings",
+          "subsection_title": "9. Normal and abnormal findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -735,56 +767,60 @@
                   "text": "This is not primarily a diagnostic instrument station. Nevertheless, examiners may ask you to inspect PPE before use."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Acceptable findings:"
+                  "type": "list",
+                  "title": "Acceptable findings:",
+                  "items": [
+                    {
+                      "text": "Gloves are intact and free of visible defects.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The correct size and material have been selected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The mask or respirator is intact and appropriately fitted.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The gown provides the required coverage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eye protection is clean and undamaged.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Gloves are intact and free of visible defects."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The correct size and material have been selected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The mask or respirator is intact and appropriately fitted."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The gown provides the required coverage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Eye protection is clean and undamaged."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal findings requiring correction:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Torn, punctured, or visibly damaged gloves."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An expired or damaged respirator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Incorrectly sized gloves that compromise dexterity or integrity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A poorly fitting respirator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contaminated or damaged reusable eye protection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Missing PPE components for the anticipated exposure risk."
+                  "type": "list",
+                  "title": "Abnormal findings requiring correction:",
+                  "items": [
+                    {
+                      "text": "Torn, punctured, or visibly damaged gloves.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An expired or damaged respirator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrectly sized gloves that compromise dexterity or integrity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A poorly fitting respirator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contaminated or damaged reusable eye protection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Missing PPE components for the anticipated exposure risk.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -792,7 +828,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_11",
-          "subsection_title": "Pediatric considerations",
+          "subsection_title": "10. Pediatric considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -806,32 +842,37 @@
                   "text": "Pediatric care requires the same infection prevention principles as adult care, with attention to the child's size and vulnerability."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use appropriately sized gloves to preserve dexterity during neonatal cannulation, venepuncture, and other delicate procedures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene before and after contact with each child, even when gloves are worn."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Change gloves between children and when moving from contaminated to clean tasks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use appropriate eye and face protection during procedures likely to generate splashes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "For neonatal resuscitation, choose PPE based on the procedure and anticipated exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not allow gloves to substitute for aseptic technique during umbilical catheterisation, central line insertion, or other invasive procedures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep unused gloves and PPE away from contaminated surfaces and clinical waste."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use appropriately sized gloves to preserve dexterity during neonatal cannulation, venepuncture, and other delicate procedures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perform hand hygiene before and after contact with each child, even when gloves are worn.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Change gloves between children and when moving from contaminated to clean tasks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use appropriate eye and face protection during procedures likely to generate splashes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "For neonatal resuscitation, choose PPE based on the procedure and anticipated exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not allow gloves to substitute for aseptic technique during umbilical catheterisation, central line insertion, or other invasive procedures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep unused gloves and PPE away from contaminated surfaces and clinical waste.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -843,7 +884,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_12",
-          "subsection_title": "Mnemonics and memory aids",
+          "subsection_title": "11. Mnemonics and memory aids",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -853,20 +894,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "R — Risk: Assess the anticipated exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Appropriate equipment: Select PPE for the task and transmission route."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Correct fit: Check size, integrity, and respirator fit where applicable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Exit safely: Remove PPE correctly and perform hand hygiene."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "R — Risk: Assess the anticipated exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Appropriate equipment: Select PPE for the task and transmission route.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Correct fit: Check size, integrity, and respirator fit where applicable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Exit safely: Remove PPE correctly and perform hand hygiene.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -877,24 +923,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pinch the outside of the first glove."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Peel it off inside out."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Slide fingers under the second glove's cuff."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Peel it off over the first glove."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clean your hands."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pinch the outside of the first glove.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peel it off inside out.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Slide fingers under the second glove's cuff.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peel it off over the first glove.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clean your hands.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -905,28 +956,35 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The WHO framework identifies hand hygiene:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Before touching a patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Before a clean or aseptic procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "After body fluid exposure risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "After touching a patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "After touching the patient's surroundings."
+                  "type": "list",
+                  "title": "The WHO framework identifies hand hygiene:",
+                  "items": [
+                    {
+                      "text": "Before touching a patient.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Before a clean or aseptic procedure.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "After body fluid exposure risk.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "After touching a patient.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "After touching the patient's surroundings.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -938,7 +996,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_13",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "12. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1033,7 +1091,7 @@
         },
         {
           "subsection_id": "examination_gloves_and_personal_protective_equipment_ppe_subsection_14",
-          "subsection_title": "Common mistakes and examiner tips",
+          "subsection_title": "13. Common mistakes and examiner tips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1043,50 +1101,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Wearing gloves without hand hygiene"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Wearing gloves without hand hygiene"
                 },
                 {
                   "type": "paragraph",
                   "text": "Perform hand hygiene before putting on gloves and after removing them."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Touching clean equipment with contaminated gloves"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Touching clean equipment with contaminated gloves"
                 },
                 {
                   "type": "paragraph",
                   "text": "Change gloves and clean your hands when moving from contaminated to clean tasks."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Confusing a surgical mask with a respirator"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Confusing a surgical mask with a respirator"
                 },
                 {
                   "type": "paragraph",
                   "text": "Explain the difference in filtration, fit, and intended use."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Removing PPE carelessly"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Removing PPE carelessly"
                 },
                 {
                   "type": "paragraph",
                   "text": "Demonstrate controlled removal, avoiding contact with contaminated surfaces."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "What impresses the examiner"
-                  ]
+                  "type": "paragraph",
+                  "text": "What impresses the examiner"
                 },
                 {
                   "type": "paragraph",

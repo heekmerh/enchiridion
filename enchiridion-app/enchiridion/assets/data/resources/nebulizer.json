@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_2",
-          "subsection_title": "Identification and definition",
+          "subsection_title": "1. Identification and definition",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -65,7 +65,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_3",
-          "subsection_title": "Types of nebulizers",
+          "subsection_title": "2. Types of nebulizers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -80,10 +80,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Jet nebulizer"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Jet nebulizer"
                 },
                 {
                   "type": "paragraph",
@@ -99,10 +97,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Ultrasonic nebulizer"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Ultrasonic nebulizer"
                 },
                 {
                   "type": "paragraph",
@@ -118,10 +114,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Vibrating mesh nebulizer"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Vibrating mesh nebulizer"
                 },
                 {
                   "type": "paragraph",
@@ -137,7 +131,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_4",
-          "subsection_title": "Parts and their functions",
+          "subsection_title": "3. Parts and their functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -202,7 +196,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_5",
-          "subsection_title": "Principle of operation",
+          "subsection_title": "4. Principle of operation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -216,28 +210,30 @@
                   "text": "The device transforms a liquid formulation into small aerosol droplets that can be inhaled."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The amount of medication reaching the lungs depends on factors such as:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The medication and formulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The nebulizer design and output."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient breathing pattern and cooperation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mask fit or mouthpiece seal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treatment duration and residual medication volume."
+                  "type": "list",
+                  "title": "The amount of medication reaching the lungs depends on factors such as:",
+                  "items": [
+                    {
+                      "text": "The medication and formulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The nebulizer design and output.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient breathing pattern and cooperation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mask fit or mouthpiece seal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treatment duration and residual medication volume.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -249,7 +245,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_6",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "5. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -259,44 +255,56 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Administration of inhaled bronchodilators during selected asthma exacerbations."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Administration of inhaled bronchodilators during selected asthma exacerbations.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Delivery of inhaled medication in selected COPD exacerbations.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Treatment of bronchospasm when a nebulizer is clinically appropriate.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Delivery of certain inhaled medications to patients unable to use other delivery systems effectively.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Administration of selected specialist inhaled treatments when the medication and device are compatible.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Delivery of inhaled medication in selected COPD exacerbations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treatment of bronchospasm when a nebulizer is clinically appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delivery of certain inhaled medications to patients unable to use other delivery systems effectively."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Administration of selected specialist inhaled treatments when the medication and device are compatible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Examples of medications that may be nebulized include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salbutamol (albuterol): Short-acting beta₂ agonist bronchodilator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ipratropium bromide: Short-acting muscarinic antagonist bronchodilator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Budesonide: Inhaled corticosteroid in suitable formulations and clinical circumstances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypertonic saline: Used in selected conditions under appropriate protocols."
+                  "type": "list",
+                  "title": "Examples of medications that may be nebulized include:",
+                  "items": [
+                    {
+                      "text": "Salbutamol (albuterol): Short-acting beta₂ agonist bronchodilator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ipratropium bromide: Short-acting muscarinic antagonist bronchodilator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Budesonide: Inhaled corticosteroid in suitable formulations and clinical circumstances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertonic saline: Used in selected conditions under appropriate protocols.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -312,7 +320,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_7",
-          "subsection_title": "Advantages",
+          "subsection_title": "6. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -322,28 +330,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Delivers medication directly to the respiratory tract."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can be used by patients who struggle to coordinate inhalation with an inhaler."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can be administered through an appropriate mask to young children."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Allows tidal breathing during treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can deliver certain medication doses that are appropriate for nebulization."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful in selected acute-care and specialist respiratory settings."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Delivers medication directly to the respiratory tract.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be used by patients who struggle to coordinate inhalation with an inhaler.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be administered through an appropriate mask to young children.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Allows tidal breathing during treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can deliver certain medication doses that are appropriate for nebulization.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful in selected acute-care and specialist respiratory settings.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -351,7 +364,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_8",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "7. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -361,36 +374,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Treatment generally takes longer than using a metered-dose inhaler with a spacer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Equipment requires cleaning, maintenance and appropriate storage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Incorrect assembly can reduce medication delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Aerosol can escape into the surrounding environment, exposing carers or staff to medication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Some devices are noisy or require a power source."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Poor mask fit and crying can reduce effective drug delivery in children."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contaminated equipment can transmit infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nebulization may increase heart rate or cause tremor when beta₂ agonists are used."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Treatment generally takes longer than using a metered-dose inhaler with a spacer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Equipment requires cleaning, maintenance and appropriate storage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrect assembly can reduce medication delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aerosol can escape into the surrounding environment, exposing carers or staff to medication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some devices are noisy or require a power source.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor mask fit and crying can reduce effective drug delivery in children.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contaminated equipment can transmit infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nebulization may increase heart rate or cause tremor when beta₂ agonists are used.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -402,7 +420,7 @@
         },
         {
           "subsection_id": "nebulizer_subsection_9",
-          "subsection_title": "How to assemble and use a nebulizer",
+          "subsection_title": "8. How to assemble and use a nebulizer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -435,10 +453,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0 of 15 steps completed"
-                  ]
+                  "type": "paragraph",
+                  "text": "0 of 15 steps completed"
                 },
                 {
                   "type": "paragraph",
@@ -499,38 +515,40 @@
                 {
                   "type": "paragraph",
                   "text": "15. Dispose of single-use components appropriately and clean, disinfect or store reusable parts according to manufacturer instructions."
-                }
-              ]
-            },
-            {
-              "group_id": "nebulizer_group_11",
-              "group_title": "Important practical points",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Never put an unprescribed medication or an unsuitable liquid into the chamber."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Use sterile fluid where required by the medication, device instructions and clinical protocol."
+                  "text": "**Important practical points**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Do not mix medications unless compatibility has been established and the prescription or protocol permits it."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not allow the chamber to tip over and spill its contents."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A mouthpiece may provide more effective delivery than a poorly fitting mask when the patient can use it."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A child should be calm and the mask should fit closely. Holding a mask near the face without a proper seal can substantially reduce drug delivery."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Never put an unprescribed medication or an unsuitable liquid into the chamber.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use sterile fluid where required by the medication, device instructions and clinical protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not mix medications unless compatibility has been established and the prescription or protocol permits it.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not allow the chamber to tip over and spill its contents.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A mouthpiece may provide more effective delivery than a poorly fitting mask when the patient can use it.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A child should be calm and the mask should fit closely. Holding a mask near the face without a proper seal can substantially reduce drug delivery.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -538,11 +556,11 @@
         },
         {
           "subsection_id": "nebulizer_subsection_10",
-          "subsection_title": "Nebulizer versus metered-dose inhaler with spacer",
+          "subsection_title": "9. Nebulizer versus metered-dose inhaler with spacer",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_12",
+              "group_id": "nebulizer_group_11",
               "group_title": "Nebulizer",
               "group_subtitle": null,
               "group_icon": null,
@@ -554,7 +572,7 @@
               ]
             },
             {
-              "group_id": "nebulizer_group_13",
+              "group_id": "nebulizer_group_12",
               "group_title": "Metered-dose inhaler with spacer",
               "group_subtitle": null,
               "group_icon": null,
@@ -573,11 +591,11 @@
         },
         {
           "subsection_id": "nebulizer_subsection_11",
-          "subsection_title": "Contraindications, precautions and complications",
+          "subsection_title": "10. Contraindications, precautions and complications",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_14",
+              "group_id": "nebulizer_group_13",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -589,39 +607,44 @@
               ]
             },
             {
-              "group_id": "nebulizer_group_15",
+              "group_id": "nebulizer_group_14",
               "group_title": "Precautions",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm the correct medication and dose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check for allergies and relevant contraindications to the prescribed drug."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use caution with beta₂ agonists in patients with significant tachyarrhythmias or other relevant cardiovascular problems."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure appropriate oxygen monitoring when clinically indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If oxygen is used as the driving gas, consider the patient's risk of hypercapnic respiratory failure and follow the prescribed oxygen target."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "In patients with suspected or known infectious respiratory disease, follow appropriate ventilation, PPE and aerosol-generating procedure policies."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm the correct medication and dose.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check for allergies and relevant contraindications to the prescribed drug.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use caution with beta₂ agonists in patients with significant tachyarrhythmias or other relevant cardiovascular problems.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure appropriate oxygen monitoring when clinically indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "If oxygen is used as the driving gas, consider the patient's risk of hypercapnic respiratory failure and follow the prescribed oxygen target.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In patients with suspected or known infectious respiratory disease, follow appropriate ventilation, PPE and aerosol-generating procedure policies.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "nebulizer_group_16",
+              "group_id": "nebulizer_group_15",
               "group_title": "Complications",
               "group_subtitle": null,
               "group_icon": null,
@@ -673,11 +696,11 @@
         },
         {
           "subsection_id": "nebulizer_subsection_12",
-          "subsection_title": "Pediatric and neonatal considerations",
+          "subsection_title": "11. Pediatric and neonatal considerations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_17",
+              "group_id": "nebulizer_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -688,36 +711,41 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use an age-appropriate mask or mouthpiece."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure a good mask seal without obstructing the nose or mouth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the child as calm and upright as tolerated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor respiratory effort, oxygen saturation and heart rate when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Watch for tremor, tachycardia or worsening respiratory distress after bronchodilator administration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use weight- or age-appropriate prescribed doses according to the applicable guideline."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not assume that a crying child is receiving an adequate dose simply because aerosol is visible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "In neonates, use only a device and medication appropriate to the neonatal indication and specialist protocol."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use an age-appropriate mask or mouthpiece.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure a good mask seal without obstructing the nose or mouth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep the child as calm and upright as tolerated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor respiratory effort, oxygen saturation and heart rate when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Watch for tremor, tachycardia or worsening respiratory distress after bronchodilator administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use weight- or age-appropriate prescribed doses according to the applicable guideline.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not assume that a crying child is receiving an adequate dose simply because aerosol is visible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In neonates, use only a device and medication appropriate to the neonatal indication and specialist protocol.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -729,35 +757,40 @@
         },
         {
           "subsection_id": "nebulizer_subsection_13",
-          "subsection_title": "Mnemonics and memory tips",
+          "subsection_title": "12. Mnemonics and memory tips",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_18",
+              "group_id": "nebulizer_group_17",
               "group_title": "Before treatment: DRUG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "D — Drug and dose checked."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "R — Respiratory status reviewed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "U — Unit assembled correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "G — Generate aerosol and monitor the patient."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "D — Drug and dose checked.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Respiratory status reviewed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "U — Unit assembled correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G — Generate aerosol and monitor the patient.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "nebulizer_group_19",
+              "group_id": "nebulizer_group_18",
               "group_title": "After treatment: REASSESS",
               "group_subtitle": null,
               "group_icon": null,
@@ -772,11 +805,11 @@
         },
         {
           "subsection_id": "nebulizer_subsection_14",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "13. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_20",
+              "group_id": "nebulizer_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -843,50 +876,55 @@
         },
         {
           "subsection_id": "nebulizer_subsection_15",
-          "subsection_title": "Common mistakes that lose OSCE marks",
+          "subsection_title": "14. Common mistakes that lose OSCE marks",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "nebulizer_group_21",
+              "group_id": "nebulizer_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Failing to check the prescription, drug, dose or expiry date."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Incorrectly assembling the chamber or tubing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using an unsuitable solution or mixing incompatible medications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to secure the mask."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neglecting to monitor the patient during treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to reassess after administration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring tachycardia or worsening respiratory distress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sharing or storing contaminated equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming that a nebulizer is always better than an inhaler with a spacer."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to check the prescription, drug, dose or expiry date.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrectly assembling the chamber or tubing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using an unsuitable solution or mixing incompatible medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to secure the mask.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neglecting to monitor the patient during treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to reassess after administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring tachycardia or worsening respiratory distress.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sharing or storing contaminated equipment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming that a nebulizer is always better than an inhaler with a spacer.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

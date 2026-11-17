@@ -43,7 +43,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -53,50 +53,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario A — Counselling"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario A — Counselling"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 29-year-old woman has received a letter stating that her cervical smear is abnormal. She is worried that she has cancer. Explain the result and the next steps."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario B — Interpretation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario B — Interpretation"
                 },
                 {
                   "type": "paragraph",
                   "text": "Interpret a cervical cytology report showing HSIL and discuss the appropriate management."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario C — Clinical management"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario C — Clinical management"
                 },
                 {
                   "type": "paragraph",
                   "text": "A woman has persistent high-risk HPV infection and low-grade cervical cytological changes. Explain how she should be managed."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario D — Colposcopy referral"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario D — Colposcopy referral"
                 },
                 {
                   "type": "paragraph",
                   "text": "A patient has atypical glandular cells on cervical cytology. Discuss the investigations required."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scenario E — Examination question"
-                  ]
+                  "type": "paragraph",
+                  "text": "Scenario E — Examination question"
                 },
                 {
                   "type": "paragraph",
@@ -108,7 +98,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_3",
-          "subsection_title": "Understanding abnormal cervical cytology",
+          "subsection_title": "2. Understanding abnormal cervical cytology",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -122,16 +112,18 @@
                   "text": "Cervical cytology examines cells collected from the cervix. Abnormalities may reflect HPV infection, precancerous changes, inflammation or, less commonly, invasive malignancy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Two systems you should understand are:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bethesda system: used to report cytological abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CIN grading: used to describe cervical intraepithelial neoplasia on histology."
+                  "type": "list",
+                  "title": "Two systems you should understand are:",
+                  "items": [
+                    {
+                      "text": "Bethesda system: used to report cytological abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CIN grading: used to describe cervical intraepithelial neoplasia on histology.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -151,10 +143,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. ASC-US — Atypical squamous cells of undetermined significance"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. ASC-US — Atypical squamous cells of undetermined significance"
                 },
                 {
                   "type": "paragraph",
@@ -170,10 +160,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. LSIL — Low-grade squamous intraepithelial lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. LSIL — Low-grade squamous intraepithelial lesion"
                 },
                 {
                   "type": "paragraph",
@@ -189,10 +177,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. HSIL — High-grade squamous intraepithelial lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. HSIL — High-grade squamous intraepithelial lesion"
                 },
                 {
                   "type": "paragraph",
@@ -208,10 +194,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. ASC-H — Atypical squamous cells, cannot exclude HSIL"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. ASC-H — Atypical squamous cells, cannot exclude HSIL"
                 },
                 {
                   "type": "paragraph",
@@ -230,48 +214,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "AGC — Atypical glandular cells"
-                  ]
+                  "type": "paragraph",
+                  "text": "AGC — Atypical glandular cells"
                 },
                 {
                   "type": "paragraph",
                   "text": "These cells may originate from the endocervix or, depending on the clinical context, the endometrium."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Benign reactive changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervical glandular precancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Adenocarcinoma in situ."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Invasive cervical adenocarcinoma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Endometrial pathology."
+                  "type": "list",
+                  "title": "Possible causes include:",
+                  "items": [
+                    {
+                      "text": "Benign reactive changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical glandular precancer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenocarcinoma in situ.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive cervical adenocarcinoma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial pathology.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "AGC requires appropriate investigation rather than simple reassurance or routine repeat screening. Assessment often includes colposcopy, endocervical sampling and, where indicated by age, bleeding pattern or risk factors, endometrial sampling."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "AIS — Adenocarcinoma in situ"
-                  ]
+                  "type": "paragraph",
+                  "text": "AIS — Adenocarcinoma in situ"
                 },
                 {
                   "type": "paragraph",
@@ -287,7 +269,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_4",
-          "subsection_title": "CIN grading: what the examiner expects",
+          "subsection_title": "3. CIN grading: what the examiner expects",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -301,10 +283,8 @@
                   "text": "Cervical intraepithelial neoplasia is a histological diagnosis describing abnormal squamous cells that have not invaded the cervical stroma."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CIN 1 — Low-grade lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "CIN 1 — Low-grade lesion"
                 },
                 {
                   "type": "paragraph",
@@ -320,10 +300,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CIN 2 — Intermediate/high-grade lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "CIN 2 — Intermediate/high-grade lesion"
                 },
                 {
                   "type": "paragraph",
@@ -339,10 +317,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CIN 3 — High-grade lesion"
-                  ]
+                  "type": "paragraph",
+                  "text": "CIN 3 — High-grade lesion"
                 },
                 {
                   "type": "paragraph",
@@ -399,7 +375,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_5",
-          "subsection_title": "History taking and counselling",
+          "subsection_title": "4. History taking and counselling",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -421,28 +397,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Introduce yourself and confirm identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure privacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask what she has been told about the result."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explore her main concern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent to discuss the report and next steps."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Introduce yourself and confirm identity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ensure privacy.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask what she has been told about the result.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Explore her main concern.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Obtain consent to discuss the report and next steps.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -450,7 +437,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I understand that receiving an abnormal cervical screening result can be worrying. An abnormal result does not automatically mean cancer. Could you tell me what you have been told so far, and what concerns you most?\""
+                  "text": "\"I understand that receiving an abnormal cervical screening result can be worrying. An abnormal result does not automatically mean cancer. Could you tell me what you have been told so far, and what concerns you most?\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -461,40 +449,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exact result and date of the test."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous HPV tests or cervical cytology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous colposcopy, biopsy or treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether she has symptoms such as postcoital bleeding or persistent abnormal discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy status, if relevant to management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immunosuppression or HIV, where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smoking."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fertility plans, especially if excisional treatment is being considered."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Exact result and date of the test.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous HPV tests or cervical cytology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous colposcopy, biopsy or treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether she has symptoms such as postcoital bleeding or persistent abnormal discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy status, if relevant to management.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immunosuppression or HIV, where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fertility plans, especially if excisional treatment is being considered.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -514,7 +504,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The sample shows mild changes in the cells on the surface of your cervix. These changes are often associated with HPV and may resolve naturally. We need to follow the recommended pathway to make sure that more significant changes are not present.\""
+                  "text": "\"The sample shows mild changes in the cells on the surface of your cervix. These changes are often associated with HPV and may resolve naturally. We need to follow the recommended pathway to make sure that more significant changes are not present.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -522,7 +513,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The sample shows more significant cell changes. This does not by itself prove that you have cancer, but it means we need to examine the cervix more closely and may need a biopsy to establish the exact diagnosis.\""
+                  "text": "\"The sample shows more significant cell changes. This does not by itself prove that you have cancer, but it means we need to examine the cervix more closely and may need a biopsy to establish the exact diagnosis.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -530,7 +522,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The sample contains unusual glandular cells. These can have several causes, and we need further investigations to determine where the changes are coming from and whether treatment is needed.\""
+                  "text": "\"The sample contains unusual glandular cells. These can have several causes, and we need further investigations to determine where the changes are coming from and whether treatment is needed.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -538,7 +531,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_6",
-          "subsection_title": "Management of an abnormal cervical smear",
+          "subsection_title": "5. Management of an abnormal cervical smear",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -560,32 +553,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Abnormal cervical screening result",
-                    "Review cytology grade, HPV result, age, symptoms and previous history",
-                    "Lower-risk findings"
-                  ]
+                  "type": "paragraph",
+                  "text": "Abnormal cervical screening result"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review cytology grade, HPV result, age, symptoms and previous history"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Lower-risk findings"
                 },
                 {
                   "type": "paragraph",
                   "text": "Programme-directed surveillance or repeat HPV-based testing where appropriate."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Higher-risk findings"
-                  ]
+                  "type": "paragraph",
+                  "text": "Higher-risk findings"
                 },
                 {
                   "type": "paragraph",
                   "text": "Colposcopy, biopsy and specialist-directed treatment where indicated."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ensure results are communicated and follow-up is completed"
-                  ]
+                  "type": "paragraph",
+                  "text": "Ensure results are communicated and follow-up is completed"
                 }
               ]
             },
@@ -646,7 +639,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_7",
-          "subsection_title": "Colposcopy: what happens next?",
+          "subsection_title": "6. Colposcopy: what happens next?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -660,36 +653,45 @@
                   "text": "Colposcopy is a magnified examination of the cervix used to investigate abnormal screening results and guide biopsy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The clinician may:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Insert a speculum and visualise the cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply dilute acetic acid."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess acetowhite areas, lesion margins, vascular patterns and the transformation zone."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply additional solutions where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take directed biopsies of suspicious areas."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform endocervical sampling when indicated and appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain when results will be available and the follow-up plan."
+                  "type": "list",
+                  "title": "The clinician may:",
+                  "items": [
+                    {
+                      "text": "Insert a speculum and visualise the cervix.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Apply dilute acetic acid.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Assess acetowhite areas, lesion margins, vascular patterns and the transformation zone.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Apply additional solutions where appropriate.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Take directed biopsies of suspicious areas.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Perform endocervical sampling when indicated and appropriate.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Explain when results will be available and the follow-up plan.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -704,32 +706,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Normal tissue or benign changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CIN 1."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CIN 2."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CIN 3."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Glandular precancer, including AIS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Invasive carcinoma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An inadequate or discordant result requiring further assessment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Normal tissue or benign changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CIN 1.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CIN 2.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CIN 3.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Glandular precancer, including AIS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive carcinoma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An inadequate or discordant result requiring further assessment.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -737,7 +744,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_8",
-          "subsection_title": "Treatment options for precancerous lesions",
+          "subsection_title": "7. Treatment options for precancerous lesions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -759,16 +766,18 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "LLETZ/LEEP: removal of the transformation zone using a wire loop."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cone biopsy: removal of a cone-shaped section of the cervix, particularly useful when glandular disease, microinvasion or the need for assessment of excision margins is a concern."
+                  "type": "list",
+                  "title": "Examples include:",
+                  "items": [
+                    {
+                      "text": "LLETZ/LEEP: removal of the transformation zone using a wire loop.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cone biopsy: removal of a cone-shaped section of the cervix, particularly useful when glandular disease, microinvasion or the need for assessment of excision margins is a concern.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -812,7 +821,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_9",
-          "subsection_title": "When should you suspect invasive cancer?",
+          "subsection_title": "8. When should you suspect invasive cancer?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -822,36 +831,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider invasive cervical cancer when there is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A friable, irregular or ulcerated cervical mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent or recurrent postcoital bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent watery or blood-stained discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unexplained postmenopausal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cytology suspicious for malignancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Biopsy evidence of stromal invasion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptoms suggesting advanced disease, such as urinary obstruction, persistent pelvic pain or fistula formation."
+                  "type": "list",
+                  "title": "Consider invasive cervical cancer when there is:",
+                  "items": [
+                    {
+                      "text": "A friable, irregular or ulcerated cervical mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent or recurrent postcoital bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent watery or blood-stained discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unexplained postmenopausal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cytology suspicious for malignancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Biopsy evidence of stromal invasion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms suggesting advanced disease, such as urinary obstruction, persistent pelvic pain or fistula formation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -863,7 +874,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_10",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "9. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -958,7 +969,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_11",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "10. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -968,44 +979,59 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Equating HSIL with confirmed invasive cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing cytological terminology with histological CIN grades."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to ask about previous screening results and HPV status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting pregnancy and fertility wishes when planning treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving a universal repeat interval without identifying the applicable guideline."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassuring a patient with persistent bleeding solely because her smear is normal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to explain why colposcopy or biopsy is required."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neglecting the importance of communicating results and ensuring follow-up."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating CIN 1, CIN 2 and CIN 3 identically."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to investigate glandular abnormalities appropriately."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Equating HSIL with confirmed invasive cancer.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confusing cytological terminology with histological CIN grades.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Failing to ask about previous screening results and HPV status.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Forgetting pregnancy and fertility wishes when planning treatment.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Giving a universal repeat interval without identifying the applicable guideline.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Reassuring a patient with persistent bleeding solely because her smear is normal.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Failing to explain why colposcopy or biopsy is required.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Neglecting the importance of communicating results and ensuring follow-up.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Treating CIN 1, CIN 2 and CIN 3 identically.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Failing to investigate glandular abnormalities appropriately.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             }
@@ -1013,7 +1039,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_12",
-          "subsection_title": "Mnemonics and rapid revision",
+          "subsection_title": "11. Mnemonics and rapid revision",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1023,20 +1049,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A — Atypical cells: ASC-US or ASC-H."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Low-grade squamous lesion: LSIL."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "H — High-grade squamous lesion: HSIL."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "G — Glandular abnormalities: AGC or AIS."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "A — Atypical cells: ASC-US or ASC-H.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Low-grade squamous lesion: LSIL.",
+                      "level": 0
+                    },
+                    {
+                      "text": "H — High-grade squamous lesion: HSIL.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G — Glandular abnormalities: AGC or AIS.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1047,20 +1078,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "R — Review the exact report."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Integrate HPV status, symptoms and prior history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Select surveillance, colposcopy or treatment according to risk."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "K — Keep track of follow-up until the pathway is completed."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "R — Review the exact report.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Integrate HPV status, symptoms and prior history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Select surveillance, colposcopy or treatment according to risk.",
+                      "level": 0
+                    },
+                    {
+                      "text": "K — Keep track of follow-up until the pathway is completed.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1071,24 +1107,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Abnormal cytology is not the same as invasive cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HSIL carries a greater likelihood of significant precancer than LSIL."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CIN is a histological diagnosis; cytology alone cannot determine stromal invasion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Glandular abnormalities require appropriate investigation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptoms suspicious for cancer require diagnostic assessment regardless of the screening result."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Abnormal cytology is not the same as invasive cancer.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "HSIL carries a greater likelihood of significant precancer than LSIL.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "CIN is a histological diagnosis; cytology alone cannot determine stromal invasion.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Glandular abnormalities require appropriate investigation.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Symptoms suspicious for cancer require diagnostic assessment regardless of the screening result.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             }
@@ -1096,7 +1142,7 @@
         },
         {
           "subsection_id": "abnormal_cervical_smear_subsection_13",
-          "subsection_title": "Mini OSCE practice",
+          "subsection_title": "12. Mini OSCE practice",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1106,10 +1152,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Exam practice"
-                  ]
+                  "type": "paragraph",
+                  "text": "Exam practice"
                 },
                 {
                   "type": "paragraph",

@@ -108,7 +108,11 @@ class _TocDrawerContentState extends State<TocDrawerContent> {
   }
 
   String _blockText(dynamic block) {
-    if (block is ParagraphBlock) return block.text;
+    if (block is ParagraphBlock) return plainText(block.text);
+    if (block is ListBlock) {
+      return plainText(
+          '${block.title ?? ''} ${block.items.map((i) => i.text).join(' ')}');
+    }
     if (block is MnemonicBlock) {
       return '${block.mnemonic} ${block.items.map((i) => '${i.key} ${i.label}').join(' ')}';
     }

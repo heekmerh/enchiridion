@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_2",
-          "subsection_title": "Identification and definition",
+          "subsection_title": "1. Identification and definition",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -65,7 +65,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_3",
-          "subsection_title": "Types of glucose-measuring devices",
+          "subsection_title": "2. Types of glucose-measuring devices",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -80,10 +80,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Handheld glucometer"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Handheld glucometer"
                 },
                 {
                   "type": "paragraph",
@@ -99,10 +97,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Hospital point-of-care glucose meter"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Hospital point-of-care glucose meter"
                 },
                 {
                   "type": "paragraph",
@@ -118,10 +114,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Continuous glucose monitoring (CGM) system"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Continuous glucose monitoring (CGM) system"
                 },
                 {
                   "type": "paragraph",
@@ -137,7 +131,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_4",
-          "subsection_title": "Parts and functions",
+          "subsection_title": "3. Parts and functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -198,7 +192,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_5",
-          "subsection_title": "Principle of operation",
+          "subsection_title": "4. Principle of operation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -220,26 +214,26 @@
                   "text": "Some devices use different technologies, and not every strip uses the same enzyme system."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Glucose may be displayed in:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "mmol/L — commonly used in Nigeria and many other countries."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "mg/dL — commonly used in the United States and some other settings."
+                  "type": "list",
+                  "title": "Glucose may be displayed in:",
+                  "items": [
+                    {
+                      "text": "mmol/L — commonly used in Nigeria and many other countries.",
+                      "level": 0
+                    },
+                    {
+                      "text": "mg/dL — commonly used in the United States and some other settings.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Conversion:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\\[ \\text{mg/dL} \\approx \\text{mmol/L}\\times18 \\]"
-                  ]
+                  "type": "paragraph",
+                  "text": "\\[ \\text{mg/dL} \\approx \\text{mmol/L}\\times18 \\]"
                 },
                 {
                   "type": "paragraph",
@@ -251,7 +245,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_6",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "5. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -261,36 +255,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suspected hypoglycaemia, especially in patients with altered consciousness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring patients with known diabetes mellitus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assessment of suspected hyperglycaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring glucose during insulin treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assessment of acutely ill patients when glucose abnormalities may affect management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring glucose in selected neonatal and pediatric settings using an appropriate device and protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitoring patients receiving treatment that may cause hypoglycaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perioperative and critical-care glucose monitoring."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Suspected hypoglycaemia, especially in patients with altered consciousness.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Monitoring patients with known diabetes mellitus.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Assessment of suspected hyperglycaemia.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Monitoring glucose during insulin treatment.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assessment of acutely ill patients when glucose abnormalities may affect management.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Monitoring glucose in selected neonatal and pediatric settings using an appropriate device and protocol.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Monitoring patients receiving treatment that may cause hypoglycaemia.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Perioperative and critical-care glucose monitoring.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -302,7 +309,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_7",
-          "subsection_title": "Advantages",
+          "subsection_title": "6. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -312,32 +319,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Rapid bedside results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Requires only a small blood sample."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Portable and relatively easy to operate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful for detecting potentially dangerous hypoglycaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Enables repeated monitoring during treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supports insulin adjustment and diabetes self-management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful in emergency, ward, outpatient, pediatric and selected neonatal settings."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Rapid bedside results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Requires only a small blood sample.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Portable and relatively easy to operate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful for detecting potentially dangerous hypoglycaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enables repeated monitoring during treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supports insulin adjustment and diabetes self-management.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful in emergency, ward, outpatient, pediatric and selected neonatal settings.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -345,7 +357,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_8",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "7. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -355,36 +367,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Requires a blood sample and skin puncture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Results can be affected by poor technique, contaminated fingers and damaged or expired strips."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accuracy may be reduced at very low or very high glucose concentrations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Poor peripheral perfusion, shock, dehydration and certain haematocrit levels can affect readings, depending on the device."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Some medications or interfering substances can affect specific meters."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A capillary result may differ from a laboratory plasma glucose result."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Requires compatible strips, batteries or other power sources."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Repeated finger pricks may cause pain, bruising or callus formation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Requires a blood sample and skin puncture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Results can be affected by poor technique, contaminated fingers and damaged or expired strips.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accuracy may be reduced at very low or very high glucose concentrations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor peripheral perfusion, shock, dehydration and certain haematocrit levels can affect readings, depending on the device.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some medications or interfering substances can affect specific meters.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A capillary result may differ from a laboratory plasma glucose result.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Requires compatible strips, batteries or other power sources.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Repeated finger pricks may cause pain, bruising or callus formation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -396,7 +413,7 @@
         },
         {
           "subsection_id": "glucometer_subsection_9",
-          "subsection_title": "How to measure capillary blood glucose: OSCE demonstration",
+          "subsection_title": "8. How to measure capillary blood glucose: OSCE demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -419,11 +436,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "0 of 14 steps completed",
-                    "Reset"
-                  ]
+                  "type": "paragraph",
+                  "text": "0 of 14 steps completed"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reset"
                 },
                 {
                   "type": "paragraph",
@@ -480,15 +498,12 @@
                 {
                   "type": "paragraph",
                   "text": "14. Remove gloves, perform hand hygiene and act on abnormal results according to the clinical situation."
-                }
-              ]
-            },
-            {
-              "group_id": "glucometer_group_11",
-              "group_title": "Why use the side of the fingertip?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Why use the side of the fingertip?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "The sides of the fingertip are generally less painful than the centre while providing a suitable capillary blood sample."
@@ -496,15 +511,12 @@
                 {
                   "type": "paragraph",
                   "text": "For routine adult testing, the middle or ring finger is often convenient. In infants and young children, use only an age-appropriate approved sampling method and device."
-                }
-              ]
-            },
-            {
-              "group_id": "glucometer_group_12",
-              "group_title": "Why must the hands be clean and dry?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Why must the hands be clean and dry?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Food residue, particularly sugar-containing substances, can falsely elevate the result. Excess water can dilute the sample, while alcohol or other cleaning agents that have not dried properly may interfere with measurement."
@@ -519,11 +531,11 @@
         },
         {
           "subsection_id": "glucometer_subsection_10",
-          "subsection_title": "Interpretation of blood glucose results",
+          "subsection_title": "9. Interpretation of blood glucose results",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_13",
+              "group_id": "glucometer_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -572,30 +584,32 @@
               ]
             },
             {
-              "group_id": "glucometer_group_14",
+              "group_id": "glucometer_group_12",
               "group_title": "Important OSCE distinction: Hypoglycaemia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Hypoglycaemia may cause:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sweating and tremor."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpitations and hunger."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusion or abnormal behaviour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Seizures or loss of consciousness in severe cases."
+                  "type": "list",
+                  "title": "Hypoglycaemia may cause:",
+                  "items": [
+                    {
+                      "text": "Sweating and tremor.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpitations and hunger.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusion or abnormal behaviour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizures or loss of consciousness in severe cases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -608,34 +622,36 @@
               ]
             },
             {
-              "group_id": "glucometer_group_15",
+              "group_id": "glucometer_group_13",
               "group_title": "Hyperglycaemia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "High glucose may be associated with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Polyuria and polydipsia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dehydration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vomiting and abdominal pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deep, laboured breathing and altered consciousness in diabetic ketoacidosis (DKA)."
+                  "type": "list",
+                  "title": "High glucose may be associated with:",
+                  "items": [
+                    {
+                      "text": "Polyuria and polydipsia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dehydration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomiting and abdominal pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deep, laboured breathing and altered consciousness in diabetic ketoacidosis (DKA).",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -647,11 +663,11 @@
         },
         {
           "subsection_id": "glucometer_subsection_11",
-          "subsection_title": "Contraindications and precautions",
+          "subsection_title": "10. Contraindications and precautions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_16",
+              "group_id": "glucometer_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -661,36 +677,38 @@
                   "text": "There are no major absolute contraindications to routine capillary glucose testing, but appropriate precautions are essential."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Precautions:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use a new, single-use lancet for every patient and every test."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never share finger-pricking devices between patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not use expired, damaged or improperly stored strips."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid sampling sites with poor perfusion, infection or significant injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the meter manufacturer's requirements for haematocrit range and interfering substances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use validated equipment and appropriate sampling protocols for neonates."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm unexpected results when clinically appropriate, but do not delay emergency treatment."
+                  "type": "list",
+                  "title": "Precautions:",
+                  "items": [
+                    {
+                      "text": "Use a new, single-use lancet for every patient and every test.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Never share finger-pricking devices between patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not use expired, damaged or improperly stored strips.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid sampling sites with poor perfusion, infection or significant injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow the meter manufacturer's requirements for haematocrit range and interfering substances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use validated equipment and appropriate sampling protocols for neonates.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm unexpected results when clinically appropriate, but do not delay emergency treatment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -699,30 +717,35 @@
               ]
             },
             {
-              "group_id": "glucometer_group_17",
+              "group_id": "glucometer_group_15",
               "group_title": "Complications",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pain at the puncture site."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Minor bleeding or bruising."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Local infection if aseptic precautions are inadequate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sharps injury to the operator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mismanagement due to a falsely low or high result."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pain at the puncture site.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Minor bleeding or bruising.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Local infection if aseptic precautions are inadequate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sharps injury to the operator.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mismanagement due to a falsely low or high result.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -730,62 +753,72 @@
         },
         {
           "subsection_id": "glucometer_subsection_12",
-          "subsection_title": "Pediatric and neonatal considerations",
+          "subsection_title": "11. Pediatric and neonatal considerations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_18",
+              "group_id": "glucometer_group_16",
               "group_title": "Children",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain the procedure in age-appropriate language."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use an appropriate safety lancet and avoid repeated punctures at the same site."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select a suitable finger and avoid squeezing excessively."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the glucose promptly in a child with altered consciousness, seizures or suspected metabolic illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret results in the context of symptoms, recent food intake, medication and clinical status."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain the procedure in age-appropriate language.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use an appropriate safety lancet and avoid repeated punctures at the same site.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Select a suitable finger and avoid squeezing excessively.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check the glucose promptly in a child with altered consciousness, seizures or suspected metabolic illness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpret results in the context of symptoms, recent food intake, medication and clinical status.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "glucometer_group_19",
+              "group_id": "glucometer_group_17",
               "group_title": "Neonates",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Neonates are vulnerable to hypoglycaemia, particularly those who are premature, small or large for gestational age, born to mothers with diabetes, or clinically unwell."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sampling may involve an approved heel-prick technique rather than a finger prick."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use neonatal-approved equipment and local protocols."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bedside meters may be less accurate at very low glucose concentrations and in neonatal samples with particular haematocrit levels."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm low or unexpected neonatal readings using an appropriate laboratory method when indicated, without delaying treatment in a symptomatic or severely hypoglycaemic infant."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Neonates are vulnerable to hypoglycaemia, particularly those who are premature, small or large for gestational age, born to mothers with diabetes, or clinically unwell.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sampling may involve an approved heel-prick technique rather than a finger prick.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use neonatal-approved equipment and local protocols.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bedside meters may be less accurate at very low glucose concentrations and in neonatal samples with particular haematocrit levels.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm low or unexpected neonatal readings using an appropriate laboratory method when indicated, without delaying treatment in a symptomatic or severely hypoglycaemic infant.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -797,58 +830,68 @@
         },
         {
           "subsection_id": "glucometer_subsection_13",
-          "subsection_title": "Mnemonics and memory tips",
+          "subsection_title": "12. Mnemonics and memory tips",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_20",
+              "group_id": "glucometer_group_18",
               "group_title": "For accurate testing: CLEAN",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "C — Check the meter and strip."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Let the hands be clean and dry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Ensure a suitable sampling site."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Apply blood correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — Note the result and units."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "C — Check the meter and strip.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Let the hands be clean and dry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Ensure a suitable sampling site.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Apply blood correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Note the result and units.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "glucometer_group_21",
+              "group_id": "glucometer_group_19",
               "group_title": "For hypoglycaemia symptoms: SHAC",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "S — Sweating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "H — Hunger."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Altered behaviour or awareness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Confusion, seizures or coma in severe cases."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "S — Sweating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "H — Hunger.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Altered behaviour or awareness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Confusion, seizures or coma in severe cases.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -856,11 +899,11 @@
         },
         {
           "subsection_id": "glucometer_subsection_14",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "13. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_22",
+              "group_id": "glucometer_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -927,54 +970,59 @@
         },
         {
           "subsection_id": "glucometer_subsection_15",
-          "subsection_title": "Common mistakes that lose OSCE marks",
+          "subsection_title": "14. Common mistakes that lose OSCE marks",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "glucometer_group_23",
+              "group_id": "glucometer_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Failing to check the units."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using expired or incompatible test strips."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sampling a finger contaminated with food or sugar."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Applying insufficient blood or using the strip incorrectly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excessively squeezing the finger."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reusing lancets."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to document the result and relevant symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating a critically unwell patient as stable because a glucose reading appears normal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving oral glucose to a patient who cannot swallow safely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delaying treatment of severe hypoglycaemia while awaiting laboratory confirmation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to check the units.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using expired or incompatible test strips.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sampling a finger contaminated with food or sugar.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Applying insufficient blood or using the strip incorrectly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessively squeezing the finger.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reusing lancets.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to document the result and relevant symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treating a critically unwell patient as stable because a glucose reading appears normal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving oral glucose to a patient who cannot swallow safely.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delaying treatment of severe hypoglycaemia while awaiting laboratory confirmation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

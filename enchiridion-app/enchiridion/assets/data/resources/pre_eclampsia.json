@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "pre_eclampsia_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -41,7 +41,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A 28-year-old primigravida at 32 weeks' gestation presents with headache and swollen feet. Take a focused history and discuss your management."
+                  "text": "**A 28-year-old primigravida at 32 weeks' gestation presents with headache and swollen feet. Take a focused history and discuss your management.**"
                 }
               ]
             },
@@ -53,7 +53,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "You are asked to assess a 34-week pregnant woman with elevated blood pressure. Perform an appropriate assessment and formulate a management plan."
+                  "text": "**You are asked to assess a 34-week pregnant woman with elevated blood pressure. Perform an appropriate assessment and formulate a management plan.**"
                 }
               ]
             },
@@ -65,7 +65,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A pregnant woman has BP 165/112 mmHg and 3+ proteinuria. Interpret the findings and discuss your immediate management."
+                  "text": "**A pregnant woman has BP 165/112 mmHg and 3+ proteinuria. Interpret the findings and discuss your immediate management.**"
                 }
               ]
             },
@@ -77,7 +77,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Counsel a woman who has been diagnosed with pre-eclampsia at 30 weeks' gestation."
+                  "text": "**Counsel a woman who has been diagnosed with pre-eclampsia at 30 weeks' gestation.**"
                 }
               ]
             },
@@ -89,7 +89,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A 30-week pregnant woman presents with severe headache, visual disturbance and BP 170/115 mmHg. Assess and manage this patient."
+                  "text": "**A 30-week pregnant woman presents with severe headache, visual disturbance and BP 170/115 mmHg. Assess and manage this patient.**"
                 }
               ]
             }
@@ -97,7 +97,7 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_2",
-          "subsection_title": "DEFINITION",
+          "subsection_title": "2. DEFINITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -108,7 +108,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Pre-eclampsia is a multisystem disorder of pregnancy characterized by new-onset hypertension after 20 weeks of gestation, usually with proteinuria and/or evidence of maternal organ dysfunction or uteroplacental dysfunction."
+                  "text": "**Pre-eclampsia** is a multisystem disorder of pregnancy characterized by **new-onset hypertension after 20 weeks of gestation**, usually with proteinuria and/or evidence of maternal organ dysfunction or uteroplacental dysfunction."
                 },
                 {
                   "type": "paragraph",
@@ -116,7 +116,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Pre-eclampsia is new-onset hypertension after 20 weeks of pregnancy associated with proteinuria and/or maternal or uteroplacental organ dysfunction.\""
+                  "text": "**\"Pre-eclampsia is new-onset hypertension after 20 weeks of pregnancy associated with proteinuria and/or maternal or uteroplacental organ dysfunction.\"**",
+                  "style": "quote"
                 }
               ]
             },
@@ -128,7 +129,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Proteinuria is not essential for the diagnosis if there is other evidence of significant maternal organ dysfunction or uteroplacental dysfunction."
+                  "text": "**Proteinuria is not essential** for the diagnosis if there is other evidence of significant maternal organ dysfunction or uteroplacental dysfunction."
                 }
               ]
             }
@@ -136,7 +137,7 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_3",
-          "subsection_title": "DIAGNOSTIC CRITERIA",
+          "subsection_title": "3. DIAGNOSTIC CRITERIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -158,14 +159,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Hypertension in pregnancy is generally:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Hypertension in pregnancy is generally:",
                   "items": [
-                    "Systolic BP ≥140 mmHg, or",
-                    "Diastolic BP ≥90 mmHg"
+                    {
+                      "text": "**Systolic BP ≥140 mmHg**, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Diastolic BP ≥90 mmHg**",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -173,37 +177,40 @@
                   "text": "on appropriate measurement."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Severe hypertension:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Severe hypertension:",
                   "items": [
-                    "SBP ≥160 mmHg, or",
-                    "DBP ≥110 mmHg"
+                    {
+                      "text": "**SBP ≥160 mmHg**, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "**DBP ≥110 mmHg**",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "This requires urgent treatment."
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_11",
-              "group_title": "Proteinuria",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Significant proteinuria may be demonstrated by:"
+                  "text": "This requires **urgent treatment**."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Proteinuria**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Significant proteinuria may be demonstrated by:",
                   "items": [
-                    "Protein:creatinine ratio ≥30 mg/mmol, or",
-                    "Albumin:creatinine ratio ≥8 mg/mmol"
+                    {
+                      "text": "Protein:creatinine ratio ≥30 mg/mmol, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "Albumin:creatinine ratio ≥8 mg/mmol",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -212,7 +219,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A 24-hour urine collection is generally not routinely required when an appropriate spot protein measurement is available."
+                  "text": "A 24-hour urine collection is generally **not routinely required** when an appropriate spot protein measurement is available."
                 }
               ]
             }
@@ -220,11 +227,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_4",
-          "subsection_title": "PATHOPHYSIOLOGY — EXAM LEVEL",
+          "subsection_title": "4. PATHOPHYSIOLOGY — EXAM LEVEL",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_12",
+              "group_id": "pre_eclampsia_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -238,60 +245,133 @@
                   "text": "The simplified sequence is:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Abnormal placentation**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Inadequate trophoblastic invasion of spiral arteries**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Poor transformation of spiral arteries**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**High-resistance uteroplacental circulation**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Placental ischemia**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Release of abnormal antiangiogenic and inflammatory factors"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Maternal endothelial dysfunction**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                }
+              ]
+            },
+            {
+              "group_id": "pre_eclampsia_group_12",
+              "group_title": "Maternal manifestations",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
                   "items": [
-                    "Abnormal placentation",
-                    "↓",
-                    "Inadequate trophoblastic invasion of spiral arteries",
-                    "↓",
-                    "Poor transformation of spiral arteries",
-                    "↓",
-                    "High-resistance uteroplacental circulation",
-                    "↓",
-                    "Placental ischemia",
-                    "↓",
-                    "Release of abnormal antiangiogenic and inflammatory factors",
-                    "↓",
-                    "Maternal endothelial dysfunction",
-                    "↓"
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Proteinuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematological abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "pre_eclampsia_group_13",
-              "group_title": "Maternal manifestations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Hypertension",
-                    "Proteinuria",
-                    "Renal dysfunction",
-                    "Liver dysfunction",
-                    "Neurological symptoms",
-                    "Haematological abnormalities",
-                    "Pulmonary oedema"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_14",
               "group_title": "Fetal/placental manifestations",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Fetal growth restriction",
-                    "Oligohydramnios",
-                    "Placental abruption",
-                    "Fetal compromise",
-                    "Stillbirth"
+                    {
+                      "text": "Fetal growth restriction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -300,11 +380,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_5",
-          "subsection_title": "RISK FACTORS",
+          "subsection_title": "5. RISK FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_15",
+              "group_id": "pre_eclampsia_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -316,72 +396,117 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_16",
+              "group_id": "pre_eclampsia_group_15",
               "group_title": "Maternal/family factors",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Previous pre-eclampsia",
-                    "Chronic hypertension",
-                    "Chronic kidney disease",
-                    "Diabetes mellitus",
-                    "Autoimmune disease, particularly SLE",
-                    "Antiphospholipid syndrome",
-                    "Family history of pre-eclampsia",
-                    "Maternal age ≥40 years",
-                    "Nulliparity"
+                    {
+                      "text": "Previous pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic kidney disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes mellitus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Autoimmune disease, particularly SLE",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antiphospholipid syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history of pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal age ≥40 years",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nulliparity",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "pre_eclampsia_group_16",
+              "group_title": "Pregnancy-related",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Multiple pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Molar pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant placental abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "pre_eclampsia_group_17",
-              "group_title": "Pregnancy-related",
+              "group_title": "Other factors",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Multiple pregnancy",
-                    "Molar pregnancy",
-                    "Significant placental abnormalities"
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Long interval between pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assisted reproductive technology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "pre_eclampsia_group_18",
-              "group_title": "Other factors",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Obesity",
-                    "Long interval between pregnancies",
-                    "Assisted reproductive technology"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_19",
               "group_title": "Very high-yield question",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Examiner: What is the strongest historical risk factor?"
+                  "text": "**Examiner:** What is the strongest historical risk factor?"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -393,11 +518,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_6",
-          "subsection_title": "HISTORY TAKING",
+          "subsection_title": "6. HISTORY TAKING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_20",
+              "group_id": "pre_eclampsia_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -408,7 +533,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Take a focused history from a pregnant woman with suspected pre-eclampsia.\""
+                  "text": "\"Take a focused history from a pregnant woman with suspected pre-eclampsia.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -417,7 +543,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_21",
+              "group_id": "pre_eclampsia_group_20",
               "group_title": "A. Presenting complaint",
               "group_subtitle": null,
               "group_icon": null,
@@ -427,28 +553,54 @@
                   "text": "Start with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What brought you to the hospital today?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then establish:"
+                  "text": "\"What brought you to the hospital today?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then establish:",
                   "items": [
-                    "Headache",
-                    "Visual symptoms",
-                    "Epigastric/right upper quadrant pain",
-                    "Swelling",
-                    "Reduced fetal movements",
-                    "Vaginal bleeding",
-                    "Abdominal pain",
-                    "Breathlessness",
-                    "Nausea/vomiting",
-                    "Convulsions"
+                    {
+                      "text": "Headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric/right upper quadrant pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nausea/vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Convulsions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -457,11 +609,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_7",
-          "subsection_title": "ASK ABOUT FEATURES OF SEVERE DISEASE",
+          "subsection_title": "7. ASK ABOUT FEATURES OF SEVERE DISEASE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_22",
+              "group_id": "pre_eclampsia_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -473,7 +625,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_23",
+              "group_id": "pre_eclampsia_group_22",
               "group_title": "Neurological symptoms",
               "group_subtitle": null,
               "group_icon": null,
@@ -483,22 +635,30 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you experienced any headache?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Clarify:"
+                  "text": "\"Have you experienced any headache?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Clarify:",
                   "items": [
-                    "Onset",
-                    "Severity",
-                    "Persistence",
-                    "Response to analgesics"
+                    {
+                      "text": "Onset",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Response to analgesics",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -506,23 +666,34 @@
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you noticed any changes in your vision?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Ask about:"
+                  "text": "\"Have you noticed any changes in your vision?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Blurred vision",
-                    "Flashing lights",
-                    "Scotoma",
-                    "Temporary visual loss",
-                    "Diplopia"
+                    {
+                      "text": "Blurred vision",
+                      "level": 0
+                    },
+                    {
+                      "text": "Flashing lights",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scotoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temporary visual loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diplopia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -530,15 +701,14 @@
                   "text": "And:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you had any weakness, confusion or difficulty speaking?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Have you had any weakness, confusion or difficulty speaking?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_24",
+              "group_id": "pre_eclampsia_group_23",
               "group_title": "Epigastric/RUQ pain",
               "group_subtitle": null,
               "group_icon": null,
@@ -549,29 +719,39 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Have you had any pain in the upper part of your abdomen, especially under the right ribs?\""
+                  "text": "\"Have you had any pain in the upper part of your abdomen, especially under the right ribs?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "This may indicate hepatic involvement."
+                  "text": "This may indicate **hepatic involvement**."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Severity",
-                    "Duration",
-                    "Vomiting",
-                    "Relationship to meals"
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship to meals",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_25",
+              "group_id": "pre_eclampsia_group_24",
               "group_title": "Respiratory symptoms",
               "group_subtitle": null,
               "group_icon": null,
@@ -581,27 +761,40 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you experienced any difficulty breathing?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Also:"
+                  "text": "\"Have you experienced any difficulty breathing?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also:",
                   "items": [
-                    "Orthopnoea",
-                    "Chest pain",
-                    "Cough",
-                    "Sudden deterioration"
+                    {
+                      "text": "Orthopnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cough",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sudden deterioration",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Pulmonary oedema.**",
+                  "style": "heading"
                 }
               ]
             }
@@ -609,11 +802,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_8",
-          "subsection_title": "ASK ABOUT FETAL WELLBEING",
+          "subsection_title": "8. ASK ABOUT FETAL WELLBEING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_26",
+              "group_id": "pre_eclampsia_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -625,56 +818,76 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_27",
+              "group_id": "pre_eclampsia_group_26",
               "group_title": "Fetal movements",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"How have your baby's movements been?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Determine:",
                   "items": [
-                    "\"How have your baby's movements been?\""
+                    {
+                      "text": "Normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Determine:"
+                  "text": "Reduced fetal movements may indicate **uteroplacental insufficiency**."
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also ask about:",
                   "items": [
-                    "Normal",
-                    "Reduced",
-                    "Absent"
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leakage of fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal pain",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Reduced fetal movements may indicate uteroplacental insufficiency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Also ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "because of risks including:",
                   "items": [
-                    "Vaginal bleeding",
-                    "Leakage of fluid",
-                    "Contractions",
-                    "Abdominal pain"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "because of risks including:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Placental abruption",
-                    "Preterm labour",
-                    "PPROM"
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Preterm labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPROM",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -683,7 +896,53 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_9",
-          "subsection_title": "ASK ABOUT URINE OUTPUT",
+          "subsection_title": "9. ASK ABOUT URINE OUTPUT",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "pre_eclampsia_group_27",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Ask:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Have you noticed any reduction in the amount of urine you pass?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reduced urine output may suggest significant renal involvement."
+                },
+                {
+                  "type": "list",
+                  "title": "Also ask about:",
+                  "items": [
+                    {
+                      "text": "Foamy urine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysuria",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "pre_eclampsia_subsection_10",
+          "subsection_title": "10. OBSTETRIC HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -693,36 +952,63 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"Have you noticed any reduction in the amount of urine you pass?\""
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced urine output may suggest significant renal involvement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Also ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "Foamy urine",
-                    "Haematuria",
-                    "Dysuria"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gravidity/parity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous fetal growth restriction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous preterm birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous stillbirth",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Particularly ask:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Did you have high blood pressure or pre-eclampsia in any previous pregnancy?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_10",
-          "subsection_title": "OBSTETRIC HISTORY",
+          "subsection_id": "pre_eclampsia_subsection_11",
+          "subsection_title": "11. MEDICAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -732,38 +1018,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask specifically about:",
                   "items": [
-                    "Gestational age",
-                    "Gravidity/parity",
-                    "Previous pregnancies",
-                    "Previous pre-eclampsia",
-                    "Previous eclampsia",
-                    "Previous fetal growth restriction",
-                    "Previous placental abruption",
-                    "Previous preterm birth",
-                    "Previous stillbirth"
+                    {
+                      "text": "Chronic hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes mellitus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "SLE",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antiphospholipid syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrombophilia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular disease",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Particularly ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"Did you have high blood pressure or pre-eclampsia in any previous pregnancy?\""
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_11",
-          "subsection_title": "MEDICAL HISTORY",
+          "subsection_id": "pre_eclampsia_subsection_12",
+          "subsection_title": "12. DRUG HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -773,49 +1067,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask specifically about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Chronic hypertension",
-                    "Diabetes mellitus",
-                    "Renal disease",
-                    "SLE",
-                    "Antiphospholipid syndrome",
-                    "Thrombophilia",
-                    "Cardiovascular disease"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_12",
-          "subsection_title": "DRUG HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "pre_eclampsia_group_31",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Antihypertensive medications",
-                    "Aspirin",
-                    "Anticoagulants",
-                    "Antidiabetic medications",
-                    "Steroids",
-                    "Herbal medications"
+                    {
+                      "text": "Antihypertensive medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aspirin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anticoagulants",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antidiabetic medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Steroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Herbal medications",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -825,16 +1103,15 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_32",
+              "group_id": "pre_eclampsia_group_31",
               "group_title": "Compliance",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you been taking your medications regularly?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Have you been taking your medications regularly?\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -842,7 +1119,48 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_13",
-          "subsection_title": "FAMILY HISTORY",
+          "subsection_title": "13. FAMILY HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "pre_eclampsia_group_32",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "pre_eclampsia_subsection_14",
+          "subsection_title": "14. SOCIAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -852,47 +1170,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Hypertension",
-                    "Pre-eclampsia",
-                    "Eclampsia",
-                    "Cardiovascular disease",
-                    "Renal disease"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_14",
-          "subsection_title": "SOCIAL HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "pre_eclampsia_group_34",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Smoking",
-                    "Alcohol",
-                    "Recreational drugs",
-                    "Social support",
-                    "Ability to attend follow-up",
-                    "Living circumstances"
+                    {
+                      "text": "Smoking",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alcohol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recreational drugs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Social support",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ability to attend follow-up",
+                      "level": 0
+                    },
+                    {
+                      "text": "Living circumstances",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -901,11 +1205,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_15",
-          "subsection_title": "EXAMINATION",
+          "subsection_title": "15. EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_35",
+              "group_id": "pre_eclampsia_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -917,24 +1221,39 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_36",
+              "group_id": "pre_eclampsia_group_35",
               "group_title": "First: General assessment",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "General appearance",
-                    "Level of consciousness",
-                    "Distress",
-                    "Pallor",
-                    "Facial/periorbital oedema",
-                    "Peripheral oedema"
+                    {
+                      "text": "General appearance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Level of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial/periorbital oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral oedema",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -947,11 +1266,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_16",
-          "subsection_title": "VITAL SIGNS",
+          "subsection_title": "16. VITAL SIGNS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_37",
+              "group_id": "pre_eclampsia_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -963,7 +1282,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_38",
+              "group_id": "pre_eclampsia_group_37",
               "group_title": "Blood pressure",
               "group_subtitle": null,
               "group_icon": null,
@@ -982,71 +1301,86 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "SBP ≥160 or DBP ≥110 mmHg → urgent assessment and treatment."
+                  "text": "**SBP ≥160 or DBP ≥110 mmHg → urgent assessment and treatment.**"
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_39",
+              "group_id": "pre_eclampsia_group_38",
               "group_title": "Pulse",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Rate",
-                    "Rhythm",
-                    "Character"
+                    {
+                      "text": "Rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Character",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "pre_eclampsia_group_39",
+              "group_title": "Respiratory rate",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Tachypnoea may suggest:",
+                  "items": [
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe systemic illness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "pre_eclampsia_group_40",
-              "group_title": "Respiratory rate",
+              "group_title": "Oxygen saturation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Tachypnoea may suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Particularly important if:",
                   "items": [
-                    "Pulmonary oedema",
-                    "Severe systemic illness"
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "pre_eclampsia_group_41",
-              "group_title": "Oxygen saturation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Particularly important if:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Breathlessness",
-                    "Pulmonary oedema",
-                    "Severe disease"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_42",
               "group_title": "Temperature",
               "group_subtitle": null,
               "group_icon": null,
@@ -1061,11 +1395,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_17",
-          "subsection_title": "NEUROLOGICAL EXAMINATION",
+          "subsection_title": "17. NEUROLOGICAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_43",
+              "group_id": "pre_eclampsia_group_42",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1075,22 +1409,31 @@
                   "text": "Particularly important in severe disease."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Level of consciousness",
-                    "Orientation",
-                    "Reflexes",
-                    "Clonus"
+                    {
+                      "text": "Level of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Orientation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reflexes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clonus",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_44",
+              "group_id": "pre_eclampsia_group_43",
               "group_title": "Why check reflexes?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1105,47 +1448,65 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_18",
-          "subsection_title": "CARDIORESPIRATORY EXAMINATION",
+          "subsection_title": "18. CARDIORESPIRATORY EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_45",
+              "group_id": "pre_eclampsia_group_44",
               "group_title": "Cardiovascular",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Pulse",
-                    "BP",
-                    "JVP if indicated",
-                    "Heart sounds",
-                    "Peripheral oedema"
+                    {
+                      "text": "Pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "JVP if indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_46",
+              "group_id": "pre_eclampsia_group_45",
               "group_title": "Respiratory",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Respiratory distress",
-                    "Crackles",
-                    "Reduced oxygen saturation"
+                    {
+                      "text": "Respiratory distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crackles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced oxygen saturation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1154,7 +1515,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pulmonary oedema."
+                  "text": "**Pulmonary oedema.**"
                 }
               ]
             }
@@ -1162,11 +1523,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_19",
-          "subsection_title": "ABDOMINAL EXAMINATION",
+          "subsection_title": "19. ABDOMINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_47",
+              "group_id": "pre_eclampsia_group_46",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1176,26 +1537,47 @@
                   "text": "Perform an obstetric abdominal examination."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Fundal height",
-                    "Lie",
-                    "Presentation",
-                    "Position",
-                    "Engagement",
-                    "Uterine tenderness",
-                    "Fetal movements",
-                    "Fetal heart rate"
+                    {
+                      "text": "Fundal height",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lie",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Engagement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal heart rate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_48",
+              "group_id": "pre_eclampsia_group_47",
               "group_title": "Why?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1206,7 +1588,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Uteroplacental insufficiency → fetal growth restriction."
+                  "text": "**Uteroplacental insufficiency → fetal growth restriction.**"
                 },
                 {
                   "type": "paragraph",
@@ -1215,7 +1597,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_49",
+              "group_id": "pre_eclampsia_group_48",
               "group_title": "RUQ/epigastric tenderness",
               "group_subtitle": null,
               "group_icon": null,
@@ -1230,7 +1612,62 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_20",
-          "subsection_title": "URINE",
+          "subsection_title": "20. URINE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "pre_eclampsia_group_49",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Perform:",
+                  "items": [
+                    {
+                      "text": "Urinalysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Quantification of proteinuria where indicated",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Protein",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood",
+                      "level": 0
+                    },
+                    {
+                      "text": "Glucose",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ketones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nitrites/leukocytes if infection is suspected",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "pre_eclampsia_subsection_21",
+          "subsection_title": "21. INVESTIGATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1241,47 +1678,130 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Perform:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Urinalysis",
-                    "Quantification of proteinuria where indicated"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Protein",
-                    "Blood",
-                    "Glucose",
-                    "Ketones",
-                    "Nitrites/leukocytes if infection is suspected"
-                  ]
+                  "text": "Think:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_21",
-          "subsection_title": "INVESTIGATIONS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "pre_eclampsia_group_51",
-              "group_title": "",
+              "group_title": "MOTHER + BABY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Think:"
+                  "text": "**Maternal investigations**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Blood tests**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FBC**"
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrombocytopenia",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**LFTs**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Raised AST/ALT",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of hepatic involvement",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**U&E / renal function**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Raised creatinine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolyte abnormalities",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**LDH**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "May be useful when evaluating:",
+                  "items": [
+                    {
+                      "text": "Haemolysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "HELLP syndrome",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Coagulation profile**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Particularly if:",
+                  "items": [
+                    {
+                      "text": "Severe disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrombocytopenia",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1289,122 +1809,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_22",
-          "subsection_title": "MOTHER + BABY",
+          "subsection_title": "22. FETAL ASSESSMENT",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "pre_eclampsia_group_52",
-              "group_title": "Blood tests",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "FBC"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Anaemia",
-                    "Thrombocytopenia"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_53",
-              "group_title": "LFTs",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Raised AST/ALT",
-                    "Evidence of hepatic involvement"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_54",
-              "group_title": "U&E / renal function",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Raised creatinine",
-                    "Electrolyte abnormalities"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_55",
-              "group_title": "LDH",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "May be useful when evaluating:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Haemolysis",
-                    "HELLP syndrome"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_56",
-              "group_title": "Coagulation profile",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Particularly if:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Severe disease",
-                    "Bleeding",
-                    "Suspected abruption",
-                    "Thrombocytopenia",
-                    "DIC"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_23",
-          "subsection_title": "FETAL ASSESSMENT",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "pre_eclampsia_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1416,64 +1825,91 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_58",
+              "group_id": "pre_eclampsia_group_53",
               "group_title": "CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Evaluate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Evaluate:",
                   "items": [
-                    "Baseline",
-                    "Variability",
-                    "Accelerations",
-                    "Decelerations",
-                    "Overall trace"
+                    {
+                      "text": "Baseline",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Decelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Overall trace",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_59",
+              "group_id": "pre_eclampsia_group_54",
               "group_title": "Ultrasound",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Fetal growth",
-                    "Estimated fetal weight",
-                    "Amniotic fluid",
-                    "Placental location",
-                    "Fetal anatomy where indicated"
+                    {
+                      "text": "Fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Estimated fetal weight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental location",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal anatomy where indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_60",
+              "group_id": "pre_eclampsia_group_55",
               "group_title": "Doppler studies",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Particularly:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Particularly:",
                   "items": [
-                    "Umbilical artery Doppler",
-                    "Other Doppler assessments depending on clinical circumstances"
+                    {
+                      "text": "Umbilical artery Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other Doppler assessments depending on clinical circumstances",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1481,12 +1917,12 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_24",
-          "subsection_title": "IMPORTANT MATERNAL COMPLICATIONS",
+          "subsection_id": "pre_eclampsia_subsection_23",
+          "subsection_title": "23. IMPORTANT MATERNAL COMPLICATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_61",
+              "group_id": "pre_eclampsia_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1498,96 +1934,239 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_62",
+              "group_id": "pre_eclampsia_group_57",
               "group_title": "Neurological",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Eclampsia",
-                    "Cerebral haemorrhage",
-                    "Stroke",
-                    "Visual disturbance"
+                    {
+                      "text": "Eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebral haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stroke",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_63",
+              "group_id": "pre_eclampsia_group_58",
               "group_title": "Renal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Acute kidney injury",
-                    "Oliguria"
+                    {
+                      "text": "Acute kidney injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oliguria",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_64",
+              "group_id": "pre_eclampsia_group_59",
               "group_title": "Hepatic",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hepatic dysfunction",
-                    "Subcapsular haematoma",
-                    "Hepatic rupture"
+                    {
+                      "text": "Hepatic dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subcapsular haematoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic rupture",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_65",
+              "group_id": "pre_eclampsia_group_60",
               "group_title": "Haematological",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Thrombocytopenia",
-                    "DIC",
-                    "HELLP syndrome"
+                    {
+                      "text": "Thrombocytopenia",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    },
+                    {
+                      "text": "HELLP syndrome",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_66",
+              "group_id": "pre_eclampsia_group_61",
               "group_title": "Respiratory",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pulmonary oedema"
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_67",
+              "group_id": "pre_eclampsia_group_62",
               "group_title": "Obstetric",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Placental abruption",
-                    "Fetal growth restriction",
-                    "Preterm birth",
-                    "Fetal death"
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal growth restriction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Preterm birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal death",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "pre_eclampsia_subsection_24",
+          "subsection_title": "24. DIFFERENTIAL DIAGNOSES",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "pre_eclampsia_group_63",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "A patient with hypertension in pregnancy may have:",
+                  "items": [
+                    {
+                      "text": "**Gestational hypertension**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Pre-eclampsia**",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Chronic hypertension**",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Chronic hypertension with superimposed pre-eclampsia**",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "SLE/autoimmune disease",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Thrombotic thrombocytopenic purpura",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Haemolytic uraemic syndrome",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "HELLP syndrome",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "If the patient has headache/visual symptoms, also consider:",
+                  "items": [
+                    {
+                      "text": "Migraine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebral venous thrombosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Meningitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other neurological disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1596,58 +2175,11 @@
         },
         {
           "subsection_id": "pre_eclampsia_subsection_25",
-          "subsection_title": "DIFFERENTIAL DIAGNOSES",
+          "subsection_title": "25. MANAGEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_68",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A patient with hypertension in pregnancy may have:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Gestational hypertension",
-                    "Pre-eclampsia",
-                    "Chronic hypertension",
-                    "Chronic hypertension with superimposed pre-eclampsia",
-                    "Renal disease",
-                    "SLE/autoimmune disease",
-                    "Thrombotic thrombocytopenic purpura",
-                    "Haemolytic uraemic syndrome",
-                    "HELLP syndrome"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If the patient has headache/visual symptoms, also consider:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Migraine",
-                    "Cerebral venous thrombosis",
-                    "Intracranial haemorrhage",
-                    "Meningitis",
-                    "Other neurological disease"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_26",
-          "subsection_title": "MANAGEMENT",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "pre_eclampsia_group_69",
+              "group_id": "pre_eclampsia_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1657,55 +2189,98 @@
                   "text": "This is one of the most important sections."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management depends on:",
                   "items": [
-                    "Gestational age",
-                    "Severity",
-                    "Maternal condition",
-                    "Fetal condition",
-                    "Laboratory results",
-                    "Presence of complications"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laboratory results",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presence of complications",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**STABILISE → ASSESS → CONTROL BP → PREVENT SEIZURES → ASSESS BABY → PLAN DELIVERY**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_27",
-          "subsection_title": "MILD/NON-SEVERE PRE-ECLAMPSIA",
+          "subsection_id": "pre_eclampsia_subsection_26",
+          "subsection_title": "26. MILD/NON-SEVERE PRE-ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_70",
+              "group_id": "pre_eclampsia_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Management may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management may include:",
                   "items": [
-                    "Maternal monitoring",
-                    "BP monitoring",
-                    "Urine/protein assessment",
-                    "Blood tests",
-                    "Fetal surveillance",
-                    "CTG when indicated",
-                    "Ultrasound growth surveillance",
-                    "Antihypertensive therapy where indicated",
-                    "Timing of delivery according to gestation and maternal/fetal condition"
+                    {
+                      "text": "Maternal monitoring",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP monitoring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine/protein assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood tests",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal surveillance",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound growth surveillance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antihypertensive therapy where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Timing of delivery according to gestation and maternal/fetal condition",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1717,12 +2292,12 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_28",
-          "subsection_title": "SEVERE HYPERTENSION",
+          "subsection_id": "pre_eclampsia_subsection_27",
+          "subsection_title": "27. SEVERE HYPERTENSION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_71",
+              "group_id": "pre_eclampsia_group_66",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1732,10 +2307,8 @@
                   "text": "If:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BP ≥160/110 mmHg"
-                  ]
+                  "type": "paragraph",
+                  "text": "**BP ≥160/110 mmHg**"
                 },
                 {
                   "type": "paragraph",
@@ -1744,34 +2317,64 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_72",
+              "group_id": "pre_eclampsia_group_67",
               "group_title": "Immediate priorities",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Call for senior help",
-                    "ABC assessment",
-                    "Establish IV access",
-                    "Repeat BP appropriately",
-                    "Monitor maternal observations",
-                    "Assess fetal wellbeing",
-                    "Send urgent blood tests",
-                    "Treat severe hypertension promptly"
+                    {
+                      "text": "Call for senior help",
+                      "level": 0
+                    },
+                    {
+                      "text": "ABC assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Establish IV access",
+                      "level": 0
+                    },
+                    {
+                      "text": "Repeat BP appropriately",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor maternal observations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Send urgent blood tests",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treat severe hypertension promptly",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common agents used to control severe hypertension include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common agents used to control severe hypertension include:",
                   "items": [
-                    "Labetalol",
-                    "Nifedipine",
-                    "Hydralazine"
+                    {
+                      "text": "Labetalol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nifedipine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydralazine",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1783,58 +2386,61 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_29",
-          "subsection_title": "PREVENTING ECLAMPSIA",
+          "subsection_id": "pre_eclampsia_subsection_28",
+          "subsection_title": "28. PREVENTING ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_73",
+              "group_id": "pre_eclampsia_group_68",
               "group_title": "Magnesium sulfate",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Magnesium sulfate is used for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Magnesium sulfate is used for:",
                   "items": [
-                    "Treatment of eclamptic seizures",
-                    "Seizure prophylaxis in selected women with severe pre-eclampsia/high seizure risk"
+                    {
+                      "text": "Treatment of eclamptic seizures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizure prophylaxis in selected women with severe pre-eclampsia/high seizure risk",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_74",
+              "group_id": "pre_eclampsia_group_69",
               "group_title": "Important OSCE question",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Examiner: What is the anticonvulsant of choice in eclampsia?"
+                  "text": "**Examiner:** What is the anticonvulsant of choice in eclampsia?"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Magnesium sulfate."
+                  "text": "**Magnesium sulfate.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_30",
-          "subsection_title": "MAGNESIUM SULFATE MONITORING",
+          "subsection_id": "pre_eclampsia_subsection_29",
+          "subsection_title": "29. MAGNESIUM SULFATE MONITORING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_75",
+              "group_id": "pre_eclampsia_group_70",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1846,7 +2452,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_76",
+              "group_id": "pre_eclampsia_group_71",
               "group_title": "R — Reflexes",
               "group_subtitle": null,
               "group_icon": null,
@@ -1858,7 +2464,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_77",
+              "group_id": "pre_eclampsia_group_72",
               "group_title": "R — Respiration",
               "group_subtitle": null,
               "group_icon": null,
@@ -1870,7 +2476,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_78",
+              "group_id": "pre_eclampsia_group_73",
               "group_title": "U — Urine",
               "group_subtitle": null,
               "group_icon": null,
@@ -1884,40 +2490,37 @@
                   "text": "This is an excellent mnemonic:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_31",
-          "subsection_title": "RRU",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "pre_eclampsia_group_79",
-              "group_title": "",
+              "group_id": "pre_eclampsia_group_74",
+              "group_title": "RRU",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Reflexes – Respiration – Urine"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Reflexes – Respiration – Urine**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Why?"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Because magnesium toxicity can cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Because magnesium toxicity can cause:",
                   "items": [
-                    "Loss of reflexes",
-                    "Respiratory depression",
-                    "Cardiac arrest"
+                    {
+                      "text": "Loss of reflexes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory depression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac arrest",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1925,27 +2528,36 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_32",
-          "subsection_title": "ANTIDOTE TO MAGNESIUM TOXICITY",
+          "subsection_id": "pre_eclampsia_subsection_30",
+          "subsection_title": "30. ANTIDOTE TO MAGNESIUM TOXICITY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_80",
+              "group_id": "pre_eclampsia_group_75",
               "group_title": "Calcium gluconate",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If magnesium toxicity is suspected:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If magnesium toxicity is suspected:",
                   "items": [
-                    "Stop magnesium",
-                    "Support ABCs",
-                    "Administer calcium gluconate according to local protocol",
-                    "Obtain urgent senior/critical-care assistance"
+                    {
+                      "text": "Stop magnesium",
+                      "level": 0
+                    },
+                    {
+                      "text": "Support ABCs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Administer calcium gluconate according to local protocol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obtain urgent senior/critical-care assistance",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1953,12 +2565,12 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_33",
-          "subsection_title": "CORTICOSTEROIDS",
+          "subsection_id": "pre_eclampsia_subsection_31",
+          "subsection_title": "31. CORTICOSTEROIDS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_81",
+              "group_id": "pre_eclampsia_group_76",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1968,31 +2580,34 @@
                   "text": "If preterm delivery is anticipated, antenatal corticosteroids may be given to enhance fetal lung maturation according to gestational age and local protocol."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples include:",
                   "items": [
-                    "Betamethasone",
-                    "Dexamethasone"
+                    {
+                      "text": "Betamethasone",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dexamethasone",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "In very preterm birth, magnesium sulfate may also have a role in fetal neuroprotection, according to gestational age and local guidance."
+                  "text": "In very preterm birth, magnesium sulfate may also have a role in **fetal neuroprotection**, according to gestational age and local guidance."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_34",
-          "subsection_title": "FLUID MANAGEMENT",
+          "subsection_id": "pre_eclampsia_subsection_32",
+          "subsection_title": "32. FLUID MANAGEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_82",
+              "group_id": "pre_eclampsia_group_77",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2007,39 +2622,41 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pulmonary oedema."
+                  "text": "**Pulmonary oedema.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Therefore:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid unnecessary fluid loading."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Carefully monitor fluid balance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor urine output."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider catheterisation in severe disease when accurate output monitoring is required."
+                  "type": "list",
+                  "title": "Therefore:",
+                  "items": [
+                    {
+                      "text": "Avoid unnecessary fluid loading.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Carefully monitor fluid balance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor urine output.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider catheterisation in severe disease when accurate output monitoring is required.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_35",
-          "subsection_title": "DEFINITIVE MANAGEMENT",
+          "subsection_id": "pre_eclampsia_subsection_33",
+          "subsection_title": "33. DEFINITIVE MANAGEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_83",
+              "group_id": "pre_eclampsia_group_78",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2049,37 +2666,45 @@
                   "text": "The definitive treatment for pre-eclampsia is:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_36",
-          "subsection_title": "DELIVERY OF THE PLACENTA/FETUS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "pre_eclampsia_group_84",
-              "group_title": "",
+              "group_id": "pre_eclampsia_group_79",
+              "group_title": "DELIVERY OF THE PLACENTA/FETUS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "However, this does not mean every woman should immediately undergo Caesarean section."
+                  "text": "However, this does **not** mean every woman should immediately undergo Caesarean section."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The decision depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The decision depends on:",
                   "items": [
-                    "Gestational age",
-                    "Cervical status",
-                    "Maternal condition",
-                    "Fetal condition",
-                    "Severity",
-                    "Presence of complications"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presence of complications",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2091,12 +2716,12 @@
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_37",
-          "subsection_title": "WHEN SHOULD DELIVERY BE CONSIDERED URGENTLY?",
+          "subsection_id": "pre_eclampsia_subsection_34",
+          "subsection_title": "34. WHEN SHOULD DELIVERY BE CONSIDERED URGENTLY?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_85",
+              "group_id": "pre_eclampsia_group_80",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2108,40 +2733,79 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_86",
+              "group_id": "pre_eclampsia_group_81",
               "group_title": "Maternal deterioration",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Uncontrolled severe hypertension",
-                    "Eclampsia",
-                    "Pulmonary oedema",
-                    "Progressive renal dysfunction",
-                    "Significant liver dysfunction",
-                    "HELLP",
-                    "DIC",
-                    "Stroke",
-                    "Persistent severe neurological symptoms"
+                    {
+                      "text": "Uncontrolled severe hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Progressive renal dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant liver dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "HELLP",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stroke",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent severe neurological symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_87",
+              "group_id": "pre_eclampsia_group_82",
               "group_title": "Fetal compromise",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Persistent pathological CTG",
-                    "Severe fetal growth restriction with concerning Dopplers",
-                    "Fetal demise",
-                    "Significant placental abruption"
+                    {
+                      "text": "Persistent pathological CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe fetal growth restriction with concerning Dopplers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal demise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant placental abruption",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2150,69 +2814,72 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maternal stabilisation takes priority, followed by appropriate delivery."
+                  "text": "**Maternal stabilisation takes priority, followed by appropriate delivery.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_38",
-          "subsection_title": "HOW TO REPORT A PATIENT WITH PRE-ECLAMPSIA",
+          "subsection_id": "pre_eclampsia_subsection_35",
+          "subsection_title": "35. HOW TO REPORT A PATIENT WITH PRE-ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_88",
+              "group_id": "pre_eclampsia_group_83",
               "group_title": "Example 1 — Non-severe disease",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 29-year-old G2P1 at 34 weeks' gestation with hypertension and significant proteinuria, consistent with pre-eclampsia. She is currently clinically stable with no symptoms suggestive of severe disease. I would assess her maternal laboratory parameters and fetal wellbeing and institute appropriate maternal and fetal surveillance.\""
+                  "text": "\"This is a 29-year-old G2P1 at 34 weeks' gestation with hypertension and significant proteinuria, consistent with pre-eclampsia. She is currently clinically stable with no symptoms suggestive of severe disease. I would assess her maternal laboratory parameters and fetal wellbeing and institute appropriate maternal and fetal surveillance.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_89",
+              "group_id": "pre_eclampsia_group_84",
               "group_title": "Example 2 — Severe disease",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 32-year-old primigravida at 31 weeks' gestation with severe hypertension of 170/112 mmHg, associated with persistent headache and visual disturbance. These findings are concerning for severe pre-eclampsia. I would urgently involve senior obstetric and anaesthetic teams, stabilise the patient, treat the severe hypertension, assess for complications, administer magnesium sulfate where indicated, assess fetal wellbeing and determine the safest timing and mode of delivery.\""
+                  "text": "\"This is a 32-year-old primigravida at 31 weeks' gestation with severe hypertension of 170/112 mmHg, associated with persistent headache and visual disturbance. These findings are concerning for severe pre-eclampsia. I would urgently involve senior obstetric and anaesthetic teams, stabilise the patient, treat the severe hypertension, assess for complications, administer magnesium sulfate where indicated, assess fetal wellbeing and determine the safest timing and mode of delivery.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_90",
+              "group_id": "pre_eclampsia_group_85",
               "group_title": "Example 3 — Pre-eclampsia with FGR",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This patient has pre-eclampsia complicated by suspected fetal growth restriction. The fetus has an estimated weight below the expected range for gestational age, and I would assess fetal wellbeing with CTG, amniotic fluid assessment and Doppler studies, while simultaneously monitoring the mother for progression of pre-eclampsia.\""
+                  "text": "\"This patient has pre-eclampsia complicated by suspected fetal growth restriction. The fetus has an estimated weight below the expected range for gestational age, and I would assess fetal wellbeing with CTG, amniotic fluid assessment and Doppler studies, while simultaneously monitoring the mother for progression of pre-eclampsia.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_39",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "pre_eclampsia_subsection_36",
+          "subsection_title": "36. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_91",
+              "group_id": "pre_eclampsia_group_86",
               "group_title": "Q1. What is pre-eclampsia?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2221,7 +2888,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_92",
+              "group_id": "pre_eclampsia_group_87",
               "group_title": "Q2. What is severe hypertension in pregnancy?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2233,7 +2900,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_93",
+              "group_id": "pre_eclampsia_group_88",
               "group_title": "Q3. What are the symptoms of severe pre-eclampsia?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2243,35 +2910,46 @@
                   "text": "Remember:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_40",
-          "subsection_title": "H-V-E-B-B-O",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "pre_eclampsia_group_94",
-              "group_title": "",
+              "group_id": "pre_eclampsia_group_89",
+              "group_title": "H-V-E-B-B-O",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "H — Headache",
-                    "V — Visual disturbance",
-                    "E — Epigastric/RUQ pain",
-                    "B — Breathlessness",
-                    "B — Reduced urine output",
-                    "O — Other neurological symptoms"
+                    {
+                      "text": "**H** — Headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "**V** — Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "**E** — Epigastric/RUQ pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "**B** — Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "**B** — Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "**O** — Other neurological symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_95",
+              "group_id": "pre_eclampsia_group_90",
               "group_title": "Q4. What is the definitive treatment?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2283,7 +2961,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_96",
+              "group_id": "pre_eclampsia_group_91",
               "group_title": "Q5. What is the anticonvulsant used in eclampsia?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2295,46 +2973,87 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_97",
-              "group_title": "Maternal",
+              "group_id": "pre_eclampsia_group_92",
+              "group_title": "Q6. What are the complications?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Maternal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Eclampsia",
-                    "HELLP",
-                    "AKI",
-                    "Pulmonary oedema",
-                    "Stroke",
-                    "DIC",
-                    "Hepatic complications",
-                    "Maternal death"
+                    {
+                      "text": "Eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "HELLP",
+                      "level": 0
+                    },
+                    {
+                      "text": "AKI",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stroke",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic complications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal death",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Fetal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "FGR",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prematurity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_98",
-              "group_title": "Fetal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "FGR",
-                    "Prematurity",
-                    "Fetal hypoxia",
-                    "Placental abruption",
-                    "Stillbirth"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "pre_eclampsia_group_99",
+              "group_id": "pre_eclampsia_group_93",
               "group_title": "Q7. Why is the fetus growth restricted?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2346,7 +3065,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_100",
+              "group_id": "pre_eclampsia_group_94",
               "group_title": "Q8. Why is urine output important?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2358,7 +3077,7 @@
               ]
             },
             {
-              "group_id": "pre_eclampsia_group_101",
+              "group_id": "pre_eclampsia_group_95",
               "group_title": "Q9. Why do you check reflexes?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2368,48 +3087,44 @@
                   "text": "To assess neurological irritability and to monitor for magnesium toxicity during magnesium sulfate therapy."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_41",
-          "subsection_title": "RRU",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "pre_eclampsia_group_102",
-              "group_title": "",
+              "group_id": "pre_eclampsia_group_96",
+              "group_title": "Q10. What are the three things you monitor during magnesium sulfate therapy?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "R — Reflexes R — Respiratory rate U — Urine output"
+                  "text": "**RRU**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**R** — Reflexes\n**R** — Respiratory rate\n**U** — Urine output"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_42",
-          "subsection_title": "COMMON OSCE TRAP",
+          "subsection_id": "pre_eclampsia_subsection_37",
+          "subsection_title": "37. COMMON OSCE TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_103",
+              "group_id": "pre_eclampsia_group_97",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"The patient's BP is 170/115 mmHg. What will you do?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"The patient's BP is 170/115 mmHg. What will you do?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not spend five minutes discussing proteinuria."
+                  "text": "Do **not** spend five minutes discussing proteinuria."
                 },
                 {
                   "type": "paragraph",
@@ -2417,7 +3132,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Severe hypertension → urgent treatment."
+                  "text": "**Severe hypertension → urgent treatment.**"
                 },
                 {
                   "type": "paragraph",
@@ -2425,30 +3140,32 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is severe hypertension in pregnancy. I would urgently repeat/confirm the measurement using appropriate technique while simultaneously initiating maternal assessment and arranging prompt antihypertensive treatment according to protocol. I would involve senior obstetric staff and assess for maternal and fetal complications.\""
+                  "text": "\"This is severe hypertension in pregnancy. I would urgently repeat/confirm the measurement using appropriate technique while simultaneously initiating maternal assessment and arranging prompt antihypertensive treatment according to protocol. I would involve senior obstetric staff and assess for maternal and fetal complications.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_43",
-          "subsection_title": "ANOTHER OSCE TRAP",
+          "subsection_id": "pre_eclampsia_subsection_38",
+          "subsection_title": "38. ANOTHER OSCE TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_104",
+              "group_id": "pre_eclampsia_group_98",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The patient has pre-eclampsia at 29 weeks. Will you deliver immediately?\""
+                  "text": "\"The patient has pre-eclampsia at 29 weeks. Will you deliver immediately?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "No—not automatically."
+                  "text": "**No—not automatically.**"
                 },
                 {
                   "type": "paragraph",
@@ -2456,19 +3173,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Not necessarily. If the mother and fetus are stable, expectant management may be considered in an appropriate specialist setting with close maternal and fetal surveillance. However, maternal or fetal deterioration would be an indication for delivery.\""
+                  "text": "\"Not necessarily. If the mother and fetus are stable, expectant management may be considered in an appropriate specialist setting with close maternal and fetal surveillance. However, maternal or fetal deterioration would be an indication for delivery.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_44",
-          "subsection_title": "RAPID OSCE APPROACH",
+          "subsection_id": "pre_eclampsia_subsection_39",
+          "subsection_title": "39. RAPID OSCE APPROACH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_105",
+              "group_id": "pre_eclampsia_group_99",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2478,73 +3196,78 @@
                   "text": "When confronted with suspected pre-eclampsia, remember:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_45",
-          "subsection_title": "PRE-ECLAMPSIA = MOTHER + BABY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "pre_eclampsia_group_106",
-              "group_title": "MOTHER",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "BP → severe hypertension?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Brain → headache, visual symptoms, seizures?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Liver → RUQ/epigastric pain, abnormal LFTs?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Kidney → creatinine, urine output?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood → platelets, haemolysis, DIC?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lungs → pulmonary oedema?"
-                }
-              ]
             },
             {
-              "group_id": "pre_eclampsia_group_107",
-              "group_title": "BABY",
+              "group_id": "pre_eclampsia_group_100",
+              "group_title": "PRE-ECLAMPSIA = MOTHER + BABY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "FHR/CTG",
-                    "Growth",
-                    "Amniotic fluid",
-                    "Dopplers",
-                    "Movements"
-                  ]
+                  "type": "paragraph",
+                  "text": "**MOTHER**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BP**\n→ severe hypertension?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Brain**\n→ headache, visual symptoms, seizures?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Liver**\n→ RUQ/epigastric pain, abnormal LFTs?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Kidney**\n→ creatinine, urine output?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Blood**\n→ platelets, haemolysis, DIC?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Lungs**\n→ pulmonary oedema?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BABY**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FHR/CTG**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Growth**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Amniotic fluid**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Dopplers**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Movements**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "pre_eclampsia_subsection_46",
-          "subsection_title": "30-SECOND EXAM ANSWER",
+          "subsection_id": "pre_eclampsia_subsection_40",
+          "subsection_title": "40. 30-SECOND EXAM ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "pre_eclampsia_group_108",
+              "group_id": "pre_eclampsia_group_101",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2554,10 +3277,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Summarise your management of a woman with severe pre-eclampsia.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Summarise your management of a woman with severe pre-eclampsia.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2565,72 +3287,95 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would admit and urgently assess the mother and fetus, involve the senior obstetric and anaesthetic teams, establish IV access and monitor vital signs, urine output and fluid balance. I would urgently treat severe hypertension with an appropriate antihypertensive, assess for maternal complications with FBC, renal and liver function and coagulation studies, and assess fetal wellbeing with CTG and ultrasound as appropriate. I would administer magnesium sulfate for seizure prophylaxis where indicated, give antenatal corticosteroids if preterm delivery is anticipated, avoid fluid overload, and determine the timing and mode of delivery based on maternal and fetal condition.\""
+                  "text": "\"I would admit and urgently assess the mother and fetus, involve the senior obstetric and anaesthetic teams, establish IV access and monitor vital signs, urine output and fluid balance. I would urgently treat severe hypertension with an appropriate antihypertensive, assess for maternal complications with FBC, renal and liver function and coagulation studies, and assess fetal wellbeing with CTG and ultrasound as appropriate. I would administer magnesium sulfate for seizure prophylaxis where indicated, give antenatal corticosteroids if preterm delivery is anticipated, avoid fluid overload, and determine the timing and mode of delivery based on maternal and fetal condition.\"",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "pre_eclampsia_subsection_47",
-          "subsection_title": "⭐ HIGH-YIELD TAKE-HOME POINTS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "pre_eclampsia_group_109",
-              "group_title": "",
+              "group_id": "pre_eclampsia_group_102",
+              "group_title": "⭐ HIGH-YIELD TAKE-HOME POINTS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pre-eclampsia occurs after 20 weeks."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "**Pre-eclampsia occurs after 20 weeks.**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Proteinuria is not mandatory if there is other maternal/uteroplacental organ dysfunction.**",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**≥160/110 mmHg = severe hypertension requiring urgent treatment.**",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Headache + visual disturbance + RUQ/epigastric pain = red flags.**",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "**Always assess both mother and fetus.**",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "**Magnesium sulfate prevents/treats eclamptic seizures.**",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "**Monitor magnesium therapy with reflexes, respiration and urine output.**",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "**Calcium gluconate is the antidote for magnesium toxicity.**",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "**Pre-eclampsia can cause FGR because of uteroplacental insufficiency.**",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "**Definitive treatment is delivery, but timing depends on maternal and fetal circumstances.**",
+                      "level": 0,
+                      "label": "10."
+                    },
+                    {
+                      "text": "**Severe disease requires senior multidisciplinary involvement.**",
+                      "level": 0,
+                      "label": "11."
+                    },
+                    {
+                      "text": "**Never forget placental abruption as a major obstetric complication.**",
+                      "level": 0,
+                      "label": "12."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Proteinuria is not mandatory if there is other maternal/uteroplacental organ dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "≥160/110 mmHg = severe hypertension requiring urgent treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Headache + visual disturbance + RUQ/epigastric pain = red flags."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Always assess both mother and fetus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Magnesium sulfate prevents/treats eclamptic seizures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor magnesium therapy with reflexes, respiration and urine output."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Calcium gluconate is the antidote for magnesium toxicity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pre-eclampsia can cause FGR because of uteroplacental insufficiency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Definitive treatment is delivery, but timing depends on maternal and fetal circumstances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe disease requires senior multidisciplinary involvement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never forget placental abruption as a major obstetric complication."
+                  "text": "**🔑 Master mnemonic**",
+                  "style": "heading"
                 }
               ]
+            },
+            {
+              "group_id": "pre_eclampsia_group_103",
+              "group_title": "PRE-ECLAMPSIA = \"BP + PROTEIN/ORGANS → MOTHER + BABY → STABILISE → DELIVER\"",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         }

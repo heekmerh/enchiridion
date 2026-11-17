@@ -591,4 +591,80 @@ void main() {
       expect(find.byType(TabBar), findsOneWidget);
     });
   });
+
+  group('SubtopicTabsView contents bar', () {
+    late StorageService storage;
+
+    setUp(() async {
+      SharedPreferences.setMockInitialValues({});
+      storage = StorageService(await SharedPreferences.getInstance());
+    });
+
+    Widget wrap(Widget child) => MaterialApp(
+          home: Scaffold(
+            body: MultiProvider(
+              providers: [
+                Provider<StorageService>.value(value: storage),
+                ChangeNotifierProvider(
+                    create: (_) => SettingsProvider(storage)),
+                ChangeNotifierProvider(
+                    create: (_) => PinnedNotesProvider(storage)),
+              ],
+              child: child,
+            ),
+          ),
+        );
+
+    Chapter manySections(int count) => _chapter([
+          _section('sec-1', 'Section One', [
+            for (var i = 1; i <= count; i++)
+              ChapterSubsection(
+                id: 'sub-$i',
+                title: '$i. Part $i',
+                contentGroups: [
+                  ContentGroup(
+                    id: 'g-$i',
+                    title: '',
+                    blocks: [ParagraphBlock(text: _longParagraph('P$i', i))],
+                  ),
+                ],
+              ),
+          ]),
+        ]);
+
+    testWidgets('up to $kMaxSubtopicTabs sections keep the tab strip',
+        (tester) async {
+      await tester.pumpWidget(wrap(SubtopicTabsView(
+        topic: _topic,
+        chapter: manySections(kMaxSubtopicTabs),
+      )));
+      await tester.pump();
+
+      expect(find.byType(TabBar), findsOneWidget);
+      expect(find.textContaining('Contents ·'), findsNothing);
+    });
+
+    testWidgets(
+        'more sections show a contents bar whose list jumps to a section',
+        (tester) async {
+      await tester.pumpWidget(wrap(SubtopicTabsView(
+        topic: _topic,
+        chapter: manySections(12),
+      )));
+      await tester.pump();
+
+      expect(find.byType(TabBar), findsNothing);
+      expect(find.text('Contents · 1 of 12'), findsOneWidget);
+
+      await tester.tap(find.text('Contents · 1 of 12'));
+      await tester.pumpAndSettle();
+      expect(find.byType(ListTile), findsWidgets);
+
+      await tester.tap(find.widgetWithText(ListTile, '3. Part 3'));
+      await tester.pumpAndSettle();
+
+      expect(find.byType(ListTile), findsNothing);
+      expect(find.text('Contents · 3 of 12'), findsOneWidget);
+    });
+  });
 }

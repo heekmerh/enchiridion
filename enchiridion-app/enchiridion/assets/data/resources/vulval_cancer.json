@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -48,23 +48,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "“A 67-year-old woman presents with persistent vulval itching. Take a focused history.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Examine this woman with a vulval ulcer and report your findings.”"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "“A vulval biopsy shows squamous cell carcinoma. Discuss management.”",
-                    "“Counsel a patient about a suspected vulval malignancy.”"
+                    {
+                      "text": "“A 67-year-old woman presents with persistent vulval itching. Take a focused history.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Examine this woman with a vulval ulcer and report your findings.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“A vulval biopsy shows squamous cell carcinoma. Discuss management.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Counsel a patient about a suspected vulval malignancy.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Interpret a photograph of a vulval lesion and give your differential diagnoses.”",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Interpret a photograph of a vulval lesion and give your differential diagnoses.”"
                 }
               ]
             }
@@ -72,7 +78,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_3",
-          "subsection_title": "Definition and classification",
+          "subsection_title": "2. Definition and classification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -99,22 +105,22 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "A. Squamous cell carcinoma (SCC)"
+                },
+                {
+                  "type": "list",
+                  "title": "The most common type. It often develops through one of two pathways:",
                   "items": [
-                    "A. Squamous cell carcinoma (SCC)"
+                    {
+                      "text": "HPV-associated disease, often linked to high-risk HPV types.",
+                      "level": 0
+                    },
+                    {
+                      "text": "HPV-independent disease, frequently associated with chronic vulval dermatoses such as lichen sclerosus and with TP53 abnormalities.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The most common type. It often develops through one of two pathways:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HPV-associated disease, often linked to high-risk HPV types."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HPV-independent disease, frequently associated with chronic vulval dermatoses such as lichen sclerosus and with TP53 abnormalities."
                 },
                 {
                   "type": "image",
@@ -122,10 +128,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Vulval melanoma"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Vulval melanoma"
                 },
                 {
                   "type": "paragraph",
@@ -137,10 +141,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Other rare cancers"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Other rare cancers"
                 },
                 {
                   "type": "paragraph",
@@ -159,12 +161,17 @@
                   "text": "VIN is a pre-invasive abnormality of the vulval epithelium. It is not the same as invasive vulval cancer."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Vulvar high-grade squamous intraepithelial lesion (vHSIL): usually HPV-associated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Differentiated VIN (dVIN): usually HPV-independent and often associated with lichen sclerosus; it carries a significant risk of progression to invasive SCC."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Vulvar high-grade squamous intraepithelial lesion (vHSIL): usually HPV-associated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Differentiated VIN (dVIN): usually HPV-independent and often associated with lichen sclerosus; it carries a significant risk of progression to invasive SCC.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -176,7 +183,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_4",
-          "subsection_title": "Risk factors",
+          "subsection_title": "3. Risk factors",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -232,7 +239,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_5",
-          "subsection_title": "Clinical presentation",
+          "subsection_title": "4. Clinical presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -242,40 +249,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Persistent vulval itching or irritation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A vulval lump, swelling or thickened area."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A non-healing ulcer or sore."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain or tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding from a lesion, sometimes after contact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent discharge or unpleasant odour from an ulcerated lesion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain during sexual intercourse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dysuria when a lesion affects the urethral region."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Changes in skin colour or texture."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Persistent vulval itching or irritation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A vulval lump, swelling or thickened area.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A non-healing ulcer or sore.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain or tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding from a lesion, sometimes after contact.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent discharge or unpleasant odour from an ulcerated lesion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain during sexual intercourse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysuria when a lesion affects the urethral region.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Changes in skin colour or texture.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -290,28 +302,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Irregular, ulcerated or fungating mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Firm or indurated lesion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A lesion that bleeds easily."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent focal thickening or a non-healing ulcer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A changing pigmented lesion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Enlarged, hard or fixed inguinal lymph nodes."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Irregular, ulcerated or fungating mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm or indurated lesion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A lesion that bleeds easily.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent focal thickening or a non-healing ulcer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A changing pigmented lesion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarged, hard or fixed inguinal lymph nodes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -323,7 +340,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_6",
-          "subsection_title": "Focused history taking",
+          "subsection_title": "5. Focused history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -333,24 +350,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Introduce yourself and confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that you would like to ask about the vulval symptoms and relevant medical history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent and ensure privacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer a chaperone for any intimate examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask whether she has any immediate concerns."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Introduce yourself and confirm the patient's identity.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain that you would like to ask about the vulval symptoms and relevant medical history.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Obtain consent and ensure privacy.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Offer a chaperone for any intimate examination.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ask whether she has any immediate concerns.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             },
@@ -361,84 +388,96 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Onset and progression"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Onset and progression"
+                    {
+                      "text": "When did you first notice the lesion or itching?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has it increased in size or changed in appearance?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it persistent or does it come and go?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have you noticed any new lumps or ulcers?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "When did you first notice the lesion or itching?"
+                  "text": "Itching and pain"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Has it increased in size or changed in appearance?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it persistent or does it come and go?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you noticed any new lumps or ulcers?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Itching and pain"
+                    {
+                      "text": "Is the itching localised or widespread?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it worse at night?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there pain at rest or during intercourse?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does urine passing over the lesion cause pain?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Is the itching localised or widespread?"
+                  "text": "Bleeding and discharge"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Is it worse at night?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there pain at rest or during intercourse?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does urine passing over the lesion cause pain?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Bleeding and discharge"
+                    {
+                      "text": "Does the lesion bleed spontaneously or after contact?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there any vaginal discharge or unpleasant odour?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there any associated vaginal bleeding, particularly after menopause?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Does the lesion bleed spontaneously or after contact?"
+                  "text": "Previous treatment"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Is there any vaginal discharge or unpleasant odour?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there any associated vaginal bleeding, particularly after menopause?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Previous treatment"
+                    {
+                      "text": "Have you used antifungal creams, antibiotics, topical steroids or other preparations?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Did they help?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has the lesion persisted despite treatment?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Have you used antifungal creams, antibiotics, topical steroids or other preparations?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Did they help?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has the lesion persisted despite treatment?"
                 },
                 {
                   "type": "paragraph",
@@ -453,32 +492,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Menstrual and menopausal status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous cervical screening results and HPV-related disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous vulval or vaginal lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous sexually transmitted infections, where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sexual symptoms and any impact on intimacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous gynaecological procedures."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Menstrual and menopausal status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous cervical screening results and HPV-related disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous vulval or vaginal lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous sexually transmitted infections, where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual symptoms and any impact on intimacy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous gynaecological procedures.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -493,28 +534,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Lichen sclerosus, lichen planus, eczema or other vulval dermatoses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HIV or other causes of immunosuppression, where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diabetes and other comorbidities affecting healing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous cancers or precancerous lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current medications, including immunosuppressants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smoking history and allergies."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Lichen sclerosus, lichen planus, eczema or other vulval dermatoses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "HIV or other causes of immunosuppression, where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diabetes and other comorbidities affecting healing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous cancers or precancerous lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current medications, including immunosuppressants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking history and allergies.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -525,24 +571,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Relevant personal or family history of malignancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smoking and other relevant exposures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Effect on mobility, sleep, daily activities and sexual relationships."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Emotional distress, embarrassment or fear of cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Available family or social support."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Relevant personal or family history of malignancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking and other relevant exposures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Effect on mobility, sleep, daily activities and sexual relationships.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Emotional distress, embarrassment or fear of cancer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Available family or social support.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -550,7 +601,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_7",
-          "subsection_title": "Vulval examination",
+          "subsection_title": "6. Vulval examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -572,76 +623,89 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Inspect the entire vulva systematically:"
+                  "type": "list",
+                  "title": "Inspect the entire vulva systematically:",
+                  "items": [
+                    {
+                      "text": "Mons pubis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labia majora.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labia minora.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clitoris and clitoral hood.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vestibule and urethral opening.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal introitus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineum and perianal region.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Mons pubis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Labia majora."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Labia minora."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clitoris and clitoral hood."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vestibule and urethral opening."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal introitus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perineum and perianal region."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe any lesion by:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Site: right or left labium, clitoris, vestibule, perineum or another location."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Number: solitary or multiple."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Size: measure in centimetres."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shape: nodular, plaque-like, ulcerated or irregular."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surface: smooth, verrucous, crusted, ulcerated or fungating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour: skin-coloured, erythematous, white, pigmented or mixed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Margins: regular or irregular."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surrounding skin: inflammation, scarring, atrophy or evidence of lichen sclerosus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding or discharge: present or absent."
+                  "type": "list",
+                  "title": "Describe any lesion by:",
+                  "items": [
+                    {
+                      "text": "Site: right or left labium, clitoris, vestibule, perineum or another location.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Number: solitary or multiple.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Size: measure in centimetres.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Shape: nodular, plaque-like, ulcerated or irregular.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Surface: smooth, verrucous, crusted, ulcerated or fungating.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Colour: skin-coloured, erythematous, white, pigmented or mixed.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Margins: regular or irregular.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Surrounding skin: inflammation, scarring, atrophy or evidence of lichen sclerosus.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Bleeding or discharge: present or absent.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
                 }
               ]
             },
@@ -652,28 +716,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "With consent, assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consistency of the lesion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Induration and depth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mobility or fixation to deeper tissues."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relationship to the urethra, clitoris, vagina and anus."
+                  "type": "list",
+                  "title": "With consent, assess:",
+                  "items": [
+                    {
+                      "text": "Consistency of the lesion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Induration and depth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility or fixation to deeper tissues.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship to the urethra, clitoris, vagina and anus.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -688,28 +754,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Palpate both groins and document:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Node size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consistency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether nodes are unilateral or bilateral."
+                  "type": "list",
+                  "title": "Palpate both groins and document:",
+                  "items": [
+                    {
+                      "text": "Node size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consistency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether nodes are unilateral or bilateral.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -741,7 +809,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The vulval skin is intact with no focal ulceration, mass, suspicious pigmentation or induration. No palpable inguinal lymphadenopathy is identified.”"
+                  "text": "“The vulval skin is intact with no focal ulceration, mass, suspicious pigmentation or induration. No palpable inguinal lymphadenopathy is identified.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -753,7 +822,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a 2.5 cm irregular ulcerated lesion on the left labium majus with an indurated base and contact bleeding. The lesion's depth and mobility require further assessment. A firm left inguinal node is palpable. The findings are suspicious for vulval malignancy with possible regional nodal involvement.”"
+                  "text": "“There is a 2.5 cm irregular ulcerated lesion on the left labium majus with an indurated base and contact bleeding. The lesion's depth and mobility require further assessment. A firm left inguinal node is palpable. The findings are suspicious for vulval malignancy with possible regional nodal involvement.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -761,7 +831,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_8",
-          "subsection_title": "Differential diagnosis",
+          "subsection_title": "7. Differential diagnosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -829,7 +899,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_9",
-          "subsection_title": "Investigations",
+          "subsection_title": "8. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -843,24 +913,26 @@
                   "text": "A punch or incisional biopsy is usually performed for a suspicious lesion, with the site and method selected to obtain representative tissue."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Histopathology can establish:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Whether the lesion is benign, pre-invasive or invasive."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Histological type and grade."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Presence of stromal invasion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other features that guide definitive treatment."
+                  "type": "list",
+                  "title": "Histopathology can establish:",
+                  "items": [
+                    {
+                      "text": "Whether the lesion is benign, pre-invasive or invasive.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Histological type and grade.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presence of stromal invasion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other features that guide definitive treatment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -925,7 +997,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_10",
-          "subsection_title": "Staging of vulval cancer",
+          "subsection_title": "9. Staging of vulval cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -985,7 +1057,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_11",
-          "subsection_title": "Management",
+          "subsection_title": "10. Management",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1007,36 +1079,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Vulval HSIL"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Vulval HSIL"
+                    {
+                      "text": "Excision, ablation or selected topical treatment may be appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive disease must be excluded before using destructive treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow-up is needed because recurrence and multifocal lesions can occur.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Excision, ablation or selected topical treatment may be appropriate."
+                  "text": "Differentiated VIN"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Invasive disease must be excluded before using destructive treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow-up is needed because recurrence and multifocal lesions can occur."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Differentiated VIN"
+                    {
+                      "text": "Usually requires excision because of its higher risk of progression to invasive SCC.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated lichen sclerosus should also be treated and monitored.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Usually requires excision because of its higher risk of progression to invasive SCC."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated lichen sclerosus should also be treated and monitored."
                 }
               ]
             },
@@ -1047,24 +1125,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Surgical management may involve:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Local wide excision or radical local excision, aiming for appropriate histological margins."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assessment of groin nodes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sentinel lymph node biopsy in appropriately selected patients with early, unifocal disease and clinically negative groins."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inguinofemoral lymphadenectomy when indicated."
+                  "type": "list",
+                  "title": "Surgical management may involve:",
+                  "items": [
+                    {
+                      "text": "Local wide excision or radical local excision, aiming for appropriate histological margins.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assessment of groin nodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sentinel lymph node biopsy in appropriately selected patients with early, unifocal disease and clinically negative groins.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inguinofemoral lymphadenectomy when indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1083,24 +1163,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Treatment may involve:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery where feasible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radiotherapy, often combined with chemotherapy in selected cases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neoadjuvant or definitive chemoradiotherapy when surgery would cause unacceptable morbidity or complete resection is unlikely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reconstruction and rehabilitation where extensive surgery is necessary."
+                  "type": "list",
+                  "title": "Treatment may involve:",
+                  "items": [
+                    {
+                      "text": "Surgery where feasible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiotherapy, often combined with chemotherapy in selected cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neoadjuvant or definitive chemoradiotherapy when surgery would cause unacceptable morbidity or complete resection is unlikely.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reconstruction and rehabilitation where extensive surgery is necessary.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1111,24 +1193,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Options depend on previous treatment and the extent of recurrence:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery for selected local recurrences."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radiotherapy or chemoradiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Systemic treatment for unresectable or metastatic disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptom control, wound care, pain management and palliative care where appropriate."
+                  "type": "list",
+                  "title": "Options depend on previous treatment and the extent of recurrence:",
+                  "items": [
+                    {
+                      "text": "Surgery for selected local recurrences.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiotherapy or chemoradiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Systemic treatment for unresectable or metastatic disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptom control, wound care, pain management and palliative care where appropriate.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1152,7 +1236,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_12",
-          "subsection_title": "Complications and prognosis",
+          "subsection_title": "11. Complications and prognosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1166,36 +1250,38 @@
                   "text": "Prognosis depends on stage, tumour size, depth of invasion, nodal involvement, histology and response to treatment."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential complications include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Local recurrence."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Groin lymph-node metastases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wound infection or breakdown."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chronic lymphoedema after groin node surgery or radiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain, altered sensation and sexual dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary or bowel difficulties when adjacent structures are involved."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Psychological distress and changes in body image."
+                  "type": "list",
+                  "title": "Potential complications include:",
+                  "items": [
+                    {
+                      "text": "Local recurrence.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Groin lymph-node metastases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wound infection or breakdown.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic lymphoedema after groin node surgery or radiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain, altered sensation and sexual dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary or bowel difficulties when adjacent structures are involved.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psychological distress and changes in body image.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1207,7 +1293,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_13",
-          "subsection_title": "Counselling a patient with suspected vulval cancer",
+          "subsection_title": "12. Counselling a patient with suspected vulval cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1229,36 +1315,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask what the patient understands about the lesion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain why its appearance or persistence requires further investigation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the purpose of biopsy and how it is performed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clarify that a suspicious lesion does not automatically mean cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss what happens if the biopsy confirms malignancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explore concerns about surgery, sexual function, urinary function, body image and lymphoedema."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the role of the specialist team and the importance of follow-up."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer psychological support and invite questions."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ask what the patient understands about the lesion.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain why its appearance or persistence requires further investigation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Explain the purpose of biopsy and how it is performed.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Clarify that a suspicious lesion does not automatically mean cancer.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Discuss what happens if the biopsy confirms malignancy.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Explore concerns about surgery, sexual function, urinary function, body image and lymphoedema.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Explain the role of the specialist team and the importance of follow-up.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Offer psychological support and invite questions.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             },
@@ -1270,7 +1369,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I understand that finding a persistent lesion in this area can be worrying and may feel difficult to discuss. There are several possible causes, including inflammatory skin conditions and precancerous changes, but we need to exclude cancer. The most reliable way to do that is to take a small sample for examination under a microscope. Once we have the result, we can discuss the appropriate treatment and any effects it may have on your comfort, sexual function and everyday life.”"
+                  "text": "“I understand that finding a persistent lesion in this area can be worrying and may feel difficult to discuss. There are several possible causes, including inflammatory skin conditions and precancerous changes, but we need to exclude cancer. The most reliable way to do that is to take a small sample for examination under a microscope. Once we have the result, we can discuss the appropriate treatment and any effects it may have on your comfort, sexual function and everyday life.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1278,7 +1378,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_14",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "13. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1373,7 +1473,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_15",
-          "subsection_title": "How to present your findings",
+          "subsection_title": "14. How to present your findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1384,11 +1484,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“On inspection, there is a 2.5 cm irregular ulcerated lesion involving the left labium majus, with an indurated base and contact bleeding. I would assess its proximity to the midline, clitoris, urethra, vagina and anus, and palpate the lesion to determine its mobility and depth. I would examine both inguinal regions for lymphadenopathy."
+                  "text": "“On inspection, there is a 2.5 cm irregular ulcerated lesion involving the left labium majus, with an indurated base and contact bleeding. I would assess its proximity to the midline, clitoris, urethra, vagina and anus, and palpate the lesion to determine its mobility and depth. I would examine both inguinal regions for lymphadenopathy.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“My main concern is vulval squamous cell carcinoma. Differential diagnoses include differentiated VIN, vulval HSIL, inflammatory dermatoses and other vulval malignancies. I would arrange an urgent biopsy for histological confirmation and refer to the gynaecological oncology team for staging and management.”"
+                  "text": "“My main concern is vulval squamous cell carcinoma. Differential diagnoses include differentiated VIN, vulval HSIL, inflammatory dermatoses and other vulval malignancies. I would arrange an urgent biopsy for histological confirmation and refer to the gynaecological oncology team for staging and management.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1396,7 +1498,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_16",
-          "subsection_title": "Mini OSCE practice",
+          "subsection_title": "15. Mini OSCE practice",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1406,31 +1508,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Single best answer"
-                  ]
+                  "type": "paragraph",
+                  "text": "Single best answer"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 72-year-old woman has persistent vulval itching. Examination reveals a focal, thickened, ulcerated lesion on the labium majus that has not responded to topical treatment. What is the most appropriate next step?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Prescribe another antifungal cream and review in six months"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Prescribe another antifungal cream and review in six months"
                 },
                 {
                   "type": "paragraph",
                   "text": "B. Reassure her because itching is usually caused by benign disease"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Arrange a vulval biopsy and appropriate specialist referral",
-                    "D. Perform routine cervical screening only"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Arrange a vulval biopsy and appropriate specialist referral"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. Perform routine cervical screening only"
                 }
               ]
             }
@@ -1438,7 +1537,7 @@
         },
         {
           "subsection_id": "vulval_cancer_subsection_17",
-          "subsection_title": "High-yield mnemonic: VULVA",
+          "subsection_title": "16. High-yield mnemonic: VULVA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1448,24 +1547,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "V — Visible lesion, ulcer or thickening."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "U — Unrelenting itching or pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Lichen sclerosus and HPV-related disease are important risk contexts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V — Vulval biopsy confirms the diagnosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Assess groin nodes and arrange appropriate staging and specialist management."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "V — Visible lesion, ulcer or thickening.",
+                      "level": 0
+                    },
+                    {
+                      "text": "U — Unrelenting itching or pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Lichen sclerosus and HPV-related disease are important risk contexts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V — Vulval biopsy confirms the diagnosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Assess groin nodes and arrange appropriate staging and specialist management.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

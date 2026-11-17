@@ -51,7 +51,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_2",
-          "subsection_title": "Identification",
+          "subsection_title": "1. Identification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -78,10 +78,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Conventional direct otoscope"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Conventional direct otoscope"
                 },
                 {
                   "type": "paragraph",
@@ -93,10 +91,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Pneumatic otoscope"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Pneumatic otoscope"
                 },
                 {
                   "type": "paragraph",
@@ -108,10 +104,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Video otoscope"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Video otoscope"
                 },
                 {
                   "type": "paragraph",
@@ -123,7 +117,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is an otoscope, a diagnostic instrument used to examine the external auditory canal and tympanic membrane. It consists of a handle, illumination system, viewing lens and detachable ear speculum.”"
+                  "text": "“This is an otoscope, a diagnostic instrument used to examine the external auditory canal and tympanic membrane. It consists of a handle, illumination system, viewing lens and detachable ear speculum.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -131,7 +126,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_3",
-          "subsection_title": "Uses and indications",
+          "subsection_title": "2. Uses and indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -195,7 +190,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_4",
-          "subsection_title": "Parts and functions",
+          "subsection_title": "3. Parts and functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -210,10 +205,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "slideserve.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "slideserve.com"
                 },
                 {
                   "type": "table",
@@ -269,20 +262,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Small speculum: commonly used for infants and narrow ear canals."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Larger speculum: used when the canal permits, providing a wider field of view."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Disposable speculum: reduces cross-contamination when used correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reusable speculum: requires appropriate cleaning and reprocessing according to local infection-control policy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Small speculum: commonly used for infants and narrow ear canals.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Larger speculum: used when the canal permits, providing a wider field of view.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Disposable speculum: reduces cross-contamination when used correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reusable speculum: requires appropriate cleaning and reprocessing according to local infection-control policy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -294,7 +292,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_5",
-          "subsection_title": "Advantages",
+          "subsection_title": "4. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -304,32 +302,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Portable: easy to carry during ward rounds and bedside examinations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rapid assessment: helps identify common causes of ear pain, discharge and hearing problems."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Magnification: allows detailed inspection of the external auditory canal and tympanic membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relatively inexpensive: widely available in primary care, emergency departments and hospitals."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Useful in children: enables assessment for acute otitis media and other ear conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pneumatic capability: certain models assess tympanic membrane mobility, helping identify middle-ear effusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Improved communication: video otoscopes can display findings to patients, caregivers or trainees."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Portable: easy to carry during ward rounds and bedside examinations.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Rapid assessment: helps identify common causes of ear pain, discharge and hearing problems.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Magnification: allows detailed inspection of the external auditory canal and tympanic membrane.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Relatively inexpensive: widely available in primary care, emergency departments and hospitals.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Useful in children: enables assessment for acute otitis media and other ear conditions.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Pneumatic capability: certain models assess tympanic membrane mobility, helping identify middle-ear effusion.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Improved communication: video otoscopes can display findings to patients, caregivers or trainees.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }
@@ -337,7 +347,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_6",
-          "subsection_title": "Disadvantages and limitations",
+          "subsection_title": "5. Disadvantages and limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -347,36 +357,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Limited field of view: only the visible portion of the ear canal and tympanic membrane can be examined."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cerumen obstruction: impacted wax may prevent adequate visualisation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient movement: particularly in infants and young children, movement can make examination difficult."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Narrow or swollen canal: may prevent insertion of an appropriately sized speculum."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Operator dependence: correct positioning and interpretation require practice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Poor visibility: discharge, debris, blood or canal oedema may obscure the tympanic membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Limited diagnostic scope: otoscopy alone cannot reliably establish the type or severity of every hearing disorder."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No routine assessment of hearing thresholds: audiometry is required when quantitative hearing assessment is indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Limited field of view: only the visible portion of the ear canal and tympanic membrane can be examined.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerumen obstruction: impacted wax may prevent adequate visualisation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient movement: particularly in infants and young children, movement can make examination difficult.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Narrow or swollen canal: may prevent insertion of an appropriately sized speculum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Operator dependence: correct positioning and interpretation require practice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor visibility: discharge, debris, blood or canal oedema may obscure the tympanic membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Limited diagnostic scope: otoscopy alone cannot reliably establish the type or severity of every hearing disorder.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No routine assessment of hearing thresholds: audiometry is required when quantitative hearing assessment is indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -388,7 +403,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_7",
-          "subsection_title": "Preparation and precautions",
+          "subsection_title": "6. Preparation and precautions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -398,32 +413,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Otoscope is functioning and the light is adequate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The lens is clean and provides a clear image."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An appropriate-sized speculum is available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The speculum is clean or disposable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hand hygiene has been performed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The patient is seated comfortably."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consent has been obtained and the procedure explained."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Otoscope is functioning and the light is adequate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The lens is clean and provides a clear image.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An appropriate-sized speculum is available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The speculum is clean or disposable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hand hygiene has been performed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The patient is seated comfortably.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consent has been obtained and the procedure explained.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -434,32 +454,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ear pain, discharge or bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hearing loss or tinnitus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recent ear trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous ear surgery, including tympanoplasty."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Known tympanic membrane perforation or ventilation tubes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous ear infections and relevant treatment."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Ear pain, discharge or bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hearing loss or tinnitus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recent ear trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ear surgery, including tympanoplasty.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Known tympanic membrane perforation or ventilation tubes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ear infections and relevant treatment.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -495,7 +517,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_8",
-          "subsection_title": "How to use an otoscope — step-by-step OSCE demonstration",
+          "subsection_title": "7. How to use an otoscope — step-by-step OSCE demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -519,7 +541,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Hello, I am going to examine your ears using an otoscope. I will gently place a small speculum at the entrance of each ear canal so I can examine the canal and eardrum. You may feel some pressure, but please tell me if you experience pain.”"
+                  "text": "“Hello, I am going to examine your ears using an otoscope. I will gently place a small speculum at the entrance of each ear canal so I can examine the canal and eardrum. You may feel some pressure, but please tell me if you experience pain.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -534,20 +557,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Sit the adult comfortably with the head supported."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "For a child, use a safe, comfortable position with the caregiver's assistance if appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the procedure in age-appropriate language."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure adequate lighting."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Sit the adult comfortably with the head supported.",
+                      "level": 0
+                    },
+                    {
+                      "text": "For a child, use a safe, comfortable position with the caregiver's assistance if appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain the procedure in age-appropriate language.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure adequate lighting.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -562,28 +590,30 @@
                   "text": "Before inserting the otoscope, examine both pinnae and the surrounding skin."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness or swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deformity or trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Scars from previous surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tenderness or lesions."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Redness or swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformity or trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars from previous surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tenderness or lesions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -631,10 +661,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Adults and older children"
-                  ]
+                  "type": "paragraph",
+                  "text": "Adults and older children"
                 },
                 {
                   "type": "paragraph",
@@ -646,10 +674,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Infants and young children"
-                  ]
+                  "type": "paragraph",
+                  "text": "Infants and young children"
                 },
                 {
                   "type": "paragraph",
@@ -668,24 +694,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Insert the speculum slowly and under direct visual guidance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the natural direction of the ear canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid force and avoid pushing against the canal walls."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep your hand braced against the patient's head."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop if there is significant pain, resistance or unexpected movement."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Insert the speculum slowly and under direct visual guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow the natural direction of the ear canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid force and avoid pushing against the canal walls.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep your hand braced against the patient's head.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stop if there is significant pain, resistance or unexpected movement.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -700,28 +731,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Canal patency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cerumen or foreign bodies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness and oedema."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discharge or debris."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ulceration, trauma or other lesions."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Canal patency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerumen or foreign bodies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Redness and oedema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge or debris.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration, trauma or other lesions.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -747,36 +780,45 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Systematically assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour: normally pearly grey or translucent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position: normally neutral or slightly retracted, depending on anatomy and pressure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Transparency: the normal membrane is partly translucent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Landmarks: identify the handle of the malleus and other visible landmarks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cone of light: usually visible in a characteristic location, but its appearance varies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Integrity: look for perforation, scarring, retraction or other abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bulging or retraction: may indicate middle-ear pathology."
+                  "type": "list",
+                  "title": "Systematically assess:",
+                  "items": [
+                    {
+                      "text": "Colour: normally pearly grey or translucent.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Position: normally neutral or slightly retracted, depending on anatomy and pressure.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Transparency: the normal membrane is partly translucent.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Landmarks: identify the handle of the malleus and other visible landmarks.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Cone of light: usually visible in a characteristic location, but its appearance varies.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Integrity: look for perforation, scarring, retraction or other abnormalities.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Bulging or retraction: may indicate middle-ear pathology.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -795,16 +837,21 @@
                   "text": "If a pneumatic otoscope is available and it is safe to use, apply gentle, controlled pressure changes while observing the tympanic membrane."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Normal mobility suggests that the membrane moves with pressure changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced or absent mobility may suggest middle-ear effusion or other middle-ear pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not perform pneumatic otoscopy when perforation or relevant trauma is suspected."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Normal mobility suggests that the membrane moves with pressure changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced or absent mobility may suggest middle-ear effusion or other middle-ear pathology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not perform pneumatic otoscopy when perforation or relevant trauma is suspected.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -852,7 +899,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_9",
-          "subsection_title": "Contraindications and complications",
+          "subsection_title": "8. Contraindications and complications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -915,28 +962,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pain or discomfort."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abrasion of the external auditory canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding from canal trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Injury or perforation of the tympanic membrane from improper technique."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Coughing caused by stimulation of the auricular branch of the vagus nerve."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cross-infection from inadequately cleaned equipment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pain or discomfort.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abrasion of the external auditory canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding from canal trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Injury or perforation of the tympanic membrane from improper technique.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coughing caused by stimulation of the auricular branch of the vagus nerve.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cross-infection from inadequately cleaned equipment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -948,7 +1000,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_10",
-          "subsection_title": "Normal and abnormal findings",
+          "subsection_title": "9. Normal and abnormal findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -975,34 +1027,34 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "enteducationswansea.org"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "enteducationswansea.org"
+                    {
+                      "text": "Pearly grey or translucent appearance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intact membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recognisable landmarks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No significant bulging or retraction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No obvious perforation, discharge or marked inflammation.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pearly grey or translucent appearance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intact membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recognisable landmarks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No significant bulging or retraction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No obvious perforation, discharge or marked inflammation."
                 },
                 {
                   "type": "paragraph",
@@ -1022,30 +1074,30 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "med.uth.edu"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "med.uth.edu"
+                    {
+                      "text": "Bulging tympanic membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Opaque or cloudy appearance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced mobility where pneumatic assessment is appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sometimes erythema or middle-ear fluid.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bulging tympanic membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Opaque or cloudy appearance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced mobility where pneumatic assessment is appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sometimes erythema or middle-ear fluid."
                 },
                 {
                   "type": "paragraph",
@@ -1065,30 +1117,30 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "pmc.ncbi.nlm.nih.gov"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "pmc.ncbi.nlm.nih.gov"
+                    {
+                      "text": "Redness and oedema of the external auditory canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge or debris.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain on manipulation of the tragus or pinna may be present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The tympanic membrane may be normal or obscured.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Redness and oedema of the external auditory canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discharge or debris."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain on manipulation of the tragus or pinna may be present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The tympanic membrane may be normal or obscured."
                 },
                 {
                   "type": "paragraph",
@@ -1108,30 +1160,30 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "otoscape.com"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "otoscape.com"
+                    {
+                      "text": "A visible defect or hole in the membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible conductive hearing loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The location and size of the perforation should be described.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A visible defect or hole in the membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible conductive hearing loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The location and size of the perforation should be described."
                 },
                 {
                   "type": "paragraph",
@@ -1151,26 +1203,26 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "pcaudiology.ca"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "pcaudiology.ca"
+                    {
+                      "text": "Accumulated wax obstructing part or all of the canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tympanic membrane may not be visible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible hearing loss, discomfort or tinnitus.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accumulated wax obstructing part or all of the canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tympanic membrane may not be visible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible hearing loss, discomfort or tinnitus."
                 },
                 {
                   "type": "paragraph",
@@ -1190,30 +1242,30 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "quizlet.com"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "quizlet.com"
+                    {
+                      "text": "Amber or dull tympanic membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible air-fluid level or bubbles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retraction may be present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced mobility with pneumatic otoscopy.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amber or dull tympanic membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible air-fluid level or bubbles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Retraction may be present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced mobility with pneumatic otoscopy."
                 },
                 {
                   "type": "paragraph",
@@ -1233,26 +1285,26 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "jpabs.org"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "jpabs.org"
+                    {
+                      "text": "Inward displacement of the membrane.",
+                      "level": 0
+                    },
+                    {
+                      "text": "More prominent middle-ear landmarks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible association with Eustachian tube dysfunction.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inward displacement of the membrane."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "More prominent middle-ear landmarks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible association with Eustachian tube dysfunction."
                 },
                 {
                   "type": "paragraph",
@@ -1272,26 +1324,26 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "urano-ent.jp"
+                },
+                {
+                  "type": "list",
+                  "title": "Typical findings:",
                   "items": [
-                    "urano-ent.jp"
+                    {
+                      "text": "Visible foreign material in the canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible surrounding redness, swelling or discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The tympanic membrane may be obscured.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Typical findings:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Visible foreign material in the canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible surrounding redness, swelling or discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The tympanic membrane may be obscured."
                 },
                 {
                   "type": "paragraph",
@@ -1306,32 +1358,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use this structure:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the affected ear."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe the external canal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe the tympanic membrane's colour, position and integrity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mention visible landmarks and mobility if assessed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State the likely diagnosis and relevant differential diagnoses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mention limitations and the next appropriate step."
+                  "type": "list",
+                  "title": "Use this structure:",
+                  "items": [
+                    {
+                      "text": "Identify the affected ear.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Describe the external canal.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Describe the tympanic membrane's colour, position and integrity.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Mention visible landmarks and mobility if assessed.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "State the likely diagnosis and relevant differential diagnoses.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Mention limitations and the next appropriate step.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1339,7 +1399,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“On otoscopy of the right ear, the tympanic membrane appears opaque and bulging. These findings, in the context of acute ear pain and other compatible symptoms, are suggestive of acute otitis media. I would assess the other ear and correlate with the clinical history.”"
+                  "text": "“On otoscopy of the right ear, the tympanic membrane appears opaque and bulging. These findings, in the context of acute ear pain and other compatible symptoms, are suggestive of acute otitis media. I would assess the other ear and correlate with the clinical history.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1351,7 +1412,7 @@
         },
         {
           "subsection_id": "otoscope_subsection_11",
-          "subsection_title": "Pediatric considerations",
+          "subsection_title": "10. Pediatric considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1373,24 +1434,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The external auditory canal is narrower."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The tympanic membrane may be harder to visualise."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The pinna requires a gentle downward-and-backward pull in young infants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Head movement increases the risk of canal injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A smaller speculum may be required."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "The external auditory canal is narrower.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The tympanic membrane may be harder to visualise.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The pinna requires a gentle downward-and-backward pull in young infants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head movement increases the risk of canal injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A smaller speculum may be required.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1401,28 +1467,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain the procedure to the caregiver and child."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask the caregiver to assist with positioning if appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Support the child's head safely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stabilise your examining hand against the child's head."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use brief, gentle movements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop if the child moves suddenly or the examination becomes unsafe."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain the procedure to the caregiver and child.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ask the caregiver to assist with positioning if appropriate.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Support the child's head safely.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Stabilise your examining hand against the child's head.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Use brief, gentle movements.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Stop if the child moves suddenly or the examination becomes unsafe.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1465,16 +1542,21 @@
                   "text": "Children may insert beads, food, paper or other objects into the ear canal. Ask about the object if known."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A button battery requires emergency removal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid irrigation for batteries and objects that may swell with water."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Refer for specialist removal if the object is deep, impacted, sharp or difficult to remove safely."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "A button battery requires emergency removal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid irrigation for batteries and objects that may swell with water.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Refer for specialist removal if the object is deep, impacted, sharp or difficult to remove safely.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1494,20 +1576,22 @@
         },
         {
           "subsection_id": "otoscope_subsection_12",
-          "subsection_title": "Mnemonics and memory aids",
+          "subsection_title": "11. Mnemonics and memory aids",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "otoscope_group_44",
-              "group_title": "C",
+              "group_title": "Mnemonic 1: Tympanic membrane examination — C-P-L-I-M",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Colour"
-                  ]
+                  "type": "paragraph",
+                  "text": "**C**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Colour"
                 },
                 {
                   "type": "paragraph",
@@ -1522,10 +1606,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Position"
-                  ]
+                  "type": "paragraph",
+                  "text": "Position"
                 },
                 {
                   "type": "paragraph",
@@ -1540,10 +1622,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Landmarks"
-                  ]
+                  "type": "paragraph",
+                  "text": "Landmarks"
                 },
                 {
                   "type": "paragraph",
@@ -1558,10 +1638,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Integrity"
-                  ]
+                  "type": "paragraph",
+                  "text": "Integrity"
                 },
                 {
                   "type": "paragraph",
@@ -1576,70 +1654,72 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mobility"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mobility"
                 },
                 {
                   "type": "paragraph",
                   "text": "Assess when indicated and safe, using pneumatic otoscopy."
-                }
-              ]
-            },
-            {
-              "group_id": "otoscope_group_49",
-              "group_title": "Mnemonic 2: Common abnormal findings — W-B-P-F",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "W — Wax impaction."
                 },
                 {
                   "type": "paragraph",
-                  "text": "B — Bulging tympanic membrane: consider acute otitis media."
+                  "text": "**Mnemonic 2: Common abnormal findings — W-B-P-F**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "W — Wax impaction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "B — Bulging tympanic membrane: consider acute otitis media.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Perforation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "F — Fluid behind the tympanic membrane: consider middle-ear effusion.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "P — Perforation."
+                  "text": "**Mnemonic 3: Safe otoscopy — G-E-N-T-L-E**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "F — Fluid behind the tympanic membrane: consider middle-ear effusion."
-                }
-              ]
-            },
-            {
-              "group_id": "otoscope_group_50",
-              "group_title": "Mnemonic 3: Safe otoscopy — G-E-N-T-L-E",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "G — Gain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Examine the external ear first."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — Note the patient's age and canal anatomy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Take the largest comfortable speculum."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Lock your hand against the patient's head for stability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Examine gently and stop if unsafe."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "G — Gain consent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Examine the external ear first.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Note the patient's age and canal anatomy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Take the largest comfortable speculum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Lock your hand against the patient's head for stability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Examine gently and stop if unsafe.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1647,11 +1727,11 @@
         },
         {
           "subsection_id": "otoscope_subsection_13",
-          "subsection_title": "Common OSCE questions and model answers",
+          "subsection_title": "12. Common OSCE questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "otoscope_group_51",
+              "group_id": "otoscope_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1758,70 +1838,58 @@
         },
         {
           "subsection_id": "otoscope_subsection_14",
-          "subsection_title": "Common mistakes and examiner tips",
+          "subsection_title": "13. Common mistakes and examiner tips",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "otoscope_group_52",
+              "group_id": "otoscope_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Forgetting to inspect the pinna"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Forgetting to inspect the pinna"
                 },
                 {
                   "type": "paragraph",
                   "text": "Examine the external ear before inserting the speculum. Look for swelling, lesions, trauma and discharge."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Using the wrong pinna traction"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Using the wrong pinna traction"
                 },
                 {
                   "type": "paragraph",
                   "text": "Use upward-and-backward traction in adults and downward-and-backward traction in young infants."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Inserting the speculum too deeply or forcefully"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Inserting the speculum too deeply or forcefully"
                 },
                 {
                   "type": "paragraph",
                   "text": "Choose an appropriate speculum, brace your hand and proceed under direct vision. Stop if the patient experiences significant pain or moves unexpectedly."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Calling a red tympanic membrane acute otitis media"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Calling a red tympanic membrane acute otitis media"
                 },
                 {
                   "type": "paragraph",
                   "text": "Look for bulging, effusion and compatible acute symptoms. Crying and irritation can also cause tympanic membrane redness."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mistake: Forgetting to examine the other ear"
-                  ]
+                  "type": "paragraph",
+                  "text": "Mistake: Forgetting to examine the other ear"
                 },
                 {
                   "type": "paragraph",
                   "text": "Compare both ears and document any differences."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Examiner tip: Describe the canal and membrane separately"
-                  ]
+                  "type": "paragraph",
+                  "text": "Examiner tip: Describe the canal and membrane separately"
                 },
                 {
                   "type": "paragraph",
@@ -1829,60 +1897,76 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "14. Mini-OSCE practice."
+                  "text": "**14. Mini-OSCE practice**."
                 },
                 {
                   "type": "paragraph",
                   "text": "1. You are examining a 2-month-old infant. How should you pull the pinna?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Upwards and backwards",
-                    "Downwards and backwards",
-                    "Straight forwards"
-                  ]
+                  "type": "paragraph",
+                  "text": "Upwards and backwards"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Downwards and backwards"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Straight forwards"
                 },
                 {
                   "type": "paragraph",
                   "text": "2. A child has acute ear pain and a bulging tympanic membrane with middle-ear effusion. What is the most likely diagnosis?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Otitis externa",
-                    "Acute otitis media",
-                    "Impacted cerumen"
-                  ]
+                  "type": "paragraph",
+                  "text": "Otitis externa"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Acute otitis media"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impacted cerumen"
                 },
                 {
                   "type": "paragraph",
                   "text": "3. You suspect a button battery is lodged in the ear canal. What should you do?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Irrigate the canal",
-                    "Attempt repeated blind removal",
-                    "Arrange immediate emergency removal"
-                  ]
+                  "type": "paragraph",
+                  "text": "Irrigate the canal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Attempt repeated blind removal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Arrange immediate emergency removal"
                 },
                 {
                   "type": "paragraph",
                   "text": "4. Why should you brace your hand against the patient's head during otoscopy?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "To increase the magnification",
-                    "To stabilise the instrument and reduce injury risk",
-                    "To improve tympanic membrane mobility"
-                  ]
+                  "type": "paragraph",
+                  "text": "To increase the magnification"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "To stabilise the instrument and reduce injury risk"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "To improve tympanic membrane mobility"
                 }
               ]
             },
             {
-              "group_id": "otoscope_group_53",
+              "group_id": "otoscope_group_51",
               "group_title": "Final rapid-revision summary",
               "group_subtitle": null,
               "group_icon": null,
