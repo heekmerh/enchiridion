@@ -32,10 +32,9 @@
                   "text": "The examiner may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Assess the growth of this child.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Assess the growth of this child.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -43,7 +42,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Measure the child's weight, length/height and head circumference and interpret your findings.”"
+                  "text": "“Measure the child's weight, length/height and head circumference and interpret your findings.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -59,7 +59,7 @@
         },
         {
           "subsection_id": "anthropometry_subsection_2",
-          "subsection_title": "What you need to assess",
+          "subsection_title": "1. What you need to assess",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -69,32 +69,65 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The major anthropometric measurements are:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The major anthropometric measurements are:",
                   "items": [
-                    "Weight",
-                    "Length",
-                    "Standing height",
-                    "Head circumference",
-                    "MUAC",
-                    "BMI"
+                    {
+                      "text": "Weight",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Length",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Standing height",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Head circumference",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "MUAC",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "BMI",
+                      "level": 0,
+                      "label": "6."
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You then interpret them using appropriate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You then interpret them using appropriate:",
                   "items": [
-                    "Age",
-                    "Sex",
-                    "Growth charts",
-                    "Percentiles",
-                    "Z-scores"
+                    {
+                      "text": "Age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sex",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth charts",
+                      "level": 0
+                    },
+                    {
+                      "text": "Percentiles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Z-scores",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -103,7 +136,7 @@
         },
         {
           "subsection_id": "anthropometry_subsection_3",
-          "subsection_title": "Before measuring",
+          "subsection_title": "2. Before measuring",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -114,7 +147,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I would like to take some measurements to assess your child's growth. Is that okay?”"
+                  "text": "“Good morning. My name is Dr ____. I would like to take some measurements to assess your child's growth. Is that okay?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -125,15 +159,36 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Explain what you're doing",
-                    "Wash hands",
-                    "Ensure equipment is clean and functioning",
-                    "Calibrate/zero the weighing scale",
-                    "Remove unnecessary clothing",
-                    "Keep the child comfortable",
-                    "Ensure privacy"
+                    {
+                      "text": "Explain what you're doing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wash hands",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure equipment is clean and functioning",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calibrate/zero the weighing scale",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remove unnecessary clothing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep the child comfortable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure privacy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -153,10 +208,8 @@
                   "text": "You need:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Date of birth + date of assessment = chronological age"
-                  ]
+                  "type": "paragraph",
+                  "text": "Date of birth + date of assessment = chronological age"
                 },
                 {
                   "type": "paragraph",
@@ -168,6 +221,12 @@
         },
         {
           "subsection_id": "anthropometry_subsection_4",
+          "subsection_title": "3. Measuring weight",
+          "subsection_icon": null,
+          "content_groups": []
+        },
+        {
+          "subsection_id": "anthropometry_subsection_5",
           "subsection_title": "Infants",
           "subsection_icon": null,
           "content_groups": [
@@ -195,32 +254,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Place the scale on a flat stable surface."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure it is zeroed/calibrated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remove excess clothing and diaper if appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place the infant safely in the centre of the scale."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never leave the infant unattended."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wait for the reading to stabilize."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Record the weight."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Place the scale on a flat stable surface.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ensure it is zeroed/calibrated.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Remove excess clothing and diaper if appropriate.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Place the infant safely in the centre of the scale.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Never leave the infant unattended.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Wait for the reading to stabilize.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Record the weight.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -240,15 +311,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would ensure the scale is calibrated, remove excess clothing, place the infant safely in the centre of the scale and record the stabilized weight.”"
+                  "text": "“I would ensure the scale is calibrated, remove excess clothing, place the infant safely in the centre of the scale and record the stabilized weight.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_5",
-          "subsection_title": "Measuring weight in older children",
+          "subsection_id": "anthropometry_subsection_6",
+          "subsection_title": "4. Measuring weight in older children",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -270,17 +342,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask the child to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask the child to:",
                   "items": [
-                    "Remove shoes",
-                    "Remove heavy outer clothing",
-                    "Stand upright",
-                    "Stand in the centre of the scale",
-                    "Keep still"
+                    {
+                      "text": "Remove shoes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remove heavy outer clothing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stand upright",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stand in the centre of the scale",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep still",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -304,8 +388,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_6",
-          "subsection_title": "Measuring length",
+          "subsection_id": "anthropometry_subsection_7",
+          "subsection_title": "5. Measuring length",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -345,40 +429,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Remove shoes and bulky clothing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lay the child supine."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position the head against the fixed headboard."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the head in the appropriate neutral position."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure the trunk is straight."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Extend the legs gently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bring the movable footboard firmly against the heels."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure the feet are perpendicular to the board."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Record the length."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Remove shoes and bulky clothing.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Lay the child supine.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Position the head against the fixed headboard.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Keep the head in the appropriate neutral position.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure the trunk is straight.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Extend the legs gently.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Bring the movable footboard firmly against the heels.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Ensure the feet are perpendicular to the board.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Record the length.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
                 }
               ]
             },
@@ -401,8 +499,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_7",
-          "subsection_title": "Measuring standing height",
+          "subsection_id": "anthropometry_subsection_8",
+          "subsection_title": "7. Measuring standing height",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -425,10 +523,8 @@
                   "text": "Use a:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Stadiometer"
-                  ]
+                  "type": "paragraph",
+                  "text": "Stadiometer"
                 }
               ]
             },
@@ -439,20 +535,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The child should:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The child should:",
                   "items": [
-                    "Remove shoes",
-                    "Stand upright",
-                    "Heels together or appropriately positioned",
-                    "Legs straight",
-                    "Shoulders relaxed",
-                    "Look straight ahead",
-                    "Have the head positioned appropriately",
-                    "Heels/buttocks/back appropriately aligned with the stadiometer where anatomically possible"
+                    {
+                      "text": "Remove shoes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stand upright",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heels together or appropriately positioned",
+                      "level": 0
+                    },
+                    {
+                      "text": "Legs straight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shoulders relaxed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Look straight ahead",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have the head positioned appropriately",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heels/buttocks/back appropriately aligned with the stadiometer where anatomically possible",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -468,8 +585,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_8",
-          "subsection_title": "Length vs height",
+          "subsection_id": "anthropometry_subsection_9",
+          "subsection_title": "7. Length vs height",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -527,8 +644,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_9",
-          "subsection_title": "Head circumference and chest circumference",
+          "subsection_id": "anthropometry_subsection_10",
+          "subsection_title": "8. Head circumference and chest circumference",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -551,10 +668,8 @@
                   "text": "Use a:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Non-stretchable measuring tape"
-                  ]
+                  "type": "paragraph",
+                  "text": "Non-stretchable measuring tape"
                 }
               ]
             },
@@ -569,15 +684,21 @@
                   "text": "Measure around the largest possible circumference of the head."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The tape should pass:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The tape should pass:",
                   "items": [
-                    "Anteriorly: just above the eyebrows/supraorbital region",
-                    "Laterally: above the ears",
-                    "Posteriorly: around the most prominent part of the occiput"
+                    {
+                      "text": "Anteriorly: just above the eyebrows/supraorbital region",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laterally: above the ears",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posteriorly: around the most prominent part of the occiput",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -589,36 +710,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ensure the child is comfortable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place tape around the head."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Find the maximum circumference."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the tape horizontal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure it is snug but not compressing the scalp."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take the measurement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Repeat if necessary."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Record."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ensure the child is comfortable.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Place tape around the head.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Find the maximum circumference.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Keep the tape horizontal.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure it is snug but not compressing the scalp.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Take the measurement.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Repeat if necessary.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Record.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             },
@@ -630,31 +764,60 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would measure the occipitofrontal circumference using a non-stretchable tape placed around the maximum circumference of the head, passing above the eyebrows and ears and around the most prominent part of the occiput.”"
+                  "text": "“I would measure the occipitofrontal circumference using a non-stretchable tape placed around the maximum circumference of the head, passing above the eyebrows and ears and around the most prominent part of the occiput.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CALCULATION",
-                    "Term baby = 35 +/- 2cm",
-                    "+2 months = +4cm",
-                    "+2 months = +3cm",
-                    "+2 months = +2cm",
-                    "+2 months = +1cm",
-                    "At 6 months = 45 +/- 2cm (43, 47)",
-                    "2-3 years = +2cm",
-                    "4-5 years = +1.5cm",
-                    "6-7 years = 1cm",
-                    "7years - Adulthood = 56 +/- 2cm"
-                  ]
+                  "type": "paragraph",
+                  "text": "**CALCULATION**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Term baby = 35 +/- 2cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "+2 months = +4cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "+2 months = +3cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "+2 months = +2cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "+2 months = +1cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "At 6 months = 45 +/- 2cm (43, 47)"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2-3 years = +2cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4-5 years = +1.5cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6-7 years = 1cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7years - Adulthood = 56 +/- 2cm"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_10",
-          "subsection_title": "What does head circumference tell you?",
+          "subsection_id": "anthropometry_subsection_11",
+          "subsection_title": "9. What does head circumference tell you?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -664,15 +827,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "It gives information about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It gives information about:",
                   "items": [
-                    "Brain growth",
-                    "Skull growth",
-                    "Neurological development"
+                    {
+                      "text": "Brain growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skull growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological development",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -697,17 +866,29 @@
                   "text": "Head circumference significantly below the expected range for age and sex."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Congenital infections",
-                    "Genetic disorders",
-                    "Brain malformations",
-                    "Perinatal insults",
-                    "Severe nutritional/environmental factors"
+                    {
+                      "text": "Congenital infections",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brain malformations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perinatal insults",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe nutritional/environmental factors",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -728,18 +909,33 @@
                   "text": "Head circumference significantly above the expected range."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes:",
                   "items": [
-                    "Hydrocephalus",
-                    "Familial macrocephaly",
-                    "Intracranial mass",
-                    "Subdural collections",
-                    "Skeletal dysplasia",
-                    "Other genetic conditions"
+                    {
+                      "text": "Hydrocephalus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Familial macrocephaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subdural collections",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skeletal dysplasia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other genetic conditions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -747,7 +943,7 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_11",
+          "subsection_id": "anthropometry_subsection_12",
           "subsection_title": "CHEST CIRCUMFERENCE",
           "subsection_icon": null,
           "content_groups": [
@@ -758,20 +954,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CC is 2-4cm < OFC at birth",
-                    "CC is equal to OFC at 1 year",
-                    "CC is > OFC after 1 year"
-                  ]
+                  "type": "paragraph",
+                  "text": "CC is 2-4cm < OFC at birth"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CC is equal to OFC at 1 year"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CC is > OFC after 1 year"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_12",
-          "subsection_title": "MUAC",
+          "subsection_id": "anthropometry_subsection_13",
+          "subsection_title": "10. MUAC",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -781,10 +981,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "MUAC = Mid-Upper Arm Circumference"
-                  ]
+                  "type": "paragraph",
+                  "text": "MUAC = Mid-Upper Arm Circumference"
                 },
                 {
                   "type": "paragraph",
@@ -795,10 +993,8 @@
                   "text": "Use:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "MUAC tape"
-                  ]
+                  "type": "paragraph",
+                  "text": "MUAC tape"
                 },
                 {
                   "type": "image",
@@ -810,8 +1006,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_13",
-          "subsection_title": "How to measure MUAC",
+          "subsection_id": "anthropometry_subsection_14",
+          "subsection_title": "10. How to measure MUAC",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -834,14 +1030,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Identify the:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Identify the:",
                   "items": [
-                    "Acromion process",
-                    "Olecranon process"
+                    {
+                      "text": "Acromion process",
+                      "level": 0
+                    },
+                    {
+                      "text": "Olecranon process",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -889,15 +1088,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ensure:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ensure:",
                   "items": [
-                    "Tape is horizontal",
-                    "Not too tight",
-                    "Not too loose"
+                    {
+                      "text": "Tape is horizontal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not too tight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not too loose",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -917,8 +1122,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_14",
-          "subsection_title": "MUAC interpretation",
+          "subsection_id": "anthropometry_subsection_15",
+          "subsection_title": "12. MUAC interpretation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -965,10 +1170,8 @@
                   "text": "For severe acute malnutrition, also look for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Bilateral pitting oedema"
-                  ]
+                  "type": "paragraph",
+                  "text": "Bilateral pitting oedema"
                 },
                 {
                   "type": "paragraph",
@@ -979,8 +1182,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_15",
-          "subsection_title": "Weight-for-age",
+          "subsection_id": "anthropometry_subsection_16",
+          "subsection_title": "13. Weight-for-age",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -995,21 +1198,25 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "This compares",
-                    "Child's weight → expected weight for age"
-                  ]
+                  "type": "paragraph",
+                  "text": "This compares"
                 },
                 {
                   "type": "paragraph",
-                  "text": "It is useful for identifying:"
+                  "text": "Child's weight → expected weight for age"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It is useful for identifying:",
                   "items": [
-                    "Underweight",
-                    "Growth faltering"
+                    {
+                      "text": "Underweight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth faltering",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1025,19 +1232,22 @@
                   "text": "Weight-for-age cannot distinguish between wasting and stunting."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example, a child may have a low weight-for-age because they are:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example, a child may have a low weight-for-age because they are:",
                   "items": [
-                    "Short for age",
-                    "Thin for height"
+                    {
+                      "text": "Short for age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thin for height",
+                      "level": 0
+                    },
+                    {
+                      "text": "Or both.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Or both."
                 },
                 {
                   "type": "paragraph",
@@ -1048,37 +1258,48 @@
                   "text": "Preterm babies loose about 15% of their body weight and regain it by the 15th day"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CALCULATION"
-                  ]
+                  "type": "paragraph",
+                  "text": "**CALCULATION**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "0-3 MONTHS = (n - 10) x 30 + Body weight"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "4-12 MONTHS = (n - 8) / 2",
-                    "1-6 YEARS = 2n + 8",
-                    "7-12 YEARS = (7n - 5) / 2",
-                    "(n is age in days)",
-                    "Weight doubles in 6 months of age",
-                    "Triples in 1 year"
-                  ]
+                  "text": "**0-3 MONTHS = (n - 10) x 30 + Body weight**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Preterm babies catch up in weight at 18 - 24 months"
+                  "text": "**4-12 MONTHS = (n - 8) / 2**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1-6 YEARS = 2n + 8**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**7-12 YEARS = (7n - 5) / 2**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**(n is age in days)**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Weight doubles in 6 months of age**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Triples in 1 year**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Preterm babies catch up in weight at 18 - 24 months**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_16",
-          "subsection_title": "Height/length-for-age",
+          "subsection_id": "anthropometry_subsection_17",
+          "subsection_title": "14. Height/length-for-age",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1101,39 +1322,58 @@
                   "text": "Low height/length-for-age suggests:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Stunting"
-                  ]
+                  "type": "paragraph",
+                  "text": "Stunting"
                 },
                 {
                   "type": "paragraph",
                   "text": "Stunting generally reflects chronic or recurrent nutritional/health problems."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential contributors include:"
+                  "type": "list",
+                  "title": "Potential contributors include:",
+                  "items": [
+                    {
+                      "text": "Chronic undernutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endocrine disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic/familial factors",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Chronic undernutrition",
-                    "Recurrent infection",
-                    "Chronic disease",
-                    "Endocrine disorders",
-                    "Genetic/familial factors",
-                    "Length at birth = 50cm +/- 5cm",
-                    "In the first year = +25cm",
-                    "> 1 year = 6n + 77"
-                  ]
+                  "type": "paragraph",
+                  "text": "Length at birth = 50cm +/- 5cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In the first year = +25cm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "> 1 year = 6n + 77"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_17",
-          "subsection_title": "Weight-for-height/length",
+          "subsection_id": "anthropometry_subsection_18",
+          "subsection_title": "15. Weight-for-height/length",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1152,20 +1392,16 @@
                   "text": "This compares:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Weight → expected weight for the child's height/length"
-                  ]
+                  "type": "paragraph",
+                  "text": "Weight → expected weight for the child's height/length"
                 },
                 {
                   "type": "paragraph",
                   "text": "It is particularly useful for identifying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Wasting"
-                  ]
+                  "type": "paragraph",
+                  "text": "Wasting"
                 },
                 {
                   "type": "paragraph",
@@ -1176,8 +1412,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_18",
-          "subsection_title": "BMI",
+          "subsection_id": "anthropometry_subsection_19",
+          "subsection_title": "16. BMI",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1187,10 +1423,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BMI ={Weight (kg)}/{Height^2(m^2)}"
-                  ]
+                  "type": "paragraph",
+                  "text": "BMI ={Weight (kg)}/{Height^2(m^2)}"
                 },
                 {
                   "type": "paragraph",
@@ -1201,11 +1435,12 @@
                   "text": "Child weighs 20 kg and is 1.1 m tall:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BMI = {20}/{1.1^2}",
-                    "BMI = 16.5\\ kg/m^2"
-                  ]
+                  "type": "paragraph",
+                  "text": "BMI = {20}/{1.1^2}"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "BMI = 16.5\\ kg/m^2"
                 }
               ]
             },
@@ -1220,15 +1455,21 @@
                   "text": "Do not interpret a child's BMI using adult BMI cut-offs."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For children, BMI must be interpreted according to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For children, BMI must be interpreted according to:",
                   "items": [
-                    "Age",
-                    "Sex",
-                    "Appropriate pediatric reference charts"
+                    {
+                      "text": "Age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sex",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate pediatric reference charts",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1241,8 +1482,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_19",
-          "subsection_title": "Z-scores",
+          "subsection_id": "anthropometry_subsection_20",
+          "subsection_title": "17. Z-scores",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1305,8 +1546,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_20",
-          "subsection_title": "WHO growth standards",
+          "subsection_id": "anthropometry_subsection_21",
+          "subsection_title": "18. WHO growth standards",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1328,10 +1569,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "WFA"
-                  ]
+                  "type": "paragraph",
+                  "text": "WFA"
                 }
               ]
             },
@@ -1342,10 +1581,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "L/HA"
-                  ]
+                  "type": "paragraph",
+                  "text": "L/HA"
                 }
               ]
             },
@@ -1356,10 +1593,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "WFL/H"
-                  ]
+                  "type": "paragraph",
+                  "text": "WFL/H"
                 }
               ]
             },
@@ -1370,10 +1605,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BMI-for-age"
-                  ]
+                  "type": "paragraph",
+                  "text": "BMI-for-age"
                 }
               ]
             },
@@ -1384,28 +1617,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "HC-for-age"
-                  ]
+                  "type": "paragraph",
+                  "text": "HC-for-age"
                 },
                 {
                   "type": "paragraph",
                   "text": "These are plotted according to:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Age + sex + measurement"
-                  ]
+                  "type": "paragraph",
+                  "text": "Age + sex + measurement"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_21",
-          "subsection_title": "Percentiles",
+          "subsection_id": "anthropometry_subsection_22",
+          "subsection_title": "19. Percentiles",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1419,22 +1648,22 @@
                   "text": "You may also encounter percentile charts."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "50th percentile = approximately the median"
+                    {
+                      "text": "50th percentile = approximately the median",
+                      "level": 0
+                    },
+                    {
+                      "text": "10th percentile = child is below approximately 90% of reference children",
+                      "level": 0
+                    },
+                    {
+                      "text": "90th percentile = child is above approximately 90% of reference children",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "10th percentile = child is below approximately 90% of reference children"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "90th percentile = child is above approximately 90% of reference children"
                 }
               ]
             },
@@ -1461,8 +1690,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_22",
-          "subsection_title": "Growth trajectory — extremely important",
+          "subsection_id": "anthropometry_subsection_23",
+          "subsection_title": "20. Growth trajectory — extremely important",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1484,10 +1713,8 @@
                   "text": "Now imagine a child who:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "75th → 50th → 25th → 5th percentile"
-                  ]
+                  "type": "paragraph",
+                  "text": "75th → 50th → 25th → 5th percentile"
                 },
                 {
                   "type": "paragraph",
@@ -1506,8 +1733,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_23",
-          "subsection_title": "Growth faltering",
+          "subsection_id": "anthropometry_subsection_24",
+          "subsection_title": "21. Growth faltering",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1521,10 +1748,9 @@
                   "text": "Instead of simply saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The child is underweight.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The child is underweight.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1532,7 +1758,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Has the child always been small, or has the child recently stopped gaining weight?”"
+                  "text": "“Has the child always been small, or has the child recently stopped gaining weight?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1547,13 +1774,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Poor breastfeeding",
-                    "Incorrect formula preparation",
-                    "Feeding difficulties",
-                    "Poor appetite",
-                    "Food insecurity"
+                    {
+                      "text": "Poor breastfeeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrect formula preparation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding difficulties",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor appetite",
+                      "level": 0
+                    },
+                    {
+                      "text": "Food insecurity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1565,11 +1807,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Coeliac disease",
-                    "Chronic diarrhoea",
-                    "Cystic fibrosis"
+                    {
+                      "text": "Coeliac disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic diarrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic fibrosis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1581,11 +1832,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Chronic infection",
-                    "Congenital heart disease",
-                    "Chronic lung disease"
+                    {
+                      "text": "Chronic infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic lung disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1597,12 +1857,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Endocrine disease",
-                    "Renal disease",
-                    "Neurological disease",
-                    "Psychosocial problems"
+                    {
+                      "text": "Endocrine disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Psychosocial problems",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1610,8 +1882,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_24",
-          "subsection_title": "Short stature",
+          "subsection_id": "anthropometry_subsection_25",
+          "subsection_title": "22. Short stature",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1641,10 +1913,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Familial short stature",
-                    "Constitutional delay of growth"
+                    {
+                      "text": "Familial short stature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constitutional delay of growth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1656,14 +1934,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Chronic systemic disease",
-                    "Malnutrition",
-                    "Endocrine disease",
-                    "Growth hormone deficiency",
-                    "Hypothyroidism",
-                    "Genetic/skeletal disorders"
+                    {
+                      "text": "Chronic systemic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malnutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endocrine disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth hormone deficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothyroidism",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic/skeletal disorders",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1675,19 +1971,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Parental heights",
-                    "Growth pattern",
-                    "Chronic disease",
-                    "Nutrition",
-                    "Puberty",
-                    "Medication",
-                    "Development"
+                    {
+                      "text": "Parental heights",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth pattern",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Puberty",
+                      "level": 0
+                    },
+                    {
+                      "text": "Medication",
+                      "level": 0
+                    },
+                    {
+                      "text": "Development",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1695,8 +2009,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_25",
-          "subsection_title": "Tall stature",
+          "subsection_id": "anthropometry_subsection_26",
+          "subsection_title": "23. Tall stature",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1706,17 +2020,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "Familial tall stature",
-                    "Obesity",
-                    "Endocrine disorders",
-                    "Precocious puberty",
-                    "Genetic conditions"
+                    {
+                      "text": "Familial tall stature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endocrine disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Precocious puberty",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic conditions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1728,8 +2054,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_26",
-          "subsection_title": "Microcephaly",
+          "subsection_id": "anthropometry_subsection_27",
+          "subsection_title": "24. Microcephaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1743,50 +2069,64 @@
                   "text": "If head circumference is significantly below the expected range:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think about:",
                   "items": [
-                    "Congenital infections",
-                    "Genetic disorders",
-                    "Brain malformations",
-                    "Perinatal brain injury",
-                    "Severe nutritional/environmental causes"
+                    {
+                      "text": "Congenital infections",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brain malformations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perinatal brain injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe nutritional/environmental causes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was head size small from birth?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is development normal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there regression?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any seizures?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any neurological abnormalities?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Was head size small from birth?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is development normal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there regression?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any seizures?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any neurological abnormalities?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_27",
-          "subsection_title": "Macrocephaly",
+          "subsection_id": "anthropometry_subsection_28",
+          "subsection_title": "25. Macrocephaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1808,9 +2148,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Familial macrocephaly"
+                    {
+                      "text": "Familial macrocephaly",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1822,13 +2165,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hydrocephalus",
-                    "Intracranial mass",
-                    "Subdural collection",
-                    "Skeletal disorders",
-                    "Genetic conditions"
+                    {
+                      "text": "Hydrocephalus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subdural collection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skeletal disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic conditions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1840,19 +2198,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Macrocephaly with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Macrocephaly with:",
                   "items": [
-                    "Vomiting",
-                    "Irritability",
-                    "Seizures",
-                    "Developmental delay",
-                    "Bulging fontanelle",
-                    "Abnormal eye movements",
-                    "Altered consciousness"
+                    {
+                      "text": "Vomiting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irritability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Developmental delay",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bulging fontanelle",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal eye movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered consciousness",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1864,8 +2240,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_28",
-          "subsection_title": "Growth chart OSCE",
+          "subsection_id": "anthropometry_subsection_29",
+          "subsection_title": "26. Growth chart OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1879,10 +2255,9 @@
                   "text": "The examiner may give you a chart and ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Interpret this growth chart.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Interpret this growth chart.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1901,10 +2276,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This is a weight-for-age growth chart.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This is a weight-for-age growth chart.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1915,10 +2289,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Sex",
-                    "Age"
+                    {
+                      "text": "Sex",
+                      "level": 0
+                    },
+                    {
+                      "text": "Age",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1930,10 +2310,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The child's current weight is approximately ___ kg.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The child's current weight is approximately ___ kg.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1944,10 +2323,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This plots at approximately the ___ percentile / ___ Z-score.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This plots at approximately the ___ percentile / ___ Z-score.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1970,10 +2348,8 @@
                   "text": "Is the child tracking along the same trajectory?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "or"
-                  ]
+                  "type": "paragraph",
+                  "text": "or"
                 },
                 {
                   "type": "paragraph",
@@ -1993,7 +2369,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The child's weight is below the expected range for age and there has been downward crossing of growth channels over the preceding months, suggesting growth faltering.”"
+                  "text": "“The child's weight is below the expected range for age and there has been downward crossing of growth channels over the preceding months, suggesting growth faltering.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -2009,15 +2386,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would correlate this with the child's dietary intake, developmental history, chronic illness, gastrointestinal symptoms and social circumstances.”"
+                  "text": "“I would correlate this with the child's dietary intake, developmental history, chronic illness, gastrointestinal symptoms and social circumstances.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_29",
-          "subsection_title": "Example growth chart question",
+          "subsection_id": "anthropometry_subsection_30",
+          "subsection_title": "27. Example growth chart question",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2028,7 +2406,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This child has gone from the 50th percentile to below the 5th percentile over 8 months. What does this mean?”"
+                  "text": "“This child has gone from the 50th percentile to below the 5th percentile over 8 months. What does this mean?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -2040,15 +2419,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There has been significant downward crossing of growth channels, suggesting growth faltering. I would assess dietary intake, feeding difficulties, chronic disease, gastrointestinal symptoms, recurrent infection and psychosocial factors.”"
+                  "text": "“There has been significant downward crossing of growth channels, suggesting growth faltering. I would assess dietary intake, feeding difficulties, chronic disease, gastrointestinal symptoms, recurrent infection and psychosocial factors.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_30",
-          "subsection_title": "Important distinction: wasting vs stunting",
+          "subsection_id": "anthropometry_subsection_31",
+          "subsection_title": "28. Important distinction: wasting vs stunting",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2070,20 +2450,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Low weight-for-height/length"
-                  ]
+                  "type": "paragraph",
+                  "text": "Low weight-for-height/length"
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Too thin for their height"
-                  ]
+                  "type": "paragraph",
+                  "text": "Too thin for their height"
                 },
                 {
                   "type": "paragraph",
@@ -2098,20 +2474,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Low height/length-for-age"
-                  ]
+                  "type": "paragraph",
+                  "text": "Low height/length-for-age"
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Too short for their age"
-                  ]
+                  "type": "paragraph",
+                  "text": "Too short for their age"
                 },
                 {
                   "type": "paragraph",
@@ -2126,10 +2498,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Low weight-for-age"
-                  ]
+                  "type": "paragraph",
+                  "text": "Low weight-for-age"
                 },
                 {
                   "type": "paragraph",
@@ -2140,8 +2510,8 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_31",
-          "subsection_title": "Growth assessment OSCE",
+          "subsection_id": "anthropometry_subsection_32",
+          "subsection_title": "29. Growth assessment OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2155,42 +2525,125 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Assess the growth of this child.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Assess the growth of this child.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Your sequence should be:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "anthropometry_subsection_32",
-          "subsection_title": "How to present your findings",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "anthropometry_group_86",
-              "group_title": "",
+              "group_title": "1. Confirm age and sex",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Suppose you have:"
-                },
+                  "text": "**2. Measure weight**"
+                }
+              ]
+            },
+            {
+              "group_id": "anthropometry_group_87",
+              "group_title": "3. Measure length/height",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**4. Measure head circumference when age-appropriate**"
+                }
+              ]
+            },
+            {
+              "group_id": "anthropometry_group_88",
+              "group_title": "5. Measure MUAC when appropriate",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**6. Calculate BMI where appropriate**"
+                }
+              ]
+            },
+            {
+              "group_id": "anthropometry_group_89",
+              "group_title": "7. Plot measurements on the appropriate growth chart",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**8. Determine percentile/Z-score**"
+                }
+              ]
+            },
+            {
+              "group_id": "anthropometry_group_90",
+              "group_title": "9. Assess trajectory",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**10. Look for wasting/stunting/underweight**"
+                }
+              ]
+            },
+            {
+              "group_id": "anthropometry_group_91",
+              "group_title": "11. Examine for bilateral pitting oedema",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**12. Interpret in clinical context**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "anthropometry_subsection_33",
+          "subsection_title": "30. How to present your findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "anthropometry_group_92",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Suppose you have:",
                   "items": [
-                    "2-year-old boy",
-                    "Weight: 8 kg",
-                    "Height: 80 cm",
-                    "MUAC: 11 cm",
-                    "Bilateral pitting oedema"
+                    {
+                      "text": "2-year-old boy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight: 8 kg",
+                      "level": 0
+                    },
+                    {
+                      "text": "Height: 80 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "MUAC: 11 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bilateral pitting oedema",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2199,19 +2652,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a 2-year-old boy with evidence of severe acute malnutrition. His MUAC is 11 cm, which is below the severe acute malnutrition threshold, and he also has bilateral pitting oedema. I would correlate this with his weight-for-height/length and assess for complications and underlying causes.”"
+                  "text": "“This is a 2-year-old boy with evidence of severe acute malnutrition. His MUAC is 11 cm, which is below the severe acute malnutrition threshold, and he also has bilateral pitting oedema. I would correlate this with his weight-for-height/length and assess for complications and underlying causes.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_33",
-          "subsection_title": "Examiner questions",
+          "subsection_id": "anthropometry_subsection_34",
+          "subsection_title": "31. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anthropometry_group_87",
+              "group_id": "anthropometry_group_93",
               "group_title": "Q1. What is MUAC used for?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2223,7 +2677,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_88",
+              "group_id": "anthropometry_group_94",
               "group_title": "Q2. What MUAC indicates severe acute malnutrition?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2235,7 +2689,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_89",
+              "group_id": "anthropometry_group_95",
               "group_title": "Q3. What is stunting?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2247,7 +2701,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_90",
+              "group_id": "anthropometry_group_96",
               "group_title": "Q4. What is wasting?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2259,7 +2713,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_91",
+              "group_id": "anthropometry_group_97",
               "group_title": "Q5. Can weight-for-age diagnose wasting?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2271,7 +2725,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_92",
+              "group_id": "anthropometry_group_98",
               "group_title": "Q6. How do you calculate BMI?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2283,7 +2737,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_93",
+              "group_id": "anthropometry_group_99",
               "group_title": "Q7. Can adult BMI cut-offs be used in children?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2295,7 +2749,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_94",
+              "group_id": "anthropometry_group_100",
               "group_title": "Q8. What is more important: a single measurement or growth trajectory?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2309,12 +2763,12 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_34",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "anthropometry_subsection_35",
+          "subsection_title": "32. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anthropometry_group_95",
+              "group_id": "anthropometry_group_101",
               "group_title": "❌ Measuring weight without checking the scale",
               "group_subtitle": null,
               "group_icon": null,
@@ -2326,7 +2780,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_96",
+              "group_id": "anthropometry_group_102",
               "group_title": "❌ Leaving an infant unattended on a scale",
               "group_subtitle": null,
               "group_icon": null,
@@ -2338,7 +2792,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_97",
+              "group_id": "anthropometry_group_103",
               "group_title": "❌ Measuring length incorrectly",
               "group_subtitle": null,
               "group_icon": null,
@@ -2350,7 +2804,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_98",
+              "group_id": "anthropometry_group_104",
               "group_title": "❌ Calling length \"height\"",
               "group_subtitle": null,
               "group_icon": null,
@@ -2366,7 +2820,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_99",
+              "group_id": "anthropometry_group_105",
               "group_title": "❌ Measuring head circumference at the wrong landmarks",
               "group_subtitle": null,
               "group_icon": null,
@@ -2378,7 +2832,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_100",
+              "group_id": "anthropometry_group_106",
               "group_title": "❌ Pulling the MUAC tape too tightly",
               "group_subtitle": null,
               "group_icon": null,
@@ -2390,7 +2844,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_101",
+              "group_id": "anthropometry_group_107",
               "group_title": "❌ Diagnosing malnutrition from weight alone",
               "group_subtitle": null,
               "group_icon": null,
@@ -2402,7 +2856,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_102",
+              "group_id": "anthropometry_group_108",
               "group_title": "❌ Ignoring previous measurements",
               "group_subtitle": null,
               "group_icon": null,
@@ -2414,7 +2868,7 @@
               ]
             },
             {
-              "group_id": "anthropometry_group_103",
+              "group_id": "anthropometry_group_109",
               "group_title": "❌ Using adult BMI criteria",
               "group_subtitle": null,
               "group_icon": null,
@@ -2428,12 +2882,12 @@
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_35",
+          "subsection_id": "anthropometry_subsection_36",
           "subsection_title": "⭐ What to memorize for the OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anthropometry_group_104",
+              "group_id": "anthropometry_group_110",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2451,22 +2905,20 @@
                   "text": "And remember these three:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Weight-for-age → Underweight Height-for-age → Stunting Weight-for-height → Wasting"
-                  ]
+                  "type": "paragraph",
+                  "text": "Weight-for-age → Underweight\nHeight-for-age → Stunting\nWeight-for-height → Wasting"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anthropometry_subsection_36",
+          "subsection_id": "anthropometry_subsection_37",
           "subsection_title": "High-yield practical station",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anthropometry_group_105",
+              "group_id": "anthropometry_group_111",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2476,10 +2928,9 @@
                   "text": "The examiner could put an actual child in front of you and say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Please assess this child's nutritional and growth status.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Please assess this child's nutritional and growth status.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",

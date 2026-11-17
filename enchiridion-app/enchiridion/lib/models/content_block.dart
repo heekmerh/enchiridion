@@ -9,6 +9,7 @@ enum BlockType {
   keyValue,
   image,
   paragraph,
+  list,
   audio,
   unknown
 }
@@ -52,6 +53,8 @@ abstract class ContentBlock {
         return ImageBlock.fromJson(json);
       case 'paragraph':
         return ParagraphBlock.fromJson(json);
+      case 'list':
+        return ListBlock.fromJson(json);
       case 'audio':
         return AudioBlock.fromJson(json);
       default:
@@ -279,14 +282,29 @@ class KeyValueBlock extends ContentBlock {
       };
 }
 
+/// Strips the `**bold**` markers that generated content uses for emphasis,
+/// for anywhere text is matched or excerpted rather than rendered.
+String plainText(String text) => text.replaceAll('**', '');
+
+/// How a paragraph presents: [quote] is a line spoken to the patient or
+/// examiner, [heading] a minor heading below a content group's title.
+enum ParagraphStyle { body, quote, heading }
+
 class ParagraphBlock extends ContentBlock {
   final String text;
+  final ParagraphStyle style;
 
-  ParagraphBlock({required this.text}) : super(type: BlockType.paragraph);
+  ParagraphBlock({required this.text, this.style = ParagraphStyle.body})
+      : super(type: BlockType.paragraph);
 
   factory ParagraphBlock.fromJson(Map<String, dynamic> json) {
     return ParagraphBlock(
       text: json['text'] ?? '',
+      style: switch (json['style']) {
+        'quote' => ParagraphStyle.quote,
+        'heading' => ParagraphStyle.heading,
+        _ => ParagraphStyle.body,
+      },
     );
   }
 
@@ -294,6 +312,60 @@ class ParagraphBlock extends ContentBlock {
   Map<String, dynamic> toJson() => {
         'type': 'paragraph',
         'text': text,
+        if (style != ParagraphStyle.body) 'style': style.name,
+      };
+}
+
+class ListItem {
+  final String text;
+  final int level;
+
+  /// The marker the source printed for an ordered item ("3.", "b)"), or
+  /// null for a bulleted one.
+  final String? label;
+
+  const ListItem({required this.text, this.level = 0, this.label});
+
+  factory ListItem.fromJson(Map<String, dynamic> json) {
+    return ListItem(
+      text: json['text']?.toString() ?? '',
+      level: (json['level'] as num?)?.toInt() ?? 0,
+      label: json['label'] as String?,
+    );
+  }
+
+  Map<String, dynamic> toJson() => {
+        'text': text,
+        'level': level,
+        if (label != null) 'label': label,
+      };
+}
+
+/// A bulleted or numbered list as the source laid it out, nested by
+/// [ListItem.level], with the line that introduced it as [title].
+class ListBlock extends ContentBlock {
+  final String? title;
+  final List<ListItem> items;
+
+  ListBlock({this.title, required this.items}) : super(type: BlockType.list);
+
+  factory ListBlock.fromJson(Map<String, dynamic> json) {
+    return ListBlock(
+      title: json['title'] as String?,
+      items: (json['items'] as List?)
+              ?.map((e) => e is Map<String, dynamic>
+                  ? ListItem.fromJson(e)
+                  : ListItem(text: e.toString()))
+              .toList() ??
+          [],
+    );
+  }
+
+  @override
+  Map<String, dynamic> toJson() => {
+        'type': 'list',
+        if (title != null) 'title': title,
+        'items': items.map((i) => i.toJson()).toList(),
       };
 }
 

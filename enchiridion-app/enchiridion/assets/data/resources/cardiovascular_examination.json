@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "cardiovascular_examination_subsection_1",
-          "subsection_title": "Cardiovascular System Examination",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "cardiovascular_examination_group_1",
-              "group_title": "",
+              "group_title": "Cardiovascular System Examination",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -33,37 +33,43 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Examine the cardiovascular system of this child and report your findings.”"
+                  "text": "**“Examine the cardiovascular system of this child and report your findings.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**“Examine this child with suspected congenital heart disease.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Your examination should answer four major questions:",
                   "items": [
-                    "“Examine this child with suspected congenital heart disease.”"
+                    {
+                      "text": "**Is the child in heart failure?**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Is there cyanosis or evidence of chronic hypoxaemia?**",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Is there a structural cardiac abnormality/murmur?**",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Are the pulses and blood pressure normal?**",
+                      "level": 0,
+                      "label": "4."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Your examination should answer four major questions:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the child in heart failure?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there cyanosis or evidence of chronic hypoxaemia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there a structural cardiac abnormality/murmur?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are the pulses and blood pressure normal?"
                 }
               ]
             }
@@ -71,7 +77,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_2",
-          "subsection_title": "Before you begin",
+          "subsection_title": "1. Before you begin",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -86,7 +92,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's heart and circulation. Is that okay?”"
+                  "text": "“Good morning. My name is Dr ____. I would like to examine your child's heart and circulation. Is that okay?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -110,7 +117,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Child sitting or lying at approximately 45°, depending on age and cooperation."
+                  "text": "**Child sitting or lying at approximately 45°**, depending on age and cooperation."
                 },
                 {
                   "type": "paragraph",
@@ -126,22 +133,40 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Observe the child before touching them."
+                  "text": "**Observe the child before touching them.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Cyanosis",
-                    "Respiratory distress",
-                    "Pallor",
-                    "Sweating",
-                    "Oedema",
-                    "Nutritional status",
-                    "Dysmorphic features"
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sweating",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmorphic features",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -150,7 +175,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_3",
-          "subsection_title": "Start at the end of the bed",
+          "subsection_title": "2. Start at the end of the bed",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -165,7 +190,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Does this child look like they have significant cardiovascular disease?"
+                  "text": "**Does this child look like they have significant cardiovascular disease?**"
                 },
                 {
                   "type": "paragraph",
@@ -180,14 +205,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Comfortable vs distressed",
-                    "Alert vs lethargic",
-                    "Well nourished vs wasted",
-                    "Pallor",
-                    "Cyanosis",
-                    "Clubbing"
+                    {
+                      "text": "Comfortable vs distressed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alert vs lethargic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Well nourished vs wasted",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -199,12 +242,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tachypnoea",
-                    "Increased work of breathing",
-                    "Nasal flaring",
-                    "Recession"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased work of breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal flaring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recession",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -213,7 +268,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Heart failure, although respiratory disease can produce similar findings."
+                  "text": "**Heart failure**, although respiratory disease can produce similar findings."
                 }
               ]
             }
@@ -221,7 +276,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_4",
-          "subsection_title": "Look for cyanosis",
+          "subsection_title": "3. Look for cyanosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -231,14 +286,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examine:",
                   "items": [
-                    "Tongue",
-                    "Oral mucosa"
+                    {
+                      "text": "Tongue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oral mucosa",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -246,15 +304,21 @@
                   "text": "Central cyanosis suggests significant arterial desaturation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think about:",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Severe respiratory disease",
-                    "Other causes of hypoxaemia"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe respiratory disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other causes of hypoxaemia",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -266,26 +330,35 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "Fingers",
-                    "Toes"
+                    {
+                      "text": "Fingers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "This may occur because of:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This may occur because of:",
                   "items": [
-                    "Cold exposure",
-                    "Peripheral vasoconstriction",
-                    "Poor perfusion"
+                    {
+                      "text": "Cold exposure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral vasoconstriction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor perfusion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -294,7 +367,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_5",
-          "subsection_title": "Look for clubbing",
+          "subsection_title": "4. Look for clubbing",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -316,15 +389,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at the fingers for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at the fingers for:",
                   "items": [
-                    "Increased nail curvature",
-                    "Bulbous fingertips",
-                    "Loss of nail-bed angle"
+                    {
+                      "text": "Increased nail curvature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bulbous fingertips",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of nail-bed angle",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -352,15 +431,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important causes include:",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Chronic suppurative lung disease",
-                    "Cystic fibrosis"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic suppurative lung disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic fibrosis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -369,7 +454,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_6",
-          "subsection_title": "Look for signs of heart failure",
+          "subsection_title": "5. Look for signs of heart failure",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -391,19 +476,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Tachypnoea",
-                    "Sweating during feeds",
-                    "Poor feeding",
-                    "Frequent pauses during feeding",
-                    "Failure to thrive",
-                    "Irritability",
-                    "Hepatomegaly"
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sweating during feeds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor feeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Frequent pauses during feeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failure to thrive",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irritability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatomegaly",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -411,12 +514,19 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does the baby sweat while feeding?”",
-                    "“Does the baby have to stop frequently while feeding?”",
-                    "“How long does a typical feed take?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Does the baby sweat while feeding?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Does the baby have to stop frequently while feeding?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“How long does a typical feed take?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -427,33 +537,63 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Exercise intolerance",
-                    "Breathlessness",
-                    "Orthopnoea",
-                    "Nocturnal cough",
-                    "Reduced exercise capacity",
-                    "Abdominal swelling",
-                    "Leg swelling"
+                    {
+                      "text": "Exercise intolerance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Orthopnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nocturnal cough",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced exercise capacity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Leg swelling",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Tachycardia",
-                    "Tachypnoea",
-                    "Hepatomegaly",
-                    "Oedema",
-                    "Raised JVP where assessable"
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Raised JVP where assessable",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -462,7 +602,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_7",
-          "subsection_title": "Hands",
+          "subsection_title": "6. Hands",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -476,18 +616,33 @@
                   "text": "Examine the hands."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Clubbing",
-                    "Cyanosis",
-                    "Pallor",
-                    "Peripheral perfusion",
-                    "Temperature",
-                    "Tremor"
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral perfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tremor",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -496,7 +651,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_8",
-          "subsection_title": "Pulse examination",
+          "subsection_title": "7. Pulse examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -534,16 +689,18 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is it:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Regular?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Irregular?"
+                  "type": "list",
+                  "title": "Is it:",
+                  "items": [
+                    {
+                      "text": "Regular?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -554,11 +711,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Normal",
-                    "Bounding",
-                    "Weak/thready"
+                    {
+                      "text": "Normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bounding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weak/thready",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -570,16 +736,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the situation:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the situation:",
                   "items": [
-                    "Collapsing",
-                    "Slow-rising",
-                    "Bounding",
-                    "Weak"
+                    {
+                      "text": "Collapsing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Slow-rising",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bounding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weak",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -588,7 +763,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_9",
-          "subsection_title": "Which pulses should you examine?",
+          "subsection_title": "8. Which pulses should you examine?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -610,10 +785,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Radial",
-                    "Brachial"
+                    {
+                      "text": "Radial",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brachial",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -625,21 +806,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Femoral"
+                    {
+                      "text": "Femoral",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You should be comfortable assessing:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You should be comfortable assessing:",
                   "items": [
-                    "Carotid in appropriate older children",
-                    "Dorsalis pedis",
-                    "Posterior tibial"
+                    {
+                      "text": "Carotid in appropriate older children",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dorsalis pedis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior tibial",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -652,7 +842,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_10",
-          "subsection_title": "Brachio-femoral delay",
+          "subsection_title": "9. Brachio-femoral delay",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -671,7 +861,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Upper limb pulses with femoral pulses."
+                  "text": "**Upper limb pulses with femoral pulses.**"
                 },
                 {
                   "type": "paragraph",
@@ -679,7 +869,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Coarctation of the aorta."
+                  "text": "**Coarctation of the aorta.**"
                 }
               ]
             },
@@ -691,7 +881,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“What are you looking for by comparing radial and femoral pulses?”"
+                  "text": "“What are you looking for by comparing radial and femoral pulses?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -699,7 +890,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I am assessing for radio-femoral delay, which may suggest coarctation of the aorta.”"
+                  "text": "“I am assessing for radio-femoral delay, which may suggest coarctation of the aorta.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -707,7 +899,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_11",
-          "subsection_title": "Blood pressure",
+          "subsection_title": "10. Blood pressure",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -750,7 +942,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Falsely high blood pressure."
+                  "text": "**Falsely high blood pressure.**"
                 }
               ]
             },
@@ -766,7 +958,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Falsely low blood pressure."
+                  "text": "**Falsely low blood pressure.**"
                 }
               ]
             }
@@ -774,7 +966,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_12",
-          "subsection_title": "How to measure BP",
+          "subsection_title": "11. How to measure BP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -788,15 +980,21 @@
                   "text": "Position the child appropriately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ensure they are:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ensure they are:",
                   "items": [
-                    "Calm",
-                    "Supported",
-                    "Not immediately after vigorous activity if avoidable"
+                    {
+                      "text": "Calm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supported",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not immediately after vigorous activity if avoidable",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -817,7 +1015,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Repeat and confirm appropriately."
+                  "text": "**Repeat and confirm appropriately.**"
                 }
               ]
             }
@@ -825,7 +1023,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_13",
-          "subsection_title": "Check four-limb BP when indicated",
+          "subsection_title": "12. Check four-limb BP when indicated",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -835,15 +1033,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "This is particularly important if you suspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This is particularly important if you suspect:",
                   "items": [
-                    "Coarctation",
-                    "Aortic pathology",
-                    "Certain congenital conditions"
+                    {
+                      "text": "Coarctation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aortic pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain congenital conditions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -851,10 +1055,8 @@
                   "text": "Compare:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Right arm + left arm + lower limb pressure"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Right arm + left arm + lower limb pressure**"
                 },
                 {
                   "type": "paragraph",
@@ -866,7 +1068,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_14",
-          "subsection_title": "Precordial inspection",
+          "subsection_title": "13. Precordial inspection",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -892,11 +1094,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Visible pulsations",
-                    "Hyperdynamic precordium",
-                    "Abnormal bulging"
+                    {
+                      "text": "Visible pulsations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperdynamic precordium",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal bulging",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -920,15 +1131,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Sternotomy scar",
-                    "Thoracotomy scar",
-                    "Previous cardiac surgery"
+                    {
+                      "text": "Sternotomy scar",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thoracotomy scar",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous cardiac surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -940,14 +1157,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Pectus excavatum",
-                    "Pectus carinatum"
+                    {
+                      "text": "Pectus excavatum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pectus carinatum",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -956,7 +1176,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_15",
-          "subsection_title": "Apex beat",
+          "subsection_title": "14. Apex beat",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -974,10 +1194,8 @@
                   "text": "In older children, it is generally around the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5th intercostal space, mid-clavicular region"
-                  ]
+                  "type": "paragraph",
+                  "text": "**5th intercostal space, mid-clavicular region**"
                 },
                 {
                   "type": "paragraph",
@@ -992,12 +1210,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Position",
-                    "Character",
-                    "Size/area",
-                    "Force"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Character",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size/area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Force",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1009,15 +1239,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May indicate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May indicate:",
                   "items": [
-                    "Cardiomegaly",
-                    "Lung pathology",
-                    "Diaphragmatic displacement"
+                    {
+                      "text": "Cardiomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lung pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diaphragmatic displacement",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1026,7 +1262,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_16",
-          "subsection_title": "Pediatric age matters",
+          "subsection_title": "15. Pediatric age matters",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1049,7 +1285,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Age + body habitus + chest shape."
+                  "text": "**Age + body habitus + chest shape.**"
                 }
               ]
             }
@@ -1057,7 +1293,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_17",
-          "subsection_title": "Palpate for heaves",
+          "subsection_title": "16. Palpate for heaves",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1072,7 +1308,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A heave is a sustained lifting impulse."
+                  "text": "A **heave** is a sustained lifting impulse."
                 },
                 {
                   "type": "paragraph",
@@ -1080,17 +1316,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Right ventricular pressure overload/hypertrophy."
+                  "text": "**Right ventricular pressure overload/hypertrophy.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Pulmonary hypertension",
-                    "Certain congenital heart diseases"
+                    {
+                      "text": "Pulmonary hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain congenital heart diseases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1099,7 +1338,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_18",
-          "subsection_title": "Palpate for thrills",
+          "subsection_title": "17. Palpate for thrills",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1114,20 +1353,32 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A palpable vibration caused by turbulent blood flow."
+                  "text": "**A palpable vibration caused by turbulent blood flow.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Palpate systematically over:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Palpate systematically over:",
                   "items": [
-                    "Aortic area",
-                    "Pulmonary area",
-                    "Tricuspid area",
-                    "Mitral area",
-                    "Left sternal border"
+                    {
+                      "text": "Aortic area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tricuspid area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mitral area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Left sternal border",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1144,7 +1395,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_19",
-          "subsection_title": "The cardiac areas",
+          "subsection_title": "18. The cardiac areas",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1207,7 +1458,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "In children, congenital defects can produce murmurs in locations that don't follow the classic adult patterns perfectly, so always interpret the whole examination."
+                  "text": "In children, congenital defects can produce murmurs in locations that don't follow the classic adult patterns perfectly, so always interpret the **whole examination**."
                 }
               ]
             }
@@ -1215,7 +1466,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_20",
-          "subsection_title": "Auscultation",
+          "subsection_title": "19. Auscultation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1229,17 +1480,29 @@
                   "text": "Use the diaphragm and bell appropriately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Listen over:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Listen over:",
                   "items": [
-                    "Aortic area",
-                    "Pulmonary area",
-                    "Tricuspid area",
-                    "Mitral area",
-                    "Left sternal border"
+                    {
+                      "text": "Aortic area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tricuspid area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mitral area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Left sternal border",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1252,7 +1515,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_21",
-          "subsection_title": "Heart sounds",
+          "subsection_title": "20. Heart sounds",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1274,14 +1537,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Closure of:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Closure of:",
                   "items": [
-                    "Mitral valve",
-                    "Tricuspid valve"
+                    {
+                      "text": "Mitral valve",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tricuspid valve",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1293,26 +1559,35 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Closure of:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Closure of:",
                   "items": [
-                    "Aortic valve",
-                    "Pulmonary valve"
+                    {
+                      "text": "Aortic valve",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary valve",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then assess:",
                   "items": [
-                    "Intensity",
-                    "Splitting",
-                    "Additional sounds"
+                    {
+                      "text": "Intensity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Splitting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Additional sounds",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1321,7 +1596,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_22",
-          "subsection_title": "Physiological splitting of S2",
+          "subsection_title": "21. Physiological splitting of S2",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1335,10 +1610,8 @@
                   "text": "Inspiration can produce:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Widening of S2 splitting"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Widening of S2 splitting**"
                 },
                 {
                   "type": "paragraph",
@@ -1354,7 +1627,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_23",
-          "subsection_title": "Fixed wide splitting of S2",
+          "subsection_title": "22. Fixed wide splitting of S2",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1368,10 +1641,8 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Atrial septal defect"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Atrial septal defect**"
                 },
                 {
                   "type": "paragraph",
@@ -1379,7 +1650,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fixed, wide splitting of S2."
+                  "text": "**Fixed, wide splitting of S2.**"
                 }
               ]
             }
@@ -1387,7 +1658,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_24",
-          "subsection_title": "Added heart sounds",
+          "subsection_title": "23. Added heart sounds",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1406,7 +1677,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Volume overload/heart failure."
+                  "text": "**Volume overload/heart failure.**"
                 }
               ]
             },
@@ -1426,7 +1697,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_25",
-          "subsection_title": "Murmurs",
+          "subsection_title": "24. Murmurs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1449,7 +1720,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "TIMING → SITE → RADIATION → CHARACTER → INTENSITY → PITCH → EFFECT OF POSITION/RESPIRATION"
+                  "text": "**TIMING → SITE → RADIATION → CHARACTER → INTENSITY → PITCH → EFFECT OF POSITION/RESPIRATION**"
                 }
               ]
             }
@@ -1457,7 +1728,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_26",
-          "subsection_title": "Timing",
+          "subsection_title": "25. Timing",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1483,10 +1754,8 @@
                   "text": "Occurs between:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "S1 → S2"
-                  ]
+                  "type": "paragraph",
+                  "text": "S1 → S2"
                 }
               ]
             },
@@ -1501,10 +1770,8 @@
                   "text": "Occurs between:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "S2 → next S1"
-                  ]
+                  "type": "paragraph",
+                  "text": "S2 → next S1"
                 }
               ]
             },
@@ -1528,7 +1795,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Diastolic murmurs are generally pathological until proven otherwise."
+                  "text": "**Diastolic murmurs are generally pathological until proven otherwise.**"
                 }
               ]
             }
@@ -1536,7 +1803,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_27",
-          "subsection_title": "Site",
+          "subsection_title": "26. Site",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1554,12 +1821,18 @@
                   "text": "For example:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Loudest at the left lower sternal border.”",
-                    "or",
-                    "“Loudest at the apex.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Loudest at the left lower sternal border.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "or"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Loudest at the apex.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1567,7 +1840,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_28",
-          "subsection_title": "Radiation",
+          "subsection_title": "27. Radiation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1597,10 +1870,8 @@
                   "text": "May radiate to:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Carotids"
-                  ]
+                  "type": "paragraph",
+                  "text": "Carotids"
                 }
               ]
             },
@@ -1615,10 +1886,8 @@
                   "text": "May radiate toward:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Axilla"
-                  ]
+                  "type": "paragraph",
+                  "text": "Axilla"
                 }
               ]
             },
@@ -1638,7 +1907,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_29",
-          "subsection_title": "Character",
+          "subsection_title": "28. Character",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1648,17 +1917,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Describe the sound:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Describe the sound:",
                   "items": [
-                    "Harsh",
-                    "Blowing",
-                    "Musical",
-                    "Rumbling",
-                    "Machinery-like"
+                    {
+                      "text": "Harsh",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blowing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Musical",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rumbling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Machinery-like",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1667,7 +1948,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_30",
-          "subsection_title": "Intensity",
+          "subsection_title": "29. Intensity",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1678,7 +1959,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Use the Levine grading system:"
+                  "text": "Use the **Levine grading system**:"
                 }
               ]
             },
@@ -1726,7 +2007,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Loud with a palpable thrill."
+                  "text": "Loud **with a palpable thrill**."
                 }
               ]
             },
@@ -1769,10 +2050,9 @@
                   "text": "A useful description is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Grade 3/6 systolic murmur without a palpable thrill.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Grade 3/6 systolic murmur without a palpable thrill.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1780,7 +2060,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_31",
-          "subsection_title": "Innocent vs pathological murmurs",
+          "subsection_title": "30. Innocent vs pathological murmurs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1802,22 +2082,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Often:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Often:",
                   "items": [
-                    "Soft",
-                    "Systolic",
-                    "Short",
-                    "No thrill",
-                    "No abnormal heart sounds",
-                    "No symptoms",
-                    "Child otherwise well",
-                    "No cyanosis",
-                    "Normal pulses",
-                    "Normal growth"
+                    {
+                      "text": "Soft",
+                      "level": 0
+                    },
+                    {
+                      "text": "Systolic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Short",
+                      "level": 0
+                    },
+                    {
+                      "text": "No thrill",
+                      "level": 0
+                    },
+                    {
+                      "text": "No abnormal heart sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "No symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Child otherwise well",
+                      "level": 0
+                    },
+                    {
+                      "text": "No cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal pulses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal growth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1829,20 +2136,56 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Diastolic murmur",
-                    "Pansystolic murmur",
-                    "Continuous pathological murmur",
-                    "Loud murmur",
-                    "Thrill",
-                    "Abnormal S2",
-                    "Cyanosis",
-                    "Abnormal pulses",
-                    "Poor growth",
-                    "Exercise intolerance",
-                    "Syncope",
-                    "Heart failure"
+                    {
+                      "text": "Diastolic murmur",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pansystolic murmur",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuous pathological murmur",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loud murmur",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal S2",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal pulses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exercise intolerance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Syncope",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1851,7 +2194,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_32",
-          "subsection_title": "Common pediatric murmurs",
+          "subsection_title": "31. Common pediatric murmurs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1865,20 +2208,16 @@
                   "text": "Typical:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Harsh pansystolic murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Harsh pansystolic murmur**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Often:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Left lower sternal border"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Left lower sternal border**"
                 },
                 {
                   "type": "paragraph",
@@ -1897,20 +2236,16 @@
                   "text": "Classically:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ejection systolic murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Ejection systolic murmur**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Best heard:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Upper left sternal border"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Upper left sternal border**"
                 },
                 {
                   "type": "paragraph",
@@ -1918,7 +2253,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fixed, wide splitting of S2."
+                  "text": "**Fixed, wide splitting of S2.**"
                 }
               ]
             },
@@ -1933,20 +2268,16 @@
                   "text": "Classic:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Continuous machinery-like murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Continuous machinery-like murmur**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Often best heard around:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Left upper sternal border/infraclavicular area"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Left upper sternal border/infraclavicular area**"
                 }
               ]
             },
@@ -1961,20 +2292,16 @@
                   "text": "Typically:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ejection systolic murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Ejection systolic murmur**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Best heard:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Left upper sternal border"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Left upper sternal border**"
                 },
                 {
                   "type": "paragraph",
@@ -1997,20 +2324,16 @@
                   "text": "Typically:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ejection systolic murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Ejection systolic murmur**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Best heard:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Right upper sternal border"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Right upper sternal border**"
                 },
                 {
                   "type": "paragraph",
@@ -2029,10 +2352,8 @@
                   "text": "May have:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ejection systolic murmur"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Ejection systolic murmur**"
                 },
                 {
                   "type": "paragraph",
@@ -2048,7 +2369,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_33",
-          "subsection_title": "Special pediatric clues",
+          "subsection_title": "32. Special pediatric clues",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2070,14 +2391,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Could suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Could suggest:",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Severe respiratory disease"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe respiratory disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2101,16 +2425,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May indicate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May indicate:",
                   "items": [
-                    "Heart failure",
-                    "Significant congenital heart disease",
-                    "Chronic respiratory disease",
-                    "Other chronic disease"
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic respiratory disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other chronic disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2127,7 +2460,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Heart failure in an infant."
+                  "text": "**Heart failure in an infant.**"
                 }
               ]
             }
@@ -2135,7 +2468,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_34",
-          "subsection_title": "Examine the JVP?",
+          "subsection_title": "33. Examine the JVP?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2153,14 +2486,17 @@
                   "text": "In an older cooperative child, you can assess for elevated venous pressure when appropriate."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Venous distension",
-                    "Hepatojugular reflux where appropriate"
+                    {
+                      "text": "Venous distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatojugular reflux where appropriate",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2173,7 +2509,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_35",
-          "subsection_title": "Examine for hepatomegaly",
+          "subsection_title": "34. Examine for hepatomegaly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2195,10 +2531,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is the liver enlarged?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Is the liver enlarged?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -2209,15 +2544,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "In heart failure, the liver may be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "In heart failure, the liver may be:",
                   "items": [
-                    "Enlarged",
-                    "Firm",
-                    "Tender"
+                    {
+                      "text": "Enlarged",
+                      "level": 0
+                    },
+                    {
+                      "text": "Firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tender",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2226,7 +2567,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Hepatomegaly is an important sign."
+                  "text": "**Hepatomegaly is an important sign.**"
                 }
               ]
             }
@@ -2234,7 +2575,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_36",
-          "subsection_title": "Examine for peripheral oedema",
+          "subsection_title": "35. Examine for peripheral oedema",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2244,15 +2585,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "Feet",
-                    "Ankles",
-                    "Sacrum in appropriate patients"
+                    {
+                      "text": "Feet",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ankles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sacrum in appropriate patients",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2260,10 +2607,8 @@
                   "text": "Look for:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pitting oedema"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pitting oedema**"
                 },
                 {
                   "type": "paragraph",
@@ -2275,7 +2620,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_37",
-          "subsection_title": "Peripheral perfusion",
+          "subsection_title": "36. Peripheral perfusion",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2285,28 +2630,43 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Temperature",
-                    "Capillary refill",
-                    "Pulse volume",
-                    "Colour"
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Capillary refill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulse volume",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Poor perfusion can indicate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Poor perfusion can indicate:",
                   "items": [
-                    "Shock",
-                    "Severe heart failure",
-                    "Other circulatory problems"
+                    {
+                      "text": "Shock",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other circulatory problems",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2315,7 +2675,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_38",
-          "subsection_title": "Complete the examination",
+          "subsection_title": "37. Complete the examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2330,7 +2690,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would complete the examination by assessing the respiratory system, abdomen for hepatosplenomegaly, and growth and nutritional status.”"
+                  "text": "“I would complete the examination by assessing the respiratory system, abdomen for hepatosplenomegaly, and growth and nutritional status.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2338,7 +2699,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cardiac disease can affect growth and cause respiratory symptoms."
+                  "text": "**Cardiac disease can affect growth and cause respiratory symptoms.**"
                 }
               ]
             }
@@ -2346,7 +2707,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_39",
-          "subsection_title": "NORMAL cardiovascular examination presentation",
+          "subsection_title": "38. NORMAL cardiovascular examination presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2361,7 +2722,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a child who is comfortable at rest with no evidence of respiratory distress, central cyanosis, clubbing or peripheral oedema. The peripheral pulses are palpable, symmetrical and of normal volume, with no radio-femoral delay. Capillary refill is less than 2 seconds. The precordium is quiet with a normally positioned apex beat and no heaves or thrills. S1 and S2 are normal with physiological splitting of S2 and there are no added sounds or murmurs. There is no clinically significant hepatomegaly. Overall, the cardiovascular examination is normal.”"
+                  "text": "“This is a child who is comfortable at rest with no evidence of respiratory distress, central cyanosis, clubbing or peripheral oedema. The peripheral pulses are palpable, symmetrical and of normal volume, with no radio-femoral delay. Capillary refill is less than 2 seconds. The precordium is quiet with a normally positioned apex beat and no heaves or thrills. S1 and S2 are normal with physiological splitting of S2 and there are no added sounds or murmurs. There is no clinically significant hepatomegaly. Overall, the cardiovascular examination is normal.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2369,7 +2731,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_40",
-          "subsection_title": "VSD presentation",
+          "subsection_title": "39. VSD presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2380,7 +2742,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a palpable left parasternal thrill with a harsh grade 4/6 pansystolic murmur loudest at the left lower sternal border. The murmur is consistent with a ventricular septal defect. I would assess the child for signs of heart failure and pulmonary hypertension and complete the examination accordingly.”"
+                  "text": "“There is a palpable left parasternal thrill with a harsh grade 4/6 pansystolic murmur loudest at the left lower sternal border. The murmur is consistent with a ventricular septal defect. I would assess the child for signs of heart failure and pulmonary hypertension and complete the examination accordingly.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2388,7 +2751,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_41",
-          "subsection_title": "ASD presentation",
+          "subsection_title": "40. ASD presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2399,7 +2762,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is an ejection systolic murmur loudest at the left upper sternal border with a fixed, wide split S2. The findings are suggestive of an atrial septal defect.”"
+                  "text": "“There is an ejection systolic murmur loudest at the left upper sternal border with a fixed, wide split S2. The findings are suggestive of an atrial septal defect.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2407,7 +2771,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_42",
-          "subsection_title": "PDA presentation",
+          "subsection_title": "41. PDA presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2418,7 +2782,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a continuous machinery-like murmur best heard at the left upper sternal/infraclavicular region, with features suggestive of a patent ductus arteriosus.”"
+                  "text": "“There is a continuous machinery-like murmur best heard at the left upper sternal/infraclavicular region, with features suggestive of a patent ductus arteriosus.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2426,7 +2791,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_43",
-          "subsection_title": "Heart failure presentation",
+          "subsection_title": "42. Heart failure presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2437,7 +2802,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The child appears tachypnoeic with increased work of breathing and poor growth. There is tachycardia, hepatomegaly and peripheral oedema. In the appropriate clinical context, these findings suggest congestive heart failure.”"
+                  "text": "“The child appears tachypnoeic with increased work of breathing and poor growth. There is tachycardia, hepatomegaly and peripheral oedema. In the appropriate clinical context, these findings suggest congestive heart failure.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2445,7 +2811,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is a history of poor feeding with sweating during feeds and prolonged feeding times, together with tachypnoea and hepatomegaly, raising concern for heart failure.”"
+                  "text": "“There is a history of poor feeding with sweating during feeds and prolonged feeding times, together with tachypnoea and hepatomegaly, raising concern for heart failure.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2453,7 +2820,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_44",
-          "subsection_title": "Examiner questions",
+          "subsection_title": "43. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2475,15 +2842,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important examples:",
                   "items": [
-                    "VSD",
-                    "Mitral regurgitation",
-                    "Tricuspid regurgitation"
+                    {
+                      "text": "VSD",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mitral regurgitation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tricuspid regurgitation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2499,10 +2872,8 @@
                   "text": "Classic example:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Patent ductus arteriosus"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Patent ductus arteriosus**"
                 },
                 {
                   "type": "paragraph",
@@ -2518,7 +2889,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Atrial septal defect."
+                  "text": "**Atrial septal defect.**"
                 }
               ]
             },
@@ -2530,7 +2901,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Coarctation of the aorta."
+                  "text": "**Coarctation of the aorta.**"
                 }
               ]
             },
@@ -2574,7 +2945,7 @@
         },
         {
           "subsection_id": "cardiovascular_examination_subsection_45",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "44. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2673,7 +3044,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Age + cooperation + developmental level matter."
+                  "text": "**Age + cooperation + developmental level matter.**"
                 }
               ]
             },
@@ -2688,17 +3059,10 @@
                   "text": "Heart failure can present predominantly with respiratory symptoms."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "cardiovascular_examination_subsection_46",
-          "subsection_title": "⭐ Cardiovascular OSCE Mental Checklist",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "cardiovascular_examination_group_120",
-              "group_title": "",
+              "group_title": "⭐ Cardiovascular OSCE Mental Checklist",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2708,124 +3072,177 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "GENERAL → PULSES → BP → PRECORDIUM → APEX → HEAVE → THRILL → HEART SOUNDS → MURMUR → LIVER → OEDEMA → COMPLETE"
+                  "text": "**GENERAL → PULSES → BP → PRECORDIUM → APEX → HEAVE → THRILL → HEART SOUNDS → MURMUR → LIVER → OEDEMA → COMPLETE**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**General**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Pulses**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Volume",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radio-femoral delay",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BP**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Correct cuff",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate limb",
+                      "level": 0
+                    },
+                    {
+                      "text": "Four-limb BP if indicated",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Precordium**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Inspection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apex",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heaves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrills",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Auscultation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "S1",
+                      "level": 0
+                    },
+                    {
+                      "text": "S2",
+                      "level": 0
+                    },
+                    {
+                      "text": "Splitting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Added sounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Murmurs",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Heart failure**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Respiratory signs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor feeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor growth",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
               "group_id": "cardiovascular_examination_group_121",
-              "group_title": "General",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Pallor",
-                    "Cyanosis",
-                    "Clubbing",
-                    "Respiratory distress",
-                    "Growth"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_122",
-              "group_title": "Pulses",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Rate",
-                    "Rhythm",
-                    "Volume",
-                    "Radio-femoral delay"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_123",
-              "group_title": "BP",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Correct cuff",
-                    "Appropriate limb",
-                    "Four-limb BP if indicated"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_124",
-              "group_title": "Precordium",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Inspection",
-                    "Apex",
-                    "Heaves",
-                    "Thrills"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_125",
-              "group_title": "Auscultation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "S1",
-                    "S2",
-                    "Splitting",
-                    "Added sounds",
-                    "Murmurs"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_126",
-              "group_title": "Heart failure",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Respiratory signs",
-                    "Hepatomegaly",
-                    "Oedema",
-                    "Poor feeding",
-                    "Poor growth"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "cardiovascular_examination_subsection_47",
-          "subsection_title": "🔥 Murmur description framework",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "cardiovascular_examination_group_127",
-              "group_title": "",
+              "group_title": "🔥 Murmur description framework",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2834,10 +3251,9 @@
                   "text": "If the examiner asks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Describe this murmur.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Describe this murmur.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2845,7 +3261,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "TIMING → SITE → RADIATION → CHARACTER → GRADE → PITCH → RESPIRATION/POSITION"
+                  "text": "**TIMING → SITE → RADIATION → CHARACTER → GRADE → PITCH → RESPIRATION/POSITION**"
                 },
                 {
                   "type": "paragraph",
@@ -2853,16 +3269,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is a grade 3/6 harsh ejection systolic murmur, loudest at the left upper sternal border, with no palpable thrill.”"
+                  "text": "“There is a grade 3/6 harsh ejection systolic murmur, loudest at the left upper sternal border, with no palpable thrill.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then give your likely diagnosis only after describing the murmur."
+                  "text": "Then give your likely diagnosis **only after describing the murmur**."
                 }
               ]
             },
             {
-              "group_id": "cardiovascular_examination_group_128",
+              "group_id": "cardiovascular_examination_group_122",
               "group_title": "The most important pediatric cardiovascular associations",
               "group_subtitle": null,
               "group_icon": null,
@@ -2923,30 +3340,27 @@
                       "Significant turbulent flow/murmur"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "cardiovascular_examination_group_129",
-              "group_title": "One final OSCE principle",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**One final OSCE principle**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "When examining a child with suspected congenital heart disease, don't focus exclusively on the murmur."
                 },
                 {
                   "type": "paragraph",
-                  "text": "The whole child tells you the severity:"
+                  "text": "The **whole child** tells you the severity:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cyanosis + clubbing + pulses + BP + precordium + murmur + respiratory status + hepatomegaly + growth"
+                  "text": "**Cyanosis + clubbing + pulses + BP + precordium + murmur + respiratory status + hepatomegaly + growth**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Together, these findings allow you to move from simply hearing a murmur to understanding what cardiovascular problem may be present and how sick the child is."
+                  "text": "Together, these findings allow you to move from simply **hearing a murmur** to understanding what cardiovascular problem may be present and how sick the child is."
                 }
               ]
             }

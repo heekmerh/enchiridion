@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_2",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -49,7 +49,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "You are asked to counsel a woman at 39 weeks regarding an assisted vaginal birth using forceps."
+                  "text": "**You are asked to counsel a woman at 39 weeks regarding an assisted vaginal birth using forceps.**"
                 }
               ]
             },
@@ -61,7 +61,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Demonstrate a forceps delivery on a model and explain the steps."
+                  "text": "**Demonstrate a forceps delivery on a model and explain the steps.**"
                 }
               ]
             },
@@ -73,7 +73,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The CTG is pathological and the fetal head is low. Discuss whether forceps delivery is appropriate."
+                  "text": "**The CTG is pathological and the fetal head is low. Discuss whether forceps delivery is appropriate.**"
                 }
               ]
             },
@@ -85,7 +85,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Forceps delivery has been attempted but the fetal head has not descended. What will you do?"
+                  "text": "**Forceps delivery has been attempted but the fetal head has not descended. What will you do?**"
                 }
               ]
             },
@@ -97,7 +97,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A woman has undergone forceps delivery. Discuss the possible maternal and neonatal complications."
+                  "text": "**A woman has undergone forceps delivery. Discuss the possible maternal and neonatal complications.**"
                 }
               ]
             }
@@ -105,7 +105,7 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_3",
-          "subsection_title": "WHAT ARE FORCEPS?",
+          "subsection_title": "2. WHAT ARE FORCEPS?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -119,15 +119,21 @@
                   "text": "Forceps are paired metal instruments designed to fit around the fetal head."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "They are used to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "They are used to:",
                   "items": [
-                    "Assist traction",
-                    "Assist delivery of the fetal head",
-                    "Occasionally assist rotation in appropriately selected cases"
+                    {
+                      "text": "Assist traction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assist delivery of the fetal head",
+                      "level": 0
+                    },
+                    {
+                      "text": "Occasionally assist rotation in appropriately selected cases",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -136,7 +142,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The fetal head is sufficiently low and the prerequisites for safe operative vaginal delivery are fulfilled."
+                  "text": "**The fetal head is sufficiently low and the prerequisites for safe operative vaginal delivery are fulfilled.**"
                 }
               ]
             }
@@ -144,7 +150,7 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_4",
-          "subsection_title": "INDICATIONS",
+          "subsection_title": "3. INDICATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -158,69 +164,82 @@
                   "text": "Remember:"
                 }
               ]
+            },
+            {
+              "group_id": "forceps_delivery_group_9",
+              "group_title": "F-M-P",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**F — Fetal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Suspected fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal CTG requiring expedited birth",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**M — Maternal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Maternal exhaustion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ineffective pushing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal medical conditions where prolonged pushing is undesirable",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**P — Progress**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Prolonged second stage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrest of descent",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
           "subsection_id": "forceps_delivery_subsection_5",
-          "subsection_title": "F-M-P",
+          "subsection_title": "4. FORCEPS VS VACUUM",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_9",
-              "group_title": "F — Fetal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Suspected fetal compromise",
-                    "Abnormal CTG requiring expedited birth"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "forceps_delivery_group_10",
-              "group_title": "M — Maternal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Maternal exhaustion",
-                    "Ineffective pushing",
-                    "Maternal medical conditions where prolonged pushing is undesirable"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_11",
-              "group_title": "P — Progress",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Prolonged second stage",
-                    "Arrest of descent"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_6",
-          "subsection_title": "FORCEPS VS VACUUM",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -230,24 +249,38 @@
                   "text": "A common examiner question:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Why would you choose forceps rather than vacuum?”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Possible reasons include:"
+                  "text": "**“Why would you choose forceps rather than vacuum?”**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible reasons include:",
                   "items": [
-                    "Need for rapid delivery",
-                    "Vacuum contraindicated or unsuitable",
-                    "Certain fetal positions",
-                    "Maternal inability to push effectively",
-                    "Operator expertise",
-                    "Clinical circumstances favouring forceps"
+                    {
+                      "text": "Need for rapid delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vacuum contraindicated or unsuitable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain fetal positions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal inability to push effectively",
+                      "level": 0
+                    },
+                    {
+                      "text": "Operator expertise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clinical circumstances favouring forceps",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -259,19 +292,19 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_7",
-          "subsection_title": "PREREQUISITES",
+          "subsection_id": "forceps_delivery_subsection_6",
+          "subsection_title": "5. PREREQUISITES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_13",
+              "group_id": "forceps_delivery_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is one of the most important viva questions."
+                  "text": "This is one of the **most important viva questions**."
                 },
                 {
                   "type": "paragraph",
@@ -280,81 +313,126 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_14",
+              "group_id": "forceps_delivery_group_12",
               "group_title": "Mother",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Informed consent where circumstances permit",
-                    "Appropriate analgesia/anaesthesia",
-                    "Bladder emptied",
-                    "Appropriate position"
+                    {
+                      "text": "Informed consent where circumstances permit",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate analgesia/anaesthesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bladder emptied",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate position",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_13",
+              "group_title": "Labour",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Cervix completely dilated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Membranes ruptured",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_14",
+              "group_title": "Fetus",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Cephalic presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Head engaged",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exact position known",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate station",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "forceps_delivery_group_15",
-              "group_title": "Labour",
+              "group_title": "Pelvis",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Cervix completely dilated",
-                    "Membranes ruptured"
+                    {
+                      "text": "No significant suspicion of cephalopelvic disproportion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "forceps_delivery_group_16",
-              "group_title": "Fetus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Cephalic presentation",
-                    "Head engaged",
-                    "Exact position known",
-                    "Appropriate station"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_17",
-              "group_title": "Pelvis",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "No significant suspicion of cephalopelvic disproportion"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_18",
               "group_title": "Safety",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Skilled operator",
-                    "Appropriate forceps available",
-                    "Neonatal support where indicated",
-                    "Ability to perform Caesarean delivery if the procedure fails"
+                    {
+                      "text": "Skilled operator",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate forceps available",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal support where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ability to perform Caesarean delivery if the procedure fails",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -362,30 +440,36 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_8",
-          "subsection_title": "THE GOLDEN RULE",
+          "subsection_id": "forceps_delivery_subsection_7",
+          "subsection_title": "6. THE GOLDEN RULE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_19",
+              "group_id": "forceps_delivery_group_17",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Never apply forceps to an unengaged fetal head or when the fetal position is unknown."
+                  "text": "**Never apply forceps to an unengaged fetal head or when the fetal position is unknown.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If you cannot confidently determine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If you cannot confidently determine:",
                   "items": [
-                    "Presentation",
-                    "Position",
-                    "Station"
+                    {
+                      "text": "Presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Station",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -397,31 +481,32 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_9",
-          "subsection_title": "INTRODUCTION AND CONSENT",
+          "subsection_id": "forceps_delivery_subsection_8",
+          "subsection_title": "7. INTRODUCTION AND CONSENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_20",
+              "group_id": "forceps_delivery_group_18",
               "group_title": "Model opening",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Hello, I'm Dr _____. I understand that your labour has reached a point where we are recommending assistance with the birth. I would like to explain why we are recommending forceps, what the procedure involves, the potential benefits and risks, and the alternatives. Is that okay?”"
+                  "text": "“Hello, I'm Dr _____. I understand that your labour has reached a point where we are recommending assistance with the birth. I would like to explain why we are recommending forceps, what the procedure involves, the potential benefits and risks, and the alternatives. Is that okay?”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_10",
-          "subsection_title": "EXPLAIN WHY FORCEPS ARE BEING RECOMMENDED",
+          "subsection_id": "forceps_delivery_subsection_9",
+          "subsection_title": "8. EXPLAIN WHY FORCEPS ARE BEING RECOMMENDED",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_21",
+              "group_id": "forceps_delivery_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -432,7 +517,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Your baby needs to be born relatively soon because of a change in the baby's heart-rate pattern.”"
+                  "text": "“Your baby needs to be born relatively soon because of a change in the baby's heart-rate pattern.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -440,19 +526,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“You have been pushing for a prolonged period and the baby's head is low enough that we can assist the final part of the birth.”"
+                  "text": "“You have been pushing for a prolonged period and the baby's head is low enough that we can assist the final part of the birth.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_11",
-          "subsection_title": "EXPLAIN THE PROCEDURE",
+          "subsection_id": "forceps_delivery_subsection_10",
+          "subsection_title": "9. EXPLAIN THE PROCEDURE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_22",
+              "group_id": "forceps_delivery_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -463,35 +550,48 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“After ensuring you have adequate pain relief and your bladder is empty, I will carefully place two curved instruments around the baby's head. Once they are correctly positioned, I will use controlled traction during your contractions and pushing to help deliver the baby's head.”"
+                  "text": "“After ensuring you have adequate pain relief and your bladder is empty, I will carefully place two curved instruments around the baby's head. Once they are correctly positioned, I will use controlled traction during your contractions and pushing to help deliver the baby's head.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_12",
-          "subsection_title": "BENEFITS",
+          "subsection_id": "forceps_delivery_subsection_11",
+          "subsection_title": "10. BENEFITS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_23",
+              "group_id": "forceps_delivery_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Potential benefits:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential benefits:",
                   "items": [
-                    "Faster birth",
-                    "Avoid prolonged pushing",
-                    "May avoid Caesarean section",
-                    "Useful when fetal condition requires relatively rapid birth",
-                    "Can be useful when maternal pushing is ineffective"
+                    {
+                      "text": "Faster birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid prolonged pushing",
+                      "level": 0
+                    },
+                    {
+                      "text": "May avoid Caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful when fetal condition requires relatively rapid birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be useful when maternal pushing is ineffective",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -499,12 +599,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_13",
-          "subsection_title": "ALTERNATIVES",
+          "subsection_id": "forceps_delivery_subsection_12",
+          "subsection_title": "11. ALTERNATIVES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_24",
+              "group_id": "forceps_delivery_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -516,7 +616,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_25",
+              "group_id": "forceps_delivery_group_23",
               "group_title": "Continue labour",
               "group_subtitle": null,
               "group_icon": null,
@@ -528,7 +628,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_26",
+              "group_id": "forceps_delivery_group_24",
               "group_title": "Vacuum delivery",
               "group_subtitle": null,
               "group_icon": null,
@@ -540,7 +640,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_27",
+              "group_id": "forceps_delivery_group_25",
               "group_title": "Caesarean section",
               "group_subtitle": null,
               "group_icon": null,
@@ -554,46 +654,135 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_14",
-          "subsection_title": "MATERNAL RISKS",
+          "subsection_id": "forceps_delivery_subsection_13",
+          "subsection_title": "12. MATERNAL RISKS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_28",
+              "group_id": "forceps_delivery_group_26",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Explain:",
                   "items": [
-                    "Vaginal tears",
-                    "Cervical trauma",
-                    "Perineal trauma",
-                    "Episiotomy",
-                    "Third-degree tear",
-                    "Fourth-degree tear",
-                    "Postpartum haemorrhage",
-                    "Haematoma",
-                    "Pain"
+                    {
+                      "text": "Vaginal tears",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Episiotomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Third-degree tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fourth-degree tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postpartum haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Longer-term risks may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Longer-term risks may include:",
                   "items": [
-                    "Urinary incontinence",
-                    "Faecal incontinence",
-                    "Pelvic-floor dysfunction",
-                    "Sexual dysfunction",
-                    "Pelvic organ prolapse"
+                    {
+                      "text": "Urinary incontinence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Faecal incontinence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic-floor dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic organ prolapse",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_14",
+          "subsection_title": "13. BABY RISKS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_27",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Possible neonatal complications:",
+                  "items": [
+                    {
+                      "text": "Facial bruising",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial abrasions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial nerve palsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scalp trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cephalohaematoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skull injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage — rare",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -602,43 +791,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_15",
-          "subsection_title": "BABY RISKS",
+          "subsection_title": "14. EXPLAIN FAILURE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_29",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Possible neonatal complications:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Facial bruising",
-                    "Facial abrasions",
-                    "Facial swelling",
-                    "Facial nerve palsy",
-                    "Scalp trauma",
-                    "Cephalohaematoma",
-                    "Skull injury",
-                    "Intracranial haemorrhage — rare"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_16",
-          "subsection_title": "EXPLAIN FAILURE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_30",
+              "group_id": "forceps_delivery_group_28",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -653,19 +810,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Sometimes the forceps do not successfully deliver the baby. If that happens, we would stop rather than continue repeated attempts and reassess whether another method of delivery or Caesarean birth would be safer.”"
+                  "text": "“Sometimes the forceps do not successfully deliver the baby. If that happens, we would stop rather than continue repeated attempts and reassess whether another method of delivery or Caesarean birth would be safer.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_17",
-          "subsection_title": "TYPES OF FORCEPS",
+          "subsection_id": "forceps_delivery_subsection_16",
+          "subsection_title": "15. TYPES OF FORCEPS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_31",
+              "group_id": "forceps_delivery_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -681,7 +839,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_32",
+              "group_id": "forceps_delivery_group_30",
               "group_title": "Simpson forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -693,7 +851,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_33",
+              "group_id": "forceps_delivery_group_31",
               "group_title": "Kielland forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -705,7 +863,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_34",
+              "group_id": "forceps_delivery_group_32",
               "group_title": "Wrigley's forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -723,12 +881,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_18",
-          "subsection_title": "CLASSIFICATION BY STATION",
+          "subsection_id": "forceps_delivery_subsection_17",
+          "subsection_title": "16. CLASSIFICATION BY STATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_35",
+              "group_id": "forceps_delivery_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -740,7 +898,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_36",
+              "group_id": "forceps_delivery_group_34",
               "group_title": "Outlet forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -752,7 +910,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_37",
+              "group_id": "forceps_delivery_group_35",
               "group_title": "Low forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -764,7 +922,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_38",
+              "group_id": "forceps_delivery_group_36",
               "group_title": "Mid-cavity forceps",
               "group_subtitle": null,
               "group_icon": null,
@@ -782,12 +940,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_19",
-          "subsection_title": "ROTATIONAL FORCEPS",
+          "subsection_id": "forceps_delivery_subsection_18",
+          "subsection_title": "17. ROTATIONAL FORCEPS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_39",
+              "group_id": "forceps_delivery_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -802,14 +960,17 @@
                   "text": "Certain forceps, particularly Kielland forceps, may be used for rotational delivery."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "Occipito-transverse position",
-                    "Selected occipito-posterior positions"
+                    {
+                      "text": "Occipito-transverse position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected occipito-posterior positions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -818,19 +979,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Rotational forceps should only be performed by an appropriately trained and experienced operator."
+                  "text": "**Rotational forceps should only be performed by an appropriately trained and experienced operator.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_20",
-          "subsection_title": "PREPARATION",
+          "subsection_id": "forceps_delivery_subsection_19",
+          "subsection_title": "18. PREPARATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_40",
+              "group_id": "forceps_delivery_group_38",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -842,30 +1003,45 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_41",
+              "group_id": "forceps_delivery_group_39",
               "group_title": "1. Explain",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Explain:",
                   "items": [
-                    "Indication",
-                    "Procedure",
-                    "Risks",
-                    "Benefits",
-                    "Alternatives",
-                    "Possibility of failure"
+                    {
+                      "text": "Indication",
+                      "level": 0
+                    },
+                    {
+                      "text": "Procedure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Risks",
+                      "level": 0
+                    },
+                    {
+                      "text": "Benefits",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alternatives",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possibility of failure",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_42",
+              "group_id": "forceps_delivery_group_40",
               "group_title": "2. Consent",
               "group_subtitle": null,
               "group_icon": null,
@@ -877,7 +1053,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_43",
+              "group_id": "forceps_delivery_group_41",
               "group_title": "3. Analgesia",
               "group_subtitle": null,
               "group_icon": null,
@@ -887,21 +1063,27 @@
                   "text": "Ensure adequate anaesthesia/analgesia."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the situation:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the situation:",
                   "items": [
-                    "Epidural",
-                    "Spinal",
-                    "Pudendal/local anaesthesia in selected circumstances"
+                    {
+                      "text": "Epidural",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spinal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pudendal/local anaesthesia in selected circumstances",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_44",
+              "group_id": "forceps_delivery_group_42",
               "group_title": "4. Bladder",
               "group_subtitle": null,
               "group_icon": null,
@@ -913,7 +1095,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_45",
+              "group_id": "forceps_delivery_group_43",
               "group_title": "5. Position",
               "group_subtitle": null,
               "group_icon": null,
@@ -925,43 +1107,61 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_46",
+              "group_id": "forceps_delivery_group_44",
               "group_title": "6. Equipment",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "Forceps",
-                    "Sterile equipment",
-                    "Suction if needed",
-                    "Neonatal equipment"
+                    {
+                      "text": "Forceps",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sterile equipment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suction if needed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal equipment",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_47",
+              "group_id": "forceps_delivery_group_45",
               "group_title": "7. Team",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ensure:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ensure:",
                   "items": [
-                    "Skilled obstetrician",
-                    "Midwife",
-                    "Anaesthetic support when needed",
-                    "Neonatal team when indicated"
+                    {
+                      "text": "Skilled obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midwife",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetic support when needed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal team when indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -969,12 +1169,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_21",
-          "subsection_title": "FINAL VAGINAL EXAMINATION",
+          "subsection_id": "forceps_delivery_subsection_20",
+          "subsection_title": "19. FINAL VAGINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_48",
+              "group_id": "forceps_delivery_group_46",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -990,7 +1190,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_49",
+              "group_id": "forceps_delivery_group_47",
               "group_title": "Cervix",
               "group_subtitle": null,
               "group_icon": null,
@@ -1002,7 +1202,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_50",
+              "group_id": "forceps_delivery_group_48",
               "group_title": "Membranes",
               "group_subtitle": null,
               "group_icon": null,
@@ -1014,7 +1214,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_51",
+              "group_id": "forceps_delivery_group_49",
               "group_title": "Presentation",
               "group_subtitle": null,
               "group_icon": null,
@@ -1026,27 +1226,33 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_52",
+              "group_id": "forceps_delivery_group_50",
               "group_title": "Position",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Identify:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Identify:",
                   "items": [
-                    "Occiput",
-                    "Sagittal suture",
-                    "Fontanelles"
+                    {
+                      "text": "Occiput",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sagittal suture",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fontanelles",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_53",
+              "group_id": "forceps_delivery_group_51",
               "group_title": "Station",
               "group_subtitle": null,
               "group_icon": null,
@@ -1060,12 +1266,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_22",
-          "subsection_title": "IDENTIFY THE FETAL POSITION",
+          "subsection_id": "forceps_delivery_subsection_21",
+          "subsection_title": "20. IDENTIFY THE FETAL POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_54",
+              "group_id": "forceps_delivery_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1079,61 +1285,64 @@
                   "text": "For example:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Left occipito-anterior**"
+                },
+                {
+                  "type": "list",
+                  "title": "means:",
                   "items": [
-                    "Left occipito-anterior"
+                    {
+                      "text": "Occiput points toward the mother's left anterior pelvis.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "means:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Occiput points toward the mother's left anterior pelvis."
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Right occipito-posterior**"
+                },
+                {
+                  "type": "list",
+                  "title": "means:",
                   "items": [
-                    "Right occipito-posterior"
+                    {
+                      "text": "Occiput points toward the mother's right posterior pelvis.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "means:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Occiput points toward the mother's right posterior pelvis."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_23",
-          "subsection_title": "FORCEPS BLADES",
+          "subsection_id": "forceps_delivery_subsection_22",
+          "subsection_title": "21. FORCEPS BLADES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_55",
+              "group_id": "forceps_delivery_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "There are two blades:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "There are two blades:",
                   "items": [
-                    "Right blade",
-                    "Left blade"
+                    {
+                      "text": "Right blade",
+                      "level": 0
+                    },
+                    {
+                      "text": "Left blade",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1146,19 +1355,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Applied correctly around the fetal head without excessive compression or maternal tissue entrapment."
+                  "text": "**Applied correctly around the fetal head without excessive compression or maternal tissue entrapment.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_24",
-          "subsection_title": "FORCEPS APPLICATION — OVERVIEW",
+          "subsection_id": "forceps_delivery_subsection_23",
+          "subsection_title": "22. FORCEPS APPLICATION — OVERVIEW",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_56",
+              "group_id": "forceps_delivery_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1168,30 +1377,43 @@
                   "text": "Think:"
                 }
               ]
+            },
+            {
+              "group_id": "forceps_delivery_group_55",
+              "group_title": "POSITION → BLADE → CHECK → LOCK → TRACTION → DELIVER",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_25",
-          "subsection_title": "STEP 1 — POSITION",
+          "subsection_id": "forceps_delivery_subsection_24",
+          "subsection_title": "23. STEP 1 — POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_57",
+              "group_id": "forceps_delivery_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Confirm:",
                   "items": [
-                    "Fetal position",
-                    "Station",
-                    "Correct orientation"
+                    {
+                      "text": "Fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Station",
+                      "level": 0
+                    },
+                    {
+                      "text": "Correct orientation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1199,12 +1421,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_26",
-          "subsection_title": "STEP 2 — INSERT THE FIRST BLADE",
+          "subsection_id": "forceps_delivery_subsection_25",
+          "subsection_title": "24. STEP 2 — INSERT THE FIRST BLADE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_58",
+              "group_id": "forceps_delivery_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1219,19 +1441,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Guided into position rather than forced."
+                  "text": "**Guided into position rather than forced.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_27",
-          "subsection_title": "STEP 3 — INSERT THE SECOND BLADE",
+          "subsection_id": "forceps_delivery_subsection_26",
+          "subsection_title": "25. STEP 3 — INSERT THE SECOND BLADE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_59",
+              "group_id": "forceps_delivery_group_58",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1249,8 +1471,49 @@
           ]
         },
         {
+          "subsection_id": "forceps_delivery_subsection_27",
+          "subsection_title": "26. STEP 4 — CHECK THE APPLICATION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_59",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Before locking, assess:",
+                  "items": [
+                    {
+                      "text": "Are the blades correctly positioned?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is the sagittal suture appropriately aligned?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is the fetal head appropriately grasped?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is maternal tissue trapped?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is the application symmetrical?",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           "subsection_id": "forceps_delivery_subsection_28",
-          "subsection_title": "STEP 4 — CHECK THE APPLICATION",
+          "subsection_title": "27. STEP 5 — LOCK THE FORCEPS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1261,62 +1524,29 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Before locking, assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are the blades correctly positioned?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the sagittal suture appropriately aligned?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the fetal head appropriately grasped?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is maternal tissue trapped?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is the application symmetrical?"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_29",
-          "subsection_title": "STEP 5 — LOCK THE FORCEPS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_61",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "The blades should lock appropriately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If the blades:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If the blades:",
                   "items": [
-                    "Do not lock easily",
-                    "Appear malpositioned",
-                    "Require excessive force"
+                    {
+                      "text": "Do not lock easily",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appear malpositioned",
+                      "level": 0
+                    },
+                    {
+                      "text": "Require excessive force",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Stop and reassess."
+                  "text": "**Stop and reassess.**"
                 },
                 {
                   "type": "paragraph",
@@ -1327,12 +1557,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_30",
-          "subsection_title": "STEP 6 — CHECK AGAIN",
+          "subsection_id": "forceps_delivery_subsection_29",
+          "subsection_title": "28. STEP 6 — CHECK AGAIN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_62",
+              "group_id": "forceps_delivery_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1343,7 +1573,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Confirm that the application is correct."
+                  "text": "**Confirm that the application is correct.**"
                 },
                 {
                   "type": "paragraph",
@@ -1354,12 +1584,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_31",
-          "subsection_title": "STEP 7 — TRACTION",
+          "subsection_id": "forceps_delivery_subsection_30",
+          "subsection_title": "29. STEP 7 — TRACTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_63",
+              "group_id": "forceps_delivery_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1375,17 +1605,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Controlled traction along the pelvic axis."
+                  "text": "**Controlled traction along the pelvic axis.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Coordinate with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Coordinate with:",
                   "items": [
-                    "Contraction",
-                    "Maternal pushing"
+                    {
+                      "text": "Contraction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal pushing",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1393,12 +1626,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_32",
-          "subsection_title": "TRACTION DIRECTION",
+          "subsection_id": "forceps_delivery_subsection_31",
+          "subsection_title": "30. TRACTION DIRECTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_64",
+              "group_id": "forceps_delivery_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1445,12 +1678,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_33",
-          "subsection_title": "DO NOT PULL CONSTANTLY",
+          "subsection_id": "forceps_delivery_subsection_32",
+          "subsection_title": "31. DO NOT PULL CONSTANTLY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_65",
+              "group_id": "forceps_delivery_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1461,18 +1694,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Controlled and coordinated with contractions."
+                  "text": "**Controlled and coordinated with contractions.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Avoid:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Avoid:",
                   "items": [
-                    "Jerking",
-                    "Excessive force",
-                    "Uncontrolled traction"
+                    {
+                      "text": "Jerking",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive force",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uncontrolled traction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1480,12 +1719,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_34",
-          "subsection_title": "ROTATIONAL FORCEPS",
+          "subsection_id": "forceps_delivery_subsection_33",
+          "subsection_title": "32. ROTATIONAL FORCEPS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_66",
+              "group_id": "forceps_delivery_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1503,10 +1742,9 @@
                   "text": "Do not describe yourself as:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Twisting the forceps until the baby turns.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Twisting the forceps until the baby turns.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1514,7 +1752,41 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would use an appropriately designed rotational forceps technique under controlled conditions by an experienced operator.”"
+                  "text": "“I would use an appropriately designed rotational forceps technique under controlled conditions by an experienced operator.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_34",
+          "subsection_title": "33. DELIVERY OF THE HEAD",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_66",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Once the head is appropriately delivered:",
+                  "items": [
+                    {
+                      "text": "Release/remove the forceps according to the technique",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complete delivery of the shoulders and body",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess the neonate immediately",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1522,25 +1794,81 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_35",
-          "subsection_title": "DELIVERY OF THE HEAD",
+          "subsection_title": "34. AFTER DELIVERY",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "forceps_delivery_group_67",
-              "group_title": "",
+              "group_title": "Mother",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Once the head is appropriately delivered:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Release/remove the forceps according to the technique",
-                    "Complete delivery of the shoulders and body",
-                    "Assess the neonate immediately"
+                    {
+                      "text": "Uterine tone",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal walls",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anal sphincter",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_68",
+              "group_title": "Baby",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tone",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apgar",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of trauma",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1549,64 +1877,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_36",
-          "subsection_title": "AFTER DELIVERY",
+          "subsection_title": "35. THIRD- AND FOURTH-DEGREE TEARS",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_68",
-              "group_title": "Mother",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Uterine tone",
-                    "Blood loss",
-                    "Perineum",
-                    "Vaginal walls",
-                    "Cervix",
-                    "Anal sphincter"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "forceps_delivery_group_69",
-              "group_title": "Baby",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Breathing",
-                    "Heart rate",
-                    "Tone",
-                    "Colour",
-                    "Apgar",
-                    "Evidence of trauma"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_37",
-          "subsection_title": "THIRD- AND FOURTH-DEGREE TEARS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_70",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1621,7 +1896,94 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Recognise it, classify it correctly and arrange appropriate repair by an appropriately trained clinician according to local protocol."
+                  "text": "**Recognise it, classify it correctly and arrange appropriate repair by an appropriately trained clinician according to local protocol.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_37",
+          "subsection_title": "36. FORCEPS COMPLICATIONS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_70",
+              "group_title": "Maternal",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Immediate**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Vaginal laceration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineal tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Third-degree tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fourth-degree tear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Episiotomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postpartum haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematoma",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Long-term**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Urinary incontinence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Faecal incontinence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic-floor dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual dysfunction",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1629,44 +1991,72 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_38",
-          "subsection_title": "FORCEPS COMPLICATIONS",
+          "subsection_title": "37. NEONATAL COMPLICATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "forceps_delivery_group_71",
-              "group_title": "Immediate",
+              "group_title": "Common/usually transient",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vaginal laceration",
-                    "Cervical tear",
-                    "Perineal tear",
-                    "Third-degree tear",
-                    "Fourth-degree tear",
-                    "Episiotomy",
-                    "Postpartum haemorrhage",
-                    "Haematoma"
+                    {
+                      "text": "Facial bruising",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial marks",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "forceps_delivery_group_72",
-              "group_title": "Long-term",
+              "group_title": "Important",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Urinary incontinence",
-                    "Faecal incontinence",
-                    "Pelvic-floor dysfunction",
-                    "Prolapse",
-                    "Sexual dysfunction"
+                    {
+                      "text": "Facial nerve palsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cephalohaematoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skull injury",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_73",
+              "group_title": "Rare but serious",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1675,64 +2065,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_39",
-          "subsection_title": "NEONATAL COMPLICATIONS",
+          "subsection_title": "38. FACIAL NERVE PALSY",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_73",
-              "group_title": "Common/usually transient",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Facial bruising",
-                    "Facial swelling",
-                    "Facial marks"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "forceps_delivery_group_74",
-              "group_title": "Important",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Facial nerve palsy",
-                    "Cephalohaematoma",
-                    "Skull injury"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_75",
-              "group_title": "Rare but serious",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Intracranial haemorrhage"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_40",
-          "subsection_title": "FACIAL NERVE PALSY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_76",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1742,10 +2079,9 @@
                   "text": "The examiner may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What neonatal neurological complication can occur following forceps delivery?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“What neonatal neurological complication can occur following forceps delivery?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1753,18 +2089,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Facial nerve injury/facial nerve palsy."
+                  "text": "**Facial nerve injury/facial nerve palsy.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You may see:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may see:",
                   "items": [
-                    "Asymmetry of the face",
-                    "Reduced movement on one side when crying",
-                    "Inability to fully close one eye on the affected side"
+                    {
+                      "text": "Asymmetry of the face",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced movement on one side when crying",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inability to fully close one eye on the affected side",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1776,12 +2118,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_41",
-          "subsection_title": "FORCEPS VS VACUUM — HIGH-YIELD TABLE",
+          "subsection_id": "forceps_delivery_subsection_40",
+          "subsection_title": "39. FORCEPS VS VACUUM — HIGH-YIELD TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_77",
+              "group_id": "forceps_delivery_group_75",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1851,12 +2193,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_42",
-          "subsection_title": "WHEN WOULD YOU CHOOSE FORCEPS?",
+          "subsection_id": "forceps_delivery_subsection_41",
+          "subsection_title": "40. WHEN WOULD YOU CHOOSE FORCEPS?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_78",
+              "group_id": "forceps_delivery_group_76",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1867,19 +2209,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would choose forceps when operative vaginal delivery is indicated and the fetal head is appropriately low and the prerequisites are fulfilled, particularly where forceps offer an advantage based on the fetal position, urgency, maternal circumstances, contraindications to vacuum or the operator's expertise.”"
+                  "text": "“I would choose forceps when operative vaginal delivery is indicated and the fetal head is appropriately low and the prerequisites are fulfilled, particularly where forceps offer an advantage based on the fetal position, urgency, maternal circumstances, contraindications to vacuum or the operator's expertise.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_43",
-          "subsection_title": "WHEN WOULD YOU CHOOSE VACUUM?",
+          "subsection_id": "forceps_delivery_subsection_42",
+          "subsection_title": "41. WHEN WOULD YOU CHOOSE VACUUM?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_79",
+              "group_id": "forceps_delivery_group_77",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1890,19 +2233,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Vacuum may be preferred when the clinical circumstances allow it and there is no contraindication, particularly when avoiding some of the maternal perineal trauma associated with forceps is desirable.”"
+                  "text": "“Vacuum may be preferred when the clinical circumstances allow it and there is no contraindication, particularly when avoiding some of the maternal perineal trauma associated with forceps is desirable.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_44",
-          "subsection_title": "FAILED FORCEPS",
+          "subsection_id": "forceps_delivery_subsection_43",
+          "subsection_title": "42. FAILED FORCEPS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_80",
+              "group_id": "forceps_delivery_group_78",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1917,7 +2261,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "No descent."
+                  "text": "**No descent.**"
                 },
                 {
                   "type": "paragraph",
@@ -1926,45 +2270,55 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_81",
+              "group_id": "forceps_delivery_group_79",
               "group_title": "Do NOT",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Apply excessive traction",
-                    "Continue pulling repeatedly",
-                    "Rotate forcefully",
-                    "Ignore fetal deterioration"
+                    {
+                      "text": "Apply excessive traction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continue pulling repeatedly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rotate forcefully",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignore fetal deterioration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_82",
+              "group_id": "forceps_delivery_group_80",
               "group_title": "Instead",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "STOP → REASSESS → CALL FOR HELP → DELIVER SAFELY"
-                  ]
+                  "type": "paragraph",
+                  "text": "**STOP → REASSESS → CALL FOR HELP → DELIVER SAFELY**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_45",
-          "subsection_title": "WHY MIGHT FORCEPS FAIL?",
+          "subsection_id": "forceps_delivery_subsection_44",
+          "subsection_title": "43. WHY MIGHT FORCEPS FAIL?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_83",
+              "group_id": "forceps_delivery_group_81",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1976,36 +2330,82 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_84",
+              "group_id": "forceps_delivery_group_82",
               "group_title": "3 Ps",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Passenger**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Passenger",
-                    "Malposition",
-                    "Macrosomia",
-                    "Malpresentation",
-                    "Passage",
-                    "Cephalopelvic disproportion",
-                    "Pelvic abnormality",
-                    "Power",
-                    "Inadequate contractions",
-                    "Maternal exhaustion"
+                    {
+                      "text": "Malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malpresentation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Also consider:"
+                  "text": "**Passage**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Incorrect forceps application",
-                    "Incorrect assessment of station",
-                    "Incorrect assessment of fetal position"
+                    {
+                      "text": "Cephalopelvic disproportion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic abnormality",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Power**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Inadequate contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal exhaustion",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Also consider:",
+                  "items": [
+                    {
+                      "text": "Incorrect forceps application",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrect assessment of station",
+                      "level": 0
+                    },
+                    {
+                      "text": "Incorrect assessment of fetal position",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2013,28 +2413,40 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_46",
-          "subsection_title": "WHAT IF FORCEPS FAIL?",
+          "subsection_id": "forceps_delivery_subsection_45",
+          "subsection_title": "44. WHAT IF FORCEPS FAIL?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_85",
+              "group_id": "forceps_delivery_group_83",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Reassess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Reassess:",
                   "items": [
-                    "Fetal position",
-                    "Station",
-                    "Maternal condition",
-                    "Fetal condition",
-                    "Reason for failure"
+                    {
+                      "text": "Fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Station",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reason for failure",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2044,16 +2456,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_86",
+              "group_id": "forceps_delivery_group_84",
               "group_title": "Another assisted vaginal delivery",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "is genuinely safe and appropriate,"
-                  ]
+                  "type": "paragraph",
+                  "text": "is genuinely safe and appropriate,"
                 },
                 {
                   "type": "paragraph",
@@ -2062,7 +2472,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_87",
+              "group_id": "forceps_delivery_group_85",
               "group_title": "Caesarean delivery",
               "group_subtitle": null,
               "group_icon": null,
@@ -2076,12 +2486,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_47",
-          "subsection_title": "FAILED FORCEPS + FETAL DISTRESS",
+          "subsection_id": "forceps_delivery_subsection_46",
+          "subsection_title": "45. FAILED FORCEPS + FETAL DISTRESS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_88",
+              "group_id": "forceps_delivery_group_86",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2092,7 +2502,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not spend excessive time attempting repeated instrumentation."
+                  "text": "**Do not spend excessive time attempting repeated instrumentation.**"
                 },
                 {
                   "type": "paragraph",
@@ -2103,31 +2513,53 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_48",
-          "subsection_title": "COUNSELLING SCENARIO",
+          "subsection_id": "forceps_delivery_subsection_47",
+          "subsection_title": "46. COUNSELLING SCENARIO",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_89",
+              "group_id": "forceps_delivery_group_87",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The woman asks: ‘Why can't you just continue letting me push?’”"
+                  "text": "“The woman asks: ‘Why can't you just continue letting me push?’”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_90",
+              "group_id": "forceps_delivery_group_88",
               "group_title": "Model answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“If you and the baby are both well and there is no urgency, continuing labour may sometimes be appropriate. However, in your situation there is a reason we are concerned about continuing for longer—for example, the baby's heart-rate pattern or prolonged second stage. Because the baby's head is already low, forceps may allow us to complete the birth more quickly and avoid a longer period of pushing or potentially a Caesarean birth.”"
+                  "text": "“If you and the baby are both well and there is no urgency, continuing labour may sometimes be appropriate. However, in your situation there is a reason we are concerned about continuing for longer—for example, the baby's heart-rate pattern or prolonged second stage. Because the baby's head is already low, forceps may allow us to complete the birth more quickly and avoid a longer period of pushing or potentially a Caesarean birth.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_48",
+          "subsection_title": "47. COUNSELLING SCENARIO — “WILL IT HURT?”",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_89",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“We will make sure you have appropriate pain relief or anaesthesia before the procedure. You may feel pressure during the delivery, but we will monitor you throughout and make sure you are as comfortable as possible.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2135,30 +2567,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_49",
-          "subsection_title": "COUNSELLING SCENARIO — “WILL IT HURT?”",
+          "subsection_title": "48. COUNSELLING SCENARIO — “WILL MY BABY BE OKAY?”",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_91",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“We will make sure you have appropriate pain relief or anaesthesia before the procedure. You may feel pressure during the delivery, but we will monitor you throughout and make sure you are as comfortable as possible.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_50",
-          "subsection_title": "COUNSELLING SCENARIO — “WILL MY BABY BE OKAY?”",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_92",
+              "group_id": "forceps_delivery_group_90",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2173,26 +2586,27 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Most babies delivered with forceps do well, but there are some risks including bruising or temporary facial marks, and less commonly facial nerve injury or other trauma. The neonatal team will assess your baby after birth, particularly because we are using an assisted delivery.”"
+                  "text": "“Most babies delivered with forceps do well, but there are some risks including bruising or temporary facial marks, and less commonly facial nerve injury or other trauma. The neonatal team will assess your baby after birth, particularly because we are using an assisted delivery.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_51",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "forceps_delivery_subsection_50",
+          "subsection_title": "49. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_93",
+              "group_id": "forceps_delivery_group_91",
               "group_title": "Q1. What are the indications for forceps?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2201,14 +2615,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_94",
+              "group_id": "forceps_delivery_group_92",
               "group_title": "Q2. What are the prerequisites?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2217,14 +2631,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_95",
+              "group_id": "forceps_delivery_group_93",
               "group_title": "Q3. Why must the fetal position be known?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2233,14 +2647,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_96",
+              "group_id": "forceps_delivery_group_94",
               "group_title": "Q4. What happens if the forceps don't lock easily?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2249,14 +2663,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_97",
+              "group_id": "forceps_delivery_group_95",
               "group_title": "Q5. What are the major maternal complications?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2265,14 +2679,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_98",
+              "group_id": "forceps_delivery_group_96",
               "group_title": "Q6. What are the major neonatal complications?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2281,14 +2695,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_99",
+              "group_id": "forceps_delivery_group_97",
               "group_title": "Q7. Which has a higher risk of severe perineal trauma: vacuum or forceps?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2297,14 +2711,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_100",
+              "group_id": "forceps_delivery_group_98",
               "group_title": "Q8. Which has a higher risk of scalp trauma?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2313,14 +2727,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_101",
+              "group_id": "forceps_delivery_group_99",
               "group_title": "Q9. What is a major serious complication of vacuum that you should watch for?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2329,14 +2743,14 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_102",
+              "group_id": "forceps_delivery_group_100",
               "group_title": "Q10. What if forceps fail to achieve descent?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2347,12 +2761,12 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_52",
-          "subsection_title": "OSCE PRACTICAL CHECKLIST",
+          "subsection_id": "forceps_delivery_subsection_51",
+          "subsection_title": "50. OSCE PRACTICAL CHECKLIST",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_103",
+              "group_id": "forceps_delivery_group_101",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2364,81 +2778,151 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_104",
+              "group_id": "forceps_delivery_group_102",
               "group_title": "1. EXPLAIN",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Indication",
-                    "Procedure",
-                    "Risks",
-                    "Benefits",
-                    "Alternatives",
-                    "Failure"
+                    {
+                      "text": "Indication",
+                      "level": 0
+                    },
+                    {
+                      "text": "Procedure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Risks",
+                      "level": 0
+                    },
+                    {
+                      "text": "Benefits",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alternatives",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failure",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_103",
+              "group_title": "2. CONSENT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**3. PREPARE**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Analgesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bladder",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Equipment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Team",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_104",
+              "group_title": "4. ASSESS",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Station",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "forceps_delivery_group_105",
-              "group_title": "3. PREPARE",
+              "group_title": "5. APPLY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Analgesia",
-                    "Bladder",
-                    "Position",
-                    "Equipment",
-                    "Team"
+                    {
+                      "text": "Correct blade",
+                      "level": 0
+                    },
+                    {
+                      "text": "Correct position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check maternal tissue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Second blade",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check application",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "forceps_delivery_group_106",
-              "group_title": "4. ASSESS",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Cervix",
-                    "Membranes",
-                    "Presentation",
-                    "Position",
-                    "Station",
-                    "Pelvis"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_107",
-              "group_title": "5. APPLY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Correct blade",
-                    "Correct position",
-                    "Check maternal tissue",
-                    "Second blade",
-                    "Check application"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_108",
               "group_title": "6. LOCK",
               "group_subtitle": null,
               "group_icon": null,
@@ -2450,24 +2934,36 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_109",
+              "group_id": "forceps_delivery_group_107",
               "group_title": "7. TRACTION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "With contractions",
-                    "Maternal pushing",
-                    "Along pelvic axis",
-                    "Controlled"
+                    {
+                      "text": "With contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal pushing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Along pelvic axis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Controlled",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "forceps_delivery_group_110",
+              "group_id": "forceps_delivery_group_108",
               "group_title": "8. REASSESS",
               "group_subtitle": null,
               "group_icon": null,
@@ -2479,7 +2975,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_111",
+              "group_id": "forceps_delivery_group_109",
               "group_title": "9. DELIVER",
               "group_subtitle": null,
               "group_icon": null,
@@ -2491,7 +2987,7 @@
               ]
             },
             {
-              "group_id": "forceps_delivery_group_112",
+              "group_id": "forceps_delivery_group_110",
               "group_title": "10. INSPECT",
               "group_subtitle": null,
               "group_icon": null,
@@ -2505,19 +3001,61 @@
           ]
         },
         {
-          "subsection_id": "forceps_delivery_subsection_53",
-          "subsection_title": "FORCEPS OSCE MNEMONIC",
+          "subsection_id": "forceps_delivery_subsection_52",
+          "subsection_title": "51. FORCEPS OSCE MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_113",
-              "group_title": "“F-O-R-C-E-P-S”",
+              "group_id": "forceps_delivery_group_111",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "F — Fully dilated O — Occiput/position identified R — Ruptured membranes C — Consent and complications explained E — Empty bladder P — Position/station appropriate S — Skilled operator + safety backup"
+                  "text": "**“F-O-R-C-E-P-S”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**F — Fully dilated**\n**O — Occiput/position identified**\n**R — Ruptured membranes**\n**C — Consent and complications explained**\n**E — Empty bladder**\n**P — Position/station appropriate**\n**S — Skilled operator + safety backup**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_53",
+          "subsection_title": "52. THE GOLDEN SAFETY RULE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_112",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**If the forceps do not work with controlled traction, do not compensate by using more force.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The absence of descent should make you ask:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“Why isn't this working?”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "—not:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“How much harder can I pull?”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -2525,50 +3063,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_54",
-          "subsection_title": "THE GOLDEN SAFETY RULE",
+          "subsection_title": "53. 60-SECOND MODEL ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "forceps_delivery_group_114",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If the forceps do not work with controlled traction, do not compensate by using more force."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The absence of descent should make you ask:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Why isn't this working?”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "—not:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“How much harder can I pull?”"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_55",
-          "subsection_title": "60-SECOND MODEL ANSWER",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_115",
+              "group_id": "forceps_delivery_group_113",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2578,10 +3077,9 @@
                   "text": "If the examiner asks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Talk me through a forceps delivery.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Talk me through a forceps delivery.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2589,7 +3087,87 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would first confirm the indication for operative vaginal delivery and assess the maternal and fetal condition. I would obtain informed consent where circumstances permit and explain the procedure, benefits, risks and alternatives, including the possibility of Caesarean delivery if the procedure fails. I would ensure appropriate analgesia, empty the bladder and confirm full cervical dilatation, ruptured membranes, cephalic presentation, an engaged head, known fetal position, appropriate station and no significant suspicion of cephalopelvic disproportion. I would perform a careful vaginal examination to identify the fetal position and then select and apply the appropriate forceps blades carefully around the fetal head, ensuring that maternal tissue is not trapped. After confirming correct application, I would lock the blades and apply controlled traction along the pelvic axis during contractions and maternal pushing, reassessing descent after each traction. If there is no descent, fetal deterioration or any concern regarding safety, I would stop, seek senior assistance and reassess the mode of delivery. Following birth, I would assess the mother for genital tract trauma and haemorrhage and the baby for facial and other injuries.”"
+                  "text": "“I would first confirm the indication for operative vaginal delivery and assess the maternal and fetal condition. I would obtain informed consent where circumstances permit and explain the procedure, benefits, risks and alternatives, including the possibility of Caesarean delivery if the procedure fails. I would ensure appropriate analgesia, empty the bladder and confirm full cervical dilatation, ruptured membranes, cephalic presentation, an engaged head, known fetal position, appropriate station and no significant suspicion of cephalopelvic disproportion. I would perform a careful vaginal examination to identify the fetal position and then select and apply the appropriate forceps blades carefully around the fetal head, ensuring that maternal tissue is not trapped. After confirming correct application, I would lock the blades and apply controlled traction along the pelvic axis during contractions and maternal pushing, reassessing descent after each traction. If there is no descent, fetal deterioration or any concern regarding safety, I would stop, seek senior assistance and reassess the mode of delivery. Following birth, I would assess the mother for genital tract trauma and haemorrhage and the baby for facial and other injuries.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "forceps_delivery_subsection_55",
+          "subsection_title": "54. RAPID REVISION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "forceps_delivery_group_114",
+              "group_title": "Indications",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Fetal compromise + Maternal indication + Prolonged second stage**"
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_115",
+              "group_title": "Prerequisites",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Fully dilated + ruptured membranes + engaged head + known position + appropriate station + adequate pelvis + empty bladder + analgesia + consent + skilled operator + backup**"
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_116",
+              "group_title": "Procedure",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Assess → Position → Insert blades → Check → Lock → Traction → Reassess → Deliver**"
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_117",
+              "group_title": "Major maternal complication",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Severe perineal trauma**"
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_118",
+              "group_title": "Important neonatal complication",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Facial injury/facial nerve palsy**"
+                }
+              ]
+            },
+            {
+              "group_id": "forceps_delivery_group_119",
+              "group_title": "Failed forceps",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Stop → Reassess → Senior help → Alternative delivery**"
                 }
               ]
             }
@@ -2597,98 +3175,11 @@
         },
         {
           "subsection_id": "forceps_delivery_subsection_56",
-          "subsection_title": "RAPID REVISION",
+          "subsection_title": "55. FORCEPS VS VACUUM — ONE-MINUTE MEMORY AID",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_116",
-              "group_title": "Indications",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal compromise + Maternal indication + Prolonged second stage"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_117",
-              "group_title": "Prerequisites",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Fully dilated + ruptured membranes + engaged head + known position + appropriate station + adequate pelvis + empty bladder + analgesia + consent + skilled operator + backup"
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_118",
-              "group_title": "Procedure",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess → Position → Insert blades → Check → Lock → Traction → Reassess → Deliver"
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_119",
-              "group_title": "Major maternal complication",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Severe perineal trauma"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "forceps_delivery_group_120",
-              "group_title": "Important neonatal complication",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Facial injury/facial nerve palsy"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "forceps_delivery_group_121",
-              "group_title": "Failed forceps",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Stop → Reassess → Senior help → Alternative delivery"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "forceps_delivery_subsection_57",
-          "subsection_title": "FORCEPS VS VACUUM — ONE-MINUTE MEMORY AID",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "forceps_delivery_group_122",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2698,24 +3189,20 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "FORCEPS = FACE + FLOOR"
-                  ]
+                  "type": "paragraph",
+                  "text": "**FORCEPS = FACE + FLOOR**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "FACE → facial bruising/facial nerve injury FLOOR → more maternal pelvic-floor/perineal trauma"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "VACUUM = SCALP + SUBGALEAL"
-                  ]
+                  "text": "**FACE** → facial bruising/facial nerve injury\n**FLOOR** → more maternal pelvic-floor/perineal trauma"
                 },
                 {
                   "type": "paragraph",
-                  "text": "SCALP → chignon, scalp trauma, cephalohaematoma SUBGALEAL → potentially life-threatening haemorrhage"
+                  "text": "**VACUUM = SCALP + SUBGALEAL**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**SCALP** → chignon, scalp trauma, cephalohaematoma\n**SUBGALEAL** → potentially life-threatening haemorrhage"
                 }
               ]
             }

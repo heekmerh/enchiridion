@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman at 6 cm cervical dilatation is in established labour. Perform a vaginal examination and report your findings.”"
+                  "text": "“A woman at 6 cm cervical dilatation is in established labour. Perform a vaginal examination and report your findings.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -40,10 +41,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a vaginal examination to assess the progress of labour.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Perform a vaginal examination to assess the progress of labour.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -55,7 +55,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman has been in labour for several hours with poor progress. Perform a vaginal examination and determine whether there is evidence of obstruction.”"
+                  "text": "“A woman has been in labour for several hours with poor progress. Perform a vaginal examination and determine whether there is evidence of obstruction.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -66,10 +67,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a vaginal examination and determine the fetal position.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Perform a vaginal examination and determine the fetal position.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -81,7 +81,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient is fully dilated and pushing. Perform a vaginal examination and assess whether she is suitable for vaginal delivery.”"
+                  "text": "“The patient is fully dilated and pushing. Perform a vaginal examination and assess whether she is suitable for vaginal delivery.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -89,7 +90,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_2",
-          "subsection_title": "PURPOSE OF THE EXAMINATION",
+          "subsection_title": "2. PURPOSE OF THE EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -111,12 +112,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "dilatation",
-                    "effacement",
-                    "consistency",
-                    "position"
+                    {
+                      "text": "dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "effacement",
+                      "level": 0
+                    },
+                    {
+                      "text": "consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "position",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -128,12 +141,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "presentation",
-                    "position",
-                    "station",
-                    "descent"
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "position",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -145,10 +170,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "intact/ruptured",
-                    "liquor characteristics"
+                    {
+                      "text": "intact/ruptured",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor characteristics",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -160,10 +191,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "caput",
-                    "moulding"
+                    {
+                      "text": "caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -175,9 +212,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "clinical adequacy where relevant"
+                    {
+                      "text": "clinical adequacy where relevant",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -185,10 +225,8 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CERVIX → BABY → MEMBRANES → CAPUT/MOULDING"
-                  ]
+                  "type": "paragraph",
+                  "text": "**CERVIX → BABY → MEMBRANES → CAPUT/MOULDING**"
                 }
               ]
             }
@@ -196,7 +234,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_3",
-          "subsection_title": "INTRODUCTION",
+          "subsection_title": "3. INTRODUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -211,23 +249,30 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Hello, I'm Dr ____. I'm one of the doctors looking after you today.”"
+                  "text": "“Hello, I'm Dr ____. I'm one of the doctors looking after you today.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Confirm:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Confirm:",
                   "items": [
-                    "name",
-                    "age",
-                    "gestational age"
+                    {
+                      "text": "name",
+                      "level": 0
+                    },
+                    {
+                      "text": "age",
+                      "level": 0
+                    },
+                    {
+                      "text": "gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "parity.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "parity."
                 }
               ]
             }
@@ -235,7 +280,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_4",
-          "subsection_title": "EXPLAIN THE PROCEDURE",
+          "subsection_title": "4. EXPLAIN THE PROCEDURE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -250,17 +295,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I'd like to perform an internal examination to assess how your labour is progressing. This involves gently examining your vagina and cervix with two gloved fingers. It may be uncomfortable, but I will stop if you need me to. Is that okay?”"
+                  "text": "“I'd like to perform an internal examination to assess how your labour is progressing. This involves gently examining your vagina and cervix with two gloved fingers. It may be uncomfortable, but I will stop if you need me to. Is that okay?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Do you have any questions before we start?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Do you have any questions before we start?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -272,7 +317,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_5",
-          "subsection_title": "CHAPERONE",
+          "subsection_title": "5. CHAPERONE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -286,20 +331,26 @@
                   "text": "Offer an appropriate chaperone."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Maintain:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Maintain:",
                   "items": [
-                    "privacy",
-                    "dignity",
-                    "warmth"
+                    {
+                      "text": "privacy",
+                      "level": 0
+                    },
+                    {
+                      "text": "dignity",
+                      "level": 0
+                    },
+                    {
+                      "text": "warmth",
+                      "level": 0
+                    },
+                    {
+                      "text": "communication.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "communication."
                 },
                 {
                   "type": "paragraph",
@@ -311,7 +362,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_6",
-          "subsection_title": "BEFORE THE EXAMINATION",
+          "subsection_title": "6. BEFORE THE EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -321,42 +372,60 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "indication for examination",
-                    "maternal condition",
-                    "fetal status",
-                    "previous vaginal examination",
-                    "analgesia"
+                    {
+                      "text": "indication for examination",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal status",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous vaginal examination",
+                      "level": 0
+                    },
+                    {
+                      "text": "analgesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "bladder status.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "bladder status."
                 },
                 {
                   "type": "paragraph",
                   "text": "Wash hands."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Prepare:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Prepare:",
                   "items": [
-                    "sterile gloves",
-                    "lubricant",
-                    "pads/towels"
+                    {
+                      "text": "sterile gloves",
+                      "level": 0
+                    },
+                    {
+                      "text": "lubricant",
+                      "level": 0
+                    },
+                    {
+                      "text": "pads/towels",
+                      "level": 0
+                    },
+                    {
+                      "text": "appropriate lighting.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "appropriate lighting."
                 }
               ]
             }
@@ -364,7 +433,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_7",
-          "subsection_title": "POSITION",
+          "subsection_title": "7. POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -384,7 +453,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "semi-recumbent or dorsal position with knees flexed and legs appropriately supported."
+                  "text": "**semi-recumbent or dorsal position with knees flexed and legs appropriately supported.**"
                 },
                 {
                   "type": "paragraph",
@@ -396,7 +465,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_8",
-          "subsection_title": "IMPORTANT SAFETY POINT",
+          "subsection_title": "8. IMPORTANT SAFETY POINT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -415,7 +484,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "clinically indicated, explained and consented to."
+                  "text": "**clinically indicated, explained and consented to.**"
                 },
                 {
                   "type": "paragraph",
@@ -427,7 +496,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_9",
-          "subsection_title": "EXTERNAL INSPECTION",
+          "subsection_title": "9. EXTERNAL INSPECTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -437,24 +506,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Before inserting your fingers, inspect for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Before inserting your fingers, inspect for:",
                   "items": [
-                    "vaginal bleeding",
-                    "liquor",
-                    "meconium",
-                    "abnormal discharge",
-                    "cord prolapse",
-                    "vulval swelling",
-                    "lesions"
+                    {
+                      "text": "vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "meconium",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "vulval swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "trauma.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "trauma."
                 }
               ]
             }
@@ -462,7 +549,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_10",
-          "subsection_title": "INSERTION",
+          "subsection_title": "10. INSERTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -477,14 +564,17 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Use:",
                   "items": [
-                    "index finger",
-                    "middle finger"
+                    {
+                      "text": "index finger",
+                      "level": 0
+                    },
+                    {
+                      "text": "middle finger",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -505,7 +595,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_11",
-          "subsection_title": "STEP 1 — FIND THE CERVIX",
+          "subsection_title": "11. STEP 1 — FIND THE CERVIX",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -535,21 +625,30 @@
                   "text": "Estimate in centimetres."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "2 cm",
-                    "4 cm",
-                    "6 cm",
-                    "8 cm"
+                    {
+                      "text": "2 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "4 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "6 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "8 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "10 cm.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "10 cm."
                 }
               ]
             }
@@ -557,7 +656,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_12",
-          "subsection_title": "CERVICAL DILATATION",
+          "subsection_title": "12. CERVICAL DILATATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -604,7 +703,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Fully dilated."
+                  "text": "**Fully dilated.**"
                 }
               ]
             }
@@ -612,7 +711,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_13",
-          "subsection_title": "HOW TO ESTIMATE DILATATION",
+          "subsection_title": "13. HOW TO ESTIMATE DILATATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -626,28 +725,27 @@
                   "text": "The examiner may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How do you estimate cervical dilatation?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“How do you estimate cervical dilatation?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Use the separation between the edges of the cervical opening."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You can conceptualize:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You can conceptualize:",
                   "items": [
-                    "1 cm = approximately one finger breadth"
+                    {
+                      "text": "1 cm = approximately one finger breadth",
+                      "level": 0
+                    },
+                    {
+                      "text": "progressively larger diameter as the cervix opens.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "progressively larger diameter as the cervix opens."
                 },
                 {
                   "type": "paragraph",
@@ -659,7 +757,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_14",
-          "subsection_title": "STEP 2 — CERVICAL EFFACEMENT",
+          "subsection_title": "14. STEP 2 — CERVICAL EFFACEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -673,20 +771,26 @@
                   "text": "Assess how much the cervix has shortened/thinned."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Describe as:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Describe as:",
                   "items": [
-                    "uneffaced",
-                    "partially effaced",
-                    "significantly effaced"
+                    {
+                      "text": "uneffaced",
+                      "level": 0
+                    },
+                    {
+                      "text": "partially effaced",
+                      "level": 0
+                    },
+                    {
+                      "text": "significantly effaced",
+                      "level": 0
+                    },
+                    {
+                      "text": "fully effaced.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fully effaced."
                 },
                 {
                   "type": "paragraph",
@@ -698,7 +802,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_15",
-          "subsection_title": "EXAMPLE",
+          "subsection_title": "15. EXAMPLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -708,10 +812,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The cervix is 5 cm dilated and approximately 80% effaced.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The cervix is 5 cm dilated and approximately 80% effaced.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -719,7 +822,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_16",
-          "subsection_title": "STEP 3 — CERVICAL CONSISTENCY",
+          "subsection_title": "16. STEP 3 — CERVICAL CONSISTENCY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -729,19 +832,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess whether the cervix is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess whether the cervix is:",
                   "items": [
-                    "firm",
-                    "medium"
+                    {
+                      "text": "firm",
+                      "level": 0
+                    },
+                    {
+                      "text": "medium",
+                      "level": 0
+                    },
+                    {
+                      "text": "soft.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "soft."
                 },
                 {
                   "type": "paragraph",
@@ -753,7 +859,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_17",
-          "subsection_title": "STEP 4 — CERVICAL POSITION",
+          "subsection_title": "17. STEP 4 — CERVICAL POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -763,19 +869,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The cervix may be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The cervix may be:",
                   "items": [
-                    "posterior",
-                    "mid-position"
+                    {
+                      "text": "posterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "mid-position",
+                      "level": 0
+                    },
+                    {
+                      "text": "anterior.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "anterior."
                 },
                 {
                   "type": "paragraph",
@@ -787,7 +896,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_18",
-          "subsection_title": "CERVICAL SUMMARY",
+          "subsection_title": "18. CERVICAL SUMMARY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -802,7 +911,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is 6 cm dilated, approximately 80% effaced, soft and anterior.”"
+                  "text": "“The cervix is 6 cm dilated, approximately 80% effaced, soft and anterior.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -814,7 +924,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_19",
-          "subsection_title": "STEP 5 — IDENTIFY THE PRESENTING PART",
+          "subsection_title": "19. STEP 5 — IDENTIFY THE PRESENTING PART",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -829,7 +939,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "What is presenting?"
+                  "text": "**What is presenting?**"
                 },
                 {
                   "type": "paragraph",
@@ -844,19 +954,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "hard skull",
-                    "sutures"
+                    {
+                      "text": "hard skull",
+                      "level": 0
+                    },
+                    {
+                      "text": "sutures",
+                      "level": 0
+                    },
+                    {
+                      "text": "fontanelles.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fontanelles."
                 }
               ]
             },
@@ -867,20 +980,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "sacrum",
-                    "buttocks",
-                    "ischial tuberosities"
+                    {
+                      "text": "sacrum",
+                      "level": 0
+                    },
+                    {
+                      "text": "buttocks",
+                      "level": 0
+                    },
+                    {
+                      "text": "ischial tuberosities",
+                      "level": 0
+                    },
+                    {
+                      "text": "feet/genitalia depending on type.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "feet/genitalia depending on type."
                 }
               ]
             },
@@ -891,20 +1010,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "orbital ridges",
-                    "nose",
-                    "mouth"
+                    {
+                      "text": "orbital ridges",
+                      "level": 0
+                    },
+                    {
+                      "text": "nose",
+                      "level": 0
+                    },
+                    {
+                      "text": "mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "chin.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "chin."
                 }
               ]
             },
@@ -915,19 +1040,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "forehead",
-                    "orbital ridges"
+                    {
+                      "text": "forehead",
+                      "level": 0
+                    },
+                    {
+                      "text": "orbital ridges",
+                      "level": 0
+                    },
+                    {
+                      "text": "anterior fontanelle.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "anterior fontanelle."
                 }
               ]
             },
@@ -938,12 +1066,14 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "shoulder/scapula/acromion."
+                  "type": "list",
+                  "title": "You may feel:",
+                  "items": [
+                    {
+                      "text": "shoulder/scapula/acromion.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -951,7 +1081,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_20",
-          "subsection_title": "NORMAL PRESENTATION",
+          "subsection_title": "20. NORMAL PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -966,7 +1096,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Vertex/cephalic presentation."
+                  "text": "**Vertex/cephalic presentation.**"
                 }
               ]
             }
@@ -974,7 +1104,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_21",
-          "subsection_title": "STEP 6 — IDENTIFY THE POSITION",
+          "subsection_title": "21. STEP 6 — IDENTIFY THE POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -989,7 +1119,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Identify the occiput."
+                  "text": "Identify the **occiput**."
                 },
                 {
                   "type": "paragraph",
@@ -1029,7 +1159,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_22",
-          "subsection_title": "POSITION EXAMPLES",
+          "subsection_title": "22. POSITION EXAMPLES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1108,7 +1238,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_23",
-          "subsection_title": "HOW TO IDENTIFY OA",
+          "subsection_title": "23. HOW TO IDENTIFY OA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1135,7 +1265,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_24",
-          "subsection_title": "HOW TO IDENTIFY OP",
+          "subsection_title": "24. HOW TO IDENTIFY OP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1153,19 +1283,22 @@
                   "text": "the posterior fontanelle points towards the maternal sacrum."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You may also find:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may also find:",
                   "items": [
-                    "increased caput",
-                    "increased moulding"
+                    {
+                      "text": "increased caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "increased moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "slower descent.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "slower descent."
                 }
               ]
             }
@@ -1173,7 +1306,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_25",
-          "subsection_title": "STEP 7 — STATION",
+          "subsection_title": "25. STEP 7 — STATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1184,7 +1317,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is a very common viva question."
+                  "text": "This is a **very common viva question**."
                 },
                 {
                   "type": "paragraph",
@@ -1192,7 +1325,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "maternal ischial spines."
+                  "text": "**maternal ischial spines.**"
                 }
               ]
             }
@@ -1200,7 +1333,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_26",
-          "subsection_title": "STATION SYSTEM",
+          "subsection_title": "26. STATION SYSTEM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1295,7 +1428,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_27",
-          "subsection_title": "EASY MEMORY",
+          "subsection_title": "27. EASY MEMORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1305,12 +1438,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Negative = above",
-                    "Zero = spines",
-                    "Positive = below"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Negative = above**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Zero = spines**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Positive = below**"
                 }
               ]
             }
@@ -1318,7 +1455,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_28",
-          "subsection_title": "STATION 0",
+          "subsection_title": "28. STATION 0",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1332,20 +1469,18 @@
                   "text": "If the examiner asks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does station 0 mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does station 0 mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Answer:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The presenting part is level with the maternal ischial spines.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The presenting part is level with the maternal ischial spines.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1353,7 +1488,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_29",
-          "subsection_title": "STEP 8 — DESCENT",
+          "subsection_title": "29. STEP 8 — DESCENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1363,19 +1498,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess whether the presenting part is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess whether the presenting part is:",
                   "items": [
-                    "high",
-                    "descending"
+                    {
+                      "text": "high",
+                      "level": 0
+                    },
+                    {
+                      "text": "descending",
+                      "level": 0
+                    },
+                    {
+                      "text": "well descended.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "well descended."
                 },
                 {
                   "type": "paragraph",
@@ -1395,7 +1533,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Serial examinations tell you whether descent is occurring."
+                  "text": "**Serial examinations tell you whether descent is occurring.**"
                 }
               ]
             }
@@ -1403,7 +1541,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_30",
-          "subsection_title": "STEP 9 — CAPUT",
+          "subsection_title": "30. STEP 9 — CAPUT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1418,7 +1556,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "oedema of the fetal scalp caused by pressure during labour."
+                  "text": "**oedema of the fetal scalp caused by pressure during labour.**"
                 },
                 {
                   "type": "paragraph",
@@ -1430,7 +1568,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_31",
-          "subsection_title": "CAPUT GRADING",
+          "subsection_title": "31. CAPUT GRADING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1493,7 +1631,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_32",
-          "subsection_title": "WHY DOES CAPUT MATTER?",
+          "subsection_title": "32. WHY DOES CAPUT MATTER?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1503,19 +1641,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Increasing caput may suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Increasing caput may suggest:",
                   "items": [
-                    "prolonged labour",
-                    "malposition"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "obstructed labour."
                 },
                 {
                   "type": "paragraph",
@@ -1523,7 +1664,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "poor descent + increasing moulding."
+                  "text": "**poor descent + increasing moulding.**"
                 }
               ]
             }
@@ -1531,7 +1672,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_33",
-          "subsection_title": "STEP 10 — MOULDING",
+          "subsection_title": "33. STEP 10 — MOULDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1546,7 +1687,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "overlapping of fetal skull bones during labour."
+                  "text": "**overlapping of fetal skull bones during labour.**"
                 }
               ]
             }
@@ -1554,7 +1695,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_34",
-          "subsection_title": "MOULDING",
+          "subsection_title": "34. MOULDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1597,7 +1738,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_35",
-          "subsection_title": "CLINICAL SIGNIFICANCE",
+          "subsection_title": "35. CLINICAL SIGNIFICANCE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1607,16 +1748,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Increasing moulding plus:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Increasing moulding plus:",
                   "items": [
-                    "poor descent",
-                    "high head",
-                    "prolonged labour",
-                    "strong contractions"
+                    {
+                      "text": "poor descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "high head",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "strong contractions",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1625,7 +1775,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "cephalopelvic disproportion/obstructed labour."
+                  "text": "**cephalopelvic disproportion/obstructed labour.**"
                 }
               ]
             }
@@ -1633,7 +1783,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_36",
-          "subsection_title": "STEP 11 — MEMBRANES",
+          "subsection_title": "36. STEP 11 — MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1648,7 +1798,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Are the membranes intact or ruptured?"
+                  "text": "**Are the membranes intact or ruptured?**"
                 }
               ]
             }
@@ -1656,7 +1806,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_37",
-          "subsection_title": "IF MEMBRANES ARE INTACT",
+          "subsection_title": "37. IF MEMBRANES ARE INTACT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1670,10 +1820,9 @@
                   "text": "Report:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The membranes are intact.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The membranes are intact.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1681,7 +1830,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_38",
-          "subsection_title": "IF MEMBRANES ARE RUPTURED",
+          "subsection_title": "38. IF MEMBRANES ARE RUPTURED",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1748,7 +1897,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_39",
-          "subsection_title": "STEP 12 — PELVIS",
+          "subsection_title": "39. STEP 12 — PELVIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1762,21 +1911,30 @@
                   "text": "You should not routinely perform an aggressive “pelvic assessment” simply because the examiner asks for a vaginal examination."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "However, when assessing suspected obstruction, consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "However, when assessing suspected obstruction, consider:",
                   "items": [
-                    "sacral curve",
-                    "ischial spines",
-                    "pelvic side walls",
-                    "pubic arch"
+                    {
+                      "text": "sacral curve",
+                      "level": 0
+                    },
+                    {
+                      "text": "ischial spines",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic side walls",
+                      "level": 0
+                    },
+                    {
+                      "text": "pubic arch",
+                      "level": 0
+                    },
+                    {
+                      "text": "whether there appears to be adequate space.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "whether there appears to be adequate space."
                 },
                 {
                   "type": "paragraph",
@@ -1788,7 +1946,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_40",
-          "subsection_title": "COMPLETE NORMAL FINDING",
+          "subsection_title": "40. COMPLETE NORMAL FINDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1798,26 +1956,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose you find:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose you find:",
                   "items": [
-                    "cervix 6 cm",
-                    "80% effaced",
-                    "soft",
-                    "anterior",
-                    "vertex",
-                    "OA",
-                    "station 0",
-                    "membranes intact",
-                    "minimal caput"
+                    {
+                      "text": "cervix 6 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "80% effaced",
+                      "level": 0
+                    },
+                    {
+                      "text": "soft",
+                      "level": 0
+                    },
+                    {
+                      "text": "anterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "vertex",
+                      "level": 0
+                    },
+                    {
+                      "text": "OA",
+                      "level": 0
+                    },
+                    {
+                      "text": "station 0",
+                      "level": 0
+                    },
+                    {
+                      "text": "membranes intact",
+                      "level": 0
+                    },
+                    {
+                      "text": "minimal caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "no moulding.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "no moulding."
                 },
                 {
                   "type": "paragraph",
@@ -1825,7 +2007,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is 6 cm dilated and approximately 80% effaced. It is soft and anterior. The presenting part is the vertex in an occipito-anterior position at station 0. The membranes are intact, with minimal caput and no significant moulding. These findings are consistent with established labour.”"
+                  "text": "“The cervix is 6 cm dilated and approximately 80% effaced. It is soft and anterior. The presenting part is the vertex in an occipito-anterior position at station 0. The membranes are intact, with minimal caput and no significant moulding. These findings are consistent with established labour.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1833,7 +2016,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_41",
-          "subsection_title": "ABNORMAL EXAMPLE — OP",
+          "subsection_title": "41. ABNORMAL EXAMPLE — OP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1844,7 +2027,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is 7 cm dilated and approximately 90% effaced. The fetus is cephalic but in an occipito-posterior position at –1 station. There is moderate caput and mild moulding. I would correlate these findings with the duration of labour and assess for progressive descent and fetal wellbeing.”"
+                  "text": "“The cervix is 7 cm dilated and approximately 90% effaced. The fetus is cephalic but in an occipito-posterior position at –1 station. There is moderate caput and mild moulding. I would correlate these findings with the duration of labour and assess for progressive descent and fetal wellbeing.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1852,7 +2036,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_42",
-          "subsection_title": "ABNORMAL EXAMPLE — OBSTRUCTION",
+          "subsection_title": "42. ABNORMAL EXAMPLE — OBSTRUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1863,7 +2047,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is fully dilated but the head remains at –1 station despite adequate contractions. There is significant caput and moulding. The findings raise concern for obstructed labour. I would immediately assess maternal and fetal wellbeing and request senior obstetric review.”"
+                  "text": "“The cervix is fully dilated but the head remains at –1 station despite adequate contractions. There is significant caput and moulding. The findings raise concern for obstructed labour. I would immediately assess maternal and fetal wellbeing and request senior obstetric review.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1871,7 +2056,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_43",
-          "subsection_title": "ABNORMAL EXAMPLE — FACE",
+          "subsection_title": "43. ABNORMAL EXAMPLE — FACE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1882,7 +2067,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The presenting part is the fetal face, with the nose, orbital ridges, mouth and chin palpable. The landmark is the mentum, which is directed anteriorly. This is a face presentation, mentum anterior.”"
+                  "text": "“The presenting part is the fetal face, with the nose, orbital ridges, mouth and chin palpable. The landmark is the mentum, which is directed anteriorly. This is a face presentation, mentum anterior.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1890,7 +2076,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_44",
-          "subsection_title": "ABNORMAL EXAMPLE — BROW",
+          "subsection_title": "44. ABNORMAL EXAMPLE — BROW",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1901,7 +2087,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The forehead and orbital ridges are palpable, but the presenting part is neither a well-flexed vertex nor a fully extended face. This is consistent with brow presentation. I would assess whether it converts, monitor labour progress and involve senior obstetric staff.”"
+                  "text": "“The forehead and orbital ridges are palpable, but the presenting part is neither a well-flexed vertex nor a fully extended face. This is consistent with brow presentation. I would assess whether it converts, monitor labour progress and involve senior obstetric staff.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1909,7 +2096,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_45",
-          "subsection_title": "ABNORMAL EXAMPLE — COMPOUND",
+          "subsection_title": "45. ABNORMAL EXAMPLE — COMPOUND",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1920,7 +2107,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The fetal vertex is presenting, with a fetal hand palpable alongside the head. This is a compound presentation. I would avoid traction on the limb and assess fetal wellbeing, cord prolapse and labour progress.”"
+                  "text": "“The fetal vertex is presenting, with a fetal hand palpable alongside the head. This is a compound presentation. I would avoid traction on the limb and assess fetal wellbeing, cord prolapse and labour progress.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1928,7 +2116,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_46",
-          "subsection_title": "ABNORMAL EXAMPLE — HIGH HEAD",
+          "subsection_title": "46. ABNORMAL EXAMPLE — HIGH HEAD",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1939,7 +2127,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is fully dilated but the fetal head remains high at –2 station. There is poor descent. I would assess fetal position, caput, moulding, pelvic adequacy and fetal wellbeing and seek senior review before considering operative vaginal birth.”"
+                  "text": "“The cervix is fully dilated but the fetal head remains high at –2 station. There is poor descent. I would assess fetal position, caput, moulding, pelvic adequacy and fetal wellbeing and seek senior review before considering operative vaginal birth.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1947,7 +2136,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_47",
-          "subsection_title": "IMPORTANT: DO NOT PERFORM VACUUM/FORCEPS WITH A HIGH HEAD",
+          "subsection_title": "47. IMPORTANT: DO NOT PERFORM VACUUM/FORCEPS WITH A HIGH HEAD",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1966,7 +2155,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "an engaged fetal head with known position and appropriate station."
+                  "text": "**an engaged fetal head with known position and appropriate station.**"
                 },
                 {
                   "type": "paragraph",
@@ -1978,7 +2167,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_48",
-          "subsection_title": "VAGINAL EXAMINATION IN SECOND STAGE",
+          "subsection_title": "48. VAGINAL EXAMINATION IN SECOND STAGE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1992,22 +2181,34 @@
                   "text": "If the woman is fully dilated:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "exact fetal position",
-                    "station",
-                    "descent",
-                    "caput",
-                    "moulding"
+                    {
+                      "text": "exact fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "suitability for vaginal delivery.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "suitability for vaginal delivery."
                 },
                 {
                   "type": "paragraph",
@@ -2015,7 +2216,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "operative vaginal delivery."
+                  "text": "**operative vaginal delivery.**"
                 }
               ]
             }
@@ -2023,7 +2224,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_49",
-          "subsection_title": "HOW OFTEN SHOULD YOU EXAMINE?",
+          "subsection_title": "49. HOW OFTEN SHOULD YOU EXAMINE?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2038,7 +2239,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "NICE recommends offering a vaginal examination approximately every 4 hours in the established first stage in low-risk labour, or sooner if clinically indicated, such as when there is concern about progress or the woman feels an urge to push."
+                  "text": "NICE recommends offering a vaginal examination approximately **every 4 hours** in the established first stage in low-risk labour, or sooner if clinically indicated, such as when there is concern about progress or the woman feels an urge to push."
                 }
               ]
             }
@@ -2046,7 +2247,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_50",
-          "subsection_title": "INDICATIONS FOR AN EARLIER EXAMINATION",
+          "subsection_title": "50. INDICATIONS FOR AN EARLIER EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2056,24 +2257,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "urge to push",
-                    "suspected transition to second stage",
-                    "abnormal CTG",
-                    "sudden change in clinical condition",
-                    "suspected cord prolapse",
-                    "suspected delivery",
-                    "concern about progress"
+                    {
+                      "text": "urge to push",
+                      "level": 0
+                    },
+                    {
+                      "text": "suspected transition to second stage",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "sudden change in clinical condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "suspected cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "suspected delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "concern about progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "significant change in contractions.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "significant change in contractions."
                 }
               ]
             }
@@ -2081,7 +2300,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_51",
-          "subsection_title": "WHEN NOT TO REPEAT THE EXAMINATION",
+          "subsection_title": "51. WHEN NOT TO REPEAT THE EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2091,20 +2310,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Avoid unnecessary repeated examinations because they can:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Avoid unnecessary repeated examinations because they can:",
                   "items": [
-                    "cause discomfort",
-                    "increase infection risk",
-                    "cause anxiety"
+                    {
+                      "text": "cause discomfort",
+                      "level": 0
+                    },
+                    {
+                      "text": "increase infection risk",
+                      "level": 0
+                    },
+                    {
+                      "text": "cause anxiety",
+                      "level": 0
+                    },
+                    {
+                      "text": "provide little additional information.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "provide little additional information."
                 }
               ]
             }
@@ -2112,7 +2337,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_52",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_title": "52. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2122,10 +2347,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Why don't you just perform vaginal examinations every hour?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Why don't you just perform vaginal examinations every hour?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -2137,7 +2361,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Vaginal examination should be clinically indicated because unnecessary repeated examinations increase discomfort and infection risk without necessarily providing useful additional information.”"
+                  "text": "“Vaginal examination should be clinically indicated because unnecessary repeated examinations increase discomfort and infection risk without necessarily providing useful additional information.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2145,7 +2370,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_53",
-          "subsection_title": "WHAT DOES A HIGH HEAD MEAN?",
+          "subsection_title": "53. WHAT DOES A HIGH HEAD MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2155,24 +2380,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible explanations include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible explanations include:",
                   "items": [
-                    "early labour",
-                    "unengaged head",
-                    "malposition",
-                    "malpresentation",
-                    "macrosomia",
-                    "pelvic limitation",
-                    "polyhydramnios"
+                    {
+                      "text": "early labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "unengaged head",
+                      "level": 0
+                    },
+                    {
+                      "text": "malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic limitation",
+                      "level": 0
+                    },
+                    {
+                      "text": "polyhydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "prematurity.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "prematurity."
                 },
                 {
                   "type": "paragraph",
@@ -2184,7 +2427,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_54",
-          "subsection_title": "WHAT DOES A HIGH HEAD + FULL DILATATION MEAN?",
+          "subsection_title": "54. WHAT DOES A HIGH HEAD + FULL DILATATION MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2198,31 +2441,39 @@
                   "text": "This is concerning."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "OP/OT",
-                    "CPD",
-                    "malpresentation",
-                    "macrosomia"
+                    {
+                      "text": "OP/OT",
+                      "level": 0
+                    },
+                    {
+                      "text": "CPD",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "obstructed labour."
                 },
                 {
                   "type": "paragraph",
                   "text": "Do not simply say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Push harder.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Push harder.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2230,7 +2481,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_55",
-          "subsection_title": "WHAT DOES CAPUT + MOULDING + POOR DESCENT MEAN?",
+          "subsection_title": "55. WHAT DOES CAPUT + MOULDING + POOR DESCENT MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2244,10 +2495,8 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "OBSTRUCTION"
-                  ]
+                  "type": "paragraph",
+                  "text": "**OBSTRUCTION**"
                 },
                 {
                   "type": "paragraph",
@@ -2259,7 +2508,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_56",
-          "subsection_title": "WHAT DOES CAPUT WITHOUT MOULDING MEAN?",
+          "subsection_title": "56. WHAT DOES CAPUT WITHOUT MOULDING MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2281,21 +2530,30 @@
                   "text": "Caput alone does not diagnose obstruction."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Interpret alongside:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Interpret alongside:",
                   "items": [
-                    "descent",
-                    "moulding",
-                    "labour duration",
-                    "contractions"
+                    {
+                      "text": "descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "labour duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal position.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal position."
                 }
               ]
             }
@@ -2303,7 +2561,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_57",
-          "subsection_title": "WHAT DOES SEVERE MOULDING MEAN?",
+          "subsection_title": "57. WHAT DOES SEVERE MOULDING MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2318,22 +2576,25 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "cephalopelvic disproportion and obstructed labour."
+                  "text": "**cephalopelvic disproportion and obstructed labour.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Especially when accompanied by:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Especially when accompanied by:",
                   "items": [
-                    "high station",
-                    "poor descent"
+                    {
+                      "text": "high station",
+                      "level": 0
+                    },
+                    {
+                      "text": "poor descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "significant caput.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "significant caput."
                 }
               ]
             }
@@ -2341,7 +2602,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_58",
-          "subsection_title": "EXAMINER VIVA — PRESENTATION",
+          "subsection_title": "58. EXAMINER VIVA — PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2351,14 +2612,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the commonest presentation in normal labour?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the commonest presentation in normal labour?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Vertex."
+                  "text": "**Vertex.**"
                 }
               ]
             },
@@ -2369,14 +2629,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the landmark in vertex presentation?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the landmark in vertex presentation?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Occiput."
+                  "text": "**Occiput.**"
                 }
               ]
             },
@@ -2387,14 +2646,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the landmark in breech?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the landmark in breech?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Sacrum."
+                  "text": "**Sacrum.**"
                 }
               ]
             },
@@ -2405,14 +2663,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the landmark in face?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the landmark in face?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Mentum."
+                  "text": "**Mentum.**"
                 }
               ]
             },
@@ -2423,14 +2680,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the landmark in brow?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the landmark in brow?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Forehead."
+                  "text": "**Forehead.**"
                 }
               ]
             }
@@ -2438,7 +2694,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_59",
-          "subsection_title": "EXAMINER VIVA — POSITION",
+          "subsection_title": "59. EXAMINER VIVA — POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2448,14 +2704,14 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How do you determine position in a vertex presentation?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“How do you determine position in a vertex presentation?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“By identifying the fetal occiput, usually through the posterior fontanelle, and determining its relationship to the maternal pelvis.”"
+                  "text": "“By identifying the fetal occiput, usually through the posterior fontanelle, and determining its relationship to the maternal pelvis.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2463,7 +2719,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_60",
-          "subsection_title": "EXAMINER VIVA — FONTANELLES",
+          "subsection_title": "60. EXAMINER VIVA — FONTANELLES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2473,15 +2729,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "small",
-                    "triangular"
+                    {
+                      "text": "small",
+                      "level": 0
+                    },
+                    {
+                      "text": "triangular",
+                      "level": 0
+                    },
+                    {
+                      "text": "usually three sutures meet.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "usually three sutures meet."
                 }
               ]
             },
@@ -2492,15 +2754,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "larger",
-                    "diamond-shaped"
+                    {
+                      "text": "larger",
+                      "level": 0
+                    },
+                    {
+                      "text": "diamond-shaped",
+                      "level": 0
+                    },
+                    {
+                      "text": "four sutures meet.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "four sutures meet."
                 }
               ]
             }
@@ -2508,7 +2776,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_61",
-          "subsection_title": "HOW TO DIFFERENTIATE THEM DURING EXAMINATION",
+          "subsection_title": "61. HOW TO DIFFERENTIATE THEM DURING EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2538,11 +2806,12 @@
                   "text": "Therefore:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Small triangle = posterior",
-                    "Large diamond = anterior"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Small triangle = posterior**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Large diamond = anterior**"
                 }
               ]
             }
@@ -2550,7 +2819,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_62",
-          "subsection_title": "EXAMINER VIVA — STATION",
+          "subsection_title": "62. EXAMINER VIVA — STATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2560,14 +2829,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is the reference point for station?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What is the reference point for station?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ischial spines."
+                  "text": "**Ischial spines.**"
                 }
               ]
             },
@@ -2578,10 +2846,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does +2 mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does +2 mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2596,10 +2863,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does –2 mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does –2 mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2611,7 +2877,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_63",
-          "subsection_title": "EXAMINER VIVA — EFFACEMENT",
+          "subsection_title": "63. EXAMINER VIVA — EFFACEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2621,10 +2887,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does effacement mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does effacement mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2636,7 +2901,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_64",
-          "subsection_title": "EXAMINER VIVA — MEMBRANES",
+          "subsection_title": "64. EXAMINER VIVA — MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2646,10 +2911,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does meconium-stained liquor mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does meconium-stained liquor mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2661,7 +2925,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_65",
-          "subsection_title": "EXAMINER VIVA — CORD PROLAPSE",
+          "subsection_title": "65. EXAMINER VIVA — CORD PROLAPSE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2671,10 +2935,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What if you feel a pulsating cord during vaginal examination?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What if you feel a pulsating cord during vaginal examination?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2682,24 +2945,33 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "umbilical cord prolapse until proven otherwise."
+                  "text": "**umbilical cord prolapse until proven otherwise.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Immediate management includes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Immediate management includes:",
                   "items": [
-                    "call for help",
-                    "avoid handling the cord unnecessarily",
-                    "relieve pressure on the cord/presenting part",
-                    "maternal positioning"
+                    {
+                      "text": "call for help",
+                      "level": 0
+                    },
+                    {
+                      "text": "avoid handling the cord unnecessarily",
+                      "level": 0
+                    },
+                    {
+                      "text": "relieve pressure on the cord/presenting part",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal positioning",
+                      "level": 0
+                    },
+                    {
+                      "text": "expedite birth according to clinical circumstances.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "expedite birth according to clinical circumstances."
                 },
                 {
                   "type": "paragraph",
@@ -2711,7 +2983,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_66",
-          "subsection_title": "EXAMINER VIVA — VAGINAL EXAMINATION AND PROM",
+          "subsection_title": "66. EXAMINER VIVA — VAGINAL EXAMINATION AND PROM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2721,10 +2993,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Should you perform repeated digital vaginal examinations in PPROM?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Should you perform repeated digital vaginal examinations in PPROM?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2736,7 +3007,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_67",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_title": "67. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2802,11 +3073,12 @@
                   "text": "Remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Triangle = posterior",
-                    "Diamond = anterior"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Triangle = posterior**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Diamond = anterior**"
                 }
               ]
             },
@@ -2818,11 +3090,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Presentation = part."
+                  "text": "**Presentation = part.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Position = where the occiput points."
+                  "text": "**Position = where the occiput points.**"
                 }
               ]
             },
@@ -2878,7 +3150,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_68",
-          "subsection_title": "COMPLETE OSCE REPORTING TEMPLATE",
+          "subsection_title": "68. COMPLETE OSCE REPORTING TEMPLATE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2893,7 +3165,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“On vaginal examination, the cervix is ___ cm dilated and approximately ___% effaced. It is ___ in consistency and ___ in position. The presenting part is ___ in ___ position at station ___. The membranes are ___ and the liquor is ___. There is ___ caput and ___ moulding. Overall, these findings indicate ___.”"
+                  "text": "**“On vaginal examination, the cervix is ___ cm dilated and approximately ___% effaced. It is ___ in consistency and ___ in position. The presenting part is ___ in ___ position at station ___. The membranes are ___ and the liquor is ___. There is ___ caput and ___ moulding. Overall, these findings indicate ___.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2905,7 +3178,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_69",
-          "subsection_title": "EXAMPLE — NORMAL",
+          "subsection_title": "69. EXAMPLE — NORMAL",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2916,7 +3189,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“On vaginal examination, the cervix is 6 cm dilated and approximately 80% effaced. It is soft and anterior. The presenting part is the vertex in an occipito-anterior position at station 0. The membranes are intact. There is minimal caput and no significant moulding. Overall, these findings are consistent with established labour with satisfactory progress.”"
+                  "text": "“On vaginal examination, the cervix is 6 cm dilated and approximately 80% effaced. It is soft and anterior. The presenting part is the vertex in an occipito-anterior position at station 0. The membranes are intact. There is minimal caput and no significant moulding. Overall, these findings are consistent with established labour with satisfactory progress.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2924,7 +3198,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_70",
-          "subsection_title": "EXAMPLE — PROGRESSING OP",
+          "subsection_title": "70. EXAMPLE — PROGRESSING OP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2935,7 +3209,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is 8 cm dilated and approximately 90% effaced. The fetus is cephalic in an occipito-posterior position at station 0, with moderate caput and mild moulding. I would correlate these findings with the previous examination to determine whether descent and rotation are occurring.”"
+                  "text": "“The cervix is 8 cm dilated and approximately 90% effaced. The fetus is cephalic in an occipito-posterior position at station 0, with moderate caput and mild moulding. I would correlate these findings with the previous examination to determine whether descent and rotation are occurring.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2943,7 +3218,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_71",
-          "subsection_title": "EXAMPLE — POSSIBLE OBSTRUCTION",
+          "subsection_title": "71. EXAMPLE — POSSIBLE OBSTRUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2954,7 +3229,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is fully dilated, but the fetal head remains at –1 station with significant caput and moulding despite adequate contractions. This raises concern for obstructed labour. I would assess maternal and fetal wellbeing, confirm fetal position and seek urgent senior obstetric review.”"
+                  "text": "“The cervix is fully dilated, but the fetal head remains at –1 station with significant caput and moulding despite adequate contractions. This raises concern for obstructed labour. I would assess maternal and fetal wellbeing, confirm fetal position and seek urgent senior obstetric review.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2962,7 +3238,7 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_72",
-          "subsection_title": "EXAMPLE — FULLY DILATED AND LOW",
+          "subsection_title": "72. EXAMPLE — FULLY DILATED AND LOW",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2973,7 +3249,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is fully dilated. The vertex is in an occipito-anterior position at +2 station with minimal caput and no significant moulding. The findings are favourable for continued vaginal birth, provided maternal and fetal conditions remain reassuring.”"
+                  "text": "“The cervix is fully dilated. The vertex is in an occipito-anterior position at +2 station with minimal caput and no significant moulding. The findings are favourable for continued vaginal birth, provided maternal and fetal conditions remain reassuring.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2981,32 +3258,66 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_73",
-          "subsection_title": "MASTER MNEMONIC",
+          "subsection_title": "73. MASTER MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "vaginal_examination_in_labour_group_132",
-              "group_title": "C — Cervix",
+              "group_title": "C-P-P-S-M-C",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**C — Cervix**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "dilatation",
-                    "effacement",
-                    "consistency",
-                    "position"
+                    {
+                      "text": "dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "effacement",
+                      "level": 0
+                    },
+                    {
+                      "text": "consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "position",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_133",
-              "group_title": "C — Caput/moulding",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**P — Presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**P — Position**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**S — Station**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**M — Membranes/liquor**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Caput/moulding**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "This should become automatic."
@@ -3017,7 +3328,46 @@
         },
         {
           "subsection_id": "vaginal_examination_in_labour_subsection_74",
-          "subsection_title": "QUICK EXAMINATION SEQUENCE",
+          "subsection_title": "74. QUICK EXAMINATION SEQUENCE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "vaginal_examination_in_labour_group_133",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before insertion:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Consent → Chaperone → Privacy → Lubrication**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "During examination:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Cervix → Presentation → Position → Station → Membranes → Caput → Moulding**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "After examination:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Remove fingers → dispose gloves → hand hygiene → help patient → explain findings → document.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "vaginal_examination_in_labour_subsection_75",
+          "subsection_title": "75. 60-SECOND MODEL ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -3028,54 +3378,12 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Before insertion:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Consent → Chaperone → Privacy → Lubrication"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "During examination:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervix → Presentation → Position → Station → Membranes → Caput → Moulding"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "After examination:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remove fingers → dispose gloves → hand hygiene → help patient → explain findings → document."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "vaginal_examination_in_labour_subsection_75",
-          "subsection_title": "60-SECOND MODEL ANSWER",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "vaginal_examination_in_labour_group_135",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "If asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Describe a vaginal examination in labour.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Describe a vaginal examination in labour.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3083,102 +3391,73 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would explain the procedure, obtain consent, offer a chaperone, ensure privacy and position the patient comfortably. I would inspect externally for bleeding, liquor or cord prolapse and then gently perform a vaginal examination. I would assess the cervix for dilatation, effacement, consistency and position. I would identify the presenting part and determine the fetal position, then assess station and descent. I would assess whether the membranes are intact and, if ruptured, the liquor. Finally, I would assess for caput and moulding. I would correlate the findings with previous examinations to determine progress and assess whether there is evidence of malposition, obstruction or fetal compromise. I would report and document the findings clearly.”"
+                  "text": "“I would explain the procedure, obtain consent, offer a chaperone, ensure privacy and position the patient comfortably. I would inspect externally for bleeding, liquor or cord prolapse and then gently perform a vaginal examination. I would assess the cervix for dilatation, effacement, consistency and position. I would identify the presenting part and determine the fetal position, then assess station and descent. I would assess whether the membranes are intact and, if ruptured, the liquor. Finally, I would assess for caput and moulding. I would correlate the findings with previous examinations to determine progress and assess whether there is evidence of malposition, obstruction or fetal compromise. I would report and document the findings clearly.”",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "vaginal_examination_in_labour_subsection_76",
-          "subsection_title": "⭐ FINAL EXAM PEARLS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "vaginal_examination_in_labour_group_136",
-              "group_title": "A vaginal examination is not just “how many centimetres?”",
+              "group_id": "vaginal_examination_in_labour_group_135",
+              "group_title": "⭐ FINAL EXAM PEARLS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**A vaginal examination is not just “how many centimetres?”**"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Always remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CERVIX + BABY + DESCENT + MEMBRANES + CAPUT/MOULDING"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_137",
-              "group_title": "Cervix",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**CERVIX + BABY + DESCENT + MEMBRANES + CAPUT/MOULDING**"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Dilatation + effacement + position + consistency"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_138",
-              "group_title": "Baby",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Cervix**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Presentation + position"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_139",
-              "group_title": "Descent",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Dilatation + effacement + position + consistency**"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Station"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_140",
-              "group_title": "Membranes",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Baby**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Intact/ruptured + liquor"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "vaginal_examination_in_labour_group_141",
-              "group_title": "Head",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Presentation + position**"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Caput + moulding"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Descent**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Station**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Membranes**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Intact/ruptured + liquor**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Head**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Caput + moulding**"
                 },
                 {
                   "type": "paragraph",
@@ -3186,7 +3465,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Never interpret one vaginal examination in isolation. Compare with previous findings to determine whether labour is progressing."
+                  "text": "**Never interpret one vaginal examination in isolation. Compare with previous findings to determine whether labour is progressing.**"
                 }
               ]
             }

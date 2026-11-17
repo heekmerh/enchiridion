@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "eclampsia_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A 32-year-old woman at 36 weeks' gestation suddenly develops a generalised tonic-clonic seizure. Assess and manage her."
+                  "text": "**A 32-year-old woman at 36 weeks' gestation suddenly develops a generalised tonic-clonic seizure. Assess and manage her.**"
                 }
               ]
             },
@@ -41,7 +41,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A 29-year-old woman with severe pre-eclampsia develops a seizure. What is your immediate management?"
+                  "text": "**A 29-year-old woman with severe pre-eclampsia develops a seizure. What is your immediate management?**"
                 }
               ]
             },
@@ -53,7 +53,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A woman 6 hours after delivery develops a generalised seizure and has BP 170/110 mmHg. What is your diagnosis and management?"
+                  "text": "**A woman 6 hours after delivery develops a generalised seizure and has BP 170/110 mmHg. What is your diagnosis and management?**"
                 }
               ]
             },
@@ -65,7 +65,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A woman with eclampsia continues to convulse despite receiving magnesium sulfate. What will you do?"
+                  "text": "**A woman with eclampsia continues to convulse despite receiving magnesium sulfate. What will you do?**"
                 }
               ]
             },
@@ -77,7 +77,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Explain to the patient's family what has happened and what treatment she requires."
+                  "text": "**Explain to the patient's family what has happened and what treatment she requires.**"
                 }
               ]
             }
@@ -85,7 +85,7 @@
         },
         {
           "subsection_id": "eclampsia_subsection_2",
-          "subsection_title": "DEFINITION",
+          "subsection_title": "2. DEFINITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -96,18 +96,24 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Eclampsia is the occurrence of a seizure in a woman with pre-eclampsia that cannot be attributed to another neurological or metabolic cause."
+                  "text": "**Eclampsia is the occurrence of a seizure in a woman with pre-eclampsia that cannot be attributed to another neurological or metabolic cause.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It may occur:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It may occur:",
                   "items": [
-                    "Before labour",
-                    "During labour",
-                    "After delivery"
+                    {
+                      "text": "Before labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "During labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "After delivery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -120,7 +126,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Eclampsia can occur without previously diagnosed hypertension or proteinuria."
+                  "text": "Eclampsia can occur **without previously diagnosed hypertension or proteinuria**."
                 },
                 {
                   "type": "paragraph",
@@ -128,7 +134,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Any seizure in pregnancy or the postpartum period is an emergency and requires consideration of eclampsia."
+                  "text": "**Any seizure in pregnancy or the postpartum period is an emergency and requires consideration of eclampsia.**"
                 }
               ]
             }
@@ -136,7 +142,7 @@
         },
         {
           "subsection_id": "eclampsia_subsection_3",
-          "subsection_title": "THE GOLDEN RULE",
+          "subsection_title": "3. THE GOLDEN RULE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -150,41 +156,36 @@
                   "text": "If the examiner gives you:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pregnant woman + generalised seizure"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pregnant woman + generalised seizure**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Your first response should be:"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_4",
-          "subsection_title": "\"I would treat this as eclampsia until proven otherwise.\"",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "eclampsia_group_9",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**\"I would treat this as eclampsia until proven otherwise.\"**",
+                  "style": "quote"
+                },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 }
               ]
+            },
+            {
+              "group_id": "eclampsia_group_9",
+              "group_title": "ABC → PROTECT → MAGNESIUM → BP → INVESTIGATE → FETUS → DELIVERY",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_5",
-          "subsection_title": "WHAT DOES AN ECLAMPTIC SEIZURE LOOK LIKE?",
+          "subsection_id": "eclampsia_subsection_4",
+          "subsection_title": "4. WHAT DOES AN ECLAMPTIC SEIZURE LOOK LIKE?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -206,10 +207,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Sudden loss of consciousness",
-                    "Generalised muscle stiffening"
+                    {
+                      "text": "Sudden loss of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Generalised muscle stiffening",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -225,9 +232,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Generalised rhythmic jerking"
+                    {
+                      "text": "Generalised rhythmic jerking",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -243,25 +253,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Reduced consciousness",
-                    "Confusion",
-                    "Drowsiness",
-                    "Amnesia"
+                    {
+                      "text": "Reduced consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drowsiness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amnesia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "There may also be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "There may also be:",
                   "items": [
-                    "Cyanosis",
-                    "Tongue biting",
-                    "Urinary incontinence",
-                    "Aspiration"
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tongue biting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary incontinence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aspiration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -269,8 +300,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_6",
-          "subsection_title": "IMMEDIATE MANAGEMENT",
+          "subsection_id": "eclampsia_subsection_5",
+          "subsection_title": "5. IMMEDIATE MANAGEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -281,7 +312,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is the highest-yield part of the station."
+                  "text": "This is the **highest-yield part of the station**."
                 },
                 {
                   "type": "paragraph",
@@ -293,15 +324,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would call for help and protect the patient from injury while managing her airway, breathing and circulation.\""
+                  "text": "**\"I would call for help and protect the patient from injury while managing her airway, breathing and circulation.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_7",
-          "subsection_title": "CALL FOR HELP",
+          "subsection_id": "eclampsia_subsection_6",
+          "subsection_title": "6. CALL FOR HELP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -311,17 +343,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Activate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Activate:",
                   "items": [
-                    "Senior obstetrician",
-                    "Anaesthetist",
-                    "Midwife/nursing team",
-                    "Neonatal team",
-                    "Critical-care team if required"
+                    {
+                      "text": "Senior obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetist",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midwife/nursing team",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal team",
+                      "level": 0
+                    },
+                    {
+                      "text": "Critical-care team if required",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -333,8 +377,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_8",
-          "subsection_title": "POSITION",
+          "subsection_id": "eclampsia_subsection_7",
+          "subsection_title": "7. POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -348,17 +392,10 @@
                   "text": "Place the woman:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_9",
-          "subsection_title": "LEFT LATERAL POSITION",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "eclampsia_group_17",
-              "group_title": "",
+              "group_title": "LEFT LATERAL POSITION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -368,21 +405,30 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "This helps:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This helps:",
                   "items": [
-                    "Reduce aspiration risk",
-                    "Improve venous return",
-                    "Reduce aortocaval compression",
-                    "Improve maternal circulation"
+                    {
+                      "text": "Reduce aspiration risk",
+                      "level": 0
+                    },
+                    {
+                      "text": "Improve venous return",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduce aortocaval compression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Improve maternal circulation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not restrain her forcibly during the seizure."
+                  "text": "Do **not** restrain her forcibly during the seizure."
                 },
                 {
                   "type": "paragraph",
@@ -393,8 +439,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_10",
-          "subsection_title": "AIRWAY",
+          "subsection_id": "eclampsia_subsection_8",
+          "subsection_title": "8. AIRWAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -404,18 +450,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "During a seizure:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "During a seizure:",
                   "items": [
-                    "Protect airway",
-                    "Clear obvious secretions",
-                    "Remove nearby objects that could cause injury",
-                    "Consider suction if available",
-                    "Maintain airway after seizure",
-                    "Prepare for airway intervention if consciousness does not recover"
+                    {
+                      "text": "Protect airway",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clear obvious secretions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remove nearby objects that could cause injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider suction if available",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain airway after seizure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prepare for airway intervention if consciousness does not recover",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -428,15 +489,15 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Never put a spoon, fingers or other object into the patient's mouth during a seizure."
+                  "text": "**Never put a spoon, fingers or other object into the patient's mouth during a seizure.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_11",
-          "subsection_title": "BREATHING",
+          "subsection_id": "eclampsia_subsection_9",
+          "subsection_title": "9. BREATHING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -446,29 +507,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Respiratory rate",
-                    "Oxygen saturation",
-                    "Chest movement",
-                    "Cyanosis",
-                    "Aspiration"
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen saturation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aspiration",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Give oxygen if required, particularly if:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Give oxygen if required, particularly if:",
                   "items": [
-                    "Hypoxic",
-                    "Cyanosed",
-                    "Respiratory compromise"
+                    {
+                      "text": "Hypoxic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory compromise",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -477,15 +556,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Bag-mask ventilation and advanced airway management may be required."
+                  "text": "**Bag-mask ventilation and advanced airway management may be required.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_12",
-          "subsection_title": "CIRCULATION",
+          "subsection_id": "eclampsia_subsection_10",
+          "subsection_title": "10. CIRCULATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -495,16 +574,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Pulse",
-                    "BP",
-                    "Capillary refill",
-                    "Peripheral perfusion"
+                    {
+                      "text": "Pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Capillary refill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral perfusion",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -512,10 +600,8 @@
                   "text": "Establish:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "IV access"
-                  ]
+                  "type": "paragraph",
+                  "text": "**IV access**"
                 },
                 {
                   "type": "paragraph",
@@ -530,8 +616,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_13",
-          "subsection_title": "DISABILITY",
+          "subsection_id": "eclampsia_subsection_11",
+          "subsection_title": "11. DISABILITY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -541,19 +627,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "GCS",
-                    "Pupils",
-                    "Blood glucose",
-                    "Reflexes",
-                    "Clonus",
-                    "Seizure duration",
-                    "Postictal state"
+                    {
+                      "text": "GCS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pupils",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood glucose",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reflexes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clonus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizure duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postictal state",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -577,8 +681,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_14",
-          "subsection_title": "PROTECT FROM INJURY",
+          "subsection_id": "eclampsia_subsection_12",
+          "subsection_title": "12. PROTECT FROM INJURY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -600,13 +704,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Keep patient on safe surface",
-                    "Protect head",
-                    "Remove dangerous objects",
-                    "Maintain lateral position where possible",
-                    "Time the seizure"
+                    {
+                      "text": "Keep patient on safe surface",
+                      "level": 0
+                    },
+                    {
+                      "text": "Protect head",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remove dangerous objects",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain lateral position where possible",
+                      "level": 0
+                    },
+                    {
+                      "text": "Time the seizure",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -618,11 +737,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Restrain her",
-                    "Put anything in her mouth",
-                    "Attempt to force her jaw open"
+                    {
+                      "text": "Restrain her",
+                      "level": 0
+                    },
+                    {
+                      "text": "Put anything in her mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Attempt to force her jaw open",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -630,25 +758,28 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_15",
-          "subsection_title": "MAGNESIUM SULFATE IS THE DRUG OF CHOICE",
+          "subsection_id": "eclampsia_subsection_13",
+          "subsection_title": "13. MAGNESIUM SULFATE",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "eclampsia_group_27",
-              "group_title": "",
+              "group_title": "MAGNESIUM SULFATE IS THE DRUG OF CHOICE",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "It is used to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It is used to:",
                   "items": [
-                    "Stop eclamptic seizures",
-                    "Prevent recurrent seizures"
+                    {
+                      "text": "Stop eclamptic seizures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prevent recurrent seizures",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -656,8 +787,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_16",
-          "subsection_title": "MAGNESIUM SULFATE REGIMEN",
+          "subsection_id": "eclampsia_subsection_14",
+          "subsection_title": "14. MAGNESIUM SULFATE REGIMEN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -683,10 +814,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4 g IV over approximately 5 minutes"
-                  ]
+                  "type": "paragraph",
+                  "text": "**4 g IV over approximately 5 minutes**"
                 },
                 {
                   "type": "paragraph",
@@ -701,14 +830,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1 g/hour IV infusion"
-                  ]
+                  "type": "paragraph",
+                  "text": "**1 g/hour IV infusion**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "usually continued for approximately 24 hours after the last seizure or delivery, depending on local protocol."
+                  "text": "usually continued for approximately **24 hours after the last seizure or delivery**, depending on local protocol."
                 },
                 {
                   "type": "paragraph",
@@ -716,15 +843,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "An additional magnesium sulfate bolus may be required according to protocol."
+                  "text": "**An additional magnesium sulfate bolus may be required according to protocol.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_17",
-          "subsection_title": "WHAT IF THE SEIZURE DOES NOT STOP?",
+          "subsection_id": "eclampsia_subsection_15",
+          "subsection_title": "15. WHAT IF THE SEIZURE DOES NOT STOP?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -747,31 +874,33 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Ensure ABCs and give magnesium sulfate appropriately."
+                  "text": "**Ensure ABCs and give magnesium sulfate appropriately.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If seizure persists or recurs:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Call anaesthesia/critical care urgently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give an additional magnesium sulfate dose according to protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for magnesium toxicity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check glucose and other reversible causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider alternative anticonvulsant/anaesthetic therapy under senior/anaesthetic direction if seizures remain refractory."
+                  "type": "list",
+                  "title": "If seizure persists or recurs:",
+                  "items": [
+                    {
+                      "text": "Call anaesthesia/critical care urgently.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Give an additional magnesium sulfate dose according to protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess for magnesium toxicity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Check glucose and other reversible causes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider alternative anticonvulsant/anaesthetic therapy under senior/anaesthetic direction if seizures remain refractory.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -783,22 +912,40 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not simply keep giving magnesium indefinitely."
+                  "text": "**Do not simply keep giving magnesium indefinitely.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Persistent seizures require reassessment for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Persistent seizures require reassessment for:",
                   "items": [
-                    "Incorrect diagnosis",
-                    "Intracranial pathology",
-                    "Cerebral venous thrombosis",
-                    "Intracranial haemorrhage",
-                    "Hypoglycaemia",
-                    "Electrolyte disturbance",
-                    "Drug/toxin-related seizures"
+                    {
+                      "text": "Incorrect diagnosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial pathology",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebral venous thrombosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoglycaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolyte disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drug/toxin-related seizures",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -806,8 +953,8 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_18",
-          "subsection_title": "MAGNESIUM MONITORING",
+          "subsection_id": "eclampsia_subsection_16",
+          "subsection_title": "16. MAGNESIUM MONITORING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -821,44 +968,36 @@
                   "text": "Remember:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_19",
-          "subsection_title": "RRU",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "eclampsia_group_35",
-              "group_title": "R — Reflexes",
+              "group_title": "RRU",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**R — Reflexes**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Check deep tendon reflexes."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_36",
-              "group_title": "R — Respiration",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**R — Respiration**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Monitor respiratory rate and oxygen saturation."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_37",
-              "group_title": "U — Urine",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**U — Urine**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Monitor urine output."
@@ -868,12 +1007,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_20",
-          "subsection_title": "MAGNESIUM TOXICITY",
+          "subsection_id": "eclampsia_subsection_17",
+          "subsection_title": "17. MAGNESIUM TOXICITY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_38",
+              "group_id": "eclampsia_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -885,32 +1024,47 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_39",
+              "group_id": "eclampsia_group_37",
               "group_title": "Early",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Reduced/absent deep tendon reflexes"
+                    {
+                      "text": "Reduced/absent deep tendon reflexes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_40",
+              "group_id": "eclampsia_group_38",
               "group_title": "More severe",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Respiratory depression",
-                    "Respiratory arrest",
-                    "Bradycardia",
-                    "Cardiac arrest"
+                    {
+                      "text": "Respiratory depression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory arrest",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bradycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac arrest",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -918,51 +1072,58 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_21",
-          "subsection_title": "ANTIDOTE",
+          "subsection_id": "eclampsia_subsection_18",
+          "subsection_title": "18. ANTIDOTE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_41",
+              "group_id": "eclampsia_group_39",
               "group_title": "Calcium gluconate",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If significant magnesium toxicity occurs:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stop magnesium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "ABC support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Call anaesthesia/critical care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give calcium gluconate according to local protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continue monitoring."
+                  "type": "list",
+                  "title": "If significant magnesium toxicity occurs:",
+                  "items": [
+                    {
+                      "text": "Stop magnesium.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "ABC support.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Call anaesthesia/critical care.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Give calcium gluconate according to local protocol.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Continue monitoring.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_22",
-          "subsection_title": "BLOOD PRESSURE MANAGEMENT",
+          "subsection_id": "eclampsia_subsection_19",
+          "subsection_title": "19. BLOOD PRESSURE MANAGEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_42",
+              "group_id": "eclampsia_group_40",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -976,38 +1137,51 @@
                   "text": "If:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "BP ≥160/110 mmHg"
-                  ]
+                  "type": "paragraph",
+                  "text": "**BP ≥160/110 mmHg**"
                 },
                 {
                   "type": "paragraph",
                   "text": "treat severe hypertension promptly."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common options:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common options:",
                   "items": [
-                    "IV labetalol",
-                    "Oral immediate-release nifedipine",
-                    "IV hydralazine"
+                    {
+                      "text": "**IV labetalol**",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Oral immediate-release nifedipine**",
+                      "level": 0
+                    },
+                    {
+                      "text": "**IV hydralazine**",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Choice depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Choice depends on:",
                   "items": [
-                    "Clinical circumstances",
-                    "Contraindications",
-                    "Availability",
-                    "Local protocol"
+                    {
+                      "text": "Clinical circumstances",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraindications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Availability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Local protocol",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1015,35 +1189,31 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_23",
-          "subsection_title": "IMPORTANT DISTINCTION",
+          "subsection_id": "eclampsia_subsection_20",
+          "subsection_title": "20. IMPORTANT DISTINCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_43",
+              "group_id": "eclampsia_group_41",
               "group_title": "Magnesium sulfate treats",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Seizures"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Seizures**"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_44",
+              "group_id": "eclampsia_group_42",
               "group_title": "Antihypertensives treat",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Severe hypertension"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Severe hypertension**"
                 },
                 {
                   "type": "paragraph",
@@ -1051,19 +1221,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A patient with eclampsia may need both."
+                  "text": "A patient with eclampsia may need **both**."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_24",
-          "subsection_title": "INVESTIGATIONS AFTER STABILISATION",
+          "subsection_id": "eclampsia_subsection_21",
+          "subsection_title": "21. INVESTIGATIONS AFTER STABILISATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_45",
+              "group_id": "eclampsia_group_43",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1075,100 +1245,120 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_46",
-              "group_title": "FBC",
+              "group_id": "eclampsia_group_44",
+              "group_title": "Blood tests",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Look for:"
+                  "text": "**FBC**",
+                  "style": "heading"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Platelet count",
-                    "Anaemia"
+                    {
+                      "text": "Platelet count",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaemia",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_47",
-              "group_title": "U&E/renal function",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**U&E/renal function**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Creatinine",
-                    "Electrolyte abnormalities",
-                    "Renal impairment"
+                    {
+                      "text": "Creatinine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolyte abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal impairment",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_48",
-              "group_title": "LFTs",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**LFTs**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "AST/ALT elevation",
-                    "Hepatic involvement"
+                    {
+                      "text": "AST/ALT elevation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic involvement",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_49",
-              "group_title": "Haemolysis markers",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If HELLP is suspected:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Haemolysis markers**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "If HELLP is suspected:",
                   "items": [
-                    "LDH",
-                    "Bilirubin",
-                    "Blood film where indicated"
+                    {
+                      "text": "LDH",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bilirubin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood film where indicated",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_50",
-              "group_title": "Coagulation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Especially if:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Coagulation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Especially if:",
                   "items": [
-                    "Bleeding",
-                    "Abruption",
-                    "DIC suspected",
-                    "Severe thrombocytopenia"
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe thrombocytopenia",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1176,12 +1366,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_25",
-          "subsection_title": "GROUP AND CROSSMATCH",
+          "subsection_id": "eclampsia_subsection_22",
+          "subsection_title": "22. GROUP AND CROSSMATCH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_51",
+              "group_id": "eclampsia_group_45",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1191,15 +1381,21 @@
                   "text": "This is important because eclampsia is associated with complications that may require urgent delivery and haemorrhage management."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Arrange:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Arrange:",
                   "items": [
-                    "Blood group",
-                    "Crossmatch",
-                    "Appropriate blood products if clinically indicated"
+                    {
+                      "text": "Blood group",
+                      "level": 0
+                    },
+                    {
+                      "text": "Crossmatch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate blood products if clinically indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1207,12 +1403,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_26",
-          "subsection_title": "URINE OUTPUT",
+          "subsection_id": "eclampsia_subsection_23",
+          "subsection_title": "23. URINE OUTPUT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_52",
+              "group_id": "eclampsia_group_46",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1226,21 +1422,25 @@
                   "text": "Monitor:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hourly urine output"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "This is particularly important because:"
+                  "text": "**Hourly urine output**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This is particularly important because:",
                   "items": [
-                    "Renal dysfunction may occur",
-                    "Magnesium is renally excreted",
-                    "Reduced urine output increases toxicity risk"
+                    {
+                      "text": "Renal dysfunction may occur",
+                      "level": 0
+                    },
+                    {
+                      "text": "Magnesium is renally excreted",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output increases toxicity risk",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1248,12 +1448,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_27",
-          "subsection_title": "FETAL ASSESSMENT",
+          "subsection_id": "eclampsia_subsection_24",
+          "subsection_title": "24. FETAL ASSESSMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_53",
+              "group_id": "eclampsia_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1265,49 +1465,67 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_54",
+              "group_id": "eclampsia_group_48",
               "group_title": "CTG",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Baseline",
-                    "Variability",
-                    "Accelerations",
-                    "Decelerations"
+                    {
+                      "text": "Baseline",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Decelerations",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_55",
+              "group_id": "eclampsia_group_49",
               "group_title": "Ultrasound",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Fetal growth",
-                    "Amniotic fluid",
-                    "Presentation",
-                    "Placenta"
+                    {
+                      "text": "Fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_56",
+              "group_id": "eclampsia_group_50",
               "group_title": "Doppler",
               "group_subtitle": null,
               "group_icon": null,
@@ -1321,12 +1539,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_28",
-          "subsection_title": "IMPORTANT OSCE POINT: FETAL BRADYCARDIA AFTER A SEIZURE",
+          "subsection_id": "eclampsia_subsection_25",
+          "subsection_title": "25. IMPORTANT OSCE POINT: FETAL BRADYCARDIA AFTER A SEIZURE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_57",
+              "group_id": "eclampsia_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1337,11 +1555,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The CTG shows fetal bradycardia immediately after the maternal seizure. What do you do?\""
+                  "text": "\"The CTG shows fetal bradycardia immediately after the maternal seizure. What do you do?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not immediately rush to Caesarean section solely because of the initial CTG abnormality."
+                  "text": "Do **not immediately rush to Caesarean section** solely because of the initial CTG abnormality."
                 },
                 {
                   "type": "paragraph",
@@ -1349,7 +1568,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Transient fetal hypoxia/bradycardia."
+                  "text": "**Transient fetal hypoxia/bradycardia.**"
                 },
                 {
                   "type": "paragraph",
@@ -1358,21 +1577,27 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_58",
+              "group_id": "eclampsia_group_52",
               "group_title": "Stabilise the mother.",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "Reassess the CTG",
-                    "Correct maternal hypoxia/hypotension",
-                    "Assess recovery"
+                    {
+                      "text": "Reassess the CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Correct maternal hypoxia/hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess recovery",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1381,19 +1606,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Urgent delivery may be required."
+                  "text": "**Urgent delivery may be required.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_29",
-          "subsection_title": "DELIVERY",
+          "subsection_id": "eclampsia_subsection_26",
+          "subsection_title": "26. DELIVERY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_59",
+              "group_id": "eclampsia_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1404,7 +1629,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Delivery is the definitive treatment for the underlying pregnancy-related disorder."
+                  "text": "**Delivery is the definitive treatment for the underlying pregnancy-related disorder.**"
                 },
                 {
                   "type": "paragraph",
@@ -1413,25 +1638,43 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_60",
+              "group_id": "eclampsia_group_54",
               "group_title": "Eclampsia ≠ automatic Caesarean section.",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The mode of delivery depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The mode of delivery depends on:",
                   "items": [
-                    "Gestational age",
-                    "Cervical favourability",
-                    "Presentation",
-                    "Fetal condition",
-                    "Maternal condition",
-                    "Labour status",
-                    "Obstetric factors"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical favourability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labour status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obstetric factors",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1439,28 +1682,40 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_30",
-          "subsection_title": "VAGINAL DELIVERY",
+          "subsection_id": "eclampsia_subsection_27",
+          "subsection_title": "27. VAGINAL DELIVERY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_61",
+              "group_id": "eclampsia_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May be appropriate if:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May be appropriate if:",
                   "items": [
-                    "Mother is stable",
-                    "Fetus is stable",
-                    "Labour is established",
-                    "Cervix is favourable",
-                    "Vaginal delivery can reasonably be achieved"
+                    {
+                      "text": "Mother is stable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetus is stable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labour is established",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervix is favourable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal delivery can reasonably be achieved",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1468,60 +1723,61 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_31",
-          "subsection_title": "CAESAREAN SECTION",
+          "subsection_id": "eclampsia_subsection_28",
+          "subsection_title": "28. CAESAREAN SECTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_62",
+              "group_id": "eclampsia_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May be required when:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May be required when:",
                   "items": [
-                    "Immediate delivery is necessary",
-                    "Fetal condition remains compromised"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Labour is not established and vaginal delivery is unlikely to be achieved quickly"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "There are obstetric indications for Caesarean section"
+                    {
+                      "text": "Immediate delivery is necessary",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal condition remains compromised",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labour is not established and vaginal delivery is unlikely to be achieved quickly",
+                      "level": 0
+                    },
+                    {
+                      "text": "There are obstetric indications for Caesarean section",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_63",
+              "group_id": "eclampsia_group_57",
               "group_title": "But remember",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Stabilise the mother before surgery whenever possible."
+                  "text": "**Stabilise the mother before surgery whenever possible.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_32",
-          "subsection_title": "CORTICOSTEROIDS",
+          "subsection_id": "eclampsia_subsection_29",
+          "subsection_title": "29. CORTICOSTEROIDS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_64",
+              "group_id": "eclampsia_group_58",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1531,14 +1787,17 @@
                   "text": "If delivery is preterm and there is sufficient time for benefit, give antenatal corticosteroids according to gestational age and local protocol."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "Betamethasone",
-                    "Dexamethasone"
+                    {
+                      "text": "Betamethasone",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dexamethasone",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1547,19 +1806,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not delay life-saving maternal treatment or necessary delivery just to complete a steroid course."
+                  "text": "**Do not delay life-saving maternal treatment or necessary delivery just to complete a steroid course.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_33",
-          "subsection_title": "COMPLICATIONS OF ECLAMPSIA",
+          "subsection_id": "eclampsia_subsection_30",
+          "subsection_title": "30. COMPLICATIONS OF ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_65",
+              "group_id": "eclampsia_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1569,122 +1828,168 @@
                   "text": "Think:"
                 }
               ]
+            },
+            {
+              "group_id": "eclampsia_group_60",
+              "group_title": "BRAIN — LUNGS — LIVER — KIDNEYS — BLOOD — BABY",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Brain**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Recurrent seizures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebral oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stroke",
+                      "level": 0
+                    },
+                    {
+                      "text": "PRES",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Lungs**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Aspiration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory failure",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Liver**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hepatic dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subcapsular haematoma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatic rupture",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Kidneys**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "AKI",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oliguria",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Blood**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "HELLP",
+                      "level": 0
+                    },
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrombocytopenia",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Baby**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Fetal hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "FGR",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prematurity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_34",
-          "subsection_title": "BRAIN — LUNGS — LIVER — KIDNEYS — BLOOD — BABY",
+          "subsection_id": "eclampsia_subsection_31",
+          "subsection_title": "31. PRES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_66",
-              "group_title": "Brain",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Recurrent seizures",
-                    "Cerebral oedema",
-                    "Intracranial haemorrhage",
-                    "Stroke",
-                    "PRES"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_67",
-              "group_title": "Lungs",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Aspiration",
-                    "Pulmonary oedema",
-                    "Respiratory failure"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_68",
-              "group_title": "Liver",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Hepatic dysfunction",
-                    "Subcapsular haematoma",
-                    "Hepatic rupture"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_69",
-              "group_title": "Kidneys",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "AKI",
-                    "Oliguria"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_70",
-              "group_title": "Blood",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "HELLP",
-                    "DIC",
-                    "Thrombocytopenia"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_71",
-              "group_title": "Baby",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal hypoxia",
-                    "FGR",
-                    "Prematurity",
-                    "Placental abruption",
-                    "Stillbirth"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_35",
-          "subsection_title": "PRES",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "eclampsia_group_72",
+              "group_id": "eclampsia_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1696,7 +2001,7 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_73",
+              "group_id": "eclampsia_group_62",
               "group_title": "Posterior reversible encephalopathy syndrome",
               "group_subtitle": null,
               "group_icon": null,
@@ -1706,16 +2011,25 @@
                   "text": "May occur with severe hypertension/eclampsia."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible features:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible features:",
                   "items": [
-                    "Headache",
-                    "Visual disturbance",
-                    "Seizures",
-                    "Altered consciousness"
+                    {
+                      "text": "Headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered consciousness",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1728,19 +2042,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "PRES or another intracranial pathology."
+                  "text": "**PRES or another intracranial pathology.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_36",
-          "subsection_title": "DIFFERENTIAL DIAGNOSES OF SEIZURE IN PREGNANCY",
+          "subsection_id": "eclampsia_subsection_32",
+          "subsection_title": "32. DIFFERENTIAL DIAGNOSES OF SEIZURE IN PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_74",
+              "group_id": "eclampsia_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1756,51 +2070,84 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_75",
+              "group_id": "eclampsia_group_64",
               "group_title": "Neurological",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Epilepsy",
-                    "Cerebral venous sinus thrombosis",
-                    "Intracranial haemorrhage",
-                    "Brain tumour",
-                    "Meningitis/encephalitis",
-                    "PRES"
+                    {
+                      "text": "Epilepsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebral venous sinus thrombosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Brain tumour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Meningitis/encephalitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "PRES",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_76",
+              "group_id": "eclampsia_group_65",
               "group_title": "Metabolic",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hypoglycaemia",
-                    "Hyponatraemia",
-                    "Other electrolyte abnormalities"
+                    {
+                      "text": "Hypoglycaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyponatraemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other electrolyte abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_77",
+              "group_id": "eclampsia_group_66",
               "group_title": "Toxicological",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Drug toxicity",
-                    "Substance use/withdrawal"
+                    {
+                      "text": "Drug toxicity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Substance use/withdrawal",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1809,19 +2156,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Eclampsia must be treated urgently while alternative diagnoses are considered."
+                  "text": "**Eclampsia must be treated urgently while alternative diagnoses are considered.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_37",
-          "subsection_title": "POSTPARTUM ECLAMPSIA",
+          "subsection_id": "eclampsia_subsection_33",
+          "subsection_title": "33. POSTPARTUM ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_78",
+              "group_id": "eclampsia_group_67",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1836,19 +2183,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "After delivery."
+                  "text": "**After delivery.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A woman may develop:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A woman may develop:",
                   "items": [
-                    "Severe headache",
-                    "Visual symptoms",
-                    "Seizure",
-                    "Hypertension"
+                    {
+                      "text": "Severe headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seizure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1861,7 +2217,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Delivery does not completely eliminate the risk immediately."
+                  "text": "**Delivery does not completely eliminate the risk immediately.**"
                 },
                 {
                   "type": "paragraph",
@@ -1872,12 +2228,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_38",
-          "subsection_title": "CASE SCENARIO",
+          "subsection_id": "eclampsia_subsection_34",
+          "subsection_title": "34. CASE SCENARIO",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_79",
+              "group_id": "eclampsia_group_68",
               "group_title": "Patient",
               "group_subtitle": null,
               "group_icon": null,
@@ -1891,10 +2247,8 @@
                   "text": "BP:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "175/115 mmHg"
-                  ]
+                  "type": "paragraph",
+                  "text": "175/115 mmHg"
                 },
                 {
                   "type": "paragraph",
@@ -1903,40 +2257,37 @@
               ]
             },
             {
-              "group_id": "eclampsia_group_80",
+              "group_id": "eclampsia_group_69",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What is your diagnosis?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"What is your diagnosis?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Answer:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"This is eclampsia until proven otherwise.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"This is eclampsia until proven otherwise.\"**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_81",
+              "group_id": "eclampsia_group_70",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What is your first action?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"What is your first action?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1944,21 +2295,21 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would call for help and immediately protect and stabilise the patient using an ABC approach, placing her in the left lateral position and ensuring airway and breathing are maintained.\""
+                  "text": "\"I would call for help and immediately protect and stabilise the patient using an ABC approach, placing her in the left lateral position and ensuring airway and breathing are maintained.\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_82",
+              "group_id": "eclampsia_group_71",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What drug?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"What drug?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1966,21 +2317,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Magnesium sulfate."
+                  "text": "**Magnesium sulfate.**"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_83",
+              "group_id": "eclampsia_group_72",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What else?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"What else?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1988,38 +2338,40 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would urgently treat the severe hypertension, monitor for magnesium toxicity, obtain maternal investigations, assess fetal wellbeing after maternal stabilisation, and plan delivery once the mother is stabilised.\""
+                  "text": "\"I would urgently treat the severe hypertension, monitor for magnesium toxicity, obtain maternal investigations, assess fetal wellbeing after maternal stabilisation, and plan delivery once the mother is stabilised.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_39",
-          "subsection_title": "EXAMINER TRAP",
+          "subsection_id": "eclampsia_subsection_35",
+          "subsection_title": "35. EXAMINER TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_84",
+              "group_id": "eclampsia_group_73",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The patient is still fitting. Should you perform an immediate Caesarean section?\""
+                  "text": "\"The patient is still fitting. Should you perform an immediate Caesarean section?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_85",
+              "group_id": "eclampsia_group_74",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -2027,7 +2379,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Control the seizure and stabilise the mother."
+                  "text": "**Control the seizure and stabilise the mother.**"
                 },
                 {
                   "type": "paragraph",
@@ -2038,31 +2390,32 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_40",
-          "subsection_title": "EXAMINER TRAP",
+          "subsection_id": "eclampsia_subsection_36",
+          "subsection_title": "36. EXAMINER TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_86",
+              "group_id": "eclampsia_group_75",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"Should you put something in her mouth to prevent tongue biting?\""
+                  "text": "\"Should you put something in her mouth to prevent tongue biting?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "eclampsia_group_87",
+              "group_id": "eclampsia_group_76",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -2077,21 +2430,20 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_41",
-          "subsection_title": "EXAMINER TRAP",
+          "subsection_id": "eclampsia_subsection_37",
+          "subsection_title": "37. EXAMINER TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_88",
+              "group_id": "eclampsia_group_77",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Why magnesium rather than diazepam?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Why magnesium rather than diazepam?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2099,28 +2451,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Magnesium sulfate is the preferred anticonvulsant for eclampsia because it is more effective than conventional anticonvulsants such as diazepam or phenytoin in preventing recurrent eclamptic seizures.\""
+                  "text": "\"Magnesium sulfate is the preferred anticonvulsant for eclampsia because it is more effective than conventional anticonvulsants such as diazepam or phenytoin in preventing recurrent eclamptic seizures.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_42",
-          "subsection_title": "EXAMINER TRAP",
+          "subsection_id": "eclampsia_subsection_38",
+          "subsection_title": "38. EXAMINER TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_89",
+              "group_id": "eclampsia_group_78",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What if the patient has another seizure while receiving magnesium?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"What if the patient has another seizure while receiving magnesium?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2128,19 +2480,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would reassess ABCs, ensure the magnesium regimen has been correctly administered, give an additional magnesium sulfate dose according to protocol, assess for magnesium toxicity and involve anaesthesia/critical care urgently if seizures remain refractory.\""
+                  "text": "\"I would reassess ABCs, ensure the magnesium regimen has been correctly administered, give an additional magnesium sulfate dose according to protocol, assess for magnesium toxicity and involve anaesthesia/critical care urgently if seizures remain refractory.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_43",
-          "subsection_title": "COUNSELLING THE FAMILY",
+          "subsection_id": "eclampsia_subsection_39",
+          "subsection_title": "39. COUNSELLING THE FAMILY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_90",
+              "group_id": "eclampsia_group_79",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2155,19 +2508,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"She has had a seizure associated with a serious pregnancy complication called eclampsia. Our immediate priority is to protect her airway, stop the seizure and control her blood pressure. We will give magnesium sulfate to prevent further seizures and closely monitor her heart, breathing, kidneys and other organs. We will also assess the baby. Once she is stabilised, the obstetric team will determine the safest way and timing to deliver the baby.\""
+                  "text": "\"She has had a seizure associated with a serious pregnancy complication called eclampsia. Our immediate priority is to protect her airway, stop the seizure and control her blood pressure. We will give magnesium sulfate to prevent further seizures and closely monitor her heart, breathing, kidneys and other organs. We will also assess the baby. Once she is stabilised, the obstetric team will determine the safest way and timing to deliver the baby.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_44",
-          "subsection_title": "FULL OSCE MANAGEMENT ALGORITHM",
+          "subsection_id": "eclampsia_subsection_40",
+          "subsection_title": "40. FULL OSCE MANAGEMENT ALGORITHM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_91",
+              "group_id": "eclampsia_group_80",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2177,140 +2531,108 @@
                   "text": "Memorise this:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_45",
-          "subsection_title": "ECLAMPSIA",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "eclampsia_group_92",
-              "group_title": "1 — CALL",
+              "group_id": "eclampsia_group_81",
+              "group_title": "ECLAMPSIA",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**1 — CALL**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Call senior obstetrician + anaesthetist + neonatal team."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_93",
-              "group_title": "2 — POSITION",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2 — POSITION**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Left lateral."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_94",
-              "group_title": "3 — AIRWAY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3 — AIRWAY**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Protect and maintain airway."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_95",
-              "group_title": "4 — BREATHING",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4 — BREATHING**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Oxygen if indicated; assess ventilation."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_96",
-              "group_title": "5 — CIRCULATION",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5 — CIRCULATION**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "IV access + BP + pulse + bloods."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_97",
-              "group_title": "6 — MAGNESIUM",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**6 — MAGNESIUM**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Loading + maintenance according to protocol."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_98",
-              "group_title": "7 — BP",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**7 — BP**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Treat severe hypertension urgently."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_99",
-              "group_title": "8 — MONITOR",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**8 — MONITOR**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "RRU + fluid balance + neurological status."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_100",
-              "group_title": "9 — INVESTIGATE",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**9 — INVESTIGATE**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "FBC, renal, liver, coagulation ± haemolysis."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_101",
-              "group_title": "10 — BABY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**10 — BABY**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "CTG + ultrasound/Doppler as appropriate."
-                }
-              ]
-            },
-            {
-              "group_id": "eclampsia_group_102",
-              "group_title": "11 — DELIVERY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**11 — DELIVERY**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "After maternal stabilisation, determine appropriate timing/mode."
@@ -2320,12 +2642,12 @@
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_46",
-          "subsection_title": "60-SECOND MODEL ANSWER",
+          "subsection_id": "eclampsia_subsection_41",
+          "subsection_title": "41. 60-SECOND MODEL ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_103",
+              "group_id": "eclampsia_group_82",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2335,10 +2657,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"You have one minute. Manage this patient.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"You have one minute. Manage this patient.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2346,19 +2667,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is eclampsia until proven otherwise. I would call for urgent senior obstetric, anaesthetic and neonatal assistance, protect the patient from injury and place her in the left lateral position. I would immediately assess and maintain the airway, assess breathing and circulation, give oxygen if indicated, establish IV access and check blood glucose. I would administer magnesium sulfate according to the local eclampsia protocol to control the seizure and prevent recurrence, while monitoring reflexes, respiratory rate and urine output. I would urgently treat severe hypertension if present with an appropriate antihypertensive. Once stabilised, I would obtain FBC, renal and liver function, coagulation and haemolysis investigations where indicated, assess fluid balance, and assess fetal wellbeing with CTG and ultrasound as appropriate. I would then determine the safest timing and mode of delivery. Maternal stabilisation takes priority.\""
+                  "text": "**\"This is eclampsia until proven otherwise. I would call for urgent senior obstetric, anaesthetic and neonatal assistance, protect the patient from injury and place her in the left lateral position. I would immediately assess and maintain the airway, assess breathing and circulation, give oxygen if indicated, establish IV access and check blood glucose. I would administer magnesium sulfate according to the local eclampsia protocol to control the seizure and prevent recurrence, while monitoring reflexes, respiratory rate and urine output. I would urgently treat severe hypertension if present with an appropriate antihypertensive. Once stabilised, I would obtain FBC, renal and liver function, coagulation and haemolysis investigations where indicated, assess fluid balance, and assess fetal wellbeing with CTG and ultrasound as appropriate. I would then determine the safest timing and mode of delivery. Maternal stabilisation takes priority.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "eclampsia_subsection_47",
-          "subsection_title": "RAPID-FIRE EXAM QUESTIONS",
+          "subsection_id": "eclampsia_subsection_42",
+          "subsection_title": "42. RAPID-FIRE EXAM QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "eclampsia_group_104",
+              "group_id": "eclampsia_group_83",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2425,42 +2747,51 @@
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "eclampsia_subsection_48",
-          "subsection_title": "\"LEFT — AIRWAY — MAGNESIUM — BP — BABY — BIRTH\"",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "eclampsia_group_105",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "LEFT → Left lateral position",
-                    "AIRWAY → Protect ABCs",
-                    "MAGNESIUM → Stop/prevent seizures",
-                    "BP → Treat severe hypertension",
-                    "BABY → CTG + fetal assessment",
-                    "BIRTH → Delivery after maternal stabilisation"
-                  ]
-                }
-              ]
             },
             {
-              "group_id": "eclampsia_group_106",
-              "group_title": "The key sentence to remember",
+              "group_id": "eclampsia_group_84",
+              "group_title": "⭐ ECLAMPSIA — THE ONE-MINUTE MEMORY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"In eclampsia, the seizure is the emergency; maternal stabilisation comes first, and delivery is the definitive treatment once the mother is stabilised.\""
+                  "text": "**\"LEFT — AIRWAY — MAGNESIUM — BP — BABY — BIRTH\"**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**LEFT**\n→ Left lateral position"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**AIRWAY**\n→ Protect ABCs"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**MAGNESIUM**\n→ Stop/prevent seizures"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BP**\n→ Treat severe hypertension"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BABY**\n→ CTG + fetal assessment"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BIRTH**\n→ Delivery after maternal stabilisation"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**The key sentence to remember**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**\"In eclampsia, the seizure is the emergency; maternal stabilisation comes first, and delivery is the definitive treatment once the mother is stabilised.\"**",
+                  "style": "quote"
                 }
               ]
             }

@@ -43,7 +43,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -110,7 +110,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_3",
-          "subsection_title": "Definition and classification",
+          "subsection_title": "2. Definition and classification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -141,11 +141,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Squamous cell carcinoma",
-                    "Most common"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Squamous cell carcinoma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Most common"
                 },
                 {
                   "type": "paragraph",
@@ -157,10 +158,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Adenocarcinoma"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Adenocarcinoma"
                 },
                 {
                   "type": "paragraph",
@@ -172,10 +171,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Adenosquamous and other rare types"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Adenosquamous and other rare types"
                 },
                 {
                   "type": "paragraph",
@@ -199,7 +196,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_4",
-          "subsection_title": "Risk factors and pathophysiology",
+          "subsection_title": "3. Risk factors and pathophysiology",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -209,32 +206,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Persistent high-risk HPV infection, especially HPV 16 and 18."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Early onset of sexual activity and multiple sexual partners, which may increase HPV exposure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smoking."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HIV infection or other causes of immunosuppression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lack of access to cervical screening and follow-up."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous high-grade cervical intraepithelial lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inadequate HPV vaccination coverage."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Persistent high-risk HPV infection, especially HPV 16 and 18.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Early onset of sexual activity and multiple sexual partners, which may increase HPV exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking.",
+                      "level": 0
+                    },
+                    {
+                      "text": "HIV infection or other causes of immunosuppression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lack of access to cervical screening and follow-up.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous high-grade cervical intraepithelial lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inadequate HPV vaccination coverage.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -249,13 +251,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Persistent infection with high-risk HPV",
-                    "Viral oncoproteins E6 and E7 interfere with tumour-suppressor pathways",
-                    "Development of cervical precancerous lesions",
-                    "Progression in a subset of cases to invasive cervical cancer"
-                  ]
+                  "type": "paragraph",
+                  "text": "Persistent infection with high-risk HPV"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Viral oncoproteins E6 and E7 interfere with tumour-suppressor pathways"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Development of cervical precancerous lesions"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Progression in a subset of cases to invasive cervical cancer"
                 },
                 {
                   "type": "paragraph",
@@ -271,7 +280,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_5",
-          "subsection_title": "Clinical presentation",
+          "subsection_title": "4. Clinical presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -285,28 +294,30 @@
                   "text": "Cervical cancer may be asymptomatic and detected through screening or investigation of abnormal bleeding."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible symptoms include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postcoital bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intermenstrual bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unusually heavy or prolonged menstrual bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postmenopausal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent watery or blood-stained vaginal discharge."
+                  "type": "list",
+                  "title": "Possible symptoms include:",
+                  "items": [
+                    {
+                      "text": "Postcoital bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intermenstrual bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unusually heavy or prolonged menstrual bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postmenopausal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent watery or blood-stained vaginal discharge.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -317,40 +328,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Persistent pelvic or lower abdominal pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Foul-smelling vaginal discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dyspareunia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Back pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unilateral or bilateral leg swelling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Haematuria or rectal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary obstruction or hydronephrosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight loss, fatigue and anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vesicovaginal or rectovaginal fistula in advanced cases."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Persistent pelvic or lower abdominal pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foul-smelling vaginal discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dyspareunia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Back pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unilateral or bilateral leg swelling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematuria or rectal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary obstruction or hydronephrosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss, fatigue and anaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vesicovaginal or rectovaginal fistula in advanced cases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -362,7 +378,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_6",
-          "subsection_title": "Focused history taking",
+          "subsection_title": "5. Focused history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -372,28 +388,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Introduce yourself and confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the purpose of the consultation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure privacy and offer a chaperone if an intimate examination may be needed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use non-judgmental language when discussing sexual history."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Introduce yourself and confirm the patient's identity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Explain the purpose of the consultation.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Obtain consent.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure privacy and offer a chaperone if an intimate examination may be needed.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Use non-judgmental language when discussing sexual history.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -401,7 +428,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I understand you have been experiencing vaginal bleeding. I'd like to ask some questions about the bleeding, your menstrual and reproductive history, and any other symptoms so that we can understand what may be causing it.\""
+                  "text": "\"I understand you have been experiencing vaginal bleeding. I'd like to ask some questions about the bleeding, your menstrual and reproductive history, and any other symptoms so that we can understand what may be causing it.\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -416,74 +444,83 @@
                   "text": "Use a structured approach."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Bleeding"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Bleeding"
+                    {
+                      "text": "When did it begin?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it after intercourse, between periods or after menopause?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How much blood is lost?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is it recurrent or persistent?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there associated pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does it occur after vaginal examination or spontaneously?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "When did it begin?"
+                  "text": "Vaginal discharge"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Is it after intercourse, between periods or after menopause?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How much blood is lost?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it recurrent or persistent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there associated pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does it occur after vaginal examination or spontaneously?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vaginal discharge"
+                    {
+                      "text": "Is it watery, blood-stained or offensive?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long has it been present?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is there associated itching, fever or pelvic pain?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Is it watery, blood-stained or offensive?"
+                  "text": "Pain"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "How long has it been present?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is there associated itching, fever or pelvic pain?"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pain"
+                    {
+                      "text": "Site, onset, duration and severity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship to intercourse or menstruation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiation to the back or legs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary or bowel symptoms.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Site, onset, duration and severity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relationship to intercourse or menstruation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radiation to the back or legs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary or bowel symptoms."
                 }
               ]
             },
@@ -494,36 +531,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Age at menarche and menstrual pattern."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Last menstrual period and menopausal status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous cervical screening results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous HPV tests, colposcopy, cervical biopsies or treatment for precancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "History of sexually transmitted infections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contraceptive use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pelvic inflammatory disease, where relevant."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Age at menarche and menstrual pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Last menstrual period and menopausal status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous cervical screening results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous HPV tests, colposcopy, cervical biopsies or treatment for precancer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "History of sexually transmitted infections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraceptive use.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic inflammatory disease, where relevant.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -534,24 +573,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Gravidity and parity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pregnancies and delivery history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current pregnancy possibility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sexual history, asked sensitively and only to the extent relevant to assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HPV vaccination history."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Gravidity and parity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pregnancies and delivery history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current pregnancy possibility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual history, asked sensitively and only to the extent relevant to assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "HPV vaccination history.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -562,24 +606,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "HIV status or other immunosuppression, where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smoking history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current medications, including anticoagulants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pelvic radiotherapy or surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Family support, emotional concerns and barriers to attending follow-up."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "HIV status or other immunosuppression, where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smoking history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current medications, including anticoagulants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic radiotherapy or surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family support, emotional concerns and barriers to attending follow-up.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -590,24 +639,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Heavy ongoing bleeding with haemodynamic compromise."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe pelvic pain or suspected sepsis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acute kidney injury or urinary obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Significant haematuria or bowel obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected advanced malignancy with rapidly worsening symptoms."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Heavy ongoing bleeding with haemodynamic compromise.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe pelvic pain or suspected sepsis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acute kidney injury or urinary obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant haematuria or bowel obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected advanced malignancy with rapidly worsening symptoms.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -615,7 +669,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_7",
-          "subsection_title": "Examination of a patient with suspected cervical cancer",
+          "subsection_title": "6. Examination of a patient with suspected cervical cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -625,36 +679,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "General appearance and performance status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pulse, blood pressure, temperature and respiratory rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pallor."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight loss or cachexia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Peripheral lymph nodes, including supraclavicular and inguinal nodes where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lower limb oedema."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hydration and general nutritional status."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "General appearance and performance status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulse, blood pressure, temperature and respiratory rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss or cachexia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral lymph nodes, including supraclavicular and inguinal nodes where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower limb oedema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydration and general nutritional status.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -665,32 +721,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abdominal distension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpable pelvic or abdominal masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suprapubic fullness suggesting bladder distension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ascites."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hepatomegaly or other findings suggesting metastatic disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Renal angle tenderness."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Abdominal distension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpable pelvic or abdominal masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suprapubic fullness suggesting bladder distension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatomegaly or other findings suggesting metastatic disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal angle tenderness.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -705,32 +763,34 @@
                   "text": "Obtain consent, ensure adequate lighting and use a chaperone. Explain that the examination may cause some discomfort or bleeding."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Inspect the cervix for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An irregular, ulcerated or exophytic mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A friable lesion that bleeds on contact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Distortion or enlargement of the cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A lesion extending into the vaginal fornices or vaginal walls."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An abnormal cervix that is difficult to visualise completely."
+                  "type": "list",
+                  "title": "Inspect the cervix for:",
+                  "items": [
+                    {
+                      "text": "An irregular, ulcerated or exophytic mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A friable lesion that bleeds on contact.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distortion or enlargement of the cervix.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A lesion extending into the vaginal fornices or vaginal walls.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An abnormal cervix that is difficult to visualise completely.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -745,28 +805,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "When appropriate and performed by a trained clinician, assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervical consistency and mobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervical or pelvic tenderness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine size and mobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Adnexal masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible parametrial thickening or fixation."
+                  "type": "list",
+                  "title": "When appropriate and performed by a trained clinician, assess:",
+                  "items": [
+                    {
+                      "text": "Cervical consistency and mobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical or pelvic tenderness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine size and mobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible parametrial thickening or fixation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -790,7 +852,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_8",
-          "subsection_title": "Differential diagnoses",
+          "subsection_title": "7. Differential diagnoses",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -854,7 +916,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_9",
-          "subsection_title": "Investigations",
+          "subsection_title": "8. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -876,30 +938,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Cervical biopsy"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Cervical biopsy"
                 },
                 {
                   "type": "paragraph",
                   "text": "A histopathological diagnosis is generally required before definitive cancer treatment. A biopsy may be taken during colposcopy or directly from a suspicious lesion."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Colposcopy"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Colposcopy"
                 },
                 {
                   "type": "paragraph",
                   "text": "Magnified examination of the cervix to identify abnormal epithelium and guide biopsy. It is particularly useful for assessing cervical precancers and selected lesions."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. HPV testing and cervical cytology"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. HPV testing and cervical cytology"
                 },
                 {
                   "type": "paragraph",
@@ -919,10 +975,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pelvic MRI"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pelvic MRI"
                 },
                 {
                   "type": "paragraph",
@@ -934,10 +988,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CT or PET-CT"
-                  ]
+                  "type": "paragraph",
+                  "text": "CT or PET-CT"
                 },
                 {
                   "type": "paragraph",
@@ -949,10 +1001,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Renal tract imaging"
-                  ]
+                  "type": "paragraph",
+                  "text": "Renal tract imaging"
                 },
                 {
                   "type": "paragraph",
@@ -967,28 +1017,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Full blood count."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Renal function and electrolytes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Liver function tests when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "HIV testing according to local guidance and with appropriate consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy test where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Additional tests based on symptoms, stage and planned treatment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Full blood count.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal function and electrolytes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver function tests when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "HIV testing according to local guidance and with appropriate consent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy test where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Additional tests based on symptoms, stage and planned treatment.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1000,7 +1055,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_10",
-          "subsection_title": "FIGO staging of cervical cancer",
+          "subsection_title": "9. FIGO staging of cervical cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1047,40 +1102,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "IA: Microscopic invasive disease, with invasion measured in millimetres."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IB: Invasive disease confined to the cervix beyond stage IA."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IIA: Upper vaginal involvement without parametrial involvement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IIB: Parametrial involvement, but not up to the pelvic wall."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IIIA: Lower third of the vagina involved, without pelvic wall extension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IIIB: Pelvic wall extension and/or tumour-related hydronephrosis or non-functioning kidney."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IIIC: Pelvic and/or para-aortic lymph node involvement, with subdivisions based on nodal location and imaging/pathological evidence."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IVA: Invasion of adjacent pelvic organs, such as bladder or rectal mucosa."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "IVB: Distant metastases."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "IA: Microscopic invasive disease, with invasion measured in millimetres.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IB: Invasive disease confined to the cervix beyond stage IA.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IIA: Upper vaginal involvement without parametrial involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IIB: Parametrial involvement, but not up to the pelvic wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IIIA: Lower third of the vagina involved, without pelvic wall extension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IIIB: Pelvic wall extension and/or tumour-related hydronephrosis or non-functioning kidney.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IIIC: Pelvic and/or para-aortic lymph node involvement, with subdivisions based on nodal location and imaging/pathological evidence.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IVA: Invasion of adjacent pelvic organs, such as bladder or rectal mucosa.",
+                      "level": 0
+                    },
+                    {
+                      "text": "IVB: Distant metastases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1092,7 +1152,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_11",
-          "subsection_title": "Management of cervical cancer",
+          "subsection_title": "10. Management of cervical cancer",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1122,24 +1182,26 @@
                   "text": "CIN is not invasive cancer."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surveillance for selected low-grade lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colposcopy-guided assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excisional treatment, such as LLETZ/LEEP, for appropriate high-grade lesions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ablative treatment for selected eligible lesions when invasive disease has been excluded."
+                  "type": "list",
+                  "title": "Management may include:",
+                  "items": [
+                    {
+                      "text": "Surveillance for selected low-grade lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colposcopy-guided assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excisional treatment, such as LLETZ/LEEP, for appropriate high-grade lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ablative treatment for selected eligible lesions when invasive disease has been excluded.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1150,20 +1212,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Options for carefully selected patients may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Excisional procedures or conisation for certain microinvasive cancers."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery, including selected fertility-sparing procedures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radical surgery with appropriate nodal assessment in eligible patients."
+                  "type": "list",
+                  "title": "Options for carefully selected patients may include:",
+                  "items": [
+                    {
+                      "text": "Excisional procedures or conisation for certain microinvasive cancers.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgery, including selected fertility-sparing procedures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radical surgery with appropriate nodal assessment in eligible patients.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1194,28 +1258,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Options may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Systemic chemotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immunotherapy in eligible patients, depending on tumour biomarkers and current indications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Targeted treatment in selected cases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Radiotherapy for symptom control or selected disease sites."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palliative and supportive care."
+                  "type": "list",
+                  "title": "Options may include:",
+                  "items": [
+                    {
+                      "text": "Systemic chemotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immunotherapy in eligible patients, depending on tumour biomarkers and current indications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Targeted treatment in selected cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiotherapy for symptom control or selected disease sites.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palliative and supportive care.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1226,28 +1292,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Treat anaemia and bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Investigate and relieve urinary obstruction when present."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Manage pain, infection and malnutrition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer psychological and social support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss fertility and sexual health where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provide palliative care early when symptoms or advanced disease warrant it."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Treat anaemia and bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Investigate and relieve urinary obstruction when present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manage pain, infection and malnutrition.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offer psychological and social support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discuss fertility and sexual health where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provide palliative care early when symptoms or advanced disease warrant it.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1259,7 +1330,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_12",
-          "subsection_title": "Counselling a patient with a confirmed diagnosis",
+          "subsection_title": "11. Counselling a patient with a confirmed diagnosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1273,32 +1344,34 @@
                   "text": "This is a common communication station."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A useful structure is SPIKES:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Set up a private, supportive environment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Assess the patient's perception of the problem."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Ask how much information she wishes to receive."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "K — Give knowledge in clear, manageable portions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Respond empathetically to emotions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Summarise the plan and agree on next steps."
+                  "type": "list",
+                  "title": "A useful structure is SPIKES:",
+                  "items": [
+                    {
+                      "text": "S — Set up a private, supportive environment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Assess the patient's perception of the problem.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Ask how much information she wishes to receive.",
+                      "level": 0
+                    },
+                    {
+                      "text": "K — Give knowledge in clear, manageable portions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Respond empathetically to emotions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Summarise the plan and agree on next steps.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1310,7 +1383,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"I have received the result of your biopsy, and it shows cancer of the cervix. I appreciate that this may be difficult news to hear. I want to reassure you that we will not leave you to face this alone."
+                  "text": "\"I have received the result of your biopsy, and it shows cancer of the cervix. I appreciate that this may be difficult news to hear. I want to reassure you that we will not leave you to face this alone.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1330,7 +1404,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_13",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "12. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1425,7 +1499,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_14",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "13. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1435,44 +1509,59 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Failing to ask about postcoital and postmenopausal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Attributing all bleeding to cervicitis or contraception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing CIN with invasive cancer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ordering cytology alone for a visibly suspicious cervical mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting biopsy and histopathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving definitive treatment advice without staging."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring renal function and possible ureteric obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to discuss HPV vaccination and prevention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Communicating the diagnosis insensitively or giving false reassurance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neglecting fertility, sexual health, psychosocial support and follow-up."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to ask about postcoital and postmenopausal bleeding.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Attributing all bleeding to cervicitis or contraception.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Confusing CIN with invasive cancer.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ordering cytology alone for a visibly suspicious cervical mass.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Forgetting biopsy and histopathology.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Giving definitive treatment advice without staging.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Ignoring renal function and possible ureteric obstruction.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Failing to discuss HPV vaccination and prevention.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Communicating the diagnosis insensitively or giving false reassurance.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Neglecting fertility, sexual health, psychosocial support and follow-up.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             }
@@ -1480,7 +1569,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_15",
-          "subsection_title": "Mnemonics and exam tips",
+          "subsection_title": "14. Mnemonics and exam tips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1490,24 +1579,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "B — Bleeding after intercourse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Lower abdominal or pelvic pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Offensive or watery discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Ongoing intermenstrual or postmenopausal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "D — Distant disease symptoms, such as leg oedema or weight loss."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "B — Bleeding after intercourse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Lower abdominal or pelvic pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Offensive or watery discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Ongoing intermenstrual or postmenopausal bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "D — Distant disease symptoms, such as leg oedema or weight loss.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1518,28 +1612,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "B — Biopsy for histological confirmation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Imaging for staging."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Organ function: renal function, blood count and other relevant tests."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Pelvic assessment, including examination and colposcopy as appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Screening history and HPV-related results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Y — Your multidisciplinary treatment plan."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "B — Biopsy for histological confirmation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Imaging for staging.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Organ function: renal function, blood count and other relevant tests.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Pelvic assessment, including examination and colposcopy as appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Screening history and HPV-related results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Y — Your multidisciplinary treatment plan.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1550,20 +1649,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pre-invasive: surveillance or treatment of precancer as indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Early invasive: selected surgery or fertility-sparing treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Locally advanced: usually chemoradiotherapy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Metastatic/recurrent: individualised systemic treatment, radiotherapy and supportive care."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pre-invasive: surveillance or treatment of precancer as indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Early invasive: selected surgery or fertility-sparing treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Locally advanced: usually chemoradiotherapy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Metastatic/recurrent: individualised systemic treatment, radiotherapy and supportive care.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1571,7 +1675,7 @@
         },
         {
           "subsection_id": "cervical_cancer_subsection_16",
-          "subsection_title": "Mini OSCE practice",
+          "subsection_title": "15. Mini OSCE practice",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1581,10 +1685,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Exam practice"
-                  ]
+                  "type": "paragraph",
+                  "text": "Exam practice"
                 },
                 {
                   "type": "paragraph",
@@ -1595,13 +1697,20 @@
                   "text": "What is the most appropriate next step to establish the diagnosis?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Repeat cervical cytology in six months",
-                    "Treat empirically for cervicitis and discharge her",
-                    "Arrange urgent specialist assessment and biopsy of the suspicious lesion",
-                    "Start chemoradiotherapy immediately without further assessment"
-                  ]
+                  "type": "paragraph",
+                  "text": "Repeat cervical cytology in six months"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Treat empirically for cervicitis and discharge her"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Arrange urgent specialist assessment and biopsy of the suspicious lesion"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Start chemoradiotherapy immediately without further assessment"
                 }
               ]
             }

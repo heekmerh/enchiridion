@@ -18,78 +18,97 @@
       "subsections": [
         {
           "subsection_id": "malpresentation_and_malposition_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "malpresentation_and_malposition_group_1",
+              "group_title": "MALPRESENTATION & MALPOSITION",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_2",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_2",
               "group_title": "Station 1 — Transverse lie",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 37-year-old G2P1 at 38 weeks is found to have a transverse lie during routine antenatal examination. Assess her and discuss management.”"
+                  "text": "“A 37-year-old G2P1 at 38 weeks is found to have a transverse lie during routine antenatal examination. Assess her and discuss management.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_2",
+              "group_id": "malpresentation_and_malposition_group_3",
               "group_title": "Station 2 — Persistent occipito-posterior position",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A primigravida at 39 weeks is in established labour. Vaginal examination reveals the fetal head in an occipito-posterior position. Discuss your assessment and management.”"
+                  "text": "“A primigravida at 39 weeks is in established labour. Vaginal examination reveals the fetal head in an occipito-posterior position. Discuss your assessment and management.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_3",
+              "group_id": "malpresentation_and_malposition_group_4",
               "group_title": "Station 3 — Face presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman in labour has a vaginal examination suggestive of face presentation. Demonstrate how you would assess this patient.”"
+                  "text": "“A woman in labour has a vaginal examination suggestive of face presentation. Demonstrate how you would assess this patient.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_4",
+              "group_id": "malpresentation_and_malposition_group_5",
               "group_title": "Station 4 — Brow presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman at 40 weeks in labour has a brow presentation. Discuss the diagnosis and management.”"
+                  "text": "“A woman at 40 weeks in labour has a brow presentation. Discuss the diagnosis and management.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_5",
+              "group_id": "malpresentation_and_malposition_group_6",
               "group_title": "Station 5 — Compound presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman in labour has a fetal hand palpable alongside the presenting head. What is your diagnosis and management?”"
+                  "text": "“A woman in labour has a fetal hand palpable alongside the presenting head. What is your diagnosis and management?”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_2",
-          "subsection_title": "FIRST: DO NOT CONFUSE THESE TERMS",
+          "subsection_id": "malpresentation_and_malposition_subsection_3",
+          "subsection_title": "2. FIRST: DO NOT CONFUSE THESE TERMS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_6",
+              "group_id": "malpresentation_and_malposition_group_7",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -101,29 +120,32 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_7",
-              "group_title": "Normal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Vertex/cephalic presentation"
-                  ]
-                }
-              ]
-            },
-            {
               "group_id": "malpresentation_and_malposition_group_8",
-              "group_title": "Malpresentations",
+              "group_title": "Presentation = WHICH PART is coming first?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Normal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Vertex/cephalic presentation**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Malpresentations**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Breech"
+                    {
+                      "text": "Breech",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -132,9 +154,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Face"
+                    {
+                      "text": "Face",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -143,9 +168,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Brow"
+                    {
+                      "text": "Brow",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -154,9 +182,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Shoulder"
+                    {
+                      "text": "Shoulder",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -165,9 +196,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Compound presentation"
+                    {
+                      "text": "Compound presentation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -176,9 +210,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Transverse/oblique lie"
+                    {
+                      "text": "Transverse/oblique lie",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -196,16 +233,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "For a vertex presentation, position describes the relationship of the occiput to the maternal pelvis."
+                  "text": "For a vertex presentation, position describes the relationship of the **occiput** to the maternal pelvis."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "Occipito-anterior — OA"
+                    {
+                      "text": "Occipito-anterior — OA",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -214,9 +251,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Occipito-posterior — OP"
+                    {
+                      "text": "Occipito-posterior — OP",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -225,9 +265,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Occipito-transverse — OT"
+                    {
+                      "text": "Occipito-transverse — OT",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -241,99 +284,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Presentation = what is presenting?"
+                  "text": "**Presentation = what is presenting?**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Position = where is the occiput pointing?"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_10",
-              "group_title": "Easy mnemonic",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "PRESENTATION = PART",
-                    "POSITION = PLACE"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_3",
-          "subsection_title": "IMPORTANT TYPES",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_11",
-              "group_title": "1. Face",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The fetal head is hyperextended."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_12",
-              "group_title": "2. Brow",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The head is partially extended."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_13",
-              "group_title": "3. Breech",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Already covered in Station 48."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_14",
-              "group_title": "4. Shoulder",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Usually associated with transverse lie."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_15",
-              "group_title": "5. Compound",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "An extremity presents alongside another presenting part, commonly:"
+                  "text": "**Position = where is the occiput pointing?**"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "fetal hand + vertex"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Easy mnemonic**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**PRESENTATION = PART**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**POSITION = PLACE**"
                 }
               ]
             }
@@ -341,11 +309,75 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_4",
-          "subsection_title": "MALPOSITION",
+          "subsection_title": "3. IMPORTANT TYPES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_16",
+              "group_id": "malpresentation_and_malposition_group_10",
+              "group_title": "A. MALPRESENTATION",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**1. Face**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The fetal head is **hyperextended**."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Brow**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The head is partially extended."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Breech**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Already covered in Station 48."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Shoulder**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Usually associated with transverse lie."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5. Compound**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "An extremity presents alongside another presenting part, commonly:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "fetal hand + vertex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_5",
+          "subsection_title": "4. MALPOSITION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -357,7 +389,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_17",
+              "group_id": "malpresentation_and_malposition_group_12",
               "group_title": "Occipito-posterior — OP",
               "group_subtitle": null,
               "group_icon": null,
@@ -369,7 +401,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_18",
+              "group_id": "malpresentation_and_malposition_group_13",
               "group_title": "Occipito-transverse — OT",
               "group_subtitle": null,
               "group_icon": null,
@@ -381,7 +413,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_19",
+              "group_id": "malpresentation_and_malposition_group_14",
               "group_title": "Asynclitism",
               "group_subtitle": null,
               "group_icon": null,
@@ -400,35 +432,68 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_5",
-          "subsection_title": "WHY DOES MALPRESENTATION/MALPOSITION MATTER?",
+          "subsection_id": "malpresentation_and_malposition_subsection_6",
+          "subsection_title": "5. WHY DOES MALPRESENTATION/MALPOSITION MATTER?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_20",
+              "group_id": "malpresentation_and_malposition_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Potential complications include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential complications include:",
                   "items": [
-                    "prolonged labour",
-                    "failure to progress",
-                    "obstructed labour",
-                    "maternal exhaustion",
-                    "fetal hypoxia",
-                    "abnormal CTG",
-                    "cord prolapse",
-                    "operative vaginal delivery",
-                    "Caesarean birth",
-                    "postpartum haemorrhage",
-                    "birth trauma",
-                    "uterine rupture in severe obstructed labour"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "failure to progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal exhaustion",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative vaginal delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "postpartum haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "birth trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "uterine rupture in severe obstructed labour",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -437,7 +502,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Abnormal lie + rupture of membranes → think cord prolapse."
+                  "text": "**Abnormal lie + rupture of membranes → think cord prolapse.**"
                 },
                 {
                   "type": "paragraph",
@@ -448,12 +513,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_6",
-          "subsection_title": "HISTORY",
+          "subsection_id": "malpresentation_and_malposition_subsection_7",
+          "subsection_title": "6. HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_21",
+              "group_id": "malpresentation_and_malposition_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -465,7 +530,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_22",
+              "group_id": "malpresentation_and_malposition_group_17",
               "group_title": "A. Gestational age",
               "group_subtitle": null,
               "group_icon": null,
@@ -475,10 +540,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How many weeks pregnant are you?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“How many weeks pregnant are you?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -487,110 +551,95 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_23",
+              "group_id": "malpresentation_and_malposition_group_18",
               "group_title": "B. Presenting complaint",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "contractions",
-                    "rupture of membranes",
-                    "vaginal bleeding",
-                    "abdominal pain",
-                    "reduced fetal movements",
-                    "abnormal fetal movements",
-                    "pressure symptoms"
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "rupture of membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "abdominal pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "reduced fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "pressure symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_24",
+              "group_id": "malpresentation_and_malposition_group_19",
               "group_title": "C. If membranes have ruptured",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sudden gush or trickle?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Colour?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amount?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Odour?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Meconium?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood?"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_25",
-              "group_title": "Important",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If a woman with an abnormal lie reports rupture of membranes, this requires urgent assessment, because abnormal presentation increases concern for cord prolapse and other complications. NICE specifically lists abnormal lie/presentation as a reason for urgent in-person assessment after suspected term rupture of membranes. NICE"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_7",
-          "subsection_title": "OBSTETRIC HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_26",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "previous pregnancies",
-                    "previous Caesarean",
-                    "previous malpresentation",
-                    "previous difficult labour",
-                    "previous obstructed labour",
-                    "previous macrosomic baby",
-                    "previous instrumental delivery",
-                    "previous uterine surgery"
+                    {
+                      "text": "When?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sudden gush or trickle?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amount?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Odour?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Meconium?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood?",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Important**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If a woman with an abnormal lie reports rupture of membranes, this requires **urgent assessment**, because abnormal presentation increases concern for cord prolapse and other complications. NICE specifically lists abnormal lie/presentation as a reason for urgent in-person assessment after suspected term rupture of membranes. NICE"
                 }
               ]
             }
@@ -598,86 +647,51 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_8",
-          "subsection_title": "RISK FACTORS",
+          "subsection_title": "7. OBSTETRIC HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_27",
+              "group_id": "malpresentation_and_malposition_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_28",
-              "group_title": "“SPACE”",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "S — Structural uterine abnormalities P — Placenta praevia A — Abnormal liquor volume C — Cord/pelvic problems E — Extra fetus/multiple pregnancy"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "More specifically:"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_29",
-              "group_title": "Maternal/uterine",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "multiparity",
-                    "fibroids",
-                    "uterine anomaly",
-                    "previous uterine surgery",
-                    "contracted pelvis",
-                    "pelvic mass"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_30",
-              "group_title": "Fetal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "prematurity",
-                    "fetal anomaly",
-                    "macrosomia",
-                    "neuromuscular abnormality"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_31",
-              "group_title": "Pregnancy",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "polyhydramnios",
-                    "oligohydramnios",
-                    "multiple pregnancy",
-                    "placenta praevia"
+                    {
+                      "text": "previous pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous Caesarean",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous malpresentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous difficult labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous obstructed labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous macrosomic baby",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous instrumental delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous uterine surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -686,41 +700,125 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_9",
-          "subsection_title": "EXAMINATION",
+          "subsection_title": "8. RISK FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_32",
-              "group_title": "Step 1 — General assessment",
+              "group_id": "malpresentation_and_malposition_group_21",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "general condition",
-                    "pallor",
-                    "distress",
-                    "dehydration",
-                    "pain"
-                  ]
+                  "text": "Think:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Check:"
+                  "text": "**“SPACE”**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**S** — Structural uterine abnormalities\n**P** — Placenta praevia\n**A** — Abnormal liquor volume\n**C** — Cord/pelvic problems\n**E** — Extra fetus/multiple pregnancy"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "More specifically:"
+                }
+              ]
+            },
+            {
+              "group_id": "malpresentation_and_malposition_group_22",
+              "group_title": "Maternal/uterine",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
                   "items": [
-                    "pulse",
-                    "BP",
-                    "respiratory rate",
-                    "temperature",
-                    "oxygen saturation if clinically indicated"
+                    {
+                      "text": "multiparity",
+                      "level": 0
+                    },
+                    {
+                      "text": "fibroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "uterine anomaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous uterine surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "contracted pelvis",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic mass",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "malpresentation_and_malposition_group_23",
+              "group_title": "Fetal",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "prematurity",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal anomaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "neuromuscular abnormality",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "malpresentation_and_malposition_group_24",
+              "group_title": "Pregnancy",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "polyhydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "multiple pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "placenta praevia",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -729,11 +827,78 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_10",
-          "subsection_title": "ABDOMINAL EXAMINATION",
+          "subsection_title": "9. EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_33",
+              "group_id": "malpresentation_and_malposition_group_25",
+              "group_title": "Step 1 — General assessment",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Look at:",
+                  "items": [
+                    {
+                      "text": "general condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "pain",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Check:",
+                  "items": [
+                    {
+                      "text": "pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "oxygen saturation if clinically indicated",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_11",
+          "subsection_title": "10. ABDOMINAL EXAMINATION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_26",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -748,12 +913,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Perform Leopold's manoeuvres."
+                  "text": "Perform **Leopold's manoeuvres**."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_34",
+              "group_id": "malpresentation_and_malposition_group_27",
               "group_title": "A. Fundal palpation",
               "group_subtitle": null,
               "group_icon": null,
@@ -763,19 +928,15 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is occupying the fundus?”"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_35",
-              "group_title": "If transverse lie",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "“What is occupying the fundus?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If transverse lie**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "You may find neither the head nor breech in the expected fundal position."
@@ -783,7 +944,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_36",
+              "group_id": "malpresentation_and_malposition_group_28",
               "group_title": "B. Lateral palpation",
               "group_subtitle": null,
               "group_icon": null,
@@ -791,37 +952,31 @@
                 {
                   "type": "paragraph",
                   "text": "Find the fetal back."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_37",
-              "group_title": "Normal longitudinal lie",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "You can identify:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Normal longitudinal lie**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "You can identify:",
                   "items": [
-                    "smooth, firm fetal back"
+                    {
+                      "text": "smooth, firm fetal back",
+                      "level": 0
+                    },
+                    {
+                      "text": "small irregular limbs on the opposite side.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "small irregular limbs on the opposite side."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_38",
-              "group_title": "Transverse lie",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Transverse lie**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "The fetal back may be horizontal."
@@ -829,7 +984,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_39",
+              "group_id": "malpresentation_and_malposition_group_29",
               "group_title": "C. Pelvic palpation",
               "group_subtitle": null,
               "group_icon": null,
@@ -839,43 +994,33 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What is presenting?”"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_40",
-              "group_title": "Vertex",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "“What is presenting?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Vertex**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Hard, round, ballotable head."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_41",
-              "group_title": "Breech",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Breech**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Softer, broader, irregular presenting part."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_42",
-              "group_title": "Transverse lie",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Transverse lie**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "No definite presenting part may be engaged in the pelvis."
@@ -885,12 +1030,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_11",
-          "subsection_title": "FETAL HEART",
+          "subsection_id": "malpresentation_and_malposition_subsection_12",
+          "subsection_title": "11. FETAL HEART",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_43",
+              "group_id": "malpresentation_and_malposition_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -901,18 +1046,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "This can provide a clue but does not by itself diagnose presentation."
+                  "text": "This can provide a clue but **does not by itself diagnose presentation**."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "cephalic: often best heard below umbilicus",
-                    "breech: often above umbilicus",
-                    "transverse: location may be lateral"
+                    {
+                      "text": "cephalic: often best heard below umbilicus",
+                      "level": 0
+                    },
+                    {
+                      "text": "breech: often above umbilicus",
+                      "level": 0
+                    },
+                    {
+                      "text": "transverse: location may be lateral",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -928,28 +1079,40 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_12",
-          "subsection_title": "VAGINAL EXAMINATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_13",
+          "subsection_title": "12. VAGINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_44",
+              "group_id": "malpresentation_and_malposition_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Only if clinically indicated and after:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Only if clinically indicated and after:",
                   "items": [
-                    "explanation",
-                    "consent",
-                    "privacy",
-                    "appropriate analgesia",
-                    "sterile technique"
+                    {
+                      "text": "explanation",
+                      "level": 0
+                    },
+                    {
+                      "text": "consent",
+                      "level": 0
+                    },
+                    {
+                      "text": "privacy",
+                      "level": 0
+                    },
+                    {
+                      "text": "appropriate analgesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "sterile technique",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -961,56 +1124,65 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_13",
-          "subsection_title": "WHAT YOU FEEL ON VAGINAL EXAMINATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_14",
+          "subsection_title": "13. WHAT YOU FEEL ON VAGINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_45",
+              "group_id": "malpresentation_and_malposition_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is very high yield for OSCEs."
+                  "text": "This is **very high yield for OSCEs**."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_46",
+              "group_id": "malpresentation_and_malposition_group_33",
               "group_title": "Vertex",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You feel:",
                   "items": [
-                    "sagittal suture",
-                    "anterior fontanelle",
-                    "posterior fontanelle",
-                    "parietal bones"
+                    {
+                      "text": "sagittal suture",
+                      "level": 0
+                    },
+                    {
+                      "text": "anterior fontanelle",
+                      "level": 0
+                    },
+                    {
+                      "text": "posterior fontanelle",
+                      "level": 0
+                    },
+                    {
+                      "text": "parietal bones",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "The position is determined from the relationship of the occiput to the maternal pelvis."
+                  "text": "The position is determined from the relationship of the **occiput** to the maternal pelvis."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_14",
-          "subsection_title": "OCCIPITO-POSTERIOR — OP",
+          "subsection_id": "malpresentation_and_malposition_subsection_15",
+          "subsection_title": "14. OCCIPITO-POSTERIOR — OP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_47",
+              "group_id": "malpresentation_and_malposition_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1033,36 +1205,16 @@
                   "text": "There are two main forms:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_15",
-          "subsection_title": "HOW TO RECOGNISE OP",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "malpresentation_and_malposition_group_48",
-              "group_title": "",
+              "group_id": "malpresentation_and_malposition_group_35",
+              "group_title": "Right occipito-posterior — ROP",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "On vaginal examination:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "posterior fontanelle is directed posteriorly",
-                    "sagittal suture may lie in an oblique diameter",
-                    "fetal head may be relatively deflexed",
-                    "presenting head may remain high"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "caput and moulding may develop if labour is prolonged."
+                  "text": "**Left occipito-posterior — LOP**"
                 }
               ]
             }
@@ -1070,32 +1222,39 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_16",
-          "subsection_title": "CLINICAL FEATURES OF PERSISTENT OP",
+          "subsection_title": "15. HOW TO RECOGNISE OP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_49",
+              "group_id": "malpresentation_and_malposition_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may see:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "On vaginal examination:",
                   "items": [
-                    "prolonged first stage",
-                    "prolonged second stage",
-                    "severe back pain",
-                    "slow descent",
-                    "poor rotation",
-                    "maternal exhaustion",
-                    "increasing caput",
-                    "increasing moulding",
-                    "arrest of descent",
-                    "abnormal CTG"
+                    {
+                      "text": "posterior fontanelle is directed posteriorly",
+                      "level": 0
+                    },
+                    {
+                      "text": "sagittal suture may lie in an oblique diameter",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal head may be relatively deflexed",
+                      "level": 0
+                    },
+                    {
+                      "text": "presenting head may remain high",
+                      "level": 0
+                    },
+                    {
+                      "text": "caput and moulding may develop if labour is prolonged.",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1104,18 +1263,79 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_17",
-          "subsection_title": "MANAGEMENT OF OP",
+          "subsection_title": "16. CLINICAL FEATURES OF PERSISTENT OP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_50",
+              "group_id": "malpresentation_and_malposition_group_37",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "You may see:",
+                  "items": [
+                    {
+                      "text": "prolonged first stage",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged second stage",
+                      "level": 0
+                    },
+                    {
+                      "text": "severe back pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "slow descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "poor rotation",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal exhaustion",
+                      "level": 0
+                    },
+                    {
+                      "text": "increasing caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "increasing moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "arrest of descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal CTG",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_18",
+          "subsection_title": "17. MANAGEMENT OF OP",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_38",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not automatically perform Caesarean section."
+                  "text": "Do **not** automatically perform Caesarean section."
                 },
                 {
                   "type": "paragraph",
@@ -1124,24 +1344,39 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_51",
+              "group_id": "malpresentation_and_malposition_group_39",
               "group_title": "If mother and fetus are well and labour is progressing",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "continue expectant management",
-                    "provide appropriate analgesia",
-                    "monitor maternal and fetal wellbeing",
-                    "monitor labour progress",
-                    "encourage comfortable maternal positions/mobility"
+                    {
+                      "text": "continue expectant management",
+                      "level": 0
+                    },
+                    {
+                      "text": "provide appropriate analgesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "monitor maternal and fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "monitor labour progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "encourage comfortable maternal positions/mobility",
+                      "level": 0
+                    },
+                    {
+                      "text": "reassess progress.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "reassess progress."
                 },
                 {
                   "type": "paragraph",
@@ -1150,7 +1385,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_52",
+              "group_id": "malpresentation_and_malposition_group_40",
               "group_title": "If persistent OP causes delay",
               "group_subtitle": null,
               "group_icon": null,
@@ -1158,88 +1393,114 @@
                 {
                   "type": "paragraph",
                   "text": "Consider:"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_53",
-              "group_title": "2. Assess",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**1. Senior obstetric review**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Assess**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "cervical dilatation",
-                    "station",
-                    "degree of caput",
-                    "moulding",
-                    "fetal wellbeing",
-                    "maternal condition",
-                    "pelvic adequacy",
-                    "exact fetal position"
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "degree of caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic adequacy",
+                      "level": 0
+                    },
+                    {
+                      "text": "exact fetal position",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_54",
-              "group_title": "3. Manual rotation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Manual rotation**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "A skilled operator may attempt rotation from OP to OA in appropriate circumstances."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_55",
-              "group_title": "4. Operative vaginal delivery",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Operative vaginal delivery**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "May be considered if all prerequisites are satisfied and an appropriately skilled operator is available."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_56",
-              "group_title": "5. Caesarean birth",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Consider if:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**5. Caesarean birth**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Consider if:",
                   "items": [
-                    "failed rotation",
-                    "obstructed labour",
-                    "fetal compromise",
-                    "significant arrest of descent"
+                    {
+                      "text": "failed rotation",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "significant arrest of descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative vaginal birth is unsafe/impossible.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "operative vaginal birth is unsafe/impossible."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_18",
-          "subsection_title": "OCCIPITO-TRANSVERSE — OT",
+          "subsection_id": "malpresentation_and_malposition_subsection_19",
+          "subsection_title": "18. OCCIPITO-TRANSVERSE — OT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_57",
+              "group_id": "malpresentation_and_malposition_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1254,14 +1515,17 @@
                   "text": "The occiput points laterally."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "LOT — left occipito-transverse",
-                    "ROT — right occipito-transverse"
+                    {
+                      "text": "LOT — left occipito-transverse",
+                      "level": 0
+                    },
+                    {
+                      "text": "ROT — right occipito-transverse",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1271,56 +1535,74 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_58",
+              "group_id": "malpresentation_and_malposition_group_42",
               "group_title": "Persistent OT",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May cause:",
                   "items": [
-                    "failure of descent",
-                    "prolonged labour",
-                    "deep transverse arrest",
-                    "operative delivery"
+                    {
+                      "text": "failure of descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "deep transverse arrest",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean birth.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Caesarean birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Management depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management depends on:",
                   "items": [
-                    "station",
-                    "fetal wellbeing",
-                    "degree of rotation",
-                    "pelvic adequacy"
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "degree of rotation",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic adequacy",
+                      "level": 0
+                    },
+                    {
+                      "text": "operator expertise.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "operator expertise."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_19",
-          "subsection_title": "ASYNCLITISM",
+          "subsection_id": "malpresentation_and_malposition_subsection_20",
+          "subsection_title": "19. ASYNCLITISM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_59",
+              "group_id": "malpresentation_and_malposition_group_43",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1337,7 +1619,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_60",
+              "group_id": "malpresentation_and_malposition_group_44",
               "group_title": "Definition",
               "group_subtitle": null,
               "group_icon": null,
@@ -1349,23 +1631,25 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_61",
-              "group_title": "Anterior asynclitism",
+              "group_id": "malpresentation_and_malposition_group_45",
+              "group_title": "Types",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**Anterior asynclitism**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
                   "text": "The anterior parietal bone is more prominent."
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_62",
-              "group_title": "Posterior asynclitism",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Posterior asynclitism**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "The posterior parietal bone is more prominent."
@@ -1373,7 +1657,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_63",
+              "group_id": "malpresentation_and_malposition_group_46",
               "group_title": "Mild asynclitism",
               "group_subtitle": null,
               "group_icon": null,
@@ -1385,38 +1669,44 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_64",
+              "group_id": "malpresentation_and_malposition_group_47",
               "group_title": "Severe/persistent asynclitism",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May cause:",
                   "items": [
-                    "poor engagement",
-                    "failure of descent",
-                    "prolonged labour"
+                    {
+                      "text": "poor engagement",
+                      "level": 0
+                    },
+                    {
+                      "text": "failure of descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "obstructed labour."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_20",
-          "subsection_title": "FACE PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_21",
+          "subsection_title": "20. FACE PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_65",
+              "group_id": "malpresentation_and_malposition_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1429,14 +1719,14 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_66",
+              "group_id": "malpresentation_and_malposition_group_49",
               "group_title": "Definition",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The fetal head is hyperextended, so the face becomes the presenting part."
+                  "text": "The fetal head is **hyperextended**, so the face becomes the presenting part."
                 },
                 {
                   "type": "paragraph",
@@ -1451,12 +1741,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_21",
-          "subsection_title": "CAUSES/RISK FACTORS",
+          "subsection_id": "malpresentation_and_malposition_subsection_22",
+          "subsection_title": "21. CAUSES/RISK FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_67",
+              "group_id": "malpresentation_and_malposition_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1466,26 +1756,46 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“FACE = Extension”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Possible associations:"
+                  "text": "**“FACE = Extension”**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible associations:",
                   "items": [
-                    "fetal anomaly",
-                    "anencephaly",
-                    "fetal neck mass",
-                    "prematurity",
-                    "polyhydramnios",
-                    "contracted pelvis",
-                    "previous face presentation",
-                    "multiparity"
+                    {
+                      "text": "fetal anomaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "anencephaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal neck mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "prematurity",
+                      "level": 0
+                    },
+                    {
+                      "text": "polyhydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "contracted pelvis",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous face presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "multiparity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1493,12 +1803,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_22",
-          "subsection_title": "VAGINAL EXAMINATION IN FACE PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_23",
+          "subsection_title": "22. VAGINAL EXAMINATION IN FACE PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_68",
+              "group_id": "malpresentation_and_malposition_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1508,26 +1818,35 @@
                   "text": "This is a classic examination finding."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "orbital ridges",
-                    "nose",
-                    "mouth",
-                    "chin/mentum"
+                    {
+                      "text": "orbital ridges",
+                      "level": 0
+                    },
+                    {
+                      "text": "nose",
+                      "level": 0
+                    },
+                    {
+                      "text": "mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "chin/mentum",
+                      "level": 0
+                    },
+                    {
+                      "text": "malar bones.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "malar bones."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_69",
+              "group_id": "malpresentation_and_malposition_group_52",
               "group_title": "Important",
               "group_subtitle": null,
               "group_icon": null,
@@ -1541,69 +1860,87 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_23",
-          "subsection_title": "HOW TO DIFFERENTIATE FACE FROM BREECH",
+          "subsection_id": "malpresentation_and_malposition_subsection_24",
+          "subsection_title": "23. HOW TO DIFFERENTIATE FACE FROM BREECH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_70",
+              "group_id": "malpresentation_and_malposition_group_53",
               "group_title": "Face",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "mouth",
-                    "gums",
-                    "nose",
-                    "orbital ridges"
+                    {
+                      "text": "mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "gums",
+                      "level": 0
+                    },
+                    {
+                      "text": "nose",
+                      "level": 0
+                    },
+                    {
+                      "text": "orbital ridges",
+                      "level": 0
+                    },
+                    {
+                      "text": "cheekbones.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "cheekbones."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_71",
+              "group_id": "malpresentation_and_malposition_group_54",
               "group_title": "Breech",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may feel:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may feel:",
                   "items": [
-                    "anus",
-                    "buttocks",
-                    "ischial tuberosities",
-                    "sacrum"
+                    {
+                      "text": "anus",
+                      "level": 0
+                    },
+                    {
+                      "text": "buttocks",
+                      "level": 0
+                    },
+                    {
+                      "text": "ischial tuberosities",
+                      "level": 0
+                    },
+                    {
+                      "text": "sacrum",
+                      "level": 0
+                    },
+                    {
+                      "text": "genitalia.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "genitalia."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_24",
-          "subsection_title": "POSITION OF FACE PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_25",
+          "subsection_title": "24. POSITION OF FACE PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_72",
+              "group_id": "malpresentation_and_malposition_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1618,37 +1955,38 @@
                   "text": "The critical landmark is the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "MENTUM = CHIN"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Therefore describe:"
+                  "text": "**MENTUM = CHIN**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Therefore describe:",
                   "items": [
-                    "mentum anterior",
-                    "mentum posterior"
+                    {
+                      "text": "mentum anterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "mentum posterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "mentum transverse.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "mentum transverse."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_25",
-          "subsection_title": "MENTUM ANTERIOR",
+          "subsection_id": "malpresentation_and_malposition_subsection_26",
+          "subsection_title": "25. MENTUM ANTERIOR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_73",
+              "group_id": "malpresentation_and_malposition_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1670,12 +2008,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_26",
-          "subsection_title": "MENTUM POSTERIOR",
+          "subsection_id": "malpresentation_and_malposition_subsection_27",
+          "subsection_title": "26. MENTUM POSTERIOR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_74",
+              "group_id": "malpresentation_and_malposition_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1694,26 +2032,31 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Persistent mentum posterior → Caesarean birth usually required."
+                  "text": "**Persistent mentum posterior → Caesarean birth usually required.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_27",
-          "subsection_title": "IMPORTANT FACE PRESENTATION RULE",
+          "subsection_id": "malpresentation_and_malposition_subsection_28",
+          "subsection_title": "27. IMPORTANT FACE PRESENTATION RULE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_75",
-              "group_title": "“CHIN DECIDES”",
+              "group_id": "malpresentation_and_malposition_group_58",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "If the chin is anterior:"
+                  "text": "**“CHIN DECIDES”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If the **chin is anterior**:"
                 },
                 {
                   "type": "paragraph",
@@ -1721,7 +2064,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "If the chin remains posterior:"
+                  "text": "If the **chin remains posterior**:"
                 },
                 {
                   "type": "paragraph",
@@ -1732,19 +2075,19 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_28",
-          "subsection_title": "WHAT SHOULD YOU NOT DO?",
+          "subsection_id": "malpresentation_and_malposition_subsection_29",
+          "subsection_title": "28. WHAT SHOULD YOU NOT DO?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_76",
+              "group_id": "malpresentation_and_malposition_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not repeatedly attempt to manually convert face presentation into vertex presentation."
+                  "text": "Do **not** repeatedly attempt to manually convert face presentation into vertex presentation."
                 },
                 {
                   "type": "paragraph",
@@ -1755,34 +2098,46 @@
                   "text": "Do not pull on the fetal face."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "fetal wellbeing",
-                    "mentum position",
-                    "progress",
-                    "pelvis",
-                    "fetal size"
+                    {
+                      "text": "fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "mentum position",
+                      "level": 0
+                    },
+                    {
+                      "text": "progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvis",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal size",
+                      "level": 0
+                    },
+                    {
+                      "text": "associated anomalies.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "associated anomalies."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_29",
-          "subsection_title": "BROW PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_30",
+          "subsection_title": "29. BROW PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_77",
+              "group_id": "malpresentation_and_malposition_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1795,7 +2150,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_78",
+              "group_id": "malpresentation_and_malposition_group_61",
               "group_title": "Definition",
               "group_subtitle": null,
               "group_icon": null,
@@ -1810,7 +2165,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "between vertex and face presentation."
+                  "text": "**between vertex and face presentation.**"
                 },
                 {
                   "type": "paragraph",
@@ -1821,31 +2176,37 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_30",
-          "subsection_title": "WHAT DO YOU FEEL?",
+          "subsection_id": "malpresentation_and_malposition_subsection_31",
+          "subsection_title": "30. WHAT DO YOU FEEL?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_79",
+              "group_id": "malpresentation_and_malposition_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "On vaginal examination you may identify:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "On vaginal examination you may identify:",
                   "items": [
-                    "forehead",
-                    "anterior fontanelle",
-                    "orbital ridges"
+                    {
+                      "text": "forehead",
+                      "level": 0
+                    },
+                    {
+                      "text": "anterior fontanelle",
+                      "level": 0
+                    },
+                    {
+                      "text": "orbital ridges",
+                      "level": 0
+                    },
+                    {
+                      "text": "frontal bones.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "frontal bones."
                 },
                 {
                   "type": "paragraph",
@@ -1856,12 +2217,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_31",
-          "subsection_title": "WHAT HAPPENS TO BROW PRESENTATION?",
+          "subsection_id": "malpresentation_and_malposition_subsection_32",
+          "subsection_title": "31. WHAT HAPPENS TO BROW PRESENTATION?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_80",
+              "group_id": "malpresentation_and_malposition_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1873,7 +2234,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_81",
+              "group_id": "malpresentation_and_malposition_group_64",
               "group_title": "Vertex",
               "group_subtitle": null,
               "group_icon": null,
@@ -1883,15 +2244,13 @@
                   "text": "if flexion increases."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "OR"
-                  ]
+                  "type": "paragraph",
+                  "text": "OR"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_82",
+              "group_id": "malpresentation_and_malposition_group_65",
               "group_title": "Face",
               "group_subtitle": null,
               "group_icon": null,
@@ -1909,12 +2268,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_32",
-          "subsection_title": "PERSISTENT BROW",
+          "subsection_id": "malpresentation_and_malposition_subsection_33",
+          "subsection_title": "32. PERSISTENT BROW",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_83",
+              "group_id": "malpresentation_and_malposition_group_66",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1929,26 +2288,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Persistent brow + failure to convert/progress → Caesarean birth."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_33",
-          "subsection_title": "BROW MNEMONIC",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_84",
-              "group_title": "BROW",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "B — Between vertex and face R — Reassess because it may rotate/convert O — Obstruction if persistent W — Watch fetal/maternal wellbeing"
+                  "text": "**Persistent brow + failure to convert/progress → Caesarean birth.**"
                 }
               ]
             }
@@ -1956,11 +2296,30 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_34",
-          "subsection_title": "TRANSVERSE LIE",
+          "subsection_title": "33. BROW MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_85",
+              "group_id": "malpresentation_and_malposition_group_67",
+              "group_title": "BROW",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**B** — Between vertex and face\n**R** — Reassess because it may rotate/convert\n**O** — Obstruction if persistent\n**W** — Watch fetal/maternal wellbeing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_35",
+          "subsection_title": "34. TRANSVERSE LIE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1977,7 +2336,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_86",
+              "group_id": "malpresentation_and_malposition_group_69",
               "group_title": "Definition",
               "group_subtitle": null,
               "group_icon": null,
@@ -1999,67 +2358,41 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_35",
-          "subsection_title": "EXAMINATION FINDINGS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_87",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "On abdominal examination:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "fundus may feel relatively empty",
-                    "head palpable in one iliac fossa",
-                    "breech palpable in the opposite side",
-                    "fetal back may be horizontal"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "no head or breech is engaged in the pelvis."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "subsection_id": "malpresentation_and_malposition_subsection_36",
-          "subsection_title": "ULTRASOUND",
+          "subsection_title": "35. EXAMINATION FINDINGS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_88",
+              "group_id": "malpresentation_and_malposition_group_70",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ultrasound should confirm:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "On abdominal examination:",
                   "items": [
-                    "lie",
-                    "presentation",
-                    "fetal viability",
-                    "fetal growth",
-                    "placental location",
-                    "liquor volume",
-                    "fetal anomalies"
+                    {
+                      "text": "fundus may feel relatively empty",
+                      "level": 0
+                    },
+                    {
+                      "text": "head palpable in one iliac fossa",
+                      "level": 0
+                    },
+                    {
+                      "text": "breech palpable in the opposite side",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal back may be horizontal",
+                      "level": 0
+                    },
+                    {
+                      "text": "no head or breech is engaged in the pelvis.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other relevant factors."
                 }
               ]
             }
@@ -2067,35 +2400,52 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_37",
-          "subsection_title": "TRANSVERSE LIE AT TERM",
+          "subsection_title": "36. ULTRASOUND",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_89",
+              "group_id": "malpresentation_and_malposition_group_71",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Management depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ultrasound should confirm:",
                   "items": [
-                    "gestational age",
-                    "whether labour has started",
-                    "whether membranes are intact",
-                    "fetal wellbeing",
-                    "parity",
-                    "uterine scar",
-                    "placental location",
-                    "whether ECV is appropriate"
+                    {
+                      "text": "lie",
+                      "level": 0
+                    },
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal viability",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "placental location",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor volume",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal anomalies",
+                      "level": 0
+                    },
+                    {
+                      "text": "other relevant factors.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "availability of emergency Caesarean delivery."
                 }
               ]
             }
@@ -2103,11 +2453,68 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_38",
-          "subsection_title": "TRANSVERSE LIE + INTACT MEMBRANES",
+          "subsection_title": "37. TRANSVERSE LIE AT TERM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_90",
+              "group_id": "malpresentation_and_malposition_group_72",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Management depends on:",
+                  "items": [
+                    {
+                      "text": "gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "whether labour has started",
+                      "level": 0
+                    },
+                    {
+                      "text": "whether membranes are intact",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "parity",
+                      "level": 0
+                    },
+                    {
+                      "text": "uterine scar",
+                      "level": 0
+                    },
+                    {
+                      "text": "placental location",
+                      "level": 0
+                    },
+                    {
+                      "text": "whether ECV is appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "availability of emergency Caesarean delivery.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_39",
+          "subsection_title": "38. TRANSVERSE LIE + INTACT MEMBRANES",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_73",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2119,7 +2526,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_91",
+              "group_id": "malpresentation_and_malposition_group_74",
               "group_title": "Assess for possible ECV",
               "group_subtitle": null,
               "group_icon": null,
@@ -2145,12 +2552,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_39",
-          "subsection_title": "TRANSVERSE LIE + LABOUR",
+          "subsection_id": "malpresentation_and_malposition_subsection_40",
+          "subsection_title": "39. TRANSVERSE LIE + LABOUR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_92",
+              "group_id": "malpresentation_and_malposition_group_75",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2166,38 +2573,59 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_93",
+              "group_id": "malpresentation_and_malposition_group_76",
               "group_title": "Management",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "call senior obstetrician",
-                    "continuous fetal assessment",
-                    "IV access",
-                    "blood tests/crossmatch according to situation",
-                    "anaesthetic review",
-                    "prepare for Caesarean birth",
-                    "assess for cord prolapse"
+                    {
+                      "text": "call senior obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "continuous fetal assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "IV access",
+                      "level": 0
+                    },
+                    {
+                      "text": "blood tests/crossmatch according to situation",
+                      "level": 0
+                    },
+                    {
+                      "text": "anaesthetic review",
+                      "level": 0
+                    },
+                    {
+                      "text": "prepare for Caesarean birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "assess for cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "neonatal team as appropriate.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "neonatal team as appropriate."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_40",
-          "subsection_title": "TRANSVERSE LIE + RUPTURED MEMBRANES",
+          "subsection_id": "malpresentation_and_malposition_subsection_41",
+          "subsection_title": "40. TRANSVERSE LIE + RUPTURED MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_94",
+              "group_id": "malpresentation_and_malposition_group_77",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2208,7 +2636,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "CORD PROLAPSE."
+                  "text": "**CORD PROLAPSE.**"
                 },
                 {
                   "type": "paragraph",
@@ -2223,12 +2651,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_41",
-          "subsection_title": "NEVER DO THIS",
+          "subsection_id": "malpresentation_and_malposition_subsection_42",
+          "subsection_title": "41. NEVER DO THIS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_95",
+              "group_id": "malpresentation_and_malposition_group_78",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2240,7 +2668,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_96",
+              "group_id": "malpresentation_and_malposition_group_79",
               "group_title": "Avoid unnecessary artificial rupture of membranes.",
               "group_subtitle": null,
               "group_icon": null,
@@ -2262,12 +2690,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_42",
-          "subsection_title": "COMPOUND PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_43",
+          "subsection_title": "42. COMPOUND PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_97",
+              "group_id": "malpresentation_and_malposition_group_80",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2280,7 +2708,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_98",
+              "group_id": "malpresentation_and_malposition_group_81",
               "group_title": "Definition",
               "group_subtitle": null,
               "group_icon": null,
@@ -2295,34 +2723,37 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "hand alongside the fetal head."
+                  "text": "**hand alongside the fetal head.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Other possibilities:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Other possibilities:",
                   "items": [
-                    "hand + vertex",
-                    "foot + vertex"
+                    {
+                      "text": "hand + vertex",
+                      "level": 0
+                    },
+                    {
+                      "text": "foot + vertex",
+                      "level": 0
+                    },
+                    {
+                      "text": "hand + breech.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "hand + breech."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_43",
-          "subsection_title": "HOW DOES IT PRESENT?",
+          "subsection_id": "malpresentation_and_malposition_subsection_44",
+          "subsection_title": "43. HOW DOES IT PRESENT?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_99",
+              "group_id": "malpresentation_and_malposition_group_82",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2333,7 +2764,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I can feel the fetal head and a fetal hand alongside it.”"
+                  "text": "“I can feel the fetal head and a fetal hand alongside it.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2344,12 +2776,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_44",
-          "subsection_title": "MANAGEMENT OF COMPOUND PRESENTATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_45",
+          "subsection_title": "44. MANAGEMENT OF COMPOUND PRESENTATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_100",
+              "group_id": "malpresentation_and_malposition_group_83",
               "group_title": "If the limb is small and labour is progressing",
               "group_subtitle": null,
               "group_icon": null,
@@ -2364,37 +2796,46 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not manipulate unnecessarily."
+                  "text": "**Do not manipulate unnecessarily.**"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_101",
+              "group_id": "malpresentation_and_malposition_group_84",
               "group_title": "If persistent",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "fetal wellbeing",
-                    "progress",
-                    "obstruction",
-                    "cord prolapse"
+                    {
+                      "text": "fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal limb position.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal limb position."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_102",
+              "group_id": "malpresentation_and_malposition_group_85",
               "group_title": "If there is obstruction/fetal compromise",
               "group_subtitle": null,
               "group_icon": null,
@@ -2408,12 +2849,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_45",
-          "subsection_title": "VERY IMPORTANT — DO NOT PULL THE LIMB",
+          "subsection_id": "malpresentation_and_malposition_subsection_46",
+          "subsection_title": "45. VERY IMPORTANT — DO NOT PULL THE LIMB",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_103",
+              "group_id": "malpresentation_and_malposition_group_86",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2424,35 +2865,41 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not pull on it."
+                  "text": "**Do not pull on it.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Traction can cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Traction can cause:",
                   "items": [
-                    "fetal injury",
-                    "fracture",
-                    "nerve injury"
+                    {
+                      "text": "fetal injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "fracture",
+                      "level": 0
+                    },
+                    {
+                      "text": "nerve injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "soft-tissue trauma.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "soft-tissue trauma."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_46",
-          "subsection_title": "RAPID COMPARISON TABLE",
+          "subsection_id": "malpresentation_and_malposition_subsection_47",
+          "subsection_title": "46. RAPID COMPARISON TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_104",
+              "group_id": "malpresentation_and_malposition_group_87",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2521,103 +2968,109 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_47",
-          "subsection_title": "HOW TO REPORT YOUR ABDOMINAL EXAMINATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_48",
+          "subsection_title": "47. HOW TO REPORT YOUR ABDOMINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_105",
+              "group_id": "malpresentation_and_malposition_group_88",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Your report should be structured."
+                  "text": "Your report should be **structured**."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_106",
+              "group_id": "malpresentation_and_malposition_group_89",
               "group_title": "Example 1 — Transverse lie",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is a term singleton pregnancy. The uterus is appropriate for gestational age. The fetal head is palpable in the right iliac fossa and the breech in the left upper quadrant, with no presenting part engaged in the pelvis. The fetal back is lying transversely. The fetal heart is best heard laterally. My findings are consistent with a transverse lie.”"
+                  "text": "“This is a term singleton pregnancy. The uterus is appropriate for gestational age. The fetal head is palpable in the right iliac fossa and the breech in the left upper quadrant, with no presenting part engaged in the pelvis. The fetal back is lying transversely. The fetal heart is best heard laterally. My findings are consistent with a transverse lie.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_107",
+              "group_id": "malpresentation_and_malposition_group_90",
               "group_title": "Example 2 — Occipito-posterior",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The fetus is in a longitudinal lie with a cephalic presentation. The head is engaged at approximately station 0. On vaginal examination, the posterior fontanelle is directed posteriorly, consistent with an occipito-posterior position. There is moderate caput but no significant moulding. I would correlate this with labour progress and fetal wellbeing.”"
+                  "text": "“The fetus is in a longitudinal lie with a cephalic presentation. The head is engaged at approximately station 0. On vaginal examination, the posterior fontanelle is directed posteriorly, consistent with an occipito-posterior position. There is moderate caput but no significant moulding. I would correlate this with labour progress and fetal wellbeing.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_108",
+              "group_id": "malpresentation_and_malposition_group_91",
               "group_title": "Example 3 — Persistent OP with obstructed labour",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a cephalic presentation in an occipito-posterior position with significant caput and moulding, poor descent despite adequate contractions and evidence of arrest of labour. This raises concern for persistent OP associated with obstructed labour. I would request urgent senior obstetric review and assess suitability for rotation, operative vaginal birth or Caesarean birth depending on station, fetal wellbeing and other prerequisites.”"
+                  "text": "“There is a cephalic presentation in an occipito-posterior position with significant caput and moulding, poor descent despite adequate contractions and evidence of arrest of labour. This raises concern for persistent OP associated with obstructed labour. I would request urgent senior obstetric review and assess suitability for rotation, operative vaginal birth or Caesarean birth depending on station, fetal wellbeing and other prerequisites.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_109",
+              "group_id": "malpresentation_and_malposition_group_92",
               "group_title": "Example 4 — Face presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“On vaginal examination, I can palpate the fetal mouth, nose, orbital ridges and chin. The landmark is the mentum, which is directed anteriorly. These findings are consistent with a face presentation, mentum anterior.”"
+                  "text": "“On vaginal examination, I can palpate the fetal mouth, nose, orbital ridges and chin. The landmark is the mentum, which is directed anteriorly. These findings are consistent with a face presentation, mentum anterior.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_110",
+              "group_id": "malpresentation_and_malposition_group_93",
               "group_title": "Example 5 — Brow",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The presenting part is the fetal forehead, with the orbital ridges palpable but neither the occiput nor chin presenting appropriately. This is consistent with a brow presentation. I would reassess for spontaneous conversion to vertex or face and monitor labour progress and fetal wellbeing.”"
+                  "text": "“The presenting part is the fetal forehead, with the orbital ridges palpable but neither the occiput nor chin presenting appropriately. This is consistent with a brow presentation. I would reassess for spontaneous conversion to vertex or face and monitor labour progress and fetal wellbeing.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_111",
+              "group_id": "malpresentation_and_malposition_group_94",
               "group_title": "Example 6 — Compound presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The fetal head is presenting, with a fetal hand palpable alongside the head. This is consistent with a compound presentation. I would avoid manipulating or pulling the limb, assess fetal wellbeing and labour progress, and involve a senior obstetrician if there is obstruction, fetal compromise or failure to progress.”"
+                  "text": "“The fetal head is presenting, with a fetal hand palpable alongside the head. This is consistent with a compound presentation. I would avoid manipulating or pulling the limb, assess fetal wellbeing and labour progress, and involve a senior obstetrician if there is obstruction, fetal compromise or failure to progress.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_48",
-          "subsection_title": "DIFFERENTIAL DIAGNOSIS OF A DIFFICULT VAGINAL EXAMINATION",
+          "subsection_id": "malpresentation_and_malposition_subsection_49",
+          "subsection_title": "48. DIFFERENTIAL DIAGNOSIS OF A DIFFICULT VAGINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_112",
+              "group_id": "malpresentation_and_malposition_group_95",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2629,93 +3082,86 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_113",
+              "group_id": "malpresentation_and_malposition_group_96",
               "group_title": "If you think it is a face",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "face presentation",
-                    "breech",
-                    "severe caput/moulding"
+                    {
+                      "text": "face presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "breech",
+                      "level": 0
+                    },
+                    {
+                      "text": "severe caput/moulding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_114",
+              "group_id": "malpresentation_and_malposition_group_97",
               "group_title": "If you feel a hand",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "compound presentation",
-                    "cord prolapse",
-                    "maternal tissue — rarely mistaken depending on examination"
+                    {
+                      "text": "compound presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal tissue — rarely mistaken depending on examination",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_115",
+              "group_id": "malpresentation_and_malposition_group_98",
               "group_title": "If you cannot identify the presenting part",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "transverse lie",
-                    "high floating head",
-                    "severe caput/moulding",
-                    "malposition"
+                    {
+                      "text": "transverse lie",
+                      "level": 0
+                    },
+                    {
+                      "text": "high floating head",
+                      "level": 0
+                    },
+                    {
+                      "text": "severe caput/moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic obstruction.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "pelvic obstruction."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_49",
-          "subsection_title": "Ultrasound",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_116",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Most useful investigation for confirming:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "presentation",
-                    "lie",
-                    "position",
-                    "fetal size",
-                    "fetal anomalies",
-                    "placenta"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "amniotic fluid."
                 }
               ]
             }
@@ -2723,11 +3169,66 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_50",
-          "subsection_title": "CTG",
+          "subsection_title": "49. INVESTIGATIONS",
+          "subsection_icon": null,
+          "content_groups": []
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_51",
+          "subsection_title": "1. Ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_117",
+              "group_id": "malpresentation_and_malposition_group_99",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Most useful investigation for confirming:",
+                  "items": [
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "lie",
+                      "level": 0
+                    },
+                    {
+                      "text": "position",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal size",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal anomalies",
+                      "level": 0
+                    },
+                    {
+                      "text": "placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "amniotic fluid.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_52",
+          "subsection_title": "2. CTG",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_100",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2737,67 +3238,91 @@
                   "text": "If in labour and continuous fetal monitoring is indicated."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "baseline",
-                    "variability",
-                    "accelerations",
-                    "decelerations"
+                    {
+                      "text": "baseline",
+                      "level": 0
+                    },
+                    {
+                      "text": "variability",
+                      "level": 0
+                    },
+                    {
+                      "text": "accelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "decelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "contractions."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_51",
-          "subsection_title": "Vaginal examination",
+          "subsection_id": "malpresentation_and_malposition_subsection_53",
+          "subsection_title": "3. Vaginal examination",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_118",
+              "group_id": "malpresentation_and_malposition_group_101",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Provides information about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Provides information about:",
                   "items": [
-                    "presentation",
-                    "position",
-                    "cervical dilatation",
-                    "station",
-                    "caput",
-                    "moulding"
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "position",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "membranes.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "membranes."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_52",
-          "subsection_title": "Blood tests",
+          "subsection_id": "malpresentation_and_malposition_subsection_54",
+          "subsection_title": "4. Blood tests",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_119",
+              "group_id": "malpresentation_and_malposition_group_102",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2807,146 +3332,165 @@
                   "text": "Not every malpresentation requires extensive blood testing."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "But if Caesarean delivery or emergency intervention is likely:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "But if Caesarean delivery or emergency intervention is likely:",
                   "items": [
-                    "FBC",
-                    "blood group",
-                    "antibody screen",
-                    "crossmatch as clinically appropriate"
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "blood group",
+                      "level": 0
+                    },
+                    {
+                      "text": "antibody screen",
+                      "level": 0
+                    },
+                    {
+                      "text": "crossmatch as clinically appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "coagulation tests when indicated.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "coagulation tests when indicated."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_53",
-          "subsection_title": "MANAGEMENT FRAMEWORK",
+          "subsection_id": "malpresentation_and_malposition_subsection_55",
+          "subsection_title": "50. MANAGEMENT FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_120",
+              "group_id": "malpresentation_and_malposition_group_103",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "When faced with ANY abnormal presentation/position, think:"
+                  "text": "When faced with **ANY abnormal presentation/position**, think:"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_121",
-              "group_title": "Fetus",
+              "group_id": "malpresentation_and_malposition_group_104",
+              "group_title": "FETUS → MOTHER → LABOUR → DELIVERY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Is the fetus alive?"
+                  "text": "**Fetus**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Is the fetus alive?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is the CTG reassuring?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gestational age?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anomaly?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Is the CTG reassuring?"
+                  "text": "**Mother**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Stable?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous Caesarean?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvis adequate?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Gestational age?"
+                  "text": "**Labour**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Cervical dilatation?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contractions?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Descent?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caput?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moulding?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Membranes intact?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Size?"
+                  "text": "**Delivery**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "Anomaly?"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_122",
-              "group_title": "Mother",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Stable?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fever?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous Caesarean?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvis adequate?"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_123",
-              "group_title": "Labour",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Cervical dilatation?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contractions?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Descent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Caput?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Moulding?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Membranes intact?"
-                }
-              ]
-            },
-            {
-              "group_id": "malpresentation_and_malposition_group_124",
-              "group_title": "Delivery",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Can this baby safely be delivered vaginally?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Can this baby safely be delivered vaginally?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2954,19 +3498,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Plan Caesarean birth."
+                  "text": "**Plan Caesarean birth.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_54",
-          "subsection_title": "EMERGENCY APPROACH",
+          "subsection_id": "malpresentation_and_malposition_subsection_56",
+          "subsection_title": "51. EMERGENCY APPROACH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_125",
+              "group_id": "malpresentation_and_malposition_group_105",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2978,76 +3522,115 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_126",
+              "group_id": "malpresentation_and_malposition_group_106",
               "group_title": "CALL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Call:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Call:",
                   "items": [
-                    "senior obstetrician",
-                    "senior midwife",
-                    "anaesthetist"
+                    {
+                      "text": "senior obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "senior midwife",
+                      "level": 0
+                    },
+                    {
+                      "text": "anaesthetist",
+                      "level": 0
+                    },
+                    {
+                      "text": "neonatal team as appropriate.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "neonatal team as appropriate."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_127",
+              "group_id": "malpresentation_and_malposition_group_107",
               "group_title": "CHECK",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "maternal vitals",
-                    "fetal heart/CTG",
-                    "cervical dilatation",
-                    "presentation",
-                    "station",
-                    "membranes",
-                    "bleeding"
+                    {
+                      "text": "maternal vitals",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart/CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "cord prolapse."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_128",
+              "group_id": "malpresentation_and_malposition_group_108",
               "group_title": "PREPARE",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "IV access",
-                    "blood tests",
-                    "analgesia/anaesthesia",
-                    "theatre if required"
+                    {
+                      "text": "IV access",
+                      "level": 0
+                    },
+                    {
+                      "text": "blood tests",
+                      "level": 0
+                    },
+                    {
+                      "text": "analgesia/anaesthesia",
+                      "level": 0
+                    },
+                    {
+                      "text": "theatre if required",
+                      "level": 0
+                    },
+                    {
+                      "text": "neonatal resuscitation equipment/team.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "neonatal resuscitation equipment/team."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_129",
+              "group_id": "malpresentation_and_malposition_group_109",
               "group_title": "DELIVER",
               "group_subtitle": null,
               "group_icon": null,
@@ -3061,19 +3644,19 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_55",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "malpresentation_and_malposition_subsection_57",
+          "subsection_title": "52. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_130",
+              "group_id": "malpresentation_and_malposition_group_110",
               "group_title": "Q1. What is malpresentation?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -3082,7 +3665,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_131",
+              "group_id": "malpresentation_and_malposition_group_111",
               "group_title": "Q2. What is malposition?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3094,7 +3677,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_132",
+              "group_id": "malpresentation_and_malposition_group_112",
               "group_title": "Q3. What is the commonest malposition?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3106,7 +3689,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_133",
+              "group_id": "malpresentation_and_malposition_group_113",
               "group_title": "Q4. What is the landmark in face presentation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3118,7 +3701,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_134",
+              "group_id": "malpresentation_and_malposition_group_114",
               "group_title": "Q5. Can a face presentation deliver vaginally?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3130,7 +3713,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_135",
+              "group_id": "malpresentation_and_malposition_group_115",
               "group_title": "Q6. What if the mentum is persistently posterior?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3142,7 +3725,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_136",
+              "group_id": "malpresentation_and_malposition_group_116",
               "group_title": "Q7. What is the difference between face and brow presentation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3154,7 +3737,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_137",
+              "group_id": "malpresentation_and_malposition_group_117",
               "group_title": "Q8. What can happen to a brow presentation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3166,7 +3749,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_138",
+              "group_id": "malpresentation_and_malposition_group_118",
               "group_title": "Q9. What is the most important complication of transverse lie after rupture of membranes?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3177,7 +3760,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Q10. What would you do if a woman with transverse lie suddenly reports that her waters have broken?"
+                  "text": "**Q10. What would you do if a woman with transverse lie suddenly reports that her waters have broken?**"
                 },
                 {
                   "type": "paragraph",
@@ -3186,7 +3769,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_139",
+              "group_id": "malpresentation_and_malposition_group_119",
               "group_title": "Q11. Would you perform amniotomy in transverse lie?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3198,7 +3781,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_140",
+              "group_id": "malpresentation_and_malposition_group_120",
               "group_title": "Q12. What is compound presentation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3210,7 +3793,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_141",
+              "group_id": "malpresentation_and_malposition_group_121",
               "group_title": "Q13. What would you do if you felt a fetal hand beside the head?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3224,40 +3807,117 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_56",
-          "subsection_title": "EXAMINER SCENARIO",
+          "subsection_id": "malpresentation_and_malposition_subsection_58",
+          "subsection_title": "53. EXAMINER SCENARIO",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_142",
+              "group_id": "malpresentation_and_malposition_group_122",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman is 6 cm dilated. The head is high and you feel a hand beside the head. What do you do?”"
+                  "text": "**“A woman is 6 cm dilated. The head is high and you feel a hand beside the head. What do you do?”**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_143",
+              "group_id": "malpresentation_and_malposition_group_123",
               "group_title": "Excellent answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would first assess the mother and fetus, including maternal observations and fetal heart rate/CTG. I would confirm the presentation and position and assess cervical dilatation, station, caput, moulding and labour progress. I would avoid pulling or manipulating the fetal hand. I would assess for cord prolapse, particularly if the membranes have ruptured, and request senior obstetric review. If the compound presentation persists with obstruction or fetal compromise, Caesarean birth may be required.”"
+                  "text": "“I would first assess the mother and fetus, including maternal observations and fetal heart rate/CTG. I would confirm the presentation and position and assess cervical dilatation, station, caput, moulding and labour progress. I would avoid pulling or manipulating the fetal hand. I would assess for cord prolapse, particularly if the membranes have ruptured, and request senior obstetric review. If the compound presentation persists with obstruction or fetal compromise, Caesarean birth may be required.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "That is much stronger than simply saying:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "“It is a compound presentation, so do Caesarean section.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_59",
+          "subsection_title": "54. ANOTHER EXAMINER SCENARIO",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_124",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“A woman is fully dilated and the fetus is persistent OP. CTG is reassuring but there has been no descent.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Your approach:",
                   "items": [
-                    "“It is a compound presentation, so do Caesarean section.”"
+                    {
+                      "text": "Assess maternal condition.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess CTG.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Confirm exact position.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess station.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess caput.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Assess moulding.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Assess pelvis.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Consider manual rotation by an experienced operator.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Consider operative vaginal birth if criteria are met.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Caesarean if vaginal birth is not safe/possible.",
+                      "level": 0,
+                      "label": "10."
+                    }
                   ]
                 }
               ]
@@ -3265,75 +3925,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_57",
-          "subsection_title": "ANOTHER EXAMINER SCENARIO",
+          "subsection_id": "malpresentation_and_malposition_subsection_60",
+          "subsection_title": "55. HIGH-YIELD MANUAL ROTATION QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_144",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“A woman is fully dilated and the fetus is persistent OP. CTG is reassuring but there has been no descent.”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Your approach:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess maternal condition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess CTG."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm exact position."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess station."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess caput."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess moulding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess pelvis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider manual rotation by an experienced operator."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider operative vaginal birth if criteria are met."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Caesarean if vaginal birth is not safe/possible."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_58",
-          "subsection_title": "HIGH-YIELD MANUAL ROTATION QUESTIONS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_145",
+              "group_id": "malpresentation_and_malposition_group_125",
               "group_title": "What is manual rotation?",
               "group_subtitle": null,
               "group_icon": null,
@@ -3345,61 +3942,85 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_146",
+              "group_id": "malpresentation_and_malposition_group_126",
               "group_title": "When might it be considered?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "When:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "When:",
                   "items": [
-                    "cervix is fully dilated",
-                    "fetal head is sufficiently low",
-                    "position is confirmed",
-                    "pelvis appears adequate",
-                    "fetal condition is appropriate"
+                    {
+                      "text": "cervix is fully dilated",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal head is sufficiently low",
+                      "level": 0
+                    },
+                    {
+                      "text": "position is confirmed",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvis appears adequate",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal condition is appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "operator is experienced.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "operator is experienced."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_147",
+              "group_id": "malpresentation_and_malposition_group_127",
               "group_title": "What are the risks?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "fetal trauma",
-                    "maternal trauma",
-                    "failure",
-                    "emergency operative delivery"
+                    {
+                      "text": "fetal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "emergency operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart rate abnormalities.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal heart rate abnormalities."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_59",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "malpresentation_and_malposition_subsection_61",
+          "subsection_title": "56. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_148",
+              "group_id": "malpresentation_and_malposition_group_128",
               "group_title": "❌ Mistake 1",
               "group_subtitle": null,
               "group_icon": null,
@@ -3410,12 +4031,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Correct: breech is a malpresentation."
+                  "text": "**Correct:** breech is a malpresentation."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_149",
+              "group_id": "malpresentation_and_malposition_group_129",
               "group_title": "❌ Mistake 2",
               "group_subtitle": null,
               "group_icon": null,
@@ -3426,12 +4047,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Correct: OP is a malposition of a cephalic-presenting fetus."
+                  "text": "**Correct:** OP is a malposition of a cephalic-presenting fetus."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_150",
+              "group_id": "malpresentation_and_malposition_group_130",
               "group_title": "❌ Mistake 3",
               "group_subtitle": null,
               "group_icon": null,
@@ -3442,7 +4063,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Incorrect."
+                  "text": "**Incorrect.**"
                 },
                 {
                   "type": "paragraph",
@@ -3451,7 +4072,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_151",
+              "group_id": "malpresentation_and_malposition_group_131",
               "group_title": "❌ Mistake 4",
               "group_subtitle": null,
               "group_icon": null,
@@ -3465,15 +4086,13 @@
                   "text": "Remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "FACE → MENTUM"
-                  ]
+                  "type": "paragraph",
+                  "text": "**FACE → MENTUM**"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_152",
+              "group_id": "malpresentation_and_malposition_group_132",
               "group_title": "❌ Mistake 5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3488,12 +4107,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Mentum anterior may deliver vaginally in selected cases."
+                  "text": "**Mentum anterior may deliver vaginally in selected cases.**"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_153",
+              "group_id": "malpresentation_and_malposition_group_133",
               "group_title": "❌ Mistake 6",
               "group_subtitle": null,
               "group_icon": null,
@@ -3509,7 +4128,7 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_154",
+              "group_id": "malpresentation_and_malposition_group_134",
               "group_title": "❌ Mistake 7",
               "group_subtitle": null,
               "group_icon": null,
@@ -3520,12 +4139,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "This can precipitate cord prolapse."
+                  "text": "This can precipitate **cord prolapse**."
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_155",
+              "group_id": "malpresentation_and_malposition_group_135",
               "group_title": "❌ Mistake 8",
               "group_subtitle": null,
               "group_icon": null,
@@ -3540,12 +4159,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Mother + fetus + labour progress."
+                  "text": "**Mother + fetus + labour progress.**"
                 }
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_156",
+              "group_id": "malpresentation_and_malposition_group_136",
               "group_title": "❌ Mistake 9",
               "group_subtitle": null,
               "group_icon": null,
@@ -3563,12 +4182,12 @@
           ]
         },
         {
-          "subsection_id": "malpresentation_and_malposition_subsection_60",
-          "subsection_title": "RAPID MEMORY TABLE",
+          "subsection_id": "malpresentation_and_malposition_subsection_62",
+          "subsection_title": "57. RAPID MEMORY TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_157",
+              "group_id": "malpresentation_and_malposition_group_137",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3609,56 +4228,15 @@
               ]
             },
             {
-              "group_id": "malpresentation_and_malposition_group_158",
+              "group_id": "malpresentation_and_malposition_group_138",
               "group_title": "Remember",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Vertex = OCCIPUT, Face = CHIN, Breech = SACRUM.”"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_61",
-          "subsection_title": "MALPOSITION MEMORY",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_159",
-              "group_title": "O-T-A",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "O — Occipito-posterior T — Occipito-transverse A — Asynclitism"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_62",
-          "subsection_title": "TRANSVERSE LIE MNEMONIC",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "malpresentation_and_malposition_group_160",
-              "group_title": "TRANSVERSE = CORD",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
                   "type": "paragraph",
-                  "text": "T — Think transverse lie R — Rupture of membranes is dangerous A — Assess fetal wellbeing N — No presenting part engaged S — Senior obstetric review V — Verify with ultrasound E — Emergency CS if labour/persistent abnormal lie R — Risk of cord prolapse S — Surgical delivery often required E — Emergency preparedness"
+                  "text": "**“Vertex = OCCIPUT, Face = CHIN, Breech = SACRUM.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -3666,29 +4244,18 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_63",
-          "subsection_title": "FACE PRESENTATION MNEMONIC",
+          "subsection_title": "58. MALPOSITION MEMORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_161",
-              "group_title": "FACE = MENTUM",
+              "group_id": "malpresentation_and_malposition_group_139",
+              "group_title": "O-T-A",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "F — Fully extended head A — Assess fetal wellbeing C — Chin/mentum determines delivery E — Evaluate pelvis and labour"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Mentum anterior → vaginal birth may be possible",
-                    "Persistent mentum posterior → usually Caesarean"
-                  ]
+                  "text": "**O** — Occipito-posterior\n**T** — Occipito-transverse\n**A** — Asynclitism"
                 }
               ]
             }
@@ -3696,11 +4263,61 @@
         },
         {
           "subsection_id": "malpresentation_and_malposition_subsection_64",
-          "subsection_title": "THE 30-SECOND OSCE ANSWER",
+          "subsection_title": "59. TRANSVERSE LIE MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "malpresentation_and_malposition_group_162",
+              "group_id": "malpresentation_and_malposition_group_140",
+              "group_title": "TRANSVERSE = CORD",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**T** — Think transverse lie\n**R** — Rupture of membranes is dangerous\n**A** — Assess fetal wellbeing\n**N** — No presenting part engaged\n**S** — Senior obstetric review\n**V** — Verify with ultrasound\n**E** — Emergency CS if labour/persistent abnormal lie\n**R** — Risk of cord prolapse\n**S** — Surgical delivery often required\n**E** — Emergency preparedness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_65",
+          "subsection_title": "60. FACE PRESENTATION MNEMONIC",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_141",
+              "group_title": "FACE = MENTUM",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**F** — Fully extended head\n**A** — Assess fetal wellbeing\n**C** — Chin/mentum determines delivery\n**E** — Evaluate pelvis and labour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Mentum anterior → vaginal birth may be possible**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Persistent mentum posterior → usually Caesarean**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "malpresentation_and_malposition_subsection_66",
+          "subsection_title": "61. THE 30-SECOND OSCE ANSWER",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "malpresentation_and_malposition_group_142",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3710,10 +4327,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How would you approach a malpresentation or malposition?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“How would you approach a malpresentation or malposition?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -3721,30 +4337,84 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would first assess the maternal and fetal condition and establish the gestational age and stage of labour. I would perform abdominal palpation to determine lie, presentation, position and engagement, followed by fetal heart assessment. If indicated, I would perform a carefully consented vaginal examination to identify the presenting part, position, station, cervical dilatation, caput and moulding. I would confirm the diagnosis with ultrasound where necessary and assess labour progress and fetal wellbeing. Management depends on the specific abnormality: some malpositions such as OP may rotate spontaneously, whereas persistent transverse lie, persistent brow or unfavourable face presentation may require Caesarean birth. I would also specifically assess for cord prolapse, obstructed labour and fetal compromise.”"
+                  "text": "“I would first assess the maternal and fetal condition and establish the gestational age and stage of labour. I would perform abdominal palpation to determine lie, presentation, position and engagement, followed by fetal heart assessment. If indicated, I would perform a carefully consented vaginal examination to identify the presenting part, position, station, cervical dilatation, caput and moulding. I would confirm the diagnosis with ultrasound where necessary and assess labour progress and fetal wellbeing. Management depends on the specific abnormality: some malpositions such as OP may rotate spontaneously, whereas persistent transverse lie, persistent brow or unfavourable face presentation may require Caesarean birth. I would also specifically assess for cord prolapse, obstructed labour and fetal compromise.”",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "malpresentation_and_malposition_subsection_65",
-          "subsection_title": "⭐ FINAL EXAM PEARLS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "malpresentation_and_malposition_group_163",
-              "group_title": "12. Never forget fetal wellbeing and labour progress.",
+              "group_id": "malpresentation_and_malposition_group_143",
+              "group_title": "⭐ FINAL EXAM PEARLS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**1. Presentation = part.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Position = place.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Face = mentum.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Breech = sacrum.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5. Vertex = occiput.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**6. Persistent OP does NOT automatically mean Caesarean.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**7. Persistent brow usually cannot deliver vaginally.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**8. Mentum anterior face may deliver vaginally.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**9. Persistent mentum posterior usually requires Caesarean.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**10. Transverse lie + ruptured membranes = think cord prolapse.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**11. Never pull on a prolapsed fetal limb in compound presentation.**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**12. Never forget fetal wellbeing and labour progress.**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "The overarching principle is:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Identify the presenting part → determine position/lie → assess mother and fetus → assess labour progress → exclude cord prolapse/obstruction → choose the safest mode of birth."
+                  "text": "**Identify the presenting part → determine position/lie → assess mother and fetus → assess labour progress → exclude cord prolapse/obstruction → choose the safest mode of birth.**"
                 }
               ]
             }

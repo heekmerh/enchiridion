@@ -18,11 +18,25 @@
       "subsections": [
         {
           "subsection_id": "anomaly_scan_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "anomaly_scan_group_1",
+              "group_title": "ANOMALY SCAN / MID-TRIMESTER FETAL ANATOMY ASSESSMENT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "anomaly_scan_subsection_2",
+          "subsection_title": "1. What the station may say",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "anomaly_scan_group_2",
               "group_title": "Station A — Counselling",
               "group_subtitle": null,
               "group_icon": null,
@@ -34,7 +48,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_2",
+              "group_id": "anomaly_scan_group_3",
               "group_title": "Station B — Image interpretation",
               "group_subtitle": null,
               "group_icon": null,
@@ -46,7 +60,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_3",
+              "group_id": "anomaly_scan_group_4",
               "group_title": "Station C — Abnormal finding",
               "group_subtitle": null,
               "group_icon": null,
@@ -58,7 +72,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_4",
+              "group_id": "anomaly_scan_group_5",
               "group_title": "Station D — Patient counselling",
               "group_subtitle": null,
               "group_icon": null,
@@ -72,34 +86,52 @@
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_2",
-          "subsection_title": "What is the anomaly scan?",
+          "subsection_id": "anomaly_scan_subsection_3",
+          "subsection_title": "2. What is the anomaly scan?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_5",
+              "group_id": "anomaly_scan_group_6",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The anomaly scan is a detailed ultrasound examination of the fetus, usually performed during the mid-trimester."
+                  "text": "The anomaly scan is a **detailed ultrasound examination of the fetus**, usually performed during the mid-trimester."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Its purpose is to assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Its purpose is to assess:",
                   "items": [
-                    "Fetal anatomy",
-                    "Fetal growth",
-                    "Placenta",
-                    "Amniotic fluid",
-                    "Number of fetuses",
-                    "Fetal position",
-                    "Selected markers of fetal abnormality"
+                    {
+                      "text": "Fetal anatomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Number of fetuses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected markers of fetal abnormality",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -107,27 +139,28 @@
                   "text": "It is sometimes called:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Mid-trimester anatomy scan",
-                    "or"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Mid-trimester anatomy scan**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Detailed fetal anomaly scan."
+                  "text": "or"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Detailed fetal anomaly scan.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_3",
-          "subsection_title": "What does it NOT do?",
+          "subsection_id": "anomaly_scan_subsection_4",
+          "subsection_title": "3. What does it NOT do?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_6",
+              "group_id": "anomaly_scan_group_7",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -142,52 +175,46 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Does not guarantee that the baby has no abnormalities."
+                  "text": "**Does not guarantee that the baby has no abnormalities.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Some abnormalities:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Some abnormalities:",
                   "items": [
-                    "Develop later",
-                    "Are too subtle to detect",
-                    "Cannot be detected by ultrasound",
-                    "May not be visible because of fetal position",
-                    "May only become apparent after birth"
+                    {
+                      "text": "Develop later",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are too subtle to detect",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cannot be detected by ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "May not be visible because of fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "May only become apparent after birth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "anomaly_scan_group_7",
+              "group_id": "anomaly_scan_group_8",
               "group_title": "Excellent counselling phrase",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"A normal scan is reassuring, but no ultrasound examination can detect every possible abnormality.\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "anomaly_scan_subsection_4",
-          "subsection_title": "The systematic approach",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "anomaly_scan_group_8",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "When shown an anomaly scan, use:"
+                  "text": "\"A normal scan is reassuring, but no ultrasound examination can detect every possible abnormality.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -195,7 +222,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_5",
-          "subsection_title": "HEAD → FACE → SPINE → HEART → CHEST → ABDOMEN → LIMBS → PLACENTA → LIQUOR",
+          "subsection_title": "4. The systematic approach",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -206,13 +233,19 @@
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "When shown an anomaly scan, use:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**HEAD → FACE → SPINE → HEART → CHEST → ABDOMEN → LIMBS → PLACENTA → LIQUOR**"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Then assess:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Growth + fetal wellbeing"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Growth + fetal wellbeing**"
                 }
               ]
             }
@@ -220,7 +253,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_6",
-          "subsection_title": "HEAD AND BRAIN",
+          "subsection_title": "5. HEAD AND BRAIN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -242,15 +275,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Intact skull",
-                    "Normal shape",
-                    "Appropriate size"
+                    {
+                      "text": "Intact skull",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal shape",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate size",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -262,19 +301,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Cerebral ventricles",
-                    "Midline structures",
-                    "Choroid plexus",
-                    "Cavum septum pellucidum",
-                    "Cerebellum",
-                    "Cisterna magna",
-                    "Posterior fossa"
+                    {
+                      "text": "Cerebral ventricles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midline structures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Choroid plexus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cavum septum pellucidum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cerebellum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cisterna magna",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior fossa",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -283,7 +340,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_7",
-          "subsection_title": "Major brain abnormalities",
+          "subsection_title": "6. Major brain abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -356,14 +413,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May include:",
                   "items": [
-                    "Encephalocele",
-                    "Spina bifida"
+                    {
+                      "text": "Encephalocele",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spina bifida",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -372,7 +432,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_8",
-          "subsection_title": "If ventriculomegaly is shown",
+          "subsection_title": "7. If ventriculomegaly is shown",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -391,33 +451,43 @@
                   "text": "Do not immediately say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"The fetus has hydrocephalus.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"The fetus has hydrocephalus.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Instead:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"There is ventriculomegaly.\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then consider:"
+                  "text": "\"There is ventriculomegaly.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then consider:",
                   "items": [
-                    "Chromosomal abnormalities",
-                    "CNS malformations",
-                    "Infection",
-                    "Intracranial haemorrhage",
-                    "Other causes"
+                    {
+                      "text": "Chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "CNS malformations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other causes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -429,18 +499,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on severity:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on severity:",
                   "items": [
-                    "Detailed neurosonography",
-                    "Specialist fetal medicine review",
-                    "Genetic assessment/testing",
-                    "Infection testing where indicated",
-                    "Follow-up ultrasound",
-                    "MRI in selected cases"
+                    {
+                      "text": "Detailed neurosonography",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist fetal medicine review",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic assessment/testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection testing where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow-up ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "MRI in selected cases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -449,7 +534,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_9",
-          "subsection_title": "FACE",
+          "subsection_title": "8. FACE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -464,17 +549,29 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Orbits",
-                    "Facial profile",
-                    "Nose",
-                    "Upper lip",
-                    "Jaw"
+                    {
+                      "text": "Orbits",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial profile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nose",
+                      "level": 0
+                    },
+                    {
+                      "text": "Upper lip",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaw",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -518,16 +615,25 @@
                   "text": "Small mandible."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May be associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May be associated with:",
                   "items": [
-                    "Chromosomal abnormalities",
-                    "Genetic syndromes",
-                    "Airway problems",
-                    "Other structural abnormalities"
+                    {
+                      "text": "Chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic syndromes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway problems",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other structural abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -536,7 +642,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_10",
-          "subsection_title": "SPINE",
+          "subsection_title": "9. SPINE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -550,16 +656,25 @@
                   "text": "Examine the spine in longitudinal and transverse planes."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Vertebral alignment",
-                    "Intact skin covering",
-                    "Normal spinal curvature",
-                    "Absence of obvious spinal defects"
+                    {
+                      "text": "Vertebral alignment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intact skin covering",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal spinal curvature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absence of obvious spinal defects",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -568,7 +683,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_11",
-          "subsection_title": "Spina bifida",
+          "subsection_title": "10. Spina bifida",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -595,9 +710,12 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Defect in the spine"
+                    {
+                      "text": "Defect in the spine",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -609,10 +727,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Lemon sign",
-                    "Banana sign"
+                    {
+                      "text": "Lemon sign",
+                      "level": 0
+                    },
+                    {
+                      "text": "Banana sign",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -625,7 +749,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_12",
-          "subsection_title": "HEART",
+          "subsection_title": "11. HEART",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -636,7 +760,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is a major component of the anomaly scan."
+                  "text": "This is a **major component of the anomaly scan**."
                 },
                 {
                   "type": "paragraph",
@@ -651,19 +775,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "Cardiac position",
-                    "Four chambers",
-                    "Chamber symmetry",
-                    "Septa",
-                    "AV valves",
-                    "Pericardium",
-                    "Cardiac rhythm"
+                    {
+                      "text": "Cardiac position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Four chambers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chamber symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Septa",
+                      "level": 0
+                    },
+                    {
+                      "text": "AV valves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pericardium",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac rhythm",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -679,10 +821,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Left ventricular outflow tract",
-                    "Right ventricular outflow tract"
+                    {
+                      "text": "Left ventricular outflow tract",
+                      "level": 0
+                    },
+                    {
+                      "text": "Right ventricular outflow tract",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -695,7 +843,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_13",
-          "subsection_title": "Important congenital heart abnormalities",
+          "subsection_title": "12. Important congenital heart abnormalities",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -705,19 +853,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples include:",
                   "items": [
-                    "Ventricular septal defect",
-                    "Atrial septal defect",
-                    "Tetralogy of Fallot",
-                    "Transposition of the great arteries",
-                    "Hypoplastic left heart syndrome",
-                    "Atrioventricular septal defect",
-                    "Coarctation of the aorta"
+                    {
+                      "text": "Ventricular septal defect",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atrial septal defect",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tetralogy of Fallot",
+                      "level": 0
+                    },
+                    {
+                      "text": "Transposition of the great arteries",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoplastic left heart syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atrioventricular septal defect",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coarctation of the aorta",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -730,7 +896,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A normal four-chamber view does not exclude all congenital heart disease."
+                  "text": "A normal four-chamber view does **not** exclude all congenital heart disease."
                 }
               ]
             }
@@ -738,7 +904,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_14",
-          "subsection_title": "When is fetal echocardiography considered?",
+          "subsection_title": "13. When is fetal echocardiography considered?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -748,17 +914,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the clinical situation, fetal echocardiography may be indicated for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the clinical situation, fetal echocardiography may be indicated for:",
                   "items": [
-                    "Suspected cardiac abnormality",
-                    "Increased risk of congenital heart disease",
-                    "Certain maternal conditions",
-                    "Certain fetal abnormalities",
-                    "Family history of significant congenital heart disease"
+                    {
+                      "text": "Suspected cardiac abnormality",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased risk of congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain maternal conditions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain fetal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history of significant congenital heart disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -771,7 +949,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_15",
-          "subsection_title": "CHEST",
+          "subsection_title": "14. CHEST",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -781,29 +959,47 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Lung fields",
-                    "Diaphragm",
-                    "Thoracic symmetry",
-                    "Position of heart"
+                    {
+                      "text": "Lung fields",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diaphragm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thoracic symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position of heart",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible abnormalities:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible abnormalities:",
                   "items": [
-                    "Congenital diaphragmatic hernia",
-                    "Cystic lung lesions",
-                    "Pleural effusion",
-                    "Pulmonary abnormalities"
+                    {
+                      "text": "Congenital diaphragmatic hernia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic lung lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -812,7 +1008,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_16",
-          "subsection_title": "Congenital diaphragmatic hernia",
+          "subsection_title": "15. Congenital diaphragmatic hernia",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -835,15 +1031,21 @@
                   "text": "Abdominal organs herniating into the chest."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "Stomach",
-                    "Bowel",
-                    "Liver"
+                    {
+                      "text": "Stomach",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bowel",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -864,7 +1066,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pulmonary hypoplasia."
+                  "text": "**Pulmonary hypoplasia.**"
                 }
               ]
             }
@@ -872,7 +1074,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_17",
-          "subsection_title": "ABDOMEN",
+          "subsection_title": "16. ABDOMEN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -906,14 +1108,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check for:",
                   "items": [
-                    "Intact abdominal wall",
-                    "Umbilical cord insertion"
+                    {
+                      "text": "Intact abdominal wall",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical cord insertion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -925,16 +1130,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Presence",
-                    "Position",
-                    "Size",
-                    "Echogenicity"
+                    {
+                      "text": "Presence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Echogenicity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -955,7 +1169,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_18",
-          "subsection_title": "Omphalocele",
+          "subsection_title": "17. Omphalocele",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -978,15 +1192,21 @@
                   "text": "Abdominal contents herniating through the umbilical ring and covered by a membrane."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Important associations include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important associations include:",
                   "items": [
-                    "Chromosomal abnormalities",
-                    "Cardiac abnormalities",
-                    "Genetic syndromes"
+                    {
+                      "text": "Chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic syndromes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -995,7 +1215,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_19",
-          "subsection_title": "Gastroschisis",
+          "subsection_title": "18. Gastroschisis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1061,7 +1281,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_20",
-          "subsection_title": "KIDNEYS AND URINARY TRACT",
+          "subsection_title": "19. KIDNEYS AND URINARY TRACT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1071,18 +1291,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Both kidneys",
-                    "Renal size",
-                    "Echogenicity",
-                    "Renal pelvis",
-                    "Bladder",
-                    "Amniotic fluid"
+                    {
+                      "text": "Both kidneys",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Echogenicity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal pelvis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bladder",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1099,7 +1334,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fetal urine."
+                  "text": "**Fetal urine.**"
                 },
                 {
                   "type": "paragraph",
@@ -1107,7 +1342,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oligohydramnios."
+                  "text": "**Oligohydramnios.**"
                 }
               ]
             }
@@ -1115,7 +1350,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_21",
-          "subsection_title": "Bilateral renal agenesis",
+          "subsection_title": "20. Bilateral renal agenesis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1137,10 +1372,8 @@
                   "text": "This can lead to:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pulmonary hypoplasia"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pulmonary hypoplasia**"
                 },
                 {
                   "type": "paragraph",
@@ -1148,7 +1381,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Potter sequence."
+                  "text": "**Potter sequence.**"
                 }
               ]
             }
@@ -1156,7 +1389,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_22",
-          "subsection_title": "LIMBS",
+          "subsection_title": "21. LIMBS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1166,31 +1399,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Four limbs",
-                    "Long bones",
-                    "Hands",
-                    "Feet",
-                    "Symmetry",
-                    "Movement where appropriate"
+                    {
+                      "text": "Four limbs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Long bones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hands",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feet",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symmetry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Movement where appropriate",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible abnormalities:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible abnormalities:",
                   "items": [
-                    "Limb reduction defects",
-                    "Shortened long bones",
-                    "Abnormal angulation",
-                    "Skeletal dysplasias"
+                    {
+                      "text": "Limb reduction defects",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shortened long bones",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal angulation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skeletal dysplasias",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1199,7 +1456,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_23",
-          "subsection_title": "Skeletal dysplasia",
+          "subsection_title": "22. Skeletal dysplasia",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1209,31 +1466,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If long bones are significantly abnormal, consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If long bones are significantly abnormal, consider:",
                   "items": [
-                    "Skeletal dysplasia",
-                    "Genetic disorders",
-                    "Chromosomal abnormalities"
+                    {
+                      "text": "Skeletal dysplasia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chromosomal abnormalities",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Long-bone measurements",
-                    "Bone shape",
-                    "Thoracic size",
-                    "Mineralisation",
-                    "Skull",
-                    "Spine",
-                    "Other skeletal features"
+                    {
+                      "text": "Long-bone measurements",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bone shape",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thoracic size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mineralisation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skull",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other skeletal features",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1242,7 +1523,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_24",
-          "subsection_title": "GROWTH",
+          "subsection_title": "23. GROWTH",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1256,16 +1537,25 @@
                   "text": "Anomaly scanning should also assess fetal size."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Measurements include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Measurements include:",
                   "items": [
-                    "BPD",
-                    "HC",
-                    "AC",
-                    "FL"
+                    {
+                      "text": "BPD",
+                      "level": 0
+                    },
+                    {
+                      "text": "HC",
+                      "level": 0
+                    },
+                    {
+                      "text": "AC",
+                      "level": 0
+                    },
+                    {
+                      "text": "FL",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1273,10 +1563,8 @@
                   "text": "These may generate:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Estimated fetal weight"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Estimated fetal weight**"
                 },
                 {
                   "type": "paragraph",
@@ -1300,7 +1588,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_25",
-          "subsection_title": "PLACENTA",
+          "subsection_title": "24. PLACENTA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1322,13 +1610,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Anterior",
-                    "Posterior",
-                    "Fundal",
-                    "Lateral",
-                    "Low-lying"
+                    {
+                      "text": "Anterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fundal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lateral",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low-lying",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1361,7 +1664,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_26",
-          "subsection_title": "Placenta accreta spectrum",
+          "subsection_title": "25. Placenta accreta spectrum",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1371,15 +1674,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If there are risk factors such as:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If there are risk factors such as:",
                   "items": [
-                    "Previous caesarean section",
-                    "Placenta praevia",
-                    "Previous uterine surgery"
+                    {
+                      "text": "Previous caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta praevia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous uterine surgery",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1396,7 +1705,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Specialist referral and multidisciplinary planning."
+                  "text": "**Specialist referral and multidisciplinary planning.**"
                 }
               ]
             }
@@ -1404,7 +1713,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_27",
-          "subsection_title": "AMNIOTIC FLUID",
+          "subsection_title": "26. AMNIOTIC FLUID",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1430,17 +1739,29 @@
                   "text": "Excessive amniotic fluid."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Maternal diabetes",
-                    "Multiple pregnancy",
-                    "Fetal swallowing abnormalities",
-                    "Structural abnormalities",
-                    "Idiopathic causes"
+                    {
+                      "text": "Maternal diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal swallowing abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Structural abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Idiopathic causes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1456,15 +1777,21 @@
                   "text": "Reduced fluid."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Ruptured membranes",
-                    "Placental insufficiency",
-                    "Fetal renal/urinary abnormalities"
+                    {
+                      "text": "Ruptured membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental insufficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal renal/urinary abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1473,7 +1800,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_28",
-          "subsection_title": "UMBILICAL CORD",
+          "subsection_title": "27. UMBILICAL CORD",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1483,14 +1810,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Cord insertion",
-                    "Number of vessels where assessed"
+                    {
+                      "text": "Cord insertion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Number of vessels where assessed",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1498,20 +1828,21 @@
                   "text": "Normally:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Three vessels"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "consisting of:"
+                  "text": "**Three vessels**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "consisting of:",
                   "items": [
-                    "Two arteries",
-                    "One vein"
+                    {
+                      "text": "Two arteries",
+                      "level": 0
+                    },
+                    {
+                      "text": "One vein",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1520,7 +1851,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_29",
-          "subsection_title": "Single umbilical artery",
+          "subsection_title": "28. Single umbilical artery",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1539,20 +1870,21 @@
                   "text": "Also called:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Two-vessel cord"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "There is:"
+                  "text": "**Two-vessel cord**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "There is:",
                   "items": [
-                    "One umbilical artery",
-                    "One umbilical vein"
+                    {
+                      "text": "One umbilical artery",
+                      "level": 0
+                    },
+                    {
+                      "text": "One umbilical vein",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1581,7 +1913,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_30",
-          "subsection_title": "What if the anomaly scan is incomplete?",
+          "subsection_title": "29. What if the anomaly scan is incomplete?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1591,28 +1923,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "This happens commonly because of:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This happens commonly because of:",
                   "items": [
-                    "Fetal position",
-                    "Maternal habitus",
-                    "Oligohydramnios",
-                    "Early gestational age",
-                    "Poor acoustic windows"
+                    {
+                      "text": "Fetal position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal habitus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "Early gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor acoustic windows",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not report:"
+                  "text": "Do **not** report:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"The anatomy is normal.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"The anatomy is normal.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1620,7 +1963,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The examination is incomplete because the required views could not be obtained.\""
+                  "text": "\"The examination is incomplete because the required views could not be obtained.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1628,7 +1972,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Repeat imaging as appropriate."
+                  "text": "**Repeat imaging as appropriate.**"
                 }
               ]
             }
@@ -1636,7 +1980,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_31",
-          "subsection_title": "Example OSCE image: absent stomach",
+          "subsection_title": "30. Example OSCE image: absent stomach",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1658,13 +2002,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Transiently empty stomach",
-                    "Oesophageal atresia",
-                    "Tracheoesophageal fistula",
-                    "Severe swallowing abnormality",
-                    "Other gastrointestinal pathology"
+                    {
+                      "text": "Transiently empty stomach",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oesophageal atresia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tracheoesophageal fistula",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe swallowing abnormality",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other gastrointestinal pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1685,7 +2044,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_32",
-          "subsection_title": "Example: echogenic bowel",
+          "subsection_title": "31. Example: echogenic bowel",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1703,18 +2062,33 @@
                   "text": "The fetal bowel appears unusually bright on ultrasound."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It can be:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It can be:",
                   "items": [
-                    "Isolated",
-                    "Associated with chromosomal abnormalities",
-                    "Associated with cystic fibrosis",
-                    "Associated with congenital infection",
-                    "Associated with intra-amniotic bleeding",
-                    "Sometimes a benign/physiological finding"
+                    {
+                      "text": "Isolated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated with chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated with cystic fibrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated with congenital infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated with intra-amniotic bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sometimes a benign/physiological finding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1730,17 +2104,29 @@
                   "text": "Depends on the overall clinical picture and local guideline."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May include:",
                   "items": [
-                    "Detailed anatomical assessment",
-                    "Review of previous screening",
-                    "Consideration of genetic testing",
-                    "Infection testing where indicated",
-                    "Follow-up ultrasound"
+                    {
+                      "text": "Detailed anatomical assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review of previous screening",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consideration of genetic testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection testing where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow-up ultrasound",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1749,7 +2135,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_33",
-          "subsection_title": "Example: choroid plexus cyst",
+          "subsection_title": "32. Example: choroid plexus cyst",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1776,7 +2162,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Trisomy 18, particularly when other abnormalities are present."
+                  "text": "**Trisomy 18**, particularly when other abnormalities are present."
                 }
               ]
             },
@@ -1792,7 +2178,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Consider the entire fetal anatomy and previous screening result."
+                  "text": "**Consider the entire fetal anatomy and previous screening result.**"
                 }
               ]
             }
@@ -1800,7 +2186,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_34",
-          "subsection_title": "Example: increased nuchal translucency",
+          "subsection_title": "33. Example: increased nuchal translucency",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1814,16 +2200,25 @@
                   "text": "Although NT is primarily assessed earlier, an increased NT is an important ultrasound marker."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible associations:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible associations:",
                   "items": [
-                    "Aneuploidy",
-                    "Congenital heart disease",
-                    "Genetic syndromes",
-                    "Structural abnormalities"
+                    {
+                      "text": "Aneuploidy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic syndromes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Structural abnormalities",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1840,7 +2235,7 @@
         },
         {
           "subsection_id": "anomaly_scan_subsection_35",
-          "subsection_title": "Counselling after an abnormal scan",
+          "subsection_title": "34. Counselling after an abnormal scan",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1858,78 +2253,63 @@
                   "text": "Use:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "anomaly_scan_subsection_36",
-          "subsection_title": "F-A-C-T-S",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "anomaly_scan_group_73",
-              "group_title": "F — Finding",
+              "group_title": "F-A-C-T-S",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**F — Finding**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Explain exactly what has been seen."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_74",
-              "group_title": "A — Avoid certainty",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A — Avoid certainty**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Don't say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Your baby definitely has...\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Your baby definitely has...\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "unless it is genuinely diagnostic."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_75",
-              "group_title": "C — Consequences",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Consequences**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Explain what the finding may mean."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_76",
-              "group_title": "T — Tests",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**T — Tests**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Discuss further investigations."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_77",
-              "group_title": "S — Support",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**S — Support**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Give time for questions and emotional support."
@@ -1939,12 +2319,12 @@
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_37",
-          "subsection_title": "Example counselling",
+          "subsection_id": "anomaly_scan_subsection_36",
+          "subsection_title": "35. Example counselling",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_78",
+              "group_id": "anomaly_scan_group_74",
               "group_title": "Scenario",
               "group_subtitle": null,
               "group_icon": null,
@@ -1956,38 +2336,42 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_79",
+              "group_id": "anomaly_scan_group_75",
               "group_title": "Model answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The scan has identified a finding involving the baby's spine that may represent spina bifida. I appreciate that this may be very worrying to hear.\""
+                  "text": "\"The scan has identified a finding involving the baby's spine that may represent spina bifida. I appreciate that this may be very worrying to hear.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"At this stage, the ultrasound finding needs further assessment rather than assuming the final diagnosis immediately.\""
+                  "text": "\"At this stage, the ultrasound finding needs further assessment rather than assuming the final diagnosis immediately.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would arrange a detailed assessment by the fetal medicine team. They would assess the extent of the abnormality and look carefully for other associated findings. Depending on the findings and previous screening results, we may also discuss genetic testing and other investigations.\""
+                  "text": "\"I would arrange a detailed assessment by the fetal medicine team. They would assess the extent of the abnormality and look carefully for other associated findings. Depending on the findings and previous screening results, we may also discuss genetic testing and other investigations.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"We would then discuss what the findings mean for the pregnancy and the baby's prognosis and go through the available options with you.\""
+                  "text": "\"We would then discuss what the findings mean for the pregnancy and the baby's prognosis and go through the available options with you.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_38",
-          "subsection_title": "What NOT to do when counselling",
+          "subsection_id": "anomaly_scan_subsection_37",
+          "subsection_title": "36. What NOT to do when counselling",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_80",
+              "group_id": "anomaly_scan_group_76",
               "group_title": "❌ Don't use jargon",
               "group_subtitle": null,
               "group_icon": null,
@@ -1998,7 +2382,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"There is a neural tube defect with ventriculomegaly and Arnold-Chiari II malformation.\""
+                  "text": "\"There is a neural tube defect with ventriculomegaly and Arnold-Chiari II malformation.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2006,23 +2391,48 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"There appears to be an abnormality involving the baby's spine and brain.\""
+                  "text": "\"There appears to be an abnormality involving the baby's spine and brain.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then explain the medical terminology."
                 }
               ]
+            },
+            {
+              "group_id": "anomaly_scan_group_77",
+              "group_title": "❌ Don't give a prognosis before completing assessment",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**❌ Don't pressure the patient toward a decision**"
+                }
+              ]
+            },
+            {
+              "group_id": "anomaly_scan_group_78",
+              "group_title": "❌ Don't imply that screening abnormalities equal diagnosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**❌ Don't overwhelm the patient with every possible complication**"
+                }
+              ]
             }
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_39",
-          "subsection_title": "Examiner questions",
+          "subsection_id": "anomaly_scan_subsection_38",
+          "subsection_title": "37. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_81",
+              "group_id": "anomaly_scan_group_79",
               "group_title": "Q1. What is the purpose of the anomaly scan?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2034,7 +2444,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_82",
+              "group_id": "anomaly_scan_group_80",
               "group_title": "Q2. Does a normal anomaly scan guarantee a normal baby?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2046,7 +2456,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_83",
+              "group_id": "anomaly_scan_group_81",
               "group_title": "Q3. What views are important in assessing the fetal brain?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2058,7 +2468,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_84",
+              "group_id": "anomaly_scan_group_82",
               "group_title": "Q4. What cardiac views are important?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2070,7 +2480,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_85",
+              "group_id": "anomaly_scan_group_83",
               "group_title": "Q5. What is the difference between omphalocele and gastroschisis?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2082,7 +2492,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_86",
+              "group_id": "anomaly_scan_group_84",
               "group_title": "Q6. What causes oligohydramnios?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2094,7 +2504,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_87",
+              "group_id": "anomaly_scan_group_85",
               "group_title": "Q7. What causes polyhydramnios?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2106,7 +2516,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_88",
+              "group_id": "anomaly_scan_group_86",
               "group_title": "Q8. What is a single umbilical artery?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2118,7 +2528,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_89",
+              "group_id": "anomaly_scan_group_87",
               "group_title": "Q9. What would you do if the anomaly scan is incomplete?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2130,7 +2540,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_90",
+              "group_id": "anomaly_scan_group_88",
               "group_title": "Q10. What should you do when an abnormality is identified?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2144,24 +2554,24 @@
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_40",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "anomaly_scan_subsection_39",
+          "subsection_title": "38. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_91",
+              "group_id": "anomaly_scan_group_89",
               "group_title": "❌ Mistake 1 — Looking only at the brain",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The anomaly scan is systematic."
+                  "text": "The anomaly scan is **systematic**."
                 }
               ]
             },
             {
-              "group_id": "anomaly_scan_group_92",
+              "group_id": "anomaly_scan_group_90",
               "group_title": "❌ Mistake 2 — Forgetting the heart",
               "group_subtitle": null,
               "group_icon": null,
@@ -2173,7 +2583,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_93",
+              "group_id": "anomaly_scan_group_91",
               "group_title": "❌ Mistake 3 — Calling an ultrasound marker a diagnosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -2185,7 +2595,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_94",
+              "group_id": "anomaly_scan_group_92",
               "group_title": "❌ Mistake 4 — Ignoring the placenta",
               "group_subtitle": null,
               "group_icon": null,
@@ -2197,7 +2607,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_95",
+              "group_id": "anomaly_scan_group_93",
               "group_title": "❌ Mistake 5 — Forgetting liquor",
               "group_subtitle": null,
               "group_icon": null,
@@ -2209,7 +2619,7 @@
               ]
             },
             {
-              "group_id": "anomaly_scan_group_96",
+              "group_id": "anomaly_scan_group_94",
               "group_title": "❌ Mistake 6 — Saying \"everything is normal\" when views are incomplete",
               "group_subtitle": null,
               "group_icon": null,
@@ -2219,34 +2629,33 @@
                   "text": "Say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"The examination is limited/incomplete.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"The examination is limited/incomplete.\"**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "anomaly_scan_group_97",
+              "group_id": "anomaly_scan_group_95",
               "group_title": "❌ Mistake 7 — Poor communication after an abnormal finding",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The examiner is assessing your communication skills, not just your ultrasound knowledge."
+                  "text": "The examiner is assessing your **communication skills**, not just your ultrasound knowledge."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "anomaly_scan_subsection_41",
-          "subsection_title": "Full systematic OSCE report",
+          "subsection_id": "anomaly_scan_subsection_40",
+          "subsection_title": "39. Full systematic OSCE report",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "anomaly_scan_group_98",
+              "group_id": "anomaly_scan_group_96",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2257,7 +2666,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"This is a singleton intrauterine pregnancy with fetal biometry appropriate for the established gestational age. The fetal head and intracranial structures visualised appear normal. The facial profile and upper lip appear normal. The spine is intact on the views obtained. The four-chamber cardiac view and outflow tracts appear satisfactory. The chest, diaphragm and abdominal organs visualised appear normal. Both kidneys and the bladder are identified. The abdominal wall and umbilical cord insertion appear normal, and a three-vessel cord is identified. The limbs visualised appear normal. The placenta is appropriately located and clear of the internal cervical os. Amniotic fluid volume appears normal. No obvious major structural abnormality is identified on this examination.\""
+                  "text": "\"This is a singleton intrauterine pregnancy with fetal biometry appropriate for the established gestational age. The fetal head and intracranial structures visualised appear normal. The facial profile and upper lip appear normal. The spine is intact on the views obtained. The four-chamber cardiac view and outflow tracts appear satisfactory. The chest, diaphragm and abdominal organs visualised appear normal. Both kidneys and the bladder are identified. The abdominal wall and umbilical cord insertion appear normal, and a three-vessel cord is identified. The limbs visualised appear normal. The placenta is appropriately located and clear of the internal cervical os. Amniotic fluid volume appears normal. No obvious major structural abnormality is identified on this examination.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2265,163 +2675,134 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would correlate these findings with the clinical history, previous screening results and the formal ultrasound report.\""
+                  "text": "**\"I would correlate these findings with the clinical history, previous screening results and the formal ultrasound report.\"**",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "anomaly_scan_subsection_42",
-          "subsection_title": "🧠 HIGH-YIELD ANOMALY SCAN CHECKLIST",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "anomaly_scan_group_99",
-              "group_title": "H-F-S-H-C-A-L-P-F-C",
+              "group_id": "anomaly_scan_group_97",
+              "group_title": "🧠 HIGH-YIELD ANOMALY SCAN CHECKLIST",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "H — Head/brain F — Face S — Spine H — Heart C — Chest A — Abdomen L — Limbs P — Placenta F — Fluid C — Cord"
+                  "text": "**H-F-S-H-C-A-L-P-F-C**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**H** — Head/brain\n**F** — Face\n**S** — Spine\n**H** — Heart\n**C** — Chest\n**A** — Abdomen\n**L** — Limbs\n**P** — Placenta\n**F** — Fluid\n**C** — Cord"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Growth + overall fetal assessment"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Growth + overall fetal assessment**"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "anomaly_scan_subsection_43",
-          "subsection_title": "⭐ EXAMINER'S FAVOURITE CONCEPTS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "anomaly_scan_group_100",
-              "group_title": "Omphalocele",
+              "group_id": "anomaly_scan_group_98",
+              "group_title": "⭐ EXAMINER'S FAVOURITE CONCEPTS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Omphalocele**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Midline + membrane covered + chromosomal associations."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_101",
-              "group_title": "Gastroschisis",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Gastroschisis**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Paraumbilical + exposed bowel + usually no membrane."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_102",
-              "group_title": "Spina bifida",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Spina bifida**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Spinal defect + possible lemon/banana signs."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_103",
-              "group_title": "Renal agenesis",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Renal agenesis**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Absent kidneys + severe oligohydramnios + pulmonary hypoplasia."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_104",
-              "group_title": "Increased NT",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Increased NT**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Aneuploidy + cardiac/structural/genetic abnormalities."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_105",
-              "group_title": "Single umbilical artery",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Single umbilical artery**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "One artery + one vein."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_106",
-              "group_title": "Abnormal cardiac scan",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Abnormal cardiac scan**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Detailed fetal echocardiography/fetal medicine assessment."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_107",
-              "group_title": "Incomplete scan",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Incomplete scan**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Repeat — don't falsely reassure."
-                }
-              ]
-            },
-            {
-              "group_id": "anomaly_scan_group_108",
-              "group_title": "Normal scan",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "Reassuring, not a guarantee."
+                  "text": "**Normal scan**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reassuring, **not a guarantee**."
                 }
               ]
             },
             {
-              "group_id": "anomaly_scan_group_109",
+              "group_id": "anomaly_scan_group_99",
               "group_title": "⭐ One sentence to memorise",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The anomaly scan is a systematic assessment of fetal anatomy—not a guarantee that the fetus is completely normal.\""
+                  "text": "**\"The anomaly scan is a systematic assessment of fetal anatomy—not a guarantee that the fetus is completely normal.\"**",
+                  "style": "quote"
                 }
               ]
             }

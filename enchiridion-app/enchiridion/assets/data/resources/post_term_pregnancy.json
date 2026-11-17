@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "post_term_pregnancy_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A 30-year-old primigravida is 41+3 weeks pregnant and has not gone into labour. Assess her and discuss management."
+                  "text": "**A 30-year-old primigravida is 41+3 weeks pregnant and has not gone into labour. Assess her and discuss management.**"
                 },
                 {
                   "type": "paragraph",
@@ -37,7 +37,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Confirm gestation → assess mother → assess fetus → cervical assessment → discuss induction vs expectant management."
+                  "text": "**Confirm gestation → assess mother → assess fetus → cervical assessment → discuss induction vs expectant management.**"
                 }
               ]
             },
@@ -52,20 +52,26 @@
                   "text": "A woman at 41 weeks asks whether she can simply wait for spontaneous labour. Counsel her."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You need to explain:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You need to explain:",
                   "items": [
-                    "increasing risks with advancing gestation",
-                    "benefits and risks of induction",
-                    "fetal surveillance if she declines induction"
+                    {
+                      "text": "increasing risks with advancing gestation",
+                      "level": 0
+                    },
+                    {
+                      "text": "benefits and risks of induction",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal surveillance if she declines induction",
+                      "level": 0
+                    },
+                    {
+                      "text": "that surveillance does **not completely eliminate the risk** of adverse outcomes.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "that surveillance does not completely eliminate the risk of adverse outcomes."
                 }
               ]
             },
@@ -81,7 +87,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "This is post-term pregnancy and requires prompt senior obstetric assessment and delivery planning."
+                  "text": "This is **post-term pregnancy** and requires prompt senior obstetric assessment and delivery planning."
                 }
               ]
             }
@@ -89,7 +95,7 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_2",
-          "subsection_title": "DEFINITIONS",
+          "subsection_title": "2. DEFINITIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -111,10 +117,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "37+0 to 40+6 weeks"
-                  ]
+                  "type": "paragraph",
+                  "text": "**37+0 to 40+6 weeks**"
                 }
               ]
             },
@@ -125,10 +129,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "41+0 to 41+6 weeks"
-                  ]
+                  "type": "paragraph",
+                  "text": "**41+0 to 41+6 weeks**"
                 }
               ]
             },
@@ -139,50 +141,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "42+0 weeks or more"
-                  ]
+                  "type": "paragraph",
+                  "text": "**42+0 weeks or more**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Therefore:"
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_8",
-              "group_title": "40+5",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**40+5**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Still term."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_9",
-              "group_title": "41+2",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "Late-term, not technically post-term."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_10",
-              "group_title": "42+0",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**41+2**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
-                  "text": "Post-term."
+                  "text": "**Late-term**, not technically post-term."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**42+0**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Post-term.**"
                 },
                 {
                   "type": "paragraph",
@@ -194,11 +185,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_3",
-          "subsection_title": "WHY DOES PREGNANCY BECOME MORE RISKY AFTER 41 WEEKS?",
+          "subsection_title": "3. WHY DOES PREGNANCY BECOME MORE RISKY AFTER 41 WEEKS?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_11",
+              "group_id": "post_term_pregnancy_group_8",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -214,43 +205,91 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_12",
+              "group_id": "post_term_pregnancy_group_9",
               "group_title": "Fetal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "stillbirth",
-                    "macrosomia",
-                    "oligohydramnios",
-                    "meconium passage",
-                    "meconium aspiration syndrome",
-                    "fetal growth abnormalities",
-                    "fetal compromise",
-                    "neonatal morbidity",
-                    "neonatal seizures in severe cases"
+                    {
+                      "text": "stillbirth",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "meconium passage",
+                      "level": 0
+                    },
+                    {
+                      "text": "meconium aspiration syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal growth abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "neonatal morbidity",
+                      "level": 0
+                    },
+                    {
+                      "text": "neonatal seizures in severe cases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_13",
+              "group_id": "post_term_pregnancy_group_10",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "prolonged labour",
-                    "induction failure",
-                    "operative vaginal delivery",
-                    "Caesarean birth",
-                    "perineal trauma",
-                    "postpartum haemorrhage",
-                    "shoulder dystocia if macrosomic"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "induction failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative vaginal delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "perineal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "postpartum haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "shoulder dystocia if macrosomic",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -259,11 +298,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_4",
-          "subsection_title": "WHY DOES STILLBIRTH RISK INCREASE?",
+          "subsection_title": "4. WHY DOES STILLBIRTH RISK INCREASE?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_14",
+              "group_id": "post_term_pregnancy_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -273,18 +312,33 @@
                   "text": "The exact mechanism is multifactorial."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible contributors include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible contributors include:",
                   "items": [
-                    "placental ageing",
-                    "reduced placental reserve",
-                    "reduced placental perfusion",
-                    "oligohydramnios",
-                    "fetal compromise",
-                    "cord compression"
+                    {
+                      "text": "placental ageing",
+                      "level": 0
+                    },
+                    {
+                      "text": "reduced placental reserve",
+                      "level": 0
+                    },
+                    {
+                      "text": "reduced placental perfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord compression",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -293,7 +347,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The placenta may become less efficient at supporting the fetus as gestation advances.\""
+                  "text": "**\"The placenta may become less efficient at supporting the fetus as gestation advances.\"**",
+                  "style": "quote"
                 }
               ]
             }
@@ -301,11 +356,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_5",
-          "subsection_title": "RISK FACTORS FOR POST-TERM PREGNANCY",
+          "subsection_title": "5. RISK FACTORS FOR POST-TERM PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_15",
+              "group_id": "post_term_pregnancy_group_12",
               "group_title": "Previous post-term pregnancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -317,7 +372,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_16",
+              "group_id": "post_term_pregnancy_group_13",
               "group_title": "Primiparity",
               "group_subtitle": null,
               "group_icon": null,
@@ -329,7 +384,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_17",
+              "group_id": "post_term_pregnancy_group_14",
               "group_title": "Incorrect dating",
               "group_subtitle": null,
               "group_icon": null,
@@ -345,36 +400,48 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_18",
+              "group_id": "post_term_pregnancy_group_15",
               "group_title": "Maternal factors",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "obesity",
-                    "increasing maternal age",
-                    "genetic/familial tendency"
+                    {
+                      "text": "obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "increasing maternal age",
+                      "level": 0
+                    },
+                    {
+                      "text": "genetic/familial tendency",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_19",
+              "group_id": "post_term_pregnancy_group_16",
               "group_title": "Fetal factors",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Rarely:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Rarely:",
                   "items": [
-                    "fetal adrenal insufficiency",
-                    "anencephaly"
+                    {
+                      "text": "fetal adrenal insufficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "anencephaly",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -383,11 +450,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_6",
-          "subsection_title": "FIRST QUESTION — IS THE DATING CORRECT?",
+          "subsection_title": "6. FIRST QUESTION — IS THE DATING CORRECT?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_20",
+              "group_id": "post_term_pregnancy_group_17",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -398,31 +465,33 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Confirm the EDD."
+                  "text": "**Confirm the EDD.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was the LMP reliable?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was a dating ultrasound performed?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When was the dating scan?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was the EDD established using first-trimester ultrasound?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Were cycles regular?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Was the LMP reliable?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was a dating ultrasound performed?",
+                      "level": 0
+                    },
+                    {
+                      "text": "When was the dating scan?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was the EDD established using first-trimester ultrasound?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Were cycles regular?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -430,11 +499,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_7",
-          "subsection_title": "HISTORY",
+          "subsection_title": "7. HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_21",
+              "group_id": "post_term_pregnancy_group_18",
               "group_title": "Presenting complaint",
               "group_subtitle": null,
               "group_icon": null,
@@ -444,23 +513,34 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How are you feeling?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then:"
+                  "text": "\"How are you feeling?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "abdominal pain",
-                    "contractions",
-                    "vaginal bleeding",
-                    "fluid leakage",
-                    "fetal movements"
+                    {
+                      "text": "abdominal pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "fluid leakage",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal movements",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -469,11 +549,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_8",
-          "subsection_title": "FETAL MOVEMENTS",
+          "subsection_title": "8. FETAL MOVEMENTS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_22",
+              "group_id": "post_term_pregnancy_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -487,10 +567,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Has your baby's movement been normal for you?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Has your baby's movement been normal for you?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -498,7 +577,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not simply continue routine post-term assessment."
+                  "text": "**Do not simply continue routine post-term assessment.**"
                 },
                 {
                   "type": "paragraph",
@@ -510,46 +589,48 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_9",
-          "subsection_title": "ASK ABOUT LABOUR",
+          "subsection_title": "9. ASK ABOUT LABOUR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_23",
+              "group_id": "post_term_pregnancy_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "contractions?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "frequency?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "duration?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "intensity?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "show?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "pelvic pressure?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "backache?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "contractions?",
+                      "level": 0
+                    },
+                    {
+                      "text": "frequency?",
+                      "level": 0
+                    },
+                    {
+                      "text": "duration?",
+                      "level": 0
+                    },
+                    {
+                      "text": "intensity?",
+                      "level": 0
+                    },
+                    {
+                      "text": "show?",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic pressure?",
+                      "level": 0
+                    },
+                    {
+                      "text": "backache?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -557,36 +638,44 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_10",
-          "subsection_title": "ASK ABOUT MEMBRANES",
+          "subsection_title": "10. ASK ABOUT MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_24",
+              "group_id": "post_term_pregnancy_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you noticed any leakage of fluid?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Have you noticed any leakage of fluid?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "If yes:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "rupture of membranes",
-                    "infection",
-                    "cord prolapse",
-                    "labour"
+                    {
+                      "text": "rupture of membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "cord prolapse",
+                      "level": 0
+                    },
+                    {
+                      "text": "labour",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -595,26 +684,35 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_11",
-          "subsection_title": "ASK ABOUT BLEEDING",
+          "subsection_title": "11. ASK ABOUT BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_25",
+              "group_id": "post_term_pregnancy_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "amount",
-                    "colour",
-                    "clots",
-                    "pain"
+                    {
+                      "text": "amount",
+                      "level": 0
+                    },
+                    {
+                      "text": "colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "clots",
+                      "level": 0
+                    },
+                    {
+                      "text": "pain",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -627,7 +725,170 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_12",
-          "subsection_title": "ANTENATAL HISTORY",
+          "subsection_title": "12. ANTENATAL HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_23",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "dating scan",
+                      "level": 0
+                    },
+                    {
+                      "text": "anomaly scan",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "placental location",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "antenatal complications",
+                      "level": 0
+                    },
+                    {
+                      "text": "hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous abnormal CTG",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_13",
+          "subsection_title": "13. PREVIOUS OBSTETRIC HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_24",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "previous pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous post-term pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous Caesarean",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous vaginal delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous induction",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous difficult delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomic baby",
+                      "level": 0
+                    },
+                    {
+                      "text": "shoulder dystocia",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_14",
+          "subsection_title": "14. MEDICAL HISTORY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_25",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Important conditions include:",
+                  "items": [
+                    {
+                      "text": "diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "thyroid disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "other maternal disease",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_15",
+          "subsection_title": "15. EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -638,31 +899,20 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Ask about:"
+                  "text": "Start with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "dating scan",
-                    "anomaly scan",
-                    "fetal growth",
-                    "placental location",
-                    "previous ultrasound",
-                    "amniotic fluid",
-                    "antenatal complications",
-                    "hypertension",
-                    "diabetes",
-                    "fetal movements",
-                    "previous abnormal CTG"
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"I would assess the mother and fetus, confirm gestational age and determine whether there is any indication for immediate delivery.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_13",
-          "subsection_title": "PREVIOUS OBSTETRIC HISTORY",
+          "subsection_id": "post_term_pregnancy_subsection_16",
+          "subsection_title": "16. GENERAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -672,21 +922,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "previous pregnancies",
-                    "previous post-term pregnancy",
-                    "previous Caesarean",
-                    "previous vaginal delivery",
-                    "previous induction",
-                    "previous difficult delivery",
-                    "macrosomic baby",
-                    "shoulder dystocia",
-                    "PPH"
+                    {
+                      "text": "general condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "weight/BMI where relevant",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -694,8 +952,8 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_14",
-          "subsection_title": "MEDICAL HISTORY",
+          "subsection_id": "post_term_pregnancy_subsection_17",
+          "subsection_title": "17. BLOOD PRESSURE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -706,92 +964,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Important conditions include:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "diabetes",
-                    "hypertension",
-                    "obesity",
-                    "thyroid disease",
-                    "other maternal disease"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_15",
-          "subsection_title": "EXAMINATION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_29",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Start with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"I would assess the mother and fetus, confirm gestational age and determine whether there is any indication for immediate delivery.\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_16",
-          "subsection_title": "GENERAL EXAMINATION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_30",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "general condition",
-                    "pallor",
-                    "oedema",
-                    "BP",
-                    "weight/BMI where relevant"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_17",
-          "subsection_title": "BLOOD PRESSURE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_31",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "Check for:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Hypertensive disease of pregnancy."
+                  "text": "**Hypertensive disease of pregnancy.**"
                 },
                 {
                   "type": "paragraph",
@@ -803,11 +980,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_18",
-          "subsection_title": "ABDOMINAL EXAMINATION",
+          "subsection_title": "18. ABDOMINAL EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_32",
+              "group_id": "post_term_pregnancy_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -819,59 +996,83 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_33",
+              "group_id": "post_term_pregnancy_group_30",
               "group_title": "Fundal height",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "appropriate growth",
-                    "possible macrosomia",
-                    "possible growth restriction"
+                    {
+                      "text": "appropriate growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "possible macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "possible growth restriction",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_34",
+              "group_id": "post_term_pregnancy_group_31",
               "group_title": "Lie",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "longitudinal",
-                    "transverse",
-                    "oblique"
+                    {
+                      "text": "longitudinal",
+                      "level": 0
+                    },
+                    {
+                      "text": "transverse",
+                      "level": 0
+                    },
+                    {
+                      "text": "oblique",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_35",
+              "group_id": "post_term_pregnancy_group_32",
               "group_title": "Presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "cephalic",
-                    "breech",
-                    "other"
+                    {
+                      "text": "cephalic",
+                      "level": 0
+                    },
+                    {
+                      "text": "breech",
+                      "level": 0
+                    },
+                    {
+                      "text": "other",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_36",
+              "group_id": "post_term_pregnancy_group_33",
               "group_title": "Engagement",
               "group_subtitle": null,
               "group_icon": null,
@@ -883,7 +1084,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_37",
+              "group_id": "post_term_pregnancy_group_34",
               "group_title": "Fetal heart rate",
               "group_subtitle": null,
               "group_icon": null,
@@ -898,11 +1099,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_19",
-          "subsection_title": "ESTIMATE FETAL SIZE",
+          "subsection_title": "19. ESTIMATE FETAL SIZE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_38",
+              "group_id": "post_term_pregnancy_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -914,23 +1115,35 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_39",
+              "group_id": "post_term_pregnancy_group_36",
               "group_title": "Macrosomia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Potential consequences:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential consequences:",
                   "items": [
-                    "prolonged labour",
-                    "shoulder dystocia",
-                    "operative delivery",
-                    "Caesarean section",
-                    "PPH"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "shoulder dystocia",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -943,11 +1156,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_20",
-          "subsection_title": "CERVICAL ASSESSMENT",
+          "subsection_title": "20. CERVICAL ASSESSMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_40",
+              "group_id": "post_term_pregnancy_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -961,38 +1174,62 @@
                   "text": "This is commonly assessed using the:"
                 }
               ]
+            },
+            {
+              "group_id": "post_term_pregnancy_group_38",
+              "group_title": "BISHOP SCORE",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_21",
-          "subsection_title": "BISHOP SCORE",
+          "subsection_title": "21. BISHOP SCORE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_41",
+              "group_id": "post_term_pregnancy_group_39",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The traditional Bishop score assesses:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The traditional Bishop score assesses:",
                   "items": [
-                    "Cervical dilatation",
-                    "Cervical effacement/length",
-                    "Fetal station",
-                    "Cervical consistency",
-                    "Cervical position"
+                    {
+                      "text": "Cervical dilatation",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Cervical effacement/length",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Fetal station",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Cervical consistency",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Cervical position",
+                      "level": 0,
+                      "label": "5."
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_42",
+              "group_id": "post_term_pregnancy_group_40",
               "group_title": "Traditional scoring system",
               "group_subtitle": null,
               "group_icon": null,
@@ -1054,11 +1291,11 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_22",
-          "subsection_title": "INTERPRETING BISHOP SCORE",
+          "subsection_title": "22. INTERPRETING BISHOP SCORE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_43",
+              "group_id": "post_term_pregnancy_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1070,7 +1307,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_44",
+              "group_id": "post_term_pregnancy_group_42",
               "group_title": "Favourable cervix",
               "group_subtitle": null,
               "group_icon": null,
@@ -1086,7 +1323,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_45",
+              "group_id": "post_term_pregnancy_group_43",
               "group_title": "Unfavourable cervix",
               "group_subtitle": null,
               "group_icon": null,
@@ -1105,7 +1342,103 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_23",
-          "subsection_title": "CTG",
+          "subsection_title": "23. INVESTIGATIONS",
+          "subsection_icon": null,
+          "content_groups": []
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_24",
+          "subsection_title": "1. CTG",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_44",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "baseline",
+                      "level": 0
+                    },
+                    {
+                      "text": "variability",
+                      "level": 0
+                    },
+                    {
+                      "text": "accelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "decelerations",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A reassuring CTG is reassuring **at that moment**, but does not eliminate future risk."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_25",
+          "subsection_title": "24. ULTRASOUND",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_45",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "estimated fetal weight",
+                      "level": 0
+                    },
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "placental location",
+                      "level": 0
+                    },
+                    {
+                      "text": "amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal wellbeing where indicated",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_26",
+          "subsection_title": "25. AMNIOTIC FLUID",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1116,90 +1449,36 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "baseline",
-                    "variability",
-                    "accelerations",
-                    "decelerations",
-                    "contractions"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A reassuring CTG is reassuring at that moment, but does not eliminate future risk."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_24",
-          "subsection_title": "ULTRASOUND",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_47",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "fetal growth",
-                    "estimated fetal weight",
-                    "presentation",
-                    "placental location",
-                    "amniotic fluid",
-                    "fetal wellbeing where indicated"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_25",
-          "subsection_title": "AMNIOTIC FLUID",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_48",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "Look particularly for:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oligohydramnios."
+                  "text": "**Oligohydramnios.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Why?"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Reduced fluid can increase:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Reduced fluid can increase:",
                   "items": [
-                    "cord compression",
-                    "fetal heart-rate abnormalities",
-                    "meconium concentration",
-                    "fetal compromise"
+                    {
+                      "text": "cord compression",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart-rate abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "meconium concentration",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1207,12 +1486,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_26",
-          "subsection_title": "FETAL MOVEMENT",
+          "subsection_id": "post_term_pregnancy_subsection_27",
+          "subsection_title": "26. FETAL MOVEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_49",
+              "group_id": "post_term_pregnancy_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1227,7 +1506,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Immediate fetal assessment is required."
+                  "text": "**Immediate fetal assessment is required.**"
                 },
                 {
                   "type": "paragraph",
@@ -1238,12 +1517,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_27",
-          "subsection_title": "WHAT IS THE MANAGEMENT OF A 41-WEEK PREGNANCY?",
+          "subsection_id": "post_term_pregnancy_subsection_28",
+          "subsection_title": "27. WHAT IS THE MANAGEMENT OF A 41-WEEK PREGNANCY?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_50",
+              "group_id": "post_term_pregnancy_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1254,19 +1533,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Current NICE guidance recommends discussing induction with women at 41+0 weeks, because some risks increase if pregnancy continues beyond this point. NICE recommends offering induction from 41+0 weeks and notes that induction from 41+0 may reduce risks associated with continuing pregnancy. (nice.org.uk)"
+                  "text": "Current NICE guidance recommends discussing induction with women at **41+0 weeks**, because some risks increase if pregnancy continues beyond this point. NICE recommends offering induction from 41+0 weeks and notes that induction from 41+0 may reduce risks associated with continuing pregnancy. (nice.org.uk)"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_28",
-          "subsection_title": "COUNSELLING ABOUT INDUCTION",
+          "subsection_id": "post_term_pregnancy_subsection_29",
+          "subsection_title": "28. COUNSELLING ABOUT INDUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_51",
+              "group_id": "post_term_pregnancy_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1277,7 +1556,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"As pregnancy continues beyond 41 weeks, some risks gradually increase. Inducing labour from around 41 weeks may reduce some of these risks.\""
+                  "text": "\"As pregnancy continues beyond 41 weeks, some risks gradually increase. Inducing labour from around 41 weeks may reduce some of these risks.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1286,37 +1566,67 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_52",
+              "group_id": "post_term_pregnancy_group_50",
               "group_title": "Potential benefits",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "reduces duration of prolonged pregnancy",
-                    "may reduce some fetal risks associated with continuing pregnancy",
-                    "reduces exposure to increasing risk of stillbirth"
+                    {
+                      "text": "reduces duration of prolonged pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "may reduce some fetal risks associated with continuing pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "reduces exposure to increasing risk of stillbirth",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_53",
+              "group_id": "post_term_pregnancy_group_51",
               "group_title": "Potential disadvantages",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "more hospital intervention",
-                    "contractions may be stronger/more painful",
-                    "longer admission",
-                    "need for cervical ripening",
-                    "failed induction",
-                    "operative delivery",
-                    "Caesarean section"
+                    {
+                      "text": "more hospital intervention",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions may be stronger/more painful",
+                      "level": 0
+                    },
+                    {
+                      "text": "longer admission",
+                      "level": 0
+                    },
+                    {
+                      "text": "need for cervical ripening",
+                      "level": 0
+                    },
+                    {
+                      "text": "failed induction",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean section",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1324,12 +1634,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_29",
-          "subsection_title": "IF THE WOMAN ACCEPTS INDUCTION",
+          "subsection_id": "post_term_pregnancy_subsection_30",
+          "subsection_title": "29. IF THE WOMAN ACCEPTS INDUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_54",
+              "group_id": "post_term_pregnancy_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1341,7 +1651,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_55",
+              "group_id": "post_term_pregnancy_group_53",
               "group_title": "Cervical favourability",
               "group_subtitle": null,
               "group_icon": null,
@@ -1359,12 +1669,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_30",
-          "subsection_title": "CERVIX FAVOURABLE",
+          "subsection_id": "post_term_pregnancy_subsection_31",
+          "subsection_title": "30. CERVIX FAVOURABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_56",
+              "group_id": "post_term_pregnancy_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1375,19 +1685,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Amniotomy ± oxytocin may be used according to local protocol."
+                  "text": "**Amniotomy ± oxytocin** may be used according to local protocol."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_31",
-          "subsection_title": "CERVIX UNFAVOURABLE",
+          "subsection_id": "post_term_pregnancy_subsection_32",
+          "subsection_title": "31. CERVIX UNFAVOURABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_57",
+              "group_id": "post_term_pregnancy_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1398,7 +1708,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cervical ripening is usually required."
+                  "text": "**Cervical ripening** is usually required."
                 },
                 {
                   "type": "paragraph",
@@ -1407,43 +1717,61 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_58",
+              "group_id": "post_term_pregnancy_group_56",
               "group_title": "Pharmacological",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "dinoprostone",
-                    "misoprostol in some protocols/settings"
+                    {
+                      "text": "dinoprostone",
+                      "level": 0
+                    },
+                    {
+                      "text": "misoprostol in some protocols/settings",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_59",
+              "group_id": "post_term_pregnancy_group_57",
               "group_title": "Mechanical",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "balloon catheter"
+                    {
+                      "text": "balloon catheter",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Choice depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Choice depends on:",
                   "items": [
-                    "cervical assessment",
-                    "previous Caesarean",
-                    "contraindications",
-                    "local protocol"
+                    {
+                      "text": "cervical assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous Caesarean",
+                      "level": 0
+                    },
+                    {
+                      "text": "contraindications",
+                      "level": 0
+                    },
+                    {
+                      "text": "local protocol",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1451,12 +1779,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_32",
-          "subsection_title": "IMPORTANT — PREVIOUS CAESAREAN",
+          "subsection_id": "post_term_pregnancy_subsection_33",
+          "subsection_title": "32. IMPORTANT — PREVIOUS CAESAREAN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_60",
+              "group_id": "post_term_pregnancy_group_58",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1471,7 +1799,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Uterine rupture."
+                  "text": "**Uterine rupture.**"
                 },
                 {
                   "type": "paragraph",
@@ -1479,19 +1807,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Induction after previous Caesarean requires individualised senior obstetric assessment."
+                  "text": "**Induction after previous Caesarean requires individualised senior obstetric assessment.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_33",
-          "subsection_title": "IF THE WOMAN DECLINES INDUCTION",
+          "subsection_id": "post_term_pregnancy_subsection_34",
+          "subsection_title": "33. IF THE WOMAN DECLINES INDUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_61",
+              "group_id": "post_term_pregnancy_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1505,10 +1833,9 @@
                   "text": "Do not say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"You must be induced.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"You must be induced.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1516,7 +1843,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Respect her autonomy, explain the risks and benefits clearly, and discuss an appropriate surveillance plan."
+                  "text": "**Respect her autonomy, explain the risks and benefits clearly, and discuss an appropriate surveillance plan.**"
                 },
                 {
                   "type": "paragraph",
@@ -1527,12 +1854,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_34",
-          "subsection_title": "COUNSELLING WHEN INDUCTION IS DECLINED",
+          "subsection_id": "post_term_pregnancy_subsection_35",
+          "subsection_title": "34. COUNSELLING WHEN INDUCTION IS DECLINED",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_62",
+              "group_id": "post_term_pregnancy_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1543,51 +1870,37 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"You have the right to make decisions about your care. I would explain that while monitoring can assess your baby's wellbeing at that point in time, it cannot completely eliminate the risk of an unexpected deterioration or stillbirth.\""
+                  "text": "\"You have the right to make decisions about your care. I would explain that while monitoring can assess your baby's wellbeing at that point in time, it cannot completely eliminate the risk of an unexpected deterioration or stillbirth.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Discuss:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Discuss:",
                   "items": [
-                    "fetal movements",
-                    "CTG",
-                    "ultrasound assessment where appropriate",
-                    "amniotic fluid assessment",
-                    "timing of reassessment",
-                    "clear safety-netting"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_35",
-          "subsection_title": "WHAT SURVEILLANCE MAY INCLUDE?",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_63",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Depending on local protocol and clinical circumstances:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "CTG",
-                    "ultrasound",
-                    "amniotic fluid assessment",
-                    "fetal growth assessment where indicated",
-                    "maternal assessment",
-                    "fetal movement monitoring"
+                    {
+                      "text": "fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "ultrasound assessment where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "amniotic fluid assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "timing of reassessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "clear safety-netting",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1596,11 +1909,56 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_36",
-          "subsection_title": "IMPORTANT COUNSELLING POINT",
+          "subsection_title": "35. WHAT SURVEILLANCE MAY INCLUDE?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_64",
+              "group_id": "post_term_pregnancy_group_61",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Depending on local protocol and clinical circumstances:",
+                  "items": [
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "amniotic fluid assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal growth assessment where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal movement monitoring",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_37",
+          "subsection_title": "36. IMPORTANT COUNSELLING POINT",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1610,22 +1968,21 @@
                   "text": "A common examiner question:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Does a normal CTG mean the baby is completely safe?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Does a normal CTG mean the baby is completely safe?\"**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_65",
+              "group_id": "post_term_pregnancy_group_63",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -1640,12 +1997,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_37",
-          "subsection_title": "MECONIUM",
+          "subsection_id": "post_term_pregnancy_subsection_38",
+          "subsection_title": "37. MECONIUM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_66",
+              "group_id": "post_term_pregnancy_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1656,30 +2013,42 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Meconium-stained amniotic fluid."
+                  "text": "**Meconium-stained amniotic fluid.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If membranes rupture and liquor is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If membranes rupture and liquor is:",
                   "items": [
-                    "green",
-                    "brown",
-                    "thick meconium"
+                    {
+                      "text": "green",
+                      "level": 0
+                    },
+                    {
+                      "text": "brown",
+                      "level": 0
+                    },
+                    {
+                      "text": "thick meconium",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "assess:",
                   "items": [
-                    "fetal heart rate",
-                    "maternal condition",
-                    "labour progress"
+                    {
+                      "text": "fetal heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "labour progress",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1691,12 +2060,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_38",
-          "subsection_title": "MACROSOMIA",
+          "subsection_id": "post_term_pregnancy_subsection_39",
+          "subsection_title": "38. MACROSOMIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_67",
+              "group_id": "post_term_pregnancy_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1712,36 +2081,63 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_68",
+              "group_id": "post_term_pregnancy_group_66",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "prolonged labour",
-                    "operative delivery",
-                    "perineal trauma",
-                    "PPH"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "perineal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_69",
+              "group_id": "post_term_pregnancy_group_67",
               "group_title": "Fetal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "shoulder dystocia",
-                    "birth trauma",
-                    "brachial plexus injury",
-                    "fractures",
-                    "hypoxic injury"
+                    {
+                      "text": "shoulder dystocia",
+                      "level": 0
+                    },
+                    {
+                      "text": "birth trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "brachial plexus injury",
+                      "level": 0
+                    },
+                    {
+                      "text": "fractures",
+                      "level": 0
+                    },
+                    {
+                      "text": "hypoxic injury",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1749,12 +2145,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_39",
-          "subsection_title": "SHOULDER DYSTOCIA RISK",
+          "subsection_id": "post_term_pregnancy_subsection_40",
+          "subsection_title": "39. SHOULDER DYSTOCIA RISK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_70",
+              "group_id": "post_term_pregnancy_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1764,10 +2160,8 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Post-term + suspected macrosomia + diabetes"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Post-term + suspected macrosomia + diabetes**"
                 },
                 {
                   "type": "paragraph",
@@ -1778,12 +2172,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_40",
-          "subsection_title": "POST-TERM + REDUCED FETAL MOVEMENT",
+          "subsection_id": "post_term_pregnancy_subsection_41",
+          "subsection_title": "40. POST-TERM + REDUCED FETAL MOVEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_71",
+              "group_id": "post_term_pregnancy_group_69",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1794,24 +2188,42 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not say:"
+                  "text": "Do **not** say:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"She is already 41 weeks, so we will induce next week.\""
+                  "text": "\"She is already 41 weeks, so we will induce next week.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Instead:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Instead:",
                   "items": [
-                    "Immediate fetal assessment",
-                    "CTG",
-                    "Ultrasound if indicated",
-                    "Senior obstetric review",
-                    "Delivery planning depending on findings"
+                    {
+                      "text": "Immediate fetal assessment",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "CTG",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ultrasound if indicated",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Senior obstetric review",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Delivery planning depending on findings",
+                      "level": 0,
+                      "label": "5."
+                    }
                   ]
                 }
               ]
@@ -1819,12 +2231,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_41",
-          "subsection_title": "POST-TERM + ABNORMAL CTG",
+          "subsection_id": "post_term_pregnancy_subsection_42",
+          "subsection_title": "41. POST-TERM + ABNORMAL CTG",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_72",
+              "group_id": "post_term_pregnancy_group_70",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1835,21 +2247,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not wait simply because the patient has not reached 42 weeks."
+                  "text": "**Do not wait simply because the patient has not reached 42 weeks.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess and expedite delivery according to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess and expedite delivery according to:",
                   "items": [
-                    "CTG",
-                    "gestational age",
-                    "presentation",
-                    "cervical findings",
-                    "maternal condition",
-                    "obstetric circumstances"
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical findings",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstetric circumstances",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1857,12 +2284,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_42",
-          "subsection_title": "POST-TERM + OLIGOHYDRAMNIOS",
+          "subsection_id": "post_term_pregnancy_subsection_43",
+          "subsection_title": "42. POST-TERM + OLIGOHYDRAMNIOS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_73",
+              "group_id": "post_term_pregnancy_group_71",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1876,16 +2303,25 @@
                   "text": "Reduced placental reserve / fetal compromise risk."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "CTG",
-                    "fetal growth",
-                    "fetal movements",
-                    "presentation"
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1897,29 +2333,44 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_43",
-          "subsection_title": "POST-TERM + BREECH",
+          "subsection_id": "post_term_pregnancy_subsection_44",
+          "subsection_title": "43. POST-TERM + BREECH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_74",
+              "group_id": "post_term_pregnancy_group_72",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Do not automatically induce without considering:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Do not automatically induce without considering:",
                   "items": [
-                    "presentation",
-                    "cervical favourability",
-                    "fetal condition",
-                    "estimated fetal weight",
-                    "previous obstetric history",
-                    "local protocol"
+                    {
+                      "text": "presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical favourability",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "estimated fetal weight",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous obstetric history",
+                      "level": 0
+                    },
+                    {
+                      "text": "local protocol",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1931,8 +2382,77 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_44",
-          "subsection_title": "POST-TERM + PREVIOUS CAESAREAN",
+          "subsection_id": "post_term_pregnancy_subsection_45",
+          "subsection_title": "44. POST-TERM + PREVIOUS CAESAREAN",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_73",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "This requires special counselling."
+                },
+                {
+                  "type": "list",
+                  "title": "Discuss:",
+                  "items": [
+                    {
+                      "text": "VBAC",
+                      "level": 0
+                    },
+                    {
+                      "text": "repeat Caesarean",
+                      "level": 0
+                    },
+                    {
+                      "text": "induction risks",
+                      "level": 0
+                    },
+                    {
+                      "text": "uterine rupture",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical favourability",
+                      "level": 0
+                    },
+                    {
+                      "text": "previous uterine scar",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_46",
+          "subsection_title": "45. REPORTING — 41-WEEK NORMAL ASSESSMENT",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_74",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**\"This is a 29-year-old primigravida at 41+2 weeks by a reliable first-trimester dating scan. She reports normal fetal movements and has no vaginal bleeding, fluid leakage or regular contractions. She is haemodynamically stable and has no clinical features of pre-eclampsia. Abdominal examination demonstrates a singleton longitudinal lie with cephalic presentation and a reassuring fetal heart rate. I would assess cervical favourability and discuss induction of labour, including its benefits, risks and alternatives, in line with current guidance.\"**",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_47",
+          "subsection_title": "46. REPORTING — POST-TERM WITH UNFAVOURABLE CERVIX",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1943,30 +2463,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This requires special counselling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "VBAC",
-                    "repeat Caesarean",
-                    "induction risks",
-                    "uterine rupture",
-                    "cervical favourability",
-                    "previous uterine scar"
-                  ]
+                  "text": "**\"This is a 32-year-old G2P1 at 41+5 weeks with normal fetal movements and no evidence of labour, bleeding or ruptured membranes. Maternal observations are normal and the CTG is reassuring. The fetus is cephalic. Vaginal examination demonstrates a posterior, firm, minimally dilated cervix with a high presenting part, giving an unfavourable Bishop score. I would discuss induction of labour and cervical ripening options with the patient.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_45",
-          "subsection_title": "REPORTING — 41-WEEK NORMAL ASSESSMENT",
+          "subsection_id": "post_term_pregnancy_subsection_48",
+          "subsection_title": "47. REPORTING — POST-TERM WITH OLIGOHYDRAMNIOS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1977,15 +2483,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 29-year-old primigravida at 41+2 weeks by a reliable first-trimester dating scan. She reports normal fetal movements and has no vaginal bleeding, fluid leakage or regular contractions. She is haemodynamically stable and has no clinical features of pre-eclampsia. Abdominal examination demonstrates a singleton longitudinal lie with cephalic presentation and a reassuring fetal heart rate. I would assess cervical favourability and discuss induction of labour, including its benefits, risks and alternatives, in line with current guidance.\""
+                  "text": "**\"This is a 41+4-week pregnancy with reduced amniotic fluid on ultrasound. The mother is clinically stable and fetal movements are currently reported as normal. I would assess the CTG and fetal growth, involve the senior obstetric team and discuss delivery given the increasing risk associated with continuing the pregnancy in the presence of oligohydramnios.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_46",
-          "subsection_title": "REPORTING — POST-TERM WITH UNFAVOURABLE CERVIX",
+          "subsection_id": "post_term_pregnancy_subsection_49",
+          "subsection_title": "48. REPORTING — POST-TERM WITH REDUCED FETAL MOVEMENTS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1996,15 +2503,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 32-year-old G2P1 at 41+5 weeks with normal fetal movements and no evidence of labour, bleeding or ruptured membranes. Maternal observations are normal and the CTG is reassuring. The fetus is cephalic. Vaginal examination demonstrates a posterior, firm, minimally dilated cervix with a high presenting part, giving an unfavourable Bishop score. I would discuss induction of labour and cervical ripening options with the patient.\""
+                  "text": "**\"This is a 41+2-week pregnant woman presenting with reduced fetal movements. Although she is otherwise clinically stable, reduced fetal movement at this gestation requires immediate fetal assessment. I would perform CTG promptly, assess maternal observations and arrange ultrasound assessment if indicated, followed by senior obstetric review and delivery planning according to the fetal assessment.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_47",
-          "subsection_title": "REPORTING — POST-TERM WITH OLIGOHYDRAMNIOS",
+          "subsection_id": "post_term_pregnancy_subsection_50",
+          "subsection_title": "49. REPORTING — POST-TERM WITH ABNORMAL CTG",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2015,15 +2523,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 41+4-week pregnancy with reduced amniotic fluid on ultrasound. The mother is clinically stable and fetal movements are currently reported as normal. I would assess the CTG and fetal growth, involve the senior obstetric team and discuss delivery given the increasing risk associated with continuing the pregnancy in the presence of oligohydramnios.\""
+                  "text": "**\"This is a 41+5-week pregnant woman with a pathological CTG demonstrating persistent fetal bradycardia and recurrent decelerations. I would treat this as fetal compromise, immediately involve the senior obstetric team, assess maternal status and prepare for expedited delivery according to the clinical circumstances rather than continuing expectant management.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_48",
-          "subsection_title": "REPORTING — POST-TERM WITH REDUCED FETAL MOVEMENTS",
+          "subsection_id": "post_term_pregnancy_subsection_51",
+          "subsection_title": "50. REPORTING — POST-TERM WITH MACROSOMIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2034,15 +2543,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 41+2-week pregnant woman presenting with reduced fetal movements. Although she is otherwise clinically stable, reduced fetal movement at this gestation requires immediate fetal assessment. I would perform CTG promptly, assess maternal observations and arrange ultrasound assessment if indicated, followed by senior obstetric review and delivery planning according to the fetal assessment.\""
+                  "text": "**\"This is a 41+3-week pregnancy with suspected fetal macrosomia. The mother is clinically stable and the CTG is currently reassuring. I would discuss the implications of suspected macrosomia, including prolonged labour, operative delivery and shoulder dystocia, and incorporate estimated fetal size, presentation, cervical favourability and the patient's obstetric history into the delivery plan.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_49",
-          "subsection_title": "REPORTING — POST-TERM WITH ABNORMAL CTG",
+          "subsection_id": "post_term_pregnancy_subsection_52",
+          "subsection_title": "51. REPORTING — POST-TERM WITH MECONIUM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2053,93 +2563,56 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 41+5-week pregnant woman with a pathological CTG demonstrating persistent fetal bradycardia and recurrent decelerations. I would treat this as fetal compromise, immediately involve the senior obstetric team, assess maternal status and prepare for expedited delivery according to the clinical circumstances rather than continuing expectant management.\""
+                  "text": "**\"This 41+5-week woman has ruptured membranes with thick meconium-stained liquor. I would immediately assess maternal and fetal wellbeing, review the CTG and involve the senior obstetric and neonatal teams as appropriate. I would assess for fetal compromise and manage the labour accordingly.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_50",
-          "subsection_title": "REPORTING — POST-TERM WITH MACROSOMIA",
+          "subsection_id": "post_term_pregnancy_subsection_53",
+          "subsection_title": "52. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "post_term_pregnancy_group_81",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "\"This is a 41+3-week pregnancy with suspected fetal macrosomia. The mother is clinically stable and the CTG is currently reassuring. I would discuss the implications of suspected macrosomia, including prolonged labour, operative delivery and shoulder dystocia, and incorporate estimated fetal size, presentation, cervical favourability and the patient's obstetric history into the delivery plan.\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_51",
-          "subsection_title": "REPORTING — POST-TERM WITH MECONIUM",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_82",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "\"This 41+5-week woman has ruptured membranes with thick meconium-stained liquor. I would immediately assess maternal and fetal wellbeing, review the CTG and involve the senior obstetric and neonatal teams as appropriate. I would assess for fetal compromise and manage the labour accordingly.\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_52",
-          "subsection_title": "EXAMINER QUESTIONS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_83",
               "group_title": "Q1. Define post-term pregnancy.",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Pregnancy continuing to 42+0 weeks or beyond."
+                  "text": "**Pregnancy continuing to 42+0 weeks or beyond.**"
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_84",
+              "group_id": "post_term_pregnancy_group_82",
               "group_title": "Q2. What is late-term pregnancy?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "41+0 to 41+6 weeks."
+                  "text": "**41+0 to 41+6 weeks.**"
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_85",
+              "group_id": "post_term_pregnancy_group_83",
               "group_title": "Q3. When would you offer induction?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "From 41+0 weeks, after discussing the benefits and risks with the woman, according to NICE guidance."
+                  "text": "**From 41+0 weeks, after discussing the benefits and risks with the woman, according to NICE guidance.**"
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_86",
+              "group_id": "post_term_pregnancy_group_84",
               "group_title": "Q4. Why induce at 41 weeks?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2153,12 +2626,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_53",
-          "subsection_title": "Q5. What is the Bishop score?",
+          "subsection_id": "post_term_pregnancy_subsection_54",
+          "subsection_title": "53. Q5. What is the Bishop score?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_87",
+              "group_id": "post_term_pregnancy_group_85",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2172,19 +2645,19 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_54",
-          "subsection_title": "Q6. What are the components?",
+          "subsection_id": "post_term_pregnancy_subsection_55",
+          "subsection_title": "54. Q6. What are the components?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_88",
+              "group_id": "post_term_pregnancy_group_86",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Dilatation, effacement/cervical length, station, consistency and position."
+                  "text": "**Dilatation, effacement/cervical length, station, consistency and position.**"
                 },
                 {
                   "type": "paragraph",
@@ -2193,26 +2666,26 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_89",
+              "group_id": "post_term_pregnancy_group_87",
               "group_title": "DEPPS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "D — Dilatation E — Effacement P — Position P — Presentation/station S — Softness/consistency"
+                  "text": "**D** — Dilatation\n**E** — Effacement\n**P** — Position\n**P** — Presentation/station\n**S** — Softness/consistency"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_55",
-          "subsection_title": "Q7. What happens if the cervix is unfavourable?",
+          "subsection_id": "post_term_pregnancy_subsection_56",
+          "subsection_title": "55. Q7. What happens if the cervix is unfavourable?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_90",
+              "group_id": "post_term_pregnancy_group_88",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2226,43 +2699,76 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_56",
-          "subsection_title": "Q8. What complications are associated with post-term pregnancy?",
+          "subsection_id": "post_term_pregnancy_subsection_57",
+          "subsection_title": "56. Q8. What complications are associated with post-term pregnancy?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_91",
+              "group_id": "post_term_pregnancy_group_89",
               "group_title": "Fetal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "stillbirth",
-                    "oligohydramnios",
-                    "meconium",
-                    "macrosomia",
-                    "fetal compromise",
-                    "birth trauma"
+                    {
+                      "text": "stillbirth",
+                      "level": 0
+                    },
+                    {
+                      "text": "oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "meconium",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "birth trauma",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_92",
+              "group_id": "post_term_pregnancy_group_90",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "prolonged labour",
-                    "operative delivery",
-                    "Caesarean",
-                    "perineal trauma",
-                    "PPH"
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean",
+                      "level": 0
+                    },
+                    {
+                      "text": "perineal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2270,12 +2776,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_57",
-          "subsection_title": "Q9. Why does macrosomia matter?",
+          "subsection_id": "post_term_pregnancy_subsection_58",
+          "subsection_title": "57. Q9. Why does macrosomia matter?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_93",
+              "group_id": "post_term_pregnancy_group_91",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2289,12 +2795,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_58",
-          "subsection_title": "Q10. What is oligohydramnios?",
+          "subsection_id": "post_term_pregnancy_subsection_59",
+          "subsection_title": "58. Q10. What is oligohydramnios?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_94",
+              "group_id": "post_term_pregnancy_group_92",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2312,19 +2818,19 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_59",
-          "subsection_title": "Q11. Does normal CTG mean you can safely wait indefinitely?",
+          "subsection_id": "post_term_pregnancy_subsection_60",
+          "subsection_title": "59. Q11. Does normal CTG mean you can safely wait indefinitely?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_95",
+              "group_id": "post_term_pregnancy_group_93",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -2335,12 +2841,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_60",
-          "subsection_title": "Q12. What if the woman refuses induction?",
+          "subsection_id": "post_term_pregnancy_subsection_61",
+          "subsection_title": "60. Q12. What if the woman refuses induction?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_96",
+              "group_id": "post_term_pregnancy_group_94",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2354,12 +2860,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_61",
-          "subsection_title": "Q13. What if she has reduced fetal movements?",
+          "subsection_id": "post_term_pregnancy_subsection_62",
+          "subsection_title": "61. Q13. What if she has reduced fetal movements?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_97",
+              "group_id": "post_term_pregnancy_group_95",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2373,12 +2879,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_62",
-          "subsection_title": "Q14. What if the CTG is pathological?",
+          "subsection_id": "post_term_pregnancy_subsection_63",
+          "subsection_title": "62. Q14. What if the CTG is pathological?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_98",
+              "group_id": "post_term_pregnancy_group_96",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2392,12 +2898,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_63",
-          "subsection_title": "Q15. What is the difference between induction and augmentation?",
+          "subsection_id": "post_term_pregnancy_subsection_64",
+          "subsection_title": "63. Q15. What is the difference between induction and augmentation?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_99",
+              "group_id": "post_term_pregnancy_group_97",
               "group_title": "Induction",
               "group_subtitle": null,
               "group_icon": null,
@@ -2409,7 +2915,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_100",
+              "group_id": "post_term_pregnancy_group_98",
               "group_title": "Augmentation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2423,36 +2929,48 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_64",
-          "subsection_title": "Q16. Name methods of induction.",
+          "subsection_id": "post_term_pregnancy_subsection_65",
+          "subsection_title": "64. Q16. Name methods of induction.",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_101",
+              "group_id": "post_term_pregnancy_group_99",
               "group_title": "Cervical ripening",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "prostaglandins",
-                    "mechanical balloon catheter"
+                    {
+                      "text": "prostaglandins",
+                      "level": 0
+                    },
+                    {
+                      "text": "mechanical balloon catheter",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_102",
+              "group_id": "post_term_pregnancy_group_100",
               "group_title": "Once cervix is favourable",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "amniotomy",
-                    "oxytocin infusion"
+                    {
+                      "text": "amniotomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "oxytocin infusion",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2464,38 +2982,19 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_65",
-          "subsection_title": "Q17. What is a major concern when inducing a woman with previous Caesarean?",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "post_term_pregnancy_group_103",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture, particularly with certain pharmacological induction methods."
-                }
-              ]
-            }
-          ]
-        },
-        {
           "subsection_id": "post_term_pregnancy_subsection_66",
-          "subsection_title": "Q18. What is the biggest mistake when dating a pregnancy?",
+          "subsection_title": "65. Q17. What is a major concern when inducing a woman with previous Caesarean?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_104",
+              "group_id": "post_term_pregnancy_group_101",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Assuming the pregnancy is post-term without confirming the gestational age and EDD."
+                  "text": "**Uterine rupture**, particularly with certain pharmacological induction methods."
                 }
               ]
             }
@@ -2503,20 +3002,37 @@
         },
         {
           "subsection_id": "post_term_pregnancy_subsection_67",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_title": "66. Q18. What is the biggest mistake when dating a pregnancy?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_105",
+              "group_id": "post_term_pregnancy_group_102",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Assuming the pregnancy is post-term without confirming the gestational age and EDD.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "post_term_pregnancy_subsection_68",
+          "subsection_title": "67. COMMON OSCE MISTAKES",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "post_term_pregnancy_group_103",
               "group_title": "❌ Mistake 1",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Calling 41+2 \"post-term.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "Calling 41+2 \"post-term.\""
                 },
                 {
                   "type": "paragraph",
@@ -2524,12 +3040,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Late-term."
+                  "text": "**Late-term.**"
                 }
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_106",
+              "group_id": "post_term_pregnancy_group_104",
               "group_title": "❌ Mistake 2",
               "group_subtitle": null,
               "group_icon": null,
@@ -2545,7 +3061,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_107",
+              "group_id": "post_term_pregnancy_group_105",
               "group_title": "❌ Mistake 3",
               "group_subtitle": null,
               "group_icon": null,
@@ -2557,7 +3073,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_108",
+              "group_id": "post_term_pregnancy_group_106",
               "group_title": "❌ Mistake 4",
               "group_subtitle": null,
               "group_icon": null,
@@ -2569,7 +3085,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_109",
+              "group_id": "post_term_pregnancy_group_107",
               "group_title": "❌ Mistake 5",
               "group_subtitle": null,
               "group_icon": null,
@@ -2581,7 +3097,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_110",
+              "group_id": "post_term_pregnancy_group_108",
               "group_title": "❌ Mistake 6",
               "group_subtitle": null,
               "group_icon": null,
@@ -2593,7 +3109,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_111",
+              "group_id": "post_term_pregnancy_group_109",
               "group_title": "❌ Mistake 7",
               "group_subtitle": null,
               "group_icon": null,
@@ -2605,7 +3121,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_112",
+              "group_id": "post_term_pregnancy_group_110",
               "group_title": "❌ Mistake 8",
               "group_subtitle": null,
               "group_icon": null,
@@ -2617,7 +3133,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_113",
+              "group_id": "post_term_pregnancy_group_111",
               "group_title": "❌ Mistake 9",
               "group_subtitle": null,
               "group_icon": null,
@@ -2629,7 +3145,7 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_114",
+              "group_id": "post_term_pregnancy_group_112",
               "group_title": "❌ Mistake 10",
               "group_subtitle": null,
               "group_icon": null,
@@ -2643,12 +3159,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_68",
-          "subsection_title": "OSCE COUNSELLING FRAMEWORK",
+          "subsection_id": "post_term_pregnancy_subsection_69",
+          "subsection_title": "68. OSCE COUNSELLING FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_115",
+              "group_id": "post_term_pregnancy_group_113",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2660,83 +3176,70 @@
               ]
             },
             {
-              "group_id": "post_term_pregnancy_group_116",
-              "group_title": "WHY?",
+              "group_id": "post_term_pregnancy_group_114",
+              "group_title": "WHY → WHEN → HOW → BENEFITS → RISKS → ALTERNATIVES → QUESTIONS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**WHY?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Increasing risks with advancing gestation."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_117",
-              "group_title": "WHEN?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**WHEN?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Discuss induction from 41 weeks."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_118",
-              "group_title": "HOW?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**HOW?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Cervical ripening → amniotomy/oxytocin depending on cervix."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_119",
-              "group_title": "BENEFITS?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**BENEFITS?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "May reduce some risks associated with continuing pregnancy."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_120",
-              "group_title": "RISKS?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**RISKS?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Intervention, pain, prolonged induction, operative delivery, Caesarean."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_121",
-              "group_title": "ALTERNATIVES?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**ALTERNATIVES?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Expectant management with surveillance if the woman declines."
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_122",
-              "group_title": "QUESTIONS?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**QUESTIONS?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Allow the patient to ask questions and make an informed decision."
@@ -2746,12 +3249,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_69",
-          "subsection_title": "RAPID-RECALL TABLE",
+          "subsection_id": "post_term_pregnancy_subsection_70",
+          "subsection_title": "69. RAPID-RECALL TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_123",
+              "group_id": "post_term_pregnancy_group_115",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2794,12 +3297,12 @@
           ]
         },
         {
-          "subsection_id": "post_term_pregnancy_subsection_70",
-          "subsection_title": "60-SECOND MODEL OSCE ANSWER",
+          "subsection_id": "post_term_pregnancy_subsection_71",
+          "subsection_title": "70. 60-SECOND MODEL OSCE ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "post_term_pregnancy_group_124",
+              "group_id": "post_term_pregnancy_group_116",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2809,10 +3312,9 @@
                   "text": "If asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How would you manage a woman at 41+3 weeks?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"How would you manage a woman at 41+3 weeks?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2820,28 +3322,22 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would first confirm the gestational age and dating, assess maternal wellbeing and ask about fetal movements, contractions, vaginal bleeding and rupture of membranes. I would check maternal observations, including blood pressure and temperature, and perform an abdominal examination assessing fundal height, fetal lie, presentation, engagement and fetal heart rate. I would assess fetal wellbeing with CTG and use ultrasound where clinically indicated to assess growth and amniotic fluid."
+                  "text": "**\"I would first confirm the gestational age and dating, assess maternal wellbeing and ask about fetal movements, contractions, vaginal bleeding and rupture of membranes. I would check maternal observations, including blood pressure and temperature, and perform an abdominal examination assessing fundal height, fetal lie, presentation, engagement and fetal heart rate. I would assess fetal wellbeing with CTG and use ultrasound where clinically indicated to assess growth and amniotic fluid.**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "At 41+3 weeks, I would counsel her regarding induction of labour because risks associated with continuing pregnancy increase from around 41 weeks. I would explain the benefits, risks and alternatives and assess cervical favourability using the Bishop score. If she accepts induction, I would use an appropriate cervical ripening method if necessary, followed by amniotomy and oxytocin when appropriate."
+                  "text": "**At 41+3 weeks, I would counsel her regarding induction of labour because risks associated with continuing pregnancy increase from around 41 weeks. I would explain the benefits, risks and alternatives and assess cervical favourability using the Bishop score. If she accepts induction, I would use an appropriate cervical ripening method if necessary, followed by amniotomy and oxytocin when appropriate.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "If she declines induction, I would respect her decision, provide clear counselling regarding the limitations of expectant management, arrange appropriate surveillance and give safety-net advice regarding reduced fetal movements, bleeding, fluid leakage and labour symptoms. If there is fetal compromise, significant bleeding, infection or another obstetric indication, I would arrange expedited delivery.\" (nice.org.uk)"
+                  "text": "**If she declines induction, I would respect her decision, provide clear counselling regarding the limitations of expectant management, arrange appropriate surveillance and give safety-net advice regarding reduced fetal movements, bleeding, fluid leakage and labour symptoms. If there is fetal compromise, significant bleeding, infection or another obstetric indication, I would arrange expedited delivery.\"** (nice.org.uk)"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "post_term_pregnancy_subsection_71",
-          "subsection_title": "🔑 FINAL EXAM TAKE-HOME",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "post_term_pregnancy_group_125",
-              "group_title": "",
+              "group_id": "post_term_pregnancy_group_117",
+              "group_title": "🔑 FINAL EXAM TAKE-HOME",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2850,42 +3346,37 @@
                   "text": "When you see:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "41+ weeks"
-                  ]
+                  "type": "paragraph",
+                  "text": "**41+ weeks**"
                 },
                 {
                   "type": "paragraph",
                   "text": "think:"
-                }
-              ]
-            },
-            {
-              "group_id": "post_term_pregnancy_group_126",
-              "group_title": "DATE → BABY → FLUID → CERVIX → INDUCTION",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "DATE → Is the EDD correct?"
                 },
                 {
                   "type": "paragraph",
-                  "text": "BABY → Movements? CTG? Growth?"
+                  "text": "**DATE → BABY → FLUID → CERVIX → INDUCTION**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "FLUID → Oligohydramnios? Meconium? ROM?"
+                  "text": "**DATE**\n→ Is the EDD correct?"
                 },
                 {
                   "type": "paragraph",
-                  "text": "CERVIX → Bishop score."
+                  "text": "**BABY**\n→ Movements? CTG? Growth?"
                 },
                 {
                   "type": "paragraph",
-                  "text": "INDUCTION → Discuss from 41+0 weeks."
+                  "text": "**FLUID**\n→ Oligohydramnios? Meconium? ROM?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**CERVIX**\n→ Bishop score."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**INDUCTION**\n→ Discuss from **41+0 weeks**."
                 },
                 {
                   "type": "paragraph",
@@ -2893,7 +3384,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "41+0 = late-term. 42+0 = post-term."
+                  "text": "**41+0 = late-term.**\n**42+0 = post-term.**"
                 },
                 {
                   "type": "paragraph",
@@ -2901,7 +3392,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Don't simply ask \"Has she reached 42 weeks?\" Ask whether continuing the pregnancy remains the safest option for mother and baby."
+                  "text": "**Don't simply ask \"Has she reached 42 weeks?\" Ask whether continuing the pregnancy remains the safest option for mother and baby.**"
                 }
               ]
             }

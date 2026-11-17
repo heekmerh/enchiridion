@@ -23,18 +23,19 @@ import shutil
 from pathlib import Path
 
 from docx import Document
+from docx.oxml.ns import qn
+from docx.text.hyperlink import Hyperlink
 from docx.text.paragraph import Paragraph
+from docx.text.run import Run
 from PIL import Image, UnidentifiedImageError
 
 from generate_resource_content import (
     APP_DIR,
     RESOURCE_ASSET_DIR,
     RESOURCE_DATA_DIR,
-    checklist_block,
-    checklist_candidate,
+    fix_block_text,
     fix_text,
     iter_block_items,
-    paragraph_block,
     table_block,
 )
 
@@ -44,9 +45,8 @@ SOUND_DIR = APP_DIR / "assets" / "audio" / "sounds"
 CATALOG_TARGET = APP_DIR / "lib" / "data" / "resource_catalog.dart"
 IMAGE_MAX_WIDTH = 900
 IMAGE_QUALITY = 70
-SUBSECTION_MIN_PT = 22.0
-NUMBERED_SUBSECTION_MIN_PT = 17.0
 GROUP_MIN_PT = 12.5
+HEADING_MAX_WORDS = 14
 LISTEN_SUFFIX = re.compile(r"\s*\(tap to listen\)\s*:?\s*$", re.IGNORECASE)
 SOUND_RENAMES = {"pulmonary friction rub": "pericardial friction rub"}
 
@@ -115,9 +115,140 @@ def run_points(paragraph: Paragraph) -> tuple[bool, float]:
     return bold, max(sizes) if sizes else 0.0
 
 
-def clean_title(text: str) -> str:
-    text = re.sub(r"^\d+(\.\d+)*[\.)]?\s*", "", fix_text(text))
-    return text.strip(" :-")
+def heading_text(text: str) -> str:
+    return fix_text(text).rstrip(" :").strip()
+
+
+def plain(text: str) -> str:
+    return text.replace("**", "")
+
+
+def inner_runs(paragraph: Paragraph) -> list[Run]:
+    runs: list[Run] = []
+    for item in paragraph.iter_inner_content():
+        runs.extend(item.runs if isinstance(item, Hyperlink) else [item])
+    return runs
+
+
+def rich_text(paragraph: Paragraph) -> str:
+    segments: list[list] = []
+    for run in inner_runs(paragraph):
+        text = run.text.replace("*", "∗")
+        if not text:
+            continue
+        bold = bool(run.bold) and bool(text.strip())
+        if segments and segments[-1][1] == bold:
+            segments[-1][0] += text
+        else:
+            segments.append([text, bold])
+    out = []
+    for text, bold in segments:
+        if not bold:
+            out.append(text)
+            continue
+        core = text.strip()
+        lead = text[: len(text) - len(text.lstrip())]
+        trail = text[len(text.rstrip()):]
+        out.append(f"{lead}**{core}**{trail}")
+    return fix_block_text("".join(out)).replace("****", "")
+
+
+ROMAN = [(1000, "m"), (900, "cm"), (500, "d"), (400, "cd"), (100, "c"), (90, "xc"),
+         (50, "l"), (40, "xl"), (10, "x"), (9, "ix"), (5, "v"), (4, "iv"), (1, "i")]
+
+
+def letters(n: int) -> str:
+    out = ""
+    while n > 0:
+        n, rem = divmod(n - 1, 26)
+        out = chr(97 + rem) + out
+    return out
+
+
+def format_number(n: int, fmt: str) -> str:
+    if fmt in ("lowerLetter", "upperLetter"):
+        value = letters(n)
+        return value.upper() if fmt == "upperLetter" else value
+    if fmt in ("lowerRoman", "upperRoman"):
+        value, rest = "", n
+        for amount, numeral in ROMAN:
+            while rest >= amount:
+                value += numeral
+                rest -= amount
+        return value.upper() if fmt == "upperRoman" else value
+    if fmt == "decimalZero":
+        return f"{n:02d}"
+    return str(n)
+
+
+class Numbering:
+    """Resolves Word's own list marks (w:numPr) to a nesting level and, for
+    ordered lists, the label Word would print, continuing counters across
+    interruptions the way Word does."""
+
+    def __init__(self, document: Document):
+        self.formats: dict[tuple[str, int], tuple[str, int, str]] = {}
+        self.counters: dict[str, dict[int, int]] = {}
+        try:
+            root = document.part.numbering_part.element
+        except (KeyError, NotImplementedError, AttributeError):
+            return
+        abstract: dict[str, dict[int, tuple[str, int, str]]] = {}
+        for node in root.findall(qn("w:abstractNum")):
+            levels = {}
+            for lvl in node.findall(qn("w:lvl")):
+                fmt = lvl.find(qn("w:numFmt"))
+                start = lvl.find(qn("w:start"))
+                text = lvl.find(qn("w:lvlText"))
+                levels[int(lvl.get(qn("w:ilvl")))] = (
+                    fmt.get(qn("w:val")) if fmt is not None else "bullet",
+                    int(start.get(qn("w:val"))) if start is not None else 1,
+                    text.get(qn("w:val")) if text is not None else "",
+                )
+            abstract[node.get(qn("w:abstractNumId"))] = levels
+        for node in root.findall(qn("w:num")):
+            ref = node.find(qn("w:abstractNumId"))
+            levels = dict(abstract.get(ref.get(qn("w:val")) if ref is not None else "", {}))
+            for override in node.findall(qn("w:lvlOverride")):
+                start = override.find(qn("w:startOverride"))
+                if start is None:
+                    continue
+                level = int(override.get(qn("w:ilvl")))
+                fmt, _, text = levels.get(level, ("decimal", 1, f"%{level + 1}."))
+                levels[level] = (fmt, int(start.get(qn("w:val"))), text)
+            for level, spec in levels.items():
+                self.formats[(node.get(qn("w:numId")), level)] = spec
+
+    def item(self, paragraph: Paragraph) -> tuple[int, str | None] | None:
+        p_pr = paragraph._p.pPr
+        if p_pr is None or p_pr.numPr is None or p_pr.numPr.numId is None:
+            return None
+        num_id = str(p_pr.numPr.numId.val)
+        if num_id == "0":
+            return None
+        level = p_pr.numPr.ilvl.val if p_pr.numPr.ilvl is not None else 0
+        fmt, start, pattern = self.formats.get((num_id, level), ("bullet", 1, ""))
+        counts = self.counters.setdefault(num_id, {})
+        for deeper in [key for key in counts if key > level]:
+            del counts[deeper]
+        counts[level] = counts.get(level, start - 1) + 1
+        if fmt in ("bullet", "none", ""):
+            return level, None
+        label = pattern or f"%{level + 1}."
+        for upper in range(level + 1):
+            upper_fmt, upper_start, _ = self.formats.get((num_id, upper), ("decimal", 1, ""))
+            label = label.replace(f"%{upper + 1}", format_number(counts.get(upper, upper_start), upper_fmt))
+        return level, label.strip() or None
+
+
+def is_lead_in(text: str) -> bool:
+    value = plain(text).strip()
+    return value.endswith(":") and len(value.split()) <= 12
+
+
+def is_spoken(text: str) -> bool:
+    value = plain(text).strip()
+    return value[:1] in ('"', "“") and len(value) > 2
 
 
 class ChapterBuilder:
@@ -126,19 +257,26 @@ class ChapterBuilder:
         self.title = title
         self.subsections: list[dict] = []
         self.sub_title = "Overview"
+        self.sub_title_set = False
         self.groups: list[dict] = []
         self.group_title = ""
         self.blocks: list[dict] = []
-        self.pending: list[str] = []
+        self.list_items: list[dict] = []
+        self.list_title: str | None = None
 
-    def flush_checklist(self) -> None:
-        if self.pending:
-            self.blocks.append(checklist_block(self.pending))
-            self.pending = []
+    def flush_list(self) -> None:
+        if self.list_items:
+            block: dict = {"type": "list"}
+            if self.list_title:
+                block["title"] = self.list_title
+            block["items"] = self.list_items
+            self.blocks.append(block)
+        self.list_items = []
+        self.list_title = None
 
     def flush_group(self) -> None:
-        self.flush_checklist()
-        if self.blocks:
+        self.flush_list()
+        if self.blocks or self.group_title:
             self.groups.append({
                 "group_id": f"{self.slug}_group_{sum(len(s['content_groups']) for s in self.subsections) + len(self.groups) + 1}",
                 "group_title": self.group_title,
@@ -151,7 +289,7 @@ class ChapterBuilder:
 
     def flush_subsection(self) -> None:
         self.flush_group()
-        if self.groups:
+        if self.groups or self.sub_title_set:
             self.subsections.append({
                 "subsection_id": f"{self.slug}_subsection_{len(self.subsections) + 1}",
                 "subsection_title": self.sub_title,
@@ -159,28 +297,43 @@ class ChapterBuilder:
                 "content_groups": self.groups,
             })
         self.groups = []
+        self.sub_title_set = False
 
     def start_subsection(self, title: str) -> None:
         self.flush_subsection()
         self.sub_title = title
+        self.sub_title_set = True
+
+    def awaiting_group_content(self) -> bool:
+        return bool(self.group_title) and not self.blocks and not self.list_items
 
     def start_group(self, title: str) -> None:
         self.flush_group()
         self.group_title = title
 
-    def add_text(self, text: str, list_style: bool) -> None:
-        if list_style or checklist_candidate(text, ""):
-            self.pending.append(text)
-            return
-        self.flush_checklist()
-        self.blocks.append(paragraph_block(text))
+    def add_paragraph(self, text: str, style: str | None = None) -> None:
+        self.flush_list()
+        block: dict = {"type": "paragraph", "text": text}
+        if style:
+            block["style"] = style
+        self.blocks.append(block)
+
+    def add_list_item(self, text: str, level: int, label: str | None) -> None:
+        if not self.list_items and self.blocks:
+            last = self.blocks[-1]
+            if last["type"] == "paragraph" and not last.get("style") and is_lead_in(last["text"]):
+                self.list_title = self.blocks.pop()["text"].rstrip()
+        item: dict = {"text": text, "level": level}
+        if label:
+            item["label"] = label
+        self.list_items.append(item)
 
     def add_block(self, block: dict) -> None:
-        self.flush_checklist()
+        self.flush_list()
         self.blocks.append(block)
 
     def add_images(self, paths: list[str], caption: str | None) -> None:
-        self.flush_checklist()
+        self.flush_list()
         for index, path in enumerate(paths):
             self.blocks.append({
                 "type": "image",
@@ -212,17 +365,110 @@ class ChapterBuilder:
 def is_banner(text: str, title: str, index: int) -> bool:
     if index > 4:
         return False
-    plain = norm(text)
-    if not plain or plain.isdigit():
+    plain_text = norm(text)
+    if not plain_text or plain_text.isdigit():
         return True
-    if "osce" in plain.split() and len(plain.split()) <= 3:
+    if "osce" in plain_text.split() and len(plain_text.split()) <= 3:
         return True
-    return plain == norm(title) or norm(title) in plain and len(plain) <= len(norm(title)) + 12
+    return plain_text == norm(title) or norm(title) in plain_text and len(plain_text) <= len(norm(title)) + 12
+
+
+def heading_candidate(paragraph: Paragraph, text: str) -> float | None:
+    bold, points = run_points(paragraph)
+    if bold and points >= GROUP_MIN_PT and len(text.split()) <= HEADING_MAX_WORDS:
+        return points
+    return None
+
+
+TOP_NUMBERED = re.compile(r"^\d+[\.)]\s+\S")
+TOP_MIN_PT = 17.0
+
+
+class HeadingPlan:
+    """How a source marks its outline. Most of Hikma's files number their
+    main sections ("3. INTRODUCTION") but vary the point size between them,
+    so when a file numbers its sections the number decides the top level and
+    size only separates the levels beneath it. Files without numbered
+    sections fall back to ranking bold heading sizes."""
+
+    def __init__(self, document: Document, title: str):
+        counts: dict[float, int] = {}
+        numbered = 0
+        index = 0
+        for paragraph in document.paragraphs:
+            text = fix_text(paragraph.text)
+            if not text:
+                continue
+            index += 1
+            if is_banner(text, title, index):
+                continue
+            points = heading_candidate(paragraph, text)
+            if points is None:
+                continue
+            counts[points] = counts.get(points, 0) + 1
+            if points >= TOP_MIN_PT and TOP_NUMBERED.match(text):
+                numbered += 1
+        self.numbered = numbered >= 3
+        frequent = sorted((size for size, count in counts.items() if count >= 2), reverse=True)
+        self.levels = {size: min(rank + 1, 3) for rank, size in enumerate(frequent)}
+        for size in counts:
+            if size not in self.levels:
+                below = [self.levels[s] for s in frequent if s < size]
+                self.levels[size] = below[0] if below else min(len(frequent) + 1, 3)
+        self.big_heading_in_section = False
+
+    def level(self, text: str, points: float) -> int:
+        if not self.numbered:
+            return self.levels[points]
+        if points >= TOP_MIN_PT and TOP_NUMBERED.match(text):
+            self.big_heading_in_section = False
+            return 1
+        if points >= TOP_MIN_PT:
+            self.big_heading_in_section = True
+            return 2
+        return 3 if self.big_heading_in_section else 2
+
+
+def style_level(style: str) -> int | None:
+    match = re.match(r"Heading (\d)", style)
+    if not match:
+        return None
+    return {1: 1, 2: 1, 3: 2}.get(int(match.group(1)), 3)
+
+
+def add_heading(builder: ChapterBuilder, text: str, level: int) -> None:
+    if level == 2 and builder.awaiting_group_content():
+        builder.add_paragraph(f"**{text}**")
+        return
+    if level == 1:
+        builder.start_subsection(text)
+    elif level == 2:
+        builder.start_group(text)
+    else:
+        builder.add_paragraph(f"**{text}**", "heading")
+
+
+def add_body(builder: ChapterBuilder, paragraph: Paragraph, numbering: Numbering,
+             mark: tuple[int, str | None] | None, style: str) -> None:
+    text = rich_text(paragraph)
+    if not text:
+        return
+    bullet = re.match(r"^(\*\*)?[•●▪◦\-–]\s+", text)
+    if mark is None and (bullet or "List" in style):
+        if bullet:
+            text = (bullet.group(1) or "") + text[bullet.end():]
+        mark = (0, None)
+    if mark is not None:
+        builder.add_list_item(text, mark[0], mark[1])
+        return
+    builder.add_paragraph(text, "quote" if is_spoken(text) else None)
 
 
 def feed_document(builder: ChapterBuilder, document: Document, sink: ImageSink,
                   title: str, first: bool) -> None:
     index = 0
+    numbering = Numbering(document)
+    plan = HeadingPlan(document, title)
     if not first:
         builder.start_subsection(title)
     for kind, item in iter_block_items(document):
@@ -230,36 +476,38 @@ def feed_document(builder: ChapterBuilder, document: Document, sink: ImageSink,
             builder.add_block(table_block(item))
             continue
         paragraph = item
+        mark = numbering.item(paragraph)
         text = fix_text(paragraph.text)
         images = sink.asset_paths(document, paragraph)
         if images:
             short = bool(text) and len(text.split()) <= 18
             if text and not short:
-                builder.add_block(paragraph_block(text))
+                builder.add_paragraph(rich_text(paragraph))
             builder.add_images(images, text if short else None)
             continue
         if not text:
-            builder.flush_checklist()
             continue
         index += 1
         if is_banner(text, title, index):
             continue
         if text.strip().isdigit():
             continue
-        bold, points = run_points(paragraph)
         style = paragraph.style.name if paragraph.style else "Normal"
-        numbered = bool(re.match(r"^\d+(\.\d+)*[\.)]\s+\S", text))
-        if style.startswith("Heading 1") or style.startswith("Heading 2") or (
-            bold and (points >= SUBSECTION_MIN_PT or (numbered and points >= NUMBERED_SUBSECTION_MIN_PT))
-        ):
-            heading = clean_title(text)
+        level = style_level(style)
+        if level is None:
+            points = heading_candidate(paragraph, text)
+            if points is not None and is_spoken(text):
+                builder.add_paragraph(f"**{fix_text(text)}**", "quote")
+                continue
+            level = plan.level(text, points) if points is not None else None
+        if level is not None:
+            heading = heading_text(text)
+            if mark and mark[1]:
+                heading = f"{mark[1]} {heading}"
             if heading:
-                builder.start_subsection(heading)
+                add_heading(builder, heading, level)
             continue
-        if style.startswith("Heading") or (bold and points >= GROUP_MIN_PT and len(text.split()) <= 14):
-            builder.start_group(fix_text(text).rstrip(":"))
-            continue
-        builder.add_text(text, "List" in style or text.startswith(("•", "-", "–")))
+        add_body(builder, paragraph, numbering, mark, style)
 
 
 def write_json(slug: str, payload: dict) -> None:
@@ -317,13 +565,14 @@ def build_quick_revision(manifest: dict, source_dir: Path) -> list[dict]:
     sink: ImageSink | None = None
     emitted: set[str] = set()
     in_sounds = False
+    numbering = Numbering(document)
 
     def finish() -> None:
         nonlocal in_sounds
         if builder is None:
             return
         if in_sounds:
-            builder.flush_checklist()
+            builder.flush_list()
             for key, block in sounds.items():
                 if key not in emitted:
                     builder.blocks.append(block)
@@ -337,6 +586,7 @@ def build_quick_revision(manifest: dict, source_dir: Path) -> list[dict]:
                 builder.add_block(table_block(item))
             continue
         paragraph = item
+        mark = numbering.item(paragraph)
         text = fix_text(paragraph.text)
         style = paragraph.style.name if paragraph.style else "Normal"
         part = re.match(r"^PART\s*(\d+)\s*:\s*(.+)$", text, re.IGNORECASE)
@@ -356,18 +606,20 @@ def build_quick_revision(manifest: dict, source_dir: Path) -> list[dict]:
             builder.add_images(images, text if text and len(text.split()) <= 18 else None)
             continue
         if not text:
-            builder.flush_checklist()
             continue
         if style.startswith("Heading 2"):
             in_sounds = False
-            builder.start_subsection(clean_title(text))
+            builder.start_subsection(heading_text(text))
             continue
         if style.startswith("Heading 3"):
             if norm(text) == "sounds":
                 in_sounds = True
                 builder.start_subsection("Sounds")
             else:
-                builder.start_group(clean_title(text))
+                builder.start_group(heading_text(text))
+            continue
+        if style.startswith("Heading"):
+            builder.add_paragraph(f"**{heading_text(text)}**", "heading")
             continue
         if in_sounds and LISTEN_SUFFIX.search(text):
             name = norm(LISTEN_SUFFIX.sub("", text))
@@ -376,7 +628,7 @@ def build_quick_revision(manifest: dict, source_dir: Path) -> list[dict]:
                 builder.add_block(sounds[name])
                 emitted.add(name)
             continue
-        builder.add_text(text, "List" in style or text.startswith(("•", "-", "–")))
+        add_body(builder, paragraph, numbering, mark, style)
     finish()
     for part in parts:
         part["asset"] = f"assets/data/resources/{slug_for(part['id'])}.json"

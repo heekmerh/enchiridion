@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "stress_urinary_incontinence_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -28,28 +28,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Common OSCE scenarios include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“A 42-year-old woman complains of urine leakage whenever she coughs or sneezes. Take a focused history and discuss management.”"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common OSCE scenarios include:",
                   "items": [
-                    "“Examine this woman with suspected stress urinary incontinence.”",
-                    "“Demonstrate a cough stress test and interpret the findings.”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Counsel a patient who has persistent stress urinary incontinence despite pelvic floor exercises.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Discuss the surgical options for stress urinary incontinence.”"
+                    {
+                      "text": "“A 42-year-old woman complains of urine leakage whenever she coughs or sneezes. Take a focused history and discuss management.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Examine this woman with suspected stress urinary incontinence.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Demonstrate a cough stress test and interpret the findings.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Counsel a patient who has persistent stress urinary incontinence despite pelvic floor exercises.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Discuss the surgical options for stress urinary incontinence.”",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -62,7 +63,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_2",
-          "subsection_title": "Definition and pathophysiology",
+          "subsection_title": "2. Definition and pathophysiology",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -80,20 +81,16 @@
                   "text": "It usually occurs because the urethral closure mechanism cannot maintain continence when abdominal pressure rises."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Urethral hypermobility"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Urethral hypermobility"
                 },
                 {
                   "type": "paragraph",
                   "text": "Weakness or damage to the pelvic floor and supporting connective tissues allows the bladder neck and urethra to move excessively during coughing or exertion."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Intrinsic sphincter deficiency"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Intrinsic sphincter deficiency"
                 },
                 {
                   "type": "paragraph",
@@ -109,7 +106,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_3",
-          "subsection_title": "Risk factors",
+          "subsection_title": "3. Risk factors",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -177,7 +174,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_4",
-          "subsection_title": "Introduction and consent",
+          "subsection_title": "4. Introduction and consent",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -191,32 +188,44 @@
                   "text": "In a practical OSCE, begin professionally."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Wash your hands and introduce yourself."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that you will ask about urinary leakage and its effects on daily life."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask permission to proceed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure privacy and offer a chaperone for intimate examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that an examination may include abdominal examination, assessment of pelvic floor muscle contraction and, with consent, an intimate examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about pain or discomfort and remind the patient that she can ask you to stop at any time."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Wash your hands and introduce yourself.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confirm the patient's identity.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Explain that you will ask about urinary leakage and its effects on daily life.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask permission to proceed.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ensure privacy and offer a chaperone for intimate examination.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Explain that an examination may include abdominal examination, assessment of pelvic floor muscle contraction and, with consent, an intimate examination.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Ask about pain or discomfort and remind the patient that she can ask you to stop at any time.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -224,7 +233,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Hello, I’m the doctor looking after you. I understand that you have been experiencing leakage of urine. I would like to ask you some questions to understand when it happens and how it affects you. Depending on your symptoms, I may also recommend an examination. Is that alright with you?”"
+                  "text": "“Hello, I’m the doctor looking after you. I understand that you have been experiencing leakage of urine. I would like to ask you some questions to understand when it happens and how it affects you. Depending on your symptoms, I may also recommend an examination. Is that alright with you?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -232,7 +242,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_5",
-          "subsection_title": "Focused history taking",
+          "subsection_title": "5. Focused history taking",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -242,15 +252,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Start with an open question:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Start with an open question:",
                   "items": [
-                    "“Can you tell me what has been happening?”",
-                    "“When did you first notice the leakage?”",
-                    "“Has it been getting worse?”"
+                    {
+                      "text": "“Can you tell me what has been happening?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“When did you first notice the leakage?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Has it been getting worse?”",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -270,68 +286,72 @@
                   "text": "This is the most important part of the history."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask whether urine leaks during:"
+                  "type": "list",
+                  "title": "Ask whether urine leaks during:",
+                  "items": [
+                    {
+                      "text": "Coughing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sneezing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laughing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Running or jumping.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lifting heavy objects.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Walking briskly or exercising.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Standing up or changing position.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Coughing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sneezing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Laughing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Running or jumping."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lifting heavy objects."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Walking briskly or exercising."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Standing up or changing position."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Then clarify:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is it a few drops or a large amount?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does it happen every time she coughs or only occasionally?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does she need to wear pads or change clothes?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does leakage occur during sexual intercourse?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does she experience leakage without warning?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does she ever wake up wet?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Does she have continuous leakage throughout the day?"
+                  "type": "list",
+                  "title": "Then clarify:",
+                  "items": [
+                    {
+                      "text": "Is it a few drops or a large amount?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does it happen every time she coughs or only occasionally?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does she need to wear pads or change clothes?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does leakage occur during sexual intercourse?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does she experience leakage without warning?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does she ever wake up wet?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does she have continuous leakage throughout the day?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -393,44 +413,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urgency and frequency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nocturia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dysuria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Haematuria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recurrent urinary tract infections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hesitancy or a weak stream."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Straining to void."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Feeling of incomplete bladder emptying."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty initiating urination."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Urgency and frequency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nocturia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysuria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematuria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent urinary tract infections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hesitancy or a weak stream.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Straining to void.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeling of incomplete bladder emptying.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty initiating urination.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -445,48 +467,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Number of pregnancies and deliveries."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal versus caesarean delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prolonged labour or instrumental delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Birth of large babies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perineal tears or obstetric anal sphincter injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pelvic organ prolapse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous hysterectomy or pelvic surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Menstrual and menopausal history, where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal dryness or symptoms of genitourinary syndrome of menopause."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Plans for future pregnancy."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Number of pregnancies and deliveries.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal versus caesarean delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged labour or instrumental delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Birth of large babies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineal tears or obstetric anal sphincter injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic organ prolapse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous hysterectomy or pelvic surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Menstrual and menopausal history, where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal dryness or symptoms of genitourinary syndrome of menopause.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Plans for future pregnancy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -497,36 +521,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Diabetes mellitus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Neurological disorders, such as multiple sclerosis or spinal disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chronic respiratory disease and persistent cough."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Constipation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obesity and mobility limitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Current medications, particularly drugs that increase urine production or affect mobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous pelvic floor physiotherapy or continence surgery."
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Diabetes mellitus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neurological disorders, such as multiple sclerosis or spinal disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic respiratory disease and persistent cough.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constipation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity and mobility limitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Current medications, particularly drugs that increase urine production or affect mobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic floor physiotherapy or continence surgery.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -537,32 +563,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask how symptoms affect:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Work and daily activities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exercise and social outings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sleep."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sexual relationships."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clothing choices and use of pads."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confidence, embarrassment and emotional well-being."
+                  "type": "list",
+                  "title": "Ask how symptoms affect:",
+                  "items": [
+                    {
+                      "text": "Work and daily activities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exercise and social outings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sleep.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sexual relationships.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clothing choices and use of pads.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confidence, embarrassment and emotional well-being.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -573,36 +601,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Specifically ask about:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Visible or persistent haematuria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recurrent unexplained urinary infections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic pain or a palpable mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Difficulty emptying the bladder."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "New neurological symptoms, including leg weakness or saddle sensory loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continuous leakage, especially after pelvic surgery or childbirth, which raises concern for a fistula."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A history of pelvic malignancy or pelvic radiotherapy."
+                  "type": "list",
+                  "title": "Specifically ask about:",
+                  "items": [
+                    {
+                      "text": "Visible or persistent haematuria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent unexplained urinary infections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pain or a palpable mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficulty emptying the bladder.",
+                      "level": 0
+                    },
+                    {
+                      "text": "New neurological symptoms, including leg weakness or saddle sensory loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuous leakage, especially after pelvic surgery or childbirth, which raises concern for a fistula.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A history of pelvic malignancy or pelvic radiotherapy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -614,7 +644,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_6",
-          "subsection_title": "Examination",
+          "subsection_title": "6. Examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -624,28 +654,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "General appearance and mobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Body mass index."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abdominal distension or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cough or respiratory disease that may exacerbate leakage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relevant neurological findings if indicated."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "General appearance and mobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Body mass index.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal distension or masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cough or respiratory disease that may exacerbate leakage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relevant neurological findings if indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -656,24 +688,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "With consent and appropriate exposure:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect for distension, scars and visible masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpate for tenderness or masses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for a distended bladder if retention is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check for suprapubic tenderness."
+                  "type": "list",
+                  "title": "With consent and appropriate exposure:",
+                  "items": [
+                    {
+                      "text": "Inspect for distension, scars and visible masses.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Palpate for tenderness or masses.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Assess for a distended bladder if retention is suspected.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Check for suprapubic tenderness.",
+                      "level": 0,
+                      "label": "4."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -692,32 +730,34 @@
                   "text": "Explain the examination, obtain explicit consent, offer a chaperone and maintain dignity."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vulval and vaginal tissue health."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evidence of atrophy or irritation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic organ prolapse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urethral or anterior vaginal wall abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgical scars or other relevant findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic floor muscle contraction."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Vulval and vaginal tissue health.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of atrophy or irritation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic organ prolapse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urethral or anterior vaginal wall abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgical scars or other relevant findings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic floor muscle contraction.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -745,34 +785,43 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Procedure"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Procedure"
+                    {
+                      "text": "Explain the test and obtain consent.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ask the patient to have a comfortably full bladder.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Position her appropriately, often initially supine or lithotomy depending on the setting.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask her to cough forcefully, and repeat if needed.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Observe the urethral opening for visible urine leakage.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "If negative despite a convincing history, consider repeating while standing.",
+                      "level": 0,
+                      "label": "6."
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the test and obtain consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask the patient to have a comfortably full bladder."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position her appropriately, often initially supine or lithotomy depending on the setting."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask her to cough forcefully, and repeat if needed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Observe the urethral opening for visible urine leakage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If negative despite a convincing history, consider repeating while standing."
                 },
                 {
                   "type": "paragraph",
@@ -795,24 +844,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess the patient's ability to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contract correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sustain a contraction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Perform repeated contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relax the muscles after contraction."
+                  "type": "list",
+                  "title": "Assess the patient's ability to:",
+                  "items": [
+                    {
+                      "text": "Contract correctly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sustain a contraction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perform repeated contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relax the muscles after contraction.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -824,7 +875,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_7",
-          "subsection_title": "Differential diagnosis",
+          "subsection_title": "7. Differential diagnosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -876,7 +927,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_8",
-          "subsection_title": "Investigations",
+          "subsection_title": "8. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -932,7 +983,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_9",
-          "subsection_title": "Management",
+          "subsection_title": "9. Management",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -959,10 +1010,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Supervised pelvic floor muscle training"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Supervised pelvic floor muscle training"
                 },
                 {
                   "type": "paragraph",
@@ -973,20 +1022,16 @@
                   "text": "Training should focus on correct contraction, adequate hold time, repeated contractions, relaxation and progression to functional activities such as coughing or lifting."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Lifestyle modification"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Lifestyle modification"
                 },
                 {
                   "type": "paragraph",
                   "text": "Encourage weight reduction if overweight or obese, management of chronic cough and constipation, and adjustment of activities that trigger leakage while treatment is underway."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Continence support"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Continence support"
                 },
                 {
                   "type": "paragraph",
@@ -1001,32 +1046,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A practical teaching sequence:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that the patient should tighten and lift the muscles around the vagina and anus, as if preventing passage of wind."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure she is not holding her breath or contracting her buttocks and thighs excessively."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Encourage a combination of sustained contractions and shorter, quicker contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that the programme should be tailored by a trained physiotherapist, including repetitions, hold duration and progression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Encourage practice consistently and during relevant functional activities, such as contracting before a cough."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange review to check technique, adherence and response."
+                  "type": "list",
+                  "title": "A practical teaching sequence:",
+                  "items": [
+                    {
+                      "text": "Explain that the patient should tighten and lift the muscles around the vagina and anus, as if preventing passage of wind.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ensure she is not holding her breath or contracting her buttocks and thighs excessively.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Encourage a combination of sustained contractions and shorter, quicker contractions.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Explain that the programme should be tailored by a trained physiotherapist, including repetitions, hold duration and progression.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Encourage practice consistently and during relevant functional activities, such as contracting before a cough.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Arrange review to check technique, adherence and response.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1045,16 +1098,21 @@
                   "text": "There is no routinely recommended medication that reliably corrects the underlying urethral support problem in uncomplicated SUI."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Duloxetine may be considered in selected settings when surgery is unsuitable or the patient prefers not to have surgery, depending on local guidance, availability and contraindications. It is not generally first-line and adverse effects should be discussed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Antimuscarinics and beta-3 agonists target urgency or overactive bladder symptoms; they are not treatments for isolated stress incontinence."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal oestrogen may help associated menopausal genitourinary symptoms but should not be presented as a definitive treatment for SUI itself."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Duloxetine may be considered in selected settings when surgery is unsuitable or the patient prefers not to have surgery, depending on local guidance, availability and contraindications. It is not generally first-line and adverse effects should be discussed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antimuscarinics and beta-3 agonists target urgency or overactive bladder symptoms; they are not treatments for isolated stress incontinence.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal oestrogen may help associated menopausal genitourinary symptoms but should not be presented as a definitive treatment for SUI itself.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1108,7 +1166,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_10",
-          "subsection_title": "How to present your findings in an OSCE",
+          "subsection_title": "10. How to present your findings in an OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1119,7 +1177,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I examined a woman with a history of leakage during coughing, sneezing and physical exertion, without preceding urgency. Her abdominal examination was unremarkable. Pelvic examination demonstrated no significant prolapse, and a cough stress test with a comfortably full bladder produced visible leakage synchronous with coughing. These findings are consistent with stress urinary incontinence. I would complete the assessment with urinalysis, assess pelvic floor function and quality-of-life impact, and offer supervised pelvic floor muscle training as first-line treatment.”"
+                  "text": "“I examined a woman with a history of leakage during coughing, sneezing and physical exertion, without preceding urgency. Her abdominal examination was unremarkable. Pelvic examination demonstrated no significant prolapse, and a cough stress test with a comfortably full bladder produced visible leakage synchronous with coughing. These findings are consistent with stress urinary incontinence. I would complete the assessment with urinalysis, assess pelvic floor function and quality-of-life impact, and offer supervised pelvic floor muscle training as first-line treatment.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1131,7 +1190,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient reports exertional urinary leakage. Pelvic examination demonstrates reduced pelvic floor contraction strength and endurance, with no obvious pelvic mass. These findings support pelvic floor dysfunction contributing to stress urinary incontinence. I would confirm that she can contract the pelvic floor correctly and refer for supervised pelvic floor muscle training.”"
+                  "text": "“The patient reports exertional urinary leakage. Pelvic examination demonstrates reduced pelvic floor contraction strength and endurance, with no obvious pelvic mass. These findings support pelvic floor dysfunction contributing to stress urinary incontinence. I would confirm that she can contract the pelvic floor correctly and refer for supervised pelvic floor muscle training.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1143,7 +1203,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient reports leakage during coughing and exercise, as well as episodes preceded by urgency. This suggests mixed urinary incontinence. I would assess the relative severity of each component, obtain a bladder diary, perform urinalysis and tailor treatment to both stress and urgency symptoms.”"
+                  "text": "“The patient reports leakage during coughing and exercise, as well as episodes preceded by urgency. This suggests mixed urinary incontinence. I would assess the relative severity of each component, obtain a bladder diary, perform urinalysis and tailor treatment to both stress and urgency symptoms.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1155,7 +1216,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The patient reports urinary leakage with difficulty emptying her bladder and recurrent urinary symptoms. Although stress incontinence is possible, the associated voiding symptoms require further assessment. I would check urinalysis and post-void residual volume and consider specialist referral before proceeding with treatment.”"
+                  "text": "“The patient reports urinary leakage with difficulty emptying her bladder and recurrent urinary symptoms. Although stress incontinence is possible, the associated voiding symptoms require further assessment. I would check urinalysis and post-void residual volume and consider specialist referral before proceeding with treatment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1163,7 +1225,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_11",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "11. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1274,7 +1336,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_12",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "12. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1284,40 +1346,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Failing to ask whether leakage is preceded by urgency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting to ask about continuous leakage and possible fistula."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Performing an intimate examination without consent or offering a chaperone."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Conducting the cough stress test with an inadequately filled bladder without acknowledging the limitation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming that a negative cough stress test rules out SUI."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prescribing urgency-incontinence medication for isolated SUI."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recommending surgery before discussing conservative treatment and patient preferences."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to consider voiding difficulty, haematuria or other red flags."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to assess the impact of symptoms on quality of life."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Failing to ask whether leakage is preceded by urgency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to ask about continuous leakage and possible fistula.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Performing an intimate examination without consent or offering a chaperone.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Conducting the cough stress test with an inadequately filled bladder without acknowledging the limitation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming that a negative cough stress test rules out SUI.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prescribing urgency-incontinence medication for isolated SUI.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recommending surgery before discussing conservative treatment and patient preferences.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to consider voiding difficulty, haematuria or other red flags.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to assess the impact of symptoms on quality of life.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1325,7 +1392,7 @@
         },
         {
           "subsection_id": "stress_urinary_incontinence_subsection_13",
-          "subsection_title": "Quick revision mnemonic — STRESS",
+          "subsection_title": "13. Quick revision mnemonic — STRESS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1335,28 +1402,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "S — Symptoms: leakage with sneezing, coughing and exertion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Triggers and type: distinguish stress, urgency and mixed symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "R — Risk factors: childbirth, obesity, chronic cough and pelvic floor injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Examination: pelvic floor assessment and cough stress test."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Screen: urinalysis and red flags; further tests if indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Start treatment: supervised pelvic floor training and lifestyle measures; consider specialist options if needed."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "S — Symptoms: leakage with sneezing, coughing and exertion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Triggers and type: distinguish stress, urgency and mixed symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Risk factors: childbirth, obesity, chronic cough and pelvic floor injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Examination: pelvic floor assessment and cough stress test.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Screen: urinalysis and red flags; further tests if indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Start treatment: supervised pelvic floor training and lifestyle measures; consider specialist options if needed.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }

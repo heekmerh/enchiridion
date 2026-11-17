@@ -18,50 +18,66 @@
       "subsections": [
         {
           "subsection_id": "mri_pelvis_subsection_1",
-          "subsection_title": "What the OSCE station may say",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "mri_pelvis_group_1",
+              "group_title": "MRI PELVIS INTERPRETATION",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_pelvis_subsection_2",
+          "subsection_title": "1. What the OSCE station may say",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_pelvis_group_2",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Station scenario 1 — Pelvic mass"
-                  ]
+                  "type": "paragraph",
+                  "text": "Station scenario 1 — Pelvic mass"
                 },
                 {
                   "type": "paragraph",
                   "text": "A 38-year-old woman presents with progressive abdominal swelling, heavy menstrual bleeding and pelvic pressure. A pelvic ultrasound reveals an enlarged uterus containing multiple masses. An MRI pelvis has been performed."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Tasks:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret the MRI findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State the most likely diagnosis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give three differential diagnoses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Outline further investigations and management."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Tasks:",
                   "items": [
-                    "Station scenario 2 — Deep infiltrating endometriosis"
+                    {
+                      "text": "Interpret the MRI findings.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "State the most likely diagnosis.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Give three differential diagnoses.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Outline further investigations and management.",
+                      "level": 0,
+                      "label": "4."
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Station scenario 2 — Deep infiltrating endometriosis"
                 },
                 {
                   "type": "paragraph",
@@ -72,10 +88,8 @@
                   "text": "Tasks: Describe the findings, identify the likely diagnosis, explain the clinical significance and outline management."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Station scenario 3 — Cervical cancer staging"
-                  ]
+                  "type": "paragraph",
+                  "text": "Station scenario 3 — Cervical cancer staging"
                 },
                 {
                   "type": "paragraph",
@@ -90,12 +104,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_2",
-          "subsection_title": "Introduction, consent and communication",
+          "subsection_id": "mri_pelvis_subsection_3",
+          "subsection_title": "2. Introduction, consent and communication",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_2",
+              "group_id": "mri_pelvis_group_3",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -111,54 +125,60 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_3",
+              "group_id": "mri_pelvis_group_4",
               "group_title": "Suggested candidate introduction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. I am one of the doctors looking after you. Your ultrasound has identified an abnormality in the pelvis, and we would like to perform an MRI scan to assess it in more detail. MRI uses a strong magnetic field and radiofrequency waves rather than ionising radiation. The scan will help us understand the location, size and characteristics of the abnormality so that we can plan appropriate treatment.”"
+                  "text": "“Good morning. I am one of the doctors looking after you. Your ultrasound has identified an abnormality in the pelvis, and we would like to perform an MRI scan to assess it in more detail. MRI uses a strong magnetic field and radiofrequency waves rather than ionising radiation. The scan will help us understand the location, size and characteristics of the abnormality so that we can plan appropriate treatment.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_4",
+              "group_id": "mri_pelvis_group_5",
               "group_title": "Important pre-MRI safety questions",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm patient identity and clinical indication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about cardiac devices, cochlear implants, aneurysm clips, neurostimulators and other metallic implants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about previous metal injuries, especially metallic fragments in the eyes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess pregnancy possibility and gestational age where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about claustrophobia and ability to lie still."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about previous reactions to gadolinium contrast."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess renal function when indicated for contrast safety."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain that the scanner is noisy and that the patient may need to remain still for approximately 20–45 minutes, depending on the protocol."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm patient identity and clinical indication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about cardiac devices, cochlear implants, aneurysm clips, neurostimulators and other metallic implants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about previous metal injuries, especially metallic fragments in the eyes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess pregnancy possibility and gestational age where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about claustrophobia and ability to lie still.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about previous reactions to gadolinium contrast.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess renal function when indicated for contrast safety.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain that the scanner is noisy and that the patient may need to remain still for approximately 20–45 minutes, depending on the protocol.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -169,12 +189,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_3",
-          "subsection_title": "Preparation and positioning",
+          "subsection_id": "mri_pelvis_subsection_4",
+          "subsection_title": "3. Preparation and positioning",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_5",
+              "group_id": "mri_pelvis_group_6",
               "group_title": "A. Patient preparation",
               "group_subtitle": null,
               "group_icon": null,
@@ -223,35 +243,40 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_6",
+              "group_id": "mri_pelvis_group_7",
               "group_title": "B. Positioning",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Patient generally lies supine."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic phased-array coil is positioned over the pelvis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient is instructed to remain still."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ear protection is provided."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Communication with the radiographer is maintained throughout the scan."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Patient generally lies supine.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic phased-array coil is positioned over the pelvis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient is instructed to remain still.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ear protection is provided.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Communication with the radiographer is maintained throughout the scan.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_7",
+              "group_id": "mri_pelvis_group_8",
               "group_title": "C. MRI sequences commonly used",
               "group_subtitle": null,
               "group_icon": null,
@@ -298,12 +323,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_4",
-          "subsection_title": "Step-by-step MRI pelvis interpretation",
+          "subsection_id": "mri_pelvis_subsection_5",
+          "subsection_title": "4. Step-by-step MRI pelvis interpretation",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_8",
+              "group_id": "mri_pelvis_group_9",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -313,60 +338,48 @@
                   "text": "Use the mnemonic P-E-L-V-I-S."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "P — Patient and protocol"
-                  ]
+                  "type": "paragraph",
+                  "text": "P — Patient and protocol"
                 },
                 {
                   "type": "paragraph",
                   "text": "Confirm age, indication, MRI sequences, contrast status and imaging planes."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "E — Examine the uterus"
-                  ]
+                  "type": "paragraph",
+                  "text": "E — Examine the uterus"
                 },
                 {
                   "type": "paragraph",
                   "text": "Assess uterine position, size, contour, myometrium, endometrium and junctional zone."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "L — Look at the cervix and lower genital tract"
-                  ]
+                  "type": "paragraph",
+                  "text": "L — Look at the cervix and lower genital tract"
                 },
                 {
                   "type": "paragraph",
                   "text": "Assess the cervix, parametria, vagina and adjacent tissues."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "V — Visualise the ovaries and adnexa"
-                  ]
+                  "type": "paragraph",
+                  "text": "V — Visualise the ovaries and adnexa"
                 },
                 {
                   "type": "paragraph",
                   "text": "Assess ovarian size, cystic or solid lesions, septations and enhancement."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "I — Inspect surrounding structures"
-                  ]
+                  "type": "paragraph",
+                  "text": "I — Inspect surrounding structures"
                 },
                 {
                   "type": "paragraph",
                   "text": "Evaluate bladder, ureters, rectum, bowel, pelvic sidewalls and lymph nodes."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "S — Summarise findings"
-                  ]
+                  "type": "paragraph",
+                  "text": "S — Summarise findings"
                 },
                 {
                   "type": "paragraph",
@@ -375,7 +388,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_9",
+              "group_id": "mri_pelvis_group_10",
               "group_title": "Systematic image reading",
               "group_subtitle": null,
               "group_icon": null,
@@ -390,11 +403,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sagittal",
-                    "Side view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Sagittal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Side view"
                 },
                 {
                   "type": "image",
@@ -402,11 +416,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Axial",
-                    "Cross-sectional view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Axial"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cross-sectional view"
                 },
                 {
                   "type": "image",
@@ -414,11 +429,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Coronal",
-                    "Frontal view"
-                  ]
+                  "type": "paragraph",
+                  "text": "Coronal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Frontal view"
                 },
                 {
                   "type": "paragraph",
@@ -429,36 +445,38 @@
                   "text": "Step 2 — Identify normal pelvic anatomy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urinary bladder anteriorly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterus centrally."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervix inferior to the uterine body."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vagina extending inferiorly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rectum posteriorly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ovaries in the adnexal regions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic muscles, vessels and lymph nodes."
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Urinary bladder anteriorly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterus centrally.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervix inferior to the uterine body.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vagina extending inferiorly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rectum posteriorly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovaries in the adnexal regions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic muscles, vessels and lymph nodes.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -502,12 +520,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_5",
-          "subsection_title": "Normal MRI pelvis findings",
+          "subsection_id": "mri_pelvis_subsection_6",
+          "subsection_title": "5. Normal MRI pelvis findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_10",
+              "group_id": "mri_pelvis_group_11",
               "group_title": "Normal uterus",
               "group_subtitle": null,
               "group_icon": null,
@@ -559,74 +577,85 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_11",
+              "group_id": "mri_pelvis_group_12",
               "group_title": "Normal ovaries",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Usually demonstrate multiple small follicles in reproductive-age patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follicular fluid is typically hyperintense on T2."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No suspicious solid enhancing mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No concerning associated pelvic disease."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_12",
-              "group_title": "Normal cervix",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Preserved cervical stromal architecture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Low T2 signal of the fibrous cervical stroma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No infiltrating mass."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No evidence of parametrial invasion."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Usually demonstrate multiple small follicles in reproductive-age patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follicular fluid is typically hyperintense on T2.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No suspicious solid enhancing mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No concerning associated pelvic disease.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
               "group_id": "mri_pelvis_group_13",
+              "group_title": "Normal cervix",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Preserved cervical stromal architecture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low T2 signal of the fibrous cervical stroma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No infiltrating mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No evidence of parametrial invasion.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mri_pelvis_group_14",
               "group_title": "Example of a normal report",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The uterus is normal in size and contour, with preserved myometrial architecture and junctional zone. The endometrial cavity is unremarkable. Both ovaries demonstrate normal morphology, with no suspicious adnexal masses. There is no pelvic lymphadenopathy or significant free fluid. Overall, no significant pelvic abnormality is identified.”"
+                  "text": "“The uterus is normal in size and contour, with preserved myometrial architecture and junctional zone. The endometrial cavity is unremarkable. Both ovaries demonstrate normal morphology, with no suspicious adnexal masses. There is no pelvic lymphadenopathy or significant free fluid. Overall, no significant pelvic abnormality is identified.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_6",
-          "subsection_title": "Abnormal MRI findings — high-yield OSCE cases",
+          "subsection_id": "mri_pelvis_subsection_7",
+          "subsection_title": "6. Abnormal MRI findings — high-yield OSCE cases",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_14",
+              "group_id": "mri_pelvis_group_15",
               "group_title": "Case 1 — Uterine leiomyoma (fibroid)",
               "group_subtitle": null,
               "group_icon": null,
@@ -640,57 +669,54 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_07.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_15",
-              "group_title": "Typical MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Well-defined, rounded myometrial masses."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Usually low signal intensity on T2-weighted images."
+                  "text": "**Typical MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Well-defined, rounded myometrial masses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Usually low signal intensity on T2-weighted images.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable signal on T1.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarged or distorted uterine contour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable enhancement following contrast.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Degenerative changes may produce heterogeneous signal.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Variable signal on T1."
+                  "text": "**Fibroid locations**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "Enlarged or distorted uterine contour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variable enhancement following contrast."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Degenerative changes may produce heterogeneous signal."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_16",
-              "group_title": "Fibroid locations",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_08.webp",
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "my.clevelandclinic.org"
-                  ]
+                  "type": "paragraph",
+                  "text": "my.clevelandclinic.org"
                 },
                 {
                   "type": "table",
@@ -726,99 +752,105 @@
                       "Urinary, bowel or obstructive symptoms"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_17",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“This is a T2-weighted MRI of the pelvis demonstrating an enlarged uterus containing multiple well-circumscribed, predominantly low-signal myometrial masses. The largest is located within the anterior uterine wall and distorts the endometrial cavity. These findings are most consistent with multiple uterine leiomyomas.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_18",
-              "group_title": "Differential diagnoses",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Adenomyosis or focal adenomyoma."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Uterine smooth muscle tumour of uncertain malignant potential."
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Uterine leiomyosarcoma."
+                  "text": "“This is a T2-weighted MRI of the pelvis demonstrating an enlarged uterus containing multiple well-circumscribed, predominantly low-signal myometrial masses. The largest is located within the anterior uterine wall and distorts the endometrial cavity. These findings are most consistent with multiple uterine leiomyomas.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Other rare mesenchymal uterine tumours."
+                  "text": "**Differential diagnoses**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Adenomyosis or focal adenomyoma.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Uterine smooth muscle tumour of uncertain malignant potential.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Uterine leiomyosarcoma.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Other rare mesenchymal uterine tumours.",
+                      "level": 0,
+                      "label": "4."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "MRI may identify suspicious features, but it cannot reliably exclude leiomyosarcoma in every case."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_19",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Management**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Depends on symptoms, fibroid size and location, fertility preferences and suspicion of malignancy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Observation for asymptomatic fibroids."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tranexamic acid for heavy menstrual bleeding where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "NSAIDs for menstrual pain and bleeding reduction where suitable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hormonal therapy, including LNG-IUS if the cavity is suitable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "GnRH agonists or antagonists in selected patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hysteroscopic myomectomy for suitable submucosal fibroids."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Laparoscopic or open myomectomy for selected patients wishing to preserve the uterus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine artery embolisation in appropriately selected patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hysterectomy as definitive treatment when appropriate."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Observation for asymptomatic fibroids.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tranexamic acid for heavy menstrual bleeding where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "NSAIDs for menstrual pain and bleeding reduction where suitable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal therapy, including LNG-IUS if the cavity is suitable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "GnRH agonists or antagonists in selected patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysteroscopic myomectomy for suitable submucosal fibroids.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopic or open myomectomy for selected patients wishing to preserve the uterus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine artery embolisation in appropriately selected patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysterectomy as definitive treatment when appropriate.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_20",
+              "group_id": "mri_pelvis_group_16",
               "group_title": "Case 2 — Adenomyosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -837,134 +869,140 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_11.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_21",
-              "group_title": "Typical MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Globular enlargement of the uterus."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Thickened junctional zone."
+                  "text": "**Typical MRI findings**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ill-defined low T2 signal within the myometrium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tiny high T2 signal myometrial cysts."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Asymmetric thickening of the uterine walls."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Globular enlargement of the uterus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thickened junctional zone.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ill-defined low T2 signal within the myometrium.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tiny high T2 signal myometrial cysts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Asymmetric thickening of the uterine walls.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "A junctional zone thickness of 12 mm or more is a classic supportive finding, but it is not diagnostic in isolation. Menstrual phase, age, hormonal therapy and other features must be considered."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_22",
-              "group_title": "Clinical features",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Progressive secondary dysmenorrhoea."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Heavy menstrual bleeding."
+                  "text": "**Clinical features**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Progressive secondary dysmenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heavy menstrual bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic pelvic pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarged, sometimes tender uterus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible subfertility.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Chronic pelvic pain."
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Enlarged, sometimes tender uterus."
+                  "text": "“The MRI demonstrates a globular enlarged uterus with diffuse thickening and poor definition of the junctional zone, associated with small cystic foci within the myometrium. These findings are suggestive of adenomyosis.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Possible subfertility."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_23",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Differentials**",
+                  "style": "heading"
+                },
                 {
-                  "type": "paragraph",
-                  "text": "“The MRI demonstrates a globular enlarged uterus with diffuse thickening and poor definition of the junctional zone, associated with small cystic foci within the myometrium. These findings are suggestive of adenomyosis.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_24",
-              "group_title": "Differentials",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Uterine fibroids."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Uterine fibroids.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal adenomyoma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Physiological junctional zone thickening.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Less commonly, infiltrative myometrial pathology.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Focal adenomyoma."
+                  "text": "**Management**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Physiological junctional zone thickening."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Less commonly, infiltrative myometrial pathology."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_25",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "NSAIDs for pain."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "LNG-IUS for bleeding and dysmenorrhoea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other hormonal suppression, including progestogens."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "GnRH-based treatment in selected cases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist fertility assessment when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hysterectomy for severe refractory symptoms when fertility is no longer desired."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "NSAIDs for pain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "LNG-IUS for bleeding and dysmenorrhoea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other hormonal suppression, including progestogens.",
+                      "level": 0
+                    },
+                    {
+                      "text": "GnRH-based treatment in selected cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist fertility assessment when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysterectomy for severe refractory symptoms when fertility is no longer desired.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -973,7 +1011,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_26",
+              "group_id": "mri_pelvis_group_17",
               "group_title": "Case 3 — Ovarian endometrioma",
               "group_subtitle": null,
               "group_icon": null,
@@ -984,10 +1022,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "T1-weighted appearance"
-                  ]
+                  "type": "paragraph",
+                  "text": "T1-weighted appearance"
                 },
                 {
                   "type": "image",
@@ -995,114 +1031,113 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "T2 shading appearance"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Classical MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "T2 shading appearance"
+                    {
+                      "text": "Ovarian cyst with high signal on T1-weighted imaging.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistence of high T1 signal after fat suppression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T2 shading due to chronic blood products.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sometimes a T2 dark-spot sign.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Usually no enhancing solid nodule in an uncomplicated endometrioma.",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_27",
-              "group_title": "Classical MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ovarian cyst with high signal on T1-weighted imaging."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Persistence of high T1 signal after fat suppression."
+                  "text": "**What is the T2 shading sign?**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "T2 shading due to chronic blood products."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sometimes a T2 dark-spot sign."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Usually no enhancing solid nodule in an uncomplicated endometrioma."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_28",
-              "group_title": "What is the T2 shading sign?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "It describes loss of signal within a T1-hyperintense ovarian cyst on T2-weighted images, typically due to concentrated chronic haemorrhagic contents."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_29",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a well-defined left ovarian cystic lesion demonstrating high signal intensity on T1-weighted imaging and reduced signal intensity on T2-weighted imaging, producing the characteristic T2 shading sign. The findings are highly suggestive of an ovarian endometrioma.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_30",
-              "group_title": "Differential diagnoses",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Haemorrhagic ovarian cyst."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Dermoid cyst."
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Haemorrhagic neoplasm."
+                  "text": "“There is a well-defined left ovarian cystic lesion demonstrating high signal intensity on T1-weighted imaging and reduced signal intensity on T2-weighted imaging, producing the characteristic T2 shading sign. The findings are highly suggestive of an ovarian endometrioma.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Other blood-containing adnexal lesions."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_31",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Differential diagnoses**",
+                  "style": "heading"
+                },
                 {
-                  "type": "paragraph",
-                  "text": "Analgesia."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Haemorrhagic ovarian cyst.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dermoid cyst.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemorrhagic neoplasm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other blood-containing adnexal lesions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Hormonal suppression for pain when pregnancy is not being attempted."
+                  "text": "**Management**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Fertility assessment where relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist endometriosis referral for suspected deep disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Laparoscopic surgery for selected patients with persistent symptoms, concerning imaging or other indications."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Analgesia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal suppression for pain when pregnancy is not being attempted.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fertility assessment where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist endometriosis referral for suspected deep disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopic surgery for selected patients with persistent symptoms, concerning imaging or other indications.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1111,7 +1146,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_32",
+              "group_id": "mri_pelvis_group_18",
               "group_title": "Case 4 — Deep infiltrating endometriosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -1130,63 +1165,60 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_16.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_33",
-              "group_title": "Typical MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Irregular low T2 signal fibrotic nodules."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Thickening of uterosacral ligaments."
+                  "text": "**Typical MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Irregular low T2 signal fibrotic nodules.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thickening of uterosacral ligaments.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obliteration of the pouch of Douglas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adhesions and distorted pelvic anatomy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rectovaginal septum infiltration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rectosigmoid bowel wall involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible ureteric involvement and hydronephrosis.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Obliteration of the pouch of Douglas."
+                  "text": "**OSCE reporting example**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Adhesions and distorted pelvic anatomy."
+                  "text": "“The MRI demonstrates irregular low T2 signal nodular thickening in the posterior pelvic compartment, involving the uterosacral ligament and rectovaginal region, with associated distortion of the pouch of Douglas. These findings are suggestive of deep pelvic endometriosis.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Rectovaginal septum infiltration."
+                  "text": "**Important examiner question**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "Rectosigmoid bowel wall involvement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible ureteric involvement and hydronephrosis."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_34",
-              "group_title": "OSCE reporting example",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The MRI demonstrates irregular low T2 signal nodular thickening in the posterior pelvic compartment, involving the uterosacral ligament and rectovaginal region, with associated distortion of the pouch of Douglas. These findings are suggestive of deep pelvic endometriosis.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_35",
-              "group_title": "Important examiner question",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Why is MRI useful in deep endometriosis?"
@@ -1197,40 +1229,43 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“MRI helps map the distribution and extent of deep endometriosis, particularly disease affecting the bowel, bladder, ureters and posterior pelvic compartment. This assists multidisciplinary surgical planning. However, a normal MRI does not exclude superficial peritoneal endometriosis.”"
+                  "text": "“MRI helps map the distribution and extent of deep endometriosis, particularly disease affecting the bowel, bladder, ureters and posterior pelvic compartment. This assists multidisciplinary surgical planning. However, a normal MRI does not exclude superficial peritoneal endometriosis.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Management**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Analgesia and hormonal treatment when appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist endometriosis assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multidisciplinary management for bowel, urinary tract or extensive disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fertility-focused planning if pregnancy is desired.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgery when clinically indicated, balancing symptom relief against operative risks.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_36",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Analgesia and hormonal treatment when appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist endometriosis assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Multidisciplinary management for bowel, urinary tract or extensive disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fertility-focused planning if pregnancy is desired."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery when clinically indicated, balancing symptom relief against operative risks."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_37",
+              "group_id": "mri_pelvis_group_19",
               "group_title": "Case 5 — Cervical carcinoma",
               "group_subtitle": null,
               "group_icon": null,
@@ -1244,91 +1279,90 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_18.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_38",
-              "group_title": "MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Intermediate-to-high T2 signal cervical mass."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Disruption of normal low-signal cervical stromal ring."
+                  "text": "**MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Intermediate-to-high T2 signal cervical mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Disruption of normal low-signal cervical stromal ring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible parametrial invasion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible vaginal extension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible bladder or rectal invasion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic lymph node enlargement or suspicious morphology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restricted diffusion in the tumour.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Possible parametrial invasion."
+                  "text": "**Features suggesting parametrial invasion**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible vaginal extension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible bladder or rectal invasion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pelvic lymph node enlargement or suspicious morphology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Restricted diffusion in the tumour."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_39",
-              "group_title": "Features suggesting parametrial invasion",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Disruption of the low-signal cervical stromal ring with tumour extending beyond the cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Irregular or spiculated tumour margins extending into parametrial fat."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Encasement of parametrial vessels."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Associated ureteric obstruction in advanced cases."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Disruption of the low-signal cervical stromal ring with tumour extending beyond the cervix.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular or spiculated tumour margins extending into parametrial fat.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encasement of parametrial vessels.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated ureteric obstruction in advanced cases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Disruption of the stromal ring alone is not always sufficient to prove parametrial invasion."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_40",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "“The MRI demonstrates an irregular cervical mass with intermediate-to-high T2 signal and restricted diffusion. There is disruption of the low-signal cervical stromal ring with extension into the adjacent parametrial tissue, suspicious for parametrial invasion. The findings are consistent with locally advanced cervical carcinoma in the context of the established biopsy diagnosis.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_41",
-              "group_title": "FIGO staging highlights",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The MRI demonstrates an irregular cervical mass with intermediate-to-high T2 signal and restricted diffusion. There is disruption of the low-signal cervical stromal ring with extension into the adjacent parametrial tissue, suspicious for parametrial invasion. The findings are consistent with locally advanced cervical carcinoma in the context of the established biopsy diagnosis.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FIGO staging highlights**",
+                  "style": "heading"
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -1373,43 +1407,45 @@
                 {
                   "type": "paragraph",
                   "text": "Important: MRI supports staging but does not independently establish every component of FIGO stage. Histopathology, examination and additional imaging may be required."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Management principles**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Histological confirmation of malignancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist gynaecological oncology referral.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multidisciplinary staging and treatment planning.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgery for selected early-stage cancers.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concurrent chemoradiation and brachytherapy for many locally advanced cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Systemic treatment and supportive care where indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_42",
-              "group_title": "Management principles",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Histological confirmation of malignancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist gynaecological oncology referral."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Multidisciplinary staging and treatment planning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery for selected early-stage cancers."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Concurrent chemoradiation and brachytherapy for many locally advanced cases."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Systemic treatment and supportive care where indicated."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_43",
+              "group_id": "mri_pelvis_group_20",
               "group_title": "Case 6 — Endometrial carcinoma",
               "group_subtitle": null,
               "group_icon": null,
@@ -1428,59 +1464,56 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_21.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_44",
-              "group_title": "Typical MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Abnormally thickened or irregular endometrial lesion."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Heterogeneous endometrial signal."
+                  "text": "**Typical MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Abnormally thickened or irregular endometrial lesion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heterogeneous endometrial signal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distortion of the endometrial–myometrial interface.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Myometrial invasion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible cervical stromal involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspicious pelvic lymph nodes in advanced disease.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Distortion of the endometrial–myometrial interface."
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Myometrial invasion."
+                  "text": "“The MRI demonstrates an irregular endometrial mass with evidence of myometrial invasion. The findings are suspicious for endometrial carcinoma, and histopathological confirmation is required if not already obtained.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Possible cervical stromal involvement."
+                  "text": "**Important questions**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "Suspicious pelvic lymph nodes in advanced disease."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_45",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The MRI demonstrates an irregular endometrial mass with evidence of myometrial invasion. The findings are suspicious for endometrial carcinoma, and histopathological confirmation is required if not already obtained.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_46",
-              "group_title": "Important questions",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Q: What is the role of MRI in endometrial cancer?"
@@ -1508,7 +1541,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_47",
+              "group_id": "mri_pelvis_group_21",
               "group_title": "Case 7 — Mature cystic teratoma (dermoid cyst)",
               "group_subtitle": null,
               "group_icon": null,
@@ -1527,79 +1560,81 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_24.webp",
                   "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**MRI findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ovarian lesion containing macroscopic fat.",
+                      "level": 0
+                    },
+                    {
+                      "text": "High T1 signal from fatty components.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of fat signal on fat-suppressed sequences.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible fat–fluid level.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May contain a Rokitansky nodule.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Variable calcification, often better seen on CT.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a well-defined ovarian mass containing macroscopic fat, demonstrated by high T1 signal with suppression on fat-saturated sequences. These findings are characteristic of a mature cystic teratoma.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Management**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Observation may be suitable for selected asymptomatic patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgery for symptoms, torsion, concerning features or other appropriate indications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian cystectomy when feasible and fertility preservation is important.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urgent surgery for suspected ovarian torsion.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_48",
-              "group_title": "MRI findings",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ovarian lesion containing macroscopic fat."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "High T1 signal from fatty components."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Loss of fat signal on fat-suppressed sequences."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible fat–fluid level."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May contain a Rokitansky nodule."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Variable calcification, often better seen on CT."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_49",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a well-defined ovarian mass containing macroscopic fat, demonstrated by high T1 signal with suppression on fat-saturated sequences. These findings are characteristic of a mature cystic teratoma.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_50",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Observation may be suitable for selected asymptomatic patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery for symptoms, torsion, concerning features or other appropriate indications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ovarian cystectomy when feasible and fertility preservation is important."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urgent surgery for suspected ovarian torsion."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_51",
+              "group_id": "mri_pelvis_group_22",
               "group_title": "Case 8 — Ovarian malignancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -1618,118 +1653,122 @@
                   "type": "image",
                   "assetPath": "assets/resources/content/og/mri_pelvis_27.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_52",
-              "group_title": "Suspicious MRI features",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Complex solid-cystic adnexal mass."
                 },
                 {
                   "type": "paragraph",
-                  "text": "Enhancing solid tissue."
+                  "text": "**Suspicious MRI features**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Complex solid-cystic adnexal mass.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enhancing solid tissue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Papillary projections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregular thick septations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restricted diffusion in solid components.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peritoneal deposits.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspicious lymphadenopathy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Papillary projections."
+                  "text": "**Model OSCE report**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Irregular thick septations."
+                  "text": "“The MRI demonstrates a complex adnexal mass containing irregular enhancing solid components and papillary projections. There is associated pelvic free fluid. These features are suspicious for an ovarian neoplasm with malignant potential. Specialist gynaecological oncology assessment is recommended.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Restricted diffusion in solid components."
+                  "text": "**Differential diagnoses**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Benign epithelial ovarian tumour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Borderline ovarian tumour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive epithelial ovarian carcinoma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Metastatic ovarian tumour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complex inflammatory adnexal mass.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ascites."
+                  "text": "**Management**",
+                  "style": "heading"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Peritoneal deposits."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspicious lymphadenopathy."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_53",
-              "group_title": "Model OSCE report",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The MRI demonstrates a complex adnexal mass containing irregular enhancing solid components and papillary projections. There is associated pelvic free fluid. These features are suspicious for an ovarian neoplasm with malignant potential. Specialist gynaecological oncology assessment is recommended.”"
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_54",
-              "group_title": "Differential diagnoses",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Benign epithelial ovarian tumour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Borderline ovarian tumour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Invasive epithelial ovarian carcinoma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Metastatic ovarian tumour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Complex inflammatory adnexal mass."
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_55",
-              "group_title": "Management",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Urgent specialist referral when malignancy is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Appropriate tumour markers, including CA-125, interpreted in clinical context."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Risk assessment using validated imaging and clinical criteria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cross-sectional staging imaging as indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "MDT discussion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgical staging/cytoreduction or neoadjuvant systemic treatment depending on tumour type, extent and patient factors."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Urgent specialist referral when malignancy is suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate tumour markers, including CA-125, interpreted in clinical context.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Risk assessment using validated imaging and clinical criteria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cross-sectional staging imaging as indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "MDT discussion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgical staging/cytoreduction or neoadjuvant systemic treatment depending on tumour type, extent and patient factors.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1738,7 +1777,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_56",
+              "group_id": "mri_pelvis_group_23",
               "group_title": "Case 9 — Congenital Müllerian anomalies",
               "group_subtitle": null,
               "group_icon": null,
@@ -1786,15 +1825,12 @@
                       "Single developed uterine horn, sometimes with a rudimentary horn"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "mri_pelvis_group_57",
-              "group_title": "Why is this clinically important?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Why is this clinically important?**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Congenital uterine anomalies may be associated with recurrent pregnancy loss, preterm birth, malpresentation, infertility in some cases and obstructive reproductive tract symptoms."
@@ -1805,7 +1841,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“MRI demonstrates two endometrial cavities separated by a septum, with a relatively preserved external fundal contour, favouring a septate uterus. Further classification should use standardised uterine anomaly criteria.”"
+                  "text": "“MRI demonstrates two endometrial cavities separated by a septum, with a relatively preserved external fundal contour, favouring a septate uterus. Further classification should use standardised uterine anomaly criteria.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1816,12 +1853,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_7",
-          "subsection_title": "How to report MRI pelvis findings",
+          "subsection_id": "mri_pelvis_subsection_8",
+          "subsection_title": "7. How to report MRI pelvis findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_58",
+              "group_id": "mri_pelvis_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1831,24 +1868,22 @@
                   "text": "The examiner may display an image and ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Please describe this MRI and give your diagnosis.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Please describe this MRI and give your diagnosis.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Use this standard format:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "MRI reporting template"
-                  ]
+                  "type": "paragraph",
+                  "text": "MRI reporting template"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a [plane] [sequence] MRI image of the female pelvis obtained for [clinical indication]."
+                  "text": "“This is a [plane] [sequence] MRI image of the female pelvis obtained for [clinical indication].",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1883,12 +1918,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_8",
-          "subsection_title": "Differential diagnosis based on MRI appearance",
+          "subsection_id": "mri_pelvis_subsection_9",
+          "subsection_title": "8. Differential diagnosis based on MRI appearance",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_59",
+              "group_id": "mri_pelvis_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1939,12 +1974,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_9",
-          "subsection_title": "Investigations",
+          "subsection_id": "mri_pelvis_subsection_10",
+          "subsection_title": "9. Investigations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_60",
+              "group_id": "mri_pelvis_group_26",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1956,7 +1991,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_61",
+              "group_id": "mri_pelvis_group_27",
               "group_title": "A. Laboratory investigations",
               "group_subtitle": null,
               "group_icon": null,
@@ -2005,46 +2040,51 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_62",
+              "group_id": "mri_pelvis_group_28",
               "group_title": "B. Other imaging and diagnostic procedures",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Transvaginal ultrasound — usually first-line for many gynaecological complaints."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Transabdominal ultrasound — complementary evaluation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hysteroscopy — direct assessment of the uterine cavity and targeted sampling."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CT chest/abdomen/pelvis — selected oncological staging indications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist ultrasound — assessment of endometriosis and uterine anomalies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Laparoscopy — selected diagnostic and therapeutic indications."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Transvaginal ultrasound — usually first-line for many gynaecological complaints.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Transabdominal ultrasound — complementary evaluation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysteroscopy — direct assessment of the uterine cavity and targeted sampling.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CT chest/abdomen/pelvis — selected oncological staging indications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist ultrasound — assessment of endometriosis and uterine anomalies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopy — selected diagnostic and therapeutic indications.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_10",
-          "subsection_title": "Management approach",
+          "subsection_id": "mri_pelvis_subsection_11",
+          "subsection_title": "10. Management approach",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_63",
+              "group_id": "mri_pelvis_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2054,15 +2094,28 @@
                   "text": "Management must be based on the underlying diagnosis rather than MRI appearance alone."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A practical OSCE management algorithm",
-                    "MRI abnormality identified",
-                    "Correlate with history, examination and investigations",
-                    "Likely benign",
-                    "Symptom assessment, surveillance or appropriate medical/surgical treatment",
-                    "Suspicious / malignant"
-                  ]
+                  "type": "paragraph",
+                  "text": "A practical OSCE management algorithm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI abnormality identified"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Correlate with history, examination and investigations"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Likely benign"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Symptom assessment, surveillance or appropriate medical/surgical treatment"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Suspicious / malignant"
                 },
                 {
                   "type": "paragraph",
@@ -2081,21 +2134,19 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_11",
-          "subsection_title": "Questions the examiner may ask",
+          "subsection_id": "mri_pelvis_subsection_12",
+          "subsection_title": "11. Questions the examiner may ask",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_64",
+              "group_id": "mri_pelvis_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "High-yield viva questions with model answers"
-                  ]
+                  "type": "paragraph",
+                  "text": "High-yield viva questions with model answers"
                 },
                 {
                   "type": "paragraph",
@@ -2162,19 +2213,19 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_12",
-          "subsection_title": "Additional model answers — examiner challenges",
+          "subsection_id": "mri_pelvis_subsection_13",
+          "subsection_title": "12. Additional model answers — examiner challenges",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_65",
+              "group_id": "mri_pelvis_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Examiner: “A patient has an MRI showing multiple uterine fibroids and desires future pregnancy. What would you do?”"
+                  "text": "**Examiner: “A patient has an MRI showing multiple uterine fibroids and desires future pregnancy. What would you do?”**"
                 },
                 {
                   "type": "paragraph",
@@ -2182,7 +2233,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would first assess the patient's symptoms, age, reproductive history, fertility goals, fibroid size, number and location, particularly whether the endometrial cavity is distorted. I would investigate other causes of infertility where appropriate."
+                  "text": "“I would first assess the patient's symptoms, age, reproductive history, fertility goals, fibroid size, number and location, particularly whether the endometrial cavity is distorted. I would investigate other causes of infertility where appropriate.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2190,7 +2242,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Examiner: “MRI shows an ovarian endometrioma in a woman with infertility. Should it be removed?”"
+                  "text": "**Examiner: “MRI shows an ovarian endometrioma in a woman with infertility. Should it be removed?”**"
                 },
                 {
                   "type": "paragraph",
@@ -2198,12 +2250,13 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Not necessarily. Management depends on pain, cyst characteristics, ovarian reserve, previous surgery, accessibility for assisted reproduction and fertility plans. Surgery can reduce ovarian reserve and is not routinely performed solely to improve IVF success. I would discuss the case with an endometriosis and fertility specialist.”"
+                  "text": "“Not necessarily. Management depends on pain, cyst characteristics, ovarian reserve, previous surgery, accessibility for assisted reproduction and fertility plans. Surgery can reduce ovarian reserve and is not routinely performed solely to improve IVF success. I would discuss the case with an endometriosis and fertility specialist.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "mri_pelvis_group_66",
+              "group_id": "mri_pelvis_group_32",
               "group_title": "Examiner: “MRI suggests cervical cancer with parametrial invasion. What is the next step?”",
               "group_subtitle": null,
               "group_icon": null,
@@ -2214,19 +2267,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would confirm that histological diagnosis is established, refer the patient to the gynaecological oncology multidisciplinary team and complete staging investigations as indicated. Parametrial invasion corresponds to at least FIGO stage IIB if no more advanced features are present. Definitive chemoradiation with brachytherapy is commonly recommended for this extent of disease, with treatment individualised by the oncology team.”"
+                  "text": "“I would confirm that histological diagnosis is established, refer the patient to the gynaecological oncology multidisciplinary team and complete staging investigations as indicated. Parametrial invasion corresponds to at least FIGO stage IIB if no more advanced features are present. Definitive chemoradiation with brachytherapy is commonly recommended for this extent of disease, with treatment individualised by the oncology team.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_13",
-          "subsection_title": "Common mistakes in MRI pelvis OSCE stations",
+          "subsection_id": "mri_pelvis_subsection_14",
+          "subsection_title": "13. Common mistakes in MRI pelvis OSCE stations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_67",
+              "group_id": "mri_pelvis_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2285,12 +2339,12 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_14",
-          "subsection_title": "OSCE mnemonics and examination tips",
+          "subsection_id": "mri_pelvis_subsection_15",
+          "subsection_title": "14. OSCE mnemonics and examination tips",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_68",
+              "group_id": "mri_pelvis_group_34",
               "group_title": "P-E-L-V-I-S — systematic interpretation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2302,7 +2356,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_69",
+              "group_id": "mri_pelvis_group_35",
               "group_title": "S-C-A-L-E — describe a lesion",
               "group_subtitle": null,
               "group_icon": null,
@@ -2314,7 +2368,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_70",
+              "group_id": "mri_pelvis_group_36",
               "group_title": "M-A-S-S — assess possible malignancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -2326,7 +2380,7 @@
               ]
             },
             {
-              "group_id": "mri_pelvis_group_71",
+              "group_id": "mri_pelvis_group_37",
               "group_title": "Essential MRI pattern recognition",
               "group_subtitle": null,
               "group_icon": null,
@@ -2385,99 +2439,135 @@
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_15",
-          "subsection_title": "OSCE practice — test yourself",
+          "subsection_id": "mri_pelvis_subsection_16",
+          "subsection_title": "15. OSCE practice — test yourself",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_72",
+              "group_id": "mri_pelvis_group_38",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5 clinical interpretation questions",
-                    "Single best answer"
-                  ]
+                  "type": "paragraph",
+                  "text": "5 clinical interpretation questions"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Single best answer"
                 },
                 {
                   "type": "paragraph",
                   "text": "1. A 35-year-old woman with heavy menstrual bleeding has a well-circumscribed, low T2 signal mass within the myometrium. What is the most likely diagnosis?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Adenomyosis",
-                    "B. Uterine leiomyoma",
-                    "C. Endometrial carcinoma",
-                    "D. Endometrioma"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Adenomyosis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B. Uterine leiomyoma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C. Endometrial carcinoma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. Endometrioma"
                 },
                 {
                   "type": "paragraph",
                   "text": "2. A 28-year-old woman with severe dysmenorrhoea has a T1-bright ovarian cyst demonstrating T2 shading. What is the likely diagnosis?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Dermoid cyst",
-                    "B. Serous cystadenoma",
-                    "C. Endometrioma",
-                    "D. Hydrosalpinx"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Dermoid cyst"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B. Serous cystadenoma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C. Endometrioma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. Hydrosalpinx"
                 },
                 {
                   "type": "paragraph",
                   "text": "3. MRI demonstrates an irregular cervical tumour extending into the parametrial tissue but not to the pelvic wall. What is the minimum FIGO stage suggested?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. IA",
-                    "B. IB",
-                    "C. IIA",
-                    "D. IIB"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. IA"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B. IB"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C. IIA"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. IIB"
                 },
                 {
                   "type": "paragraph",
                   "text": "4. A uterine MRI demonstrates diffuse junctional-zone thickening and tiny myometrial cysts. What is the most likely diagnosis?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Adenomyosis",
-                    "B. Leiomyosarcoma",
-                    "C. Endometrial polyp",
-                    "D. Ovarian carcinoma"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Adenomyosis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B. Leiomyosarcoma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C. Endometrial polyp"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. Ovarian carcinoma"
                 },
                 {
                   "type": "paragraph",
                   "text": "5. Which MRI feature is most characteristic of an ovarian mature cystic teratoma?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. T2 shading",
-                    "B. Parametrial infiltration",
-                    "C. Macroscopic fat with signal loss on fat suppression",
-                    "D. Diffuse junctional-zone thickening"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. T2 shading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B. Parametrial infiltration"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "C. Macroscopic fat with signal loss on fat suppression"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "D. Diffuse junctional-zone thickening"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "mri_pelvis_subsection_16",
-          "subsection_title": "Final examiner-ready summary",
+          "subsection_id": "mri_pelvis_subsection_17",
+          "subsection_title": "16. Final examiner-ready summary",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "mri_pelvis_group_73",
+              "group_id": "mri_pelvis_group_39",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2488,7 +2578,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is an MRI of the female pelvis. I would first identify the imaging plane and sequence, then systematically assess the uterus, cervix, ovaries, adnexa and adjacent pelvic structures. I would describe any abnormality according to its site, size, morphology, signal characteristics and local extension. I would then provide the most likely diagnosis, relevant differential diagnoses and any features suspicious for malignancy. Finally, I would correlate the findings with the patient's clinical presentation and recommend appropriate further investigations and management.”"
+                  "text": "“This is an MRI of the female pelvis. I would first identify the imaging plane and sequence, then systematically assess the uterus, cervix, ovaries, adnexa and adjacent pelvic structures. I would describe any abnormality according to its site, size, morphology, signal characteristics and local extension. I would then provide the most likely diagnosis, relevant differential diagnoses and any features suspicious for malignancy. Finally, I would correlate the findings with the patient's clinical presentation and recommend appropriate further investigations and management.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",

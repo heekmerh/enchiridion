@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 32-year-old woman presents to the postnatal ward on day 10 after vaginal delivery with heavy vaginal bleeding. Assess and manage her.”"
+                  "text": "**“A 32-year-old woman presents to the postnatal ward on day 10 after vaginal delivery with heavy vaginal bleeding. Assess and manage her.”**",
+                  "style": "quote"
                 }
               ]
             },
@@ -41,7 +42,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman presents to the emergency department 8 days after delivery with sudden heavy vaginal bleeding, dizziness and palpitations. Her pulse is 125 bpm and BP is 88/54 mmHg. What would you do?”"
+                  "text": "**“A woman presents to the emergency department 8 days after delivery with sudden heavy vaginal bleeding, dizziness and palpitations. Her pulse is 125 bpm and BP is 88/54 mmHg. What would you do?”**",
+                  "style": "quote"
                 }
               ]
             },
@@ -53,7 +55,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Take a focused history from a woman presenting with secondary postpartum haemorrhage.”"
+                  "text": "**“Take a focused history from a woman presenting with secondary postpartum haemorrhage.”**",
+                  "style": "quote"
                 }
               ]
             },
@@ -64,10 +67,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What are the causes of secondary postpartum haemorrhage?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“What are the causes of secondary postpartum haemorrhage?”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -75,7 +77,7 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_2",
-          "subsection_title": "Definition",
+          "subsection_title": "2. Definition",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -90,20 +92,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Abnormal or excessive genital tract bleeding occurring from 24 hours after delivery up to 6 weeks postpartum."
+                  "text": "**Abnormal or excessive genital tract bleeding occurring from 24 hours after delivery up to 6 weeks postpartum.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The exact definition and terminology can vary between guidelines."
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_6",
-              "group_title": "Contrast with primary PPH",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Contrast with primary PPH**",
+                  "style": "heading"
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -127,11 +126,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_3",
-          "subsection_title": "Common causes",
+          "subsection_title": "3. Common causes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_7",
+              "group_id": "secondary_postpartum_haemorrhage_group_6",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -139,11 +138,16 @@
                 {
                   "type": "paragraph",
                   "text": "The major causes to remember are:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“RIP”**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_8",
+              "group_id": "secondary_postpartum_haemorrhage_group_7",
               "group_title": "R — Retained products",
               "group_subtitle": null,
               "group_icon": null,
@@ -155,7 +159,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_9",
+              "group_id": "secondary_postpartum_haemorrhage_group_8",
               "group_title": "I — Infection",
               "group_subtitle": null,
               "group_icon": null,
@@ -167,7 +171,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_10",
+              "group_id": "secondary_postpartum_haemorrhage_group_9",
               "group_title": "P — Placental site/subinvolution",
               "group_subtitle": null,
               "group_icon": null,
@@ -177,18 +181,33 @@
                   "text": "Subinvolution of the placental bed."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "But also consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "But also consider:",
                   "items": [
-                    "Gestational trophoblastic disease",
-                    "Coagulopathy",
-                    "Uterine abnormalities",
-                    "Rarely uterine artery pseudoaneurysm/AV malformation",
-                    "Trauma",
-                    "Caesarean scar complications"
+                    {
+                      "text": "Gestational trophoblastic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coagulopathy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rarely uterine artery pseudoaneurysm/AV malformation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean scar complications",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -197,11 +216,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_4",
-          "subsection_title": "Important causes in more detail",
+          "subsection_title": "4. Important causes in more detail",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_11",
+              "group_id": "secondary_postpartum_haemorrhage_group_10",
               "group_title": "A. Retained products of conception",
               "group_subtitle": null,
               "group_icon": null,
@@ -211,30 +230,51 @@
                   "text": "One of the most important causes."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible history:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible history:",
                   "items": [
-                    "Placenta was incomplete",
-                    "Difficult third stage",
-                    "Manual removal",
-                    "Previous retained placenta",
-                    "Persistent bleeding",
-                    "Secondary bleeding after an initially normal postpartum course"
+                    {
+                      "text": "Placenta was incomplete",
+                      "level": 0
+                    },
+                    {
+                      "text": "Difficult third stage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manual removal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous retained placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Secondary bleeding after an initially normal postpartum course",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible examination:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible examination:",
                   "items": [
-                    "Enlarged/subinvoluted uterus",
-                    "Persistent bleeding",
-                    "Sometimes uterine tenderness"
+                    {
+                      "text": "Enlarged/subinvoluted uterus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sometimes uterine tenderness",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -243,7 +283,94 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_5",
-          "subsection_title": "Endometritis",
+          "subsection_title": "5. Endometritis",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_11",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Think:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Bleeding + fever + uterine tenderness + offensive lochia**"
+                },
+                {
+                  "type": "list",
+                  "title": "Possible symptoms:",
+                  "items": [
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chills",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower abdominal pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offensive vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malaise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased bleeding",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Risk factors include:",
+                  "items": [
+                    {
+                      "text": "Caesarean delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged rupture of membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiple vaginal examinations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retained products",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manual removal of placenta",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_6",
+          "subsection_title": "6. Subinvolution of the placental site",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -254,69 +381,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Bleeding + fever + uterine tenderness + offensive lochia"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Possible symptoms:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Fever",
-                    "Chills",
-                    "Lower abdominal pain",
-                    "Uterine tenderness",
-                    "Offensive vaginal discharge",
-                    "Malaise",
-                    "Increased bleeding"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Risk factors include:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Caesarean delivery",
-                    "Prolonged rupture of membranes",
-                    "Prolonged labour",
-                    "Multiple vaginal examinations",
-                    "Retained products",
-                    "Manual removal of placenta"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_6",
-          "subsection_title": "Subinvolution of the placental site",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_13",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "Normally, after delivery:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Placental bed vessels → myometrial contraction → thrombosis → involution"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Placental bed vessels → myometrial contraction → thrombosis → involution**"
                 },
                 {
                   "type": "paragraph",
@@ -324,23 +393,35 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "→ persistent enlarged uterus → continued bleeding → secondary PPH."
+                  "text": "→ persistent enlarged uterus\n→ continued bleeding\n→ secondary PPH."
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_14",
+              "group_id": "secondary_postpartum_haemorrhage_group_13",
               "group_title": "Typical presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Bleeding several days postpartum",
-                    "Often recurrent or intermittent",
-                    "Uterus larger/softer than expected for postpartum day",
-                    "May have no fever"
+                    {
+                      "text": "Bleeding several days postpartum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Often recurrent or intermittent",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterus larger/softer than expected for postpartum day",
+                      "level": 0
+                    },
+                    {
+                      "text": "May have no fever",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -349,33 +430,45 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_7",
-          "subsection_title": "Other important causes",
+          "subsection_title": "7. Other important causes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_15",
+              "group_id": "secondary_postpartum_haemorrhage_group_14",
               "group_title": "Coagulopathy",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "DIC",
-                    "Severe sepsis",
-                    "Liver disease",
-                    "Anticoagulant therapy",
-                    "Inherited bleeding disorder"
+                    {
+                      "text": "DIC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe sepsis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anticoagulant therapy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inherited bleeding disorder",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_16",
+              "group_id": "secondary_postpartum_haemorrhage_group_15",
               "group_title": "Uterine artery pseudoaneurysm",
               "group_subtitle": null,
               "group_icon": null,
@@ -385,27 +478,31 @@
                   "text": "Important because it may cause:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sudden, severe or recurrent delayed bleeding"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Often follows:"
+                  "text": "**Sudden, severe or recurrent delayed bleeding**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Often follows:",
                   "items": [
-                    "Caesarean section",
-                    "Uterine surgery",
-                    "Trauma"
+                    {
+                      "text": "Caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_17",
+              "group_id": "secondary_postpartum_haemorrhage_group_16",
               "group_title": "Uterine AV malformation",
               "group_subtitle": null,
               "group_icon": null,
@@ -417,21 +514,27 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_18",
+              "group_id": "secondary_postpartum_haemorrhage_group_17",
               "group_title": "Gestational trophoblastic disease",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Rare but should be considered with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Rare but should be considered with:",
                   "items": [
-                    "Persistent bleeding",
-                    "Persistently elevated β-hCG",
-                    "Abnormal ultrasound findings"
+                    {
+                      "text": "Persistent bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistently elevated β-hCG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal ultrasound findings",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -440,42 +543,44 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_8",
-          "subsection_title": "Introduction",
+          "subsection_title": "8. Introduction",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_19",
+              "group_id": "secondary_postpartum_haemorrhage_group_18",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Hello, my name is Dr ____. I am one of the doctors looking after you today.”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Can I confirm your name and date of birth?”"
-                  ]
+                  "text": "“Hello, my name is Dr ____. I am one of the doctors looking after you today.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I understand that you have been experiencing vaginal bleeding since your delivery.”"
+                  "text": "“Can I confirm your name and date of birth?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would like to ask you some questions and then examine you to determine how much you are bleeding and what may be causing it.”"
+                  "text": "“I understand that you have been experiencing vaginal bleeding since your delivery.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Some of the examinations may be intimate, so I will explain each step and maintain your privacy throughout.”"
+                  "text": "“I would like to ask you some questions and then examine you to determine how much you are bleeding and what may be causing it.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is that okay?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Some of the examinations may be intimate, so I will explain each step and maintain your privacy throughout.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Is that okay?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -483,11 +588,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_9",
-          "subsection_title": "First priority — Is she stable?",
+          "subsection_title": "9. First priority — Is she stable?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_20",
+              "group_id": "secondary_postpartum_haemorrhage_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -499,71 +604,115 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_21",
+              "group_id": "secondary_postpartum_haemorrhage_group_20",
               "group_title": "ABCDE",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she conscious?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she pale?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she dizzy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she breathless?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is she shocked?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "Pulse",
-                    "BP",
-                    "Respiratory rate",
-                    "SpO₂",
-                    "Temperature",
-                    "Capillary refill",
-                    "Mental state"
+                    {
+                      "text": "Is she conscious?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is she pale?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is she dizzy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is she breathless?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is she shocked?",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_22",
-              "group_title": "Red flags",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "Tachycardia",
-                    "Hypotension",
-                    "Tachypnoea",
-                    "Pallor",
-                    "Cold extremities",
-                    "Delayed capillary refill",
-                    "Reduced urine output",
-                    "Confusion",
-                    "Syncope"
+                    {
+                      "text": "Pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "SpO₂",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Capillary refill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mental state",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Red flags**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachypnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cold extremities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delayed capillary refill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Syncope",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -572,11 +721,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_10",
-          "subsection_title": "Focused history",
+          "subsection_title": "10. Focused history",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_23",
+              "group_id": "secondary_postpartum_haemorrhage_group_21",
               "group_title": "A. Characterise the bleeding",
               "group_subtitle": null,
               "group_icon": null,
@@ -586,35 +735,77 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“When did the bleeding start?”",
-                    "“How much blood have you lost?”",
-                    "“Is it getting heavier?”",
-                    "“Are you soaking pads?”",
-                    "“How frequently are you changing them?”",
-                    "“Have you passed clots?”",
-                    "“How large are the clots?”",
-                    "“Have you passed any tissue?”"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_24",
-              "group_title": "Ask specifically about",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "“When did the bleeding start?”",
+                  "style": "quote"
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "“How much blood have you lost?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Is it getting heavier?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Are you soaking pads?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“How frequently are you changing them?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Have you passed clots?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“How large are the clots?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Have you passed any tissue?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Ask specifically about**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Sudden vs gradual onset",
-                    "Continuous vs intermittent",
-                    "Heavy vs spotting",
-                    "Clots",
-                    "Tissue",
-                    "Foul smell"
+                    {
+                      "text": "Sudden vs gradual onset",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuous vs intermittent",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heavy vs spotting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clots",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tissue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foul smell",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -623,51 +814,53 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_11",
-          "subsection_title": "Symptoms of hypovolaemia",
+          "subsection_title": "11. Symptoms of hypovolaemia",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_25",
+              "group_id": "secondary_postpartum_haemorrhage_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dizziness?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fainting?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Palpitations?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weakness?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Shortness of breath?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chest discomfort?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced urine output?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Dizziness?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fainting?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpitations?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weakness?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shortness of breath?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest discomfort?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_26",
+              "group_id": "secondary_postpartum_haemorrhage_group_23",
               "group_title": "Important",
               "group_subtitle": null,
               "group_icon": null,
@@ -682,7 +875,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Clinical condition is more important than the patient's estimated blood loss."
+                  "text": "**Clinical condition is more important than the patient's estimated blood loss.**"
                 }
               ]
             }
@@ -690,52 +883,52 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_12",
-          "subsection_title": "Ask about fever/infection",
+          "subsection_title": "12. Ask about fever/infection",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_27",
+              "group_id": "secondary_postpartum_haemorrhage_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fever?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chills?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rigors?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lower abdominal pain?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offensive discharge?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Malaise?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Fever?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chills?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rigors?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower abdominal pain?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offensive discharge?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malaise?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Endometritis"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Endometritis**"
                 }
               ]
             }
@@ -743,11 +936,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_13",
-          "subsection_title": "Delivery history",
+          "subsection_title": "13. Delivery history",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_28",
+              "group_id": "secondary_postpartum_haemorrhage_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -763,70 +956,89 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_29",
+              "group_id": "secondary_postpartum_haemorrhage_group_26",
               "group_title": "Mode of delivery",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vaginal",
-                    "Instrumental",
-                    "Caesarean"
+                    {
+                      "text": "Vaginal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Instrumental",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_30",
+              "group_id": "secondary_postpartum_haemorrhage_group_27",
               "group_title": "Third stage",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Was the placenta delivered completely?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was there difficulty delivering it?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was manual removal required?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Was there postpartum haemorrhage immediately after delivery?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Was the placenta delivered completely?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was there difficulty delivering it?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was manual removal required?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was there postpartum haemorrhage immediately after delivery?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_31",
+              "group_id": "secondary_postpartum_haemorrhage_group_28",
               "group_title": "Labour",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Prolonged labour?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prolonged rupture of membranes?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Induction?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Augmentation?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chorioamnionitis?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Prolonged labour?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged rupture of membranes?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Induction?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Augmentation?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chorioamnionitis?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -834,11 +1046,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_14",
-          "subsection_title": "Previous postpartum course",
+          "subsection_title": "14. Previous postpartum course",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_32",
+              "group_id": "secondary_postpartum_haemorrhage_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -848,11 +1060,14 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Was the bleeding normal immediately after delivery?”",
-                    "“Did the bleeding initially decrease and then become heavy again?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Was the bleeding normal immediately after delivery?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Did the bleeding initially decrease and then become heavy again?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -861,28 +1076,35 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_33",
+              "group_id": "secondary_postpartum_haemorrhage_group_30",
               "group_title": "Example",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Normal lochia → bleeding becomes heavier on day 8"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Think:"
+                  "text": "**Normal lochia → bleeding becomes heavier on day 8**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Infection",
-                    "Retained products",
-                    "Subinvolution",
-                    "Vascular lesion"
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retained products",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subinvolution",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vascular lesion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -891,11 +1113,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_15",
-          "subsection_title": "Lochia history",
+          "subsection_title": "15. Lochia history",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_34",
+              "group_id": "secondary_postpartum_haemorrhage_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -907,7 +1129,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_35",
+              "group_id": "secondary_postpartum_haemorrhage_group_32",
               "group_title": "Lochia rubra",
               "group_subtitle": null,
               "group_icon": null,
@@ -919,7 +1141,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_36",
+              "group_id": "secondary_postpartum_haemorrhage_group_33",
               "group_title": "Lochia serosa",
               "group_subtitle": null,
               "group_icon": null,
@@ -931,7 +1153,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_37",
+              "group_id": "secondary_postpartum_haemorrhage_group_34",
               "group_title": "Lochia alba",
               "group_subtitle": null,
               "group_icon": null,
@@ -941,16 +1163,25 @@
                   "text": "Later becomes pale/whitish."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Increasing quantity",
-                    "Fresh red bleeding",
-                    "Offensive smell",
-                    "Change in pattern"
+                    {
+                      "text": "Increasing quantity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fresh red bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offensive smell",
+                      "level": 0
+                    },
+                    {
+                      "text": "Change in pattern",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -959,7 +1190,162 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_16",
-          "subsection_title": "Pregnancy and placental history",
+          "subsection_title": "16. Pregnancy and placental history",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_35",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Placenta praevia?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous retained placenta?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta accreta spectrum?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manual removal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal placentation?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous Caesarean section?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous uterine surgery?",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_17",
+          "subsection_title": "17. Medical history",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_36",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Bleeding disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sepsis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anticoagulants",
+                      "level": 0
+                    },
+                    {
+                      "text": "Medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous PPH",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_18",
+          "subsection_title": "18. Examination",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_37",
+              "group_title": "General inspection",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sweating",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anxiety",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weakness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dizziness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of shock",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_19",
+          "subsection_title": "19. Vital signs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -969,144 +1355,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placenta praevia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placental abruption?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous retained placenta?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placenta accreta spectrum?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Manual removal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Abnormal placentation?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous Caesarean section?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Previous uterine surgery?"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_17",
-          "subsection_title": "Medical history",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_39",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Record:",
                   "items": [
-                    "Bleeding disorders",
-                    "Liver disease",
-                    "Hypertension",
-                    "Sepsis",
-                    "Anaemia",
-                    "Anticoagulants",
-                    "Medications",
-                    "Previous PPH"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_18",
-          "subsection_title": "Examination",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_40",
-              "group_title": "General inspection",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Pallor",
-                    "Sweating",
-                    "Anxiety",
-                    "Weakness",
-                    "Dizziness",
-                    "Altered consciousness",
-                    "Signs of shock"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_19",
-          "subsection_title": "Vital signs",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_41",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Record:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Temperature",
-                    "Pulse",
-                    "BP",
-                    "Respiratory rate",
-                    "SpO₂"
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "SpO₂",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_42",
+              "group_id": "secondary_postpartum_haemorrhage_group_39",
               "group_title": "Do not make this mistake",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Normal BP does not exclude significant haemorrhage."
+                  "text": "**Normal BP does not exclude significant haemorrhage.**"
                 },
                 {
                   "type": "paragraph",
@@ -1114,7 +1398,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "tachycardia before hypotension."
+                  "text": "**tachycardia before hypotension.**"
                 }
               ]
             }
@@ -1122,55 +1406,79 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_20",
-          "subsection_title": "Abdominal examination",
+          "subsection_title": "20. Abdominal examination",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_43",
+              "group_id": "secondary_postpartum_haemorrhage_group_40",
               "group_title": "Inspection",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Distension",
-                    "Caesarean scar",
-                    "Wound infection"
+                    {
+                      "text": "Distension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean scar",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wound infection",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_44",
+              "group_id": "secondary_postpartum_haemorrhage_group_41",
               "group_title": "Palpation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Fundal height",
-                    "Uterine size",
-                    "Uterine tenderness",
-                    "Uterine consistency",
-                    "Abdominal tenderness",
-                    "Guarding",
-                    "Masses"
+                    {
+                      "text": "Fundal height",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine consistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Guarding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_45",
+              "group_id": "secondary_postpartum_haemorrhage_group_42",
               "group_title": "Key finding",
               "group_subtitle": null,
               "group_icon": null,
@@ -1180,21 +1488,25 @@
                   "text": "If the uterus is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "larger than expected + soft/subinvoluted"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "consider:"
+                  "text": "**larger than expected + soft/subinvoluted**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "consider:",
                   "items": [
-                    "Retained products",
-                    "Endometritis",
-                    "Subinvolution"
+                    {
+                      "text": "Retained products",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometritis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Subinvolution",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1203,7 +1515,196 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_21",
-          "subsection_title": "Pelvic examination",
+          "subsection_title": "21. Pelvic examination",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_43",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "With consent, chaperone and appropriate privacy:"
+                },
+                {
+                  "type": "list",
+                  "title": "Inspect:",
+                  "items": [
+                    {
+                      "text": "Vulva",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervix if appropriate",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Active bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clots",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tissue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offensive discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_44",
+              "group_title": "Bimanual examination",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If clinically appropriate:"
+                },
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Uterine size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adnexal tenderness/mass",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_22",
+          "subsection_title": "22. Investigations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_45",
+              "group_title": "Blood tests",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Request:",
+                  "items": [
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Group and save/crossmatch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coagulation profile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibrinogen if significant bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "U&E",
+                      "level": 0
+                    },
+                    {
+                      "text": "LFTs where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "CRP if infection suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lactate/blood gas if unstable",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Why FBC?**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Haemoglobin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Platelets",
+                      "level": 0
+                    },
+                    {
+                      "text": "Degree of anaemia",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Remember:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**An early Hb can underestimate acute blood loss.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "secondary_postpartum_haemorrhage_subsection_23",
+          "subsection_title": "23. Pelvic ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1214,159 +1715,42 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "With consent, chaperone and appropriate privacy:"
+                  "text": "Very important investigation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Vulva",
-                    "Perineum",
-                    "Vaginal bleeding",
-                    "Cervix if appropriate"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Active bleeding",
-                    "Clots",
-                    "Tissue",
-                    "Offensive discharge",
-                    "Cervical lesions",
-                    "Trauma"
+                    {
+                      "text": "Retained products",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometrial thickening",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine material",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood clot",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic collection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vascular lesions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "secondary_postpartum_haemorrhage_group_47",
-              "group_title": "Bimanual examination",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If clinically appropriate:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Uterine size",
-                    "Uterine tenderness",
-                    "Cervical status",
-                    "Adnexal tenderness/mass"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_22",
-          "subsection_title": "Investigations",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_48",
-              "group_title": "Blood tests",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Request:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "FBC",
-                    "Group and save/crossmatch",
-                    "Coagulation profile",
-                    "Fibrinogen if significant bleeding",
-                    "U&E",
-                    "LFTs where indicated",
-                    "CRP if infection suspected",
-                    "Lactate/blood gas if unstable"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_49",
-              "group_title": "Why FBC?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Haemoglobin",
-                    "Platelets",
-                    "Degree of anaemia"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remember:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An early Hb can underestimate acute blood loss."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_23",
-          "subsection_title": "Pelvic ultrasound",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_50",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Very important investigation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Retained products",
-                    "Endometrial thickening",
-                    "Intrauterine material",
-                    "Blood clot",
-                    "Pelvic collection",
-                    "Vascular lesions"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_51",
               "group_title": "Important OSCE nuance",
               "group_subtitle": null,
               "group_icon": null,
@@ -1385,40 +1769,44 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_24",
-          "subsection_title": "Doppler ultrasound",
+          "subsection_title": "24. Doppler ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_52",
+              "group_id": "secondary_postpartum_haemorrhage_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Particularly useful if considering:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Particularly useful if considering:",
                   "items": [
-                    "Uterine artery pseudoaneurysm",
-                    "AV malformation",
-                    "Vascular retained tissue"
+                    {
+                      "text": "Uterine artery pseudoaneurysm",
+                      "level": 0
+                    },
+                    {
+                      "text": "AV malformation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vascular retained tissue",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_53",
+              "group_id": "secondary_postpartum_haemorrhage_group_49",
               "group_title": "Classic concern",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Recurrent severe bleeding + vascular lesion on Doppler"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Recurrent severe bleeding + vascular lesion on Doppler**"
                 },
                 {
                   "type": "paragraph",
@@ -1430,25 +1818,31 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_25",
-          "subsection_title": "β-hCG",
+          "subsection_title": "25. β-hCG",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_54",
+              "group_id": "secondary_postpartum_haemorrhage_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider if:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider if:",
                   "items": [
-                    "Persistent abnormal bleeding",
-                    "Ultrasound suggests trophoblastic disease",
-                    "Concern about gestational trophoblastic neoplasia"
+                    {
+                      "text": "Persistent abnormal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound suggests trophoblastic disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concern about gestational trophoblastic neoplasia",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1457,25 +1851,34 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_26",
-          "subsection_title": "Management",
+          "subsection_title": "26. Management",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_55",
+              "group_id": "secondary_postpartum_haemorrhage_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The management depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The management depends on:",
                   "items": [
-                    "Severity of bleeding",
-                    "Haemodynamic stability",
-                    "Cause"
+                    {
+                      "text": "**Severity of bleeding**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Haemodynamic stability**",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Cause**",
+                      "level": 0,
+                      "label": "3."
+                    }
                   ]
                 }
               ]
@@ -1484,11 +1887,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_27",
-          "subsection_title": "If unstable",
+          "subsection_title": "27. If unstable",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_56",
+              "group_id": "secondary_postpartum_haemorrhage_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1500,19 +1903,39 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_57",
-              "group_title": "Call for help",
+              "group_id": "secondary_postpartum_haemorrhage_group_53",
+              "group_title": "CALL → RESUSCITATE → INVESTIGATE → CONTROL",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Call for help**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Senior obstetrician",
-                    "Anaesthetist",
-                    "Theatre team",
-                    "Blood bank",
-                    "Haematology when required"
+                    {
+                      "text": "Senior obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetist",
+                      "level": 0
+                    },
+                    {
+                      "text": "Theatre team",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood bank",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematology when required",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1521,11 +1944,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_28",
-          "subsection_title": "ABCDE",
+          "subsection_title": "28. ABCDE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_58",
+              "group_id": "secondary_postpartum_haemorrhage_group_54",
               "group_title": "A",
               "group_subtitle": null,
               "group_icon": null,
@@ -1537,7 +1960,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_59",
+              "group_id": "secondary_postpartum_haemorrhage_group_55",
               "group_title": "B",
               "group_subtitle": null,
               "group_icon": null,
@@ -1553,7 +1976,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_60",
+              "group_id": "secondary_postpartum_haemorrhage_group_56",
               "group_title": "C",
               "group_subtitle": null,
               "group_icon": null,
@@ -1563,18 +1986,33 @@
                   "text": "Two large-bore IV cannulas."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Take:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Take:",
                   "items": [
-                    "FBC",
-                    "Group/crossmatch",
-                    "Coagulation",
-                    "Fibrinogen",
-                    "U&E",
-                    "Blood gas/lactate"
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Group/crossmatch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coagulation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibrinogen",
+                      "level": 0
+                    },
+                    {
+                      "text": "U&E",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood gas/lactate",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1584,41 +2022,53 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_61",
+              "group_id": "secondary_postpartum_haemorrhage_group_57",
               "group_title": "D",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Consciousness",
-                    "Blood glucose"
+                    {
+                      "text": "Consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood glucose",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_62",
+              "group_id": "secondary_postpartum_haemorrhage_group_58",
               "group_title": "E",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Bleeding",
-                    "Infection",
-                    "Wounds",
-                    "Abdominal findings"
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wounds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal findings",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1627,11 +2077,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_29",
-          "subsection_title": "Blood products",
+          "subsection_title": "29. Blood products",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_63",
+              "group_id": "secondary_postpartum_haemorrhage_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1642,19 +2092,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Activate the local major obstetric haemorrhage protocol."
+                  "text": "Activate the local **major obstetric haemorrhage protocol**."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Blood products may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Blood products may include:",
                   "items": [
-                    "Packed red cells",
-                    "Fresh frozen plasma",
-                    "Platelets",
-                    "Fibrinogen replacement where indicated"
+                    {
+                      "text": "Packed red cells",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fresh frozen plasma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Platelets",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibrinogen replacement where indicated",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1667,49 +2126,58 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_30",
-          "subsection_title": "Treat the cause",
+          "subsection_title": "30. Treat the cause",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_64",
+              "group_id": "secondary_postpartum_haemorrhage_group_60",
               "group_title": "Retained products",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on severity and findings:"
+                  "type": "list",
+                  "title": "Depending on severity and findings:",
+                  "items": [
+                    {
+                      "text": "Senior obstetric review",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antibiotics if infection suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evacuation/source control when indicated",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Senior obstetric review",
-                    "Antibiotics if infection suspected",
-                    "Evacuation/source control when indicated"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_65",
-              "group_title": "Important",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Important**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Do not automatically perform blind uterine curettage."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential complications include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential complications include:",
                   "items": [
-                    "Uterine perforation",
-                    "Intrauterine adhesions",
-                    "Haemorrhage"
+                    {
+                      "text": "Uterine perforation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine adhesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemorrhage",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1722,11 +2190,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_31",
-          "subsection_title": "Endometritis",
+          "subsection_title": "31. Endometritis",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_66",
+              "group_id": "secondary_postpartum_haemorrhage_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1738,21 +2206,27 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_67",
+              "group_id": "secondary_postpartum_haemorrhage_group_62",
               "group_title": "Treat with appropriate broad-spectrum antibiotics.",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess for:",
                   "items": [
-                    "Retained products",
-                    "Abscess",
-                    "Persistent sepsis"
+                    {
+                      "text": "Retained products",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abscess",
+                      "level": 0
+                    },
+                    {
+                      "text": "Persistent sepsis",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1761,7 +2235,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Antibiotics alone may not be enough."
+                  "text": "**Antibiotics alone may not be enough.**"
                 },
                 {
                   "type": "paragraph",
@@ -1773,11 +2247,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_32",
-          "subsection_title": "Subinvolution",
+          "subsection_title": "32. Subinvolution",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_68",
+              "group_id": "secondary_postpartum_haemorrhage_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1787,16 +2261,25 @@
                   "text": "If other causes have been excluded:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management may include:",
                   "items": [
-                    "Observation if bleeding is mild and patient stable",
-                    "Treatment of infection if present",
-                    "Uterotonic therapy in selected cases",
-                    "Specialist gynaecological assessment if persistent"
+                    {
+                      "text": "Observation if bleeding is mild and patient stable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treatment of infection if present",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterotonic therapy in selected cases",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist gynaecological assessment if persistent",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1805,23 +2288,23 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_33",
-          "subsection_title": "Uterine artery pseudoaneurysm",
+          "subsection_title": "33. Uterine artery pseudoaneurysm",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_69",
+              "group_id": "secondary_postpartum_haemorrhage_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is a high-yield viva topic."
+                  "text": "This is a **high-yield viva topic**."
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_70",
+              "group_id": "secondary_postpartum_haemorrhage_group_65",
               "group_title": "Typical presentation",
               "group_subtitle": null,
               "group_icon": null,
@@ -1833,16 +2316,14 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_71",
+              "group_id": "secondary_postpartum_haemorrhage_group_66",
               "group_title": "Investigation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Colour Doppler ultrasound"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Colour Doppler ultrasound**"
                 },
                 {
                   "type": "paragraph",
@@ -1851,7 +2332,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_72",
+              "group_id": "secondary_postpartum_haemorrhage_group_67",
               "group_title": "Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1861,10 +2342,8 @@
                   "text": "Often:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Uterine artery embolisation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Uterine artery embolisation**"
                 },
                 {
                   "type": "paragraph",
@@ -1873,14 +2352,14 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_73",
+              "group_id": "secondary_postpartum_haemorrhage_group_68",
               "group_title": "Important trap",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "If a vascular lesion is suspected, avoid blind curettage, because it can precipitate catastrophic bleeding."
+                  "text": "If a vascular lesion is suspected, **avoid blind curettage**, because it can precipitate catastrophic bleeding."
                 }
               ]
             }
@@ -1888,25 +2367,31 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_34",
-          "subsection_title": "Gestational trophoblastic disease",
+          "subsection_title": "34. Gestational trophoblastic disease",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_74",
+              "group_id": "secondary_postpartum_haemorrhage_group_69",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If persistent bleeding is associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If persistent bleeding is associated with:",
                   "items": [
-                    "Persistently elevated β-hCG",
-                    "Abnormal ultrasound",
-                    "Symptoms/signs suggestive of trophoblastic disease"
+                    {
+                      "text": "Persistently elevated β-hCG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms/signs suggestive of trophoblastic disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1919,11 +2404,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_35",
-          "subsection_title": "Differential diagnosis",
+          "subsection_title": "35. Differential diagnosis",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_75",
+              "group_id": "secondary_postpartum_haemorrhage_group_70",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1979,42 +2464,45 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_36",
-          "subsection_title": "How to report your findings",
+          "subsection_title": "36. How to report your findings",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_76",
+              "group_id": "secondary_postpartum_haemorrhage_group_71",
               "group_title": "Example 1 — Retained products",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This woman is haemodynamically stable but has ongoing secondary postpartum haemorrhage with a subinvoluted uterus. She has no obvious clinical features of sepsis. My leading diagnosis is retained products of conception. I would arrange urgent pelvic ultrasound, blood tests and senior obstetric review.”"
+                  "text": "“This woman is haemodynamically stable but has ongoing secondary postpartum haemorrhage with a subinvoluted uterus. She has no obvious clinical features of sepsis. My leading diagnosis is retained products of conception. I would arrange urgent pelvic ultrasound, blood tests and senior obstetric review.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_77",
+              "group_id": "secondary_postpartum_haemorrhage_group_72",
               "group_title": "Example 2 — Endometritis",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This woman is febrile and tachycardic with lower abdominal tenderness, a tender subinvoluted uterus and offensive lochia. My leading diagnosis is postpartum endometritis causing secondary postpartum haemorrhage. I would assess for sepsis, obtain appropriate cultures and blood tests, commence appropriate broad-spectrum antibiotics and investigate for retained products.”"
+                  "text": "“This woman is febrile and tachycardic with lower abdominal tenderness, a tender subinvoluted uterus and offensive lochia. My leading diagnosis is postpartum endometritis causing secondary postpartum haemorrhage. I would assess for sepsis, obtain appropriate cultures and blood tests, commence appropriate broad-spectrum antibiotics and investigate for retained products.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_78",
+              "group_id": "secondary_postpartum_haemorrhage_group_73",
               "group_title": "Example 3 — Vascular lesion",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This woman has recurrent episodes of significant secondary postpartum haemorrhage following Caesarean delivery. A vascular lesion such as a uterine artery pseudoaneurysm needs to be excluded. I would arrange urgent Doppler assessment and involve senior gynaecology/interventional radiology. I would avoid blind uterine instrumentation until a vascular cause has been excluded.”"
+                  "text": "“This woman has recurrent episodes of significant secondary postpartum haemorrhage following Caesarean delivery. A vascular lesion such as a uterine artery pseudoaneurysm needs to be excluded. I would arrange urgent Doppler assessment and involve senior gynaecology/interventional radiology. I would avoid blind uterine instrumentation until a vascular cause has been excluded.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2022,130 +2510,136 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_37",
-          "subsection_title": "Examiner questions",
+          "subsection_title": "37. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_79",
+              "group_id": "secondary_postpartum_haemorrhage_group_74",
               "group_title": "Q1. Define secondary PPH.",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“It is abnormal or excessive postpartum genital tract bleeding occurring after the first 24 hours following delivery, traditionally up to 6 weeks postpartum.”"
+                  "text": "“It is abnormal or excessive postpartum genital tract bleeding occurring after the first 24 hours following delivery, traditionally up to 6 weeks postpartum.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_80",
+              "group_id": "secondary_postpartum_haemorrhage_group_75",
               "group_title": "Q2. What are the common causes?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Retained products of conception, endometritis and subinvolution of the placental site are major causes. Other causes include coagulopathy, uterine vascular lesions and gestational trophoblastic disease.”"
+                  "text": "“Retained products of conception, endometritis and subinvolution of the placental site are major causes. Other causes include coagulopathy, uterine vascular lesions and gestational trophoblastic disease.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_81",
+              "group_id": "secondary_postpartum_haemorrhage_group_76",
               "group_title": "Q3. What is the most important investigation?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Pelvic ultrasound is an important investigation when retained products or intrauterine pathology is suspected, but investigations should be guided by the clinical presentation.”"
+                  "text": "“Pelvic ultrasound is an important investigation when retained products or intrauterine pathology is suspected, but investigations should be guided by the clinical presentation.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_82",
+              "group_id": "secondary_postpartum_haemorrhage_group_77",
               "group_title": "Q4. What blood tests would you request?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“FBC, group and crossmatch, coagulation studies, fibrinogen if significant haemorrhage, renal function and other tests such as CRP, lactate and blood gas depending on the clinical condition.”"
+                  "text": "“FBC, group and crossmatch, coagulation studies, fibrinogen if significant haemorrhage, renal function and other tests such as CRP, lactate and blood gas depending on the clinical condition.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_83",
+              "group_id": "secondary_postpartum_haemorrhage_group_78",
               "group_title": "Q5. What suggests endometritis?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Fever, uterine tenderness, offensive lochia and sometimes subinvolution and tachycardia.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Fever, uterine tenderness, offensive lochia and sometimes subinvolution and tachycardia.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_84",
+              "group_id": "secondary_postpartum_haemorrhage_group_79",
               "group_title": "Q6. What is subinvolution?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Failure of the uterus and particularly the placental implantation site to involute at the expected rate after delivery, which can contribute to secondary postpartum haemorrhage.”"
+                  "text": "“Failure of the uterus and particularly the placental implantation site to involute at the expected rate after delivery, which can contribute to secondary postpartum haemorrhage.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_85",
+              "group_id": "secondary_postpartum_haemorrhage_group_80",
               "group_title": "Q7. What vascular lesion can cause secondary PPH?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A uterine artery pseudoaneurysm or, less commonly, an acquired uterine arteriovenous malformation.”"
+                  "text": "**“A uterine artery pseudoaneurysm or, less commonly, an acquired uterine arteriovenous malformation.”**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_86",
+              "group_id": "secondary_postpartum_haemorrhage_group_81",
               "group_title": "Q8. How would you diagnose a uterine artery pseudoaneurysm?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Colour Doppler ultrasound is an important first-line investigation.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Colour Doppler ultrasound is an important first-line investigation.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_87",
+              "group_id": "secondary_postpartum_haemorrhage_group_82",
               "group_title": "Q9. How might a pseudoaneurysm be treated?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Uterine artery embolisation is an important fertility-preserving treatment in appropriate patients, with surgical management considered depending on the clinical situation.”"
+                  "text": "“Uterine artery embolisation is an important fertility-preserving treatment in appropriate patients, with surgical management considered depending on the clinical situation.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_88",
+              "group_id": "secondary_postpartum_haemorrhage_group_83",
               "group_title": "Q10. What is your immediate priority if she is shocked?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Resuscitation and haemorrhage control. I would not delay treatment while waiting for the definitive diagnosis.”"
+                  "text": "**“Resuscitation and haemorrhage control. I would not delay treatment while waiting for the definitive diagnosis.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -2153,11 +2647,11 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_38",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "38. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_89",
+              "group_id": "secondary_postpartum_haemorrhage_group_84",
               "group_title": "❌ Mistake 1: Calling every secondary PPH “retained products”",
               "group_subtitle": null,
               "group_icon": null,
@@ -2169,7 +2663,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_90",
+              "group_id": "secondary_postpartum_haemorrhage_group_85",
               "group_title": "❌ Mistake 2: Forgetting infection",
               "group_subtitle": null,
               "group_icon": null,
@@ -2180,12 +2674,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fever + uterine pain + offensive lochia."
+                  "text": "**Fever + uterine pain + offensive lochia.**"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_91",
+              "group_id": "secondary_postpartum_haemorrhage_group_86",
               "group_title": "❌ Mistake 3: Forgetting vascular causes",
               "group_subtitle": null,
               "group_icon": null,
@@ -2196,12 +2690,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Recurrent severe bleeding after Caesarean section."
+                  "text": "**Recurrent severe bleeding after Caesarean section.**"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_92",
+              "group_id": "secondary_postpartum_haemorrhage_group_87",
               "group_title": "❌ Mistake 4: Blind curettage",
               "group_subtitle": null,
               "group_icon": null,
@@ -2213,7 +2707,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_93",
+              "group_id": "secondary_postpartum_haemorrhage_group_88",
               "group_title": "❌ Mistake 5: Ignoring haemodynamic status",
               "group_subtitle": null,
               "group_icon": null,
@@ -2223,15 +2717,14 @@
                   "text": "The first question is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is she stable?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Is she stable?”**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_94",
+              "group_id": "secondary_postpartum_haemorrhage_group_89",
               "group_title": "❌ Mistake 6: Assuming a normal Hb excludes major bleeding",
               "group_subtitle": null,
               "group_icon": null,
@@ -2243,7 +2736,7 @@
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_95",
+              "group_id": "secondary_postpartum_haemorrhage_group_90",
               "group_title": "❌ Mistake 7: Forgetting β-hCG",
               "group_subtitle": null,
               "group_icon": null,
@@ -2258,140 +2751,247 @@
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_39",
-          "subsection_title": "OSCE mnemonic",
+          "subsection_title": "39. OSCE mnemonic",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_96",
-              "group_title": "V — Vascular lesion",
+              "group_id": "secondary_postpartum_haemorrhage_group_91",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**“RIP + V”**",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_92",
+              "group_title": "R — Retained products",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**I — Infection**"
+                }
+              ]
+            },
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_93",
+              "group_title": "P — Placental site subinvolution",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**V — Vascular lesion**"
+                },
+                {
+                  "type": "paragraph",
                   "text": "Then remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C = Coagulopathy",
-                    "G = Gestational trophoblastic disease"
-                  ]
+                  "type": "paragraph",
+                  "text": "**C = Coagulopathy**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**G = Gestational trophoblastic disease**"
                 },
                 {
                   "type": "paragraph",
                   "text": "So:"
                 }
               ]
+            },
+            {
+              "group_id": "secondary_postpartum_haemorrhage_group_94",
+              "group_title": "RIP + VCG",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
           "subsection_id": "secondary_postpartum_haemorrhage_subsection_40",
-          "subsection_title": "Emergency algorithm",
+          "subsection_title": "40. Emergency algorithm",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_97",
+              "group_id": "secondary_postpartum_haemorrhage_group_95",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "SECONDARY POSTPARTUM HAEMORRHAGE",
-                    "↓",
-                    "ABCDE ASSESSMENT",
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "SECONDARY POSTPARTUM HAEMORRHAGE"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "ABCDE ASSESSMENT"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Is she unstable?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↙ ↘",
-                    "YES NO",
-                    "↓ ↓",
-                    "CALL HELP Focused history",
-                    "↓ ↓",
-                    "2 LARGE IVs Examination",
-                    "↓ ↓",
-                    "Bloods/crossmatch Blood tests",
-                    "↓ ↓",
-                    "Resuscitate Pelvic ultrasound",
-                    "↓ ↓",
-                    "Control bleeding Identify cause",
-                    "↓ ↓",
-                    "└───────┬───────┘",
-                    "↓",
-                    "IDENTIFY CAUSE",
-                    "↓",
-                    "┌────────┬────────┬────────┬─────────┐",
-                    "↓ ↓ ↓ ↓",
-                    "RPOC Endometritis Subinvolution Vascular",
-                    "↓ ↓ ↓ ↓",
-                    "Source IV Specialist Doppler/",
-                    "control antibiotics review embolisation"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "secondary_postpartum_haemorrhage_subsection_41",
-          "subsection_title": "⭐ EXAM GOLD",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "secondary_postpartum_haemorrhage_group_98",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
                   "type": "paragraph",
-                  "text": "If you remember only six things, remember:"
+                  "text": "↙ ↘"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Secondary PPH occurs after 24 hours postpartum."
+                  "text": "YES NO"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Think retained products, infection and subinvolution first."
+                  "text": "↓ ↓"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Always assess haemodynamic stability first."
+                  "text": "CALL HELP Focused history"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fever + uterine tenderness + offensive lochia = think endometritis."
+                  "text": "↓ ↓"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Recurrent massive bleeding after Caesarean = consider uterine artery pseudoaneurysm."
+                  "text": "2 LARGE IVs Examination"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Never blindly instrument a uterus when a vascular lesion is suspected."
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bloods/crossmatch Blood tests"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Resuscitate Pelvic ultrasound"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Control bleeding Identify cause"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "└───────┬───────┘"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "IDENTIFY CAUSE"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "┌────────┬────────┬────────┬─────────┐"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓ ↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "RPOC Endometritis Subinvolution Vascular"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓ ↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Source IV Specialist Doppler/"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "control antibiotics review embolisation"
                 }
               ]
             },
             {
-              "group_id": "secondary_postpartum_haemorrhage_group_99",
-              "group_title": "One-line examiner answer",
+              "group_id": "secondary_postpartum_haemorrhage_group_96",
+              "group_title": "⭐ EXAM GOLD",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "list",
+                  "title": "If you remember only **six things**, remember:",
+                  "items": [
+                    {
+                      "text": "**Secondary PPH occurs after 24 hours postpartum.**",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Think **retained products, infection and subinvolution** first.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Always assess haemodynamic stability first.**",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Fever + uterine tenderness + offensive lochia = think endometritis.**",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "**Recurrent massive bleeding after Caesarean = consider uterine artery pseudoaneurysm.**",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "**Never blindly instrument a uterus when a vascular lesion is suspected.**",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
+                },
+                {
                   "type": "paragraph",
-                  "text": "“In secondary postpartum haemorrhage, I would first assess and stabilise the mother, then determine whether the likely cause is retained products, infection, subinvolution, coagulopathy or a vascular lesion, using clinical assessment, laboratory tests and pelvic imaging to guide definitive treatment.”"
+                  "text": "**One-line examiner answer**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“In secondary postpartum haemorrhage, I would first assess and stabilise the mother, then determine whether the likely cause is retained products, infection, subinvolution, coagulopathy or a vascular lesion, using clinical assessment, laboratory tests and pelvic imaging to guide definitive treatment.”**",
+                  "style": "quote"
                 }
               ]
             }

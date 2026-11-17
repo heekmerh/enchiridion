@@ -37,7 +37,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -51,36 +51,49 @@
                   "text": "You are an obstetric doctor caring for a pregnant woman who requires an intervention. The examiner asks you to obtain informed consent for one of the following:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Caesarean section."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Induction of labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood transfusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Operative vaginal delivery using forceps or vacuum."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Manual removal of the placenta."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evacuation of retained products of conception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sterilisation or another contraceptive procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An obstetric procedure where the woman is anxious or reluctant."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Caesarean section.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Induction of labour.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Blood transfusion.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Operative vaginal delivery using forceps or vacuum.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Manual removal of the placenta.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Evacuation of retained products of conception.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Sterilisation or another contraceptive procedure.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "An obstetric procedure where the woman is anxious or reluctant.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -96,7 +109,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_3",
-          "subsection_title": "Definition of informed consent",
+          "subsection_title": "2. Definition of informed consent",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -110,36 +123,38 @@
                   "text": "Informed consent is a voluntary decision made by a patient with the capacity to decide, after receiving and understanding relevant information about a proposed intervention."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The patient should understand:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Why the intervention is recommended."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "What the procedure involves."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Its expected benefits."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Material risks and possible complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reasonable alternatives, including no intervention where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The likely consequences of accepting or declining the intervention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The opportunity to ask questions and change her mind."
+                  "type": "list",
+                  "title": "The patient should understand:",
+                  "items": [
+                    {
+                      "text": "Why the intervention is recommended.",
+                      "level": 0
+                    },
+                    {
+                      "text": "What the procedure involves.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Its expected benefits.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Material risks and possible complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reasonable alternatives, including no intervention where appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The likely consequences of accepting or declining the intervention.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The opportunity to ask questions and change her mind.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -151,7 +166,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_4",
-          "subsection_title": "The essential elements of valid consent",
+          "subsection_title": "3. The essential elements of valid consent",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -165,60 +180,48 @@
                   "text": "Remember these six elements."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Information"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Information"
                 },
                 {
                   "type": "paragraph",
                   "text": "Explain the procedure, benefits, material risks, alternatives and consequences of refusal."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Capacity"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Capacity"
                 },
                 {
                   "type": "paragraph",
                   "text": "The woman can understand, retain, use or weigh relevant information and communicate a decision."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Understanding"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Understanding"
                 },
                 {
                   "type": "paragraph",
                   "text": "Use understandable language and check comprehension rather than simply asking whether she understands."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Voluntariness"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Voluntariness"
                 },
                 {
                   "type": "paragraph",
                   "text": "The decision must be free from coercion, intimidation or inappropriate pressure."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "5. Alternatives"
-                  ]
+                  "type": "paragraph",
+                  "text": "5. Alternatives"
                 },
                 {
                   "type": "paragraph",
                   "text": "Discuss reasonable alternatives, including their benefits and risks."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "6. Documentation"
-                  ]
+                  "type": "paragraph",
+                  "text": "6. Documentation"
                 },
                 {
                   "type": "paragraph",
@@ -230,7 +233,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_5",
-          "subsection_title": "Step-by-step approach to an obstetric consent station",
+          "subsection_title": "4. Step-by-step approach to an obstetric consent station",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -241,7 +244,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning, Madam. My name is Dr ____. I am one of the doctors looking after you today. I would like to discuss a procedure that we have recommended for you, explain why we think it may help, and talk through the benefits, risks and alternatives. Is that alright?”"
+                  "text": "“Good morning, Madam. My name is Dr ____. I am one of the doctors looking after you today. I would like to discuss a procedure that we have recommended for you, explain why we think it may help, and talk through the benefits, risks and alternatives. Is that alright?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -260,23 +264,21 @@
                   "text": "Ask what the woman understands about her condition."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For example:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "“What have you been told about your condition?”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“What is your understanding of why we have recommended this procedure?”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“What concerns you most about it?”"
+                    {
+                      "text": "“What have you been told about your condition?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“What is your understanding of why we have recommended this procedure?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“What concerns you most about it?”",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -301,7 +303,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Your baby's heart rate is showing concerning changes, and we are worried that your baby may not be coping well with labour. We recommend delivering the baby by caesarean section because we believe this may be the safest way to deliver promptly.”"
+                  "text": "“Your baby's heart rate is showing concerning changes, and we are worried that your baby may not be coping well with labour. We recommend delivering the baby by caesarean section because we believe this may be the safest way to deliver promptly.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -316,28 +319,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Describe what will happen, where relevant:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Preparation and monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anaesthesia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Main steps of the procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Expected duration or recovery, if known and relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Post-procedure monitoring and aftercare."
+                  "type": "list",
+                  "title": "Describe what will happen, where relevant:",
+                  "items": [
+                    {
+                      "text": "Preparation and monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthesia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Main steps of the procedure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Expected duration or recovery, if known and relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Post-procedure monitoring and aftercare.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -368,28 +373,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continued observation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A different method of delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Another treatment option."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Referral for specialist assessment, where feasible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No intervention, with an explanation of the likely consequences."
+                  "type": "list",
+                  "title": "Examples may include:",
+                  "items": [
+                    {
+                      "text": "Continued observation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A different method of delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Another treatment option.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Referral for specialist assessment, where feasible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No intervention, with an explanation of the likely consequences.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -409,7 +416,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Just so I know I have explained everything clearly, could you tell me in your own words what the procedure is intended to do and what the main risks are?”"
+                  "text": "“Just so I know I have explained everything clearly, could you tell me in your own words what the procedure is intended to do and what the main risks are?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -428,12 +436,19 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What questions do you have?”",
-                    "“Is there anything you would like me to explain again?”",
-                    "“Do you feel you have enough information to decide?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What questions do you have?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Is there anything you would like me to explain again?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Do you feel you have enough information to decide?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -465,7 +480,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_6",
-          "subsection_title": "Consent for caesarean section",
+          "subsection_title": "5. Consent for caesarean section",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -487,36 +502,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the circumstances, caesarean section may be recommended for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Persistent fetal compromise."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Labour that is not progressing despite appropriate management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placenta praevia obstructing vaginal birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Certain malpresentations, such as transverse lie."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Some cases of previous uterine surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected cases of multiple pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other maternal or fetal conditions where vaginal birth is unsafe or less appropriate."
+                  "type": "list",
+                  "title": "Depending on the circumstances, caesarean section may be recommended for:",
+                  "items": [
+                    {
+                      "text": "Persistent fetal compromise.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labour that is not progressing despite appropriate management.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta praevia obstructing vaginal birth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain malpresentations, such as transverse lie.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some cases of previous uterine surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected cases of multiple pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other maternal or fetal conditions where vaginal birth is unsafe or less appropriate.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -536,7 +553,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“A caesarean section is an operation in which we deliver your baby through an incision in your abdomen and uterus. It is usually performed under spinal or epidural anaesthesia, although general anaesthesia may sometimes be required. We will monitor you during the operation and provide pain relief afterwards.”"
+                  "text": "“A caesarean section is an operation in which we deliver your baby through an incision in your abdomen and uterus. It is usually performed under spinal or epidural anaesthesia, although general anaesthesia may sometimes be required. We will monitor you during the operation and provide pain relief afterwards.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -547,16 +565,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May permit prompt delivery when vaginal delivery is unsafe or too slow."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can reduce certain risks associated with the underlying obstetric complication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May be the safest route of delivery in specific maternal or fetal conditions."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "May permit prompt delivery when vaginal delivery is unsafe or too slow.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can reduce certain risks associated with the underlying obstetric complication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May be the safest route of delivery in specific maternal or fetal conditions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -571,40 +594,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain relevant risks, including:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding and possible blood transfusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infection of the wound or uterus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood clots, including deep-vein thrombosis and pulmonary embolism."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Injury to nearby organs, such as the bladder or bowel."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anaesthetic complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rarely, hysterectomy or life-threatening complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postoperative pain and a longer recovery than uncomplicated vaginal birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increased risks in some future pregnancies, including placenta praevia or placenta accreta spectrum and uterine scar complications."
+                  "type": "list",
+                  "title": "Explain relevant risks, including:",
+                  "items": [
+                    {
+                      "text": "Bleeding and possible blood transfusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection of the wound or uterus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood clots, including deep-vein thrombosis and pulmonary embolism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Injury to nearby organs, such as the bladder or bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetic complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rarely, hysterectomy or life-threatening complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postoperative pain and a longer recovery than uncomplicated vaginal birth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased risks in some future pregnancies, including placenta praevia or placenta accreta spectrum and uterine scar complications.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -615,16 +640,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Accidental skin injury during delivery, which is uncommon."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory difficulties, particularly when delivered before labour or before the appropriate gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Potential effects of the underlying condition that necessitated the operation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Accidental skin injury during delivery, which is uncommon.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory difficulties, particularly when delivered before labour or before the appropriate gestational age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Potential effects of the underlying condition that necessitated the operation.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -639,24 +669,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the indication:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continued labour with close monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assisted vaginal delivery, if appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Induction or augmentation of labour, where safe."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Another intervention suited to the specific complication."
+                  "type": "list",
+                  "title": "Depending on the indication:",
+                  "items": [
+                    {
+                      "text": "Continued labour with close monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assisted vaginal delivery, if appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Induction or augmentation of labour, where safe.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Another intervention suited to the specific complication.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -672,7 +704,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Madam, because of the changes we are seeing in your baby's condition, we recommend a caesarean section. This means delivering your baby through an operation involving cuts in your abdomen and uterus."
+                  "text": "“Madam, because of the changes we are seeing in your baby's condition, we recommend a caesarean section. This means delivering your baby through an operation involving cuts in your abdomen and uterus.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -696,7 +729,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_7",
-          "subsection_title": "Consent for induction of labour",
+          "subsection_title": "6. Consent for induction of labour",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -718,28 +751,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy continuing beyond the recommended gestational period."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prelabour rupture of membranes in appropriate circumstances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypertensive disorders of pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected maternal medical conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Concerns about fetal wellbeing where delivery is indicated."
+                  "type": "list",
+                  "title": "Examples include:",
+                  "items": [
+                    {
+                      "text": "Pregnancy continuing beyond the recommended gestational period.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prelabour rupture of membranes in appropriate circumstances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertensive disorders of pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected maternal medical conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concerns about fetal wellbeing where delivery is indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -750,24 +785,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the clinical situation and local protocol:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cervical ripening with medication, such as a prostaglandin."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mechanical cervical ripening with a balloon catheter."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amniotomy, when appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Oxytocin infusion."
+                  "type": "list",
+                  "title": "Depending on the clinical situation and local protocol:",
+                  "items": [
+                    {
+                      "text": "Cervical ripening with medication, such as a prostaglandin.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mechanical cervical ripening with a balloon catheter.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotomy, when appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxytocin infusion.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -782,16 +819,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Initiates delivery when continuing the pregnancy may pose greater risks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May reduce risks associated with prolonged pregnancy or certain maternal and fetal conditions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May allow vaginal birth and avoid caesarean section, although induction can sometimes lead to operative delivery."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Initiates delivery when continuing the pregnancy may pose greater risks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May reduce risks associated with prolonged pregnancy or certain maternal and fetal conditions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May allow vaginal birth and avoid caesarean section, although induction can sometimes lead to operative delivery.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -802,28 +844,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Painful or prolonged induction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failure to establish labour, sometimes requiring caesarean section."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine hyperstimulation, particularly with some medications, which may affect the baby's heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Need for continuous or additional fetal monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine rupture, a rare but important risk in selected circumstances, particularly with a previous uterine scar."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infection or other complications depending on the clinical circumstances."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Painful or prolonged induction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failure to establish labour, sometimes requiring caesarean section.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine hyperstimulation, particularly with some medications, which may affect the baby's heart rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Need for continuous or additional fetal monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture, a rare but important risk in selected circumstances, particularly with a previous uterine scar.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection or other complications depending on the clinical circumstances.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -834,16 +881,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Expectant management with an appropriate monitoring plan, if safe."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Another method of induction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Caesarean delivery, where indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Expectant management with an appropriate monitoring plan, if safe.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Another method of induction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean delivery, where indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -859,7 +911,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“We recommend induction because we believe it is safer for you and your baby to deliver now than to continue the pregnancy. We would use a method to help your cervix prepare for labour and may use other methods to start contractions."
+                  "text": "“We recommend induction because we believe it is safer for you and your baby to deliver now than to continue the pregnancy. We would use a method to help your cervix prepare for labour and may use other methods to start contractions.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -875,7 +928,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_8",
-          "subsection_title": "Consent for blood transfusion",
+          "subsection_title": "7. Consent for blood transfusion",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -897,24 +950,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain why transfusion is being considered:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Significant blood loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Haemodynamic instability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe symptomatic anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other clinically significant deficiencies requiring blood components."
+                  "type": "list",
+                  "title": "Explain why transfusion is being considered:",
+                  "items": [
+                    {
+                      "text": "Significant blood loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemodynamic instability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe symptomatic anaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other clinically significant deficiencies requiring blood components.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -929,16 +984,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Restores circulating red blood cells and improves oxygen delivery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supports resuscitation in major bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May prevent organ injury or death when clinically necessary."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Restores circulating red blood cells and improves oxygen delivery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supports resuscitation in major bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May prevent organ injury or death when clinically necessary.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -953,28 +1013,33 @@
                   "text": "Explain that transfusion is generally safe when properly indicated and administered, but risks include:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Fever or allergic reactions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Haemolytic transfusion reactions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Transfusion-associated circulatory overload."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Transfusion-related acute lung injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A very small residual risk of transmitting infections despite donor screening."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other complications depending on the clinical circumstances."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Fever or allergic reactions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemolytic transfusion reactions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Transfusion-associated circulatory overload.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Transfusion-related acute lung injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A very small residual risk of transmitting infections despite donor screening.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other complications depending on the clinical circumstances.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -985,24 +1050,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Where clinically reasonable, alternatives may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating the underlying cause of blood loss."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Iron therapy for suitable cases of iron-deficiency anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Measures to minimise further bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other blood conservation approaches."
+                  "type": "list",
+                  "title": "Where clinically reasonable, alternatives may include:",
+                  "items": [
+                    {
+                      "text": "Treating the underlying cause of blood loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Iron therapy for suitable cases of iron-deficiency anaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Measures to minimise further bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other blood conservation approaches.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1018,7 +1085,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Your blood count and clinical condition indicate that you may benefit from a blood transfusion. The purpose is to replace blood components and improve the delivery of oxygen to your organs."
+                  "text": "“Your blood count and clinical condition indicate that you may benefit from a blood transfusion. The purpose is to replace blood components and improve the delivery of oxygen to your organs.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1038,7 +1106,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_9",
-          "subsection_title": "Consent for operative vaginal delivery",
+          "subsection_title": "8. Consent for operative vaginal delivery",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1060,16 +1128,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Delay in the second stage of labour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Concern about fetal condition when expedited vaginal birth is appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal conditions where shortening the pushing phase may be beneficial."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Delay in the second stage of labour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concern about fetal condition when expedited vaginal birth is appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal conditions where shortening the pushing phase may be beneficial.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1080,12 +1153,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May achieve vaginal birth more quickly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May avoid or reduce the need for a second-stage caesarean section in appropriate circumstances."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "May achieve vaginal birth more quickly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May avoid or reduce the need for a second-stage caesarean section in appropriate circumstances.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1096,20 +1174,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Perineal tears, including severe tears."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vaginal or cervical trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postpartum bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pain and pelvic floor injury."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Perineal tears, including severe tears.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal or cervical trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postpartum bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain and pelvic floor injury.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1120,24 +1203,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the instrument and circumstances:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bruising or superficial injuries."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cephalohaematoma or other scalp injury, particularly with vacuum extraction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Facial injury or nerve injury, particularly with forceps."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rarely, serious neonatal injury."
+                  "type": "list",
+                  "title": "Depending on the instrument and circumstances:",
+                  "items": [
+                    {
+                      "text": "Bruising or superficial injuries.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cephalohaematoma or other scalp injury, particularly with vacuum extraction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial injury or nerve injury, particularly with forceps.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rarely, serious neonatal injury.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1148,16 +1233,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Continue pushing, if safe."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Caesarean section."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Another appropriate method of assisted delivery, where suitable."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Continue pushing, if safe.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean section.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Another appropriate method of assisted delivery, where suitable.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1173,7 +1263,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“We are considering assisting your baby's birth with an instrument because we believe this may help deliver the baby more safely or quickly. The instrument would be applied to your baby's head to help guide delivery."
+                  "text": "“We are considering assisting your baby's birth with an instrument because we believe this may help deliver the baby more safely or quickly. The instrument would be applied to your baby's head to help guide delivery.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1189,7 +1280,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_10",
-          "subsection_title": "Consent for manual removal of the placenta",
+          "subsection_title": "9. Consent for manual removal of the placenta",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1223,12 +1314,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Removes retained placental tissue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "May control bleeding and reduce the risk of ongoing haemorrhage or infection."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Removes retained placental tissue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "May control bleeding and reduce the risk of ongoing haemorrhage or infection.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1239,28 +1335,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pain and anaesthetic complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine injury or perforation, rarely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failure to remove the placenta completely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Further intervention, including surgery, in complicated cases."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pain and anaesthetic complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine injury or perforation, rarely.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failure to remove the placenta completely.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Further intervention, including surgery, in complicated cases.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1276,7 +1377,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Your placenta has not come out, and we are concerned about the risk of bleeding and other complications if it remains inside the uterus. We recommend removing it manually."
+                  "text": "“Your placenta has not come out, and we are concerned about the risk of bleeding and other complications if it remains inside the uterus. We recommend removing it manually.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1292,7 +1394,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_11",
-          "subsection_title": "Capacity and consent in emergencies",
+          "subsection_title": "10. Capacity and consent in emergencies",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1314,24 +1416,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For the specific decision, assess whether the woman can:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Understand the relevant information."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Retain it long enough to make the decision."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use or weigh the information as part of the decision."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Communicate her choice."
+                  "type": "list",
+                  "title": "For the specific decision, assess whether the woman can:",
+                  "items": [
+                    {
+                      "text": "Understand the relevant information.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Retain it long enough to make the decision.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Use or weigh the information as part of the decision.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Communicate her choice.",
+                      "level": 0,
+                      "label": "4."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1346,32 +1454,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explore her reasons and concerns."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure she has received clear, balanced information."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Correct misunderstandings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discuss alternatives and the consequences of refusal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Offer a second opinion or senior review where feasible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respect an informed decision by a woman with capacity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Document the discussion and continue appropriate care."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explore her reasons and concerns.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ensure she has received clear, balanced information.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Correct misunderstandings.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Discuss alternatives and the consequences of refusal.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Offer a second opinion or senior review where feasible.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Respect an informed decision by a woman with capacity.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Document the discussion and continue appropriate care.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1415,7 +1535,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_12",
-          "subsection_title": "Shared decision-making",
+          "subsection_title": "11. Shared decision-making",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1429,36 +1549,45 @@
                   "text": "Shared decision-making combines the clinician's medical expertise with the woman's values, preferences and circumstances."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use this sequence:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the clinical problem."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Present reasonable options."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Compare benefits and risks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask what matters most to the woman."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check her understanding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Agree on a plan where possible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Document the decision and review it if circumstances change."
+                  "type": "list",
+                  "title": "Use this sequence:",
+                  "items": [
+                    {
+                      "text": "Explain the clinical problem.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Present reasonable options.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Compare benefits and risks.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Ask what matters most to the woman.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Check her understanding.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Agree on a plan where possible.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Document the decision and review it if circumstances change.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -1486,7 +1615,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_13",
-          "subsection_title": "Documentation of consent",
+          "subsection_title": "12. Documentation of consent",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1496,44 +1625,46 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A good consent record includes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient identity and the proposed intervention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Indication and relevant clinical findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Benefits and material risks discussed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reasonable alternatives and consequences of refusal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Questions asked and information provided."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Evidence of understanding and voluntariness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Decision made, including any refusal or limitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Date, time and names of relevant clinicians."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The consent form, where required by local policy."
+                  "type": "list",
+                  "title": "A good consent record includes:",
+                  "items": [
+                    {
+                      "text": "Patient identity and the proposed intervention.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Indication and relevant clinical findings.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Benefits and material risks discussed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reasonable alternatives and consequences of refusal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Questions asked and information provided.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of understanding and voluntariness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Decision made, including any refusal or limitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Date, time and names of relevant clinicians.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The consent form, where required by local policy.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1549,7 +1680,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_14",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "13. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1644,7 +1775,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_15",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "14. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1654,48 +1785,53 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Asking the woman to sign before explaining the procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using technical terms without explanation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Listing risks without explaining the indication or benefits."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Omitting alternatives and the consequences of declining treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pressuring the woman by using fear or guilt."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming the partner has decision-making authority."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating disagreement as evidence of incapacity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to check understanding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Promising that complications will not occur."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting that consent may be withdrawn."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Relying on a signed form without documenting the discussion."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Asking the woman to sign before explaining the procedure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using technical terms without explanation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Listing risks without explaining the indication or benefits.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Omitting alternatives and the consequences of declining treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pressuring the woman by using fear or guilt.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming the partner has decision-making authority.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treating disagreement as evidence of incapacity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to check understanding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Promising that complications will not occur.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting that consent may be withdrawn.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relying on a signed form without documenting the discussion.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1703,7 +1839,7 @@
         },
         {
           "subsection_id": "obstetric_consent_and_shared_decision_subsection_16",
-          "subsection_title": "Mnemonic: CONSENT",
+          "subsection_title": "15. Mnemonic: CONSENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1713,10 +1849,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Clinical indication"
-                  ]
+                  "type": "paragraph",
+                  "text": "Clinical indication"
                 },
                 {
                   "type": "paragraph",
@@ -1731,10 +1865,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Options"
-                  ]
+                  "type": "paragraph",
+                  "text": "Options"
                 },
                 {
                   "type": "paragraph",
@@ -1749,10 +1881,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Nature of the procedure"
-                  ]
+                  "type": "paragraph",
+                  "text": "Nature of the procedure"
                 },
                 {
                   "type": "paragraph",
@@ -1767,10 +1897,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Significant risks and benefits"
-                  ]
+                  "type": "paragraph",
+                  "text": "Significant risks and benefits"
                 },
                 {
                   "type": "paragraph",
@@ -1785,10 +1913,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Evaluate understanding"
-                  ]
+                  "type": "paragraph",
+                  "text": "Evaluate understanding"
                 },
                 {
                   "type": "paragraph",
@@ -1803,10 +1929,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "No coercion"
-                  ]
+                  "type": "paragraph",
+                  "text": "No coercion"
                 },
                 {
                   "type": "paragraph",
@@ -1821,10 +1945,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Trace the discussion"
-                  ]
+                  "type": "paragraph",
+                  "text": "Trace the discussion"
                 },
                 {
                   "type": "paragraph",

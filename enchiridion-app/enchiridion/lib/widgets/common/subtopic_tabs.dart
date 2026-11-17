@@ -472,12 +472,22 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
 
     return Column(
       children: [
-        TabBar(
-          controller: _controller,
-          isScrollable: true,
-          onTap: _scrollToTab,
-          tabs: [for (final tab in _tabs) Tab(text: tab.title)],
-        ),
+        if (_tabs.length > kMaxSubtopicTabs)
+          _ContentsBar(
+            controller: _controller,
+            titles: [for (final tab in _tabs) tab.title],
+            onSelected: (index) {
+              _controller.index = index;
+              _scrollToTab(index);
+            },
+          )
+        else
+          TabBar(
+            controller: _controller,
+            isScrollable: true,
+            onTap: _scrollToTab,
+            tabs: [for (final tab in _tabs) Tab(text: tab.title)],
+          ),
         Expanded(
           child: GestureDetector(
             onHorizontalDragEnd: _handleHorizontalDragEnd,
@@ -489,6 +499,132 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Past this many sub-topics a tab strip stops being scannable on a phone,
+/// so [SubtopicTabsView] shows a contents bar that opens the full list.
+const int kMaxSubtopicTabs = 6;
+
+/// Pinned bar naming the section in view; tapping it opens every section
+/// as a list to jump to.
+class _ContentsBar extends StatelessWidget {
+  final TabController controller;
+  final List<String> titles;
+  final ValueChanged<int> onSelected;
+
+  const _ContentsBar({
+    required this.controller,
+    required this.titles,
+    required this.onSelected,
+  });
+
+  Future<void> _open(BuildContext context) async {
+    final selected = await showModalBottomSheet<int>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (sheetContext) => _ContentsSheet(
+        titles: titles,
+        current: controller.index,
+      ),
+    );
+    if (selected != null) onSelected(selected);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Material(
+      color: theme.colorScheme.surface,
+      child: InkWell(
+        onTap: () => _open(context),
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(16, 10, 12, 10),
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: theme.dividerColor)),
+          ),
+          child: AnimatedBuilder(
+            animation: controller,
+            builder: (context, _) => Row(
+              children: [
+                Icon(Icons.toc, color: theme.colorScheme.primary),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Contents · ${controller.index + 1} of ${titles.length}',
+                        style: theme.textTheme.labelSmall?.copyWith(
+                          color: theme.colorScheme.primary,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        titles[controller.index],
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: theme.textTheme.titleSmall,
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.expand_more),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ContentsSheet extends StatelessWidget {
+  final List<String> titles;
+  final int current;
+
+  const _ContentsSheet({required this.titles, required this.current});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: 0.7,
+      maxChildSize: 0.95,
+      builder: (context, scrollController) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 8),
+            child: Text('Contents', style: theme.textTheme.titleMedium),
+          ),
+          Expanded(
+            child: ListView.builder(
+              controller: scrollController,
+              itemCount: titles.length,
+              itemBuilder: (context, index) {
+                final active = index == current;
+                return ListTile(
+                  selected: active,
+                  dense: true,
+                  title: Text(
+                    titles[index],
+                    style: active
+                        ? const TextStyle(fontWeight: FontWeight.w700)
+                        : null,
+                  ),
+                  onTap: () => Navigator.of(context).pop(index),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

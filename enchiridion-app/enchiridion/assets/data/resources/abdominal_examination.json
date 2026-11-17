@@ -18,48 +18,78 @@
       "subsections": [
         {
           "subsection_id": "abdominal_examination_subsection_1",
-          "subsection_title": "INTRODUCTION (OSCE OPENING)",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "abdominal_examination_group_1",
+              "group_title": "ABDOMINAL EXAMINATION",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_2",
+          "subsection_title": "1. INTRODUCTION (OSCE OPENING)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_2",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "When you begin in an OSCE: RIGHT SIDE OF THE PATIENT"
+                  "text": "When you begin in an OSCE: **RIGHT SIDE OF THE PATIENT**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Hello, I’m a medical student. I’ve been asked to examine your abdomen. This will involve looking, feeling, tapping, and listening to your tummy. It shouldn’t be painful, but let me know if you feel any discomfort.”"
+                  "text": "“Hello, I’m a medical student. I’ve been asked to examine your abdomen. This will involve looking, feeling, tapping, and listening to your tummy. It shouldn’t be painful, but let me know if you feel any discomfort.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Wash hands",
-                    "Gain consent",
-                    "Ensure privacy",
-                    "Position patient at 45°",
-                    "Expose from nipples to knees"
+                    {
+                      "text": "Wash hands",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gain consent",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure privacy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position patient at **45°**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Expose from **nipples to knees**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about pain → **“Do you have any pain?”**\n👉 If yes → **examine painful area LAST**",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about pain → “Do you have any pain?” 👉 If yes → examine painful area LAST"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_2",
-          "subsection_title": "GENERAL INSPECTION (END OF BED)",
+          "subsection_id": "abdominal_examination_subsection_3",
+          "subsection_title": "2. GENERAL INSPECTION (END OF BED)",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_2",
+              "group_id": "abdominal_examination_group_3",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -76,35 +106,59 @@
               ]
             },
             {
-              "group_id": "abdominal_examination_group_3",
+              "group_id": "abdominal_examination_group_4",
               "group_title": "Patient condition",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Distress, pain, jaundice, pallor",
-                    "Cachexia (malignancy)",
-                    "Dehydration"
+                    {
+                      "text": "Distress, pain, jaundice, pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cachexia (malignancy)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dehydration",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "abdominal_examination_group_4",
+              "group_id": "abdominal_examination_group_5",
               "group_title": "Surroundings",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "IV lines",
-                    "NG tube",
-                    "Urinary catheter",
-                    "Stoma bags",
-                    "Drains"
+                    {
+                      "text": "IV lines",
+                      "level": 0
+                    },
+                    {
+                      "text": "NG tube",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urinary catheter",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stoma bags",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drains",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -112,12 +166,12 @@
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_3",
-          "subsection_title": "HANDS",
+          "subsection_id": "abdominal_examination_subsection_4",
+          "subsection_title": "3. HANDS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_5",
+              "group_id": "abdominal_examination_group_6",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -133,42 +187,33 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Clubbing → IBD, cirrhosis",
-                    "Leukonychia → hypoalbuminemia",
-                    "Palmar erythema → liver disease",
-                    "Dupuytren’s contracture → chronic liver disease",
-                    "Asterixis (flapping tremor) → hepatic encephalopathy",
-                    "👉 Test: Ask patient to extend arms and dorsiflex wrists"
+                    {
+                      "text": "**Clubbing** → IBD, cirrhosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Leukonychia** → hypoalbuminemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Palmar erythema** → liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Dupuytren’s contracture** → chronic liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Asterixis (flapping tremor)** → hepatic encephalopathy",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_4",
-          "subsection_title": "ARMS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_6",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "image",
-                  "assetPath": "assets/resources/content/medical/abdominal_examination_04.webp",
-                  "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Scratch marks → pruritus (cholestasis)",
-                    "Bruising → coagulopathy"
-                  ]
+                  "type": "paragraph",
+                  "text": "👉 Test: Ask patient to extend arms and dorsiflex wrists"
                 }
               ]
             }
@@ -176,7 +221,7 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_5",
-          "subsection_title": "FACE",
+          "subsection_title": "4. ARMS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -187,23 +232,62 @@
               "blocks": [
                 {
                   "type": "image",
+                  "assetPath": "assets/resources/content/medical/abdominal_examination_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Scratch marks → pruritus (cholestasis)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bruising → coagulopathy",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_6",
+          "subsection_title": "5. FACE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_8",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_05.webp",
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Eyes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Jaundice (scleral icterus)",
-                    "Pallor"
+                    {
+                      "text": "**Eyes**:",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice (scleral icterus)",
+                      "level": 1
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Mouth**:",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mouth:"
                 },
                 {
                   "type": "image",
@@ -216,10 +300,16 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Angular stomatitis (anemia)",
-                    "Glossitis"
+                    {
+                      "text": "Angular stomatitis (anemia)",
+                      "level": 1
+                    },
+                    {
+                      "text": "Glossitis",
+                      "level": 1
+                    }
                   ]
                 }
               ]
@@ -227,12 +317,12 @@
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_6",
-          "subsection_title": "NECK",
+          "subsection_id": "abdominal_examination_subsection_7",
+          "subsection_title": "6. NECK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_8",
+              "group_id": "abdominal_examination_group_9",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -243,31 +333,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Virchow’s node (left supraclavicular) → gastric cancer"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_7",
-          "subsection_title": "CHEST",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_9",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Spider naevi → liver disease",
-                    "Gynaecomastia → cirrhosis"
+                    {
+                      "text": "**Virchow’s node (left supraclavicular)** → gastric cancer",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -276,20 +347,46 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_8",
-          "subsection_title": "ABDOMINAL EXAMINATION (CORE)",
+          "subsection_title": "7. CHEST",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "abdominal_examination_group_10",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "**Spider naevi** → liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Gynaecomastia** → cirrhosis",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_9",
+          "subsection_title": "8. ABDOMINAL EXAMINATION (CORE)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_11",
               "group_title": "A. INSPECTION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Position: patient lying flat"
-                  ]
+                  "type": "paragraph",
+                  "text": "Position: patient lying flat"
                 },
                 {
                   "type": "image",
@@ -299,63 +396,81 @@
                 {
                   "type": "paragraph",
                   "text": "Look for:"
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_11",
-              "group_title": "Shape",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Shape**",
+                  "style": "heading"
+                },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_10.webp",
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Flat, distended, scaphoid"
+                    {
+                      "text": "Flat, distended, scaphoid",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_12",
-              "group_title": "Distension causes (5 F’s)",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Distension causes (5 F’s)**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Fat",
-                    "Fluid (ascites)",
-                    "Fetus",
-                    "Flatus",
-                    "Faeces"
+                    {
+                      "text": "Fat",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fluid (ascites)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Flatus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Faeces",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_13",
-              "group_title": "Skin",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Skin**",
+                  "style": "heading"
+                },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_11.webp",
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Scars (surgical history)",
-                    "Striae",
-                    "Dilated veins (caput medusae → portal hypertension)"
+                    {
+                      "text": "Scars (surgical history)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Striae",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dilated veins (caput medusae → portal hypertension)",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -364,57 +479,75 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Bruising:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Cullen’s sign (umbilical)",
-                    "Grey Turner’s (flanks)",
-                    "Hernia"
+                    {
+                      "text": "Bruising:",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cullen’s sign (umbilical)",
+                      "level": 1
+                    },
+                    {
+                      "text": "Grey Turner’s (flanks)",
+                      "level": 1
+                    },
+                    {
+                      "text": "Hernia",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_13.webp",
                   "caption": null
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_14",
-              "group_title": "Umbilicus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Umbilicus**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Everted → ascites",
-                    "Inverted → normal",
-                    "Nodule → Sister Mary Joseph node (malignancy)"
+                    {
+                      "text": "Everted → ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inverted → normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nodule → Sister Mary Joseph node (malignancy)",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Visible movements**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Peristalsis → obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulsations → AAA",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "abdominal_examination_group_15",
-              "group_title": "Visible movements",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Peristalsis → obstruction",
-                    "Pulsations → AAA"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_16",
+              "group_id": "abdominal_examination_group_12",
               "group_title": "B. PALPATION",
               "group_subtitle": null,
               "group_icon": null,
@@ -426,146 +559,197 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "👉 Warm hands 👉 Kneel or sit at patient level 👉 Watch patient’s face"
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_17",
-              "group_title": "1. Light palpation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "👉 Warm hands\n👉 Kneel or sit at patient level\n👉 Watch patient’s face"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1. Light palpation**",
+                  "style": "heading"
+                },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_15.webp",
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tenderness",
-                    "Guarding"
+                    {
+                      "text": "Tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Guarding",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_18",
-              "group_title": "2. Deep palpation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Deep palpation**",
+                  "style": "heading"
+                },
                 {
                   "type": "image",
                   "assetPath": "assets/resources/content/medical/abdominal_examination_16.webp",
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Masses (location, size, consistency, mobility)"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_19",
-              "group_title": "3. Specific organ palpation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Liver",
-                    "Start in RIF → move upwards",
-                    "Ask patient to breathe in",
-                    "Feel liver edge",
-                    "👉 Enlarged liver = hepatomegaly"
+                    {
+                      "text": "Masses (location, size, consistency, mobility)",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**3. Specific organ palpation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Liver**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Spleen",
-                    "Start RIF → move diagonally",
-                    "Enlarges towards right iliac fossa",
-                    "👉 Tip: You cannot “get above” spleen"
+                    {
+                      "text": "Start in RIF → move upwards",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask patient to **breathe in**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feel liver edge",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "👉 Enlarged liver = hepatomegaly"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Spleen**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Kidneys (ballotment)",
-                    "One hand anterior, one posterior",
-                    "Try to “capture” kidney"
+                    {
+                      "text": "Start RIF → move diagonally",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enlarges towards **right iliac fossa**",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "👉 Tip: You cannot “get above” spleen"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Kidneys (ballotment)**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Aorta",
-                    "Above umbilicus",
-                    "Expansile pulsation → AAA"
+                    {
+                      "text": "One hand anterior, one posterior",
+                      "level": 0
+                    },
+                    {
+                      "text": "Try to “capture” kidney",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Aorta**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Above umbilicus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Expansile pulsation → AAA",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "abdominal_examination_group_20",
-              "group_title": "General",
+              "group_id": "abdominal_examination_group_13",
+              "group_title": "C. PERCUSSION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Tympanic (gas)",
-                    "Dull (solid/fluid)"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_21",
-              "group_title": "Liver span",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**General**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Percuss midclavicular line"
+                    {
+                      "text": "Tympanic (gas)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dull (solid/fluid)",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_22",
-              "group_title": "Spleen",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Traube’s space (normally resonant)"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "abdominal_examination_group_23",
-              "group_title": "Ascites tests",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**Liver span**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "1. Shifting dullness"
+                    {
+                      "text": "Percuss midclavicular line",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Spleen**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Traube’s space (normally resonant)",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Ascites tests**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1. Shifting dullness**"
                 },
                 {
                   "type": "image",
@@ -573,76 +757,66 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Percuss → roll patient → re-percuss",
-                    "2. Fluid thrill",
-                    "Assistant presses midline"
+                    {
+                      "text": "Percuss → roll patient → re-percuss",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Fluid thrill**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assistant presses midline",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "abdominal_examination_group_24",
+              "group_id": "abdominal_examination_group_14",
               "group_title": "D. AUSCULTATION",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Bowel sounds:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Normal",
-                    "Absent → ileus",
-                    "Hyperactive → obstruction"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bruits:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Renal artery stenosis",
-                    "AAA"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_9",
-          "subsection_title": "SPECIAL TESTS (HIGH-YIELD)",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_25",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Murphy’s sign → cholecystitis",
-                    "McBurney’s point tenderness → appendicitis"
-                  ]
-                },
-                {
-                  "type": "image",
-                  "assetPath": "assets/resources/content/medical/abdominal_examination_18.webp",
-                  "caption": null
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Rebound tenderness → peritonitis",
-                    "Rovsing’s sign → appendicitis"
+                    {
+                      "text": "Bowel sounds:",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal",
+                      "level": 1
+                    },
+                    {
+                      "text": "Absent → ileus",
+                      "level": 1
+                    },
+                    {
+                      "text": "Hyperactive → obstruction",
+                      "level": 1
+                    },
+                    {
+                      "text": "Bruits:",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal artery stenosis",
+                      "level": 1
+                    },
+                    {
+                      "text": "AAA",
+                      "level": 1
+                    }
                   ]
                 }
               ]
@@ -651,35 +825,44 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_10",
-          "subsection_title": "COMPLETION",
+          "subsection_title": "9. SPECIAL TESTS (HIGH-YIELD)",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_26",
+              "group_id": "abdominal_examination_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hernial orifices",
-                    "External genitalia (if indicated)"
+                    {
+                      "text": "**Murphy’s sign** → cholecystitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "**McBurney’s point tenderness** → appendicitis",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/abdominal_examination_18.webp",
+                  "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "PR exam",
-                    "Urinalysis"
+                    {
+                      "text": "**Rebound tenderness** → peritonitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Rovsing’s sign** → appendicitis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -688,11 +871,55 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_11",
-          "subsection_title": "OSCE PRESENTATION OF FINDINGS",
+          "subsection_title": "10. COMPLETION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_27",
+              "group_id": "abdominal_examination_group_16",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Examine:",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Hernial orifices**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**External genitalia (if indicated)**",
+                      "level": 1
+                    },
+                    {
+                      "text": "Check:",
+                      "level": 0
+                    },
+                    {
+                      "text": "**PR exam**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Urinalysis**",
+                      "level": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_12",
+          "subsection_title": "11. OSCE PRESENTATION OF FINDINGS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_17",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -704,14 +931,15 @@
               ]
             },
             {
-              "group_id": "abdominal_examination_group_28",
+              "group_id": "abdominal_examination_group_18",
               "group_title": "Normal Presentation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“On general inspection, the patient appears comfortable at rest with no obvious distress. There are no stigmata of chronic liver disease on the hands, face, or chest."
+                  "text": "“On general inspection, the patient appears comfortable at rest with no obvious distress. There are no stigmata of chronic liver disease on the hands, face, or chest.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -722,18 +950,203 @@
                   "text": "Percussion reveals normal tympany with no evidence of ascites. Bowel sounds are present and normal."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "In summary, this is a normal abdominal examination.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "In summary, this is a normal abdominal examination.”"
+                }
+              ]
+            },
+            {
+              "group_id": "abdominal_examination_group_19",
+              "group_title": "EXAMPLES OF ABNORMAL FINDINGS",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_13",
+          "subsection_title": "1. ASCITES (e.g., Liver Cirrhosis)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_20",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The abdomen is distended with a full flanks appearance and an everted umbilicus. There are dilated superficial veins visible over the abdominal wall.\nOn palpation, the abdomen is soft and non-tender.\nPercussion reveals shifting dullness, consistent with free fluid in the abdomen.\nBowel sounds are present.\nThese findings are suggestive of ascites, likely secondary to chronic liver disease.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_12",
-          "subsection_title": "ASCITES (e.g., Liver Cirrhosis)",
+          "subsection_id": "abdominal_examination_subsection_14",
+          "subsection_title": "2. SPLENOMEGALY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_21",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“On palpation, there is a palpable mass arising from the left costal margin extending towards the right iliac fossa. The mass moves with respiration and has a smooth surface with a palpable notch.\nI am unable to get above the mass.\nThese findings are consistent with splenomegaly.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_15",
+          "subsection_title": "3. HEPATOMEGALY (Tender – e.g., Hepatitis)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_22",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There is a tender, enlarged liver palpable 3 cm below the right costal margin. The edge is smooth and regular.\nThere is no splenomegaly and no evidence of ascites.\nThese findings suggest hepatomegaly, possibly due to an inflammatory cause such as hepatitis.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_16",
+          "subsection_title": "4. LIVER CIRRHOSIS (WITH STIGMATA)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_23",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There are stigmata of chronic liver disease including spider naevi and palmar erythema.\nThe abdomen is distended with evidence of ascites on percussion.\nThe liver edge is not clearly palpable, and there may be splenomegaly.\nThese findings are suggestive of chronic liver disease with portal hypertension.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_17",
+          "subsection_title": "5. ACUTE APPENDICITIS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_24",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There is localized tenderness in the right iliac fossa with associated guarding.\nRebound tenderness is present, and there is maximal tenderness at McBurney’s point.\nThese findings are suggestive of acute appendicitis.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_18",
+          "subsection_title": "6. ACUTE CHOLECYSTITIS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_25",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There is tenderness in the right upper quadrant with a positive Murphy’s sign.\nThe patient experiences pain and stops inspiration during palpation.\nThese findings are suggestive of acute cholecystitis.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_19",
+          "subsection_title": "7. ABDOMINAL AORTIC ANEURYSM (AAA)",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_26",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There is a central pulsatile abdominal mass located above the umbilicus.\nThe mass is expansile on palpation.\nThese findings are concerning for an abdominal aortic aneurysm.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_20",
+          "subsection_title": "8. INTESTINAL OBSTRUCTION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_27",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The abdomen is distended with visible peristalsis.\nOn auscultation, there are high-pitched, tinkling bowel sounds.\nThere is generalized tenderness but no peritonism.\nThese findings are suggestive of intestinal obstruction.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_21",
+          "subsection_title": "9. PERITONITIS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "abdominal_examination_group_28",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The abdomen is rigid with generalized tenderness.\nThere is involuntary guarding and rebound tenderness present.\nBowel sounds are absent.\nThese findings are consistent with peritonitis.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "abdominal_examination_subsection_22",
+          "subsection_title": "10. ABDOMINAL MASS (GENERAL PRESENTATION)",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -744,15 +1157,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The abdomen is distended with a full flanks appearance and an everted umbilicus. There are dilated superficial veins visible over the abdominal wall. On palpation, the abdomen is soft and non-tender. Percussion reveals shifting dullness, consistent with free fluid in the abdomen. Bowel sounds are present. These findings are suggestive of ascites, likely secondary to chronic liver disease.”"
+                  "text": "“There is a palpable mass in the left lower quadrant measuring approximately 5 cm.\nIt is firm, non-tender, and has limited mobility.\nThe overlying skin appears normal.\nFurther evaluation is required to determine the origin of the mass.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_13",
-          "subsection_title": "SPLENOMEGALY",
+          "subsection_id": "abdominal_examination_subsection_23",
+          "subsection_title": "11. RENAL MASS (BALLOTABLE KIDNEY)",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -763,15 +1177,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“On palpation, there is a palpable mass arising from the left costal margin extending towards the right iliac fossa. The mass moves with respiration and has a smooth surface with a palpable notch. I am unable to get above the mass. These findings are consistent with splenomegaly.”"
+                  "text": "“There is a mass in the right flank that is ballotable on examination.\nIt is smooth and moves slightly with respiration.\nThese findings are suggestive of a renal mass.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_14",
-          "subsection_title": "HEPATOMEGALY (Tender – e.g., Hepatitis)",
+          "subsection_id": "abdominal_examination_subsection_24",
+          "subsection_title": "12. PANCREATITIS (SEVERE)",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -782,15 +1197,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a tender, enlarged liver palpable 3 cm below the right costal margin. The edge is smooth and regular. There is no splenomegaly and no evidence of ascites. These findings suggest hepatomegaly, possibly due to an inflammatory cause such as hepatitis.”"
+                  "text": "“There is epigastric tenderness with guarding.\nThere are signs of bruising around the umbilicus (Cullen’s sign).\nThese findings are suggestive of acute pancreatitis, possibly severe.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_15",
-          "subsection_title": "LIVER CIRRHOSIS (WITH STIGMATA)",
+          "subsection_id": "abdominal_examination_subsection_25",
+          "subsection_title": "13. FAECAL LOADING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -801,15 +1217,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There are stigmata of chronic liver disease including spider naevi and palmar erythema. The abdomen is distended with evidence of ascites on percussion. The liver edge is not clearly palpable, and there may be splenomegaly. These findings are suggestive of chronic liver disease with portal hypertension.”"
+                  "text": "“There is a firm, irregular mass palpable in the left iliac fossa.\nIt is non-tender and does not move with respiration.\nThese findings are suggestive of faecal loading.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_16",
-          "subsection_title": "ACUTE APPENDICITIS",
+          "subsection_id": "abdominal_examination_subsection_26",
+          "subsection_title": "14. GASTRIC CANCER (ADVANCED)",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -820,15 +1237,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is localized tenderness in the right iliac fossa with associated guarding. Rebound tenderness is present, and there is maximal tenderness at McBurney’s point. These findings are suggestive of acute appendicitis.”"
+                  "text": "“There is a palpable left supraclavicular lymph node.\nThe abdomen shows a possible epigastric mass and features suggestive of ascites.\nThese findings raise suspicion for advanced intra-abdominal malignancy, possibly gastric in origin.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_17",
-          "subsection_title": "ACUTE CHOLECYSTITIS",
+          "subsection_id": "abdominal_examination_subsection_27",
+          "subsection_title": "15. HERNIA (INGUINAL EXAMPLE)",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -839,34 +1257,66 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is tenderness in the right upper quadrant with a positive Murphy’s sign. The patient experiences pain and stops inspiration during palpation. These findings are suggestive of acute cholecystitis.”"
+                  "text": "“There is a swelling in the right inguinal region that becomes more prominent on coughing.\nIt is reducible and has a cough impulse.\nThese findings are consistent with an inguinal hernia.”",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_18",
-          "subsection_title": "ABDOMINAL AORTIC ANEURYSM (AAA)",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "abdominal_examination_group_35",
-              "group_title": "",
+              "group_title": "🔑 TIPS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a central pulsatile abdominal mass located above the umbilicus. The mass is expansile on palpation. These findings are concerning for an abdominal aortic aneurysm.”"
+                  "text": "Always end with:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“These findings are suggestive of…”",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Avoid overcommitting:\n❌ “This is definitely…”\n✅ “Suggestive of / consistent with…”",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mention:",
+                      "level": 0
+                    },
+                    {
+                      "text": "**Location**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Size**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Tenderness**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Movement with respiration**",
+                      "level": 1
+                    },
+                    {
+                      "text": "**Special signs**",
+                      "level": 1
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_19",
-          "subsection_title": "INTESTINAL OBSTRUCTION",
+          "subsection_id": "abdominal_examination_subsection_28",
+          "subsection_title": "12. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -876,16 +1326,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "“The abdomen is distended with visible peristalsis. On auscultation, there are high-pitched, tinkling bowel sounds. There is generalized tenderness but no peritonism. These findings are suggestive of intestinal obstruction.”"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Not asking about **pain first**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cold hands 😅",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pressing too hard too early",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not watching patient’s face",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting **from right side**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skipping **completion steps**",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_20",
-          "subsection_title": "PERITONITIS",
+          "subsection_id": "abdominal_examination_subsection_29",
+          "subsection_title": "13. QUICK MEMORY AID",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -896,15 +1371,37 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The abdomen is rigid with generalized tenderness. There is involuntary guarding and rebound tenderness present. Bowel sounds are absent. These findings are consistent with peritonitis.”"
+                  "text": "**“IPPA”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "**I**nspection",
+                      "level": 0
+                    },
+                    {
+                      "text": "**P**alpation",
+                      "level": 0
+                    },
+                    {
+                      "text": "**P**ercussion",
+                      "level": 0
+                    },
+                    {
+                      "text": "**A**uscultation",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_21",
-          "subsection_title": "ABDOMINAL MASS (GENERAL PRESENTATION)",
+          "subsection_id": "abdominal_examination_subsection_30",
+          "subsection_title": "14. EXTRA HIGH-YIELD PEARLS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -914,35 +1411,48 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "“There is a palpable mass in the left lower quadrant measuring approximately 5 cm. It is firm, non-tender, and has limited mobility. The overlying skin appears normal. Further evaluation is required to determine the origin of the mass.”"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Always examine **painful area LAST**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver moves **down on inspiration**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spleen enlarges **diagonally**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites = **shifting dullness**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bowel obstruction = **tinkling sounds**",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peritonitis = **guarding + rebound tenderness**",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_22",
-          "subsection_title": "RENAL MASS (BALLOTABLE KIDNEY)",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "abdominal_examination_group_39",
-              "group_title": "",
+              "group_title": "🩺 OSCE VIVA – ABDOMINAL EXAMINATION",
               "group_subtitle": null,
               "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a mass in the right flank that is ballotable on examination. It is smooth and moves slightly with respiration. These findings are suggestive of a renal mass.”"
-                }
-              ]
+              "blocks": []
             }
           ]
         },
         {
-          "subsection_id": "abdominal_examination_subsection_23",
-          "subsection_title": "PANCREATITIS (SEVERE)",
+          "subsection_id": "abdominal_examination_subsection_31",
+          "subsection_title": "1. Why do you examine the patient from the right side?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -953,202 +1463,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is epigastric tenderness with guarding. There are signs of bruising around the umbilicus (Cullen’s sign). These findings are suggestive of acute pancreatitis, possibly severe.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_24",
-          "subsection_title": "FAECAL LOADING",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_41",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a firm, irregular mass palpable in the left iliac fossa. It is non-tender and does not move with respiration. These findings are suggestive of faecal loading.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_25",
-          "subsection_title": "GASTRIC CANCER (ADVANCED)",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_42",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a palpable left supraclavicular lymph node. The abdomen shows a possible epigastric mass and features suggestive of ascites. These findings raise suspicion for advanced intra-abdominal malignancy, possibly gastric in origin.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_26",
-          "subsection_title": "HERNIA (INGUINAL EXAMPLE)",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_43",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“There is a swelling in the right inguinal region that becomes more prominent on coughing. It is reducible and has a cough impulse. These findings are consistent with an inguinal hernia.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_27",
-          "subsection_title": "🔑 TIPS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_44",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Always end with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“These findings are suggestive of…”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid overcommitting: ❌ “This is definitely…” ✅ “Suggestive of / consistent with…”"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mention:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Location",
-                    "Size",
-                    "Tenderness",
-                    "Movement with respiration",
-                    "Special signs"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_28",
-          "subsection_title": "COMMON OSCE MISTAKES",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_45",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Not asking about pain first",
-                    "Cold hands 😅",
-                    "Pressing too hard too early",
-                    "Not watching patient’s face",
-                    "Forgetting from right side",
-                    "Skipping completion steps"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_29",
-          "subsection_title": "QUICK MEMORY AID",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_46",
-              "group_title": "“IPPA”",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Inspection",
-                    "Palpation",
-                    "Percussion",
-                    "Auscultation"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_30",
-          "subsection_title": "EXTRA HIGH-YIELD PEARLS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_47",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Always examine painful area LAST",
-                    "Liver moves down on inspiration",
-                    "Spleen enlarges diagonally",
-                    "Ascites = shifting dullness",
-                    "Bowel obstruction = tinkling sounds",
-                    "Peritonitis = guarding + rebound tenderness"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "abdominal_examination_subsection_31",
-          "subsection_title": "Why do you examine the patient from the right side?",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "abdominal_examination_group_48",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1160,18 +1475,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_32",
-          "subsection_title": "Why do you ask about pain before examining?",
+          "subsection_title": "2. Why do you ask about pain before examining?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_49",
+              "group_id": "abdominal_examination_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1183,18 +1498,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_33",
-          "subsection_title": "Why are your hands warmed before palpation?",
+          "subsection_title": "3. Why are your hands warmed before palpation?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_50",
+              "group_id": "abdominal_examination_group_42",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1206,24 +1521,22 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_34",
-          "subsection_title": "What are the causes of abdominal distension?",
+          "subsection_title": "4. What are the causes of abdominal distension?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_51",
+              "group_id": "abdominal_examination_group_43",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer (5 F’s):"
+                  "text": "**Answer (5 F’s):**"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fat, Fluid, Flatus, Faeces, Fetus"
-                  ]
+                  "type": "paragraph",
+                  "text": "Fat, Fluid, Flatus, Faeces, Fetus"
                 }
               ]
             }
@@ -1231,22 +1544,22 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_35",
-          "subsection_title": "How do you differentiate ascites from obesity?",
+          "subsection_title": "5. How do you differentiate ascites from obesity?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_52",
+              "group_id": "abdominal_examination_group_44",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Ascites shows shifting dullness and fluid thrill, while obesity does not. The flanks are more full in ascites."
+                  "text": "Ascites shows **shifting dullness and fluid thrill**, while obesity does not. The flanks are more full in ascites."
                 }
               ]
             }
@@ -1254,18 +1567,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_36",
-          "subsection_title": "What is shifting dullness?",
+          "subsection_title": "6. What is shifting dullness?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_53",
+              "group_id": "abdominal_examination_group_45",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1277,18 +1590,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_37",
-          "subsection_title": "Why do you auscultate before palpation?",
+          "subsection_title": "7. Why do you auscultate before palpation?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_54",
+              "group_id": "abdominal_examination_group_46",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1300,18 +1613,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_38",
-          "subsection_title": "What are normal bowel sounds?",
+          "subsection_title": "8. What are normal bowel sounds?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_55",
+              "group_id": "abdominal_examination_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1323,18 +1636,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_39",
-          "subsection_title": "What do absent bowel sounds suggest?",
+          "subsection_title": "9. What do absent bowel sounds suggest?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_56",
+              "group_id": "abdominal_examination_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1346,18 +1659,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_40",
-          "subsection_title": "What do hyperactive bowel sounds suggest?",
+          "subsection_title": "10. What do hyperactive bowel sounds suggest?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_57",
+              "group_id": "abdominal_examination_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1369,18 +1682,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_41",
-          "subsection_title": "How do you palpate the liver?",
+          "subsection_title": "11. How do you palpate the liver?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_58",
+              "group_id": "abdominal_examination_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1392,18 +1705,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_42",
-          "subsection_title": "What are features of a cirrhotic liver?",
+          "subsection_title": "12. What are features of a cirrhotic liver?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_59",
+              "group_id": "abdominal_examination_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1415,24 +1728,27 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_43",
-          "subsection_title": "How do you differentiate liver from spleen enlargement?",
+          "subsection_title": "13. How do you differentiate liver from spleen enlargement?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_60",
+              "group_id": "abdominal_examination_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Liver: moves vertically, no notch",
-                    "Spleen: moves diagonally, has a notch, cannot get above it"
+                    {
+                      "text": "Liver: moves vertically, no notch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spleen: moves diagonally, has a notch, cannot get above it",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1441,18 +1757,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_44",
-          "subsection_title": "What is Murphy’s sign?",
+          "subsection_title": "14. What is Murphy’s sign?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_61",
+              "group_id": "abdominal_examination_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1464,18 +1780,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_45",
-          "subsection_title": "What is McBurney’s point?",
+          "subsection_title": "15. What is McBurney’s point?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_62",
+              "group_id": "abdominal_examination_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1487,18 +1803,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_46",
-          "subsection_title": "What is rebound tenderness?",
+          "subsection_title": "16. What is rebound tenderness?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_63",
+              "group_id": "abdominal_examination_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1510,18 +1826,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_47",
-          "subsection_title": "What is guarding?",
+          "subsection_title": "17. What is guarding?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_64",
+              "group_id": "abdominal_examination_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1533,18 +1849,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_48",
-          "subsection_title": "What is a pulsatile abdominal mass?",
+          "subsection_title": "18. What is a pulsatile abdominal mass?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_65",
+              "group_id": "abdominal_examination_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1556,18 +1872,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_49",
-          "subsection_title": "What is caput medusae?",
+          "subsection_title": "19. What is caput medusae?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_66",
+              "group_id": "abdominal_examination_group_58",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1579,18 +1895,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_50",
-          "subsection_title": "What are signs of chronic liver disease?",
+          "subsection_title": "20. What are signs of chronic liver disease?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_67",
+              "group_id": "abdominal_examination_group_59",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1602,29 +1918,35 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_51",
-          "subsection_title": "What is splenomegaly? Give causes.",
+          "subsection_title": "21. What is splenomegaly? Give causes.",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_68",
+              "group_id": "abdominal_examination_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Enlargement of spleen. Causes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Enlargement of spleen.\n**Causes:**",
                   "items": [
-                    "Infection (malaria, EBV)",
-                    "Hematological (leukemia)",
-                    "Portal hypertension"
+                    {
+                      "text": "Infection (malaria, EBV)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hematological (leukemia)",
+                      "level": 0
+                    },
+                    {
+                      "text": "Portal hypertension",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1633,18 +1955,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_52",
-          "subsection_title": "How do you examine for splenomegaly?",
+          "subsection_title": "22. How do you examine for splenomegaly?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_69",
+              "group_id": "abdominal_examination_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1656,18 +1978,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_53",
-          "subsection_title": "What is ballotment?",
+          "subsection_title": "23. What is ballotment?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_70",
+              "group_id": "abdominal_examination_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1679,18 +2001,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_54",
-          "subsection_title": "What is Cullen’s sign?",
+          "subsection_title": "24. What is Cullen’s sign?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_71",
+              "group_id": "abdominal_examination_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1702,18 +2024,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_55",
-          "subsection_title": "What is Grey Turner’s sign?",
+          "subsection_title": "25. What is Grey Turner’s sign?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_72",
+              "group_id": "abdominal_examination_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1725,18 +2047,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_56",
-          "subsection_title": "What would you do after completing the abdominal exam?",
+          "subsection_title": "26. What would you do after completing the abdominal exam?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_73",
+              "group_id": "abdominal_examination_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1748,31 +2070,43 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_57",
-          "subsection_title": "What investigations would you request?",
+          "subsection_title": "27. What investigations would you request?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_74",
+              "group_id": "abdominal_examination_group_66",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Depends on findings but may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depends on findings but may include:",
                   "items": [
-                    "FBC",
-                    "LFTs",
-                    "U&E",
-                    "Ultrasound abdomen",
-                    "CT scan"
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "LFTs",
+                      "level": 0
+                    },
+                    {
+                      "text": "U&E",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound abdomen",
+                      "level": 0
+                    },
+                    {
+                      "text": "CT scan",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1781,18 +2115,18 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_58",
-          "subsection_title": "How do you examine for ascites clinically?",
+          "subsection_title": "28. How do you examine for ascites clinically?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_75",
+              "group_id": "abdominal_examination_group_67",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1804,26 +2138,35 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_59",
-          "subsection_title": "What causes hepatomegaly?",
+          "subsection_title": "29. What causes hepatomegaly?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_76",
+              "group_id": "abdominal_examination_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Hepatitis",
-                    "Fatty liver",
-                    "Congestive heart failure",
-                    "Malignancy"
+                    {
+                      "text": "Hepatitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fatty liver",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congestive heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malignancy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1832,41 +2175,45 @@
         },
         {
           "subsection_id": "abdominal_examination_subsection_60",
-          "subsection_title": "What are the differences between voluntary and involuntary guarding?",
+          "subsection_title": "30. What are the differences between voluntary and involuntary guarding?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "abdominal_examination_group_77",
+              "group_id": "abdominal_examination_group_69",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Voluntary: patient conscious, reduces with relaxation",
-                    "Involuntary: due to peritonitis, persists despite relaxation"
+                    {
+                      "text": "Voluntary: patient conscious, reduces with relaxation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Involuntary: due to peritonitis, persists despite relaxation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "abdominal_examination_group_78",
+              "group_id": "abdominal_examination_group_70",
               "group_title": "Q: How would you summarize your findings to a consultant?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Model Answer:"
+                  "text": "**Model Answer:**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a patient with abdominal distension, shifting dullness, and stigmata of chronic liver disease, suggestive of ascites likely secondary to liver cirrhosis. I would like to confirm with ultrasound and perform further blood investigations.”"
+                  "text": "“This is a patient with abdominal distension, shifting dullness, and stigmata of chronic liver disease, suggestive of ascites likely secondary to liver cirrhosis. I would like to confirm with ultrasound and perform further blood investigations.”",
+                  "style": "quote"
                 }
               ]
             }

@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "speculum_examination_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -32,31 +32,33 @@
                   "text": "You may be asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a speculum examination on this patient.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a speculum examination on this patient.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a speculum examination to investigate vaginal discharge.”",
-                    "“Examine the cervix in a woman presenting with postcoital bleeding.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a speculum examination to investigate vaginal discharge.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Perform a speculum examination to determine whether the membranes have ruptured.”"
+                  "text": "**“Examine the cervix in a woman presenting with postcoital bleeding.”**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a speculum examination and take appropriate vaginal/cervical swabs.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a speculum examination to determine whether the membranes have ruptured.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“Perform a speculum examination and take appropriate vaginal/cervical swabs.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -64,7 +66,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_2",
-          "subsection_title": "WHAT IS A SPECULUM?",
+          "subsection_title": "2. WHAT IS A SPECULUM?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -78,18 +80,48 @@
                   "text": "A vaginal speculum is an instrument used to separate the vaginal walls and allow direct visualization of:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vaginal walls",
-                    "Cervix",
-                    "Vaginal discharge",
-                    "Blood",
-                    "Cervical lesions",
-                    "Cervical polyps",
-                    "Cervical ectropion",
-                    "Foreign bodies",
-                    "Evidence of infection",
-                    "Liquor draining through the cervix"
+                    {
+                      "text": "Vaginal walls",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical polyps",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical ectropion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foreign bodies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liquor draining through the cervix",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -97,10 +129,8 @@
                   "text": "The most commonly encountered OSCE instrument is the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Cusco's bivalve speculum"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Cusco's bivalve speculum**"
                 },
                 {
                   "type": "image",
@@ -113,7 +143,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_3",
-          "subsection_title": "COMMON INDICATIONS",
+          "subsection_title": "3. COMMON INDICATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -123,17 +153,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vaginal discharge",
-                    "Abnormal vaginal bleeding",
-                    "Postcoital bleeding",
-                    "Suspected STI/cervicitis",
-                    "Vaginal lesions",
-                    "Cervical lesions",
-                    "Cervical polyp",
-                    "Taking cervical/vaginal samples",
-                    "Assessment of vaginal trauma"
+                    {
+                      "text": "Vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected STI/cervicitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical lesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical polyp",
+                      "level": 0
+                    },
+                    {
+                      "text": "Taking cervical/vaginal samples",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assessment of vaginal trauma",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -145,11 +202,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Suspected rupture of membranes",
-                    "Vaginal bleeding where appropriate",
-                    "Assessment of cervical/vaginal pathology"
+                    {
+                      "text": "Suspected rupture of membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal bleeding where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assessment of cervical/vaginal pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -158,7 +224,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_4",
-          "subsection_title": "IMPORTANT CONTRAINDICATION/SAFETY CONSIDERATION",
+          "subsection_title": "4. IMPORTANT CONTRAINDICATION/SAFETY CONSIDERATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -169,7 +235,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The examiner may give you a scenario where a speculum examination is not appropriate without further assessment."
+                  "text": "The examiner may give you a scenario where a speculum examination is **not appropriate without further assessment**."
                 },
                 {
                   "type": "paragraph",
@@ -185,11 +251,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would first assess maternal and fetal wellbeing and establish the likely cause of the bleeding. I would avoid an inappropriate digital vaginal examination until placenta praevia has been excluded.”"
+                  "text": "“I would first assess maternal and fetal wellbeing and establish the likely cause of the bleeding. I would avoid an inappropriate digital vaginal examination until placenta praevia has been excluded.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "A speculum examination may sometimes be used in selected bleeding scenarios, but the examination must be clinically justified and performed safely."
+                  "text": "A speculum examination may sometimes be used in selected bleeding scenarios, but the examination must be **clinically justified and performed safely**."
                 }
               ]
             }
@@ -197,7 +264,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_5",
-          "subsection_title": "INTRODUCTION AND CONSENT",
+          "subsection_title": "5. INTRODUCTION AND CONSENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -216,7 +283,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I have been asked to perform an examination to look at your vagina and cervix.”"
+                  "text": "“Good morning. My name is Dr ____. I have been asked to perform an examination to look at your vagina and cervix.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -224,7 +292,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I will gently insert a lubricated instrument called a speculum into the vagina so that I can see the vaginal walls and cervix.”"
+                  "text": "“I will gently insert a lubricated instrument called a speculum into the vagina so that I can see the vaginal walls and cervix.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -232,17 +301,17 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“It may feel uncomfortable, but it should not be painful. Please tell me if you want me to stop at any time.”"
+                  "text": "“It may feel uncomfortable, but it should not be painful. Please tell me if you want me to stop at any time.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is that okay?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Is that okay?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -250,7 +319,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_6",
-          "subsection_title": "CHAPERONE",
+          "subsection_title": "6. CHAPERONE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -264,10 +333,8 @@
                   "text": "Offer an appropriate:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Chaperone"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Chaperone**"
                 },
                 {
                   "type": "paragraph",
@@ -283,7 +350,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_7",
-          "subsection_title": "EQUIPMENT",
+          "subsection_title": "7. EQUIPMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -293,21 +360,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You may need:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You may need:",
                   "items": [
-                    "Cusco's speculum",
-                    "Gloves",
-                    "Lubricant",
-                    "Good light source",
-                    "Swabs",
-                    "Cervical sampling equipment where indicated",
-                    "Specimen containers",
-                    "Appropriate PPE",
-                    "Disposable sheet"
+                    {
+                      "text": "Cusco's speculum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gloves",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lubricant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Good light source",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swabs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical sampling equipment where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specimen containers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate PPE",
+                      "level": 0
+                    },
+                    {
+                      "text": "Disposable sheet",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -320,7 +411,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_8",
-          "subsection_title": "POSITION",
+          "subsection_title": "8. POSITION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -334,10 +425,8 @@
                   "text": "The patient is generally positioned:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Dorsal/lithotomy position"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Dorsal/lithotomy position**"
                 },
                 {
                   "type": "image",
@@ -345,16 +434,25 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "with:",
                   "items": [
-                    "Knees flexed",
-                    "Hips abducted",
-                    "Adequate draping",
-                    "Adequate lighting"
+                    {
+                      "text": "Knees flexed",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hips abducted",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adequate draping",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adequate lighting",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -367,7 +465,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_9",
-          "subsection_title": "BEFORE INSERTING THE SPECULUM",
+          "subsection_title": "9. BEFORE INSERTING THE SPECULUM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -377,33 +475,63 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Inspect:",
                   "items": [
-                    "Vulva",
-                    "Perineum",
-                    "Introitus"
+                    {
+                      "text": "Vulva",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perineum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Introitus",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Ulcers",
-                    "Vesicles",
-                    "Warts",
-                    "Discharge",
-                    "Blood",
-                    "Swelling",
-                    "Trauma",
-                    "Skin changes",
-                    "Prolapse"
+                    {
+                      "text": "Ulcers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vesicles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warts",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolapse",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -411,10 +539,9 @@
                   "text": "Then explain:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“I am going to insert the speculum now.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“I am going to insert the speculum now.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -422,7 +549,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_10",
-          "subsection_title": "SPECULUM PREPARATION",
+          "subsection_title": "10. SPECULUM PREPARATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -436,15 +563,21 @@
                   "text": "Hold the closed speculum correctly."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "Appropriate size",
-                    "Mechanism functioning",
-                    "No sharp edges or damage"
+                    {
+                      "text": "Appropriate size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mechanism functioning",
+                      "level": 0
+                    },
+                    {
+                      "text": "No sharp edges or damage",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -477,7 +610,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_11",
-          "subsection_title": "INSERTING THE CUSCO'S SPECULUM",
+          "subsection_title": "11. INSERTING THE CUSCO'S SPECULUM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -572,7 +705,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_12",
-          "subsection_title": "IMPORTANT TECHNIQUE POINT",
+          "subsection_title": "12. IMPORTANT TECHNIQUE POINT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -583,7 +716,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not force the speculum."
+                  "text": "Do **not** force the speculum."
                 },
                 {
                   "type": "paragraph",
@@ -594,17 +727,29 @@
                   "text": "Stop."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Reassess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Reassess:",
                   "items": [
-                    "Position",
-                    "Lubrication",
-                    "Speculum size",
-                    "Patient relaxation",
-                    "Technique"
+                    {
+                      "text": "Position",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lubrication",
+                      "level": 0
+                    },
+                    {
+                      "text": "Speculum size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient relaxation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Technique",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -613,7 +758,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_13",
-          "subsection_title": "WHAT YOU SHOULD VISUALIZE",
+          "subsection_title": "13. WHAT YOU SHOULD VISUALIZE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -635,22 +780,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Colour",
-                    "Discharge",
-                    "Blood",
-                    "Ulcers",
-                    "Vesicles",
-                    "Warts",
-                    "Inflammation",
-                    "Masses",
-                    "Foreign body",
-                    "Vaginal wall abnormalities"
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vesicles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Warts",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inflammation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foreign body",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal wall abnormalities",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -658,10 +830,8 @@
                   "text": "Then locate the:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Cervix"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Cervix**"
                 }
               ]
             }
@@ -669,7 +839,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_14",
-          "subsection_title": "EXAMINING THE CERVIX",
+          "subsection_title": "14. EXAMINING THE CERVIX",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -703,17 +873,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Smooth surface",
-                    "Erosion/ectropion",
-                    "Ulceration",
-                    "Nodularity",
-                    "Irregularity"
+                    {
+                      "text": "Smooth surface",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erosion/ectropion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nodularity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irregularity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -725,16 +907,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Appearance",
-                    "Discharge",
-                    "Bleeding",
-                    "Lesions"
+                    {
+                      "text": "Appearance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lesions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -755,7 +946,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_15",
-          "subsection_title": "NORMAL CERVIX",
+          "subsection_title": "15. NORMAL CERVIX",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -765,19 +956,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A normal cervix may appear:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A normal cervix may appear:",
                   "items": [
-                    "Smooth",
-                    "Pink",
-                    "Regular",
-                    "Symmetrical",
-                    "No abnormal bleeding",
-                    "No suspicious lesion",
-                    "No abnormal discharge"
+                    {
+                      "text": "Smooth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pink",
+                      "level": 0
+                    },
+                    {
+                      "text": "Regular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symmetrical",
+                      "level": 0
+                    },
+                    {
+                      "text": "No abnormal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "No suspicious lesion",
+                      "level": 0
+                    },
+                    {
+                      "text": "No abnormal discharge",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -790,7 +999,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The vaginal walls appear healthy with no abnormal discharge or lesions. The cervix is visualized and appears smooth, pink and healthy, with no obvious lesion or contact bleeding.”"
+                  "text": "“The vaginal walls appear healthy with no abnormal discharge or lesions. The cervix is visualized and appears smooth, pink and healthy, with no obvious lesion or contact bleeding.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -798,7 +1008,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_16",
-          "subsection_title": "CERVICAL ECTROPION",
+          "subsection_title": "16. CERVICAL ECTROPION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -834,27 +1044,39 @@
                   "text": "This occurs because columnar epithelium is visible on the ectocervix."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It may be associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It may be associated with:",
                   "items": [
-                    "Pregnancy",
-                    "Adolescence",
-                    "Combined hormonal contraception"
+                    {
+                      "text": "Pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adolescence",
+                      "level": 0
+                    },
+                    {
+                      "text": "Combined hormonal contraception",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It can cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It can cause:",
                   "items": [
-                    "Increased discharge",
-                    "Contact bleeding",
-                    "Postcoital bleeding"
+                    {
+                      "text": "Increased discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contact bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -867,7 +1089,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a well-demarcated reddish area around the external os consistent with cervical ectropion.”"
+                  "text": "“There is a well-demarcated reddish area around the external os consistent with cervical ectropion.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -875,7 +1098,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_17",
-          "subsection_title": "CERVICAL POLYP",
+          "subsection_title": "17. CERVICAL POLYP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -898,15 +1121,21 @@
                   "text": "A smooth, fleshy, red/pink projection arising from the cervical canal."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May cause:",
                   "items": [
-                    "Intermenstrual bleeding",
-                    "Postcoital bleeding",
-                    "Vaginal discharge"
+                    {
+                      "text": "Intermenstrual bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postcoital bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal discharge",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -919,7 +1148,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is a smooth polypoid lesion protruding through the external cervical os. This requires appropriate gynaecological assessment.”"
+                  "text": "“There is a smooth polypoid lesion protruding through the external cervical os. This requires appropriate gynaecological assessment.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -931,7 +1161,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_18",
-          "subsection_title": "CERVICITIS",
+          "subsection_title": "18. CERVICITIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -951,29 +1181,47 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings:",
                   "items": [
-                    "Inflamed cervix",
-                    "Mucopurulent discharge",
-                    "Contact bleeding",
-                    "Cervical erythema"
+                    {
+                      "text": "Inflamed cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mucopurulent discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contact bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical erythema",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Chlamydia",
-                    "Gonorrhoea",
-                    "Trichomoniasis",
-                    "Other infections"
+                    {
+                      "text": "Chlamydia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gonorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trichomoniasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other infections",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -986,7 +1234,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix appears inflamed with mucopurulent discharge and contact bleeding, consistent with cervicitis.”"
+                  "text": "“The cervix appears inflamed with mucopurulent discharge and contact bleeding, consistent with cervicitis.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -998,7 +1247,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_19",
-          "subsection_title": "SUSPICIOUS CERVICAL LESION",
+          "subsection_title": "19. SUSPICIOUS CERVICAL LESION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1013,18 +1262,33 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Red flags include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Red flags include:",
                   "items": [
-                    "Irregular cervical mass",
-                    "Ulceration",
-                    "Friability",
-                    "Contact bleeding",
-                    "Necrotic area",
-                    "Abnormal vascularity"
+                    {
+                      "text": "Irregular cervical mass",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Friability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contact bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Necrotic area",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal vascularity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1037,17 +1301,17 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is an irregular, friable lesion involving the cervix with contact bleeding. This is suspicious and requires urgent specialist assessment.”"
+                  "text": "“There is an irregular, friable lesion involving the cervix with contact bleeding. This is suspicious and requires urgent specialist assessment.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not say:"
+                  "text": "Do **not** say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This is definitely cervical cancer.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This is definitely cervical cancer.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1059,7 +1323,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_20",
-          "subsection_title": "CERVICAL CANCER — CLASSIC OSCE DESCRIPTION",
+          "subsection_title": "20. CERVICAL CANCER — CLASSIC OSCE DESCRIPTION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1074,7 +1338,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Irregular, friable, ulcerated, bleeding on contact or replaced by an abnormal mass."
+                  "text": "**Irregular, friable, ulcerated, bleeding on contact or replaced by an abnormal mass.**"
                 },
                 {
                   "type": "paragraph",
@@ -1082,7 +1346,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would arrange urgent gynaecological assessment and appropriate diagnostic investigation rather than assuming the diagnosis from appearance alone.”"
+                  "text": "“I would arrange urgent gynaecological assessment and appropriate diagnostic investigation rather than assuming the diagnosis from appearance alone.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1090,7 +1355,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_21",
-          "subsection_title": "VAGINAL DISCHARGE",
+          "subsection_title": "21. VAGINAL DISCHARGE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1112,10 +1377,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Colour Consistency Odour Amount"
-                  ]
+                  "type": "paragraph",
+                  "text": "**C**olour\n**C**onsistency\n**O**dour\n**A**mount"
                 },
                 {
                   "type": "paragraph",
@@ -1123,7 +1386,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“There is a moderate amount of thin, greyish vaginal discharge with an abnormal odour.”"
+                  "text": "“There is a moderate amount of thin, greyish vaginal discharge with an abnormal odour.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1131,7 +1395,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_22",
-          "subsection_title": "COMMON DISCHARGE PATTERNS",
+          "subsection_title": "22. COMMON DISCHARGE PATTERNS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1146,27 +1410,39 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Typical features:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Typical features:",
                   "items": [
-                    "Thick",
-                    "White",
-                    "Curd-like",
-                    "Usually no strong offensive odour"
+                    {
+                      "text": "Thick",
+                      "level": 0
+                    },
+                    {
+                      "text": "White",
+                      "level": 0
+                    },
+                    {
+                      "text": "Curd-like",
+                      "level": 0
+                    },
+                    {
+                      "text": "Usually no strong offensive odour",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May be associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May be associated with:",
                   "items": [
-                    "Vulval itching",
-                    "Erythema"
+                    {
+                      "text": "Vulval itching",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erythema",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1183,16 +1459,25 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Typical discharge:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Typical discharge:",
                   "items": [
-                    "Thin",
-                    "Homogeneous",
-                    "Grey/white",
-                    "Fishy odour"
+                    {
+                      "text": "Thin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Homogeneous",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grey/white",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fishy odour",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1209,15 +1494,21 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May produce:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May produce:",
                   "items": [
-                    "Frothy",
-                    "Yellow-green discharge",
-                    "Offensive odour"
+                    {
+                      "text": "Frothy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Yellow-green discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Offensive odour",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1225,10 +1516,9 @@
                   "text": "The cervix may show:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Strawberry cervix.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Strawberry cervix.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "image",
@@ -1249,15 +1539,21 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "May have:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May have:",
                   "items": [
-                    "Mucopurulent cervical discharge",
-                    "Contact bleeding",
-                    "Cervical inflammation"
+                    {
+                      "text": "Mucopurulent cervical discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contact bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical inflammation",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1274,7 +1570,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_23",
-          "subsection_title": "“STRAWBERRY CERVIX”",
+          "subsection_title": "23. “STRAWBERRY CERVIX”",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1293,7 +1589,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Red and punctate due to small haemorrhages."
+                  "text": "**Red and punctate due to small haemorrhages.**"
                 },
                 {
                   "type": "paragraph",
@@ -1301,7 +1597,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Trichomoniasis."
+                  "text": "**Trichomoniasis.**"
                 }
               ]
             }
@@ -1309,7 +1605,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_24",
-          "subsection_title": "VAGINAL BLEEDING",
+          "subsection_title": "24. VAGINAL BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1319,17 +1615,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If blood is present, document:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If blood is present, document:",
                   "items": [
-                    "Amount",
-                    "Colour",
-                    "Source",
-                    "Whether it appears to arise from cervix/vagina",
-                    "Whether there is contact bleeding"
+                    {
+                      "text": "Amount",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Source",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether it appears to arise from cervix/vagina",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether there is contact bleeding",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1338,7 +1646,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“A small amount of fresh blood is seen at the cervical os with contact bleeding from the cervix.”"
+                  "text": "“A small amount of fresh blood is seen at the cervical os with contact bleeding from the cervix.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1346,7 +1655,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_25",
-          "subsection_title": "POSTCOITAL BLEEDING",
+          "subsection_title": "25. POSTCOITAL BLEEDING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1356,18 +1665,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important differential diagnoses include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important differential diagnoses include:",
                   "items": [
-                    "Cervical ectropion",
-                    "Cervicitis",
-                    "Cervical polyp",
-                    "Cervical malignancy",
-                    "Vaginal/vulval trauma",
-                    "Atrophic changes"
+                    {
+                      "text": "Cervical ectropion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervicitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical polyp",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical malignancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal/vulval trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atrophic changes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1376,7 +1700,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not reassure without appropriate assessment."
+                  "text": "**Do not reassure without appropriate assessment.**"
                 }
               ]
             }
@@ -1384,7 +1708,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_26",
-          "subsection_title": "SUSPECTED RUPTURE OF MEMBRANES",
+          "subsection_title": "26. SUSPECTED RUPTURE OF MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1403,18 +1727,24 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pooling of liquor in the posterior vaginal fornix or fluid passing through the cervical os."
+                  "text": "**Pooling of liquor in the posterior vaginal fornix or fluid passing through the cervical os.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Observe:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Observe:",
                   "items": [
-                    "Colour",
-                    "Amount",
-                    "Odour"
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amount",
+                      "level": 0
+                    },
+                    {
+                      "text": "Odour",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1422,20 +1752,18 @@
                   "text": "Possible descriptions:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Clear fluid is seen pooling in the posterior fornix.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Clear fluid is seen pooling in the posterior fornix.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Clear fluid is seen passing through the cervical os.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Clear fluid is seen passing through the cervical os.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1447,7 +1775,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_27",
-          "subsection_title": "MECONIUM-STAINED LIQUOR",
+          "subsection_title": "27. MECONIUM-STAINED LIQUOR",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1461,32 +1789,38 @@
                   "text": "If fluid is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Green/brown"
-                  ]
+                  "type": "paragraph",
+                  "text": "Green/brown"
                 },
                 {
                   "type": "paragraph",
                   "text": "report:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“There is greenish-brown fluid consistent with meconium-stained liquor.”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then assess:"
+                  "text": "“There is greenish-brown fluid consistent with meconium-stained liquor.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then assess:",
                   "items": [
-                    "Gestational age",
-                    "Maternal condition",
-                    "Fetal wellbeing",
-                    "Labour progress"
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Labour progress",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1495,7 +1829,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_28",
-          "subsection_title": "FOUL-SMELLING LIQUOR",
+          "subsection_title": "28. FOUL-SMELLING LIQUOR",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1517,23 +1851,34 @@
                   "text": "Report:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“There is foul-smelling vaginal fluid, raising concern for infection.”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then correlate with:"
+                  "text": "“There is foul-smelling vaginal fluid, raising concern for infection.”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then correlate with:",
                   "items": [
-                    "Maternal temperature",
-                    "Maternal pulse",
-                    "Uterine tenderness",
-                    "Fetal heart rate",
-                    "Other clinical findings"
+                    {
+                      "text": "Maternal temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other clinical findings",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1542,7 +1887,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_29",
-          "subsection_title": "TAKING SWABS",
+          "subsection_title": "29. TAKING SWABS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1552,31 +1897,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Depending on the indication, samples may include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the indication, samples may include:",
                   "items": [
-                    "Vaginal swab",
-                    "Endocervical sample",
-                    "STI testing",
-                    "Microbiology samples"
+                    {
+                      "text": "Vaginal swab",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endocervical sample",
+                      "level": 0
+                    },
+                    {
+                      "text": "STI testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Microbiology samples",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples of investigations for suspected STI may include testing for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples of investigations for suspected STI may include testing for:",
                   "items": [
-                    "Chlamydia",
-                    "Gonorrhoea",
-                    "Trichomonas",
-                    "HIV",
-                    "Syphilis",
-                    "Hepatitis B/C according to risk and local protocol"
+                    {
+                      "text": "Chlamydia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gonorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trichomonas",
+                      "level": 0
+                    },
+                    {
+                      "text": "HIV",
+                      "level": 0
+                    },
+                    {
+                      "text": "Syphilis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatitis B/C according to risk and local protocol",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1589,7 +1958,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_30",
-          "subsection_title": "CERVICAL SCREENING",
+          "subsection_title": "30. CERVICAL SCREENING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1608,7 +1977,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Screening is different from investigating a suspicious symptomatic cervical lesion."
+                  "text": "**Screening is different from investigating a suspicious symptomatic cervical lesion.**"
                 },
                 {
                   "type": "paragraph",
@@ -1620,7 +1989,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_31",
-          "subsection_title": "REMOVING THE SPECULUM",
+          "subsection_title": "31. REMOVING THE SPECULUM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1638,10 +2007,9 @@
                   "text": "Before removal:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“I am going to remove the speculum now.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“I am going to remove the speculum now.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1665,7 +2033,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_32",
-          "subsection_title": "AFTER THE EXAMINATION",
+          "subsection_title": "32. AFTER THE EXAMINATION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1687,10 +2055,9 @@
                   "text": "Thank her."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Thank you. You can get dressed now.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Thank you. You can get dressed now.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1714,7 +2081,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_33",
-          "subsection_title": "NORMAL SPECULUM REPORT",
+          "subsection_title": "33. NORMAL SPECULUM REPORT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1729,7 +2096,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The vulva appears normal with no lesions or abnormal discharge. The vaginal walls appear healthy with no bleeding, ulceration or masses. The cervix is fully visualized and appears smooth, pink and healthy, with a regular external os and no contact bleeding or suspicious lesion. There is no abnormal discharge.”"
+                  "text": "“The vulva appears normal with no lesions or abnormal discharge. The vaginal walls appear healthy with no bleeding, ulceration or masses. The cervix is fully visualized and appears smooth, pink and healthy, with a regular external os and no contact bleeding or suspicious lesion. There is no abnormal discharge.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1737,7 +2105,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_34",
-          "subsection_title": "ABNORMAL REPORT — CERVICITIS",
+          "subsection_title": "34. ABNORMAL REPORT — CERVICITIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1748,7 +2116,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The vaginal walls are mildly erythematous with moderate mucopurulent discharge. The cervix appears erythematous and friable, with contact bleeding. These findings are suggestive of cervicitis. I would obtain appropriate microbiological samples and assess for sexually transmitted infection.”"
+                  "text": "“The vaginal walls are mildly erythematous with moderate mucopurulent discharge. The cervix appears erythematous and friable, with contact bleeding. These findings are suggestive of cervicitis. I would obtain appropriate microbiological samples and assess for sexually transmitted infection.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1756,7 +2125,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_35",
-          "subsection_title": "ABNORMAL REPORT — CERVICAL POLYP",
+          "subsection_title": "35. ABNORMAL REPORT — CERVICAL POLYP",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1767,7 +2136,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix is visualized and there is a smooth, fleshy polypoid lesion protruding through the external os. There is no significant active bleeding. This requires appropriate gynaecological assessment.”"
+                  "text": "“The cervix is visualized and there is a smooth, fleshy polypoid lesion protruding through the external os. There is no significant active bleeding. This requires appropriate gynaecological assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1775,7 +2145,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_36",
-          "subsection_title": "ABNORMAL REPORT — SUSPICIOUS CERVICAL LESION",
+          "subsection_title": "36. ABNORMAL REPORT — SUSPICIOUS CERVICAL LESION",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1786,7 +2156,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix appears irregular and friable, with an ulcerated lesion that bleeds on contact. This is suspicious for significant cervical pathology and requires urgent specialist assessment and appropriate diagnostic investigation.”"
+                  "text": "“The cervix appears irregular and friable, with an ulcerated lesion that bleeds on contact. This is suspicious for significant cervical pathology and requires urgent specialist assessment and appropriate diagnostic investigation.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1794,7 +2165,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_37",
-          "subsection_title": "ABNORMAL REPORT — SUSPECTED RUPTURE OF MEMBRANES",
+          "subsection_title": "37. ABNORMAL REPORT — SUSPECTED RUPTURE OF MEMBRANES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1805,7 +2176,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The vaginal walls appear normal. Clear fluid is seen pooling in the posterior fornix and appearing to pass through the cervical os. This is suggestive of ruptured membranes. I would correlate this with the clinical history and appropriate obstetric assessment.”"
+                  "text": "“The vaginal walls appear normal. Clear fluid is seen pooling in the posterior fornix and appearing to pass through the cervical os. This is suggestive of ruptured membranes. I would correlate this with the clinical history and appropriate obstetric assessment.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1813,7 +2185,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_38",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_title": "38. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1824,7 +2196,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1840,7 +2212,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1855,22 +2227,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Answer:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "**Answer:**",
                   "items": [
-                    "Colour",
-                    "Surface",
-                    "Discharge",
-                    "Bleeding",
-                    "Ectropion",
-                    "Polyps",
-                    "Ulceration",
-                    "Masses",
-                    "Friability",
-                    "Suspicious lesions"
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surface",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectropion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polyps",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulceration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Masses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Friability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspicious lesions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1883,7 +2282,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1899,19 +2298,28 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "Cervicitis",
-                    "Cervical neoplasia",
-                    "Trauma",
-                    "Other cervical pathology"
+                    {
+                      "text": "Cervicitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical neoplasia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other cervical pathology",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1924,11 +2332,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "A punctate erythematous cervical appearance classically associated with Trichomonas vaginalis infection."
+                  "text": "A punctate erythematous cervical appearance classically associated with **Trichomonas vaginalis** infection."
                 }
               ]
             },
@@ -1940,7 +2348,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1956,7 +2364,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1972,7 +2380,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -1984,7 +2392,7 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_39",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_title": "39. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2055,7 +2463,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Inspect the vaginal walls on insertion and withdrawal."
+                  "text": "Inspect the **vaginal walls on insertion and withdrawal**."
                 }
               ]
             },
@@ -2111,75 +2519,65 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_40",
-          "subsection_title": "SPECULUM EXAMINATION MNEMONIC",
+          "subsection_title": "40. SPECULUM EXAMINATION MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "speculum_examination_group_79",
-              "group_title": "V — Vulva",
+              "group_title": "V-C-D-B-L-S",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**V — Vulva**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Look first."
-                }
-              ]
-            },
-            {
-              "group_id": "speculum_examination_group_80",
-              "group_title": "C — Cervix",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Cervix**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Visualize completely."
-                }
-              ]
-            },
-            {
-              "group_id": "speculum_examination_group_81",
-              "group_title": "D — Discharge",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**D — Discharge**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Colour, consistency, odour, amount."
-                }
-              ]
-            },
-            {
-              "group_id": "speculum_examination_group_82",
-              "group_title": "B — Bleeding",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B — Bleeding**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Amount, source, contact bleeding."
-                }
-              ]
-            },
-            {
-              "group_id": "speculum_examination_group_83",
-              "group_title": "L — Lesions",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**L — Lesions**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Ectropion, polyp, ulcer, mass, warts."
-                }
-              ]
-            },
-            {
-              "group_id": "speculum_examination_group_84",
-              "group_title": "S — Samples",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**S — Samples**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Take appropriate swabs/samples when indicated."
@@ -2190,11 +2588,11 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_41",
-          "subsection_title": "THE 30-SECOND OSCE VERSION",
+          "subsection_title": "41. THE 30-SECOND OSCE VERSION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "speculum_examination_group_85",
+              "group_id": "speculum_examination_group_80",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2204,10 +2602,8 @@
                   "text": "Before starting:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Consent → Chaperone → Privacy → Position → Explain"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Consent → Chaperone → Privacy → Position → Explain**"
                 },
                 {
                   "type": "paragraph",
@@ -2215,17 +2611,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "External inspection → Insert → Open → Visualize cervix → Inspect vagina → Samples if indicated → Close → Withdraw → Re-examine walls → Report"
+                  "text": "**External inspection → Insert → Open → Visualize cervix → Inspect vagina → Samples if indicated → Close → Withdraw → Re-examine walls → Report**"
                 },
                 {
                   "type": "paragraph",
                   "text": "And remember:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Describe what I see; don't diagnose what I haven't proved.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Describe what I see; don't diagnose what I haven't proved.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -2233,11 +2628,11 @@
         },
         {
           "subsection_id": "speculum_examination_subsection_42",
-          "subsection_title": "HIGH-YIELD DIFFERENTIAL TABLE",
+          "subsection_title": "42. HIGH-YIELD DIFFERENTIAL TABLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "speculum_examination_group_86",
+              "group_id": "speculum_examination_group_81",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2302,7 +2697,7 @@
               ]
             },
             {
-              "group_id": "speculum_examination_group_87",
+              "group_id": "speculum_examination_group_82",
               "group_title": "🔥 EXAM PEARL",
               "group_subtitle": null,
               "group_icon": null,
@@ -2312,10 +2707,9 @@
                   "text": "When the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a speculum examination.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a speculum examination.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2327,7 +2721,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Consent → Chaperone → Explain → Position → External inspection."
+                  "text": "**Consent → Chaperone → Explain → Position → External inspection.**"
                 },
                 {
                   "type": "paragraph",
@@ -2335,11 +2729,11 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Visualize → Describe → Interpret → Investigate → Manage."
+                  "text": "**Visualize → Describe → Interpret → Investigate → Manage.**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "The examiner is looking for a safe clinician, not merely someone who knows how to open a speculum."
+                  "text": "The examiner is looking for a **safe clinician**, not merely someone who knows how to open a speculum."
                 }
               ]
             }

@@ -18,84 +18,97 @@
       "subsections": [
         {
           "subsection_id": "partograph_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "partograph_group_1",
+              "group_title": "PARTOGRAPH / PARTOGRAPH INTERPRETATION",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "partograph_subsection_2",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "partograph_group_2",
               "group_title": "Station 1 — Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Interpret this partograph and comment on the progress of labour.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Interpret this partograph and comment on the progress of labour.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "partograph_group_2",
+              "group_id": "partograph_group_3",
               "group_title": "Station 2 — Abnormal progress",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervical dilatation has crossed the alert/action line. What does this mean?”"
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_3",
-              "group_title": "Station 3 — Maternal and fetal assessment",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Review this partograph and identify any abnormalities.”"
-                  ]
+                  "text": "“The cervical dilatation has crossed the alert/action line. What does this mean?”",
+                  "style": "quote"
                 }
               ]
             },
             {
               "group_id": "partograph_group_4",
+              "group_title": "Station 3 — Maternal and fetal assessment",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“Review this partograph and identify any abnormalities.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "partograph_group_5",
               "group_title": "Station 4 — Management",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The woman has been in labour for several hours and the partograph suggests poor progress. What would you do?”"
+                  "text": "“The woman has been in labour for several hours and the partograph suggests poor progress. What would you do?”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "partograph_group_5",
+              "group_id": "partograph_group_6",
               "group_title": "Station 5 — Complete a partograph",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Complete the partograph using the information provided.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Complete the partograph using the information provided.”",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "partograph_subsection_2",
-          "subsection_title": "WHAT IS A PARTOGRAPH?",
+          "subsection_id": "partograph_subsection_3",
+          "subsection_title": "2. WHAT IS A PARTOGRAPH?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_6",
+              "group_id": "partograph_group_7",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -112,7 +125,19 @@
               ]
             },
             {
-              "group_id": "partograph_group_7",
+              "group_id": "partograph_group_8",
+              "group_title": "Fetal condition",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Maternal condition**"
+                }
+              ]
+            },
+            {
+              "group_id": "partograph_group_9",
               "group_title": "Progress of labour",
               "group_subtitle": null,
               "group_icon": null,
@@ -122,34 +147,46 @@
                   "text": "over time."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The traditional chart allows clinicians to identify:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The traditional chart allows clinicians to identify:",
                   "items": [
-                    "slow cervical dilatation",
-                    "prolonged labour",
-                    "abnormal descent",
-                    "excessive contractions",
-                    "fetal compromise"
+                    {
+                      "text": "slow cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "excessive contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal deterioration.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "maternal deterioration."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "partograph_subsection_3",
-          "subsection_title": "THE THREE MAIN SECTIONS",
+          "subsection_id": "partograph_subsection_4",
+          "subsection_title": "3. THE THREE MAIN SECTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_8",
+              "group_id": "partograph_group_10",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -159,72 +196,99 @@
                   "text": "Think:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "partograph_subsection_4",
-          "subsection_title": "BABY — LABOUR — MOTHER",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "partograph_group_9",
-              "group_title": "BABY",
+              "group_id": "partograph_group_11",
+              "group_title": "BABY — LABOUR — MOTHER",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "fetal heart rate",
-                    "liquor",
-                    "moulding"
-                  ]
+                  "type": "paragraph",
+                  "text": "**BABY**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "descent."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "fetal heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "partograph_group_10",
+              "group_id": "partograph_group_12",
               "group_title": "LABOUR",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "cervical dilatation",
-                    "contractions"
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "time.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "time."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_11",
+              "group_id": "partograph_group_13",
               "group_title": "MOTHER",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "pulse",
-                    "BP",
-                    "temperature",
-                    "urine",
-                    "fluids"
+                    {
+                      "text": "pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "urine",
+                      "level": 0
+                    },
+                    {
+                      "text": "fluids",
+                      "level": 0
+                    },
+                    {
+                      "text": "medications/oxytocin.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "medications/oxytocin."
                 }
               ]
             }
@@ -232,42 +296,44 @@
         },
         {
           "subsection_id": "partograph_subsection_5",
-          "subsection_title": "PARTOGRAPH MEMORY",
+          "subsection_title": "4. PARTOGRAPH MEMORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_12",
+              "group_id": "partograph_group_14",
               "group_title": "F-C-M",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "F — Fetus",
-                    "C — Cervix/contractions",
-                    "M — Mother"
-                  ]
+                  "type": "paragraph",
+                  "text": "**F — Fetus**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Cervix/contractions**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**M — Mother**"
                 },
                 {
                   "type": "paragraph",
                   "text": "If the examiner asks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does a partograph monitor?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does a partograph monitor?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“It records fetal wellbeing, maternal condition and progress of labour.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“It records fetal wellbeing, maternal condition and progress of labour.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -275,11 +341,11 @@
         },
         {
           "subsection_id": "partograph_subsection_6",
-          "subsection_title": "CERVICAL DILATATION",
+          "subsection_title": "5. CERVICAL DILATATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_13",
+              "group_id": "partograph_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -298,10 +364,8 @@
                   "text": "The cervix is plotted against:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "TIME"
-                  ]
+                  "type": "paragraph",
+                  "text": "**TIME**"
                 }
               ]
             }
@@ -309,11 +373,11 @@
         },
         {
           "subsection_id": "partograph_subsection_7",
-          "subsection_title": "TRADITIONAL ALERT LINE",
+          "subsection_title": "6. TRADITIONAL ALERT LINE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_14",
+              "group_id": "partograph_group_16",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -324,15 +388,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "the alert line traditionally represented approximately 1 cm/hour cervical dilatation."
+                  "text": "the alert line traditionally represented approximately **1 cm/hour** cervical dilatation."
                 },
                 {
                   "type": "paragraph",
-                  "text": "However, this is an important modern OSCE caveat:"
+                  "text": "However, this is an important **modern OSCE caveat**:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not assume that every woman must dilate at exactly 1 cm/hour."
+                  "text": "Do **not** assume that every woman must dilate at exactly 1 cm/hour."
                 },
                 {
                   "type": "paragraph",
@@ -343,10 +407,8 @@
                   "text": "Therefore, crossing an alert line should prompt:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "clinical assessment"
-                  ]
+                  "type": "paragraph",
+                  "text": "**clinical assessment**"
                 },
                 {
                   "type": "paragraph",
@@ -358,11 +420,11 @@
         },
         {
           "subsection_id": "partograph_subsection_8",
-          "subsection_title": "TRADITIONAL ACTION LINE",
+          "subsection_title": "7. TRADITIONAL ACTION LINE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_15",
+              "group_id": "partograph_group_17",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -372,10 +434,8 @@
                   "text": "The traditional action line was placed to the right of the alert line, commonly:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4 hours"
-                  ]
+                  "type": "paragraph",
+                  "text": "**4 hours**"
                 },
                 {
                   "type": "paragraph",
@@ -387,7 +447,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "assessment and intervention."
+                  "text": "**assessment and intervention.**"
                 },
                 {
                   "type": "paragraph",
@@ -395,7 +455,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not automatically perform Caesarean section merely because a graph crosses a line."
+                  "text": "**Do not automatically perform Caesarean section merely because a graph crosses a line.**"
                 },
                 {
                   "type": "paragraph",
@@ -407,11 +467,11 @@
         },
         {
           "subsection_id": "partograph_subsection_9",
-          "subsection_title": "VERY IMPORTANT EXAM POINT",
+          "subsection_title": "8. VERY IMPORTANT EXAM POINT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_16",
+              "group_id": "partograph_group_18",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -421,10 +481,9 @@
                   "text": "If the examiner asks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Does crossing the alert line mean Caesarean section?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Does crossing the alert line mean Caesarean section?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -432,7 +491,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“No. It indicates that labour progress requires assessment. I would assess contractions, cervical change, fetal position, descent, caput, moulding, maternal and fetal condition and possible causes of delay before deciding on intervention.”"
+                  "text": "**“No. It indicates that labour progress requires assessment. I would assess contractions, cervical change, fetal position, descent, caput, moulding, maternal and fetal condition and possible causes of delay before deciding on intervention.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -444,32 +504,44 @@
         },
         {
           "subsection_id": "partograph_subsection_10",
-          "subsection_title": "CURRENT NICE APPROACH",
+          "subsection_title": "9. CURRENT NICE APPROACH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_17",
+              "group_id": "partograph_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "NICE recommends assessing progress using:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "NICE recommends assessing progress using:",
                   "items": [
-                    "cervical dilatation",
-                    "descent",
-                    "rotation",
-                    "contractions",
-                    "maternal condition"
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "rotation",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal condition.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal condition."
                 },
                 {
                   "type": "paragraph",
@@ -481,7 +553,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The graph should never replace clinical assessment."
+                  "text": "**The graph should never replace clinical assessment.**"
                 }
               ]
             }
@@ -489,11 +561,11 @@
         },
         {
           "subsection_id": "partograph_subsection_11",
-          "subsection_title": "FETAL HEART RATE",
+          "subsection_title": "10. FETAL HEART RATE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_18",
+              "group_id": "partograph_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -512,10 +584,8 @@
                   "text": "A normal baseline is approximately:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "110–160 bpm"
-                  ]
+                  "type": "paragraph",
+                  "text": "**110–160 bpm**"
                 },
                 {
                   "type": "paragraph",
@@ -527,11 +597,11 @@
         },
         {
           "subsection_id": "partograph_subsection_12",
-          "subsection_title": "ABNORMAL FETAL HEART RATE",
+          "subsection_title": "11. ABNORMAL FETAL HEART RATE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_19",
+              "group_id": "partograph_group_21",
               "group_title": "Bradycardia",
               "group_subtitle": null,
               "group_icon": null,
@@ -541,10 +611,8 @@
                   "text": "Persistent:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "<110 bpm"
-                  ]
+                  "type": "paragraph",
+                  "text": "**<110 bpm**"
                 },
                 {
                   "type": "paragraph",
@@ -553,7 +621,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_20",
+              "group_id": "partograph_group_22",
               "group_title": "Tachycardia",
               "group_subtitle": null,
               "group_icon": null,
@@ -563,32 +631,42 @@
                   "text": "Persistent:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    ">160 bpm"
-                  ]
+                  "type": "paragraph",
+                  "text": "**>160 bpm**"
                 },
                 {
                   "type": "paragraph",
                   "text": "requires assessment."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible causes include:",
                   "items": [
-                    "maternal fever",
-                    "infection",
-                    "medications",
-                    "fetal hypoxia",
-                    "maternal dehydration"
+                    {
+                      "text": "maternal fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "other clinical factors.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other clinical factors."
                 },
                 {
                   "type": "paragraph",
@@ -600,11 +678,11 @@
         },
         {
           "subsection_id": "partograph_subsection_13",
-          "subsection_title": "LIQUOR",
+          "subsection_title": "12. LIQUOR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_21",
+              "group_id": "partograph_group_23",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -621,7 +699,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_22",
+              "group_id": "partograph_group_24",
               "group_title": "I",
               "group_subtitle": null,
               "group_icon": null,
@@ -633,7 +711,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_23",
+              "group_id": "partograph_group_25",
               "group_title": "C",
               "group_subtitle": null,
               "group_icon": null,
@@ -645,7 +723,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_24",
+              "group_id": "partograph_group_26",
               "group_title": "M",
               "group_subtitle": null,
               "group_icon": null,
@@ -657,7 +735,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_25",
+              "group_id": "partograph_group_27",
               "group_title": "B",
               "group_subtitle": null,
               "group_icon": null,
@@ -676,29 +754,32 @@
         },
         {
           "subsection_id": "partograph_subsection_14",
-          "subsection_title": "WHY DOES LIQUOR MATTER?",
+          "subsection_title": "13. WHY DOES LIQUOR MATTER?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_26",
+              "group_id": "partograph_group_28",
               "group_title": "Meconium",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May be associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May be associated with:",
                   "items": [
-                    "fetal maturity",
-                    "fetal stress"
+                    {
+                      "text": "fetal maturity",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal stress",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal hypoxia.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal hypoxia."
                 },
                 {
                   "type": "paragraph",
@@ -706,7 +787,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Meconium alone does not diagnose fetal hypoxia."
+                  "text": "**Meconium alone does not diagnose fetal hypoxia.**"
                 },
                 {
                   "type": "paragraph",
@@ -718,30 +799,36 @@
         },
         {
           "subsection_id": "partograph_subsection_15",
-          "subsection_title": "BLOOD-STAINED LIQUOR",
+          "subsection_title": "14. BLOOD-STAINED LIQUOR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_27",
+              "group_id": "partograph_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "cervical changes/show",
-                    "placental abruption",
-                    "trauma"
+                    {
+                      "text": "cervical changes/show",
+                      "level": 0
+                    },
+                    {
+                      "text": "placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "other bleeding.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other bleeding."
                 },
                 {
                   "type": "paragraph",
@@ -753,11 +840,11 @@
         },
         {
           "subsection_id": "partograph_subsection_16",
-          "subsection_title": "MOULDING",
+          "subsection_title": "15. MOULDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_28",
+              "group_id": "partograph_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -778,7 +865,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_29",
+              "group_id": "partograph_group_31",
               "group_title": "+",
               "group_subtitle": null,
               "group_icon": null,
@@ -790,7 +877,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_30",
+              "group_id": "partograph_group_32",
               "group_title": "++",
               "group_subtitle": null,
               "group_icon": null,
@@ -802,7 +889,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_31",
+              "group_id": "partograph_group_33",
               "group_title": "+++",
               "group_subtitle": null,
               "group_icon": null,
@@ -817,11 +904,11 @@
         },
         {
           "subsection_id": "partograph_subsection_17",
-          "subsection_title": "WHY IS MOULDING IMPORTANT?",
+          "subsection_title": "16. WHY IS MOULDING IMPORTANT?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_32",
+              "group_id": "partograph_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -832,17 +919,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "difficulty with passage of the fetal head."
+                  "text": "**difficulty with passage of the fetal head.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Especially:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "++/+++ moulding + poor descent + slow progress"
-                  ]
+                  "type": "paragraph",
+                  "text": "**++/+++ moulding + poor descent + slow progress**"
                 },
                 {
                   "type": "paragraph",
@@ -850,7 +935,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "cephalopelvic disproportion/obstructed labour."
+                  "text": "**cephalopelvic disproportion/obstructed labour.**"
                 }
               ]
             }
@@ -858,11 +943,11 @@
         },
         {
           "subsection_id": "partograph_subsection_18",
-          "subsection_title": "DESCENT",
+          "subsection_title": "17. DESCENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_33",
+              "group_id": "partograph_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -873,19 +958,22 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Descent may be plotted using:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Descent may be plotted using:",
                   "items": [
-                    "fifths of the head palpable abdominally",
-                    "station"
+                    {
+                      "text": "fifths of the head palpable abdominally",
+                      "level": 0
+                    },
+                    {
+                      "text": "station",
+                      "level": 0
+                    },
+                    {
+                      "text": "other local charting systems.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other local charting systems."
                 },
                 {
                   "type": "paragraph",
@@ -897,11 +985,11 @@
         },
         {
           "subsection_id": "partograph_subsection_19",
-          "subsection_title": "WHY IS DESCENT IMPORTANT?",
+          "subsection_title": "18. WHY IS DESCENT IMPORTANT?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_34",
+              "group_id": "partograph_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -919,21 +1007,30 @@
                   "text": "cervical dilatation without adequate fetal descent."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "This should make you consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This should make you consider:",
                   "items": [
-                    "malposition",
-                    "malpresentation",
-                    "macrosomia",
-                    "pelvic limitation"
+                    {
+                      "text": "malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic limitation",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstructed labour.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "obstructed labour."
                 }
               ]
             }
@@ -941,11 +1038,11 @@
         },
         {
           "subsection_id": "partograph_subsection_20",
-          "subsection_title": "CONTRACTIONS",
+          "subsection_title": "19. CONTRACTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_35",
+              "group_id": "partograph_group_37",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -961,7 +1058,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "10-minute periods."
+                  "text": "**10-minute periods.**"
                 },
                 {
                   "type": "paragraph",
@@ -970,7 +1067,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_36",
+              "group_id": "partograph_group_38",
               "group_title": "Frequency",
               "group_subtitle": null,
               "group_icon": null,
@@ -982,7 +1079,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_37",
+              "group_id": "partograph_group_39",
               "group_title": "Duration",
               "group_subtitle": null,
               "group_icon": null,
@@ -1005,11 +1102,11 @@
         },
         {
           "subsection_id": "partograph_subsection_21",
-          "subsection_title": "EXCESSIVE CONTRACTIONS",
+          "subsection_title": "20. EXCESSIVE CONTRACTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_38",
+              "group_id": "partograph_group_40",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1019,39 +1116,38 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "uterine hyperstimulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**uterine** **hyperstimulation**"
                 },
                 {
                   "type": "paragraph",
                   "text": "particularly if there are:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "≥5 contractions in 10 minutes"
-                  ]
+                  "type": "paragraph",
+                  "text": "**≥5 contractions in 10 minutes**"
                 },
                 {
                   "type": "paragraph",
                   "text": "or prolonged contractions."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential consequences:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential consequences:",
                   "items": [
-                    "reduced uteroplacental perfusion",
-                    "fetal compromise"
+                    {
+                      "text": "reduced uteroplacental perfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "abnormal CTG.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "abnormal CTG."
                 }
               ]
             }
@@ -1059,29 +1155,32 @@
         },
         {
           "subsection_id": "partograph_subsection_22",
-          "subsection_title": "OXYTOCIN",
+          "subsection_title": "21. OXYTOCIN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_39",
+              "group_id": "partograph_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If oxytocin is being used, record:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If oxytocin is being used, record:",
                   "items": [
-                    "dose",
-                    "rate"
+                    {
+                      "text": "dose",
+                      "level": 0
+                    },
+                    {
+                      "text": "rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "changes in dose.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "changes in dose."
                 },
                 {
                   "type": "paragraph",
@@ -1093,93 +1192,7 @@
         },
         {
           "subsection_id": "partograph_subsection_23",
-          "subsection_title": "MATERNAL PULSE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "partograph_group_40",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The partograph records maternal pulse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A rising pulse may suggest:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "pain",
-                    "dehydration",
-                    "infection",
-                    "haemorrhage",
-                    "medication effects"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "physiological stress."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "partograph_subsection_24",
-          "subsection_title": "MATERNAL BLOOD PRESSURE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "partograph_group_41",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Monitor BP."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypertension may suggest:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "pre-eclampsia"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "chronic hypertension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypotension may occur with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "haemorrhage",
-                    "dehydration",
-                    "epidural-related hypotension"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other causes."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "partograph_subsection_25",
-          "subsection_title": "MATERNAL TEMPERATURE",
+          "subsection_title": "22. MATERNAL PULSE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1190,44 +1203,45 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Fever during labour may suggest:"
+                  "text": "The partograph records maternal pulse."
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A rising pulse may suggest:",
                   "items": [
-                    "chorioamnionitis",
-                    "maternal infection",
-                    "epidural-associated fever"
+                    {
+                      "text": "pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "medication effects",
+                      "level": 0
+                    },
+                    {
+                      "text": "physiological stress.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A fever must be interpreted with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "maternal pulse",
-                    "fetal heart",
-                    "liquor",
-                    "uterine tenderness"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "other clinical findings."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "partograph_subsection_26",
-          "subsection_title": "URINE",
+          "subsection_id": "partograph_subsection_24",
+          "subsection_title": "23. MATERNAL BLOOD PRESSURE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1238,23 +1252,144 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Traditional partographs may document:"
+                  "text": "Monitor BP."
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Hypertension may suggest:",
                   "items": [
-                    "urine volume",
-                    "protein"
+                    {
+                      "text": "pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "chronic hypertension.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "acetone."
+                  "type": "list",
+                  "title": "Hypotension may occur with:",
+                  "items": [
+                    {
+                      "text": "haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "epidural-related hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "other causes.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "partograph_subsection_25",
+          "subsection_title": "24. MATERNAL TEMPERATURE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "partograph_group_44",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Fever during labour may suggest:",
+                  "items": [
+                    {
+                      "text": "chorioamnionitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "epidural-associated fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "other infection.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "A fever must be interpreted with:",
+                  "items": [
+                    {
+                      "text": "maternal pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "other clinical findings.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "partograph_subsection_26",
+          "subsection_title": "25. URINE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "partograph_group_45",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Traditional partographs may document:",
+                  "items": [
+                    {
+                      "text": "urine volume",
+                      "level": 0
+                    },
+                    {
+                      "text": "protein",
+                      "level": 0
+                    },
+                    {
+                      "text": "acetone.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "partograph_group_44",
+              "group_id": "partograph_group_46",
               "group_title": "Protein",
               "group_subtitle": null,
               "group_icon": null,
@@ -1270,25 +1405,28 @@
               ]
             },
             {
-              "group_id": "partograph_group_45",
+              "group_id": "partograph_group_47",
               "group_title": "Ketones/acetone",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "May indicate:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "May indicate:",
                   "items": [
-                    "inadequate intake",
-                    "dehydration"
+                    {
+                      "text": "inadequate intake",
+                      "level": 0
+                    },
+                    {
+                      "text": "dehydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "metabolic stress.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "metabolic stress."
                 }
               ]
             }
@@ -1296,11 +1434,11 @@
         },
         {
           "subsection_id": "partograph_subsection_27",
-          "subsection_title": "HOW TO INTERPRET A PARTOGRAPH",
+          "subsection_title": "26. HOW TO INTERPRET A PARTOGRAPH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_46",
+              "group_id": "partograph_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1314,39 +1452,48 @@
                   "text": "Use:"
                 }
               ]
+            },
+            {
+              "group_id": "partograph_group_49",
+              "group_title": "TIME → CERVIX → DESCENT → CONTRACTIONS → BABY → MOTHER",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
           "subsection_id": "partograph_subsection_28",
-          "subsection_title": "STEP 1 — CHECK THE TIME",
+          "subsection_title": "27. STEP 1 — CHECK THE TIME",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_47",
+              "group_id": "partograph_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When did labour begin?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "When was established labour diagnosed?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "How long has she been in labour?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Are the times recorded correctly?"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "When did labour begin?",
+                      "level": 0
+                    },
+                    {
+                      "text": "When was established labour diagnosed?",
+                      "level": 0
+                    },
+                    {
+                      "text": "How long has she been in labour?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Are the times recorded correctly?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1354,11 +1501,11 @@
         },
         {
           "subsection_id": "partograph_subsection_29",
-          "subsection_title": "STEP 2 — LOOK AT CERVICAL DILATATION",
+          "subsection_title": "28. STEP 2 — LOOK AT CERVICAL DILATATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_48",
+              "group_id": "partograph_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1368,25 +1515,27 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is the cervix progressively dilating?”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Look for:"
+                  "text": "“Is the cervix progressively dilating?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "upward/rightward progress",
-                    "flattening"
+                    {
+                      "text": "upward/rightward progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "flattening",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged periods without change.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "prolonged periods without change."
                 }
               ]
             }
@@ -1394,11 +1543,11 @@
         },
         {
           "subsection_id": "partograph_subsection_30",
-          "subsection_title": "STEP 3 — LOOK AT DESCENT",
+          "subsection_title": "29. STEP 3 — LOOK AT DESCENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_49",
+              "group_id": "partograph_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1408,10 +1557,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Is the presenting part descending?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Is the presenting part descending?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1423,11 +1571,11 @@
         },
         {
           "subsection_id": "partograph_subsection_31",
-          "subsection_title": "STEP 4 — LOOK AT CONTRACTIONS",
+          "subsection_title": "30. STEP 4 — LOOK AT CONTRACTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_50",
+              "group_id": "partograph_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1437,10 +1585,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Are contractions adequate?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Are contractions adequate?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1464,30 +1611,36 @@
         },
         {
           "subsection_id": "partograph_subsection_32",
-          "subsection_title": "STEP 5 — LOOK AT FETAL CONDITION",
+          "subsection_title": "31. STEP 5 — LOOK AT FETAL CONDITION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_51",
+              "group_id": "partograph_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "fetal heart",
-                    "liquor",
-                    "moulding"
+                    {
+                      "text": "fetal heart",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "descent."
                 },
                 {
                   "type": "paragraph",
@@ -1503,33 +1656,48 @@
         },
         {
           "subsection_id": "partograph_subsection_33",
-          "subsection_title": "STEP 6 — LOOK AT THE MOTHER",
+          "subsection_title": "32. STEP 6 — LOOK AT THE MOTHER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_52",
+              "group_id": "partograph_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "pulse",
-                    "BP",
-                    "temperature",
-                    "urine",
-                    "bleeding",
-                    "pain"
+                    {
+                      "text": "pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "urine",
+                      "level": 0
+                    },
+                    {
+                      "text": "bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "hydration.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "hydration."
                 }
               ]
             }
@@ -1537,11 +1705,11 @@
         },
         {
           "subsection_id": "partograph_subsection_34",
-          "subsection_title": "THE 3 Ps",
+          "subsection_title": "33. THE 3 Ps",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_53",
+              "group_id": "partograph_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1553,7 +1721,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_54",
+              "group_id": "partograph_group_57",
               "group_title": "POWER",
               "group_subtitle": null,
               "group_icon": null,
@@ -1565,54 +1733,58 @@
               ]
             },
             {
-              "group_id": "partograph_group_55",
+              "group_id": "partograph_group_58",
               "group_title": "PASSENGER",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is there:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "OP?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "OT?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "breech?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "macrosomia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "malpresentation?"
+                  "type": "list",
+                  "title": "Is there:",
+                  "items": [
+                    {
+                      "text": "OP?",
+                      "level": 0
+                    },
+                    {
+                      "text": "OT?",
+                      "level": 0
+                    },
+                    {
+                      "text": "breech?",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia?",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresentation?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "partograph_group_56",
+              "group_id": "partograph_group_59",
               "group_title": "PASSAGE",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is there:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "pelvic limitation?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "obstruction?"
+                  "type": "list",
+                  "title": "Is there:",
+                  "items": [
+                    {
+                      "text": "pelvic limitation?",
+                      "level": 0
+                    },
+                    {
+                      "text": "obstruction?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1620,48 +1792,61 @@
         },
         {
           "subsection_id": "partograph_subsection_35",
-          "subsection_title": "EXAMPLE — NORMAL PARTOGRAPH",
+          "subsection_title": "34. EXAMPLE — NORMAL PARTOGRAPH",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_57",
+              "group_id": "partograph_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "cervix progresses 5 → 6 → 7 → 8 → 9 → 10 cm"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "descent increases",
-                    "contractions 3–4/10 min",
-                    "fetal heart 120–150",
-                    "liquor clear",
-                    "moulding minimal"
+                    {
+                      "text": "cervix progresses 5 → 6 → 7 → 8 → 9 → 10 cm",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent increases",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions 3–4/10 min",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart 120–150",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor clear",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding minimal",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal observations normal.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "maternal observations normal."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_58",
+              "group_id": "partograph_group_61",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This partograph demonstrates progressive cervical dilatation and descent with adequate contractions. Maternal and fetal observations are reassuring, with no significant moulding. Overall, labour appears to be progressing normally.”"
+                  "text": "“This partograph demonstrates progressive cervical dilatation and descent with adequate contractions. Maternal and fetal observations are reassuring, with no significant moulding. Overall, labour appears to be progressing normally.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1669,43 +1854,53 @@
         },
         {
           "subsection_id": "partograph_subsection_36",
-          "subsection_title": "EXAMPLE — SLOW CERVICAL PROGRESS",
+          "subsection_title": "35. EXAMPLE — SLOW CERVICAL PROGRESS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_59",
+              "group_id": "partograph_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "cervix 5 cm for several hours",
-                    "contractions only 2/10 min",
-                    "fetal heart normal",
-                    "head high"
+                    {
+                      "text": "cervix 5 cm for several hours",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions only 2/10 min",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "head high",
+                      "level": 0
+                    },
+                    {
+                      "text": "minimal moulding.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "minimal moulding."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_60",
+              "group_id": "partograph_group_63",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is slow cervical progress associated with apparently inadequate uterine activity. I would assess maternal and fetal wellbeing, confirm presentation and position, evaluate the membranes and station, and consider whether augmentation is appropriate after excluding obstruction and contraindications.”"
+                  "text": "“There is slow cervical progress associated with apparently inadequate uterine activity. I would assess maternal and fetal wellbeing, confirm presentation and position, evaluate the membranes and station, and consider whether augmentation is appropriate after excluding obstruction and contraindications.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1713,43 +1908,53 @@
         },
         {
           "subsection_id": "partograph_subsection_37",
-          "subsection_title": "EXAMPLE — OBSTRUCTION",
+          "subsection_title": "36. EXAMPLE — OBSTRUCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_61",
+              "group_id": "partograph_group_64",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "cervix progresses slowly",
-                    "head remains high",
-                    "significant caput",
-                    "++/+++ moulding"
+                    {
+                      "text": "cervix progresses slowly",
+                      "level": 0
+                    },
+                    {
+                      "text": "head remains high",
+                      "level": 0
+                    },
+                    {
+                      "text": "significant caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "++/+++ moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "strong contractions.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "strong contractions."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_62",
+              "group_id": "partograph_group_65",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is poor cervical progress and inadequate descent despite apparently adequate contractions, with increasing caput and moulding. This raises significant concern for mechanical obstruction or cephalopelvic disproportion. I would stop routine augmentation, request urgent senior obstetric review and assess the safest mode of delivery.”"
+                  "text": "“There is poor cervical progress and inadequate descent despite apparently adequate contractions, with increasing caput and moulding. This raises significant concern for mechanical obstruction or cephalopelvic disproportion. I would stop routine augmentation, request urgent senior obstetric review and assess the safest mode of delivery.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1757,11 +1962,11 @@
         },
         {
           "subsection_id": "partograph_subsection_38",
-          "subsection_title": "IMPORTANT",
+          "subsection_title": "37. IMPORTANT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_63",
+              "group_id": "partograph_group_66",
               "group_title": "Do NOT give oxytocin automatically for slow progress.",
               "group_subtitle": null,
               "group_icon": null,
@@ -1772,20 +1977,32 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Is there obstruction?"
+                  "text": "**Is there obstruction?**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If there is:",
                   "items": [
-                    "high head",
-                    "severe moulding",
-                    "significant caput",
-                    "malpresentation",
-                    "suspected CPD"
+                    {
+                      "text": "high head",
+                      "level": 0
+                    },
+                    {
+                      "text": "severe moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "significant caput",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "suspected CPD",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1798,41 +2015,45 @@
         },
         {
           "subsection_id": "partograph_subsection_39",
-          "subsection_title": "EXAMPLE — HYPERSTIMULATION",
+          "subsection_title": "38. EXAMPLE — HYPERSTIMULATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_64",
+              "group_id": "partograph_group_67",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "6 contractions in 10 minutes",
-                    "prolonged contractions"
+                    {
+                      "text": "6 contractions in 10 minutes",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart abnormalities.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "fetal heart abnormalities."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_65",
+              "group_id": "partograph_group_68",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“There is uterine hyperstimulation associated with fetal compromise. I would urgently assess the CTG and maternal condition, stop or reduce oxytocin if being administered, consider tocolysis according to local protocol, correct reversible maternal factors and expedite birth if the fetal compromise persists.”"
+                  "text": "“There is uterine hyperstimulation associated with fetal compromise. I would urgently assess the CTG and maternal condition, stop or reduce oxytocin if being administered, consider tocolysis according to local protocol, correct reversible maternal factors and expedite birth if the fetal compromise persists.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1840,41 +2061,45 @@
         },
         {
           "subsection_id": "partograph_subsection_40",
-          "subsection_title": "EXAMPLE — MATERNAL FEVER",
+          "subsection_title": "39. EXAMPLE — MATERNAL FEVER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_66",
+              "group_id": "partograph_group_69",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "maternal temperature 38.5°C",
-                    "fetal tachycardia"
+                    {
+                      "text": "maternal temperature 38.5°C",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "foul-smelling liquor.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "foul-smelling liquor."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_67",
+              "group_id": "partograph_group_70",
               "group_title": "Interpretation",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The partograph indicates maternal pyrexia with fetal tachycardia and offensive liquor, raising concern for intrauterine infection. I would assess for maternal sepsis, obtain appropriate investigations, initiate antibiotics according to local protocol and involve senior obstetric/neonatal teams.”"
+                  "text": "“The partograph indicates maternal pyrexia with fetal tachycardia and offensive liquor, raising concern for intrauterine infection. I would assess for maternal sepsis, obtain appropriate investigations, initiate antibiotics according to local protocol and involve senior obstetric/neonatal teams.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1882,49 +2107,49 @@
         },
         {
           "subsection_id": "partograph_subsection_41",
-          "subsection_title": "EXAMPLE — ABNORMAL FETAL HEART",
+          "subsection_title": "40. EXAMPLE — ABNORMAL FETAL HEART",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_68",
+              "group_id": "partograph_group_71",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Suppose:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Suppose:",
                   "items": [
-                    "fetal heart persistently >160",
-                    "maternal temperature normal"
+                    {
+                      "text": "fetal heart persistently >160",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal temperature normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions excessive.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "contractions excessive."
                 },
                 {
                   "type": "paragraph",
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "fetal tachycardia + hyperstimulation"
-                  ]
+                  "type": "paragraph",
+                  "text": "**fetal tachycardia + hyperstimulation**"
                 },
                 {
                   "type": "paragraph",
                   "text": "rather than simply writing:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Fetal distress.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Fetal distress.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1936,11 +2161,11 @@
         },
         {
           "subsection_id": "partograph_subsection_42",
-          "subsection_title": "ALERT LINE — EXAM ANSWER",
+          "subsection_title": "41. ALERT LINE — EXAM ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_69",
+              "group_id": "partograph_group_72",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1950,10 +2175,9 @@
                   "text": "If asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What does crossing the alert line mean?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What does crossing the alert line mean?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1961,7 +2185,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Traditionally, crossing the alert line indicates slower-than-expected cervical progress and should prompt reassessment and consideration of transfer or closer obstetric review depending on the setting. It is not, by itself, an indication for Caesarean delivery.”"
+                  "text": "“Traditionally, crossing the alert line indicates slower-than-expected cervical progress and should prompt reassessment and consideration of transfer or closer obstetric review depending on the setting. It is not, by itself, an indication for Caesarean delivery.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1969,18 +2194,19 @@
         },
         {
           "subsection_id": "partograph_subsection_43",
-          "subsection_title": "ACTION LINE — EXAM ANSWER",
+          "subsection_title": "42. ACTION LINE — EXAM ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_70",
+              "group_id": "partograph_group_73",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Traditionally, crossing the action line prompts more urgent assessment and intervention, but the decision should be based on the woman's overall clinical condition, fetal wellbeing, contractions, descent, position, caput, moulding and possible causes of delay rather than the graph alone.”"
+                  "text": "“Traditionally, crossing the action line prompts more urgent assessment and intervention, but the decision should be based on the woman's overall clinical condition, fetal wellbeing, contractions, descent, position, caput, moulding and possible causes of delay rather than the graph alone.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1988,44 +2214,45 @@
         },
         {
           "subsection_id": "partograph_subsection_44",
-          "subsection_title": "MODERN EXAM TRAP",
+          "subsection_title": "43. MODERN EXAM TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_71",
+              "group_id": "partograph_group_74",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The cervix has crossed the action line. What will you do?”"
+                  "text": "“The cervix has crossed the action line. What will you do?”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "partograph_group_72",
+              "group_id": "partograph_group_75",
               "group_title": "Poor answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Caesarean section.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Caesarean section.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "partograph_group_73",
+              "group_id": "partograph_group_76",
               "group_title": "Better answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would reassess the mother and fetus, confirm the accuracy of the chart, evaluate contractions, cervical change, descent, fetal position, caput and moulding, and identify whether the problem is power, passenger or passage before deciding on augmentation, operative vaginal delivery or Caesarean birth.”"
+                  "text": "“I would reassess the mother and fetus, confirm the accuracy of the chart, evaluate contractions, cervical change, descent, fetal position, caput and moulding, and identify whether the problem is power, passenger or passage before deciding on augmentation, operative vaginal delivery or Caesarean birth.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2033,11 +2260,11 @@
         },
         {
           "subsection_id": "partograph_subsection_45",
-          "subsection_title": "PARTOGRAPH AND OXYTOCIN",
+          "subsection_title": "44. PARTOGRAPH AND OXYTOCIN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_74",
+              "group_id": "partograph_group_77",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2047,21 +2274,30 @@
                   "text": "If oxytocin is being used:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Monitor:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Monitor:",
                   "items": [
-                    "contraction frequency",
-                    "duration",
-                    "fetal heart",
-                    "cervical progress"
+                    {
+                      "text": "contraction frequency",
+                      "level": 0
+                    },
+                    {
+                      "text": "duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetal heart",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervical progress",
+                      "level": 0
+                    },
+                    {
+                      "text": "maternal condition.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "maternal condition."
                 },
                 {
                   "type": "paragraph",
@@ -2069,7 +2305,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "reduce/stop oxytocin and manage hyperstimulation."
+                  "text": "**reduce/stop oxytocin and manage hyperstimulation.**"
                 },
                 {
                   "type": "paragraph",
@@ -2081,11 +2317,11 @@
         },
         {
           "subsection_id": "partograph_subsection_46",
-          "subsection_title": "PARTOGRAPH AND FETAL DESCENT",
+          "subsection_title": "45. PARTOGRAPH AND FETAL DESCENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_75",
+              "group_id": "partograph_group_78",
               "group_title": "Good cervical progress + good descent",
               "group_subtitle": null,
               "group_icon": null,
@@ -2097,30 +2333,33 @@
               ]
             },
             {
-              "group_id": "partograph_group_76",
+              "group_id": "partograph_group_79",
               "group_title": "Good cervical progress + poor descent",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "malposition",
-                    "macrosomia"
+                    {
+                      "text": "malposition",
+                      "level": 0
+                    },
+                    {
+                      "text": "macrosomia",
+                      "level": 0
+                    },
+                    {
+                      "text": "pelvic limitation.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "pelvic limitation."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_77",
+              "group_id": "partograph_group_80",
               "group_title": "Poor cervical progress + poor descent",
               "group_subtitle": null,
               "group_icon": null,
@@ -2131,7 +2370,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "possible obstruction."
+                  "text": "**possible obstruction.**"
                 }
               ]
             }
@@ -2139,11 +2378,11 @@
         },
         {
           "subsection_id": "partograph_subsection_47",
-          "subsection_title": "PARTOGRAPH AND CAPUT",
+          "subsection_title": "46. PARTOGRAPH AND CAPUT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_78",
+              "group_id": "partograph_group_81",
               "group_title": "No caput",
               "group_subtitle": null,
               "group_icon": null,
@@ -2155,7 +2394,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_79",
+              "group_id": "partograph_group_82",
               "group_title": "+ caput",
               "group_subtitle": null,
               "group_icon": null,
@@ -2167,25 +2406,28 @@
               ]
             },
             {
-              "group_id": "partograph_group_80",
+              "group_id": "partograph_group_83",
               "group_title": "++/+++ caput",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Increasing concern, especially if associated with:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Increasing concern, especially if associated with:",
                   "items": [
-                    "moulding",
-                    "poor descent"
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "poor descent",
+                      "level": 0
+                    },
+                    {
+                      "text": "prolonged labour.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "prolonged labour."
                 }
               ]
             }
@@ -2193,11 +2435,11 @@
         },
         {
           "subsection_id": "partograph_subsection_48",
-          "subsection_title": "PARTOGRAPH AND MOULDING",
+          "subsection_title": "47. PARTOGRAPH AND MOULDING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_81",
+              "group_id": "partograph_group_84",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2209,7 +2451,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_82",
+              "group_id": "partograph_group_85",
               "group_title": "+",
               "group_subtitle": null,
               "group_icon": null,
@@ -2221,7 +2463,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_83",
+              "group_id": "partograph_group_86",
               "group_title": "++",
               "group_subtitle": null,
               "group_icon": null,
@@ -2233,7 +2475,7 @@
               ]
             },
             {
-              "group_id": "partograph_group_84",
+              "group_id": "partograph_group_87",
               "group_title": "+++",
               "group_subtitle": null,
               "group_icon": null,
@@ -2248,11 +2490,11 @@
         },
         {
           "subsection_id": "partograph_subsection_49",
-          "subsection_title": "COMPLETE PARTOGRAPH REPORT",
+          "subsection_title": "48. COMPLETE PARTOGRAPH REPORT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_85",
+              "group_id": "partograph_group_88",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2263,7 +2505,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This partograph represents approximately ___ hours of established labour. Cervical dilatation has progressed from ___ cm to ___ cm over ___ hours, with ___ descent of the presenting part. Contractions are occurring at approximately ___ per 10 minutes, lasting ___ seconds. Fetal heart rate is ___, with ___ liquor and ___ moulding. Maternal observations show pulse ___, BP ___ and temperature ___. Overall, the labour is [progressing normally / showing slow progress / complicated by hyperstimulation / concerning for obstruction / complicated by possible fetal compromise].”"
+                  "text": "“This partograph represents approximately ___ hours of established labour. Cervical dilatation has progressed from ___ cm to ___ cm over ___ hours, with ___ descent of the presenting part. Contractions are occurring at approximately ___ per 10 minutes, lasting ___ seconds. Fetal heart rate is ___, with ___ liquor and ___ moulding. Maternal observations show pulse ___, BP ___ and temperature ___. Overall, the labour is [progressing normally / showing slow progress / complicated by hyperstimulation / concerning for obstruction / complicated by possible fetal compromise].”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2271,18 +2514,19 @@
         },
         {
           "subsection_id": "partograph_subsection_50",
-          "subsection_title": "EXAMPLE OF A STRONG REPORT",
+          "subsection_title": "49. EXAMPLE OF A STRONG REPORT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_86",
+              "group_id": "partograph_group_89",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“This is a term singleton pregnancy in established labour. Cervical dilatation has progressed slowly from 5 to 6 cm over several hours, with limited descent. There are approximately four contractions per 10 minutes, each lasting 50 seconds. The fetal heart rate is currently reassuring and the liquor is clear. There is moderate caput and significant moulding. Overall, there is poor progress despite apparently adequate contractions, raising concern for mechanical obstruction. I would request urgent senior obstetric assessment rather than simply augmenting labour.”"
+                  "text": "“This is a term singleton pregnancy in established labour. Cervical dilatation has progressed slowly from 5 to 6 cm over several hours, with limited descent. There are approximately four contractions per 10 minutes, each lasting 50 seconds. The fetal heart rate is currently reassuring and the liquor is clear. There is moderate caput and significant moulding. Overall, there is poor progress despite apparently adequate contractions, raising concern for mechanical obstruction. I would request urgent senior obstetric assessment rather than simply augmenting labour.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2290,11 +2534,11 @@
         },
         {
           "subsection_id": "partograph_subsection_51",
-          "subsection_title": "INVESTIGATIONS WHEN PARTOGRAPH IS ABNORMAL",
+          "subsection_title": "50. INVESTIGATIONS WHEN PARTOGRAPH IS ABNORMAL",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_87",
+              "group_id": "partograph_group_90",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2314,41 +2558,56 @@
               ]
             },
             {
-              "group_id": "partograph_group_88",
+              "group_id": "partograph_group_91",
               "group_title": "Fetal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "CTG"
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "ultrasound where indicated.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "ultrasound where indicated."
                 }
               ]
             },
             {
-              "group_id": "partograph_group_89",
+              "group_id": "partograph_group_92",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "FBC",
-                    "CRP/cultures if infection suspected",
-                    "blood group/crossmatch if bleeding",
-                    "renal/liver tests if hypertensive disease suspected"
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "CRP/cultures if infection suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "blood group/crossmatch if bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "renal/liver tests if hypertensive disease suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "coagulation studies if haemorrhage/abruption suspected.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "coagulation studies if haemorrhage/abruption suspected."
                 }
               ]
             }
@@ -2356,11 +2615,11 @@
         },
         {
           "subsection_id": "partograph_subsection_52",
-          "subsection_title": "MANAGEMENT FRAMEWORK",
+          "subsection_title": "51. MANAGEMENT FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_90",
+              "group_id": "partograph_group_93",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2370,53 +2629,57 @@
                   "text": "When the partograph becomes abnormal:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "partograph_subsection_53",
-          "subsection_title": "STOP — ASSESS — IDENTIFY — ACT",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "partograph_group_91",
-              "group_title": "STOP",
+              "group_id": "partograph_group_94",
+              "group_title": "STOP — ASSESS — IDENTIFY — ACT",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Don't blindly continue the existing intervention."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_92",
-              "group_title": "ASSESS",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**STOP**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Don't blindly continue the existing intervention."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**ASSESS**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "mother",
-                    "fetus",
-                    "contractions",
-                    "cervix"
+                    {
+                      "text": "mother",
+                      "level": 0
+                    },
+                    {
+                      "text": "fetus",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "cervix",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "descent."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_93",
-              "group_title": "IDENTIFY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**IDENTIFY**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Power?"
@@ -2428,36 +2691,48 @@
                 {
                   "type": "paragraph",
                   "text": "Passage?"
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_94",
-              "group_title": "ACT",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "continue observation",
-                    "correct reversible cause",
-                    "augment if appropriate",
-                    "rotate",
-                    "operative vaginal birth"
-                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Caesarean birth."
+                  "text": "**ACT**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "continue observation",
+                      "level": 0
+                    },
+                    {
+                      "text": "correct reversible cause",
+                      "level": 0
+                    },
+                    {
+                      "text": "augment if appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "rotate",
+                      "level": 0
+                    },
+                    {
+                      "text": "operative vaginal birth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean birth.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "partograph_subsection_54",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "partograph_subsection_53",
+          "subsection_title": "52. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2583,8 +2858,8 @@
           ]
         },
         {
-          "subsection_id": "partograph_subsection_55",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "partograph_subsection_54",
+          "subsection_title": "53. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2614,10 +2889,9 @@
                   "text": "Saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Crossing the alert line = Caesarean.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Crossing the alert line = Caesarean.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2641,7 +2915,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "descent + contractions + fetus + mother."
+                  "text": "**descent + contractions + fetus + mother.**"
                 }
               ]
             },
@@ -2661,7 +2935,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "obstruction."
+                  "text": "**obstruction.**"
                 }
               ]
             },
@@ -2732,132 +3006,158 @@
           ]
         },
         {
-          "subsection_id": "partograph_subsection_56",
-          "subsection_title": "PARTOGRAPH MNEMONIC",
+          "subsection_id": "partograph_subsection_55",
+          "subsection_title": "54. PARTOGRAPH MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "partograph_group_113",
-              "group_title": "F — Fetus",
+              "group_title": "F-L-M",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "FHR",
-                    "liquor",
-                    "moulding",
-                    "descent"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_114",
-              "group_title": "L — Labour",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "**F — Fetus**",
+                  "style": "heading"
+                },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "cervical dilatation",
-                    "contractions",
-                    "time"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_115",
-              "group_title": "M — Mother",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "pulse",
-                    "BP",
-                    "temperature",
-                    "urine",
-                    "fluids"
+                    {
+                      "text": "FHR",
+                      "level": 0
+                    },
+                    {
+                      "text": "liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "moulding",
+                      "level": 0
+                    },
+                    {
+                      "text": "descent",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "medications."
+                  "text": "**L — Labour**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "cervical dilatation",
+                      "level": 0
+                    },
+                    {
+                      "text": "contractions",
+                      "level": 0
+                    },
+                    {
+                      "text": "time",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**M — Mother**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "pulse",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "urine",
+                      "level": 0
+                    },
+                    {
+                      "text": "fluids",
+                      "level": 0
+                    },
+                    {
+                      "text": "medications.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "partograph_subsection_57",
-          "subsection_title": "ABNORMAL PROGRESS MNEMONIC",
+          "subsection_id": "partograph_subsection_56",
+          "subsection_title": "55. ABNORMAL PROGRESS MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_116",
+              "group_id": "partograph_group_114",
               "group_title": "3 Ps",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "POWER — PASSENGER — PASSAGE"
-                  ]
+                  "type": "paragraph",
+                  "text": "**POWER — PASSENGER — PASSAGE**"
                 },
                 {
                   "type": "paragraph",
                   "text": "If labour is slow:"
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_117",
-              "group_title": "Power",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Power**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Are contractions adequate?"
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_118",
-              "group_title": "Passenger",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Is the baby:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "too large?"
+                  "text": "**Passenger**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "Is the baby:",
+                  "items": [
+                    {
+                      "text": "too large?",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpositioned?",
+                      "level": 0
+                    },
+                    {
+                      "text": "malpresenting?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "malpositioned?"
+                  "text": "**Passage**",
+                  "style": "heading"
                 },
-                {
-                  "type": "paragraph",
-                  "text": "malpresenting?"
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_119",
-              "group_title": "Passage",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Is the pelvis adequate?"
@@ -2867,12 +3167,12 @@
           ]
         },
         {
-          "subsection_id": "partograph_subsection_58",
-          "subsection_title": "60-SECOND MODEL ANSWER",
+          "subsection_id": "partograph_subsection_57",
+          "subsection_title": "56. 60-SECOND MODEL ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "partograph_group_120",
+              "group_id": "partograph_group_115",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2882,10 +3182,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Interpret this partograph.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Interpret this partograph.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2893,130 +3192,101 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would first confirm the patient's identity, gestational age and the time established labour began. I would assess the cervical dilatation and descent for evidence of progressive labour, then assess the frequency and duration of contractions. I would review fetal wellbeing including fetal heart rate, liquor and moulding, and assess maternal pulse, blood pressure, temperature, urine and any medications such as oxytocin. If progress is slow, I would not rely on the alert or action line alone. I would assess the three Ps — power, passenger and passage — and specifically look for malposition, malpresentation, inadequate contractions, caput, moulding or obstruction. I would then decide whether continued observation, correction of a reversible problem, augmentation, operative vaginal delivery or Caesarean birth is appropriate.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "partograph_subsection_59",
-          "subsection_title": "⭐ FINAL EXAM PEARLS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "partograph_group_121",
-              "group_title": "The partograph is about",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "BABY + LABOUR + MOTHER"
-                  ]
+                  "text": "“I would first confirm the patient's identity, gestational age and the time established labour began. I would assess the cervical dilatation and descent for evidence of progressive labour, then assess the frequency and duration of contractions. I would review fetal wellbeing including fetal heart rate, liquor and moulding, and assess maternal pulse, blood pressure, temperature, urine and any medications such as oxytocin. If progress is slow, I would not rely on the alert or action line alone. I would assess the three Ps — power, passenger and passage — and specifically look for malposition, malpresentation, inadequate contractions, caput, moulding or obstruction. I would then decide whether continued observation, correction of a reversible problem, augmentation, operative vaginal delivery or Caesarean birth is appropriate.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "partograph_group_122",
-              "group_title": "If labour is slow",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "POWER + PASSENGER + PASSAGE"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_123",
-              "group_title": "If cervical dilatation is slow",
+              "group_id": "partograph_group_116",
+              "group_title": "⭐ FINAL EXAM PEARLS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Don't automatically augment."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_124",
-              "group_title": "If caput + moulding + poor descent",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Think obstruction."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_125",
-              "group_title": "If contractions are excessive",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Think hyperstimulation."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_126",
-              "group_title": "If fetal heart becomes abnormal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Assess the fetus and the cause immediately."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_127",
-              "group_title": "If maternal temperature rises",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Think infection."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_128",
-              "group_title": "If bleeding occurs",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Think beyond the partograph — assess for obstetric haemorrhage/abruption."
-                }
-              ]
-            },
-            {
-              "group_id": "partograph_group_129",
-              "group_title": "And the most important modern OSCE correction",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Crossing an alert/action line is a signal to assess the woman, not an automatic indication for Caesarean section."
+                  "text": "**The partograph is about**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "The best candidate doesn't simply describe where the plotted line sits. They explain what the pattern means clinically and what they would do next."
+                  "text": "**BABY + LABOUR + MOTHER**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If labour is slow**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**POWER + PASSENGER + PASSAGE**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If cervical dilatation is slow**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Don't automatically augment.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If caput + moulding + poor descent**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Think obstruction.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If contractions are excessive**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Think hyperstimulation.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If fetal heart becomes abnormal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Assess the fetus and the cause immediately.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If maternal temperature rises**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Think infection.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If bleeding occurs**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Think beyond the partograph — assess for obstetric haemorrhage/abruption.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**And the most important modern OSCE correction**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Crossing an alert/action line is a signal to assess the woman, not an automatic indication for Caesarean section.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The best candidate doesn't simply describe where the plotted line sits. They explain **what the pattern means clinically and what they would do next.**"
                 }
               ]
             }

@@ -43,7 +43,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_2",
-          "subsection_title": "Identification",
+          "subsection_title": "1. Identification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -73,24 +73,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Category: Cardiovascular therapeutic equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Type: Electronic cardiac stimulation device."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Function: Electrical stimulation of the myocardium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Common indications: Symptomatic bradycardia and selected conduction abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Types: Temporary and permanent pacemakers."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Category: Cardiovascular therapeutic equipment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Type: Electronic cardiac stimulation device.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Function: Electrical stimulation of the myocardium.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Common indications: Symptomatic bradycardia and selected conduction abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Types: Temporary and permanent pacemakers.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -106,10 +111,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Permanent pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Permanent pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -121,10 +124,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Temporary transvenous pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Temporary transvenous pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -136,10 +137,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Temporary transcutaneous pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Temporary transcutaneous pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -151,10 +150,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "D. Leadless pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "D. Leadless pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -170,7 +167,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a cardiac pacemaker, an electronic device that delivers electrical impulses to stimulate the myocardium and maintain an appropriate heart rate. It may be temporary or permanent and is used mainly in patients with symptomatic bradycardia or clinically significant conduction disorders.\""
+                  "text": "\"This is a cardiac pacemaker, an electronic device that delivers electrical impulses to stimulate the myocardium and maintain an appropriate heart rate. It may be temporary or permanent and is used mainly in patients with symptomatic bradycardia or clinically significant conduction disorders.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -182,7 +180,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_3",
-          "subsection_title": "Uses and Indications",
+          "subsection_title": "2. Uses and Indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -208,28 +206,33 @@
                   "text": "A pacemaker may be indicated when a slow heart rate causes symptoms such as:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Syncope."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Presyncope."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dizziness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exercise intolerance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fatigue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Heart failure symptoms attributable to bradycardia."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Syncope.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Presyncope.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dizziness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exercise intolerance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fatigue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure symptoms attributable to bradycardia.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -244,20 +247,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Permanent pacing is commonly indicated for:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Acquired Mobitz type II second-degree AV block."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "High-grade AV block."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Complete (third-degree) AV block."
+                  "type": "list",
+                  "title": "Permanent pacing is commonly indicated for:",
+                  "items": [
+                    {
+                      "text": "Acquired Mobitz type II second-degree AV block.",
+                      "level": 0
+                    },
+                    {
+                      "text": "High-grade AV block.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complete (third-degree) AV block.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -272,24 +277,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptomatic sinus bradycardia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptomatic sinus pauses."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tachycardia–bradycardia syndrome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inability to increase heart rate appropriately with activity when symptoms are attributable to chronotropic incompetence."
+                  "type": "list",
+                  "title": "Examples include:",
+                  "items": [
+                    {
+                      "text": "Symptomatic sinus bradycardia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptomatic sinus pauses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachycardia–bradycardia syndrome.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inability to increase heart rate appropriately with activity when symptoms are attributable to chronotropic incompetence.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -300,16 +307,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Certain neuromuscular disorders associated with progressive conduction disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected reflex syncope cases with documented cardioinhibitory mechanisms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cardiac resynchronization therapy in selected patients with heart failure and electrical dyssynchrony."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Certain neuromuscular disorders associated with progressive conduction disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected reflex syncope cases with documented cardioinhibitory mechanisms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac resynchronization therapy in selected patients with heart failure and electrical dyssynchrony.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -324,24 +336,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Temporary pacing may be required for selected patients with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hemodynamically significant bradycardia unresponsive to initial treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Advanced AV block requiring urgent support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Bradycardia due to a potentially reversible cause while the underlying problem is treated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected situations around cardiac procedures."
+                  "type": "list",
+                  "title": "Temporary pacing may be required for selected patients with:",
+                  "items": [
+                    {
+                      "text": "Hemodynamically significant bradycardia unresponsive to initial treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Advanced AV block requiring urgent support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bradycardia due to a potentially reversible cause while the underlying problem is treated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected situations around cardiac procedures.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -353,7 +367,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_4",
-          "subsection_title": "Parts and Functions",
+          "subsection_title": "3. Parts and Functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -368,10 +382,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "hvchealth.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "hvchealth.com"
                 },
                 {
                   "type": "paragraph",
@@ -444,10 +456,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Single-chamber pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "Single-chamber pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -459,10 +469,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Dual-chamber pacemaker"
-                  ]
+                  "type": "paragraph",
+                  "text": "Dual-chamber pacemaker"
                 },
                 {
                   "type": "paragraph",
@@ -474,10 +482,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Biventricular pacemaker (CRT-P)"
-                  ]
+                  "type": "paragraph",
+                  "text": "Biventricular pacemaker (CRT-P)"
                 },
                 {
                   "type": "paragraph",
@@ -492,48 +498,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The first three positions of the traditional NBG pacemaker code describe:"
+                  "type": "list",
+                  "title": "The first three positions of the traditional NBG pacemaker code describe:",
+                  "items": [
+                    {
+                      "text": "First position: Chamber paced.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Second position: Chamber sensed.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Third position: Response to sensing.",
+                      "level": 0,
+                      "label": "3."
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "First position: Chamber paced."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Second position: Chamber sensed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Third position: Response to sensing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Common letters include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Atrium."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V — Ventricle."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "D — Dual chamber."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — None."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "I — Inhibited response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Triggered response."
+                  "type": "list",
+                  "title": "Common letters include:",
+                  "items": [
+                    {
+                      "text": "A — Atrium.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V — Ventricle.",
+                      "level": 0
+                    },
+                    {
+                      "text": "D — Dual chamber.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — None.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Inhibited response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Triggered response.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -549,7 +562,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_5",
-          "subsection_title": "Advantages",
+          "subsection_title": "4. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -559,32 +572,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Prevents symptomatic bradycardia: Maintains an adequate heart rate when intrinsic cardiac activity is insufficient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Improves symptoms: May reduce syncope, dizziness, fatigue, and exercise intolerance caused by bradycardia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Improves AV synchrony: Selected dual-chamber systems coordinate atrial and ventricular activity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provides long-term support: Permanent devices can function for years, depending on the device, settings, and battery usage."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can improve quality of life: Particularly when symptoms are directly attributable to a pacing-responsive rhythm disorder."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialized pacing options: CRT can improve cardiac coordination in appropriately selected heart failure patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Programmable operation: Clinicians can adjust pacing parameters to suit the patient's clinical needs."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Prevents symptomatic bradycardia: Maintains an adequate heart rate when intrinsic cardiac activity is insufficient.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Improves symptoms: May reduce syncope, dizziness, fatigue, and exercise intolerance caused by bradycardia.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Improves AV synchrony: Selected dual-chamber systems coordinate atrial and ventricular activity.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Provides long-term support: Permanent devices can function for years, depending on the device, settings, and battery usage.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Can improve quality of life: Particularly when symptoms are directly attributable to a pacing-responsive rhythm disorder.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Specialized pacing options: CRT can improve cardiac coordination in appropriately selected heart failure patients.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Programmable operation: Clinicians can adjust pacing parameters to suit the patient's clinical needs.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }
@@ -592,7 +617,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_6",
-          "subsection_title": "Disadvantages and Limitations",
+          "subsection_title": "5. Disadvantages and Limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -602,40 +627,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Invasive implantation: Conventional permanent pacing usually requires a procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infection risk: Infection may involve the generator pocket, leads, or bloodstream."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lead-related complications: Lead displacement, fracture, insulation failure, or abnormal sensing may occur."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Battery depletion: Generator replacement is eventually required."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Device dependence: Some patients rely heavily on pacing, making device malfunction potentially dangerous."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Not a cure for every arrhythmia: A conventional pacemaker does not treat all causes of syncope, tachycardia, or cardiac arrest."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow-up required: Patients need device checks and clinical review."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Potential electromagnetic interference: Certain equipment and procedures require specific precautions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pacing-induced ventricular dysfunction: Chronic right ventricular pacing can impair ventricular function in some patients."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Invasive implantation: Conventional permanent pacing usually requires a procedure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection risk: Infection may involve the generator pocket, leads, or bloodstream.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lead-related complications: Lead displacement, fracture, insulation failure, or abnormal sensing may occur.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Battery depletion: Generator replacement is eventually required.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Device dependence: Some patients rely heavily on pacing, making device malfunction potentially dangerous.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Not a cure for every arrhythmia: A conventional pacemaker does not treat all causes of syncope, tachycardia, or cardiac arrest.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow-up required: Patients need device checks and clinical review.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Potential electromagnetic interference: Certain equipment and procedures require specific precautions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pacing-induced ventricular dysfunction: Chronic right ventricular pacing can impair ventricular function in some patients.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -647,7 +677,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_7",
-          "subsection_title": "Preparation and Precautions",
+          "subsection_title": "6. Preparation and Precautions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -669,32 +699,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confirm the indication and review the ECG."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess symptoms, hemodynamic status, and potentially reversible causes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review medications and relevant investigations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain informed consent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess infection risk and follow appropriate peri-procedural precautions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm appropriate monitoring and emergency equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the implanting team's procedural checklist."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confirm the indication and review the ECG.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess symptoms, hemodynamic status, and potentially reversible causes.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Review medications and relevant investigations.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Obtain informed consent.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess infection risk and follow appropriate peri-procedural precautions.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Confirm appropriate monitoring and emergency equipment.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Follow the implanting team's procedural checklist.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -705,28 +747,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Establish appropriate ECG and hemodynamic monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess the need for urgent pacing and the patient's stability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure that resuscitation equipment is available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prepare sterile equipment and appropriate vascular access supplies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow local protocols for analgesia, sedation, and procedural support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm pacing capture and sensing after lead placement."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Establish appropriate ECG and hemodynamic monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess the need for urgent pacing and the patient's stability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure that resuscitation equipment is available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prepare sterile equipment and appropriate vascular access supplies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow local protocols for analgesia, sedation, and procedural support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm pacing capture and sensing after lead placement.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -741,32 +788,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Recognize and treat the underlying cause of bradycardia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm that the patient requires emergency pacing according to the relevant resuscitation algorithm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply the pacing/defibrillation pads as directed by the device."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Connect ECG monitoring and activate pacing mode."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select appropriate pacing rate and output according to the protocol and patient response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm both electrical and mechanical capture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provide analgesia or sedation if appropriate and if this does not delay lifesaving treatment."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Recognize and treat the underlying cause of bradycardia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm that the patient requires emergency pacing according to the relevant resuscitation algorithm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apply the pacing/defibrillation pads as directed by the device.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Connect ECG monitoring and activate pacing mode.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Select appropriate pacing rate and output according to the protocol and patient response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm both electrical and mechanical capture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provide analgesia or sedation if appropriate and if this does not delay lifesaving treatment.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -777,28 +829,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Carry device identification information."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Attend scheduled device checks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inform healthcare professionals about the device before procedures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow device-specific advice about MRI and other electromagnetic exposures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid manipulating the generator pocket."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Seek urgent assessment for syncope, recurrent dizziness, unexplained breathlessness, or suspected device malfunction."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Carry device identification information.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Attend scheduled device checks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inform healthcare professionals about the device before procedures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow device-specific advice about MRI and other electromagnetic exposures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid manipulating the generator pocket.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seek urgent assessment for syncope, recurrent dizziness, unexplained breathlessness, or suspected device malfunction.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -810,7 +867,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_8",
-          "subsection_title": "How to Use It — Step-by-Step OSCE Demonstration",
+          "subsection_title": "7. How to Use It — Step-by-Step OSCE Demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -837,51 +894,44 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "bhf.org.uk",
-                    "Step 1: Identify the device"
-                  ]
+                  "type": "paragraph",
+                  "text": "bhf.org.uk"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 1: Identify the device"
                 },
                 {
                   "type": "paragraph",
                   "text": "State that it is a cardiac pacemaker and distinguish permanent from temporary pacing equipment where possible."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 2: Explain the function"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 2: Explain the function"
                 },
                 {
                   "type": "paragraph",
                   "text": "Describe how the device senses intrinsic cardiac activity and delivers electrical impulses when required by its programmed settings."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 3: Identify the components"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 3: Identify the components"
                 },
                 {
                   "type": "paragraph",
                   "text": "Point out the pulse generator, battery, lead or leads, and electrode tips where visible."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 4: State the indications"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 4: State the indications"
                 },
                 {
                   "type": "paragraph",
                   "text": "Mention symptomatic bradycardia, advanced AV block, and selected cases of sinus node dysfunction."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Step 5: Explain monitoring and follow-up"
-                  ]
+                  "type": "paragraph",
+                  "text": "Step 5: Explain monitoring and follow-up"
                 },
                 {
                   "type": "paragraph",
@@ -905,40 +955,54 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess the patient and activate appropriate emergency support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the indication for pacing and follow the applicable resuscitation algorithm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Attach ECG monitoring and apply pacing pads correctly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select the pacing mode and set the initial rate and output according to the device and clinical protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increase output as required until electrical capture is obtained."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm mechanical capture by assessing a corresponding pulse and clinical perfusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassess blood pressure, consciousness, and overall clinical response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provide analgesia or sedation when appropriate without delaying urgent treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange expert review and definitive management, including transvenous pacing when indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assess the patient and activate appropriate emergency support.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confirm the indication for pacing and follow the applicable resuscitation algorithm.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Attach ECG monitoring and apply pacing pads correctly.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Select the pacing mode and set the initial rate and output according to the device and clinical protocol.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Increase output as required until electrical capture is obtained.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Confirm mechanical capture by assessing a corresponding pulse and clinical perfusion.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Reassess blood pressure, consciousness, and overall clinical response.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Provide analgesia or sedation when appropriate without delaying urgent treatment.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Arrange expert review and definitive management, including transvenous pacing when indicated.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -953,32 +1017,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess airway, breathing, circulation, and vital signs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about syncope, dizziness, palpitations, chest pain, or breathlessness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the device pocket for redness, swelling, discharge, or erosion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain a 12-lead ECG when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check for pacing spikes, capture, and relevant rhythm abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange pacemaker interrogation if malfunction is suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Escalate urgently if the patient is unstable or device failure is suspected."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assess airway, breathing, circulation, and vital signs.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ask about syncope, dizziness, palpitations, chest pain, or breathlessness.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Inspect the device pocket for redness, swelling, discharge, or erosion.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Obtain a 12-lead ECG when indicated.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Check for pacing spikes, capture, and relevant rhythm abnormalities.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Arrange pacemaker interrogation if malfunction is suspected.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Escalate urgently if the patient is unstable or device failure is suspected.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }
@@ -986,7 +1062,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_9",
-          "subsection_title": "Contraindications and Complications",
+          "subsection_title": "8. Contraindications and Complications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1000,28 +1076,30 @@
                   "text": "There is no single absolute contraindication that applies to every pacemaker system and every clinical situation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "However:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A permanent pacemaker should not be implanted without a valid clinical indication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reversible causes of bradycardia should be assessed and treated when appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Active infection requires careful management and may necessitate delaying permanent implantation when clinically feasible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Temporary pacing should be used when its expected benefit outweighs the procedural risks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Device selection must account for the patient's rhythm disorder, anatomy, comorbidities, and expected pacing requirements."
+                  "type": "list",
+                  "title": "However:",
+                  "items": [
+                    {
+                      "text": "A permanent pacemaker should not be implanted without a valid clinical indication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reversible causes of bradycardia should be assessed and treated when appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Active infection requires careful management and may necessitate delaying permanent implantation when clinically feasible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temporary pacing should be used when its expected benefit outweighs the procedural risks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Device selection must account for the patient's rhythm disorder, anatomy, comorbidities, and expected pacing requirements.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1102,10 +1180,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Failure to capture"
-                  ]
+                  "type": "paragraph",
+                  "text": "Failure to capture"
                 },
                 {
                   "type": "paragraph",
@@ -1117,10 +1193,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Failure to pace"
-                  ]
+                  "type": "paragraph",
+                  "text": "Failure to pace"
                 },
                 {
                   "type": "paragraph",
@@ -1132,10 +1206,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sensing abnormality"
-                  ]
+                  "type": "paragraph",
+                  "text": "Sensing abnormality"
                 },
                 {
                   "type": "paragraph",
@@ -1151,7 +1223,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_10",
-          "subsection_title": "Normal and Abnormal Findings",
+          "subsection_title": "9. Normal and Abnormal Findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1165,28 +1237,30 @@
                   "text": "A functioning pacemaker should demonstrate appropriate sensing, pacing when required, and capture when an impulse is delivered."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "On ECG, expected findings may include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pacing spikes before atrial depolarization in atrial pacing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pacing spikes before a QRS complex in ventricular pacing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A paced QRS complex following ventricular pacing, often broad in conventional right ventricular pacing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Appropriate intrinsic cardiac activity when the pacemaker does not need to stimulate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Appropriate coordination of atrial and ventricular events in dual-chamber pacing when programmed and functioning normally."
+                  "type": "list",
+                  "title": "On ECG, expected findings may include:",
+                  "items": [
+                    {
+                      "text": "Pacing spikes before atrial depolarization in atrial pacing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pacing spikes before a QRS complex in ventricular pacing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A paced QRS complex following ventricular pacing, often broad in conventional right ventricular pacing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate intrinsic cardiac activity when the pacemaker does not need to stimulate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate coordination of atrial and ventricular events in dual-chamber pacing when programmed and functioning normally.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1310,7 +1384,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_11",
-          "subsection_title": "Pediatric Considerations",
+          "subsection_title": "10. Pediatric Considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1332,24 +1406,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Congenital complete AV block with appropriate clinical indications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptomatic sinus node dysfunction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Advanced AV block following cardiac surgery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected congenital heart disease-associated conduction disorders."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Certain neuromuscular or inherited conditions associated with conduction abnormalities."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Congenital complete AV block with appropriate clinical indications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptomatic sinus node dysfunction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Advanced AV block following cardiac surgery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected congenital heart disease-associated conduction disorders.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Certain neuromuscular or inherited conditions associated with conduction abnormalities.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1360,28 +1439,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Congenital heart disease: Abnormal cardiac anatomy may affect device and lead selection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Growth: A child's growth can affect lead requirements and long-term device planning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Skin and tissue: Smaller body size requires careful consideration of generator position and wound healing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Battery longevity: Pacing settings, lead characteristics, and growth-related factors influence long-term device management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Activity: Advice should be individualized to the device, procedure, and underlying cardiac condition."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Family education: Caregivers need to understand device checks, warning symptoms, and follow-up schedules."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Congenital heart disease: Abnormal cardiac anatomy may affect device and lead selection.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Growth: A child's growth can affect lead requirements and long-term device planning.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Skin and tissue: Smaller body size requires careful consideration of generator position and wound healing.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Battery longevity: Pacing settings, lead characteristics, and growth-related factors influence long-term device management.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Activity: Advice should be individualized to the device, procedure, and underlying cardiac condition.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Family education: Caregivers need to understand device checks, warning symptoms, and follow-up schedules.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             },
@@ -1405,7 +1495,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_12",
-          "subsection_title": "Mnemonics and Memory Aids",
+          "subsection_title": "11. Mnemonics and Memory Aids",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1415,40 +1505,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "P — Prevent symptomatic bradycardia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Assess the indication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Check capture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Evaluate sensing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "M — Monitor the patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Assess for complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "K — Keep up with device checks."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Educate the patient."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "R — Review the underlying rhythm."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "P — Prevent symptomatic bradycardia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Assess the indication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Check capture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Evaluate sensing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "M — Monitor the patient.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Assess for complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "K — Keep up with device checks.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Educate the patient.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Review the underlying rhythm.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1463,16 +1558,21 @@
                   "text": "Remember SPIKE → RESPONSE."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A pacing spike is delivered."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The expected depolarization should follow."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If it does not, consider failure to capture."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "A pacing spike is delivered.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The expected depolarization should follow.",
+                      "level": 0
+                    },
+                    {
+                      "text": "If it does not, consider failure to capture.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1483,22 +1583,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "P–C–S"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "P–C–S"
+                    {
+                      "text": "P — Failure to pace.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Failure to capture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Failure to sense correctly.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Failure to pace."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Failure to capture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Failure to sense correctly."
                 }
               ]
             },
@@ -1509,34 +1612,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "POCKET"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "POCKET"
+                    {
+                      "text": "P — Pain and other symptoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Observe the device site.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Check the ECG.",
+                      "level": 0
+                    },
+                    {
+                      "text": "K — Know the device type and indication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Evaluate for complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Test the device through appropriate interrogation when indicated.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Pain and other symptoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Observe the device site."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Check the ECG."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "K — Know the device type and indication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Evaluate for complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Test the device through appropriate interrogation when indicated."
                 }
               ]
             }
@@ -1544,7 +1650,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_13",
-          "subsection_title": "Common OSCE Questions and Model Answers",
+          "subsection_title": "12. Common OSCE Questions and Model Answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1671,7 +1777,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_14",
-          "subsection_title": "Common Mistakes and Examiner Tips",
+          "subsection_title": "13. Common Mistakes and Examiner Tips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1730,40 +1836,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "To score highly:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the device and its purpose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the distinction between pacing and defibrillation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "State the major indications for permanent pacing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the generator and leads where applicable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recognize failure to pace, failure to capture, and sensing abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Describe important implantation complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain how to confirm mechanical capture."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Emphasize device follow-up and patient education."
+                  "type": "list",
+                  "title": "To score highly:",
+                  "items": [
+                    {
+                      "text": "Identify the device and its purpose.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the distinction between pacing and defibrillation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "State the major indications for permanent pacing.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Identify the generator and leads where applicable.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Recognize failure to pace, failure to capture, and sensing abnormalities.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Describe important implantation complications.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Explain how to confirm mechanical capture.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Emphasize device follow-up and patient education.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             },
@@ -1775,7 +1891,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a cardiac pacemaker, an electronic device that delivers electrical impulses to stimulate the heart when intrinsic cardiac activity is inadequate. It may be temporary or permanent and is commonly used for symptomatic bradycardia and advanced AV block. A conventional system consists of a pulse generator and pacing leads. Important complications include infection, lead displacement, and failure to capture. During assessment, I would review the patient's symptoms, ECG, device site, and device function, and I would escalate urgently if malfunction or hemodynamic instability were suspected.\""
+                  "text": "\"This is a cardiac pacemaker, an electronic device that delivers electrical impulses to stimulate the heart when intrinsic cardiac activity is inadequate. It may be temporary or permanent and is commonly used for symptomatic bradycardia and advanced AV block. A conventional system consists of a pulse generator and pacing leads. Important complications include infection, lead displacement, and failure to capture. During assessment, I would review the patient's symptoms, ECG, device site, and device function, and I would escalate urgently if malfunction or hemodynamic instability were suspected.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1783,7 +1900,7 @@
         },
         {
           "subsection_id": "pacemaker_subsection_15",
-          "subsection_title": "Mini-OSCE Practice Questions",
+          "subsection_title": "14. Mini-OSCE Practice Questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1797,39 +1914,60 @@
                   "text": "1. An ECG shows pacing spikes, but no QRS complexes follow the ventricular pacing spikes. What is the likely problem?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Failure to capture",
-                    "Failure to pace",
-                    "Normal dual-chamber pacing",
-                    "Sinus tachycardia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Failure to capture"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Failure to pace"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal dual-chamber pacing"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sinus tachycardia"
                 },
                 {
                   "type": "paragraph",
                   "text": "2. A patient with severe symptomatic bradycardia remains unstable despite initial treatment. Which intervention may be required?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Routine outpatient Holter monitoring",
-                    "Emergency pacing according to the resuscitation algorithm",
-                    "Discharge with a symptom diary",
-                    "Elective echocardiography before stabilization"
-                  ]
+                  "type": "paragraph",
+                  "text": "Routine outpatient Holter monitoring"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emergency pacing according to the resuscitation algorithm"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Discharge with a symptom diary"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Elective echocardiography before stabilization"
                 },
                 {
                   "type": "paragraph",
                   "text": "3. During transcutaneous pacing, pacing spikes are followed by broad QRS complexes. What else must be confirmed?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "The device battery colour",
-                    "Mechanical capture with a corresponding pulse and perfusion",
-                    "A normal temperature",
-                    "Absence of all ECG artifacts"
-                  ]
+                  "type": "paragraph",
+                  "text": "The device battery colour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mechanical capture with a corresponding pulse and perfusion"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A normal temperature"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Absence of all ECG artifacts"
                 }
               ]
             },

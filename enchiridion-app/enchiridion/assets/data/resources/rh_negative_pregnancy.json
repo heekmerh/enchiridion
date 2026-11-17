@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "rh_negative_pregnancy_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 28-year-old G2P1 woman at 12 weeks is found to be RhD negative. What would you do?”"
+                  "text": "“A 28-year-old G2P1 woman at 12 weeks is found to be RhD negative. What would you do?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -41,7 +42,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A pregnant woman is RhD negative and her antibody screen is positive. Assess and manage her.”"
+                  "text": "“A pregnant woman is RhD negative and her antibody screen is positive. Assess and manage her.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -53,7 +55,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“An RhD-negative woman at 10 weeks presents with vaginal bleeding. What is your management?”"
+                  "text": "“An RhD-negative woman at 10 weeks presents with vaginal bleeding. What is your management?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -65,7 +68,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“An RhD-negative woman at 28 weeks is involved in a road traffic accident. What are your concerns?”"
+                  "text": "“An RhD-negative woman at 28 weeks is involved in a road traffic accident. What are your concerns?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -77,7 +81,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman who previously had a baby requiring treatment for haemolytic disease of the fetus and newborn is now pregnant. How would you manage her?”"
+                  "text": "“A woman who previously had a baby requiring treatment for haemolytic disease of the fetus and newborn is now pregnant. How would you manage her?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -85,7 +90,7 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_2",
-          "subsection_title": "START WITH THE BASIC CONCEPT",
+          "subsection_title": "2. START WITH THE BASIC CONCEPT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -99,14 +104,17 @@
                   "text": "RhD is an antigen found on the surface of red blood cells."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "A person is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A person is:",
                   "items": [
-                    "RhD positive — D antigen present",
-                    "RhD negative — D antigen absent"
+                    {
+                      "text": "**RhD positive** — D antigen present",
+                      "level": 0
+                    },
+                    {
+                      "text": "**RhD negative** — D antigen absent",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -114,10 +122,8 @@
                   "text": "The problem occurs when:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD-negative mother + RhD-positive fetus"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD-negative mother + RhD-positive fetus**"
                 },
                 {
                   "type": "paragraph",
@@ -128,26 +134,31 @@
                   "text": "The mother may then develop:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Anti-D antibodies"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Anti-D antibodies**"
                 },
                 {
                   "type": "paragraph",
                   "text": "This is called:"
                 }
               ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_7",
+              "group_title": "RhD alloimmunisation / sensitisation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_3",
-          "subsection_title": "WHY IS IT IMPORTANT?",
+          "subsection_title": "3. WHY IS IT IMPORTANT?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_7",
+              "group_id": "rh_negative_pregnancy_group_8",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -161,24 +172,37 @@
                   "text": "They can destroy fetal red blood cells, causing:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Haemolytic disease of the fetus and newborn — HDFN"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "The severity ranges from:"
+                  "text": "**Haemolytic disease of the fetus and newborn — HDFN**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The severity ranges from:",
                   "items": [
-                    "Mild fetal anaemia",
-                    "Neonatal jaundice",
-                    "Significant fetal anaemia",
-                    "Hydrops fetalis",
-                    "Heart failure",
-                    "Fetal death"
+                    {
+                      "text": "Mild fetal anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Significant fetal anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydrops fetalis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal death",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -187,11 +211,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_4",
-          "subsection_title": "VERY IMPORTANT DISTINCTION",
+          "subsection_title": "4. VERY IMPORTANT DISTINCTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_8",
+              "group_id": "rh_negative_pregnancy_group_9",
               "group_title": "RhD-negative ≠ sensitised",
               "group_subtitle": null,
               "group_icon": null,
@@ -201,24 +225,20 @@
                   "text": "A woman can be:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD negative + antibody screen negative"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD negative + antibody screen negative**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "and therefore not sensitised."
+                  "text": "and therefore **not sensitised**."
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD negative + immune anti-D antibody positive"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD negative + immune anti-D antibody positive**"
                 },
                 {
                   "type": "paragraph",
@@ -231,14 +251,15 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_9",
+              "group_id": "rh_negative_pregnancy_group_10",
               "group_title": "Golden sentence",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Being RhD negative does not mean that a woman is alloimmunised; alloimmunisation is determined by the presence of clinically significant red-cell antibodies.”"
+                  "text": "**“Being RhD negative does not mean that a woman is alloimmunised; alloimmunisation is determined by the presence of clinically significant red-cell antibodies.”**",
+                  "style": "quote"
                 }
               ]
             }
@@ -246,11 +267,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_5",
-          "subsection_title": "ANTENATAL ASSESSMENT",
+          "subsection_title": "5. ANTENATAL ASSESSMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_10",
+              "group_id": "rh_negative_pregnancy_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -262,7 +283,19 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_11",
+              "group_id": "rh_negative_pregnancy_group_12",
+              "group_title": "1. Maternal ABO blood group",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**2. RhD status**"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_13",
               "group_title": "3. Red-cell antibody screen",
               "group_subtitle": null,
               "group_icon": null,
@@ -272,16 +305,25 @@
                   "text": "The antibody screen is important because the problem is not limited to anti-D."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Other clinically significant antibodies include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Other clinically significant antibodies include:",
                   "items": [
-                    "Anti-c",
-                    "Anti-K",
-                    "Anti-E",
-                    "Others depending on the laboratory panel"
+                    {
+                      "text": "Anti-c",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anti-K",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anti-E",
+                      "level": 0
+                    },
+                    {
+                      "text": "Others depending on the laboratory panel",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -290,11 +332,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_6",
-          "subsection_title": "HISTORY",
+          "subsection_title": "6. HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_12",
+              "group_id": "rh_negative_pregnancy_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -306,113 +348,179 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_13",
+              "group_id": "rh_negative_pregnancy_group_15",
               "group_title": "Previous pregnancies",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "Number of pregnancies",
-                    "Previous babies",
-                    "Previous miscarriages",
-                    "Ectopic pregnancy",
-                    "Stillbirth",
-                    "Previous neonatal jaundice",
-                    "Previous exchange transfusion",
-                    "Previous fetal anaemia",
-                    "Previous hydrops",
-                    "Previous baby with HDFN"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_14",
-              "group_title": "Previous procedures",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Amniocentesis",
-                    "Chorionic villus sampling",
-                    "Cordocentesis",
-                    "Caesarean section",
-                    "Manual removal of placenta",
-                    "Evacuation of retained products"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_15",
-              "group_title": "Bleeding",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Vaginal bleeding",
-                    "Miscarriage",
-                    "Antepartum haemorrhage"
+                    {
+                      "text": "Number of pregnancies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous babies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous miscarriages",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous neonatal jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous exchange transfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous fetal anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous hydrops",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous baby with HDFN",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_16",
-              "group_title": "Trauma",
+              "group_title": "Previous procedures",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Abdominal trauma",
-                    "Road traffic accident",
-                    "Domestic trauma"
+                    {
+                      "text": "Amniocentesis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chorionic villus sampling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cordocentesis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Caesarean section",
+                      "level": 0
+                    },
+                    {
+                      "text": "Manual removal of placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evacuation of retained products",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_17",
+              "group_title": "Bleeding",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antepartum haemorrhage",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_18",
+              "group_title": "Trauma",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Ask about:",
+                  "items": [
+                    {
+                      "text": "Abdominal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Road traffic accident",
+                      "level": 0
+                    },
+                    {
+                      "text": "Domestic trauma",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_19",
               "group_title": "Other sensitising events",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "External cephalic version",
-                    "Invasive fetal procedures",
-                    "Intrauterine death",
-                    "Delivery",
-                    "Pregnancy termination"
+                    {
+                      "text": "External cephalic version",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive fetal procedures",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine death",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy termination",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -421,11 +529,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_7",
-          "subsection_title": "SENSITISING EVENTS",
+          "subsection_title": "7. SENSITISING EVENTS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_18",
+              "group_id": "rh_negative_pregnancy_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -433,76 +541,108 @@
                 {
                   "type": "paragraph",
                   "text": "Remember:"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_19",
-              "group_title": "Bleeding",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Miscarriage",
-                    "Ectopic pregnancy",
-                    "Antepartum haemorrhage"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_20",
-              "group_title": "Procedure",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "CVS",
-                    "Amniocentesis",
-                    "Cordocentesis"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“BLEED, PROCEDURE, TRAUMA, DELIVERY”**",
+                  "style": "quote"
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_21",
-              "group_title": "Trauma",
+              "group_title": "Bleeding",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Abdominal trauma"
+                    {
+                      "text": "Miscarriage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antepartum haemorrhage",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_22",
+              "group_title": "Procedure",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "CVS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniocentesis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cordocentesis",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_23",
+              "group_title": "Trauma",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Abdominal trauma",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_24",
               "group_title": "Delivery",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Delivery of an RhD-positive baby"
+                    {
+                      "text": "Delivery of an RhD-positive baby",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Other important events:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Other important events:",
                   "items": [
-                    "External cephalic version",
-                    "Intrauterine fetal death"
+                    {
+                      "text": "External cephalic version",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine fetal death",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -511,11 +651,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_8",
-          "subsection_title": "HOW DOES SENSITISATION OCCUR?",
+          "subsection_title": "8. HOW DOES SENSITISATION OCCUR?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_23",
+              "group_id": "rh_negative_pregnancy_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -525,51 +665,44 @@
                   "text": "The process is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetomaternal haemorrhage"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fetomaternal** **haemorrhage**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Fetal RhD-positive RBCs enter maternal circulation."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Maternal immune system recognises D antigen."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Maternal B cells produce:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Anti-D antibodies",
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Anti-D antibodies**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Memory response develops."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
@@ -580,32 +713,32 @@
                   "text": "Maternal IgG anti-D crosses placenta."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Fetal RBC destruction."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓",
-                    "Fetal anaemia",
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Fetal anaemia**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "Severe disease can cause:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hydrops → heart failure → fetal death"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Hydrops → heart failure → fetal death**"
                 }
               ]
             }
@@ -613,50 +746,7 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_9",
-          "subsection_title": "ANTI-D IMMUNOGLOBULIN",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_24",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Anti-D immunoglobulin is given to an unsensitised RhD-negative woman to prevent formation of immune anti-D following exposure to RhD-positive fetal cells."
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_25",
-              "group_title": "Important",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Anti-D is:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Prevention, not treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Once true immune sensitisation has occurred:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anti-D cannot reverse it."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_10",
-          "subsection_title": "ROUTINE ANTENATAL ANTI-D PROFYLAXIS",
+          "subsection_title": "9. ANTI-D IMMUNOGLOBULIN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -667,43 +757,85 @@
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "Anti-D immunoglobulin is given to an **unsensitised** **RhD-negative woman** to prevent formation of immune anti-D following exposure to RhD-positive fetal cells."
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_27",
+              "group_title": "Important",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Anti-D is:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Prevention, not treatment.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Once true immune sensitisation has occurred:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Anti-D cannot reverse it.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rh_negative_pregnancy_subsection_10",
+          "subsection_title": "10. ROUTINE ANTENATAL ANTI-D PROFYLAXIS",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rh_negative_pregnancy_group_28",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
                   "text": "An unsensitised RhD-negative woman may be offered:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Routine antenatal anti-D prophylaxis — RAADP"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Routine antenatal anti-D prophylaxis — RAADP**"
                 },
                 {
                   "type": "paragraph",
                   "text": "The exact regimen varies according to national/local protocol and available preparation."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common regimens include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common regimens include:",
                   "items": [
-                    "A single dose around 28–30 weeks, or"
+                    {
+                      "text": "A single dose around 28–30 weeks, or",
+                      "level": 0
+                    },
+                    {
+                      "text": "Two-dose regimens around 28 and 34 weeks.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Two-dose regimens around 28 and 34 weeks."
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_27",
+              "group_id": "rh_negative_pregnancy_group_29",
               "group_title": "OSCE answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would follow the local protocol for routine antenatal anti-D prophylaxis.”"
+                  "text": "“I would follow the local protocol for routine antenatal anti-D prophylaxis.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -715,11 +847,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_11",
-          "subsection_title": "ANTI-D AFTER A SENSITISING EVENT",
+          "subsection_title": "11. ANTI-D AFTER A SENSITISING EVENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_28",
+              "group_id": "rh_negative_pregnancy_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -730,23 +862,44 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Assess promptly for anti-D prophylaxis."
+                  "text": "**Assess promptly for anti-D prophylaxis.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Examples:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "Vaginal bleeding",
-                    "Abdominal trauma",
-                    "Miscarriage",
-                    "Ectopic pregnancy",
-                    "Invasive procedure",
-                    "External cephalic version",
-                    "Delivery",
-                    "Intrauterine fetal death"
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Invasive procedure",
+                      "level": 0
+                    },
+                    {
+                      "text": "External cephalic version",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine fetal death",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -758,10 +911,8 @@
                   "text": "Anti-D should generally be administered:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "As soon as possible after the event"
-                  ]
+                  "type": "paragraph",
+                  "text": "**As soon as possible after the event**"
                 },
                 {
                   "type": "paragraph",
@@ -773,11 +924,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_12",
-          "subsection_title": "DO NOT DELAY",
+          "subsection_title": "12. DO NOT DELAY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_29",
+              "group_id": "rh_negative_pregnancy_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -788,7 +939,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not wait for the antibody screen to become positive before giving prophylaxis."
+                  "text": "**Do not wait for the antibody screen to become positive before giving prophylaxis.**"
                 },
                 {
                   "type": "paragraph",
@@ -804,11 +955,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_13",
-          "subsection_title": "FETOMATERNAL HAEMORRHAGE",
+          "subsection_title": "13. FETOMATERNAL HAEMORRHAGE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_30",
+              "group_id": "rh_negative_pregnancy_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -823,17 +974,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A large fetomaternal haemorrhage may require additional anti-D."
+                  "text": "A **large fetomaternal** **haemorrhage** may require additional anti-D."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Tests used to estimate fetal cells in maternal blood include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Tests used to estimate fetal cells in maternal blood include:",
                   "items": [
-                    "Kleihauer-Betke test",
-                    "Flow cytometry"
+                    {
+                      "text": "Kleihauer-Betke test",
+                      "level": 0
+                    },
+                    {
+                      "text": "Flow cytometry",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -846,34 +1000,40 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_14",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_title": "14. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_31",
-              "group_title": "“Why would you perform a Kleihauer test?”",
+              "group_id": "rh_negative_pregnancy_group_33",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“Why would you perform a Kleihauer test?”**",
+                  "style": "quote"
+                },
                 {
                   "type": "paragraph",
                   "text": "Answer:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“To estimate the volume of fetomaternal haemorrhage and determine whether additional anti-D immunoglobulin is required following a sensitising event.”"
+                  "text": "“To estimate the volume of fetomaternal haemorrhage and determine whether additional anti-D immunoglobulin is required following a sensitising event.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_32",
+              "group_id": "rh_negative_pregnancy_group_34",
               "group_title": "Important nuance",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The test is not required for every RhD-negative woman routinely."
+                  "text": "The test is **not required for every RhD-negative woman routinely**."
                 },
                 {
                   "type": "paragraph",
@@ -885,18 +1045,18 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_15",
-          "subsection_title": "WHAT IF THE ANTIBODY SCREEN IS POSITIVE?",
+          "subsection_title": "15. WHAT IF THE ANTIBODY SCREEN IS POSITIVE?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_33",
+              "group_id": "rh_negative_pregnancy_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not immediately assume it is immune anti-D."
+                  "text": "Do **not** immediately assume it is immune anti-D."
                 },
                 {
                   "type": "paragraph",
@@ -904,19 +1064,28 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Which antibody is present?"
+                  "text": "**Which antibody is present?**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then establish:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then establish:",
                   "items": [
-                    "Antibody specificity",
-                    "Antibody level/titre",
-                    "Whether it is clinically significant",
-                    "Whether it is immune anti-D or passive anti-D following prophylaxis"
+                    {
+                      "text": "Antibody specificity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antibody level/titre",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether it is clinically significant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether it is immune anti-D or passive anti-D following prophylaxis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -925,11 +1094,11 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_16",
-          "subsection_title": "PASSIVE VS IMMUNE ANTI-D",
+          "subsection_title": "16. PASSIVE VS IMMUNE ANTI-D",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_34",
+              "group_id": "rh_negative_pregnancy_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -944,7 +1113,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Passive anti-D detected on antibody screening."
+                  "text": "**Passive anti-D detected on antibody screening.**"
                 },
                 {
                   "type": "paragraph",
@@ -957,28 +1126,33 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_35",
+              "group_id": "rh_negative_pregnancy_group_37",
               "group_title": "Passive anti-D",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "from"
-                  ]
+                  "type": "paragraph",
+                  "text": "from"
                 }
               ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_38",
+              "group_title": "Immune anti-D",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_17",
-          "subsection_title": "IF SHE IS ALREADY SENSITISED",
+          "subsection_title": "17. IF SHE IS ALREADY SENSITISED",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_36",
+              "group_id": "rh_negative_pregnancy_group_39",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -989,7 +1163,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Anti-D prophylaxis is no longer useful for preventing sensitisation."
+                  "text": "**Anti-D prophylaxis is no longer useful for preventing sensitisation.**"
                 },
                 {
                   "type": "paragraph",
@@ -997,7 +1171,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Monitor the fetus for evidence of anaemia."
+                  "text": "**Monitor the fetus for evidence of anaemia.**"
                 },
                 {
                   "type": "paragraph",
@@ -1009,109 +1183,7 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_18",
-          "subsection_title": "FETAL ANAEMIA",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_37",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Maternal IgG antibodies cross the placenta."
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal RBC destruction."
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal anaemia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe anaemia can cause:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Tachycardia",
-                    "Cardiomegaly",
-                    "High-output cardiac failure",
-                    "Hydrops",
-                    "Fetal death"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_19",
-          "subsection_title": "HOW DO YOU MONITOR FOR FETAL ANAEMIA?",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_38",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "The key non-invasive test is:"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_20",
-          "subsection_title": "Middle cerebral artery peak systolic velocity — MCA-PSV",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_39",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "As fetal anaemia develops:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Blood becomes less viscous + cardiac output increases",
-                    "↓"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "MCA blood flow velocity increases."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_21",
-          "subsection_title": "MCA-PSV — EXAM POINT",
+          "subsection_title": "18. FETAL ANAEMIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1122,95 +1194,100 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A commonly used threshold suggesting significant fetal anaemia is:"
+                  "text": "Maternal IgG antibodies cross the placenta."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fetal RBC destruction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fetal anaemia."
+                },
+                {
+                  "type": "list",
+                  "title": "Severe anaemia can cause:",
                   "items": [
-                    "MCA-PSV >1.5 MoM"
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "High-output cardiac failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydrops",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal death",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "where:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "MoM = multiples of the median"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "This is a major exam number."
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_41",
-              "group_title": "Golden sentence",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“An MCA peak systolic velocity greater than approximately 1.5 MoM is concerning for significant fetal anaemia and requires specialist assessment.”"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_22",
-          "subsection_title": "WHAT IF MCA-PSV IS >1.5 MOM?",
+          "subsection_id": "rh_negative_pregnancy_subsection_19",
+          "subsection_title": "19. HOW DO YOU MONITOR FOR FETAL ANAEMIA?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_42",
+              "group_id": "rh_negative_pregnancy_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not simply say:"
-                },
+                  "text": "The key non-invasive test is:"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_42",
+              "group_title": "Middle cerebral artery peak systolic velocity — MCA-PSV",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Deliver the baby.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "As fetal anaemia develops:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Instead:"
+                  "text": "Blood becomes less viscous + cardiac output increases"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Urgent fetal medicine assessment."
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Depending on gestational age and overall circumstances:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Confirm findings",
-                    "Assess fetal wellbeing",
-                    "Consider invasive assessment",
-                    "Consider fetal blood sampling",
-                    "Intrauterine transfusion where indicated",
-                    "Plan delivery at an appropriate gestational age"
-                  ]
+                  "text": "MCA blood flow velocity increases."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_23",
-          "subsection_title": "FETAL BLOOD SAMPLING",
+          "subsection_id": "rh_negative_pregnancy_subsection_20",
+          "subsection_title": "20. MCA-PSV — EXAM POINT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1221,15 +1298,134 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Cordocentesis can directly measure:"
+                  "text": "A commonly used threshold suggesting significant fetal anaemia is:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**MCA-PSV >1.5 MoM**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "where:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**MoM = multiples of the median**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is a major exam number."
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_44",
+              "group_title": "Golden sentence",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“An MCA peak systolic velocity greater than approximately 1.5 MoM is concerning for significant fetal anaemia and requires specialist assessment.”**",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rh_negative_pregnancy_subsection_21",
+          "subsection_title": "21. WHAT IF MCA-PSV IS >1.5 MOM?",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rh_negative_pregnancy_group_45",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Do not simply say:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Deliver the baby.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Instead:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Urgent fetal medicine assessment.**"
+                },
+                {
+                  "type": "list",
+                  "title": "Depending on gestational age and overall circumstances:",
                   "items": [
-                    "Fetal haemoglobin",
-                    "Haematocrit",
-                    "Blood group",
-                    "Other parameters"
+                    {
+                      "text": "Confirm findings",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess fetal wellbeing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider invasive assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider fetal blood sampling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine transfusion where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Plan delivery at an appropriate gestational age",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rh_negative_pregnancy_subsection_22",
+          "subsection_title": "22. FETAL BLOOD SAMPLING",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rh_negative_pregnancy_group_46",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Cordocentesis can directly measure:",
+                  "items": [
+                    {
+                      "text": "Fetal haemoglobin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haematocrit",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood group",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other parameters",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1237,16 +1433,25 @@
                   "text": "But it is invasive."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It carries risks including:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It carries risks including:",
                   "items": [
-                    "Fetomaternal haemorrhage",
-                    "Fetal bradycardia",
-                    "Infection",
-                    "Fetal loss"
+                    {
+                      "text": "Fetomaternal haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal bradycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal loss",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1258,12 +1463,12 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_24",
-          "subsection_title": "INTRAUTERINE TRANSFUSION",
+          "subsection_id": "rh_negative_pregnancy_subsection_23",
+          "subsection_title": "23. INTRAUTERINE TRANSFUSION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_44",
+              "group_id": "rh_negative_pregnancy_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1274,7 +1479,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Intrauterine transfusion may be required."
+                  "text": "**Intrauterine transfusion may be required.**"
                 },
                 {
                   "type": "paragraph",
@@ -1293,12 +1498,12 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_25",
-          "subsection_title": "HYDROPS FETALIS",
+          "subsection_id": "rh_negative_pregnancy_subsection_24",
+          "subsection_title": "24. HYDROPS FETALIS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_45",
+              "group_id": "rh_negative_pregnancy_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1309,18 +1514,33 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Severe haemolytic disease can cause:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Severe haemolytic disease can cause:",
                   "items": [
-                    "Generalised skin oedema",
-                    "Ascites",
-                    "Pleural effusion",
-                    "Pericardial effusion",
-                    "Placental thickening",
-                    "Cardiomegaly"
+                    {
+                      "text": "Generalised skin oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pericardial effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental thickening",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiomegaly",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1328,10 +1548,8 @@
                   "text": "This is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hydrops fetalis"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Hydrops fetalis**"
                 },
                 {
                   "type": "paragraph",
@@ -1342,31 +1560,52 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_26",
-          "subsection_title": "ULTRASOUND FINDINGS OF SEVERE FETAL ANAEMIA",
+          "subsection_id": "rh_negative_pregnancy_subsection_25",
+          "subsection_title": "25. ULTRASOUND FINDINGS OF SEVERE FETAL ANAEMIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_46",
+              "group_id": "rh_negative_pregnancy_group_49",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Possible findings include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible findings include:",
                   "items": [
-                    "Cardiomegaly",
-                    "Increased MCA-PSV",
-                    "Ascites",
-                    "Pleural effusion",
-                    "Pericardial effusion",
-                    "Skin oedema",
-                    "Placentomegaly",
-                    "Polyhydramnios"
+                    {
+                      "text": "Cardiomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased MCA-PSV",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascites",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pericardial effusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placentomegaly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polyhydramnios",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1375,7 +1614,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not wait for hydrops to develop before diagnosing fetal anaemia."
+                  "text": "**Do not wait for hydrops to develop before diagnosing fetal anaemia.**"
                 },
                 {
                   "type": "paragraph",
@@ -1386,12 +1625,12 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_27",
-          "subsection_title": "PREVIOUSLY AFFECTED PREGNANCY",
+          "subsection_id": "rh_negative_pregnancy_subsection_26",
+          "subsection_title": "26. PREVIOUSLY AFFECTED PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_47",
+              "group_id": "rh_negative_pregnancy_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1405,42 +1644,43 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "“Was your previous baby affected by haemolytic disease?”",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Specifically:",
                   "items": [
-                    "“Was your previous baby affected by haemolytic disease?”"
+                    {
+                      "text": "Phototherapy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exchange transfusion?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaemia?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood transfusion?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydrops?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine transfusion?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specifically:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Phototherapy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exchange transfusion?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anaemia?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood transfusion?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hydrops?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intrauterine transfusion?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stillbirth?"
                 },
                 {
                   "type": "paragraph",
@@ -1448,19 +1688,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "High-risk pregnancy in the current pregnancy."
+                  "text": "**High-risk pregnancy in the current pregnancy.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_28",
-          "subsection_title": "PATERNAL/FETAL RhD STATUS",
+          "subsection_id": "rh_negative_pregnancy_subsection_27",
+          "subsection_title": "27. PATERNAL/FETAL RhD STATUS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_48",
+              "group_id": "rh_negative_pregnancy_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1474,10 +1714,8 @@
                   "text": "If the fetus is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD negative"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD negative**"
                 },
                 {
                   "type": "paragraph",
@@ -1488,10 +1726,8 @@
                   "text": "If fetus is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD positive"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD positive**"
                 },
                 {
                   "type": "paragraph",
@@ -1502,11 +1738,20 @@
                   "text": "Depending on resources and local practice, fetal RhD status may be assessed through:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Paternal testing",
-                    "Fetal genotyping",
-                    "Cell-free fetal DNA testing where available"
+                    {
+                      "text": "Paternal testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal genotyping",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cell-free fetal DNA testing where available",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1514,125 +1759,131 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_29",
-          "subsection_title": "MANAGEMENT ALGORITHM",
+          "subsection_id": "rh_negative_pregnancy_subsection_28",
+          "subsection_title": "28. MANAGEMENT ALGORITHM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_49",
+              "group_id": "rh_negative_pregnancy_group_52",
               "group_title": "STEP 1 — Determine maternal RhD status",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "↓"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_50",
+              "group_id": "rh_negative_pregnancy_group_53",
               "group_title": "STEP 2 — Antibody screen",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_51",
-              "group_title": "If antibody screen negative",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "paragraph",
+                  "text": "↓"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Unsensitised",
-                    "↓",
-                    "Routine anti-D prophylaxis"
-                  ]
+                  "type": "paragraph",
+                  "text": "**If antibody screen negative**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Unsensitised**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Routine anti-D prophylaxis"
                 },
                 {
                   "type": "paragraph",
                   "text": "Anti-D after appropriate sensitising events."
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_52",
-              "group_title": "If antibody screen positive",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**If antibody screen positive**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Identify antibody."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "list",
+                  "title": "Determine:",
                   "items": [
-                    "↓"
+                    {
+                      "text": "Clinically significant?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immune anti-D?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Passive anti-D?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Level/titre?",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Determine:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clinically significant?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immune anti-D?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Passive anti-D?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Level/titre?"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "↓"
-                  ]
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "If clinically significant:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal surveillance",
-                    "↓",
-                    "MCA-PSV",
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fetal surveillance**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MCA-PSV"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
                   "text": "If concerning:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal medicine referral",
-                    "↓",
-                    "Possible fetal blood sampling/IUT",
-                    "↓"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Fetal medicine referral**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Possible fetal blood sampling/IUT"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
                 },
                 {
                   "type": "paragraph",
@@ -1643,54 +1894,81 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_30",
-          "subsection_title": "MANAGEMENT OF AN RhD-NEGATIVE, ANTIBODY-NEGATIVE WOMAN",
+          "subsection_id": "rh_negative_pregnancy_subsection_29",
+          "subsection_title": "29. MANAGEMENT OF AN RhD-NEGATIVE, ANTIBODY-NEGATIVE WOMAN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_53",
+              "group_id": "rh_negative_pregnancy_group_54",
               "group_title": "At booking",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "ABO/RhD typing",
-                    "Antibody screen",
-                    "Review previous obstetric history"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_54",
-              "group_title": "During pregnancy",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Repeat antibody screening according to protocol",
-                    "Routine antenatal anti-D prophylaxis",
-                    "Give anti-D after appropriate sensitising events"
+                    {
+                      "text": "ABO/RhD typing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antibody screen",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review previous obstetric history",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_55",
+              "group_title": "During pregnancy",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Repeat antibody screening according to protocol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Routine antenatal anti-D prophylaxis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Give anti-D after appropriate sensitising events",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_56",
               "group_title": "At delivery",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Determine newborn blood group/RhD where indicated",
-                    "Assess need for postpartum anti-D",
-                    "Assess fetomaternal haemorrhage when indicated"
+                    {
+                      "text": "Determine newborn blood group/RhD where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess need for postpartum anti-D",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess fetomaternal haemorrhage when indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1698,12 +1976,12 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_31",
-          "subsection_title": "POSTPARTUM ANTI-D",
+          "subsection_id": "rh_negative_pregnancy_subsection_30",
+          "subsection_title": "30. POSTPARTUM ANTI-D",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_56",
+              "group_id": "rh_negative_pregnancy_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1713,10 +1991,8 @@
                   "text": "If an RhD-negative mother delivers an:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "RhD-positive baby"
-                  ]
+                  "type": "paragraph",
+                  "text": "**RhD-positive baby**"
                 },
                 {
                   "type": "paragraph",
@@ -1724,7 +2000,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Postpartum anti-D should be administered according to local protocol."
+                  "text": "**Postpartum anti-D should be administered according to local protocol.**"
                 },
                 {
                   "type": "paragraph",
@@ -1735,33 +2011,32 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_32",
-          "subsection_title": "IMPORTANT EXAM TRAP",
+          "subsection_id": "rh_negative_pregnancy_subsection_31",
+          "subsection_title": "31. IMPORTANT EXAM TRAP",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_57",
+              "group_id": "rh_negative_pregnancy_group_58",
               "group_title": "Question",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Should an RhD-negative woman who is already sensitised receive anti-D?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Should an RhD-negative woman who is already sensitised receive anti-D?”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_58",
+              "group_id": "rh_negative_pregnancy_group_59",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 },
                 {
                   "type": "paragraph",
@@ -1769,7 +2044,79 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Anti-D prevents sensitisation; it does not treat established immune anti-D alloimmunisation."
+                  "text": "**Anti-D prevents sensitisation; it does not treat established immune anti-D alloimmunisation.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rh_negative_pregnancy_subsection_32",
+          "subsection_title": "32. ABNORMAL FINDING REPORTING",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rh_negative_pregnancy_group_60",
+              "group_title": "Scenario 1 — RhD negative but antibody screen negative",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The patient is RhD negative with a negative antibody screen, indicating that she is currently unsensitised. I would ensure appropriate routine antenatal anti-D prophylaxis and prophylaxis following relevant sensitising events.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_61",
+              "group_title": "Scenario 2 — Positive antibody screen",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The patient is RhD negative with a positive antibody screen. I would identify the specific antibody and determine whether it is clinically significant and whether the finding represents passive anti-D following recent prophylaxis or true immune alloimmunisation.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_62",
+              "group_title": "Scenario 3 — Significant anti-D",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The patient has clinically significant immune anti-D antibodies. She is therefore alloimmunised and anti-D prophylaxis is no longer indicated. I would refer her for specialist fetal surveillance and assessment of fetal anaemia.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_63",
+              "group_title": "Scenario 4 — Elevated MCA-PSV",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The fetus demonstrates an MCA peak systolic velocity above 1.5 MoM, which is concerning for significant fetal anaemia in the context of maternal red-cell alloimmunisation. I would urgently involve the fetal medicine team.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_64",
+              "group_title": "Scenario 5 — Hydrops",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“Ultrasound demonstrates fetal ascites, skin oedema and cardiomegaly in the setting of maternal red-cell alloimmunisation, consistent with severe fetal anaemia with hydrops fetalis.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1777,66 +2124,44 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_33",
-          "subsection_title": "ABNORMAL FINDING REPORTING",
+          "subsection_title": "33. DIFFERENTIALS FOR FETAL ANAEMIA",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_59",
-              "group_title": "Scenario 1 — RhD negative but antibody screen negative",
+              "group_id": "rh_negative_pregnancy_group_65",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "“The patient is RhD negative with a negative antibody screen, indicating that she is currently unsensitised. I would ensure appropriate routine antenatal anti-D prophylaxis and prophylaxis following relevant sensitising events.”"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_60",
-              "group_title": "Scenario 2 — Positive antibody screen",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The patient is RhD negative with a positive antibody screen. I would identify the specific antibody and determine whether it is clinically significant and whether the finding represents passive anti-D following recent prophylaxis or true immune alloimmunisation.”"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_61",
-              "group_title": "Scenario 3 — Significant anti-D",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The patient has clinically significant immune anti-D antibodies. She is therefore alloimmunised and anti-D prophylaxis is no longer indicated. I would refer her for specialist fetal surveillance and assessment of fetal anaemia.”"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_62",
-              "group_title": "Scenario 4 — Elevated MCA-PSV",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“The fetus demonstrates an MCA peak systolic velocity above 1.5 MoM, which is concerning for significant fetal anaemia in the context of maternal red-cell alloimmunisation. I would urgently involve the fetal medicine team.”"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_63",
-              "group_title": "Scenario 5 — Hydrops",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "“Ultrasound demonstrates fetal ascites, skin oedema and cardiomegaly in the setting of maternal red-cell alloimmunisation, consistent with severe fetal anaemia with hydrops fetalis.”"
+                  "type": "list",
+                  "title": "Although RhD alloimmunisation is important, other causes include:",
+                  "items": [
+                    {
+                      "text": "Other maternal red-cell antibodies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Parvovirus B19 infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetomaternal haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Twin-to-twin transfusion-related disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal haemoglobinopathies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other fetal conditions causing anaemia",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1844,189 +2169,163 @@
         },
         {
           "subsection_id": "rh_negative_pregnancy_subsection_34",
-          "subsection_title": "DIFFERENTIALS FOR FETAL ANAEMIA",
+          "subsection_title": "34. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_64",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Although RhD alloimmunisation is important, other causes include:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Other maternal red-cell antibodies",
-                    "Parvovirus B19 infection",
-                    "Fetomaternal haemorrhage",
-                    "Twin-to-twin transfusion-related disease",
-                    "Fetal haemoglobinopathies",
-                    "Other fetal conditions causing anaemia"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_35",
-          "subsection_title": "EXAMINER QUESTIONS",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_65",
+              "group_id": "rh_negative_pregnancy_group_66",
               "group_title": "Q1. What is RhD incompatibility?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“It occurs when an RhD-negative mother carries an RhD-positive fetus, creating the potential for maternal sensitisation against the fetal D antigen.”"
+                  "text": "“It occurs when an RhD-negative mother carries an RhD-positive fetus, creating the potential for maternal sensitisation against the fetal D antigen.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_66",
+              "group_id": "rh_negative_pregnancy_group_67",
               "group_title": "Q2. What is sensitisation?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Maternal immune production of antibodies against fetal red-cell antigens following exposure to those antigens.”"
+                  "text": "“Maternal immune production of antibodies against fetal red-cell antigens following exposure to those antigens.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_67",
+              "group_id": "rh_negative_pregnancy_group_68",
               "group_title": "Q3. What antibody causes classic Rh disease?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Anti-D IgG."
+                  "text": "**Anti-D IgG.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_68",
+              "group_id": "rh_negative_pregnancy_group_69",
               "group_title": "Q4. Why is IgG important?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“IgG crosses the placenta and can therefore cause fetal red-cell haemolysis.”"
+                  "text": "“IgG crosses the placenta and can therefore cause fetal red-cell haemolysis.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_69",
+              "group_id": "rh_negative_pregnancy_group_70",
               "group_title": "Q5. What is the purpose of anti-D immunoglobulin?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“To prevent RhD-negative women from becoming sensitised following exposure to RhD-positive fetal red cells.”"
+                  "text": "“To prevent RhD-negative women from becoming sensitised following exposure to RhD-positive fetal red cells.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_70",
+              "group_id": "rh_negative_pregnancy_group_71",
               "group_title": "Q6. Can anti-D treat established sensitisation?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "No."
+                  "text": "**No.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_71",
+              "group_id": "rh_negative_pregnancy_group_72",
               "group_title": "Q7. What is the most important test for monitoring fetal anaemia?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "MCA peak systolic velocity Doppler."
+                  "text": "**MCA peak systolic velocity Doppler.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_72",
+              "group_id": "rh_negative_pregnancy_group_73",
               "group_title": "Q8. What MCA-PSV threshold concerns you?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": ">1.5 MoM."
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_73",
-              "group_title": "Q9. What can severe fetal anaemia cause?",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“High-output cardiac failure, hydrops fetalis and fetal death.”"
-                  ]
+                  "text": "**>1.5 MoM.**"
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_74",
+              "group_title": "Q9. What can severe fetal anaemia cause?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“High-output cardiac failure, hydrops fetalis and fetal death.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_75",
               "group_title": "Q10. What is hydrops?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Abnormal accumulation of fluid in at least two fetal compartments, such as ascites, pleural effusion, pericardial effusion or generalised skin oedema.”"
+                  "text": "“Abnormal accumulation of fluid in at least two fetal compartments, such as ascites, pleural effusion, pericardial effusion or generalised skin oedema.”",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_75",
+              "group_id": "rh_negative_pregnancy_group_76",
               "group_title": "Q11. What is the Kleihauer test?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A test used to estimate the volume of fetomaternal haemorrhage and guide additional anti-D dosing where indicated.”"
-                }
-              ]
-            },
-            {
-              "group_id": "rh_negative_pregnancy_group_76",
-              "group_title": "Q12. Name other clinically significant antibodies.",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Anti-c, anti-K and anti-E are examples.”"
-                  ]
+                  "text": "“A test used to estimate the volume of fetomaternal haemorrhage and guide additional anti-D dosing where indicated.”",
+                  "style": "quote"
                 }
               ]
             },
             {
               "group_id": "rh_negative_pregnancy_group_77",
+              "group_title": "Q12. Name other clinically significant antibodies.",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“Anti-c, anti-K and anti-E are examples.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_78",
               "group_title": "Q13. Why is anti-K particularly important?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2037,7 +2336,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Suppression of fetal erythropoiesis, in addition to haemolysis."
+                  "text": "**Suppression of fetal erythropoiesis**, in addition to haemolysis."
                 },
                 {
                   "type": "paragraph",
@@ -2048,21 +2347,20 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_36",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "rh_negative_pregnancy_subsection_35",
+          "subsection_title": "35. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_78",
+              "group_id": "rh_negative_pregnancy_group_79",
               "group_title": "❌ Mistake 1",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Rh-negative means the woman has antibodies.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Rh-negative means the woman has antibodies.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2071,7 +2369,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_79",
+              "group_id": "rh_negative_pregnancy_group_80",
               "group_title": "Correct",
               "group_subtitle": null,
               "group_icon": null,
@@ -2083,7 +2381,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_80",
+              "group_id": "rh_negative_pregnancy_group_81",
               "group_title": "❌ Mistake 2",
               "group_subtitle": null,
               "group_icon": null,
@@ -2094,12 +2392,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Anti-D is prophylaxis, not treatment."
+                  "text": "**Anti-D is prophylaxis, not treatment.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_81",
+              "group_id": "rh_negative_pregnancy_group_82",
               "group_title": "❌ Mistake 3",
               "group_subtitle": null,
               "group_icon": null,
@@ -2115,7 +2413,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_82",
+              "group_id": "rh_negative_pregnancy_group_83",
               "group_title": "❌ Mistake 4",
               "group_subtitle": null,
               "group_icon": null,
@@ -2130,12 +2428,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Passive anti-D."
+                  "text": "**Passive anti-D.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_83",
+              "group_id": "rh_negative_pregnancy_group_84",
               "group_title": "❌ Mistake 5",
               "group_subtitle": null,
               "group_icon": null,
@@ -2151,7 +2449,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_84",
+              "group_id": "rh_negative_pregnancy_group_85",
               "group_title": "❌ Mistake 6",
               "group_subtitle": null,
               "group_icon": null,
@@ -2161,10 +2459,9 @@
                   "text": "Saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“MCA Doppler diagnoses Rh disease.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“MCA Doppler diagnoses Rh disease.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2176,12 +2473,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Assess fetal anaemia in an at-risk fetus."
+                  "text": "**Assess fetal anaemia in an at-risk fetus.**"
                 }
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_85",
+              "group_id": "rh_negative_pregnancy_group_86",
               "group_title": "❌ Mistake 7",
               "group_subtitle": null,
               "group_icon": null,
@@ -2191,33 +2488,55 @@
                   "text": "Forgetting other antibodies."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The mother may be sensitised to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The mother may be sensitised to:",
                   "items": [
-                    "D",
-                    "c",
-                    "K",
-                    "E"
+                    {
+                      "text": "D",
+                      "level": 0
+                    },
+                    {
+                      "text": "c",
+                      "level": 0
+                    },
+                    {
+                      "text": "K",
+                      "level": 0
+                    },
+                    {
+                      "text": "E",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other clinically significant antigens.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other clinically significant antigens."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_37",
-          "subsection_title": "HIGH-YIELD MNEMONIC",
+          "subsection_id": "rh_negative_pregnancy_subsection_36",
+          "subsection_title": "36. HIGH-YIELD MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rh_negative_pregnancy_group_86",
+              "group_id": "rh_negative_pregnancy_group_87",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“NEGATIVE → SCREEN → PREVENT → MONITOR”**",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_88",
               "group_title": "NEGATIVE",
               "group_subtitle": null,
               "group_icon": null,
@@ -2229,7 +2548,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_87",
+              "group_id": "rh_negative_pregnancy_group_89",
               "group_title": "SCREEN",
               "group_subtitle": null,
               "group_icon": null,
@@ -2241,7 +2560,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_88",
+              "group_id": "rh_negative_pregnancy_group_90",
               "group_title": "PREVENT",
               "group_subtitle": null,
               "group_icon": null,
@@ -2253,7 +2572,7 @@
               ]
             },
             {
-              "group_id": "rh_negative_pregnancy_group_89",
+              "group_id": "rh_negative_pregnancy_group_91",
               "group_title": "MONITOR",
               "group_subtitle": null,
               "group_icon": null,
@@ -2267,107 +2586,8 @@
           ]
         },
         {
-          "subsection_id": "rh_negative_pregnancy_subsection_38",
-          "subsection_title": "THE MOST IMPORTANT FLOWCHART",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_90",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "RhD-negative mother",
-                    "↓",
-                    "Antibody screen",
-                    "↓",
-                    "┌───────────────┐",
-                    "│ │",
-                    "Negative Positive",
-                    "│ │",
-                    "↓ ↓",
-                    "Unsensitised Identify antibody",
-                    "│ │",
-                    "↓ ↓"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anti-D Significant?"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "prophylaxis │",
-                    "│ ┌─────┴─────┐",
-                    "↓ │ │",
-                    "Sensitising No Yes",
-                    "events │ │",
-                    "↓ ↓ ↓",
-                    "Anti-D Routine Fetal",
-                    "as indicated care surveillance",
-                    "↓",
-                    "MCA-PSV",
-                    "↓"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": ">1.5 MoM?"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "↓",
-                    "Fetal medicine",
-                    "↓",
-                    "IUT / delivery as",
-                    "appropriate"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_39",
-          "subsection_title": "30-SECOND EXAM ANSWER",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "rh_negative_pregnancy_group_91",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If the examiner asks:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“How would you manage an RhD-negative pregnant woman?”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Say:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“I would confirm her ABO and RhD status and perform an antibody screen. If she is RhD negative and unsensitised, I would provide routine antenatal anti-D prophylaxis according to local protocol and administer additional anti-D following appropriate sensitising events. I would document previous pregnancies and sensitising events carefully. If clinically significant antibodies are detected, I would identify the antibody and determine whether this represents passive prophylactic anti-D or true alloimmunisation. In established alloimmunisation, anti-D is no longer useful, and I would refer for specialist fetal surveillance, particularly MCA peak systolic velocity Doppler to assess for fetal anaemia. If significant fetal anaemia develops, fetal medicine assessment for possible intrauterine transfusion or appropriately timed delivery would be required.”"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "rh_negative_pregnancy_subsection_40",
-          "subsection_title": "🔑 FINAL OSCE TAKE-HOME",
+          "subsection_id": "rh_negative_pregnancy_subsection_37",
+          "subsection_title": "37. THE MOST IMPORTANT FLOWCHART",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2378,26 +2598,191 @@
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "RhD-negative mother"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Antibody screen"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "┌───────────────┐"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "│ │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Negative Positive"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "│ │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Unsensitised Identify antibody"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "│ │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Anti-D Significant?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "prophylaxis │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "│ ┌─────┴─────┐"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ │ │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sensitising No Yes"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "events │ │"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓ ↓ ↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Anti-D Routine Fetal"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "as indicated care surveillance"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MCA-PSV"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": ">1.5 MoM?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fetal medicine"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "IUT / delivery as"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "appropriate"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rh_negative_pregnancy_subsection_38",
+          "subsection_title": "38. 30-SECOND EXAM ANSWER",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rh_negative_pregnancy_group_93",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If the examiner asks:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“How would you manage an RhD-negative pregnant woman?”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Say:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I would confirm her ABO and RhD status and perform an antibody screen. If she is RhD negative and unsensitised, I would provide routine antenatal anti-D prophylaxis according to local protocol and administer additional anti-D following appropriate sensitising events. I would document previous pregnancies and sensitising events carefully. If clinically significant antibodies are detected, I would identify the antibody and determine whether this represents passive prophylactic anti-D or true alloimmunisation. In established alloimmunisation, anti-D is no longer useful, and I would refer for specialist fetal surveillance, particularly MCA peak systolic velocity Doppler to assess for fetal anaemia. If significant fetal anaemia develops, fetal medicine assessment for possible intrauterine transfusion or appropriately timed delivery would be required.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "rh_negative_pregnancy_group_94",
+              "group_title": "🔑 FINAL OSCE TAKE-HOME",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
                   "text": "Remember this sequence:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "RH STATUS → ANTIBODY SCREEN → SENSITISING EVENT → ANTI-D → MCA DOPPLER → FETAL ANAEMIA"
+                  "text": "**RH STATUS → ANTIBODY SCREEN → SENSITISING EVENT → ANTI-D → MCA DOPPLER → FETAL ANAEMIA**"
                 },
                 {
                   "type": "paragraph",
-                  "text": "And the three golden sentences:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“RhD negative does not mean RhD sensitised.”",
-                    "“Anti-D prevents sensitisation; it does not treat established immune anti-D.”"
-                  ]
+                  "text": "And the **three golden sentences**:"
                 },
                 {
                   "type": "paragraph",
-                  "text": "“In an alloimmunised pregnancy, MCA-PSV is the key non-invasive method of surveillance for fetal anaemia.”"
+                  "text": "**“RhD negative does not mean RhD** **sensitised.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“Anti-D prevents sensitisation; it does not treat established immune anti-D.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“In an alloimmunised pregnancy, MCA-PSV is the key non-invasive method of surveillance for fetal anaemia.”**",
+                  "style": "quote"
                 }
               ]
             }

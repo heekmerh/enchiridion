@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "ecg_electrodes_subsection_1",
-          "subsection_title": "ECG Electrodes and Lead Placement",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "ecg_electrodes_group_1",
-              "group_title": "",
+              "group_title": "ECG Electrodes and Lead Placement",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -50,7 +50,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_2",
-          "subsection_title": "Types of ECG electrodes",
+          "subsection_title": "1. Types of ECG electrodes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -65,10 +65,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Disposable adhesive electrodes"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Disposable adhesive electrodes"
                 },
                 {
                   "type": "paragraph",
@@ -80,10 +78,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Limb clip electrodes"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Limb clip electrodes"
                 },
                 {
                   "type": "paragraph",
@@ -95,10 +91,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Reusable chest electrodes"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Reusable chest electrodes"
                 },
                 {
                   "type": "paragraph",
@@ -110,7 +104,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_3",
-          "subsection_title": "Number of electrodes and leads",
+          "subsection_title": "2. Number of electrodes and leads",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -120,28 +114,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A standard 12-lead ECG uses 10 physical electrodes:"
+                  "type": "list",
+                  "title": "A standard 12-lead ECG uses 10 physical electrodes:",
+                  "items": [
+                    {
+                      "text": "Four limb electrodes: RA, LA, RL, LL.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Six chest electrodes: V1, V2, V3, V4, V5, V6.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Four limb electrodes: RA, LA, RL, LL."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Six chest electrodes: V1, V2, V3, V4, V5, V6."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "These produce 12 leads:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Six limb leads: I, II, III, aVR, aVL, aVF."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Six chest leads: V1–V6."
+                  "type": "list",
+                  "title": "These produce 12 leads:",
+                  "items": [
+                    {
+                      "text": "Six limb leads: I, II, III, aVR, aVL, aVF.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Six chest leads: V1–V6.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -153,7 +151,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_4",
-          "subsection_title": "ECG electrode colour codes",
+          "subsection_title": "3. ECG electrode colour codes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -258,7 +256,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_5",
-          "subsection_title": "Limb electrode placement",
+          "subsection_title": "4. Limb electrode placement",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -311,7 +309,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_6",
-          "subsection_title": "Chest electrode placement: V1–V6",
+          "subsection_title": "5. Chest electrode placement: V1–V6",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -372,28 +370,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Locate the sternal angle."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the second rib and second intercostal space."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Count down to the fourth intercostal space for V1 and V2."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Locate the fifth intercostal space and left midclavicular line for V4."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place V3 midway between V2 and V4."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place V5 and V6 horizontally level with V4."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Locate the sternal angle.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Identify the second rib and second intercostal space.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Count down to the fourth intercostal space for V1 and V2.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Locate the fifth intercostal space and left midclavicular line for V4.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Place V3 midway between V2 and V4.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Place V5 and V6 horizontally level with V4.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -405,7 +414,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_7",
-          "subsection_title": "How to apply electrodes correctly",
+          "subsection_title": "6. How to apply electrodes correctly",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -415,36 +424,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain the procedure, obtain consent, and ensure privacy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clean and dry the skin."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remove excessive hair if necessary for good contact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Attach the electrodes firmly at the correct locations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Connect the labelled cables to their corresponding electrodes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the machine for loose connections or artefact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask the patient to relax, remain still, and avoid talking during recording."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm that the tracing is interpretable before completing the procedure."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain the procedure, obtain consent, and ensure privacy.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Clean and dry the skin.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Remove excessive hair if necessary for good contact.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Attach the electrodes firmly at the correct locations.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Connect the labelled cables to their corresponding electrodes.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Check the machine for loose connections or artefact.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Ask the patient to relax, remain still, and avoid talking during recording.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Confirm that the tracing is interpretable before completing the procedure.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -456,7 +478,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_8",
-          "subsection_title": "Errors caused by incorrect electrode placement",
+          "subsection_title": "7. Errors caused by incorrect electrode placement",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -508,7 +530,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_9",
-          "subsection_title": "Precautions and infection prevention",
+          "subsection_title": "8. Precautions and infection prevention",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -518,32 +540,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Perform hand hygiene before and after the procedure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use disposable electrodes according to the manufacturer's instructions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clean reusable electrodes and cables between patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid damaging fragile skin when removing adhesive electrodes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maintain privacy and dignity during chest electrode placement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not allow cable tension to pull electrodes off the skin."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Record any non-standard electrode positions that could affect interpretation."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Perform hand hygiene before and after the procedure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use disposable electrodes according to the manufacturer's instructions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clean reusable electrodes and cables between patients.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid damaging fragile skin when removing adhesive electrodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain privacy and dignity during chest electrode placement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not allow cable tension to pull electrodes off the skin.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Record any non-standard electrode positions that could affect interpretation.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -551,7 +578,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_10",
-          "subsection_title": "Pediatric considerations",
+          "subsection_title": "9. Pediatric considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -561,24 +588,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use appropriately sized electrodes for infants and children."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the child warm and minimise movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure accurate chest-lead placement; do not estimate locations solely by age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret pediatric ECGs using age-appropriate standards."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "In neonates and infants, follow local protocols for lead placement and monitoring."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use appropriately sized electrodes for infants and children.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep the child warm and minimise movement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure accurate chest-lead placement; do not estimate locations solely by age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpret pediatric ECGs using age-appropriate standards.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In neonates and infants, follow local protocols for lead placement and monitoring.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -586,7 +618,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_11",
-          "subsection_title": "Mnemonic: “4–4–Between–5–Axillary”",
+          "subsection_title": "10. Mnemonic: “4–4–Between–5–Axillary”",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -596,28 +628,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "V1: Fourth intercostal space, right sternal border."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V2: Fourth intercostal space, left sternal border."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V3: Between V2 and V4."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V4: Fifth intercostal space, midclavicular line."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V5: Anterior axillary line, level with V4."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "V6: Midaxillary line, level with V4."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "V1: Fourth intercostal space, right sternal border.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V2: Fourth intercostal space, left sternal border.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V3: Between V2 and V4.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V4: Fifth intercostal space, midclavicular line.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V5: Anterior axillary line, level with V4.",
+                      "level": 0
+                    },
+                    {
+                      "text": "V6: Midaxillary line, level with V4.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -625,7 +662,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_12",
-          "subsection_title": "Common OSCE examiner questions",
+          "subsection_title": "11. Common OSCE examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -696,7 +733,7 @@
         },
         {
           "subsection_id": "ecg_electrodes_subsection_13",
-          "subsection_title": "Mini OSCE station",
+          "subsection_title": "12. Mini OSCE station",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -710,36 +747,45 @@
                   "text": "Scenario: You are shown a set of ECG electrodes and cables. Demonstrate how you would prepare the patient and place the electrodes for a standard 12-lead ECG."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Expected approach:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the electrodes and explain their purpose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the difference between electrodes and leads."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place RA, LA, RL, and LL using the labelled cable connections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the anatomical landmarks for V1–V6."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply the electrodes with good skin contact."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check connections and tracing quality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain common placement errors and their potential consequences."
+                  "type": "list",
+                  "title": "Expected approach:",
+                  "items": [
+                    {
+                      "text": "Identify the electrodes and explain their purpose.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the difference between electrodes and leads.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Place RA, LA, RL, and LL using the labelled cable connections.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Identify the anatomical landmarks for V1–V6.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Apply the electrodes with good skin contact.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Check connections and tracing quality.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Explain common placement errors and their potential consequences.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             }

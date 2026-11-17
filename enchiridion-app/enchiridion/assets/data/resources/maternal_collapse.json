@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "maternal_collapse_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -29,7 +29,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 32-year-old woman at 34 weeks' gestation suddenly collapses on the antenatal ward. Demonstrate your immediate management.”"
+                  "text": "“A 32-year-old woman at 34 weeks' gestation suddenly collapses on the antenatal ward. Demonstrate your immediate management.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -41,7 +42,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman in labour suddenly becomes unresponsive. What would you do?”"
+                  "text": "“A woman in labour suddenly becomes unresponsive. What would you do?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -53,7 +55,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A woman collapses 30 minutes after delivery. Assess and manage her.”"
+                  "text": "“A woman collapses 30 minutes after delivery. Assess and manage her.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -65,7 +68,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“A 36-week pregnant woman becomes unresponsive and has no pulse. Demonstrate your management.”"
+                  "text": "“A 36-week pregnant woman becomes unresponsive and has no pulse. Demonstrate your management.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -76,10 +80,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“What are the causes of maternal collapse?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“What are the causes of maternal collapse?”",
+                  "style": "quote"
                 }
               ]
             }
@@ -87,7 +90,7 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_2",
-          "subsection_title": "THE MOST IMPORTANT PRINCIPLE",
+          "subsection_title": "2. THE MOST IMPORTANT PRINCIPLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -98,7 +101,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not begin by trying to determine the diagnosis."
+                  "text": "Do **not** begin by trying to determine the diagnosis."
                 },
                 {
                   "type": "paragraph",
@@ -106,7 +109,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Resuscitation comes first."
+                  "text": "**Resuscitation comes first.**"
                 },
                 {
                   "type": "paragraph",
@@ -118,7 +121,7 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_3",
-          "subsection_title": "MATERNAL COLLAPSE — WHAT DOES IT MEAN?",
+          "subsection_title": "3. MATERNAL COLLAPSE — WHAT DOES IT MEAN?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -128,30 +131,51 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Maternal collapse is an acute event involving:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Maternal collapse is an acute event involving:",
                   "items": [
-                    "Loss of consciousness",
-                    "Severe cardiovascular compromise",
-                    "Respiratory compromise",
-                    "Cardiac arrest",
-                    "Or a combination of these"
+                    {
+                      "text": "Loss of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe cardiovascular compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac arrest",
+                      "level": 0
+                    },
+                    {
+                      "text": "Or a combination of these",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "It can occur:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It can occur:",
                   "items": [
-                    "During pregnancy",
-                    "During labour",
-                    "Immediately after delivery",
-                    "During the puerperium"
+                    {
+                      "text": "During pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "During labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immediately after delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "During the puerperium",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -160,7 +184,7 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_4",
-          "subsection_title": "DIFFERENTIAL DIAGNOSIS",
+          "subsection_title": "4. DIFFERENTIAL DIAGNOSIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -177,80 +201,128 @@
             },
             {
               "group_id": "maternal_collapse_group_9",
-              "group_title": "Haemorrhage",
+              "group_title": "Obstetric causes",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Haemorrhage**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "PPH",
-                    "Placental abruption",
-                    "Placenta praevia",
-                    "Uterine rupture",
-                    "Ectopic pregnancy",
-                    "Miscarriage-related haemorrhage"
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta praevia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic pregnancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriage-related haemorrhage",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_10",
-              "group_title": "Thromboembolism",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Thromboembolism**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Pulmonary embolism"
+                    {
+                      "text": "Pulmonary embolism",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_11",
-              "group_title": "Hypertensive disease",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Hypertensive disease**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Eclampsia",
-                    "Severe pre-eclampsia",
-                    "Intracranial haemorrhage"
+                    {
+                      "text": "Eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_12",
-              "group_title": "Sepsis",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Amniotic fluid embolism**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Sepsis**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Septic shock",
-                    "Toxic shock"
+                    {
+                      "text": "Septic shock",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toxic shock",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_13",
-              "group_title": "Anaesthetic complications",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Uterine inversion**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Anaesthetic complications**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "High spinal/total spinal",
-                    "Local anaesthetic toxicity",
-                    "Airway complications"
+                    {
+                      "text": "High spinal/total spinal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Local anaesthetic toxicity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway complications",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -259,35 +331,71 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_5",
-          "subsection_title": "NON-OBSTETRIC CAUSES",
+          "subsection_title": "5. NON-OBSTETRIC CAUSES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_14",
+              "group_id": "maternal_collapse_group_10",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Also consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also consider:",
                   "items": [
-                    "Myocardial infarction",
-                    "Arrhythmia",
-                    "Cardiomyopathy",
-                    "Hypoglycaemia",
-                    "Electrolyte abnormalities",
-                    "Epilepsy",
-                    "Stroke",
-                    "Intracranial haemorrhage",
-                    "Anaphylaxis",
-                    "Drug toxicity",
-                    "Severe asthma",
-                    "Pneumothorax",
-                    "Vasovagal syncope"
+                    {
+                      "text": "Myocardial infarction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrhythmia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiomyopathy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoglycaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolyte abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epilepsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stroke",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intracranial haemorrhage",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaphylaxis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drug toxicity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe asthma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vasovagal syncope",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -296,11 +404,11 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_6",
-          "subsection_title": "A USEFUL MATERNAL COLLAPSE FRAMEWORK",
+          "subsection_title": "6. A USEFUL MATERNAL COLLAPSE FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_15",
+              "group_id": "maternal_collapse_group_11",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -308,6 +416,83 @@
                 {
                   "type": "paragraph",
                   "text": "Think:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**“BLEED – BREATHE – CLOT – SEIZE – INFECT – DRUG”**",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_12",
+              "group_title": "BLEED",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Haemorrhage"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_13",
+              "group_title": "BREATHE",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "PE, airway, hypoxia"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_14",
+              "group_title": "CLOT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Thromboembolism"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_15",
+              "group_title": "SEIZE",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Eclampsia/seizure/stroke"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_16",
+              "group_title": "INFECT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Sepsis"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_17",
+              "group_title": "DRUG",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Anaesthesia, medication, magnesium toxicity, anaphylaxis"
                 }
               ]
             }
@@ -315,102 +500,11 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_7",
-          "subsection_title": "“BLEED – BREATHE – CLOT – SEIZE – INFECT – DRUG”",
+          "subsection_title": "7. FIRST RESPONSE",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "maternal_collapse_group_16",
-              "group_title": "BLEED",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Haemorrhage"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_17",
-              "group_title": "BREATHE",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "PE, airway, hypoxia"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "maternal_collapse_group_18",
-              "group_title": "CLOT",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Thromboembolism"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_19",
-              "group_title": "SEIZE",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Eclampsia/seizure/stroke"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_20",
-              "group_title": "INFECT",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Sepsis"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_21",
-              "group_title": "DRUG",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Anaesthesia, medication, magnesium toxicity, anaphylaxis"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_8",
-          "subsection_title": "FIRST RESPONSE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "maternal_collapse_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -420,28 +514,42 @@
                   "text": "If you find an unresponsive woman:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Help! This is a maternal emergency.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Help! This is a maternal emergency.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Activate the emergency response immediately."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Call:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Call:",
                   "items": [
-                    "Obstetrician",
-                    "Anaesthetist",
-                    "Resuscitation team",
-                    "Midwifery/nursing team",
-                    "Neonatal team if fetus potentially viable",
-                    "Blood bank if haemorrhage suspected"
+                    {
+                      "text": "Obstetrician",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetist",
+                      "level": 0
+                    },
+                    {
+                      "text": "Resuscitation team",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midwifery/nursing team",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal team if fetus potentially viable",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood bank if haemorrhage suspected",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -449,12 +557,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_9",
-          "subsection_title": "CHECK RESPONSE",
+          "subsection_id": "maternal_collapse_subsection_8",
+          "subsection_title": "8. CHECK RESPONSE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_23",
+              "group_id": "maternal_collapse_group_19",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -466,16 +574,15 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_24",
+              "group_id": "maternal_collapse_group_20",
               "group_title": "Assess",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Can you hear me?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Can you hear me?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -487,19 +594,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Proceed immediately to ABC."
+                  "text": "**Proceed immediately to ABC.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_10",
-          "subsection_title": "A — AIRWAY",
+          "subsection_id": "maternal_collapse_subsection_9",
+          "subsection_title": "9. A — AIRWAY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_25",
+              "group_id": "maternal_collapse_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -509,30 +616,51 @@
                   "text": "Open airway."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Airway obstruction",
-                    "Vomitus",
-                    "Blood",
-                    "Secretions",
-                    "Tongue obstruction"
+                    {
+                      "text": "Airway obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomitus",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood",
+                      "level": 0
+                    },
+                    {
+                      "text": "Secretions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tongue obstruction",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Use:",
                   "items": [
-                    "Head tilt/chin lift where appropriate",
-                    "Jaw thrust if trauma suspected",
-                    "Suction",
-                    "Airway adjuncts"
+                    {
+                      "text": "Head tilt/chin lift where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaw thrust if trauma suspected",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway adjuncts",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -541,19 +669,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Advanced airway management."
+                  "text": "**Advanced airway management.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_11",
-          "subsection_title": "B — BREATHING",
+          "subsection_id": "maternal_collapse_subsection_10",
+          "subsection_title": "10. B — BREATHING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_26",
+              "group_id": "maternal_collapse_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -563,16 +691,25 @@
                   "text": "Look, listen and feel."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Respiratory rate",
-                    "Chest movement",
-                    "SpO₂",
-                    "Work of breathing"
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "SpO₂",
+                      "level": 0
+                    },
+                    {
+                      "text": "Work of breathing",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -581,7 +718,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Treat as cardiac arrest."
+                  "text": "**Treat as cardiac arrest.**"
                 },
                 {
                   "type": "paragraph",
@@ -592,12 +729,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_12",
-          "subsection_title": "C — CIRCULATION",
+          "subsection_id": "maternal_collapse_subsection_11",
+          "subsection_title": "11. C — CIRCULATION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_27",
+              "group_id": "maternal_collapse_group_23",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -608,7 +745,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Carotid pulse for no more than approximately 10 seconds."
+                  "text": "**Carotid pulse** for no more than approximately 10 seconds."
                 },
                 {
                   "type": "paragraph",
@@ -616,19 +753,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Start CPR immediately."
+                  "text": "**Start CPR immediately.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_13",
-          "subsection_title": "MATERNAL CARDIAC ARREST",
+          "subsection_id": "maternal_collapse_subsection_12",
+          "subsection_title": "12. MATERNAL CARDIAC ARREST",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_28",
+              "group_id": "maternal_collapse_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -639,20 +776,32 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "High-quality CPR is the priority."
+                  "text": "**High-quality CPR is the priority.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Use:",
                   "items": [
-                    "Chest compressions",
-                    "Appropriate ventilation",
-                    "Defibrillation when indicated",
-                    "Advanced life support",
-                    "Identification and treatment of reversible causes"
+                    {
+                      "text": "Chest compressions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate ventilation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Defibrillation when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Advanced life support",
+                      "level": 0
+                    },
+                    {
+                      "text": "Identification and treatment of reversible causes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -660,12 +809,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_14",
-          "subsection_title": "CHEST COMPRESSIONS IN PREGNANCY",
+          "subsection_id": "maternal_collapse_subsection_13",
+          "subsection_title": "13. CHEST COMPRESSIONS IN PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_29",
+              "group_id": "maternal_collapse_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -676,7 +825,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "On the lower half of the sternum, as in standard adult CPR."
+                  "text": "**On the lower half of the sternum, as in standard adult CPR.**"
                 },
                 {
                   "type": "paragraph",
@@ -684,19 +833,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Do not reduce compression quality because the woman is pregnant."
+                  "text": "Do **not** reduce compression quality because the woman is pregnant."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_15",
-          "subsection_title": "LEFT UTERINE DISPLACEMENT",
+          "subsection_id": "maternal_collapse_subsection_14",
+          "subsection_title": "14. LEFT UTERINE DISPLACEMENT",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_30",
+              "group_id": "maternal_collapse_group_26",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -711,7 +860,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Perform manual left uterine displacement."
+                  "text": "**Perform manual left uterine displacement.**"
                 },
                 {
                   "type": "paragraph",
@@ -720,14 +869,64 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_31",
+              "group_id": "maternal_collapse_group_27",
               "group_title": "OSCE phrase",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“I would ensure continuous manual left uterine displacement to relieve aortocaval compression.”"
+                  "text": "“I would ensure continuous manual left uterine displacement to relieve aortocaval compression.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "maternal_collapse_subsection_15",
+          "subsection_title": "15. DEFIBRILLATION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "maternal_collapse_group_28",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "If the rhythm is shockable:",
+                  "items": [
+                    {
+                      "text": "Ventricular fibrillation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulseless ventricular tachycardia",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Defibrillate using standard adult energy protocols.**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pregnancy is **not a contraindication to defibrillation**."
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_29",
+              "group_title": "Important",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Do not withhold a lifesaving shock because the patient is pregnant.**"
                 }
               ]
             }
@@ -735,57 +934,11 @@
         },
         {
           "subsection_id": "maternal_collapse_subsection_16",
-          "subsection_title": "DEFIBRILLATION",
+          "subsection_title": "16. OXYGEN",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_32",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "If the rhythm is shockable:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Ventricular fibrillation",
-                    "Pulseless ventricular tachycardia"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Defibrillate using standard adult energy protocols."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy is not a contraindication to defibrillation."
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_33",
-              "group_title": "Important",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Do not withhold a lifesaving shock because the patient is pregnant."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_17",
-          "subsection_title": "OXYGEN",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "maternal_collapse_group_34",
+              "group_id": "maternal_collapse_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -807,24 +960,24 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_18",
-          "subsection_title": "IV/IO ACCESS",
+          "subsection_id": "maternal_collapse_subsection_17",
+          "subsection_title": "17. IV/IO ACCESS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_35",
+              "group_id": "maternal_collapse_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Obtain:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Obtain:",
                   "items": [
-                    "Two large-bore IV lines"
+                    {
+                      "text": "Two large-bore IV lines",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -833,39 +986,63 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Use intraosseous access when necessary."
+                  "text": "**Use intraosseous access when necessary.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_19",
-          "subsection_title": "BLOOD TESTS",
+          "subsection_id": "maternal_collapse_subsection_18",
+          "subsection_title": "18. BLOOD TESTS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_36",
+              "group_id": "maternal_collapse_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Send:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Send:",
                   "items": [
-                    "FBC",
-                    "Group and crossmatch",
-                    "U&E",
-                    "Glucose",
-                    "Calcium",
-                    "Magnesium where relevant",
-                    "Coagulation profile",
-                    "Fibrinogen",
-                    "Blood gas/lactate"
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Group and crossmatch",
+                      "level": 0
+                    },
+                    {
+                      "text": "U&E",
+                      "level": 0
+                    },
+                    {
+                      "text": "Glucose",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calcium",
+                      "level": 0
+                    },
+                    {
+                      "text": "Magnesium where relevant",
+                      "level": 0
+                    },
+                    {
+                      "text": "Coagulation profile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fibrinogen",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood gas/lactate",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -877,12 +1054,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_20",
-          "subsection_title": "REVERSIBLE CAUSES — THE 4 Hs AND 4 Ts",
+          "subsection_id": "maternal_collapse_subsection_19",
+          "subsection_title": "19. REVERSIBLE CAUSES — THE 4 Hs AND 4 Ts",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_37",
+              "group_id": "maternal_collapse_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -892,57 +1069,89 @@
                   "text": "A standard cardiac arrest framework is:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_21",
-          "subsection_title": "Hs",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "maternal_collapse_group_38",
-              "group_title": "Hypothermia",
+              "group_id": "maternal_collapse_group_34",
+              "group_title": "4 Hs",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
+                  "text": "**Hypoxia**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Hypovolaemia**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Hypo-/hyperkalaemia and metabolic abnormalities**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Hypothermia**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
                   "text": "And:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_22",
-          "subsection_title": "Ts",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "maternal_collapse_group_39",
-              "group_title": "Thrombosis",
+              "group_id": "maternal_collapse_group_35",
+              "group_title": "4 Ts",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Thrombosis**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Coronary",
-                    "Pulmonary"
+                    {
+                      "text": "Coronary",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Tension pneumothorax**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Tamponade**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Toxins**",
+                  "style": "heading"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_23",
-          "subsection_title": "OBSTETRICALLY IMPORTANT ADDITIONS",
+          "subsection_id": "maternal_collapse_subsection_20",
+          "subsection_title": "20. OBSTETRICALLY IMPORTANT ADDITIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_40",
+              "group_id": "maternal_collapse_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -952,12 +1161,55 @@
                   "text": "For maternal collapse, particularly think about:"
                 }
               ]
+            },
+            {
+              "group_id": "maternal_collapse_group_37",
+              "group_title": "Haemorrhage",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Eclampsia**"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_38",
+              "group_title": "Pulmonary embolism",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Amniotic fluid embolism**"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_39",
+              "group_title": "Sepsis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Anaesthetic complications**"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_40",
+              "group_title": "Uterine rupture",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_24",
-          "subsection_title": "HAEMORRHAGE",
+          "subsection_id": "maternal_collapse_subsection_21",
+          "subsection_title": "21. HAEMORRHAGE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -971,19 +1223,37 @@
                   "text": "This should always be high on your list."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Vaginal bleeding",
-                    "Abdominal bleeding",
-                    "PPH",
-                    "Uterine atony",
-                    "Retained placenta",
-                    "Uterine rupture",
-                    "Placental abruption"
+                    {
+                      "text": "Vaginal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine atony",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retained placenta",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine rupture",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1000,15 +1270,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Massive concealed haemorrhage without dramatic vaginal bleeding."
+                  "text": "**Massive concealed haemorrhage without dramatic vaginal bleeding.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_25",
-          "subsection_title": "MANAGEMENT OF HAEMORRHAGIC COLLAPSE",
+          "subsection_id": "maternal_collapse_subsection_22",
+          "subsection_title": "22. MANAGEMENT OF HAEMORRHAGIC COLLAPSE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1018,22 +1288,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Simultaneously:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Simultaneously:",
                   "items": [
-                    "ABC resuscitation",
-                    "Two large-bore IVs",
-                    "Major haemorrhage protocol",
-                    "Blood products",
-                    "TXA where appropriate for PPH",
-                    "Identify source",
-                    "Uterine massage if atony",
-                    "Remove retained tissue",
-                    "Repair trauma",
-                    "Emergency laparotomy when required"
+                    {
+                      "text": "ABC resuscitation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Two large-bore IVs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Major haemorrhage protocol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood products",
+                      "level": 0
+                    },
+                    {
+                      "text": "TXA where appropriate for PPH",
+                      "level": 0
+                    },
+                    {
+                      "text": "Identify source",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine massage if atony",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remove retained tissue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Repair trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Emergency laparotomy when required",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1041,8 +1338,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_26",
-          "subsection_title": "PULMONARY EMBOLISM",
+          "subsection_id": "maternal_collapse_subsection_23",
+          "subsection_title": "23. PULMONARY EMBOLISM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1052,18 +1349,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think PE when there is:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think PE when there is:",
                   "items": [
-                    "Sudden dyspnoea",
-                    "Chest pain",
-                    "Hypoxia",
-                    "Tachycardia",
-                    "Syncope",
-                    "Cardiovascular collapse"
+                    {
+                      "text": "Sudden dyspnoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Syncope",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular collapse",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1080,7 +1392,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Thrombolysis may be considered even during pregnancy or maternal cardiac arrest."
+                  "text": "**Thrombolysis may be considered even during pregnancy or maternal cardiac arrest.**"
                 },
                 {
                   "type": "paragraph",
@@ -1091,8 +1403,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_27",
-          "subsection_title": "ECLAMPSIA",
+          "subsection_id": "maternal_collapse_subsection_24",
+          "subsection_title": "24. ECLAMPSIA",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1107,22 +1419,40 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pregnant/postpartum woman + seizure ± hypertension/proteinuria."
+                  "text": "**Pregnant/postpartum woman + seizure ± hypertension/proteinuria.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management:",
                   "items": [
-                    "ABC",
-                    "Protect airway",
-                    "Left lateral positioning when appropriate",
-                    "Magnesium sulfate",
-                    "Control severe hypertension",
-                    "Assess maternal/fetal status",
-                    "Plan delivery after maternal stabilisation"
+                    {
+                      "text": "ABC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Protect airway",
+                      "level": 0
+                    },
+                    {
+                      "text": "Left lateral positioning when appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Magnesium sulfate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Control severe hypertension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess maternal/fetal status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Plan delivery after maternal stabilisation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1135,15 +1465,15 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Eclampsia can occur without severe hypertension immediately beforehand."
+                  "text": "**Eclampsia can occur without severe hypertension immediately beforehand.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_28",
-          "subsection_title": "MAGNESIUM TOXICITY",
+          "subsection_id": "maternal_collapse_subsection_25",
+          "subsection_title": "25. MAGNESIUM TOXICITY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1153,16 +1483,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "A woman receiving magnesium sulfate may develop:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "A woman receiving magnesium sulfate may develop:",
                   "items": [
-                    "Loss of deep tendon reflexes",
-                    "Respiratory depression",
-                    "Reduced consciousness",
-                    "Cardiac arrest in severe toxicity"
+                    {
+                      "text": "Loss of deep tendon reflexes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory depression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiac arrest in severe toxicity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1174,10 +1513,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Calcium gluconate"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Calcium gluconate**"
                 },
                 {
                   "type": "paragraph",
@@ -1188,8 +1525,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_29",
-          "subsection_title": "AMNIOTIC FLUID EMBOLISM",
+          "subsection_id": "maternal_collapse_subsection_26",
+          "subsection_title": "26. AMNIOTIC FLUID EMBOLISM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1207,21 +1544,25 @@
                   "text": "Classically presents with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Sudden hypoxia + hypotension/cardiac arrest + coagulopathy"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "It may occur:"
+                  "text": "**Sudden hypoxia + hypotension/cardiac arrest + coagulopathy**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "It may occur:",
                   "items": [
-                    "During labour",
-                    "At delivery",
-                    "Immediately postpartum"
+                    {
+                      "text": "During labour",
+                      "level": 0
+                    },
+                    {
+                      "text": "At delivery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immediately postpartum",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1230,7 +1571,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Supportive critical care and aggressive resuscitation."
+                  "text": "**Supportive critical care and aggressive resuscitation.**"
                 },
                 {
                   "type": "paragraph",
@@ -1241,8 +1582,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_30",
-          "subsection_title": "SEPSIS",
+          "subsection_id": "maternal_collapse_subsection_27",
+          "subsection_title": "27. SEPSIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1252,36 +1593,75 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "Fever",
-                    "Rigors",
-                    "Tachycardia",
-                    "Hypotension",
-                    "Altered mental status",
-                    "Uterine tenderness",
-                    "Foul-smelling lochia",
-                    "Recent delivery/procedure"
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rigors",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered mental status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine tenderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Foul-smelling lochia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recent delivery/procedure",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management:",
                   "items": [
-                    "ABC",
-                    "Blood cultures where appropriate",
-                    "Broad-spectrum IV antibiotics",
-                    "IV fluids/blood products as indicated",
-                    "Source control",
-                    "Lactate",
-                    "Senior/critical care involvement"
+                    {
+                      "text": "ABC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood cultures where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Broad-spectrum IV antibiotics",
+                      "level": 0
+                    },
+                    {
+                      "text": "IV fluids/blood products as indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Source control",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lactate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Senior/critical care involvement",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1289,8 +1669,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_31",
-          "subsection_title": "ANAPHYLAXIS",
+          "subsection_id": "maternal_collapse_subsection_28",
+          "subsection_title": "28. ANAPHYLAXIS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1300,31 +1680,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider after:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider after:",
                   "items": [
-                    "Antibiotic administration",
-                    "Anaesthetic medication",
-                    "Blood transfusion",
-                    "Other drug exposure"
+                    {
+                      "text": "Antibiotic administration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetic medication",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood transfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other drug exposure",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Features:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Features:",
                   "items": [
-                    "Hypotension",
-                    "Bronchospasm",
-                    "Wheeze",
-                    "Urticaria",
-                    "Angioedema",
-                    "Cardiovascular collapse"
+                    {
+                      "text": "Hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchospasm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wheeze",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urticaria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Angioedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cardiovascular collapse",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1332,10 +1736,8 @@
                   "text": "Treat immediately with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "IM adrenaline"
-                  ]
+                  "type": "paragraph",
+                  "text": "**IM adrenaline**"
                 },
                 {
                   "type": "paragraph",
@@ -1346,8 +1748,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_32",
-          "subsection_title": "HIGH/ TOTAL SPINAL",
+          "subsection_id": "maternal_collapse_subsection_29",
+          "subsection_title": "29. HIGH/ TOTAL SPINAL",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1361,33 +1763,63 @@
                   "text": "This can occur following neuraxial anaesthesia."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Features:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Features:",
                   "items": [
-                    "Rapid hypotension",
-                    "Bradycardia",
-                    "Respiratory difficulty",
-                    "Upper limb weakness",
-                    "Loss of consciousness",
-                    "Respiratory arrest"
+                    {
+                      "text": "Rapid hypotension",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bradycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory difficulty",
+                      "level": 0
+                    },
+                    {
+                      "text": "Upper limb weakness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory arrest",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management:",
                   "items": [
-                    "Airway",
-                    "Ventilation",
-                    "Circulatory support",
-                    "Vasopressors",
-                    "Anaesthetic team",
-                    "CPR if arrest occurs"
+                    {
+                      "text": "Airway",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventilation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Circulatory support",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vasopressors",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anaesthetic team",
+                      "level": 0
+                    },
+                    {
+                      "text": "CPR if arrest occurs",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1395,8 +1827,8 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_33",
-          "subsection_title": "POSTPARTUM COLLAPSE — IMPORTANT DIFFERENTIALS",
+          "subsection_id": "maternal_collapse_subsection_30",
+          "subsection_title": "30. POSTPARTUM COLLAPSE — IMPORTANT DIFFERENTIALS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1408,31 +1840,87 @@
                 {
                   "type": "paragraph",
                   "text": "After delivery, think:"
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_54",
-              "group_title": "“Bleeding, clot, infection, pressure, heart.”",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**“Bleeding, clot, infection, pressure, heart.”**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Bleeding**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Bleeding",
-                    "PPH",
-                    "Concealed haemorrhage",
-                    "Clot",
-                    "Pulmonary embolism",
-                    "Infection",
-                    "Sepsis",
-                    "Pressure",
-                    "Severe hypertension/eclampsia/stroke",
-                    "Heart",
-                    "Cardiomyopathy",
-                    "Arrhythmia",
-                    "MI"
+                    {
+                      "text": "PPH",
+                      "level": 0
+                    },
+                    {
+                      "text": "Concealed haemorrhage",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Clot**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pulmonary embolism",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Infection**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Sepsis",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Pressure**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Severe hypertension/eclampsia/stroke",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Heart**"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Cardiomyopathy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrhythmia",
+                      "level": 0
+                    },
+                    {
+                      "text": "MI",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1440,12 +1928,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_34",
-          "subsection_title": "FETAL CONSIDERATIONS",
+          "subsection_id": "maternal_collapse_subsection_31",
+          "subsection_title": "31. FETAL CONSIDERATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_55",
+              "group_id": "maternal_collapse_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1456,7 +1944,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maternal resuscitation is the priority."
+                  "text": "**Maternal resuscitation is the priority.**"
                 },
                 {
                   "type": "paragraph",
@@ -1475,12 +1963,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_35",
-          "subsection_title": "RESUSCITATIVE MATERNAL DELIVERY",
+          "subsection_id": "maternal_collapse_subsection_32",
+          "subsection_title": "32. RESUSCITATIVE MATERNAL DELIVERY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_56",
+              "group_id": "maternal_collapse_group_55",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1495,7 +1983,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Prepare for emergency resuscitative delivery."
+                  "text": "**Prepare for emergency resuscitative delivery.**"
                 },
                 {
                   "type": "paragraph",
@@ -1503,7 +1991,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Improve maternal resuscitation by relieving aortocaval compression, while potentially also providing a chance of fetal survival."
+                  "text": "**Improve maternal resuscitation by relieving aortocaval compression**, while potentially also providing a chance of fetal survival."
                 },
                 {
                   "type": "paragraph",
@@ -1514,12 +2002,12 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_36",
-          "subsection_title": "DO NOT WAIT FOR THE BABY TEAM",
+          "subsection_id": "maternal_collapse_subsection_33",
+          "subsection_title": "33. DO NOT WAIT FOR THE BABY TEAM",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_57",
+              "group_id": "maternal_collapse_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1529,10 +2017,9 @@
                   "text": "A common OSCE mistake is:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“We need to get the neonatologist first.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“We need to get the neonatologist first.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1544,19 +2031,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Proceed with the resuscitative delivery process while appropriate neonatal help is mobilised."
+                  "text": "**Proceed with the resuscitative delivery process while appropriate neonatal help is mobilised.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_37",
-          "subsection_title": "RETURN OF SPONTANEOUS CIRCULATION — ROSC",
+          "subsection_id": "maternal_collapse_subsection_34",
+          "subsection_title": "34. RETURN OF SPONTANEOUS CIRCULATION — ROSC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_58",
+              "group_id": "maternal_collapse_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1572,65 +2059,91 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_59",
+              "group_id": "maternal_collapse_group_58",
               "group_title": "Airway",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is it protected?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Is it protected?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_60",
+              "group_id": "maternal_collapse_group_59",
               "group_title": "Breathing",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Oxygenation",
-                    "Ventilation"
+                    {
+                      "text": "Oxygenation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventilation",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_60",
+              "group_title": "Circulation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perfusion",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "maternal_collapse_group_61",
-              "group_title": "Circulation",
+              "group_title": "Disability",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "BP",
-                    "Heart rhythm",
-                    "Perfusion"
+                    {
+                      "text": "Neurological status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Glucose",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "maternal_collapse_group_62",
-              "group_title": "Disability",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Neurological status",
-                    "Glucose"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_63",
               "group_title": "Exposure",
               "group_subtitle": null,
               "group_icon": null,
@@ -1644,8 +2157,69 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_38",
-          "subsection_title": "AFTER ROSC",
+          "subsection_id": "maternal_collapse_subsection_35",
+          "subsection_title": "35. AFTER ROSC",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "maternal_collapse_group_63",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Continue:",
+                  "items": [
+                    {
+                      "text": "Continuous ECG",
+                      "level": 0
+                    },
+                    {
+                      "text": "BP monitoring",
+                      "level": 0
+                    },
+                    {
+                      "text": "SpO₂",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Serial blood gases",
+                      "level": 0
+                    },
+                    {
+                      "text": "Electrolytes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lactate",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Arrange:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**ICU/HDU-level care where appropriate.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "maternal_collapse_subsection_36",
+          "subsection_title": "36. HOW TO APPROACH AN UNKNOWN COLLAPSE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1656,53 +2230,12 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Continue:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Continuous ECG",
-                    "BP monitoring",
-                    "SpO₂",
-                    "Temperature",
-                    "Urine output",
-                    "Serial blood gases",
-                    "Electrolytes",
-                    "Lactate"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "ICU/HDU-level care where appropriate."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_39",
-          "subsection_title": "HOW TO APPROACH AN UNKNOWN COLLAPSE",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "maternal_collapse_group_65",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "The examiner may say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“You don't know why she collapsed. What do you do?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“You don't know why she collapsed. What do you do?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1710,7 +2243,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would initially manage this as an undifferentiated emergency using ABCDE, while simultaneously considering reversible causes and obstetric-specific causes.”"
+                  "text": "**“I would initially manage this as an undifferentiated emergency using ABCDE, while simultaneously considering reversible causes and obstetric-specific causes.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1719,63 +2253,55 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_66",
+              "group_id": "maternal_collapse_group_65",
               "group_title": "A",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Airway obstruction"
-                  ]
+                  "type": "paragraph",
+                  "text": "Airway obstruction"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_67",
+              "group_id": "maternal_collapse_group_66",
               "group_title": "B",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hypoxia / PE / aspiration / pneumothorax"
-                  ]
+                  "type": "paragraph",
+                  "text": "Hypoxia / PE / aspiration / pneumothorax"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_68",
+              "group_id": "maternal_collapse_group_67",
               "group_title": "C",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Haemorrhage / arrhythmia / MI / PE / sepsis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Haemorrhage / arrhythmia / MI / PE / sepsis"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_69",
+              "group_id": "maternal_collapse_group_68",
               "group_title": "D",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Seizure / eclampsia / stroke / hypoglycaemia"
-                  ]
+                  "type": "paragraph",
+                  "text": "Seizure / eclampsia / stroke / hypoglycaemia"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_70",
+              "group_id": "maternal_collapse_group_69",
               "group_title": "E",
               "group_subtitle": null,
               "group_icon": null,
@@ -1789,24 +2315,24 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_40",
-          "subsection_title": "EXAMINER QUESTIONS",
+          "subsection_id": "maternal_collapse_subsection_37",
+          "subsection_title": "37. EXAMINER QUESTIONS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_71",
+              "group_id": "maternal_collapse_group_70",
               "group_title": "Q1. What is your first priority?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Maternal resuscitation and stabilisation."
+                  "text": "**Maternal resuscitation and stabilisation.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_72",
+              "group_id": "maternal_collapse_group_71",
               "group_title": "Q2. What are the causes of maternal collapse?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1818,41 +2344,67 @@
               ]
             },
             {
+              "group_id": "maternal_collapse_group_72",
+              "group_title": "Q3. What are the 4 Hs and 4 Ts?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**4 Hs**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hypoxia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypovolaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypo-/hyperkalaemia and metabolic abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothermia",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4 Ts**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Thrombosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tension pneumothorax",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tamponade",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toxins",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
               "group_id": "maternal_collapse_group_73",
-              "group_title": "4 Hs",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Hypoxia",
-                    "Hypovolaemia",
-                    "Hypo-/hyperkalaemia and metabolic abnormalities",
-                    "Hypothermia"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_74",
-              "group_title": "4 Ts",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Thrombosis",
-                    "Tension pneumothorax",
-                    "Tamponade",
-                    "Toxins"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "maternal_collapse_group_75",
               "group_title": "Q4. How do you modify CPR in advanced pregnancy?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1864,31 +2416,31 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_76",
+              "group_id": "maternal_collapse_group_74",
               "group_title": "Q5. Can you defibrillate a pregnant woman?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Yes. Pregnancy is not a contraindication to defibrillation."
+                  "text": "**Yes. Pregnancy is not a contraindication to defibrillation.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_77",
+              "group_id": "maternal_collapse_group_75",
               "group_title": "Q6. Can adrenaline be given during maternal cardiac arrest?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Yes. Standard ALS medications are used; pregnancy is not a reason to withhold life-saving resuscitation drugs."
+                  "text": "**Yes. Standard ALS medications are used; pregnancy is not a reason to withhold life-saving resuscitation drugs.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_78",
+              "group_id": "maternal_collapse_group_76",
               "group_title": "Q7. What is the most common cause of maternal collapse?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1899,7 +2451,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would immediately consider haemorrhage, thromboembolism, hypertensive disease/eclampsia, sepsis and cardiac/anaesthetic causes according to the timing and presentation.”"
+                  "text": "**“I would immediately consider haemorrhage, thromboembolism, hypertensive disease/eclampsia, sepsis and cardiac/anaesthetic causes according to the timing and presentation.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1908,7 +2461,7 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_79",
+              "group_id": "maternal_collapse_group_77",
               "group_title": "Q8. What is the classic presentation of amniotic fluid embolism?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1920,38 +2473,38 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_80",
+              "group_id": "maternal_collapse_group_78",
               "group_title": "Q9. What is the antidote for magnesium toxicity?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Calcium gluconate."
+                  "text": "**Calcium gluconate.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_81",
+              "group_id": "maternal_collapse_group_79",
               "group_title": "Q10. What is the definitive treatment for uterine rupture?",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Emergency laparotomy with delivery and surgical control of haemorrhage."
+                  "text": "**Emergency laparotomy with delivery and surgical control of haemorrhage.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_41",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "maternal_collapse_subsection_38",
+          "subsection_title": "38. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_82",
+              "group_id": "maternal_collapse_group_80",
               "group_title": "❌ Mistake 1: Asking “What happened?” before starting ABC",
               "group_subtitle": null,
               "group_icon": null,
@@ -1962,12 +2515,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Resuscitate first."
+                  "text": "**Resuscitate first.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_83",
+              "group_id": "maternal_collapse_group_81",
               "group_title": "❌ Mistake 2: Forgetting to call for help",
               "group_subtitle": null,
               "group_icon": null,
@@ -1979,7 +2532,7 @@
               ]
             },
             {
-              "group_id": "maternal_collapse_group_84",
+              "group_id": "maternal_collapse_group_82",
               "group_title": "❌ Mistake 3: Withholding defibrillation because she is pregnant",
               "group_subtitle": null,
               "group_icon": null,
@@ -1990,12 +2543,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Defibrillate when indicated."
+                  "text": "**Defibrillate when indicated.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_85",
+              "group_id": "maternal_collapse_group_83",
               "group_title": "❌ Mistake 4: Forgetting aortocaval compression",
               "group_subtitle": null,
               "group_icon": null,
@@ -2006,12 +2559,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Manual left uterine displacement."
+                  "text": "**Manual left uterine displacement.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_86",
+              "group_id": "maternal_collapse_group_84",
               "group_title": "❌ Mistake 5: Focusing on the fetus instead of the mother",
               "group_subtitle": null,
               "group_icon": null,
@@ -2022,12 +2575,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Maternal resuscitation."
+                  "text": "**Maternal resuscitation.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_87",
+              "group_id": "maternal_collapse_group_85",
               "group_title": "❌ Mistake 6: Assuming postpartum collapse is always PPH",
               "group_subtitle": null,
               "group_icon": null,
@@ -2038,12 +2591,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Haemorrhage + PE + sepsis + eclampsia + cardiac causes + anaesthetic causes."
+                  "text": "**Haemorrhage + PE + sepsis + eclampsia + cardiac causes + anaesthetic causes.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_88",
+              "group_id": "maternal_collapse_group_86",
               "group_title": "❌ Mistake 7: Forgetting hypoglycaemia",
               "group_subtitle": null,
               "group_icon": null,
@@ -2054,12 +2607,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Blood glucose."
+                  "text": "**Blood glucose.**"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_89",
+              "group_id": "maternal_collapse_group_87",
               "group_title": "❌ Mistake 8: Forgetting temperature",
               "group_subtitle": null,
               "group_icon": null,
@@ -2073,59 +2626,68 @@
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_42",
-          "subsection_title": "“4 H + 4 T + 5 O”",
+          "subsection_id": "maternal_collapse_subsection_39",
+          "subsection_title": "39. HIGH-YIELD MATERNAL COLLAPSE MNEMONIC",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_90",
+              "group_id": "maternal_collapse_group_88",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**“4 H + 4 T + 5 O”**",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "maternal_collapse_group_89",
               "group_title": "4 Hs",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hypoxia Hypovolaemia Hypo/hyperkalaemia & metabolic causes Hypothermia"
-                  ]
+                  "type": "paragraph",
+                  "text": "**H**ypoxia\n**H**ypovolaemia\n**H**ypo/hyperkalaemia & metabolic causes\n**H**ypothermia"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_91",
+              "group_id": "maternal_collapse_group_90",
               "group_title": "4 Ts",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Thrombosis Tension pneumothorax Tamponade Toxins"
-                  ]
+                  "type": "paragraph",
+                  "text": "**T**hrombosis\n**T**ension pneumothorax\n**T**amponade\n**T**oxins"
                 }
               ]
             },
             {
-              "group_id": "maternal_collapse_group_92",
+              "group_id": "maternal_collapse_group_91",
               "group_title": "Obstetric causes",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Obstetric haemorrhage Oedema/PE-type thromboembolism Obstetric hypertensive seizure/eclampsia Obstetric embolism — amniotic fluid embolism Obstetric sepsis"
+                  "text": "**O**bstetric haemorrhage\n**O**edema/PE-type thromboembolism\n**O**bstetric hypertensive seizure/eclampsia\n**O**bstetric embolism — amniotic fluid embolism\n**O**bstetric sepsis"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "maternal_collapse_subsection_43",
-          "subsection_title": "THE 30-SECOND CARDIAC ARREST ANSWER",
+          "subsection_id": "maternal_collapse_subsection_40",
+          "subsection_title": "40. THE 30-SECOND CARDIAC ARREST ANSWER",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "maternal_collapse_group_93",
+              "group_id": "maternal_collapse_group_92",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2136,7 +2698,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The pregnant woman is unresponsive and has no pulse. What do you do?”"
+                  "text": "**“The pregnant woman is unresponsive and has no pulse. What do you do?”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2144,20 +2707,14 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would recognise maternal cardiac arrest, call for the emergency resuscitation team, obstetrician, anaesthetist and neonatal team, and immediately commence high-quality CPR. I would ensure airway and ventilation, give oxygen, attach the defibrillator and defibrillate if indicated. I would obtain IV or intraosseous access and administer standard ALS medications. Because she is in advanced pregnancy, I would ensure continuous manual left uterine displacement to relieve aortocaval compression. Simultaneously, I would identify and treat reversible causes, particularly haemorrhage, thromboembolism, eclampsia, amniotic fluid embolism, sepsis and anaesthetic complications. If there is no prompt return of maternal circulation and the pregnancy is sufficiently advanced, I would prepare for emergency resuscitative delivery according to the maternal cardiac arrest protocol.”"
+                  "text": "**“I would recognise maternal cardiac arrest, call for the emergency resuscitation team, obstetrician, anaesthetist and neonatal team, and immediately commence high-quality CPR. I would ensure airway and ventilation, give oxygen, attach the defibrillator and defibrillate if indicated. I would obtain IV or intraosseous access and administer standard ALS medications. Because she is in advanced pregnancy, I would ensure continuous manual left uterine displacement to relieve aortocaval compression. Simultaneously, I would identify and treat reversible causes, particularly haemorrhage, thromboembolism, eclampsia, amniotic fluid embolism, sepsis and anaesthetic complications. If there is no prompt return of maternal circulation and the pregnancy is sufficiently advanced, I would prepare for emergency resuscitative delivery according to the maternal cardiac arrest protocol.”**",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_44",
-          "subsection_title": "⭐ EXAM GOLD",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "maternal_collapse_group_94",
-              "group_title": "",
+              "group_id": "maternal_collapse_group_93",
+              "group_title": "⭐ EXAM GOLD",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2166,27 +2723,18 @@
                   "text": "When you see:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "PREGNANT WOMAN + COLLAPSE"
-                  ]
+                  "type": "paragraph",
+                  "text": "**PREGNANT WOMAN + COLLAPSE**"
                 },
                 {
                   "type": "paragraph",
                   "text": "Your first thought should be:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "maternal_collapse_subsection_45",
-          "subsection_title": "ABCDE + 4Hs + 4Ts + OBSTETRIC CAUSES",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "maternal_collapse_group_95",
-              "group_title": "",
+              "group_id": "maternal_collapse_group_94",
+              "group_title": "ABCDE + 4Hs + 4Ts + OBSTETRIC CAUSES",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2196,7 +2744,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "CPR + DEFIBRILLATION WHEN INDICATED + LEFT UTERINE DISPLACEMENT + TREAT REVERSIBLE CAUSES + PREPARE RESUSCITATIVE DELIVERY WHEN INDICATED."
+                  "text": "**CPR + DEFIBRILLATION WHEN INDICATED + LEFT UTERINE DISPLACEMENT + TREAT REVERSIBLE CAUSES + PREPARE RESUSCITATIVE DELIVERY WHEN INDICATED.**"
                 }
               ]
             }

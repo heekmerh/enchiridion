@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_2",
-          "subsection_title": "Identification",
+          "subsection_title": "1. Identification",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -68,20 +68,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Category: Respiratory therapeutic equipment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Type: Positive-pressure ventilatory support device."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Function: Supports ventilation and, depending on settings, oxygenation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Common locations: ICU, emergency department, operating theatre, neonatal unit, and transport settings."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Category: Respiratory therapeutic equipment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Type: Positive-pressure ventilatory support device.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Function: Supports ventilation and, depending on settings, oxygenation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Common locations: ICU, emergency department, operating theatre, neonatal unit, and transport settings.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -97,10 +102,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A. Invasive ventilation"
-                  ]
+                  "type": "paragraph",
+                  "text": "A. Invasive ventilation"
                 },
                 {
                   "type": "paragraph",
@@ -112,10 +115,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "B. Non-invasive ventilation (NIV)"
-                  ]
+                  "type": "paragraph",
+                  "text": "B. Non-invasive ventilation (NIV)"
                 },
                 {
                   "type": "paragraph",
@@ -127,10 +128,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "C. Neonatal and pediatric ventilation"
-                  ]
+                  "type": "paragraph",
+                  "text": "C. Neonatal and pediatric ventilation"
                 },
                 {
                   "type": "paragraph",
@@ -146,7 +145,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a mechanical ventilator, a respiratory support device that delivers controlled or assisted breaths to patients with inadequate spontaneous ventilation or oxygenation. It can be used invasively through an endotracheal or tracheostomy tube, or non-invasively through an appropriate interface.\""
+                  "text": "\"This is a mechanical ventilator, a respiratory support device that delivers controlled or assisted breaths to patients with inadequate spontaneous ventilation or oxygenation. It can be used invasively through an endotracheal or tracheostomy tube, or non-invasively through an appropriate interface.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -158,7 +158,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_3",
-          "subsection_title": "Uses and Indications",
+          "subsection_title": "2. Uses and Indications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -168,28 +168,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Mechanical ventilation may be needed in patients with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe hypoxemic respiratory failure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypercapnic respiratory failure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe respiratory muscle fatigue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failure to maintain adequate ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Selected cases of acute respiratory distress syndrome (ARDS)."
+                  "type": "list",
+                  "title": "Mechanical ventilation may be needed in patients with:",
+                  "items": [
+                    {
+                      "text": "Severe hypoxemic respiratory failure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypercapnic respiratory failure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe respiratory muscle fatigue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failure to maintain adequate ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Selected cases of acute respiratory distress syndrome (ARDS).",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -224,24 +226,26 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Examples include selected patients with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Guillain–Barré syndrome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Myasthenic crisis."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Motor neuron disease with ventilatory failure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other conditions causing respiratory muscle weakness."
+                  "type": "list",
+                  "title": "Examples include selected patients with:",
+                  "items": [
+                    {
+                      "text": "Guillain–Barré syndrome.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Myasthenic crisis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Motor neuron disease with ventilatory failure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other conditions causing respiratory muscle weakness.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -289,7 +293,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_4",
-          "subsection_title": "Parts and Functions",
+          "subsection_title": "3. Parts and Functions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -304,10 +308,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "livephysics.com"
-                  ]
+                  "type": "paragraph",
+                  "text": "livephysics.com"
                 },
                 {
                   "type": "table",
@@ -387,20 +389,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Endotracheal tube: Inserted through the mouth or nose into the trachea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tracheostomy tube: Inserted through a surgically created opening in the neck into the trachea."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Face mask: Used for non-invasive respiratory support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Nasal interface: Commonly used for selected neonatal and pediatric respiratory support."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Endotracheal tube: Inserted through the mouth or nose into the trachea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tracheostomy tube: Inserted through a surgically created opening in the neck into the trachea.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Face mask: Used for non-invasive respiratory support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal interface: Commonly used for selected neonatal and pediatric respiratory support.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -461,7 +468,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_5",
-          "subsection_title": "Advantages",
+          "subsection_title": "4. Advantages",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -471,36 +478,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Supports gas exchange: Can improve oxygenation and ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduces respiratory muscle workload: Provides assistance when the patient cannot sustain adequate breathing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Allows controlled ventilation: Enables clinicians to adjust respiratory rate, tidal volume or inspiratory pressure, and oxygen concentration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supports lung-protective strategies: Appropriate settings can reduce ventilator-associated lung injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provides continuous monitoring: Displays airway pressures, volumes, respiratory rate, and other measurements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Can provide PEEP: Helps prevent alveolar collapse and improve oxygenation in selected patients."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Allows prolonged respiratory support: Can sustain ventilation while the underlying illness is treated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Supports anaesthesia and critical care: Provides controlled respiratory support during procedures and severe illness."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Supports gas exchange: Can improve oxygenation and ventilation.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Reduces respiratory muscle workload: Provides assistance when the patient cannot sustain adequate breathing.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Allows controlled ventilation: Enables clinicians to adjust respiratory rate, tidal volume or inspiratory pressure, and oxygen concentration.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Supports lung-protective strategies: Appropriate settings can reduce ventilator-associated lung injury.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Provides continuous monitoring: Displays airway pressures, volumes, respiratory rate, and other measurements.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Can provide PEEP: Helps prevent alveolar collapse and improve oxygenation in selected patients.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Allows prolonged respiratory support: Can sustain ventilation while the underlying illness is treated.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Supports anaesthesia and critical care: Provides controlled respiratory support during procedures and severe illness.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             }
@@ -508,7 +528,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_6",
-          "subsection_title": "Disadvantages and Limitations",
+          "subsection_title": "5. Disadvantages and Limitations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -522,44 +542,49 @@
                   "text": "Mechanical ventilation can be lifesaving, but it carries important risks."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ventilator-induced lung injury: Excessive tidal volumes or pressures may damage the lungs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Barotrauma: Excessive pressure may contribute to pneumothorax or other air-leak syndromes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Volutrauma: Excessive lung volume can injure alveoli."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Atelectrauma: Repeated opening and closing of unstable alveoli can cause injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Oxygen toxicity: Prolonged exposure to high oxygen concentrations may cause harm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ventilator-associated pneumonia: Invasive ventilation increases the risk of respiratory infection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hemodynamic effects: Positive intrathoracic pressure may reduce venous return and cardiac output."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sedation-related complications: Some patients require sedation, which can contribute to hypotension, delirium, or prolonged ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Airway injury: Endotracheal and tracheostomy tubes can cause trauma."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dependence and deconditioning: Prolonged ventilation can weaken respiratory muscles and delay liberation from the ventilator."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ventilator-induced lung injury: Excessive tidal volumes or pressures may damage the lungs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Barotrauma: Excessive pressure may contribute to pneumothorax or other air-leak syndromes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Volutrauma: Excessive lung volume can injure alveoli.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Atelectrauma: Repeated opening and closing of unstable alveoli can cause injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen toxicity: Prolonged exposure to high oxygen concentrations may cause harm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventilator-associated pneumonia: Invasive ventilation increases the risk of respiratory infection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hemodynamic effects: Positive intrathoracic pressure may reduce venous return and cardiac output.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sedation-related complications: Some patients require sedation, which can contribute to hypotension, delirium, or prolonged ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway injury: Endotracheal and tracheostomy tubes can cause trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dependence and deconditioning: Prolonged ventilation can weaken respiratory muscles and delay liberation from the ventilator.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -571,7 +596,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_7",
-          "subsection_title": "Preparation and Precautions",
+          "subsection_title": "6. Preparation and Precautions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -581,40 +606,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess the patient's airway, breathing, circulation, and indication for respiratory support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the appropriate ventilator and patient circuit."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the power supply and battery backup."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Verify the availability of oxygen and other required gas supplies."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspect the circuit, connectors, filters, and valves."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Check the ventilator self-test and alarm functions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure that suction, bag-mask ventilation, and emergency airway equipment are available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Select an appropriate airway interface."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish monitoring appropriate to the patient's condition."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Assess the patient's airway, breathing, circulation, and indication for respiratory support.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Confirm the appropriate ventilator and patient circuit.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Check the power supply and battery backup.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Verify the availability of oxygen and other required gas supplies.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Inspect the circuit, connectors, filters, and valves.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Check the ventilator self-test and alarm functions.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Ensure that suction, bag-mask ventilation, and emergency airway equipment are available.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Select an appropriate airway interface.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Establish monitoring appropriate to the patient's condition.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
                 }
               ]
             },
@@ -625,32 +664,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Explain the procedure if the patient is conscious and circumstances permit."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain appropriate consent when possible."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Position the patient appropriately."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apply pulse oximetry and ECG monitoring as indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange blood gas analysis when clinically required."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm endotracheal or tracheostomy tube placement when invasive ventilation is used."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure that alarms and emergency response arrangements are in place."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Explain the procedure if the patient is conscious and circumstances permit.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obtain appropriate consent when possible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Position the patient appropriately.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apply pulse oximetry and ECG monitoring as indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arrange blood gas analysis when clinically required.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm endotracheal or tracheostomy tube placement when invasive ventilation is used.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure that alarms and emergency response arrangements are in place.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -661,32 +705,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use patient-appropriate settings rather than relying on one universal ventilator prescription."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid excessive tidal volumes and airway pressures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor oxygen saturation, ventilation, blood pressure, and clinical response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use humidification when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maintain appropriate infection prevention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Secure the airway and circuit to reduce accidental disconnection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassess the patient whenever an alarm sounds."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use patient-appropriate settings rather than relying on one universal ventilator prescription.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid excessive tidal volumes and airway pressures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor oxygen saturation, ventilation, blood pressure, and clinical response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use humidification when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain appropriate infection prevention.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Secure the airway and circuit to reduce accidental disconnection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reassess the patient whenever an alarm sounds.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -698,7 +747,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_8",
-          "subsection_title": "How to Use It — Step-by-Step OSCE Demonstration",
+          "subsection_title": "7. How to Use It — Step-by-Step OSCE Demonstration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -784,32 +833,34 @@
                   "text": "Choose a mode appropriate to the patient's condition and the ventilator's capabilities."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Common modes include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Volume-controlled ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pressure-controlled ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assist-control ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Synchronized intermittent mandatory ventilation (SIMV)."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pressure-support ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continuous positive airway pressure (CPAP)."
+                  "type": "list",
+                  "title": "Common modes include:",
+                  "items": [
+                    {
+                      "text": "Volume-controlled ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pressure-controlled ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assist-control ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Synchronized intermittent mandatory ventilation (SIMV).",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pressure-support ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuous positive airway pressure (CPAP).",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -828,32 +879,34 @@
                   "text": "Settings depend on the diagnosis, age, predicted body weight where applicable, respiratory mechanics, and clinical condition."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "For a typical adult, the clinician may select:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Tidal volume or inspiratory pressure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "FiO₂."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "PEEP."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inspiratory time or inspiratory-to-expiratory ratio."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Trigger sensitivity and pressure support when applicable."
+                  "type": "list",
+                  "title": "For a typical adult, the clinician may select:",
+                  "items": [
+                    {
+                      "text": "Tidal volume or inspiratory pressure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "FiO₂.",
+                      "level": 0
+                    },
+                    {
+                      "text": "PEEP.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inspiratory time or inspiratory-to-expiratory ratio.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trigger sensitivity and pressure support when applicable.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -868,36 +921,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Chest movement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "SpO₂."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Exhaled tidal volume and minute ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Airway pressure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "EtCO₂ waveform where available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hemodynamic response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood gas results when indicated."
+                  "type": "list",
+                  "title": "Assess:",
+                  "items": [
+                    {
+                      "text": "Chest movement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "SpO₂.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exhaled tidal volume and minute ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Airway pressure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "EtCO₂ waveform where available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hemodynamic response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood gas results when indicated.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -949,7 +1004,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"I would confirm the indication for ventilation, check the ventilator and circuit, select patient-appropriate settings, verify effective ventilation using clinical observations and monitoring, and ensure that alarms are enabled. I would monitor for complications and regularly reassess whether the patient can be safely weaned from ventilatory support.\""
+                  "text": "\"I would confirm the indication for ventilation, check the ventilator and circuit, select patient-appropriate settings, verify effective ventilation using clinical observations and monitoring, and ensure that alarms are enabled. I would monitor for complications and regularly reassess whether the patient can be safely weaned from ventilatory support.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -957,7 +1013,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_9",
-          "subsection_title": "Contraindications and Complications",
+          "subsection_title": "8. Contraindications and Complications",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -971,42 +1027,42 @@
                   "text": "There is no absolute contraindication to lifesaving ventilation when it is necessary to support a patient's breathing. However, the type of ventilation and interface must be selected carefully."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Non-invasive ventilation: important contraindications or limitations**"
+                },
+                {
+                  "type": "list",
+                  "title": "Non-invasive ventilation may be inappropriate or unsafe when a patient has:",
                   "items": [
-                    "Non-invasive ventilation: important contraindications or limitations"
+                    {
+                      "text": "Respiratory or cardiac arrest.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inability to protect the airway.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe impairment of consciousness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Active vomiting or a high risk of aspiration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe hemodynamic instability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial trauma or anatomy preventing an adequate mask seal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Copious secretions that cannot be cleared effectively.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Non-invasive ventilation may be inappropriate or unsafe when a patient has:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory or cardiac arrest."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Inability to protect the airway."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe impairment of consciousness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Active vomiting or a high risk of aspiration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe hemodynamic instability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Facial trauma or anatomy preventing an adequate mask seal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Copious secretions that cannot be cleared effectively."
                 },
                 {
                   "type": "paragraph",
@@ -1082,36 +1138,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important preventive measures include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hand hygiene and infection-control precautions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Appropriate oral care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Elevation of the head of the bed when clinically suitable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Minimizing unnecessary sedation and assessing readiness for liberation from ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maintaining appropriate cuff management where applicable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoiding unnecessary circuit disconnections."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Following local ventilator-associated pneumonia prevention protocols."
+                  "type": "list",
+                  "title": "Important preventive measures include:",
+                  "items": [
+                    {
+                      "text": "Hand hygiene and infection-control precautions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appropriate oral care.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Elevation of the head of the bed when clinically suitable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Minimizing unnecessary sedation and assessing readiness for liberation from ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintaining appropriate cuff management where applicable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoiding unnecessary circuit disconnections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Following local ventilator-associated pneumonia prevention protocols.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1130,24 +1188,26 @@
                   "text": "It is particularly important in patients with severe airflow obstruction, such as asthma or COPD."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential consequences include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increased airway pressures."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reduced venous return."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Barotrauma."
+                  "type": "list",
+                  "title": "Potential consequences include:",
+                  "items": [
+                    {
+                      "text": "Increased airway pressures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced venous return.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Barotrauma.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1159,7 +1219,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_10",
-          "subsection_title": "Normal and Abnormal Findings",
+          "subsection_title": "9. Normal and Abnormal Findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1227,10 +1287,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Volume-controlled ventilation"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Volume-controlled ventilation"
                 },
                 {
                   "type": "paragraph",
@@ -1242,10 +1300,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Pressure-controlled ventilation"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Pressure-controlled ventilation"
                 },
                 {
                   "type": "paragraph",
@@ -1257,10 +1313,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Pressure-support ventilation"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Pressure-support ventilation"
                 },
                 {
                   "type": "paragraph",
@@ -1272,10 +1326,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. CPAP"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. CPAP"
                 },
                 {
                   "type": "paragraph",
@@ -1347,20 +1399,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "D — Displacement: Endotracheal tube displaced or extubated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Obstruction: Tube blockage, secretions, or kinking."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Pneumothorax: Consider tension pneumothorax when clinically suspected."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Equipment failure: Circuit disconnection, ventilator malfunction, or gas supply problem."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "D — Displacement: Endotracheal tube displaced or extubated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Obstruction: Tube blockage, secretions, or kinking.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Pneumothorax: Consider tension pneumothorax when clinically suspected.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Equipment failure: Circuit disconnection, ventilator malfunction, or gas supply problem.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1417,7 +1474,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_11",
-          "subsection_title": "Pediatric Considerations",
+          "subsection_title": "10. Pediatric Considerations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1439,32 +1496,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Neonatal respiratory distress syndrome."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe pneumonia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pediatric ARDS."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory failure due to neuromuscular disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Apnea or inadequate respiratory drive in selected circumstances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe asthma requiring invasive ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postoperative respiratory support."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Neonatal respiratory distress syndrome.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe pneumonia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pediatric ARDS.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory failure due to neuromuscular disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Apnea or inadequate respiratory drive in selected circumstances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe asthma requiring invasive ventilation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postoperative respiratory support.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1524,28 +1586,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Use neonatal ventilators and circuits where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Minimize unnecessary apparatus dead space."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor for air leaks and pressure-related injury."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use appropriate oxygen targets and avoid unnecessary hyperoxia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess temperature, humidification, and airway patency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor blood gases or other measures of ventilation when indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use neonatal ventilators and circuits where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Minimize unnecessary apparatus dead space.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor for air leaks and pressure-related injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use appropriate oxygen targets and avoid unnecessary hyperoxia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess temperature, humidification, and airway patency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor blood gases or other measures of ventilation when indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1557,7 +1624,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_12",
-          "subsection_title": "Mnemonics and Memory Aids",
+          "subsection_title": "11. Mnemonics and Memory Aids",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1567,20 +1634,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "V — Volume: Tidal volume or delivered breath size."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Expiratory pressure: PEEP."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "N — Number of breaths: Respiratory rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "T — Target oxygen: FiO₂."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "V — Volume: Tidal volume or delivered breath size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Expiratory pressure: PEEP.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Number of breaths: Respiratory rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "T — Target oxygen: FiO₂.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1595,20 +1667,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "D — Displacement."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "O — Obstruction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Pneumothorax."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Equipment failure."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "D — Displacement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "O — Obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Pneumothorax.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Equipment failure.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1635,24 +1712,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "C — Circuit: Check for leaks, kinks, and disconnection."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "H — Hemodynamics: Assess blood pressure and perfusion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "E — Endotracheal tube: Assess position and patency."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "C — Capnography: Review EtCO₂ and waveform where available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "K — Known settings: Review mode, pressures, volumes, FiO₂, and alarms."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "C — Circuit: Check for leaks, kinks, and disconnection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "H — Hemodynamics: Assess blood pressure and perfusion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "E — Endotracheal tube: Assess position and patency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "C — Capnography: Review EtCO₂ and waveform where available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "K — Known settings: Review mode, pressures, volumes, FiO₂, and alarms.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1660,7 +1742,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_13",
-          "subsection_title": "Common OSCE Questions and Model Answers",
+          "subsection_title": "12. Common OSCE Questions and Model Answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1795,7 +1877,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_14",
-          "subsection_title": "Common Mistakes and Examiner Tips",
+          "subsection_title": "13. Common Mistakes and Examiner Tips",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1858,40 +1940,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "To score highly in the ventilator OSCE station:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify the ventilator and its intended use."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain invasive versus non-invasive ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Identify FiO₂, tidal volume, respiratory rate, and PEEP."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Differentiate volume-controlled from pressure-controlled ventilation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain high- and low-pressure alarms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Demonstrate the DOPE approach to sudden deterioration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mention lung-protective ventilation and infection prevention."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Emphasize continuous clinical reassessment."
+                  "type": "list",
+                  "title": "To score highly in the ventilator OSCE station:",
+                  "items": [
+                    {
+                      "text": "Identify the ventilator and its intended use.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain invasive versus non-invasive ventilation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Identify FiO₂, tidal volume, respiratory rate, and PEEP.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Differentiate volume-controlled from pressure-controlled ventilation.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Explain high- and low-pressure alarms.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Demonstrate the DOPE approach to sudden deterioration.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Mention lung-protective ventilation and infection prevention.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Emphasize continuous clinical reassessment.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 }
               ]
             },
@@ -1903,7 +1995,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a mechanical ventilator used to support or replace spontaneous breathing in patients with respiratory failure or other indications for respiratory support. It delivers controlled or assisted breaths through an invasive or non-invasive interface. Important parameters include tidal volume or inspiratory pressure, respiratory rate, FiO₂, and PEEP. Complications include ventilator-associated pneumonia, barotrauma, and hemodynamic compromise. If a ventilated patient deteriorates suddenly, I would assess the patient immediately and consider displacement, obstruction, pneumothorax, and equipment failure.\""
+                  "text": "\"This is a mechanical ventilator used to support or replace spontaneous breathing in patients with respiratory failure or other indications for respiratory support. It delivers controlled or assisted breaths through an invasive or non-invasive interface. Important parameters include tidal volume or inspiratory pressure, respiratory rate, FiO₂, and PEEP. Complications include ventilator-associated pneumonia, barotrauma, and hemodynamic compromise. If a ventilated patient deteriorates suddenly, I would assess the patient immediately and consider displacement, obstruction, pneumothorax, and equipment failure.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1911,7 +2004,7 @@
         },
         {
           "subsection_id": "ventilator_subsection_15",
-          "subsection_title": "Mini-OSCE Practice Questions",
+          "subsection_title": "14. Mini-OSCE Practice Questions",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1925,39 +2018,60 @@
                   "text": "1. A ventilated patient suddenly develops high airway pressure and hypotension. Which serious complication must be considered?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Tension pneumothorax",
-                    "Simple fever alone",
-                    "Normal ventilator function",
-                    "Isolated skin irritation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Tension pneumothorax"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Simple fever alone"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal ventilator function"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Isolated skin irritation"
                 },
                 {
                   "type": "paragraph",
                   "text": "2. In volume-controlled ventilation, which parameter is targeted by the ventilator?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A fixed tidal volume for mandatory breaths",
-                    "A fixed arterial PaCO₂ in every patient",
-                    "A fixed plateau pressure in every breath",
-                    "A fixed oxygen saturation regardless of FiO₂"
-                  ]
+                  "type": "paragraph",
+                  "text": "A fixed tidal volume for mandatory breaths"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A fixed arterial PaCO₂ in every patient"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A fixed plateau pressure in every breath"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A fixed oxygen saturation regardless of FiO₂"
                 },
                 {
                   "type": "paragraph",
                   "text": "3. What does PEEP stand for?"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Positive end-expiratory pressure",
-                    "Peak expiratory exchange pressure",
-                    "Pulmonary end-expiratory pulse",
-                    "Positive external emergency pressure"
-                  ]
+                  "type": "paragraph",
+                  "text": "Positive end-expiratory pressure"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Peak expiratory exchange pressure"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pulmonary end-expiratory pulse"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Positive external emergency pressure"
                 }
               ]
             },

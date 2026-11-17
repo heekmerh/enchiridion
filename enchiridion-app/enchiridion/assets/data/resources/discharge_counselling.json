@@ -28,10 +28,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Clinical skills • Counselling station • Maternal and newborn care"
-                  ]
+                  "type": "paragraph",
+                  "text": "Clinical skills • Counselling station • Maternal and newborn care"
                 }
               ]
             }
@@ -39,7 +37,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -53,36 +51,38 @@
                   "text": "You are the doctor on the postnatal ward. A woman who had an uncomplicated vaginal delivery 24–48 hours ago is preparing to go home with her newborn."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Your task is to counsel her on:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Readiness for discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal recovery and personal hygiene."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breastfeeding and newborn care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal and neonatal danger signs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Immunisation and follow-up."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Postpartum contraception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Emotional wellbeing and available support."
+                  "type": "list",
+                  "title": "Your task is to counsel her on:",
+                  "items": [
+                    {
+                      "text": "Readiness for discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal recovery and personal hygiene.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breastfeeding and newborn care.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal and neonatal danger signs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Immunisation and follow-up.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Postpartum contraception.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Emotional wellbeing and available support.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -94,7 +94,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_3",
-          "subsection_title": "Introduction, consent and communication",
+          "subsection_title": "2. Introduction, consent and communication",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -113,35 +113,44 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Good morning, Madam. My name is Dr ____. I understand that you and your baby may be preparing to go home today. I would like to discuss how you can look after yourself and your baby, the warning signs to watch for, and when to return to the hospital. Is that alright with you?”"
+                  "text": "“Good morning, Madam. My name is Dr ____. I understand that you and your baby may be preparing to go home today. I would like to discuss how you can look after yourself and your baby, the warning signs to watch for, and when to return to the hospital. Is that alright with you?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the woman's identity and her baby's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask how she is feeling physically and emotionally."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask whether she has any concerns about herself or the baby."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess her understanding of breastfeeding and newborn care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask whether she has support at home and whether she can access a health facility if needed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use simple language and encourage questions."
+                  "type": "list",
+                  "title": "Then:",
+                  "items": [
+                    {
+                      "text": "Confirm the woman's identity and her baby's identity.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Ask how she is feeling physically and emotionally.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ask whether she has any concerns about herself or the baby.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess her understanding of breastfeeding and newborn care.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Ask whether she has support at home and whether she can access a health facility if needed.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Use simple language and encourage questions.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -153,7 +162,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_4",
-          "subsection_title": "Assess discharge readiness",
+          "subsection_title": "3. Assess discharge readiness",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -244,44 +253,49 @@
                   "text": "Confirm that the baby has been assessed and is suitable for discharge according to the facility's neonatal policy."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Breathing comfortably without significant respiratory distress."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Temperature stable."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Feeding effectively, with feeding difficulties assessed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Passing urine and stool as appropriate for age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "No concerning jaundice or other signs of illness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight and hydration assessed where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Newborn examination completed, with abnormalities addressed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Required birth interventions, screening and immunisations reviewed according to local policy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Parents can recognise danger signs and demonstrate essential newborn care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow-up arrangements are clear."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Breathing comfortably without significant respiratory distress.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temperature stable.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding effectively, with feeding difficulties assessed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Passing urine and stool as appropriate for age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No concerning jaundice or other signs of illness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight and hydration assessed where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Newborn examination completed, with abnormalities addressed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Required birth interventions, screening and immunisations reviewed according to local policy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Parents can recognise danger signs and demonstrate essential newborn care.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow-up arrangements are clear.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -293,7 +307,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_5",
-          "subsection_title": "Counsel on maternal recovery",
+          "subsection_title": "4. Counsel on maternal recovery",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -307,40 +321,47 @@
                   "text": "Explain that vaginal bleeding after delivery is normal and usually gradually reduces and changes in colour over several weeks."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Initially, it is usually red."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "It generally becomes pinkish or brownish."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Later, it may become pale or yellowish-white."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Initially, it is usually red.",
+                      "level": 0
+                    },
+                    {
+                      "text": "It generally becomes pinkish or brownish.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Later, it may become pale or yellowish-white.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
                   "text": "The pattern varies between women."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Advise her to seek urgent care if she experiences:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Sudden heavy bleeding or bleeding that rapidly soaks pads."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Large clots accompanied by heavy bleeding or feeling unwell."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dizziness, fainting, marked weakness or palpitations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fever, worsening abdominal pain or foul-smelling discharge."
+                  "type": "list",
+                  "title": "Advise her to seek urgent care if she experiences:",
+                  "items": [
+                    {
+                      "text": "Sudden heavy bleeding or bleeding that rapidly soaks pads.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Large clots accompanied by heavy bleeding or feeling unwell.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dizziness, fainting, marked weakness or palpitations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever, worsening abdominal pain or foul-smelling discharge.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -355,36 +376,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For a woman with an episiotomy or perineal tear:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wash hands before and after toileting or wound care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clean the area gently with clean water."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wipe from front to back."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Change sanitary pads regularly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid applying unprescribed creams, powders or antiseptics to the wound."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take prescribed analgesics as directed."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Seek review for worsening pain, swelling, pus, wound separation or fever."
+                  "type": "list",
+                  "title": "For a woman with an episiotomy or perineal tear:",
+                  "items": [
+                    {
+                      "text": "Wash hands before and after toileting or wound care.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Clean the area gently with clean water.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Wipe from front to back.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Change sanitary pads regularly.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Avoid applying unprescribed creams, powders or antiseptics to the wound.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Take prescribed analgesics as directed.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Seek review for worsening pain, swelling, pus, wound separation or fever.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -395,28 +425,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "For a woman who underwent caesarean section:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the wound-care instructions provided by the surgical team."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the wound clean and follow advice on bathing and dressing changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid heavy lifting and strenuous activity during recovery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mobilise regularly as advised to reduce complications associated with immobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Take prescribed medicines and attend the planned wound review."
+                  "type": "list",
+                  "title": "For a woman who underwent caesarean section:",
+                  "items": [
+                    {
+                      "text": "Follow the wound-care instructions provided by the surgical team.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep the wound clean and follow advice on bathing and dressing changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid heavy lifting and strenuous activity during recovery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobilise regularly as advised to reduce complications associated with immobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Take prescribed medicines and attend the planned wound review.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -431,28 +463,30 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Advise the woman to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drink fluids regularly unless medically restricted."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Eat a balanced diet containing fibre."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mobilise as tolerated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid straining excessively during bowel movements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Seek assessment for inability to pass urine, severe constipation, persistent vomiting or severe abdominal pain."
+                  "type": "list",
+                  "title": "Advise the woman to:",
+                  "items": [
+                    {
+                      "text": "Drink fluids regularly unless medically restricted.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eat a balanced diet containing fibre.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mobilise as tolerated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid straining excessively during bowel movements.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Seek assessment for inability to pass urine, severe constipation, persistent vomiting or severe abdominal pain.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -463,24 +497,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Resume activity gradually according to comfort and recovery."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid prolonged immobility."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Accept practical help with cooking, cleaning and baby care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid driving until she can do so safely and comfortably, particularly after caesarean section or while taking sedating medication."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Resume sexual activity when physically and emotionally ready, bleeding and wounds have sufficiently settled, and any clinician-specific restrictions have been addressed."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Resume activity gradually according to comfort and recovery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid prolonged immobility.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Accept practical help with cooking, cleaning and baby care.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid driving until she can do so safely and comfortably, particularly after caesarean section or while taking sedating medication.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Resume sexual activity when physically and emotionally ready, bleeding and wounds have sufficiently settled, and any clinician-specific restrictions have been addressed.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -492,7 +531,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_6",
-          "subsection_title": "Breastfeeding counselling",
+          "subsection_title": "5. Breastfeeding counselling",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -514,32 +553,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Initiate breastfeeding early where possible and continue feeding responsively, whenever the baby shows hunger cues."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for early cues such as rooting, bringing hands to the mouth and increased alertness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ensure the baby's mouth takes in a good portion of the areola, not just the nipple."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Look for rhythmic sucking and swallowing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Feed from one breast until the baby appears satisfied, then offer the other breast."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid giving water or other feeds routinely to an exclusively breastfed newborn unless medically indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Seek help for persistent nipple pain, poor latch, ineffective feeding or concerns about milk supply."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Initiate breastfeeding early where possible and continue feeding responsively, whenever the baby shows hunger cues.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Look for early cues such as rooting, bringing hands to the mouth and increased alertness.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Ensure the baby's mouth takes in a good portion of the areola, not just the nipple.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Look for rhythmic sucking and swallowing.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Feed from one breast until the baby appears satisfied, then offer the other breast.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Avoid giving water or other feeds routinely to an exclusively breastfed newborn unless medically indicated.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Seek help for persistent nipple pain, poor latch, ineffective feeding or concerns about milk supply.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 }
               ]
             },
@@ -550,24 +601,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "The baby attaches and sucks effectively."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Swallowing can be observed or heard."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The baby appears satisfied after many feeds."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urine and stool output become appropriate for the baby's age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weight is monitored and progresses appropriately."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "The baby attaches and sucks effectively.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swallowing can be observed or heard.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The baby appears satisfied after many feeds.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine and stool output become appropriate for the baby's age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight is monitored and progresses appropriately.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -579,7 +635,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_7",
-          "subsection_title": "Essential newborn care",
+          "subsection_title": "6. Essential newborn care",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -589,24 +645,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Keep the umbilical stump clean and dry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fold the nappy below the stump."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not pull off the stump."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not apply ash, herbs, toothpaste, powders or other unprescribed substances."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow local guidance on chlorhexidine cord care where indicated."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Keep the umbilical stump clean and dry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fold the nappy below the stump.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not pull off the stump.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not apply ash, herbs, toothpaste, powders or other unprescribed substances.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow local guidance on chlorhexidine cord care where indicated.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -621,20 +682,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Keep the baby warm, especially in the first days of life."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use skin-to-skin contact when appropriate and safe."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dress the baby suitably for the environment without overheating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid placing the baby near open flames, hot objects or direct heat sources."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Keep the baby warm, especially in the first days of life.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use skin-to-skin contact when appropriate and safe.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dress the baby suitably for the environment without overheating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid placing the baby near open flames, hot objects or direct heat sources.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -660,36 +726,38 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Counsel the parent to:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Place the baby on their back for every sleep."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use a firm, flat sleep surface."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep pillows, loose blankets, toys and other soft objects out of the baby's sleep space."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid overheating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Keep the baby in the same room as the caregiver, ideally in a separate safe sleep space."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid sleeping with the baby on a sofa or armchair."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never shake a baby."
+                  "type": "list",
+                  "title": "Counsel the parent to:",
+                  "items": [
+                    {
+                      "text": "Place the baby on their back for every sleep.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use a firm, flat sleep surface.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep pillows, loose blankets, toys and other soft objects out of the baby's sleep space.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid overheating.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Keep the baby in the same room as the caregiver, ideally in a separate safe sleep space.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid sleeping with the baby on a sofa or armchair.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Never shake a baby.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -700,24 +768,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Delay the first bath until the baby is thermally stable; follow facility and national guidance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use warm water and keep the room comfortably warm."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never leave the baby unattended in water, even briefly."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Clean the eyes and face gently."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid inserting cotton buds or other objects into the ears or nose."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Delay the first bath until the baby is thermally stable; follow facility and national guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use warm water and keep the room comfortably warm.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Never leave the baby unattended in water, even briefly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clean the eyes and face gently.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid inserting cotton buds or other objects into the ears or nose.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -732,28 +805,30 @@
                   "text": "Explain that yellowing of the skin or eyes may occur in newborns, but it must not automatically be considered harmless."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Urgent assessment is required if:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Jaundice develops in the first 24 hours after birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Yellowing is increasing rapidly or becomes marked."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The baby is difficult to wake, feeds poorly or has an abnormal cry."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The palms or soles appear yellow."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "There is fever, abnormal temperature, breathing difficulty or another sign of illness."
+                  "type": "list",
+                  "title": "Urgent assessment is required if:",
+                  "items": [
+                    {
+                      "text": "Jaundice develops in the first 24 hours after birth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Yellowing is increasing rapidly or becomes marked.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The baby is difficult to wake, feeds poorly or has an abnormal cry.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The palms or soles appear yellow.",
+                      "level": 0
+                    },
+                    {
+                      "text": "There is fever, abnormal temperature, breathing difficulty or another sign of illness.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -768,24 +843,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Check the baby's immunisation record before discharge."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain vaccines already administered and those due next."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give the caregiver the immunisation card and the next appointment date."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow the current Nigerian national immunisation schedule and local facility protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain any planned newborn screening or preventive interventions."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Check the baby's immunisation record before discharge.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain vaccines already administered and those due next.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Give the caregiver the immunisation card and the next appointment date.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow the current Nigerian national immunisation schedule and local facility protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain any planned newborn screening or preventive interventions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -797,7 +877,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_8",
-          "subsection_title": "Maternal danger signs after discharge",
+          "subsection_title": "7. Maternal danger signs after discharge",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -861,7 +941,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“If you develop any of these symptoms, do not wait for your next appointment. Come to the hospital immediately or use the nearest emergency service.”"
+                  "text": "“If you develop any of these symptoms, do not wait for your next appointment. Come to the hospital immediately or use the nearest emergency service.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -873,7 +954,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_9",
-          "subsection_title": "Newborn danger signs",
+          "subsection_title": "8. Newborn danger signs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -883,52 +964,54 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Tell the mother to seek urgent medical attention if the baby:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stops feeding or feeds markedly less than usual."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Is unusually sleepy, difficult to wake or floppy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has fast or difficult breathing, grunting or chest indrawing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has a fever or an abnormally low temperature."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has convulsions or abnormal repetitive movements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Develops jaundice within the first 24 hours or severe/progressive jaundice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Vomits repeatedly, especially green vomit."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has marked abdominal distension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has blue lips or tongue."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Has significantly reduced urine output or other signs of dehydration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Develops redness spreading from the umbilicus or appears seriously unwell."
+                  "type": "list",
+                  "title": "Tell the mother to seek urgent medical attention if the baby:",
+                  "items": [
+                    {
+                      "text": "Stops feeding or feeds markedly less than usual.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Is unusually sleepy, difficult to wake or floppy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has fast or difficult breathing, grunting or chest indrawing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has a fever or an abnormally low temperature.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has convulsions or abnormal repetitive movements.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Develops jaundice within the first 24 hours or severe/progressive jaundice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vomits repeatedly, especially green vomit.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has marked abdominal distension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has blue lips or tongue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Has significantly reduced urine output or other signs of dehydration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Develops redness spreading from the umbilicus or appears seriously unwell.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -940,7 +1023,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_10",
-          "subsection_title": "Postnatal follow-up",
+          "subsection_title": "9. Postnatal follow-up",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -954,36 +1037,38 @@
                   "text": "Explain that postnatal care is not limited to the discharge day."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The plan should include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal review of blood pressure, bleeding, pain, wound healing and any pregnancy-related complications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assessment of mood, sleep, coping and social support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breastfeeding assessment and support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Newborn feeding, weight, hydration and jaundice assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Review of immunisation and screening needs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contraception and future pregnancy planning."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A clear contact pathway if problems develop."
+                  "type": "list",
+                  "title": "The plan should include:",
+                  "items": [
+                    {
+                      "text": "Maternal review of blood pressure, bleeding, pain, wound healing and any pregnancy-related complications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assessment of mood, sleep, coping and social support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breastfeeding assessment and support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Newborn feeding, weight, hydration and jaundice assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review of immunisation and screening needs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraception and future pregnancy planning.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A clear contact pathway if problems develop.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -999,7 +1084,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_11",
-          "subsection_title": "Postpartum contraception",
+          "subsection_title": "10. Postpartum contraception",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1017,32 +1102,37 @@
                   "text": "Discuss options according to the woman's preferences, medical eligibility, breastfeeding status and local availability. These may include:"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Condoms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Progestogen-only pills."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Implants."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Injectable contraception."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Intrauterine contraception, including appropriate postpartum timing."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lactational amenorrhoea method (LAM), if all criteria are met."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Other methods after assessing suitability and timing."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Condoms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Progestogen-only pills.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Implants.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Injectable contraception.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine contraception, including appropriate postpartum timing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lactational amenorrhoea method (LAM), if all criteria are met.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other methods after assessing suitability and timing.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1053,20 +1143,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "LAM is effective only when all three conditions are present:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The baby is younger than six months."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The mother has not resumed menstruation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Breastfeeding is exclusive or nearly exclusive, frequent, including day and night."
+                  "type": "list",
+                  "title": "LAM is effective only when all three conditions are present:",
+                  "items": [
+                    {
+                      "text": "The baby is younger than six months.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "The mother has not resumed menstruation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Breastfeeding is exclusive or nearly exclusive, frequent, including day and night.",
+                      "level": 0,
+                      "label": "3."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1082,7 +1177,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_12",
-          "subsection_title": "Mental health and family support",
+          "subsection_title": "11. Mental health and family support",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1092,24 +1187,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask sensitively:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask sensitively:",
                   "items": [
-                    "“How have you been feeling emotionally since delivery?”",
-                    "“Do you have someone who can help you at home?”"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "“Have you been feeling persistently sad, hopeless or unable to cope?”"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "“Have you had any frightening thoughts or felt unsafe?”"
+                    {
+                      "text": "“How have you been feeling emotionally since delivery?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Do you have someone who can help you at home?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Have you been feeling persistently sad, hopeless or unable to cope?”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Have you had any frightening thoughts or felt unsafe?”",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1130,7 +1226,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_13",
-          "subsection_title": "Example of a complete OSCE counselling script",
+          "subsection_title": "12. Example of a complete OSCE counselling script",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1145,7 +1241,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“Madam, before you go home, we have checked that you and your baby are well enough for discharge and have discussed your care plan."
+                  "text": "“Madam, before you go home, we have checked that you and your baby are well enough for discharge and have discussed your care plan.",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1164,10 +1261,8 @@
                   "text": "We will give you your follow-up appointments and immunisation information. We can also discuss contraception so that you can choose a method that suits you. Finally, please tell us if you feel persistently sad, overwhelmed or unsafe. You do not have to manage these difficulties alone."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "What questions or concerns do you have before you leave?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "What questions or concerns do you have before you leave?”"
                 }
               ]
             }
@@ -1175,7 +1270,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_14",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "13. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1254,7 +1349,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_15",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "14. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1264,44 +1359,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Giving generic discharge advice without checking maternal and newborn readiness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting postpartum hypertension and thromboembolism."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to explain newborn danger signs."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Telling parents that jaundice is always normal."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Omitting safe sleep advice."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting immunisation documentation and follow-up dates."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Recommending LAM without checking all three criteria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring maternal mood and family support."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to explain where and how to seek urgent care."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discharging a patient with unresolved complications without an appropriate plan."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Giving generic discharge advice without checking maternal and newborn readiness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting postpartum hypertension and thromboembolism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to explain newborn danger signs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Telling parents that jaundice is always normal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Omitting safe sleep advice.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting immunisation documentation and follow-up dates.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recommending LAM without checking all three criteria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring maternal mood and family support.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to explain where and how to seek urgent care.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discharging a patient with unresolved complications without an appropriate plan.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1309,7 +1409,7 @@
         },
         {
           "subsection_id": "discharge_counselling_subsection_16",
-          "subsection_title": "Mnemonic: HOME SAFE",
+          "subsection_title": "15. Mnemonic: HOME SAFE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1319,10 +1419,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Health of mother"
-                  ]
+                  "type": "paragraph",
+                  "text": "Health of mother"
                 },
                 {
                   "type": "paragraph",
@@ -1337,10 +1435,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Observe the newborn"
-                  ]
+                  "type": "paragraph",
+                  "text": "Observe the newborn"
                 },
                 {
                   "type": "paragraph",
@@ -1355,10 +1451,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Milk and maternal recovery"
-                  ]
+                  "type": "paragraph",
+                  "text": "Milk and maternal recovery"
                 },
                 {
                   "type": "paragraph",
@@ -1373,10 +1467,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Emergency signs"
-                  ]
+                  "type": "paragraph",
+                  "text": "Emergency signs"
                 },
                 {
                   "type": "paragraph",
@@ -1391,10 +1483,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Safe newborn care"
-                  ]
+                  "type": "paragraph",
+                  "text": "Safe newborn care"
                 },
                 {
                   "type": "paragraph",
@@ -1409,10 +1499,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Appointments and immunisation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Appointments and immunisation"
                 },
                 {
                   "type": "paragraph",
@@ -1427,10 +1515,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Family planning and feelings"
-                  ]
+                  "type": "paragraph",
+                  "text": "Family planning and feelings"
                 },
                 {
                   "type": "paragraph",
@@ -1445,10 +1531,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ensure understanding"
-                  ]
+                  "type": "paragraph",
+                  "text": "Ensure understanding"
                 },
                 {
                   "type": "paragraph",

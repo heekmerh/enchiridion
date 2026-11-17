@@ -18,56 +18,78 @@
       "subsections": [
         {
           "subsection_id": "subfertility_history_subsection_1",
-          "subsection_title": "WHAT THE STATION MAY SAY",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "subfertility_history_group_1",
+              "group_title": "SUBFERTILITY / INFERTILITY HISTORY",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
+            }
+          ]
+        },
+        {
+          "subsection_id": "subfertility_history_subsection_2",
+          "subsection_title": "1. WHAT THE STATION MAY SAY",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "subfertility_history_group_2",
               "group_title": "General station",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"A 30-year-old woman presents with difficulty conceiving. Take an appropriate history.\""
+                  "text": "**\"A 30-year-old woman presents with difficulty conceiving. Take an appropriate history.\"**",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_2",
+              "group_id": "subfertility_history_group_3",
               "group_title": "Other possibilities",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Take a history from a couple with primary infertility.\"",
-                    "\"Take a history from a woman with secondary infertility.\"",
-                    "\"Take a focused infertility history.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Take a history from a couple with primary infertility.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"A couple has been trying to conceive for two years. Assess them.\""
+                  "text": "\"Take a history from a woman with secondary infertility.\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Take a history from a woman with recurrent miscarriage.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Take a focused infertility history.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"A couple has been trying to conceive for two years. Assess them.\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Take a history from a woman with recurrent miscarriage.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_2",
-          "subsection_title": "FIRST — CLARIFY WHAT THE PATIENT MEANS",
+          "subsection_id": "subfertility_history_subsection_3",
+          "subsection_title": "2. FIRST — CLARIFY WHAT THE PATIENT MEANS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_3",
+              "group_id": "subfertility_history_group_4",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -82,20 +104,33 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Could you tell me more about your concerns regarding becoming pregnant?\""
+                  "text": "**\"Could you tell me more about your concerns regarding becoming pregnant?\"**",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then establish:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then establish:",
                   "items": [
-                    "How long they have been trying",
-                    "Whether they have ever conceived before",
-                    "Whether intercourse is occurring regularly",
-                    "Whether contraception has been used",
-                    "Whether either partner has previously had a child"
+                    {
+                      "text": "How long they have been trying",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether they have ever conceived before",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether intercourse is occurring regularly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether contraception has been used",
+                      "level": 0
+                    },
+                    {
+                      "text": "Whether either partner has previously had a child",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -103,12 +138,12 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_3",
-          "subsection_title": "DEFINE THE INFERTILITY",
+          "subsection_id": "subfertility_history_subsection_4",
+          "subsection_title": "3. DEFINE THE INFERTILITY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_4",
+              "group_id": "subfertility_history_group_5",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -123,7 +158,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would establish the duration of regular unprotected intercourse and whether there has been any previous pregnancy.\""
+                  "text": "**\"I would establish the duration of regular unprotected intercourse and whether there has been any previous pregnancy.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -134,24 +170,24 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_4",
-          "subsection_title": "PRIMARY VS SECONDARY INFERTILITY",
+          "subsection_id": "subfertility_history_subsection_5",
+          "subsection_title": "4. PRIMARY VS SECONDARY INFERTILITY",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_5",
+              "group_id": "subfertility_history_group_6",
               "group_title": "Primary infertility",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The couple has never achieved a pregnancy despite trying."
+                  "text": "The couple has **never achieved a pregnancy** despite trying."
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_6",
+              "group_id": "subfertility_history_group_7",
               "group_title": "Secondary infertility",
               "group_subtitle": null,
               "group_icon": null,
@@ -159,20 +195,16 @@
                 {
                   "type": "paragraph",
                   "text": "The couple has previously achieved a pregnancy but is now experiencing difficulty conceiving again."
-                }
-              ]
-            },
-            {
-              "group_id": "subfertility_history_group_7",
-              "group_title": "Examiner",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Why is it important to distinguish primary from secondary infertility?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**Examiner**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Why is it important to distinguish primary from secondary infertility?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -180,15 +212,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Because the previous pregnancy provides information about previous fertility, and the differential causes and clinical history may be different.\""
+                  "text": "\"Because the previous pregnancy provides information about previous fertility, and the differential causes and clinical history may be different.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_5",
-          "subsection_title": "THE INFERTILITY HISTORY FRAMEWORK",
+          "subsection_id": "subfertility_history_subsection_6",
+          "subsection_title": "5. THE INFERTILITY HISTORY FRAMEWORK",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -211,7 +244,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "C — Couple's presenting concern O — Ovulation/menstrual history U — Uterine/tubal factors P — Previous pregnancies L — Lifestyle/medical factors E — Evaluation of both partners"
+                  "text": "**C** — Couple's presenting concern\n**O** — Ovulation/menstrual history\n**U** — Uterine/tubal factors\n**P** — Previous pregnancies\n**L** — Lifestyle/medical factors\n**E** — Evaluation of both partners"
                 },
                 {
                   "type": "paragraph",
@@ -219,15 +252,15 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Duration → Previous pregnancies → Sexual intercourse → Female factors → Male factors → Previous investigations → Medical/surgical history → Lifestyle → Impact → Plan"
+                  "text": "**Duration → Previous pregnancies → Sexual intercourse → Female factors → Male factors → Previous investigations → Medical/surgical history → Lifestyle → Impact → Plan**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_6",
-          "subsection_title": "DURATION OF TRYING",
+          "subsection_id": "subfertility_history_subsection_7",
+          "subsection_title": "6. DURATION OF TRYING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -241,30 +274,36 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How long have you been trying to become pregnant?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"How long have you been trying to become pregnant?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"When did you stop using contraception?\"",
-                    "\"What method were you previously using?\"",
-                    "\"Have you been having regular unprotected intercourse throughout that time?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"When did you stop using contraception?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"What method were you previously using?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Have you been having regular unprotected intercourse throughout that time?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_7",
-          "subsection_title": "SEXUAL INTERCOURSE",
+          "subsection_id": "subfertility_history_subsection_8",
+          "subsection_title": "7. SEXUAL INTERCOURSE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -282,25 +321,44 @@
                   "text": "Ask sensitively:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How often would you say you have sexual intercourse?\"",
-                    "\"Is intercourse occurring regularly?\"",
-                    "\"Is intercourse timed around the middle of your menstrual cycle?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"How often would you say you have sexual intercourse?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Also ask about:"
+                  "text": "\"Is intercourse occurring regularly?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Is intercourse timed around the middle of your menstrual cycle?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Also ask about:",
                   "items": [
-                    "Dyspareunia",
-                    "Erectile dysfunction",
-                    "Ejaculatory problems",
-                    "Vaginal penetration difficulties",
-                    "Low libido"
+                    {
+                      "text": "Dyspareunia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erectile dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ejaculatory problems",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal penetration difficulties",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low libido",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -316,28 +374,26 @@
                   "text": "Do not equate:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Having sex\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Having sex\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "with:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Regular vaginal intercourse capable of resulting in conception.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Regular vaginal intercourse capable of resulting in conception.\"**",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_8",
-          "subsection_title": "CONTRACEPTIVE HISTORY",
+          "subsection_id": "subfertility_history_subsection_9",
+          "subsection_title": "8. CONTRACEPTIVE HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -351,35 +407,52 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"What contraception were you using before trying to conceive?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "\"What contraception were you using before trying to conceive?\""
+                    {
+                      "text": "Method",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "When stopped",
+                      "level": 0
+                    },
+                    {
+                      "text": "Return of periods after stopping",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous fertility after stopping",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "This is particularly useful with:",
                   "items": [
-                    "Method",
-                    "Duration",
-                    "When stopped",
-                    "Return of periods after stopping",
-                    "Previous fertility after stopping"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "This is particularly useful with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Hormonal contraception",
-                    "Long-acting methods",
-                    "Previous injectable contraception"
+                    {
+                      "text": "Hormonal contraception",
+                      "level": 0
+                    },
+                    {
+                      "text": "Long-acting methods",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous injectable contraception",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -387,8 +460,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_9",
-          "subsection_title": "MENSTRUAL HISTORY",
+          "subsection_id": "subfertility_history_subsection_10",
+          "subsection_title": "9. MENSTRUAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -402,20 +475,41 @@
                   "text": "Now move into the female reproductive history."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask:",
                   "items": [
-                    "Age at menarche",
-                    "LMP",
-                    "Cycle length",
-                    "Regularity",
-                    "Duration",
-                    "Amount of bleeding",
-                    "Dysmenorrhoea",
-                    "Intermenstrual bleeding"
+                    {
+                      "text": "Age at menarche",
+                      "level": 0
+                    },
+                    {
+                      "text": "LMP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cycle length",
+                      "level": 0
+                    },
+                    {
+                      "text": "Regularity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amount of bleeding",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmenorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intermenstrual bleeding",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -427,10 +521,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Are your periods regular?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Are your periods regular?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -441,8 +534,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_10",
-          "subsection_title": "OVULATION HISTORY",
+          "subsection_id": "subfertility_history_subsection_11",
+          "subsection_title": "10. OVULATION HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -452,16 +545,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about symptoms suggesting ovulation:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about symptoms suggesting ovulation:",
                   "items": [
-                    "Regular menstrual cycles",
-                    "Mid-cycle pelvic discomfort",
-                    "Cervical mucus changes",
-                    "Premenstrual symptoms"
+                    {
+                      "text": "Regular menstrual cycles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mid-cycle pelvic discomfort",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical mucus changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Premenstrual symptoms",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -469,17 +571,29 @@
                   "text": "But don't rely on symptoms alone."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "If there is irregular menstruation, think about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "If there is irregular menstruation, think about:",
                   "items": [
-                    "PCOS",
-                    "Hyperprolactinaemia",
-                    "Thyroid dysfunction",
-                    "Hypothalamic causes",
-                    "Premature ovarian insufficiency"
+                    {
+                      "text": "PCOS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperprolactinaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothalamic causes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Premature ovarian insufficiency",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -487,8 +601,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_11",
-          "subsection_title": "PCOS SCREENING",
+          "subsection_id": "subfertility_history_subsection_12",
+          "subsection_title": "11. PCOS SCREENING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -498,18 +612,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Irregular periods",
-                    "Hirsutism",
-                    "Acne",
-                    "Weight gain",
-                    "Obesity",
-                    "Previous diagnosis of PCOS"
+                    {
+                      "text": "Irregular periods",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hirsutism",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acne",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight gain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous diagnosis of PCOS",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -518,15 +647,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Have you ever been told that you have polycystic ovary syndrome?\""
+                  "text": "\"Have you ever been told that you have polycystic ovary syndrome?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_12",
-          "subsection_title": "HYPERPROLACTINAEMIA SCREEN",
+          "subsection_id": "subfertility_history_subsection_13",
+          "subsection_title": "12. HYPERPROLACTINAEMIA SCREEN",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -541,18 +671,25 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Have you noticed any milk-like discharge from your breasts when you are not breastfeeding?\""
+                  "text": "\"Have you noticed any milk-like discharge from your breasts when you are not breastfeeding?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Then:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "Headaches",
-                    "Visual disturbance",
-                    "Menstrual irregularity"
+                    {
+                      "text": "Headaches",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Menstrual irregularity",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -560,18 +697,16 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Hyperprolactinaemia → ovulatory dysfunction"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Hyperprolactinaemia → ovulatory dysfunction**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_13",
-          "subsection_title": "THYROID HISTORY",
+          "subsection_id": "subfertility_history_subsection_14",
+          "subsection_title": "13. THYROID HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -593,12 +728,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Fatigue",
-                    "Weight gain",
-                    "Cold intolerance",
-                    "Constipation"
+                    {
+                      "text": "Fatigue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight gain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cold intolerance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Constipation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -610,12 +757,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Weight loss",
-                    "Heat intolerance",
-                    "Palpitations",
-                    "Tremor"
+                    {
+                      "text": "Weight loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heat intolerance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpitations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tremor",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -627,8 +786,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_14",
-          "subsection_title": "PREMATURE OVARIAN INSUFFICIENCY",
+          "subsection_id": "subfertility_history_subsection_15",
+          "subsection_title": "14. PREMATURE OVARIAN INSUFFICIENCY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -642,24 +801,38 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have your periods become increasingly irregular or stopped?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then:"
+                  "text": "\"Have your periods become increasingly irregular or stopped?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "Hot flushes",
-                    "Night sweats",
-                    "Vaginal dryness",
-                    "Family history",
-                    "Previous chemotherapy/radiotherapy",
-                    "Ovarian surgery"
+                    {
+                      "text": "Hot flushes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Night sweats",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vaginal dryness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family history",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous chemotherapy/radiotherapy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -667,8 +840,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_15",
-          "subsection_title": "ENDOMETRIOSIS SCREENING",
+          "subsection_id": "subfertility_history_subsection_16",
+          "subsection_title": "15. ENDOMETRIOSIS SCREENING",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -682,25 +855,29 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you have very painful periods?\"",
-                    "\"Do you have deep pain during intercourse?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you have very painful periods?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Do you experience pelvic pain that changes with your menstrual cycle?\""
+                  "text": "\"Do you have deep pain during intercourse?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Do you have pain when opening your bowels during your period?\""
+                  "text": "\"Do you experience pelvic pain that changes with your menstrual cycle?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Any cyclical urinary symptoms?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you have pain when opening your bowels during your period?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Any cyclical urinary symptoms?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -711,8 +888,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_16",
-          "subsection_title": "PID / TUBAL FACTORS",
+          "subsection_id": "subfertility_history_subsection_17",
+          "subsection_title": "16. PID / TUBAL FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -722,19 +899,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Previous PID",
-                    "Chlamydia",
-                    "Gonorrhoea",
-                    "Other STIs",
-                    "Abnormal vaginal discharge",
-                    "Previous pelvic infection",
-                    "Previous tubo-ovarian abscess"
+                    {
+                      "text": "Previous PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chlamydia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gonorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other STIs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal vaginal discharge",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous tubo-ovarian abscess",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -743,15 +938,16 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Have you ever been treated for a sexually transmitted infection or pelvic inflammatory disease?\""
+                  "text": "\"Have you ever been treated for a sexually transmitted infection or pelvic inflammatory disease?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_17",
-          "subsection_title": "PREVIOUS ECTOPIC PREGNANCY",
+          "subsection_id": "subfertility_history_subsection_18",
+          "subsection_title": "17. PREVIOUS ECTOPIC PREGNANCY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -765,34 +961,35 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Have you ever had an ectopic pregnancy?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "If yes:",
                   "items": [
-                    "\"Have you ever had an ectopic pregnancy?\""
+                    {
+                      "text": "Which side?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surgery?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Salpingectomy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Medical treatment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complications?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If yes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Which side?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Surgery?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Salpingectomy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Medical treatment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Complications?"
                 },
                 {
                   "type": "paragraph",
@@ -803,8 +1000,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_18",
-          "subsection_title": "PREVIOUS PELVIC SURGERY",
+          "subsection_id": "subfertility_history_subsection_19",
+          "subsection_title": "18. PREVIOUS PELVIC SURGERY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -814,21 +1011,45 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Myomectomy",
-                    "Ovarian surgery",
-                    "Ectopic surgery",
-                    "Tubal surgery",
-                    "Appendectomy",
-                    "Pelvic laparotomy",
-                    "Laparoscopy",
-                    "D&C",
-                    "Hysteroscopy"
+                    {
+                      "text": "Myomectomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubal surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appendectomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic laparotomy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopy",
+                      "level": 0
+                    },
+                    {
+                      "text": "D&C",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysteroscopy",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -836,18 +1057,16 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Surgery → adhesions → tubal dysfunction"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Surgery → adhesions → tubal dysfunction**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_19",
-          "subsection_title": "FIBROIDS",
+          "subsection_id": "subfertility_history_subsection_20",
+          "subsection_title": "19. FIBROIDS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -857,18 +1076,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Heavy periods",
-                    "Dysmenorrhoea",
-                    "Pelvic pressure",
-                    "Abdominal enlargement",
-                    "Previous ultrasound",
-                    "Previous myomectomy"
+                    {
+                      "text": "Heavy periods",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmenorrhoea",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic pressure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal enlargement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous myomectomy",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -876,18 +1110,17 @@
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you ever been diagnosed with fibroids?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Have you ever been diagnosed with fibroids?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_20",
-          "subsection_title": "PREVIOUS PREGNANCIES",
+          "subsection_id": "subfertility_history_subsection_21",
+          "subsection_title": "20. PREVIOUS PREGNANCIES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -901,56 +1134,58 @@
                   "text": "Even in \"infertility,\" establish all previous pregnancies."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask:"
+                  "type": "list",
+                  "title": "Ask:",
+                  "items": [
+                    {
+                      "text": "Pregnancy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Year?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Outcome?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Miscarriage?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ectopic?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stillbirth?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Live birth?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delivery method?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complications?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Pregnancy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Year?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Outcome?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Miscarriage?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ectopic?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stillbirth?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Live birth?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delivery method?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Complications?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "This helps distinguish primary vs secondary infertility and may reveal acquired reproductive problems."
+                  "text": "This helps distinguish **primary vs secondary infertility** and may reveal acquired reproductive problems."
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_21",
-          "subsection_title": "PREVIOUS MISCARRIAGES",
+          "subsection_id": "subfertility_history_subsection_22",
+          "subsection_title": "21. PREVIOUS MISCARRIAGES",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -964,43 +1199,43 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "\"Have you ever become pregnant but subsequently lost the pregnancy?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "list",
+                  "title": "If yes:",
                   "items": [
-                    "\"Have you ever become pregnant but subsequently lost the pregnancy?\""
+                    {
+                      "text": "Number",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consecutive or non-consecutive?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Investigations",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any genetic testing?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any uterine assessment?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Any thrombophilia/autoimmune assessment?",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "If yes:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Number",
-                    "Gestational age"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consecutive or non-consecutive?"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Investigations"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any genetic testing?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any uterine assessment?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Any thrombophilia/autoimmune assessment?"
                 },
                 {
                   "type": "paragraph",
@@ -1011,8 +1246,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_22",
-          "subsection_title": "MALE PARTNER — DO NOT FORGET HIM",
+          "subsection_id": "subfertility_history_subsection_23",
+          "subsection_title": "22. MALE PARTNER — DO NOT FORGET HIM",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1031,7 +1266,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Although we're discussing your fertility, fertility problems can involve either partner, so I'd also like to ask about your partner's health.\""
+                  "text": "**\"Although we're discussing your fertility, fertility problems can involve either partner, so I'd also like to ask about your partner's health.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1046,10 +1282,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Has your partner fathered a pregnancy before?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Has your partner fathered a pregnancy before?\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1060,12 +1295,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Libido",
-                    "Erectile function",
-                    "Ejaculation",
-                    "Frequency of intercourse"
+                    {
+                      "text": "Libido",
+                      "level": 0
+                    },
+                    {
+                      "text": "Erectile function",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ejaculation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Frequency of intercourse",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1077,12 +1324,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Diabetes",
-                    "Chronic illness",
-                    "Endocrine disease",
-                    "Genetic conditions"
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic illness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endocrine disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic conditions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1094,11 +1353,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Testicular surgery",
-                    "Hernia repair",
-                    "Pelvic surgery"
+                    {
+                      "text": "Testicular surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hernia repair",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic surgery",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1106,8 +1374,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_23",
-          "subsection_title": "MALE TESTICULAR HISTORY",
+          "subsection_id": "subfertility_history_subsection_24",
+          "subsection_title": "23. MALE TESTICULAR HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1117,19 +1385,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Undescended testes",
-                    "Testicular trauma",
-                    "Testicular torsion",
-                    "Infection",
-                    "Testicular surgery",
-                    "Varicocele",
-                    "Testicular cancer"
+                    {
+                      "text": "Undescended testes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular trauma",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular torsion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Varicocele",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular cancer",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1137,8 +1423,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_24",
-          "subsection_title": "MALE INFECTION HISTORY",
+          "subsection_id": "subfertility_history_subsection_25",
+          "subsection_title": "24. MALE INFECTION HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1148,16 +1434,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Mumps orchitis",
-                    "STIs",
-                    "Genital infections",
-                    "Previous epididymo-orchitis"
+                    {
+                      "text": "Mumps orchitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "STIs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genital infections",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous epididymo-orchitis",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1165,8 +1460,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_25",
-          "subsection_title": "MEDICATIONS AND EXPOSURES IN THE MALE PARTNER",
+          "subsection_id": "subfertility_history_subsection_26",
+          "subsection_title": "25. MEDICATIONS AND EXPOSURES IN THE MALE PARTNER",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1176,17 +1471,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Important exposures include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Important exposures include:",
                   "items": [
-                    "Testosterone/anabolic steroids",
-                    "Chemotherapy",
-                    "Radiotherapy",
-                    "Some medications",
-                    "Recreational drugs"
+                    {
+                      "text": "Testosterone/anabolic steroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chemotherapy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Radiotherapy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recreational drugs",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1198,10 +1505,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Does your partner use testosterone or anabolic steroids?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Does your partner use testosterone or anabolic steroids?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1212,8 +1518,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_26",
-          "subsection_title": "MALE OCCUPATIONAL / LIFESTYLE FACTORS",
+          "subsection_id": "subfertility_history_subsection_27",
+          "subsection_title": "26. MALE OCCUPATIONAL / LIFESTYLE FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1223,31 +1529,55 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Smoking",
-                    "Alcohol",
-                    "Recreational drugs",
-                    "Heat exposure",
-                    "Occupational toxins",
-                    "Obesity",
-                    "Extreme exercise"
+                    {
+                      "text": "Smoking",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alcohol",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recreational drugs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heat exposure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Occupational toxins",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obesity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extreme exercise",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Also ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also ask about:",
                   "items": [
-                    "Recent severe illness",
-                    "Fever",
-                    "Major weight change"
+                    {
+                      "text": "Recent severe illness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Major weight change",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1255,8 +1585,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_27",
-          "subsection_title": "FEMALE MEDICAL HISTORY",
+          "subsection_id": "subfertility_history_subsection_28",
+          "subsection_title": "27. FEMALE MEDICAL HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1266,20 +1596,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Diabetes",
-                    "Thyroid disease",
-                    "Hyperprolactinaemia",
-                    "Autoimmune disease",
-                    "Renal disease",
-                    "Liver disease",
-                    "Epilepsy",
-                    "Genetic conditions"
+                    {
+                      "text": "Diabetes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperprolactinaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Autoimmune disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epilepsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic conditions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1287,8 +1638,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_28",
-          "subsection_title": "DRUG HISTORY",
+          "subsection_id": "subfertility_history_subsection_29",
+          "subsection_title": "28. DRUG HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1302,24 +1653,38 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you take any regular medications or supplements?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Include:"
+                  "text": "\"Do you take any regular medications or supplements?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Include:",
                   "items": [
-                    "Hormonal medications",
-                    "Antipsychotics",
-                    "Antidepressants",
-                    "Antiepileptics",
-                    "Steroids",
-                    "Herbal medicines"
+                    {
+                      "text": "Hormonal medications",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antipsychotics",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antidepressants",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antiepileptics",
+                      "level": 0
+                    },
+                    {
+                      "text": "Steroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Herbal medicines",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1327,8 +1692,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_29",
-          "subsection_title": "LIFESTYLE",
+          "subsection_id": "subfertility_history_subsection_30",
+          "subsection_title": "29. LIFESTYLE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1350,10 +1715,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you smoke?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you smoke?\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1364,10 +1728,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How much alcohol do you drink?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"How much alcohol do you drink?\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1378,10 +1741,9 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Do you use recreational drugs?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Do you use recreational drugs?\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1392,16 +1754,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Recent weight gain",
-                    "Weight loss",
-                    "Eating disorders",
-                    "Excessive exercise"
+                    {
+                      "text": "Recent weight gain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weight loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eating disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Excessive exercise",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1413,8 +1784,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_30",
-          "subsection_title": "FAMILY HISTORY",
+          "subsection_id": "subfertility_history_subsection_31",
+          "subsection_title": "30. FAMILY HISTORY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1424,18 +1795,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Infertility",
-                    "Early menopause",
-                    "Premature ovarian insufficiency",
-                    "Genetic disorders",
-                    "Recurrent pregnancy loss",
-                    "Congenital abnormalities"
+                    {
+                      "text": "Infertility",
+                      "level": 0
+                    },
+                    {
+                      "text": "Early menopause",
+                      "level": 0
+                    },
+                    {
+                      "text": "Premature ovarian insufficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recurrent pregnancy loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1443,8 +1829,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_31",
-          "subsection_title": "PREVIOUS FERTILITY INVESTIGATIONS",
+          "subsection_id": "subfertility_history_subsection_32",
+          "subsection_title": "31. PREVIOUS FERTILITY INVESTIGATIONS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1462,10 +1848,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you had any investigations for fertility before?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Have you had any investigations for fertility before?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1480,14 +1865,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hormonal testing",
-                    "Ultrasound",
-                    "Ovulation assessment",
-                    "Tubal patency testing",
-                    "Hysteroscopy",
-                    "Laparoscopy"
+                    {
+                      "text": "Hormonal testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovulation assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubal patency testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hysteroscopy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1499,11 +1902,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Semen analysis",
-                    "Hormonal testing",
-                    "Scrotal ultrasound where indicated"
+                    {
+                      "text": "Semen analysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal testing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scrotal ultrasound where indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1511,8 +1923,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_32",
-          "subsection_title": "PREVIOUS FERTILITY TREATMENT",
+          "subsection_id": "subfertility_history_subsection_33",
+          "subsection_title": "32. PREVIOUS FERTILITY TREATMENT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1526,23 +1938,34 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Have you previously received any treatment to help you conceive?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Possible treatments:"
+                  "text": "\"Have you previously received any treatment to help you conceive?\"",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible treatments:",
                   "items": [
-                    "Ovulation induction",
-                    "Intrauterine insemination",
-                    "IVF",
-                    "ICSI",
-                    "Other assisted reproductive techniques"
+                    {
+                      "text": "Ovulation induction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intrauterine insemination",
+                      "level": 0
+                    },
+                    {
+                      "text": "IVF",
+                      "level": 0
+                    },
+                    {
+                      "text": "ICSI",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other assisted reproductive techniques",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1550,19 +1973,22 @@
                   "text": "Then:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How many cycles?\"",
-                    "\"What was the outcome?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"How many cycles?\"",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"What was the outcome?\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_33",
-          "subsection_title": "EMOTIONAL AND PSYCHOSOCIAL IMPACT",
+          "subsection_id": "subfertility_history_subsection_34",
+          "subsection_title": "33. EMOTIONAL AND PSYCHOSOCIAL IMPACT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1580,24 +2006,38 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"How has the difficulty conceiving affected you emotionally?\""
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Then:"
+                  "text": "**\"How has the difficulty conceiving affected you emotionally?\"**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Then:",
                   "items": [
-                    "Anxiety",
-                    "Depression",
-                    "Relationship strain",
-                    "Family pressure",
-                    "Financial impact",
-                    "Social pressure"
+                    {
+                      "text": "Anxiety",
+                      "level": 0
+                    },
+                    {
+                      "text": "Depression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relationship strain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Family pressure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Financial impact",
+                      "level": 0
+                    },
+                    {
+                      "text": "Social pressure",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1609,8 +2049,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_34",
-          "subsection_title": "CULTURAL AND SOCIAL CONTEXT",
+          "subsection_id": "subfertility_history_subsection_35",
+          "subsection_title": "34. CULTURAL AND SOCIAL CONTEXT",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1629,11 +2069,13 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Do you feel you have enough support from your partner and family?\""
+                  "text": "\"Do you feel you have enough support from your partner and family?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Has anyone been putting pressure on you because you have not conceived?\""
+                  "text": "\"Has anyone been putting pressure on you because you have not conceived?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1644,8 +2086,8 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_35",
-          "subsection_title": "SUMMARISING PRIMARY INFERTILITY",
+          "subsection_id": "subfertility_history_subsection_36",
+          "subsection_title": "35. SUMMARISING PRIMARY INFERTILITY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1656,11 +2098,13 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 29-year-old woman who has been attempting conception with her partner for two years with regular unprotected vaginal intercourse. She has never previously conceived. Her cycles are irregular, occurring every 45–60 days, and she reports recent weight gain, acne and increased facial hair. She has no previous history of PID, pelvic surgery or ectopic pregnancy.\""
+                  "text": "\"This is a 29-year-old woman who has been attempting conception with her partner for two years with regular unprotected vaginal intercourse. She has never previously conceived. Her cycles are irregular, occurring every 45–60 days, and she reports recent weight gain, acne and increased facial hair. She has no previous history of PID, pelvic surgery or ectopic pregnancy.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"Her partner has no previous children and reports normal libido and erectile and ejaculatory function.\""
+                  "text": "\"Her partner has no previous children and reports normal libido and erectile and ejaculatory function.\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1672,15 +2116,16 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"The history raises concern for an ovulatory disorder, particularly PCOS, although both partners require assessment.\""
+                  "text": "\"The history raises concern for an ovulatory disorder, particularly PCOS, although both partners require assessment.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_36",
-          "subsection_title": "SUMMARISING SECONDARY INFERTILITY",
+          "subsection_id": "subfertility_history_subsection_37",
+          "subsection_title": "36. SUMMARISING SECONDARY INFERTILITY",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1691,7 +2136,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is a 34-year-old woman who previously conceived spontaneously and delivered at term six years ago. She has now been attempting conception with her partner for two years without success. Since her previous pregnancy she has developed progressively painful periods and deep dyspareunia. She has no history of PID but had a previous pelvic surgery.\""
+                  "text": "\"This is a 34-year-old woman who previously conceived spontaneously and delivered at term six years ago. She has now been attempting conception with her partner for two years without success. Since her previous pregnancy she has developed progressively painful periods and deep dyspareunia. She has no history of PID but had a previous pelvic surgery.\"",
+                  "style": "quote"
                 }
               ]
             },
@@ -1702,18 +2148,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Endometriosis / pelvic adhesions / tubal factor"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Endometriosis / pelvic adhesions / tubal factor**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_37",
-          "subsection_title": "IMPORTANT DIFFERENTIALS",
+          "subsection_id": "subfertility_history_subsection_38",
+          "subsection_title": "37. IMPORTANT DIFFERENTIALS",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1730,70 +2174,120 @@
             },
             {
               "group_id": "subfertility_history_group_59",
-              "group_title": "Ovulatory",
+              "group_title": "FEMALE",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Ovulatory**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "PCOS",
-                    "Hyperprolactinaemia",
-                    "Thyroid disease",
-                    "Hypothalamic dysfunction",
-                    "Premature ovarian insufficiency"
+                    {
+                      "text": "PCOS",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hyperprolactinaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothalamic dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Premature ovarian insufficiency",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "subfertility_history_group_60",
-              "group_title": "Tubal/peritoneal",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Tubal/peritoneal**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "PID",
-                    "Previous ectopic",
-                    "Endometriosis",
-                    "Pelvic adhesions",
-                    "Previous pelvic surgery"
+                    {
+                      "text": "PID",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ectopic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Endometriosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic adhesions",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous pelvic surgery",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "subfertility_history_group_61",
-              "group_title": "Uterine",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Uterine**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Fibroids",
-                    "Polyps",
-                    "Adenomyosis",
-                    "Congenital uterine abnormalities"
+                    {
+                      "text": "Fibroids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polyps",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adenomyosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Congenital uterine abnormalities",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "subfertility_history_group_62",
-              "group_title": "Ovarian reserve",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Ovarian reserve**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Increasing age",
-                    "Premature ovarian insufficiency",
-                    "Previous ovarian surgery",
-                    "Gonadotoxic treatment"
+                    {
+                      "text": "Increasing age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Premature ovarian insufficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous ovarian surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gonadotoxic treatment",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1801,12 +2295,12 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_38",
-          "subsection_title": "MALE FACTORS",
+          "subsection_id": "subfertility_history_subsection_39",
+          "subsection_title": "38. MALE FACTORS",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_63",
+              "group_id": "subfertility_history_group_60",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1818,90 +2312,106 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_64",
+              "group_id": "subfertility_history_group_61",
               "group_title": "Sperm production",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Varicocele",
-                    "Testicular disease",
-                    "Genetic disorders",
-                    "Mumps orchitis",
-                    "Gonadotoxic therapy"
+                    {
+                      "text": "Varicocele",
+                      "level": 0
+                    },
+                    {
+                      "text": "Testicular disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic disorders",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mumps orchitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gonadotoxic therapy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_65",
+              "group_id": "subfertility_history_group_62",
               "group_title": "Sperm transport",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Obstruction",
-                    "Previous surgery",
-                    "Infection"
+                    {
+                      "text": "Obstruction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Previous surgery",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_66",
+              "group_id": "subfertility_history_group_63",
               "group_title": "Sexual/ejaculatory",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Erectile dysfunction",
-                    "Ejaculatory dysfunction",
-                    "Low libido"
+                    {
+                      "text": "Erectile dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ejaculatory dysfunction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low libido",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_67",
+              "group_id": "subfertility_history_group_64",
               "group_title": "Hormonal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hypogonadism",
-                    "Exogenous testosterone/anabolic steroids"
+                    {
+                      "text": "Hypogonadism",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exogenous testosterone/anabolic steroids",
+                      "level": 0
+                    }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "subfertility_history_subsection_39",
-          "subsection_title": "EXAMINER QUESTION",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "subfertility_history_group_68",
-              "group_title": "\"What are the main causes of infertility?\"",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "A strong answer:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "\"Broadly, infertility can result from female factors, male factors, combined factors, or remain unexplained. Female causes include ovulatory disorders, tubal and peritoneal disease, uterine pathology and reduced ovarian reserve. Male causes include abnormalities of sperm production, transport, sexual or ejaculatory function and hormonal disorders.\""
                 }
               ]
             }
@@ -1909,18 +2419,52 @@
         },
         {
           "subsection_id": "subfertility_history_subsection_40",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_title": "39. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_69",
-              "group_title": "\"What is the first investigation you would request in the male partner?\"",
+              "group_id": "subfertility_history_group_65",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Semen analysis."
+                  "text": "**\"What are the main causes of infertility?\"**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A strong answer:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "\"Broadly, infertility can result from female factors, male factors, combined factors, or remain unexplained. Female causes include ovulatory disorders, tubal and peritoneal disease, uterine pathology and reduced ovarian reserve. Male causes include abnormalities of sperm production, transport, sexual or ejaculatory function and hormonal disorders.\"",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "subfertility_history_subsection_41",
+          "subsection_title": "40. EXAMINER QUESTION",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "subfertility_history_group_66",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**\"What is the first investigation you would request in the male partner?\"**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Semen analysis.**"
                 },
                 {
                   "type": "paragraph",
@@ -1931,27 +2475,41 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_41",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_id": "subfertility_history_subsection_42",
+          "subsection_title": "41. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_70",
-              "group_title": "\"How do you assess ovulation?\"",
+              "group_id": "subfertility_history_group_67",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Depending on the clinical context:"
+                  "text": "**\"How do you assess ovulation?\"**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Depending on the clinical context:",
                   "items": [
-                    "Menstrual history",
-                    "Mid-luteal progesterone assessment",
-                    "Other hormonal evaluation when indicated",
-                    "Ultrasound follicular tracking in selected fertility-treatment settings"
+                    {
+                      "text": "Menstrual history",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mid-luteal progesterone assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other hormonal evaluation when indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ultrasound follicular tracking in selected fertility-treatment settings",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1963,26 +2521,37 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_42",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_id": "subfertility_history_subsection_43",
+          "subsection_title": "42. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_71",
-              "group_title": "\"How do you assess tubal patency?\"",
+              "group_id": "subfertility_history_group_68",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Possible methods include:"
+                  "text": "**\"How do you assess tubal patency?\"**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible methods include:",
                   "items": [
-                    "Hysterosalpingography",
-                    "HyCoSy/contrast ultrasound techniques",
-                    "Laparoscopy with chromopertubation in selected circumstances"
+                    {
+                      "text": "Hysterosalpingography",
+                      "level": 0
+                    },
+                    {
+                      "text": "HyCoSy/contrast ultrasound techniques",
+                      "level": 0
+                    },
+                    {
+                      "text": "Laparoscopy with chromopertubation in selected circumstances",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1994,16 +2563,21 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_43",
-          "subsection_title": "EXAMINER QUESTION",
+          "subsection_id": "subfertility_history_subsection_44",
+          "subsection_title": "43. EXAMINER QUESTION",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_72",
-              "group_title": "\"What investigations might you perform?\"",
+              "group_id": "subfertility_history_group_69",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**\"What investigations might you perform?\"**",
+                  "style": "quote"
+                },
                 {
                   "type": "paragraph",
                   "text": "A structured answer:"
@@ -2011,51 +2585,84 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_73",
+              "group_id": "subfertility_history_group_70",
               "group_title": "Female",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pregnancy test where appropriate",
-                    "Ovulation assessment",
-                    "Pelvic ultrasound",
-                    "Relevant endocrine tests",
-                    "Tubal patency assessment",
-                    "Ovarian reserve assessment in selected cases"
+                    {
+                      "text": "Pregnancy test where appropriate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovulation assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relevant endocrine tests",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tubal patency assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ovarian reserve assessment in selected cases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_74",
+              "group_id": "subfertility_history_group_71",
               "group_title": "Male",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Semen analysis",
-                    "Hormonal testing if indicated",
-                    "Further specialist assessment if abnormal"
+                    {
+                      "text": "Semen analysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hormonal testing if indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Further specialist assessment if abnormal",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_75",
+              "group_id": "subfertility_history_group_72",
               "group_title": "Couple",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "STI testing where indicated",
-                    "Genetic testing in selected situations"
+                    {
+                      "text": "STI testing where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic testing in selected situations",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2063,19 +2670,19 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_44",
-          "subsection_title": "IMPORTANT OSCE PRINCIPLE",
+          "subsection_id": "subfertility_history_subsection_45",
+          "subsection_title": "44. IMPORTANT OSCE PRINCIPLE",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_76",
+              "group_id": "subfertility_history_group_73",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Don't order every possible test immediately."
+                  "text": "Don't order **every possible test immediately**."
                 },
                 {
                   "type": "paragraph",
@@ -2083,7 +2690,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would tailor investigations according to the history, examination findings, age, duration of infertility and previous results.\""
+                  "text": "\"I would tailor investigations according to the history, examination findings, age, duration of infertility and previous results.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2094,12 +2702,12 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_45",
-          "subsection_title": "INFERTILITY COUNSELLING",
+          "subsection_id": "subfertility_history_subsection_46",
+          "subsection_title": "45. INFERTILITY COUNSELLING",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_77",
+              "group_id": "subfertility_history_group_74",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2109,10 +2717,9 @@
                   "text": "A patient may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Why can't I get pregnant?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Why can't I get pregnant?\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2124,7 +2731,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"There are several possible causes, and sometimes both partners contribute. We would therefore assess both you and your partner rather than assuming the problem is coming from one person.\""
+                  "text": "\"There are several possible causes, and sometimes both partners contribute. We would therefore assess both you and your partner rather than assuming the problem is coming from one person.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2135,12 +2743,24 @@
           ]
         },
         {
-          "subsection_id": "subfertility_history_subsection_46",
-          "subsection_title": "COMMON OSCE MISTAKES",
+          "subsection_id": "subfertility_history_subsection_47",
+          "subsection_title": "46. COMMON OSCE MISTAKES",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "subfertility_history_group_78",
+              "group_id": "subfertility_history_group_75",
+              "group_title": "❌ Only assessing the woman",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**✅ Assess both partners.**"
+                }
+              ]
+            },
+            {
+              "group_id": "subfertility_history_group_76",
               "group_title": "❌ Forgetting sexual intercourse",
               "group_subtitle": null,
               "group_icon": null,
@@ -2152,7 +2772,7 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_79",
+              "group_id": "subfertility_history_group_77",
               "group_title": "❌ Forgetting previous pregnancies",
               "group_subtitle": null,
               "group_icon": null,
@@ -2164,7 +2784,7 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_80",
+              "group_id": "subfertility_history_group_78",
               "group_title": "❌ Forgetting PID",
               "group_subtitle": null,
               "group_icon": null,
@@ -2176,7 +2796,7 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_81",
+              "group_id": "subfertility_history_group_79",
               "group_title": "❌ Forgetting endometriosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -2192,7 +2812,7 @@
               ]
             },
             {
-              "group_id": "subfertility_history_group_82",
+              "group_id": "subfertility_history_group_80",
               "group_title": "❌ Forgetting male medications",
               "group_subtitle": null,
               "group_icon": null,
@@ -2203,12 +2823,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Testosterone/anabolic steroids."
+                  "text": "**Testosterone/anabolic steroids.**"
                 }
               ]
             },
             {
-              "group_id": "subfertility_history_group_83",
+              "group_id": "subfertility_history_group_81",
               "group_title": "❌ Ignoring emotional impact",
               "group_subtitle": null,
               "group_icon": null,
@@ -2218,23 +2838,21 @@
                   "text": "Infertility is not purely a biological problem."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "subfertility_history_subsection_47",
-          "subsection_title": "🧠 INFERTILITY OSCE MNEMONIC",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "subfertility_history_group_84",
-              "group_title": "\"BOTH\"",
+              "group_id": "subfertility_history_group_82",
+              "group_title": "🧠 INFERTILITY OSCE MNEMONIC",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "B — Both partners O — Ovulation T — Tubes/uterus H — History of previous pregnancy and sexual intercourse"
+                  "text": "**\"BOTH\"**",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B — Both partners**\n**O — Ovulation**\n**T — Tubes/uterus**\n**H — History of previous pregnancy and sexual intercourse**"
                 },
                 {
                   "type": "paragraph",
@@ -2242,20 +2860,13 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Semen + Surgery + STIs + Lifestyle + Investigations + Treatment"
+                  "text": "**Semen + Surgery + STIs + Lifestyle + Investigations + Treatment**"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "subfertility_history_subsection_48",
-          "subsection_title": "⭐ RAPID 60-SECOND INFERTILITY HISTORY",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "subfertility_history_group_85",
-              "group_title": "",
+              "group_id": "subfertility_history_group_83",
+              "group_title": "⭐ RAPID 60-SECOND INFERTILITY HISTORY",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2265,11 +2876,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"How long have you been trying to conceive, and have you ever conceived before? Have you been having regular unprotected vaginal intercourse, and how frequently? What contraception were you previously using? Are your periods regular, and when was your LMP? Do you have dysmenorrhoea, deep dyspareunia, abnormal bleeding, symptoms of PCOS or symptoms suggesting thyroid or prolactin disorders? Have you had previous PID, STIs, ectopic pregnancy or pelvic surgery? Have you had previous fertility investigations or treatment? I'd also like to ask about your partner's previous fertility, sexual function, testicular problems, medical history, medications including testosterone or anabolic steroids, and lifestyle factors such as smoking, alcohol and drug use.\""
+                  "text": "\"How long have you been trying to conceive, and have you ever conceived before? Have you been having regular unprotected vaginal intercourse, and how frequently? What contraception were you previously using? Are your periods regular, and when was your LMP? Do you have dysmenorrhoea, deep dyspareunia, abnormal bleeding, symptoms of PCOS or symptoms suggesting thyroid or prolactin disorders? Have you had previous PID, STIs, ectopic pregnancy or pelvic surgery? Have you had previous fertility investigations or treatment? I'd also like to ask about your partner's previous fertility, sexual function, testicular problems, medical history, medications including testosterone or anabolic steroids, and lifestyle factors such as smoking, alcohol and drug use.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "That is an excellent high-yield infertility station answer."
+                  "text": "That is an excellent **high-yield infertility station answer**."
                 }
               ]
             }

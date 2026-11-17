@@ -38,7 +38,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_2",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -48,40 +48,50 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Common station scenarios include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "You are shown an ultrasound image of a woman in early pregnancy. Interpret the findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A pregnant woman presents with vaginal bleeding. Interpret her ultrasound scan."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "You are shown a 12-week scan. Identify the structures and explain the findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret a 20-week fetal anomaly scan."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A woman at 32 weeks has an ultrasound showing reduced fetal growth. Explain the findings and management."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Interpret an ultrasound report showing placenta praevia."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A scan suggests multiple pregnancy. Describe the type of twin pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Counsel a pregnant woman following an ultrasound diagnosis of fetal abnormality."
+                  "type": "list",
+                  "title": "Common station scenarios include:",
+                  "items": [
+                    {
+                      "text": "You are shown an ultrasound image of a woman in early pregnancy. Interpret the findings.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "A pregnant woman presents with vaginal bleeding. Interpret her ultrasound scan.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "You are shown a 12-week scan. Identify the structures and explain the findings.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Interpret a 20-week fetal anomaly scan.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "A woman at 32 weeks has an ultrasound showing reduced fetal growth. Explain the findings and management.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Interpret an ultrasound report showing placenta praevia.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "A scan suggests multiple pregnancy. Describe the type of twin pregnancy.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Counsel a pregnant woman following an ultrasound diagnosis of fetal abnormality.",
+                      "level": 0,
+                      "label": "8."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -93,7 +103,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_3",
-          "subsection_title": "Introduction, consent and communication",
+          "subsection_title": "2. Introduction, consent and communication",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -103,40 +113,42 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If the station involves reviewing a scan with a patient, begin with:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wash your hands and introduce yourself."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the patient's identity."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain the purpose of the scan or the results discussion."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Obtain consent before performing an ultrasound examination."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ask about the last menstrual period, cycle regularity and current gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Establish the indication for the scan and any relevant symptoms, particularly pain, vaginal bleeding or reduced fetal movements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maintain privacy, dignity and confidentiality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Explain findings in plain language, avoid premature conclusions and allow the patient to ask questions."
+                  "type": "list",
+                  "title": "If the station involves reviewing a scan with a patient, begin with:",
+                  "items": [
+                    {
+                      "text": "Wash your hands and introduce yourself.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confirm the patient's identity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain the purpose of the scan or the results discussion.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obtain consent before performing an ultrasound examination.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ask about the last menstrual period, cycle regularity and current gestational age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Establish the indication for the scan and any relevant symptoms, particularly pain, vaginal bleeding or reduced fetal movements.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintain privacy, dignity and confidentiality.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Explain findings in plain language, avoid premature conclusions and allow the patient to ask questions.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -148,7 +160,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_4",
-          "subsection_title": "Preparation and basic ultrasound terminology",
+          "subsection_title": "3. Preparation and basic ultrasound terminology",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -163,26 +175,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "1. Transvaginal ultrasound (TVUS)"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "1. Transvaginal ultrasound (TVUS)"
+                    {
+                      "text": "Particularly useful in early pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provides detailed views of the uterus, gestational sac, yolk sac, embryo and adnexa.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Helps assess pregnancy location and viability.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Requires informed consent, privacy and appropriate preparation.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Particularly useful in early pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Provides detailed views of the uterus, gestational sac, yolk sac, embryo and adnexa."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Helps assess pregnancy location and viability."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Requires informed consent, privacy and appropriate preparation."
                 },
                 {
                   "type": "image",
@@ -190,26 +205,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "2. Transabdominal ultrasound"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "2. Transabdominal ultrasound"
+                    {
+                      "text": "Commonly used throughout pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assesses fetal growth, anatomy, lie, presentation, placenta and amniotic fluid.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An adequately filled bladder may improve views during some early-pregnancy scans.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A full bladder is generally unnecessary later in pregnancy.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Commonly used throughout pregnancy."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assesses fetal growth, anatomy, lie, presentation, placenta and amniotic fluid."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "An adequately filled bladder may improve views during some early-pregnancy scans."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A full bladder is generally unnecessary later in pregnancy."
                 },
                 {
                   "type": "image",
@@ -217,26 +235,29 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "3. Doppler ultrasound"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "3. Doppler ultrasound"
+                    {
+                      "text": "Assesses blood flow in selected maternal and fetal vessels.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical artery Doppler is important in suspected fetal growth restriction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Middle cerebral artery Doppler may be used in selected situations, including fetal anaemia assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Uterine artery Doppler may contribute to pre-eclampsia or placental dysfunction risk assessment.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assesses blood flow in selected maternal and fetal vessels."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Umbilical artery Doppler is important in suspected fetal growth restriction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Middle cerebral artery Doppler may be used in selected situations, including fetal anaemia assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Uterine artery Doppler may contribute to pre-eclampsia or placental dysfunction risk assessment."
                 }
               ]
             },
@@ -251,24 +272,29 @@
                   "text": "Ask yourself: Why was this scan requested?"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Early pregnancy: confirm pregnancy location, viability, gestational age and number of embryos."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "First trimester screening: assess dating and, where appropriate, markers used in aneuploidy screening."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mid-trimester: assess fetal anatomy and screen for structural abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Third trimester: assess growth, presentation, placental location and amniotic fluid when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Suspected complications: investigate bleeding, pain, multiple pregnancy, fetal growth restriction, abnormal liquor volume or placental problems."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Early pregnancy: confirm pregnancy location, viability, gestational age and number of embryos.",
+                      "level": 0
+                    },
+                    {
+                      "text": "First trimester screening: assess dating and, where appropriate, markers used in aneuploidy screening.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mid-trimester: assess fetal anatomy and screen for structural abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Third trimester: assess growth, presentation, placental location and amniotic fluid when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suspected complications: investigate bleeding, pain, multiple pregnancy, fetal growth restriction, abnormal liquor volume or placental problems.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -280,7 +306,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_5",
-          "subsection_title": "Step-by-step method for interpreting any obstetric ultrasound",
+          "subsection_title": "4. Step-by-step method for interpreting any obstetric ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -302,10 +328,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pregnancy location"
-                  ]
+                  "type": "paragraph",
+                  "text": "Pregnancy location"
                 },
                 {
                   "type": "paragraph",
@@ -320,10 +344,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Viability"
-                  ]
+                  "type": "paragraph",
+                  "text": "Viability"
                 },
                 {
                   "type": "paragraph",
@@ -343,10 +365,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Gestational age"
-                  ]
+                  "type": "paragraph",
+                  "text": "Gestational age"
                 },
                 {
                   "type": "paragraph",
@@ -361,10 +381,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal number and anatomy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Fetal number and anatomy"
                 },
                 {
                   "type": "paragraph",
@@ -379,10 +397,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Placenta"
-                  ]
+                  "type": "paragraph",
+                  "text": "Placenta"
                 },
                 {
                   "type": "paragraph",
@@ -397,10 +413,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Liquor"
-                  ]
+                  "type": "paragraph",
+                  "text": "Liquor"
                 },
                 {
                   "type": "paragraph",
@@ -415,10 +429,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Assessment of growth"
-                  ]
+                  "type": "paragraph",
+                  "text": "Assessment of growth"
                 },
                 {
                   "type": "paragraph",
@@ -433,10 +445,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Doppler and other details"
-                  ]
+                  "type": "paragraph",
+                  "text": "Doppler and other details"
                 },
                 {
                   "type": "paragraph",
@@ -452,7 +462,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_6",
-          "subsection_title": "First-trimester ultrasound",
+          "subsection_title": "5. First-trimester ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -534,20 +544,25 @@
                   "text": "Crown–rump length (CRL) is the preferred ultrasound measurement for dating a pregnancy in the first trimester when the embryo can be measured reliably."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "CRL is measured from the top of the embryo's head to its rump."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The measurement is used with a validated dating chart or ultrasound system."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The earliest reliable ultrasound measurement is generally the best basis for establishing gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not estimate gestational age from the gestational sac alone when a more reliable embryo measurement is available."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "CRL is measured from the top of the embryo's head to its rump.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The measurement is used with a validated dating chart or ultrasound system.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The earliest reliable ultrasound measurement is generally the best basis for establishing gestational age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not estimate gestational age from the gestational sac alone when a more reliable embryo measurement is available.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -566,16 +581,18 @@
                   "text": "Do not diagnose miscarriage from a single uncertain finding."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Commonly used conservative transvaginal ultrasound criteria include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CRL of 7 mm or more with no visible cardiac activity: diagnostic criterion for pregnancy failure under widely used consensus criteria, after appropriate technical assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mean gestational sac diameter of 25 mm or more with no embryo: diagnostic criterion under widely used consensus criteria."
+                  "type": "list",
+                  "title": "Commonly used conservative transvaginal ultrasound criteria include:",
+                  "items": [
+                    {
+                      "text": "CRL of 7 mm or more with no visible cardiac activity: diagnostic criterion for pregnancy failure under widely used consensus criteria, after appropriate technical assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mean gestational sac diameter of 25 mm or more with no embryo: diagnostic criterion under widely used consensus criteria.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -594,10 +611,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Ectopic pregnancy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Ectopic pregnancy"
                 },
                 {
                   "type": "paragraph",
@@ -613,10 +628,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Early pregnancy loss"
-                  ]
+                  "type": "paragraph",
+                  "text": "Early pregnancy loss"
                 },
                 {
                   "type": "paragraph",
@@ -632,10 +645,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Molar pregnancy"
-                  ]
+                  "type": "paragraph",
+                  "text": "Molar pregnancy"
                 },
                 {
                   "type": "paragraph",
@@ -659,7 +670,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_7",
-          "subsection_title": "Second-trimester ultrasound: fetal anomaly scan",
+          "subsection_title": "6. Second-trimester ultrasound: fetal anomaly scan",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -700,32 +711,37 @@
                   "text": "Use the mnemonic H–B–F–S–A–P–L."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "H — Head and brain: skull, cerebral structures and ventricles."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "B — Body and abdomen: abdominal wall, stomach, kidneys and bladder as appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "F — Face: facial profile and other required facial views."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "S — Spine: alignment and appearance of the vertebral column."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A — Anatomy of the heart: four-chamber view and additional cardiac views required by the protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "P — Placenta: location and relationship to the cervix."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "L — Limbs: presence, alignment and appearance of the limbs."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "H — Head and brain: skull, cerebral structures and ventricles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "B — Body and abdomen: abdominal wall, stomach, kidneys and bladder as appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "F — Face: facial profile and other required facial views.",
+                      "level": 0
+                    },
+                    {
+                      "text": "S — Spine: alignment and appearance of the vertebral column.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Anatomy of the heart: four-chamber view and additional cardiac views required by the protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — Placenta: location and relationship to the cervix.",
+                      "level": 0
+                    },
+                    {
+                      "text": "L — Limbs: presence, alignment and appearance of the limbs.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -749,10 +765,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "1. Open spina bifida"
-                  ]
+                  "type": "paragraph",
+                  "text": "1. Open spina bifida"
                 },
                 {
                   "type": "paragraph",
@@ -768,10 +782,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "2. Anencephaly"
-                  ]
+                  "type": "paragraph",
+                  "text": "2. Anencephaly"
                 },
                 {
                   "type": "paragraph",
@@ -787,10 +799,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "3. Ventriculomegaly"
-                  ]
+                  "type": "paragraph",
+                  "text": "3. Ventriculomegaly"
                 },
                 {
                   "type": "paragraph",
@@ -801,10 +811,8 @@
                   "text": "Next steps: detailed neurosonography, assessment for associated abnormalities and specialist-directed investigations."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4. Omphalocele"
-                  ]
+                  "type": "paragraph",
+                  "text": "4. Omphalocele"
                 },
                 {
                   "type": "paragraph",
@@ -836,7 +844,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“The ultrasound appears to show a possible structural fetal abnormality. I would arrange prompt review by a fetal medicine specialist for confirmation, assess for associated abnormalities, and provide sensitive, non-directive counselling to the parents.”"
+                  "text": "“The ultrasound appears to show a possible structural fetal abnormality. I would arrange prompt review by a fetal medicine specialist for confirmation, assess for associated abnormalities, and provide sensitive, non-directive counselling to the parents.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -844,12 +853,12 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_8",
-          "subsection_title": "Third-trimester ultrasound: growth and fetal wellbeing",
+          "subsection_title": "7. Third-trimester ultrasound: growth and fetal wellbeing",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "obstetric_ultrasound_group_24",
-              "group_title": "Fetal biometry",
+              "group_title": "A. Fetal biometry",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -859,10 +868,18 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "The BPD can be measured through any plane that crosses the 3rd ventricle, thalami, and cavum septi pellucidi (CSP).",
-                    "The calvaria should be smooth and symmetrical as indicated."
+                    {
+                      "text": "The BPD can be measured through any plane that crosses the 3rd ventricle, thalami, and cavum septi pellucidi (CSP).",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "The calvaria should be smooth and symmetrical as indicated.",
+                      "level": 0,
+                      "label": "2."
+                    }
                   ]
                 },
                 {
@@ -871,9 +888,13 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "The cursor in the near field should be placed on the outer edge of the calvaria and the cursor in the far field should be placed on the inner edge as indicated."
+                    {
+                      "text": "The cursor in the near field should be placed on the outer edge of the calvaria and the cursor in the far field should be placed on the inner edge as indicated.",
+                      "level": 0,
+                      "label": "3."
+                    }
                   ]
                 },
                 {
@@ -887,7 +908,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "1. Measurement is through a plane that crosses the 3rd ventricle, thalami, and CSP. 2. The calvaria should be smooth and symmetrical. 3. The cavum septi pellucidi (CSP) should be visible in the anterior portion of the brain. 4. Caliper placement is around the calvarial wall and should not include scalp thickness."
+                  "text": "1. Measurement is through a plane that crosses the 3rd ventricle, thalami, and CSP.\n2. The calvaria should be smooth and symmetrical.\n3. The cavum septi pellucidi (CSP) should be visible in the anterior portion of the brain.\n4. Caliper placement is around the calvarial wall and should not include scalp thickness."
                 },
                 {
                   "type": "paragraph",
@@ -921,13 +942,20 @@
                   "text": "The CI is an index or ratio which is used to evaluate the shape of the head. It is calculated by measuring the maximum width (BPD) of the cranium divided by its maximum length (occipital frontal diameter, OFD). The front to back, OFD, is measured with the cursor placed on the outer edge to outer edge of the cranial bones as demonstrated. The following formula derives the cephalic index:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "CI =BPD/OFD x 100",
-                    "A normal cephalic index (CI) = 78.3%",
-                    "1 Standard Deviation (SD) = 74%-83%",
-                    "2 Standard Deviations (SD) = 70%-86%"
-                  ]
+                  "type": "paragraph",
+                  "text": "CI =BPD/OFD x 100"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A normal cephalic index (CI) = 78.3%"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1 Standard Deviation (SD) = 74%-83%"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2 Standard Deviations (SD) = 70%-86%"
                 },
                 {
                   "type": "image",
@@ -1140,20 +1168,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Small for gestational age (SGA): commonly defined as EFW or AC below the 10th centile."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal growth restriction (FGR): a fetus that has not achieved its growth potential, often because of placental dysfunction or other pathology."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Large for gestational age (LGA): commonly EFW above the 90th centile."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Macrosomia: a high absolute birthweight or estimated fetal weight, defined using a threshold appropriate to the guideline or clinical context."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Small for gestational age (SGA): commonly defined as EFW or AC below the 10th centile.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal growth restriction (FGR): a fetus that has not achieved its growth potential, often because of placental dysfunction or other pathology.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Large for gestational age (LGA): commonly EFW above the 90th centile.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Macrosomia: a high absolute birthweight or estimated fetal weight, defined using a threshold appropriate to the guideline or clinical context.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1168,32 +1201,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "If an ultrasound shows EFW or AC below the 10th centile:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm gestational age and review previous growth measurements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess maternal history and risk factors, including hypertension and placental disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange appropriate fetal growth surveillance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess amniotic fluid and umbilical artery Doppler."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Consider additional fetal surveillance and investigations according to the severity and gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Plan delivery timing with the obstetric team, guided by gestational age, Doppler results, maternal condition and fetal wellbeing."
+                  "type": "list",
+                  "title": "If an ultrasound shows EFW or AC below the 10th centile:",
+                  "items": [
+                    {
+                      "text": "Confirm gestational age and review previous growth measurements.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess maternal history and risk factors, including hypertension and placental disease.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Arrange appropriate fetal growth surveillance.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Assess amniotic fluid and umbilical artery Doppler.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Consider additional fetal surveillance and investigations according to the severity and gestational age.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Plan delivery timing with the obstetric team, guided by gestational age, Doppler results, maternal condition and fetal wellbeing.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1213,10 +1254,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Oligohydramnios"
-                  ]
+                  "type": "paragraph",
+                  "text": "Oligohydramnios"
                 },
                 {
                   "type": "paragraph",
@@ -1232,10 +1271,8 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Polyhydramnios"
-                  ]
+                  "type": "paragraph",
+                  "text": "Polyhydramnios"
                 },
                 {
                   "type": "paragraph",
@@ -1258,24 +1295,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Anterior placenta: attached to the anterior uterine wall."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Posterior placenta: attached to the posterior uterine wall."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fundal placenta: located near the uterine fundus."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Low-lying placenta: placental edge less than 20 mm from the internal cervical os after 16 weeks, according to commonly used definitions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placenta praevia: placenta covers the internal cervical os."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Anterior placenta: attached to the anterior uterine wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior placenta: attached to the posterior uterine wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fundal placenta: located near the uterine fundus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Low-lying placenta: placental edge less than 20 mm from the internal cervical os after 16 weeks, according to commonly used definitions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placenta praevia: placenta covers the internal cervical os.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1291,7 +1333,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_10",
-          "subsection_title": "Multiple pregnancy: twins and chorionicity",
+          "subsection_title": "8. Multiple pregnancy: twins and chorionicity",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1362,7 +1404,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_11",
-          "subsection_title": "Common O&G ultrasound findings: differential diagnosis and management",
+          "subsection_title": "9. Common O&G ultrasound findings: differential diagnosis and management",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1441,7 +1483,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_12",
-          "subsection_title": "Investigations following an abnormal obstetric ultrasound",
+          "subsection_title": "10. Investigations following an abnormal obstetric ultrasound",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1455,92 +1497,104 @@
                   "text": "Investigations depend on the finding; they should not all be ordered routinely."
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "Early pregnancy bleeding or pregnancy of unknown location"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Early pregnancy bleeding or pregnancy of unknown location"
+                    {
+                      "text": "Quantitative serum β-hCG, often repeated approximately 48 hours later when clinically appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Repeat transvaginal ultrasound.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Full blood count and blood group/Rh status as indicated by bleeding severity and local protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urgent assessment if ectopic pregnancy or significant haemorrhage is suspected.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Quantitative serum β-hCG, often repeated approximately 48 hours later when clinically appropriate."
+                  "text": "Suspected fetal growth restriction"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Repeat transvaginal ultrasound."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Full blood count and blood group/Rh status as indicated by bleeding severity and local protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urgent assessment if ectopic pregnancy or significant haemorrhage is suspected."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Suspected fetal growth restriction"
+                    {
+                      "text": "Serial growth ultrasound.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical artery Doppler.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal blood pressure and evaluation for pre-eclampsia when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG or other fetal surveillance according to gestational age and clinical risk.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Serial growth ultrasound."
+                  "text": "Suspected fetal structural abnormality"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Umbilical artery Doppler."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Amniotic fluid assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal blood pressure and evaluation for pre-eclampsia when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "CTG or other fetal surveillance according to gestational age and clinical risk."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Suspected fetal structural abnormality"
+                    {
+                      "text": "Detailed fetal anomaly scan or targeted ultrasound.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal echocardiography when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic counselling and diagnostic testing, such as amniocentesis, when appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Additional investigations directed by the suspected abnormality.",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Detailed fetal anomaly scan or targeted ultrasound."
+                  "text": "Suspected placenta accreta spectrum"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Fetal echocardiography when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Genetic counselling and diagnostic testing, such as amniocentesis, when appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Additional investigations directed by the suspected abnormality."
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Suspected placenta accreta spectrum"
+                    {
+                      "text": "Detailed ultrasound by an experienced operator, including Doppler where indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "MRI in selected cases when it may clarify the diagnosis or extent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist multidisciplinary planning for delivery.",
+                      "level": 0
+                    }
                   ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Detailed ultrasound by an experienced operator, including Doppler where indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "MRI in selected cases when it may clarify the diagnosis or extent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Specialist multidisciplinary planning for delivery."
                 }
               ]
             }
@@ -1548,7 +1602,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_13",
-          "subsection_title": "How to report an obstetric ultrasound in the OSCE",
+          "subsection_title": "11. How to report an obstetric ultrasound in the OSCE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1562,48 +1616,60 @@
                   "text": "The examiner wants a systematic report, not merely the name of a diagnosis."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Use this template:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Patient and indication: relevant clinical history and gestational age."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Technique: transabdominal, transvaginal or both."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pregnancy: intrauterine or extrauterine; singleton or multiple."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Viability: cardiac activity, where appropriate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Dating and biometry: CRL or appropriate fetal measurements."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Anatomy: normal structures visualised and any abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Placenta: location and relationship to the internal cervical os."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Liquor: normal, reduced or increased, with measurements where available."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Growth and Doppler: EFW centile, growth trend and relevant Doppler results."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Impression and plan: summary, limitations and recommended next steps."
+                  "type": "list",
+                  "title": "Use this template:",
+                  "items": [
+                    {
+                      "text": "Patient and indication: relevant clinical history and gestational age.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Technique: transabdominal, transvaginal or both.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Pregnancy: intrauterine or extrauterine; singleton or multiple.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Viability: cardiac activity, where appropriate.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Dating and biometry: CRL or appropriate fetal measurements.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Anatomy: normal structures visualised and any abnormalities.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Placenta: location and relationship to the internal cervical os.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Liquor: normal, reduced or increased, with measurements where available.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Growth and Doppler: EFW centile, growth trend and relevant Doppler results.",
+                      "level": 0,
+                      "label": "9."
+                    },
+                    {
+                      "text": "Impression and plan: summary, limitations and recommended next steps.",
+                      "level": 0,
+                      "label": "10."
+                    }
+                  ]
                 }
               ]
             },
@@ -1615,7 +1681,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The scan demonstrates a single intrauterine pregnancy with an embryo measuring approximately 9 weeks by crown–rump length. Cardiac activity is present. The gestational age is consistent with the biometric measurement. No obvious abnormality is identified in the structures assessed. I would correlate the findings with the clinical history and issue the formal report.”"
+                  "text": "“The scan demonstrates a single intrauterine pregnancy with an embryo measuring approximately 9 weeks by crown–rump length. Cardiac activity is present. The gestational age is consistent with the biometric measurement. No obvious abnormality is identified in the structures assessed. I would correlate the findings with the clinical history and issue the formal report.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1627,7 +1694,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The scan demonstrates no definite intrauterine pregnancy and an abnormal adnexal finding suspicious for an ectopic pregnancy. I would assess the patient’s haemodynamic status immediately, review the adnexa and pelvic free fluid, and arrange urgent gynaecological assessment. If the patient is unstable or rupture is suspected, emergency management is required.”"
+                  "text": "“The scan demonstrates no definite intrauterine pregnancy and an abnormal adnexal finding suspicious for an ectopic pregnancy. I would assess the patient’s haemodynamic status immediately, review the adnexa and pelvic free fluid, and arrange urgent gynaecological assessment. If the patient is unstable or rupture is suspected, emergency management is required.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1643,7 +1711,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The scan demonstrates a placenta covering the internal cervical os, consistent with placenta praevia. I would confirm the placental relationship to the os, assess for relevant risk factors and features of placenta accreta spectrum, and arrange specialist obstetric follow-up and delivery planning.”"
+                  "text": "“The scan demonstrates a placenta covering the internal cervical os, consistent with placenta praevia. I would confirm the placental relationship to the os, assess for relevant risk factors and features of placenta accreta spectrum, and arrange specialist obstetric follow-up and delivery planning.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1655,7 +1724,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The fetus has an estimated fetal weight below the 10th centile for the established gestational age, raising concern for a small-for-gestational-age fetus or fetal growth restriction. I would review serial growth measurements, amniotic fluid volume and umbilical artery Doppler, assess maternal risk factors and plan further surveillance with the obstetric team.”"
+                  "text": "“The fetus has an estimated fetal weight below the 10th centile for the established gestational age, raising concern for a small-for-gestational-age fetus or fetal growth restriction. I would review serial growth measurements, amniotic fluid volume and umbilical artery Doppler, assess maternal risk factors and plan further surveillance with the obstetric team.”",
+                  "style": "quote"
                 }
               ]
             },
@@ -1667,7 +1737,8 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“The amniotic fluid volume is reduced, with a deepest vertical pocket below 2 cm. I would assess for rupture of membranes, review fetal growth and renal anatomy where relevant, evaluate fetal wellbeing and arrange management according to the gestational age and clinical findings.”"
+                  "text": "“The amniotic fluid volume is reduced, with a deepest vertical pocket below 2 cm. I would assess for rupture of membranes, review fetal growth and renal anatomy where relevant, evaluate fetal wellbeing and arrange management according to the gestational age and clinical findings.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -1675,7 +1746,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_14",
-          "subsection_title": "Examiner questions and model answers",
+          "subsection_title": "12. Examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1770,7 +1841,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_15",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "13. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1780,44 +1851,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Calling a pregnancy non-viable from an early scan that does not meet diagnostic criteria."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assuming that an empty uterus means ectopic pregnancy without appropriate assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting that pregnancy of unknown location requires follow-up."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving a definitive diagnosis from a single image of poor quality."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing SGA with pathological fetal growth restriction."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reporting a low-lying placenta as placenta praevia without confirming its relationship to the internal os."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to mention Doppler assessment in suspected FGR."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Reassuring a patient that the anomaly scan excludes all congenital abnormalities."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Discussing a serious fetal abnormality insensitively or before appropriate confirmation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Ignoring maternal instability in a patient with pain and suspected ectopic pregnancy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Calling a pregnancy non-viable from an early scan that does not meet diagnostic criteria.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming that an empty uterus means ectopic pregnancy without appropriate assessment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting that pregnancy of unknown location requires follow-up.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving a definitive diagnosis from a single image of poor quality.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing SGA with pathological fetal growth restriction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reporting a low-lying placenta as placenta praevia without confirming its relationship to the internal os.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to mention Doppler assessment in suspected FGR.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reassuring a patient that the anomaly scan excludes all congenital abnormalities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Discussing a serious fetal abnormality insensitively or before appropriate confirmation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring maternal instability in a patient with pain and suspected ectopic pregnancy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1825,7 +1901,7 @@
         },
         {
           "subsection_id": "obstetric_ultrasound_subsection_16",
-          "subsection_title": "Final OSCE revision checklist",
+          "subsection_title": "14. Final OSCE revision checklist",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1835,20 +1911,48 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Identify the scan type and clinical indication",
-                    "Assess pregnancy location and viability when relevant",
-                    "Interpret gestational age and fetal biometry",
-                    "Assess fetal number and anatomy",
-                    "Describe placental location and the internal cervical os",
-                    "Assess amniotic fluid volume",
-                    "Review fetal growth and Doppler when indicated",
-                    "Identify abnormalities and their clinical significance",
-                    "State appropriate further investigations",
-                    "Propose management and urgent escalation when required",
-                    "Deliver a clear, sensitive report to the patient or examiner"
-                  ]
+                  "type": "paragraph",
+                  "text": "Identify the scan type and clinical indication"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess pregnancy location and viability when relevant"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Interpret gestational age and fetal biometry"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess fetal number and anatomy"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe placental location and the internal cervical os"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess amniotic fluid volume"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review fetal growth and Doppler when indicated"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify abnormalities and their clinical significance"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State appropriate further investigations"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Propose management and urgent escalation when required"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Deliver a clear, sensitive report to the patient or examiner"
                 }
               ]
             },
@@ -1859,28 +1963,39 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "First trimester: location, viability and accurate dating."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Second trimester: fetal anatomy and placental location."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Third trimester: growth, presentation, liquor and Doppler when indicated."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Never diagnose early pregnancy failure from uncertain findings."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Always escalate suspected ectopic rupture, significant fetal compromise or major maternal bleeding."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A good OSCE answer combines description → interpretation → differential diagnosis → investigations → management."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "First trimester: location, viability and accurate dating.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Second trimester: fetal anatomy and placental location.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Third trimester: growth, presentation, liquor and Doppler when indicated.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Never diagnose early pregnancy failure from uncertain findings.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Always escalate suspected ectopic rupture, significant fetal compromise or major maternal bleeding.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "A good OSCE answer combines description → interpretation → differential diagnosis → investigations → management.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
                 }
               ]
             }

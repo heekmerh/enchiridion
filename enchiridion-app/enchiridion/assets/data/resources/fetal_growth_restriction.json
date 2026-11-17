@@ -18,7 +18,7 @@
       "subsections": [
         {
           "subsection_id": "fetal_growth_restriction_subsection_1",
-          "subsection_title": "What the station may say",
+          "subsection_title": "1. What the station may say",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -73,7 +73,7 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_2",
-          "subsection_title": "Definition",
+          "subsection_title": "2. Definition",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -88,21 +88,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "A fetus that has failed to achieve its biological growth potential because of a pathological process."
+                  "text": "**A fetus that has failed to achieve its biological growth potential because of a pathological process.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Commonly associated findings include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Commonly associated findings include:",
                   "items": [
-                    "EFW below the 10th centile",
-                    "AC below the 10th centile",
-                    "Reduced growth velocity",
-                    "Abnormal Doppler studies",
-                    "Oligohydramnios",
-                    "Maternal placental disease"
+                    {
+                      "text": "EFW below the 10th centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "AC below the 10th centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced growth velocity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal Doppler studies",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oligohydramnios",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal placental disease",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -110,10 +125,8 @@
                   "text": "Severe smallness, such as:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "EFW below the 3rd centile"
-                  ]
+                  "type": "paragraph",
+                  "text": "**EFW below the 3rd centile**"
                 },
                 {
                   "type": "paragraph",
@@ -125,7 +138,7 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_3",
-          "subsection_title": "SGA vs FGR — again",
+          "subsection_title": "3. SGA vs FGR — again",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -147,10 +160,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Small fetus"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Small fetus**"
                 }
               ]
             },
@@ -161,10 +172,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pathologically small/growing inadequately"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pathologically small/growing inadequately**"
                 }
               ]
             },
@@ -180,7 +189,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Constitutionally small."
+                  "text": "**Constitutionally small.**"
                 },
                 {
                   "type": "paragraph",
@@ -188,7 +197,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "FGR."
+                  "text": "**FGR.**"
                 }
               ]
             }
@@ -196,7 +205,7 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_4",
-          "subsection_title": "Classification of FGR",
+          "subsection_title": "4. Classification of FGR",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -210,33 +219,43 @@
                   "text": "Generally:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Before 32 weeks**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Typical features**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "Before 32 weeks"
+                    {
+                      "text": "More severe",
+                      "level": 0
+                    },
+                    {
+                      "text": "More often associated with pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "More likely to have abnormal Dopplers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Higher association with fetal/chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Often requires specialist fetal medicine management",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "fetal_growth_restriction_group_11",
-              "group_title": "Typical features",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "More severe",
-                    "More often associated with pre-eclampsia",
-                    "More likely to have abnormal Dopplers",
-                    "Higher association with fetal/chromosomal abnormalities",
-                    "Often requires specialist fetal medicine management"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_12",
               "group_title": "Late-onset FGR",
               "group_subtitle": null,
               "group_icon": null,
@@ -246,26 +265,33 @@
                   "text": "Generally:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "32 weeks or later"
-                  ]
+                  "type": "paragraph",
+                  "text": "**32 weeks or later**"
                 },
                 {
                   "type": "paragraph",
                   "text": "It can be more subtle."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The fetus may:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The fetus may:",
                   "items": [
-                    "Have an EFW >3rd centile",
-                    "Have relatively normal umbilical artery Doppler",
-                    "Show reduced growth velocity",
-                    "Demonstrate abnormal cerebral redistribution"
+                    {
+                      "text": "Have an EFW >3rd centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Have relatively normal umbilical artery Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "Show reduced growth velocity",
+                      "level": 0
+                    },
+                    {
+                      "text": "Demonstrate abnormal cerebral redistribution",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -274,7 +300,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal umbilical artery Doppler does not completely exclude late FGR."
+                  "text": "**Normal umbilical artery Doppler does not completely exclude late FGR.**"
                 }
               ]
             }
@@ -282,11 +308,11 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_5",
-          "subsection_title": "Causes of FGR",
+          "subsection_title": "5. Causes of FGR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_13",
+              "group_id": "fetal_growth_restriction_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -296,60 +322,90 @@
                   "text": "Think:"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_6",
-          "subsection_title": "MOTHER → PLACENTA → FETUS",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "fetal_growth_restriction_group_14",
-              "group_title": "Hypertensive disease",
+              "group_id": "fetal_growth_restriction_group_13",
+              "group_title": "MOTHER → PLACENTA → FETUS",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**A. Maternal causes**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Hypertensive disease**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Especially:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pre-eclampsia"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_15",
-              "group_title": "Autoimmune disease",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
                   "type": "paragraph",
-                  "text": "For example:"
+                  "text": "**Pre-eclampsia**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**Chronic hypertension**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Renal disease**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Autoimmune disease**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "title": "For example:",
                   "items": [
-                    "SLE",
-                    "Antiphospholipid syndrome"
+                    {
+                      "text": "SLE",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antiphospholipid syndrome",
+                      "level": 0
+                    }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Severe malnutrition**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Smoking**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Alcohol/substance exposure**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Severe chronic maternal disease**",
+                  "style": "heading"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_7",
-          "subsection_title": "Placental causes",
+          "subsection_id": "fetal_growth_restriction_subsection_6",
+          "subsection_title": "6. Placental causes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_16",
+              "group_id": "fetal_growth_restriction_group_14",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -360,21 +416,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Placental insufficiency."
+                  "text": "**Placental insufficiency.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Potential causes:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Potential causes:",
                   "items": [
-                    "Abnormal placentation",
-                    "Placental infarction",
-                    "Placental vascular disease",
-                    "Placental thrombosis",
-                    "Placental abruption",
-                    "Abnormal maternal spiral artery remodelling"
+                    {
+                      "text": "Abnormal placentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental infarction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental vascular disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental thrombosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental abruption",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal maternal spiral artery remodelling",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -382,12 +453,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_8",
-          "subsection_title": "Fetal causes",
+          "subsection_id": "fetal_growth_restriction_subsection_7",
+          "subsection_title": "7. Fetal causes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_17",
+              "group_id": "fetal_growth_restriction_group_15",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -399,58 +470,94 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_18",
+              "group_id": "fetal_growth_restriction_group_16",
               "group_title": "Chromosomal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Trisomy 13",
-                    "Trisomy 18",
-                    "Trisomy 21",
-                    "Other chromosomal abnormalities"
+                    {
+                      "text": "Trisomy 13",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trisomy 18",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trisomy 21",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other chromosomal abnormalities",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_17",
+              "group_title": "Genetic",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Genetic syndromes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skeletal dysplasias",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_18",
+              "group_title": "Infection",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "CMV",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toxoplasmosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rubella",
+                      "level": 0
+                    },
+                    {
+                      "text": "Syphilis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Parvovirus B19",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other clinically relevant infections",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "fetal_growth_restriction_group_19",
-              "group_title": "Genetic",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Genetic syndromes",
-                    "Skeletal dysplasias"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_20",
-              "group_title": "Infection",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "CMV",
-                    "Toxoplasmosis",
-                    "Rubella",
-                    "Syphilis",
-                    "Parvovirus B19",
-                    "Other clinically relevant infections"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_21",
               "group_title": "Structural",
               "group_subtitle": null,
               "group_icon": null,
@@ -464,12 +571,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_9",
-          "subsection_title": "Pathophysiology",
+          "subsection_id": "fetal_growth_restriction_subsection_8",
+          "subsection_title": "8. Pathophysiology",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_22",
+              "group_id": "fetal_growth_restriction_group_20",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -484,19 +591,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "↓ Placental perfusion ↓ Oxygen/nutrient delivery → Fetal hypoxaemia → Fetal adaptive responses → Redistribution of blood flow → Reduced growth → Potential fetal compromise"
+                  "text": "↓ Placental perfusion\n↓ Oxygen/nutrient delivery\n→ Fetal hypoxaemia\n→ Fetal adaptive responses\n→ Redistribution of blood flow\n→ Reduced growth\n→ Potential fetal compromise"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_10",
-          "subsection_title": "What happens to the fetal circulation?",
+          "subsection_id": "fetal_growth_restriction_subsection_9",
+          "subsection_title": "9. What happens to the fetal circulation?",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_23",
+              "group_id": "fetal_growth_restriction_group_21",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -506,15 +613,21 @@
                   "text": "The fetus prioritises vital organs."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Blood flow is preferentially directed toward:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Blood flow is preferentially directed toward:",
                   "items": [
-                    "Brain",
-                    "Heart",
-                    "Adrenal glands"
+                    {
+                      "text": "Brain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adrenal glands",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -523,19 +636,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Brain-sparing/cerebral redistribution."
+                  "text": "**Brain-sparing/cerebral redistribution.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_11",
-          "subsection_title": "Umbilical artery Doppler",
+          "subsection_id": "fetal_growth_restriction_subsection_10",
+          "subsection_title": "10. Umbilical artery Doppler",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_24",
+              "group_id": "fetal_growth_restriction_group_22",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -550,19 +663,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Placental vascular resistance."
+                  "text": "**Placental vascular resistance.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_12",
-          "subsection_title": "Normal umbilical artery Doppler",
+          "subsection_id": "fetal_growth_restriction_subsection_11",
+          "subsection_title": "11. Normal umbilical artery Doppler",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_25",
+              "group_id": "fetal_growth_restriction_group_23",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -573,17 +686,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Forward blood flow throughout systole and diastole."
+                  "text": "**Forward blood flow throughout systole and diastole.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The waveform has:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The waveform has:",
                   "items": [
-                    "Systolic flow",
-                    "Diastolic flow"
+                    {
+                      "text": "Systolic flow",
+                      "level": 0
+                    },
+                    {
+                      "text": "Diastolic flow",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -595,12 +711,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_13",
-          "subsection_title": "Increased resistance",
+          "subsection_id": "fetal_growth_restriction_subsection_12",
+          "subsection_title": "12. Increased resistance",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_26",
+              "group_id": "fetal_growth_restriction_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -630,21 +746,19 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_14",
-          "subsection_title": "Absent end-diastolic flow",
+          "subsection_id": "fetal_growth_restriction_subsection_13",
+          "subsection_title": "13. Absent end-diastolic flow",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_27",
+              "group_id": "fetal_growth_restriction_group_25",
               "group_title": "AEDF",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Absent end-diastolic flow"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Absent end-diastolic flow**"
                 },
                 {
                   "type": "paragraph",
@@ -661,35 +775,34 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_28",
+              "group_id": "fetal_growth_restriction_group_26",
               "group_title": "OSCE answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is an abnormal umbilical artery Doppler demonstrating absent end-diastolic flow, suggesting significant placental insufficiency.\""
+                  "text": "\"This is an abnormal umbilical artery Doppler demonstrating absent end-diastolic flow, suggesting significant placental insufficiency.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_15",
-          "subsection_title": "Reversed end-diastolic flow",
+          "subsection_id": "fetal_growth_restriction_subsection_14",
+          "subsection_title": "14. Reversed end-diastolic flow",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_29",
+              "group_id": "fetal_growth_restriction_group_27",
               "group_title": "REDF",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Reversed end-diastolic flow"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Reversed end-diastolic flow**"
                 },
                 {
                   "type": "paragraph",
@@ -709,19 +822,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Marked placental resistance and significant fetal compromise risk."
+                  "text": "**Marked placental resistance and significant fetal compromise risk.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_16",
-          "subsection_title": "Easy Doppler progression",
+          "subsection_id": "fetal_growth_restriction_subsection_15",
+          "subsection_title": "15. Easy Doppler progression",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_30",
+              "group_id": "fetal_growth_restriction_group_28",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -731,38 +844,52 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "NORMAL → REDUCED → ABSENT → REVERSED"
-                  ]
+                  "type": "paragraph",
+                  "text": "**NORMAL → REDUCED → ABSENT → REVERSED**"
                 },
                 {
                   "type": "paragraph",
                   "text": "As placental resistance worsens:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Forward diastolic flow",
-                    "↓",
-                    "Reduced diastolic flow",
-                    "↓",
-                    "Absent diastolic flow",
-                    "↓",
-                    "Reversed diastolic flow"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Forward diastolic flow**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Reduced diastolic flow**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Absent diastolic flow**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Reversed diastolic flow**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_17",
-          "subsection_title": "Pulsatility index",
+          "subsection_id": "fetal_growth_restriction_subsection_16",
+          "subsection_title": "16. Pulsatility index",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_31",
+              "group_id": "fetal_growth_restriction_group_29",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -772,20 +899,17 @@
                   "text": "You may be asked:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"What Doppler parameter is used?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"What Doppler parameter is used?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "The:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Pulsatility index (PI)"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Pulsatility index (PI)**"
                 },
                 {
                   "type": "paragraph",
@@ -797,7 +921,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Higher PI = greater resistance to blood flow."
+                  "text": "**Higher PI = greater resistance to blood flow.**"
                 },
                 {
                   "type": "paragraph",
@@ -808,12 +932,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_18",
-          "subsection_title": "Middle cerebral artery Doppler",
+          "subsection_id": "fetal_growth_restriction_subsection_17",
+          "subsection_title": "17. Middle cerebral artery Doppler",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_32",
+              "group_id": "fetal_growth_restriction_group_30",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -835,10 +959,8 @@
                   "text": "This produces:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Reduced MCA PI"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Reduced MCA PI**"
                 },
                 {
                   "type": "paragraph",
@@ -846,19 +968,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Cerebral redistribution / brain sparing."
+                  "text": "**Cerebral redistribution / brain sparing.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_19",
-          "subsection_title": "Cerebroplacental ratio",
+          "subsection_id": "fetal_growth_restriction_subsection_18",
+          "subsection_title": "18. Cerebroplacental ratio",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_33",
+              "group_id": "fetal_growth_restriction_group_31",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -868,10 +990,8 @@
                   "text": "The:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Cerebroplacental ratio (CPR)"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Cerebroplacental ratio (CPR)**"
                 },
                 {
                   "type": "paragraph",
@@ -883,7 +1003,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fetal adaptation to placental insufficiency, particularly in late-onset FGR."
+                  "text": "**Fetal adaptation to placental insufficiency**, particularly in late-onset FGR."
                 },
                 {
                   "type": "paragraph",
@@ -894,12 +1014,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_20",
-          "subsection_title": "Ductus venosus",
+          "subsection_id": "fetal_growth_restriction_subsection_19",
+          "subsection_title": "19. Ductus venosus",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_34",
+              "group_id": "fetal_growth_restriction_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -910,7 +1030,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Severe early-onset FGR."
+                  "text": "**Severe early-onset FGR.**"
                 },
                 {
                   "type": "paragraph",
@@ -918,7 +1038,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Fetal cardiac function and cardiovascular compromise."
+                  "text": "**Fetal cardiac function and cardiovascular compromise.**"
                 },
                 {
                   "type": "paragraph",
@@ -929,12 +1049,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_21",
-          "subsection_title": "Amniotic fluid",
+          "subsection_id": "fetal_growth_restriction_subsection_20",
+          "subsection_title": "20. Amniotic fluid",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_35",
+              "group_id": "fetal_growth_restriction_group_33",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -945,7 +1065,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Oligohydramnios."
+                  "text": "**Oligohydramnios.**"
                 },
                 {
                   "type": "paragraph",
@@ -965,19 +1085,19 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal liquor does not exclude FGR."
+                  "text": "**Normal liquor does not exclude FGR.**"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_22",
-          "subsection_title": "Growth trajectory",
+          "subsection_id": "fetal_growth_restriction_subsection_21",
+          "subsection_title": "21. Growth trajectory",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_36",
+              "group_id": "fetal_growth_restriction_group_34",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -989,7 +1109,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_37",
+              "group_id": "fetal_growth_restriction_group_35",
               "group_title": "Example",
               "group_subtitle": null,
               "group_icon": null,
@@ -999,30 +1119,24 @@
                   "text": "At 20 weeks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "55th centile"
-                  ]
+                  "type": "paragraph",
+                  "text": "55th centile"
                 },
                 {
                   "type": "paragraph",
                   "text": "At 28 weeks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "25th centile"
-                  ]
+                  "type": "paragraph",
+                  "text": "25th centile"
                 },
                 {
                   "type": "paragraph",
                   "text": "At 34 weeks:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "4th centile"
-                  ]
+                  "type": "paragraph",
+                  "text": "4th centile"
                 },
                 {
                   "type": "paragraph",
@@ -1033,12 +1147,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_23",
-          "subsection_title": "Maternal assessment",
+          "subsection_id": "fetal_growth_restriction_subsection_22",
+          "subsection_title": "22. Maternal assessment",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_38",
+              "group_id": "fetal_growth_restriction_group_36",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1050,7 +1164,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_39",
+              "group_id": "fetal_growth_restriction_group_37",
               "group_title": "Blood pressure",
               "group_subtitle": null,
               "group_icon": null,
@@ -1066,7 +1180,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_40",
+              "group_id": "fetal_growth_restriction_group_38",
               "group_title": "Urine",
               "group_subtitle": null,
               "group_icon": null,
@@ -1078,24 +1192,84 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_41",
+              "group_id": "fetal_growth_restriction_group_39",
               "group_title": "Symptoms of pre-eclampsia",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Severe headache",
-                    "Visual disturbance",
-                    "Epigastric/RUQ pain",
-                    "Sudden swelling",
-                    "Reduced urine output",
-                    "Shortness of breath"
+                    {
+                      "text": "Severe headache",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visual disturbance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epigastric/RUQ pain",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sudden swelling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine output",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shortness of breath",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "fetal_growth_restriction_subsection_23",
+          "subsection_title": "23. Maternal investigations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "fetal_growth_restriction_group_40",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Depending on the clinical picture:",
+                  "items": [
+                    {
+                      "text": "FBC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Platelet count",
+                      "level": 0
+                    },
+                    {
+                      "text": "Creatinine/U&E",
+                      "level": 0
+                    },
+                    {
+                      "text": "AST/ALT or LFT",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine protein assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other pre-eclampsia investigations",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1104,41 +1278,11 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_24",
-          "subsection_title": "Maternal investigations",
+          "subsection_title": "24. Fetal investigations",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_42",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Depending on the clinical picture:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "FBC",
-                    "Platelet count",
-                    "Creatinine/U&E",
-                    "AST/ALT or LFT",
-                    "Urine protein assessment",
-                    "Other pre-eclampsia investigations"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_25",
-          "subsection_title": "Fetal investigations",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_43",
+              "group_id": "fetal_growth_restriction_group_41",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1150,64 +1294,146 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_44",
+              "group_id": "fetal_growth_restriction_group_42",
               "group_title": "Ultrasound",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "EFW",
-                    "AC",
-                    "HC",
-                    "FL"
+                    {
+                      "text": "EFW",
+                      "level": 0
+                    },
+                    {
+                      "text": "AC",
+                      "level": 0
+                    },
+                    {
+                      "text": "HC",
+                      "level": 0
+                    },
+                    {
+                      "text": "FL",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_43",
+              "group_title": "Amniotic fluid",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "AFI or deepest vertical pocket according to guideline",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_44",
+              "group_title": "Doppler",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Umbilical artery",
+                      "level": 0
+                    },
+                    {
+                      "text": "MCA",
+                      "level": 0
+                    },
+                    {
+                      "text": "CPR",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ductus venosus where indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
               "group_id": "fetal_growth_restriction_group_45",
-              "group_title": "Amniotic fluid",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "AFI or deepest vertical pocket according to guideline"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_46",
-              "group_title": "Doppler",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Umbilical artery",
-                    "MCA",
-                    "CPR",
-                    "Ductus venosus where indicated"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_47",
               "group_title": "Fetal surveillance",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "CTG",
-                    "Other fetal wellbeing assessments"
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other fetal wellbeing assessments",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "fetal_growth_restriction_subsection_25",
+          "subsection_title": "25. Severe or early FGR",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "fetal_growth_restriction_group_46",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "If FGR occurs:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Before 32 weeks**"
+                },
+                {
+                  "type": "list",
+                  "title": "or is particularly severe, consider:",
+                  "items": [
+                    {
+                      "text": "Detailed anatomical ultrasound",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic counselling",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic testing where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infection evaluation where clinically indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Specialist fetal medicine review",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1216,7 +1442,48 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_26",
-          "subsection_title": "Severe or early FGR",
+          "subsection_title": "26. Why might you offer genetic testing?",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "fetal_growth_restriction_group_47",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Because severe early FGR can be associated with:",
+                  "items": [
+                    {
+                      "text": "Chromosomal abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Genetic syndromes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Structural abnormalities",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is particularly relevant when:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FGR is early, severe or associated with abnormal anatomy.**"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "fetal_growth_restriction_subsection_27",
+          "subsection_title": "27. Management principles",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1227,103 +1494,35 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "If FGR occurs:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Before 32 weeks"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "or is particularly severe, consider:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Detailed anatomical ultrasound",
-                    "Genetic counselling",
-                    "Genetic testing where indicated",
-                    "Infection evaluation where clinically indicated",
-                    "Specialist fetal medicine review"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_27",
-          "subsection_title": "Why might you offer genetic testing?",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_49",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "Because severe early FGR can be associated with:"
-                },
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Chromosomal abnormalities",
-                    "Genetic syndromes",
-                    "Structural abnormalities"
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "text": "This is particularly relevant when:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "FGR is early, severe or associated with abnormal anatomy."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_28",
-          "subsection_title": "Management principles",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_50",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
                   "text": "There is no medication that reliably:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Makes a growth-restricted placenta normal.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "**\"Makes a growth-restricted placenta normal.\"**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Management is primarily:"
                 }
               ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_49",
+              "group_title": "SURVEILLANCE + OPTIMAL DELIVERY TIMING",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": []
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_29",
-          "subsection_title": "Surveillance",
+          "subsection_id": "fetal_growth_restriction_subsection_28",
+          "subsection_title": "28. Surveillance",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_51",
+              "group_id": "fetal_growth_restriction_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1335,38 +1534,71 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_52",
+              "group_id": "fetal_growth_restriction_group_51",
               "group_title": "Fetal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Growth",
-                    "Umbilical artery Doppler",
-                    "MCA/CPR where indicated",
-                    "Ductus venosus in selected severe early FGR",
-                    "Amniotic fluid",
-                    "Fetal movements",
-                    "CTG where appropriate"
+                    {
+                      "text": "Growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Umbilical artery Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "MCA/CPR where indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ductus venosus in selected severe early FGR",
+                      "level": 0
+                    },
+                    {
+                      "text": "Amniotic fluid",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_53",
+              "group_id": "fetal_growth_restriction_group_52",
               "group_title": "Maternal",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "BP",
-                    "Proteinuria",
-                    "Pre-eclampsia symptoms",
-                    "Maternal laboratory results when indicated"
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Proteinuria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-eclampsia symptoms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal laboratory results when indicated",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1374,12 +1606,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_30",
-          "subsection_title": "Delivery timing",
+          "subsection_id": "fetal_growth_restriction_subsection_29",
+          "subsection_title": "29. Delivery timing",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_54",
+              "group_id": "fetal_growth_restriction_group_53",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1395,21 +1627,19 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_55",
+              "group_id": "fetal_growth_restriction_group_54",
               "group_title": "Risk of remaining in utero",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "versus"
-                  ]
+                  "type": "paragraph",
+                  "text": "versus"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_56",
+              "group_id": "fetal_growth_restriction_group_55",
               "group_title": "Risk of prematurity.",
               "group_subtitle": null,
               "group_icon": null,
@@ -1420,7 +1650,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The worse the fetal surveillance, the greater the urgency to deliver."
+                  "text": "**The worse the fetal surveillance, the greater the urgency to deliver.**"
                 },
                 {
                   "type": "paragraph",
@@ -1431,31 +1661,49 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_31",
-          "subsection_title": "Scenario 1 — Mild FGR, reassuring surveillance",
+          "subsection_id": "fetal_growth_restriction_subsection_30",
+          "subsection_title": "30. Scenario 1 — Mild FGR, reassuring surveillance",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_57",
+              "group_id": "fetal_growth_restriction_group_56",
               "group_title": "Findings",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "EFW 7th centile",
-                    "Stable growth",
-                    "Normal UA Doppler",
-                    "Normal liquor",
-                    "Reassuring CTG",
-                    "No maternal disease"
+                    {
+                      "text": "EFW 7th centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stable growth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal UA Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "Normal liquor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reassuring CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "No maternal disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_58",
+              "group_id": "fetal_growth_restriction_group_57",
               "group_title": "Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1469,28 +1717,37 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_32",
-          "subsection_title": "Scenario 2 — Severe FGR",
+          "subsection_id": "fetal_growth_restriction_subsection_31",
+          "subsection_title": "31. Scenario 2 — Severe FGR",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_59",
+              "group_id": "fetal_growth_restriction_group_58",
               "group_title": "Findings",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "EFW <3rd centile",
-                    "Abnormal UA Doppler",
-                    "Reduced liquor"
+                    {
+                      "text": "EFW <3rd centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal UA Doppler",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced liquor",
+                      "level": 0
+                    }
                   ]
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_60",
+              "group_id": "fetal_growth_restriction_group_59",
               "group_title": "Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1504,21 +1761,27 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_33",
-          "subsection_title": "Scenario 3 — Absent end-diastolic flow",
+          "subsection_id": "fetal_growth_restriction_subsection_32",
+          "subsection_title": "32. Scenario 3 — Absent end-diastolic flow",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_61",
+              "group_id": "fetal_growth_restriction_group_60",
               "group_title": "Findings",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Severe FGR",
-                    "AEDF"
+                    {
+                      "text": "Severe FGR",
+                      "level": 0
+                    },
+                    {
+                      "text": "AEDF",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1527,21 +1790,36 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Significant placental insufficiency."
+                  "text": "**Significant placental insufficiency.**"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management requires:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Management requires:",
                   "items": [
-                    "Specialist care",
-                    "Close fetal surveillance",
-                    "Assessment for deterioration",
-                    "Antenatal corticosteroids if preterm delivery is likely",
-                    "Magnesium sulfate if very preterm birth is anticipated and indicated",
-                    "Delivery planning based on gestational age and fetal condition"
+                    {
+                      "text": "Specialist care",
+                      "level": 0
+                    },
+                    {
+                      "text": "Close fetal surveillance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assessment for deterioration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Antenatal corticosteroids if preterm delivery is likely",
+                      "level": 0
+                    },
+                    {
+                      "text": "Magnesium sulfate if very preterm birth is anticipated and indicated",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delivery planning based on gestational age and fetal condition",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1549,12 +1827,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_34",
-          "subsection_title": "Scenario 4 — Reversed end-diastolic flow",
+          "subsection_id": "fetal_growth_restriction_subsection_33",
+          "subsection_title": "33. Scenario 4 — Reversed end-diastolic flow",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_62",
+              "group_id": "fetal_growth_restriction_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1569,7 +1847,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Severe placental insufficiency + high fetal risk."
+                  "text": "**Severe placental insufficiency + high fetal risk.**"
                 },
                 {
                   "type": "paragraph",
@@ -1584,12 +1862,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_35",
-          "subsection_title": "Antenatal corticosteroids",
+          "subsection_id": "fetal_growth_restriction_subsection_34",
+          "subsection_title": "34. Antenatal corticosteroids",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_63",
+              "group_id": "fetal_growth_restriction_group_62",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1600,7 +1878,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Give antenatal corticosteroids according to the applicable gestational-age guideline."
+                  "text": "**Give antenatal corticosteroids according to the applicable gestational-age guideline.**"
                 },
                 {
                   "type": "paragraph",
@@ -1615,12 +1893,12 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_36",
-          "subsection_title": "Magnesium sulfate",
+          "subsection_id": "fetal_growth_restriction_subsection_35",
+          "subsection_title": "35. Magnesium sulfate",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_64",
+              "group_id": "fetal_growth_restriction_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1631,7 +1909,84 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Magnesium sulfate may be used for fetal neuroprotection according to gestational age and local protocol."
+                  "text": "**Magnesium sulfate may be used for fetal neuroprotection** according to gestational age and local protocol."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "fetal_growth_restriction_subsection_36",
+          "subsection_title": "36. Mode of delivery",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "fetal_growth_restriction_group_64",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "FGR does **not automatically mean caesarean section.**"
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_65",
+              "group_title": "Vaginal delivery may be appropriate when",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Fetal condition is reassuring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dopplers are acceptable",
+                      "level": 0
+                    },
+                    {
+                      "text": "No other contraindication exists",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gestational age is appropriate",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_66",
+              "group_title": "Caesarean may be required when",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Severe fetal compromise",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe Doppler abnormalities in an appropriate clinical context",
+                      "level": 0
+                    },
+                    {
+                      "text": "Other obstetric indications",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1639,64 +1994,11 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_37",
-          "subsection_title": "Mode of delivery",
+          "subsection_title": "37. FGR and induction",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_65",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "FGR does not automatically mean caesarean section."
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_66",
-              "group_title": "Vaginal delivery may be appropriate when",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Fetal condition is reassuring",
-                    "Dopplers are acceptable",
-                    "No other contraindication exists",
-                    "Gestational age is appropriate"
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "fetal_growth_restriction_group_67",
-              "group_title": "Caesarean may be required when",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Severe fetal compromise",
-                    "Abnormal CTG",
-                    "Severe Doppler abnormalities in an appropriate clinical context",
-                    "Other obstetric indications"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_38",
-          "subsection_title": "FGR and induction",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1706,42 +2008,92 @@
                   "text": "A common examiner question:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Can you induce labour in a growth-restricted fetus?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Can you induce labour in a growth-restricted fetus?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_69",
+              "group_id": "fetal_growth_restriction_group_68",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Yes, in selected pregnancies."
+                  "text": "**Yes, in selected pregnancies.**"
                 },
                 {
                   "type": "paragraph",
                   "text": "FGR alone is not an absolute indication for caesarean delivery."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "The decision depends on:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "The decision depends on:",
                   "items": [
-                    "Doppler findings",
-                    "CTG",
-                    "Gestational age",
-                    "Fetal presentation",
-                    "Cervical status",
-                    "Maternal condition",
-                    "Overall fetal wellbeing"
+                    {
+                      "text": "Doppler findings",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Gestational age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal presentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cervical status",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal condition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Overall fetal wellbeing",
+                      "level": 0
+                    }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "fetal_growth_restriction_subsection_38",
+          "subsection_title": "38. Counselling the patient",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "fetal_growth_restriction_group_69",
+              "group_title": "Patient",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"Why is my baby small?\"",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_70",
+              "group_title": "Model answer",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "\"There are several possible reasons. Some babies are naturally small and completely healthy, but sometimes a small baby indicates that the placenta is not delivering enough oxygen and nutrients. Less commonly, growth restriction can be associated with fetal genetic, structural or infectious conditions. We need to assess the growth pattern, blood flow through the placenta and baby's wellbeing to understand which situation applies to you.\"",
+                  "style": "quote"
                 }
               ]
             }
@@ -1749,65 +2101,32 @@
         },
         {
           "subsection_id": "fetal_growth_restriction_subsection_39",
-          "subsection_title": "Counselling the patient",
+          "subsection_title": "39. Patient asks",
           "subsection_icon": null,
           "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_70",
-              "group_title": "Patient",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "\"Why is my baby small?\""
-                  ]
-                }
-              ]
-            },
             {
               "group_id": "fetal_growth_restriction_group_71",
-              "group_title": "Model answer",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "\"There are several possible reasons. Some babies are naturally small and completely healthy, but sometimes a small baby indicates that the placenta is not delivering enough oxygen and nutrients. Less commonly, growth restriction can be associated with fetal genetic, structural or infectious conditions. We need to assess the growth pattern, blood flow through the placenta and baby's wellbeing to understand which situation applies to you.\""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_40",
-          "subsection_title": "Patient asks",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_72",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Can you make my baby grow?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Can you make my baby grow?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_73",
+              "group_id": "fetal_growth_restriction_group_72",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"Unfortunately, once significant placental insufficiency has developed, there is no medication that can simply make the placenta function normally. Our goal is to monitor the baby closely and deliver at the safest time—early enough to prevent serious complications but late enough to avoid unnecessary prematurity.\""
+                  "text": "\"Unfortunately, once significant placental insufficiency has developed, there is no medication that can simply make the placenta function normally. Our goal is to monitor the baby closely and deliver at the safest time—early enough to prevent serious complications but late enough to avoid unnecessary prematurity.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1818,54 +2137,53 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_41",
-          "subsection_title": "Patient asks",
+          "subsection_id": "fetal_growth_restriction_subsection_40",
+          "subsection_title": "40. Patient asks",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_74",
+              "group_id": "fetal_growth_restriction_group_73",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Did I cause this?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Did I cause this?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_75",
+              "group_id": "fetal_growth_restriction_group_74",
               "group_title": "Answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"Usually not. Some maternal conditions can increase the risk, but fetal growth restriction is often related to placental function, and it is not something you should blame yourself for.\""
+                  "text": "\"Usually not. Some maternal conditions can increase the risk, but fetal growth restriction is often related to placental function, and it is not something you should blame yourself for.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_42",
-          "subsection_title": "Patient asks",
+          "subsection_id": "fetal_growth_restriction_subsection_41",
+          "subsection_title": "41. Patient asks",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_76",
+              "group_id": "fetal_growth_restriction_group_75",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Will my baby survive?\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Will my baby survive?\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1877,19 +2195,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"The outlook depends greatly on how early the growth restriction developed, how small the baby is, the blood-flow measurements, the baby's heart-rate pattern and the overall condition of the pregnancy. We will use these findings to determine the safest timing for delivery and involve the neonatal team if early delivery is likely.\""
+                  "text": "\"The outlook depends greatly on how early the growth restriction developed, how small the baby is, the blood-flow measurements, the baby's heart-rate pattern and the overall condition of the pregnancy. We will use these findings to determine the safest timing for delivery and involve the neonatal team if early delivery is likely.\"",
+                  "style": "quote"
                 }
               ]
             }
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_43",
-          "subsection_title": "Examiner questions",
+          "subsection_id": "fetal_growth_restriction_subsection_42",
+          "subsection_title": "42. Examiner questions",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_77",
+              "group_id": "fetal_growth_restriction_group_76",
               "group_title": "Q1. What is FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1901,7 +2220,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_78",
+              "group_id": "fetal_growth_restriction_group_77",
               "group_title": "Q2. What is the most common mechanism?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1913,7 +2232,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_79",
+              "group_id": "fetal_growth_restriction_group_78",
               "group_title": "Q3. What is early-onset FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1925,7 +2244,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_80",
+              "group_id": "fetal_growth_restriction_group_79",
               "group_title": "Q4. What is late-onset FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1937,7 +2256,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_81",
+              "group_id": "fetal_growth_restriction_group_80",
               "group_title": "Q5. What Doppler assesses placental resistance?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1949,7 +2268,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_82",
+              "group_id": "fetal_growth_restriction_group_81",
               "group_title": "Q6. What is AEDF?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1961,7 +2280,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_83",
+              "group_id": "fetal_growth_restriction_group_82",
               "group_title": "Q7. What is REDF?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1973,7 +2292,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_84",
+              "group_id": "fetal_growth_restriction_group_83",
               "group_title": "Q8. What does reduced MCA PI suggest?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1985,7 +2304,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_85",
+              "group_id": "fetal_growth_restriction_group_84",
               "group_title": "Q9. What is CPR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -1997,7 +2316,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_86",
+              "group_id": "fetal_growth_restriction_group_85",
               "group_title": "Q10. What is the main treatment for established placental FGR?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2009,7 +2328,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_87",
+              "group_id": "fetal_growth_restriction_group_86",
               "group_title": "Q11. Does FGR always require caesarean?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2021,7 +2340,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_88",
+              "group_id": "fetal_growth_restriction_group_87",
               "group_title": "Q12. What maternal disease should you actively look for?",
               "group_subtitle": null,
               "group_icon": null,
@@ -2035,21 +2354,20 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_44",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_id": "fetal_growth_restriction_subsection_43",
+          "subsection_title": "43. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_89",
+              "group_id": "fetal_growth_restriction_group_88",
               "group_title": "❌ Mistake 1",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"EFW below 10th centile = FGR.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"EFW below 10th centile = FGR.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2058,16 +2376,15 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_90",
+              "group_id": "fetal_growth_restriction_group_89",
               "group_title": "❌ Mistake 2",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Normal umbilical artery Doppler excludes FGR.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Normal umbilical artery Doppler excludes FGR.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2079,12 +2396,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Late-onset FGR."
+                  "text": "**Late-onset FGR.**"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_91",
+              "group_id": "fetal_growth_restriction_group_90",
               "group_title": "❌ Mistake 3",
               "group_subtitle": null,
               "group_icon": null,
@@ -2096,7 +2413,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_92",
+              "group_id": "fetal_growth_restriction_group_91",
               "group_title": "❌ Mistake 4",
               "group_subtitle": null,
               "group_icon": null,
@@ -2108,7 +2425,7 @@
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_93",
+              "group_id": "fetal_growth_restriction_group_92",
               "group_title": "❌ Mistake 5",
               "group_subtitle": null,
               "group_icon": null,
@@ -2118,10 +2435,9 @@
                   "text": "Saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"Give steroids and deliver immediately.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"Give steroids and deliver immediately.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2133,12 +2449,12 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Gestational age + fetal surveillance + maternal condition."
+                  "text": "**Gestational age + fetal surveillance + maternal condition.**"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_94",
+              "group_id": "fetal_growth_restriction_group_93",
               "group_title": "❌ Mistake 6",
               "group_subtitle": null,
               "group_icon": null,
@@ -2148,10 +2464,9 @@
                   "text": "Saying:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "\"FGR means caesarean.\""
-                  ]
+                  "type": "paragraph",
+                  "text": "\"FGR means caesarean.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2162,197 +2477,258 @@
           ]
         },
         {
-          "subsection_id": "fetal_growth_restriction_subsection_45",
-          "subsection_title": "Full OSCE model answer",
+          "subsection_id": "fetal_growth_restriction_subsection_44",
+          "subsection_title": "44. Full OSCE model answer",
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "fetal_growth_restriction_group_95",
+              "group_id": "fetal_growth_restriction_group_94",
               "group_title": "Examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"A 28-week woman has severe FGR with absent end-diastolic flow. How would you manage her?\""
+                  "text": "\"A 28-week woman has severe FGR with absent end-diastolic flow. How would you manage her?\"",
+                  "style": "quote"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_96",
+              "group_id": "fetal_growth_restriction_group_95",
               "group_title": "Model answer",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"This is severe early-onset fetal growth restriction with an abnormal umbilical artery Doppler demonstrating absent end-diastolic flow, suggesting significant placental insufficiency.\""
+                  "text": "\"This is severe early-onset fetal growth restriction with an abnormal umbilical artery Doppler demonstrating absent end-diastolic flow, suggesting significant placental insufficiency.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would involve the fetal medicine and senior obstetric team and admit or closely monitor her depending on the clinical situation. I would assess maternal wellbeing, particularly for pre-eclampsia, and perform comprehensive fetal surveillance including serial Doppler studies, fetal heart-rate monitoring where appropriate, amniotic fluid assessment and additional Dopplers such as the MCA or ductus venosus when indicated.\""
+                  "text": "\"I would involve the fetal medicine and senior obstetric team and admit or closely monitor her depending on the clinical situation. I would assess maternal wellbeing, particularly for pre-eclampsia, and perform comprehensive fetal surveillance including serial Doppler studies, fetal heart-rate monitoring where appropriate, amniotic fluid assessment and additional Dopplers such as the MCA or ductus venosus when indicated.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would administer antenatal corticosteroids if preterm delivery is anticipated and consider magnesium sulfate for fetal neuroprotection if delivery is expected at a sufficiently preterm gestation according to local guidance.\""
+                  "text": "\"I would administer antenatal corticosteroids if preterm delivery is anticipated and consider magnesium sulfate for fetal neuroprotection if delivery is expected at a sufficiently preterm gestation according to local guidance.\"",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "\"I would discuss the case with the neonatal team and plan delivery based on the gestational age, Doppler progression, CTG, fetal movements, maternal condition and other evidence of fetal compromise. I would balance the risks of extreme prematurity against the risks of continued intrauterine exposure to severe placental insufficiency.\""
+                  "text": "\"I would discuss the case with the neonatal team and plan delivery based on the gestational age, Doppler progression, CTG, fetal movements, maternal condition and other evidence of fetal compromise. I would balance the risks of extreme prematurity against the risks of continued intrauterine exposure to severe placental insufficiency.\"",
+                  "style": "quote"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_46",
-          "subsection_title": "🧠 FGR MASTER FRAMEWORK",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
-              "group_id": "fetal_growth_restriction_group_97",
-              "group_title": "",
+              "group_id": "fetal_growth_restriction_group_96",
+              "group_title": "🧠 FGR MASTER FRAMEWORK",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "When you see FGR, immediately think:"
+                  "text": "When you see **FGR**, immediately think:"
+                }
+              ]
+            },
+            {
+              "group_id": "fetal_growth_restriction_group_97",
+              "group_title": "CAUSE → GROWTH → FLOW → FLUID → FETUS → MOTHER → DELIVERY",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**CAUSE**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Maternal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Placental",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**GROWTH**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "EFW",
+                      "level": 0
+                    },
+                    {
+                      "text": "AC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Centile",
+                      "level": 0
+                    },
+                    {
+                      "text": "Trajectory",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FLOW**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "UA",
+                      "level": 0
+                    },
+                    {
+                      "text": "MCA",
+                      "level": 0
+                    },
+                    {
+                      "text": "CPR",
+                      "level": 0
+                    },
+                    {
+                      "text": "DV",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FLUID**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Oligohydramnios?",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**FETUS**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Movements",
+                      "level": 0
+                    },
+                    {
+                      "text": "CTG",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anatomy",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**MOTHER**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "BP",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-eclampsia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal/autoimmune disease",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**DELIVERY**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "When is continuing pregnancy more dangerous than prematurity?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
             {
               "group_id": "fetal_growth_restriction_group_98",
-              "group_title": "CAUSE",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Maternal",
-                    "Placental",
-                    "Fetal"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_99",
-              "group_title": "GROWTH",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "EFW",
-                    "AC",
-                    "Centile",
-                    "Trajectory"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_100",
-              "group_title": "FLOW",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "UA",
-                    "MCA",
-                    "CPR",
-                    "DV"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_101",
-              "group_title": "FLUID",
+              "group_title": "⭐ Doppler progression to memorise",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Oligohydramnios?"
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_102",
-              "group_title": "FETUS",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "Movements",
-                    "CTG",
-                    "Anatomy"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_103",
-              "group_title": "MOTHER",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
-                {
-                  "type": "checklist",
-                  "items": [
-                    "BP",
-                    "Pre-eclampsia",
-                    "Renal/autoimmune disease"
-                  ]
-                }
-              ]
-            },
-            {
-              "group_id": "fetal_growth_restriction_group_104",
-              "group_title": "DELIVERY",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Normal**"
+                },
                 {
                   "type": "paragraph",
-                  "text": "When is continuing pregnancy more dangerous than prematurity?"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "fetal_growth_restriction_subsection_47",
-          "subsection_title": "⭐ Doppler progression to memorise",
-          "subsection_icon": null,
-          "content_groups": [
-            {
-              "group_id": "fetal_growth_restriction_group_105",
-              "group_title": "",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "↓"
+                },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Normal",
-                    "↓",
-                    "Increased resistance",
-                    "↓",
-                    "Reduced end-diastolic flow",
-                    "↓",
-                    "Absent end-diastolic flow",
-                    "↓",
-                    "Reversed end-diastolic flow"
-                  ]
+                  "type": "paragraph",
+                  "text": "**Increased resistance**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Reduced end-diastolic flow**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Absent end-diastolic flow**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "↓"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Reversed end-diastolic flow**"
                 },
                 {
                   "type": "paragraph",
@@ -2360,19 +2736,20 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "The more abnormal the Doppler and fetal surveillance, the greater the concern for fetal compromise."
+                  "text": "**The more abnormal the Doppler and fetal surveillance, the greater the concern for fetal compromise.**"
                 }
               ]
             },
             {
-              "group_id": "fetal_growth_restriction_group_106",
+              "group_id": "fetal_growth_restriction_group_99",
               "group_title": "⭐ One sentence for the examiner",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "\"In suspected FGR, I would not base management on fetal size alone; I would integrate growth trajectory, maternal disease, amniotic fluid, umbilical and cerebral Dopplers, fetal surveillance and gestational age to determine the safest timing and mode of delivery.\""
+                  "text": "**\"In suspected FGR, I would not base management on fetal size alone; I would integrate growth trajectory, maternal disease, amniotic fluid, umbilical and cerebral Dopplers, fetal surveillance and gestational age to determine the safest timing and mode of delivery.\"**",
+                  "style": "quote"
                 }
               ]
             }

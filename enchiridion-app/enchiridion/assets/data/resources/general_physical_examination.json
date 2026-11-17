@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "general_physical_examination_subsection_1",
-          "subsection_title": "General Pediatric Examination",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "general_physical_examination_group_1",
-              "group_title": "",
+              "group_title": "General Pediatric Examination",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -32,24 +32,22 @@
                   "text": "The examiner may ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Examine this child generally and report your findings.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Examine this child generally and report your findings.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Perform a general examination of this child.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Perform a general examination of this child.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Your job is to demonstrate that you can assess the child's overall condition before moving to a system-specific examination."
+                  "text": "Your job is to demonstrate that you can **assess the child's overall condition before moving to a system-specific examination.**"
                 }
               ]
             }
@@ -57,7 +55,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_2",
-          "subsection_title": "What you should be able to do",
+          "subsection_title": "1. What you should be able to do",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -67,29 +65,77 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "By the end of this station, you should be able to assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "By the end of this station, you should be able to assess:",
                   "items": [
-                    "General appearance",
-                    "Consciousness",
-                    "Behaviour and interaction",
-                    "Nutritional state",
-                    "Hydration",
-                    "Pallor",
-                    "Jaundice",
-                    "Cyanosis",
-                    "Clubbing",
-                    "Oedema",
-                    "Lymphadenopathy",
-                    "Skin",
-                    "Dysmorphic features",
-                    "Respiratory distress",
-                    "Shock",
-                    "Temperature",
-                    "Pain/distress"
+                    {
+                      "text": "General appearance",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Behaviour and interaction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional state",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymphadenopathy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmorphic features",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory distress",
+                      "level": 0
+                    },
+                    {
+                      "text": "Shock",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pain/distress",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -98,7 +144,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Recognize a sick child early."
+                  "text": "**Recognize a sick child early.**"
                 }
               ]
             }
@@ -106,7 +152,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_3",
-          "subsection_title": "Before touching the child",
+          "subsection_title": "2. Before touching the child",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -117,18 +163,25 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "“Good morning. My name is Dr ____. I am going to examine your child. Is that okay?”"
+                  "text": "“Good morning. My name is Dr ____. I am going to examine your child. Is that okay?”",
+                  "style": "quote"
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Confirm:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Confirm:",
                   "items": [
-                    "Child's name",
-                    "Age",
-                    "Identity"
+                    {
+                      "text": "Child's name",
+                      "level": 0
+                    },
+                    {
+                      "text": "Age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Identity",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -140,16 +193,25 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Ideally examine the child:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ideally examine the child:",
                   "items": [
-                    "In the parent's presence",
-                    "In a comfortable position",
-                    "With adequate exposure",
-                    "While minimizing distress"
+                    {
+                      "text": "In the parent's presence",
+                      "level": 0
+                    },
+                    {
+                      "text": "In a comfortable position",
+                      "level": 0
+                    },
+                    {
+                      "text": "With adequate exposure",
+                      "level": 0
+                    },
+                    {
+                      "text": "While minimizing distress",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -178,7 +240,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Observe before touching."
+                  "text": "**Observe before touching.**"
                 },
                 {
                   "type": "paragraph",
@@ -190,7 +252,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_4",
-          "subsection_title": "First impression — from the end of the bed",
+          "subsection_title": "3. First impression — from the end of the bed",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -216,22 +278,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "Alertness",
-                    "Interaction",
-                    "Posture",
-                    "Facial expression",
-                    "Cry",
-                    "Movement",
-                    "Breathing",
-                    "Colour",
-                    "Nutritional state",
-                    "Hydration"
+                    {
+                      "text": "Alertness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interaction",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posture",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial expression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cry",
+                      "level": 0
+                    },
+                    {
+                      "text": "Movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Breathing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Colour",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nutritional state",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydration",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -239,20 +328,18 @@
                   "text": "You should be able to say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This child appears comfortable and is alert and appropriately interactive.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This child appears comfortable and is alert and appropriately interactive.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Or:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“This child appears ill, lethargic and in moderate respiratory distress.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“This child appears ill, lethargic and in moderate respiratory distress.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -260,7 +347,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_5",
-          "subsection_title": "General appearance",
+          "subsection_title": "4. General appearance",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -282,32 +369,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Is the child:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Alert?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Playful?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Irritable?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Drowsy?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Lethargic?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Unresponsive?"
+                  "type": "list",
+                  "title": "Is the child:",
+                  "items": [
+                    {
+                      "text": "Alert?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Playful?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irritable?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drowsy?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lethargic?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unresponsive?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -318,32 +407,34 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Does the child:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Make eye contact?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respond to the parent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respond to you?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Follow objects?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Smile appropriately?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cry appropriately?"
+                  "type": "list",
+                  "title": "Does the child:",
+                  "items": [
+                    {
+                      "text": "Make eye contact?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respond to the parent?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respond to you?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Follow objects?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Smile appropriately?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cry appropriately?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -358,32 +449,34 @@
                   "text": "In infants, listen to the cry."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Is it:"
+                  "type": "list",
+                  "title": "Is it:",
+                  "items": [
+                    {
+                      "text": "Normal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weak?",
+                      "level": 0
+                    },
+                    {
+                      "text": "High-pitched?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hoarse?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Absent?",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Weak?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "High-pitched?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Hoarse?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Absent?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A high-pitched cry may be associated with neurological pathology."
+                  "text": "A **high-pitched cry** may be associated with neurological pathology."
                 },
                 {
                   "type": "paragraph",
@@ -395,7 +488,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_6",
-          "subsection_title": "Assess level of consciousness",
+          "subsection_title": "5. Assess level of consciousness",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -409,28 +502,42 @@
                   "text": "For an OSCE, don't simply say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The child is conscious.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The child is conscious.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
                   "text": "Describe the level more precisely."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Possible states:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Possible states:",
                   "items": [
-                    "Alert",
-                    "Drowsy",
-                    "Lethargic",
-                    "Obtunded",
-                    "Stuporous",
-                    "Comatose"
+                    {
+                      "text": "Alert",
+                      "level": 0
+                    },
+                    {
+                      "text": "Drowsy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lethargic",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obtunded",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stuporous",
+                      "level": 0
+                    },
+                    {
+                      "text": "Comatose",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -446,13 +553,20 @@
                   "text": "A quick pediatric assessment:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "A — Alert",
-                    "V — Responds to Voice",
-                    "P — Responds to Pain",
-                    "U — Unresponsive"
-                  ]
+                  "type": "paragraph",
+                  "text": "**A — Alert**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**V — Responds to Voice**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**P — Responds to Pain**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**U — Unresponsive**"
                 },
                 {
                   "type": "paragraph",
@@ -464,7 +578,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_7",
-          "subsection_title": "Assess nutritional state",
+          "subsection_title": "6. Assess nutritional state",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -491,16 +605,25 @@
                   "caption": null
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Check:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Check:",
                   "items": [
-                    "Face",
-                    "Arms",
-                    "Thighs",
-                    "Buttocks"
+                    {
+                      "text": "Face",
+                      "level": 0
+                    },
+                    {
+                      "text": "Arms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thighs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Buttocks",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -521,17 +644,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Typical appearance:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Typical appearance:",
                   "items": [
-                    "Severe wasting",
-                    "Prominent ribs",
-                    "Thin limbs",
-                    "Reduced subcutaneous fat",
-                    "“Old man” appearance"
+                    {
+                      "text": "Severe wasting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prominent ribs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thin limbs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced subcutaneous fat",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Old man” appearance",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -543,18 +678,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Bilateral pitting oedema",
-                    "Muscle wasting",
-                    "Hair changes",
-                    "Skin changes",
-                    "Moon face",
-                    "Irritability/apathy"
+                    {
+                      "text": "Bilateral pitting oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Muscle wasting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hair changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Moon face",
+                      "level": 0
+                    },
+                    {
+                      "text": "Irritability/apathy",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -570,17 +720,29 @@
                   "text": "Do not diagnose malnutrition purely by looking."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "You should subsequently perform:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You should subsequently perform:",
                   "items": [
-                    "Weight",
-                    "Height/length",
-                    "MUAC",
-                    "Growth chart assessment",
-                    "Oedema assessment"
+                    {
+                      "text": "Weight",
+                      "level": 0
+                    },
+                    {
+                      "text": "Height/length",
+                      "level": 0
+                    },
+                    {
+                      "text": "MUAC",
+                      "level": 0
+                    },
+                    {
+                      "text": "Growth chart assessment",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oedema assessment",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -589,7 +751,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_8",
-          "subsection_title": "Assess hydration",
+          "subsection_title": "7. Assess hydration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -615,10 +777,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Normal",
-                    "Sunken"
+                    {
+                      "text": "Normal",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sunken",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -630,10 +798,16 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Moist",
-                    "Dry"
+                    {
+                      "text": "Moist",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dry",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -649,10 +823,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Has the child been producing tears when crying?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Has the child been producing tears when crying?”",
+                  "style": "quote"
                 }
               ]
             },
@@ -684,7 +857,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normally approximately ≤2 seconds in a warm child."
+                  "text": "Normally approximately **≤2 seconds** in a warm child."
                 }
               ]
             },
@@ -699,10 +872,9 @@
                   "text": "Ask the caregiver:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“How much has the child been passing urine?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“How much has the child been passing urine?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -714,7 +886,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_9",
-          "subsection_title": "Recognizing dehydration",
+          "subsection_title": "8. Recognizing dehydration",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -724,13 +896,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Irritability",
-                    "Restlessness",
-                    "Sunken eyes",
-                    "Dry mucous membranes",
-                    "Increased thirst"
+                    {
+                      "text": "Irritability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restlessness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sunken eyes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dry mucous membranes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increased thirst",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -742,14 +929,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Lethargy/unconsciousness",
-                    "Very sunken eyes",
-                    "Unable to drink/drinking poorly",
-                    "Very slow skin pinch",
-                    "Reduced urine",
-                    "Poor perfusion/shock"
+                    {
+                      "text": "Lethargy/unconsciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Very sunken eyes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unable to drink/drinking poorly",
+                      "level": 0
+                    },
+                    {
+                      "text": "Very slow skin pinch",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced urine",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor perfusion/shock",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -762,7 +967,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Dehydration ≠ shock."
+                  "text": "**Dehydration ≠ shock.**"
                 },
                 {
                   "type": "paragraph",
@@ -770,7 +975,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Shock is a circulatory failure and requires urgent assessment and treatment."
+                  "text": "Shock is a **circulatory failure** and requires urgent assessment and treatment."
                 }
               ]
             }
@@ -778,7 +983,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_10",
-          "subsection_title": "Look for pallor",
+          "subsection_title": "9. Look for pallor",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -809,26 +1014,35 @@
                   "text": "Gently pull down the lower eyelid."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Pink/red",
-                    "Pale"
+                    {
+                      "text": "Pink/red",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pale",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Also examine:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also examine:",
                   "items": [
-                    "Palms",
-                    "Nail beds",
-                    "Oral mucosa"
+                    {
+                      "text": "Palms",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nail beds",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oral mucosa",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -840,19 +1054,37 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think of:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think of:",
                   "items": [
-                    "Anaemia",
-                    "Malaria",
-                    "Iron deficiency",
-                    "Sickle cell disease",
-                    "Haemolysis",
-                    "Acute blood loss",
-                    "Chronic disease"
+                    {
+                      "text": "Anaemia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malaria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Iron deficiency",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sickle cell disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Haemolysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Acute blood loss",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -861,7 +1093,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_11",
-          "subsection_title": "Look for jaundice",
+          "subsection_title": "10. Look for jaundice",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -896,14 +1128,17 @@
                   "text": "Look for yellow discoloration."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Also inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also inspect:",
                   "items": [
-                    "Skin",
-                    "Palms/soles where appropriate"
+                    {
+                      "text": "Skin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palms/soles where appropriate",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -915,23 +1150,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Consider:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Consider:",
                   "items": [
-                    "Haemolysis",
-                    "Malaria",
-                    "Hepatitis",
-                    "Sepsis",
-                    "Sickle cell disease",
-                    "Neonatal causes in newborns"
+                    {
+                      "text": "Haemolysis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malaria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hepatitis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sepsis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sickle cell disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neonatal causes in newborns",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "In a newborn, jaundice requires a much more structured assessment, which we'll cover in the newborn examination."
+                  "text": "In a newborn, **jaundice requires a much more structured assessment**, which we'll cover in the newborn examination."
                 }
               ]
             }
@@ -939,7 +1189,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_12",
-          "subsection_title": "Look for cyanosis",
+          "subsection_title": "11. Look for cyanosis",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -962,14 +1212,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "Tongue",
-                    "Oral mucosa"
+                    {
+                      "text": "Tongue",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oral mucosa",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -985,15 +1238,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look at:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look at:",
                   "items": [
-                    "Fingers",
-                    "Toes",
-                    "Nail beds"
+                    {
+                      "text": "Fingers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Toes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nail beds",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1010,7 +1269,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Do not diagnose central cyanosis simply by looking at the nail beds."
+                  "text": "**Do not diagnose central cyanosis simply by looking at the nail beds.**"
                 },
                 {
                   "type": "paragraph",
@@ -1022,7 +1281,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_13",
-          "subsection_title": "Check for clubbing",
+          "subsection_title": "12. Check for clubbing",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1049,15 +1308,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Increased nail curvature",
-                    "Loss of nail-bed angle",
-                    "Bulbous fingertips"
+                    {
+                      "text": "Increased nail curvature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of nail-bed angle",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bulbous fingertips",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1089,13 +1354,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Cystic fibrosis",
-                    "Chronic suppurative lung disease",
-                    "Bronchiectasis",
-                    "Some inflammatory bowel diseases"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic fibrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic suppurative lung disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiectasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some inflammatory bowel diseases",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1104,7 +1384,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_14",
-          "subsection_title": "Look for oedema",
+          "subsection_title": "13. Look for oedema",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1114,33 +1394,51 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Inspect:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Inspect:",
                   "items": [
-                    "Face",
-                    "Eyelids",
-                    "Sacrum",
-                    "Lower limbs",
-                    "Feet"
+                    {
+                      "text": "Face",
+                      "level": 0
+                    },
+                    {
+                      "text": "Eyelids",
+                      "level": 0
+                    },
+                    {
+                      "text": "Sacrum",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lower limbs",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feet",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then test for pitting oedema."
+                  "text": "Then test for **pitting oedema**."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Press firmly over:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Press firmly over:",
                   "items": [
-                    "Tibia",
-                    "Ankle",
-                    "Dorsum of foot"
+                    {
+                      "text": "Tibia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ankle",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dorsum of foot",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1160,13 +1458,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Nephrotic syndrome",
-                    "Renal disease",
-                    "Severe malnutrition",
-                    "Heart failure",
-                    "Liver disease"
+                    {
+                      "text": "Nephrotic syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Renal disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe malnutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1179,7 +1492,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Bilateral pitting oedema in a malnourished child is particularly important."
+                  "text": "**Bilateral pitting oedema in a malnourished child is particularly important.**"
                 }
               ]
             }
@@ -1187,7 +1500,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_15",
-          "subsection_title": "Lymph node examination",
+          "subsection_title": "14. Lymph node examination",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1214,17 +1527,44 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Occipital",
-                    "Post-auricular",
-                    "Pre-auricular",
-                    "Tonsillar",
-                    "Submandibular",
-                    "Submental",
-                    "Anterior cervical",
-                    "Posterior cervical",
-                    "Supraclavicular"
+                    {
+                      "text": "Occipital",
+                      "level": 0
+                    },
+                    {
+                      "text": "Post-auricular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pre-auricular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tonsillar",
+                      "level": 0
+                    },
+                    {
+                      "text": "Submandibular",
+                      "level": 0
+                    },
+                    {
+                      "text": "Submental",
+                      "level": 0
+                    },
+                    {
+                      "text": "Anterior cervical",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior cervical",
+                      "level": 0
+                    },
+                    {
+                      "text": "Supraclavicular",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1236,11 +1576,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Axillary",
-                    "Epitrochlear",
-                    "Inguinal"
+                    {
+                      "text": "Axillary",
+                      "level": 0
+                    },
+                    {
+                      "text": "Epitrochlear",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inguinal",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1248,26 +1597,50 @@
                   "text": "For an enlarged node, describe:"
                 },
                 {
-                  "type": "checklist",
+                  "type": "paragraph",
+                  "text": "**S C M T M**"
+                },
+                {
+                  "type": "list",
                   "items": [
-                    "S C M T M",
-                    "Size",
-                    "Consistency",
-                    "Mobility",
-                    "Tenderness",
-                    "Matting"
+                    {
+                      "text": "**S**ize",
+                      "level": 0
+                    },
+                    {
+                      "text": "**C**onsistency",
+                      "level": 0
+                    },
+                    {
+                      "text": "**M**obility",
+                      "level": 0
+                    },
+                    {
+                      "text": "**T**enderness",
+                      "level": 0
+                    },
+                    {
+                      "text": "**M**atting",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Also note:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Also note:",
                   "items": [
-                    "Overlying skin",
-                    "Number",
-                    "Distribution"
+                    {
+                      "text": "Overlying skin",
+                      "level": 0
+                    },
+                    {
+                      "text": "Number",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distribution",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1280,7 +1653,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Supraclavicular lymphadenopathy is particularly concerning and should not be dismissed."
+                  "text": "**Supraclavicular lymphadenopathy is particularly concerning** and should not be dismissed."
                 }
               ]
             }
@@ -1288,7 +1661,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_16",
-          "subsection_title": "Examine the skin",
+          "subsection_title": "15. Examine the skin",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1310,11 +1683,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pallor",
-                    "Cyanosis",
-                    "Jaundice"
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1326,13 +1708,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Macules"
+                    {
+                      "text": "Macules",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1341,9 +1723,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Papules"
+                    {
+                      "text": "Papules",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1352,9 +1737,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Vesicles"
+                    {
+                      "text": "Vesicles",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1363,9 +1751,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pustules"
+                    {
+                      "text": "Pustules",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1374,9 +1765,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Petechiae"
+                    {
+                      "text": "Petechiae",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1385,9 +1779,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Purpura"
+                    {
+                      "text": "Purpura",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1396,9 +1793,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Urticaria"
+                    {
+                      "text": "Urticaria",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1415,16 +1815,40 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Bruising",
-                    "Scratch marks",
-                    "Scars",
-                    "Ulcers",
-                    "Pigmentation",
-                    "Café-au-lait spots",
-                    "Hypopigmentation",
-                    "Birthmarks"
+                    {
+                      "text": "Bruising",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scratch marks",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ulcers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pigmentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Café-au-lait spots",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypopigmentation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Birthmarks",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1437,7 +1861,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Non-blanching petechiae/purpura + fever = consider meningococcal/severe bacterial infection until proven otherwise."
+                  "text": "**Non-blanching petechiae/purpura + fever = consider meningococcal/severe bacterial infection until proven otherwise.**"
                 }
               ]
             }
@@ -1445,7 +1869,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_17",
-          "subsection_title": "Look for dysmorphic features",
+          "subsection_title": "16. Look for dysmorphic features",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1467,13 +1891,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Eyes",
-                    "Nose",
-                    "Mouth",
-                    "Ears",
-                    "Facial proportions"
+                    {
+                      "text": "Eyes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nose",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ears",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial proportions",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1485,11 +1924,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Shape",
-                    "Size",
-                    "Hairline"
+                    {
+                      "text": "Shape",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hairline",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1501,11 +1949,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Finger abnormalities",
-                    "Single transverse palmar crease",
-                    "Clinodactyly"
+                    {
+                      "text": "Finger abnormalities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Single transverse palmar crease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clinodactyly",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1517,13 +1974,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Features may suggest:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Features may suggest:",
                   "items": [
-                    "Down syndrome"
+                    {
+                      "text": "Down syndrome",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1532,9 +1989,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Turner syndrome"
+                    {
+                      "text": "Turner syndrome",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1543,9 +2003,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Noonan syndrome"
+                    {
+                      "text": "Noonan syndrome",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1554,9 +2017,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Marfan syndrome"
+                    {
+                      "text": "Marfan syndrome",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1565,9 +2031,12 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Other genetic syndromes"
+                    {
+                      "text": "Other genetic syndromes",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -1579,10 +2048,9 @@
                   "text": "Say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The child has dysmorphic features, including…”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The child has dysmorphic features, including…”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -1594,7 +2062,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_18",
-          "subsection_title": "Assess respiratory distress",
+          "subsection_title": "17. Assess respiratory distress",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1605,7 +2073,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "This is one of the most important parts of general pediatric examination."
+                  "text": "This is **one of the most important parts of general pediatric examination**."
                 },
                 {
                   "type": "paragraph",
@@ -1632,18 +2100,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Subcostal recession",
-                    "Intercostal recession",
-                    "Suprasternal recession",
-                    "Tracheal tug",
-                    "Nasal flaring",
-                    "Grunting"
+                    {
+                      "text": "Subcostal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intercostal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Suprasternal recession",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tracheal tug",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nasal flaring",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grunting",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1655,12 +2138,24 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Head bobbing in infants",
-                    "Use of accessory muscles",
-                    "Cyanosis",
-                    "Abnormal respiratory pattern"
+                    {
+                      "text": "Head bobbing in infants",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use of accessory muscles",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abnormal respiratory pattern",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1672,20 +2167,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Can you hear:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Stridor?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Wheeze?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Grunting?"
+                  "type": "list",
+                  "title": "Can you hear:",
+                  "items": [
+                    {
+                      "text": "Stridor?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wheeze?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grunting?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1696,23 +2193,38 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Features can include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Features can include:",
                   "items": [
-                    "Marked chest indrawing",
-                    "Grunting",
-                    "Cyanosis",
-                    "Exhaustion",
-                    "Altered consciousness",
-                    "Poor air entry"
+                    {
+                      "text": "Marked chest indrawing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Grunting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exhaustion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered consciousness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor air entry",
+                      "level": 0
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "An exhausted child with decreasing respiratory effort may actually be getting worse, not better."
+                  "text": "**An exhausted child with decreasing respiratory effort may actually be getting worse, not** **better.**"
                 }
               ]
             }
@@ -1720,7 +2232,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_19",
-          "subsection_title": "Assess circulation and look for shock",
+          "subsection_title": "18. Assess circulation and look for shock",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1742,15 +2254,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Assess:",
                   "items": [
-                    "Rate",
-                    "Rhythm",
-                    "Volume"
+                    {
+                      "text": "Rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rhythm",
+                      "level": 0
+                    },
+                    {
+                      "text": "Volume",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1774,20 +2292,22 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Are they:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Warm?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cold?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mottled?"
+                  "type": "list",
+                  "title": "Are they:",
+                  "items": [
+                    {
+                      "text": "Warm?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cold?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mottled?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1798,16 +2318,21 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Pale?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Mottled?"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Cyanosed?"
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pale?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mottled?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosed?",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -1842,15 +2367,36 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Tachycardia",
-                    "Prolonged capillary refill",
-                    "Cold extremities",
-                    "Weak peripheral pulses",
-                    "Altered mental state",
-                    "Oliguria",
-                    "Hypotension — usually a late sign in children"
+                    {
+                      "text": "Tachycardia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prolonged capillary refill",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cold extremities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Weak peripheral pulses",
+                      "level": 0
+                    },
+                    {
+                      "text": "Altered mental state",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oliguria",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypotension — **usually a late sign in children**",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1863,7 +2409,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "A normal blood pressure does not exclude shock in a child."
+                  "text": "**A normal blood pressure does not exclude shock in a child.**"
                 },
                 {
                   "type": "paragraph",
@@ -1875,7 +2421,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_20",
-          "subsection_title": "Temperature",
+          "subsection_title": "19. Temperature",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1889,28 +2435,43 @@
                   "text": "Measure temperature using an appropriate method."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Interpret according to:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Interpret according to:",
                   "items": [
-                    "Age",
-                    "Measurement site",
-                    "Clinical context"
+                    {
+                      "text": "Age",
+                      "level": 0
+                    },
+                    {
+                      "text": "Measurement site",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clinical context",
+                      "level": 0
+                    }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Ask about:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Ask about:",
                   "items": [
-                    "Fever",
-                    "Hypothermia",
-                    "Duration",
-                    "Associated symptoms"
+                    {
+                      "text": "Fever",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypothermia",
+                      "level": 0
+                    },
+                    {
+                      "text": "Duration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated symptoms",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1923,7 +2484,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Hypothermia in a sick infant or young child can be a sign of serious infection, not simply “being cold.”"
+                  "text": "**Hypothermia in a sick infant or young child can be a sign of serious infection**, not simply “being cold.”"
                 }
               ]
             }
@@ -1931,7 +2492,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_21",
-          "subsection_title": "Pain assessment",
+          "subsection_title": "20. Pain assessment",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1942,7 +2503,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Pain assessment should be age appropriate."
+                  "text": "Pain assessment should be **age appropriate**."
                 }
               ]
             },
@@ -1953,17 +2514,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Look for:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Look for:",
                   "items": [
-                    "Crying",
-                    "Facial expression",
-                    "Body movement",
-                    "Consolability",
-                    "Feeding changes"
+                    {
+                      "text": "Crying",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial expression",
+                      "level": 0
+                    },
+                    {
+                      "text": "Body movement",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolability",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding changes",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -1979,10 +2552,9 @@
                   "text": "Ask:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Where does it hurt?”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“Where does it hurt?”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2001,14 +2573,24 @@
                   "text": "Useful particularly for young/non-verbal children:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "F — Face",
-                    "L — Legs",
-                    "A — Activity",
-                    "C — Cry",
-                    "C — Consolability"
-                  ]
+                  "type": "paragraph",
+                  "text": "**F — Face**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**L — Legs**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A — Activity**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Cry**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C — Consolability**"
                 }
               ]
             },
@@ -2019,14 +2601,17 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "You can use:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "You can use:",
                   "items": [
-                    "Numeric rating scale",
-                    "Faces pain scale"
+                    {
+                      "text": "Numeric rating scale",
+                      "level": 0
+                    },
+                    {
+                      "text": "Faces pain scale",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2035,7 +2620,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_22",
-          "subsection_title": "Vital signs",
+          "subsection_title": "21. Vital signs",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2046,21 +2631,36 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "You should know that normal values vary significantly with age."
+                  "text": "You should know that **normal values vary significantly with age**."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Always assess:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Always assess:",
                   "items": [
-                    "Temperature",
-                    "Respiratory rate",
-                    "Heart rate",
-                    "Blood pressure",
-                    "Oxygen saturation",
-                    "Capillary refill"
+                    {
+                      "text": "Temperature",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart rate",
+                      "level": 0
+                    },
+                    {
+                      "text": "Blood pressure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen saturation",
+                      "level": 0
+                    },
+                    {
+                      "text": "Capillary refill",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2073,7 +2673,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "The younger the child, the higher the normal heart and respiratory rates tend to be."
+                  "text": "**The younger the child, the higher the normal heart and respiratory rates tend to be.**"
                 },
                 {
                   "type": "paragraph",
@@ -2081,7 +2681,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal pediatric blood pressure is age/size dependent."
+                  "text": "**Normal pediatric blood pressure is age/size dependent.**"
                 },
                 {
                   "type": "paragraph",
@@ -2089,7 +2689,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "We will cover the age-specific normal pediatric vital signs and BP interpretation separately because they are important enough to warrant their own OSCE section."
+                  "text": "We will cover the **age-specific normal pediatric vital signs and BP interpretation** separately because they are important enough to warrant their own OSCE section."
                 }
               ]
             }
@@ -2097,7 +2697,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_23",
-          "subsection_title": "What else should you look for?",
+          "subsection_title": "22. What else should you look for?",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2119,14 +2719,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pallor",
-                    "Cyanosis",
-                    "Clubbing",
-                    "Peripheral perfusion",
-                    "Tremor",
-                    "Nail abnormalities"
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Clubbing",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripheral perfusion",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tremor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Nail abnormalities",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2138,14 +2756,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Pallor",
-                    "Jaundice",
-                    "Cyanosis",
-                    "Dysmorphism",
-                    "Facial oedema",
-                    "Cushingoid appearance"
+                    {
+                      "text": "Pallor",
+                      "level": 0
+                    },
+                    {
+                      "text": "Jaundice",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dysmorphism",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facial oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cushingoid appearance",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2157,14 +2793,32 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Hydration",
-                    "Central cyanosis",
-                    "Oral ulcers",
-                    "Thrush",
-                    "Dental disease",
-                    "Pigmentation"
+                    {
+                      "text": "Hydration",
+                      "level": 0
+                    },
+                    {
+                      "text": "Central cyanosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oral ulcers",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thrush",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dental disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pigmentation",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2176,11 +2830,20 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Cervical lymphadenopathy",
-                    "Neck stiffness",
-                    "Thyroid enlargement"
+                    {
+                      "text": "Cervical lymphadenopathy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Neck stiffness",
+                      "level": 0
+                    },
+                    {
+                      "text": "Thyroid enlargement",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2192,13 +2855,28 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Oedema",
-                    "Wasting",
-                    "Deformities",
-                    "Skin changes",
-                    "Scars"
+                    {
+                      "text": "Oedema",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wasting",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deformities",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin changes",
+                      "level": 0
+                    },
+                    {
+                      "text": "Scars",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2207,7 +2885,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_24",
-          "subsection_title": "Complete general examination sequence",
+          "subsection_title": "23. Complete general examination sequence",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2222,7 +2900,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "LOOK → TALK → COLOUR → HYDRATION → NUTRITION → NODES → SKIN → BREATHING → CIRCULATION → VITALS"
+                  "text": "**LOOK → TALK → COLOUR → HYDRATION → NUTRITION → NODES → SKIN → BREATHING → CIRCULATION → VITALS**"
                 },
                 {
                   "type": "paragraph",
@@ -2238,7 +2916,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "1. General appearance 2. Consciousness 3. Behaviour/interaction 4. Respiratory effort 5. Colour 6. Nutritional state 7. Hydration"
+                  "text": "**1.** General appearance\n**2.** Consciousness\n**3.** Behaviour/interaction\n**4.** Respiratory effort\n**5.** Colour\n**6.** Nutritional state\n**7.** Hydration"
                 }
               ]
             },
@@ -2250,7 +2928,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "8. Hands 9. Pulse/capillary refill 10. Pallor 11. Cyanosis 12. Clubbing 13. Oedema 14. Lymph nodes 15. Skin 16. Eyes/mouth 17. Dysmorphic features"
+                  "text": "**8.** Hands\n**9.** Pulse/capillary refill\n**10.** Pallor\n**11.** Cyanosis\n**12.** Clubbing\n**13.** Oedema\n**14.** Lymph nodes\n**15.** Skin\n**16.** Eyes/mouth\n**17.** Dysmorphic features"
                 }
               ]
             },
@@ -2262,11 +2940,11 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "18. Temperature 19. Respiratory rate 20. Oxygen saturation 21. Blood pressure 22. Weight/height/MUAC when appropriate"
+                  "text": "**18.** Temperature\n**19.** Respiratory rate\n**20.** Oxygen saturation\n**21.** Blood pressure\n**22.** Weight/height/MUAC when appropriate"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Then proceed to the relevant systemic examination."
+                  "text": "Then proceed to the **relevant systemic examination**."
                 }
               ]
             }
@@ -2274,7 +2952,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_25",
-          "subsection_title": "How to present your findings",
+          "subsection_title": "24. How to present your findings",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2292,10 +2970,9 @@
                   "text": "Don't say:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“The child is fine.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "“The child is fine.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2303,7 +2980,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a 5-year-old boy who is alert, comfortable and appropriately interactive with his caregiver. He is not in obvious respiratory distress. He is pink, warm and well perfused, with no peripheral or central cyanosis, pallor, jaundice or clubbing. There is no clinically significant peripheral oedema or generalized lymphadenopathy. His nutritional status appears appropriate for age.”"
+                  "text": "“This is a 5-year-old boy who is alert, comfortable and appropriately interactive with his caregiver. He is not in obvious respiratory distress. He is pink, warm and well perfused, with no peripheral or central cyanosis, pallor, jaundice or clubbing. There is no clinically significant peripheral oedema or generalized lymphadenopathy. His nutritional status appears appropriate for age.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2311,7 +2989,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“His respiratory rate is 24 breaths per minute, pulse rate is 100 beats per minute, oxygen saturation is 98% on room air, temperature is 36.8°C and blood pressure is appropriate for his age and size.”"
+                  "text": "“His respiratory rate is 24 breaths per minute, pulse rate is 100 beats per minute, oxygen saturation is 98% on room air, temperature is 36.8°C and blood pressure is appropriate for his age and size.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2319,7 +2998,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“I would proceed to a focused systemic examination based on the presenting complaint.”"
+                  "text": "“I would proceed to a focused systemic examination based on the presenting complaint.”",
+                  "style": "quote"
                 }
               ]
             }
@@ -2327,7 +3007,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_26",
-          "subsection_title": "Example: Abnormal presentation",
+          "subsection_title": "25. Example: Abnormal presentation",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2342,7 +3022,8 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "“This is a 2-year-old child who appears acutely ill and lethargic, with marked respiratory distress characterized by tachypnoea, nasal flaring and subcostal and intercostal recession. The child is centrally pink with no obvious cyanosis. There is reduced peripheral perfusion with prolonged capillary refill and cool extremities. The child appears mildly dehydrated. I would urgently assess the airway, breathing and circulation and proceed with a focused respiratory and cardiovascular examination.”"
+                  "text": "“This is a 2-year-old child who appears acutely ill and lethargic, with marked respiratory distress characterized by tachypnoea, nasal flaring and subcostal and intercostal recession. The child is centrally pink with no obvious cyanosis. There is reduced peripheral perfusion with prolonged capillary refill and cool extremities. The child appears mildly dehydrated. I would urgently assess the airway, breathing and circulation and proceed with a focused respiratory and cardiovascular examination.”",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2354,7 +3035,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_27",
-          "subsection_title": "Examiner questions you should anticipate",
+          "subsection_title": "26. Examiner questions you should anticipate",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2365,7 +3046,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Answer:"
+                  "text": "**Answer:**"
                 },
                 {
                   "type": "paragraph",
@@ -2393,7 +3074,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Central cyanosis involves the tongue and oral mucosa and indicates significant arterial desaturation. Peripheral cyanosis is mainly seen in the extremities and can occur with peripheral vasoconstriction or poor circulation."
+                  "text": "**Central cyanosis** involves the tongue and oral mucosa and indicates significant arterial desaturation. **Peripheral cyanosis** is mainly seen in the extremities and can occur with peripheral vasoconstriction or poor circulation."
                 }
               ]
             },
@@ -2416,18 +3097,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Think:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Think:",
                   "items": [
-                    "Infections",
-                    "HIV",
-                    "Tuberculosis",
-                    "Malignancy",
-                    "Autoimmune/inflammatory disease",
-                    "Some medications"
+                    {
+                      "text": "Infections",
+                      "level": 0
+                    },
+                    {
+                      "text": "HIV",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tuberculosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malignancy",
+                      "level": 0
+                    },
+                    {
+                      "text": "Autoimmune/inflammatory disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Some medications",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2439,17 +3135,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Common important causes include:"
-                },
-                {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Common important causes include:",
                   "items": [
-                    "Cyanotic congenital heart disease",
-                    "Chronic suppurative lung disease",
-                    "Cystic fibrosis",
-                    "Bronchiectasis",
-                    "Inflammatory bowel disease"
+                    {
+                      "text": "Cyanotic congenital heart disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic suppurative lung disease",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cystic fibrosis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchiectasis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Inflammatory bowel disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2465,23 +3173,33 @@
                   "text": "Think:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Renal + nutritional + cardiac + hepatic"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Examples:"
+                  "text": "**Renal + nutritional + cardiac + hepatic**"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Examples:",
                   "items": [
-                    "Nephrotic syndrome",
-                    "Glomerulonephritis",
-                    "Severe acute malnutrition",
-                    "Heart failure",
-                    "Liver disease"
+                    {
+                      "text": "Nephrotic syndrome",
+                      "level": 0
+                    },
+                    {
+                      "text": "Glomerulonephritis",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe acute malnutrition",
+                      "level": 0
+                    },
+                    {
+                      "text": "Heart failure",
+                      "level": 0
+                    },
+                    {
+                      "text": "Liver disease",
+                      "level": 0
+                    }
                   ]
                 }
               ]
@@ -2490,7 +3208,7 @@
         },
         {
           "subsection_id": "general_physical_examination_subsection_28",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "27. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -2513,7 +3231,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Respiratory rate is one of the most important pediatric vital signs."
+                  "text": "Respiratory rate is **one of the most important pediatric vital signs**."
                 }
               ]
             },
@@ -2529,7 +3247,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Count for a full minute."
+                  "text": "**Count for a full minute.**"
                 }
               ]
             },
@@ -2553,7 +3271,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Always assess the oral mucosa/tongue for central cyanosis."
+                  "text": "Always assess the **oral mucosa/tongue for central cyanosis**."
                 }
               ]
             },
@@ -2577,7 +3295,7 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Hypotension can be late in pediatric shock."
+                  "text": "**Hypotension can be late in pediatric shock.**"
                 }
               ]
             },
@@ -2601,24 +3319,17 @@
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Use the least distressing examination first."
+                  "text": "Use the **least distressing examination first**."
                 },
                 {
                   "type": "paragraph",
                   "text": "For example, examine the chest before forcing an upset child to open their mouth."
                 }
               ]
-            }
-          ]
-        },
-        {
-          "subsection_id": "general_physical_examination_subsection_29",
-          "subsection_title": "⭐ The Golden Pediatric OSCE Principle",
-          "subsection_icon": null,
-          "content_groups": [
+            },
             {
               "group_id": "general_physical_examination_group_113",
-              "group_title": "",
+              "group_title": "⭐ The Golden Pediatric OSCE Principle",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2627,22 +3338,30 @@
                   "text": "A very useful rule:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Observe first, examine gently, leave the uncomfortable parts until later.”"
-                  ]
-                },
-                {
                   "type": "paragraph",
-                  "text": "Children often become distressed when you:"
+                  "text": "**“Observe first, examine gently, leave the uncomfortable parts until later.”**",
+                  "style": "quote"
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
+                  "title": "Children often become distressed when you:",
                   "items": [
-                    "Examine the mouth",
-                    "Examine the ears",
-                    "Examine the throat",
-                    "Palpate painful areas"
+                    {
+                      "text": "Examine the mouth",
+                      "level": 0
+                    },
+                    {
+                      "text": "Examine the ears",
+                      "level": 0
+                    },
+                    {
+                      "text": "Examine the throat",
+                      "level": 0
+                    },
+                    {
+                      "text": "Palpate painful areas",
+                      "level": 0
+                    }
                   ]
                 },
                 {
@@ -2655,7 +3374,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Listen to the chest while the child is relatively calm → examine the heart → abdomen → neurological/general observations → leave throat/ears until later."
+                  "text": "**Listen to the chest while the child is relatively calm → examine the heart → abdomen → neurological/general observations → leave throat/ears until later.**"
                 }
               ]
             },
@@ -2670,10 +3389,9 @@
                   "text": "If the examiner says:"
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "“Examine this child generally.”"
-                  ]
+                  "type": "paragraph",
+                  "text": "**“Examine this child generally.”**",
+                  "style": "quote"
                 },
                 {
                   "type": "paragraph",
@@ -2681,7 +3399,7 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "Appearance → Consciousness → Interaction → Nutrition → Hydration → Pallor → Jaundice → Cyanosis → Clubbing → Oedema → Lymph nodes → Skin → Dysmorphism → Respiratory distress → Perfusion/shock → Vital signs."
+                  "text": "**Appearance → Consciousness → Interaction → Nutrition → Hydration → Pallor → Jaundice → Cyanosis → Clubbing → Oedema → Lymph nodes → Skin → Dysmorphism → Respiratory distress → Perfusion/shock → Vital signs.**"
                 }
               ]
             }

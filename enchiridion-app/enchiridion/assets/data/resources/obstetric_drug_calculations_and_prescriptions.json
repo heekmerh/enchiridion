@@ -18,12 +18,12 @@
       "subsections": [
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_1",
-          "subsection_title": "Obstetric Drug Calculations and Prescribing Safety",
+          "subsection_title": "Overview",
           "subsection_icon": null,
           "content_groups": [
             {
               "group_id": "obstetric_drug_calculations_and_prescriptions_group_1",
-              "group_title": "",
+              "group_title": "Obstetric Drug Calculations and Prescribing Safety",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -45,7 +45,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_2",
-          "subsection_title": "The universal method for drug calculations",
+          "subsection_title": "1. The universal method for drug calculations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -59,50 +59,40 @@
                   "text": "Use this sequence every time."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Identify the prescribed dose"
-                  ]
+                  "type": "paragraph",
+                  "text": "Identify the prescribed dose"
                 },
                 {
                   "type": "paragraph",
                   "text": "Check the drug, indication, dose, route, frequency and maximum dose where relevant."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Check the available preparation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Check the available preparation"
                 },
                 {
                   "type": "paragraph",
                   "text": "Read the ampoule or vial label, including the concentration and total volume."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Convert the units"
-                  ]
+                  "type": "paragraph",
+                  "text": "Convert the units"
                 },
                 {
                   "type": "paragraph",
                   "text": "Make sure the prescribed dose and available concentration use compatible units."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Calculate and independently check"
-                  ]
+                  "type": "paragraph",
+                  "text": "Calculate and independently check"
                 },
                 {
                   "type": "paragraph",
                   "text": "Calculate the volume or rate, then verify the arithmetic, units and plausibility."
                 },
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Prescribe, administer and monitor"
-                  ]
+                  "type": "paragraph",
+                  "text": "Prescribe, administer and monitor"
                 },
                 {
                   "type": "paragraph",
@@ -117,9 +107,13 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Volume to administer"
+                    {
+                      "text": "Volume to administer",
+                      "level": 0,
+                      "label": "A."
+                    }
                   ]
                 },
                 {
@@ -128,9 +122,13 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Infusion pump rate"
+                    {
+                      "text": "Infusion pump rate",
+                      "level": 0,
+                      "label": "B."
+                    }
                   ]
                 },
                 {
@@ -139,9 +137,13 @@
                   "caption": null
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Gravity infusion rate"
+                    {
+                      "text": "Gravity infusion rate",
+                      "level": 0,
+                      "label": "C."
+                    }
                   ]
                 },
                 {
@@ -154,9 +156,13 @@
                   "text": "Always check the giving-set factor printed on the equipment. It may be 10, 15, 20 or 60 drops/mL, depending on the set."
                 },
                 {
-                  "type": "checklist",
+                  "type": "list",
                   "items": [
-                    "Weight-based dose"
+                    {
+                      "text": "Weight-based dose",
+                      "level": 0,
+                      "label": "D."
+                    }
                   ]
                 },
                 {
@@ -219,7 +225,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_3",
-          "subsection_title": "Oxytocin: infusion calculations",
+          "subsection_title": "2. Oxytocin: infusion calculations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -317,28 +323,33 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Frequency and duration of uterine contractions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fetal heart rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal observations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Fluid balance."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Signs of uterine hyperstimulation."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "The infusion pump setting and line connection."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Frequency and duration of uterine contractions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fetal heart rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal observations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Fluid balance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of uterine hyperstimulation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The infusion pump setting and line connection.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -354,7 +365,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_4",
-          "subsection_title": "Magnesium sulfate: eclampsia and severe pre-eclampsia",
+          "subsection_title": "3. Magnesium sulfate: eclampsia and severe pre-eclampsia",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -452,52 +463,56 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Monitor according to the clinical protocol, including:"
+                  "type": "list",
+                  "title": "Monitor according to the clinical protocol, including:",
+                  "items": [
+                    {
+                      "text": "Respiratory rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Deep tendon reflexes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine output and renal function.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Level of consciousness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oxygen saturation and other relevant observations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Infusion rate and cumulative dose.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Respiratory rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Deep tendon reflexes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Urine output and renal function."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Level of consciousness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Oxygen saturation and other relevant observations."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Infusion rate and cumulative dose."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Features concerning for toxicity include:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Loss of deep tendon reflexes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Respiratory depression."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Increasing weakness or reduced consciousness."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Severe toxicity may cause respiratory or cardiac arrest."
+                  "type": "list",
+                  "title": "Features concerning for toxicity include:",
+                  "items": [
+                    {
+                      "text": "Loss of deep tendon reflexes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Respiratory depression.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Increasing weakness or reduced consciousness.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Severe toxicity may cause respiratory or cardiac arrest.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -545,7 +560,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_5",
-          "subsection_title": "Obstetric antihypertensives",
+          "subsection_title": "4. Obstetric antihypertensives",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -575,24 +590,26 @@
                   "text": "Potential routes include intravenous and oral administration, depending on the indication."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Monitor:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood pressure."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Pulse and cardiac status."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Response to treatment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Contraindications such as significant bradycardia, heart block or certain forms of asthma, according to the clinical context."
+                  "type": "list",
+                  "title": "Monitor:",
+                  "items": [
+                    {
+                      "text": "Blood pressure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulse and cardiac status.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Response to treatment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contraindications such as significant bradycardia, heart block or certain forms of asthma, according to the clinical context.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -607,24 +624,26 @@
                   "text": "Hydralazine may be used intravenously in severe hypertension."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Monitor:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Blood pressure response."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal pulse."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Symptoms of hypotension."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Maternal and fetal status as appropriate."
+                  "type": "list",
+                  "title": "Monitor:",
+                  "items": [
+                    {
+                      "text": "Blood pressure response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal pulse.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Symptoms of hypotension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maternal and fetal status as appropriate.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -639,24 +658,26 @@
                   "text": "Immediate-release oral nifedipine is used in some protocols for acute severe hypertension."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Safety points:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Use the prescribed oral formulation and route."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not administer it sublingually."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor blood pressure closely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Avoid an excessive or uncontrolled fall in blood pressure."
+                  "type": "list",
+                  "title": "Safety points:",
+                  "items": [
+                    {
+                      "text": "Use the prescribed oral formulation and route.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not administer it sublingually.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor blood pressure closely.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid an excessive or uncontrolled fall in blood pressure.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -671,36 +692,45 @@
                   "text": "In pregnancy or postpartum, persistent severe hypertension—commonly defined as systolic blood pressure of at least 160 mmHg or diastolic pressure of at least 110 mmHg—requires urgent assessment and treatment."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Management includes:"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confirm the reading promptly without delaying treatment when severe hypertension is persistent."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess ABCDE and symptoms of severe disease."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Give an appropriate antihypertensive according to the emergency protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Monitor blood pressure closely."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess for complications such as eclampsia, stroke or pulmonary oedema."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Arrange appropriate maternal and fetal assessment."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Plan ongoing obstetric management."
+                  "type": "list",
+                  "title": "Management includes:",
+                  "items": [
+                    {
+                      "text": "Confirm the reading promptly without delaying treatment when severe hypertension is persistent.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Assess ABCDE and symptoms of severe disease.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Give an appropriate antihypertensive according to the emergency protocol.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Monitor blood pressure closely.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Assess for complications such as eclampsia, stroke or pulmonary oedema.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Arrange appropriate maternal and fetal assessment.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Plan ongoing obstetric management.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -712,7 +742,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_6",
-          "subsection_title": "Tranexamic acid in postpartum haemorrhage",
+          "subsection_title": "5. Tranexamic acid in postpartum haemorrhage",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -776,24 +806,29 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "In postpartum haemorrhage, give tranexamic acid as early as possible when indicated, generally within three hours of birth."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Do not delay haemorrhage control, uterotonics, resuscitation or blood products while preparing it."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "A repeat dose may be indicated if bleeding continues or restarts, according to the applicable protocol."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Assess contraindications and relevant thromboembolic history."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Remember that tranexamic acid does not replace treatment of uterine atony, genital tract trauma, retained tissue or coagulopathy."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "In postpartum haemorrhage, give tranexamic acid as early as possible when indicated, generally within three hours of birth.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not delay haemorrhage control, uterotonics, resuscitation or blood products while preparing it.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A repeat dose may be indicated if bleeding continues or restarts, according to the applicable protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assess contraindications and relevant thromboembolic history.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Remember that tranexamic acid does not replace treatment of uterine atony, genital tract trauma, retained tissue or coagulopathy.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -801,7 +836,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_7",
-          "subsection_title": "Intravenous fluid and infusion calculations",
+          "subsection_title": "6. Intravenous fluid and infusion calculations",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -923,7 +958,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_8",
-          "subsection_title": "Safe prescribing in obstetrics",
+          "subsection_title": "7. Safe prescribing in obstetrics",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -994,44 +1029,49 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Confusing mg with micrograms."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing grams with milligrams."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Writing a dose without a route."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Omitting the infusion concentration."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using an incorrect pump rate."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving an additional loading dose without checking what was already administered."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to account for renal impairment when relevant."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Continuing oxytocin despite uterine hyperstimulation or concerning fetal heart-rate changes."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Giving magnesium sulfate without appropriate monitoring."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Delaying treatment of severe hypertension or postpartum haemorrhage."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Confusing mg with micrograms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing grams with milligrams.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Writing a dose without a route.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Omitting the infusion concentration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using an incorrect pump rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving an additional loading dose without checking what was already administered.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to account for renal impairment when relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Continuing oxytocin despite uterine hyperstimulation or concerning fetal heart-rate changes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Giving magnesium sulfate without appropriate monitoring.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Delaying treatment of severe hypertension or postpartum haemorrhage.",
+                      "level": 0
+                    }
+                  ]
                 },
                 {
                   "type": "paragraph",
@@ -1047,7 +1087,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_9",
-          "subsection_title": "Practical prescribing exercise",
+          "subsection_title": "8. Practical prescribing exercise",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1066,7 +1106,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_10",
-          "subsection_title": "Common examiner questions and model answers",
+          "subsection_title": "9. Common examiner questions and model answers",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1145,7 +1185,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_11",
-          "subsection_title": "Common OSCE mistakes",
+          "subsection_title": "10. Common OSCE mistakes",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1155,36 +1195,41 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "paragraph",
-                  "text": "Forgetting to convert grams into milligrams."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Confusing milliunits/minute with milliunits/hour."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Using the final bag volume incorrectly when preparing a dilution."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Failing to state units in the answer."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Rounding the pump rate too early."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Calculating a correct rate from an incorrect prescription without questioning it."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Forgetting monitoring and contraindications."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "Treating a calculation exercise as sufficient justification to administer a medication."
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Forgetting to convert grams into milligrams.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing milliunits/minute with milliunits/hour.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using the final bag volume incorrectly when preparing a dilution.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to state units in the answer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Rounding the pump rate too early.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calculating a correct rate from an incorrect prescription without questioning it.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting monitoring and contraindications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Treating a calculation exercise as sufficient justification to administer a medication.",
+                      "level": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -1192,7 +1237,7 @@
         },
         {
           "subsection_id": "obstetric_drug_calculations_and_prescriptions_subsection_12",
-          "subsection_title": "Mnemonic: DOSE SAFE",
+          "subsection_title": "11. Mnemonic: DOSE SAFE",
           "subsection_icon": null,
           "content_groups": [
             {
@@ -1202,10 +1247,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Drug and diagnosis"
-                  ]
+                  "type": "paragraph",
+                  "text": "Drug and diagnosis"
                 },
                 {
                   "type": "paragraph",
@@ -1220,10 +1263,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Obtain the correct concentration"
-                  ]
+                  "type": "paragraph",
+                  "text": "Obtain the correct concentration"
                 },
                 {
                   "type": "paragraph",
@@ -1238,10 +1279,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Standardise the units"
-                  ]
+                  "type": "paragraph",
+                  "text": "Standardise the units"
                 },
                 {
                   "type": "paragraph",
@@ -1256,10 +1295,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Evaluate the calculation"
-                  ]
+                  "type": "paragraph",
+                  "text": "Evaluate the calculation"
                 },
                 {
                   "type": "paragraph",
@@ -1274,10 +1311,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Safe route and rate"
-                  ]
+                  "type": "paragraph",
+                  "text": "Safe route and rate"
                 },
                 {
                   "type": "paragraph",
@@ -1292,10 +1327,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Assess the patient"
-                  ]
+                  "type": "paragraph",
+                  "text": "Assess the patient"
                 },
                 {
                   "type": "paragraph",
@@ -1310,10 +1343,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Final independent check"
-                  ]
+                  "type": "paragraph",
+                  "text": "Final independent check"
                 },
                 {
                   "type": "paragraph",
@@ -1328,10 +1359,8 @@
               "group_icon": null,
               "blocks": [
                 {
-                  "type": "checklist",
-                  "items": [
-                    "Enter and document"
-                  ]
+                  "type": "paragraph",
+                  "text": "Enter and document"
                 },
                 {
                   "type": "paragraph",
