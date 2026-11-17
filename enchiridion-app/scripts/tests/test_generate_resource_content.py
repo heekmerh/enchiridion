@@ -90,8 +90,8 @@ class IvCannulaShippedAssetTest(unittest.TestCase):
 
 
 class OptedOutTopicsStabilityTest(unittest.TestCase):
-    """sutures and abdominal_examination default bold_heading_min_pt to None,
-    so regenerating them must reproduce the committed JSON byte for byte."""
+    """sutures defaults bold_heading_min_pt to None,
+    so regenerating it must reproduce the committed JSON byte for byte."""
 
     def setUp(self):
         self._original_data_dir = generator.RESOURCE_DATA_DIR
@@ -109,9 +109,9 @@ class OptedOutTopicsStabilityTest(unittest.TestCase):
         generator.RESOURCE_DATA_DIR = self._original_data_dir
         generator.RESOURCE_ASSET_DIR = self._original_asset_dir
 
-    def test_sutures_and_abdominal_examination_are_byte_identical(self):
+    def test_sutures_is_byte_identical(self):
         specs_by_slug = {spec.slug: spec for spec in generator.TOPICS}
-        for slug in ("sutures", "abdominal_examination"):
+        for slug in ("sutures",):
             with self.subTest(slug=slug):
                 generator.build_topic_json(specs_by_slug[slug])
                 produced = (generator.RESOURCE_DATA_DIR / f"{slug}.json").read_bytes()

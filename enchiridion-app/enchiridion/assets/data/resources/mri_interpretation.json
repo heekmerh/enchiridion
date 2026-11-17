@@ -1,0 +1,3937 @@
+{
+  "chapter_metadata": {
+    "chapter_id": "mri_interpretation",
+    "chapter_title": "MRI interpretation",
+    "chapter_icon": null,
+    "description": null,
+    "position_in_book": 1,
+    "tags": [
+      "MRI interpretation"
+    ],
+    "chapter_color": null
+  },
+  "sections": [
+    {
+      "section_id": "mri_interpretation_section_1",
+      "section_title": "MRI interpretation",
+      "section_order": 1,
+      "subsections": [
+        {
+          "subsection_id": "mri_interpretation_subsection_1",
+          "subsection_title": "MRI",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_1",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI (magnetic resonance imaging) is the third major imaging modality in our OSCE series, following X-rays and CT scans."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For medical OSCEs and clinical vivas, you should be able to explain how MRI works, identify the major sequences, interpret common appearances, recognise emergencies, and present a structured report."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The single most important concept in MRI is this: the appearance of a structure depends on the sequence used. A bright area on one sequence may be dark on another. You must identify the sequence before interpreting the abnormality."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_2",
+          "subsection_title": "What is MRI?",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_2",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_01.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_02.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI uses a strong magnetic field, radiofrequency pulses and computer processing to generate detailed images. Unlike CT and conventional X-rays, MRI does not use ionising radiation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI is particularly useful for:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Brain pathology, including ischaemia, demyelination, tumours and many infections."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Spinal cord, intervertebral discs, nerve roots and ligaments."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Joints, cartilage, tendons and soft-tissue injuries."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bone marrow abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Selected abdominal, pelvic, vascular and cardiac conditions."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_3",
+              "group_title": "MRI versus CT versus X-ray",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Feature",
+                    "X-ray",
+                    "CT",
+                    "MRI"
+                  ],
+                  "rows": [
+                    [
+                      "Ionising radiation",
+                      "Yes",
+                      "Yes",
+                      "No"
+                    ],
+                    [
+                      "Bone cortex",
+                      "Good for many fractures",
+                      "Excellent detail",
+                      "Less suitable than CT for fine cortical detail"
+                    ],
+                    [
+                      "Brain haemorrhage in emergencies",
+                      "Limited",
+                      "Excellent initial assessment in many emergencies",
+                      "Useful in selected cases; appearance varies with blood age and sequence"
+                    ],
+                    [
+                      "Early ischaemic stroke",
+                      "Poor",
+                      "May be subtle initially",
+                      "DWI is highly sensitive to acute ischaemia"
+                    ],
+                    [
+                      "Ligaments and spinal cord",
+                      "Limited",
+                      "Bone detail is excellent",
+                      "Excellent soft-tissue detail"
+                    ],
+                    [
+                      "Examination time",
+                      "Usually seconds",
+                      "Usually minutes",
+                      "Often tens of minutes"
+                    ],
+                    [
+                      "Important limitations",
+                      "Overlapping structures",
+                      "Radiation and possible contrast risks",
+                      "Motion, metal-related safety concerns, availability and longer acquisition"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI is not automatically the best test for every condition. The appropriate modality depends on the clinical question, urgency, contraindications and local protocols."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_3",
+          "subsection_title": "MRI safety: a common viva topic",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_4",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before an MRI examination, the team must screen for relevant safety risks."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important considerations include:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Certain implanted devices, including some pacemakers, neurostimulators and cochlear implants. Some are MRI-conditional and may be scanned under specific conditions; others are contraindicated."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ferromagnetic foreign bodies, particularly suspected metallic fragments in the eye."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Implanted clips, pumps, prostheses or other devices whose MRI compatibility has not been established."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pregnancy, when the indication and protocol require individual assessment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Claustrophobia and the ability to remain still."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Renal impairment and the risk–benefit assessment for gadolinium-based contrast agents when contrast is planned."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Never assume that an implant is safe or unsafe from its name alone. Check the exact device, conditions and institutional MRI safety protocol."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_5",
+              "group_title": "Viva question: Does MRI use radiation?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "No. MRI uses a magnetic field and radiofrequency energy, not ionising radiation. However, it has distinct safety risks related to magnetic forces, radiofrequency heating, acoustic noise and certain implants."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_4",
+          "subsection_title": "The MRI sequences you must know",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_6",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "This is the most important section for MRI interpretation. Learn the characteristic appearance of water, fat, cerebrospinal fluid (CSF), bone and pathology on each sequence."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_7",
+              "group_title": "A. T1-weighted MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "mrimaster.com",
+                    "Typical appearance"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "White matter is generally brighter than grey matter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CSF is dark."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat is relatively bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal cortical bone is usually dark because it produces little MRI signal."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Main uses"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal anatomical detail."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assessment of anatomy before and after contrast."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identifying fat-containing lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assessing subacute blood products in the appropriate clinical context."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Memory aid: T1 = anatomy; fat is bright, CSF is dark."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_8",
+              "group_title": "B. T2-weighted MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "edinburgh-innovations.ed.ac.uk",
+                    "Typical appearance"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CSF is bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Water-rich tissues and many forms of oedema are bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat can also be relatively bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Many inflammatory, infective and neoplastic lesions appear hyperintense."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Main uses"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Oedema and inflammation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Many brain and spinal cord lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fluid collections."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Structural abnormalities in organs and joints."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Memory aid: T2 = water is bright."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_9",
+              "group_title": "C. FLAIR — fluid-attenuated inversion recovery",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "mrimaster.com"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FLAIR is a T2-based sequence designed to suppress the signal from free fluid such as CSF."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical appearance"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal ventricular and sulcal CSF is dark."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Many lesions containing increased tissue water remain bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Periventricular and juxtacortical lesions can become more conspicuous."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Main uses"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Multiple sclerosis and other white-matter disorders."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Oedema and many inflammatory lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Selected subarachnoid and meningeal abnormalities, depending on the clinical setting and timing."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Memory aid: FLAIR = T2-like lesion contrast, but free CSF is suppressed."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_10",
+              "group_title": "D. Diffusion-weighted imaging (DWI) and ADC maps",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_06.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "DWI assesses the movement of water molecules. The apparent diffusion coefficient (ADC) map helps determine whether increased DWI signal reflects true restricted diffusion."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Finding",
+                    "Typical interpretation"
+                  ],
+                  "rows": [
+                    [
+                      "DWI bright, ADC dark",
+                      "Supports true restricted diffusion"
+                    ],
+                    [
+                      "DWI bright, ADC not low",
+                      "May represent T2 shine-through or another process"
+                    ],
+                    [
+                      "DWI and ADC both unremarkable",
+                      "Does not exclude every early or small infarct"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classic OSCE pattern: Acute cerebral infarction commonly produces DWI hyperintensity with corresponding low ADC signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Restricted diffusion is not specific to infarction. Abscesses, some highly cellular tumours and other conditions can produce similar findings."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_11",
+              "group_title": "E. STIR — short tau inversion recovery",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_09.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "orthobullets.com"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "STIR is an inversion-recovery sequence that suppresses fat."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat becomes dark."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Water-rich abnormalities, including oedema, tend to be bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bone marrow oedema, soft-tissue injury and some inflammatory changes become more conspicuous."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Main uses: Musculoskeletal MRI, spinal trauma, marrow lesions and soft-tissue abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not confuse STIR with FLAIR: STIR suppresses fat, whereas FLAIR suppresses free fluid such as CSF."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_12",
+              "group_title": "F. GRE and SWI — susceptibility-sensitive sequences",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_10.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_11.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_12.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Gradient echo (GRE) and susceptibility-weighted imaging (SWI) are sensitive to local magnetic susceptibility effects."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "They can highlight:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Blood products and cerebral microbleeds."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Haemosiderin deposits."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Some calcifications and venous structures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Susceptibility effects caused by metal or air."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Blood products and calcium can both produce signal loss or blooming. The appearance alone may not reliably distinguish them; CT or other sequences can help."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_13",
+              "group_title": "G. T1 post-contrast",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_13.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "mriclinicalcasemap.philips.com"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Following administration of a gadolinium-based contrast agent, T1-weighted imaging can show enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Common patterns include:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Homogeneous enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Heterogeneous enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ring enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Leptomeningeal or pachymeningeal enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "No visible enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enhancement may indicate disruption of normal tissue barriers, vascularity or other processes. It does not automatically mean cancer."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_14",
+              "group_title": "Master comparison table",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Sequence",
+                    "CSF",
+                    "Fat",
+                    "Typical high-yield role"
+                  ],
+                  "rows": [
+                    [
+                      "T1",
+                      "Dark",
+                      "Bright",
+                      "Anatomy and post-contrast imaging"
+                    ],
+                    [
+                      "T2",
+                      "Bright",
+                      "Often bright",
+                      "Oedema and fluid-rich lesions"
+                    ],
+                    [
+                      "FLAIR",
+                      "Suppressed/dark",
+                      "Variable",
+                      "Brain lesions near CSF spaces"
+                    ],
+                    [
+                      "DWI",
+                      "Variable; restricted areas bright",
+                      "Variable",
+                      "Acute ischaemia and other restricted diffusion"
+                    ],
+                    [
+                      "ADC",
+                      "Variable; restricted areas dark",
+                      "Variable",
+                      "Confirming true restricted diffusion"
+                    ],
+                    [
+                      "STIR",
+                      "Generally fluid-sensitive",
+                      "Suppressed",
+                      "Marrow and soft-tissue oedema"
+                    ],
+                    [
+                      "GRE/SWI",
+                      "Variable",
+                      "Variable",
+                      "Blood products and susceptibility"
+                    ],
+                    [
+                      "T1 post-contrast",
+                      "Usually dark",
+                      "Often bright",
+                      "Enhancement patterns"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are general patterns. The precise appearance depends on the acquisition parameters, field strength, tissue composition and pathology."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_5",
+          "subsection_title": "A systematic approach to reading any MRI",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_15",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before identifying a disease, ask seven questions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "What body part is imaged?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Brain, spine, knee, shoulder, abdomen or another region?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Which planes are available?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Axial, coronal and sagittal images, as appropriate."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Which sequences are shown?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify T1, T2, FLAIR, DWI/ADC, STIR, GRE/SWI and contrast-enhanced images where available."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Is the study technically adequate?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check coverage, motion, artefacts and whether the appropriate sequences were obtained."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Where is the abnormality?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State the anatomical compartment, side and precise location."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "What are its signal characteristics?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe T1/T2 signal, diffusion restriction, susceptibility and enhancement, as relevant."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "What is the impression and urgency?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State the likely diagnosis, important complications and appropriate next action."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Remember: a bright lesion is not enough to make a diagnosis. You must state which sequence demonstrates the brightness and whether the finding is supported by the other sequences."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_6",
+          "subsection_title": "MRI brain: high-yield OSCE interpretation",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_16",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Brain MRI is particularly useful for stroke, demyelination, tumours, infections, epilepsy-related pathology and many disorders that may be subtle on CT."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_14.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_15.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_17",
+              "group_title": "A. Use a systematic brain MRI checklist",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Review:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Brain parenchyma: Signal abnormalities, masses, oedema and infarcts."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Grey–white matter: Differentiation, symmetry and focal abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ventricles and CSF spaces: Enlargement, compression or hydrocephalus."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Midline and mass effect: Shift, herniation or distortion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Diffusion: Restricted diffusion on DWI with corresponding ADC findings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Blood products: GRE/SWI abnormalities where available."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enhancement: Abnormal parenchymal, meningeal or lesion enhancement if contrast was given."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Extra-axial spaces and skull: Collections, visible bone abnormalities and scalp findings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Posterior fossa: Cerebellum and brainstem."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Other visible structures: Orbits, sinuses and mastoid regions where relevant."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_18",
+              "group_title": "B. Common brain MRI patterns",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_16.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "1. Acute ischaemic infarction"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "DWI hyperintensity with corresponding low ADC signal is the classic pattern. The abnormality often follows a vascular territory."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Report: Identify the side, vascular territory, extent and any associated swelling or haemorrhagic transformation."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_17.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "2. Multiple sclerosis"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Typical lesions are T2/FLAIR hyperintense and may be ovoid, periventricular, juxtacortical, infratentorial or within the spinal cord. Some lesions enhance when active."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Key clue: Distribution and morphology matter; isolated white-matter lesions do not establish MS."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_18.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "3. Brain tumour"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A mass may show abnormal signal, enhancement, oedema, mass effect or necrosis. Appearance varies by tumour type."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Report: Location, dimensions, enhancement pattern, surrounding oedema, mass effect and any herniation."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_19.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "4. Brain abscess"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A common pattern is a ring-enhancing lesion with central restricted diffusion, often with surrounding oedema."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Key clue: Clinical infection and the full imaging pattern help distinguish an abscess from necrotic tumour. Neither appearance is completely specific."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_19",
+              "group_title": "C. CT versus MRI in suspected stroke",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Clinical question",
+                    "Important imaging principle"
+                  ],
+                  "rows": [
+                    [
+                      "Is there acute intracranial haemorrhage?",
+                      "Non-contrast CT is commonly used first because it is fast and widely available."
+                    ],
+                    [
+                      "Is there early acute ischaemia?",
+                      "MRI DWI is highly sensitive, although false-negative studies can occur."
+                    ],
+                    [
+                      "Is there a large-vessel occlusion?",
+                      "CT angiography or MR angiography, depending on the pathway."
+                    ],
+                    [
+                      "Is there salvageable tissue?",
+                      "Selected patients may undergo CT or MR perfusion imaging."
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE rule: Do not delay urgent stroke assessment or eligible reperfusion treatment while waiting for MRI when the established local pathway supports faster treatment using CT-based imaging."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_7",
+          "subsection_title": "MRI spine",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_20",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI is the principal imaging modality for many spinal cord, disc, nerve root, ligament and marrow disorders."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_20.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_21.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_22.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_21",
+              "group_title": "A. How to examine a spine MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use this order:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Alignment: Curvature, vertebral displacement and scoliosis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Vertebrae: Height, marrow signal, fractures and lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Discs: Hydration, height, bulging, protrusion, extrusion and degeneration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Canal: Central canal stenosis and compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cord and conus: Signal abnormalities, swelling, compression and level of termination when visible."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Nerve roots and foramina: Narrowing and potential compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Paraspinal tissues: Collections, masses or other abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In the lumbar spine, review each level individually rather than assuming the most obvious disc abnormality explains the patient's symptoms."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_22",
+              "group_title": "B. Common MRI spine abnormalities",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_23.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Lumbar disc herniation"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Disc material extends beyond its normal boundary and may narrow the canal or neural foramen or compress a nerve root."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Report: Level, side, type of herniation, degree of narrowing and affected nerve root where identifiable."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_24.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Spinal canal stenosis"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Narrowing may result from disc degeneration, facet hypertrophy, ligament thickening or other causes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess the severity and whether there is compression of the cord, cauda equina or nerve roots."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_25.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Cord compression / myelopathy"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for cord flattening, canal narrowing and abnormal intramedullary signal. Cord signal change can suggest injury or myelopathy in the appropriate context."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Urgency: New or progressive neurological deficits need prompt specialist assessment."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_26.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Discitis / vertebral osteomyelitis"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "May produce adjacent endplate and marrow signal abnormalities, disc involvement and enhancement. An epidural or paraspinal collection may coexist."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Urgency: Suspected spinal infection requires prompt clinical evaluation, particularly with sepsis or neurological deficits."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_23",
+              "group_title": "C. Cauda equina syndrome: an emergency",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Consider urgent MRI when the clinical presentation suggests cauda equina compression, particularly with combinations of:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "New urinary retention or other significant bladder dysfunction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Saddle sensory disturbance."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "New bowel dysfunction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bilateral radicular symptoms or progressive leg weakness."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The MRI may demonstrate a large central disc herniation, severe canal stenosis, tumour, haematoma or another compressive lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not wait for every classic symptom to appear before escalating a concerning presentation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_8",
+          "subsection_title": "Musculoskeletal MRI: joints, tendons and ligaments",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_24",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI is particularly valuable for soft-tissue injuries and bone marrow pathology that may not be apparent on plain radiographs."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_27.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_28.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_29.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_25",
+              "group_title": "A. Knee MRI: what to inspect",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use a systematic checklist:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "ACL and PCL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Medial and lateral menisci."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Medial and lateral collateral ligaments."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Articular cartilage and joint surfaces."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bone marrow for oedema, contusions and occult fractures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Extensor mechanism, including quadriceps and patellar tendons."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Joint effusion, synovium and periarticular soft tissues."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_26",
+              "group_title": "Common knee findings",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "ACL tear: Abnormal ligament signal, fibre disruption or loss of normal orientation, sometimes with associated bone bruising."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Meniscal tear: Abnormal signal reaching an articular surface or displaced meniscal tissue, interpreted in the correct planes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Joint effusion: Fluid within the joint; the significance depends on the clinical context."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bone marrow oedema: Increased fluid-sensitive signal, which may accompany trauma, inflammation or other pathology."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "An abnormal MRI finding must be correlated with symptoms and examination. Degenerative meniscal abnormalities, for example, may be incidental."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_27",
+              "group_title": "B. Shoulder MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Assess the rotator cuff tendons, long head of biceps, labrum, glenohumeral joint, acromioclavicular joint, bone marrow and surrounding muscles."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Common findings include:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Partial- or full-thickness rotator cuff tears."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Tendinopathy and bursitis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Labral injuries."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Joint effusion and degenerative change."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Muscle atrophy or fatty infiltration in chronic cuff disease."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_28",
+              "group_title": "C. Avascular necrosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI can identify early osteonecrosis before radiographic changes become apparent. In the femoral head, characteristic findings may include a serpiginous low-signal rim and, in appropriate sequences, a double-line sign."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Viva question: Why might MRI detect avascular necrosis earlier than an X-ray?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI is sensitive to early bone marrow changes, while plain radiographs may remain normal until structural changes develop."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_9",
+          "subsection_title": "MRI abdomen and pelvis",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_29",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI is useful for selected liver lesions, biliary disease, pelvic pathology, prostate assessment, rectal cancer staging and many soft-tissue abnormalities. MRCP is an MRI technique designed to display the biliary and pancreatic ducts."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_30.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_31.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_30",
+              "group_title": "A. Common MRI abdomen and pelvis applications",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Examination",
+                    "Important findings"
+                  ],
+                  "rows": [
+                    [
+                      "Liver MRI",
+                      "Lesion characterisation, enhancement patterns and selected focal liver lesions"
+                    ],
+                    [
+                      "MRCP",
+                      "Biliary obstruction, duct dilatation and selected pancreatic duct abnormalities"
+                    ],
+                    [
+                      "Pelvic MRI",
+                      "Uterine, cervical, rectal and other pelvic pathology"
+                    ],
+                    [
+                      "Prostate MRI",
+                      "Prostate lesions and local staging using multiparametric techniques"
+                    ],
+                    [
+                      "MRI enterography",
+                      "Small-bowel inflammation, strictures and selected complications of Crohn's disease"
+                    ],
+                    [
+                      "Fetal MRI",
+                      "Selected fetal anatomical abnormalities when additional information is needed"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_31",
+              "group_title": "B. MRCP: a common viva topic",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRCP uses heavily T2-weighted sequences, so static or slowly moving fluid in the biliary and pancreatic ducts appears bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "It can help identify:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dilated bile ducts."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Filling defects suspicious for stones."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Biliary strictures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Selected congenital ductal abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pancreatic duct abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: A small stone may be missed, and a filling defect is not automatically a stone. Interpret the findings alongside the clinical presentation and other imaging."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_32",
+              "group_title": "C. MRI pelvis: what should you report?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Identify the organ of interest, its size and morphology, any focal lesion, its signal characteristics, enhancement where assessed, and its relationship to adjacent structures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For malignancy staging, the relationship to surrounding organs, fascia, lymph nodes and relevant anatomical planes may be more important than simply stating that a mass is present."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_10",
+          "subsection_title": "How to report an MRI in an OSCE",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_33",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A structured report should be clear, concise and clinically relevant."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_34",
+              "group_title": "The seven-part MRI report",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Examination: State the body part, side, planes and sequences where relevant."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Indication: State the clinical question."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Technical quality: Mention limitations, incomplete coverage or significant artefacts."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Location: Identify the exact site of the abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Signal and morphology: Describe T1/T2 signal, diffusion, susceptibility and enhancement where relevant."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Associated findings: Include mass effect, oedema, compression, additional lesions or complications."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Give the most likely diagnosis and any urgent clinical implications."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_35",
+              "group_title": "Example 1: Acute ischaemic stroke",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“MRI brain demonstrates a focus of restricted diffusion in the right middle cerebral artery territory, appearing hyperintense on DWI with corresponding low ADC signal. The findings are consistent with acute ischaemic infarction. The extent of infarction, associated mass effect and any haemorrhagic transformation should be assessed. Urgent stroke-team management is indicated.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_36",
+              "group_title": "Example 2: Lumbar disc herniation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“MRI of the lumbar spine demonstrates a posterior disc extrusion at L4–L5, with narrowing of the spinal canal and compression of the traversing nerve root on the affected side. The remaining levels should be assessed for additional disc disease, foraminal narrowing and other abnormalities. The findings should be correlated with the patient's neurological examination.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_37",
+              "group_title": "Example 3: Suspected spinal infection",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“MRI of the spine demonstrates abnormal marrow signal and enhancement involving adjacent vertebral endplates, with associated disc signal abnormality and paraspinal inflammatory change. The findings are suspicious for spondylodiscitis. Assess for epidural extension or abscess and urgent neural compression. Prompt clinical assessment is required.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are model presentations. Use only findings demonstrated on the actual scan, and do not claim enhancement if contrast was not administered."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_11",
+          "subsection_title": "High-yield MRI viva questions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_38",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Try answering each question before opening the explanation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1. What is the key difference between T1 and T2 MRI?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. What does FLAIR suppress?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. What MRI pattern supports acute cerebral infarction?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. What is T2 shine-through?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. What is STIR used for?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. Which sequences are sensitive to blood products and microbleeds?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. Does ring enhancement prove a brain abscess?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Why is MRI preferred for many spinal cord disorders?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. Does MRI use ionising radiation?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. Can an MRI implant always be considered safe if it is made of titanium?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "11. What is MRCP?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "12. What is the main limitation of a routine MRI report based on one image?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_12",
+          "subsection_title": "MRI OSCE final checklist",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_39",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Revision progress",
+                    "0 of 8"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify the body part, plane and sequence."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Know the typical appearance of fat, water, CSF and bone."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Distinguish T1, T2, FLAIR, DWI, ADC, STIR and GRE/SWI."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess the entire study systematically, not just one slice."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe the lesion's location, signal, morphology and enhancement where applicable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check for mass effect, compression and other complications."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Give a clear impression and identify emergencies."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Remember MRI safety and the limitations of the modality."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_13",
+          "subsection_title": "MRI sequences: what the examiner expects you to know",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_40",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before presenting an MRI, determine which sequence you are viewing. The same tissue may look different on different sequences. A bright area does not automatically indicate pathology."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_32.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "T1-weighted imaging"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat is usually bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cerebrospinal fluid (CSF) is dark."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Useful for anatomy, fat-containing lesions and post-contrast assessment."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_33.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "T2-weighted imaging"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fluid and CSF are usually bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Oedema and many inflammatory lesions are bright."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Useful for detecting many pathological processes."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "FLAIR"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Suppresses free CSF signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Many lesions near the ventricles and in brain tissue become easier to see."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Commonly used for multiple sclerosis, oedema and other brain lesions."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "DWI and ADC"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Acute infarction typically appears bright on DWI and dark on the corresponding ADC map."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Helps distinguish true restricted diffusion from T2 shine-through."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Some other conditions, including abscesses, may also restrict diffusion."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_10.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "GRE/SWI"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Sensitive to susceptibility effects from blood products and some mineral deposits."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Useful for microhaemorrhages, haemorrhagic lesions and certain vascular abnormalities."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_35.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "STIR or other fat-suppressed sequences"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Suppress fat signal so fluid, oedema and marrow abnormalities stand out."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Particularly useful in musculoskeletal MRI."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_41",
+              "group_title": "High-yield signal terminology",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Term",
+                    "Meaning"
+                  ],
+                  "rows": [
+                    [
+                      "Hyperintense",
+                      "Brighter than the reference tissue on that sequence"
+                    ],
+                    [
+                      "Hypointense",
+                      "Darker than the reference tissue on that sequence"
+                    ],
+                    [
+                      "Isointense",
+                      "Similar signal intensity to the reference tissue"
+                    ],
+                    [
+                      "Restricted diffusion",
+                      "High DWI signal with corresponding low ADC signal, interpreted in context"
+                    ],
+                    [
+                      "Enhancement",
+                      "Increased signal after contrast administration on appropriate post-contrast images"
+                    ],
+                    [
+                      "Oedema",
+                      "Increased tissue water, often producing high signal on T2/STIR"
+                    ],
+                    [
+                      "Mass effect",
+                      "Displacement or compression of adjacent structures"
+                    ],
+                    [
+                      "Flow void",
+                      "Signal loss from rapidly flowing blood on many conventional sequences"
+                    ],
+                    [
+                      "Susceptibility artefact",
+                      "Signal loss or distortion associated with local magnetic susceptibility differences"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: Always qualify hyperintensity or hypointensity by sequence—for example, “T2-hyperintense lesion”—rather than simply calling something bright or dark."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_14",
+          "subsection_title": "MRI brain: presenting normal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_42",
+              "group_title": "A. Systematic approach: BRAIN",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use this checklist for an MRI brain examination."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "B — Brain tissue: cerebral hemispheres, grey-white matter, deep grey nuclei, brainstem and cerebellum."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "R — Restricted diffusion and haemorrhage: review DWI/ADC and GRE/SWI where available."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A — Anatomy and abnormal signal: identify lesions, oedema, abnormal signal and enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "I — Intracranial spaces: ventricles, sulci, cisterns, extra-axial spaces and midline."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "N — Neighbouring structures: skull, orbits, paranasal sinuses, mastoids and other included structures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Also inspect the pituitary region and major vascular flow voids when relevant to the clinical question and the coverage."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_43",
+              "group_title": "B. Normal MRI brain: complete presentation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_36.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I have been presented with an MRI examination of the [anatomical region] of a [patient’s age]-year-old [male/female], performed for the clinical indication of [indication]."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "1. Examination and technique"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The examination is an MRI of the [region], performed using the available sequences, including [T1-weighted, T2-weighted, FLAIR, diffusion-weighted imaging, ADC maps, susceptibility-weighted imaging/gradient echo, STIR, or other relevant sequences]. The examination is [performed without/with and without] intravenous contrast. The images are of satisfactory diagnostic quality, with adequate anatomical coverage and no significant motion artefact limiting assessment."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "2. Image quality and coverage"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The relevant anatomical structures are included in the field of view. The sequences provided permit assessment of the principal structures relevant to the clinical question. Any limitation related to motion, susceptibility artefact, incomplete coverage, lack of a required sequence or lack of contrast is stated."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "3. Anatomical alignment and morphology"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised structures demonstrate normal anatomical alignment, position, size and configuration, as applicable to the region being examined. No significant structural distortion or mass effect is identified."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "4. Signal characteristics"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised tissues demonstrate expected signal characteristics on the supplied sequences. There is no focal abnormal signal identified to suggest oedema, inflammation, haemorrhage, infiltrative disease or a focal lesion, where these abnormalities are relevant to the examination."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "5. Diffusion and susceptibility, where applicable"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "There is no abnormal restricted diffusion identified on the diffusion-weighted images and corresponding ADC maps, where provided. There is no abnormal susceptibility signal to suggest blood products or other susceptibility-producing material on the relevant sequences, where assessed."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "6. Contrast enhancement, where applicable"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Following contrast administration, there is no abnormal pathological enhancement identified in the structures assessed. If the examination is non-contrast, enhancement cannot be assessed and must not be reported as normal."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "7. Surrounding tissues and adjacent structures"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised surrounding soft tissues, adjacent anatomical compartments and relevant regional structures show no significant abnormality. No significant collection, abnormal fluid accumulation or other relevant finding is identified."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "8. Additional findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "No other significant abnormality is identified within the anatomical coverage of the examination. Relevant incidental findings are described separately where present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Normal MRI appearance of the [anatomical region] on the supplied sequences. No significant abnormality identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Limitations: The interpretation is limited to the sequences, contrast protocol, image quality and anatomical coverage provided. The absence of abnormality on MRI does not exclude all disease, and further targeted assessment may be necessary if the clinical suspicion remains high.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use this as a model, not a script to recite blindly. Do not claim that a structure is normal if it is not included or adequately assessed. A normal MRI also does not exclude every cause of neurological symptoms."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_37.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I have been presented with an MRI scan of the brain, performed for [clinical indication]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1. Technique and image quality: The examination includes the available T1-weighted, T2-weighted, FLAIR and diffusion-weighted sequences with ADC maps, and susceptibility-sensitive sequences where provided. The study is [non-contrast/contrast-enhanced]. Image quality is satisfactory, with no significant motion artefact limiting assessment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Cerebral hemispheres: The cerebral hemispheres demonstrate preserved anatomical architecture and expected signal characteristics. The grey-white matter differentiation is maintained. There is no focal mass lesion, significant oedema or abnormal parenchymal signal identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. White matter: The cerebral white matter demonstrates no significant abnormal signal on the supplied sequences. No focal or confluent white-matter abnormality of significance is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Diffusion: There is no abnormal restricted diffusion on the diffusion-weighted images and corresponding ADC maps to suggest an acute infarction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. Haemorrhage and susceptibility: No abnormal susceptibility signal is identified on the supplied susceptibility-sensitive sequences to suggest intracranial blood products or another susceptibility-producing lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. Deep grey matter: The basal ganglia, thalami and internal capsules demonstrate normal morphology and signal characteristics."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. Corpus callosum: The corpus callosum is normally formed, with preserved morphology and signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Brainstem and cerebellum: The midbrain, pons, medulla and cerebellar hemispheres demonstrate no significant focal signal abnormality or structural lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. Ventricles and cerebrospinal fluid spaces: The ventricular system is normal in size and configuration. There is no hydrocephalus. The cortical sulci and extra-axial cerebrospinal fluid spaces are within expected limits for age."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. Midline structures and mass effect: The midline structures remain central. There is no significant mass effect, midline shift, cisternal effacement or evidence of herniation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "11. Sellar and parasellar regions: The pituitary region and visualised parasellar structures demonstrate no significant abnormality, within the limits of a routine brain MRI."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "12. Orbits: The visualised orbital contents demonstrate no significant abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "13. Paranasal sinuses and mastoid air cells: The visualised paranasal sinuses and mastoid air cells show no significant opacification or fluid accumulation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "14. Calvarium and extracranial soft tissues: The visualised skull marrow, calvarium and extracranial soft tissues demonstrate no significant abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "15. Contrast enhancement, if performed: No abnormal intracranial parenchymal, leptomeningeal or pachymeningeal enhancement is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "16. Additional structures: The visualised craniocervical junction and other included structures show no significant abnormality, where adequately assessed."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: No significant intracranial abnormality identified on the supplied MRI brain examination.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_44",
+              "group_title": "MRI brain: high-yield qualifications",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Acute infarction: assess DWI and ADC maps; true restriction typically produces high DWI signal with low ADC signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Haemorrhage: susceptibility-sensitive sequences help identify blood products, but appearances depend on the age and type of haemorrhage."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Demyelination: assess the distribution, morphology and signal of white-matter lesions, including relevant periventricular, juxtacortical, infratentorial and spinal locations when included."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mass lesions: describe location, dimensions, signal characteristics, surrounding oedema, mass effect, diffusion and enhancement where assessed."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Meningeal disease: meningeal enhancement cannot be assessed without appropriate post-contrast sequences."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Vascular pathology: do not claim that intracranial arteries and veins are normal unless appropriate vascular sequences, such as MRA or MRV, have been performed."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_45",
+              "group_title": "1. Acute ischaemic stroke",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_38.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_16.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "High signal in the affected area on DWI."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Corresponding low signal on ADC, supporting restricted diffusion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FLAIR changes may be absent early or develop later."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Distribution may correspond to a vascular territory."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess for haemorrhagic transformation, swelling and mass effect."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is an area of abnormal signal involving the [anatomical region], demonstrating high signal on diffusion-weighted imaging with corresponding low signal on the ADC map, in keeping with restricted diffusion. The distribution is [within/not clearly confined to] a recognised vascular territory. There is [no/evidence of] associated haemorrhagic transformation or significant mass effect."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Findings are consistent with an acute or recent ischaemic infarct, in the appropriate clinical context.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE distinction: DWI brightness alone is insufficient; correlate with ADC. The timing of infarction cannot be established precisely from one sequence alone. Suspected acute stroke requires urgent clinical assessment and stroke-protocol imaging."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_46",
+              "group_title": "2. Intracranial haemorrhage",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_39.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_40.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_41.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Susceptibility or blooming on GRE/SWI may indicate blood products."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Signal varies with the age and biochemical state of blood."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Determine whether haemorrhage is intraparenchymal, subarachnoid, subdural or epidural."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess surrounding oedema, mass effect and ventricular extension."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is an abnormal susceptibility focus involving the [location], measuring approximately [dimensions], with associated [surrounding oedema/mass effect/ventricular extension, if present]. The appearance is suspicious for blood products. The exact age of the haemorrhage cannot be determined from susceptibility alone."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Intracranial haemorrhagic lesion involving the [location]. Correlation with the clinical presentation and appropriate acute imaging is advised.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Must know: CT is often the initial investigation for suspected acute intracranial haemorrhage because it is rapid and widely available. MRI is useful in selected cases and for further characterisation."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_47",
+              "group_title": "3. Brain tumour or intracranial mass",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_42.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_43.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_44.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Intra-axial versus extra-axial location."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Size, margins, solid or cystic components."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "T1/T2/FLAIR signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pattern of contrast enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Surrounding oedema."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mass effect, midline shift and hydrocephalus."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Haemorrhage or restricted diffusion, if present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a [intra-axial/extra-axial] lesion centred in the [location], measuring approximately [dimensions]. It demonstrates [signal characteristics] on the available sequences and [homogeneous/heterogeneous/rim/no significant] enhancement following contrast administration. There is associated [surrounding oedema, mass effect or midline shift]. The ventricular system is [not compressed/compressed], with [no/present] evidence of hydrocephalus."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Intracranial mass in the [location]. The differential diagnosis includes [most relevant possibilities], depending on the lesion’s location and imaging characteristics.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Distinguishing clue: A dural-based extra-axial mass with a dural tail may suggest meningioma, but this sign is not specific. A ring-enhancing lesion has a broad differential, including neoplasm, abscess and selected inflammatory or infectious lesions."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_48",
+              "group_title": "4. Multiple sclerosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_15.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_45.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_46.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Multiple T2/FLAIR-hyperintense lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Periventricular, juxtacortical, infratentorial and spinal cord locations may be characteristic."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Ovoid lesions perpendicular to the ventricles may form “Dawson’s fingers.”"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Some active lesions enhance with contrast."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Different lesion ages may be suggested by differing enhancement patterns."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There are multiple T2/FLAIR-hyperintense lesions involving the [periventricular/juxtacortical/infratentorial] white matter. Some lesions demonstrate an ovoid configuration and [orientation perpendicular to the ventricles, if seen]. There is [no/evidence of] contrast enhancement in the identified lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: The distribution and signal characteristics raise the possibility of demyelinating disease, including multiple sclerosis. Diagnosis requires correlation with the clinical history and appropriate diagnostic criteria.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_49",
+              "group_title": "5. Hydrocephalus",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enlarged ventricles."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Possible periventricular interstitial oedema."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess sulcal size, aqueduct and CSF pathways."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for a mass or obstruction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is enlargement of the ventricular system, involving the [lateral/third/fourth] ventricles. There is [associated periventricular T2/FLAIR hyperintensity suggesting transependymal CSF flow/no such change identified]. The appearance is [obstructive/communicating in pattern, if supported by the images], with [presence/absence] of an identifiable obstructing lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Hydrocephalus. The pattern and clinical context should guide further assessment and management.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_50",
+              "group_title": "6. Brain abscess",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical features"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A well-defined lesion, often with peripheral enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Central restricted diffusion may be present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Surrounding oedema and mass effect may occur."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a ring-enhancing lesion in the [location] with surrounding oedema and central restricted diffusion. In the appropriate clinical context, the findings are concerning for an intracranial abscess. Necrotic neoplasm and other ring-enhancing lesions remain differential diagnoses.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Urgent point: Suspected brain abscess requires urgent specialist assessment."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_15",
+          "subsection_title": "MRI spine: normal and abnormal presentations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_51",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI is particularly useful for assessing the intervertebral discs, spinal cord, nerve roots, ligaments, bone marrow and spinal canal."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_52",
+              "group_title": "A. Systematic approach: the 6 Cs",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Curvature: cervical lordosis, thoracic kyphosis or lumbar lordosis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Column alignment: vertebral alignment, listhesis and deformity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Corpora: vertebral body height, marrow signal, fractures and lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cartilaginous discs: disc height, hydration, degeneration, protrusion and herniation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Canal and cord: canal stenosis, cord compression, cord signal and conus level."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Connections and surrounding tissues: facet joints, ligamentum flavum, neural foramina, nerve roots and paraspinal soft tissues."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Adapt this checklist to the region being examined."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_53",
+              "group_title": "B. Normal MRI spine: complete presentation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_47.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I have been presented with an MRI of the [cervical/thoracic/lumbar] spine, performed for [clinical indication]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1. Technique: The examination includes the available sagittal and axial sequences, including T1-weighted, T2-weighted and fluid-sensitive sequences as appropriate. The images are of satisfactory quality, with adequate coverage of the intended spinal region."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Vertebral alignment: The vertebral bodies demonstrate normal alignment, with no significant listhesis or abnormal curvature beyond expected physiological alignment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. Vertebral bodies and marrow: Vertebral body heights are preserved. The vertebral marrow demonstrates no suspicious focal lesion, acute compression fracture or significant marrow oedema identified on the supplied sequences."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Intervertebral discs: The intervertebral discs demonstrate preserved height and expected signal characteristics for age, without significant disc protrusion, extrusion or herniation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. Spinal canal: The central spinal canal is of satisfactory calibre. There is no significant central canal stenosis or compressive lesion identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. Neural foramina: The neural exit foramina are patent, without significant foraminal stenosis or visible nerve root compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. Spinal cord and conus, where included: The spinal cord demonstrates normal calibre and signal, without focal intramedullary lesion or abnormal cord oedema. The conus medullaris terminates at an expected level, where included. The cauda equina nerve roots demonstrate no significant clumping or compression where assessable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Posterior elements and facet joints: The posterior elements are intact. The facet joints demonstrate no significant abnormality or advanced arthropathy."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. Ligaments and paraspinal tissues: The visualised supporting ligaments and paraspinal soft tissues demonstrate no significant abnormality. There is no abnormal paraspinal collection or mass identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. Additional findings: The visualised adjacent structures show no significant abnormality within the coverage of the study."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: No significant abnormality identified on MRI of the [specified spinal region]. No significant spinal canal stenosis, neural foraminal narrowing or neural compression identified.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_54",
+              "group_title": "1. Intervertebral disc prolapse or herniation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "What to identify"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Level: e.g. L4–L5 or L5–S1."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Type: bulge, protrusion, extrusion or sequestration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Direction: central, paracentral, foraminal or extraforaminal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Effect on the thecal sac, spinal canal, lateral recess and nerve roots."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Degree of canal or foraminal stenosis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is disc degeneration at L4–L5 with a [broad-based bulge/focal protrusion/extrusion] extending [centrally/paracentrally/foraminally]. This results in [mild/moderate/severe] narrowing of the spinal canal and [right/left/bilateral] lateral recess or neural foramen, with [contact/displacement/compression] of the traversing or exiting nerve root."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The remaining visualised levels demonstrate [relevant findings]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: L4–L5 disc herniation with associated [canal/lateral recess/foraminal] narrowing and [right/left] nerve root involvement.”"
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Important distinction"
+                  ]
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Term",
+                    "Meaning"
+                  ],
+                  "rows": [
+                    [
+                      "Disc bulge",
+                      "Broad extension of the disc beyond its normal margins; not necessarily a focal herniation"
+                    ],
+                    [
+                      "Protrusion",
+                      "Focal herniation in which the base is broader than the outward component"
+                    ],
+                    [
+                      "Extrusion",
+                      "The outward component extends farther than its base in at least one relevant dimension, or there is loss of continuity with the parent disc"
+                    ],
+                    [
+                      "Sequestration",
+                      "An extruded fragment has separated from the parent disc"
+                    ],
+                    [
+                      "Foraminal stenosis",
+                      "Narrowing of the opening through which the exiting nerve root passes"
+                    ],
+                    [
+                      "Canal stenosis",
+                      "Narrowing of the central spinal canal"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These terms describe morphology. The clinical significance depends on the level, degree of compression and correlation with symptoms."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_55",
+              "group_title": "2. Degenerative disc disease and spondylosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reduced disc height and loss of normal T2 disc signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Disc bulging and osteophyte formation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Endplate degeneration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Facet joint arthropathy."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Variable canal and foraminal stenosis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There are multilevel degenerative changes characterised by disc desiccation, reduced disc height and endplate changes, most pronounced at [level/levels]. Associated disc-osteophyte complexes and facet arthropathy result in [degree] spinal canal and neural foraminal narrowing at [levels]. There is [no/evidence of] cord or nerve root compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Multilevel degenerative spondylosis, most pronounced at [level/levels], with [relevant stenosis or neural compression].”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_56",
+              "group_title": "3. Spinal canal stenosis and cord compression",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Look for:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Narrowed canal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Flattening or deformation of the cord."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Loss of surrounding CSF spaces."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Intramedullary T2 hyperintensity, which may indicate cord oedema or myelopathic change."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The level and cause of compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is severe canal narrowing at C5–C6 due to a disc-osteophyte complex, with flattening of the cervical cord and associated focal T2 hyperintensity. These findings are concerning for compressive cervical myelopathy.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Cord compression with progressive weakness, gait disturbance, sphincter dysfunction or saddle sensory symptoms requires urgent clinical assessment."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_57",
+              "group_title": "4. Vertebral fracture",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI may demonstrate:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Loss of vertebral body height."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Marrow oedema, often low on T1 and high on fluid-sensitive sequences."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Retropulsion of a fragment into the canal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Associated ligament injury or cord compression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a compression fracture of the [vertebral level], with [degree] loss of vertebral body height and associated marrow oedema. There is [no/present] retropulsion of the posterior vertebral body wall and [no/present] associated canal narrowing or neural compression.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI helps assess marrow oedema and associated soft-tissue or neural injury. CT is often better for defining detailed bony fracture morphology."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_58",
+              "group_title": "5. Spinal infection: spondylodiscitis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_48.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "link.springer.com",
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormal signal in adjacent vertebral endplates and marrow."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormal disc signal or enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Endplate destruction in more advanced disease."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Paravertebral or epidural inflammation and abscess."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is abnormal marrow signal and enhancement involving the adjacent [vertebral levels], with abnormal signal in the intervening disc and associated [paravertebral/epidural] inflammatory change. The findings are concerning for spondylodiscitis, with [presence/absence] of a collection or neural compression.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Must know: Fever may be absent. Suspected spinal infection, especially with epidural abscess or neurological deficit, requires urgent assessment."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_59",
+              "group_title": "6. Spinal cord lesion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A focal T2-hyperintense intramedullary lesion may be associated with inflammation, demyelination, tumour, infarction or other pathology."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Present the level, length, position within the cord, signal characteristics, enhancement and associated expansion or compression. Avoid assigning a specific diagnosis from signal intensity alone."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_16",
+          "subsection_title": "MRI knee: normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_60",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI of the knee is a common musculoskeletal OSCE station because it demonstrates menisci, ligaments, cartilage, bone marrow and joint fluid."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_61",
+              "group_title": "A. Systematic approach: the 5 Ms",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Menisci: medial and lateral."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Major ligaments: ACL, PCL, MCL and LCL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Muscles and tendons: quadriceps, patellar and surrounding tendons."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Marrow and bones: femur, tibia, patella and fibula."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Miscellaneous: cartilage, joint effusion, synovium, bursae and soft tissues."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_62",
+              "group_title": "B. Normal MRI knee: presentation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“This is an MRI of the [right/left] knee."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised bones demonstrate normal alignment and preserved marrow signal, with no focal marrow lesion or acute fracture identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The medial and lateral menisci demonstrate normal morphology and signal, without a definite tear. The anterior and posterior cruciate ligaments are intact. The medial and lateral collateral ligament complexes are preserved."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The articular cartilage is maintained without a significant focal defect. The quadriceps and patellar tendons are intact. There is no significant joint effusion or abnormal periarticular collection."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Impression: No significant MRI abnormality of the [right/left] knee.”"
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_63",
+              "group_title": "1. Anterior cruciate ligament (ACL) tear",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_49.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_50.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_51.webp",
+                  "caption": null
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key features"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Discontinuity or non-visualisation of normal ACL fibres."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormal orientation or wavy appearance of the ligament."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Increased signal within the ligament."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Associated bone bruising, joint effusion or secondary signs of instability."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “The ACL demonstrates abnormal increased signal and loss of normal fibre continuity, with [partial/complete] disruption. There is associated [joint effusion/bone marrow oedema/other ligament injury, if present]. The findings are consistent with an ACL tear.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not diagnose a complete tear from increased signal alone; assess fibre continuity and the ligament’s morphology."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_64",
+              "group_title": "2. Meniscal tear",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key features"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormal signal extending to an articular surface."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A displaced fragment or abnormal meniscal morphology."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify the medial or lateral meniscus, anterior or posterior horn, and body."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for associated effusion or parameniscal cyst."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is abnormal signal within the [medial/lateral] meniscus, involving the [anterior horn/body/posterior horn] and extending to an articular surface, consistent with a tear. There is [no/a] displaced fragment and [no/a] associated joint effusion.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "High-yield clue: Intrasubstance signal that does not reach an articular surface is not, by itself, sufficient to diagnose a meniscal tear."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_65",
+              "group_title": "3. Osteoarthritis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Articular cartilage thinning or loss."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Marginal osteophytes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Subchondral marrow changes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Subchondral cysts."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Associated effusion or synovitis."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There are degenerative changes affecting the [medial/lateral/patellofemoral] compartment, characterised by cartilage loss, marginal osteophytes and [subchondral oedema/cystic change]. There is [presence/absence] of joint effusion.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_66",
+              "group_title": "4. Joint effusion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is an increased volume of intra-articular fluid distending the joint recesses, consistent with a joint effusion. The cause should be assessed in conjunction with the remaining imaging findings and clinical presentation.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A large effusion is a finding, not a complete diagnosis. Trauma, infection, inflammatory arthritis and degeneration are among the possible causes."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_67",
+              "group_title": "5. Bone marrow oedema or contusion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is focal marrow oedema within the [bone and anatomical region], appearing hyperintense on fluid-sensitive sequences and relatively hypointense on T1-weighted imaging. There is [no/a] definite fracture line. The findings are consistent with a bone contusion or other marrow injury, depending on the clinical context.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_17",
+          "subsection_title": "MRI shoulder: normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_68",
+              "group_title": "A. Systematic approach",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Assess the rotator cuff tendons, long head of biceps tendon, labrum, glenohumeral joint, acromioclavicular joint, bones, bursae and surrounding muscles."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_69",
+              "group_title": "B. Normal MRI shoulder: presentation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“This is an MRI of the [right/left] shoulder. The humeral head is normally aligned within the glenoid. The visualised bones demonstrate preserved marrow signal without a focal lesion or acute fracture."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The supraspinatus, infraspinatus, subscapularis and teres minor tendons demonstrate preserved continuity, without a significant tear. The long head of the biceps tendon is normally positioned within the bicipital groove."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised labrum demonstrates no definite displaced tear. The articular cartilage is preserved, and there is no significant glenohumeral joint effusion or subacromial-subdeltoid bursal distension."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Impression: No significant MRI abnormality of the [right/left] shoulder.”"
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_70",
+              "group_title": "C. Rotator cuff tear",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_52.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_53.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Tendon fibre discontinuity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Partial-thickness versus full-thickness tear."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Tendon retraction."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fluid communicating across the tendon defect."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Muscle atrophy and fatty infiltration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Associated bursitis or biceps pathology."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a tear of the [supraspinatus/infraspinatus/subscapularis] tendon, which is [partial-thickness/full-thickness], involving the [articular/bursal surface or specified footprint]. The tear measures approximately [dimensions], with [presence/absence] of tendon retraction and [presence/absence] of muscle atrophy. There is [associated bursal fluid/other relevant finding].”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A full-thickness tear extends from the articular to the bursal surface of the tendon. A partial-thickness tear does not traverse the entire tendon thickness."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_71",
+              "group_title": "D. Shoulder dislocation or labral injury",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is abnormal alignment of the humeral head relative to the glenoid, consistent with [anterior/posterior] dislocation, with [presence/absence] of an associated fracture or marrow impaction injury. There is [presence/absence] of associated labral abnormality.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI can assess associated soft-tissue injury. In an acute dislocation, appropriate initial radiographs and prompt clinical management remain important."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_18",
+          "subsection_title": "MRI abdomen: normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_72",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRI abdomen is useful for characterising liver lesions, biliary disease, pancreatic abnormalities, renal lesions and selected bowel or vascular conditions."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_73",
+              "group_title": "A. Systematic approach",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Review the liver, gallbladder and biliary tree, pancreas, spleen, adrenal glands, kidneys, bowel, major vessels, lymph nodes, peritoneum and visualised bones. Assess enhancement and diffusion when the appropriate sequences are available."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_74",
+              "group_title": "B. Normal MRI abdomen: presentation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“This is an MRI of the abdomen. The examination is of adequate diagnostic quality for the structures assessed."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The liver is normal in size and demonstrates no focal suspicious lesion. The gallbladder and visualised biliary tree are unremarkable, without biliary dilatation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The pancreas is normal in size and signal, without a focal lesion or surrounding inflammatory change. The spleen and adrenal glands demonstrate no significant abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Both kidneys demonstrate preserved morphology, without hydronephrosis or a suspicious focal lesion. The visualised bowel loops demonstrate no significant abnormality. There is no significant abdominal lymphadenopathy, ascites or focal peritoneal collection."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Impression: No significant MRI abnormality identified in the visualised abdomen.”"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Adapt this to the protocol. For example, a dedicated MRCP or liver MRI may not adequately assess every abdominal structure."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_75",
+              "group_title": "C. Liver lesion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_54.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_55.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/mri_interpretation_56.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When presenting a liver lesion, describe:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Segment and location."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Size and number."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "T1 and T2 signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Diffusion characteristics."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enhancement pattern and any washout."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat, haemorrhage or necrosis, if identifiable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Background liver morphology and associated vascular findings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation template:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a focal lesion within segment [number] of the liver, measuring approximately [dimensions]. It demonstrates [T1/T2 signal characteristics], with [enhancement pattern] following contrast administration and [presence/absence] of restricted diffusion. There is [no/evidence of] associated biliary dilatation, vascular involvement or additional focal lesions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: Focal hepatic lesion with imaging characteristics [suggestive of the most likely diagnosis/indeterminate]. Further characterisation should be guided by the specific imaging protocol and clinical risk factors.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: A liver lesion cannot reliably be labelled benign or malignant from the fact that it is bright or dark on one sequence alone. Enhancement patterns must be interpreted in the context of the complete study."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_76",
+              "group_title": "D. Pancreatitis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Possible findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pancreatic enlargement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormal pancreatic signal and enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Peripancreatic oedema or fluid."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Necrosis or collections in complicated cases."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “The pancreas demonstrates [enlargement/abnormal signal or enhancement] with surrounding inflammatory change and [presence/absence] of peripancreatic collections. The appearances are compatible with pancreatitis in the appropriate clinical context.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "MRI may be useful for selected complications or when biliary pathology is being investigated. Diagnosis and urgency depend on clinical findings and laboratory results as well."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_77",
+              "group_title": "E. Renal lesion or hydronephrosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Presentation for hydronephrosis: “There is dilatation of the [right/left] renal collecting system, with [presence/absence] of associated ureteric dilatation. The level and cause of obstruction should be assessed on the available sequences.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation for a renal mass: Describe the renal location, dimensions, solid or cystic composition, enhancement, internal complexity, renal vein involvement and regional lymph nodes, where assessable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_19",
+          "subsection_title": "MRCP: normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_78",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "MRCP stands for magnetic resonance cholangiopancreatography. It uses heavily T2-weighted sequences to demonstrate fluid-filled biliary and pancreatic ducts."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_79",
+              "group_title": "A. Normal MRCP",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The intrahepatic and extrahepatic bile ducts are not dilated. The common bile duct demonstrates a normal calibre for the clinical context, without a definite filling defect or abrupt narrowing. The gallbladder demonstrates no definite intraluminal calculus on the provided images. The main pancreatic duct is not dilated, and no focal ductal obstruction is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression: No significant biliary or pancreatic ductal abnormality identified on this MRCP.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_80",
+              "group_title": "B. Choledocholithiasis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A filling defect within the bile duct."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Upstream biliary dilatation may be present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The location and number of suspected calculi should be stated."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a filling defect within the [distal/mid/proximal] common bile duct, with [presence/absence] of upstream biliary dilatation. The finding is suspicious for choledocholithiasis.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_81",
+              "group_title": "C. Biliary obstruction",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is dilatation of the intrahepatic and extrahepatic biliary ducts, with an apparent transition at [location]. An obstructing calculus, stricture or mass should be considered according to the associated findings.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_82",
+              "group_title": "D. Pancreatic duct abnormality",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Report duct calibre, irregularity, abrupt cut-off, filling defects and associated pancreatic lesions. Ductal dilatation with an abrupt cut-off or associated mass warrants further evaluation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_20",
+          "subsection_title": "MRI pelvis: normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_83",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Pelvic MRI is used to assess the uterus, ovaries, prostate, bladder, rectum, pelvic floor, lymph nodes and surrounding soft tissues. The exact approach depends on the patient's anatomy and the clinical question."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_84",
+              "group_title": "A. Normal female pelvis MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The uterus is normal in size and demonstrates preserved zonal anatomy, with no focal myometrial lesion identified. The endometrium is of appropriate appearance for the clinical context. Both ovaries demonstrate no suspicious focal lesion. There is no significant adnexal mass or pelvic lymphadenopathy. The visualised bladder and rectum demonstrate no significant abnormality, and there is no significant free pelvic fluid."
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Impression: No significant MRI abnormality identified in the visualised pelvis.”"
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_85",
+              "group_title": "B. Uterine fibroids",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Typical findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Well-defined myometrial masses."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Commonly low T2 signal, although signal varies with degeneration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Distortion of the endometrial cavity or uterine contour may occur."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe the number, size and location."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There are well-defined myometrial lesions, predominantly low in T2 signal, consistent with uterine leiomyomas. The largest measures approximately [dimensions] and is located in the [location]. The lesion demonstrates [submucosal/intramural/subserosal] extension and [presence/absence] of distortion of the endometrial cavity.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_86",
+              "group_title": "C. Ovarian or adnexal mass",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Describe:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Side and anatomical origin, if identifiable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Size and cystic or solid components."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Septations, mural nodules and solid enhancing tissue."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat or blood products."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Restricted diffusion and enhancement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ascites, peritoneal disease and lymphadenopathy."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a [right/left] adnexal lesion measuring [dimensions], with [simple cystic/complex cystic/solid] morphology. It demonstrates [relevant signal and enhancement characteristics]. There is [presence/absence] of suspicious solid tissue, ascites or pelvic lymphadenopathy. The lesion requires characterisation in conjunction with the clinical findings and the applicable risk-assessment system.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_87",
+              "group_title": "D. Prostate MRI",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "For a prostate MRI, assess the gland size, transition and peripheral zones, focal lesions, diffusion restriction, enhancement, capsule, seminal vesicles and pelvic lymph nodes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation template: “The prostate measures approximately [dimensions or volume if available]. There is a focal lesion in the [zone and location], demonstrating [T2 signal, diffusion and enhancement characteristics]. There is [presence/absence] of capsular involvement, seminal vesicle invasion and suspicious pelvic lymphadenopathy. The lesion should be assigned a PI-RADS category only when the appropriate multiparametric sequences and assessment criteria are available.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_21",
+          "subsection_title": "MRI musculoskeletal system: other high-yield abnormalities",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_88",
+              "group_title": "A. Osteomyelitis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Marrow oedema and abnormal marrow signal."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Low T1 signal and high fluid-sensitive signal in affected marrow."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enhancement and adjacent soft-tissue inflammation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abscess formation in complicated cases."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is abnormal marrow signal in the [bone and location], with low T1 and high fluid-sensitive signal, accompanied by [enhancement/adjacent soft-tissue inflammatory change]. The findings are suspicious for osteomyelitis, with [presence/absence] of a drainable collection.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_89",
+              "group_title": "B. Avascular necrosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "checklist",
+                  "items": [
+                    "Key findings"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Subchondral lesion, commonly involving the femoral head."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Serpiginous low-signal rim on T1-weighted images."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A corresponding T2 double-line sign may be present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess for subchondral fracture and collapse."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is an abnormal subchondral lesion within the [right/left] femoral head, with a serpiginous margin and signal characteristics consistent with avascular necrosis. There is [no/evidence of] subchondral collapse.”"
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_90",
+              "group_title": "C. Bone or soft-tissue tumour",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Describe the site, dimensions, margins, relationship to bone or adjacent structures, signal, enhancement, marrow involvement, cortical destruction, soft-tissue extension and neurovascular involvement."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a lesion centred in the [bone/soft tissue] at [location], measuring [dimensions]. It demonstrates [signal and enhancement characteristics] with [presence/absence] of cortical breach, surrounding oedema and soft-tissue extension. The imaging features are [benign-appearing/indeterminate/suspicious], and further specialist evaluation is indicated as appropriate.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not decide whether a tumour is benign or malignant solely from signal intensity."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_22",
+          "subsection_title": "How to present an MRI when the findings are abnormal",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_91",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The most common OSCE mistake is listing observations without giving a coherent impression. Use this pattern:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Location → morphology → signal → associated features → effect on surrounding structures → impression."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For example, instead of saying:"
+                },
+                {
+                  "type": "checklist",
+                  "items": [
+                    "“There is a bright lesion in the brain.”"
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Say:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a 2.5 cm lesion in the right frontal lobe demonstrating T2/FLAIR hyperintensity and heterogeneous post-contrast enhancement, with surrounding vasogenic oedema and mild local mass effect. The imaging appearance is concerning for an intracranial mass, and the differential diagnosis depends on its full imaging characteristics and clinical context.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The example is illustrative; do not use its measurements or diagnosis for an actual scan."
+                }
+              ]
+            },
+            {
+              "group_id": "mri_interpretation_group_92",
+              "group_title": "Important MRI abnormalities: rapid recognition table",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Finding",
+                    "High-yield MRI clue",
+                    "Important caution"
+                  ],
+                  "rows": [
+                    [
+                      "Acute infarction",
+                      "DWI high, corresponding ADC low",
+                      "DWI brightness alone may be misleading"
+                    ],
+                    [
+                      "Multiple sclerosis",
+                      "Typical multifocal T2/FLAIR lesions",
+                      "Lesion distribution and clinical criteria matter"
+                    ],
+                    [
+                      "Disc herniation",
+                      "Focal disc material with possible neural compression",
+                      "Describe the level and affected nerve root"
+                    ],
+                    [
+                      "ACL tear",
+                      "Fibre disruption and abnormal ligament morphology",
+                      "Increased signal alone is not definitive"
+                    ],
+                    [
+                      "Meniscal tear",
+                      "Abnormal signal reaching an articular surface",
+                      "Intrasubstance signal may not be a tear"
+                    ],
+                    [
+                      "Rotator cuff tear",
+                      "Tendon discontinuity or fluid-filled defect",
+                      "State partial versus full thickness"
+                    ],
+                    [
+                      "Osteomyelitis",
+                      "Abnormal marrow signal with possible soft-tissue inflammation",
+                      "Correlate with clinical and laboratory findings"
+                    ],
+                    [
+                      "Avascular necrosis",
+                      "Serpiginous subchondral lesion",
+                      "Look for collapse"
+                    ],
+                    [
+                      "Brain abscess",
+                      "Ring enhancement with central restricted diffusion",
+                      "Differential diagnosis remains important"
+                    ],
+                    [
+                      "Spinal cord compression",
+                      "Cord deformation, sometimes with T2 signal change",
+                      "Neurological compromise may be urgent"
+                    ],
+                    [
+                      "Biliary obstruction",
+                      "Ductal dilatation and a transition point",
+                      "Identify the cause where possible"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_23",
+          "subsection_title": "Common MRI viva questions and model answers",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_93",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. Why is MRI preferred for many spinal cord lesions?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. What is the difference between T1 and T2?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. What does restricted diffusion mean?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. What is the purpose of FLAIR?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. Why do we use contrast?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. What is the difference between a disc protrusion and an extrusion?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. What MRI findings suggest cord compression?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Can MRI detect all fractures?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. What is a flow void?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. What are the important MRI safety considerations?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "11. Does a normal MRI exclude all disease?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "12. When should an MRI finding be escalated urgently?"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "mri_interpretation_subsection_24",
+          "subsection_title": "Normal versus abnormal MRI: how to avoid common mistakes",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "mri_interpretation_group_94",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Do not call a scan normal after reviewing only one image. Review all available sequences and planes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not confuse sequence-related signal with pathology. Confirm that the finding is abnormal relative to the correct tissue and sequence."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not overlook mass effect. Midline shift, ventricular compression, hydrocephalus and cord compression may be more urgent than the lesion's precise identity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not overstate certainty. Use “suggestive of,” “consistent with” or “concerning for” when appropriate."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not ignore incidental findings. Report clinically relevant abnormalities in the structures included in the scan."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not assume every abnormality explains the symptoms. Correlate with history, examination and laboratory findings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not delay emergency care for a formal presentation. Suspected acute stroke, cord compression, epidural abscess or other time-critical pathology requires prompt clinical escalation."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
