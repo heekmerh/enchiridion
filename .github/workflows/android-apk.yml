@@ -67,9 +67,35 @@ jobs:
           --build-number=${{ github.run_number }}
           --dart-define=GOOGLE_WEB_CLIENT_ID=$GOOGLE_WEB_CLIENT_ID
 
-      - uses: actions/upload-artifact@v4
+      - name: Name each APK by build and device type
+        run: |
+          cd build/app/outputs/flutter-apk
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            mv "app-$abi-release.apk" "enchiridion-${{ github.run_number }}-$abi.apk"
+          done
+
+      # Each APK is uploaded on its own and unzipped, so it downloads as a
+      # plain .apk file. With archive false the file name is the artifact name.
+      - name: Upload arm64-v8a APK (most phones)
+        uses: actions/upload-artifact@v7
         with:
-          name: enchiridion-apks-${{ github.run_number }}
-          path: enchiridion-app/enchiridion/build/app/outputs/flutter-apk/*-release.apk
+          path: enchiridion-app/enchiridion/build/app/outputs/flutter-apk/enchiridion-${{ github.run_number }}-arm64-v8a.apk
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload armeabi-v7a APK (older 32-bit phones)
+        uses: actions/upload-artifact@v7
+        with:
+          path: enchiridion-app/enchiridion/build/app/outputs/flutter-apk/enchiridion-${{ github.run_number }}-armeabi-v7a.apk
+          archive: false
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload x86_64 APK (emulators and Chromebooks)
+        uses: actions/upload-artifact@v7
+        with:
+          path: enchiridion-app/enchiridion/build/app/outputs/flutter-apk/enchiridion-${{ github.run_number }}-x86_64.apk
+          archive: false
           if-no-files-found: error
           retention-days: 30
