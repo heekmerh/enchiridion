@@ -47,7 +47,7 @@ export default function PartnerSuccessGuideModal({ isOpen, onClose }: PartnerSuc
                         <h3>3. Pro-Tips for Maximum Impact</h3>
                         <ul>
                             <li><b>Focus on Exams:</b> Mention that our app and books cover UKMLA, USMLE, and MCCQE. Targeting students during exam season is the fastest way to drive book sales.</li>
-                            <li><b>Sell the Discount:</b> Remind your network that your code gets them ₦500 off their first app subscription and 10% off their first book order.</li>
+                            <li><b>Sell the Discount:</b> Remind your network that your code gets them 10% off their first book order.</li>
                             <li><b>Climb the Rankings:</b> Check the 'Rewards' tab to see where you stand. Top partners gain visibility and prestige in the Enchiridion community.</li>
                             <li><b>Use the Share Buttons:</b> Don't manually copy-paste. Use the WhatsApp and Email buttons on your dashboard to send pre-formatted, professional messages.</li>
                         </ul>
