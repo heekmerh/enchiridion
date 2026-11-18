@@ -16,3 +16,7 @@ export async function POST(request: Request) {
 export async function PUT(request: Request) {
     return proxyBackend(request, upstreamPath(request));
 }
+
+export async function DELETE(request: Request) {
+    return proxyBackend(request, upstreamPath(request));
+}

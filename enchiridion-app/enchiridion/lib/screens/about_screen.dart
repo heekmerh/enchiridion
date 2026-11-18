@@ -3,6 +3,7 @@ import '../widgets/common/brand_division.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../config/purchasing_policy.dart';
 import '../constants/about_config.dart';
 import '../utils/bottom_inset.dart';
 import 'legal_document_screen.dart';
@@ -58,6 +59,10 @@ class AboutScreen extends StatelessWidget {
           const _Section(
             title: 'About the App',
             child: Text(AboutConfig.aboutAppBlurb),
+          ),
+          const _Section(
+            title: 'Medical Disclaimer',
+            child: Text(AboutConfig.medicalDisclaimer),
           ),
           _Section(
             title: 'About the Author',
@@ -120,15 +125,16 @@ class AboutScreen extends StatelessWidget {
               onOpen: () => _openLink(context, AboutConfig.physicalCopyUrl),
             ),
           ),
-          _Section(
-            title: 'Website',
-            child: _LinkRow(
-              url: AboutConfig.websiteUrl,
-              label: 'Visit the website',
-              icon: Icons.language_outlined,
-              onOpen: () => _openLink(context, AboutConfig.websiteUrl),
+          if (!currentPurchasingPolicy.allowsInAppPurchase)
+            _Section(
+              title: 'Website',
+              child: _LinkRow(
+                url: AboutConfig.websiteUrl,
+                label: 'Visit the website',
+                icon: Icons.language_outlined,
+                onOpen: () => _openLink(context, AboutConfig.websiteUrl),
+              ),
             ),
-          ),
           _Section(
             title: 'Legal',
             child: Column(

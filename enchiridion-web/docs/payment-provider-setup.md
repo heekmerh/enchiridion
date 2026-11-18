@@ -92,11 +92,10 @@ The backend creates a Flutterwave payment plan automatically the first time some
 
 ### B1. Prepare the app (one time, permanent)
 
-1. **Pick the final application ID.** In `enchiridion-app/enchiridion/android/app/build.gradle.kts`, change `applicationId = "com.example.enchiridion"` to your own reverse domain, e.g. `site.enchiridion.app`.
-   - Play rejects `com.example.*`, and the ID can never change after the first upload.
+1. **Application ID.** It is `site.enchiridion.app` in `enchiridion-app/enchiridion/android/app/build.gradle.kts`. It can never change after the first upload, and the backend's `GOOGLE_PLAY_PACKAGE_NAME` must match it.
    - Leave `namespace` as it is; changing it would mean moving the Kotlin files.
-2. **Release signing.** The release build is still signed with the debug key; the file has a `TODO` saying so. Create an upload keystore and a signing config, following Flutter's "Build and release an Android app" guide, and enrol in **Play App Signing** when you create the app.
-3. Build the bundle: `cd enchiridion && flutter build appbundle`.
+2. **Release signing.** GitHub Actions signs release builds with the upload key from the `ANDROID_KEYSTORE_*` secrets. When you create the app, enrol in **Play App Signing** and keep that keystore as the upload key.
+3. **Get the bundle.** Every merge to `main` builds `enchiridion-<run>.aab` as a workflow artifact. Download it from the run's page.
 4. In Play Console, create the app if it doesn't exist.
 5. Open **Test and release → Testing → Internal testing**, create a release, and upload the `.aab`.
    - Play only lets you create subscriptions after a build with the billing permission is uploaded. The `in_app_purchase` plugin adds that permission automatically.

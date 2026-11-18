@@ -8,7 +8,7 @@ import psycopg
 
 from . import mailer
 from .database import get_db
-from .routers import billing, communications, referral, reviews, users
+from .routers import account, billing, communications, referral, reviews, users
 
 app = FastAPI(title="Enchiridion Backend")
 app.add_middleware(
@@ -21,6 +21,7 @@ app.add_middleware(
 )
 app.include_router(users.router, prefix="/users", tags=["users"])
 app.include_router(billing.router, prefix="/api/v1", tags=["billing"])
+app.include_router(account.router, prefix="/api/v1", tags=["account"])
 app.include_router(communications.router, prefix="/api/v1/communications", tags=["communications"])
 app.include_router(referral.router, prefix="/referral", tags=["referral"])
 app.include_router(reviews.router, prefix="/reviews", tags=["reviews"])
