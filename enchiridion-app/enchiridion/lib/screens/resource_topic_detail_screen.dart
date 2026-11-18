@@ -5,6 +5,7 @@ import '../models/resource_topic.dart';
 import '../services/resource_topic_service.dart';
 import '../services/sound_player.dart';
 import 'pinned_notes_screen.dart';
+import '../widgets/notes/chapter_notes_sheet.dart';
 import '../widgets/common/subtopic_tabs.dart';
 
 class ResourceTopicDetailScreen extends StatefulWidget {
@@ -71,11 +72,20 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
         title: Text(widget.topic.title),
         actions: [
           IconButton(
+            icon: const Icon(Icons.edit_note_outlined),
+            tooltip: 'Topic notes',
+            onPressed: () => showChapterNotesSheet(
+              context,
+              bookId: widget.topic.notesScope,
+              chapterId: widget.topic.id,
+              noun: 'topic',
+            ),
+          ),
+          IconButton(
             icon: const Icon(Icons.push_pin_outlined),
-            tooltip: 'Notes for ${widget.topic.title}',
+            tooltip: 'Pinned notes',
             onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (_) => const PinnedNotesScreen()),
+              MaterialPageRoute(builder: (_) => const PinnedNotesScreen()),
             ),
           ),
         ],
