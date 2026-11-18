@@ -65,6 +65,7 @@ String topicTitleForNotesScope(String scope) {
     kObstetricsOsceTopics,
     kPediatricsOsceTopics,
     kQuickRevisionTopics,
+    kPrescriptionTopics,
   ];
   for (final catalog in catalogs) {
     for (final topic in catalog) {

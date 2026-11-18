@@ -132,6 +132,7 @@ void main() {
       'Pediatrics OSCE': kPediatricsOsceTopics,
       'Surgical instrumentation': kSurgicalInstrumentationTopics,
       'Quick revision': kQuickRevisionTopics,
+      'Prescriptions & medication guide': kPrescriptionTopics,
     };
 
     for (final card in cards.entries) {

@@ -655,13 +655,8 @@ class _ResourcesTabState extends State<_ResourcesTab> {
       _ResourceCategory(
         title: 'Prescriptions & medication guide',
         assetPath: 'assets/resources/prescriptions.jpg',
-        onTap: (context) => ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content:
-                Text('Prescriptions & medication guide — $kComingSoonLabel'),
-            behavior: SnackBarBehavior.floating,
-          ),
-        ),
+        onTap: _openTopics(
+            'Prescriptions & medication guide', kPrescriptionTopics),
       ),
     ];
   }

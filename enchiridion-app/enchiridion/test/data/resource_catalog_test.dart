@@ -15,6 +15,7 @@ const Map<String, List<ResourceTopic>> _catalogsByDartName = {
   'kPediatricsOsceTopics': kPediatricsOsceTopics,
   'kMedicalInstrumentationTopics': kMedicalInstrumentationTopics,
   'kSurgicalInstrumentationTopics': kSurgicalInstrumentationTopics,
+  'kPrescriptionTopics': kPrescriptionTopics,
   'kQuickRevisionTopics': kQuickRevisionTopics,
 };
 
