@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../widgets/common/brand_division.dart';
 import '../models/book_catalog.dart';
 import '../providers/auth_provider.dart';
 import '../providers/settings_provider.dart';
@@ -296,15 +295,9 @@ class _LibraryScreenState extends State<LibraryScreen>
                           width: 30, height: 30),
                       const SizedBox(width: 10),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text('Enchiridion',
-                                style: theme.textTheme.titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.bold)),
-                            const BrandDivision(),
-                          ],
-                        ),
+                        child: Text('Enchiridion',
+                            style: theme.textTheme.titleLarge
+                                ?.copyWith(fontWeight: FontWeight.bold)),
                       ),
                       IconButton(
                         icon: const Icon(Icons.push_pin_outlined),
@@ -625,18 +618,6 @@ class _ResourcesTabState extends State<_ResourcesTab> {
         )),
       ),
       _ResourceCategory(
-        title: 'Surgical instrumentation',
-        assetPath: 'assets/resources/surgical instrumentation.jpeg',
-        onTap: _openTopics(
-            'Surgical instrumentation', kSurgicalInstrumentationTopics),
-      ),
-      _ResourceCategory(
-        title: 'Instrumentation in medicine & pediatrics',
-        assetPath: 'assets/resources/clinical instrumentation.jpeg',
-        onTap: _openTopics('Instrumentation in medicine & pediatrics',
-            kMedicalInstrumentationTopics),
-      ),
-      _ResourceCategory(
         title: 'Medical examination OSCE',
         assetPath: 'assets/resources/osce.jpeg',
         onTap: _openTopics('Medical examination OSCE', kOsceTopics),
@@ -648,9 +629,21 @@ class _ResourcesTabState extends State<_ResourcesTab> {
             _openTopics('Obstetrics & gynaecology OSCE', kObstetricsOsceTopics),
       ),
       _ResourceCategory(
+        title: 'Instrumentation in medicine & pediatrics',
+        assetPath: 'assets/resources/clinical instrumentation.jpeg',
+        onTap: _openTopics('Instrumentation in medicine & pediatrics',
+            kMedicalInstrumentationTopics),
+      ),
+      _ResourceCategory(
         title: 'Pediatrics OSCE',
         assetPath: 'assets/resources/pediatrics_osce.jpg',
         onTap: _openTopics('Pediatrics OSCE', kPediatricsOsceTopics),
+      ),
+      _ResourceCategory(
+        title: 'Surgical instrumentation',
+        assetPath: 'assets/resources/surgical instrumentation.jpeg',
+        onTap: _openTopics(
+            'Surgical instrumentation', kSurgicalInstrumentationTopics),
       ),
       _ResourceCategory(
         title: 'OSCE quick reference',

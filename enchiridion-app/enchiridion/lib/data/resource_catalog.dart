@@ -30,6 +30,7 @@ const List<ResourceTopic> kOsceTopics = [
     title: 'Neurological system examination',
     categoryTitle: 'Medical examination OSCE',
     heroAssetPath: 'assets/resources/osce.jpeg',
+    dataAssetPath: 'assets/data/resources/neurological_examination.json',
   ),
   ResourceTopic(
     id: 'musculoskeletal-examination',
@@ -1357,6 +1358,7 @@ const List<ResourceTopic> kObstetricsOsceTopics = [
     title: 'Gynaecological ultrasound',
     categoryTitle: 'Obstetrics & gynaecology OSCE',
     heroAssetPath: 'assets/resources/og_osce.jpg',
+    dataAssetPath: 'assets/data/resources/gynaecological_ultrasound.json',
     group: 'O&G imaging & investigations',
   ),
   ResourceTopic(
@@ -1639,6 +1641,7 @@ const List<ResourceTopic> kPediatricsOsceTopics = [
     title: 'Pediatric X-ray deck',
     categoryTitle: 'Pediatrics OSCE',
     heroAssetPath: 'assets/resources/pediatrics_osce.jpg',
+    dataAssetPath: 'assets/data/resources/pediatric_x_ray_deck.json',
     group: 'Part 5: Investigations',
   ),
   ResourceTopic(
@@ -1646,6 +1649,7 @@ const List<ResourceTopic> kPediatricsOsceTopics = [
     title: 'Pediatric CT scan interpretation',
     categoryTitle: 'Pediatrics OSCE',
     heroAssetPath: 'assets/resources/pediatrics_osce.jpg',
+    dataAssetPath: 'assets/data/resources/pediatric_ct_scan_interpretation.json',
     group: 'Part 5: Investigations',
   ),
   ResourceTopic(
@@ -1653,6 +1657,7 @@ const List<ResourceTopic> kPediatricsOsceTopics = [
     title: 'Pediatric MRI scan interpretation',
     categoryTitle: 'Pediatrics OSCE',
     heroAssetPath: 'assets/resources/pediatrics_osce.jpg',
+    dataAssetPath: 'assets/data/resources/pediatric_mri_scan_interpretation.json',
     group: 'Part 5: Investigations',
   ),
 ];
