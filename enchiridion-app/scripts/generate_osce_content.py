@@ -496,6 +496,11 @@ def feed_document(builder: ChapterBuilder, document: Document, sink: ImageSink,
             continue
         style = paragraph.style.name if paragraph.style else "Normal"
         level = style_level(style)
+        if level == 1 and plan.numbered and not TOP_NUMBERED.match(text):
+            # In a file whose main sections are numbered, an unnumbered
+            # Word heading ("A. Motor system", "Case 1") sits inside the
+            # numbered section above it rather than starting a new one.
+            level = 2
         if level is None:
             points = heading_candidate(paragraph, text)
             if points is not None and is_spoken(text):

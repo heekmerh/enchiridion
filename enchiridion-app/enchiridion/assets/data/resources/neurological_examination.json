@@ -167,35 +167,43 @@
                   "items": [
                     {
                       "text": "Wash your hands.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Introduce yourself and confirm the patient's identity.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Explain the examination and obtain consent.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Ask whether the patient has pain or any movement restrictions.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Ensure privacy and adequate lighting.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     },
                     {
                       "text": "Expose the relevant limbs while preserving dignity.",
-                      "level": 0
+                      "level": 0,
+                      "label": "6."
                     },
                     {
                       "text": "Position the patient comfortably, usually sitting for the initial examination.",
-                      "level": 0
+                      "level": 0,
+                      "label": "7."
                     },
                     {
                       "text": "Check whether they use glasses, hearing aids, walking aids or other assistive devices.",
-                      "level": 0
+                      "level": 0,
+                      "label": "8."
                     }
                   ]
                 },
@@ -645,6 +653,11 @@
                 {
                   "type": "paragraph",
                   "text": "Cranial nerves supply the sensory and motor functions of the head and neck, with the vagus nerve also supplying thoracic and abdominal viscera."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_01.webp",
+                  "caption": null
                 }
               ]
             },
@@ -654,6 +667,11 @@
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_02.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Function: Smell."
@@ -667,27 +685,33 @@
                   "items": [
                     {
                       "text": "Confirm that each nostril is patent.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ask the patient to close their eyes.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Occlude one nostril.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Present a familiar, non-irritating smell, such as coffee or soap, to the other nostril.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Ask the patient to identify it.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     },
                     {
                       "text": "Repeat on the opposite side.",
-                      "level": 0
+                      "level": 0,
+                      "label": "6."
                     }
                   ]
                 },
@@ -716,86 +740,104 @@
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_03.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Functions: Visual acuity, visual fields and the afferent limb of the pupillary light reflex."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_16",
-              "group_title": "A. Visual acuity",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Visual acuity**"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
                       "text": "Ensure the patient wears their usual corrective lenses if available.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Use a Snellen chart or an appropriate near-vision chart.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Test each eye separately, covering the other eye without applying pressure.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Record the smallest line read correctly and document any correction used.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "If the patient cannot read the chart, assess progressively using counting fingers, hand movements and perception of light, as appropriate to the setting."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_17",
-              "group_title": "B. Visual fields by confrontation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "[pmc.ncbi.nlm.nih.gov](https://pmc.ncbi.nlm.nih.gov/articles/PMC3588129/)"
+                  "text": "**B. Visual fields by confrontation**"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "pmc.ncbi.nlm.nih.gov"
                 },
                 {
                   "type": "list",
                   "items": [
                     {
                       "text": "Sit opposite the patient at eye level, approximately an arm's length away.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ask the patient to cover one eye while you cover your opposite eye.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Ask the patient to look at your open eye.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Introduce a moving finger or target from the periphery towards the centre in each quadrant.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Ask the patient when they first see the target.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     },
                     {
                       "text": "Compare their field with your own.",
-                      "level": 0
+                      "level": 0,
+                      "label": "6."
                     },
                     {
                       "text": "Repeat for the other eye.",
-                      "level": 0
+                      "level": 0,
+                      "label": "7."
                     }
                   ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_05.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -817,15 +859,11 @@
                       "level": 0
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_18",
-              "group_title": "C. Pupillary examination",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Pupillary examination**"
+                },
                 {
                   "type": "paragraph",
                   "text": "The pupils are examined in conjunction with cranial nerves II and III."
@@ -835,50 +873,74 @@
                   "items": [
                     {
                       "text": "Inspect pupil size, shape and symmetry.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Shine a light into one eye and observe direct constriction.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Observe the opposite pupil for consensual constriction.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Perform the swinging-flashlight test if a relative afferent pupillary defect is suspected.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "A relative afferent pupillary defect (RAPD) may occur with asymmetric optic nerve or severe retinal disease."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_19",
-              "group_title": "D. Fundoscopy",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**D. Fundoscopy**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If indicated, examine the optic discs and retina for:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_06.webp",
+                  "caption": "Papilloedema."
+                },
                 {
                   "type": "list",
-                  "title": "If indicated, examine the optic discs and retina for:",
                   "items": [
-                    {
-                      "text": "Papilloedema.",
-                      "level": 0
-                    },
                     {
                       "text": "Optic disc pallor.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Retinal haemorrhages.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Other retinal or vascular abnormalities.",
                       "level": 0
@@ -892,11 +954,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_20",
+              "group_id": "neurological_examination_group_16",
               "group_title": "Cranial nerve III — Oculomotor nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_03.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Functions: Most extraocular movements, eyelid elevation, pupil constriction and accommodation."
@@ -933,11 +1000,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_21",
+              "group_id": "neurological_examination_group_17",
               "group_title": "Cranial nerve IV — Trochlear nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_09.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Function: Supplies the superior oblique muscle, which contributes to depression of the adducted eye and intorsion."
@@ -953,11 +1025,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_22",
+              "group_id": "neurological_examination_group_18",
               "group_title": "Cranial nerve VI — Abducens nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_10.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Function: Supplies the lateral rectus muscle, which abducts the eye."
@@ -973,18 +1050,19 @@
                 {
                   "type": "paragraph",
                   "text": "A sixth nerve palsy can occur with raised intracranial pressure, among other causes."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_23",
-              "group_title": "Testing extraocular movements",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
                 {
                   "type": "paragraph",
-                  "text": "[pressbooks.pub](https://pressbooks.pub/fortmyerstech/chapter/focused-assessment-neurologic-examination/)"
+                  "text": "**Testing extraocular movements**"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_11.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "pressbooks.pub"
                 },
                 {
                   "type": "paragraph",
@@ -1001,11 +1079,31 @@
                     {
                       "text": "Diplopia.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_12.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Nystagmus.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_13.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Ptosis (drooping eyelid)",
                       "level": 0
@@ -1023,23 +1121,24 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_24",
+              "group_id": "neurological_examination_group_19",
               "group_title": "Cranial nerve V — Trigeminal nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_14.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Functions: Facial sensation, muscles of mastication and the afferent limb of the corneal reflex."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_25",
-              "group_title": "A. Sensory examination",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Sensory examination**"
+                },
                 {
                   "type": "list",
                   "title": "Test light touch and, if indicated, pinprick sensation over:",
@@ -1061,48 +1160,44 @@
                 {
                   "type": "paragraph",
                   "text": "Compare corresponding areas on both sides and ask the patient whether the sensation feels equal."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_26",
-              "group_title": "B. Motor examination",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Motor examination**"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
                       "text": "Ask the patient to clench their teeth.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Palpate the masseter and temporalis muscles.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Ask the patient to open their mouth against resistance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Observe for deviation of the jaw.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "With a unilateral trigeminal motor lesion, the jaw may deviate towards the weak side on opening."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_27",
-              "group_title": "C. Corneal reflex",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Corneal reflex**"
+                },
                 {
                   "type": "list",
                   "title": "The corneal reflex is mediated by:",
@@ -1124,11 +1219,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_28",
+              "group_id": "neurological_examination_group_20",
               "group_title": "Cranial nerve VII — Facial nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_15.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Functions: Muscles of facial expression, taste from the anterior two-thirds of the tongue, and some parasympathetic functions."
@@ -1143,23 +1243,28 @@
                   "items": [
                     {
                       "text": "Raise their eyebrows.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Frown.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Close their eyes tightly while you gently attempt to open them.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Smile and show their teeth.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Puff out their cheeks.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 },
@@ -1208,43 +1313,52 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_29",
+              "group_id": "neurological_examination_group_21",
               "group_title": "Cranial nerve VIII — Vestibulocochlear nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_16.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Functions: Hearing and balance."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_30",
-              "group_title": "A. Hearing",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Hearing**"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
                       "text": "Check each ear for obvious external abnormalities.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Test hearing by whispering a combination of letters and numbers near one ear while masking the other ear.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "If hearing is reduced, proceed to Weber and Rinne tests using a 512-Hz tuning fork where available.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     }
                   ]
                 },
                 {
                   "type": "paragraph",
                   "text": "Weber test"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_17.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -1268,6 +1382,11 @@
                   "text": "Rinne test"
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_18.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Compare bone conduction at the mastoid with air conduction beside the ear canal."
                 },
@@ -1287,15 +1406,11 @@
                 {
                   "type": "paragraph",
                   "text": "Interpret both tests together. Formal audiometry is needed to characterise hearing loss reliably."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_31",
-              "group_title": "B. Vestibular function",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Vestibular function**"
+                },
                 {
                   "type": "paragraph",
                   "text": "Ask about vertigo, imbalance, nausea and oscillopsia. Examine for spontaneous or gaze-evoked nystagmus when indicated."
@@ -1307,11 +1422,21 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_32",
+              "group_id": "neurological_examination_group_22",
               "group_title": "Cranial nerves IX and X — Glossopharyngeal and vagus nerves",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_19.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_20.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Functions: Swallowing, palatal movement, voice and gag reflex pathways, among other functions."
@@ -1395,11 +1520,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_33",
+              "group_id": "neurological_examination_group_23",
               "group_title": "Cranial nerve XI — Accessory nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_21.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Functions: Sternocleidomastoid and trapezius muscles."
@@ -1413,11 +1543,13 @@
                   "items": [
                     {
                       "text": "Ask the patient to shrug their shoulders against resistance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ask them to turn their head to each side against your hand.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     }
                   ]
                 },
@@ -1428,11 +1560,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_34",
+              "group_id": "neurological_examination_group_24",
               "group_title": "Cranial nerve XII — Hypoglossal nerve",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_22.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Function: Tongue movement."
@@ -1446,19 +1583,23 @@
                   "items": [
                     {
                       "text": "Ask the patient to protrude their tongue.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Observe its position, bulk, wasting and fasciculations.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Ask the patient to move the tongue from side to side.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Assess tongue strength by asking them to push it against the inside of each cheek.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
@@ -1497,7 +1638,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_35",
+              "group_id": "neurological_examination_group_25",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1513,7 +1654,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_36",
+              "group_id": "neurological_examination_group_26",
               "group_title": "A. Inspection of muscle bulk",
               "group_subtitle": null,
               "group_icon": null,
@@ -1567,7 +1708,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_37",
+              "group_id": "neurological_examination_group_27",
               "group_title": "B. Muscle tone",
               "group_subtitle": null,
               "group_icon": null,
@@ -1585,30 +1726,45 @@
                   "items": [
                     {
                       "text": "Explain the procedure and ask the patient to relax.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Support the limb fully.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Move the joints passively through their range of motion.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Compare both sides and vary the speed of movement.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_38",
-              "group_title": "Types of abnormal tone",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Types of abnormal tone**"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_23.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_24.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_25.webp",
+                  "caption": null
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -1658,7 +1814,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_39",
+              "group_id": "neurological_examination_group_28",
               "group_title": "C. Assessment of muscle power",
               "group_subtitle": null,
               "group_icon": null,
@@ -1711,7 +1867,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_40",
+              "group_id": "neurological_examination_group_29",
               "group_title": "D. Upper limb motor examination",
               "group_subtitle": null,
               "group_icon": null,
@@ -1721,8 +1877,13 @@
                   "text": "Examine both arms, comparing corresponding movements."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_26.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "[medistudents.com](https://www.medistudents.com/osce-skills/upper-limb-neurological-examination)"
+                  "text": "medistudents.com"
                 },
                 {
                   "type": "table",
@@ -1778,27 +1939,33 @@
                   "items": [
                     {
                       "text": "Ask the patient to abduct the shoulders against resistance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Test elbow flexion and extension.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Test wrist flexion and extension.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Test finger flexion, extension and abduction.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Assess thumb opposition.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     },
                     {
                       "text": "Test grip strength, remembering that grip alone does not adequately assess upper limb power.",
-                      "level": 0
+                      "level": 0,
+                      "label": "6."
                     }
                   ]
                 },
@@ -1809,14 +1976,19 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_41",
+              "group_id": "neurological_examination_group_30",
               "group_title": "E. Lower limb motor examination",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_27.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "[slideserve.com](https://www.slideserve.com/tjefferson/motor-and-sensory-examination-dr-bandar-al-jafen-md-consultant-neurologist-powerpoint-ppt-presentation)"
+                  "text": "slideserve.com"
                 },
                 {
                   "type": "table",
@@ -1877,23 +2049,28 @@
                   "items": [
                     {
                       "text": "Ask the patient to flex the hip against resistance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Test hip extension and abduction where appropriate.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Test knee flexion and extension.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Test ankle dorsiflexion and plantarflexion.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Ask the patient to extend the great toe against resistance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 },
@@ -1904,11 +2081,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_42",
+              "group_id": "neurological_examination_group_31",
               "group_title": "F. Pronator drift",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_28.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Pronator drift is a useful test for subtle upper motor neuron weakness."
@@ -1922,19 +2104,23 @@
                   "items": [
                     {
                       "text": "Ask the patient to extend both arms forwards.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Turn the palms upwards.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Ask the patient to close their eyes.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Observe for approximately 20–30 seconds.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
@@ -1956,7 +2142,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_43",
+              "group_id": "neurological_examination_group_32",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1968,7 +2154,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_44",
+              "group_id": "neurological_examination_group_33",
               "group_title": "A. General technique",
               "group_subtitle": null,
               "group_icon": null,
@@ -2005,7 +2191,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_45",
+              "group_id": "neurological_examination_group_34",
               "group_title": "B. Reflex grading",
               "group_subtitle": null,
               "group_icon": null,
@@ -2046,11 +2232,26 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_46",
+              "group_id": "neurological_examination_group_35",
               "group_title": "C. Upper limb reflexes",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_29.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_30.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_31.webp",
+                  "caption": null
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -2104,11 +2305,26 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_47",
+              "group_id": "neurological_examination_group_36",
               "group_title": "D. Lower limb reflexes",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_32.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_33.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_34.webp",
+                  "caption": null
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -2147,14 +2363,19 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_48",
+              "group_id": "neurological_examination_group_37",
               "group_title": "E. Plantar response",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_35.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "[medical.uworld.com](https://medical.uworld.com/library/neurology/331/amyotrophic-lateral-sclerosis-als-lou-gehrig-disease/)"
+                  "text": "medical.uworld.com"
                 },
                 {
                   "type": "paragraph",
@@ -2165,19 +2386,23 @@
                   "items": [
                     {
                       "text": "Explain the procedure.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Use a blunt object to stroke the lateral sole from the heel towards the little toe.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Curve medially across the ball of the foot.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Observe the great toe and other toes.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
@@ -2196,15 +2421,12 @@
                 {
                   "type": "paragraph",
                   "text": "In infants, an extensor plantar response can be physiological because the motor pathways are still developing."
-                }
-              ]
-            },
-            {
-              "group_id": "neurological_examination_group_49",
-              "group_title": "F. Clonus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_36.webp",
+                  "caption": "F. Clonus"
+                },
                 {
                   "type": "paragraph",
                   "text": "Clonus is a series of rhythmic muscle contractions triggered by sudden sustained stretch."
@@ -2218,19 +2440,23 @@
                   "items": [
                     {
                       "text": "Support the patient's leg with the knee slightly flexed.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Rapidly dorsiflex the foot.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Maintain the stretch.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Observe for repetitive rhythmic plantarflexion and dorsiflexion.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
@@ -2248,7 +2474,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_50",
+              "group_id": "neurological_examination_group_38",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2268,11 +2494,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_51",
+              "group_id": "neurological_examination_group_39",
               "group_title": "A. Primary sensory modalities",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_37.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "1. Light touch"
@@ -2280,6 +2511,11 @@
                 {
                   "type": "paragraph",
                   "text": "Use a wisp of cotton wool or another light stimulus. Ask the patient to say “yes” when they feel it. Compare corresponding areas on both sides."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_38.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -2290,12 +2526,22 @@
                   "text": "Use a clean, disposable neurotip. Ask the patient to distinguish sharp from blunt where appropriate. Avoid breaking the skin."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_39.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "3. Vibration sense"
                 },
                 {
                   "type": "paragraph",
                   "text": "Use a vibrating 128-Hz tuning fork on a bony prominence. Ask when the vibration begins and when it stops."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_40.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -2308,7 +2554,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_52",
+              "group_id": "neurological_examination_group_40",
               "group_title": "B. Temperature sensation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2324,7 +2570,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_53",
+              "group_id": "neurological_examination_group_41",
               "group_title": "C. Vibration sense",
               "group_subtitle": null,
               "group_icon": null,
@@ -2344,7 +2590,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_54",
+              "group_id": "neurological_examination_group_42",
               "group_title": "D. Joint position sense",
               "group_subtitle": null,
               "group_icon": null,
@@ -2364,7 +2610,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_55",
+              "group_id": "neurological_examination_group_43",
               "group_title": "E. Sensory distribution and localisation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2413,7 +2659,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_56",
+              "group_id": "neurological_examination_group_44",
               "group_title": "F. Cortical sensory testing",
               "group_subtitle": null,
               "group_icon": null,
@@ -2448,7 +2694,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_57",
+              "group_id": "neurological_examination_group_45",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2494,11 +2740,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_58",
+              "group_id": "neurological_examination_group_46",
               "group_title": "A. Finger–nose test",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_41.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Technique"
@@ -2508,23 +2759,28 @@
                   "items": [
                     {
                       "text": "Ask the patient to touch their nose with the index finger.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ask them to touch your finger, positioned at a reasonable distance.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Move your target to different positions.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Ask the patient to alternate between their nose and your finger.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Repeat on both sides.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 },
@@ -2538,11 +2794,31 @@
                     {
                       "text": "Dysmetria: overshooting or undershooting the target.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_42.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Intention tremor: tremor that becomes more prominent as the finger approaches the target.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_43.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Decomposition: movement broken into separate components rather than performed smoothly.",
                       "level": 0
@@ -2556,14 +2832,19 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_59",
+              "group_id": "neurological_examination_group_47",
               "group_title": "B. Heel–shin test",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_44.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "[neurology-joa.tistory.com](https://neurology-joa.tistory.com/13)"
+                  "text": "neurology-joa.tistory.com"
                 },
                 {
                   "type": "paragraph",
@@ -2574,19 +2855,23 @@
                   "items": [
                     {
                       "text": "Ask the patient to lie supine.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Place the heel of one foot on the opposite knee.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Slide the heel down the shin towards the ankle.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Repeat on the other side.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     }
                   ]
                 },
@@ -2601,7 +2886,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_60",
+              "group_id": "neurological_examination_group_48",
               "group_title": "C. Rapid alternating movements",
               "group_subtitle": null,
               "group_icon": null,
@@ -2621,7 +2906,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_61",
+              "group_id": "neurological_examination_group_49",
               "group_title": "D. Rebound phenomenon",
               "group_subtitle": null,
               "group_icon": null,
@@ -2641,7 +2926,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_62",
+              "group_id": "neurological_examination_group_50",
               "group_title": "E. Speech and eye movements",
               "group_subtitle": null,
               "group_icon": null,
@@ -2657,14 +2942,19 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_63",
+              "group_id": "neurological_examination_group_51",
               "group_title": "F. Romberg test",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_45.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "[fysiobasen.no](https://www.fysiobasen.no/innlegg/rombergs)"
+                  "text": "fysiobasen.no"
                 },
                 {
                   "type": "paragraph",
@@ -2675,23 +2965,28 @@
                   "items": [
                     {
                       "text": "Ensure the patient can stand safely.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Stand close enough to prevent a fall.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Ask the patient to stand with feet together and arms by their sides.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Observe with eyes open first.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Ask the patient to close their eyes briefly while you guard them.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 },
@@ -2717,7 +3012,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_64",
+              "group_id": "neurological_examination_group_52",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2733,7 +3028,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_65",
+              "group_id": "neurological_examination_group_53",
               "group_title": "A. Normal gait",
               "group_subtitle": null,
               "group_icon": null,
@@ -2779,11 +3074,26 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_66",
+              "group_id": "neurological_examination_group_54",
               "group_title": "B. Common abnormal gait patterns",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_46.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_47.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_48.webp",
+                  "caption": null
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -2837,7 +3147,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_67",
+              "group_id": "neurological_examination_group_55",
               "group_title": "C. Heel and toe walking",
               "group_subtitle": null,
               "group_icon": null,
@@ -2867,7 +3177,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_68",
+              "group_id": "neurological_examination_group_56",
               "group_title": "D. Additional gait assessments",
               "group_subtitle": null,
               "group_icon": null,
@@ -2916,7 +3226,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_69",
+              "group_id": "neurological_examination_group_57",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2928,7 +3238,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_70",
+              "group_id": "neurological_examination_group_58",
               "group_title": "A. Neck stiffness",
               "group_subtitle": null,
               "group_icon": null,
@@ -2948,11 +3258,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_71",
+              "group_id": "neurological_examination_group_59",
               "group_title": "B. Kernig's sign",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_49.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "With the patient supine, flex the hip and knee to approximately 90 degrees, then attempt to extend the knee."
@@ -2964,7 +3279,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_72",
+              "group_id": "neurological_examination_group_60",
               "group_title": "C. Brudzinski's sign",
               "group_subtitle": null,
               "group_icon": null,
@@ -2991,7 +3306,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_73",
+              "group_id": "neurological_examination_group_61",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3052,7 +3367,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_74",
+              "group_id": "neurological_examination_group_62",
               "group_title": "Upper versus lower motor neuron lesions",
               "group_subtitle": null,
               "group_icon": null,
@@ -3111,7 +3426,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_75",
+              "group_id": "neurological_examination_group_63",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3122,30 +3437,35 @@
                   "items": [
                     {
                       "text": "Thank the patient and help them return to a comfortable position.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ensure that they are safe, especially after balance or gait testing.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Wash your hands.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "State which further examinations or investigations are indicated.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Present the findings systematically.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 }
               ]
             },
             {
-              "group_id": "neurological_examination_group_76",
+              "group_id": "neurological_examination_group_64",
               "group_title": "Sample OSCE presentation: normal neurological examination",
               "group_subtitle": null,
               "group_icon": null,
@@ -3193,7 +3513,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_77",
+              "group_id": "neurological_examination_group_65",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3248,7 +3568,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_78",
+              "group_id": "neurological_examination_group_66",
               "group_title": "Neurological examination practice",
               "group_subtitle": null,
               "group_icon": null,
@@ -3339,7 +3659,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_79",
+              "group_id": "neurological_examination_group_67",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3402,7 +3722,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_80",
+              "group_id": "neurological_examination_group_68",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3446,7 +3766,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_81",
+              "group_id": "neurological_examination_group_69",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3458,7 +3778,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_82",
+              "group_id": "neurological_examination_group_70",
               "group_title": "A. Higher mental functions",
               "group_subtitle": null,
               "group_icon": null,
@@ -3506,7 +3826,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_83",
+              "group_id": "neurological_examination_group_71",
               "group_title": "Distinguish these two",
               "group_subtitle": null,
               "group_icon": null,
@@ -3526,7 +3846,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_84",
+              "group_id": "neurological_examination_group_72",
               "group_title": "B. Cranial nerve abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -3589,11 +3909,16 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_85",
+              "group_id": "neurological_examination_group_73",
               "group_title": "Important facial weakness distinction",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_50.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Central facial weakness"
@@ -3601,6 +3926,11 @@
                 {
                   "type": "paragraph",
                   "text": "Often affects the contralateral lower face, with relative preservation of forehead movement. A cortical or corticobulbar lesion is possible."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_51.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -3617,7 +3947,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_86",
+              "group_id": "neurological_examination_group_74",
               "group_title": "C. Motor system abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -3684,7 +4014,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_87",
+              "group_id": "neurological_examination_group_75",
               "group_title": "MRC muscle power scale",
               "group_subtitle": null,
               "group_icon": null,
@@ -3700,7 +4030,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_88",
+              "group_id": "neurological_examination_group_76",
               "group_title": "1/5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3712,7 +4042,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_89",
+              "group_id": "neurological_examination_group_77",
               "group_title": "2/5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3724,7 +4054,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_90",
+              "group_id": "neurological_examination_group_78",
               "group_title": "3/5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3736,7 +4066,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_91",
+              "group_id": "neurological_examination_group_79",
               "group_title": "4/5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3748,7 +4078,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_92",
+              "group_id": "neurological_examination_group_80",
               "group_title": "5/5",
               "group_subtitle": null,
               "group_icon": null,
@@ -3768,7 +4098,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_93",
+              "group_id": "neurological_examination_group_81",
               "group_title": "Upper motor neuron versus lower motor neuron",
               "group_subtitle": null,
               "group_icon": null,
@@ -3829,7 +4159,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_94",
+              "group_id": "neurological_examination_group_82",
               "group_title": "D. Sensory abnormalities",
               "group_subtitle": null,
               "group_icon": null,
@@ -3886,7 +4216,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_95",
+              "group_id": "neurological_examination_group_83",
               "group_title": "High-yield sensory distinctions",
               "group_subtitle": null,
               "group_icon": null,
@@ -3919,7 +4249,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_96",
+              "group_id": "neurological_examination_group_84",
               "group_title": "E. Coordination and cerebellar findings",
               "group_subtitle": null,
               "group_icon": null,
@@ -3978,7 +4308,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_97",
+              "group_id": "neurological_examination_group_85",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -3986,6 +4316,11 @@
                 {
                   "type": "paragraph",
                   "text": "These are patterns that frequently separate one OSCE diagnosis from another."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_52.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -3996,12 +4331,22 @@
                   "text": "Sudden focal weakness, often affecting the face and arm more than the leg in a middle cerebral artery territory. Aphasia suggests dominant hemisphere involvement; neglect may suggest non-dominant hemisphere involvement."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_53.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "2. Spinal cord lesion"
                 },
                 {
                   "type": "paragraph",
                   "text": "May cause bilateral weakness, a sensory level, brisk reflexes below the lesion and sphincter disturbance. Segmental LMN signs may occur at the level of the lesion."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_54.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -4012,6 +4357,11 @@
                   "text": "Pain radiating in a root distribution, with possible dermatomal sensory change, myotomal weakness and reduced corresponding reflexes."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_55.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "4. Peripheral polyneuropathy"
                 },
@@ -4020,12 +4370,22 @@
                   "text": "Usually symmetrical distal sensory abnormalities, often beginning in the feet. Distal weakness and reduced ankle reflexes may occur as disease progresses."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_56.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "5. Cerebellar syndrome"
                 },
                 {
                   "type": "paragraph",
                   "text": "Dysmetria, dysdiadochokinesia, intention tremor and gait or truncal ataxia. The abnormalities generally remain evident with eyes open."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/neurological_examination_57.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -4038,7 +4398,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_98",
+              "group_id": "neurological_examination_group_86",
               "group_title": "Five patterns worth memorising",
               "group_subtitle": null,
               "group_icon": null,
@@ -4082,7 +4442,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_99",
+              "group_id": "neurological_examination_group_87",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4094,7 +4454,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_100",
+              "group_id": "neurological_examination_group_88",
               "group_title": "A. Higher mental functions and cranial nerves",
               "group_subtitle": null,
               "group_icon": null,
@@ -4143,7 +4503,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_101",
+              "group_id": "neurological_examination_group_89",
               "group_title": "B. Motor examination",
               "group_subtitle": null,
               "group_icon": null,
@@ -4188,7 +4548,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_102",
+              "group_id": "neurological_examination_group_90",
               "group_title": "C. Sensory examination",
               "group_subtitle": null,
               "group_icon": null,
@@ -4237,7 +4597,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_103",
+              "group_id": "neurological_examination_group_91",
               "group_title": "D. Coordination, gait and special tests",
               "group_subtitle": null,
               "group_icon": null,
@@ -4278,7 +4638,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_104",
+              "group_id": "neurological_examination_group_92",
               "group_title": "The examiner's follow-up trap",
               "group_subtitle": null,
               "group_icon": null,
@@ -4306,7 +4666,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_105",
+              "group_id": "neurological_examination_group_93",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4318,7 +4678,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_106",
+              "group_id": "neurological_examination_group_94",
               "group_title": "Mnemonic 1: The motor examination",
               "group_subtitle": null,
               "group_icon": null,
@@ -4334,16 +4694,18 @@
                 {
                   "type": "paragraph",
                   "text": "Use this sequence when presenting motor findings. It prevents you from forgetting reflexes or the plantar response after testing power."
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "neurological_examination_group_95",
+              "group_title": "Mnemonic 2: UMN signs",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "**Mnemonic 2: UMN signs**",
-                  "style": "heading"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "**“UP”**",
-                  "style": "quote"
+                  "text": "**“UP”**"
                 },
                 {
                   "type": "list",
@@ -4361,16 +4723,18 @@
                 {
                   "type": "paragraph",
                   "text": "Remember that acute UMN lesions may initially be flaccid, and not every UMN lesion produces every sign."
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "neurological_examination_group_96",
+              "group_title": "Mnemonic 3: Lower cranial nerves",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "**Mnemonic 3: Lower cranial nerves**",
-                  "style": "heading"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "**“9, 10, 12: Swallow, speak, stick out your tongue”**",
-                  "style": "quote"
+                  "text": "**“9, 10, 12: Swallow, speak, stick out your tongue”**"
                 },
                 {
                   "type": "list",
@@ -4392,20 +4756,19 @@
                 {
                   "type": "paragraph",
                   "text": "Use this as a bedside recall aid, not as a complete description of each nerve's functions."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "**Mnemonic 4: Cerebellar signs**",
-                  "style": "heading"
                 }
               ]
             },
             {
-              "group_id": "neurological_examination_group_107",
-              "group_title": "D–D–I–N–G",
+              "group_id": "neurological_examination_group_97",
+              "group_title": "Mnemonic 4: Cerebellar signs",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**D–D–I–N–G**"
+                },
                 {
                   "type": "list",
                   "items": [
@@ -4434,16 +4797,18 @@
                 {
                   "type": "paragraph",
                   "text": "Not all signs need to be present in every cerebellar lesion."
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "neurological_examination_group_98",
+              "group_title": "Mnemonic 5: Sensory modalities",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "**Mnemonic 5: Sensory modalities**",
-                  "style": "heading"
-                },
-                {
-                  "type": "paragraph",
-                  "text": "**“P–T–V–P”**",
-                  "style": "quote"
+                  "text": "**“P–T–V–P”**"
                 },
                 {
                   "type": "list",
@@ -4469,12 +4834,15 @@
                 {
                   "type": "paragraph",
                   "text": "Pain and temperature are primarily carried by the anterolateral system; vibration and position sense are carried mainly by the dorsal column–medial lemniscus system."
-                },
-                {
-                  "type": "paragraph",
-                  "text": "**Mnemonic 6: Cranial nerve names**",
-                  "style": "heading"
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "neurological_examination_group_99",
+              "group_title": "Mnemonic 6: Cranial nerve names",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "I–XII, in order"
@@ -4497,7 +4865,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_108",
+              "group_id": "neurological_examination_group_100",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4551,7 +4919,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_109",
+              "group_id": "neurological_examination_group_101",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4563,7 +4931,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_110",
+              "group_id": "neurological_examination_group_102",
               "group_title": "A. Motor system viva",
               "group_subtitle": null,
               "group_icon": null,
@@ -4611,7 +4979,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_111",
+              "group_id": "neurological_examination_group_103",
               "group_title": "B. Sensory system viva",
               "group_subtitle": null,
               "group_icon": null,
@@ -4659,7 +5027,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_112",
+              "group_id": "neurological_examination_group_104",
               "group_title": "C. Cranial nerve and localisation viva",
               "group_subtitle": null,
               "group_icon": null,
@@ -4707,7 +5075,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_113",
+              "group_id": "neurological_examination_group_105",
               "group_title": "D. Emergency and clinical reasoning viva",
               "group_subtitle": null,
               "group_icon": null,
@@ -4762,7 +5130,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_114",
+              "group_id": "neurological_examination_group_106",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4774,7 +5142,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_115",
+              "group_id": "neurological_examination_group_107",
               "group_title": "Case 1: Right-sided hemiparesis with UMN signs",
               "group_subtitle": null,
               "group_icon": null,
@@ -4799,7 +5167,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_116",
+              "group_id": "neurological_examination_group_108",
               "group_title": "Case 2: Peripheral polyneuropathy",
               "group_subtitle": null,
               "group_icon": null,
@@ -4816,7 +5184,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_117",
+              "group_id": "neurological_examination_group_109",
               "group_title": "Case 3: Cerebellar syndrome",
               "group_subtitle": null,
               "group_icon": null,
@@ -4833,7 +5201,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_118",
+              "group_id": "neurological_examination_group_110",
               "group_title": "Case 4: Possible cervical myelopathy",
               "group_subtitle": null,
               "group_icon": null,
@@ -4850,7 +5218,7 @@
               ]
             },
             {
-              "group_id": "neurological_examination_group_119",
+              "group_id": "neurological_examination_group_111",
               "group_title": "Case 5: Parkinsonian syndrome",
               "group_subtitle": null,
               "group_icon": null,
@@ -4874,7 +5242,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_120",
+              "group_id": "neurological_examination_group_112",
               "group_title": "Ten things you must know before your OSCE",
               "group_subtitle": null,
               "group_icon": null,
@@ -4929,7 +5297,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "neurological_examination_group_121",
+              "group_id": "neurological_examination_group_113",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
