@@ -15,7 +15,9 @@ const Map<String, List<ResourceTopic>> _catalogsByDartName = {
   'kPediatricsOsceTopics': kPediatricsOsceTopics,
   'kMedicalInstrumentationTopics': kMedicalInstrumentationTopics,
   'kSurgicalInstrumentationTopics': kSurgicalInstrumentationTopics,
+  'kPrescriptionTopics': kPrescriptionTopics,
   'kQuickRevisionTopics': kQuickRevisionTopics,
+  'kMnemonicsTopics': kMnemonicsTopics,
 };
 
 List<ResourceTopic> get _allTopics =>
@@ -59,6 +61,8 @@ void main() {
   test('quick revision has one topic per part, all with content', () {
     expect(kQuickRevisionTopics, isNotEmpty);
     expect(kQuickRevisionTopics.every((t) => t.hasContent), isTrue);
+    expect(kMnemonicsTopics, hasLength(27));
+    expect(kMnemonicsTopics.every((t) => t.hasContent), isTrue);
   });
 
   test(

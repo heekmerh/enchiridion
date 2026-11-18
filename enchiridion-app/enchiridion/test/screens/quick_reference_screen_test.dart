@@ -48,12 +48,13 @@ void main() {
     expect(find.byType(ResourceTopicListScreen), findsOneWidget);
   });
 
-  testWidgets('mnemonics shows coming soon', (tester) async {
+  testWidgets('mnemonics opens its chapter list', (tester) async {
     await tester.pumpWidget(host());
     await tester.tap(find.text('Mnemonics'));
-    await tester.pump();
+    await tester.pumpAndSettle();
 
-    expect(find.byType(SnackBar), findsOneWidget);
+    expect(find.byType(ResourceTopicListScreen), findsOneWidget);
+    expect(find.text('Cardiovascular medicine'), findsOneWidget);
   });
 
   testWidgets('add your notes opens an empty notebook', (tester) async {

@@ -1,0 +1,1668 @@
+{
+  "chapter_metadata": {
+    "chapter_id": "rx_drug_dose_calculations",
+    "chapter_title": "Drug dose calculations",
+    "chapter_icon": null,
+    "description": null,
+    "position_in_book": 1,
+    "tags": [
+      "Drug dose calculations"
+    ],
+    "chapter_color": null
+  },
+  "sections": [
+    {
+      "section_id": "rx_drug_dose_calculations_section_1",
+      "section_title": "Drug dose calculations",
+      "section_order": 1,
+      "subsections": [
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_1",
+          "subsection_title": "Drug dose calculations: a comprehensive clinical guide",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_1",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Drug calculations are among the most important practical skills in prescribing. An error involving a decimal point, concentration, body weight, infusion rate or dosing interval can result in treatment failure or serious toxicity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This chapter progresses from basic calculations to paediatric dosing, injectable medicines, infusion rates and renal dose adjustment. The worked examples are educational; actual prescriptions must be verified against the specific medicine, indication, patient characteristics and current clinical protocol."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_2",
+          "subsection_title": "3.1 The fundamental rules",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_2",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Before calculating any dose, establish five things:",
+                  "items": [
+                    {
+                      "text": "What is prescribed? The intended dose and its units.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "What is available? The product's strength and formulation.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Who is receiving it? Age, current weight, clinical condition and relevant organ function.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "How is it administered? Route, frequency and duration.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "What is the permitted limit? Maximum single dose, maximum daily dose and any indication-specific restrictions.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_3",
+              "group_title": "The four basic formulas",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. Number of dosage units"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_01.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use when calculating the number of tablets or capsules per administration, provided the dosage form is suitable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Volume to administer"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_02.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When the dose is in mg and the concentration is in mg/mL, the result is in mL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. Total quantity for a fixed regimen"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Infusion pump rate"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The result is mL/hour. For drug-dose-based infusions, additional calculations may be required."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_3",
+          "subsection_title": "3.2 Unit conversions you must know",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_4",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Conversion",
+                    "Equivalent"
+                  ],
+                  "rows": [
+                    [
+                      "1 g",
+                      "1,000 mg"
+                    ],
+                    [
+                      "1 mg",
+                      "1,000 micrograms (mcg or µg)"
+                    ],
+                    [
+                      "1 mg",
+                      "1,000,000 nanograms"
+                    ],
+                    [
+                      "1 L",
+                      "1,000 mL"
+                    ],
+                    [
+                      "1 hour",
+                      "60 minutes"
+                    ],
+                    [
+                      "1 kg",
+                      "1,000 g"
+                    ],
+                    [
+                      "1 mmol",
+                      "Depends on the substance when converting to mg"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: Milligrams and millilitres measure different things. You cannot convert mg to mL without knowing the concentration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For electrolytes, mmol and mEq are not always numerically equal. The relationship depends on the ion's valence. For example, 1 mmol of a monovalent ion corresponds to 1 mEq, whereas 1 mmol of a divalent ion corresponds to 2 mEq."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_4",
+          "subsection_title": "3.3 Basic dose calculations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_5",
+              "group_title": "Example 1: tablets",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A hypothetical prescription requires 750 mg of a medicine. The available tablets contain 250 mg each."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculated dose is three tablets, assuming the tablets are appropriate for the prescribed regimen and can be taken in that manner."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_6",
+              "group_title": "Example 2: oral liquid",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A prescribed dose is 300 mg. The bottle contains 150 mg/5 mL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "First calculate the concentration:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_06.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then calculate the volume:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The volume corresponding to 300 mg is 10 mL."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_7",
+              "group_title": "Example 3: converting grams to milligrams",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A hypothetical order specifies 1.5 g, while the product is labelled in milligrams."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The required amount is 1,500 mg. Always check whether the product's strength refers to the active ingredient, a salt, or another labelled component."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_5",
+          "subsection_title": "3.4 Weight-based dosing: mg/kg/dose versus mg/kg/day",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_8",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "This is one of the highest-yield topics in paediatric prescribing and medication calculation examinations."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The two expressions look similar but mean different things."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_6",
+          "subsection_title": "A. mg/kg/dose",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_9",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The stated amount is administered at each individual administration."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_09.webp",
+                  "caption": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_7",
+          "subsection_title": "B. mg/kg/day",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_10",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The stated amount is the total amount for the entire day. It may need to be divided into multiple administrations."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_10.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_11",
+              "group_title": "Worked example 1: prescribed mg/kg/dose",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A hypothetical medicine is prescribed at 10 mg/kg/dose for a child weighing 18 kg, given twice daily."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 1: Calculate the individual dose."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_11.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 2: Calculate the total daily amount."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_12.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Answer: 180 mg per administration, twice daily; total 360 mg/day, before applying any medicine-specific maximum dose."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_12",
+              "group_title": "Worked example 2: prescribed mg/kg/day",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A hypothetical medicine is prescribed at 30 mg/kg/day for a child weighing 18 kg, divided into three equal doses."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 1: Calculate the total daily dose."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_13.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 2: Divide into three administrations."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_14.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Answer: 180 mg per administration, three times daily."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Notice that the numerical result happens to match the previous example, but the prescribed dosing instructions are different."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_13",
+              "group_title": "Worked example 3: converting the calculated dose into volume",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Suppose the calculated individual dose is 180 mg and the liquid concentration is 120 mg/5 mL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "First:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_15.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Then:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_16.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The volume corresponding to the calculated dose is 7.5 mL per administration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This calculation does not establish that the medicine, dose or frequency is appropriate for a particular child. Verify the actual product, indication, age restrictions and maximum dose."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_8",
+          "subsection_title": "3.5 The maximum-dose rule",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_14",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A weight-based calculation does not automatically authorise the calculated amount."
+                },
+                {
+                  "type": "list",
+                  "title": "Suppose a hypothetical protocol specifies:",
+                  "items": [
+                    {
+                      "text": "Dose: 15 mg/kg per administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient weight: 40 kg.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maximum single dose: 500 mg.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Calculation:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_17.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The weight-based result is 600 mg, but the stated maximum single dose is 500 mg."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Therefore, the calculated dose must not exceed 500 mg under this hypothetical protocol."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This illustrates the general rule:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_18.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The relevant maximum may be per dose, per day, per course or indication-specific. Check all applicable limits rather than assuming one maximum covers every circumstance."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_15",
+              "group_title": "Common maximum-dose errors",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Checking the maximum single dose but forgetting the daily maximum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Applying an adult maximum when the guideline specifies a different paediatric limit.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calculating a correct mg/kg dose but administering it at the wrong frequency.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing mg/kg/dose with mg/kg/day.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using an outdated weight or an incorrect unit.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting that some medicines use ideal, adjusted or other specified dosing weights rather than total body weight.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_9",
+          "subsection_title": "3.6 Body-surface-area dosing",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_16",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Body-surface-area (BSA) dosing is used for selected medicines, particularly many oncology regimens and some specialist treatments. It is not the default method for every paediatric medicine."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A commonly used equation is the Mosteller formula:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_19.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_17",
+              "group_title": "Worked example",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A hypothetical patient weighs 20 kg and is 110 cm tall."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_20.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Suppose a specialist protocol specifies a medicine at 50 mg/m²."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_21.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculated amount is approximately 39.1 mg before applying the protocol's rounding rules, dose caps, organ-function adjustments and other requirements."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Safety note: Oncology and other specialist regimens must be checked against the actual protocol. Do not independently substitute BSA dosing for a weight-based regimen or round a calculated dose without following the relevant guidance."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_10",
+          "subsection_title": "3.7 Loading doses and maintenance doses",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_18",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Some medicines require a loading dose to achieve a therapeutic concentration quickly, followed by maintenance doses to sustain that concentration."
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Loading dose: Intended to reach a target concentration more rapidly.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Maintenance dose: Intended to replace the amount of drug eliminated over time.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A simplified pharmacokinetic relationship is:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_22.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For an IV medicine with complete bioavailability, the bioavailability term is 1."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A simplified maintenance-dose relationship is:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_23.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These equations require appropriate units and medicine-specific pharmacokinetic information. The prescribed dose also depends on the dosing interval, formulation and therapeutic target."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_19",
+              "group_title": "Important clinical considerations",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Loading doses may be used for selected medicines such as certain antiarrhythmics, anticonvulsants and antimicrobial agents."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "However, loading and maintenance regimens are not interchangeable. Renal impairment may substantially alter maintenance dosing, while its effect on the loading dose depends on the medicine's volume of distribution and other patient factors."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For medicines with a narrow therapeutic index, use the relevant protocol and therapeutic drug monitoring where indicated."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_11",
+          "subsection_title": "3.8 IV infusion calculations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_20",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "There are two major types of infusion calculation:",
+                  "items": [
+                    {
+                      "text": "Volume-based infusion: A prescribed volume is delivered over a specified time.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Drug-dose-based infusion: A medicine is delivered at a prescribed dose rate, such as micrograms/kg/minute.",
+                      "level": 0,
+                      "label": "2."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The second type requires additional calculations and is common in critical care."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_21",
+              "group_title": "A. Volume-based infusion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A fluid order specifies 1,000 mL over 8 hours."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_24.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculated pump rate is 125 mL/hour."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is an arithmetic result, not an assessment that the fluid volume or rate is suitable for the patient. Fluid selection and administration must account for clinical status, cardiac and renal function, electrolytes and ongoing losses."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_22",
+              "group_title": "B. Gravity infusion: drops per minute",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A 500 mL infusion is to run over 4 hours using a giving set labelled 20 drops/mL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Convert hours to minutes:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_25.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Calculate the rate:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_26.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculated rate is approximately 42 drops per minute, subject to the clinical protocol and the accuracy limitations of gravity administration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Always verify the giving-set factor printed on the actual equipment."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_23",
+              "group_title": "C. Dose-based infusion: micrograms/kg/minute",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A dose-based infusion requires the prescribed dose rate, patient's weight and prepared drug concentration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The general relationship is:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_27.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For this formula, the dose rate is in micrograms/kg/minute, the weight is in kg and the concentration is in micrograms/mL. The result is mL/hour."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Worked mathematical example**"
+                },
+                {
+                  "type": "list",
+                  "title": "Assume a hypothetical, already verified infusion has:",
+                  "items": [
+                    {
+                      "text": "Prescribed rate: 2 micrograms/kg/minute.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Patient weight: 60 kg.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prepared concentration: 1,000 micrograms/mL.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 1: Calculate the required amount per minute."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_28.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 2: Convert to the amount per hour."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_29.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 3: Convert to mL/hour."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_30.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculated rate is 7.2 mL/hour for these hypothetical inputs."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For an actual vasoactive or other high-alert infusion, verify the prescribed dose, concentration, pump settings, institutional preparation protocol and required monitoring independently before administration."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_12",
+          "subsection_title": "3.9 Reconstitution and dilution calculations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_24",
+              "group_title": "A. Reconstitution",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Reconstitution is the preparation of a medicine supplied as a powder or concentrated product by adding a specified diluent."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The final concentration must be taken from the product instructions. Do not assume the final volume equals the volume of diluent added; powder displacement and product-specific instructions can affect the final volume."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_25",
+              "group_title": "B. Dilution",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "For simple dilution of a solution, when the amount of active ingredient is conserved:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_31.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "title": "Where:",
+                  "items": [
+                    {
+                      "text": "(C1) = starting concentration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "(V1) = volume of starting solution.",
+                      "level": 0
+                    },
+                    {
+                      "text": "(C2) = desired final concentration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "(V2) = final volume.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Worked mathematical example**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A solution has a starting concentration of 10 mg/mL. How much is required to prepare 50 mL at 2 mg/mL?"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_32.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The calculation requires 10 mL of the starting solution, with a compatible diluent added to achieve a final volume of 50 mL."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is a mathematical illustration only. Actual injectable preparation must follow product-specific compatibility, concentration, sterility, stability and administration requirements. Some medicines must not be diluted using this method or to arbitrary concentrations."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_26",
+              "group_title": "C. Common preparation errors",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Using the wrong diluent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing the volume added with the final volume.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Misreading mg/mL as mg per vial.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using a concentration intended for a different route.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ignoring product stability after reconstitution.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to label the final concentration and preparation time where required.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mixing incompatible medicines in the same syringe, infusion bag or line.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_13",
+          "subsection_title": "3.10 Renal dose adjustment",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_27",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Renal impairment can increase drug exposure when the medicine or its active metabolites are eliminated by the kidneys. The result may be toxicity, prolonged effects or delayed adverse reactions."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_28",
+              "group_title": "Step 1: Assess renal function",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Use the appropriate clinical information, which may include:",
+                  "items": [
+                    {
+                      "text": "Serum creatinine and its trend.",
+                      "level": 0
+                    },
+                    {
+                      "text": "eGFR.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Creatinine clearance when specified by the medicine's dosing guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Urine output and the clinical context.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Dialysis status, where applicable.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A single creatinine result may not reliably reflect renal function during rapidly evolving acute kidney injury."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_29",
+              "group_title": "Step 2: Check the medicine's dosing recommendations",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Depending on the medicine, renal adjustment may involve:",
+                  "items": [
+                    {
+                      "text": "Reducing each dose.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extending the interval between doses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Using a different medicine.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitoring serum concentrations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adjusting dosing around dialysis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Temporarily withholding treatment when clinically indicated.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not automatically reduce every medicine by the same percentage."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_30",
+              "group_title": "Step 3: Monitor the response",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Reassess efficacy, adverse effects, renal function and other relevant tests after starting or changing treatment."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_31",
+              "group_title": "Creatinine clearance: Cockcroft–Gault equation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "For selected adults, the traditional equation is:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_33.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This gives an estimated creatinine clearance in mL/min when serum creatinine (SCr) is in mg/dL and the specified weight is in kg. The traditional equation includes a sex-related coefficient in its original formulation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If serum creatinine is supplied in micromoles/L:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important limitations: Cockcroft–Gault is not appropriate for every patient or every medicine. The choice of weight, body composition, rapidly changing renal function and the product's dosing guidance all matter. Do not assume eGFR and creatinine clearance are interchangeable."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_14",
+          "subsection_title": "3.11 Electrolyte replacement calculations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_32",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Electrolyte replacement requires more than arithmetic. The severity of the abnormality, symptoms, ECG findings, renal function, ongoing losses and route of replacement determine the treatment plan."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_33",
+              "group_title": "A. Understanding mmol and mEq",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The relationship is:"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/prescriptions/rx_drug_dose_calculations_35.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "title": "For example:",
+                  "items": [
+                    {
+                      "text": "10 mmol of sodium corresponds to 10 mEq.",
+                      "level": 0
+                    },
+                    {
+                      "text": "10 mmol of potassium corresponds to 10 mEq.",
+                      "level": 0
+                    },
+                    {
+                      "text": "10 mmol of calcium ions corresponds to 20 mEq of calcium charge.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The mass in milligrams depends on the specific ion or compound. Always confirm whether the product label describes the amount of elemental ion or the mass of the entire salt."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_34",
+              "group_title": "B. Potassium replacement: safety principles",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Potassium chloride is a high-alert medicine."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Before replacement, assess serum potassium, renal function, urine output, magnesium and the clinical context. Severe or symptomatic hypokalaemia may require monitored IV replacement under a specific institutional protocol."
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Never administer concentrated potassium chloride by direct IV push.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Verify the product concentration, dilution, route and infusion rate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use an infusion pump and cardiac monitoring when indicated by the protocol and clinical severity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recheck potassium and renal function at appropriate intervals.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid routine replacement without considering renal impairment and the risk of hyperkalaemia.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "There is no single safe replacement rate or total dose for every patient."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_35",
+              "group_title": "C. Sodium abnormalities",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Sodium disorders require assessment of the cause, symptoms, volume status and chronicity. Rapid correction can cause serious neurological injury."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In hyponatraemia, the correction target and monitoring frequency depend on the clinical situation and treatment method. Hypernatraemia also requires a carefully planned correction strategy."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Clinical rule: Never calculate an electrolyte replacement regimen from the laboratory value alone. Use a condition-specific protocol with appropriate monitoring."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_15",
+          "subsection_title": "3.12 Fluid calculations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_36",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Fluid prescribing is particularly important in Medicine, Paediatrics, Obstetrics and Surgery."
+                },
+                {
+                  "type": "list",
+                  "title": "The guide will distinguish:",
+                  "items": [
+                    {
+                      "text": "Resuscitation: Restoring circulation in patients with impaired perfusion.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Maintenance: Providing routine water and electrolyte requirements.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Replacement: Replacing abnormal ongoing losses.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Correction: Addressing an existing fluid or electrolyte deficit.",
+                      "level": 0,
+                      "label": "4."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are different objectives and must not be combined indiscriminately."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_37",
+              "group_title": "A. Adult maintenance fluids",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Maintenance prescriptions depend on body weight, clinical status, oral intake, renal and cardiac function, ongoing losses and electrolyte requirements."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not apply a standard maintenance volume automatically to patients with heart failure, renal failure, significant oedema, major electrolyte disturbances or other conditions requiring an individualised plan."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_38",
+              "group_title": "B. Paediatric maintenance fluids",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Paediatric maintenance requirements are often estimated using a weight-based method, but the appropriate fluid, electrolyte content and volume depend on age, illness, hydration, renal function and ongoing losses."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The familiar Holliday–Segar method is a starting point for calculating maintenance requirements, not a complete fluid-resuscitation or dehydration-correction protocol."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For neonates, children with severe acute malnutrition, DKA, shock or significant renal or cardiac disease, use the relevant specialist protocol."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_16",
+          "subsection_title": "3.13 Common drug-calculation errors",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_39",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Error",
+                    "Potential consequence",
+                    "Prevention"
+                  ],
+                  "rows": [
+                    [
+                      "Confusing mg/kg/day with mg/kg/dose",
+                      "Major overdose or underdose",
+                      "Write the units explicitly and calculate the daily total"
+                    ],
+                    [
+                      "Incorrect body weight",
+                      "Inappropriate dose",
+                      "Verify the current measured weight in kg"
+                    ],
+                    [
+                      "Misreading concentration",
+                      "Wrong volume administered",
+                      "Read the actual product label before calculation"
+                    ],
+                    [
+                      "Forgetting the maximum dose",
+                      "Excessive dose",
+                      "Check both single-dose and daily limits"
+                    ],
+                    [
+                      "Incorrect infusion conversion",
+                      "Infusion delivered too quickly or slowly",
+                      "Verify units and convert minutes to hours correctly"
+                    ],
+                    [
+                      "Confusing mg and micrograms",
+                      "Potentially thousandfold error",
+                      "Write units clearly and independently verify high-risk calculations"
+                    ],
+                    [
+                      "Using the wrong final volume",
+                      "Incorrect concentration",
+                      "Follow the preparation instructions and calculate the final volume"
+                    ],
+                    [
+                      "Applying an adult regimen to a child",
+                      "Toxicity or ineffective treatment",
+                      "Use age- and weight-appropriate guidance"
+                    ],
+                    [
+                      "Using a standard renal adjustment without checking the drug",
+                      "Toxicity or treatment failure",
+                      "Consult the drug-specific dosing recommendations"
+                    ],
+                    [
+                      "Failing to reassess",
+                      "Delayed recognition of toxicity or treatment failure",
+                      "Establish a monitoring and review plan"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_17",
+          "subsection_title": "3.14 A universal method for solving drug-calculation questions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_40",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use this sequence for both clinical practice and examinations."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Read the question carefully"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify the required dose, available strength, route, frequency and units."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Convert units"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Make all units compatible before calculating."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Choose the correct formula"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Select the tablet, liquid, weight-based or infusion formula."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Calculate and check limits"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Verify the arithmetic, maximum dose and relevant patient-specific restrictions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check clinical plausibility"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ask whether the result is reasonable for the patient and formulation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State the answer with units"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Specify mg, mL, tablets, mL/hour or the requested unit clearly."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_18",
+          "subsection_title": "3.15 Practice questions",
+          "subsection_icon": null,
+          "content_groups": []
+        },
+        {
+          "subsection_id": "rx_drug_dose_calculations_subsection_19",
+          "subsection_title": "Calculation assessment",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "rx_drug_dose_calculations_group_41",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. A hypothetical medicine is prescribed at 12 mg/kg/dose for a child weighing 15 kg. What is the calculated individual dose?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "80 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "120 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "180 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "240 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. A medicine is prescribed at 40 mg/kg/day for a 12 kg child, divided into four equal doses. What is the dose per administration?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "60 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "120 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "240 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "480 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. A liquid contains 200 mg/5 mL. What volume contains 120 mg?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2 mL"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3 mL"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4 mL"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5 mL"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. An infusion of 750 mL is prescribed over 6 hours. What is the pump rate?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "100 mL/hour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "115 mL/hour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "125 mL/hour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "150 mL/hour"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. A hypothetical protocol gives 20 mg/kg, with a maximum single dose of 600 mg. A patient weighs 40 kg. What dose is permitted under this protocol?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "400 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "600 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "800 mg"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1,000 mg"
+                }
+              ]
+            },
+            {
+              "group_id": "rx_drug_dose_calculations_group_42",
+              "group_title": "Recommended reference resources",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "World Health Organization — Rational use of medicines.",
+                      "level": 0
+                    },
+                    {
+                      "text": "National Institute for Health and Care Excellence — Clinical guidelines.",
+                      "level": 0
+                    },
+                    {
+                      "text": "British National Formulary — BNF.",
+                      "level": 0
+                    },
+                    {
+                      "text": "World Health Organization — Pocket Book of Hospital Care for Children.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use the current edition and relevant local protocols when applying these principles to clinical care."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

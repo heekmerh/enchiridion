@@ -643,6 +643,164 @@ def build_quick_revision(manifest: dict, source_dir: Path) -> list[dict]:
     return parts
 
 
+CHAPTER_LINE = re.compile(r"^chapter\s*(\d+)\s*[:.]\s*(.+)$", re.IGNORECASE)
+MNEMONIC_SUB_PT = 17.0
+MNEMONIC_GROUP_PT = 13.0
+MNEMONIC_NUMBERED = re.compile(r"^\d+(\.\d+)*[\.)]?\s+\S")
+
+
+def mnemonic_slug(number: int) -> str:
+    return f"mnemonics_chapter_{number}"
+
+
+def is_chapter_line(paragraph: Paragraph, text: str, style: str) -> re.Match | None:
+    chapter = CHAPTER_LINE.match(text)
+    if chapter and (style.startswith("Heading 1") or run_points(paragraph)[1] >= 20):
+        return chapter
+    return None
+
+
+def mnemonic_modes(document: Document) -> dict[int, str]:
+    """The handbook's chapters mark their items three ways: Word headings
+    (Heading 2 item, Heading 3 mnemonic), bold 18pt numbered items with
+    13.5pt mnemonics under them, or 13.5pt numbered items under an 18pt
+    section banner. Work out which one each chapter uses."""
+    counts: dict[int, dict[str, int]] = {}
+    current = None
+    for paragraph in document.paragraphs:
+        text = fix_text(paragraph.text)
+        style = paragraph.style.name if paragraph.style else "Normal"
+        chapter = is_chapter_line(paragraph, text, style)
+        if chapter:
+            current = int(chapter.group(1))
+            counts[current] = {"styles": 0, "big": 0}
+            continue
+        if current is None or not text:
+            continue
+        if style.startswith("Heading 2"):
+            counts[current]["styles"] += 1
+        bold, points = run_points(paragraph)
+        if bold and points >= MNEMONIC_SUB_PT and MNEMONIC_NUMBERED.match(text):
+            counts[current]["big"] += 1
+    modes = {}
+    for number, count in counts.items():
+        if count["styles"] >= 3:
+            modes[number] = "styles"
+        elif count["big"] >= 3:
+            modes[number] = "big"
+        else:
+            modes[number] = "small"
+    return modes
+
+
+def mnemonic_level(paragraph: Paragraph, text: str, style: str, mode: str) -> int | None:
+    """Subsection (1), group (2) or bold line (3) for a heading, None for
+    body text, 0 for a section banner that is dropped because its items
+    become the subsections."""
+    match = re.match(r"Heading (\d)", style)
+    if match:
+        return {1: 1, 2: 1, 3: 2}.get(int(match.group(1)), 3)
+    bold, points = run_points(paragraph)
+    if not bold or len(text.split()) > HEADING_MAX_WORDS:
+        return None
+    if len(text.strip()) <= 2:
+        # Chapter 5 spells FAST out in single 24pt letters.
+        return None
+    if points < MNEMONIC_GROUP_PT:
+        return None
+    if mode == "styles":
+        return 2
+    if mode == "big":
+        return 1 if points >= MNEMONIC_SUB_PT else 2
+    return 0 if points >= MNEMONIC_SUB_PT else 1
+
+
+def build_mnemonics(manifest: dict, source_dir: Path) -> list[dict]:
+    spec = manifest["mnemonics"]
+    source = source_dir / f"{spec['source']['id']}.docx"
+    document = Document(str(source))
+    for old in (RESOURCE_ASSET_DIR / "mnemonics").glob("*.webp"):
+        old.unlink()
+    for old in RESOURCE_DATA_DIR.glob("mnemonics_chapter_*.json"):
+        old.unlink()
+    chapters: list[dict] = []
+    builder: ChapterBuilder | None = None
+    sink: ImageSink | None = None
+    numbering = Numbering(document)
+    modes = mnemonic_modes(document)
+    mode = "styles"
+
+    def finish() -> None:
+        if builder is not None:
+            write_json(builder.slug, builder.payload(None))
+
+    for kind, item in iter_block_items(document):
+        if kind == "table":
+            if builder:
+                builder.add_block(table_block(item))
+            continue
+        paragraph = item
+        mark = numbering.item(paragraph)
+        text = fix_text(paragraph.text)
+        style = paragraph.style.name if paragraph.style else "Normal"
+        chapter = is_chapter_line(paragraph, text, style)
+        if chapter:
+            finish()
+            number = int(chapter.group(1))
+            title = heading_text(chapter.group(2)).capitalize()
+            chapters.append({"number": number, "title": title})
+            mode = modes.get(number, "styles")
+            builder = ChapterBuilder(mnemonic_slug(number), title)
+            sink = ImageSink("mnemonics", mnemonic_slug(number))
+            continue
+        if builder is None or sink is None:
+            continue
+        images = sink.asset_paths(document, paragraph)
+        level = mnemonic_level(paragraph, text, style, mode) if text else None
+        if level:
+            heading = heading_text(text)
+            if mark and mark[1]:
+                heading = f"{mark[1]} {heading}"
+            add_heading(builder, heading, level)
+            if images:
+                builder.add_images(images, None)
+            continue
+        if level == 0:
+            if images:
+                builder.add_images(images, None)
+            continue
+        if images:
+            short = bool(text) and len(text.split()) <= 18
+            if text and not short:
+                builder.add_paragraph(rich_text(paragraph))
+            builder.add_images(images, text if short else None)
+            continue
+        if not text:
+            continue
+        add_body(builder, paragraph, numbering, mark, style)
+    finish()
+    return chapters
+
+
+def mnemonic_topics(manifest: dict) -> list[dict]:
+    groups = {}
+    for group in manifest["mnemonics"]["groups"]:
+        for number in group["chapters"]:
+            groups[number] = group["title"]
+    topics = []
+    for path in sorted(RESOURCE_DATA_DIR.glob("mnemonics_chapter_*.json"),
+                       key=lambda p: int(p.stem.rsplit("_", 1)[1])):
+        number = int(path.stem.rsplit("_", 1)[1])
+        data = json.loads(path.read_text(encoding="utf-8"))
+        topics.append({
+            "id": f"mnemonics-chapter-{number}",
+            "title": data["chapter_metadata"]["chapter_title"],
+            "group": groups.get(number),
+            "dataAssetPath": f"assets/data/resources/{path.name}",
+        })
+    return topics
+
+
 def dart_string(value: str) -> str:
     return "'" + value.replace("\\", "\\\\").replace("'", "\\'").replace("$", "\\$") + "'"
 
@@ -681,6 +839,8 @@ def write_catalog(manifest: dict, assets: dict[str, str | None], quick_parts: li
     spec = manifest["quick_revision"]
     emit(spec["dart_name"], spec["category_title"], spec["hero_asset"],
          [{**part, "dataAssetPath": part.get("asset")} for part in quick_parts])
+    spec = manifest["mnemonics"]
+    emit(spec["dart_name"], spec["category_title"], spec["hero_asset"], mnemonic_topics(manifest))
     CATALOG_TARGET.parent.mkdir(parents=True, exist_ok=True)
     CATALOG_TARGET.write_text("\n".join(lines), encoding="utf-8")
 
@@ -739,6 +899,9 @@ def main() -> None:
     if not wanted or "quick_revision" in wanted:
         parts = build_quick_revision(manifest, args.source_dir)
         print(f"quick_revision: {len(parts)} parts built")
+    if not wanted or "mnemonics" in wanted:
+        chapters = build_mnemonics(manifest, args.source_dir)
+        print(f"mnemonics: {len(chapters)} chapters built")
     assets, parts = existing_assets(manifest)
     write_catalog(manifest, assets, parts)
     print(f"Images written: {total_images / 1e6:.1f} MB, {skipped} unsupported images skipped.")

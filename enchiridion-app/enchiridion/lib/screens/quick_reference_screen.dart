@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../models/resource_topic.dart';
-import '../widgets/common/coming_soon.dart';
 import 'notebook_screen.dart';
+import 'resource_search_screen.dart';
 import 'resource_topic_list_screen.dart';
 
 class QuickReferenceScreen extends StatelessWidget {
@@ -11,7 +11,15 @@ class QuickReferenceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('OSCE quick reference')),
+      appBar: AppBar(
+        title: const Text('OSCE quick reference'),
+        actions: const [
+          ResourceSearchButton(
+            sectionTitle: 'OSCE quick reference',
+            catalogs: [kQuickRevisionTopics, kMnemonicsTopics],
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: [
@@ -31,13 +39,15 @@ class QuickReferenceScreen extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.psychology_alt_outlined),
             title: const Text('Mnemonics'),
-            subtitle: const Text(kComingSoonLabel),
-            onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Mnemonics — $kComingSoonLabel'),
-                behavior: SnackBarBehavior.floating,
+            subtitle: Text('${kMnemonicsTopics.length} chapters'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const ResourceTopicListScreen(
+                title: 'Mnemonics',
+                topics: kMnemonicsTopics,
+                dense: true,
               ),
-            ),
+            )),
           ),
           ListTile(
             leading: const Icon(Icons.edit_note),
