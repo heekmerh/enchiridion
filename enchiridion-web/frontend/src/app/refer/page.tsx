@@ -294,8 +294,8 @@ export default function ReferralPage() {
         {
             title: "3. Referee Benefits",
             body: [
-                "New users who enter your referral code receive ₦500 off their app subscription and a 10% discount on book purchases.",
-                "Both discounts are one-time only: the ₦500 discount applies solely to the referee's first app subscription payment, and the 10% discount applies solely to their first book purchase. Subsequent payments and purchases are charged at full price.",
+                "New users who enter your referral code receive a 10% discount on book purchases.",
+                "The discount is one-time only and applies solely to the referee's first book purchase. Subsequent purchases are charged at full price.",
             ],
         },
         {
@@ -901,7 +901,7 @@ export default function ReferralPage() {
                     <div className={styles.partnerBenefits}>
                         <h3>Why Become a Referral Partner?</h3>
                         <ul>
-                            <li>Earn discounts on Enchiridion books and app subscriptions</li>
+                            <li>Earn discounts on Enchiridion books</li>
                             <li>Early access to unreleased specialties</li>
                             <li>Recognition inside the Enchiridion ecosystem</li>
                             <li>Priority access to contributor and reviewer programs</li>
