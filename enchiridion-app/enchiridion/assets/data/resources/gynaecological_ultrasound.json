@@ -33,39 +33,48 @@
                   "items": [
                     {
                       "text": "Interpret a transvaginal ultrasound showing uterine fibroids.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "A woman with heavy menstrual bleeding has a thickened endometrium. Interpret the scan.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Identify an ovarian cyst and describe its ultrasound features.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "A woman presents with sudden severe pelvic pain. Interpret the ultrasound and discuss ovarian torsion.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Interpret an ultrasound suggestive of adenomyosis.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     },
                     {
                       "text": "A woman with infertility has multiple ovarian follicles. Explain the findings.",
-                      "level": 0
+                      "level": 0,
+                      "label": "6."
                     },
                     {
                       "text": "Interpret a complex adnexal mass suspicious for ovarian malignancy.",
-                      "level": 0
+                      "level": 0,
+                      "label": "7."
                     },
                     {
                       "text": "A woman with pelvic pain has a dilated, fluid-filled fallopian tube. Give the differential diagnoses.",
-                      "level": 0
+                      "level": 0,
+                      "label": "8."
                     },
                     {
                       "text": "Explain the findings of a pelvic ultrasound to a patient in understandable language.",
-                      "level": 0
+                      "level": 0,
+                      "label": "9."
                     }
                   ]
                 }
@@ -256,6 +265,24 @@
           "content_groups": [
             {
               "group_id": "gynaecological_ultrasound_group_10",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_01.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_02.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_11",
               "group_title": "A. Uterus",
               "group_subtitle": null,
               "group_icon": null,
@@ -288,11 +315,21 @@
                 {
                   "type": "paragraph",
                   "text": "Uterine size and endometrial appearance vary with age, parity, hormonal status and menstrual cycle."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_04.webp",
+                  "caption": null
                 }
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_11",
+              "group_id": "gynaecological_ultrasound_group_12",
               "group_title": "B. Endometrium",
               "group_subtitle": null,
               "group_icon": null,
@@ -326,11 +363,21 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_12",
+              "group_id": "gynaecological_ultrasound_group_13",
               "group_title": "C. Ovaries",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_06.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Normal ovaries may contain follicles of different sizes. Their appearance varies with age, menstrual cycle and menopausal status."
@@ -364,7 +411,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_13",
+              "group_id": "gynaecological_ultrasound_group_14",
               "group_title": "Transvaginal Pelvic Ultrasound Protocol",
               "group_subtitle": null,
               "group_icon": null,
@@ -372,15 +419,12 @@
                 {
                   "type": "paragraph",
                   "text": "Transvaginal ultrasound gives the best resolution and visualization of the female pelvic structures. However, it is considered more invasive than the transabdominal approach."
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_14",
-              "group_title": "Patient Preparation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Patient Preparation**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "items": [
@@ -397,30 +441,37 @@
                       "level": 0
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_15",
-              "group_title": "Ultrasound Machine Preparation",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Ultrasound Machine Preparation**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
-                      "text": "**Transducer**: [Transvaginal/Endocavitary](https://www.pocus101.com/ultrasound-machine-basics-knobology-probes-and-modes/) probe.",
+                      "text": "**Transducer**: Transvaginal/Endocavitary probe.",
                       "level": 0
                     },
                     {
-                      "text": "[**Preset**](https://www.pocus101.com/ultrasound-machine-basics-knobology-probes-and-modes/): Gyn/Pelvic",
+                      "text": "**Preset**: Gyn/Pelvic",
                       "level": 0
                     },
                     {
                       "text": "Will also need a sterile condom (or sterile glove) and sterile gel.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "The indicator is located at the 12 o’clock position of the probe.",
                       "level": 0
@@ -436,7 +487,22 @@
                     {
                       "text": "Apply sterile gel to the tip of the covered endocavitary probe.",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_09.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "**Machine Positioning**: Position the ultrasound machine on the right side of the patient with the screen facing you. With this configuration you can face both the patient and the ultrasound screen, scanning with your right hand and manipulating buttons on the machine with the other hand. Also position a chair at the foot of the bed to sit in while performing the scan.",
                       "level": 0
@@ -444,33 +510,32 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_10.webp",
+                  "caption": "Complete Transvaginal Exam Setup using Blue Phantom Model"
+                },
+                {
                   "type": "paragraph",
-                  "text": "Complete Transvaginal Exam Setup using Blue Phantom Model"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_16",
-              "group_title": "Step 1: Obtain Sagittal/Longitudinal View of Uterus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Step 1: Obtain Sagittal/Longitudinal View of Uterus**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
-                      "text": "∗Gently∗ insert the probe into the patient’s vagina with the indicator at 12 o’clock (toward the ceiling).",
+                      "text": "Gently insert the probe into the patient’s vagina with the indicator at 12 o’clock (toward the ceiling).",
                       "level": 0
                     }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "**∗POCUS 101 Tip: Aligning your thumb with the probe indicator helps you know the exact orientation of the probe despite any manipulation you do throughout the exam.∗**"
+                  "text": "**POCUS 101 Tip**: Aligning your thumb with the probe indicator helps you know the exact orientation of the probe despite any manipulation you do throughout the exam."
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Transvaginal Probe Insertion in Blue Phantom Model"
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_11.webp",
+                  "caption": "Transvaginal Probe Insertion in Blue Phantom Model"
                 },
                 {
                   "type": "list",
@@ -520,49 +585,46 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_12.webp",
+                  "caption": "Sagittal transvaginal Ultrasound with free fluid in pouch of Douglas"
+                },
+                {
                   "type": "paragraph",
-                  "text": "Sagittal transvaginal Ultrasound with free fluid in pouch of Douglas"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_17",
-              "group_title": "Step 2: Obtain Transverse View of Uterus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Step 2: Obtain Transverse View of Uterus**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "items": [
                     {
-                      "text": "Rotate the probe 90 degrees counterclockwise (toward the patient’s right, or the 9 o’clock position) to obtain a good view of the bladder, myometrium, and endometrium of the uterus. [Tilt/Fan superiorly and inferiorly](https://www.pocus101.com/ultrasound-machine-basics-knobology-probes-and-modes/) to view then entire uterus in the transverse view.",
+                      "text": "Rotate the probe 90 degrees counterclockwise (toward the patient’s right, or the 9 o’clock position) to obtain a good view of the bladder, myometrium, and endometrium of the uterus. Tilt/Fan superiorly and inferiorly to view then entire uterus in the transverse view.",
                       "level": 0
                     }
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Probe indicator at 9 o’clock; Transverse transvaginal scan position"
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_13.webp",
+                  "caption": "Probe indicator at 9 o’clock; Transverse transvaginal scan position"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_14.webp",
+                  "caption": "Normal Uterus; Transverse transvaginal ultrasound"
                 },
                 {
                   "type": "paragraph",
-                  "text": "Normal Uterus; Transverse transvaginal ultrasound"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_18",
-              "group_title": "Step 3: Obtain View of Ovaries",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Step 3: Obtain View of Ovaries**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "In general, you can use either a sagittal or transverse view to identify the ovaries, which are usually located **lateral and/or posterior to the uterus** (Sohoni 2014)."
                 },
                 {
                   "type": "paragraph",
-                  "text": "**∗POCUS 101 Tip: If you have trouble viewing the ovary, try directing the** endocavitary **probe more posteriorly.∗**"
+                  "text": "**POCUS 101 Tip**: If you have trouble viewing the ovary, try directing the endocavitary probe more posteriorly."
                 },
                 {
                   "type": "list",
@@ -591,25 +653,23 @@
                   ]
                 },
                 {
-                  "type": "paragraph",
-                  "text": "Normal ovary with follicle/cyst; transvaginal ultrasound"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_19",
-              "group_title": "Step 4: Disinfect Endocavitary Probe",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_15.webp",
+                  "caption": "Normal ovary with follicle/cyst; transvaginal ultrasound"
+                },
                 {
                   "type": "paragraph",
-                  "text": "When you complete your transvaginal ultrasound exam it is imperative that you disinfect the probe properly using your hospital approved process. You can read the American Institute of Ultrasound in Medicine (AIUM) policy for disinfection [here](https://www.aium.org/officialstatements/57)."
+                  "text": "**Step 4: Disinfect Endocavitary Probe**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "When you complete your transvaginal ultrasound exam it is imperative that you disinfect the probe properly using your hospital approved process. You can read the American Institute of Ultrasound in Medicine (AIUM) policy for disinfection here."
                 }
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_20",
+              "group_id": "gynaecological_ultrasound_group_15",
               "group_title": "Free Fluid Evaluation with Pelvic Ultrasound",
               "group_subtitle": null,
               "group_icon": null,
@@ -620,20 +680,22 @@
                 },
                 {
                   "type": "paragraph",
-                  "text": "In females, free fluid from the abdominal cavity sinks into the pelvic cavity and settles in the **∗Pouch of Douglas**∗ (also called the **Posterior Cul-De-Sac and Rectouterine Pouch**), located posterior to the uterus and anterior to the rectum. Anechoic fluid in this location can be detected by ultrasound imaging using either the transabdominal or transvaginal approaches."
+                  "text": "In females, free fluid from the abdominal cavity sinks into the pelvic cavity and settles in the **Pouch of Douglas** (also called the **Posterior Cul-De-Sac and Rectouterine Pouch**), located posterior to the uterus and anterior to the rectum. Anechoic fluid in this location can be detected by ultrasound imaging using either the transabdominal or transvaginal approaches."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_16.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
                   "text": "Pouch of Douglas"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_21",
-              "group_title": "Normal Amount of Pelvic Free Fluid",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Normal Amount of Pelvic Free Fluid**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Small amounts of free fluid in the pelvis (usually <10 mL but up to ~20 mL near ovulation) can be normal in females (Ritchie, 1986; Hall et al., 1979). This is especially true in patients following ovulation, after menopause, or during early pregnancy. Make sure to look for the free fluid in the **Pouch of Douglas**."
@@ -643,21 +705,28 @@
                   "text": "Here are some pelvic ultrasound images of normal amounts of free fluid in the pouch of Douglas."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_17.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Small Amount of Free Fluid in Pouch of Douglas; Sagittal Transabdominal Ultrasound"
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_18.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Small Amount of Free Fluid in Pouch of Douglas; Transverse Transabdominal Ultrasound"
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_22",
-              "group_title": "Abnormal Pelvic Free Fluid",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Abnormal Pelvic Free Fluid**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "There are several pathologic conditions (both pelvic and non-pelvic) associated with an abnormal buildup of free fluid in the pelvis."
@@ -692,6 +761,11 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_19.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "Pelvic free fluid accumulation in Pouch of Douglas; Sagittal Transvaginal scan"
                 },
@@ -700,8 +774,18 @@
                   "text": "When you do see a significant amount of free fluid in the Pouch of Douglas make sure to check the right upper quadrant (RUQ) in Morison’s Pouch and the left upper quadrant (LUQ) to evaluate for more free fluid. Remember, free fluid can also be due to non-pelvic causes such as liver cirrhosis (alcohol-related or viral), heart failure, renal failure, and trauma. Below are ultrasound images of abdominal free fluid in the left and right upper quadrants."
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_20.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "RUQ Free Fluid in Morison’s Pouch"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_21.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -710,14 +794,14 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_23",
+              "group_id": "gynaecological_ultrasound_group_16",
               "group_title": "Uterine Ultrasound Pathology",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "Uterine abnormalities are a common cause of pelvic complaints that can be detected well using Point-of-Care Ultrasound. You may especially want to assess for uterine pathologies if uterine [measurements](https://www.pocus101.com/ultrasound-machine-basics-knobology-probes-and-modes/) are larger than the normals indicated in the chart below (Nalaboff 2001; Ozcan & DeCherney, 2019)."
+                  "text": "Uterine abnormalities are a common cause of pelvic complaints that can be detected well using Point-of-Care Ultrasound. You may especially want to assess for uterine pathologies if uterine measurements are larger than the normals indicated in the chart below (Nalaboff 2001; Ozcan & DeCherney, 2019)."
                 },
                 {
                   "type": "table",
@@ -758,27 +842,54 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_24",
-              "group_title": "Submucosal Fibroids",
+              "group_id": "gynaecological_ultrasound_group_17",
+              "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_22.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
-                  "text": "**Subserosal Fibroids**"
+                  "text": "**Submucosal Fibroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_23.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Subserosal Fibroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_24.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Intramural Fibroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_25.webp",
+                  "caption": null
                 }
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_25",
-              "group_title": "Intramural Fibroids",
+              "group_id": "gynaecological_ultrasound_group_18",
+              "group_title": "A. Definition",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
-                {
-                  "type": "paragraph",
-                  "text": "**A. Definition**"
-                },
                 {
                   "type": "paragraph",
                   "text": "Uterine fibroids are benign tumours arising from uterine smooth muscle. They may be asymptomatic or cause heavy menstrual bleeding, pelvic pressure, pain, infertility or pregnancy complications."
@@ -786,7 +897,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_26",
+              "group_id": "gynaecological_ultrasound_group_19",
               "group_title": "B. Ultrasound features",
               "group_subtitle": null,
               "group_icon": null,
@@ -820,7 +931,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_27",
+              "group_id": "gynaecological_ultrasound_group_20",
               "group_title": "C. Classification",
               "group_subtitle": null,
               "group_icon": null,
@@ -858,7 +969,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_28",
+              "group_id": "gynaecological_ultrasound_group_21",
               "group_title": "D. How to report the image",
               "group_subtitle": null,
               "group_icon": null,
@@ -871,7 +982,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_29",
+              "group_id": "gynaecological_ultrasound_group_22",
               "group_title": "E. Differential diagnoses",
               "group_subtitle": null,
               "group_icon": null,
@@ -900,7 +1011,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_30",
+              "group_id": "gynaecological_ultrasound_group_23",
               "group_title": "F. Investigations",
               "group_subtitle": null,
               "group_icon": null,
@@ -933,7 +1044,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_31",
+              "group_id": "gynaecological_ultrasound_group_24",
               "group_title": "G. Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -977,7 +1088,25 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_32",
+              "group_id": "gynaecological_ultrasound_group_25",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_26.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_27.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_26",
               "group_title": "A. Definition",
               "group_subtitle": null,
               "group_icon": null,
@@ -989,7 +1118,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_33",
+              "group_id": "gynaecological_ultrasound_group_27",
               "group_title": "B. Ultrasound features",
               "group_subtitle": null,
               "group_icon": null,
@@ -1031,7 +1160,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_34",
+              "group_id": "gynaecological_ultrasound_group_28",
               "group_title": "C. How to report it",
               "group_subtitle": null,
               "group_icon": null,
@@ -1044,7 +1173,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_35",
+              "group_id": "gynaecological_ultrasound_group_29",
               "group_title": "D. Differential diagnosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -1069,7 +1198,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_36",
+              "group_id": "gynaecological_ultrasound_group_30",
               "group_title": "E. Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1109,7 +1238,30 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_37",
+              "group_id": "gynaecological_ultrasound_group_31",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_28.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_29.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_30.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_32",
               "group_title": "A. Endometrial polyp",
               "group_subtitle": null,
               "group_icon": null,
@@ -1151,7 +1303,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_38",
+              "group_id": "gynaecological_ultrasound_group_33",
               "group_title": "B. Thickened endometrium",
               "group_subtitle": null,
               "group_icon": null,
@@ -1197,7 +1349,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_39",
+              "group_id": "gynaecological_ultrasound_group_34",
               "group_title": "C. How to report it",
               "group_subtitle": null,
               "group_icon": null,
@@ -1221,7 +1373,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_40",
+              "group_id": "gynaecological_ultrasound_group_35",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1249,13 +1401,27 @@
                     {
                       "text": "Usually < 3 cm",
                       "level": 0
-                    },
-                    {
-                      "text": "**Simple ovarian cyst**",
-                      "level": 0
                     }
                   ]
                 },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_31.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_32.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_36",
+              "group_title": "A. Simple ovarian cyst",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "list",
                   "title": "Ultrasound findings of Simple Ovarian Cysts:",
@@ -1281,6 +1447,11 @@
                       "level": 0
                     }
                   ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_33.webp",
+                  "caption": null
                 },
                 {
                   "type": "list",
@@ -1311,16 +1482,15 @@
                 {
                   "type": "paragraph",
                   "text": "Many simple cysts in premenopausal women are physiological or benign. Management depends on symptoms, size, menopausal status and the complete imaging assessment."
-                },
-                {
-                  "type": "list",
-                  "items": [
-                    {
-                      "text": "**Haemorrhagic cyst**",
-                      "level": 0
-                    }
-                  ]
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_37",
+              "group_title": "B. Haemorrhagic cyst",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "list",
                   "title": "Ultrasound findings of Hemorrhagic Cysts:",
@@ -1348,6 +1518,16 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_35.webp",
+                  "caption": null
+                },
+                {
                   "type": "list",
                   "title": "Typical features may include:",
                   "items": [
@@ -1368,16 +1548,15 @@
                 {
                   "type": "paragraph",
                   "text": "A haemorrhagic cyst may cause acute pain. Severe pain, haemodynamic instability or suspected rupture requires urgent assessment."
-                },
-                {
-                  "type": "list",
-                  "items": [
-                    {
-                      "text": "**Dermoid cyst (mature cystic teratoma)**",
-                      "level": 0
-                    }
-                  ]
-                },
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_38",
+              "group_title": "C. Dermoid cyst (mature cystic teratoma)",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
                 {
                   "type": "paragraph",
                   "text": "Ultrasound Findings of Dermoid Cysts:"
@@ -1408,6 +1587,21 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_36.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_37.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_38.webp",
+                  "caption": null
+                },
+                {
                   "type": "list",
                   "title": "Features may include:",
                   "items": [
@@ -1432,7 +1626,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_41",
+              "group_id": "gynaecological_ultrasound_group_39",
               "group_title": "D. Suspicious ovarian mass",
               "group_subtitle": null,
               "group_icon": null,
@@ -1474,7 +1668,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_42",
+              "group_id": "gynaecological_ultrasound_group_40",
               "group_title": "E. How to report an ovarian mass",
               "group_subtitle": null,
               "group_icon": null,
@@ -1487,7 +1681,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_43",
+              "group_id": "gynaecological_ultrasound_group_41",
               "group_title": "F. Investigations",
               "group_subtitle": null,
               "group_icon": null,
@@ -1528,7 +1722,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_44",
+              "group_id": "gynaecological_ultrasound_group_42",
               "group_title": "G. Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1564,7 +1758,35 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_45",
+              "group_id": "gynaecological_ultrasound_group_43",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_39.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_40.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_41.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_42.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "gynaecological_ultrasound_group_44",
               "group_title": "A. Clinical presentation",
               "group_subtitle": null,
               "group_icon": null,
@@ -1593,7 +1815,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_46",
+              "group_id": "gynaecological_ultrasound_group_45",
               "group_title": "B. Ultrasound findings",
               "group_subtitle": null,
               "group_icon": null,
@@ -1634,7 +1856,7 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_47",
+              "group_id": "gynaecological_ultrasound_group_46",
               "group_title": "C. Management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1644,23 +1866,28 @@
                   "items": [
                     {
                       "text": "Arrange urgent gynaecological review.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Assess vital signs and provide appropriate analgesia.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Obtain pregnancy testing and other investigations as clinically indicated.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     },
                     {
                       "text": "Do not delay specialist assessment while waiting for definitive imaging if suspicion is high.",
-                      "level": 0
+                      "level": 0,
+                      "label": "4."
                     },
                     {
                       "text": "Urgent laparoscopy is commonly required for diagnosis and treatment, with detorsion and ovarian preservation whenever feasible.",
-                      "level": 0
+                      "level": 0,
+                      "label": "5."
                     }
                   ]
                 },
@@ -1683,11 +1910,16 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_48",
+              "group_id": "gynaecological_ultrasound_group_47",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_43.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "A. Endometrioma"
@@ -1703,6 +1935,11 @@
                 {
                   "type": "paragraph",
                   "text": "Management: depends on symptoms, fertility plans, lesion features and complications. Specialist assessment is appropriate when imaging is uncertain or concerning."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_44.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
@@ -1744,16 +1981,32 @@
                       "level": 0
                     },
                     {
-                      "text": "**Beads-on-a-String sign** – cross-sectional view with incomplete septations associated with ∗chronic∗ pelvic inflammation",
+                      "text": "**Beads-on-a-String sign** – cross-sectional view with incomplete septations associated with chronic pelvic inflammation",
                       "level": 0
                     },
                     {
-                      "text": "**Cogwheel sign** – cross-sectional view with thickened longitudinal folds of the uterine tubes associated with ∗acute∗ pelvic inflammation",
+                      "text": "**Cogwheel sign** – cross-sectional view with thickened longitudinal folds of the uterine tubes associated with acute pelvic inflammation",
                       "level": 0
-                    },
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_45.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_46.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "items": [
                     {
                       "text": "Tubo-ovarian abscess",
-                      "level": 0
+                      "level": 1,
+                      "label": "D."
                     }
                   ]
                 },
@@ -1783,6 +2036,11 @@
                   ]
                 },
                 {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_47.webp",
+                  "caption": null
+                },
+                {
                   "type": "paragraph",
                   "text": "May appear as a complex, multilocular adnexal mass with thick walls and internal debris in a patient with pelvic pain and infection."
                 },
@@ -1804,11 +2062,26 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_49",
+              "group_id": "gynaecological_ultrasound_group_48",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_48.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_49.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_50.webp",
+                  "caption": null
+                },
                 {
                   "type": "paragraph",
                   "text": "Polycystic ovarian morphology describes the appearance of the ovaries on ultrasound. It is not synonymous with polycystic ovary syndrome (PCOS)."
@@ -1822,15 +2095,18 @@
                   "items": [
                     {
                       "text": "Clinical or biochemical hyperandrogenism.",
-                      "level": 0
+                      "level": 0,
+                      "label": "1."
                     },
                     {
                       "text": "Ovulatory dysfunction.",
-                      "level": 0
+                      "level": 0,
+                      "label": "2."
                     },
                     {
                       "text": "Polycystic ovarian morphology on ultrasound, or an appropriately validated alternative marker in settings where guidelines permit its use.",
-                      "level": 0
+                      "level": 0,
+                      "label": "3."
                     }
                   ]
                 },
@@ -1854,31 +2130,30 @@
               ]
             },
             {
-              "group_id": "gynaecological_ultrasound_group_50",
+              "group_id": "gynaecological_ultrasound_group_49",
               "group_title": "Ovarian Neoplasms",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "paragraph",
-                  "text": "**Mucinous Cystadenoma**"
+                  "text": "**Mucinous Cystadenoma**",
+                  "style": "heading"
                 },
                 {
                   "type": "paragraph",
-                  "text": "These types of tumors are the most common type of benign ovarian neoplasm. Patients may appear “gravid” if the mass has grown extensively into the abdomen."
+                  "text": "These types of tumors are the most common type of benign ovarian neoplasm. Patients may appear “gravid” if the mass has grown extensively into the abdomen.\n\nOn ultrasound, you can expect to see a cystic mass filled with mucinous material (several small, low-level internal echoes)."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_51.webp",
+                  "caption": null
                 },
                 {
                   "type": "paragraph",
-                  "text": "On ultrasound, you can expect to see a cystic mass filled with mucinous material (several small, low-level internal echoes)."
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_51",
-              "group_title": "Serous Cystadenoma",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                  "text": "**Serous Cystadenoma**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "title": "Ultrasound findings include a cystic mass with:",
@@ -1892,15 +2167,17 @@
                       "level": 0
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_52",
-              "group_title": "Serous Cystadenocarcinoma",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_52.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Serous Cystadenocarcinoma**",
+                  "style": "heading"
+                },
                 {
                   "type": "list",
                   "title": "These tumors are malignant and appear on ultrasound as cystic masses with:",
@@ -1922,15 +2199,28 @@
                       "level": 0
                     }
                   ]
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_53.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Bicornuate Uterus**",
+                  "style": "heading"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_54.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/og/gynaecological_ultrasound_55.webp",
+                  "caption": null
                 }
               ]
-            },
-            {
-              "group_id": "gynaecological_ultrasound_group_53",
-              "group_title": "Bicornuate Uterus",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": []
             }
           ]
         },
@@ -1940,7 +2230,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_54",
+              "group_id": "gynaecological_ultrasound_group_50",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -2019,7 +2309,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "gynaecological_ultrasound_group_55",
+              "group_id": "gynaecological_ultrasound_group_51",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
