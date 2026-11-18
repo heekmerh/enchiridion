@@ -4,3 +4,4 @@
 const int kFreeChapterCount = 1;
 const int kFreeQuestionCount = 10;
 const int kFreeCalculatorsPerCategory = 1;
+const int kFreeTopicsPerResource = 1;

@@ -5,6 +5,7 @@ import 'package:enchiridion/utils/content_availability.dart';
 import 'package:enchiridion/widgets/common/section_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:enchiridion/services/access_service.dart';
 
 // Local fixtures rather than the real catalogs, so this file stays valid
 // while sibling Task 2 rewrites kMedicalInstrumentationTopics.
@@ -73,6 +74,10 @@ Widget _groupLessSubject() => const MaterialApp(
     );
 
 void main() {
+  // These tests cover a premium account; the free-tier paywall has its own
+  // tests in resource_topic_paywall_test.dart.
+  setUp(() => AccessService.testAccessOverride = true);
+  tearDown(() => AccessService.testAccessOverride = null);
   test(
       'groupTopicsForDisplay ranks a group holding content ahead of a group '
       'holding none, group order otherwise first-appearance', () {

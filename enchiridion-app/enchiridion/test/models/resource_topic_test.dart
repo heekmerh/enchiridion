@@ -5,8 +5,13 @@ import 'package:enchiridion/models/resource_topic.dart';
 import 'package:enchiridion/screens/resource_topic_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:enchiridion/services/access_service.dart';
 
 void main() {
+  // These tests cover a premium account; the free-tier paywall has its own
+  // tests in resource_topic_paywall_test.dart.
+  setUp(() => AccessService.testAccessOverride = true);
+  tearDown(() => AccessService.testAccessOverride = null);
   group('Suture Material rename', () {
     final topic = kSurgicalInstrumentationTopics.firstWhere(
       (t) => t.id == 'sutures',
