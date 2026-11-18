@@ -22,6 +22,7 @@ import 'package:enchiridion/widgets/common/coming_soon.dart';
 
 @GenerateNiceMocks([MockSpec<SharedPreferences>()])
 import 'library_screen_test.mocks.dart';
+import 'package:enchiridion/services/access_service.dart';
 
 // Fake AuthProvider — bypasses Supabase constructor initialisation.
 // LibraryScreen only reads AuthProvider inside _showSettings(); it is never
@@ -147,6 +148,10 @@ StorageService _makeStorage() {
 }
 
 void main() {
+  // These tests cover a premium account; the free-tier paywall has its own
+  // tests in resource_topic_paywall_test.dart.
+  setUp(() => AccessService.testAccessOverride = true);
+  tearDown(() => AccessService.testAccessOverride = null);
   setUpAll(() async {
     // Initialise a stub Supabase instance so that AccessService.hasFullAccess()
     // can resolve Supabase.instance without throwing. No real network connection

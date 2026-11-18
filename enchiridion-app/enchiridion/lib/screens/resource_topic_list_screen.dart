@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../config/freemium_config.dart';
 import '../models/resource_topic.dart';
+import '../services/access_service.dart';
 import '../utils/bottom_inset.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/common/section_header.dart';
 import 'resource_topic_detail_screen.dart';
+import 'unlock_screen.dart';
 
 /// A single row in the flattened, renderable list: either a section header
 /// or a topic. Flattening headers and topics into one list lets both
@@ -24,7 +27,16 @@ class _TopicEntry extends _ListEntry {
   const _TopicEntry(this.topic);
 }
 
-class ResourceTopicListScreen extends StatelessWidget {
+/// Ids of the topics a free account may open in [displayOrder]: the first
+/// [kFreeTopicsPerResource] topics that have content. Coming-soon topics
+/// never use a free slot, mirroring the calculator paywall.
+Set<String> freeTopicIds(List<ResourceTopic> displayOrder) => displayOrder
+    .where((t) => t.hasContent)
+    .take(kFreeTopicsPerResource)
+    .map((t) => t.id)
+    .toSet();
+
+class ResourceTopicListScreen extends StatefulWidget {
   final String title;
   final List<ResourceTopic> topics;
 
@@ -41,16 +53,52 @@ class ResourceTopicListScreen extends StatelessWidget {
     this.dense = false,
   });
 
-  void _handleTap(
+  @override
+  State<ResourceTopicListScreen> createState() =>
+      _ResourceTopicListScreenState();
+}
+
+class _ResourceTopicListScreenState extends State<ResourceTopicListScreen> {
+  /// Starts false, like the calculator list, so nothing past the free topic
+  /// opens before the entitlement check has answered.
+  bool _hasAccess = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAccess();
+  }
+
+  Future<void> _loadAccess() async {
+    final access = await AccessService.instance.hasFullAccess();
+    if (!mounted) return;
+    setState(() => _hasAccess = access);
+  }
+
+  bool _isLocked(ResourceTopic topic, Set<String> freeIds) {
+    if (topic.isComingSoon) return false;
+    if (_hasAccess) return false;
+    return !freeIds.contains(topic.id);
+  }
+
+  Future<void> _handleTap(
     BuildContext context,
     ResourceTopic topic,
     bool comingSoon,
-  ) {
+    bool locked,
+  ) async {
     if (comingSoon) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('${topic.title} — $kComingSoonLabel'),
         behavior: SnackBarBehavior.floating,
       ));
+      return;
+    }
+    if (locked) {
+      await Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => const UnlockScreen()),
+      );
+      if (mounted) await _loadAccess();
       return;
     }
     Navigator.of(context).push(
@@ -66,24 +114,29 @@ class ResourceTopicListScreen extends StatelessWidget {
     // handed to this screen inherits both for free; a group-less list
     // collapses to one bucket with zero header rows (Surgical
     // Instrumentation, OSCE).
-    final grouped = groupTopicsForDisplay(topics);
+    final grouped = groupTopicsForDisplay(widget.topics);
     final items = <_ListEntry>[
       for (final entry in grouped.entries) ...[
         if (entry.key != null) _HeaderEntry(entry.key!),
         for (final topic in entry.value) _TopicEntry(topic),
       ],
     ];
+    final freeIds = freeTopicIds([
+      for (final item in items)
+        if (item is _TopicEntry) item.topic,
+    ]);
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: dense
-          ? _buildDenseList(context, items)
-          : _buildCardList(context, items),
+      appBar: AppBar(title: Text(widget.title)),
+      body: widget.dense
+          ? _buildDenseList(context, items, freeIds)
+          : _buildCardList(context, items, freeIds),
     );
   }
 
   Widget _buildDenseList(
     BuildContext context,
     List<_ListEntry> items,
+    Set<String> freeIds,
   ) {
     final cs = Theme.of(context).colorScheme;
     return ListView.builder(
@@ -99,22 +152,24 @@ class ResourceTopicListScreen extends StatelessWidget {
         }
         final topic = (item as _TopicEntry).topic;
         final comingSoon = topic.isComingSoon;
+        final locked = _isLocked(topic, freeIds);
+        final muted = comingSoon || locked;
         return ListTile(
           leading: CircleAvatar(
             backgroundColor: comingSoon
                 ? ComingSoonStyle.container(cs)
-                : cs.primaryContainer,
+                : locked
+                    ? cs.surfaceContainerHighest
+                    : cs.primaryContainer,
             child: Icon(
-              Icons.medical_services_outlined,
+              locked ? Icons.lock_outline : Icons.medical_services_outlined,
               size: 20,
-              color:
-                  comingSoon ? ComingSoonStyle.icon(cs) : cs.onPrimaryContainer,
+              color: muted ? ComingSoonStyle.icon(cs) : cs.onPrimaryContainer,
             ),
           ),
           title: Text(
             topic.title,
-            style:
-                comingSoon ? TextStyle(color: ComingSoonStyle.title(cs)) : null,
+            style: muted ? TextStyle(color: ComingSoonStyle.title(cs)) : null,
           ),
           subtitle: topic.description == null
               ? null
@@ -122,14 +177,16 @@ class ResourceTopicListScreen extends StatelessWidget {
                   topic.description!,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: comingSoon
-                      ? TextStyle(color: ComingSoonStyle.body(cs))
-                      : null,
+                  style:
+                      muted ? TextStyle(color: ComingSoonStyle.body(cs)) : null,
                 ),
           trailing: comingSoon
               ? const ComingSoonBadge(compact: true)
-              : const Icon(Icons.chevron_right),
-          onTap: () => _handleTap(context, topic, comingSoon),
+              : locked
+                  ? Icon(Icons.lock_outline,
+                      size: 16, color: ComingSoonStyle.icon(cs))
+                  : const Icon(Icons.chevron_right),
+          onTap: () => _handleTap(context, topic, comingSoon, locked),
         );
       },
     );
@@ -138,6 +195,7 @@ class ResourceTopicListScreen extends StatelessWidget {
   Widget _buildCardList(
     BuildContext context,
     List<_ListEntry> items,
+    Set<String> freeIds,
   ) {
     return ListView.builder(
       padding: EdgeInsets.only(
@@ -163,18 +221,18 @@ class ResourceTopicListScreen extends StatelessWidget {
             16,
             isLast || nextIsHeader ? 0 : 14,
           ),
-          child: _cardTile(context, topic),
+          child: _cardTile(context, topic, _isLocked(topic, freeIds)),
         );
       },
     );
   }
 
-  Widget _cardTile(BuildContext context, ResourceTopic topic) {
+  Widget _cardTile(BuildContext context, ResourceTopic topic, bool locked) {
     final comingSoon = topic.isComingSoon;
     final cs = Theme.of(context).colorScheme;
     return InkWell(
       borderRadius: BorderRadius.circular(20),
-      onTap: () => _handleTap(context, topic, comingSoon),
+      onTap: () => _handleTap(context, topic, comingSoon, locked),
       child: Ink(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -221,6 +279,11 @@ class ResourceTopicListScreen extends StatelessWidget {
                   if (comingSoon) ...[
                     const SizedBox(height: 8),
                     const ComingSoonBadge(),
+                  ],
+                  if (locked) ...[
+                    const SizedBox(height: 8),
+                    Icon(Icons.lock_outline,
+                        size: 18, color: ComingSoonStyle.icon(cs)),
                   ],
                 ],
               ),

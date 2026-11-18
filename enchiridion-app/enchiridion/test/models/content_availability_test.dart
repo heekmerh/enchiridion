@@ -4,6 +4,7 @@ import 'package:enchiridion/screens/resource_topic_list_screen.dart';
 import 'package:enchiridion/utils/content_availability.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:enchiridion/services/access_service.dart';
 
 class _Item {
   final String name;
@@ -15,6 +16,10 @@ class _Item {
 }
 
 void main() {
+  // These tests cover a premium account; the free-tier paywall has its own
+  // tests in resource_topic_paywall_test.dart.
+  setUp(() => AccessService.testAccessOverride = true);
+  tearDown(() => AccessService.testAccessOverride = null);
   group('availableFirst', () {
     test('partitions available items ahead of pending items, stably', () {
       const a = _Item('a', false);
