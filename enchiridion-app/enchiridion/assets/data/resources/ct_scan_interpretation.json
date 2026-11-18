@@ -1,0 +1,4122 @@
+{
+  "chapter_metadata": {
+    "chapter_id": "ct_scan_interpretation",
+    "chapter_title": "CT scan interpretation",
+    "chapter_icon": null,
+    "description": null,
+    "position_in_book": 1,
+    "tags": [
+      "CT scan interpretation"
+    ],
+    "chapter_color": null
+  },
+  "sections": [
+    {
+      "section_id": "ct_scan_interpretation_section_1",
+      "section_title": "CT scan interpretation",
+      "section_order": 1,
+      "subsections": [
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_1",
+          "subsection_title": "Overview",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_1",
+              "group_title": "CT Scans",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Computed tomography (CT) is a core imaging topic for medical OSCEs, clinical examinations, emergency medicine, and viva questions. You need to understand how CT works, recognise the common appearances, interpret images systematically, and present your findings in a structured way."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Unlike a plain X-ray, which produces a two-dimensional projection of overlapping structures, CT produces cross-sectional images that can be viewed in axial, coronal and sagittal planes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "We’ll approach CT from the perspective of a medical doctor expected to interpret common studies and recognise emergencies—not as a radiologist expected to report every subtle finding."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_2",
+          "subsection_title": "1. What is a CT scan?",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_2",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_01.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_02.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CT uses X-rays acquired from multiple angles and computer reconstruction to create cross-sectional images of the body."
+                },
+                {
+                  "type": "list",
+                  "title": "It is useful for assessing:",
+                  "items": [
+                    {
+                      "text": "Brain haemorrhage, stroke-related changes, trauma and mass lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chest pathology, including pulmonary embolism when CT pulmonary angiography is performed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Abdominal emergencies, including bowel obstruction, appendicitis, perforation and trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bone fractures, particularly complex fractures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Tumours, abscesses, vascular pathology and internal bleeding.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_3",
+              "group_title": "CT versus plain X-ray",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Feature",
+                    "Plain X-ray",
+                    "CT scan"
+                  ],
+                  "rows": [
+                    [
+                      "Image",
+                      "2D projection",
+                      "Cross-sectional images"
+                    ],
+                    [
+                      "Overlapping anatomy",
+                      "Common",
+                      "Greatly reduced"
+                    ],
+                    [
+                      "Soft-tissue detail",
+                      "Limited",
+                      "Usually much better"
+                    ],
+                    [
+                      "Fracture assessment",
+                      "Good for many simple fractures",
+                      "Better for many complex fractures"
+                    ],
+                    [
+                      "Radiation",
+                      "Usually lower",
+                      "Usually higher, depending on protocol"
+                    ],
+                    [
+                      "Contrast",
+                      "Sometimes used",
+                      "Frequently used when clinically indicated"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CT uses ionising radiation. The benefit of obtaining the scan should be weighed against radiation exposure, particularly in children and pregnancy. Contrast administration also requires consideration of the clinical indication, previous contrast reactions and relevant renal function."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_3",
+          "subsection_title": "2. The CT image: what do the different shades mean?",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_4",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The most important difference from your initial X-ray lesson is that CT attenuation can be quantified using Hounsfield units (HU)."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_5",
+              "group_title": "−1000",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Air"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Very black; approximately −1000 HU."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Examples: air in the lungs, bowel gas and air outside the lungs in a pneumothorax."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_6",
+              "group_title": "−100",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Fat"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dark grey; typically around −100 HU."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Helps distinguish fat planes from soft tissue and identify fat-containing lesions."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_7",
+              "group_title": "+40",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Soft tissue and fluid"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Different shades of grey; values vary substantially."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Brain tissue, muscle, organs and simple fluid overlap in attenuation. Their appearance depends on the tissue, contrast phase and scan settings."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_8",
+              "group_title": "+40–80",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Acute blood: often relatively hyperattenuating"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Acute blood may appear brighter than surrounding brain tissue on a non-contrast CT head, although attenuation varies with timing, haematocrit and other factors."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_9",
+              "group_title": "+700",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Dense cortical bone"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Often several hundred to over +1000 HU."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dense bone is bright; metal and concentrated iodinated contrast can be even brighter."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are approximate teaching values, not rigid diagnostic cut-offs. HU measurements depend on tissue composition, acquisition and reconstruction settings."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Essential CT terminology**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hyperattenuating / hyperdense: brighter than the reference tissue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoattenuating / hypodense: darker than the reference tissue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Isoattenuating / isodense: similar attenuation to the reference tissue.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enhancement: increased attenuation after intravenous contrast administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mass effect: displacement or compression of adjacent structures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midline shift: displacement of central intracranial structures from their normal midline position.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Windowing: adjustment of the displayed attenuation range to emphasise particular tissues.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A critical rule: hyperdense does not automatically mean haemorrhage, and hypodense does not automatically mean infarction. The anatomical location, scan protocol, clinical context and other findings matter."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_4",
+          "subsection_title": "3. Understand the CT views and orientation",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_10",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_06.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CT images are commonly reconstructed in three planes."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Plane",
+                    "What you see",
+                    "Common use"
+                  ],
+                  "rows": [
+                    [
+                      "Axial",
+                      "Horizontal cross-sections",
+                      "Routine CT head, chest and abdomen"
+                    ],
+                    [
+                      "Coronal",
+                      "Front-facing sections",
+                      "Sinuses, abdomen, pelvis and spine"
+                    ],
+                    [
+                      "Sagittal",
+                      "Side-facing sections",
+                      "Spine, brain midline and pelvic anatomy"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_11",
+              "group_title": "How to orient yourself",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "On a conventional axial CT image displayed in radiological orientation:",
+                  "items": [
+                    {
+                      "text": "The patient’s right is on the left side of the screen.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The patient’s left is on the right side of the screen.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The image is conventionally viewed as though you are looking from the patient's feet towards the head.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Always verify the orientation markers and display convention, especially when viewing reformatted images or unfamiliar software."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_12",
+              "group_title": "Common CT protocols",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Non-contrast CT (NCCT)"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "No intravenous contrast. Commonly used first in suspected acute intracranial haemorrhage and head trauma."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Contrast-enhanced CT"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Intravenous iodinated contrast helps assess organs, vessels, inflammation, tumours and collections. The acquisition timing affects what is visible."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_09.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CT angiography (CTA)"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Contrast timing is optimised to assess blood vessels. Examples include CT pulmonary angiography for suspected pulmonary embolism and CTA for suspected aortic dissection."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_10.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "High-resolution CT (HRCT)"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Thin-section CT optimised for lung parenchyma and interstitial lung disease. The exact protocol depends on the clinical question."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE viva: Why is a non-contrast CT head often obtained first in suspected acute stroke?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "It can rapidly identify intracranial haemorrhage, which changes immediate management. Early ischaemic stroke may be subtle or invisible on initial non-contrast CT. Additional vascular or perfusion imaging may be needed depending on the presentation and local stroke pathway."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_5",
+          "subsection_title": "4. The universal CT reporting approach",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_13",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Before interpreting a CT, establish:",
+                  "items": [
+                    {
+                      "text": "Patient and indication: Who is being scanned, and why?",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Region and protocol: CT head, chest, abdomen, etc.; contrast or non-contrast?",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Technical adequacy: Is the relevant anatomy covered? Are there motion artefacts or other limitations?",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Systematic review: Examine the relevant structures in a consistent order.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Abnormality description: Location, size, attenuation, distribution, enhancement and associated effects.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Impression: Give the most likely diagnosis and clinically important alternatives where necessary.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Urgency: Identify findings requiring immediate escalation or treatment.",
+                      "level": 0,
+                      "label": "7."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_14",
+              "group_title": "How to describe a CT abnormality",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "For a lesion or collection, document:",
+                  "items": [
+                    {
+                      "text": "Location: Exact organ, lobe, anatomical compartment or side.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size: Dimensions in millimetres or centimetres where relevant.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Attenuation: Hyperattenuating, hypoattenuating or mixed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Margins: Well-defined, ill-defined, smooth or irregular.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enhancement: None, homogeneous, heterogeneous or peripheral, as appropriate to the protocol.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated findings: Oedema, mass effect, obstruction, lymphadenopathy, free fluid or adjacent inflammation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Complications: Haemorrhage, herniation, perforation, vascular compromise or other urgent features.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "You do not need to describe every feature for every finding. Focus on the features that distinguish the likely diagnoses and affect management."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_6",
+          "subsection_title": "5. CT head: the highest-yield OSCE station",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_15",
+              "group_title": "A. Systematic approach to a non-contrast CT head",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_11.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_12.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_13.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Use BRAIN as a practical memory aid. It is a teaching framework rather than a universally standardised radiology acronym."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_16",
+              "group_title": "B",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Blood"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for acute haemorrhage in the brain parenchyma, subarachnoid spaces, ventricles and extra-axial compartments. Acute blood is often relatively hyperdense."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_17",
+              "group_title": "R",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Related anatomy"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check grey–white matter differentiation, brain parenchyma, basal ganglia, thalami, posterior fossa and visible skull."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_18",
+              "group_title": "A",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Air spaces and CSF spaces"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Assess ventricles, sulci and basal cisterns. Look for hydrocephalus, compression or abnormal effacement."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_19",
+              "group_title": "I",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Intracranial mass effect"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Check for midline shift, ventricular compression, sulcal effacement, herniation and mass lesions."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_20",
+              "group_title": "N",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Notice everything else"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review the skull, scalp, paranasal sinuses, mastoid air cells and orbits where visible. Check for fractures and soft-tissue swelling."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Technique tip: Review the entire image series from the skull base to the vertex, not just one or two selected slices. Use appropriate brain and bone windows when available."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_21",
+              "group_title": "B. Intracranial haemorrhage: four important patterns",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_14.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "1. Epidural (extradural) haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classically a biconvex or lentiform extra-axial hyperdense collection. It usually does not cross cranial sutures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classic association: Temporal bone fracture and middle meningeal arterial injury, although other causes occur."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_15.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Subdural haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classically a crescent-shaped extra-axial collection. It can cross sutures but is limited by dural reflections, including the falx and tentorium."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classic association: Tearing of bridging veins, particularly in older adults or after trauma."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_16.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. Subarachnoid haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Hyperdensity within sulci, fissures or basal cisterns."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Classic presentation: Sudden severe headache, sometimes described as a thunderclap headache."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_17.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Intraparenchymal haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A hyperdense focus within the brain tissue, potentially surrounded by oedema and associated with mass effect."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Common locations: Basal ganglia, thalamus, lobar regions, pons and cerebellum. The likely cause depends on location and clinical context."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Important distinction**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are classic appearances, not absolute rules. Blood appearance changes with time, and mixed-density collections can occur. If a patient has reduced consciousness, new neurological deficits or signs of raised intracranial pressure, urgent clinical management takes priority over a prolonged examination of the scan."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_22",
+              "group_title": "C. CT findings in ischaemic stroke",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_18.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_19.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_20.webp",
+                  "caption": null
+                },
+                {
+                  "type": "list",
+                  "title": "Early ischaemic changes can be subtle on non-contrast CT. Look for:",
+                  "items": [
+                    {
+                      "text": "Loss of grey–white matter differentiation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of the insular ribbon.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obscuration of the lentiform nucleus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal sulcal effacement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A hyperdense artery, such as the middle cerebral artery, which may indicate an acute thrombus.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "As infarction evolves, the affected region often becomes more clearly hypoattenuating, with swelling and mass effect."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE trap: A normal initial non-contrast CT does not exclude acute ischaemic stroke. Do not delay stroke-team assessment or time-sensitive treatment solely because early CT appears normal. Additional CTA, perfusion imaging or MRI may be appropriate under the local stroke pathway."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_23",
+              "group_title": "D. Mass effect and raised intracranial pressure",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Look for:",
+                  "items": [
+                    {
+                      "text": "Midline shift.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Compression or displacement of the ventricles.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Effacement of sulci or basal cisterns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydrocephalus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Herniation patterns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surrounding oedema.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These findings can be more immediately important than the precise identity of a mass."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_24",
+              "group_title": "E. Model CT head reports",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Example: acute subdural haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Non-contrast CT of the head demonstrates a crescentic hyperdense extra-axial collection over the right cerebral convexity, consistent with acute subdural haemorrhage. There is associated mass effect, with effacement of adjacent sulci and [degree of] midline shift. Urgent neurosurgical assessment is indicated.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Example: suspected acute ischaemic infarction"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“Non-contrast CT of the head demonstrates loss of grey–white matter differentiation in the left middle cerebral artery territory, with associated sulcal effacement. The findings are concerning for acute ischaemic infarction. Urgent stroke-team assessment and appropriate vascular imaging are required.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These are example templates; only include findings demonstrated on the actual scan."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_7",
+          "subsection_title": "6. CT chest",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_25",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT chest provides detailed assessment of lung parenchyma, pleura, mediastinum, vessels and chest wall."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_21.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_22.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_23.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_26",
+              "group_title": "A. What to examine",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Use a consistent sequence:",
+                  "items": [
+                    {
+                      "text": "Lungs: Consolidation, nodules, masses, cavitation, emphysema, interstitial abnormalities and ground-glass opacities.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Pleura: Effusions, pneumothorax, pleural thickening and collections.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Mediastinum and hila: Lymphadenopathy, masses and abnormal structures.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Heart and vessels: Cardiac structures, aorta and pulmonary arteries, according to the protocol.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Chest wall and bones: Ribs, sternum, vertebrae and soft tissues.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Upper abdomen: Visible liver, adrenals and other included structures.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review both lung and mediastinal windows where available. A finding can be obvious on one window and difficult to appreciate on another."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_27",
+              "group_title": "B. High-yield CT chest patterns",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_24.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Pulmonary embolism"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "On appropriately timed CT pulmonary angiography, an intraluminal contrast-filling defect in a pulmonary artery is a key finding."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Report: Identify the involved pulmonary artery, extent and any relevant signs of right-heart strain. A routine non-angiographic CT is not equivalent to a dedicated CTPA."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_25.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Aortic dissection"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A contrast-enhanced CT angiogram may demonstrate an intimal flap separating true and false lumina."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emergency: Suspected acute aortic dissection requires urgent assessment and the appropriate imaging protocol."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_26.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Consolidation"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Air-space opacity may contain air bronchograms and can be focal or multifocal. Correlate with infection, aspiration, haemorrhage or other causes."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_27.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emphysema"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Areas of reduced lung attenuation and destruction of normal lung architecture, sometimes with bullae."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_28.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Bronchiectasis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormally dilated bronchi, often with lack of normal tapering and visible bronchi near the pleural surface. The signet-ring appearance is a classic clue."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Ground-glass opacity versus consolidation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Ground-glass opacity: Increased lung attenuation through which bronchial and vascular markings remain visible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolidation: Increased attenuation that obscures underlying vascular markings.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Both are descriptive patterns rather than diagnoses. Infection, oedema, haemorrhage and inflammatory lung disease can produce overlapping appearances."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_8",
+          "subsection_title": "7. CT abdomen and pelvis",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_28",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT is particularly useful in acute abdominal pain, trauma, bowel obstruction, suspected perforation, inflammatory disease and malignancy."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_29.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_30.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_29",
+              "group_title": "A. A systematic abdominal CT approach",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use the following sequence:"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Structure",
+                    "What to assess"
+                  ],
+                  "rows": [
+                    [
+                      "Liver and biliary system",
+                      "Lesions, enlargement, duct dilatation, gallbladder inflammation"
+                    ],
+                    [
+                      "Spleen",
+                      "Laceration, haematoma, enlargement, infarction"
+                    ],
+                    [
+                      "Pancreas",
+                      "Inflammation, collections, masses, duct dilatation"
+                    ],
+                    [
+                      "Adrenals",
+                      "Nodules, enlargement, haemorrhage"
+                    ],
+                    [
+                      "Kidneys and urinary tract",
+                      "Stones, obstruction, hydronephrosis, masses, injury"
+                    ],
+                    [
+                      "Bowel",
+                      "Dilatation, transition point, wall thickening, inflammation, obstruction"
+                    ],
+                    [
+                      "Peritoneum",
+                      "Free air, free fluid, abscess, fat stranding"
+                    ],
+                    [
+                      "Blood vessels",
+                      "Aneurysm, dissection, thrombosis, active bleeding where assessed"
+                    ],
+                    [
+                      "Pelvis",
+                      "Bladder, reproductive organs, pelvic collections and bones"
+                    ],
+                    [
+                      "Bones and soft tissues",
+                      "Fractures, destructive lesions, haematomas"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Also inspect lymph nodes, abdominal wall and any visible lung bases."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_30",
+              "group_title": "B. Common abdominal emergencies",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. Bowel obstruction"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Dilated bowel proximal to a transition point, with relatively decompressed bowel distally. Look for the cause, closed-loop obstruction, reduced bowel-wall enhancement, pneumatosis and free fluid."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Report: State the level, likely cause and any signs of strangulation or ischaemia."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_31.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Acute appendicitis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "An enlarged inflamed appendix, wall thickening or enhancement, and periappendiceal fat stranding. An appendicolith may be present."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for perforation, abscess and other complications."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_32.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. Pneumoperitoneum"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Free gas outside the gastrointestinal tract, often visible anteriorly in a supine patient. It raises concern for hollow-viscus perforation, although postoperative and other causes exist."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emergency: Urgent surgical assessment is required when perforation is suspected."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_33.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Acute pancreatitis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Possible findings include pancreatic enlargement, peripancreatic fat stranding and fluid collections. Severe disease can cause necrosis, which is assessed on appropriate contrast-enhanced imaging."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Early CT is not necessary in every patient with clinically established acute pancreatitis."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. Abdominal trauma"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for organ lacerations, haematomas, active contrast extravasation, free fluid, bowel or mesenteric injury and vascular injury."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In haemodynamically unstable trauma patients, do not delay resuscitation or indicated intervention to obtain CT."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A key CT abdomen reporting rule**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not simply write “acute abdomen on CT.” State the actual findings, anatomical site and likely diagnosis, then identify complications and urgent management implications."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For example:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“CT abdomen and pelvis demonstrates dilated small-bowel loops with a transition point in the distal ileum and decompressed distal bowel, consistent with mechanical small-bowel obstruction. There is [presence or absence] of concerning features of bowel ischaemia or perforation. Urgent surgical review is recommended.”",
+                  "style": "quote"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_9",
+          "subsection_title": "8. CT spine and musculoskeletal system",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_31",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT is especially useful for complex fractures, spinal trauma, subtle cortical fractures and detailed assessment of bony anatomy."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_35.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_36.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_37.webp",
+                  "caption": null
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_32",
+              "group_title": "A. CT spine: what to look for",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Use a systematic approach:",
+                  "items": [
+                    {
+                      "text": "Alignment: Follow the vertebral bodies and posterior elements. Look for translation, angulation and malalignment.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Vertebral bodies: Check height, cortical integrity and fractures.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Posterior elements: Examine pedicles, laminae, facets and spinous processes.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Spinal canal: Look for bony fragments or narrowing that may compromise the canal.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Paravertebral soft tissues: Look for swelling or haematoma.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Additional levels: Review the entire relevant scan for other fractures.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "CT is excellent for bony injury but is less sensitive than MRI for many spinal cord, ligament and other soft-tissue injuries."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "OSCE warning: A normal CT does not exclude every clinically significant spinal injury. Persistent neurological deficits or suspected ligamentous or spinal cord injury may warrant MRI and specialist assessment."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_33",
+              "group_title": "B. CT fracture terminology",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Finding",
+                    "Meaning"
+                  ],
+                  "rows": [
+                    [
+                      "Comminuted fracture",
+                      "Bone broken into multiple fragments"
+                    ],
+                    [
+                      "Depressed fracture",
+                      "Bone fragment displaced inward, classically in the skull"
+                    ],
+                    [
+                      "Burst fracture",
+                      "Vertebral body fracture with disruption of the vertebral body, often involving the posterior wall"
+                    ],
+                    [
+                      "Intra-articular fracture",
+                      "Fracture extending into a joint surface"
+                    ],
+                    [
+                      "Displaced fracture",
+                      "Fragments no longer maintain normal anatomical position"
+                    ],
+                    [
+                      "Haematoma",
+                      "Collection of blood in tissue or a body compartment"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For pelvic and acetabular fractures, assess the fracture pattern, displacement, joint congruity and associated pelvic or soft-tissue injuries. In trauma, also consider associated vascular and visceral injury."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_10",
+          "subsection_title": "9. Contrast: indications, safety and OSCE viva",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_34",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Intravenous iodinated contrast helps demonstrate vessels, organ perfusion, inflammation, tumours and collections."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_35",
+              "group_title": "Common contrast-enhanced studies",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "CT angiography for vascular emergencies.",
+                      "level": 0
+                    },
+                    {
+                      "text": "CT pulmonary angiography for suspected pulmonary embolism.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Contrast-enhanced CT abdomen for many inflammatory conditions, abdominal masses and trauma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Multiphase CT for selected liver, renal and pancreatic lesions.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_36",
+              "group_title": "Important safety considerations",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Before contrast administration, assess the indication and relevant risks according to local protocol."
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Previous allergic-like reaction to iodinated contrast.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Kidney function and risk of acute kidney injury, particularly in patients with severe renal impairment or other relevant risk factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pregnancy and whether an alternative investigation is appropriate.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Metformin use in patients with acute kidney injury or significant renal impairment, following local guidance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Potential contrast extravasation and other acute reactions.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A history of shellfish allergy alone does not mean a patient has a specific contrast allergy. Also, kidney disease is not an automatic reason to withhold clinically essential contrast: the risks and benefits should be assessed."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_37",
+              "group_title": "Contrast phases you should recognise",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Phase",
+                    "Approximate timing*",
+                    "Main purpose"
+                  ],
+                  "rows": [
+                    [
+                      "Non-contrast",
+                      "Before contrast",
+                      "Haemorrhage, stones and baseline attenuation"
+                    ],
+                    [
+                      "Arterial",
+                      "Roughly 20–40 seconds",
+                      "Arteries, active bleeding and selected hypervascular lesions"
+                    ],
+                    [
+                      "Portal venous",
+                      "Roughly 60–80 seconds",
+                      "Many abdominal organs, inflammatory pathology and trauma"
+                    ],
+                    [
+                      "Delayed / excretory",
+                      "Minutes later, protocol-dependent",
+                      "Urinary tract assessment and selected lesion characterisation"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "∗Timings are illustrative. Actual acquisition depends on the protocol, injection, patient circulation and clinical question."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Viva question: Why might a renal stone be easier to identify on a non-contrast CT?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Because many urinary calculi are readily visible as high-attenuation foci without contrast obscuring the stone or complicating attenuation assessment. Non-contrast CT is a common investigation for suspected urinary calculi, although the preferred modality depends on the patient and clinical situation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_11",
+          "subsection_title": "10. CT brain: important qualifications",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_38",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "A normal non-contrast CT does not reliably exclude early ischaemic stroke, particularly in the first hours after symptom onset.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Small haemorrhages, subtle posterior fossa abnormalities and some small lesions can be difficult to detect.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not state that intracranial vessels are normal unless an appropriate vascular examination, such as CT angiography, has been performed.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not claim that enhancement is normal on a non-contrast study.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_12",
+          "subsection_title": "11. Common CT OSCE mistakes",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_39",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Mistake 1: Looking at only one slice"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Scroll through the full series and inspect all relevant planes."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mistake 2: Confusing attenuation with diagnosis"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Hyperdensity and hypodensity are descriptions. Interpret them using location, morphology, protocol and clinical context."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mistake 3: Ignoring mass effect"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Midline shift, hydrocephalus and herniation may determine urgency even before the exact cause is known."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mistake 4: Using the wrong protocol to exclude a disease"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A routine CT chest cannot reliably exclude pulmonary embolism in the way a suitable CTPA can. A normal early non-contrast CT head does not exclude ischaemic stroke."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mistake 5: Giving findings without an impression"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "End with the likely diagnosis and mention urgent action when indicated."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_13",
+          "subsection_title": "12. CT scan viva questions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_40",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. What is the unit used to quantify CT attenuation?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. What is the classic shape of an epidural haematoma?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. How does a subdural haematoma typically appear?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Does a normal early CT head exclude ischaemic stroke?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. What is the difference between CTA and routine contrast CT?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. What is the key CT feature of pulmonary embolism on CTPA?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. What is the CT transition point in bowel obstruction?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. Which modality is better for detailed cortical bone injury: CT or MRI?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. Why are lung and mediastinal windows both useful?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. What is the most important immediate finding in a CT head with a large haematoma?"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_41",
+              "group_title": "Final CT revision checklist",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Know HU, hyperdense, hypodense and enhancement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Identify axial, coronal and sagittal views and patient orientation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distinguish non-contrast CT from contrast CT and CTA.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpret a CT head systematically, especially haemorrhage, infarction, mass effect and hydrocephalus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recognise major CT chest emergencies, particularly pulmonary embolism and aortic dissection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Recognise abdominal obstruction, appendicitis, perforation and traumatic injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Describe fractures and spinal alignment on CT.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Give a concise, structured report with an impression and urgent next steps.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_14",
+          "subsection_title": "13. The universal CT reporting framework",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_42",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Use this framework for CT head, chest, abdomen, pelvis and spine."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identification and indication"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State the body region, clinical indication and whether the scan is non-contrast, contrast-enhanced or angiographic."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Technical adequacy"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Comment on coverage, motion artefacts, contrast timing and other limitations if relevant."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Systematic anatomical review"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Examine the relevant organs and structures in a consistent order, scrolling through the full image series."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Abnormality description"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "State the location, size, attenuation, morphology, enhancement and associated findings, as applicable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Impression and action"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Give the most likely diagnosis, important complications and appropriate urgency or next steps."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_43",
+              "group_title": "The universal verbal template",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“This is a CT scan of the [anatomical region], performed [with/without] intravenous contrast for [clinical indication]. The study is [technically adequate / limited by …].",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "On systematic review, the principal finding is [abnormality] involving [precise anatomical location]. It is characterised by [size, attenuation, morphology, enhancement and extent, where relevant]. Associated findings include [oedema, mass effect, obstruction, fluid, lymphadenopathy or other abnormalities]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The overall impression is [most likely diagnosis]. I would assess for [important complications] and recommend [appropriate clinical action or further investigation].”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not force every descriptor into every report. A CT head haemorrhage and a CT abdominal obstruction require different details."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_15",
+          "subsection_title": "14. CT terminology: how to describe what you see",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_44",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_38.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Hyperattenuating / hyperdense"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A structure appears brighter than the reference tissue. Examples include many acute intracranial haemorrhages on non-contrast CT, calcification and concentrated contrast."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_39.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Hypoattenuating / hypodense"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A structure appears darker than the reference tissue. Examples include many areas of oedema, established infarction and some fluid-containing lesions."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_40.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Enhancement"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Increased attenuation after contrast administration. Describe the pattern as homogeneous, heterogeneous, peripheral or otherwise appropriate to the lesion."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_41.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mass effect"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Compression or displacement of adjacent structures. Look for ventricular compression, midline shift, sulcal effacement and herniation where relevant."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_42.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Fat stranding"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Increased attenuation and haziness in fat around an organ or structure, often indicating inflammation, infection, oedema or infiltration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important: Attenuation is a descriptive finding, not a diagnosis. Always interpret it in the anatomical location and with the scan protocol and clinical context."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_16",
+          "subsection_title": "15. CT head: presenting normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_45",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT head is one of the most important CT OSCE stations. In acute settings, non-contrast CT is commonly used to assess intracranial haemorrhage, significant traumatic injury, mass effect and other urgent abnormalities."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_46",
+              "group_title": "A. Systematic review of CT head",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Use BRAIN as a practical checklist:",
+                  "items": [
+                    {
+                      "text": "B — Blood: Intracranial, extra-axial, subarachnoid and intraventricular haemorrhage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Related brain anatomy: Brain parenchyma, grey–white differentiation, basal ganglia, thalami, cerebellum and brainstem.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A — Air and CSF spaces: Ventricles, sulci and basal cisterns; look for hydrocephalus or effacement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "I — Intracranial mass effect: Midline shift, compression, herniation and oedema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "N — Neighbouring structures: Skull, scalp, orbits, paranasal sinuses and mastoid air cells.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review the full series from the skull base to the vertex and use brain and bone windows where available."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_47",
+              "group_title": "B. Presenting a normal CT head",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_11.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_43.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_44.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What normal findings should you identify?**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Normal grey–white matter differentiation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No focal acute intracranial haemorrhage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No obvious acute territorial infarction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No mass effect or midline shift.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventricles and CSF spaces appropriate for age.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Basal cisterns are patent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No hydrocephalus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No obvious acute skull fracture in the imaged region.",
+                      "level": 0
+                    },
+                    {
+                      "text": "No significant extra-axial collection.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full normal OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_45.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I have been presented with a CT scan of the [anatomical region] of a [patient’s age]-year-old [male/female], performed for the clinical indication of [indication].",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1. Examination and technique**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The examination is a [non-contrast/contrast-enhanced] CT of the [region]. Images were acquired in the axial plane, with multiplanar coronal and sagittal reconstructions where available. The scan covers [anatomical extent]. The images are of satisfactory diagnostic quality, with no significant motion or other artefact limiting assessment. The contrast phase, where applicable, is [unenhanced/arterial/venous/delayed/other documented phase]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Image coverage and technical limitations**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The relevant anatomical structures are included within the field of view. The image quality and available reconstruction thickness permit assessment of the structures relevant to the clinical question. Any limitation related to motion, incomplete coverage, metal artefact, body habitus or contrast timing is stated."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Systematic anatomical review**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised anatomical structures are assessed systematically from superior to inferior, or by organ system as appropriate to the scan region."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The relevant organs and soft tissues demonstrate normal size, position, configuration and attenuation where applicable. There is no focal lesion, collection, abnormal fluid accumulation, significant inflammatory change or other focal abnormality identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised bones demonstrate preserved alignment and no acute fracture or destructive osseous lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The major vascular structures are assessed for their calibre, course and opacification where appropriate to the examination and contrast phase. No significant abnormality is identified within the limits of the study."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised lymph nodes are not pathologically enlarged by size criteria, and there is no significant lymphadenopathy identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "There is no unexpected free fluid, free gas, collection or other significant abnormality within the scanned region."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Additional findings**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The visualised adjacent anatomical structures and included portions of the other organs demonstrate no significant abnormality. No relevant incidental finding is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5. Impression**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal CT appearance of the [anatomical region] on the supplied examination. No acute abnormality identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**6. Limitations**"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The examination is interpreted within the limits of the acquisition technique, contrast protocol and anatomical coverage. A normal CT does not exclude all disease, particularly subtle mucosal, early ischaemic, small soft-tissue or other abnormalities that may require a different protocol or imaging modality.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B.** “I have been presented with a CT scan of the brain, performed for [clinical indication]."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1. Technique:** This is a [non-contrast/contrast-enhanced] CT brain examination. The images are of satisfactory diagnostic quality, with adequate coverage of the intracranial structures and no significant motion artefact."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Brain parenchyma:** The cerebral hemispheres demonstrate preserved grey-white matter differentiation. There is no focal intracranial haemorrhage, large established territorial infarction, focal mass lesion or significant surrounding oedema identified. The basal ganglia, thalami, internal capsules, brainstem and cerebellum show no obvious acute abnormality within the limits of CT."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Mass effect and midline structures:** There is no significant mass effect or midline shift. The basal cisterns are patent, with no evidence of significant cisternal effacement or downward herniation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Ventricular system and cerebrospinal fluid spaces:** The ventricles are normal in size and configuration. There is no hydrocephalus. The sulci and extra-axial cerebrospinal fluid spaces are within expected limits for the patient’s age. No extra-axial collection is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5. Extra-axial spaces and haemorrhage:** There is no acute intracranial haemorrhage identified, including within the visualised subarachnoid spaces, and no subdural or extradural collection is seen."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**6. Posterior fossa:** The visualised brainstem and cerebellum show no obvious acute abnormality, acknowledging the limitations imposed by CT artefact in the posterior fossa."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**7. Calvarium and skull base:** The visualised calvarium and skull base show no acute fracture or destructive osseous lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**8. Orbits and paranasal sinuses:** The visualised orbital contents are unremarkable. The included paranasal sinuses and mastoid air cells are adequately aerated, without significant opacification."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**9. Additional structures:** The visualised scalp soft tissues and other included extracranial structures show no significant abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Impression:** No acute intracranial abnormality identified on this CT brain examination.”"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_48",
+              "group_title": "C. Acute intracranial haemorrhage",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_14.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_46.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Abnormal findings to identify**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Hyperdense blood on non-contrast CT, depending on the age and characteristics of the haemorrhage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Exact compartment and anatomical location.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size or extent.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surrounding oedema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ventricular compression or intraventricular extension.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Midline shift, cisternal effacement or herniation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated skull fracture in trauma.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“This is a non-contrast CT head demonstrating an acute [epidural/subdural/subarachnoid/intraparenchymal] haemorrhage involving [precise location]. The haemorrhage appears [describe its shape and extent] and is associated with [surrounding oedema, ventricular compression, midline shift or other findings, if present].",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings are consistent with acute intracranial haemorrhage. I would immediately assess the patient's neurological status and haemodynamic stability and arrange urgent senior and neurosurgical assessment as indicated.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Distinguishing the major haemorrhage patterns**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Type",
+                    "Typical CT appearance",
+                    "Important feature"
+                  ],
+                  "rows": [
+                    [
+                      "Epidural",
+                      "Biconvex or lentiform extra-axial collection",
+                      "Usually limited by sutures"
+                    ],
+                    [
+                      "Subdural",
+                      "Crescentic extra-axial collection",
+                      "Can cross sutures but is limited by dural reflections"
+                    ],
+                    [
+                      "Subarachnoid",
+                      "Blood within sulci, fissures or basal cisterns",
+                      "May follow trauma or aneurysmal rupture"
+                    ],
+                    [
+                      "Intraparenchymal",
+                      "Blood within brain tissue",
+                      "Assess location, volume, oedema and mass effect"
+                    ],
+                    [
+                      "Intraventricular",
+                      "Blood within the ventricular system",
+                      "Assess for obstructive hydrocephalus"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Emergency findings: Significant midline shift, compressed basal cisterns, obstructive hydrocephalus or herniation require urgent escalation."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_49",
+              "group_title": "D. Ischaemic stroke on CT head",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_18.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_47.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_48.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Loss of grey–white differentiation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Loss of the insular ribbon.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obscuration of the lentiform nucleus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal sulcal effacement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypoattenuation in a vascular territory.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A hyperdense artery suggesting thrombus.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Swelling and mass effect in established infarction.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The non-contrast CT head demonstrates [subtle loss of grey–white differentiation / an area of hypoattenuation] involving the [specified vascular territory], with [associated sulcal effacement or other findings]. The appearance is concerning for acute or evolving ischaemic infarction.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "I would urgently activate the appropriate stroke pathway. Early ischaemic stroke may be subtle or invisible on non-contrast CT, and CTA, perfusion imaging or MRI may be required depending on the clinical presentation and local protocol.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not describe a normal early CT as excluding ischaemic stroke."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_50",
+              "group_title": "E. Hydrocephalus",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_49.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "cambridge.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Abnormal findings**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Enlargement of the ventricular system.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible enlargement of the temporal horns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periventricular hypoattenuation due to transependymal CSF flow in some cases.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Compression or displacement of adjacent structures.",
+                      "level": 0
+                    },
+                    {
+                      "text": "An obstructing lesion or other underlying cause, where visible.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT head demonstrates dilatation of the ventricular system, involving [specified ventricles], with [periventricular hypoattenuation or other associated findings, if present]. The appearance is consistent with hydrocephalus. I would assess for an obstructing lesion, mass effect and signs of raised intracranial pressure. Urgent clinical and neurosurgical assessment is indicated where acute or symptomatic hydrocephalus is suspected.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_51",
+              "group_title": "F. Intracranial mass",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**What to describe**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Location and dimensions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Intra-axial or extra-axial position, if discernible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Attenuation and enhancement, if contrast was used.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Surrounding oedema.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Calcification or haemorrhage.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mass effect, midline shift and ventricular obstruction.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a [specified size] lesion in the [anatomical location], demonstrating [attenuation and enhancement characteristics]. It is associated with [surrounding oedema, mass effect or other findings]. The appearance raises concern for an intracranial mass lesion. Further characterisation with MRI brain, with contrast where appropriate, and specialist assessment are indicated.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not name a specific tumour unless the imaging pattern and clinical context justify it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_17",
+          "subsection_title": "16. CT chest: presenting normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_52",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT chest provides detailed assessment of lung parenchyma, pleura, mediastinum, lymph nodes, heart, vessels and chest wall."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_53",
+              "group_title": "A. Systematic review",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Review the scan using this sequence:",
+                  "items": [
+                    {
+                      "text": "Lungs: Consolidation, nodules, masses, cavitation, emphysema and interstitial abnormalities.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Pleura: Effusion, pneumothorax, thickening and collections.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Mediastinum and hila: Lymphadenopathy, masses and structural abnormalities.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Heart and great vessels: Cardiac structures, aorta and pulmonary arteries as appropriate to the protocol.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Chest wall and bones: Ribs, sternum, spine and soft tissues.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Upper abdomen: Visible liver, adrenals and other included structures.",
+                      "level": 0,
+                      "label": "6."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review both lung and mediastinal windows where available."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_54",
+              "group_title": "B. Presenting a normal CT chest",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_21.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_50.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_51.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full normal OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“This is a CT scan of the chest performed [with/without] intravenous contrast. The study is technically adequate.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Both lungs are adequately expanded, with no focal consolidation, suspicious pulmonary mass or significant interstitial abnormality identified. There is no pleural effusion or pneumothorax. The mediastinum and hila demonstrate no significant lymphadenopathy or mass. The heart and great vessels show no obvious acute abnormality within the limitations of the examination. The visualised chest wall and osseous structures show no obvious acute abnormality."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Overall, there is no significant acute thoracic abnormality identified on this examination.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Only report the heart and vessels as adequately assessed for the clinical question and protocol. For example, a routine CT chest is not equivalent to CT angiography for excluding pulmonary embolism or aortic dissection."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_55",
+              "group_title": "C. Pulmonary embolism on CT pulmonary angiography",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_52.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "casereports.bmj.com"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Intraluminal filling defect in a pulmonary artery.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Main, lobar, segmental or more distal vessel involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extent and distribution of emboli.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Right ventricular enlargement or other signs of right-heart strain.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pulmonary infarction, pleural effusion or other associated findings.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“This is a CT pulmonary angiogram. There is an intraluminal contrast-filling defect involving the [specified pulmonary artery or arteries], consistent with pulmonary embolism. The extent of embolic disease is [describe the demonstrated distribution]. I would assess for right-heart strain and associated pulmonary abnormalities.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The patient requires urgent clinical assessment, with management guided by haemodynamic status, right ventricular function and the overall clinical risk.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A filling defect must be distinguished from contrast-mixing artefact and other mimics. If no embolus is seen, state that the study is negative only when it is technically adequate for the relevant vessels."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_56",
+              "group_title": "D. Aortic dissection",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_25.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "pmc.ncbi.nlm.nih.gov"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Intimal flap separating true and false lumina.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Extent of dissection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ascending versus descending aortic involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aortic dilatation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pericardial effusion or haemopericardium.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Signs of branch-vessel compromise or rupture.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT angiogram demonstrates an intimal flap within the aorta, separating the true and false lumina. The dissection involves the [ascending/descending] aorta and extends to [extent, if demonstrated]. I would assess for aortic rupture, pericardial involvement and branch-vessel malperfusion.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is a vascular emergency requiring immediate specialist assessment and management.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A dedicated CT angiography protocol is generally required when acute aortic syndrome is suspected."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_57",
+              "group_title": "E. Pneumonia and pulmonary consolidation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_53.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "epos.myesr.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to describe**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Lobe or segment involved.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal, multifocal or diffuse distribution.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consolidation, ground-glass opacity or both.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Air bronchograms.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cavitation or abscess formation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural effusion or other complications.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is focal air-space consolidation involving the [specified lobe], with [air bronchograms, surrounding ground-glass opacity or other demonstrated features]. There is [no/present] associated pleural effusion or cavitation. The appearance is consistent with pulmonary consolidation, with infection a likely cause in the appropriate clinical context.”",
+                  "style": "quote"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_58",
+              "group_title": "F. Lung mass or pulmonary nodule",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**What to describe**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Exact lobe and segment where possible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Size and number.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Solid, subsolid or ground-glass appearance.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Margins and any spiculation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cavitation or calcification.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymphadenopathy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pleural involvement or other suspicious lesions.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a [size] [solid/subsolid/ground-glass] lesion in the [lobe and location], with [describe the margins, density and other relevant features]. There is [presence or absence of] associated hilar or mediastinal lymphadenopathy and [other findings]. The lesion requires further assessment according to its imaging characteristics, previous imaging and the patient's clinical risk.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not diagnose malignancy from one feature alone. Management and follow-up depend on lesion size, morphology, risk factors and applicable guidelines."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_59",
+              "group_title": "G. Pleural effusion and pneumothorax on CT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Finding",
+                    "How to present it"
+                  ],
+                  "rows": [
+                    [
+                      "Pleural effusion",
+                      "“There is a [small/moderate/large] pleural effusion on the [side], with [associated collapse, pleural thickening or other findings].”"
+                    ],
+                    [
+                      "Pneumothorax",
+                      "“There is a [side]-sided pneumothorax with partial or complete collapse of the adjacent lung. I would assess its extent and any evidence of tension physiology.”"
+                    ],
+                    [
+                      "Empyema",
+                      "“There is a pleural collection demonstrating [relevant pleural enhancement or loculation], concerning for empyema in the appropriate clinical context.”"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Tension pneumothorax is primarily a clinical emergency. Do not delay urgent treatment in an unstable patient to obtain or complete a CT scan."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_18",
+          "subsection_title": "17. CT abdomen and pelvis: presenting normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_60",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT abdomen and pelvis is a major OSCE topic for acute abdominal pain, bowel obstruction, perforation, appendicitis, pancreatitis, trauma and urinary tract pathology."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_61",
+              "group_title": "A. Systematic review of CT abdomen and pelvis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Review:",
+                  "items": [
+                    {
+                      "text": "Liver, gallbladder and biliary ducts.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spleen.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pancreas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Adrenal glands.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Kidneys, ureters and bladder.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Stomach and bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mesentery and peritoneum.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Aorta and major abdominal vessels.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lymph nodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Pelvic organs.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bones and abdominal wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Visible lung bases.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Always consider the scan protocol: a non-contrast study, portal venous phase CT and CT angiogram answer different clinical questions."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_62",
+              "group_title": "B. Presenting a normal CT abdomen and pelvis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_30.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_54.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_55.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full normal OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“I have been presented with a CT scan of the abdomen and pelvis, performed for [clinical indication].",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**1. Technique:** The examination is a [non-contrast/contrast-enhanced] CT abdomen and pelvis, acquired from [documented superior coverage] to [documented inferior coverage], with multiplanar reconstructions where available. The contrast phase is [documented phase]. Image quality is satisfactory for interpretation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**2. Liver:** The liver is normal in size and contour, with homogeneous attenuation or enhancement as appropriate to the phase. No focal hepatic lesion or intrahepatic biliary dilatation is identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**3. Gallbladder and biliary tree:** The gallbladder is unremarkable, with no radiopaque gallstone or surrounding inflammatory change identified. The extrahepatic bile ducts are not dilated."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**4. Spleen:** The spleen is normal in size and demonstrates no focal lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**5. Pancreas:** The pancreas is unremarkable in size and contour, with no focal lesion, surrounding inflammatory change or pancreatic duct dilatation identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**6. Adrenal glands:** Both adrenal glands are unremarkable, without a focal adrenal mass."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**7. Kidneys and urinary tract:** Both kidneys are normal in size, position and enhancement where applicable. There is no hydronephrosis or obvious focal renal lesion. No urinary tract calculus is identified within the limitations of the protocol. The visualised ureters show no significant dilatation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**8. Urinary bladder:** The urinary bladder is [adequately distended/partially distended] and demonstrates no obvious focal wall abnormality or intraluminal calculus. Assessment of the wall is limited if the bladder is underdistended."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**9. Bowel:** The stomach and visualised small and large bowel demonstrate no significant dilatation or focal inflammatory change. There is no evidence of bowel obstruction or abnormal bowel wall thickening identified on this examination. The appendix is [visualised and unremarkable/not separately visualised], with no secondary signs of appendiceal inflammation where assessable."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**10. Peritoneal cavity and mesentery:** There is no free intraperitoneal gas, significant free fluid, drainable collection or focal mesenteric inflammatory change identified."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**11. Lymph nodes:** No pathologically enlarged abdominal, pelvic or retroperitoneal lymph nodes are identified by size criteria."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**12. Major vessels:** The abdominal aorta is normal in calibre, without aneurysmal dilatation. The major visualised vessels demonstrate no significant abnormality within the limits of the examination and contrast phase."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**13. Reproductive organs:** The visualised reproductive organs are unremarkable for the patient’s sex and age, within the limits of CT. In females, the uterus and adnexal regions are assessed as visualised; in males, the prostate and seminal vesicles are assessed as visualised."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**14. Abdominal wall and groins:** No significant abdominal wall defect, hernia or focal soft-tissue collection is identified within the scanned region."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**15. Bones:** The visualised spine, pelvic bones and hips show no acute fracture or destructive osseous lesion."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**16. Lung bases and other included structures:** The visualised lung bases show no focal consolidation or pleural effusion. No other significant abnormality is identified in the included structures."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Impression:** No acute abnormality identified on the CT abdomen and pelvis examination.”"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_63",
+              "group_title": "C. Acute appendicitis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_31.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "commons.wikimedia.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Enlarged, inflamed appendix.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wall thickening or enhancement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Periappendiceal fat stranding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Appendicolith, if present.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Local fluid, abscess or extraluminal gas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Evidence of perforation or other complications.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT abdomen and pelvis demonstrates an enlarged appendix with [wall thickening or enhancement, if present] and surrounding periappendiceal fat stranding. There is [no/present] associated appendicolith, collection or extraluminal gas.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings are consistent with acute appendicitis. I would assess for perforation and abscess formation and arrange prompt surgical assessment according to the clinical severity.”"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_64",
+              "group_title": "D. Small-bowel obstruction",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_56.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "pmc.ncbi.nlm.nih.gov"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Dilated proximal small bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A transition point between dilated and decompressed bowel.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Underlying cause, such as adhesions, hernia, mass or stricture.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Closed-loop obstruction.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reduced or absent bowel-wall enhancement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Mesenteric oedema, free fluid, pneumatosis or portal venous gas.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates dilated small-bowel loops proximal to a transition point at [location], with decompressed distal bowel. The likely cause is [if identifiable]. I would assess for a closed-loop configuration, reduced bowel-wall enhancement, mesenteric congestion, pneumatosis and other features of bowel ischaemia or perforation.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings are consistent with mechanical small-bowel obstruction. Urgent surgical assessment is indicated, particularly if there are features concerning for strangulation or ischaemia.”"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_65",
+              "group_title": "E. Large-bowel obstruction",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is dilatation of the colon proximal to a transition point at [location], with relative decompression distally. There is [a mass, stricture, volvulus or other suspected cause, if demonstrated]. I would assess the caecal diameter, bowel-wall enhancement, free fluid, pneumatosis and extraluminal gas for complications.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings are consistent with large-bowel obstruction. Urgent surgical assessment and management planning are required.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "If volvulus is suspected, identify its location and characteristic configuration, and assess for ischaemia or perforation."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_66",
+              "group_title": "F. Pneumoperitoneum and bowel perforation",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_57.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "learningradiology.com"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Extraluminal gas.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Free gas around the liver or anterior abdominal wall.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Focal bowel-wall discontinuity, if visible.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Localised inflammation or collection.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Free fluid.",
+                      "level": 0
+                    },
+                    {
+                      "text": "The suspected site and cause of perforation.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates free intraperitoneal gas, with [associated free fluid, focal inflammatory change or other findings]. The findings raise strong concern for hollow-viscus perforation in the appropriate clinical context. I would assess for the likely source and associated collections or other complications.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This requires urgent surgical assessment. In an unstable patient, resuscitation and necessary intervention must not be delayed for further imaging.”"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_67",
+              "group_title": "G. Acute pancreatitis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_33.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "wikidoc.org"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Pancreatic enlargement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripancreatic fat stranding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Peripancreatic fluid collections.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Areas of reduced enhancement suggesting necrosis on appropriate contrast-enhanced imaging.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vascular complications or other local complications.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates [pancreatic enlargement and/or peripancreatic inflammatory change], with [fluid collections or other associated findings, if present]. These features are compatible with acute pancreatitis in the appropriate clinical context. I would assess for pancreatic necrosis and local complications where the scan protocol and timing permit.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Early CT is not required in every patient with clinically established acute pancreatitis. Timing and clinical indication matter."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_68",
+              "group_title": "H. Renal calculi and hydronephrosis",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_58.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_59.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_60.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Calculus location and size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hydroureter or hydronephrosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Perinephric stranding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obstruction and its level.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Alternative causes of pain where visible.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates a [size] calculus within the [right/left kidney or ureter], at [location]. There is [no/present] associated hydroureter or hydronephrosis, with [other relevant findings]. The appearance is consistent with urinary tract calculi, with [presence or absence of] evidence of obstruction.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "An obstructed infected urinary system, especially with sepsis, requires urgent urological assessment."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_69",
+              "group_title": "I. Liver lesions and abdominal masses",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Describe:",
+                  "items": [
+                    {
+                      "text": "Organ and exact segment or region.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Number and size.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Attenuation before contrast, if available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Enhancement pattern and phase.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Margins and internal features.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vascular involvement, lymphadenopathy and other lesions.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Relevant background liver disease.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“There is a [size] focal lesion within segment [number, if identifiable] of the liver, demonstrating [attenuation and enhancement characteristics]. There are [associated features, if present]. The appearance requires characterisation in the context of the clinical history and background liver status. Further multiphasic imaging or MRI may be indicated.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not label an unspecified liver lesion as a haemangioma or hepatocellular carcinoma without appropriate supporting features and context."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_19",
+          "subsection_title": "18. CT spine and musculoskeletal system",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_70",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "CT is particularly useful for complex fractures, cortical bone injury and detailed assessment of spinal alignment. MRI is generally better for many spinal cord, ligament and soft-tissue injuries."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_71",
+              "group_title": "A. Presenting a normal CT spine",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "**What to assess**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Vertebral alignment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Vertebral body heights.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cortical integrity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior elements.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Facet alignment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spinal canal and visible bony fragments.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Paravertebral soft tissues.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full normal OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“This is a CT scan of the [cervical/thoracic/lumbar] spine. Vertebral alignment is maintained, and vertebral body heights are preserved. No acute fracture or traumatic malalignment is identified. The posterior elements and facet joints demonstrate no obvious acute abnormality. There is no significant bony narrowing of the spinal canal on this examination, and the visualised paravertebral soft tissues show no obvious acute abnormality.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Overall, there is no acute osseous abnormality identified on this CT scan.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A normal CT spine does not exclude every ligamentous or spinal cord injury."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_72",
+              "group_title": "B. Presenting a vertebral fracture",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_61.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_62.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_63.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**What to look for**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Vertebral body height loss.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Cortical disruption.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Wedge, compression or burst pattern.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Retropulsion of fragments into the spinal canal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Posterior element involvement.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Malalignment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Associated fractures.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Full OSCE presentation**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates an acute fracture of the [vertebral level], characterised by [compression, wedge deformity, burst pattern or other morphology]. There is [degree of height loss, if measurable] and [presence or absence of posterior wall involvement, retropulsion or canal compromise]. I would assess the posterior elements, alignment and adjacent levels for additional injury.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings are consistent with a [specific fracture description]. I would assess the patient's neurological status and arrange urgent spinal specialist review where indicated.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not infer neurological integrity from a normal-looking spinal canal. That requires clinical assessment."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_73",
+              "group_title": "C. Presenting a pelvic or acetabular fracture",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Describe the exact bone and fracture pattern, displacement, joint congruity, articular surface involvement and any associated pelvic injury."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "“The CT pelvis demonstrates a fracture involving the [specified part of the pelvis or acetabulum], with [displacement and articular involvement, if present]. I would assess the hip joint for congruity and review the remainder of the pelvic ring for additional fractures. Associated soft-tissue, vascular and visceral injuries should be considered according to the mechanism of trauma.",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The findings require appropriate trauma and orthopaedic assessment.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_20",
+          "subsection_title": "18. CT trauma: the most important emergency presentations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_74",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "In trauma OSCEs, your priority is to identify immediately life-threatening injuries, not merely list anatomical abnormalities."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_34.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Splenic injury"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe laceration, haematoma, devascularisation, active contrast extravasation and associated haemoperitoneum."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a splenic laceration with associated perisplenic haematoma and [other demonstrated findings], consistent with traumatic splenic injury.”"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_64.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Liver injury"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Describe laceration, haematoma, active bleeding and free fluid."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is a hepatic laceration involving [segment, if identifiable], with [associated findings].”"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_65.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Active haemorrhage"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Look for active contrast extravasation, vascular injury and expanding haematoma."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is active contrast extravasation at [location], concerning for ongoing haemorrhage. This requires immediate trauma-team escalation.”"
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/medical/ct_scan_interpretation_66.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Traumatic brain injury"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Identify fractures, haemorrhage, contusions, oedema, mass effect and herniation."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Presentation: “There is [specified traumatic lesion] with [associated complications]. The findings require urgent neurological and trauma assessment.”"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "In haemodynamically unstable trauma, resuscitation and indicated intervention take priority over CT when transporting the patient to the scanner would be unsafe."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_21",
+          "subsection_title": "19. Normal versus abnormal CT reporting: quick reference",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_75",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Structure",
+                    "Normal finding",
+                    "Example abnormal finding"
+                  ],
+                  "rows": [
+                    [
+                      "Brain",
+                      "Preserved grey–white differentiation",
+                      "Loss of differentiation in a vascular territory"
+                    ],
+                    [
+                      "Intracranial spaces",
+                      "No significant mass effect",
+                      "Haemorrhage with midline shift"
+                    ],
+                    [
+                      "Ventricles",
+                      "No hydrocephalus",
+                      "Ventricular enlargement with transependymal CSF flow"
+                    ],
+                    [
+                      "Lungs",
+                      "No focal consolidation",
+                      "Lobar consolidation with air bronchograms"
+                    ],
+                    [
+                      "Pulmonary arteries on CTPA",
+                      "No filling defect in adequately assessed vessels",
+                      "Intraluminal filling defect consistent with embolus"
+                    ],
+                    [
+                      "Aorta on CTA",
+                      "No acute dissection identified",
+                      "Intimal flap with true and false lumina"
+                    ],
+                    [
+                      "Bowel",
+                      "No abnormal dilatation or transition point",
+                      "Dilated proximal bowel with distal decompression"
+                    ],
+                    [
+                      "Appendix",
+                      "No convincing inflammatory abnormality",
+                      "Enlarged inflamed appendix with fat stranding"
+                    ],
+                    [
+                      "Peritoneum",
+                      "No free gas or significant free fluid",
+                      "Extraluminal gas suspicious for perforation"
+                    ],
+                    [
+                      "Kidneys",
+                      "No hydronephrosis",
+                      "Dilated collecting system proximal to obstruction"
+                    ],
+                    [
+                      "Vertebrae",
+                      "Maintained alignment and height",
+                      "Fracture with height loss or retropulsion"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A normal report should always be limited to what the actual scan and protocol can establish."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_22",
+          "subsection_title": "20. How to describe CT abnormalities precisely",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_76",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "The following terms help you move from a vague presentation to a professional one."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Feature",
+                    "What to state"
+                  ],
+                  "rows": [
+                    [
+                      "Location",
+                      "Organ, side, lobe, segment, anatomical compartment or vertebral level"
+                    ],
+                    [
+                      "Size",
+                      "Maximum dimensions in millimetres or centimetres where relevant"
+                    ],
+                    [
+                      "Attenuation",
+                      "Hyperattenuating, hypoattenuating, mixed or similar to surrounding tissue"
+                    ],
+                    [
+                      "Shape",
+                      "Round, oval, irregular, crescentic, lentiform or another appropriate descriptor"
+                    ],
+                    [
+                      "Margins",
+                      "Well-defined, ill-defined, smooth, lobulated or irregular"
+                    ],
+                    [
+                      "Enhancement",
+                      "Homogeneous, heterogeneous, peripheral, absent or another observed pattern"
+                    ],
+                    [
+                      "Distribution",
+                      "Focal, multifocal, diffuse, unilateral or bilateral"
+                    ],
+                    [
+                      "Extent",
+                      "Structures or anatomical regions involved"
+                    ],
+                    [
+                      "Associated findings",
+                      "Oedema, fat stranding, free fluid, lymphadenopathy or other abnormalities"
+                    ],
+                    [
+                      "Complications",
+                      "Mass effect, obstruction, ischaemia, haemorrhage, perforation or vascular compromise"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Not every lesion requires all ten descriptors. For a suspected acute haemorrhage, location, extent and mass effect may be the priorities. For a liver lesion, enhancement and morphology may be more important."
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_77",
+              "group_title": "Phrases for uncertain findings",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Use these when the scan is suggestive but not definitive:",
+                  "items": [
+                    {
+                      "text": "“The findings are suspicious for …”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“The appearance raises the possibility of …”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“This is concerning for … in the appropriate clinical context.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“The finding is indeterminate on this examination.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“Further characterisation with MRI or a dedicated CT protocol may be appropriate.”",
+                      "level": 0
+                    },
+                    {
+                      "text": "“The study is limited by motion artefact, and a subtle abnormality cannot be excluded.”",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Avoid saying “CT is normal” when the scan is technically limited or when the clinical question requires a protocol that was not performed."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_23",
+          "subsection_title": "21. CT reporting templates you can memorise",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_78",
+              "group_title": "Template A — Normal CT",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“This is a CT scan of the [region], performed [with/without] contrast. The examination is technically adequate for the intended assessment. The relevant anatomical structures demonstrate no significant acute abnormality. There is no evidence of [the key condition being investigated]. Overall, no significant acute abnormality is identified within the limitations of this examination.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Copy normal CT template"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_79",
+              "group_title": "Template B — Focal lesion",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“There is a [size] lesion involving [location], demonstrating [attenuation, morphology and enhancement characteristics]. Associated findings include [relevant features]. The appearance is most consistent with [diagnosis], although [alternative] remains a consideration. Further assessment with [investigation] may be indicated.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Copy focal lesion template"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_80",
+              "group_title": "Template C — Acute emergency",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "“The CT demonstrates [specific abnormality] involving [location], with [important associated findings or complications]. The findings are concerning for [diagnosis]. This requires urgent clinical assessment and escalation to the appropriate specialist team. Further investigation or intervention should be guided by the patient's clinical stability and the relevant emergency pathway.”",
+                  "style": "quote"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Copy emergency template"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "ct_scan_interpretation_subsection_24",
+          "subsection_title": "22. Common CT OSCE viva questions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "ct_scan_interpretation_group_81",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. Why must you identify whether a CT is contrast-enhanced?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. What is the difference between hyperattenuation and enhancement?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. What are the most important features to assess in an intracranial haemorrhage?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "4. Can a normal non-contrast CT head exclude acute ischaemic stroke?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "5. What is the key feature of mechanical bowel obstruction?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "6. What CT finding supports acute appendicitis?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "7. What is active contrast extravasation?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "8. What is the difference between CT chest and CT pulmonary angiography?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "9. What would make you suspect bowel ischaemia on CT?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "10. When would MRI be more useful than CT for spinal pathology?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "11. What should you do if an important emergency finding is identified?"
+                }
+              ]
+            },
+            {
+              "group_id": "ct_scan_interpretation_group_82",
+              "group_title": "The most important lesson",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "A good CT presentation is not a long list of anatomical structures. It is a focused interpretation that demonstrates that you can:"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Recognise the important abnormality.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Describe it precisely.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Identify dangerous complications.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Give a justified impression.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Explain what needs to happen next.",
+                      "level": 0,
+                      "label": "5."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For OSCE preparation, practise the normal and abnormal presentations aloud until you can deliver each in approximately one to two minutes, prioritising the findings that matter most to the clinical question."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

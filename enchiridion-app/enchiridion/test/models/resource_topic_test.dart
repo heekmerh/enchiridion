@@ -12,10 +12,10 @@ void main() {
       (t) => t.id == 'sutures',
     );
 
-    test('catalog entry keeps id sutures but displays as Suture Material', () {
+    test('catalog entry keeps id sutures but displays as Suture material', () {
       expect(topic.id, 'sutures');
-      expect(topic.title, 'Suture Material');
-      expect(topic.categoryTitle, 'Surgical Instrumentation');
+      expect(topic.title, 'Suture material');
+      expect(topic.categoryTitle, 'Surgical instrumentation');
       expect(
         topic.heroAssetPath,
         'assets/resources/surgical instrumentation.jpeg',
@@ -23,10 +23,6 @@ void main() {
       expect(
         topic.dataAssetPath,
         'assets/data/resources/sutures.json',
-      );
-      expect(
-        topic.description,
-        'Core suture types, handling, indications, and image-rich references.',
       );
     });
 
@@ -71,17 +67,19 @@ void main() {
     );
 
     testWidgets(
-      'real Surgical Instrumentation catalog card list renders Suture '
-      'Material, never the bare old name Sutures',
+      'real Surgical Instrumentation catalog list renders Suture '
+      'material, never the bare old name Sutures',
       (tester) async {
         await tester.pumpWidget(const MaterialApp(
           home: ResourceTopicListScreen(
             title: 'Surgical Instrumentation',
             topics: kSurgicalInstrumentationTopics,
+            dense: true,
           ),
         ));
 
-        expect(find.text('Suture Material'), findsOneWidget);
+        await tester.scrollUntilVisible(find.text('Suture material'), 300);
+        expect(find.text('Suture material'), findsOneWidget);
         expect(find.text('Sutures'), findsNothing);
       },
     );

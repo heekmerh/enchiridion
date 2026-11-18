@@ -41,9 +41,9 @@ class TopicSpec:
     # Opts this topic into detecting headings by Word run formatting (bold +
     # an explicit run size at or above this many points) in addition to the
     # three style/text-shape rules in is_heading(). Left at the default
-    # (None, i.e. opted out) for sutures and abdominal_examination: the same
-    # bold-and-large-run pattern matches ordinary content lines in those two
-    # sources (see the counts in 260919-kix's plan research findings), so
+    # (None, i.e. opted out) for sutures: the same
+    # bold-and-large-run pattern matches ordinary content lines in that
+    # source (see the counts in 260919-kix's plan research findings), so
     # enabling it there would restructure already-shipped topics.
     bold_heading_min_pt: float | None = None
 
@@ -65,12 +65,6 @@ TOPICS = [
         source_path=CONTENT_DIR / "IV_Cannula_instrumentation.docx",
         description="Peripheral venous cannula anatomy, uses, precautions, and insertion flow.",
         bold_heading_min_pt=13.5,
-    ),
-    TopicSpec(
-        slug="abdominal_examination",
-        title="Abdominal Examination",
-        source_path=CONTENT_DIR / "ABDOMINAL_EXAMINATION_osce.docx",
-        description="A structured OSCE abdominal examination guide with image support.",
     ),
 ]
 

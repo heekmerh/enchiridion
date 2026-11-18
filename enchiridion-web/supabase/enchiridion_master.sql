@@ -1308,6 +1308,20 @@ create table if not exists public.user_book_history (
   primary key (user_id, book_id)
 );
 
+create table if not exists public.notebook_entries (
+  user_id    uuid not null references auth.users(id) on delete cascade,
+  id         text not null,
+  kind       text not null default 'text',
+  content    text not null default '',
+  position   double precision not null default 0,
+  created_at timestamptz not null default timezone('utc', now()),
+  updated_at timestamptz not null default timezone('utc', now()),
+  primary key (user_id, id)
+);
+
+create index if not exists idx_notebook_entries_user_position
+  on public.notebook_entries(user_id, position);
+
 create table if not exists public.synced_deletions (
   user_id    uuid not null references auth.users(id) on delete cascade,
   entity     text not null,
@@ -1329,6 +1343,7 @@ begin
     ['user_answers',      'Users manage own answers'],
     ['user_settings',     'Users manage own settings'],
     ['user_book_history', 'Users manage own book history'],
+    ['notebook_entries',  'Users manage own notebook entries'],
     ['synced_deletions',  'Users manage own deletions']
   ]
   loop
@@ -1382,6 +1397,28 @@ create policy "Users can update their own avatar"
 create policy "Users can delete their own avatar"
   on storage.objects for delete
   using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+insert into storage.buckets (id, name, public)
+values ('notebook-images', 'notebook-images', false)
+on conflict (id) do update set public = false;
+
+drop policy if exists "Users can read their own notebook images"   on storage.objects;
+drop policy if exists "Users can upload their own notebook images" on storage.objects;
+drop policy if exists "Users can update their own notebook images" on storage.objects;
+drop policy if exists "Users can delete their own notebook images" on storage.objects;
+
+create policy "Users can read their own notebook images"
+  on storage.objects for select
+  using (bucket_id = 'notebook-images' and (storage.foldername(name))[1] = auth.uid()::text);
+create policy "Users can upload their own notebook images"
+  on storage.objects for insert
+  with check (bucket_id = 'notebook-images' and (storage.foldername(name))[1] = auth.uid()::text);
+create policy "Users can update their own notebook images"
+  on storage.objects for update
+  using (bucket_id = 'notebook-images' and (storage.foldername(name))[1] = auth.uid()::text);
+create policy "Users can delete their own notebook images"
+  on storage.objects for delete
+  using (bucket_id = 'notebook-images' and (storage.foldername(name))[1] = auth.uid()::text);
 
 commit;
 

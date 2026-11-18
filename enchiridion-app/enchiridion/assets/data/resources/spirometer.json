@@ -1,0 +1,1021 @@
+{
+  "chapter_metadata": {
+    "chapter_id": "spirometer",
+    "chapter_title": "Spirometer",
+    "chapter_icon": null,
+    "description": null,
+    "position_in_book": 1,
+    "tags": [
+      "Spirometer"
+    ],
+    "chapter_color": null
+  },
+  "sections": [
+    {
+      "section_id": "spirometer_section_1",
+      "section_title": "Spirometer",
+      "section_order": 1,
+      "subsections": [
+        {
+          "subsection_id": "spirometer_subsection_1",
+          "subsection_title": "Overview",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_1",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_01.webp",
+                  "caption": null
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_02.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A spirometer is a diagnostic instrument used to measure the volume of air a person inhales or exhales and, in standard diagnostic spirometry, how quickly air can be expelled during forced expiration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "It is commonly used to investigate obstructive and restrictive patterns of lung function. In an OSCE, you should be able to identify the instrument, explain its components, demonstrate the forced expiratory manoeuvre, interpret key parameters and recognise test limitations."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Important distinction: Spirometry measures airflow and exhaled or inhaled volumes. It does not directly measure residual volume or total lung capacity; these require additional pulmonary function tests."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_2",
+          "subsection_title": "1. Identification",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_2",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Name: Spirometer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Classification: Respiratory diagnostic equipment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Function: Measures respiratory volumes and airflow during breathing manoeuvres.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Common clinical use: Spirometry with forced expiratory manoeuvres.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Distinguishing features: A measurement unit connected to a mouthpiece, often with a disposable filter, and software or a display that produces numerical results and flow–volume or volume–time curves.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Do not confuse a spirometer with a peak flow meter, which measures peak expiratory flow rather than the full set of spirometric parameters."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_3",
+          "subsection_title": "2. Uses and indications",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_3",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Indication",
+                    "Purpose"
+                  ],
+                  "rows": [
+                    [
+                      "Suspected asthma",
+                      "Assess airflow obstruction and variability alongside clinical findings"
+                    ],
+                    [
+                      "Suspected COPD",
+                      "Demonstrate persistent airflow obstruction"
+                    ],
+                    [
+                      "Unexplained dyspnoea",
+                      "Investigate ventilatory impairment"
+                    ],
+                    [
+                      "Chronic cough or wheeze",
+                      "Assess lung function"
+                    ],
+                    [
+                      "Monitoring respiratory disease",
+                      "Compare results over time"
+                    ],
+                    [
+                      "Preoperative assessment",
+                      "Evaluate lung function when clinically indicated"
+                    ],
+                    [
+                      "Occupational respiratory assessment",
+                      "Detect or monitor changes related to workplace exposures"
+                    ],
+                    [
+                      "Bronchodilator testing",
+                      "Assess changes in spirometric values after a bronchodilator"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Spirometry can suggest a restrictive pattern when FVC is reduced, but restriction is confirmed by a reduced total lung capacity (TLC), not by spirometry alone."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_4",
+          "subsection_title": "3. Parts and functions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_4",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_03.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Main unit and display"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Processes the measured airflow or volume and displays results such as FEV₁, FVC and the FEV₁/FVC ratio."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_04.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Mouthpiece and filter"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Provide the interface through which the patient breathes; a suitable filter helps reduce contamination risk."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_05.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Flow sensor"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Detects airflow so the system can calculate flow and volume."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_06.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Nose clip"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Prevents air from escaping through the nose during the manoeuvre when required by the protocol."
+                },
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_07.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Display and analysis software"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Produces the flow–volume loop, volume–time curve and calculated spirometric indices."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Other components may include a calibration syringe, tubing, a stand and a computer or printer."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_5",
+          "subsection_title": "4. Advantages",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_5",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Non-invasive and generally quick to perform.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Provides objective measurements of airflow and lung volumes that can be exhaled.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Helps identify obstructive ventilatory patterns.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Useful for monitoring disease progression and treatment response.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Allows comparison with predicted values based on relevant reference equations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Can be repeated to assess bronchodilator response or follow-up lung function.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_6",
+          "subsection_title": "5. Disadvantages and limitations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_6",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Requires patient cooperation, understanding and adequate effort.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Poor technique can produce misleading results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Does not directly measure residual volume or total lung capacity.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A normal result does not exclude all respiratory disease, including asthma between symptomatic episodes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Results can be affected by age, height, posture, fatigue, pain and technical factors.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpretation depends on appropriate reference equations and quality control.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_7",
+          "subsection_title": "6. Preparation and precautions",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_7",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Before performing spirometry:",
+                  "items": [
+                    {
+                      "text": "Confirm the patient's identity, indication and relevant medical history.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "Explain the procedure and demonstrate the manoeuvre.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "Record age, height and other demographic information required by the equipment's reference equations.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "Check the spirometer's calibration or verification status according to local policy.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "Use a clean, appropriate mouthpiece and filter.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "Position the patient sitting upright, preferably with feet supported.",
+                      "level": 0,
+                      "label": "6."
+                    },
+                    {
+                      "text": "Apply a nose clip if required and ensure a good seal around the mouthpiece.",
+                      "level": 0,
+                      "label": "7."
+                    },
+                    {
+                      "text": "Ask about recent surgery, acute illness, chest pain, significant haemoptysis, cardiovascular instability or other conditions that may make forced expiration unsafe.",
+                      "level": 0,
+                      "label": "8."
+                    },
+                    {
+                      "text": "Follow local guidance on bronchodilator withholding when a reversibility test is planned; do not independently stop prescribed medication.",
+                      "level": 0,
+                      "label": "9."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Precaution: Forced expiration can increase intrathoracic and intra-abdominal pressure. If the patient has a condition that may make forceful manoeuvres hazardous, obtain appropriate clinical review before testing."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_8",
+          "subsection_title": "7. Step-by-step practical use",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_8",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Step 1 — Explain and prepare"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Explain that the patient will take a full breath in and then blow out as hard and as long as possible. Confirm that the patient understands the instructions."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 2 — Position the patient"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Seat the patient upright with feet supported. Fit the nose clip if indicated and ensure the mouthpiece can be held securely between the lips."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 3 — Take a maximal inspiration"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Ask the patient to breathe in fully until the lungs are filled as much as possible."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 4 — Perform forced expiration"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Instruct the patient to seal their lips around the mouthpiece and blow out as hard and fast as possible, continuing until the manoeuvre is complete. Encourage them clearly without obstructing airflow."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 5 — Assess the trace"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Review the flow–volume loop and volume–time curve for technical quality, coughing, leaks, early termination or other errors."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Step 6 — Repeat and document"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Obtain repeat acceptable manoeuvres according to the applicable standard. Record the best valid results, quality assessment and relevant clinical details."
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_9",
+              "group_title": "What should you assess during the manoeuvre?",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Was the initial inspiration maximal?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was expiration started forcefully, without hesitation?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was there coughing, particularly in the first second?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was there a leak around the mouthpiece?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Was expiration continued adequately?",
+                      "level": 0
+                    },
+                    {
+                      "text": "Were the results sufficiently repeatable?",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A technically poor test should not be interpreted as if it were a reliable measurement of lung function."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_9",
+          "subsection_title": "8. Contraindications and complications",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_10",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Spirometry is generally safe, but forced manoeuvres may not be appropriate in every patient."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Concern",
+                    "OSCE consideration"
+                  ],
+                  "rows": [
+                    [
+                      "Recent myocardial infarction or unstable cardiovascular disease",
+                      "Obtain clinical review before testing"
+                    ],
+                    [
+                      "Recent thoracic, abdominal, eye or brain surgery",
+                      "Follow procedure-specific advice and local guidance"
+                    ],
+                    [
+                      "Pneumothorax",
+                      "Avoid forced manoeuvres until clinically assessed and cleared"
+                    ],
+                    [
+                      "Active significant haemoptysis",
+                      "Assess the cause and safety before proceeding"
+                    ],
+                    [
+                      "Acute severe respiratory distress",
+                      "Stabilise the patient; routine spirometry should not delay emergency treatment"
+                    ],
+                    [
+                      "Syncope or severe dizziness during testing",
+                      "Stop the manoeuvre and assess the patient"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Possible complications include transient dizziness, coughing, breathlessness, fatigue or, rarely, syncope. Follow appropriate infection-control procedures because the patient exhales directly into the equipment."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_10",
+          "subsection_title": "9. Normal and abnormal findings",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_11",
+              "group_title": "Key spirometric parameters",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "table",
+                  "columns": [
+                    "Parameter",
+                    "Meaning"
+                  ],
+                  "rows": [
+                    [
+                      "FVC — Forced vital capacity",
+                      "Total volume forcibly exhaled after a maximal inspiration"
+                    ],
+                    [
+                      "FEV₁ — Forced expiratory volume in one second",
+                      "Volume exhaled during the first second of forced expiration"
+                    ],
+                    [
+                      "FEV₁/FVC ratio",
+                      "Proportion of the forced vital capacity exhaled in the first second"
+                    ],
+                    [
+                      "PEF — Peak expiratory flow",
+                      "Highest airflow reached during forced expiration"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_12",
+              "group_title": "Obstructive pattern",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_08.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FEV₁ is reduced disproportionately to FVC, and the FEV₁/FVC ratio is reduced. A ratio below the lower limit of normal supports airflow obstruction. The fixed 0.70 ratio is used in some COPD diagnostic frameworks but can misclassify some younger or older adults."
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_13",
+              "group_title": "Possible restrictive pattern",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "image",
+                  "assetPath": "assets/resources/content/instrumentation/spirometer_09.webp",
+                  "caption": null
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FVC is reduced, while the FEV₁/FVC ratio may be normal or increased. This pattern suggests possible restriction, but total lung capacity must be measured to confirm a restrictive ventilatory defect."
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_14",
+              "group_title": "Interpretation principles",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use the lower limit of normal (often the fifth percentile, corresponding to a z-score below approximately −1.645) when appropriate reference equations are available.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Consider test quality before interpreting abnormal values.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A reduced FEV₁/FVC ratio suggests obstruction, but the diagnosis requires clinical context.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A reduced FVC with a preserved ratio may reflect restriction, air trapping or an incomplete manoeuvre.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Bronchodilator response should be assessed using the relevant guideline and laboratory protocol.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_11",
+          "subsection_title": "10. Paediatric considerations",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_15",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Use age-appropriate instructions and demonstrate the manoeuvre.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Encourage the child in a calm, supportive manner.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Ensure correct mouthpiece size and a good seal.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Spirometry is often feasible in cooperative school-aged children, but younger children may require specialised equipment or alternative tests.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Interpret results using appropriate paediatric reference equations.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid interpreting an inconsistent or technically poor effort as definitive evidence of lung disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Do not delay urgent treatment in a child with acute respiratory distress to obtain spirometry.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_12",
+          "subsection_title": "11. Mnemonics and memory aids",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_16",
+              "group_title": "Spirometry parameters: F-F-R-P",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "F — FEV₁: forced volume in the first second.",
+                      "level": 0
+                    },
+                    {
+                      "text": "F — FVC: total forced exhaled volume.",
+                      "level": 0
+                    },
+                    {
+                      "text": "R — Ratio: FEV₁ divided by FVC.",
+                      "level": 0
+                    },
+                    {
+                      "text": "P — PEF: peak expiratory flow.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_17",
+              "group_title": "Obstructive versus restrictive pattern",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Obstructive: air gets out slowly — the FEV₁/FVC ratio falls.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Restrictive: the total volume available to exhale is reduced — FVC falls, while the ratio may remain normal or rise.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Remember: “Obstruction lowers the ratio; restriction needs TLC confirmation.”"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_13",
+          "subsection_title": "12. Common OSCE questions and model answers",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_18",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Q1. Identify this instrument."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "This is a spirometer, used to measure respiratory volumes and airflow during breathing manoeuvres."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q2. What is FEV₁?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The volume of air forcibly exhaled during the first second after a maximal inspiration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q3. What is FVC?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The total volume of air forcibly exhaled after taking a maximal inspiration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q4. How does spirometry help distinguish obstructive from restrictive patterns?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Obstruction is characterised by a reduced FEV₁/FVC ratio. A restrictive pattern may show a reduced FVC with a preserved or increased ratio, but restriction requires confirmation by a reduced total lung capacity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q5. Can a spirometer measure residual volume?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "No. Standard spirometry does not directly measure residual volume because that air remains in the lungs after maximal expiration."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q6. Why is patient cooperation important?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The test requires a maximal inspiration followed by a forceful, sustained expiration. Inadequate effort, coughing or leaks can produce misleading results."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q7. What is the difference between a spirometer and a peak flow meter?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A spirometer measures several parameters, including FEV₁ and FVC. A peak flow meter primarily measures peak expiratory flow."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Q8. Name three reasons to stop a manoeuvre or reassess the patient."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Severe dizziness or presyncope, significant chest pain, and acute distress or other concerning symptoms."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_14",
+          "subsection_title": "13. Common mistakes and examiner tips",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_19",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "title": "Avoid these common errors:",
+                  "items": [
+                    {
+                      "text": "Confusing FEV₁ with FVC.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting that FEV₁/FVC is a ratio, not a volume.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Claiming that spirometry confirms restrictive disease by itself.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Forgetting to check the technical quality of the trace.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Allowing leaks around the mouthpiece.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Failing to explain the manoeuvre before testing.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Assuming normal spirometry excludes asthma.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Confusing a spirometer with a peak flow meter.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Examiner tip: When presented with spirometry results, state the test quality, FEV₁, FVC and FEV₁/FVC ratio, then describe the likely pattern and any limitations. Do not jump straight to a diagnosis."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "subsection_id": "spirometer_subsection_15",
+          "subsection_title": "14. Mini-OSCE practice quiz",
+          "subsection_icon": null,
+          "content_groups": [
+            {
+              "group_id": "spirometer_group_20",
+              "group_title": "",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "1. Which parameter represents the volume forcibly exhaled during the first second?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FVC"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FEV₁"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Residual volume"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "2. Which finding most strongly suggests an obstructive spirometric pattern?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Reduced FEV₁/FVC ratio"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Normal ratio with reduced FVC only"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Increased total lung capacity measured by spirometry"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "3. How is a restrictive ventilatory defect confirmed?"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "By a reduced PEF alone"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "By a reduced FEV₁/FVC ratio alone"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "By demonstrating reduced total lung capacity"
+                }
+              ]
+            },
+            {
+              "group_id": "spirometer_group_21",
+              "group_title": "High-yield summary",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Instrument: Spirometer.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Purpose: Measures airflow and exhaled or inhaled volumes.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Key parameters: FEV₁, FVC, FEV₁/FVC and PEF.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obstructive pattern: Reduced FEV₁/FVC ratio.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Possible restrictive pattern: Reduced FVC with preserved or increased ratio; confirm with TLC.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Major limitation: Results depend on technique and patient cooperation.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Practical skill: Explain the manoeuvre, ensure a good mouthpiece seal, encourage forceful expiration and assess test quality..",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

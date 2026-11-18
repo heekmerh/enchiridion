@@ -102,14 +102,18 @@ void main() {
   });
 
   group('isComingSoon', () {
-    test('ResourceTopic.isComingSoon is true for cardiovascular-system and '
-        'false for abdominal-examination', () {
-      final cardiovascular =
-          kOsceTopics.firstWhere((t) => t.id == 'cardiovascular-system');
+    test('ResourceTopic.isComingSoon is true without a data file and false '
+        'for abdominal-examination', () {
+      const empty = ResourceTopic(
+        id: 'no-content-yet',
+        title: 'No content yet',
+        categoryTitle: 'Medical examination OSCE',
+        heroAssetPath: 'assets/resources/osce.jpeg',
+      );
       final abdominal =
           kOsceTopics.firstWhere((t) => t.id == 'abdominal-examination');
 
-      expect(cardiovascular.isComingSoon, isTrue);
+      expect(empty.isComingSoon, isTrue);
       expect(abdominal.isComingSoon, isFalse);
     });
 

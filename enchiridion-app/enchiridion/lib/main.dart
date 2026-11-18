@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -174,6 +175,9 @@ class _EnchiridionAppState extends State<EnchiridionApp> {
           return MaterialApp(
             title: 'Enchiridion',
             debugShowCheckedModeBanner: false,
+            localizationsDelegates: const [
+              FlutterQuillLocalizations.delegate,
+            ],
             navigatorKey: rootNavigatorKey,
             theme: AppTheme.getTheme(settingsProvider.settings.theme),
             builder: (context, child) => AppZoomScope(

@@ -172,30 +172,25 @@ void main() {
   });
 
   testWidgets(
-      'the real kMedicalInstrumentationTopics catalog opens on the '
-      'Diagnostic and Monitoring Equipment header with IV Cannula first',
-      (tester) async {
+      'the real kMedicalInstrumentationTopics catalog opens on its first '
+      'group header with that group\'s first topic under it', (tester) async {
+    final first = kMedicalInstrumentationTopics.first;
     await tester.pumpWidget(const MaterialApp(
       home: ResourceTopicListScreen(
-        title: 'Medical Instrumentation',
+        title: 'Instrumentation in medicine & pediatrics',
         topics: kMedicalInstrumentationTopics,
         dense: true,
       ),
     ));
 
-    expect(
-      find.text('DIAGNOSTIC AND MONITORING EQUIPMENT'),
-      findsOneWidget,
-    );
+    expect(find.text(first.group!.toUpperCase()), findsOneWidget);
 
     final firstHeaderFinder = find.byType(SectionHeader).first;
     final firstTopicRowFinder = find.ancestor(
-      of: find.text('IV Cannula'),
+      of: find.text(first.title),
       matching: find.byType(ListTile),
     );
 
-    // The header precedes the first topic row in paint order, so the
-    // header's top offset must be smaller than the topic row's.
     final headerTop = tester.getTopLeft(firstHeaderFinder).dy;
     final topicTop = tester.getTopLeft(firstTopicRowFinder).dy;
     expect(headerTop, lessThan(topicTop));

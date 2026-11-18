@@ -12,11 +12,14 @@ import '../../services/storage_service.dart';
 import '../../theme/app_colors.dart';
 import '../../utils/bottom_inset.dart';
 import 'algorithm_block.dart';
+import 'audio_block.dart';
 import 'checklist_block.dart';
 import 'clinical_pearls_block.dart';
 import 'key_value_block.dart';
+import 'list_block.dart';
 import 'mnemonic_block.dart';
 import 'red_flags_block.dart';
+import 'rich_text.dart';
 import 'table_block.dart';
 
 /// Stable-enough id for a single content block within its chapter, used to
@@ -309,6 +312,9 @@ class _ChapterView extends StatelessWidget {
           fontSize: fontSize,
           lineHeight: lineHeight,
           headerTintColor: _headingTint(chapter.chapterColor, brightness));
+    } else if (block is ListBlock) {
+      return ListBlockWidget(
+          block: block, fontSize: fontSize, lineHeight: lineHeight);
     } else if (block is ChecklistBlock) {
       return ChecklistBlockWidget(
           block: block, fontSize: fontSize, lineHeight: lineHeight);
@@ -330,6 +336,8 @@ class _ChapterView extends StatelessWidget {
     } else if (block is AgeReferenceBlock) {
       return _AgeReferenceWidget(
           block: block, fontSize: fontSize, lineHeight: lineHeight);
+    } else if (block is AudioBlock) {
+      return AudioBlockWidget(block: block, fontSize: fontSize);
     }
     return const SizedBox.shrink();
   }
@@ -970,17 +978,47 @@ class _ParagraphWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Padding(
-      padding: EdgeInsets.only(bottom: fontSize),
-      child: Text(
-        block.text,
-        style: TextStyle(
-          fontSize: fontSize,
-          height: lineHeight,
-          color: theme.colorScheme.onSurface,
-        ),
-      ),
+    final base = TextStyle(
+      fontSize: fontSize,
+      height: lineHeight,
+      color: theme.colorScheme.onSurface,
     );
+    switch (block.style) {
+      case ParagraphStyle.heading:
+        return Padding(
+          padding: EdgeInsets.only(top: fontSize * 0.4, bottom: fontSize * 0.5),
+          child: EmphasisText(
+            block.text,
+            style: base.copyWith(
+              fontSize: fontSize * 1.05,
+              fontWeight: FontWeight.w700,
+              color: theme.colorScheme.primary,
+            ),
+          ),
+        );
+      case ParagraphStyle.quote:
+        return Padding(
+          padding: EdgeInsets.only(bottom: fontSize * 0.75),
+          child: Container(
+            padding: EdgeInsets.fromLTRB(fontSize * 0.75, fontSize * 0.2, 0,
+                fontSize * 0.2),
+            decoration: BoxDecoration(
+              border: Border(
+                left: BorderSide(color: theme.colorScheme.primary, width: 3),
+              ),
+            ),
+            child: EmphasisText(
+              block.text,
+              style: base.copyWith(fontStyle: FontStyle.italic),
+            ),
+          ),
+        );
+      case ParagraphStyle.body:
+        return Padding(
+          padding: EdgeInsets.only(bottom: fontSize),
+          child: EmphasisText(block.text, style: base),
+        );
+    }
   }
 }
 

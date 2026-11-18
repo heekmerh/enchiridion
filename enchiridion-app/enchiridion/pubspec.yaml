@@ -50,6 +50,9 @@ dependencies:
   google_sign_in: ^7.2.0
   crypto: ^3.0.7
   local_auth: ^3.0.2
+  just_audio: ^0.10.6
+  flutter_quill: ^11.6.0
+  path_provider: ^2.1.5
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -89,7 +92,13 @@ flutter:
     - assets/resources/content/
     - assets/resources/content/sutures/
     - assets/resources/content/iv_cannula/
-    - assets/resources/content/abdominal_examination/
+    - assets/resources/content/medical/
+    - assets/resources/content/og/
+    - assets/resources/content/pediatrics/
+    - assets/resources/content/instrumentation/
+    - assets/resources/content/surgical/
+    - assets/resources/content/quick_revision/
+    - assets/audio/sounds/
 
 # App Icon Configuration
 flutter_launcher_icons:
@@ -111,7 +120,7 @@ flutter_native_splash:
   color_dark: "#0A0E27"
   image: assets/icon/logo.png
   android_12:
-    image: assets/icon/logo.png
+    image: assets/icon/splash_android12.png
     color: "#F8F9FA"
     color_dark: "#0A0E27"
   web: true
