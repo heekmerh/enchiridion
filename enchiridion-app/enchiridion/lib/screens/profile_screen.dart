@@ -8,6 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../config/backend_config.dart';
 import '../constants/billing_copy.dart';
 import '../providers/auth_provider.dart';
+import '../services/account_deletion_service.dart';
 import '../services/auth_service.dart';
 import '../services/subscription_service.dart';
 import 'login_screen.dart';
@@ -286,6 +287,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  Future<void> _deleteAccount() async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Delete your account?'),
+        content: const SingleChildScrollView(
+          child: Text(
+            'This permanently deletes your Enchiridion account: your sign-in, '
+            'profile and photo, synced notes, notebook pages, bookmarks, '
+            'answers and study progress. It cannot be undone.\n\n'
+            'Payment records are kept, no longer linked to you, because the '
+            'law requires it. If you subscribe through Google Play, cancel it '
+            'there first so you are not charged again.',
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext, false),
+            child: const Text('Keep my account'),
+          ),
+          FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(dialogContext).colorScheme.error,
+            ),
+            onPressed: () => Navigator.pop(dialogContext, true),
+            child: const Text('Delete permanently'),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !mounted) return;
+    setState(() => _saving = true);
+    final result = await AccountDeletionService.instance.deleteMyAccount();
+    if (!mounted) return;
+    setState(() => _saving = false);
+    final messenger = ScaffoldMessenger.of(context);
+    if (result.isDeleted) {
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (_) => const LoginScreen()),
+        (_) => false,
+      );
+      messenger.showSnackBar(SnackBar(
+          content: Text(result.message), behavior: SnackBarBehavior.floating));
+      return;
+    }
+    if (result.outcome == AccountDeletionOutcome.cancelGooglePlayFirst) {
+      final manageUrl = result.manageUrl ?? kGooglePlaySubscriptionsUrl;
+      await showDialog<void>(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: const Text('Cancel your subscription first'),
+          content: Text(result.message),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialogContext),
+              child: const Text('Close'),
+            ),
+            FilledButton(
+              onPressed: () {
+                Navigator.pop(dialogContext);
+                launchUrl(Uri.parse(manageUrl),
+                    mode: LaunchMode.externalApplication);
+              },
+              child: const Text('Open Google Play'),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+    messenger.showSnackBar(SnackBar(
+        content: Text(result.message), behavior: SnackBarBehavior.floating));
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -447,6 +522,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           side: BorderSide(color: cs.error),
                           padding: const EdgeInsets.symmetric(vertical: 14),
                         ),
+                      ),
+                      const SizedBox(height: 12),
+                      TextButton(
+                        onPressed: _saving ? null : _deleteAccount,
+                        style: TextButton.styleFrom(foregroundColor: cs.error),
+                        child: const Text('Delete account'),
                       ),
                     ],
                   ),

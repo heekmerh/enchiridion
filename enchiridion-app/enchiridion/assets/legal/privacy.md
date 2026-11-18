@@ -1,6 +1,6 @@
 # Enchiridion — Privacy Policy
 
-**Last updated: 25 September 2026**
+**Last updated: 18 November 2026**
 
 Enchiridion ("we", "us") provides an offline-first clinical companion app
 with textbooks, calculators, instrumentation guides, OSCE stations, and
@@ -55,8 +55,8 @@ and any question you flag in-app (question ID and reason).
 **Synced to your account.** When you are signed in, the following sync to
 your account so a new device recovers everything: reading notes, pinned
 margin notes and their collections, text clips, bookmarks, per-question
-answers, reading settings (theme, font), recently opened books, review
-progress, and daily statistics. Sync is last-write-wins per item, and
+answers, notebook pages and the photos you add to them, reading settings
+(theme, font), recently opened books, review progress, and daily statistics. Sync is last-write-wins per item, and
 deletions propagate to your other devices (deletion records are kept for
 90 days, then purged).
 
@@ -98,10 +98,17 @@ We do not sell personal data and we do not share it for marketing.
 ## 4. How long we keep data
 
 Account, study, and entitlement records are kept while your account is
-active. Payment references are kept for our financial records. If you delete
-your account, your profile, study records, and entitlements are removed
-(see §6). Device-only data is erased when you uninstall the app or clear
-its data.
+active. When you delete your account (see §6) we delete, straight away, your
+sign-in, profile and photo, device registration, synced notes, notebook pages
+and photos, bookmarks, clips, answers, review progress, statistics, email
+preferences, and any newsletter or sample sign-ups under your email.
+
+We keep records of payments you made (plan, amount, currency, dates, the
+Flutterwave or Google Play payment reference and its verification result),
+no longer linked to your account, for as long as Nigerian tax and accounting
+law requires, and to handle refunds and prevent fraud. Referral payout
+records are kept for the same reason. Device-only data is erased when you
+uninstall the app or clear its data.
 
 ## 5. Security
 
@@ -122,9 +129,15 @@ withdrawal of consent. Email **support@enchiridion.site** with the subject
 "Data request". We will verify you own the account and respond within the
 statutory timeframe.
 
-To change your display name or photo, use the Profile screen in the app. To
-delete your account, contact support (in-app deletion is on our roadmap —
-see the compliance notes below).
+To change your display name or photo, use the Profile screen in the app.
+
+**Deleting your account.** In the app, open Profile and tap **Delete
+account**. On the web, go to https://www.enchiridion.site/account/delete and
+sign in. Deletion is permanent. A renewing website subscription is cancelled
+for you; a Google Play subscription must be cancelled in Google Play first so
+you are not charged again. If you cannot sign in, email
+support@enchiridion.site from your account's address with the subject
+"Delete my account" and we will delete it within 30 days.
 
 ## 7. Children
 
@@ -137,15 +150,3 @@ learn we hold a young child's data without proper consent, we will delete it.
 Material changes will be announced in-app and on this page with a new
 "last updated" date. Continued use after changes take effect means you
 accept the updated policy.
-
----
-
-### Implementation notes (not for publication)
-
-Facts assumed above that must stay true: RLS isolates per-user rows;
-leaderboard RPCs return display-name + points only; avatars bucket is
-public-read; no analytics SDKs; notifications are local-only; payments are
-one-time website purchases in NGN verified server-side; user notes,
-bookmarks, clips, answers, settings, and history sync last-write-wins with
-90-day deletion tombstones; support is email-only. Outstanding gaps are
-tracked in `docs/legal/ndpa-gap-review.md`.

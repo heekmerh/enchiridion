@@ -16,11 +16,18 @@ class AboutConfig {
 
   static const String privacyPolicyUrl = 'https://www.enchiridion.site/privacy';
 
-
   static const String aboutAppBlurb =
       'Enchiridion is an offline-first clinical companion: textbooks, '
       'calculators, instrumentation guides, OSCE stations, and exam prep '
       'with spaced repetition — on your device, online or offline.';
+
+  static const String medicalDisclaimer =
+      'Enchiridion is a study and reference aid for medical students and '
+      'clinicians. It is not a medical device and does not diagnose, treat, '
+      'cure or prevent any medical condition. Always check doses and '
+      'calculations against current local guidelines, and use your own '
+      'clinical judgement. Patients should consult a qualified healthcare '
+      'professional for medical advice, diagnosis or treatment.';
 
   static const String copyrightNotice =
       '© 2026 Hikma Akinfunmilola Atanda. Enchiridion software, calculators '

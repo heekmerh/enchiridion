@@ -41,6 +41,7 @@ export default function Footer() {
                         <nav aria-label="Legal information" className={styles.legalLinks}>
                             <Link href="/privacy">Privacy Policy</Link>
                             <Link href="/terms">Terms and Conditions</Link>
+                            <Link href="/account/delete">Delete your account</Link>
                         </nav>
                         <p>&copy; {new Date().getFullYear()} Enchiridion. All rights reserved.</p>
                     </div>
