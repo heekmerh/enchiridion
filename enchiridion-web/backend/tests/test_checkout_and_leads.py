@@ -1,11 +1,12 @@
 """Book checkout totals and lead emails: what the site shows must be what the server charges and sends."""
 
+import psycopg
 import pytest
 
 from app import delivery
 from app.billing import notifications
 from app import mailer
-from tests.conftest import fetch
+from tests.conftest import create_user, fetch
 
 ORDER = {"email": "guest@example.com", "fullName": "Reader", "address": "1 Test Street", "city": "Kano",
          "phone": "+2348000000000", "quantity": 1}
@@ -111,3 +112,43 @@ async def test_queued_lead_emails_are_sent_and_retried(db_url, monkeypatch):
     assert "&lt;b&gt;Ada&lt;/b&gt;" in alert_body
     statuses = fetch(db_url, "SELECT status FROM enchiridion_web.email_outbox ORDER BY kind")
     assert [row["status"] for row in statuses] == ["sent", "sent"]
+
+
+def _order(client, monkeypatch, **changes):
+    monkeypatch.setenv("FLUTTERWAVE_SECRET_KEY", "test-only")
+    monkeypatch.setenv("BOOK_PRICE_NGN", "10000")
+    response = client.post("/referral/initialize-purchase", json={**ORDER, "state": "Kano", **changes})
+    assert response.status_code == 200, response.text
+    return response.json()
+
+
+def test_referral_code_takes_ten_percent_off_a_first_book(client, db_url, monkeypatch):
+    create_user(db_url, "ref@example.com", referral_code="ref")
+    order = _order(client, monkeypatch, refCode="REF")
+    assert order["discount"] == 1000
+    assert order["amount"] == 10500
+    row = fetch(db_url, "SELECT amount, metadata FROM enchiridion_web.purchase_orders")[0]
+    assert row["amount"] == 10500
+    assert row["metadata"]["referral_discount"] == "1000.00"
+
+
+def test_signed_up_referee_gets_the_discount_without_entering_the_code(client, db_url, monkeypatch):
+    create_user(db_url, "ref@example.com", referral_code="ref")
+    create_user(db_url, "guest@example.com", referral_code="guest", referred_by="ref")
+    assert _order(client, monkeypatch)["amount"] == 10500
+
+
+@pytest.mark.parametrize("ref_code", ["", "nobody", "own"])
+def test_no_discount_without_a_valid_code_from_someone_else(client, db_url, monkeypatch, ref_code):
+    create_user(db_url, "guest@example.com", referral_code="own")
+    order = _order(client, monkeypatch, refCode=ref_code)
+    assert order["discount"] == 0
+    assert order["amount"] == 11500
+
+
+def test_no_discount_after_a_first_paid_book(client, db_url, monkeypatch):
+    create_user(db_url, "ref@example.com", referral_code="ref")
+    with psycopg.connect(db_url) as db:
+        db.execute("INSERT INTO enchiridion_web.payments(reference, transaction_id, email, amount, currency) "
+                   "VALUES ('old', '1', 'guest@example.com', 10500, 'NGN')")
+    assert _order(client, monkeypatch, refCode="ref")["amount"] == 11500

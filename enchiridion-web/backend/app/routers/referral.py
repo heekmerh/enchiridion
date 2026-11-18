@@ -130,6 +130,30 @@ def book_price():
     return price
 
 
+REFERRAL_BOOK_DISCOUNT = Decimal("0.10")
+
+
+async def referral_book_discount(db, email, ref_code, unit_price):
+    """10% off one copy on a referred buyer's first book purchase, never for their own code."""
+    email = email.strip().lower()
+    code = ref_code.strip().lower()
+    if not code:
+        buyer = await (await db.execute(
+            "SELECT referred_by FROM partners WHERE lower(email) = %s", (email,))).fetchone()
+        code = str((buyer or {}).get("referred_by") or "").strip().lower()
+    if not code:
+        return Decimal("0"), ""
+    referrer = await (await db.execute(
+        "SELECT email FROM partners WHERE referral_code = %s AND is_active", (code,))).fetchone()
+    if not referrer or str(referrer["email"]).strip().lower() == email:
+        return Decimal("0"), ""
+    bought_before = await (await db.execute(
+        "SELECT 1 FROM payments WHERE lower(email) = %s LIMIT 1", (email,))).fetchone()
+    if bought_before:
+        return Decimal("0"), ""
+    return (unit_price * REFERRAL_BOOK_DISCOUNT).quantize(Decimal("0.01")), code
+
+
 @router.get("/checkout-config")
 async def checkout_config():
     return {"bookPrice": float(book_price()), "currency": "NGN", "delivery": delivery.pricing_config()}
@@ -167,16 +191,19 @@ async def initialize_purchase(body: PurchaseOrder, db=DB):
     except ValueError as exc:
         raise HTTPException(400, str(exc))
     unit_price = book_price()
-    amount = unit_price * body.quantity + delivery_fee
+    discount, discount_code = await referral_book_discount(db, str(body.email), body.refCode, unit_price)
+    amount = unit_price * body.quantity + delivery_fee - discount
     tx_ref = "ENCH-" + uuid.uuid4().hex
     metadata = {**body.model_dump(mode="json"), "state": state, "product": "book",
-                "book_price": str(unit_price), "delivery_cost": delivery_fee}
+                "book_price": str(unit_price), "delivery_cost": delivery_fee,
+                "referral_discount": str(discount), "referral_discount_code": discount_code}
     await db.execute(
         "INSERT INTO purchase_orders(tx_ref,email,amount,quantity,state,metadata) VALUES (%s,%s,%s,%s,%s,%s)",
         (tx_ref, body.email.lower(), amount, body.quantity, state, Jsonb(metadata)),
     )
     return {"tx_ref": tx_ref, "amount": float(amount), "currency": "NGN", "bookPrice": float(unit_price),
-            "quantity": body.quantity, "deliveryCost": delivery_fee, "fulfillment": body.fulfillment, "state": state}
+            "quantity": body.quantity, "deliveryCost": delivery_fee, "discount": float(discount),
+            "fulfillment": body.fulfillment, "state": state}
 
 
 class CompletePurchase(BaseModel):

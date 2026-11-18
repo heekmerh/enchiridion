@@ -24,6 +24,7 @@ interface ServerOrder {
     currency: string;
     bookPrice: number;
     deliveryCost: number;
+    discount: number;
     state: string;
     fulfillment: FulfillmentMode;
 }
@@ -155,7 +156,9 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                 // Prices changed since the page loaded: show the server's total and let the buyer confirm it.
                 setServerOrder(order);
                 setPaymentBusy(false);
-                setPaymentError(`The total is now ₦${order.amount.toLocaleString()}. Check it below, then tap Pay again.`);
+                setPaymentError(order.discount > 0
+                    ? `Your referral discount of ₦${order.discount.toLocaleString()} is applied. Check the total below, then tap Pay again.`
+                    : `The total is now ₦${order.amount.toLocaleString()}. Check it below, then tap Pay again.`);
                 return;
             }
             openFlutterwave(publicKey, order);
@@ -207,8 +210,8 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
     const shownTotal = (bookPrice ?? 0) + (selectedState?.cost || 0);
     // Once the server has priced the order, its figures are the ones shown and charged.
     const summary = serverOrder
-        ? { book: serverOrder.bookPrice, delivery: serverOrder.deliveryCost, total: serverOrder.amount }
-        : { book: bookPrice, delivery: selectedState?.cost ?? null, total: shownTotal };
+        ? { book: serverOrder.bookPrice, delivery: serverOrder.deliveryCost, discount: serverOrder.discount, total: serverOrder.amount }
+        : { book: bookPrice, delivery: selectedState?.cost ?? null, discount: 0, total: shownTotal };
 
     const handleShippingSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -423,6 +426,12 @@ export default function CheckoutModal({ book, isOpen, onClose }: CheckoutModalPr
                                 <span>{effectiveFulfillment === "pickup" ? `Pickup in ${selectedState?.name}:` : `Delivery to ${selectedState?.name}:`}</span>
                                 <span>{summary.delivery === null ? "--" : deliveryCostLabel(summary.delivery)}</span>
                             </div>
+                            {summary.discount > 0 && (
+                                <div className={styles.summaryRow}>
+                                    <span>Referral discount (10%):</span>
+                                    <span>-₦{summary.discount.toLocaleString()}</span>
+                                </div>
+                            )}
                             <div className={styles.paymentTotal}>
                                 <span>Amount Due:</span>
                                 <span>₦{summary.total.toLocaleString()}</span>
