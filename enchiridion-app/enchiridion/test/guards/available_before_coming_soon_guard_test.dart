@@ -52,6 +52,7 @@ List<_Catalog> _resourceCatalogs() {
     'kSurgicalInstrumentationTopics': kSurgicalInstrumentationTopics,
     'kPrescriptionTopics': kPrescriptionTopics,
     'kQuickRevisionTopics': kQuickRevisionTopics,
+    'kMnemonicsTopics': kMnemonicsTopics,
   };
   return [
     for (final catalog in catalogs.entries)
