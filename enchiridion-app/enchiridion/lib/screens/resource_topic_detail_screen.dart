@@ -11,9 +11,13 @@ import '../widgets/common/subtopic_tabs.dart';
 class ResourceTopicDetailScreen extends StatefulWidget {
   final ResourceTopic topic;
 
+  /// Opens the topic at the tab holding this subsection, for search results.
+  final String? initialSubsectionId;
+
   const ResourceTopicDetailScreen({
     super.key,
     required this.topic,
+    this.initialSubsectionId,
   });
 
   @override
@@ -105,6 +109,11 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
               : SubtopicTabsView(
                   topic: widget.topic,
                   chapter: _chapter,
+                  initialIndex: initialTabFor(
+                    topic: widget.topic,
+                    chapter: _chapter,
+                    subsectionId: widget.initialSubsectionId,
+                  ),
                   // The hero banner and category label scroll away with the
                   // content; the tab strip stays pinned above the scroll
                   // view so sub-topic navigation never leaves the screen.
@@ -137,4 +146,22 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
                 ),
     );
   }
+}
+
+/// The tab of [subtopicTabsFor] whose content holds [subsectionId], or 0.
+int initialTabFor({
+  required ResourceTopic topic,
+  required Chapter? chapter,
+  required String? subsectionId,
+}) {
+  if (subsectionId == null || chapter == null) return 0;
+  final tabs = subtopicTabsFor(topic: topic, chapter: chapter);
+  for (var i = 0; i < tabs.length; i++) {
+    final content = tabs[i].content;
+    if (content == null) continue;
+    for (final section in content.sections) {
+      if (section.subsections.any((s) => s.id == subsectionId)) return i;
+    }
+  }
+  return 0;
 }

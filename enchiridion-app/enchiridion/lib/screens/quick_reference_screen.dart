@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/resource_topic.dart';
 import 'notebook_screen.dart';
+import 'resource_search_screen.dart';
 import 'resource_topic_list_screen.dart';
 
 class QuickReferenceScreen extends StatelessWidget {
@@ -10,7 +11,15 @@ class QuickReferenceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('OSCE quick reference')),
+      appBar: AppBar(
+        title: const Text('OSCE quick reference'),
+        actions: const [
+          ResourceSearchButton(
+            sectionTitle: 'OSCE quick reference',
+            catalogs: [kQuickRevisionTopics, kMnemonicsTopics],
+          ),
+        ],
+      ),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: [

@@ -233,6 +233,14 @@ class _SubtopicTabsViewState extends State<SubtopicTabsView>
     );
     _autoScrollController = AutoScrollController();
     _autoScrollController.addListener(_onScroll);
+    if (_controller.index > 0) {
+      // A caller that opens the topic part-way down (a search result) needs
+      // the content scrolled there too, not just the tab selected. Wait one
+      // frame so the reader has reported its scroll anchors.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _scrollToTab(_controller.index);
+      });
+    }
   }
 
   @override

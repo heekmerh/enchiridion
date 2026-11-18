@@ -6,6 +6,7 @@ import '../services/access_service.dart';
 import '../utils/bottom_inset.dart';
 import '../widgets/common/coming_soon.dart';
 import '../widgets/common/section_header.dart';
+import 'resource_search_screen.dart';
 import 'resource_topic_detail_screen.dart';
 import 'unlock_screen.dart';
 
@@ -126,7 +127,15 @@ class _ResourceTopicListScreenState extends State<ResourceTopicListScreen> {
         if (item is _TopicEntry) item.topic,
     ]);
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(
+        title: Text(widget.title),
+        actions: [
+          ResourceSearchButton(
+            sectionTitle: widget.title,
+            catalogs: [widget.topics],
+          ),
+        ],
+      ),
       body: widget.dense
           ? _buildDenseList(context, items, freeIds)
           : _buildCardList(context, items, freeIds),
