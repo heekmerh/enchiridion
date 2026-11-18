@@ -83,7 +83,7 @@ class _ResourceTopicDetailScreenState extends State<ResourceTopicDetailScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.push_pin_outlined),
-            tooltip: 'Notes for ${widget.topic.title}',
+            tooltip: 'Pinned notes',
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => const PinnedNotesScreen()),
             ),
