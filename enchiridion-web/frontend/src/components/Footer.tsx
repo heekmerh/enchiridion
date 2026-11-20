@@ -9,13 +9,17 @@ export default function Footer() {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <Link href="/" className={styles.brandLink}><h2 className={styles.logo}>ENCHIRIDION</h2></Link>
-                        <p className={styles.division}>A division of ultramedikx nigeria limited</p>
+                        <p className={styles.division}>A division of ULTRAMEDIKX NIGERIA LIMITED</p>
                         <p className={styles.tagline}>Definitive clinical references for the modern healthcare professional.</p>
                         <NewsletterSignup />
                     </div>
 
                     <div className={styles.section}>
                         <h3>Contact & community</h3>
+                        <address className={styles.address}>
+                            ULTRAMEDIKX NIGERIA LIMITED<br />
+                            NO. 819, YALWA &apos;A&apos;, DULO, MARIRI, KUMBOTSO LGA, KANO, NIGERIA
+                        </address>
                         <a className={styles.email} href="mailto:support@enchiridion.site">support@enchiridion.site</a>
                         <nav aria-label="Enchiridion social profiles" className={styles.socials}>
                             <a href="https://www.instagram.com/enchiridion.md/" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -43,7 +47,7 @@ export default function Footer() {
                             <Link href="/terms">Terms and Conditions</Link>
                             <Link href="/account/delete">Delete your account</Link>
                         </nav>
-                        <p>&copy; {new Date().getFullYear()} Enchiridion. All rights reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} Enchiridion. A product of ULTRAMEDIKX NIGERIA LIMITED (RC 1464450). All rights reserved.</p>
                     </div>
                     <p className={styles.affiliations}>
                         Institutional affiliations are used for identification only.

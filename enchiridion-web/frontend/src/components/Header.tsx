@@ -170,7 +170,7 @@ export default function Header() {
               />
               <span className={styles.brandText}>
                 <span>ENCHIRIDION</span>
-                <small className={styles.division}>A division of ultramedikx nigeria limited</small>
+                <small className={styles.division}>A division of ULTRAMEDIKX NIGERIA LIMITED</small>
               </span>
             </Link>
           </div>
