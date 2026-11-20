@@ -18,7 +18,7 @@ export default function Footer() {
                         <h3>Contact & community</h3>
                         <address className={styles.address}>
                             ULTRAMEDIKX NIGERIA LIMITED<br />
-                            NO. 819, YALWA &apos;A&apos;, DULO, MARIRI, KUMBOTSO LGA, KANO, NIGERIA
+                            NO. 819, YALWA &apos;A&apos;, DULO, MARIRI, KUMBOTSO LGA, KANO 700104, NIGERIA
                         </address>
                         <a className={styles.email} href="mailto:support@enchiridion.site">support@enchiridion.site</a>
                         <nav aria-label="Enchiridion social profiles" className={styles.socials}>
