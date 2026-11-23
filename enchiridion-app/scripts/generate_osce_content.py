@@ -49,6 +49,9 @@ IMAGE_MAX_WIDTH = 900
 IMAGE_QUALITY = 70
 GROUP_MIN_PT = 12.5
 HEADING_MAX_WORDS = 14
+# A "Copy prescription" button label that came along when a prescription
+# was pasted from a web page. Hikma asked for it to go (Slack, 21 Nov).
+COPY_LABEL = re.compile(r"^\s*copy\s+prescription\s*$", re.IGNORECASE)
 LISTEN_SUFFIX = re.compile(r"\s*\(tap to listen\)\s*:?\s*$", re.IGNORECASE)
 SOUND_RENAMES = {"pulmonary friction rub": "pericardial friction rub"}
 
@@ -492,7 +495,7 @@ def feed_document(builder: ChapterBuilder, document: Document, sink: ImageSink,
         index += 1
         if is_banner(text, title, index):
             continue
-        if text.strip().isdigit():
+        if text.strip().isdigit() or COPY_LABEL.match(text):
             continue
         style = paragraph.style.name if paragraph.style else "Normal"
         level = style_level(style)

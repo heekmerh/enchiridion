@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../config/backend_config.dart';
@@ -102,6 +103,11 @@ class AccountDeletionService {
     } catch (_) {}
     try {
       await GoogleSignIn.instance.signOut();
+    } catch (_) {}
+    // A deleted account's email should not be offered at the next sign-in.
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(kLastLoginEmailKey);
     } catch (_) {}
   }
 }

@@ -10,6 +10,11 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../config/backend_config.dart';
 import '../config/google_sign_in_config.dart';
 
+/// SharedPreferences key for the last email used to sign in, so the login
+/// field is filled next time. The password itself is never stored by the
+/// app: the phone's password manager offers to save it instead.
+const String kLastLoginEmailKey = 'last_login_email';
+
 class AuthService {
   static SupabaseClient get _client => Supabase.instance.client;
 

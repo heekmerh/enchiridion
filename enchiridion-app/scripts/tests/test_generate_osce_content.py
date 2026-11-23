@@ -105,5 +105,22 @@ class OsceExtractionTest(unittest.TestCase):
         self.assertEqual(labels, ["1.", "2."])
 
 
+class CopyLabelTest(unittest.TestCase):
+    def test_pasted_copy_prescription_button_is_dropped(self):
+        document = Document()
+        _heading(document, "1. EXAMPLE PRESCRIPTION", 18)
+        document.add_paragraph("Rx: Indapamide 1.5 mg")
+        document.add_paragraph("Copy prescription")
+        document.add_paragraph("Copy the prescription onto the chart.")
+        texts = [
+            block.get("text")
+            for group in _build(document)[0]["content_groups"]
+            for block in group["blocks"]
+        ]
+        self.assertEqual(
+            texts, ["Rx: Indapamide 1.5 mg", "Copy the prescription onto the chart."]
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
