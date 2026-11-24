@@ -22,15 +22,32 @@ class AccessService {
   static bool? testAccessOverride;
 
   /// Past this age without a successful revalidation, cached grants are
-  /// discarded and the user reverts to freemium — so access can't be kept
-  /// alive indefinitely by cutting the app off from the internet.
+  /// discarded and the user reverts to freemium, so access can't be kept
+  /// alive indefinitely by cutting the app off from the internet. Until then
+  /// a device that can't reach Supabase keeps the last confirmed grants.
   static const maxValidationAge = Duration(days: 7);
+
+  /// How long a successful check is trusted before launch, resume or a
+  /// token refresh asks Supabase again. Keeps a busy user to about one
+  /// entitlement call a day instead of one per app switch. A purchase, a
+  /// sign-in and the paywall screen still check straight away, and a grant
+  /// whose own expiry has passed is rechecked early.
+  static const revalidateAfter = Duration(hours: 24);
+
+  /// Testing seams: the entitlement rows Supabase would return, the signed-in
+  /// user id, and the clock. Reset to null in tearDown.
+  @visibleForTesting
+  static Future<List<dynamic>> Function()? fetchOverride;
+  @visibleForTesting
+  static String? Function()? userIdOverride;
+  @visibleForTesting
+  static DateTime Function()? clockOverride;
 
   StorageService? _storage;
 
   /// Wires the persistent validation-timestamp store. Called once at startup
   /// (see `main()`); without it the in-memory cache still works, but the
-  /// 7-day offline revert cannot tell how stale a cached grant is across
+  /// 7-day offline window cannot tell how stale a cached grant is across
   /// restarts.
   void bindStorage(StorageService storage) {
     _storage = storage;
@@ -40,47 +57,127 @@ class AccessService {
   final Map<String, bool> _cache = {};
   bool _loaded = false;
   String? _loadedForUserId;
+  Future<void>? _inflight;
 
-  /// Call once after login to populate the cache.
-  Future<void> loadAccess() async {
-    final user = AuthService.currentUser;
-    if (user == null) {
+  /// Number of entitlement requests sent to Supabase, for tests.
+  @visibleForTesting
+  int fetchCount = 0;
+
+  DateTime _now() => (clockOverride?.call() ?? DateTime.now()).toUtc();
+
+  String? _currentUserId() {
+    final override = userIdOverride;
+    if (override != null) return override();
+    return AuthService.currentUser?.id;
+  }
+
+  Future<List<dynamic>> _fetchEntitlements() async {
+    fetchCount++;
+    final override = fetchOverride;
+    if (override != null) return override();
+    return await Supabase.instance.client.rpc('get_my_entitlements') as List;
+  }
+
+  /// For launch, resume and token refreshes: asks Supabase only when the
+  /// last successful check is older than [revalidateAfter], or a cached
+  /// grant has passed its own expiry. Otherwise it reuses the stored grants.
+  Future<void> refreshIfDue() async {
+    final userId = _currentUserId();
+    if (userId == null) {
+      clearCache();
+      return;
+    }
+    if (!_isDue(userId)) {
+      if (!(_loaded && _loadedForUserId == userId)) {
+        _hydrateFromStorage(userId);
+      }
+      return;
+    }
+    await loadAccess();
+  }
+
+  bool _isDue(String userId) {
+    final storage = _storage;
+    if (storage == null) return true;
+    final last = storage.getLastAccessValidation(userId);
+    if (last == null || storage.getCachedAccessScopes(userId) == null) {
+      return true;
+    }
+    final now = _now();
+    if (now.difference(last) >= revalidateAfter) return true;
+    final expiry = storage.getAccessExpiry(userId);
+    return expiry != null && !now.isBefore(expiry);
+  }
+
+  /// Checks entitlements with Supabase now. Used after sign-in, a purchase
+  /// and on the paywall screen. Calls made while one is already running
+  /// share it rather than sending a second request.
+  Future<void> loadAccess() {
+    final running = _inflight;
+    if (running != null) return running;
+    final future = _load();
+    _inflight = future;
+    return future.whenComplete(() {
+      if (identical(_inflight, future)) _inflight = null;
+    });
+  }
+
+  Future<void> _load() async {
+    final userId = _currentUserId();
+    if (userId == null) {
       clearCache();
       return;
     }
 
-    final userId = user.id;
-    _cache.clear();
-    _loaded = false;
-    _loadedForUserId = userId;
-
     try {
-      final rows = await Supabase.instance.client.rpc('get_my_entitlements');
+      final rows = await _fetchEntitlements();
 
       // Auth can change while the request is in flight. Discard stale rows
       // rather than granting one user's entitlements to another user.
-      if (AuthService.currentUser?.id != userId) {
+      if (_currentUserId() != userId) {
         clearCache();
         return;
       }
 
-      for (final row in rows as List) {
-        _cache[scopeForFeature(row['feature'] as String)] = true;
+      final scopes = <String>{};
+      DateTime? earliestExpiry;
+      for (final row in rows) {
+        final map = row as Map;
+        scopes.add(scopeForFeature(map['feature'] as String));
+        final raw = map['expires_at'];
+        final expiry = raw is String ? DateTime.tryParse(raw)?.toUtc() : null;
+        if (expiry != null &&
+            (earliestExpiry == null || expiry.isBefore(earliestExpiry))) {
+          earliestExpiry = expiry;
+        }
       }
+      _cache
+        ..clear()
+        ..addEntries(scopes.map((scope) => MapEntry(scope, true)));
+      _loaded = true;
+      _loadedForUserId = userId;
 
-      // Records this successful validation for `_enforceValidationFreshness`,
-      // and persists the granted scopes so `_hydrateFromStorage` lets a cold
-      // isolate reuse them instead of repeating this round trip.
-      if (AuthService.currentUser?.id == userId) {
-        await _storage?.setLastAccessValidation(userId, DateTime.now().toUtc());
-        await _storage?.setCachedAccessScopes(userId, _cache.keys.toList());
-      }
+      // Records this successful validation for `_isDue` and
+      // `_enforceValidationFreshness`, and persists the granted scopes so
+      // `_hydrateFromStorage` lets a cold start or an offline device reuse
+      // them instead of repeating this round trip.
+      await _storage?.setLastAccessValidation(userId, _now());
+      await _storage?.setCachedAccessScopes(userId, scopes.toList());
+      await _storage?.setAccessExpiry(userId, earliestExpiry);
     } catch (_) {
-      // Supabase not configured or offline: default to the free tier. The
-      // cache was already cleared, so old entitlements cannot leak through.
+      // Offline or Supabase unreachable. Keep the last confirmed grants while
+      // they are within [maxValidationAge]; past that, or with nothing
+      // stored, fall back to the free tier.
+      if (_currentUserId() != userId) {
+        clearCache();
+        return;
+      }
+      if (!_hydrateFromStorage(userId)) {
+        _cache.clear();
+        _loaded = true;
+        _loadedForUserId = userId;
+      }
     }
-
-    _loaded = true;
   }
 
   void clearCache() {
@@ -91,17 +188,17 @@ class AccessService {
 
   Future<bool> hasBookAccess(String bookId) async {
     if (testAccessOverride != null) return testAccessOverride!;
-    final user = AuthService.currentUser;
-    if (user == null) return false;
-    await _ensureAccessLoaded(user.id);
+    final userId = _currentUserId();
+    if (userId == null) return false;
+    await _ensureAccessLoaded(userId);
     return _cache.containsKey('*') || (_cache[bookId] ?? false);
   }
 
   Future<bool> hasFullAccess() async {
     if (testAccessOverride != null) return testAccessOverride!;
-    final user = AuthService.currentUser;
-    if (user == null) return false;
-    await _ensureAccessLoaded(user.id);
+    final userId = _currentUserId();
+    if (userId == null) return false;
+    await _ensureAccessLoaded(userId);
     return _cache.containsKey('*');
   }
 
@@ -114,9 +211,9 @@ class AccessService {
   /// `exam_prep_<id>` scope. A full (`*`) subscription unlocks every module.
   Future<bool> hasModuleAccess(String moduleId) async {
     if (testAccessOverride != null) return testAccessOverride!;
-    final user = AuthService.currentUser;
-    if (user == null) return false;
-    await _ensureAccessLoaded(user.id);
+    final userId = _currentUserId();
+    if (userId == null) return false;
+    await _ensureAccessLoaded(userId);
     return _cache.containsKey('*') ||
         (_cache[examScopeForModule(moduleId)] ?? false);
   }
@@ -156,8 +253,7 @@ class AccessService {
     final storage = _storage;
     if (storage == null) return false;
     final last = storage.getLastAccessValidation(userId);
-    if (last == null ||
-        DateTime.now().toUtc().difference(last) > maxValidationAge) {
+    if (last == null || _now().difference(last) > maxValidationAge) {
       return false;
     }
     // null, not empty: an empty list is a validated free-tier user (hydrate,
@@ -183,8 +279,7 @@ class AccessService {
     final storage = _storage;
     if (storage == null) return;
     final last = storage.getLastAccessValidation(userId);
-    if (last != null &&
-        DateTime.now().toUtc().difference(last) <= maxValidationAge) {
+    if (last != null && _now().difference(last) <= maxValidationAge) {
       return;
     }
     // Never validated, or validated too long ago (including pre-upgrade

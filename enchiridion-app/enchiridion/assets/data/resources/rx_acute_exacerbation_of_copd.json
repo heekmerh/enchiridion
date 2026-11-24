@@ -278,7 +278,7 @@
                     ],
                     [
                       "GOLD 4",
-                      "6.0 kPa (45 mmHg)",
+                      "<30%",
                       "Hypercapnic"
                     ]
                   ]
@@ -295,7 +295,7 @@
             },
             {
               "group_id": "rx_acute_exacerbation_of_copd_group_7",
-              "group_title": "F. Important differential diagnoses",
+              "group_title": "D. Important differential diagnoses",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
@@ -2517,42 +2517,737 @@
           "content_groups": [
             {
               "group_id": "rx_acute_exacerbation_of_copd_group_42",
-              "group_title": "A. Renal dose adjustment",
+              "group_title": "10.1. Renal impairment and dose adjustment",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Renal impairment is particularly important when prescribing antibiotics and certain supportive medications. Drug accumulation may increase adverse effects and toxicity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Bronchodilators**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Renal adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Salbutamol",
+                      "No routine dose adjustment",
+                      "Monitor potassium, heart rate and tremors, particularly with high-dose nebulisation"
+                    ],
+                    [
+                      "Ipratropium bromide",
+                      "No routine dose adjustment",
+                      "Use cautiously in patients with urinary retention or narrow-angle glaucoma"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Clinical note:** Repeated or continuous nebulised salbutamol can cause hypokalaemia, which may be more clinically significant in patients with renal or electrolyte abnormalities."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Corticosteroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Renal adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Prednisolone",
+                      "No routine dose adjustment",
+                      "Monitor blood glucose, blood pressure, fluid retention and infection"
+                    ],
+                    [
+                      "Hydrocortisone",
+                      "No routine dose adjustment",
+                      "Monitor fluid and electrolyte balance, particularly sodium and potassium"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Systemic corticosteroids are generally administered at standard doses in patients with renal impairment."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Antibiotics**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Antibiotic",
+                    "Renal adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Amoxicillin",
+                      "Required in significant renal impairment",
+                      "Reduce dose or extend dosing interval according to creatinine clearance"
+                    ],
+                    [
+                      "Co-amoxiclav",
+                      "Required",
+                      "Adjust according to renal function; avoid the 875/125 mg formulation when GFR is below 30 mL/min"
+                    ],
+                    [
+                      "Doxycycline",
+                      "Usually not required",
+                      "Generally suitable in renal impairment"
+                    ],
+                    [
+                      "Azithromycin",
+                      "Usually not required in mild-to-moderate impairment",
+                      "Use caution in severe renal impairment; monitor for adverse effects"
+                    ],
+                    [
+                      "Levofloxacin",
+                      "Required",
+                      "Reduce dose or adjust dosing interval according to renal function"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Important prescribing considerations:**",
+                  "items": [
+                    {
+                      "text": "Calculate creatinine clearance when required for antibiotic dose adjustment.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid unnecessary nephrotoxic medications.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor renal function, particularly in elderly patients and those with dehydration or sepsis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review antibiotic dosing if renal function deteriorates during admission.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rx_acute_exacerbation_of_copd_group_43",
+              "group_title": "10.2. Hepatic impairment and dose adjustment",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Hepatic impairment affects the metabolism of several medications used in AECOPD. Particular attention should be given to antibiotics metabolised by the liver and medications associated with hepatotoxicity."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Bronchodilators**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Hepatic adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Salbutamol",
+                      "No established routine adjustment",
+                      "Monitor tachycardia, tremors and hypokalaemia"
+                    ],
+                    [
+                      "Ipratropium bromide",
+                      "No routine adjustment",
+                      "Minimal systemic absorption when inhaled"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Corticosteroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Hepatic adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Prednisolone",
+                      "Usually no routine adjustment",
+                      "Monitor fluid retention, glucose and blood pressure"
+                    ],
+                    [
+                      "Hydrocortisone",
+                      "Usually no routine adjustment",
+                      "Monitor fluid and electrolyte balance"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Important:** In severe hepatic disease, corticosteroid response and protein binding may be altered. Monitor clinical response and adverse effects."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Antibiotics**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Antibiotic",
+                    "Hepatic adjustment",
+                    "Clinical considerations"
+                  ],
+                  "rows": [
+                    [
+                      "Amoxicillin",
+                      "Usually no adjustment",
+                      "Monitor liver function if prolonged treatment is required"
+                    ],
+                    [
+                      "Co-amoxiclav",
+                      "Use caution",
+                      "Avoid in patients with previous co-amoxiclav-associated cholestatic jaundice or hepatic dysfunction"
+                    ],
+                    [
+                      "Doxycycline",
+                      "Usually no adjustment in mild impairment",
+                      "Use cautiously in severe hepatic impairment"
+                    ],
+                    [
+                      "Azithromycin",
+                      "Usually no adjustment in mild-to-moderate impairment",
+                      "Avoid in patients with previous azithromycin-associated cholestatic jaundice; use caution in severe hepatic disease"
+                    ],
+                    [
+                      "Levofloxacin",
+                      "Usually no adjustment",
+                      "Primarily renally eliminated; monitor for adverse effects"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Important prescribing considerations:**",
+                  "items": [
+                    {
+                      "text": "Check baseline liver function in patients with known liver disease or suspected hepatic injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Co-amoxiclav can cause cholestatic hepatitis and drug-induced liver injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid re-exposure to co-amoxiclav in patients with previous co-amoxiclav-associated liver injury.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Review all concomitant medications for potential hepatotoxicity.",
+                      "level": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rx_acute_exacerbation_of_copd_group_44",
+              "group_title": "10.3. Pregnancy considerations in AECOPD",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Acute exacerbation of COPD during pregnancy requires prompt treatment because maternal hypoxaemia can compromise fetal oxygen delivery."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Management should involve obstetric and respiratory teams, particularly in moderate-to-severe exacerbations."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Bronchodilators**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Pregnancy safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Salbutamol",
+                      "Generally considered compatible",
+                      "Preferred short-acting bronchodilator"
+                    ],
+                    [
+                      "Ipratropium bromide",
+                      "Generally considered compatible",
+                      "Can be used when additional bronchodilation is required"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Clinical considerations:**",
+                  "items": [
+                    {
+                      "text": "Do not withhold necessary bronchodilator treatment because of pregnancy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use inhaled or nebulised treatment as clinically indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor maternal heart rate and oxygen saturation.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Corticosteroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Pregnancy safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Prednisolone",
+                      "Can be used when clinically indicated",
+                      "Preferred systemic corticosteroid for many maternal indications"
+                    ],
+                    [
+                      "Hydrocortisone",
+                      "Can be used when clinically indicated",
+                      "Suitable when intravenous corticosteroid treatment is required"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Clinical considerations:**",
+                  "items": [
+                    {
+                      "text": "Use systemic corticosteroids for significant exacerbations when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Prednisolone is preferred over dexamethasone for many maternal inflammatory conditions because placental metabolism limits fetal exposure.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Use the lowest effective dose for the shortest clinically appropriate duration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Monitor maternal blood glucose, especially in patients with gestational or pre-existing diabetes.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Antibiotics**",
+                  "style": "heading"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Antibiotics should only be prescribed when bacterial infection is suspected or established, such as in patients with increased sputum purulence and other features suggesting bacterial exacerbation."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Antibiotic",
+                    "Pregnancy safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Amoxicillin",
+                      "Generally compatible",
+                      "Preferred option when appropriate"
+                    ],
+                    [
+                      "Co-amoxiclav",
+                      "Generally acceptable when indicated",
+                      "Use when broader bacterial coverage is required"
+                    ],
+                    [
+                      "Azithromycin",
+                      "Generally acceptable when indicated",
+                      "Alternative when clinically appropriate"
+                    ],
+                    [
+                      "Doxycycline",
+                      "Avoid during pregnancy",
+                      "Choose a suitable alternative"
+                    ],
+                    [
+                      "Levofloxacin",
+                      "Generally avoid",
+                      "Reserve for situations where safer alternatives are unsuitable and specialist advice supports its use"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**Important:** Antibiotic selection should reflect suspected organisms, allergy history, local resistance patterns and severity of infection."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**D. Oxygen therapy**",
+                  "style": "heading"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "Administer controlled oxygen to correct hypoxaemia.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In patients at risk of hypercapnic respiratory failure, initially target oxygen saturation of 88–92% pending arterial blood gas results.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Obtain arterial blood gases when indicated.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Avoid both maternal hypoxaemia and unnecessary excessive oxygen administration.",
+                      "level": 0
+                    },
+                    {
+                      "text": "In pregnancy, involve obstetric and respiratory specialists when determining oxygenation targets in complex cases.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Maternal respiratory failure requires urgent multidisciplinary management."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_acute_exacerbation_of_copd_group_45",
+              "group_title": "10.4. Breastfeeding considerations in AECOPD",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Most commonly used inhaled bronchodilators and short courses of systemic corticosteroids are compatible with breastfeeding."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Bronchodilators**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Breastfeeding safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Salbutamol",
+                      "Compatible",
+                      "Can be continued"
+                    ],
+                    [
+                      "Ipratropium bromide",
+                      "Compatible",
+                      "Can be continued"
+                    ]
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Inhaled medications produce low maternal systemic exposure and are unlikely to cause clinically significant effects in breastfed infants."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Corticosteroids**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Drug",
+                    "Breastfeeding safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Prednisolone",
+                      "Compatible",
+                      "Can be used when indicated"
+                    ],
+                    [
+                      "Hydrocortisone",
+                      "Compatible",
+                      "Can be used when indicated"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Clinical considerations:**",
+                  "items": [
+                    {
+                      "text": "Prednisolone enters breast milk in small quantities.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Short courses generally do not require interruption of breastfeeding.",
+                      "level": 0
+                    },
+                    {
+                      "text": "With high systemic doses, waiting approximately 4 hours after administration before breastfeeding may further reduce infant exposure, although this is usually unnecessary with standard doses.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Large systemic doses may temporarily reduce milk production in some women.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Antibiotics**",
+                  "style": "heading"
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "Antibiotic",
+                    "Breastfeeding safety",
+                    "Recommendation"
+                  ],
+                  "rows": [
+                    [
+                      "Amoxicillin",
+                      "Compatible",
+                      "Can be used"
+                    ],
+                    [
+                      "Co-amoxiclav",
+                      "Compatible",
+                      "Can be used"
+                    ],
+                    [
+                      "Doxycycline",
+                      "Generally compatible for short courses",
+                      "Avoid prolonged or repeated courses where possible"
+                    ],
+                    [
+                      "Azithromycin",
+                      "Compatible",
+                      "Can be used"
+                    ],
+                    [
+                      "Levofloxacin",
+                      "Can be used cautiously when necessary",
+                      "Prefer suitable alternatives when available"
+                    ]
+                  ]
+                },
+                {
+                  "type": "list",
+                  "title": "**Monitor the breastfed infant for:**",
+                  "items": [
+                    {
+                      "text": "Diarrhoea or loose stools.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Oral thrush.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Skin rash.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Feeding difficulties.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Unusual irritability.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "These effects are generally uncommon and usually mild."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_acute_exacerbation_of_copd_group_46",
+              "group_title": "10.5. Summary table: prescribing in special populations",
               "group_subtitle": null,
               "group_icon": null,
               "blocks": [
                 {
                   "type": "table",
                   "columns": [
-                    "Drug",
-                    "Renal considerations"
+                    "Medication",
+                    "Renal impairment",
+                    "Hepatic impairment",
+                    "Pregnancy",
+                    "Breastfeeding"
                   ],
                   "rows": [
                     [
                       "Salbutamol",
-                      "No routine adjustment; monitor potassium"
+                      "No adjustment",
+                      "No adjustment",
+                      "Compatible",
+                      "Compatible"
                     ],
                     [
                       "Ipratropium",
-                      "No routine adjustment"
+                      "No adjustment",
+                      "No adjustment",
+                      "Compatible",
+                      "Compatible"
                     ],
                     [
                       "Prednisolone",
-                      "No routine adjustment"
+                      "No adjustment",
+                      "Usually no adjustment",
+                      "Use if indicated",
+                      "Compatible"
                     ],
                     [
                       "Hydrocortisone",
-                      "No routine adjustment"
+                      "No adjustment",
+                      "Usually no adjustment",
+                      "Use if indicated",
+                      "Compatible"
                     ],
                     [
                       "Amoxicillin",
-                      "Adjust dose or interval in significant renal impairment"
+                      "Adjust in significant impairment",
+                      "Usually no adjustment",
+                      "Compatible",
+                      "Compatible"
+                    ],
+                    [
+                      "Co-amoxiclav",
+                      "Adjust in significant impairment",
+                      "Caution; avoid previous associated liver injury",
+                      "Generally compatible",
+                      "Compatible"
+                    ],
+                    [
+                      "Doxycycline",
+                      "Usually no adjustment",
+                      "Caution in severe impairment",
+                      "Avoid",
+                      "Short courses generally compatible"
+                    ],
+                    [
+                      "Azithromycin",
+                      "Caution in severe impairment",
+                      "Caution in severe impairment",
+                      "Generally compatible",
+                      "Compatible"
+                    ],
+                    [
+                      "Levofloxacin",
+                      "Adjust according to renal function",
+                      "Usually no adjustment",
+                      "Generally avoid",
+                      "Use cautiously if necessary"
                     ]
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rx_acute_exacerbation_of_copd_group_47",
+              "group_title": "10.6. Important clinical prescribing notes",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "**Renal impairment:** Always review renal function before prescribing amoxicillin, co-amoxiclav or levofloxacin.",
+                      "level": 0,
+                      "label": "1."
+                    },
+                    {
+                      "text": "**Hepatic impairment:** Avoid co-amoxiclav in patients with previous co-amoxiclav-associated cholestatic jaundice or hepatic dysfunction.",
+                      "level": 0,
+                      "label": "2."
+                    },
+                    {
+                      "text": "**Pregnancy:** Amoxicillin and azithromycin are generally suitable antibiotic options when indicated. Avoid doxycycline and generally avoid fluoroquinolones.",
+                      "level": 0,
+                      "label": "3."
+                    },
+                    {
+                      "text": "**Breastfeeding:** Most standard AECOPD treatments do not require interruption of breastfeeding.",
+                      "level": 0,
+                      "label": "4."
+                    },
+                    {
+                      "text": "**Oxygen:** In patients at risk of hypercapnic respiratory failure, use controlled oxygen and obtain arterial blood gases.",
+                      "level": 0,
+                      "label": "5."
+                    },
+                    {
+                      "text": "**Antibiotic stewardship:** Antibiotics are not routinely required in every COPD exacerbation.",
+                      "level": 0,
+                      "label": "6."
+                    }
                   ]
                 },
                 {
                   "type": "paragraph",
-                  "text": "| Co-amoxiclav | Adjust according to CrCl; avoid 875/125 mg formulation when GFR\nClinical scenario: Adult recovering from moderate AECOPD with suspected bacterial infection."
+                  "text": "For clinical use, verify individual antibiotic doses against current renal function, local antimicrobial guidelines and pregnancy-specific prescribing references."
                 },
                 {
                   "type": "paragraph",
@@ -2617,15 +3312,12 @@
                 {
                   "type": "paragraph",
                   "text": "Maintenance inhaler selection should be individualised. Patients with recurrent exacerbations and elevated blood eosinophils may benefit from adding ICS to dual long-acting bronchodilator therapy. ICS is not routinely indicated for every COPD patient."
-                }
-              ]
-            },
-            {
-              "group_id": "rx_acute_exacerbation_of_copd_group_43",
-              "group_title": "C. Patient counselling",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**A. Patient counselling**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "Medication"
@@ -2750,15 +3442,12 @@
                       "level": 0
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "rx_acute_exacerbation_of_copd_group_44",
-              "group_title": "D. Follow-up",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**B. Follow-up**",
+                  "style": "heading"
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -2787,15 +3476,12 @@
                 {
                   "type": "paragraph",
                   "text": "Patients discharged on oxygen should have formal reassessment because oxygen requirements may improve after recovery."
-                }
-              ]
-            },
-            {
-              "group_id": "rx_acute_exacerbation_of_copd_group_45",
-              "group_title": "E. Common prescribing errors",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**C. Common prescribing errors**",
+                  "style": "heading"
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -2852,15 +3538,12 @@
                       "Reassess oxygen requirement after recovery"
                     ]
                   ]
-                }
-              ]
-            },
-            {
-              "group_id": "rx_acute_exacerbation_of_copd_group_46",
-              "group_title": "F. High-yield clinical pearls and examination points",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**D. High-yield clinical pearls and examination points**",
+                  "style": "heading"
+                },
                 {
                   "type": "paragraph",
                   "text": "1. Diagnostic spirometry criterion"
@@ -2956,15 +3639,12 @@
                 {
                   "type": "paragraph",
                   "text": "Long-acting bronchodilators, usually LABA/LAMA, with ICS added in selected patients according to exacerbation history, eosinophils and other indications."
-                }
-              ]
-            },
-            {
-              "group_id": "rx_acute_exacerbation_of_copd_group_47",
-              "group_title": "G. Quick revision: AECOPD drug doses",
-              "group_subtitle": null,
-              "group_icon": null,
-              "blocks": [
+                },
+                {
+                  "type": "paragraph",
+                  "text": "**E. Quick revision: AECOPD drug doses**",
+                  "style": "heading"
+                },
                 {
                   "type": "table",
                   "columns": [
@@ -3020,7 +3700,7 @@
         },
         {
           "subsection_id": "rx_acute_exacerbation_of_copd_subsection_12",
-          "subsection_title": "13. Important guideline references",
+          "subsection_title": "11. Important guideline references",
           "subsection_icon": null,
           "content_groups": [
             {

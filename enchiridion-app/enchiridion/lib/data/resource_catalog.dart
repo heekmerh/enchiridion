@@ -3024,6 +3024,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hypoglycaemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hypoglycaemia.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3031,6 +3032,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Diabetic neuropathy and foot complications',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_diabetic_neuropathy_and_foot_complications.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3038,6 +3040,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hyperthyroidism and thyroid storm',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hyperthyroidism_and_thyroid_storm.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3045,6 +3048,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hypothyroidism and myxoedema coma',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hypothyroidism_and_myxoedema_coma.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3052,6 +3056,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Adrenal insufficiency and adrenal crisis',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_adrenal_insufficiency_and_adrenal_crisis.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3059,6 +3064,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Cushing syndrome',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_cushing_syndrome.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3066,6 +3072,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Obesity and metabolic syndrome',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_obesity_and_metabolic_syndrome.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3073,6 +3080,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hypercalcaemia and hypocalcaemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hypercalcaemia_and_hypocalcaemia.json',
     group: 'Internal medicine: Endocrine and metabolic diseases',
   ),
   ResourceTopic(
@@ -3080,6 +3088,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Acute kidney injury',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_acute_kidney_injury.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(
@@ -3087,6 +3096,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Chronic kidney disease',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_chronic_kidney_disease.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(
@@ -3094,6 +3104,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hyperkalaemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hyperkalaemia.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(
@@ -3101,6 +3112,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hypokalaemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hypokalaemia.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(
@@ -3108,6 +3120,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hyponatraemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hyponatraemia.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(
@@ -3115,6 +3128,7 @@ const List<ResourceTopic> kPrescriptionTopics = [
     title: 'Hypernatraemia',
     categoryTitle: 'Prescriptions & medication guide',
     heroAssetPath: 'assets/resources/prescriptions.jpg',
+    dataAssetPath: 'assets/data/resources/rx_hypernatraemia.json',
     group: 'Internal medicine: Renal and electrolyte disorders',
   ),
   ResourceTopic(

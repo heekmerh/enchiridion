@@ -218,9 +218,8 @@ class StorageService {
   Future<void> purgeOldDeletions(
       [Duration maxAge = const Duration(days: 90)]) async {
     final cutoff = DateTime.now().toUtc().subtract(maxAge);
-    await _saveDeletions(getDeletions()
-        .where((d) => d.deletedAt.isAfter(cutoff))
-        .toList());
+    await _saveDeletions(
+        getDeletions().where((d) => d.deletedAt.isAfter(cutoff)).toList());
   }
 
   /// Removes local rows matching remotely-pulled tombstones. Returns true
@@ -280,8 +279,7 @@ class StorageService {
       case UserDataEntity.clips:
         final parts = deletion.id.split('|');
         if (parts.length != 4) return false;
-        final clips =
-            getClips(parts[0], parts[1], parts[2]);
+        final clips = getClips(parts[0], parts[1], parts[2]);
         final before = clips.length;
         clips.removeWhere((c) => c.id == parts[3]);
         if (clips.length == before) return false;
@@ -472,8 +470,7 @@ class StorageService {
       await _prefs.remove(_noteKey(bookId, chapterId));
       await _prefs.remove('$_noteMetaPrefix${bookId}_$chapterId');
       await _removeFromIndex(_notesIndexKey, '$bookId|$chapterId');
-      await recordDeletion(
-          UserDataEntity.readingNotes, '$bookId|$chapterId');
+      await recordDeletion(UserDataEntity.readingNotes, '$bookId|$chapterId');
     } else {
       await _prefs.setString(_noteKey(bookId, chapterId), text);
       await _prefs.setString('$_noteMetaPrefix${bookId}_$chapterId',
@@ -517,9 +514,7 @@ class StorageService {
       for (final record in remote) {
         final localAt = getNoteUpdatedAt(record.bookId, record.chapterId);
         final remoteAt = record.updatedAt;
-        if (localAt != null &&
-            remoteAt != null &&
-            !remoteAt.isAfter(localAt)) {
+        if (localAt != null && remoteAt != null && !remoteAt.isAfter(localAt)) {
           continue;
         }
         await _prefs.setString(
@@ -585,8 +580,7 @@ class StorageService {
     );
     clips.add(clip);
     await _saveClips(bookId, chapterId, sectionId, clips);
-    await _addToIndex(
-        _clipsIndexKey, '$bookId|$chapterId|$sectionId');
+    await _addToIndex(_clipsIndexKey, '$bookId|$chapterId|$sectionId');
     _notify(UserDataEntity.clips);
     return clip;
   }
@@ -614,8 +608,7 @@ class StorageService {
     clips.removeWhere((c) => c.id == clipId);
     await _saveClips(bookId, chapterId, sectionId, clips);
     if (getClips(bookId, chapterId, sectionId).isEmpty) {
-      await _removeFromIndex(
-          _clipsIndexKey, '$bookId|$chapterId|$sectionId');
+      await _removeFromIndex(_clipsIndexKey, '$bookId|$chapterId|$sectionId');
     }
     await recordDeletion(
         UserDataEntity.clips, '$bookId|$chapterId|$sectionId|$clipId');
@@ -649,8 +642,8 @@ class StorageService {
       for (final record in remote) {
         final key = '${record.bookId}|${record.chapterId}|${record.sectionId}';
         final local = {
-          for (final c in getClips(
-                  record.bookId, record.chapterId, record.sectionId))
+          for (final c
+              in getClips(record.bookId, record.chapterId, record.sectionId))
             c.id: c
         };
         final incoming = record.clip;
@@ -673,8 +666,7 @@ class StorageService {
             deduped[clip.id] = clip;
           }
         }
-        await _saveClips(
-            parts[0], parts[1], parts[2], deduped.values.toList());
+        await _saveClips(parts[0], parts[1], parts[2], deduped.values.toList());
       }
     });
     return changed;
@@ -693,7 +685,8 @@ class StorageService {
       final items = jsonDecode(raw) as List<dynamic>;
       return items
           .map((item) => NoteCollection.fromJson(item as Map<String, dynamic>))
-          .where((collection) => collection.id.isNotEmpty && collection.name.isNotEmpty)
+          .where((collection) =>
+              collection.id.isNotEmpty && collection.name.isNotEmpty)
           .toList()
         ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
     } catch (_) {
@@ -732,16 +725,15 @@ class StorageService {
     final trimmed = name.trim();
     if (trimmed.isEmpty) throw ArgumentError.value(name, 'name');
     final collections = getNoteCollections();
-    if (collections.any((c) =>
-        c.id != id && c.name.toLowerCase() == trimmed.toLowerCase())) {
+    if (collections.any(
+        (c) => c.id != id && c.name.toLowerCase() == trimmed.toLowerCase())) {
       throw ArgumentError.value(name, 'name', 'Collection already exists');
     }
     final now = DateTime.now().toUtc();
     await _saveNoteCollections(
       collections
-          .map((c) => c.id == id
-              ? c.copyWith(name: trimmed, updatedAt: now)
-              : c)
+          .map(
+              (c) => c.id == id ? c.copyWith(name: trimmed, updatedAt: now) : c)
           .toList(),
     );
     _notify(UserDataEntity.noteCollections);
@@ -763,9 +755,11 @@ class StorageService {
     _notify(UserDataEntity.pinnedNotes);
   }
 
-  Future<void> assignPinnedNoteToCollection(String noteId, String? collectionId) async {
+  Future<void> assignPinnedNoteToCollection(
+      String noteId, String? collectionId) async {
     if (collectionId != null &&
-        !getNoteCollections().any((collection) => collection.id == collectionId)) {
+        !getNoteCollections()
+            .any((collection) => collection.id == collectionId)) {
       throw ArgumentError.value(collectionId, 'collectionId');
     }
     final notes = getPinnedNotes()
@@ -795,8 +789,7 @@ class StorageService {
       }
     }
     if (!changed) return false;
-    await runQuietly(
-        () => _saveNoteCollections(local.values.toList()));
+    await runQuietly(() => _saveNoteCollections(local.values.toList()));
     return true;
   }
 
@@ -968,10 +961,8 @@ class StorageService {
         : after == null
             ? before + 1
             : (before + after) / 2;
-    entries.insert(
-        to,
-        moving.copyWith(
-            position: position, updatedAt: DateTime.now().toUtc()));
+    entries.insert(to,
+        moving.copyWith(position: position, updatedAt: DateTime.now().toUtc()));
     await _saveNotebookEntries(entries);
     _notify(UserDataEntity.notebookEntries);
   }
@@ -1207,8 +1198,8 @@ class StorageService {
   }) async {
     await ensureQuestionReviewsMigrated(scope);
     final reviews = getQuestionReviews(scope);
-    final current = reviews[answer.questionId] ??
-        QuestionReview.initial(answer.questionId);
+    final current =
+        reviews[answer.questionId] ?? QuestionReview.initial(answer.questionId);
     final updated = current.applyAnswer(
       isCorrect: answer.isCorrect,
       selectedOption: answer.selectedOption,
@@ -1293,13 +1284,31 @@ class StorageService {
     await _prefs.setStringList('$_accessScopesPrefix$userId', scopes);
   }
 
+  static const _accessExpiryPrefix = 'access_expiry_';
+
+  /// Earliest expiry among the grants confirmed at the last validation, or
+  /// null when none of them expires. Once it passes, the next launch or
+  /// resume rechecks with Supabase instead of waiting out the usual interval.
+  DateTime? getAccessExpiry(String userId) {
+    final raw = _prefs.getString('$_accessExpiryPrefix$userId');
+    return raw == null ? null : DateTime.tryParse(raw);
+  }
+
+  Future<void> setAccessExpiry(String userId, DateTime? expiry) async {
+    if (expiry == null) {
+      await _prefs.remove('$_accessExpiryPrefix$userId');
+    } else {
+      await _prefs.setString(
+          '$_accessExpiryPrefix$userId', expiry.toUtc().toIso8601String());
+    }
+  }
+
   static const _initialSyncKey = 'initial_sync_complete';
 
   /// Whether this device has ever completed a full cross-device sync.
   /// Guards the new-device sync splash: first sync is shown with progress,
   /// later ones refresh silently in the background.
-  bool hasCompletedInitialSync() =>
-      _prefs.getBool(_initialSyncKey) ?? false;
+  bool hasCompletedInitialSync() => _prefs.getBool(_initialSyncKey) ?? false;
 
   Future<void> setInitialSyncComplete() async {
     await _prefs.setBool(_initialSyncKey, true);
@@ -1331,7 +1340,8 @@ class StorageService {
 
   // Daily study stats
 
-  StudyDayStats getDailyStudyStats(String scope, String dateKey) {    try {
+  StudyDayStats getDailyStudyStats(String scope, String dateKey) {
+    try {
       final raw = _prefs.getString('$_studyStatsPrefix$scope');
       if (raw == null) {
         return StudyDayStats.empty(scope: scope, dateKey: dateKey);

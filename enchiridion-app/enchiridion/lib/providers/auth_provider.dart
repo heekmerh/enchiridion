@@ -88,7 +88,8 @@ class AuthProvider with ChangeNotifier {
 
   void _refreshEntitlements() {
     if (_status != AuthStatus.authenticated) return;
-    unawaited(AccessService.instance.loadAccess());
+    // At most one Supabase check a day on resume; see AccessService.
+    unawaited(AccessService.instance.refreshIfDue());
   }
 
   @override
@@ -102,7 +103,7 @@ class AuthProvider with ChangeNotifier {
     if (session != null) {
       _user = session.user;
       _status = AuthStatus.authenticated;
-      AccessService.instance.loadAccess();
+      unawaited(AccessService.instance.refreshIfDue());
       QuestionReviewSyncService(_storage).pullAndMergeAll();
       unawaited(_runUserDataSync());
       _checkDeviceGate();
@@ -114,7 +115,14 @@ class AuthProvider with ChangeNotifier {
       _user = event.session?.user;
       if (event.session != null) {
         _status = AuthStatus.authenticated;
-        AccessService.instance.loadAccess();
+        // A fresh sign-in checks straight away. The startup session event
+        // and the hourly token refresh only check when the last check is a
+        // day old, so they don't each cost a Supabase call.
+        if (event.event == AuthChangeEvent.signedIn) {
+          unawaited(AccessService.instance.loadAccess());
+        } else {
+          unawaited(AccessService.instance.refreshIfDue());
+        }
         if (event.event == AuthChangeEvent.signedIn) {
           unawaited(PlayBillingService.instance.restore(reportOutcome: false));
         }
