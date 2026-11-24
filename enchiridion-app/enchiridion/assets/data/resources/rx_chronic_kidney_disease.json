@@ -141,6 +141,60 @@
                 {
                   "type": "paragraph",
                   "text": "This is known as the **CGA classification**."
+                }
+              ]
+            },
+            {
+              "group_id": "rx_chronic_kidney_disease_group_4",
+              "group_title": "C — Cause of CKD",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Identify the underlying kidney disease."
+                },
+                {
+                  "type": "list",
+                  "title": "Examples include:",
+                  "items": [
+                    {
+                      "text": "Diabetic kidney disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Hypertensive nephrosclerosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic glomerulonephritis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Polycystic kidney disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic obstructive uropathy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Reflux nephropathy.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Chronic tubulointerstitial disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "Lupus nephritis.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "G — GFR categories"
                 },
                 {
                   "type": "table",
@@ -177,8 +231,8 @@
                     ],
                     [
                       "G5",
-                      "30",
-                      ">300 | Severely increased"
+                      "<15",
+                      "Kidney failure"
                     ]
                   ]
                 },
@@ -189,7 +243,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_4",
+              "group_id": "rx_chronic_kidney_disease_group_5",
               "group_title": "1.5 Combined CKD classification",
               "group_subtitle": null,
               "group_icon": null,
@@ -276,6 +330,64 @@
                 },
                 {
                   "type": "paragraph",
+                  "text": "A patient with diabetic kidney disease, eGFR of 38 mL/min/1.73 m² and ACR of 15 mg/mmol:"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "C: Diabetic kidney disease.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G: G3b.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A: A2.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Full classification: Diabetic kidney disease, CKD G3b A2."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Example 3:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "A patient with hypertensive nephrosclerosis, eGFR of 22 mL/min/1.73 m² and ACR of 50 mg/mmol:"
+                },
+                {
+                  "type": "list",
+                  "items": [
+                    {
+                      "text": "C: Hypertensive nephrosclerosis.",
+                      "level": 0
+                    },
+                    {
+                      "text": "G: G4.",
+                      "level": 0
+                    },
+                    {
+                      "text": "A: A3.",
+                      "level": 0
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Full classification: Hypertensive nephrosclerosis, CKD G4 A3."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "Example 4:"
+                },
+                {
+                  "type": "paragraph",
                   "text": "**Diagnosis: CKD G4 A2.**"
                 },
                 {
@@ -285,7 +397,66 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_5",
+              "group_id": "rx_chronic_kidney_disease_group_6",
+              "group_title": "KDIGO CKD heat map — risk classification",
+              "group_subtitle": null,
+              "group_icon": null,
+              "blocks": [
+                {
+                  "type": "paragraph",
+                  "text": "Prognosis based on GFR and albuminuria categories, assuming CKD is established."
+                },
+                {
+                  "type": "table",
+                  "columns": [
+                    "GFR category",
+                    "A1",
+                    "A2",
+                    "A3"
+                  ],
+                  "rows": [
+                    [
+                      "G1",
+                      "Low",
+                      "Moderate",
+                      "High"
+                    ],
+                    [
+                      "G2",
+                      "Low",
+                      "Moderate",
+                      "High"
+                    ],
+                    [
+                      "G3a",
+                      "Moderate",
+                      "High",
+                      "Very high"
+                    ],
+                    [
+                      "G3b",
+                      "High",
+                      "Very high",
+                      "Very high"
+                    ],
+                    [
+                      "G4",
+                      "Very high",
+                      "Very high",
+                      "Very high"
+                    ],
+                    [
+                      "G5",
+                      "Very high",
+                      "Very high",
+                      "Very high"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "group_id": "rx_chronic_kidney_disease_group_7",
               "group_title": "1.6 CKD risk classification",
               "group_subtitle": null,
               "group_icon": null,
@@ -357,7 +528,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_6",
+              "group_id": "rx_chronic_kidney_disease_group_8",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -438,7 +609,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_7",
+              "group_id": "rx_chronic_kidney_disease_group_9",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -454,7 +625,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_8",
+              "group_id": "rx_chronic_kidney_disease_group_10",
               "group_title": "3.1 Immediate management of complications",
               "group_subtitle": null,
               "group_icon": null,
@@ -503,7 +674,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_9",
+              "group_id": "rx_chronic_kidney_disease_group_11",
               "group_title": "3.2 General long-term management",
               "group_subtitle": null,
               "group_icon": null,
@@ -564,7 +735,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_10",
+              "group_id": "rx_chronic_kidney_disease_group_12",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -612,7 +783,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_11",
+              "group_id": "rx_chronic_kidney_disease_group_13",
               "group_title": "4.1 ACE inhibitors (ACEi)",
               "group_subtitle": null,
               "group_icon": null,
@@ -794,7 +965,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_12",
+              "group_id": "rx_chronic_kidney_disease_group_14",
               "group_title": "4.2 Angiotensin receptor blockers (ARBs)",
               "group_subtitle": null,
               "group_icon": null,
@@ -901,7 +1072,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_13",
+              "group_id": "rx_chronic_kidney_disease_group_15",
               "group_title": "4.3 SGLT2 inhibitors",
               "group_subtitle": null,
               "group_icon": null,
@@ -1050,7 +1221,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_14",
+              "group_id": "rx_chronic_kidney_disease_group_16",
               "group_title": "4.4 Mineralocorticoid receptor antagonists",
               "group_subtitle": null,
               "group_icon": null,
@@ -1141,7 +1312,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_15",
+              "group_id": "rx_chronic_kidney_disease_group_17",
               "group_title": "4.5 Blood pressure control",
               "group_subtitle": null,
               "group_icon": null,
@@ -1269,7 +1440,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_16",
+              "group_id": "rx_chronic_kidney_disease_group_18",
               "group_title": "4.6 Diabetes management in CKD",
               "group_subtitle": null,
               "group_icon": null,
@@ -1363,7 +1534,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_17",
+              "group_id": "rx_chronic_kidney_disease_group_19",
               "group_title": "4.7 Lipid management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1420,7 +1591,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_18",
+              "group_id": "rx_chronic_kidney_disease_group_20",
               "group_title": "4.8 Management of metabolic acidosis",
               "group_subtitle": null,
               "group_icon": null,
@@ -1477,7 +1648,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_19",
+              "group_id": "rx_chronic_kidney_disease_group_21",
               "group_title": "4.9 Management of CKD-associated anaemia",
               "group_subtitle": null,
               "group_icon": null,
@@ -1616,7 +1787,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_20",
+              "group_id": "rx_chronic_kidney_disease_group_22",
               "group_title": "4.10 CKD-mineral and bone disorder (CKD-MBD)",
               "group_subtitle": null,
               "group_icon": null,
@@ -1758,7 +1929,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_21",
+              "group_id": "rx_chronic_kidney_disease_group_23",
               "group_title": "4.11 Dietary and lifestyle management",
               "group_subtitle": null,
               "group_icon": null,
@@ -1814,7 +1985,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_22",
+              "group_id": "rx_chronic_kidney_disease_group_24",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -1826,7 +1997,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_23",
+              "group_id": "rx_chronic_kidney_disease_group_25",
               "group_title": "5.1 Example prescription: CKD with hypertension and albuminuria",
               "group_subtitle": null,
               "group_icon": null,
@@ -2117,7 +2288,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_24",
+              "group_id": "rx_chronic_kidney_disease_group_26",
               "group_title": "6.1 Adult dosing summary",
               "group_subtitle": null,
               "group_icon": null,
@@ -2199,7 +2370,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_25",
+              "group_id": "rx_chronic_kidney_disease_group_27",
               "group_title": "6.2 Paediatric CKD management",
               "group_subtitle": null,
               "group_icon": null,
@@ -2340,7 +2511,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_26",
+              "group_id": "rx_chronic_kidney_disease_group_28",
               "group_title": "6.3 Weight-based medication calculation",
               "group_subtitle": null,
               "group_icon": null,
@@ -2385,7 +2556,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_27",
+              "group_id": "rx_chronic_kidney_disease_group_29",
               "group_title": "7.1 ACE inhibitors and ARBs",
               "group_subtitle": null,
               "group_icon": null,
@@ -2418,7 +2589,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_28",
+              "group_id": "rx_chronic_kidney_disease_group_30",
               "group_title": "7.2 SGLT2 inhibitors",
               "group_subtitle": null,
               "group_icon": null,
@@ -2451,7 +2622,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_29",
+              "group_id": "rx_chronic_kidney_disease_group_31",
               "group_title": "7.3 Intravenous iron",
               "group_subtitle": null,
               "group_icon": null,
@@ -2510,7 +2681,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_30",
+              "group_id": "rx_chronic_kidney_disease_group_32",
               "group_title": "7.4 Epoetin alfa",
               "group_subtitle": null,
               "group_icon": null,
@@ -2543,7 +2714,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_31",
+              "group_id": "rx_chronic_kidney_disease_group_33",
               "group_title": "7.5 Calcium gluconate",
               "group_subtitle": null,
               "group_icon": null,
@@ -2584,7 +2755,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_32",
+              "group_id": "rx_chronic_kidney_disease_group_34",
               "group_title": "8.1 Important contraindications",
               "group_subtitle": null,
               "group_icon": null,
@@ -2641,7 +2812,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_33",
+              "group_id": "rx_chronic_kidney_disease_group_35",
               "group_title": "8.2 Important drug interactions",
               "group_subtitle": null,
               "group_icon": null,
@@ -2698,7 +2869,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_34",
+              "group_id": "rx_chronic_kidney_disease_group_36",
               "group_title": "8.3 The triple-whammy interaction",
               "group_subtitle": null,
               "group_icon": null,
@@ -2746,7 +2917,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_35",
+              "group_id": "rx_chronic_kidney_disease_group_37",
               "group_title": "9.1 Treatment-related adverse effects",
               "group_subtitle": null,
               "group_icon": null,
@@ -2824,7 +2995,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_36",
+              "group_id": "rx_chronic_kidney_disease_group_38",
               "group_title": "9.2 Management of important drug toxicities",
               "group_subtitle": null,
               "group_icon": null,
@@ -2968,7 +3139,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_37",
+              "group_id": "rx_chronic_kidney_disease_group_39",
               "group_title": "10.1 Renal dose adjustment",
               "group_subtitle": null,
               "group_icon": null,
@@ -3037,7 +3208,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_38",
+              "group_id": "rx_chronic_kidney_disease_group_40",
               "group_title": "10.2 Hepatic impairment",
               "group_subtitle": null,
               "group_icon": null,
@@ -3074,7 +3245,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_39",
+              "group_id": "rx_chronic_kidney_disease_group_41",
               "group_title": "10.3 Pregnancy",
               "group_subtitle": null,
               "group_icon": null,
@@ -3147,7 +3318,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_40",
+              "group_id": "rx_chronic_kidney_disease_group_42",
               "group_title": "10.4 Breastfeeding",
               "group_subtitle": null,
               "group_icon": null,
@@ -3223,7 +3394,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_41",
+              "group_id": "rx_chronic_kidney_disease_group_43",
               "group_title": "11.1 Routine monitoring",
               "group_subtitle": null,
               "group_icon": null,
@@ -3300,7 +3471,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_42",
+              "group_id": "rx_chronic_kidney_disease_group_44",
               "group_title": "11.2 Monitoring frequency according to CKD stage",
               "group_subtitle": null,
               "group_icon": null,
@@ -3353,7 +3524,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_43",
+              "group_id": "rx_chronic_kidney_disease_group_45",
               "group_title": "11.3 Assessing treatment response",
               "group_subtitle": null,
               "group_icon": null,
@@ -3414,7 +3585,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_44",
+              "group_id": "rx_chronic_kidney_disease_group_46",
               "group_title": "11.4 Treatment failure and progression",
               "group_subtitle": null,
               "group_icon": null,
@@ -3464,7 +3635,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_45",
+              "group_id": "rx_chronic_kidney_disease_group_47",
               "group_title": "11.5 Criteria for nephrology referral",
               "group_subtitle": null,
               "group_icon": null,
@@ -3539,7 +3710,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_46",
+              "group_id": "rx_chronic_kidney_disease_group_48",
               "group_title": "12.1 When to prepare for dialysis",
               "group_subtitle": null,
               "group_icon": null,
@@ -3585,7 +3756,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_47",
+              "group_id": "rx_chronic_kidney_disease_group_49",
               "group_title": "12.2 Indications for dialysis in CKD",
               "group_subtitle": null,
               "group_icon": null,
@@ -3638,7 +3809,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_48",
+              "group_id": "rx_chronic_kidney_disease_group_50",
               "group_title": "12.3 Types of renal replacement therapy",
               "group_subtitle": null,
               "group_icon": null,
@@ -3681,7 +3852,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_49",
+              "group_id": "rx_chronic_kidney_disease_group_51",
               "group_title": "13.1 Patient counselling",
               "group_subtitle": null,
               "group_icon": null,
@@ -3745,7 +3916,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_50",
+              "group_id": "rx_chronic_kidney_disease_group_52",
               "group_title": "13.2 Dietary counselling",
               "group_subtitle": null,
               "group_icon": null,
@@ -3828,7 +3999,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_51",
+              "group_id": "rx_chronic_kidney_disease_group_53",
               "group_title": "13.3 Follow-up schedule",
               "group_subtitle": null,
               "group_icon": null,
@@ -3888,7 +4059,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_52",
+              "group_id": "rx_chronic_kidney_disease_group_54",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
@@ -4005,7 +4176,7 @@
               ]
             },
             {
-              "group_id": "rx_chronic_kidney_disease_group_53",
+              "group_id": "rx_chronic_kidney_disease_group_55",
               "group_title": "14.2 Important CKD versus AKI distinction",
               "group_subtitle": null,
               "group_icon": null,
@@ -4074,7 +4245,7 @@
           "subsection_icon": null,
           "content_groups": [
             {
-              "group_id": "rx_chronic_kidney_disease_group_54",
+              "group_id": "rx_chronic_kidney_disease_group_56",
               "group_title": "",
               "group_subtitle": null,
               "group_icon": null,
